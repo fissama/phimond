@@ -29,3 +29,21 @@ F01/F02: packet và renderer không cùng contract; private fixtures có thể p
 ## Cuối phase
 
 Kết luận cuối và blocker xem `P00-verification.md`; không đóng gate visual/live hiếm chỉ vì mock pass. Số đo FPS 120 frame là sample ngắn, không đủ chứng nhận gate 10 phút/50 actor. Report giữ/chỉnh/hoãn này phải được mang vào sprint tiếp theo.
+
+## Cuối phase (final)
+
+Native keyboard/click run đã chạy; evidence trong `evidence/native-playtest.log`, `evidence/native-battle.png`, `evidence/native-after-attack.png`, `evidence/native-attack.png`, `evidence/native-contact.png`. Damage/heal/miss/status/finishing/flee và reconnect từ native input đều có ảnh xác nhận.
+
+Reviewer (Codex) đã chạy, có evidence red→green cho F01/F02, nullable spawn, terminal NPC lock và packet/stale validation. Reviewer không chạy live DB recovery / fault matrix / visual gate / 50-CCU; chi tiết đóng ở `P00-verification.md` mục "## Review độc lập và sửa sau review".
+
+Trạng thái friction còn lại (sở hữu đã chốt trong bảng Finding ở trên):
+
+- P02 owns combat UX, pending/turn flow pacing (giữ budgets master, không che latency).
+- P01 owns map seams, proximity, collision, room topology.
+- P05 owns art polish, animation timing, final render.
+- P06 owns production resilience (RTT/pool/query/locks, hot-map, 50 mixed battle, 10 reconnect/40 còn).
+- P09 owns release candidate (2h soak50, stress75/15min, RTT300, packet loss/jitter).
+
+Các deferred entry P00-G04 (rừng seam/art POC → P01/P05), P00-G05 (DB/network chờ action → P02 cảm giác combat; P06/P09 topology/latency) và P00-G06 (đủ bộ loài/action/balance mới chơi → P02 actor matrix/P03 pet mapping/P04 clean-account pacing) đã có chỗ trong bảng Finding ở trên; không lặp nội dung ở đây.
+
+Kết luận: P00 baseline closed; latency budget FAILED trên dev topology; 50 CCU NOT certified. Owner map chuyển tiếp: P01 (map seams/proximity/collision), P02 (combat UX/pacing), P05 (art polish), P06 (production load + fault matrix), P09 (2h soak50 + release candidate), P10–P12 (shared-world + party).

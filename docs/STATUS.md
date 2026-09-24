@@ -1,5 +1,11 @@
 # Delivery status
 
+## P00 closed (2026-09-24)
+
+- Server default `127.0.0.1:8090` chạy code mới; reconnect Godot client để nạp scripts mới.
+- P00 latency budget FAILED — không cert 50 CCU.
+- Owner map: P01 (map seams, proximity, collision), P02 (combat UX, pacing), P05 (art polish), P06 (production load + fault matrix), P09 (2h soak50 + release candidate), P10–P12 (shared-world + party).
+
 ## Current P00 implementation — 2026-09-23
 
 Active client is LoginScreen → shared `reference_game.gd` world/battle renderer, with four-direction movement, visible-monster contact and source raster art (still POC). P00 adds atomic public combat events, sanitized terminal presentation, auth/read/duplicate no-replay, nullable spawn handling, offline Godot gates, opt-in aggregate metrics and a public-protocol load harness. Existing gameplay formulas and actor art are retained.

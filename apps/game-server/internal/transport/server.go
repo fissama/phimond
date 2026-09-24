@@ -313,6 +313,9 @@ func (s *Server) ws(w http.ResponseWriter, r *http.Request) {
 		}
 		response, _ := payload.(map[string]any)
 		s.metrics.observe("response_ready", m.Op, time.Since(requestStarted), response["op"] == "error")
+		if response["op"] == "error" {
+			s.metrics.observe("rejected_response", m.Op, time.Since(requestStarted), true)
+		}
 		writeCtx, c := context.WithTimeout(ctx, 10*time.Second)
 		defer c()
 		started := time.Now()

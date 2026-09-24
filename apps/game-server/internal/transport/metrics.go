@@ -60,7 +60,7 @@ func (m *runtimeMetrics) observe(stage, op string, d time.Duration, failed bool)
 		return
 	}
 	switch stage {
-	case "response_ready", "socket_write", "apply", "durable_mutation", "checkpoint", "checkpoint_age", "session_validation", "db_begin", "db_lock_read", "db_receipt_read", "db_state_write", "db_pet_projection", "db_audit_write", "db_receipt_write", "db_commit", "authority_wait":
+	case "response_ready", "socket_write", "apply", "durable_mutation", "checkpoint", "checkpoint_age", "session_validation", "db_begin", "db_lock_read", "db_receipt_read", "db_state_write", "db_pet_projection", "db_audit_write", "db_receipt_write", "db_commit", "authority_wait", "rejected_response":
 	default:
 		stage = "other"
 	}

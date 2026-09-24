@@ -1,0 +1,17 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+WARNING: res://styles/styleboxes/tab_unselected.tres:3 - ext_resource, invalid UID: uid://brn24tj25n5f - using text path instead: res://styles/styleboxes/tab_unselected.png
+     at: load (scene/resources/resource_format_text.cpp:501)
+PASS: actual registration/login, four UI directions, menus, NPC, shop, quest/portal/reward, battle defend/item/skill/attack/capture/flee, reconnect and persisted state
+Action roundtrip ms: median=21 max=1263 samples=41
+# 2026-09-24 reconnect smoke
+# server: 127.0.0.1:8094 (local, GAME_METRICS=1; same env as load-stages-final run)
+# harness: scripts/reference_live_check.gd via 'Godot --script' (SceneTree, headless)
+# existing Godot editor PID 83587 left untouched; smoke spawns its own process
+# screenshots: not produced; --script mode is headless (no display surface); limitation documented in evidence/screens/README.md if needed
+
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.1 Metal - 91.7 - Compatibility - Using Device: Apple - Apple M3 Pro
+
+PASS: actual registration/login, four UI directions, menus, NPC, shop, quest/portal/reward, battle defend/item/skill/attack/capture/flee, reconnect and persisted state
+Action roundtrip ms: median=21 max=1569 samples=41

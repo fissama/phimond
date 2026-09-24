@@ -1,0 +1,40 @@
+=== RUN   TestMySQLWireRecovery
+=== RUN   TestMySQLWireRecovery/before_forward
+    fault_mysql_test.go:50: fixture_account=9055980d8a2199096cbbbf059f2d2aac scenario=before_forward
+=== RUN   TestMySQLWireRecovery/after_commit
+    fault_mysql_test.go:50: fixture_account=f25e25cef1842d59501c18bce6e43292 scenario=after_commit
+=== RUN   TestMySQLWireRecovery/timeout_after_commit
+    fault_mysql_test.go:50: fixture_account=0d9635cd880ac0e613fb67b1860fe8d6 scenario=timeout_after_commit
+=== RUN   TestMySQLWireRecovery/rtt300
+    fault_mysql_test.go:50: fixture_account=dce9b406d6677c815b82f7abed11e4e9 scenario=rtt300
+--- PASS: TestMySQLWireRecovery (8.49s)
+    --- PASS: TestMySQLWireRecovery/before_forward (1.81s)
+    --- PASS: TestMySQLWireRecovery/after_commit (1.97s)
+    --- PASS: TestMySQLWireRecovery/timeout_after_commit (2.22s)
+    --- PASS: TestMySQLWireRecovery/rtt300 (2.02s)
+=== RUN   TestRejectedResponseMetrics
+--- PASS: TestRejectedResponseMetrics (0.00s)
+=== RUN   TestMetricsBoundedLabelsAndBuckets
+--- PASS: TestMetricsBoundedLabelsAndBuckets (0.00s)
+=== RUN   TestStagesEvidenceDumpsGameMetrics
+--- PASS: TestStagesEvidenceDumpsGameMetrics (0.00s)
+PASS
+ok  	phimond/server/internal/transport	8.711s
+=== RUN   TestMySQLPoolRetainsConcurrentConnections
+--- PASS: TestMySQLPoolRetainsConcurrentConnections (2.57s)
+=== RUN   TestMySQLMutationObservations
+--- PASS: TestMySQLMutationObservations (1.73s)
+=== RUN   TestMySQLAtomicMutation
+--- PASS: TestMySQLAtomicMutation (1.99s)
+=== RUN   TestMySQLConcurrentMutations
+--- PASS: TestMySQLConcurrentMutations (4.78s)
+=== RUN   TestMySQLMovementCheckpoint
+--- PASS: TestMySQLMovementCheckpoint (2.47s)
+=== RUN   TestMySQLAuditBatchPreservesEscapedJSON
+--- PASS: TestMySQLAuditBatchPreservesEscapedJSON (1.49s)
+PASS
+ok  	phimond/server/internal/persistence	15.425s
+=== RUN   TestMySQLBreedingSurvivesReconnect
+--- PASS: TestMySQLBreedingSurvivesReconnect (2.95s)
+PASS
+ok  	phimond/server/internal/character	3.346s

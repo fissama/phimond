@@ -6,6 +6,8 @@ Godot gameplay client with the source-asset presentation reconstructed from the 
 
 Start the game server on `127.0.0.1:8090` using the repository server instructions, then double-click [launch.command](launch.command). It uses the existing bundled Godot in `.tools/Godot.app`, falling back to `godot` on PATH. The website on port 3100 is not the gameplay client.
 
+> After P00 baseline close (2026-09-24), restart Godot client to load new scripts. Server default `127.0.0.1:8090` đã chạy code mới.
+
 1. Register a test account or log in. Main entry is `scenes/LoginScreen.tscn`.
 2. Use WASD/arrows or all four D-pad directions. The center opens the menu. F3 toggles coordinates/revision for diagnosis.
 3. Click an NPC to approach and talk, or press E near one. NPC options open shop/quests/healing as supported by that NPC.

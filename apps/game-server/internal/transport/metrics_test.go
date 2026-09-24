@@ -46,6 +46,10 @@ func TestRejectedResponseMetrics(t *testing.T) {
 	if stat.Count != 1 || stat.Errors != 1 {
 		t.Fatalf("rejection missing from metrics: %+v", stat)
 	}
+	rejected := s.metrics.snapshot()["rejected_response/battle.action"]
+	if rejected.Count != 1 || rejected.Errors != 1 {
+		t.Fatalf("rejected_response stage missing or miscounted: %+v", rejected)
+	}
 }
 
 func TestMetricsBoundedLabelsAndBuckets(t *testing.T) {
@@ -67,6 +71,15 @@ func TestMetricsBoundedLabelsAndBuckets(t *testing.T) {
 	off.observe("response_ready", "world.move", time.Second, false)
 	if len(off.snapshot()) != 0 {
 		t.Fatal("disabled instrumentation recorded")
+	}
+	rej := newRuntimeMetrics(true)
+	rej.observe("rejected_response", "world.move", 3*time.Millisecond, true)
+	if rej.snapshot()["rejected_response/world.move"].Count != 1 {
+		t.Fatal("rejected_response stage not whitelisted")
+	}
+	rej.observe("rejected_response", "world.move", 0, true)
+	if rej.snapshot()["rejected_response/world.move"].Count != 2 {
+		t.Fatal("rejected_response cumulative count broken")
 	}
 }
 

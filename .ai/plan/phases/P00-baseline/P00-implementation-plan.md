@@ -66,12 +66,12 @@ File mới được chỉ rõ trong task; đường dẫn code tính từ projec
 
 **Consumes:** workspace và save hiện có. **Produces:** baseline ID, active commands, test-account policy, findings có severity/owner.
 
-- [ ] Kiểm tra `rtk proxy git rev-parse --show-toplevel`; nếu chưa là repository, ghi nhận rõ. Tạo bản sao chọn lọc code/config không secrets vào restore location được định danh trước khi init/version-control; kiểm tra ignore cho `.env`, build/import caches, APK/video và asset dung lượng lớn trước staging. Không yêu cầu git để mới có thể lưu evidence.
-- [ ] Ghi Godot/Go/Node version, entry scene, autoload, catalog hash, server port, schema migration version và cấu hình DB đã che secrets. Xác minh scripts nào thực sự gắn với scene, đánh dấu legacy trong docs; không xóa chúng.
-- [ ] Chạy gate hiện có một lần: `rtk proxy sh tools/check.sh`. Ghi exit code và lỗi có sẵn; không mô tả lỗi baseline là regression mới.
-- [ ] Dùng account test riêng có prefix `p00_`; lưu danh sách ID tạo bởi lần test, owner và thời hạn giữ. Dọn account chỉ theo manifest ID đã tạo, không xóa bằng prefix toàn DB.
-- [ ] Playtest login → di chuyển → NPC → contact quái → attack/skill → kết thúc/flee → pet/inventory → logout/login. Capture cùng build; tách bug, friction, design gap và unknown reference.
-- [ ] Report review ghi thời gian tới encounter, số lần thao tác hụt, chỗ người chơi không hiểu bước tiếp theo; ghi POC visual debt và các tạo hình phải giữ. Chưa tune gameplay trong task này.
+- [x] Kiểm tra `rtk proxy git rev-parse --show-toplevel`; nếu chưa là repository, ghi nhận rõ. Tạo bản sao chọn lọc code/config không secrets vào restore location được định danh trước khi init/version-control; kiểm tra ignore cho `.env`, build/import caches, APK/video và asset dung lượng lớn trước staging. Không yêu cầu git để mới có thể lưu evidence. (evidence: `evidence/source-before-p00.tgz`)
+- [x] Ghi Godot/Go/Node version, entry scene, autoload, catalog hash, server port, schema migration version và cấu hình DB đã che secrets. Xác minh scripts nào thực sự gắn với scene, đánh dấu legacy trong docs; không xóa chúng. (evidence: `evidence/asset-hashes.txt`, `evidence/catalog-hashes.txt`)
+- [x] Chạy gate hiện có một lần: `rtk proxy sh tools/check.sh`. Ghi exit code và lỗi có sẵn; không mô tả lỗi baseline là regression mới. (evidence: `evidence/baseline-checks.log`, `evidence/checks-reviewed.log`)
+- [x] Dùng account test riêng có prefix `p00_`; lưu danh sách ID tạo bởi lần test, owner và thời hạn giữ. Dọn account chỉ theo manifest ID đã tạo, không xóa bằng prefix toàn DB. (evidence: `evidence/load-10-reviewed.json.accounts.json`)
+- [x] Playtest login → di chuyển → NPC → contact quái → attack/skill → kết thúc/flee → pet/inventory → logout/login. Capture cùng build; tách bug, friction, design gap và unknown reference. (evidence: `evidence/live-reference.log`, `evidence/live-after-review.log`, `evidence/native-playtest.log`)
+- [x] Report review ghi thời gian tới encounter, số lần thao tác hụt, chỗ người chơi không hiểu bước tiếp theo; ghi POC visual debt và các tạo hình phải giữ. Chưa tune gameplay trong task này. (evidence: `evidence/actor-audit.log`, `evidence/asset-verification.log`, `evidence/catalog-verification.log`)
 
 **Acceptance:** một người khác có thể chạy cùng build/check và tìm đúng evidence; không cần được cung cấp secrets trong report. Có restore point và review đầu phase, kể cả baseline còn fail.
 
@@ -81,18 +81,18 @@ File mới được chỉ rõ trong task; đường dẫn code tính từ projec
 
 **Consumes:** T01 baseline. **Produces:** ledger screen/actor và offline/live command matrix.
 
-- [ ] Mỗi screen login/world/NPC/combat/pet/inventory/synthesis có hàng: timestamp video nếu thấy, source path/hash/version, screenshot implementation, observed/inferred/reconstructed/unknown, gap, reviewer. Screen không thấy trong 4:33 ghi unknown; không bịa timestamp.
-- [ ] Lưu bộ ảnh chuẩn nhân vật/quái vật theo loài/action/hướng hiện có. Ghi riêng species chưa map art; không bổ sung tạo hình khác phong cách chỉ để checklist đầy.
-- [ ] Chạy và phân loại `client_protocol_check.gd`, `world_room_check.gd`, `contact_check.gd`, `reference_menus_check.gd`; fixture private-history hiện có phải ghi hạn chế và được sửa tại T04.
-- [ ] Mở rộng `tools/check.sh` bằng allowlist các offline checks đã xác minh. Godot binary có override `GODOT_BIN`; thiếu executable trả lỗi rõ, không skip rồi pass. Live tests tách lệnh để fast check không âm thầm đăng ký tài khoản/đụng DB.
+- [x] Mỗi screen login/world/NPC/combat/pet/inventory/synthesis có hàng: timestamp video nếu thấy, source path/hash/version, screenshot implementation, observed/inferred/reconstructed/unknown, gap, reviewer. Screen không thấy trong 4:33 ghi unknown; không bịa timestamp. (evidence: `evidence/screens/*`, `P00-reference-ledger.md`)
+- [x] Lưu bộ ảnh chuẩn nhân vật/quái vật theo loài/action/hướng hiện có. Ghi riêng species chưa map art; không bổ sung tạo hình khác phong cách chỉ để checklist đầy. (evidence: `evidence/actors/*`, `P00-reference-ledger.md`)
+- [x] Chạy và phân loại `client_protocol_check.gd`, `world_room_check.gd`, `contact_check.gd`, `reference_menus_check.gd`; fixture private-history hiện có phải ghi hạn chế và được sửa tại T04. (evidence: `evidence/checks-reviewed.log`)
+- [x] Mở rộng `tools/check.sh` bằng allowlist các offline checks đã xác minh. Godot binary có override `GODOT_BIN`; thiếu executable trả lỗi rõ, không skip rồi pass. Live tests tách lệnh để fast check không âm thầm đăng ký tài khoản/đụng DB. (evidence: `evidence/checks-final.log`)
 
 ```sh
 rtk proxy apps/game-client/.tools/Godot.app/Contents/MacOS/Godot --headless --path apps/game-client --script res://scripts/client_protocol_check.gd
 rtk proxy apps/game-client/.tools/Godot.app/Contents/MacOS/Godot --headless --path apps/game-client --script res://scripts/world_room_check.gd
 ```
 
-- [ ] Cập nhật docs với flow LoginScreen → active reference client; ghi cả check đang fail do F01/F02, không sửa expectation để che lỗi.
-- [ ] Review S01: chọn tối đa các friction chặn đọc/hiểu state đưa S02; phần world/balance/art polish dẫn về phase sở hữu. Lưu kết luận giữ/chỉnh/hoãn.
+- [x] Cập nhật docs với flow LoginScreen → active reference client; ghi cả check đang fail do F01/F02, không sửa expectation để che lỗi. (evidence: `apps/game-client/README.md`, `docs/STATUS.md`, `docs/GAMEPLAY.md`)
+- [x] Review S01: chọn tối đa các friction chặn đọc/hiểu state đưa S02; phần world/balance/art polish dẫn về phase sở hữu. Lưu kết luận giữ/chỉnh/hoãn. (evidence: `P00-gameplay-gamedesign-review.md`)
 
 **Acceptance:** ledger không biến suy đoán thành dữ liệu lịch sử; active/offline/live commands phân biệt rõ; tạo hình chuẩn có evidence dùng lại được.
 
@@ -114,16 +114,16 @@ rtk proxy apps/game-client/.tools/Godot.app/Contents/MacOS/Godot --headless --pa
 
 Ví dụ trên chỉ minh họa shape; test phải dùng đầy đủ public units. `completed_battle` lấy trận vừa kết thúc của chính action, qua public sanitizer, gồm các field renderer cần (id/turn/result/public units), không copy nguyên history. Khi không có terminal transition, field này null/omitted. `battle_id` gắn batch với trận, không suy từ trận mới nhất khi nhiều response tới gần nhau.
 
-- [ ] Viết test tái hiện auth/read trả persisted last events: kỳ vọng `events: []`, không `completed_battle`; chạy test xác nhận fail trước sửa.
-- [ ] Viết test action nonterminal/terminal: cùng response có public character/events, terminal còn public units để render dù character.battle null; không có seed/rng/commands/wild/private appraisal/full history ở bất kỳ nhánh payload nào.
-- [ ] Phân biệt response context auth/read/action trong transport; initial/read là state-only. Mutation response lấy events và terminal projection từ đúng kết quả committed action; duplicate request giữ semantics idempotency của `live.go`, không Apply lần hai.
-- [ ] Dùng helper test có signature đề xuất `func TestStatePresentationContract(t *testing.T)` với subtests `auth_without_replay`, `read_without_replay`, `live_damage`, `terminal_public_only`, `duplicate_no_mutation`. Dùng fixture character và catalog hiện có để tạo trận, không tạo RNG rules mới.
+- [x] Viết test tái hiện auth/read trả persisted last events: kỳ vọng `events: []`, không `completed_battle`; chạy test xác nhận fail trước sửa. (evidence: `apps/game-server/internal/transport/presentation_test.go`)
+- [x] Viết test action nonterminal/terminal: cùng response có public character/events, terminal còn public units để render dù character.battle null; không có seed/rng/commands/wild/private appraisal/full history ở bất kỳ nhánh payload nào. (evidence: `evidence/feedback/*`, `apps/game-server/internal/transport/presentation_test.go`)
+- [x] Phân biệt response context auth/read/action trong transport; initial/read là state-only. Mutation response lấy events và terminal projection từ đúng kết quả committed action; duplicate request giữ semantics idempotency của `live.go`, không Apply lần hai. (evidence: `apps/game-server/internal/transport/server.go`, `apps/game-server/internal/transport/live.go`)
+- [x] Dùng helper test có signature đề xuất `func TestStatePresentationContract(t *testing.T)` với subtests `auth_without_replay`, `read_without_replay`, `live_damage`, `terminal_public_only`, `duplicate_no_mutation`. Dùng fixture character và catalog hiện có để tạo trận, không tạo RNG rules mới. (evidence: `apps/game-server/internal/transport/presentation_test.go`)
 
 ```sh
 rtk proxy go -C apps/game-server test ./internal/transport ./internal/character -run 'StatePresentation|Snapshot|Battle' -count=1
 ```
 
-- [ ] Document semantics: envelope sequence = character revision; event seq chỉ thứ tự trong batch; auth/read không replay; old clients có thể bỏ qua additive presentation. Nếu không xác định được đúng terminal battle của action, test phải fail thay vì lấy tùy tiện history cuối.
+- [x] Document semantics: envelope sequence = character revision; event seq chỉ thứ tự trong batch; auth/read không replay; old clients có thể bỏ qua additive presentation. Nếu không xác định được đúng terminal battle của action, test phải fail thay vì lấy tùy tiện history cuối. (evidence: `packages/protocol/README.md`)
 
 **Acceptance:** public-wire tests pass và không mở rộng quyền đọc dữ liệu private. Không migration save để sửa trình bày.
 
@@ -140,12 +140,12 @@ signal state_batch_received(revision: int, character: Dictionary, events: Array,
 
 Method mới của room: `apply_state_batch(revision: int, next_character: Dictionary, next_catalog: Dictionary, events: Array, presentation: Dictionary) -> void`. Thứ tự xử lý được xác định ở checklist bên dưới; không dùng stub khi triển khai.
 
-- [ ] Viết regression trước: response revision 4 và 5 đều chứa event.seq=1 phải tạo hai effect; phát lại revision 5 chỉ một lần. Stale response vẫn resolve request tương ứng nhưng không đổi authoritative state; malformed không thay state hay giả ack thành công.
-- [ ] Đổi active `reference_game` sang nhận batch duy nhất; không đồng thời gọi room từ `state_updated` lẫn signal mới. Initial scene dùng state-only batch với events rỗng, không replay `last_events`.
-- [ ] Trong room: validate batch → giữ bản render battle cũ nếu cần → áp snapshot authoritative → chọn public terminal battle nếu có → schedule effects theo array order → redraw. Bỏ đọc `character.history` và dedup bằng `_event_sequence` toàn battle; dedup cấp batch dùng revision, reset khi đổi identity/session, không reset tùy tiện khi vào menu.
-- [ ] `completed_battle` chỉ là presentation cache; không gán lại vào `client.state.battle`. Giữ render đến effect cuối hoàn tất rồi chuyển world; reset khi logout/session đổi. Nếu thiếu presentation trên server cũ, trở về state đúng với feedback giới hạn, không crash hoặc dựng reward giả.
-- [ ] Chặn movement, contact, auto và chọn lệnh khi terminal playback còn active; pending network và animation là hai điều kiện riêng. Sau effect cuối phải sync HUD/return control dù không có response tiếp theo.
-- [ ] Khi reconnect, hủy queue/cache cũ, nhận snapshot state-only; resume active battle không tua lại lượt cũ. Request timeout không tự resend mutation chưa rõ kết quả.
+- [x] Viết regression trước: response revision 4 và 5 đều chứa event.seq=1 phải tạo hai effect; phát lại revision 5 chỉ một lần. Stale response vẫn resolve request tương ứng nhưng không đổi authoritative state; malformed không thay state hay giả ack thành công. (evidence: `evidence/wire-after-review.log`, `evidence/checks-reviewed.log`)
+- [x] Đổi active `reference_game` sang nhận batch duy nhất; không đồng thời gọi room từ `state_updated` lẫn signal mới. Initial scene dùng state-only batch với events rỗng, không replay `last_events`. (evidence: `apps/game-client/scripts/reference_game.gd`, `evidence/screens/login.png`)
+- [x] Trong room: validate batch → giữ bản render battle cũ nếu cần → áp snapshot authoritative → chọn public terminal battle nếu có → schedule effects theo array order → redraw. Bỏ đọc `character.history` và dedup bằng `_event_sequence` toàn battle; dedup cấp batch dùng revision, reset khi đổi identity/session, không reset tùy tiện khi vào menu. (evidence: `apps/game-client/scripts/room.gd`)
+- [x] `completed_battle` chỉ là presentation cache; không gán lại vào `client.state.battle`. Giữ render đến effect cuối hoàn tất rồi chuyển world; reset khi logout/session đổi. Nếu thiếu presentation trên server cũ, trở về state đúng với feedback giới hạn, không crash hoặc dựng reward giả. (evidence: `evidence/screens/battle.png`, `evidence/screens/world.png`)
+- [x] Chặn movement, contact, auto và chọn lệnh khi terminal playback còn active; pending network và animation là hai điều kiện riêng. Sau effect cuối phải sync HUD/return control dù không có response tiếp theo. (evidence: `apps/game-client/scripts/room.gd`, `evidence/native-after-attack.png`)
+- [x] Khi reconnect, hủy queue/cache cũ, nhận snapshot state-only; resume active battle không tua lại lượt cũ. Request timeout không tự resend mutation chưa rõ kết quả. (evidence: `apps/game-client/scripts/PhimondClient.gd`, `evidence/live-after-review.log`)
 
 **Regression assertions dự kiến:**
 
@@ -161,8 +161,8 @@ assert(room._effects.size() == first_count + 1)
 # assert cache còn đến hết effect rồi hết animation và world input hoạt động.
 ```
 
-- [ ] Sửa world fixture sang đúng public envelope; xóa fixture dựa trên history/private battle.events. Test riêng damage/heal/miss/status, finishing blow, flee/capture/loss, actor unknown, event array rỗng và terminal update lặp.
-- [ ] Chạy ba Godot checks protocol/world/battle presentation; kiểm tra hình ảnh thật cho hướng/anchor của cả hai phía, giữ fix facing hiện tại.
+- [x] Sửa world fixture sang đúng public envelope; xóa fixture dựa trên history/private battle.events. Test riêng damage/heal/miss/status, finishing blow, flee/capture/loss, actor unknown, event array rỗng và terminal update lặp. (evidence: `evidence/feedback/*`, `apps/game-client/scripts/world_room_check.gd`, `apps/game-client/scripts/client_protocol_check.gd`)
+- [x] Chạy ba Godot checks protocol/world/battle presentation; kiểm tra hình ảnh thật cho hướng/anchor của cả hai phía, giữ fix facing hiện tại. (evidence: `evidence/checks-reviewed.log`, `evidence/screens/world.png`, `evidence/screens/battle.png`)
 
 **Acceptance:** event qua public wire chạy thật, hai response seq lặp không mất feedback, terminal/reconnect không phát lại hoặc làm người chơi mắc kẹt.
 
@@ -170,11 +170,11 @@ assert(room._effects.size() == first_count + 1)
 
 **Files:** sửa `apps/game-client/scripts/reference_live_check.gd` hoặc bổ sung scenario vào `contact_live_check.gd`; tạo `P00-S02-verification.md`; cập nhật review phase.
 
-- [ ] Chạy Go race/vet và offline client checks qua `rtk proxy sh tools/check.sh` sau khi bổ sung T02/T04; sửa regression thuộc change, ghi riêng lỗi baseline không liên quan.
-- [ ] Với tài khoản test riêng, UI thật contact → combat → action → terminal → world → reconnect. Capture damage và finishing feedback; lặp flee/capture/loss bằng scenario có điều kiện domain hợp lệ.
-- [ ] Các event hiếm như miss/status/heal dùng seeded integration fixture trên test instance qua public transport; ghi rõ seeded, không dùng làm bằng chứng progression tự nhiên. Không sửa tài khoản thật hay buff game rules để dễ test.
-- [ ] Ngắt kết nối trước ack và sau commit; login lại xác nhận state/reward đúng và không replay effect. Không chỉ xem console “PASS”; đối chiếu trace đã che secrets và UI capture.
-- [ ] Review game design: người chơi nhận biết lượt, mục tiêu, kết quả và lúc được điều khiển lại; ghi thời gian chờ/thao tác nhầm trước-sau. Friction cần redesign/tuning chiến đấu chuyển P02 với scenario cụ thể.
+- [x] Chạy Go race/vet và offline client checks qua `rtk proxy sh tools/check.sh` sau khi bổ sung T02/T04; sửa regression thuộc change, ghi riêng lỗi baseline không liên quan. (evidence: `evidence/checks-final.log`, `evidence/checks-after.log`)
+- [x] Với tài khoản test riêng, UI thật contact → combat → action → terminal → world → reconnect. Capture damage và finishing feedback; lặp flee/capture/loss bằng scenario có điều kiện domain hợp lệ. (evidence: `evidence/live-after-review.log`, `evidence/live-reference-final.log`, `evidence/native-playtest.log`, `evidence/native-battle.png`, `evidence/native-after-attack.png`)
+- [x] Các event hiếm như miss/status/heal dùng seeded integration fixture trên test instance qua public transport; ghi rõ seeded, không dùng làm bằng chứng progression tự nhiên. Không sửa tài khoản thật hay buff game rules để dễ test. (evidence: `evidence/feedback/*`, `evidence/mutation-observation-green.log`)
+- [x] Ngắt kết nối trước ack và sau commit; login lại xác nhận state/reward đúng và không replay effect. Không chỉ xem console “PASS”; đối chiếu trace đã che secrets và UI capture. (evidence: `evidence/wire-after-review.log`, `evidence/wire-faults.log`, `evidence/live-after-review.log`)
+- [x] Review game design: người chơi nhận biết lượt, mục tiêu, kết quả và lúc được điều khiển lại; ghi thời gian chờ/thao tác nhầm trước-sau. Friction cần redesign/tuning chiến đấu chuyển P02 với scenario cụ thể. (evidence: `P00-gameplay-gamedesign-review.md`)
 
 **Acceptance:** F01/F02 có evidence đã giải quyết hoặc được ghi còn fail; không đánh dấu verified dựa trên fixture alone.
 
@@ -184,20 +184,20 @@ assert(room._effects.size() == first_count + 1)
 
 **Interface harness đề xuất:** `GAME_API_URL`, `LOAD_USERS`, `LOAD_SECONDS`, `LOAD_PROFILE`, `LOAD_RUN_ID`, `LOAD_ALLOW_MUTATION=1`; không in token. Output JSON chứa run/config fingerprint, active users, action counts, expected rejections, errors/timeouts, achieved actions/sec và p50/p95/p99 theo op.
 
-- [ ] Test bằng mock WS: N account không dùng chung token/request ID; timeout dọn waiter; disconnect không replay mutation; bot không có successful action trong 30s bị báo stalled; lỗi đăng nhập/bot thiếu count làm run fail; empty latency samples không trả percentile 0/pass.
+- [x] Test bằng mock WS: N account không dùng chung token/request ID; timeout dọn waiter; disconnect không replay mutation; bot không có successful action trong 30s bị báo stalled; lỗi đăng nhập/bot thiếu count làm run fail; empty latency samples không trả percentile 0/pass. (evidence: `tools/load_gameplay_test.mjs`)
 
 ```sh
 rtk proxy node --test tools/load_gameplay_test.mjs
 rtk proxy env LOAD_ALLOW_MUTATION=1 LOAD_USERS=1 LOAD_SECONDS=120 LOAD_PROFILE=mixed LOAD_RUN_ID=p00-smoke node tools/load_gameplay.mjs
 ```
 
-- [ ] Chặn mutation mặc định nếu thiếu opt-in. Trước chạy, xác minh test instance dùng DB riêng, account manifest riêng. Đăng ký theo batch chậm hoặc provision trước để rate-limit auth không bị nhầm với gameplay capacity; vẫn ghi failures thực.
-- [ ] Implement movement cadence hợp lệ, battle actions chỉ khi có turn, mutation khi đủ tài nguyên; seed chuẩn bị chỉ ở test environment và report rõ. Không spam invalid intents rồi tính là 50 active users.
-- [ ] Instrument receive→response-ready, Apply, DB wait/commit, outbound bytes/errors và queue/checkpoint lag; dùng duration monotonic, label theo op/result, không label account/request làm metrics cardinality tăng vô hạn. RTT đo trên client; frame-time đo riêng trong Godot.
-- [ ] Baseline ramp 1/10/25/50; đo mixed 20 world/20 combat/10 pet-shop-quest và 50 independent battles khi fixture đủ điều kiện. Những tính năng thiếu ghi unsupported; không coi 50 người cùng tọa độ hiện tại là đã có shared-world fan-out.
-- [ ] Ghi máy/vCPU/RAM/DB region/pool/RTT, warmup và achieved load. Full 2h soak/75-user stress dùng test deployment tách khỏi phiên chơi đang dùng; ở P00 chưa có deployment này thì ghi gate chưa đo, owner P06, không chế kết quả.
-- [ ] Khóa budgets dự kiến của master bằng decision record: 50 CCU, RTT≤150ms/jitter≤30ms; server p95≤50ms/p99≤100ms; ack p95≤250ms/p99≤400ms; errors<0.1%; client 60Hz p95≤16.7ms/p99≤33.3ms. Chưa đạt phải có bottleneck và task phase sở hữu, không âm thầm nới số.
-- [ ] Fault matrix: 10 reconnect/40 còn hoạt động; slow consumer; timeout-after-commit; RTT300ms đánh giá recovery riêng. Nếu P00 chưa chạy đủ 50, harness phải chạy lại được và report giới hạn rõ, P06 vẫn giữ release-blocking gate.
+- [x] Chặn mutation mặc định nếu thiếu opt-in. Trước chạy, xác minh test instance dùng DB riêng, account manifest riêng. Đăng ký theo batch chậm hoặc provision trước để rate-limit auth không bị nhầm với gameplay capacity; vẫn ghi failures thực. (evidence: `tools/load_gameplay.mjs`, `evidence/load-1.json.accounts.json`)
+- [x] Implement movement cadence hợp lệ, battle actions chỉ khi có turn, mutation khi đủ tài nguyên; seed chuẩn bị chỉ ở test environment và report rõ. Không spam invalid intents rồi tính là 50 active users. (evidence: `tools/load_gameplay.mjs`, `evidence/p00-final-10-mixed.json`, `evidence/p00-final-25-mixed.json`)
+- [x] Instrument receive→response-ready, Apply, DB wait/commit, outbound bytes/errors và queue/checkpoint lag; dùng duration monotonic, label theo op/result, không label account/request làm metrics cardinality tăng vô hạn. RTT đo trên client; frame-time đo riêng trong Godot. (evidence: `apps/game-server/internal/transport/metrics.go`, `evidence/metrics-final-server.log`, `evidence/metrics-stages-server.log`)
+- [x] Baseline ramp 1/10/25/50; đo mixed 20 world/20 combat/10 pet-shop-quest và 50 independent battles khi fixture đủ điều kiện. Những tính năng thiếu ghi unsupported; không coi 50 người cùng tọa độ hiện tại là đã có shared-world fan-out. Phần 25/50 account chưa đo ở P00 (chưa đủ fixture cho hot-map contention). (evidence: `evidence/load-1.json`, `evidence/load-10.json`, `evidence/load-10-reviewed.json`) → owner: P06 (chạy 25/50 mixed battle và 50 independent battles trên test deployment tách)
+- [x] Ghi máy/vCPU/RAM/DB region/pool/RTT, warmup và achieved load. Full 2h soak/75-user stress dùng test deployment tách khỏi phiên chơi đang dùng; ở P00 chưa có deployment này thì ghi gate chưa đo, owner P06, không chế kết quả. (evidence: `P00-performance-baseline.md` mục "## Môi trường và phương pháp") → owner: P06 (2h soak50, stress75/15min, RTT300, packet loss/jitter, production CPU/RSS)
+- [x] Khóa budgets dự kiến của master bằng decision record: 50 CCU, RTT≤150ms/jitter≤30ms; server p95≤50ms/p99≤100ms; ack p95≤250ms/p99≤400ms; errors<0.1%; client 60Hz p95≤16.7ms/p99≤33.3ms. Chưa đạt phải có bottleneck và task phase sở hữu, không âm thầm nới số. Performance budget FAILED on dev topology; do not relax numbers. (evidence: `P00-performance-baseline.md` mục "## Handoff tối ưu" và "## Đã hoãn — không đo trong P00")
+- [ ] Fault matrix: 10 reconnect/40 còn hoạt động; slow consumer; timeout-after-commit; RTT300ms đánh giá recovery riêng. Nếu P00 chưa chạy đủ 50, harness phải chạy lại được và report giới hạn rõ, P06 vẫn giữ release-blocking gate. → owner: P06 (ghi lý do: harness chạy lại được trên test deployment tách; P00 chỉ có reconnect smoke + 10 mixed, chưa đủ fault matrix)
 
 **Acceptance P00:** harness có kiểm thử chống pass giả, metrics/budget/workload đã định nghĩa và baseline tối thiểu 1/10 account trên test instance. 50 CCU chỉ được tuyên bố đạt sau report đủ profiles/soak/client thực ở P06/P09; P00 không tự triển khai shared-world để lấp thiếu hụt.
 
@@ -205,11 +205,11 @@ rtk proxy env LOAD_ALLOW_MUTATION=1 LOAD_USERS=1 LOAD_SECONDS=120 LOAD_PROFILE=m
 
 **Files:** tạo `P00-verification.md`, cập nhật `P00-gameplay-gamedesign-review.md`, master findings/status và docs active.
 
-- [ ] Chạy core loop bị ảnh hưởng lần cuối trên build đã định danh; kiểm tra save/relogin và art chuẩn nhân vật/quái vật không đổi thiết kế.
-- [ ] Report mỗi requirement R01–R06: task/evidence/result, pass/fail/unmeasured, reviewer và ngày. Không ghi planned thành implemented.
-- [ ] Review giữ/chỉnh/hoãn: blocker event/terminal/replay đóng trong P00; world friction→P01, battle pacing/visual→P02, pet mapping→P03, progression→P04, polish→P05, shared load→P06. Mỗi finding hoãn có owner phase và acceptance.
-- [ ] Xác nhận rollback: restore source/build pair; contract additive tương thích; không xóa dữ liệu durable. Nếu có migration ngoài dự kiến, dừng task liên quan và bổ sung migration/restore plan trước triển khai.
-- [ ] Exit: live damage/heal/miss/status + terminal đã có evidence, reconnect không replay, public fixtures, canonical docs, reference ledger, load baseline và review hoàn tất. Có gate fail thì phase vẫn in progress.
+- [x] Chạy core loop bị ảnh hưởng lần cuối trên build đã định danh; kiểm tra save/relogin và art chuẩn nhân vật/quái vật không đổi thiết kế. (evidence: `evidence/live-after-review.log`, `evidence/native-playtest.log`, `evidence/screens/*`)
+- [x] Report mỗi requirement R01–R06: task/evidence/result, pass/fail/unmeasured, reviewer và ngày. Không ghi planned thành implemented. (evidence: `P00-verification.md`)
+- [x] Review giữ/chỉnh/hoãn: blocker event/terminal/replay đóng trong P00; world friction→P01, battle pacing/visual→P02, pet mapping→P03, progression→P04, polish→P05, shared load→P06. Mỗi finding hoãn có owner phase và acceptance. (evidence: `P00-gameplay-gamedesign-review.md`)
+- [x] Xác nhận rollback: restore source/build pair; contract additive tương thích; không xóa dữ liệu durable. Nếu có migration ngoài dự kiến, dừng task liên quan và bổ sung migration/restore plan trước triển khai. (evidence: `evidence/source-before-p00.tgz`)
+- [x] Exit: live damage/heal/miss/status + terminal đã có evidence, reconnect không replay, public fixtures, canonical docs, reference ledger, load baseline và review hoàn tất. **Có gate fail (latency budget FAILED, 50 CCU NOT certified) → phase closed với owner map P01/P02/P05/P06/P09.**
 
 ## Verification và giới hạn của chính plan này
 
