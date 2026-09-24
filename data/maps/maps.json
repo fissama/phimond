@@ -1,0 +1,127 @@
+{
+  "severa": {
+    "id": "severa",
+    "name": "Severa City",
+    "width": 40,
+    "height": 24,
+    "spawns": [],
+    "min_level": 1,
+    "arena_required": 0,
+    "portals": [
+      {
+        "id": "forest_gate",
+        "x": 39,
+        "to": "forest",
+        "spawn": 1
+      },
+      {
+        "id": "ranch_gate",
+        "x": 0,
+        "to": "ranch",
+        "spawn": 1
+      },
+      {
+        "id": "arena_gate",
+        "x": 20,
+        "to": "arena",
+        "spawn": 1
+      }
+    ],
+    "confidence": "reconstructed",
+    "source": "Phimond reconstruction v1; exact historical value unverified"
+  },
+  "forest": {
+    "id": "forest",
+    "name": "Emerald Forest",
+    "width": 40,
+    "height": 24,
+    "spawns": [
+      "snail",
+      "flower_fairy",
+      "mushroom",
+      "spider",
+      "wolf"
+    ],
+    "min_level": 1,
+    "arena_required": 0,
+    "portals": [
+      {
+        "id": "city_gate",
+        "x": 0,
+        "to": "severa",
+        "spawn": 38
+      },
+      {
+        "id": "beach_gate",
+        "x": 39,
+        "to": "beach",
+        "spawn": 1
+      }
+    ],
+    "confidence": "reconstructed",
+    "source": "Phimond reconstruction v1; exact historical value unverified"
+  },
+  "beach": {
+    "id": "beach",
+    "name": "Treasure Beach",
+    "width": 40,
+    "height": 24,
+    "spawns": [
+      "dark_crab",
+      "wealth_turtle",
+      "treasure_chest",
+      "sea_demon",
+      "windmill_spirit"
+    ],
+    "min_level": 10,
+    "arena_required": 1,
+    "portals": [
+      {
+        "id": "forest_gate",
+        "x": 0,
+        "to": "forest",
+        "spawn": 38
+      }
+    ],
+    "confidence": "reconstructed",
+    "source": "Phimond reconstruction v1; exact historical value unverified"
+  },
+  "ranch": {
+    "id": "ranch",
+    "name": "Whisperleaf Ranch",
+    "width": 40,
+    "height": 24,
+    "spawns": [],
+    "min_level": 1,
+    "arena_required": 0,
+    "portals": [
+      {
+        "id": "city_gate",
+        "x": 0,
+        "to": "severa",
+        "spawn": 1
+      }
+    ],
+    "confidence": "reconstructed",
+    "source": "Phimond reconstruction v1; exact historical value unverified"
+  },
+  "arena": {
+    "id": "arena",
+    "name": "Imperial Arena",
+    "width": 40,
+    "height": 24,
+    "spawns": [],
+    "min_level": 1,
+    "arena_required": 0,
+    "portals": [
+      {
+        "id": "city_gate",
+        "x": 0,
+        "to": "severa",
+        "spawn": 20
+      }
+    ],
+    "confidence": "reconstructed",
+    "source": "Phimond reconstruction v1; exact historical value unverified"
+  }
+}

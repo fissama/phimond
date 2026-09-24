@@ -1,0 +1,26 @@
+; Engine configuration file.
+; Phimond game server — Godot 4 headless.
+;
+; Run locally:
+;   cd server && godot --headless -s res://server_main.gd
+;
+; Run in Docker (production):
+;   godot --headless --path /app -s res://server_main.gd
+
+config_version=5
+
+[application]
+
+config/name="Phimond Server"
+config/description="Godot headless server for Phimond Pokémon-like 2D game."
+config/features=PackedStringArray("4.2", "GL Compatibility")
+
+[debug]
+
+gdscript/warnings/unused_variable=1
+gdscript/warnings/unused_local_variable=1
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

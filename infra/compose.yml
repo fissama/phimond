@@ -1,0 +1,22 @@
+# Independent of the existing legacy docker-compose.yml; uses the supplied MySQL service.
+name: phimond-reconstruction
+services:
+  game-server:
+    build:
+      context: ..
+      dockerfile: apps/game-server/Dockerfile
+    env_file: ../.env
+    environment:
+      GAME_ADDR: 0.0.0.0:8090
+      GAME_DATA_DIR: /data
+    ports:
+      - "127.0.0.1:8090:8090"
+    restart: unless-stopped
+  # Run only once: docker compose -f infra/compose.yml run --rm migrate
+  migrate:
+    build:
+      context: ..
+      dockerfile: apps/game-server/Dockerfile
+    env_file: ../.env
+    command: ["-migrate", "-migrations", "/migrations"]
+    profiles: ["setup"]

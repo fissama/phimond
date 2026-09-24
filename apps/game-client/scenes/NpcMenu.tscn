@@ -1,0 +1,99 @@
+[gd_scene load_steps=6 format=3 uid="uid://b_npc_min"]
+
+[ext_resource type="Script" path="res://scripts/NpcMenu.gd" id="1_npc"]
+[ext_resource type="PackedScene" uid="uid://b_game_window" path="res://scenes/components/GameWindow.tscn" id="2_window"]
+[ext_resource type="PackedScene" uid="uid://b_game_button" path="res://scenes/components/GameButton.tscn" id="3_btn"]
+
+[node name="NpcMenu" type="Control"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_npc")
+
+[node name="Bg" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.02, 0.04, 0.08, 0.78)
+mouse_filter = 2
+
+[node name="Window" parent="." instance=ExtResource("2_window")]
+offset_left = 96.0
+offset_top = 80.0
+offset_right = 864.0
+offset_bottom = 560.0
+
+[node name="BodyRoot" type="VBoxContainer" parent="Window/Frame/Body/BodyContainer"]
+custom_minimum_size = Vector2(700, 380)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/separation = 10
+
+[node name="HeaderRow" type="HBoxContainer" parent="Window/Frame/Body/BodyContainer/BodyRoot"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Portrait" type="TextureRect" parent="Window/Frame/Body/BodyContainer/BodyRoot/HeaderRow"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HeaderCol" type="VBoxContainer" parent="Window/Frame/Body/BodyContainer/BodyRoot/HeaderRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="NameLabel" type="Label" parent="Window/Frame/Body/BodyContainer/BodyRoot/HeaderRow/HeaderCol"]
+layout_mode = 2
+text = "NPC"
+theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(1, 0.88, 0.55, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+
+[node name="Dialogue" type="RichTextLabel" parent="Window/Frame/Body/BodyContainer/BodyRoot/HeaderRow/HeaderCol"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "..."
+fit_content = true
+theme_override_font_sizes/normal_font_size = 16
+theme_override_colors/default_color = Color(1, 0.97, 0.88, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+
+[node name="RoleRow" type="HBoxContainer" parent="Window/Frame/Body/BodyContainer/BodyRoot"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 8
+
+[node name="ShopBtn" parent="Window/Frame/Body/BodyContainer/BodyRoot/RoleRow" instance=ExtResource("3_btn")]
+custom_minimum_size = Vector2(96, 40)
+layout_mode = 2
+
+[node name="HealBtn" parent="Window/Frame/Body/BodyContainer/BodyRoot/RoleRow" instance=ExtResource("3_btn")]
+custom_minimum_size = Vector2(96, 40)
+layout_mode = 2
+
+[node name="AppraiseBtn" parent="Window/Frame/Body/BodyContainer/BodyRoot/RoleRow" instance=ExtResource("3_btn")]
+custom_minimum_size = Vector2(96, 40)
+layout_mode = 2
+
+[node name="BreedBtn" parent="Window/Frame/Body/BodyContainer/BodyRoot/RoleRow" instance=ExtResource("3_btn")]
+custom_minimum_size = Vector2(96, 40)
+layout_mode = 2
+
+[node name="RecipeBtn" parent="Window/Frame/Body/BodyContainer/BodyRoot/RoleRow" instance=ExtResource("3_btn")]
+custom_minimum_size = Vector2(96, 40)
+layout_mode = 2
+
+[node name="QuestBtn" parent="Window/Frame/Body/BodyContainer/BodyRoot/RoleRow" instance=ExtResource("3_btn")]
+custom_minimum_size = Vector2(96, 40)
+layout_mode = 2
+
+[node name="ArenaBtn" parent="Window/Frame/Body/BodyContainer/BodyRoot/RoleRow" instance=ExtResource("3_btn")]
+custom_minimum_size = Vector2(96, 40)
+layout_mode = 2

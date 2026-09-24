@@ -1,0 +1,138 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/LoginScreen.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/reference/rooms/severa.png" id="2"]
+[ext_resource type="Texture2D" path="res://assets/reference/hud/panel_menu.png" id="3"]
+[ext_resource type="Texture2D" path="res://assets/reference/hud/button_confirm.png" id="4"]
+
+[node name="LoginScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1")
+
+[node name="Bg" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource("2")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Tint" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.01, 0.04, 0.08, 0.22)
+mouse_filter = 2
+
+[node name="Window" type="Control" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -245.5
+offset_top = -132.0
+offset_right = 245.5
+offset_bottom = 132.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Frame" type="NinePatchRect" parent="Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource("3")
+patch_margin_left = 112
+patch_margin_top = 42
+patch_margin_right = 28
+patch_margin_bottom = 42
+
+[node name="Title" type="Label" parent="Window"]
+offset_left = 125.0
+offset_top = 19.0
+offset_right = 449.0
+offset_bottom = 42.0
+text = "PHIMOND"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 18
+
+[node name="UserLabel" type="Label" parent="Window"]
+offset_left = 125.0
+offset_top = 56.0
+offset_right = 218.0
+offset_bottom = 83.0
+text = "Account"
+
+[node name="UserInput" type="LineEdit" parent="Window"]
+offset_left = 220.0
+offset_top = 56.0
+offset_right = 449.0
+offset_bottom = 83.0
+placeholder_text = "Username"
+
+[node name="PassLabel" type="Label" parent="Window"]
+offset_left = 125.0
+offset_top = 94.0
+offset_right = 218.0
+offset_bottom = 121.0
+text = "Password"
+
+[node name="PassInput" type="LineEdit" parent="Window"]
+offset_left = 220.0
+offset_top = 94.0
+offset_right = 449.0
+offset_bottom = 121.0
+placeholder_text = "Password"
+secret = true
+
+[node name="RegisterBtn" type="TextureButton" parent="Window"]
+offset_left = 186.0
+offset_top = 132.0
+offset_right = 253.0
+offset_bottom = 194.0
+texture_normal = ExtResource("4")
+texture_focused = ExtResource("4")
+
+[node name="Label" type="Label" parent="Window/RegisterBtn"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+text = "Register"
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_font_sizes/font_size = 12
+
+[node name="LoginBtn" type="TextureButton" parent="Window"]
+offset_left = 328.0
+offset_top = 132.0
+offset_right = 395.0
+offset_bottom = 194.0
+texture_normal = ExtResource("4")
+texture_focused = ExtResource("4")
+
+[node name="Label" type="Label" parent="Window/LoginBtn"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+text = "Login"
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_font_sizes/font_size = 12
+
+[node name="Status" type="Label" parent="Window"]
+offset_left = 121.0
+offset_top = 201.0
+offset_right = 452.0
+offset_bottom = 242.0
+text = "Enter your account to continue."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+theme_override_font_sizes/font_size = 12

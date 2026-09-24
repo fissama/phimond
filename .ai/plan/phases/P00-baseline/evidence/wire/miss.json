@@ -1,0 +1,305 @@
+{
+  "action": {
+    "data": {
+      "character": {
+        "active_pet_id": "hero_pet_1",
+        "arena_tier": 0,
+        "battle": {
+          "arena": false,
+          "id": "hero_battle_3",
+          "phase": "WAIT_COMMAND",
+          "result": "",
+          "sequence": 4,
+          "turn": 2,
+          "units": [
+            {
+              "buffs": [],
+              "defending": false,
+              "hp": 57,
+              "id": "hero_pet_1",
+              "max_hp": 64,
+              "max_mp": 36,
+              "mp": 36,
+              "name": "Moss Snail",
+              "side": "player",
+              "species_id": "snail",
+              "statuses": []
+            },
+            {
+              "buffs": [],
+              "defending": false,
+              "hp": 63,
+              "id": "hero_pet_2",
+              "max_hp": 63,
+              "max_mp": 32,
+              "mp": 32,
+              "name": "Bloom Fairy",
+              "side": "enemy",
+              "species_id": "flower_fairy",
+              "statuses": []
+            }
+          ]
+        },
+        "crystals": 0,
+        "gold": 100,
+        "id": "hero",
+        "inventory": {
+          "capture_seal": 10,
+          "ether": 3,
+          "potion": 5,
+          "synthesis_soul": 2
+        },
+        "level": 1,
+        "map_id": "forest",
+        "name": "Hero",
+        "pets": [
+          {
+            "appraised": true,
+            "attack": 10,
+            "blessing": 0,
+            "critical": 0.055380000000000006,
+            "defense": 8,
+            "gender": "male",
+            "generation": 1,
+            "growth": {
+              "agility": 118,
+              "critical": 88,
+              "defense": 94,
+              "intelligence": 105,
+              "spirit": 85,
+              "stamina": 84,
+              "strength": 85
+            },
+            "hp": 57,
+            "id": "hero_pet_1",
+            "level": 3,
+            "magic": 9,
+            "max_hp": 64,
+            "max_mp": 36,
+            "mp": 36,
+            "name": "Moss Snail",
+            "parents": [],
+            "quality": {
+              "agility": 1089,
+              "critical": 966,
+              "defense": 972,
+              "intelligence": 1015,
+              "spirit": 928,
+              "stamina": 981,
+              "strength": 1081
+            },
+            "refinement": 0,
+            "resistances": {
+              "dark": 9,
+              "earth": 9,
+              "fire": 7,
+              "light": 13,
+              "neutral": 9,
+              "water": 10,
+              "wind": 1
+            },
+            "retired": false,
+            "skills": [
+              "attack",
+              "mend",
+              "petrify"
+            ],
+            "species_id": "snail",
+            "speed": 10,
+            "star": 1,
+            "status_resistances": {
+              "bind": 1,
+              "blind": 0,
+              "confusion": 3,
+              "doom": 4,
+              "petrify": 7,
+              "silence": 2,
+              "sleep": 6
+            },
+            "strengthening": 0,
+            "xp": 0
+          }
+        ],
+        "quests": {},
+        "recipes": [],
+        "revision": 2,
+        "x": 6,
+        "xp": 0,
+        "y": 12
+      },
+      "events": [
+        {
+          "actor_id": "hero_pet_1",
+          "message": "Moss Snail used Strike",
+          "seq": 1,
+          "target_id": "hero_pet_2",
+          "type": "skill_cast"
+        },
+        {
+          "actor_id": "hero_pet_1",
+          "message": "The skill missed",
+          "seq": 2,
+          "target_id": "hero_pet_2",
+          "type": "miss"
+        },
+        {
+          "actor_id": "hero_pet_2",
+          "message": "Bloom Fairy used Strike",
+          "seq": 3,
+          "target_id": "hero_pet_1",
+          "type": "skill_cast"
+        },
+        {
+          "actor_id": "hero_pet_2",
+          "amount": 7,
+          "message": "Moss Snail takes 7 damage",
+          "seq": 4,
+          "target_id": "hero_pet_1",
+          "type": "damage"
+        }
+      ],
+      "presentation": {
+        "battle_id": "hero_battle_3"
+      }
+    },
+    "op": "state",
+    "request_id": "fixture",
+    "sequence": 2
+  },
+  "expected": "miss",
+  "initial": {
+    "data": {
+      "character": {
+        "active_pet_id": "hero_pet_1",
+        "arena_tier": 0,
+        "battle": {
+          "arena": false,
+          "id": "hero_battle_3",
+          "phase": "WAIT_COMMAND",
+          "result": "",
+          "sequence": 0,
+          "turn": 1,
+          "units": [
+            {
+              "buffs": [],
+              "defending": false,
+              "hp": 64,
+              "id": "hero_pet_1",
+              "max_hp": 64,
+              "max_mp": 36,
+              "mp": 100,
+              "name": "Moss Snail",
+              "side": "player",
+              "species_id": "snail",
+              "statuses": []
+            },
+            {
+              "buffs": [],
+              "defending": false,
+              "hp": 63,
+              "id": "hero_pet_2",
+              "max_hp": 63,
+              "max_mp": 32,
+              "mp": 32,
+              "name": "Bloom Fairy",
+              "side": "enemy",
+              "species_id": "flower_fairy",
+              "statuses": []
+            }
+          ]
+        },
+        "crystals": 0,
+        "gold": 100,
+        "id": "hero",
+        "inventory": {
+          "capture_seal": 10,
+          "ether": 3,
+          "potion": 5,
+          "synthesis_soul": 2
+        },
+        "level": 1,
+        "map_id": "forest",
+        "name": "Hero",
+        "pets": [
+          {
+            "appraised": true,
+            "attack": 10,
+            "blessing": 0,
+            "critical": 0.055380000000000006,
+            "defense": 8,
+            "gender": "male",
+            "generation": 1,
+            "growth": {
+              "agility": 118,
+              "critical": 88,
+              "defense": 94,
+              "intelligence": 105,
+              "spirit": 85,
+              "stamina": 84,
+              "strength": 85
+            },
+            "hp": 64,
+            "id": "hero_pet_1",
+            "level": 3,
+            "magic": 9,
+            "max_hp": 64,
+            "max_mp": 36,
+            "mp": 36,
+            "name": "Moss Snail",
+            "parents": [],
+            "quality": {
+              "agility": 1089,
+              "critical": 966,
+              "defense": 972,
+              "intelligence": 1015,
+              "spirit": 928,
+              "stamina": 981,
+              "strength": 1081
+            },
+            "refinement": 0,
+            "resistances": {
+              "dark": 9,
+              "earth": 9,
+              "fire": 7,
+              "light": 13,
+              "neutral": 9,
+              "water": 10,
+              "wind": 1
+            },
+            "retired": false,
+            "skills": [
+              "attack",
+              "mend",
+              "petrify"
+            ],
+            "species_id": "snail",
+            "speed": 10,
+            "star": 1,
+            "status_resistances": {
+              "bind": 1,
+              "blind": 0,
+              "confusion": 3,
+              "doom": 4,
+              "petrify": 7,
+              "silence": 2,
+              "sleep": 6
+            },
+            "strengthening": 0,
+            "xp": 0
+          }
+        ],
+        "quests": {},
+        "recipes": [],
+        "revision": 1,
+        "x": 6,
+        "xp": 0,
+        "y": 12
+      },
+      "events": []
+    },
+    "op": "state",
+    "request_id": "auth",
+    "sequence": 1
+  },
+  "seeded_test_fixture": true
+}

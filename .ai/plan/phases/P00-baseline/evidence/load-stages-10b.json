@@ -1,0 +1,197 @@
+{
+  "passed": false,
+  "workload_completed": true,
+  "performance_budget_met": false,
+  "configured_users": 10,
+  "active_users": 10,
+  "elapsed_ms": 121106.376291,
+  "actions": 1603,
+  "actions_per_second": 13.236297287503984,
+  "users": [
+    {
+      "actions": 238,
+      "last": 175950.7465,
+      "errors": 0,
+      "max_gap_ms": 937.8522499999963
+    },
+    {
+      "actions": 238,
+      "last": 175947.908041,
+      "errors": 0,
+      "max_gap_ms": 934.5922090000095
+    },
+    {
+      "actions": 239,
+      "last": 176126.902916,
+      "errors": 0,
+      "max_gap_ms": 628.0746249999938
+    },
+    {
+      "actions": 238,
+      "last": 175795.920208,
+      "errors": 0,
+      "max_gap_ms": 563.1265410000051
+    },
+    {
+      "actions": 99,
+      "last": 176725.544875,
+      "errors": 0,
+      "max_gap_ms": 2536.979250000004
+    },
+    {
+      "actions": 101,
+      "last": 176744.376583,
+      "errors": 0,
+      "max_gap_ms": 1956.9115420000162
+    },
+    {
+      "actions": 99,
+      "last": 175739.146583,
+      "errors": 0,
+      "max_gap_ms": 1951.1488339999923
+    },
+    {
+      "actions": 102,
+      "last": 176783.068,
+      "errors": 0,
+      "max_gap_ms": 2091.982707999996
+    },
+    {
+      "actions": 125,
+      "last": 176504.858041,
+      "errors": 0,
+      "max_gap_ms": 1497.3692499999888
+    },
+    {
+      "actions": 124,
+      "last": 176226.082208,
+      "errors": 0,
+      "max_gap_ms": 1488.9140000000189
+    }
+  ],
+  "operations": {
+    "world.move": {
+      "n": 953,
+      "p50_ms": 1,
+      "p95_ms": 5,
+      "p99_ms": 52,
+      "max_ms": 387.5803339999984
+    },
+    "quest.accept": {
+      "n": 2,
+      "p50_ms": 604,
+      "p95_ms": 822,
+      "p99_ms": 822,
+      "max_ms": 821.0723749999961
+    },
+    "world.encounter": {
+      "n": 38,
+      "p50_ms": 601,
+      "p95_ms": 1265,
+      "p99_ms": 2037,
+      "max_ms": 2036.9384580000187
+    },
+    "pet.activate": {
+      "n": 235,
+      "p50_ms": 442,
+      "p95_ms": 755,
+      "p99_ms": 956,
+      "max_ms": 996.8923749999958
+    },
+    "battle.action": {
+      "n": 339,
+      "p50_ms": 665,
+      "p95_ms": 1030,
+      "p99_ms": 1419,
+      "max_ms": 1591.8817909999925
+    },
+    "pet.heal": {
+      "n": 24,
+      "p50_ms": 713,
+      "p95_ms": 1297,
+      "p99_ms": 1306,
+      "max_ms": 1305.1756659999955
+    },
+    "shop.buy": {
+      "n": 12,
+      "p50_ms": 445,
+      "p95_ms": 688,
+      "p99_ms": 688,
+      "max_ms": 687.3359999999957
+    }
+  },
+  "failures": [],
+  "measurement": "client send to authoritative acknowledgement; includes network and persistence",
+  "capacity_certified": false,
+  "limitations": [
+    "No shared-world presence/fan-out yet",
+    "No renderer/FPS measurement in protocol bots",
+    "Provisioning and travel warmup excluded"
+  ],
+  "run": "p00-stages-10b",
+  "config": {
+    "users": 10,
+    "seconds": 120,
+    "cadence_ms": 500,
+    "profile": "mixed",
+    "reconnect": true
+  },
+  "generator": {
+    "node": "v24.11.0",
+    "platform": "darwin",
+    "arch": "arm64",
+    "cpus": 11
+  },
+  "accounts": [
+    {
+      "id": "696af83cea06e41082aa58b9224b2475",
+      "username": "p00_4d7aaf901068cb",
+      "profile": "world"
+    },
+    {
+      "id": "96c8ce25ff02bcd02a999b52590defab",
+      "username": "p00_7558dbfb9729ec",
+      "profile": "world"
+    },
+    {
+      "id": "149517dcf8b0f4efde1fc1e999c5c1e2",
+      "username": "p00_51f2b7d43856a1",
+      "profile": "world"
+    },
+    {
+      "id": "709c2a9feb6b41741f9a9bc03e5a2c6f",
+      "username": "p00_402b6a478c7059",
+      "profile": "world"
+    },
+    {
+      "id": "6476c04496c5680fc3d1ee37160cf5cf",
+      "username": "p00_8754af505105a8",
+      "profile": "battle"
+    },
+    {
+      "id": "7655df16c16c9ec799a000f54e63b22b",
+      "username": "p00_9d2cf1b2498230",
+      "profile": "battle"
+    },
+    {
+      "id": "994a6ee0a7f72da63c40b67d8731dcd1",
+      "username": "p00_0e93bdf261a7ee",
+      "profile": "battle"
+    },
+    {
+      "id": "b7868074985d07fd4bd7208b0e80e760",
+      "username": "p00_b4caf2439a01e7",
+      "profile": "battle"
+    },
+    {
+      "id": "4de61fda4bdc4d1530190584b0525196",
+      "username": "p00_1d17751d803a5d",
+      "profile": "pet"
+    },
+    {
+      "id": "6efa7a6ffafd26e69c5f38185eb457f7",
+      "username": "p00_bfff01052cb0fe",
+      "profile": "pet"
+    }
+  ]
+}

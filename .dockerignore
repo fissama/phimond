@@ -1,0 +1,29 @@
+# Keep the Docker build context small.
+
+# Node
+client/node_modules
+client/dist
+client/.vite
+
+# Godot cache + IDE noise
+server/.godot
+server/.import
+
+# Repo meta
+.git
+.gitignore
+README.md
+IMPLEMENTATION_PLAN.md
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+.env
+.env.*
+apps/**/node_modules
+apps/**/.next
+apps/**/.godot
+apps/**/.tools
+apps/**/artifacts
+tools/.cache
+assets-gen

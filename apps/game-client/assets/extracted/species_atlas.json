@@ -1,0 +1,379 @@
+{
+  "source_actors_json": "reference/actors.json",
+  "mapping_note": "Vietnamese pet actor names → Plimond species by Vietnamese semantic match",
+  "species": {
+    "snail": {
+      "actor": "OCSENHOA",
+      "confidence": "guessed",
+      "note": "OCSENHOA = ốc sen hoa (lotus snail), element earth/insect — matches",
+      "idle_frames": [
+        "reference/actors/OCSENHOA/Idle/000.png",
+        "reference/actors/OCSENHOA/Idle/001.png",
+        "reference/actors/OCSENHOA/Idle/002.png",
+        "reference/actors/OCSENHOA/Idle/003.png"
+      ],
+      "run_frames": [
+        "reference/actors/OCSENHOA/Run/000.png",
+        "reference/actors/OCSENHOA/Run/001.png",
+        "reference/actors/OCSENHOA/Run/002.png"
+      ],
+      "attack_frames": [
+        "reference/actors/OCSENHOA/Attack/000.png"
+      ],
+      "die_frames": [
+        "reference/actors/OCSENHOA/Die/000.png"
+      ],
+      "magic_frames": [
+        "reference/actors/OCSENHOA/Magic/000.png"
+      ],
+      "idle_duration": 1.3333333730697632,
+      "run_duration": 1.0,
+      "default_sprite": "reference/actors/OCSENHOA/Idle/000.png"
+    },
+    "flower_fairy": {
+      "actor": "YEUTINHHOA",
+      "confidence": "guessed",
+      "note": "YEUTINHHOA = yêu tinh hoa (flower fairy) — matches",
+      "idle_frames": [
+        "reference/actors/YEUTINHHOA/Idle/000.png"
+      ],
+      "run_frames": [
+        "reference/actors/YEUTINHHOA/Run/000.png"
+      ],
+      "attack_frames": [
+        "reference/actors/YEUTINHHOA/Attack/000.png"
+      ],
+      "die_frames": [
+        "reference/actors/YEUTINHHOA/Die/000.png"
+      ],
+      "magic_frames": [
+        "reference/actors/YEUTINHHOA/Magic/000.png"
+      ],
+      "idle_duration": 0.3333333432674408,
+      "run_duration": 0.3333333432674408,
+      "default_sprite": "reference/actors/YEUTINHHOA/Idle/000.png"
+    },
+    "mushroom": {
+      "actor": "NAMHOA",
+      "confidence": "guessed",
+      "note": "NAMHOA = nấm hoa (mushroom+flower), element light/plant — closest to mushroom",
+      "idle_frames": [
+        "reference/actors/NAMHOA/Idle/000.png",
+        "reference/actors/NAMHOA/Idle/001.png"
+      ],
+      "run_frames": [
+        "reference/actors/NAMHOA/Run/000.png",
+        "reference/actors/NAMHOA/Run/001.png",
+        "reference/actors/NAMHOA/Run/002.png"
+      ],
+      "attack_frames": [
+        "reference/actors/NAMHOA/Attack/000.png"
+      ],
+      "die_frames": [
+        "reference/actors/NAMHOA/Die/000.png"
+      ],
+      "magic_frames": [
+        "reference/actors/NAMHOA/Magic/000.png"
+      ],
+      "idle_duration": 0.6666666865348816,
+      "run_duration": 1.0,
+      "default_sprite": "reference/actors/NAMHOA/Idle/000.png"
+    },
+    "dark_crab": {
+      "actor": "CUAHACAM",
+      "confidence": "guessed",
+      "note": "CUAHACAM = cua hắc ám (dark crab), element dark/undead — matches",
+      "idle_frames": [
+        "reference/actors/CUAHACAM/Idle/000.png",
+        "reference/actors/CUAHACAM/Idle/001.png",
+        "reference/actors/CUAHACAM/Idle/002.png",
+        "reference/actors/CUAHACAM/Idle/003.png"
+      ],
+      "run_frames": [
+        "reference/actors/CUAHACAM/Run/000.png",
+        "reference/actors/CUAHACAM/Run/001.png"
+      ],
+      "attack_frames": [
+        "reference/actors/CUAHACAM/Attack/000.png"
+      ],
+      "die_frames": [
+        "reference/actors/CUAHACAM/Die/000.png"
+      ],
+      "magic_frames": [
+        "reference/actors/CUAHACAM/Magic/000.png"
+      ],
+      "idle_duration": 1.3333333730697632,
+      "run_duration": 0.6666666865348816,
+      "default_sprite": "reference/actors/CUAHACAM/Idle/000.png"
+    },
+    "wealth_turtle": {
+      "actor": "RUAPHUQUY",
+      "confidence": "guessed",
+      "note": "RUAPHUQUY = rùa phú quý (wealth turtle), element neutral/beast — matches",
+      "idle_frames": [
+        "reference/actors/RUAPHUQUY/Idle/000.png",
+        "reference/actors/RUAPHUQUY/Idle/001.png",
+        "reference/actors/RUAPHUQUY/Idle/002.png",
+        "reference/actors/RUAPHUQUY/Idle/003.png"
+      ],
+      "run_frames": [
+        "reference/actors/RUAPHUQUY/Run/000.png",
+        "reference/actors/RUAPHUQUY/Run/001.png",
+        "reference/actors/RUAPHUQUY/Run/002.png",
+        "reference/actors/RUAPHUQUY/Run/003.png"
+      ],
+      "attack_frames": [
+        "reference/actors/RUAPHUQUY/Attack/000.png"
+      ],
+      "die_frames": [
+        "reference/actors/RUAPHUQUY/Die/000.png"
+      ],
+      "magic_frames": [
+        "reference/actors/RUAPHUQUY/Magic/000.png"
+      ],
+      "idle_duration": 1.3333333730697632,
+      "run_duration": 1.3333333730697632,
+      "default_sprite": "reference/actors/RUAPHUQUY/Idle/000.png"
+    },
+    "treasure_chest": {
+      "actor": "QUAIVATRUONGBAU",
+      "confidence": "guessed",
+      "note": "QUAIVATRUONGBAU = quái vật trứng bầu (gourd/treasure monster), element water/spirit — matches",
+      "idle_frames": [
+        "reference/actors/QUAIVATRUONGBAU/Idle/000.png",
+        "reference/actors/QUAIVATRUONGBAU/Idle/001.png"
+      ],
+      "run_frames": [
+        "reference/actors/QUAIVATRUONGBAU/Run/000.png",
+        "reference/actors/QUAIVATRUONGBAU/Run/001.png",
+        "reference/actors/QUAIVATRUONGBAU/Run/002.png",
+        "reference/actors/QUAIVATRUONGBAU/Run/003.png"
+      ],
+      "attack_frames": [
+        "reference/actors/QUAIVATRUONGBAU/Attack/000.png"
+      ],
+      "die_frames": [
+        "reference/actors/QUAIVATRUONGBAU/Die/000.png"
+      ],
+      "magic_frames": [
+        "reference/actors/QUAIVATRUONGBAU/Magic/000.png"
+      ],
+      "idle_duration": 0.6666666865348816,
+      "run_duration": 1.3333333730697632,
+      "default_sprite": "reference/actors/QUAIVATRUONGBAU/Idle/000.png"
+    },
+    "sea_demon": {
+      "actor": "TIEUACMA",
+      "confidence": "guessed",
+      "note": "TIEUACMA = tiểu ác ma (small evil demon), element fire/demon — matches",
+      "idle_frames": [
+        "reference/actors/TIEUACMA/Idle/000.png",
+        "reference/actors/TIEUACMA/Idle/001.png",
+        "reference/actors/TIEUACMA/Idle/002.png",
+        "reference/actors/TIEUACMA/Idle/003.png"
+      ],
+      "run_frames": [
+        "reference/actors/TIEUACMA/Run/000.png",
+        "reference/actors/TIEUACMA/Run/001.png",
+        "reference/actors/TIEUACMA/Run/002.png",
+        "reference/actors/TIEUACMA/Run/003.png"
+      ],
+      "attack_frames": [
+        "reference/actors/TIEUACMA/Attack/000.png"
+      ],
+      "die_frames": [
+        "reference/actors/TIEUACMA/Die/000.png"
+      ],
+      "magic_frames": [
+        "reference/actors/TIEUACMA/Magic/000.png"
+      ],
+      "idle_duration": 1.3333333730697632,
+      "run_duration": 1.3333333730697632,
+      "default_sprite": "reference/actors/TIEUACMA/Idle/000.png"
+    },
+    "spider": {
+      "actor": "NHENDOC",
+      "confidence": "guessed",
+      "note": "NHENDOC = nhện độc (poison spider), element earth/insect — matches",
+      "idle_frames": [
+        "reference/actors/NHENDOC/Idle/000.png",
+        "reference/actors/NHENDOC/Idle/001.png",
+        "reference/actors/NHENDOC/Idle/002.png",
+        "reference/actors/NHENDOC/Idle/003.png"
+      ],
+      "run_frames": [
+        "reference/actors/NHENDOC/Run/000.png",
+        "reference/actors/NHENDOC/Run/001.png"
+      ],
+      "attack_frames": [
+        "reference/actors/NHENDOC/Attack/000.png"
+      ],
+      "die_frames": [
+        "reference/actors/NHENDOC/Die/000.png"
+      ],
+      "magic_frames": [
+        "reference/actors/NHENDOC/Magic/000.png"
+      ],
+      "idle_duration": 1.3333333730697632,
+      "run_duration": 0.6666666865348816,
+      "default_sprite": "reference/actors/NHENDOC/Idle/000.png"
+    },
+    "wolf": {
+      "actor": "SOINGONGAN",
+      "confidence": "guessed",
+      "note": "SOINGONGAN = wolf variant in original game — matches",
+      "idle_frames": [
+        "reference/actors/SOINGONGAN/Idle/000.png"
+      ],
+      "run_frames": [
+        "reference/actors/SOINGONGAN/Run/000.png"
+      ],
+      "attack_frames": [
+        "reference/actors/SOINGONGAN/Attack/000.png"
+      ],
+      "die_frames": [
+        "reference/actors/SOINGONGAN/Die/000.png"
+      ],
+      "magic_frames": [
+        "reference/actors/SOINGONGAN/Magic/000.png"
+      ],
+      "idle_duration": 0.3333333432674408,
+      "run_duration": 0.3333333432674408,
+      "default_sprite": "reference/actors/SOINGONGAN/Idle/000.png"
+    },
+    "windmill_spirit": {
+      "actor": "CHONGCHONGGIO",
+      "confidence": "guessed",
+      "note": "CHONGCHONGGIO = chong chóng gió (windmill/pinwheel), element water/spirit — matches",
+      "idle_frames": [
+        "reference/actors/CHONGCHONGGIO/Idle/000.png",
+        "reference/actors/CHONGCHONGGIO/Idle/001.png",
+        "reference/actors/CHONGCHONGGIO/Idle/002.png"
+      ],
+      "run_frames": [
+        "reference/actors/CHONGCHONGGIO/Run/000.png",
+        "reference/actors/CHONGCHONGGIO/Run/001.png",
+        "reference/actors/CHONGCHONGGIO/Run/002.png"
+      ],
+      "attack_frames": [
+        "reference/actors/CHONGCHONGGIO/Attack/000.png"
+      ],
+      "die_frames": [
+        "reference/actors/CHONGCHONGGIO/Die/000.png"
+      ],
+      "magic_frames": [
+        "reference/actors/CHONGCHONGGIO/Magic/000.png"
+      ],
+      "idle_duration": 1.0,
+      "run_duration": 1.0,
+      "default_sprite": "reference/actors/CHONGCHONGGIO/Idle/000.png"
+    },
+    "grove_guardian": {
+      "actor": "NAMHOA",
+      "confidence": "unmapped",
+      "note": "no matching actor; 2-star boss — using NAMHOA (plant) as visual placeholder",
+      "idle_frames": [
+        "reference/actors/NAMHOA/Idle/000.png",
+        "reference/actors/NAMHOA/Idle/001.png"
+      ],
+      "run_frames": [
+        "reference/actors/NAMHOA/Run/000.png",
+        "reference/actors/NAMHOA/Run/001.png",
+        "reference/actors/NAMHOA/Run/002.png"
+      ],
+      "attack_frames": [
+        "reference/actors/NAMHOA/Attack/000.png"
+      ],
+      "die_frames": [
+        "reference/actors/NAMHOA/Die/000.png"
+      ],
+      "magic_frames": [
+        "reference/actors/NAMHOA/Magic/000.png"
+      ],
+      "idle_duration": 0.6666666865348816,
+      "run_duration": 1.0,
+      "default_sprite": "reference/actors/NAMHOA/Idle/000.png"
+    },
+    "tide_sentinel": {
+      "actor": "QUAIVATRUONGBAU",
+      "confidence": "unmapped",
+      "note": "no matching actor; 3-star boss — using QUAIVATRUONGBAU (spirit/water) as placeholder",
+      "idle_frames": [
+        "reference/actors/QUAIVATRUONGBAU/Idle/000.png",
+        "reference/actors/QUAIVATRUONGBAU/Idle/001.png"
+      ],
+      "run_frames": [
+        "reference/actors/QUAIVATRUONGBAU/Run/000.png",
+        "reference/actors/QUAIVATRUONGBAU/Run/001.png",
+        "reference/actors/QUAIVATRUONGBAU/Run/002.png",
+        "reference/actors/QUAIVATRUONGBAU/Run/003.png"
+      ],
+      "attack_frames": [
+        "reference/actors/QUAIVATRUONGBAU/Attack/000.png"
+      ],
+      "die_frames": [
+        "reference/actors/QUAIVATRUONGBAU/Die/000.png"
+      ],
+      "magic_frames": [
+        "reference/actors/QUAIVATRUONGBAU/Magic/000.png"
+      ],
+      "idle_duration": 0.6666666865348816,
+      "run_duration": 1.3333333730697632,
+      "default_sprite": "reference/actors/QUAIVATRUONGBAU/Idle/000.png"
+    },
+    "moon_warden": {
+      "actor": "CUAHACAM",
+      "confidence": "unmapped",
+      "note": "no matching actor; 4-star boss — using CUAHACAM (dark/undead) as placeholder",
+      "idle_frames": [
+        "reference/actors/CUAHACAM/Idle/000.png",
+        "reference/actors/CUAHACAM/Idle/001.png",
+        "reference/actors/CUAHACAM/Idle/002.png",
+        "reference/actors/CUAHACAM/Idle/003.png"
+      ],
+      "run_frames": [
+        "reference/actors/CUAHACAM/Run/000.png",
+        "reference/actors/CUAHACAM/Run/001.png"
+      ],
+      "attack_frames": [
+        "reference/actors/CUAHACAM/Attack/000.png"
+      ],
+      "die_frames": [
+        "reference/actors/CUAHACAM/Die/000.png"
+      ],
+      "magic_frames": [
+        "reference/actors/CUAHACAM/Magic/000.png"
+      ],
+      "idle_duration": 1.3333333730697632,
+      "run_duration": 0.6666666865348816,
+      "default_sprite": "reference/actors/CUAHACAM/Idle/000.png"
+    },
+    "dawn_sovereign": {
+      "actor": "CHONGCHONGGIO",
+      "confidence": "unmapped",
+      "note": "no matching actor; 5-star boss — using CHONGCHONGGIO (bird-style) as placeholder",
+      "idle_frames": [
+        "reference/actors/CHONGCHONGGIO/Idle/000.png",
+        "reference/actors/CHONGCHONGGIO/Idle/001.png",
+        "reference/actors/CHONGCHONGGIO/Idle/002.png"
+      ],
+      "run_frames": [
+        "reference/actors/CHONGCHONGGIO/Run/000.png",
+        "reference/actors/CHONGCHONGGIO/Run/001.png",
+        "reference/actors/CHONGCHONGGIO/Run/002.png"
+      ],
+      "attack_frames": [
+        "reference/actors/CHONGCHONGGIO/Attack/000.png"
+      ],
+      "die_frames": [
+        "reference/actors/CHONGCHONGGIO/Die/000.png"
+      ],
+      "magic_frames": [
+        "reference/actors/CHONGCHONGGIO/Magic/000.png"
+      ],
+      "idle_duration": 1.0,
+      "run_duration": 1.0,
+      "default_sprite": "reference/actors/CHONGCHONGGIO/Idle/000.png"
+    }
+  }
+}

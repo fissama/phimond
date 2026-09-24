@@ -1,0 +1,199 @@
+[gd_resource type="Theme" format=3]
+
+[ext_resource type="StyleBox" path="res://styles/styleboxes/panel_9slice.tres" id="1_g8nqd"]
+[ext_resource type="StyleBox" path="res://styles/styleboxes/button_disabled.tres" id="2_s8nld"]
+[ext_resource type="StyleBox" path="res://styles/styleboxes/button_hover.tres" id="3_3c2bj"]
+[ext_resource type="StyleBox" path="res://styles/styleboxes/button_normal.tres" id="4_2eumg"]
+[ext_resource type="StyleBox" path="res://styles/styleboxes/button_pressed.tres" id="5_7atx6"]
+[ext_resource type="StyleBox" path="res://styles/styleboxes/lineedit_frame.tres" id="6_71ay7"]
+[ext_resource type="StyleBox" path="res://styles/styleboxes/progress_bg.tres" id="7_itf2e"]
+[ext_resource type="StyleBox" path="res://styles/styleboxes/progress_fg.tres" id="8_632n6"]
+[ext_resource type="StyleBox" path="res://styles/styleboxes/tab_selected.tres" id="9_5gvej"]
+[ext_resource type="StyleBox" path="res://styles/styleboxes/tab_unselected.tres" id="10_d75ya"]
+
+[ext_resource type="Texture2D" path="res://assets/reference/hud/panel_menu.png" id="source_panel"]
+[ext_resource type="Texture2D" path="res://assets/reference/hud/row_menu.png" id="source_row"]
+[ext_resource type="Texture2D" path="res://assets/reference/hud/row_selected.png" id="source_selected"]
+
+[sub_resource type="SystemFont" id="CjkFallback"]
+font_names = PackedStringArray("Heiti SC", "Noto Sans CJK SC", "Microsoft YaHei", "PingFang SC")
+allow_system_fallback = true
+
+[sub_resource type="SystemFont" id="SourceFont"]
+font_names = PackedStringArray("Arial", "Noto Sans", "sans-serif")
+fallbacks = Array[Font]([SubResource("CjkFallback")])
+allow_system_fallback = true
+
+[sub_resource type="StyleBoxTexture" id="SourcePanel"]
+texture = ExtResource("source_panel")
+texture_margin_left = 112.0
+texture_margin_top = 42.0
+texture_margin_right = 28.0
+texture_margin_bottom = 42.0
+content_margin_left = 30.0
+content_margin_top = 12.0
+content_margin_right = 14.0
+content_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxTexture" id="SourceRow"]
+texture = ExtResource("source_row")
+texture_margin_left = 8.0
+texture_margin_right = 8.0
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="SourceSelected"]
+texture = ExtResource("source_selected")
+texture_margin_left = 8.0
+texture_margin_right = 8.0
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="SourceInput"]
+bg_color = Color(0.015, 0.08, 0.15, 0.95)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.28, 0.57, 0.72, 1)
+content_margin_left = 7.0
+content_margin_right = 7.0
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxEmpty" id="SourceEmpty"]
+
+[resource]
+default_font = SubResource("SourceFont")
+default_base_scale = 1.0
+default_font_size = 14
+AcceptDialog/styles/panel = SubResource("SourcePanel")
+Button/colors/font_color = Color(0.95, 0.93, 0.88, 1)
+Button/colors/font_disabled_color = Color(0.5, 0.5, 0.5, 1)
+Button/colors/font_focus_color = Color(1, 0.85, 0.55, 1)
+Button/colors/font_hover_color = Color(1, 0.85, 0.55, 1)
+Button/colors/font_pressed_color = Color(1, 1, 0.9, 1)
+Button/constants/h_separation = 8
+Button/constants/outline_size = 2
+Button/colors/font_outline_color = Color(0, 0.03, 0.08, 0.9)
+Button/font_sizes/font_size = 14
+Button/styles/disabled = SubResource("SourceRow")
+Button/styles/focus = SubResource("SourceSelected")
+Button/styles/hover = SubResource("SourceSelected")
+Button/styles/normal = SubResource("SourceRow")
+Button/styles/pressed = SubResource("SourceSelected")
+CheckBox/colors/font_color = Color(0.95, 0.93, 0.88, 1)
+CheckBox/colors/font_disabled_color = Color(0.5, 0.5, 0.5, 1)
+CheckBox/colors/font_hover_color = Color(1, 0.85, 0.55, 1)
+CheckBox/colors/font_pressed_color = Color(1, 1, 0.9, 1)
+CheckBox/font_sizes/font_size = 13
+CheckButton/colors/font_color = Color(0.95, 0.93, 0.88, 1)
+CheckButton/colors/font_disabled_color = Color(0.5, 0.5, 0.5, 1)
+CheckButton/colors/font_hover_color = Color(1, 0.85, 0.55, 1)
+CheckButton/colors/font_pressed_color = Color(1, 1, 0.9, 1)
+CheckButton/font_sizes/font_size = 13
+ConfirmationDialog/styles/panel = SubResource("SourcePanel")
+HScrollBar/styles/grabber = SubResource("SourceSelected")
+HScrollBar/styles/grabber_highlight = SubResource("SourceSelected")
+HScrollBar/styles/grabber_pressed = SubResource("SourceSelected")
+HScrollBar/styles/scroll = SubResource("SourceRow")
+Label/colors/font_color = Color(0.96, 0.95, 0.86, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0.6)
+Label/constants/line_spacing = 2
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/font_sizes/font_size = 14
+LineEdit/colors/caret_color = Color(1, 0.85, 0.4, 1)
+LineEdit/colors/clear_button_color = Color(0.96, 0.95, 0.86, 1)
+LineEdit/colors/clear_button_color_pressed = Color(1, 0.85, 0.55, 1)
+LineEdit/colors/font_color = Color(0.95, 0.93, 0.88, 1)
+LineEdit/colors/font_placeholder_color = Color(0.5, 0.5, 0.55, 0.8)
+LineEdit/colors/font_selected_color = Color(0.96, 0.95, 0.86, 1)
+LineEdit/colors/font_uneditable_color = Color(0.5, 0.5, 0.5, 1)
+LineEdit/colors/selection_color = Color(0.78, 0.69, 0.47, 0.4)
+LineEdit/constants/caret_width = 2
+LineEdit/constants/minimum_character_width = 8
+LineEdit/font_sizes/font_size = 14
+LineEdit/styles/focus = SubResource("SourceInput")
+LineEdit/styles/normal = SubResource("SourceInput")
+LineEdit/styles/read_only = SubResource("SourceInput")
+MenuBar/colors/font_color = Color(0.95, 0.93, 0.88, 1)
+MenuBar/colors/font_hover_color = Color(1, 0.85, 0.55, 1)
+MenuBar/styles/hover = SubResource("SourceSelected")
+MenuBar/styles/normal = SubResource("SourceRow")
+MenuBar/styles/pressed = SubResource("SourceSelected")
+OptionButton/colors/arrow_color = Color(0.96, 0.95, 0.86, 1)
+OptionButton/colors/font_color = Color(0.95, 0.93, 0.88, 1)
+OptionButton/colors/font_disabled_color = Color(0.5, 0.5, 0.5, 1)
+OptionButton/colors/font_hover_color = Color(1, 0.85, 0.55, 1)
+OptionButton/colors/font_pressed_color = Color(1, 1, 0.9, 1)
+OptionButton/font_sizes/font_size = 14
+OptionButton/styles/disabled = SubResource("SourceRow")
+OptionButton/styles/focus = SubResource("SourceSelected")
+OptionButton/styles/hover = SubResource("SourceSelected")
+OptionButton/styles/normal = SubResource("SourceRow")
+OptionButton/styles/pressed = SubResource("SourceSelected")
+Panel/styles/panel = SubResource("SourcePanel")
+PanelContainer/styles/panel = SubResource("SourcePanel")
+PopupMenu/colors/font_color = Color(0.95, 0.93, 0.88, 1)
+PopupMenu/colors/font_disabled_color = Color(0.5, 0.5, 0.5, 1)
+PopupMenu/colors/font_hover_color = Color(1, 1, 0.9, 1)
+PopupMenu/font_sizes/font_size = 13
+PopupMenu/styles/hover = SubResource("SourceSelected")
+PopupMenu/styles/panel = SubResource("SourcePanel")
+PopupMenu/styles/separator = ExtResource("7_itf2e")
+ProgressBar/colors/font_color = Color(0.95, 0.93, 0.88, 1)
+ProgressBar/colors/font_outline_color = Color(0, 0, 0, 0.7)
+ProgressBar/font_sizes/font_size = 12
+ProgressBar/styles/background = ExtResource("7_itf2e")
+ProgressBar/styles/fill = ExtResource("8_632n6")
+RichTextLabel/colors/default_color = Color(0.96, 0.95, 0.86, 1)
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 0.7)
+RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 0.6)
+RichTextLabel/constants/shadow_offset_x = 1
+RichTextLabel/constants/shadow_offset_y = 1
+ScrollContainer/styles/bg = SubResource("SourceEmpty")
+ScrollContainer/styles/panel = SubResource("SourceEmpty")
+SpinBox/colors/caret_color = Color(1, 0.85, 0.4, 1)
+SpinBox/colors/font_color = Color(0.95, 0.93, 0.88, 1)
+SpinBox/font_sizes/font_size = 14
+SpinBox/styles/normal = SubResource("SourceInput")
+TabContainer/colors/font_disabled_color = Color(0.5, 0.5, 0.5, 1)
+TabContainer/colors/font_selected_color = Color(1, 0.85, 0.55, 1)
+TabContainer/colors/font_unselected_color = Color(0.96, 0.95, 0.86, 1)
+TabContainer/constants/h_separation = 4
+TabContainer/constants/side_margin = 8
+TabContainer/font_sizes/font_size = 14
+TabContainer/styles/panel = SubResource("SourcePanel")
+TabContainer/styles/tab_selected = ExtResource("9_5gvej")
+TabContainer/styles/tab_selected_close = ExtResource("9_5gvej")
+TabContainer/styles/tab_unselected = ExtResource("10_d75ya")
+TabContainer/styles/tab_unselected_close = ExtResource("10_d75ya")
+TextureButton/colors/font_color = Color(0.95, 0.93, 0.88, 1)
+TextureButton/colors/font_disabled_color = Color(0.5, 0.5, 0.5, 1)
+TextureButton/colors/font_hover_color = Color(1, 0.85, 0.55, 1)
+TextureButton/colors/font_pressed_color = Color(1, 1, 0.9, 1)
+TextureButton/font_sizes/font_size = 14
+Tree/colors/font_color = Color(0.95, 0.93, 0.88, 1)
+Tree/colors/font_selected_color = Color(1, 1, 0.9, 1)
+Tree/colors/guide_color = Color(0.4, 0.4, 0.5, 0.6)
+Tree/colors/title_button_color = Color(0.96, 0.95, 0.86, 1)
+Tree/font_sizes/font_size = 13
+Tree/styles/bg = SubResource("SourcePanel")
+Tree/styles/cursor = SubResource("SourceSelected")
+Tree/styles/panel = SubResource("SourcePanel")
+Tree/styles/selected = SubResource("SourceSelected")
+Tree/styles/selected_focus = SubResource("SourceSelected")
+VScrollBar/styles/grabber = SubResource("SourceSelected")
+VScrollBar/styles/grabber_highlight = SubResource("SourceSelected")
+VScrollBar/styles/grabber_pressed = SubResource("SourceSelected")
+VScrollBar/styles/scroll = SubResource("SourceRow")
+Window/colors/title_color = Color(0.96, 0.95, 0.86, 1)
+Window/constants/title_height = 28
+Window/font_sizes/title_font_size = 14
+Window/styles/embedded_border = SubResource("SourcePanel")
+Window/styles/embedded_unfocused_border = SubResource("SourcePanel")

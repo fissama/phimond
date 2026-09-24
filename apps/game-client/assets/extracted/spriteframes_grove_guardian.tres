@@ -1,0 +1,62 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/reference/actors/NAMHOA/Attack/000.png" id="1_psdxv"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/NAMHOA/Die/000.png" id="2_bguul"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/NAMHOA/Idle/000.png" id="3_1jfnu"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/NAMHOA/Idle/001.png" id="4_7orfl"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/NAMHOA/Magic/000.png" id="5_bdehj"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/NAMHOA/Run/000.png" id="6_16uus"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/NAMHOA/Run/001.png" id="7_6s2gy"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/NAMHOA/Run/002.png" id="8_qscs3"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_psdxv")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bguul")
+}],
+"loop": 0,
+"name": &"die",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1jfnu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7orfl")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 2.9999999105930355
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_bdehj")
+}],
+"loop": 0,
+"name": &"magic",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_16uus")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6s2gy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qscs3")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 3.0
+}]

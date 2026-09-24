@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "configured_users": 1,
+  "active_users": 1,
+  "elapsed_ms": 120274.605375,
+  "actions": 238,
+  "actions_per_second": 1.9788050790767353,
+  "users": [
+    {
+      "actions": 238,
+      "last": 121076.738042,
+      "errors": 0
+    }
+  ],
+  "operations": {
+    "world.move": {
+      "n": 238,
+      "p50_ms": 1,
+      "p95_ms": 3,
+      "p99_ms": 133,
+      "max_ms": 462.30212499999834
+    }
+  },
+  "failures": [],
+  "measurement": "client send to authoritative acknowledgement; includes network and persistence",
+  "capacity_certified": false,
+  "limitations": [
+    "No shared-world presence/fan-out yet",
+    "No renderer/FPS measurement in protocol bots",
+    "Provisioning and travel warmup excluded"
+  ],
+  "run": "p00-one",
+  "config": {
+    "users": 1,
+    "seconds": 120,
+    "cadence_ms": 500,
+    "profile": "mixed",
+    "reconnect": false
+  },
+  "generator": {
+    "node": "v24.11.0",
+    "platform": "darwin",
+    "arch": "arm64",
+    "cpus": 11
+  },
+  "accounts": [
+    {
+      "id": "08949b44cd928ff9ce412db6a79ad14c",
+      "username": "p00_574afcace6d610",
+      "profile": "world"
+    }
+  ]
+}

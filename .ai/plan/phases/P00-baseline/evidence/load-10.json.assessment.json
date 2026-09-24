@@ -1,0 +1,61 @@
+{
+  "source": ".ai/plan/phases/P00-baseline/evidence/load-10.json",
+  "performance_budget_met": false,
+  "ack_budget_ms": {
+    "p95": 250,
+    "p99": 400
+  },
+  "capacity_certified": false,
+  "note": "Assessment of recorded samples only; original workload report preserved, not a new run",
+  "operations": {
+    "world.move": {
+      "n": 943,
+      "p50_ms": 1,
+      "p95_ms": 1,
+      "p99_ms": 104,
+      "max_ms": 1262.5984580000077
+    },
+    "world.encounter": {
+      "n": 24,
+      "p50_ms": 1179,
+      "p95_ms": 2649,
+      "p99_ms": 3102,
+      "max_ms": 3101.680250000005
+    },
+    "quest.accept": {
+      "n": 2,
+      "p50_ms": 847,
+      "p95_ms": 847,
+      "p99_ms": 847,
+      "max_ms": 846.7131670000017
+    },
+    "battle.action": {
+      "n": 205,
+      "p50_ms": 1360,
+      "p95_ms": 2961,
+      "p99_ms": 4935,
+      "max_ms": 6944.30025
+    },
+    "pet.activate": {
+      "n": 159,
+      "p50_ms": 831,
+      "p95_ms": 1913,
+      "p99_ms": 3290,
+      "max_ms": 4730.489749999993
+    },
+    "pet.heal": {
+      "n": 11,
+      "p50_ms": 1697,
+      "p95_ms": 6763,
+      "p99_ms": 6763,
+      "max_ms": 6762.7432499999995
+    },
+    "shop.buy": {
+      "n": 8,
+      "p50_ms": 642,
+      "p95_ms": 2829,
+      "p99_ms": 2829,
+      "max_ms": 2828.4750410000124
+    }
+  }
+}

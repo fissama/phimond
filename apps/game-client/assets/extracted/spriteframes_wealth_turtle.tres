@@ -1,0 +1,74 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/reference/actors/RUAPHUQUY/Attack/000.png" id="1_47wgm"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/RUAPHUQUY/Die/000.png" id="2_2haih"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/RUAPHUQUY/Idle/000.png" id="3_07vdj"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/RUAPHUQUY/Idle/001.png" id="4_fdifn"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/RUAPHUQUY/Idle/002.png" id="5_m4qeo"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/RUAPHUQUY/Idle/003.png" id="6_ihrvl"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/RUAPHUQUY/Magic/000.png" id="7_4iv8s"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/RUAPHUQUY/Run/000.png" id="8_jaob0"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/RUAPHUQUY/Run/001.png" id="9_p113n"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/RUAPHUQUY/Run/002.png" id="10_2tsey"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/RUAPHUQUY/Run/003.png" id="11_regl4"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_47wgm")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2haih")
+}],
+"loop": 0,
+"name": &"die",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_07vdj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fdifn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_m4qeo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ihrvl")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 2.9999999105930355
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_4iv8s")
+}],
+"loop": 0,
+"name": &"magic",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_jaob0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_p113n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2tsey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_regl4")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 2.9999999105930355
+}]

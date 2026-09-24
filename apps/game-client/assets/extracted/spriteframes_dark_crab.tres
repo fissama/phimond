@@ -1,0 +1,66 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/reference/actors/CUAHACAM/Attack/000.png" id="1_wckx6"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/CUAHACAM/Die/000.png" id="2_hh52h"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/CUAHACAM/Idle/000.png" id="3_wdnuo"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/CUAHACAM/Idle/001.png" id="4_x4iiq"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/CUAHACAM/Idle/002.png" id="5_sx3rk"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/CUAHACAM/Idle/003.png" id="6_vveky"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/CUAHACAM/Magic/000.png" id="7_ivxco"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/CUAHACAM/Run/000.png" id="8_6snin"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/CUAHACAM/Run/001.png" id="9_h0hdt"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wckx6")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hh52h")
+}],
+"loop": 0,
+"name": &"die",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_wdnuo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_x4iiq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sx3rk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vveky")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 2.9999999105930355
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ivxco")
+}],
+"loop": 0,
+"name": &"magic",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_6snin")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_h0hdt")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 2.9999999105930355
+}]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b_game_textinput"]
+
+[ext_resource type="Script" path="res://scripts/components/GameTextInput.gd" id="1_input"]
+
+[node name="GameTextInput" type="LineEdit"]
+custom_minimum_size = Vector2(240, 32)
+offset_right = 240.0
+offset_bottom = 32.0
+script = ExtResource("1_input")
+placeholder_text = "Type here..."

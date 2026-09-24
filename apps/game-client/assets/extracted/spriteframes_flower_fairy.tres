@@ -1,0 +1,50 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/reference/actors/YEUTINHHOA/Attack/000.png" id="1_jx5in"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/YEUTINHHOA/Die/000.png" id="2_ss1nq"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/YEUTINHHOA/Idle/000.png" id="3_t381t"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/YEUTINHHOA/Magic/000.png" id="4_dydur"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/YEUTINHHOA/Run/000.png" id="5_l7ip8"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jx5in")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ss1nq")
+}],
+"loop": 0,
+"name": &"die",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_t381t")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 2.9999999105930355
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_dydur")
+}],
+"loop": 0,
+"name": &"magic",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_l7ip8")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 2.9999999105930355
+}]

@@ -1,0 +1,43 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+client/node_modules/
+client/dist/
+client/.vite/
+*.log
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Godot
+server/.godot/
+server/.import/
+server/*.translation
+server/export_presets.cfg
+server/.editor/
+
+# Docker build cache (Godot binary)
+.docker-cache/
+
+# Editor / IDE
+.idea/
+.vscode/
+*.swp
+
+# Local reconstruction secrets and build artifacts
+.env
+.env.*
+!.env.example
+apps/**/.godot/
+apps/**/.next/
+apps/**/node_modules/
+apps/game-server/phimond-server
+
+apps/**/tsconfig.tsbuildinfo
+apps/**/artifacts/
+tools/.cache/
+apps/**/.tools/

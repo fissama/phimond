@@ -1,0 +1,63 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/reference/actors/Boy/Idle/000.png" id="1_202wn"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/Boy/Idle/001.png" id="2_ybndt"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/Boy/Idle/002.png" id="3_d1bed"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/Boy/Idle/003.png" id="4_54qkb"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/Boy/Idle/004.png" id="5_ebatc"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/Boy/Idle/005.png" id="6_v1t6c"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/Boy/Run/000.png" id="7_aypid"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/Boy/Run/001.png" id="8_4sd2m"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/Boy/Run/002.png" id="9_ysjap"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/Boy/Run/003.png" id="10_q4gss"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/Boy/Run/004.png" id="11_iy0og"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/Boy/Run/005.png" id="12_stk6l"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_202wn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ybndt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_d1bed")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_54qkb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ebatc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_v1t6c")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_aypid")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4sd2m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ysjap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_q4gss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_iy0og")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_stk6l")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 12.0
+}]

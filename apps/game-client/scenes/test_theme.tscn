@@ -1,0 +1,114 @@
+[gd_scene load_steps=10 format=3 uid="uid://b_test_theme"]
+
+[ext_resource type="Script" path="res://scripts/test_theme.gd" id="1_test"]
+[ext_resource type="PackedScene" uid="uid://b_game_window" path="res://scenes/components/GameWindow.tscn" id="2_window"]
+[ext_resource type="PackedScene" uid="uid://b_game_button" path="res://scenes/components/GameButton.tscn" id="3_button"]
+[ext_resource type="PackedScene" uid="uid://b_game_tab" path="res://scenes/components/GameTab.tscn" id="4_tab"]
+[ext_resource type="PackedScene" uid="uid://b_game_slot" path="res://scenes/components/GameSlot.tscn" id="5_slot"]
+[ext_resource type="PackedScene" uid="uid://b_game_textinput" path="res://scenes/components/GameTextInput.tscn" id="6_input"]
+[ext_resource type="PackedScene" uid="uid://b_game_hpbar" path="res://scenes/components/GameHPBar.tscn" id="7_hp"]
+[ext_resource type="PackedScene" uid="uid://b_game_mpbar" path="res://scenes/components/GameMPBar.tscn" id="8_mp"]
+[ext_resource type="Texture2D" uid="uid://dndy33s14lsyv" path="res://assets/reference/ui/right_btn0.png" id="9_btn_n"]
+
+[node name="TestTheme" type="Control"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_test")
+
+[node name="Bg" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.04, 0.08, 0.12, 1)
+
+[node name="Title" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 944.0
+offset_bottom = 36.0
+text = "Phimond — Theme + Components Test"
+
+[node name="Window" parent="." instance=ExtResource("2_window")]
+offset_left = 32.0
+offset_top = 56.0
+offset_right = 432.0
+offset_bottom = 376.0
+
+[node name="ButtonsRow" type="HBoxContainer" parent="."]
+offset_left = 32.0
+offset_top = 392.0
+offset_right = 600.0
+offset_bottom = 448.0
+theme_override_constants/separation = 12
+
+[node name="Button1" parent="ButtonsRow" instance=ExtResource("3_button")]
+custom_minimum_size = Vector2(140, 48)
+layout_mode = 2
+
+[node name="Button2" parent="ButtonsRow" instance=ExtResource("3_button")]
+custom_minimum_size = Vector2(140, 48)
+layout_mode = 2
+
+[node name="TabsRow" type="HBoxContainer" parent="."]
+offset_left = 32.0
+offset_top = 460.0
+offset_right = 600.0
+offset_bottom = 500.0
+theme_override_constants/separation = 4
+
+[node name="Tab1" parent="TabsRow" instance=ExtResource("4_tab")]
+layout_mode = 2
+
+[node name="Tab2" parent="TabsRow" instance=ExtResource("4_tab")]
+layout_mode = 2
+
+[node name="SlotsRow" type="HBoxContainer" parent="."]
+offset_left = 32.0
+offset_top = 512.0
+offset_right = 600.0
+offset_bottom = 552.0
+theme_override_constants/separation = 6
+
+[node name="Slot1" parent="SlotsRow" instance=ExtResource("5_slot")]
+layout_mode = 2
+
+[node name="Slot2" parent="SlotsRow" instance=ExtResource("5_slot")]
+layout_mode = 2
+
+[node name="Slot3" parent="SlotsRow" instance=ExtResource("5_slot")]
+layout_mode = 2
+
+[node name="Slot4" parent="SlotsRow" instance=ExtResource("5_slot")]
+layout_mode = 2
+
+[node name="SidePanel" type="VBoxContainer" parent="."]
+offset_left = 460.0
+offset_top = 56.0
+offset_right = 928.0
+offset_bottom = 600.0
+theme_override_constants/separation = 12
+
+[node name="TextInput" parent="SidePanel" instance=ExtResource("6_input")]
+layout_mode = 2
+
+[node name="HPBar" parent="SidePanel" instance=ExtResource("7_hp")]
+layout_mode = 2
+
+[node name="MPBar" parent="SidePanel" instance=ExtResource("8_mp")]
+layout_mode = 2
+
+[node name="PlainLabel" type="Label" parent="SidePanel"]
+layout_mode = 2
+text = "Default Label (gold text from theme)"
+
+[node name="PlainButton" type="Button" parent="SidePanel"]
+layout_mode = 2
+text = "Plain Button (theme-driven)"
+
+[node name="StatusLabel" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 600.0
+offset_right = 944.0
+offset_bottom = 628.0
+text = "ready"

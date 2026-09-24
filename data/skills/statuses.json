@@ -1,0 +1,124 @@
+{
+  "petrify": {
+    "id": "petrify",
+    "name": "Petrify",
+    "blocks": [
+      "physical",
+      "magic",
+      "status",
+      "heal",
+      "cleanse",
+      "buff",
+      "defend",
+      "capture",
+      "item"
+    ],
+    "wake_on_damage": false,
+    "wake_multiplier": 1,
+    "fatal_on_expiry": false,
+    "random_target": false,
+    "hit_multiplier": 1,
+    "defense_multiplier": 1.5,
+    "confidence": "likely",
+    "source": "https://m.ali213.net/gonglue/100908/10529.html (2010-09-08 guide); durations and unspecified multipliers reconstructed"
+  },
+  "doom": {
+    "id": "doom",
+    "name": "Doom",
+    "blocks": [
+      "physical",
+      "magic"
+    ],
+    "wake_on_damage": false,
+    "wake_multiplier": 1,
+    "fatal_on_expiry": true,
+    "random_target": false,
+    "hit_multiplier": 1,
+    "defense_multiplier": 1,
+    "confidence": "likely",
+    "source": "https://m.ali213.net/gonglue/100908/10529.html (2010-09-08 guide); durations and unspecified multipliers reconstructed"
+  },
+  "sleep": {
+    "id": "sleep",
+    "name": "Sleep",
+    "blocks": [
+      "physical",
+      "magic",
+      "status",
+      "heal",
+      "cleanse",
+      "buff",
+      "defend",
+      "capture",
+      "item"
+    ],
+    "wake_on_damage": true,
+    "wake_multiplier": 2,
+    "fatal_on_expiry": false,
+    "random_target": false,
+    "hit_multiplier": 1,
+    "defense_multiplier": 1,
+    "confidence": "likely",
+    "source": "https://m.ali213.net/gonglue/100908/10529.html (2010-09-08 guide); durations and unspecified multipliers reconstructed"
+  },
+  "silence": {
+    "id": "silence",
+    "name": "Silence",
+    "blocks": [
+      "magic",
+      "status",
+      "heal",
+      "cleanse",
+      "buff"
+    ],
+    "wake_on_damage": false,
+    "wake_multiplier": 1,
+    "fatal_on_expiry": false,
+    "random_target": false,
+    "hit_multiplier": 1,
+    "defense_multiplier": 1,
+    "confidence": "likely",
+    "source": "https://m.ali213.net/gonglue/100908/10529.html (2010-09-08 guide); durations and unspecified multipliers reconstructed"
+  },
+  "bind": {
+    "id": "bind",
+    "name": "Bind",
+    "blocks": [
+      "physical"
+    ],
+    "wake_on_damage": false,
+    "wake_multiplier": 1,
+    "fatal_on_expiry": false,
+    "random_target": false,
+    "hit_multiplier": 1,
+    "defense_multiplier": 1,
+    "confidence": "likely",
+    "source": "https://m.ali213.net/gonglue/100908/10529.html (2010-09-08 guide); durations and unspecified multipliers reconstructed"
+  },
+  "blind": {
+    "id": "blind",
+    "name": "Blind",
+    "blocks": [],
+    "wake_on_damage": false,
+    "wake_multiplier": 1,
+    "fatal_on_expiry": false,
+    "random_target": false,
+    "hit_multiplier": 0.1,
+    "defense_multiplier": 1,
+    "confidence": "likely",
+    "source": "https://m.ali213.net/gonglue/100908/10529.html (2010-09-08 guide); durations and unspecified multipliers reconstructed"
+  },
+  "confusion": {
+    "id": "confusion",
+    "name": "Confusion",
+    "blocks": [],
+    "wake_on_damage": false,
+    "wake_multiplier": 1,
+    "fatal_on_expiry": false,
+    "random_target": true,
+    "hit_multiplier": 1,
+    "defense_multiplier": 1,
+    "confidence": "likely",
+    "source": "https://m.ali213.net/gonglue/100908/10529.html (2010-09-08 guide); durations and unspecified multipliers reconstructed"
+  }
+}

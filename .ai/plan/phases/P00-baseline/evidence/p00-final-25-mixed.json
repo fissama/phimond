@@ -1,0 +1,263 @@
+{
+  "passed": false,
+  "workload_completed": false,
+  "performance_budget_met": false,
+  "configured_users": 25,
+  "active_users": 0,
+  "elapsed_ms": 509956.39900000003,
+  "actions": 0,
+  "actions_per_second": 0,
+  "users": [
+    {
+      "actions": 0,
+      "last": null,
+      "errors": 0,
+      "max_gap_ms": 0
+    },
+    {
+      "actions": 0,
+      "last": null,
+      "errors": 0,
+      "max_gap_ms": 0
+    },
+    {
+      "actions": 0,
+      "last": null,
+      "errors": 0,
+      "max_gap_ms": 0
+    },
+    {
+      "actions": 0,
+      "last": null,
+      "errors": 0,
+      "max_gap_ms": 0
+    },
+    {
+      "actions": 0,
+      "last": null,
+      "errors": 0,
+      "max_gap_ms": 0
+    },
+    {
+      "actions": 0,
+      "last": null,
+      "errors": 0,
+      "max_gap_ms": 0
+    },
+    {
+      "actions": 0,
+      "last": null,
+      "errors": 0,
+      "max_gap_ms": 0
+    },
+    {
+      "actions": 0,
+      "last": null,
+      "errors": 0,
+      "max_gap_ms": 0
+    },
+    {
+      "actions": 0,
+      "last": null,
+      "errors": 0,
+      "max_gap_ms": 0
+    },
+    {
+      "actions": 0,
+      "last": null,
+      "errors": 0,
+      "max_gap_ms": 0
+    },
+    {
+      "actions": 0,
+      "last": null,
+      "errors": 0,
+      "max_gap_ms": 0
+    },
+    {
+      "actions": 0,
+      "last": null,
+      "errors": 0,
+      "max_gap_ms": 0
+    },
+    {
+      "actions": 0,
+      "last": null,
+      "errors": 0,
+      "max_gap_ms": 0
+    },
+    {
+      "actions": 0,
+      "last": null,
+      "errors": 0,
+      "max_gap_ms": 0
+    },
+    {
+      "actions": 0,
+      "last": null,
+      "errors": 1,
+      "max_gap_ms": 0
+    },
+    {
+      "actions": 0,
+      "last": null,
+      "errors": 0,
+      "max_gap_ms": 0
+    },
+    {
+      "actions": 0,
+      "last": null,
+      "errors": 0,
+      "max_gap_ms": 0
+    },
+    {
+      "actions": 0,
+      "last": null,
+      "errors": 0,
+      "max_gap_ms": 0
+    },
+    {
+      "actions": 0,
+      "last": null,
+      "errors": 0,
+      "max_gap_ms": 0
+    },
+    {
+      "actions": 0,
+      "last": null,
+      "errors": 0,
+      "max_gap_ms": 0
+    },
+    {
+      "actions": 0,
+      "last": null,
+      "errors": 0,
+      "max_gap_ms": 0
+    },
+    {
+      "actions": 0,
+      "last": null,
+      "errors": 0,
+      "max_gap_ms": 0
+    },
+    {
+      "actions": 0,
+      "last": null,
+      "errors": 0,
+      "max_gap_ms": 0
+    },
+    {
+      "actions": 0,
+      "last": null,
+      "errors": 0,
+      "max_gap_ms": 0
+    },
+    {
+      "actions": 0,
+      "last": null,
+      "errors": 0,
+      "max_gap_ms": 0
+    }
+  ],
+  "operations": {},
+  "failures": [
+    {
+      "user": 14,
+      "op": "provision_or_prepare",
+      "code": "http_400"
+    }
+  ],
+  "measurement": "client send to authoritative acknowledgement; includes network and persistence",
+  "capacity_certified": false,
+  "limitations": [
+    "No shared-world presence/fan-out yet",
+    "No renderer/FPS measurement in protocol bots",
+    "Provisioning and travel warmup excluded"
+  ],
+  "run": "p00-final-25-mixed",
+  "config": {
+    "users": 25,
+    "seconds": 120,
+    "cadence_ms": 500,
+    "profile": "mixed",
+    "reconnect": true
+  },
+  "generator": {
+    "node": "v24.11.0",
+    "platform": "darwin",
+    "arch": "arm64",
+    "cpus": 11
+  },
+  "accounts": [
+    {
+      "id": "76c5a5be6b7bf8ef6e5664536ddac329",
+      "username": "p00_8d3b2754d4ecf2",
+      "profile": "world"
+    },
+    {
+      "id": "718b88ee6e89f01257248bb7ec5dabc9",
+      "username": "p00_ed6c7bdee38097",
+      "profile": "world"
+    },
+    {
+      "id": "82ca216c582328713c74a242d9995a8a",
+      "username": "p00_54de98ff35123e",
+      "profile": "world"
+    },
+    {
+      "id": "3df9e9e1f26b6dd8e82608638335e796",
+      "username": "p00_3cd98af024e668",
+      "profile": "world"
+    },
+    {
+      "id": "47cf479a37839e8000c2ce8620777048",
+      "username": "p00_ecf08b05cb3a21",
+      "profile": "world"
+    },
+    {
+      "id": "41b2efe56ce8094496b9fef424ea5300",
+      "username": "p00_cc764f513c0cdc",
+      "profile": "world"
+    },
+    {
+      "id": "feae681132c87fac4999b83e6af35237",
+      "username": "p00_a1eb5a69d3e903",
+      "profile": "world"
+    },
+    {
+      "id": "44008226fd30e740cf5ec8de52373efb",
+      "username": "p00_253537bd8e64f6",
+      "profile": "world"
+    },
+    {
+      "id": "47f54cb55d4fd43216e707f6c14de234",
+      "username": "p00_633b42da31f788",
+      "profile": "world"
+    },
+    {
+      "id": "4077aa39bf9f62f24f979a788bde075e",
+      "username": "p00_a3bf1cdc9379b6",
+      "profile": "world"
+    },
+    {
+      "id": "f265e1aeb52279f1600f8757180ccf3a",
+      "username": "p00_a1331c5cba48b2",
+      "profile": "battle"
+    },
+    {
+      "id": "d390c5be0e4a8495175242fb6d69d37f",
+      "username": "p00_15c69ae6ce86ff",
+      "profile": "battle"
+    },
+    {
+      "id": "4dbe09e01d79878a7e89b19fc7896c19",
+      "username": "p00_f3edc6f10fe1df",
+      "profile": "battle"
+    },
+    {
+      "id": "f30e3f44930e2ab3017b63ad70d88064",
+      "username": "p00_99f004dfa8e05d",
+      "profile": "battle"
+    }
+  ]
+}

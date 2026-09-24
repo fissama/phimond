@@ -1,0 +1,70 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/reference/actors/OCSENHOA/Attack/000.png" id="1_mixvq"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/OCSENHOA/Die/000.png" id="2_8pxxf"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/OCSENHOA/Idle/000.png" id="3_i42vj"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/OCSENHOA/Idle/001.png" id="4_1nd0v"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/OCSENHOA/Idle/002.png" id="5_4fanp"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/OCSENHOA/Idle/003.png" id="6_7oc3r"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/OCSENHOA/Magic/000.png" id="7_uco82"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/OCSENHOA/Run/000.png" id="8_mjjwg"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/OCSENHOA/Run/001.png" id="9_1q4ue"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/OCSENHOA/Run/002.png" id="10_5wysj"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mixvq")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8pxxf")
+}],
+"loop": 0,
+"name": &"die",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_i42vj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1nd0v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4fanp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7oc3r")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 2.9999999105930355
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_uco82")
+}],
+"loop": 0,
+"name": &"magic",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_mjjwg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1q4ue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5wysj")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 3.0
+}]

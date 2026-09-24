@@ -1,0 +1,15 @@
+# Database and consistency
+
+`MYSQL_HOST`, `MYSQL_PORT`, `MYSQL_USER`, `MYSQL_PASSWORD` and `MYSQL_DATABASE` configure the connection; `GAME_DB_NAME` is a fallback database name. The URL path of any `DATABASE_URL` is intentionally not adopted. This session created `phimond_reconstruction` on the supplied MySQL service; existing `philandz` was not targeted.
+
+Bootstrap validates identifiers, obtains a database-specific advisory lock, creates a new schema, and writes `phimond_ownership`. Existing unmarked databases are rejected without migration. Normal connections verify that marker. Version/checksum rows in `schema_migrations` reject edits to already-applied SQL. MySQL DDL is not transactional; checked-in CREATE TABLE IF NOT EXISTS statements are rerunnable after a partial migration. Failure before writing the marker requires manual inspection, never silent adoption.
+
+Tables: accounts, sessions, characters, pets, pet_ancestry, command_receipts, audit_events. Passwords use bcrypt. Only SHA-256 digests of cryptographically random opaque session tokens are stored; sessions expire after seven days. The first slice has one character per account. Owned state is a JSON character aggregate; pets and ancestor edges are queryable relational projections. InnoDB foreign keys and indexes preserve references.
+
+Each mutation locks the character row with SELECT FOR UPDATE, checks its persistent request receipt, applies rules to a copy, then commits state, pets, lineage and audit events together. Errors roll back and do not consume request IDs. Retired pets are preserved for ancestry. Concurrent duplicate commands execute once, concurrent distinct commands serialize. A repeated ID returns current state without applying again; clients must not reuse an ID for a different intent.
+
+The current slice checkpoints **each discrete movement intent** as well as map changes. This is durable but slow with remote MySQL, and should be replaced with an owning world process plus timed/map/logout position checkpoints before a larger online world. No per-render-frame persistence exists. Battle seed, PRNG state, commands and events survive disconnects inside the aggregate. The last 20 completed battle records are retained there; public history strips seeds, PRNG state and private pet snapshots. A separate long-lived battle archive remains future work.
+
+Testing: explicit MYSQL_TEST=1 tests only an already marked database, creates new isolated random test accounts and leaves them for inspection. No existing rows are truncated. Tests cover atomicity, concurrent deduplication, rollback, session revocation, synthesis costs and relational lineage surviving a newly opened connection.
+
+TLS verifies server identity by default. MYSQL_CA_FILE adds service roots. MYSQL_TLS_INSECURE=true is an explicit development override requested for this workspace; it encrypts without authenticating the remote certificate. Root .env is mode 0600 and ignored. Production deployment and least-privilege credentials are not provisioned by this slice.

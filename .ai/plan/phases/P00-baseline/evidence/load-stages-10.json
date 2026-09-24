@@ -1,0 +1,102 @@
+{
+  "passed": false,
+  "workload_completed": false,
+  "performance_budget_met": false,
+  "configured_users": 10,
+  "active_users": 0,
+  "elapsed_ms": 57.303957999999994,
+  "actions": 0,
+  "actions_per_second": 0,
+  "users": [
+    {
+      "actions": 0,
+      "last": null,
+      "errors": 1,
+      "max_gap_ms": 0
+    },
+    {
+      "actions": 0,
+      "last": null,
+      "errors": 0,
+      "max_gap_ms": 0
+    },
+    {
+      "actions": 0,
+      "last": null,
+      "errors": 0,
+      "max_gap_ms": 0
+    },
+    {
+      "actions": 0,
+      "last": null,
+      "errors": 0,
+      "max_gap_ms": 0
+    },
+    {
+      "actions": 0,
+      "last": null,
+      "errors": 0,
+      "max_gap_ms": 0
+    },
+    {
+      "actions": 0,
+      "last": null,
+      "errors": 0,
+      "max_gap_ms": 0
+    },
+    {
+      "actions": 0,
+      "last": null,
+      "errors": 0,
+      "max_gap_ms": 0
+    },
+    {
+      "actions": 0,
+      "last": null,
+      "errors": 0,
+      "max_gap_ms": 0
+    },
+    {
+      "actions": 0,
+      "last": null,
+      "errors": 0,
+      "max_gap_ms": 0
+    },
+    {
+      "actions": 0,
+      "last": null,
+      "errors": 0,
+      "max_gap_ms": 0
+    }
+  ],
+  "operations": {},
+  "failures": [
+    {
+      "user": 0,
+      "op": "provision_or_prepare",
+      "code": "setup_error"
+    }
+  ],
+  "measurement": "client send to authoritative acknowledgement; includes network and persistence",
+  "capacity_certified": false,
+  "limitations": [
+    "No shared-world presence/fan-out yet",
+    "No renderer/FPS measurement in protocol bots",
+    "Provisioning and travel warmup excluded"
+  ],
+  "run": "p00-stages-10",
+  "config": {
+    "users": 10,
+    "seconds": 120,
+    "cadence_ms": 500,
+    "profile": "mixed",
+    "reconnect": true
+  },
+  "generator": {
+    "node": "v24.11.0",
+    "platform": "darwin",
+    "arch": "arm64",
+    "cpus": 11
+  },
+  "accounts": []
+}

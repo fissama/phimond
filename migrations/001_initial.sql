@@ -1,0 +1,51 @@
+CREATE TABLE IF NOT EXISTS accounts (
+ id CHAR(32) PRIMARY KEY,
+ username VARCHAR(24) CHARACTER SET ascii COLLATE ascii_general_ci NOT NULL UNIQUE,
+ password_hash VARBINARY(100) NOT NULL,
+ created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
+CREATE TABLE IF NOT EXISTS characters (
+ id CHAR(32) PRIMARY KEY,
+ account_id CHAR(32) NOT NULL UNIQUE,
+ state JSON NOT NULL,
+ updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+ FOREIGN KEY (account_id) REFERENCES accounts(id)
+) ENGINE=InnoDB;
+CREATE TABLE IF NOT EXISTS sessions (
+ token_hash BINARY(32) PRIMARY KEY,
+ account_id CHAR(32) NOT NULL,
+ expires_at DATETIME(6) NOT NULL,
+ FOREIGN KEY (account_id) REFERENCES accounts(id),
+ INDEX (expires_at)
+) ENGINE=InnoDB;
+CREATE TABLE IF NOT EXISTS command_receipts (
+ character_id CHAR(32) NOT NULL,
+ request_id VARCHAR(128) NOT NULL,
+ created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ PRIMARY KEY(character_id,request_id),
+ FOREIGN KEY(character_id) REFERENCES characters(id)
+) ENGINE=InnoDB;
+CREATE TABLE IF NOT EXISTS audit_events (
+ id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+ character_id CHAR(32) NOT NULL,
+ request_id VARCHAR(128) NOT NULL,
+ event_type VARCHAR(64) NOT NULL,
+ data JSON NOT NULL,
+ created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ FOREIGN KEY(character_id) REFERENCES characters(id)
+) ENGINE=InnoDB;
+CREATE TABLE IF NOT EXISTS pets (
+ id VARCHAR(64) PRIMARY KEY,
+ character_id CHAR(32) NOT NULL,
+ species_id VARCHAR(64) NOT NULL,
+ retired BOOLEAN NOT NULL,
+ data JSON NOT NULL,
+ FOREIGN KEY(character_id) REFERENCES characters(id)
+) ENGINE=InnoDB;
+CREATE TABLE IF NOT EXISTS pet_ancestry (
+ child_id VARCHAR(64) NOT NULL,
+ parent_id VARCHAR(64) NOT NULL,
+ PRIMARY KEY(child_id,parent_id),
+ FOREIGN KEY(child_id) REFERENCES pets(id),
+ FOREIGN KEY(parent_id) REFERENCES pets(id)
+) ENGINE=InnoDB;

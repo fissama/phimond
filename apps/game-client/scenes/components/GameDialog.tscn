@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://b_game_dialog"]
+
+[ext_resource type="Script" path="res://scripts/components/GameDialog.gd" id="1_dlg"]
+
+[node name="GameDialog" type="AcceptDialog"]
+size = Vector2i(360, 160)
+ok_button_text = "OK"
+script = ExtResource("1_dlg")
+
+[node name="Panel" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -40.0
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="BodyLabel" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+text = "Body text"
+autowrap_mode = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_font_sizes/font_size = 14

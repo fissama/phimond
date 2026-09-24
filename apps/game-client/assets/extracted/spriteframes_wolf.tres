@@ -1,0 +1,50 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/reference/actors/SOINGONGAN/Attack/000.png" id="1_agf5h"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/SOINGONGAN/Die/000.png" id="2_ldrxt"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/SOINGONGAN/Idle/000.png" id="3_qvo0c"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/SOINGONGAN/Magic/000.png" id="4_navcj"]
+[ext_resource type="Texture2D" path="res://assets/reference/actors/SOINGONGAN/Run/000.png" id="5_hlgso"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_agf5h")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ldrxt")
+}],
+"loop": 0,
+"name": &"die",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qvo0c")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 2.9999999105930355
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_navcj")
+}],
+"loop": 0,
+"name": &"magic",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_hlgso")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 2.9999999105930355
+}]

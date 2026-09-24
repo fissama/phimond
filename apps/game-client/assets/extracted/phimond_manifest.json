@@ -1,0 +1,327 @@
+{
+  "generated_at": "2026-09-21",
+  "project": "Phimond Wildbound — minimal Godot client",
+  "sources": {
+    "sbw_v32_apk": "/Users/phileanh/.minimax/v2/assets/2026/09/18/...Spirit Beast World 3.2.apk",
+    "sbw_v84_xapk": "/Users/phileanh/.minimax/v2/assets/2026/09/18/...Spirit Beast World 8.4.xapk",
+    "extractor": "tools/assets/extract_unity.py (UnityPy 1.25.3, Pillow 12.3.0)",
+    "reference_assets": "apps/game-client/assets/reference/ (already extracted by earlier worker)"
+  },
+  "extracted_dir": "apps/game-client/assets/extracted/",
+  "subdirs": {
+    "sbw_v32/": "sbw v3.2 dump — Texture2D/Sprite/AnimationClip/TextAsset/MonoScript/BuildSettings",
+    "sbw_v84/": "sbw v8.4 dump (same content as v3.2; mostly ID drift + new splash sprite)",
+    "species_atlas.json": "species → actor frame mapping (Vietnamese semantic match)"
+  },
+  "counts": {
+    "sbw_v32": {
+      "PlayerSettings": 1,
+      "InputManager": 1,
+      "TagManager": 1,
+      "AudioManager": 1,
+      "ScriptMapper": 1,
+      "MonoManager": 1,
+      "GraphicsSettings": 1,
+      "TimeManager": 1,
+      "DelayedCallManager": 1,
+      "PhysicsManager": 1,
+      "BuildSettings": 1,
+      "QualitySettings": 1,
+      "ResourceManager": 1,
+      "NavMeshProjectSettings": 1,
+      "Physics2DSettings": 1,
+      "RuntimeInitializeOnLoadManager": 1,
+      "UnityConnectSettings": 1,
+      "StreamingManager": 1,
+      "VFXManager": 1,
+      "Shader": 56,
+      "PreloadData": 26,
+      "Material": 12,
+      "MonoScript": 1912,
+      "Texture2D": 1313,
+      "Font": 3,
+      "Sprite": 1347,
+      "GameObject": 7667,
+      "CanvasRenderer": 1830,
+      "RectTransform": 2375,
+      "MonoBehaviour": 4460,
+      "Cubemap": 25,
+      "LightProbes": 25,
+      "Transform": 5292,
+      "Camera": 26,
+      "AudioListener": 26,
+      "RenderSettings": 25,
+      "LightmapSettings": 25,
+      "NavMeshSettings": 25,
+      "Canvas": 12,
+      "LightingSettings": 19,
+      "AnimationClip": 780,
+      "RenderTexture": 1,
+      "AnimatorController": 164,
+      "MeshRenderer": 425,
+      "Animator": 360,
+      "SpriteRenderer": 3638,
+      "MeshFilter": 2,
+      "Rigidbody2D": 1,
+      "CircleCollider2D": 158,
+      "CapsuleCollider2D": 270,
+      "FlareLayer": 1,
+      "BoxCollider2D": 218,
+      "EdgeCollider2D": 3,
+      "TextAsset": 5,
+      "ParticleSystem": 4,
+      "ParticleSystemRenderer": 4,
+      "CanvasGroup": 39
+    },
+    "sbw_v84": {
+      "PlayerSettings": 1,
+      "InputManager": 1,
+      "TagManager": 1,
+      "AudioManager": 1,
+      "ScriptMapper": 1,
+      "MonoManager": 1,
+      "GraphicsSettings": 1,
+      "TimeManager": 1,
+      "DelayedCallManager": 1,
+      "PhysicsManager": 1,
+      "BuildSettings": 1,
+      "QualitySettings": 1,
+      "ResourceManager": 1,
+      "NavMeshProjectSettings": 1,
+      "Physics2DSettings": 1,
+      "RuntimeInitializeOnLoadManager": 1,
+      "UnityConnectSettings": 1,
+      "StreamingManager": 1,
+      "VFXManager": 1,
+      "Unknown (655991488)": 1,
+      "Shader": 56,
+      "PreloadData": 26,
+      "Material": 13,
+      "Texture2D": 1314,
+      "MonoScript": 836,
+      "Sprite": 1347,
+      "Cubemap": 2,
+      "Font": 3,
+      "LightProbes": 2,
+      "GameObject": 7675,
+      "CanvasRenderer": 1830,
+      "RectTransform": 2377,
+      "MonoBehaviour": 4465,
+      "Transform": 5298,
+      "Camera": 26,
+      "AudioListener": 26,
+      "RenderSettings": 25,
+      "LightmapSettings": 25,
+      "NavMeshSettings": 25,
+      "Canvas": 12,
+      "LightingSettings": 2,
+      "AnimationClip": 780,
+      "RenderTexture": 1,
+      "AnimatorController": 164,
+      "MeshRenderer": 427,
+      "Animator": 360,
+      "SpriteRenderer": 3644,
+      "MeshFilter": 2,
+      "Rigidbody2D": 1,
+      "CircleCollider2D": 158,
+      "CapsuleCollider2D": 272,
+      "FlareLayer": 1,
+      "BoxCollider2D": 218,
+      "EdgeCollider2D": 3,
+      "TextAsset": 5,
+      "ParticleSystem": 4,
+      "ParticleSystemRenderer": 4,
+      "CanvasGroup": 39
+    },
+    "npcs_in_reference_manifest": 5,
+    "species_total": 14,
+    "species_mapped": 10,
+    "species_using_fallback": 4
+  },
+  "npc_sprite_mapping": {
+    "trainer": "level3_1030.png",
+    "ranch_keeper": "level3_1029.png",
+    "arena_master": "level3_1024.png",
+    "forest_guide": "level4_353.png",
+    "beach_guide": "level5_668.png"
+  },
+  "species_atlas_excerpt": {
+    "snail": {
+      "actor": "OCSENHOA",
+      "confidence": "guessed",
+      "note": "OCSENHOA = ốc sen hoa (lotus snail), element earth/insect — matches"
+    },
+    "flower_fairy": {
+      "actor": "YEUTINHHOA",
+      "confidence": "guessed",
+      "note": "YEUTINHHOA = yêu tinh hoa (flower fairy) — matches"
+    },
+    "mushroom": {
+      "actor": "NAMHOA",
+      "confidence": "guessed",
+      "note": "NAMHOA = nấm hoa (mushroom+flower), element light/plant — closest to mushroom"
+    },
+    "dark_crab": {
+      "actor": "CUAHACAM",
+      "confidence": "guessed",
+      "note": "CUAHACAM = cua hắc ám (dark crab), element dark/undead — matches"
+    },
+    "wealth_turtle": {
+      "actor": "RUAPHUQUY",
+      "confidence": "guessed",
+      "note": "RUAPHUQUY = rùa phú quý (wealth turtle), element neutral/beast — matches"
+    },
+    "treasure_chest": {
+      "actor": "QUAIVATRUONGBAU",
+      "confidence": "guessed",
+      "note": "QUAIVATRUONGBAU = quái vật trứng bầu (gourd/treasure monster), element water/spirit — matches"
+    },
+    "sea_demon": {
+      "actor": "TIEUACMA",
+      "confidence": "guessed",
+      "note": "TIEUACMA = tiểu ác ma (small evil demon), element fire/demon — matches"
+    },
+    "spider": {
+      "actor": "NHENDOC",
+      "confidence": "guessed",
+      "note": "NHENDOC = nhện độc (poison spider), element earth/insect — matches"
+    },
+    "wolf": {
+      "actor": "SOINGONGAN",
+      "confidence": "guessed",
+      "note": "SOINGONGAN = wolf variant in original game — matches"
+    },
+    "windmill_spirit": {
+      "actor": "CHONGCHONGGIO",
+      "confidence": "guessed",
+      "note": "CHONGCHONGGIO = chong chóng gió (windmill/pinwheel), element water/spirit — matches"
+    },
+    "grove_guardian": {
+      "actor": "NAMHOA",
+      "confidence": "unmapped",
+      "note": "no matching actor; 2-star boss — using NAMHOA (plant) as visual placeholder"
+    },
+    "tide_sentinel": {
+      "actor": "QUAIVATRUONGBAU",
+      "confidence": "unmapped",
+      "note": "no matching actor; 3-star boss — using QUAIVATRUONGBAU (spirit/water) as placeholder"
+    },
+    "moon_warden": {
+      "actor": "CUAHACAM",
+      "confidence": "unmapped",
+      "note": "no matching actor; 4-star boss — using CUAHACAM (dark/undead) as placeholder"
+    },
+    "dawn_sovereign": {
+      "actor": "CHONGCHONGGIO",
+      "confidence": "unmapped",
+      "note": "no matching actor; 5-star boss — using CHONGCHONGGIO (bird-style) as placeholder"
+    }
+  },
+  "reference_assets_summary": {
+    "actors_dir": "reference/actors/",
+    "actor_count": 12,
+    "total_pngs": 172,
+    "frame_animations": {
+      "Boy": {
+        "idle": 6,
+        "run": 6
+      },
+      "Girl": {
+        "idle": 8,
+        "run": 6
+      },
+      "OCSENHOA": {
+        "idle": 4,
+        "run": 3,
+        "attack": 1,
+        "magic": 1,
+        "die": 1
+      },
+      "YEUTINHHOA": {
+        "idle": 1,
+        "run": 1,
+        "attack": 1,
+        "magic": 1,
+        "die": 1
+      },
+      "NAMHOA": {
+        "idle": 2,
+        "run": 3,
+        "attack": 1,
+        "magic": 1,
+        "die": 1
+      },
+      "NHENDOC": {
+        "idle": 4,
+        "run": 2,
+        "attack": 1,
+        "magic": 1,
+        "die": 1
+      },
+      "SOINGONGAN": {
+        "idle": 1,
+        "run": 1,
+        "attack": 1,
+        "magic": 1,
+        "die": 1
+      },
+      "CUAHACAM": {
+        "idle": 4,
+        "run": 2,
+        "attack": 1,
+        "magic": 1,
+        "die": 1
+      },
+      "RUAPHUQUY": {
+        "idle": 4,
+        "run": 4,
+        "attack": 1,
+        "magic": 1,
+        "die": 1
+      },
+      "QUAIVATRUONGBAU": {
+        "idle": 2,
+        "run": 4,
+        "attack": 1,
+        "magic": 1,
+        "die": 1
+      },
+      "TIEUACMA": {
+        "idle": 4,
+        "run": 4,
+        "attack": 1,
+        "magic": 1,
+        "die": 1
+      },
+      "CHONGCHONGGIO": {
+        "idle": 3,
+        "run": 3,
+        "attack": 1,
+        "magic": 1,
+        "die": 1
+      }
+    },
+    "ui_assets": {
+      "UI.png": "520x320 full-screen panel frame",
+      "right_btn0.png": "79x66 normal",
+      "right_btn1.png": "79x66 hover/pressed",
+      "right_btn2.png": "79x66 disabled",
+      "tableitem.png": "346x25 row background",
+      "tableitem1.png": "346x25 row background (alt)"
+    },
+    "rooms_assets": [
+      "arena.png",
+      "beach.png",
+      "forest.png",
+      "ranch.png",
+      "severa.png"
+    ],
+    "hud_assets_count": 86
+  },
+  "extraction_quality_notes": [
+    "Texture2D Font Texture entries failed with \"[Errno 21] Is a directory\" because UnityPy tried to write a PNG with the same name as an existing folder. Non-fatal: 3 errors per APK, all font glyph atlases that we do not need.",
+    "No species-to-sprite index TextAsset found in the APK — the game baked references in MonoBehaviour fields, not as JSON. We derived mapping from Vietnamese actor names + element/race alignment.",
+    "AnimationClip JSONs reference sprite PathIDs via m_ClipBindingConstant[pptrCurveMapping], but for our client we use the already-curated actors.json frame list (decoded by an earlier worker).",
+    "v8.4 adds one 2048x1024 Sprite (empty, Unity splash) but no new gameplay content vs v3.2 — confirmed by diffing sprite names + sizes."
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "first_steps": {
+    "id": "first_steps",
+    "name": "A path into the green",
+    "description": "Visit Emerald Forest, then speak to a guide.",
+    "kind": "reach_map",
+    "target": "forest",
+    "count": 1,
+    "gold": 30,
+    "xp": 20,
+    "items": {
+      "capture_seal": 5
+    },
+    "recipe": "",
+    "confidence": "reconstructed",
+    "source": "Phimond reconstruction v1; exact historical value unverified"
+  },
+  "first_capture": {
+    "id": "first_capture",
+    "name": "A bond of your own",
+    "description": "Weaken and capture one wild beast.",
+    "kind": "pet_capture",
+    "target": "",
+    "count": 1,
+    "gold": 80,
+    "xp": 50,
+    "items": {
+      "synthesis_soul": 2
+    },
+    "recipe": "snail_refinement",
+    "confidence": "reconstructed",
+    "source": "Phimond reconstruction v1; exact historical value unverified"
+  },
+  "field_training": {
+    "id": "field_training",
+    "name": "Learn from the wild",
+    "description": "Win three wild battles.",
+    "kind": "battle_win",
+    "target": "",
+    "count": 3,
+    "gold": 50,
+    "xp": 80,
+    "items": {
+      "potion": 5,
+      "blessing_leaf": 1
+    },
+    "recipe": "",
+    "confidence": "reconstructed",
+    "source": "Phimond reconstruction v1; exact historical value unverified"
+  },
+  "next_generation": {
+    "id": "next_generation",
+    "name": "Roots and branches",
+    "description": "Synthesize a new generation at the ranch.",
+    "kind": "pet_breed",
+    "target": "",
+    "count": 1,
+    "gold": 150,
+    "xp": 100,
+    "items": {
+      "synthesis_soul": 3
+    },
+    "recipe": "",
+    "confidence": "reconstructed",
+    "source": "Phimond reconstruction v1; exact historical value unverified"
+  }
+}
