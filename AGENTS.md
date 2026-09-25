@@ -52,6 +52,79 @@ GAME_API_URL=http://127.0.0.1:8090 \
 **Log:** `/tmp/p00-serve.log` (server, rotate khi restart).
 **Test accounts:** xem `.ai/plan/phases/P00-baseline/evidence/*.accounts.json` (p00_* prefix + cũ hơn ref_*/contact_*).
 
+## Required workflow rule — Phase delivery ritual
+
+**Rule (added 2026-09-25):** Every phase / sprint delivery in this workspace
+must follow this 5-step sequence before reporting "done" to the user or
+launching the next task:
+
+1. **Implement** — code the phase per its spec; do not edit code outside the
+   agreed scope. Spec lives in `.ai/plan/PHIMOND_MASTER_SPEC_PLAN.md` +
+   `.ai/plan/phases/<phase>/` + `.ai/plan/SPRINT_SPEC_TEMPLATE.md`.
+2. **Build / test** — rebuild server + run smoke + unit + race tests:
+   ```sh
+   cd apps/game-server && go build -o /tmp/phimond-server ./cmd/server
+   cd apps/game-server && go test -race ./... -count=1
+   curl -s http://127.0.0.1:8090/healthz
+   # Client smokes:
+   apps/game-client/.tools/Godot.app/Contents/MacOS/Godot \
+     --headless --path apps/game-client \
+     --script res://scripts/min_smoke.gd
+   apps/game-client/.tools/Godot.app/Contents/MacOS/Godot \
+     --headless --path apps/game-client \
+     --script res://scripts/contact_check.gd
+   apps/game-client/.tools/Godot.app/Contents/MacOS/Godot \
+     --headless --path apps/game-client \
+     --script res://scripts/layout_audit.gd
+   ```
+   Every smoke must end with the script's `PASS:` line. Failures are blockers.
+3. **Self-review** — re-read `git diff <base>..HEAD`, list what is *actually*
+   live (not aspirational). Confirm the implementation matches the spec's
+   behavior contract. Be honest about flaky / known issues; do not paper
+   over failures.
+4. **Handoff package** — invoke the `phimond-phase-handoff` skill. Output
+   goes to `.ai/plan/phases/<phase>/handoff-<YYYYMMDD>.md` for the audit
+   trail and is also printed so the user can forward it to GPT 6 Astra
+   unchanged.
+5. **Commit & push** — `git add -A && git commit -m "<phase>: <summary>" &&
+   git push origin main`. Never commit secrets, `.env`, `node_modules`, or
+   `.tools/` (already in `.gitignore`).
+
+**Lý do:** Two reasons.
+- Handoff package gives GPT 6 Astra (or any other agent) the exact context
+  to continue work without re-reading the whole repo.
+- Self-review forces honesty: what passes a smoke is *live*; what fails is
+  a known issue. The handoff is not marketing copy.
+
+**Handoff format (mandatory — used by `phimond-phase-handoff` skill):**
+
+```
+Phase: <ID + name>
+
+Implemented:
+- <bullets>
+
+Files changed:
+- <bullets>
+
+Architecture decisions:
+- <bullets>
+
+Tests:
+- <N> passed
+- <N> skipped
+- <N> flaky: <reason>
+
+Known issues:
+- <bullets>
+
+Git diff:
+<attach diff / branch / changed files>
+```
+
+Diff size policy: inline if ≤ 500 lines, else save to
+`/tmp/phase-<id>-<short-sha>.diff` and reference the path.
+
 ## Plans / phases
 
 Phase plan ở `.ai/plan/phases/P00-baseline/` (P00 baseline + event contract).
