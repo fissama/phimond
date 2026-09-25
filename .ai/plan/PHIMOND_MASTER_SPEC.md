@@ -90,7 +90,7 @@ Mỗi phase có requirement review riêng bên dưới, bao gồm ba task phải
 2. **Trong phase:** playtest sau mỗi lát cắt chơi được; review điều khiển, mức rõ ràng, lựa chọn có ý nghĩa, độ khó, nhịp độ, công sức/phần thưởng và đường phục hồi. Đề xuất tuning dựa trên quan sát; ghi rõ thay đổi mechanics nào cần quyết định ruleset. Tối ưu gameplay là cải thiện trải nghiệm và vòng chơi, không chỉ FPS/latency.
 3. **Cuối phase:** chơi lại flow của phase cùng core loop bị ảnh hưởng; so sánh trước/sau, review game design và hình ảnh, kiểm tra giữ nguyên thiết kế nhân vật/quái vật. Kết luận **giữ / chỉnh / hoãn** cho từng finding, có lý do và evidence. Finding chặn outcome/exit gate phải được xử lý và chơi lại trước khi đóng phase; phần hoãn phải có owner, phase/sprint đích và lý do chấp nhận.
 
-Deliverable: `Pxx-gameplay-gamedesign-review.md` trong folder của phase, dẫn chiếu build, scenario, người chơi/reviewer, capture/log, số đo, phản hồi định tính, quyết định tuning và task tiếp theo. Không coi test kỹ thuật qua hoặc danh sách feature hoàn thành là thay thế review. Phase không được đóng khi thiếu report và kết luận design review; phase không chọn triển khai được ghi rõ skipped cùng lý do, không đánh dấu verified.
+Deliverable: `PXX-review.md` trong folder của phase, dẫn chiếu build, scenario, người chơi/reviewer, capture/log, số đo, phản hồi định tính, quyết định tuning và task tiếp theo. Không coi test kỹ thuật qua hoặc danh sách feature hoàn thành là thay thế review. Phase không được đóng khi thiếu report và kết luận design review; phase không chọn triển khai được ghi rõ skipped cùng lý do, không đánh dấu verified.
 
 ## 3. Review baseline hiện tại
 

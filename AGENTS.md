@@ -59,7 +59,7 @@ must follow this 5-step sequence before reporting "done" to the user or
 launching the next task:
 
 1. **Implement** — code the phase per its spec; do not edit code outside the
-   agreed scope. Spec lives in `.ai/plan/PHIMOND_MASTER_SPEC_PLAN.md` +
+   agreed scope. Spec lives in `.ai/plan/PHIMOND_MASTER_SPEC.md` +
    `.ai/plan/phases/<phase>/` + `.ai/plan/SPRINT_SPEC_TEMPLATE.md`.
 2. **Build / test** — rebuild server + run smoke + unit + race tests:
    ```sh
@@ -128,7 +128,7 @@ Diff size policy: inline if ≤ 500 lines, else save to
 ## Plans / phases
 
 Phase plan ở `.ai/plan/phases/P00-baseline/` (P00 baseline + event contract).
-Master spec ở `.ai/plan/PHIMOND_MASTER_SPEC_PLAN.md`.
+Master spec ở `.ai/plan/PHIMOND_MASTER_SPEC.md`.
 
 Active plan (cập nhật gần nhất):
 - P00 — baseline + measurement → đã đóng 2026-09-24 (commit `e66350b`). Latency budget FAILED trên dev topology; 50 CCU NOT certified.

@@ -6,7 +6,7 @@
 
 **Phạm vi session này:**
 - T06 đóng: validate lại metrics post-fix, ghi evidence bottleneck ở dev topology, document giới hạn.
-- T07 đóng: cập nhật `P00-gameplay-gamedesign-review.md` cuối phase, reconcile checklist R01–R06, handoff notes.
+- T07 đóng: cập nhật `P00-review.md` cuối phase, reconcile checklist R01–R06, handoff notes.
 - Reconnect Godot client smoke + commit phần đóng P00.
 
 **Không thuộc session này (owner khác, đã tagged):**
@@ -27,7 +27,7 @@
 | T05 live MySQL + native input + reconnect | ✅ pass | `live-after-review.log`, `native-playtest.log`, `wire-visual.log`, fixtures |
 | T06 metrics harness | ✅ partial | `load_gameplay_test.mjs` pass, `load-10-reviewed.json` workload_done; perf budget FAILED |
 | T06 per-mutation stages, authority-lock wait, rejected-response metrics | ⚠ active | `mutation-observation-green.log` (PASS once), `metrics-stages-server.log` |
-| T07 final review + handoff doc | ⚠ active | `P00-gameplay-gamedesign-review.md` thiếu mục cuối |
+| T07 final review + handoff doc | ⚠ active | `P00-review.md` thiếu mục cuối |
 | Master findings / `docs/STATUS.md` close | ⚠ active | thiếu P00 close note |
 | Godot client reconnect smoke sau code mới | ❌ chưa làm | cần `live-after-review.log` mới + screenshot |
 
@@ -152,14 +152,14 @@ env LOAD_ALLOW_MUTATION=1 GAME_API_URL=http://127.0.0.1:8092 \
 
 ### T07 closure — Final review + handoff
 
-#### B-T07-01 — Update `P00-gameplay-gamedesign-review.md` (cuối phase)
+#### B-T07-01 — Update `P00-review.md` (cuối phase)
 **Goal:** Bổ sung mục "Cuối phase (final)" confirm:
 - Native keyboard/click đã chạy (`native-playtest.log`, `native-battle.png`, `native-after-attack.png`).
 - Reviewer đã không chạy live DB recovery / fault matrix / visual / 50-CCU.
 - P02/P01/P05/P06/P09 ownership của friction còn lại.
 
 **Files:**
-- `.ai/plan/phases/P00-baseline/P00-gameplay-gamedesign-review.md`
+- `.ai/plan/phases/P00-baseline/P00-review.md`
 
 **Acceptance:**
 - Có mục "Cuối phase (final)" ngay sau "Cuối phase" cũ, không xóa nội dung cũ.
@@ -241,7 +241,7 @@ rtk proxy apps/game-client/.tools/Godot.app/Contents/MacOS/Godot \
 
 **Files (staged ngoài evidence đã track):**
 - `.ai/plan/phases/P00-baseline/P00-continuation-beads.md`
-- `.ai/plan/phases/P00-baseline/P00-gameplay-gamedesign-review.md`
+- `.ai/plan/phases/P00-baseline/P00-review.md`
 - `.ai/plan/phases/P00-baseline/P00-implementation-plan.md`
 - `.ai/plan/phases/P00-baseline/P00-performance-baseline.md`
 - `.ai/plan/phases/P00-baseline/P00-verification.md`
@@ -270,7 +270,7 @@ rtk proxy apps/game-client/.tools/Godot.app/Contents/MacOS/Godot \
 - [ ] B-T06-03: authority-lock wait metric visible → evidence
 - [ ] B-T06-04: dev-topology bottleneck evidence mới + 1 dòng trong `P00-performance-baseline.md`
 - [ ] B-T06-05: deferred-list chốt trong `P00-performance-baseline.md`
-- [ ] B-T07-01: `P00-gameplay-gamedesign-review.md` có mục cuối phase final
+- [ ] B-T07-01: `P00-review.md` có mục cuối phase final
 - [ ] B-T07-02: `docs/STATUS.md` + `apps/game-client/README.md` có P00 close + owner map
 - [ ] B-T07-03: checklist `P00-implementation-plan.md` reconciled, evidence-linked hoặc owner-linked
 - [ ] B-HAND-01: Godot reconnect smoke + ảnh + log mới

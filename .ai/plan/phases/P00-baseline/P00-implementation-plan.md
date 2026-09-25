@@ -8,7 +8,7 @@
 
 **Tech Stack:** Go, MySQL, Godot 4/GDScript, Node.js cho protocol harness; Next.js companion giữ checks hiện có.
 
-**Spec:** [Master spec](../../PHIMOND_MASTER_SPEC_PLAN.md), P00-R01–P00-R06; [Sprint template](../../SPRINT_SPEC_TEMPLATE.md).
+**Spec:** [Master spec](../../PHIMOND_MASTER_SPEC.md), P00-R01–P00-R06; [Sprint template](../../SPRINT_SPEC_TEMPLATE.md).
 
 **Trạng thái thực thi — 2026-09-23:** Đã triển khai phạm vi baseline P00; xem [báo cáo verification](P00-verification.md) và [execution ledger](progress.md) để biết kết quả, điều chỉnh và giới hạn bằng chứng. Checklist dưới đây giữ nguyên như kế hoạch gốc, không phải chứng nhận mọi gate. Bài tải 10 account hoàn tất nhưng **không đạt latency budget**; chưa chứng nhận 50 CCU.
 
@@ -62,7 +62,7 @@ File mới được chỉ rõ trong task; đường dẫn code tính từ projec
 
 ## T01 — Baseline có thể khôi phục và gameplay review đầu phase
 
-**Files:** tạo `P00-baseline.md`, `P00-gameplay-gamedesign-review.md`, `P00-S01-spec.md`, `P00-S01-verification.md` trong folder này; đọc `.gitignore`, scene/project config và docs active.
+**Files:** tạo `P00-baseline.md`, `P00-review.md`, `P00-S01-spec.md`, `P00-S01-verification.md` trong folder này; đọc `.gitignore`, scene/project config và docs active.
 
 **Consumes:** workspace và save hiện có. **Produces:** baseline ID, active commands, test-account policy, findings có severity/owner.
 
@@ -92,7 +92,7 @@ rtk proxy apps/game-client/.tools/Godot.app/Contents/MacOS/Godot --headless --pa
 ```
 
 - [x] Cập nhật docs với flow LoginScreen → active reference client; ghi cả check đang fail do F01/F02, không sửa expectation để che lỗi. (evidence: `apps/game-client/README.md`, `docs/STATUS.md`, `docs/GAMEPLAY.md`)
-- [x] Review S01: chọn tối đa các friction chặn đọc/hiểu state đưa S02; phần world/balance/art polish dẫn về phase sở hữu. Lưu kết luận giữ/chỉnh/hoãn. (evidence: `P00-gameplay-gamedesign-review.md`)
+- [x] Review S01: chọn tối đa các friction chặn đọc/hiểu state đưa S02; phần world/balance/art polish dẫn về phase sở hữu. Lưu kết luận giữ/chỉnh/hoãn. (evidence: `P00-review.md`)
 
 **Acceptance:** ledger không biến suy đoán thành dữ liệu lịch sử; active/offline/live commands phân biệt rõ; tạo hình chuẩn có evidence dùng lại được.
 
@@ -174,7 +174,7 @@ assert(room._effects.size() == first_count + 1)
 - [x] Với tài khoản test riêng, UI thật contact → combat → action → terminal → world → reconnect. Capture damage và finishing feedback; lặp flee/capture/loss bằng scenario có điều kiện domain hợp lệ. (evidence: `evidence/live-after-review.log`, `evidence/live-reference-final.log`, `evidence/native-playtest.log`, `evidence/native-battle.png`, `evidence/native-after-attack.png`)
 - [x] Các event hiếm như miss/status/heal dùng seeded integration fixture trên test instance qua public transport; ghi rõ seeded, không dùng làm bằng chứng progression tự nhiên. Không sửa tài khoản thật hay buff game rules để dễ test. (evidence: `evidence/feedback/*`, `evidence/mutation-observation-green.log`)
 - [x] Ngắt kết nối trước ack và sau commit; login lại xác nhận state/reward đúng và không replay effect. Không chỉ xem console “PASS”; đối chiếu trace đã che secrets và UI capture. (evidence: `evidence/wire-after-review.log`, `evidence/wire-faults.log`, `evidence/live-after-review.log`)
-- [x] Review game design: người chơi nhận biết lượt, mục tiêu, kết quả và lúc được điều khiển lại; ghi thời gian chờ/thao tác nhầm trước-sau. Friction cần redesign/tuning chiến đấu chuyển P02 với scenario cụ thể. (evidence: `P00-gameplay-gamedesign-review.md`)
+- [x] Review game design: người chơi nhận biết lượt, mục tiêu, kết quả và lúc được điều khiển lại; ghi thời gian chờ/thao tác nhầm trước-sau. Friction cần redesign/tuning chiến đấu chuyển P02 với scenario cụ thể. (evidence: `P00-review.md`)
 
 **Acceptance:** F01/F02 có evidence đã giải quyết hoặc được ghi còn fail; không đánh dấu verified dựa trên fixture alone.
 
@@ -203,11 +203,11 @@ rtk proxy env LOAD_ALLOW_MUTATION=1 LOAD_USERS=1 LOAD_SECONDS=120 LOAD_PROFILE=m
 
 ## T07 — Review cuối phase và handoff
 
-**Files:** tạo `P00-verification.md`, cập nhật `P00-gameplay-gamedesign-review.md`, master findings/status và docs active.
+**Files:** tạo `P00-verification.md`, cập nhật `P00-review.md`, master findings/status và docs active.
 
 - [x] Chạy core loop bị ảnh hưởng lần cuối trên build đã định danh; kiểm tra save/relogin và art chuẩn nhân vật/quái vật không đổi thiết kế. (evidence: `evidence/live-after-review.log`, `evidence/native-playtest.log`, `evidence/screens/*`)
 - [x] Report mỗi requirement R01–R06: task/evidence/result, pass/fail/unmeasured, reviewer và ngày. Không ghi planned thành implemented. (evidence: `P00-verification.md`)
-- [x] Review giữ/chỉnh/hoãn: blocker event/terminal/replay đóng trong P00; world friction→P01, battle pacing/visual→P02, pet mapping→P03, progression→P04, polish→P05, shared load→P06. Mỗi finding hoãn có owner phase và acceptance. (evidence: `P00-gameplay-gamedesign-review.md`)
+- [x] Review giữ/chỉnh/hoãn: blocker event/terminal/replay đóng trong P00; world friction→P01, battle pacing/visual→P02, pet mapping→P03, progression→P04, polish→P05, shared load→P06. Mỗi finding hoãn có owner phase và acceptance. (evidence: `P00-review.md`)
 - [x] Xác nhận rollback: restore source/build pair; contract additive tương thích; không xóa dữ liệu durable. Nếu có migration ngoài dự kiến, dừng task liên quan và bổ sung migration/restore plan trước triển khai. (evidence: `evidence/source-before-p00.tgz`)
 - [x] Exit: live damage/heal/miss/status + terminal đã có evidence, reconnect không replay, public fixtures, canonical docs, reference ledger, load baseline và review hoàn tất. **Có gate fail (latency budget FAILED, 50 CCU NOT certified) → phase closed với owner map P01/P02/P05/P06/P09.**
 

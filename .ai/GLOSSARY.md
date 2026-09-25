@@ -1,16 +1,17 @@
 # GLOSSARY.md — project-specific terminology
 
 Use these terms consistently across code, commits, handoffs, and reviews.
-If a new term appears more than once in the project, add it here.
+Add a new term the first time it appears more than once.
 
 ## Core
 
-| Term                    | Meaning                                                                          |
-| ----------------------- | -------------------------------------------------------------------------------- |
+| Term                     | Meaning                                                                          |
+| ------------------------ | -------------------------------------------------------------------------------- |
 | **Server-authoritative** | All RNG, damage, capture, progression, and ownership decisions live on server.   |
 | **Phimond**              | Internal name for the reconstruction of 《靈獸世界 Online》 / PokeZoo Online.   |
 | **Reconstruction**       | A faithful rebuild, not a redesign. Same layout, same flow, modernized backend. |
 | **Confidence**           | Tag on reconstructed data: `observed` / `inferred` / `reconstructed` / `unknown`. |
+| **POC art**              | Current artwork is proof-of-concept quality; not the final visual standard.     |
 
 ## Game domain
 
@@ -47,8 +48,8 @@ If a new term appears more than once in the project, add it here.
 | **Sprint**            | A bounded work unit inside a phase. Has spec + implementation plan + verification. |
 | **Sprint spec**       | Mandatory structure from `SPRINT_SPEC_TEMPLATE.md`. Authored before code.  |
 | **Implementation plan** | File-level action plan. Written after sprint spec, before coding.       |
-| **Handoff package**   | Standard GPT 6 Astra summary at end of phase. See `phimond-phase-handoff` skill. |
-| **Worker**            | A bounded-scope subagent (code/docs/operational split, see AGENTS.md).    |
+| **Handoff**           | Cross-session / cross-agent context for unfinished work. Output of `phimond-phase-handoff` skill. |
+| **Worker**            | A bounded-scope subagent (code / docs / operational split, see AGENTS.md). |
 | **Evidence**          | Raw logs / metrics / screenshots stored under `plan/phases/PXX/evidence/`. |
 
 ## Data conventions

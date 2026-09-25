@@ -1,34 +1,61 @@
 # `.ai/decisions/` — Architecture Decision Records (ADR)
 
 Immutable log of **why** the code looks the way it does. Once an ADR is
-accepted, it is **never edited**; if the decision is reversed, write a
-new ADR that supersedes it.
+**Accepted**, its body is never edited; lifecycle is tracked only via
+the `Status:` field. Reversing a decision requires a new ADR.
+
+## Lifecycle
+
+```
+Proposed ───► Accepted ───► Superseded (by ADR-XXXX)
+            ╲
+             ╲──► Rejected (recorded for context)
+              ╲
+               ──► Deprecated (still in effect, but flagged to avoid for new work)
+```
+
+| Status      | Meaning                                                                              |
+| ----------- | ------------------------------------------------------------------------------------ |
+| Proposed    | Under discussion. Body may change.                                                   |
+| Accepted    | Decision is in force. Body is **immutable**; only the status header may change.     |
+| Rejected    | Considered but not adopted. Recorded for context.                                    |
+| Superseded  | Replaced by a later ADR. Body kept for context; the new ADR cites it.               |
+| Deprecated  | Still in force but flagged as a poor choice; new work should prefer alternatives.    |
+
+A `Superseded` ADR must contain:
+
+```markdown
+Status: Superseded
+Superseded by: ADR-XXXX-...
+```
+
+Do not infer supersession from dates alone — the link is explicit.
+
+The **latest Accepted, non-Superseded ADR on a topic** is authoritative
+for that topic's rationale.
 
 ## Index
 
 | ID      | Title                                | Status   | Date       |
 | ------- | ------------------------------------ | -------- | ---------- |
-| ADR-0001 | 2D world movement (server + client) | accepted | 2026-09-23 |
-| ADR-0002 | Stub packages over empty impls       | accepted | 2026-09-23 |
-| ADR-0003 | Server-authoritative damage/RNG      | accepted | 2026-09-17 |
-| ADR-0004 | ...                                  |          |            |
+| _none yet_ |                                  |          |            |
 
-(Append here as ADRs are written. Keep the table compact; details live in
-the individual files.)
+(Append each new ADR here on acceptance.)
 
 ## Template (`ADR-NNNN-short-title.md`)
 
 ```markdown
 # ADR-NNNN: <short title>
 
-- **Status**: proposed | accepted | superseded by ADR-MMMM
+- **Status**: Proposed | Accepted | Rejected | Superseded | Deprecated
 - **Date**: YYYY-MM-DD
 - **Deciders**: <who>
 
 ## Context
 
 What is the situation that requires a decision? What forces are at play
-(technical, schedule, team, compatibility)? Include links to evidence.
+(technical, schedule, team, compatibility)? Include links to evidence
+in `.ai/plan/phases/PXX/evidence/` or `docs/research/`.
 
 ## Decision
 
@@ -52,16 +79,17 @@ across the project; do not renumber when superseding.
 
 ## When to write an ADR
 
-- Architectural choice that affects multiple modules (e.g. server-client
+- Architectural choice that affects multiple modules (server-client
   contract, package boundaries, data shape).
-- Trade-off between two valid approaches (e.g. sync vs async, REST vs WS,
-  monolith vs split).
+- Trade-off between two valid approaches (sync vs async, REST vs WS,
+  monolith vs split, stub vs full impl).
 - Reversal of a previous ADR (write a new one that supersedes).
 - Rejection of a "popular" or "default" approach for project reasons.
 
 ## When NOT to write an ADR
 
-- A bug fix that follows an existing convention.
-- Implementation detail that's obvious from the code.
+- A bug fix that follows an existing convention (commit message suffices).
+- An implementation detail that's obvious from the code.
 - A user-facing feature that lives entirely in one sprint spec (lives in
   `plan/phases/PXX/` instead).
+- Routine session work (lives in git log / `handoffs/` if unfinished).

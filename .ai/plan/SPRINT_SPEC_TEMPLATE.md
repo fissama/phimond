@@ -1,6 +1,6 @@
 # Sprint spec — hướng dẫn tách từ master plan
 
-Đây là cấu trúc để tạo sprint mới, không phải một sprint đã được chốt. Master reference: [PHIMOND_MASTER_SPEC_PLAN.md](PHIMOND_MASTER_SPEC_PLAN.md).
+Đây là cấu trúc để tạo sprint mới, không phải một sprint đã được chốt. Master reference: [PHIMOND_MASTER_SPEC.md](PHIMOND_MASTER_SPEC.md).
 
 ## Quy ước lưu
 
@@ -8,7 +8,7 @@
 - Sprint spec: `P00-S01-spec.md`.
 - Implementation plan: `P00-S01-implementation-plan.md`, chỉ viết sau khi chốt sprint spec và khảo sát code hiện tại.
 - Evidence: `P00-S01-verification.md` và ảnh/log đã loại secrets.
-- Review phase: `P00-gameplay-gamedesign-review.md` trong cùng folder; mỗi sprint cập nhật finding, quyết định và bằng chứng của mình.
+- Review phase: `P00-review.md` trong cùng folder; mỗi sprint cập nhật finding, quyết định và bằng chứng của mình.
 - Chưa tạo sẵn các sprint rỗng; chỉ tạo khi chọn thực hiện để tránh backlog giả trông như đã được phân tích.
 
 ## Nội dung bắt buộc của một sprint spec

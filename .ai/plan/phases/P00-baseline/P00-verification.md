@@ -13,7 +13,7 @@
 | P00-R03 | Ledger video/source/gap và bộ ảnh actor giữ art direction | [Reference ledger](P00-reference-ledger.md), `screens/`, `actors/`, asset hashes |
 | P00-R04 | Metrics/harness có regression, baseline1/10 và reconnect; latency budget chưa đạt | [Performance baseline](P00-performance-baseline.md), load JSON + assessment |
 | P00-R05 | Active commands/docs đồng bộ; offline gate không tạo account; load manifest có ID | `tools/check.sh`, client README/protocol, `.accounts.json` |
-| P00-R06 | Có review đầu/trong/cuối, native input và handoff findings | [Gameplay/game design review](P00-gameplay-gamedesign-review.md) |
+| P00-R06 | Có review đầu/trong/cuối, native input và handoff findings | [Gameplay/game design review](P00-review.md) |
 
 ## Các gate đã chạy
 
