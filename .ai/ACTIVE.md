@@ -1,64 +1,16 @@
 # Active Development
 
-> Canonical pointer to current work. Updated at end of every phase delivery.
-> Cheap to read — pointers only, no duplicated specs.
+- **Last reviewed:** 2026-09-28
+- **Phase:** P10 — pet model foundation, design review in progress.
+- **Current objective:** adopt the 152-species APK 8.4 roster/art and debate remaining pet/stat/fusion contracts with the user.
+- **Accepted:** original Race × Star distribution; MP as a P11 resource; growth reroll after Pet → Egg; APK-defined Special species/recipes/materials; basic attack available at zero learned skills; independent Race/Element and one Status Resistance.
+- **Current question:** distinguish the grown stat component, fixed inheritance, permanent total and equipment; choose player-facing stat display before finalizing D14/D21/D22.
+- **Specification:** [P10 decisions](plan/phases/P10-pet-model/P10-design-decisions.md).
+- **Review queue:** [P10 review](plan/phases/P10-pet-model/P10-review.md).
+- **Species list:** [P10 roster](plan/phases/P10-pet-model/P10-roster.md); machine data `data/pets/roster_apk84.json`.
+- **Assets:** `apps/game-client/assets/pets/apk84/` — 152 portraits and 760 clips.
+- **Runtime boundary:** the legacy 14-species gameplay catalog/save IDs remain active until P11/P13/P16 configuration and migration are designed. New roster has source identity/art, not invented stats or elements.
+- **Implementation plan:** none for gameplay migration; do not mark P10 closed while decisions remain pending.
+- **Historical phase:** P00 closed at `e66350b`; failed dev latency budget and no 50-CCU certification remain recorded there.
 
-- **Last verified**: 2026-09-25
-- **Verified against commit**: `452dbc0` (`.ai/: project context structure`)
-
-## Current phase
-
-P00-baseline (closed 2026-09-24, commit `e66350b`).
-
-## Current sprint
-
-None. Next phase to pick: **P01 — map / proximity / collision**.
-
-## Status
-
-Idle. Awaiting user choice on next phase or sprint.
-
-## Current objective
-
-Pick a single sprint from P01 master scope and write the sprint spec
-before any code change.
-
-## Active specification
-
-- Master: `.ai/plan/PHIMOND_MASTER_SPEC.md` (sections for P01 not yet
-  drafted; see master "Next phases" list).
-- Active phase: `.ai/plan/phases/P00-baseline/` (closed; for reference only).
-
-## Implementation plan
-
-None. Will be authored when a sprint is picked, after the sprint spec is
-accepted.
-
-## Relevant ADRs
-
-None accepted yet. Folder scaffold: `.ai/decisions/README.md`.
-
-## Latest handoff
-
-None outstanding. Most recent commit is project-context structure work,
-not a phase delivery — no handoff was produced.
-
-## Current blockers
-
-- User has not picked P01 sprint scope yet.
-- `layout_audit.gd` (Godot smoke) was written for the previous
-  MainMap/BattleScene paradigm and is now stale after the
-  `reference_game.gd` restructure; needs decision (rewrite vs delete).
-
-## Known failing checks
-
-- None currently blocking. `go test -race ./... -count=1` green;
-  `min_smoke.gd` PASS; `contact_check.gd` PASS; `layout_audit.gd`
-  expected to FAIL until rewritten.
-
-## Next recommended action
-
-User to confirm which P01 sprint to start. Suggested first slice: portal
-proximity + collision (smallest path to a verifiable player outcome —
-"can the player walk through a wall and into a portal?"). Do not begin
-implementation until the sprint spec is accepted.
+Existing unrelated issue: legacy `layout_audit.gd` targets the old scene structure; the active canonical gate is `tools/check.sh`.

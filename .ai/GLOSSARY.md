@@ -9,7 +9,7 @@ Add a new term the first time it appears more than once.
 | ------------------------ | -------------------------------------------------------------------------------- |
 | **Server-authoritative** | All RNG, damage, capture, progression, and ownership decisions live on server.   |
 | **Phimond**              | Internal name for the reconstruction of 《靈獸世界 Online》 / PokeZoo Online.   |
-| **Reconstruction**       | A faithful rebuild, not a redesign. Same layout, same flow, modernized backend. |
+| **Reconstruction**       | Preserve source roster/art and presentation; approved gameplay changes are labeled in the active P10 spec rather than presented as historical facts. |
 | **Confidence**           | Tag on reconstructed data: `observed` / `inferred` / `reconstructed` / `unknown`. |
 | **POC art**              | Current artwork is proof-of-concept quality; not the final visual standard.     |
 
@@ -18,10 +18,16 @@ Add a new term the first time it appears more than once.
 | Term          | Meaning                                                                              |
 | ------------- | ------------------------------------------------------------------------------------ |
 | **Pet**       | Combat unit owned by a player. Has species + variance + lineage.                    |
-| **Species**   | Base template (sprite + skills + element). 14 in current data.                      |
+| **Species**   | Template with source identity/Race/Star/art. Approved baseline: 152 in `roster_apk84.json`; legacy runtime still uses 14 in `species.json` pending stat/skill/save migration. |
+| **Race**      | Species taxonomy and eligibility dimension; eight source races. Does not automatically assign combat Element or grant a stat bonus. |
+| **Element**   | Species combat property independent of Race; interaction uses skill Element vs target Element, with chart owned by P13. |
+| **Special**   | APK-defined thần thú: four 4★ and thirteen 5★ species with exact same-Star parent pairs. Not an extra Star. |
+| **MP**        | Combat resource; maxMP/growth/recovery owned by P11, consumption by P13. Separate from the six core stats. |
+| **Status Resistance** | One shared stat affecting status application probability; not duration reduction or a per-status map. |
+| **Basic attack** | Separate attack-button action available at zero learned skills; consumes no learned-skill slot. |
 | **Star (★)**   | Pet tier 1★–5★; controls level cap (60/70/80/90/100).                              |
 | **+00..+99**  | "Plus" rating on a pet; opens extra level room above star cap. **+99 cannot** be upgraded. |
-| **Synthesis** | Two-pet fusion. Two branches: ascension (→ egg of next ★) or reinforce (→ main pet stat boost). Both consume both pets. |
+| **Synthesis** | Two-pet fusion into Egg: normal next-Star ascension, source-defined same-Star Special recipe, or reinforcement preserving main Species. Exact Special server rules still need review. |
 | **Capture**   | Convert wild pet to owned; bounded by HP threshold + status + luck.                 |
 | **Room**      | A discrete map (40×24 tiles currently). One of: severa / forest / beach / ranch / arena. |
 | **Portal**    | Edge-of-room transition to another room. Min-level + arena-tier gated.               |

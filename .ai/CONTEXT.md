@@ -9,7 +9,8 @@ not on every commit.
 ## Product
 
 Reconstruction of 《靈獸世界 Online》 / PokeZoo Online — a 2D
-room-based monster-taming MMORPG. Faithful rebuild, not a redesign.
+room-based monster-taming MMORPG. Preserve source roster/art and presentation;
+explicitly approved P10 gameplay changes are recorded separately from source facts.
 Spec: `.ai/plan/PHIMOND_MASTER_SPEC.md`.
 
 ## Current architecture
@@ -86,7 +87,9 @@ Full workflow + per-task ritual: see `AGENTS.md` (workspace root).
 ## Important architectural constraints
 
 1. Server-authoritative: never recompute damage / RNG / capture / rewards on the client.
-2. Faithful reconstruction: do not redesign layout, flow, or art direction.
+2. Preserve layout/flow/art direction. The approved P10 baseline has 152 original
+   species and source assets; Race/Element separation, shared Status Resistance,
+   MP resource rules and reroll behavior follow the active design decisions.
 3. Spec before code: master spec → phase spec → sprint spec → implementation plan → code.
 4. Phase delivery ritual (AGENTS.md): implement → build/test → self-review → handoff → commit & push.
 5. No secrets in repo. Test accounts prefix `p00_*`.
