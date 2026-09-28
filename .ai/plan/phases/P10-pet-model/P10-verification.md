@@ -57,6 +57,32 @@ rtk proxy sh tools/check.sh
   transitions, renderer scaling or battle-event synchronization.
 - Embedded catalog existence does not prove original server obtainability.
 - Exact Special server costs/Plus/validation and stat formulas remain unverified.
-- D14/D21/D22 stat terminology/display remains a proposal under discussion.
+- D14/D21/D22 was pending at import verification; the subsequent user review
+  accepted option A (`grown_stat + inheritance_bonus`). Numeric formulas remain unresolved.
 - All data/assets are local source exports; no source APK executable or credentials
   are included in the package.
+
+## Full design audit and canonical ID normalization — 2026-09-28
+
+This section records the later full-review pass, including all subsequent user
+choices. The earlier import checks above describe their original scope.
+
+| Check executed | Result |
+|---|---|
+| `python3 tools/content/p10_catalog.py` | PASS: 152 species, 8 selected item references, 17 disabled recipes; complete unique IDs, references, matrix, asset hashes/paths and deterministic generated data |
+| `python3 -m unittest discover -s tools/content -p 'test_p10_catalog.py' -v` | PASS: 9 tests; corruption cases include duplicate IDs/JSON keys, missing mapping, localized ID, wrong Star/parent, missing asset and wrong source hash |
+| Godot `tools/assets/check_p10_assets.gd` | PASS: 152 portraits/resources, 760 clips, 1,241 timed frames |
+| `sh tools/check.sh` | Exit 0: Go race/vet (cached where valid), five client checks, seven harness tests, three web tests and TypeScript |
+| `go build -o /tmp/phimond-server ./cmd/server` | Exit 0 |
+| Local Markdown link check | PASS: 324 relative links in P10 documents resolve |
+| `git diff --check` | PASS |
+| Diff check for legacy runtime catalogs, raw APK catalog/evidence and original assets | Unchanged; ID normalization is additive, no live save rewrite |
+
+Nine new tests cover **catalog tooling**, not future P10 gameplay. The 23
+scenarios in P10-data-contract.md remain acceptance requirements for later
+implementation. No balance formula, original Special server rule, mail gameplay
+or 14→152 save migration was implemented or certified in this review.
+
+New source-ID mapping and authoring catalogs are in `data/p10/`. See
+P10-readiness.md for findings and owner/gate assignments; P10 remains a reviewed
+design foundation rather than a delivered gameplay phase.

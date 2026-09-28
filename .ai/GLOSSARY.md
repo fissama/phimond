@@ -17,18 +17,21 @@ Add a new term the first time it appears more than once.
 
 | Term          | Meaning                                                                              |
 | ------------- | ------------------------------------------------------------------------------------ |
-| **Pet**       | Combat unit owned by a player. Has species + variance + lineage.                    |
-| **Species**   | Template with source identity/Race/Star/art. Approved baseline: 152 in `roster_apk84.json`; legacy runtime still uses 14 in `species.json` pending stat/skill/save migration. |
+| **Pet**       | Combat unit owned by a player. Has species + growth profile + inheritance + lineage.                    |
+| **Species**   | Template with source identity/Race/Star/art. Approved baseline: 152 canonical IDs in `data/p10/species.json`, source IDs in `roster_apk84.json`; legacy runtime still uses 14 in `species.json` pending stat/skill/save migration. |
 | **Race**      | Species taxonomy and eligibility dimension; eight source races. Does not automatically assign combat Element or grant a stat bonus. |
 | **Element**   | Species combat property independent of Race; interaction uses skill Element vs target Element, with chart owned by P13. |
 | **Special**   | APK-defined thần thú: four 4★ and thirteen 5★ species with exact same-Star parent pairs. Not an extra Star. |
 | **MP**        | Combat resource; maxMP/growth/recovery owned by P11, consumption by P13. Separate from the six core stats. |
 | **Status Resistance** | One shared stat affecting status application probability; not duration reduction or a per-status map. |
 | **Basic attack** | Separate attack-button action available at zero learned skills; consumes no learned-skill slot. |
+| **Grown stat / Bản thân** | Species Lv1 base plus growth earned at current level; excludes inheritance and equipment. Left number in the approved `186 +12` display. |
+| **Inheritance bonus / Kế thừa** | Fixed contribution created with the Egg; right number in `186 +12`. Leveling or growth reroll does not directly change it. |
+| **Permanent total** | Grown stat + inheritance bonus exactly once: `186 +12 = 198`. Used as parental inheritance input; equipment and temporary effects excluded. |
 | **Star (★)**   | Pet tier 1★–5★; controls level cap (60/70/80/90/100).                              |
-| **+00..+99**  | "Plus" rating on a pet; opens extra level room above star cap. **+99 cannot** be upgraded. |
+| **+00..+99**  | "Plus" rating on a pet; opens extra level room above star cap. **+99 can still be reinforced**, with output Plus capped at +99; inheritance follows diminishing returns without a hard bonus cap. |
 | **Synthesis** | Two-pet fusion into Egg: normal next-Star ascension, source-defined same-Star Special recipe, or reinforcement preserving main Species. Exact Special server rules still need review. |
-| **Capture**   | Convert wild pet to owned; bounded by HP threshold + status + luck.                 |
+| **Capture**   | P10: eligible wild 1★ capture creates an Egg; exact success rules belong to the owning phase. Legacy runtime still creates a pet directly.                 |
 | **Room**      | A discrete map (40×24 tiles currently). One of: severa / forest / beach / ranch / arena. |
 | **Portal**    | Edge-of-room transition to another room. Min-level + arena-tier gated.               |
 | **NPC**       | Stationary role in a room (trainer, ranch_keeper, arena_master, …). 7 roles total. |
@@ -60,6 +63,7 @@ Add a new term the first time it appears more than once.
 
 ## Data conventions
 
+- P10 IDs: English ASCII `snake_case`, frozen source mapping in `data/p10/id_registry.json`; localized names are never IDs. See `data/p10/README.md`.
 - Test accounts: prefix `p00_*`, then `ref_*`, then `contact_*`.
 - Server PID logs: `/tmp/p00-serve.log` (rotated on restart).
 - Diff size policy: inline ≤ 500 lines, else `/tmp/phase-<id>-<short>.diff`.

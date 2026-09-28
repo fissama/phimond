@@ -2,13 +2,15 @@
 
 **Baseline date:** 2026-09-28
 
-**Status:** Repository review in progress; P10 is not closed.
+**Status:** Design baseline audited; implementation/source gates tracked in [P10-readiness.md](P10-readiness.md). No gameplay delivery claimed.
+
+**Coding entry point:** [P10-data-contract.md](P10-data-contract.md). Canonical IDs: `data/p10/`; source evidence: `data/pets/roster_apk84.json`.
 
 **Purpose:** Lock the semantics of Pet / Species / Egg / Fusion / Growth / Inheritance / Skills so P11, P13, P16, P19 and P20 can design their detailed formulas and systems without re-interpreting P10 decisions.
 
 > Imported from the user's `P10 Design Decisions.md`, then updated with explicit decisions confirmed on 2026-09-28. Sections marked pending remain discussion proposals. APK observations establish source content; unobserved server rules are not inferred from asset names. Numeric formulas remain owned by their later phase.
 
-Confirmed during repository review: use the original 152-species roster and distribution; MP is a resource owned by P11; growth reroll is allowed after Pet → Egg; use APK-defined Special species/parent pairs/materials; basic attack is available with zero learned skills; Race and Element are independent and Status Resistance is one shared stat. Stat terminology/display (D14/D21/D22) is pending detailed review.
+Confirmed during repository review: use the original 152-species roster and distribution; MP is a resource owned by P11; growth reroll is allowed after Pet → Egg; use APK-defined Special species/parent pairs/materials; basic attack is available with zero learned skills; Race and Element are independent and Status Resistance is one shared stat. Stat display option A is accepted: `grown_stat + inheritance_bonus`; their sum is the permanent total (D14/D21/D22).
 
 ---
 
@@ -76,7 +78,7 @@ Rules:
 - Exact budgets belong to P11.
 
 ### P10-D05 — Approved APK 8.4 baseline: 152 Species
-Canonical identity/art catalog: `data/pets/roster_apk84.json`. Full list and source notes: [P10-roster.md](P10-roster.md). Preserve source IDs, names, Race, Star, Special classification and assets. Runtime stat/element/skill configuration and migration are later work; the 14-species legacy catalog is not historical source truth.
+Canonical authoring catalog: `data/p10/species.json`; immutable source identity/art catalog: `data/pets/roster_apk84.json`. Full list and source notes: [P10-roster.md](P10-roster.md). Preserve exact source IDs separately in the ID registry and source metadata; use canonical IDs for new development. Preserve names, Race, Star, Special classification and assets. Runtime stat/element/skill configuration and migration are later work; the 14-species legacy catalog is not historical source truth.
 
 | Star | Target Species |
 |---|---:|
@@ -138,7 +140,7 @@ Rules:
 - Plus never directly adds/multiplies stats.
 - Plus must not appear as a direct stat-formula addend/multiplier.
 - There is no separate numeric “generation depth” gameplay stat.
-- Original-game generation semantics correspond to this Plus system.
+- Plus is the approved product axis; exact equivalence to original-game generation semantics is not established by catalog extraction.
 - Lineage depth is represented through parent relationships, not a number.
 - Current reconstruction `Pet.Generation` and `Refinement` must not be blindly renamed; migration needs a dedicated plan.
 
@@ -155,7 +157,7 @@ Rules:
 - Resulting Plus depends on Plus values of both pets.
 - Exact Plus formula belongs to P16.
 - Plus calculation and stat inheritance are independent pipelines.
-- +99 cannot be Reinforced further.
+- User correction (2026-09-28): +99 can still be Reinforced when common validation passes. Plus is capped at +99; a +99 main produces +99. Do not reject merely because Plus cannot increase at the cap. The below-cap formula remains with P16.
 
 ---
 
@@ -171,11 +173,11 @@ Examples:
 Rules:
 - Source-confirmed recipes are in [P10-roster.md](P10-roster.md); no extra Special species are introduced.
 - Source catalog does not recover server cost, Plus outcome, success chance, stat budget or inheritance formula. These remain explicitly unresolved; do not invent a numeric "APK rule".
+- User decision (2026-09-28): wait for original-game verification of the Special fusion Plus outcome. Neither reset to +00 nor preservation of the main parent's Plus is approved as a fallback. Keep this behavior blocked until evidence is reviewed.
 - Same-Star Special recipes are distinct from normal N→N+1 Star-up. Formula ownership and the common fusion flow must support both recipe kinds.
 - Special 4★/5★ may be substantially stronger than normal Species at the same Star.
-- Special Species can be Reinforced normally.
-- Reinforcement preserves Special Species identity.
-- Special Formula constraints are additive to common validation.
+- Special Reinforcement eligibility remains source-unverified (P10-O02); do not enable it merely from this draft. If enabled after verification, Reinforcement preserves the main Species as in D27.
+- Keep Special validation separate until verified; common product rules must not be presented as recovered server rules.
 - 5★ is current Star ceiling; 6★ is only a future possibility.
 
 ---
@@ -230,12 +232,12 @@ Rules:
 ## 6. Stat Inheritance
 
 ### P10-D14 — Inheritance Input
-**Terminology review pending:** "current total permanent stats" includes the parent's fixed inheritance exactly once. D21/D22 wording must distinguish the grown component from the total before approval; see [P10-review.md](P10-review.md).
+**Accepted terminology:** `grown_stat` is Species Lv1 base plus growth earned at the current level under the individual's growth profile, excluding inheritance and equipment. `inheritance_bonus` is the fixed inherited contribution. `permanent_total = grown_stat + inheritance_bonus` includes inheritance exactly once.
 
 Both Star-up and Reinforcement use current total permanent stats of both parents as inheritance inputs.
 
 Correct concept:
-`child.inheritance = f(parentA.current_permanent_stats, parentB.current_permanent_stats)`
+`child.inheritance_bonus = f(main.permanent_total, secondary.permanent_total)`
 
 Do not directly sum/copy parent inheritance fields.
 
@@ -259,14 +261,28 @@ UI example:
 - Lv20: `HP 186 +12`
 - Lv50: `HP 274 +12`
 
-### P10-D16 — Inheritance Needs Cap / Diminishing Return
-P11/P16 must design cap/soft-cap/diminishing return to:
-- prevent infinite multi-generation power inflation.
-- avoid investment becoming worthless too early.
-- keep late investment meaningful near the cap.
-- keep pets inside intended power budgets.
+### P10-D16 — Inheritance Uses Diminishing Returns, No Hard Cap
+User selected B (2026-09-28): inherited bonuses can continue increasing, with
+diminishing marginal gains and no hard inheritance cap. Reinforcement remains
+available at +99 while output Plus stays +99. This replaces the proposed hard
+inheritance cap; it is a product decision, not verified original-game behavior.
 
-Exact formula is not part of P10.
+P11/P16 define the formula, inputs, coefficients, precision and rounding. P15
+must simulate long sequences, equivalent parent quality, donor/slot changes and
+Star-up to verify diminishing gains and pacing. Smaller gains do not by
+themselves prove a finite bound on total power. Do not silently reintroduce a
+hard cap or a minimum +1 gain, or claim every combination improves every stat.
+User selected A for weak donors (2026-09-28): in Reinforcement, each child's
+inherited stat bonus must be at least the main parent's existing bonus for that
+same stat: `child.inheritance_bonus[s] >= main.inheritance_bonus[s]`. Any extra
+gain follows diminishing returns; there is no automatic minimum +1 gain.
+This floor preserves inherited bonuses, not the main parent's high-level total,
+growth profile or level. The child still hatches at Lv1. Count the main parent's
+old inheritance once in the total-based calculation; enforcing a floor must not
+append it again. The floor applies to Reinforcement, including at +99; it is not
+automatically extended to Star-up or source-unverified Special fusion.
+Exact formulas and rounding remain with P11/P16. Original-game behavior for
+this floor has not been verified.
 
 ---
 
@@ -313,12 +329,12 @@ Rules:
 ## 8. Stat UI
 
 ### P10-D21 — Base / Attributes Tab
-**Pending clarification:** the expression below must be read as the component before inheritance plus the fixed inheritance bonus, not a total that already includes the bonus. Exact player-facing labels are still being debated.
+**Accepted option A:** show the grown component followed by the fixed inherited bonus. Label/explain the components as **Bản thân + Kế thừa**; the first number is not the permanent total.
 
 Do not show raw growth-deviation percentages.
 
 Display:
-`current permanent stat + fixed inheritance contribution`
+`grown_stat + inheritance_bonus`
 
 Example:
 - `HP 128 +12`
@@ -331,14 +347,17 @@ Rules:
 - first value increases with level/growth.
 - inheritance number remains fixed.
 - equipment is not included here.
+- `HP 186 +12` means permanent HP 198. Do not display `198 +12`, which would count inheritance twice.
 
 ### P10-D22 — Overview Tab
-**Pending clarification:** `permanent_stat` in this section means the complete permanent total including inheritance exactly once; it must not be confused with the first number shown in D21.
+Use the permanent total from D14, including inheritance exactly once, then apply equipment.
 
 Overview shows final current stats with equipment applied.
 
 Concept:
-`overview_stat = permanent_stat + equipment_bonus`
+`overview_stat = permanent_total + equipment_bonus`
+
+Example: Attributes `HP 186 +12`; equipment adds 25; Overview shows 223. The parent's inheritance input is 198. Temporary combat modifiers do not enter either the permanent total or inheritance input. Numeric growth/inheritance coefficients remain P11/P16 decisions.
 
 ---
 
@@ -404,7 +423,7 @@ Requirements:
 - player selects target from unlocked Formula list.
 - normal progression target Star = N+1.
 - at least one ingredient pet must have same Race as target Species.
-- Special Formula may add exact parent/species constraints.
+- Special targets are excluded from normal Star-up; use their separate exact same-Star recipes under D10.
 - both parents are consumed.
 - result is Egg Item.
 - result Species/Race/Element/Star come from target Species.
@@ -415,15 +434,16 @@ Requirements:
 ## 11. Reinforcement Rules
 
 ### P10-D27 — Reinforcement
-- Main and donor are same Star.
+- Main and donor are same Star and both at least Lv20 under the common product fusion gate.
+- Special Species eligibility is separately gated by D10/P10-O02.
 - Donor may be any Species/Race/Element if common validation passes.
 - Formula of exact main `species + star` must be unlocked.
-- Main identity is preserved: Species/Race/Element/Star.
+- Main Species properties are preserved: Species/Race/Element/Star. This does not promise the same owned pet instance ID after fusion; two parents are consumed and a child is created.
 - Both pets are consumed.
 - Result is Egg → hatch Lv1.
 - Resulting Plus uses both parents' Plus values under P16 formula.
 - New inheritance uses both parents' current permanent stats.
-- +99 cannot Reinforce.
+- +99 can Reinforce; the result stays +99. The same two-parent consumption, costs, Egg → Lv1 hatch and inheritance pipeline apply. Plus caps level capacity; inheritance uses diminishing returns without a hard cap under D16. P11/P16 own the formula. Repeated reinforcement is not a promise that every stat increases.
 
 ---
 
@@ -440,16 +460,23 @@ Fusion Egg preserves:
 - immutable pre-fusion restoration snapshot for Parent A
 - immutable pre-fusion restoration snapshot for Parent B
 
-Snapshot must allow exact restore of both parents to their state immediately before fusion.
+Snapshot must allow exact restore of both parents' intrinsic state immediately before fusion. Equipment ownership is handled separately under D32; restoration does not recreate or re-equip items returned to inventory/mail. Historical owner metadata is not authority to return pets to an old owner: restoration ownership follows D30.
 
 ### P10-D30 — Split Fusion Egg
 Split Item:
 - works only while object is Egg.
+- User selected A (2026-09-28): a fusion child that has already hatched may return to Egg under D31 and then be split. Having hatched before does not remove restoration eligibility; valid direct-parent snapshots are still required.
 - deletes/consumes child Egg.
 - restores exact Parent A and Parent B.
+- Restore the parents' pre-fusion state, not progress earned by the child. Child levels, learned skills and rerolled growth do not transfer back to the restored parents. Reroll costs are not refunded.
+- Retired parents cannot be used while consumed. A successful split restores those same parents and consumes the child atomically; it must not create additional copies. Restored parents are usable once delivered to pet storage; parents awaiting mailbox claim remain unavailable. This is the explicit exception to the old one-way retirement rule.
 - does not refund Gold.
 - does not refund Ascension/Reinforcement Stone or material costs.
 - child growth rerolls do not mutate parent restoration snapshots.
+- User selected A (2026-09-28): the restoration right follows the child Pet/Egg through any valid ownership transfer. Splitting grants both restored parents to the child's current owner, not the original fusion owner. Preserve parent identities and intrinsic snapshots; historical owner fields must not overwrite the current recipient.
+- Transfer eligibility must respect both parents' binding restrictions; fusion, re-hatch and splitting must not bypass a parent's non-transferability. P08/P19/P16 define the detailed binding/transfer contract before trading is implemented. This decision does not make every child tradable or return previously removed equipment to the buyer.
+- User selected A (2026-09-28): if pet storage lacks space on split, deliver parents that fit to storage and hold the remaining restored parents in the current owner's mailbox. Storage capacity alone does not reject splitting. Mail preserves restored identity, level, Plus, growth, skills and other intrinsic snapshot state; claiming does not create an Egg or reset level.
+- A parent awaiting claim cannot be used or traded. Claim requires available pet storage and transfers that same pet exactly once; it must not create a second copy. Split consumption and durable delivery to storage/mail commit consistently. P19/P16 define mailbox retention, capacity, claim UI and deterministic delivery order; no numeric limits or expiry policy are approved here.
 
 ### P10-D31 — Pet → Egg
 Future item may convert Pet back to Egg.
@@ -468,16 +495,22 @@ Preserve:
 When hatched again:
 - level = 1
 - xp = 0
+- Recalculate maximum MP from the new Lv1 state using P11 rules, including any approved growth reroll and preserved inheritance as those rules specify.
+- Set current MP to that newly calculated maximum. Do not carry over the former high-level current/max MP or preserve its percentage. This is the user's design decision (2026-09-28), not verified original-game behavior.
 
 Do not reroll growth or inheritance.
 This describes conversion itself. Once converted, the player may explicitly consume a growth-reroll item as allowed by D20. Re-hatch preserves current learned skills (unlike a newly created fusion/capture Egg) and does not reroll inheritance.
 
-### P10-D32 — Equipment Handling on Pet → Egg
-Before conversion:
+### P10-D32 — Equipment Handling on Fusion and Pet → Egg
+User selected automatic unequip with mailbox overflow (2026-09-28).
+For both fusion parents, or the pet being converted to Egg:
 - auto-unequip all equipment.
 - return equipment to inventory.
-- if inventory cannot receive it, fail entire transaction.
+- send equipment that does not fit to the player's mailbox; inventory capacity alone does not reject the operation.
 - equipment is never stored in Egg payload.
+- splitting restores parents unequipped; snapshots must not recreate items already returned to inventory or mail.
+- P19 (Items) owns system mailbox delivery/claim semantics, capacity and retention rules, coordinated with P14/P16. These details are not approved here.
+- conversion/fusion and durable inventory/mail delivery must commit consistently and exactly once, including on retry; a failed delivery must not lose or duplicate equipment.
 
 ### P10-D33 — Split After Previous Hatch
 If fusion result already hatched:
@@ -523,11 +556,14 @@ At fusion:
 - only parents' current skills are candidates.
 - max 6 + 6.
 - combine → deduplicate → eligibility filter → child Inherited Skill Pool.
+- User selected A (2026-09-28): inheritance eligibility is defined per skill. A skill may allow multiple Races or restrict specific Races; a mismatch between skill Element and child Element does not by itself exclude the skill. This does not approve universal inheritance of every skill. P13 defines individual restrictions in coordination with P16.
+- Eligible inherited skills enter the learnable pool, not the current learned set. Learning-level gates are checked when learning; a child's initial low level must not by itself discard a skill from its inherited pool.
 - no RNG chooses inherited skills.
 - pool is stored permanently on Egg/Pet.
 - pool may contain more than 6.
 - first hatch of a newly created fusion/capture Egg starts with 0/6 current skills; basic attack remains available.
 - re-hatch after Pet → Egg preserves its current skills under D31.
+- User selected A (2026-09-28): a skill's level requirement gates learning, not use of an already learned skill. After re-hatch at Lv1, preserved current skills are immediately usable subject to MP and other P13 use conditions; do not level-lock them again. This is a product decision, not verified original-game behavior. Newly created fusion/capture Eggs still hatch with 0 current skills.
 
 ### P10-D37 — Only Current Skills Propagate
 When a Pet later becomes parent:
@@ -544,7 +580,7 @@ Rules:
 - At 6/6, learning a new skill requires replacing/forgetting one current skill.
 - NPC-learned skill becomes a permanent current skill.
 - if still in current 6 at future fusion, it can pass to next generation.
-- exact Native Skill Pool size remains open.
+- User selected A (2026-09-28): Native Skill Pool size is content-driven per Species and may differ between Species. P13 defines the concrete skills/counts by role and identity; there is no mandatory equal-size pool across Species. This does not alter the six current-skill limit or automatically teach pool skills. Balance must consider skill quality/synergy, not count alone. Original APK pools for all 152 Species have not yet been verified.
 
 ---
 
@@ -599,6 +635,8 @@ Extra turns/action gauges/tick frequency belong to P13 if ever added.
 ### P10-D43 — Status Resistance
 Use one shared Status Resistance stat.
 - affects chance to receive status.
+- User selected A (2026-09-28): covers all harmful statuses, including crowd control (stun/sleep/freeze), damage-over-time statuses (poison/burn), and stat reductions (ATK/DEF/SPD). This is a product decision, not a recovered original-game rule.
+- Resistance applies to status application, not the direct-damage component of a hit. Resisting poison on a damaging hit does not negate that hit's direct damage. It does not reduce an applied status's tick damage.
 - does not reduce status duration.
 - no per-status resistance map.
 - exact formula/cap/boss rules belong to P11/P13.
@@ -630,7 +668,7 @@ through P13/P18.
 - growth-deviation distribution
 - growth-deviation effect on final stats
 - inheritance coefficients
-- inheritance cap/soft-cap/diminishing return
+- diminishing-return inheritance formula and rounding, without a hard cap (D16)
 - Status Resistance chance formula
 
 ### P13
@@ -640,7 +678,7 @@ through P13/P18.
 - Crit rules
 - status duration/stack/refresh
 - skill eligibility
-- Species Native Skill Pool size
+- concrete Species Native Skill Pool contents/counts under the accepted per-Species policy
 - Other Eligible Skills
 - learn/forget UX details
 
@@ -657,6 +695,7 @@ through P13/P18.
 - Growth Reroll item rarity/source/cost
 - storage expansion items
 - fusion stone economy
+- system mailbox for returned equipment/restored pets (P19 with P16), claim/retention/capacity and binding rules
 
 ### Original-game research
 - 152-Species roster and Race × Star distribution: decoded and adopted.
@@ -695,6 +734,14 @@ Superseded by:
 ### Old 5★ +99 Build-Change Placeholder
 The previous placeholder mechanic “5★ +99 build-change without stat/cap increase” is not a current P10 requirement.
 
+User selected A and corrected the cap rule (2026-09-28): remove the standalone
+build-change action, but allow normal Reinforcement at +99 with output +99.
+Skill changes and Pet → Egg → growth reroll remain available under common rules.
+Pet → Egg preserves Plus. Reinforcement consumes both parents and costs, produces
+an Egg, and hatches at Lv1; it does not preserve the main parent's current level.
+This supersedes the previous prohibition on Reinforcement at +99 and does not
+resolve the separate source-unverified Special fusion Plus outcome.
+
 Current confirmed endgame direction instead includes:
 - Special same-star 4★ fusion
 - Special same-star 5★ fusion
@@ -704,20 +751,18 @@ If build-change is desired later, reopen it as a separate decision.
 
 ---
 
-## 19. Next P10 Review Topics
+## 19. Remaining implementation gates
 
-Before marking P10 design-ready, useful remaining review topics:
+The authoritative open register is [P10-readiness.md](P10-readiness.md). Deferred numerical/content work does not reopen accepted decisions. Remaining handoffs:
 
-1. Species Native Skill Pool size
-   - hard cap
-   - recommended range
-   - fully content-driven
+1. Species Native Skill Pool policy is resolved: content-driven per Species,
+   without mandatory equal counts. Concrete skill lists/counts belong to P13.
 
 2. Fusion validation edge cases
    - pet currently in battle
    - quest-bound pet
    - invalid transaction state
-   - inventory/storage capacity during restore
+   - capacity policies already fixed in D18/D19/D30/D32; P19/P16 implement storage/mail rules
 
 3. Final data-contract boundary between
    - P10 Pet/Species/Egg
@@ -737,15 +782,15 @@ Conceptual Species:
 ```text
 Species
 ├─ id
-├─ race
-├─ element
+├─ race_id
+├─ element_id
 ├─ star
 ├─ species_class
 ├─ base_stats_at_lv1
 ├─ growth_baseline_by_stat
 ├─ primary_role
 ├─ secondary_role?
-└─ native_skill_pool
+└─ native_skill_ids
 ```
 
 Conceptual Pet:
@@ -757,10 +802,10 @@ Pet
 ├─ xp
 ├─ plus
 ├─ gender
-├─ individual_growth_profile
-├─ fixed_inheritance_by_stat
-├─ current_skills[0..6]
-├─ inherited_skill_pool[]
+├─ growth_profile
+├─ inheritance_bonus
+├─ current_skill_ids[0..6]
+├─ inherited_skill_ids[]
 ├─ direct_parent_refs
 └─ fusion_restoration_metadata?
 ```
@@ -773,10 +818,10 @@ Egg Item
 ├─ star
 ├─ plus
 ├─ gender
-├─ individual_growth_profile
-├─ fixed_inheritance_by_stat
-├─ inherited_skill_pool[]
-├─ preserved_current_skills[]   // relevant for Pet → Egg
+├─ growth_profile
+├─ inheritance_bonus
+├─ inherited_skill_ids[]
+├─ preserved_current_skill_ids[]   // relevant for Pet → Egg
 ├─ source_type
 ├─ direct_parent_refs
 └─ immutable_parent_restore_snapshots?  // fusion origin only
@@ -793,7 +838,7 @@ Egg Item
 - Training parents matters because current permanent stats affect inheritance.
 - Individuality comes from growth potential, not random Lv1 start stats.
 - Growth becomes deterministic once the Egg is fixed.
-- Egg is the configuration/review stage before permanent hatch.
+- Egg is the configuration/review stage; hatch is reversible through the approved Pet → Egg item.
 - Skill inheritance is player-controlled through parent current-skill choices, not RNG.
 - Fusion should create long-term build depth without requiring full genealogy complexity.
 - UI should remain compact/readable instead of becoming spreadsheet-like.

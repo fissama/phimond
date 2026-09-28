@@ -90,6 +90,8 @@ Full workflow + per-task ritual: see `AGENTS.md` (workspace root).
 2. Preserve layout/flow/art direction. The approved P10 baseline has 152 original
    species and source assets; Race/Element separation, shared Status Resistance,
    MP resource rules and reroll behavior follow the active design decisions.
+   New P10 authoring data uses canonical IDs in `data/p10/` with a frozen APK
+   mapping; legacy runtime/save IDs remain unchanged until an explicit migration.
 3. Spec before code: master spec → phase spec → sprint spec → implementation plan → code.
 4. Phase delivery ritual (AGENTS.md): implement → build/test → self-review → handoff → commit & push.
 5. No secrets in repo. Test accounts prefix `p00_*`.
