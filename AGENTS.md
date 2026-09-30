@@ -127,16 +127,39 @@ Diff size policy: inline if ≤ 500 lines, else save to
 
 ## Plans / phases
 
-Phase plan ở `.ai/plan/phases/P00-baseline/` (P00 baseline + event contract).
-Master spec ở `.ai/plan/PHIMOND_MASTER_SPEC.md`.
+Phase plans ở `.ai/plan/phases/<phase>/`. Master spec ở `.ai/plan/PHIMOND_MASTER_SPEC_PLAN.md` (21 phase, ID stable, NOT execution order; see §5).
 
-Active plan (cập nhật gần nhất):
-- P00 — baseline + measurement → đã đóng 2026-09-24 (commit `e66350b`). Latency budget FAILED trên dev topology; 50 CCU NOT certified.
-- P01 — map/proximity/collision (sẽ start ở session sau).
-- P02 — combat UX pacing.
-- P06 — production load + fault matrix + topology.
-- P09 — soak/release candidate.
-- P10–P12 — shared-world + party (chỉ trong master; chưa có plan chi tiết).
+Closed phases (cập nhật 2026-09-30):
+- **P00 — baseline + measurement** → đã đóng 2026-09-24 (commit `e66350b`). Latency budget FAILED trên dev topology; 50 CCU NOT certified.
+- **P10 — pet model foundation** → design phase đã đóng 2026-09-30. Closure report `.ai/plan/phases/P10-pet-model/P10-closure.md`. P10 đã chốt vocabulary (D01–D46), 152-species roster, 23 acceptance scenarios, 8 open register (O01–O08) với owners rõ. P10 **không** bao gồm runtime code, numeric formulas, save migration hay Special server rules — đó là P11/P13/P16/P19/P20.
+
+Active / next:
+- **P11 — stats system** → ChatGPT 5.6 Sol đang chạy song song với mình prep P12. Scaffold ở `.ai/plan/phases/P11-stats/`. P11 owner phải đọc `README.md` + `P11-from-P10-handoff.md` trước khi viết design.
+- **P12 — world graph + map types + NPC + farm** → owner là Mavis (mình). P12 sẽ tham chiếu P10 glossary, P11 element/role config (khi xong), 152 species IDs. Schedule: start sau khi P10 closure committed + P11 starts.
+- **P01 — movement + collision + portal + encounter** → owner Mavis. Phụ thuộc P12 (per master plan), không start trước P12.
+
+Later (per master plan §5):
+- P13 — Skill pet/quái + hệ tương tác
+- P19 — Items, EXP share
+- P02 — PvE auto 1v3
+- P14 — Trang bị pet
+- P15 — Level vùng, training
+- P20 — Công thức pet, sao
+- P03 — Pet management UI
+- P16 — Farm, dung hợp, trứng
+- P04 — Onboarding, quest
+- P05 — Solo alpha (M1)
+- P06 — Shared world, 50 CCU
+- P07 — Party 3 + PvP (M2)
+- P08 — Economy (M3, optional)
+- P17 — Cốt truyện chính
+- P09 — Release hardening (M4)
+- P18 — Truyện phụ
+
+Out-of-scope ongoing work (not blocking P10 closure):
+- **P10 pixel-sprite redraw contract** — separate scope, owner-approved 2026-09-30, separate peer ownership. See `.ai/plan/phases/P10-pet-model/P10-redraw-plan.md`. NOT part of P10 design phase delivery.
+
+AGENTS.md version: edited 2026-09-30 to reflect P10 closure + P11 scaffold.
 
 ## Conventions
 
