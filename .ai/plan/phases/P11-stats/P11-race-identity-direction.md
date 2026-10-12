@@ -1,7 +1,7 @@
 # P11 — Race identity direction, 2026-10-12
 
 Status: **Bird comparison policy owner-approved and authored in catalog v1.1**.
-The seven other Race identities below remain proposed; runtime is not activated.
+The owner approved the seven other Race directions on2026-10-12; catalog v2 now authors them. Runtime is not activated.
 
 ## Owner steering
 
@@ -30,7 +30,7 @@ Role defines dominant battle function; Race defines a shared tendency and
 tradeoff. Species can specialize within both. Individual growth, inheritance,
 level, equipment and effects can still change an owned matchup.
 
-## Proposed identities for the remaining Races — not individually approved
+## Owner-approved Race directions
 
 | Race | Distinctive direction | P11 expression | P13 function / tradeoff |
 |---|---|---|---|
@@ -43,7 +43,7 @@ level, equipment and effects can still change an owned matchup.
 | Plant / Thực Vật | Recovery and protection | Sustainable HP/MAG allocation by role | Ally heal/protect/cleanse; lower initiative or direct damage |
 | Insect / Côn Trùng | Attrition and disruption | Allocation supporting intended kit | Control/debuff/DoT with output tradeoffs; pure DoT alone is not Disruptor |
 
-These are a recommendation for owner discussion. Six stats need not provide
+The owner approved this direction table and delegated concrete Species tradeoffs. Six stats need not provide
 eight unique stat maxima; some Race advantages are concrete native functions.
 MP/SR do not imply learned skills. SR is incoming resistance, never outgoing
 control potency. No automatic Race skills, immunities or damage multipliers.
@@ -91,6 +91,37 @@ strict grown SPD ordering for every common positive grade multiplier and level.
 Future non-Bird or Bird modifiers must retain this invariant; +5% by itself is
 not permission for future non-Birds to tie Bird SPD.
 
-Next authoring revision can resolve the other seven Race profiles and remaining
-catalog-review findings. This update implements only the specifically approved
-Bird ordering; it does not claim all proposed Race signatures are complete.
+V1.1 implemented only Bird ordering. V2 additionally authors the approved seven
+Race directions, per-Species accents and descriptions; see the revision below.
+
+## Catalog v2 — concrete authoring choices
+
+The percentages below are agent-selected authoring strengths under the approved
+directions, not recovered APK values or separately approved numerical answers.
+They apply to exact templates before quantization, independently at Lv1/growth.
+
+| Race | Main-stat emphasis | Separate auxiliary / native brief |
+|---|---|---|
+| Bird | Per-Species accent | Preserve v1.1 SPD priority |
+| Beast | HP +6% | Endurance; paid from other main stats |
+| Dragon | DEF +6% | Defense; paid from other main stats |
+| Spirit | MAG +6% for M/H/S/D; no forced MAG emphasis for P/T | Preserve physical/Tank role |
+| Demon | Main damage channel +6%; Hybrid ATK/MAG +5% each | Burst direction must fit actual role; Support retains ally function |
+| Undead | Per-Species accent | SR at highest representable value <=105% target |
+| Plant | HP/MAG +4% each for M/H/S/D; HP +6% for P/T | Ally sustain for Support; self/protection utility for other roles; no auto-heal |
+| Insect | Role-compatible attack +3%; Tank DEF +3% | Attrition/control direction; pure DoT does not create Disruptor |
+
+Every ID has an explicit +2% accent (HP/ATK/MAG/DEF); dual-damage accents split
++1% ATK/+1% MAG. The builder lists these IDs explicitly, without random jitter.
+The expense is subtracted proportionally from unboosted main-stat allocations
+in normalized budget units. If insufficient donor budget exists, reduce all
+boosts uniformly so donor loss is at most8%; no budget is minted. Quantize
+nearest integer/.001, clamp to representable +/-10% bounds and validate every
+role/budget guard afterward. Actual modifiers and budget drift are in the JSON.
+All auxiliary templates stay intact; no non-Bird SPD boost is introduced.
+
+This revision creates137 distinct vectors versus94 in v1.1;27 Species still
+share vectors. Equal stats are allowed when roles/native briefs differ; P13 must
+supply distinct usable kits rather than assume static numerical uniqueness
+establishes combat balance. All152 authored descriptions avoid “nhất”;97 source
+quotes are preserved verbatim and55 remain explicitly missing.

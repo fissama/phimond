@@ -56,7 +56,7 @@ func _process(delta: float) -> bool:
 			" revision=", _pc.revision,
 			" state_updates_seen=", _received)
 		var pass_ok: bool = _pc.revision >= 1 and int(_pc.state.get("x", 0)) >= 6
-		print("[min_smoke] DONE — overall ", "PASS" if pass_ok else "FAIL")
+		print("PASS: min_smoke auth/catalog/connection/movement" if pass_ok else "FAIL: min_smoke auth/catalog/connection/movement")
 		quit(0 if pass_ok else 1)
 		return true
 	return false

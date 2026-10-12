@@ -86,3 +86,20 @@ and252 possible template cohorts pass strict integer-base advantage plus
 nonlower growth, proving strict ordering at every common grade/level. Earlier
 arithmetic/review snapshots are explicitly pinned to v1. New evidence:
 [Bird priority](evidence/bird-priority-20261012.json).
+
+## 2026-10-12 follow-up: layout repair and catalog v2
+
+The prior failed layout result is historical. The repaired current layout audit
+passes and is included in tools/check_godot.mjs. A temporary incorrect-login
+fixture failed with exit1 and no positive marker; it was removed afterward.
+Full tools/check.sh passed; fresh go test -race ./... -count=1 and server build
+passed. min_smoke completed with its existing overall PASS output.
+
+Catalog v2 --write/--check validates152 frozen identities,304 numeric layers,
+owner-approved Race direction checks and Bird priority. Static numeric vectors
+increase from94 (v1.1) to137;27 Species remain in shared-vector groups. All152
+authored descriptions avoid absolute superlatives;97 original quotes remain
+verbatim,55 remain missing. Source/registry hashes and Bird SPD values remain
+unchanged. See evidence/race-catalog-review-20261012.json and the current
+catalog-validation.json. Older arithmetic/catalog review evidence remains pinned
+to its recorded catalog version and does not certify v2 combat balance.

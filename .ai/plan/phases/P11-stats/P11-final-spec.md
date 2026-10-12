@@ -310,3 +310,25 @@ from names/portraits. No migration or runtime activation is authorized here.
 These are integration dependencies, not unanswered P11 numeric questions.
 Design completion does not certify runtime correctness, combat balance, economy
 fairness, original-game formula fidelity or readiness to enable Special operations.
+
+## F08 — Owner-approved remaining Race directions (catalog v2)
+
+On2026-10-12 the owner approved Beast HP, Dragon DEF, Spirit role-compatible
+MAG, Demon primary damage, Undead SR, Plant recovery/protection and Insect
+attrition/control, and authorized concrete Species tradeoffs. The
+[Race authoring table](P11-race-identity-direction.md) defines the selected
+strengths, budget-conserving redistribution, explicit per-ID accents and
+quantization. These strengths are delegated authoring choices. Frozen identities
+remain; all152 design records have authored descriptions separate from source
+quotes. No Race multiplier or native skill is automatically granted. Plant and
+Insect function briefs are P13 acceptance requirements, not implemented abilities.
+Bird SPD values/order are preserved from v1.1. Numeric validity does not certify
+combat balance; repeated vectors may require distinct kits in P13.
+
+## F09 — Owner-approved Normal5 Wind coverage
+
+The owner selected species_0107 (Đại Bàng Vàng) as Wind rather than Light,
+interpreting golden plumage as appearance. Race Bird, Primary Physical, Star,
+class, recipes and identity remain unchanged. This is Phimond Element authoring;
+no recovered APK Element claim or automatic damage bonus. Normal5 now covers
+all six authored Elements. P13 still defines actual interactions and kit value.

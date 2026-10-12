@@ -1,6 +1,6 @@
 # P11 — Design readiness and downstream gates
 
-Date: 2026-10-12. **DESIGN COMPLETE; formal phase closure blocked by legacy layout smoke.**
+Date: 2026-10-12. **P11 DESIGN CLOSED; catalog v2 validated; layout delivery gate repaired and passing.**
 Authority: owner selections plus delegated completion F01–F06 in
 [final spec](P11-final-spec.md). Agent-selected defaults are not falsely labeled
 individual owner approvals. Runtime implementation remains separate.
@@ -18,9 +18,14 @@ individual owner approvals. Runtime implementation remains separate.
 - [x] APK/video/internet observations separated from authored rules.
 - [x] Downstream ownership and source/migration blockers explicit.
 - [x] Design self-review and build/race/canonical/min/contact checks executed.
-- [ ] Full delivery gate: legacy layout_audit fails LoginScreen/BattleScene.
-      AGENTS.md calls smoke failures blockers; no waiver is inferred. Handoff
-      and scoped commit/push deliver this design baseline without claiming closure.
+- [x] Layout delivery gate repaired: wait for real anchor/container layout;
+      verify current login/NPC/shop windows and dynamic battle HUD geometry.
+      Canonical Godot checks now include layout_audit; negative regression rejects
+      incorrect login geometry. See [gate repair](P11-layout-gate-repair-20261012.md).
+- [x] Owner-directed catalog revision: all eight Race directions authored,
+      purposeful Species accents and all152 adapted descriptions. Owner approved
+      species_0107 Wind; Normal5 now covers all six Elements. Numeric validity
+      does not certify combat balance; P13 kit acceptance remains downstream.
 
 ## P10 open-register disposition
 
@@ -68,5 +73,16 @@ not balance approval; see the review for six prioritized findings and evidence.
 strictly higher grown SPD at the same Star/class, role blend, level and grade,
 without inheritance/gear/buffs. All21 Bird records now embody this preference
 within existing ±5% bounds; proof covers actual pairs and252 template cohorts.
-Previous review measurements refer to catalog v1; the seven other Race profiles
-and remaining catalog identity/Element/kit findings are still open.
+Previous review measurements refer to catalog v1; the seven other Race profiles were subsequently approved and authored in v2;
+Element coverage and P13 kit findings are tracked separately below.
+
+## Race/catalog v2 revision
+
+The owner approved the remaining seven Race directions. Catalog v2 authors
+all152 Species with budget-conserving Race emphases, explicit Species accents
+and adapted gameplay descriptions without absolute superlatives; source quotes
+remain archived unchanged.304 numeric layers pass all existing guards, including
+Bird priority.137 distinct vectors;27 Species still share stats and require
+P13 kit differentiation. The owner approved species_0107 as Wind; Normal5 covers all six Elements; runtime/combat certification remains downstream.
+
+[Design closure report](P11-closure.md) records scope and downstream gates.

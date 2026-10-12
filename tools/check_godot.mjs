@@ -5,7 +5,7 @@ import {resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
 const root=resolve(fileURLToPath(new URL('..',import.meta.url)));
 const godot=process.env.GODOT_BIN || resolve(root,'apps/game-client/.tools/Godot.app/Contents/MacOS/Godot');
-for(const script of ['client_protocol_check','world_room_check','contact_check','reference_menus_check','battle_presentation_check']){
+for(const script of ['client_protocol_check','world_room_check','contact_check','reference_menus_check','battle_presentation_check','layout_audit']){
  const r=spawnSync(godot,['--headless','--path',resolve(root,'apps/game-client'),'--script',`res://scripts/${script}.gd`],{encoding:'utf8',timeout:60000});
  const output=(r.stdout||'')+(r.stderr||'');
  const marker = script === 'reference_menus_check' ? 'REFERENCE_MENUS_CHECK:' : 'PASS:';

@@ -1,8 +1,8 @@
 # Active Development
 
 - **Last reviewed:** 2026-09-30
-- **Phase:** **P10 design phase CLOSED** (closure report [`.ai/plan/phases/P10-pet-model/P10-closure.md`](plan/phases/P10-pet-model/P10-closure.md)). P11 may begin.
-- **Next:** P11 **DESIGN COMPLETE** (2026-10-12), formal phase closure blocked by existing legacy layout smoke. [Final spec](plan/phases/P11-stats/P11-final-spec.md), [152-Species catalog](plan/phases/P11-stats/P11-species-catalog.md), [readiness](plan/phases/P11-stats/P11-readiness.md). Delegated F02/F03 explicitly replace total-candidate inheritance with accumulated training credit and strongest-lineage carry, including Normal Star-up; Special remains gated. Runtime/migration unchanged. P12 follows its own owner/dependencies.
+- **Phase:** **P10 design phase CLOSED** (closure report [`.ai/plan/phases/P10-pet-model/P10-closure.md`](plan/phases/P10-pet-model/P10-closure.md)). P11 design is closed; see [P11 closure](plan/phases/P11-stats/P11-closure.md).
+- **Next:** P11 **DESIGN CLOSED** (2026-10-12), catalog v2 with owner-approved Race directions and Wind eagle; layout smoke repaired and passing. [Final spec](plan/phases/P11-stats/P11-final-spec.md), [152-Species catalog](plan/phases/P11-stats/P11-species-catalog.md), [readiness](plan/phases/P11-stats/P11-readiness.md). Delegated F02/F03 explicitly replace total-candidate inheritance with accumulated training credit and strongest-lineage carry, including Normal Star-up; Special remains gated. Runtime/migration unchanged. P12 follows its own owner/dependencies.
 - **P10 design summary:** 152-species roster, 8-race taxonomy, 46 design decisions D01–D46, 23 acceptance scenarios, 8 open register entries (O01–O08) all tagged with explicit owners. Catalog tooling + asset validation + canonical checks all PASS (2026-09-28). P10 design does NOT include runtime code, numeric formulas, save migration, or Special server rules — those are P11/P13/P16/P19/P20.
 - **Accepted:** original Race × Star distribution; MP as a P11 resource; growth reroll after Pet → Egg; APK-defined Special species/recipes/materials; basic attack available at zero learned skills; independent Race/Element and one Status Resistance.
 - **Stat display accepted:** option A, `grown_stat + inheritance_bonus` (e.g. `186 +12`); permanent total is 198 and Overview adds equipment once.
@@ -29,4 +29,4 @@
 - **P10 implementation:** none for gameplay migration; gameplay code is owned by P11/P13/P16/P19/P20.
 - **Historical phase:** P00 closed at `e66350b`; failed dev latency budget and no 50-CCU certification remain recorded there.
 
-Existing unrelated issue: legacy `layout_audit.gd` targets the old scene structure; the active canonical gate is `tools/check.sh`.
+Layout delivery gate repaired2026-10-12: `layout_audit.gd` verifies current scene geometry and is included in `tools/check.sh`. Runtime P11 remains separate.

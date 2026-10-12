@@ -2,7 +2,7 @@
 """Reproduce/check the P11 design catalog; never writes runtime content or simulates play."""
 import argparse
 from collections import Counter
-from decimal import Decimal as D, ROUND_HALF_UP, ROUND_FLOOR
+from decimal import Decimal as D, ROUND_HALF_UP, ROUND_FLOOR, ROUND_CEILING
 import hashlib
 import json
 from pathlib import Path
@@ -127,7 +127,7 @@ CHOICES = '''
 104 A P S bird attacker with speed and silence cleanse
 105 F M S authored vermilion bird with recovery
 106 D M D fast infernal owl with slowing
-107 L P - authored golden eagle physical offense
+107 A P - owner-approved wind eagle physical offense; golden plumage is visual theme
 108 E P - venom attacker; no control role from venom alone
 109 E M - earth magic scorpion directly described in source
 110 E T P armored mantis physical guard
@@ -199,13 +199,72 @@ def targets(source, primary, secondary, growth):
     result['spd'] = (D('1.020') if growth else D(40))*spd_star*sum({'T':D('.9'),'S':D('1.05'),'D':D('1.1')}.get(r,D(1))*w for r,w in weights)
     return budget, result
 
-def authored_values(source, template, growth):
-    values = {stat:rounded(value,growth) for stat,value in template.items()}
+SPECIES_ACCENTS = {
+    'hp': '5 6 25 43 60 82 84 97 117 125 133 146',
+    'def': '2 3 10 12 17 20 21 26 29 32 34 35 36 41 45 46 49 56 59 63 67 72 73 75 80 81 110 111 114 119 124 130 135 139 142 145 147 150',
+    'atk': '1 7 9 11 13 15 30 31 39 40 44 47 54 58 70 71 74 76 77 85 87 88 89 91 92 93 95 98 99 100 101 104 107 108 112 115 120 123 127 129 134 138 148 149 151',
+    'mag': '4 8 14 16 18 19 22 24 28 33 37 38 48 50 53 55 61 62 65 66 69 79 83 86 94 96 102 103 105 106 109 116 118 121 122 128 131 132 137 141 143 144 152',
+}
+ACCENTS = {f'species_{int(i):04d}':stat for stat,ids in SPECIES_ACCENTS.items() for i in ids.split()}
+# Dual-damage species split their accent instead of favoring a single channel.
+for i in (42,51,52,57,68,113,140):
+    ACCENTS[f'species_{i:04d}']='dual'
+for i in (23,27,64,78,90,126,136):
+    ACCENTS[f'species_{i:04d}']='hp'
+RACE_VI = {'bird':'Chim','beast':'Thú','dragon':'Rồng','spirit':'Linh','demon':'Ác Ma','undead':'Vong Linh','plant':'Thực Vật','insect':'Côn Trùng'}
+ROLE_VI = {'P':'sát thương vật lý','M':'sát thương phép','T':'chống chịu','H':'sát thương vật lý và phép','S':'hồi phục, bảo vệ hoặc hỗ trợ đồng đội','D':'khống chế hoặc làm giảm hiệu quả đối thủ'}
+RACE_BRIEF = {
+    'bird':'Ưu tiên tốc độ khi cùng Star, class, role, level và grade.',
+    'beast':'Thiên về lượng HP để duy trì hiện diện trong giao tranh.',
+    'dragon':'Thiên về DEF, đánh đổi một phần phân bổ chỉ số khác.',
+    'spirit':'Thiên về phép ở role phù hợp; role vật lý hoặc Tank vẫn giữ chức năng chính.',
+    'demon':'Ưu tiên áp lực tấn công, đổi bằng một phần sức chịu đòn hoặc chỉ số phụ.',
+    'undead':'Thiên về kháng status đầu vào; không đồng nghĩa miễn nhiễm.',
+    'plant':'Định hướng duy trì giao tranh bằng hồi phục hoặc bảo vệ phù hợp role.',
+    'insect':'Định hướng tiêu hao, gây áp lực kéo dài hoặc cản trở phù hợp role.',
+}
+def main_authoring(source, template, primary):
+    race=source['race_id']
+    boosts={k:D(0) for k in STATS[:4]}
+    if race=='beast': boosts['hp']=D('.06')
+    elif race=='dragon': boosts['def']=D('.06')
+    elif race=='spirit' and primary in ('M','H','S','D'): boosts['mag']=D('.06')
+    elif race=='demon':
+        if primary=='H': boosts['atk']=boosts['mag']=D('.05')
+        else: boosts['mag' if primary in ('M','S','D') else 'atk']=D('.06')
+    elif race=='plant':
+        if primary in ('M','H','S','D'): boosts['hp']=boosts['mag']=D('.04')
+        else: boosts['hp']=D('.06')
+    elif race=='insect': boosts['def' if primary=='T' else 'mag' if primary in ('M','S','D') else 'atk']=D('.03')
+    accent=ACCENTS[source['id']]
+    if accent=='dual': boosts['atk']+=D('.01'); boosts['mag']+=D('.01')
+    else: boosts[accent]+=D('.02')
+    normalized={k:v/(10 if k=='hp' else 1) for k,v in template.items() if k in STATS[:4]}
+    donors=[k for k in boosts if not boosts[k]]
+    spent=sum(normalized[k]*v for k,v in boosts.items())
+    available=sum(normalized[k] for k in donors)
+    # Keep a margin inside +/-10% for integer quantization. Reduce emphasis
+    # uniformly if a role has too little donor allocation; never inflate budget.
+    scale=min(D(1),D('.08')*available/spent) if spent else D(1)
+    reduction=spent*scale/available if available else D(0)
+    modifiers={k:boosts[k]*scale if boosts[k] else -reduction for k in boosts}
+    return {k:template[k]*(1+modifiers.get(k,D(0))) for k in template},modifiers
+
+def authored_values(source, template, growth, primary='P'):
+    authored,modifiers=main_authoring(source,template,primary) if 'id' in source else (template,{})
+    values = {stat:rounded(value,growth) for stat,value in authored.items()}
+    grid=D('.001') if growth else D(1)
+    for stat in STATS[:4]:
+        low=(template[stat]*D('.90')).quantize(grid,rounding=ROUND_CEILING)
+        high=(template[stat]*D('1.10')).quantize(grid,rounding=ROUND_FLOOR)
+        values[stat]=max(low,min(high,values[stat]))
     if source['race_id'] == 'bird':
         # Owner-approved authoring priority, already embedded in Species values.
         # Floor at the +5% boundary so quantization never exceeds the band.
         values['spd'] = (template['spd']*D('1.05')).quantize(
             D('.001') if growth else D(1), rounding=ROUND_FLOOR)
+    if source['race_id']=='undead':
+        values['status_resistance']=(template['status_resistance']*D('1.05')).quantize(grid,rounding=ROUND_FLOOR)
     return values
 
 def validate_bird_priority(records):
@@ -249,24 +308,30 @@ def build():
         s = source[key]
         secondary = None if secondary == '-' else secondary
         desc = s['description']['vi']
-        rec = {'id':key, 'name_vi':s['display_name']['vi'], 'race_id':s['race_id'], 'star':s['star'], 'species_class':s['species_class'], 'element_id':ELEMENTS[element], 'primary_role':ROLES[primary], 'secondary_role':ROLES.get(secondary), 'role_ids':[ROLES[r] for r in (primary, secondary) if r], 'source_identity':s['source'], 'source_description_vi':desc, 'source_description_status':'observed_qualitative_only' if desc else 'missing_not_recovered', 'assignment_provenance':'phimond_authored_design_v1_not_source_certified', 'approval_basis':'owner_delegated_P11_design_completion_2026-10-12', 'rationale':note, 'p13_native_pool_contract':{'primary_function':ROLE_INTENT[primary], 'secondary_function':ROLE_INTENT.get(secondary), 'status':'required_future_skill_design_not_implemented'}, 'element_provenance':'Phimond authored thematic placement; no Race mapping or source chart claim', 'numeric_provenance':'approved role/budget targets; Bird SPD authored at upper +5% bound with floor-to-grid; other values nearest half-up; no runtime Race bonus', 'layers':{}}
+        rec = {'id':key, 'name_vi':s['display_name']['vi'], 'race_id':s['race_id'], 'star':s['star'], 'species_class':s['species_class'], 'element_id':ELEMENTS[element], 'primary_role':ROLES[primary], 'secondary_role':ROLES.get(secondary), 'role_ids':[ROLES[r] for r in (primary, secondary) if r], 'source_identity':s['source'], 'source_description_vi':desc, 'source_description_status':'observed_qualitative_only' if desc else 'missing_not_recovered', 'assignment_provenance':'phimond_authored_design_v2_not_source_certified', 'approval_basis':'owner_delegated_P11_design_completion_2026-10-12', 'rationale':note, 'p13_native_pool_contract':{'primary_function':ROLE_INTENT[primary], 'secondary_function':ROLE_INTENT.get(secondary), 'status':'required_future_skill_design_not_implemented'}, 'element_provenance':'Phimond authored thematic placement; no Race mapping or source chart claim', 'numeric_provenance':'owner-approved Race directions; agent-authored budget-conserving Race/Species emphases; half-up quantization with band clamp; Bird SPD and Undead SR upper bound floor; no runtime Race bonus', 'layers':{}}
         for growth, name in ((False,'base_stats'),(True,'growth_baseline')):
             budget, exact = targets(s, primary, secondary, growth)
-            values = authored_values(s, exact, growth)
+            values = authored_values(s, exact, growth, primary)
             rec[name] = {stat:number(value) for stat,value in values.items()}
             rec['layers'][name] = {'main_target':number(budget), 'main_budget':number(values['hp']/10+sum(values[k] for k in ('atk','mag','def'))), 'exact_role_template':{k:str(v) for k,v in exact.items()}, 'relative_modifiers':{k:str(values[k]/exact[k]-1) for k in STATS}, 'main_tolerance':'.02' if s['species_class']=='special' else '.03'}
+        rec['race_identity_brief_vi']=RACE_BRIEF[s['race_id']]
+        rec['species_stat_accent']=ACCENTS[key]
+        rec['gameplay_description_vi']='Thiên về '+ROLE_VI[primary]+(' với chức năng phụ '+ROLE_VI[secondary] if secondary else '')+'. '+RACE_BRIEF[s['race_id']]+' Điểm nhấn riêng: '+{'hp':'HP','def':'DEF','atk':'ATK','mag':'MAG','dual':'ATK và MAG'}[ACCENTS[key]]+'.'
+        rec['p13_native_pool_contract']['race_function_direction']=RACE_BRIEF[s['race_id']]
+        rec['p13_native_pool_contract']['race_function_scope']='intended native pool only; must preserve Primary/Secondary; no automatic Race skill or passive'
         records[key] = rec
-    return {'schema_version':1, 'status':'design_only_not_runtime', 'catalog_version':'P11-v1.1-bird-spd-2026-10-12', 'authority':'owner-authorized autonomous P11 design completion; future runtime activation separate', 'source_species_sha256':digest(SOURCE), 'source_registry_sha256':digest(REGISTRY), 'element_ids':list(ELEMENTS.values()), 'records':records}
+    return {'schema_version':1, 'status':'design_only_not_runtime', 'catalog_version':'P11-v2-race-identity-2026-10-12', 'authority':'owner-authorized autonomous P11 design completion; future runtime activation separate', 'source_species_sha256':digest(SOURCE), 'source_registry_sha256':digest(REGISTRY), 'element_ids':list(ELEMENTS.values()), 'records':records}
 
 def validate(catalog):
     source = json.loads(SOURCE.read_text())['records']
     registry = json.loads(REGISTRY.read_text())['species']
     records = catalog['records']
-    assert set(records)==set(source) and len(records)==152
+    assert set(records)==set(source)==set(ACCENTS) and len(records)==152
     assert catalog['source_species_sha256']==digest(SOURCE)
     assert catalog['source_registry_sha256']==digest(REGISTRY)
     counts = Counter(s['species_class'] for s in source.values())
     assert counts=={'normal':135,'special':17}
+    assert {r['element_id'] for r in records.values() if r['species_class']=='normal' and r['star']==5}==set(ELEMENTS.values()),'Normal5 Element coverage'
     assert Counter(s['star'] for s in source.values() if s['species_class']=='special')=={4:4,5:13}
     reverse = {v:k for k,v in ROLES.items()}
     checked = 0
@@ -276,6 +341,8 @@ def validate(catalog):
         assert rec['source_identity']==s['source']
         assert rec['name_vi']==s['display_name']['vi']
         assert rec['source_description_vi']==s['description']['vi']
+        assert 'nhất' not in rec['gameplay_description_vi'] and rec['race_identity_brief_vi']==RACE_BRIEF[s['race_id']]
+        assert rec['species_stat_accent']==ACCENTS[key]
         for field in ('star','species_class','race_id'):
             assert rec[field]==s[field]
         assert rec['element_id'] in ELEMENTS.values()
@@ -302,14 +369,37 @@ def validate(catalog):
             if primary=='H': assert min(values['atk'],values['mag'])>=D('.20')*B and values['atk']+values['mag']>=D('.50')*B,(key,name,'H signature')
             checked+=1
     bird_priority=validate_bird_priority(records)
+    race_checks=0
+    for key,rec in records.items():
+        primary=reverse[rec['primary_role']]
+        secondary=reverse[rec['secondary_role']] if rec['secondary_role'] else None
+        for growth,name in ((False,'base_stats'),(True,'growth_baseline')):
+            _,template=targets(source[key],primary,secondary,growth)
+            race=rec['race_id']
+            stat={'beast':'hp','dragon':'def','undead':'status_resistance'}.get(race)
+            if stat:
+                assert D(str(rec[name][stat]))>template[stat],(key,name,'Race emphasis',stat)
+                race_checks+=1
+            if race=='spirit' and primary in ('M','H','S','D'):
+                assert D(str(rec[name]['mag']))>template['mag'],(key,name,'Spirit MAG')
+                race_checks+=1
+            if race=='demon':
+                damage=['atk','mag'] if primary=='H' else ['mag' if primary in ('M','S','D') else 'atk']
+                assert all(D(str(rec[name][stat]))>template[stat] for stat in damage),(key,name,'Demon damage emphasis')
+                race_checks+=1
     assert sum(not s['description']['vi'] for s in source.values())==55
-    return {'status':'PASS', 'scope':'static design artifact validation; no runtime, combat or long-run simulation', 'species_records':152,'layers_checked':checked,'bird_spd_priority':bird_priority, 'normal':135,'special':17,'special4':4,'special5':13,'source_descriptions_present':97,'source_descriptions_missing':55,'primary_roles':dict(sorted(Counter(r['primary_role'] for r in records.values()).items())),'elements':dict(sorted(Counter(r['element_id'] for r in records.values()).items())),'checks':['frozen ID/registry equality and source hashes','frozen identity/name/Race/Star/class/source descriptions preserved','152 unique complete assignments','integer base / <=3-decimal growth / positive six stats','exact targets and 75/25 secondary blending','independent base/growth main-budget tolerances','independent per-stat main +/-10%, auxiliary +/-5%','Physical/Magic/Tank/Hybrid Primary signatures both layers','Bird strict base SPD/nonlower growth against same-cohort non-Birds; all252 template cohorts','source limitations retained; no inferred recovery','generated JSON/Markdown deterministic reproduction'], 'source_species_sha256':digest(SOURCE), 'source_registry_sha256':digest(REGISTRY)}
+    return {'status':'PASS', 'scope':'static design artifact validation; no runtime, combat or long-run simulation', 'species_records':152,'layers_checked':checked,'race_emphasis_checks':race_checks,'bird_spd_priority':bird_priority, 'normal':135,'special':17,'special4':4,'special5':13,'source_descriptions_present':97,'source_descriptions_missing':55,'primary_roles':dict(sorted(Counter(r['primary_role'] for r in records.values()).items())),'elements':dict(sorted(Counter(r['element_id'] for r in records.values()).items())),'checks':['frozen ID/registry equality and source hashes','frozen identity/name/Race/Star/class/source descriptions preserved','152 unique complete assignments; all six Elements covered by Normal5','integer base / <=3-decimal growth / positive six stats','exact targets and 75/25 secondary blending','independent base/growth main-budget tolerances','independent per-stat main +/-10%, auxiliary +/-5%','Physical/Magic/Tank/Hybrid Primary signatures both layers','Bird strict base SPD/nonlower growth against same-cohort non-Birds; all252 template cohorts','approved Race numeric emphases checked in both layers; explicit Species accents; authored descriptions contain no nhat superlatives','source limitations retained; no inferred recovery','generated JSON/Markdown deterministic reproduction'], 'source_species_sha256':digest(SOURCE), 'source_registry_sha256':digest(REGISTRY)}
 
 def markdown(catalog):
-    lines=['# P11 — 152 Species catalog v1.1: Bird speed priority','', 'Status: **DESIGN COMPLETE; NOT RUNTIME-ACTIVATED**, 2026-10-12.', '', 'These are Phimond authoring decisions under the owner’s delegated P11 completion scope. The frozen roster remains unchanged. This companion JSON is the complete stat/Element/role design, not a replacement runtime dataset, save migration, recovered APK table or P13 skill implementation.', '', '## Provenance and constraints', '', '- 152 frozen IDs: 135 Normal, 4 Special4★, 13 Special5★. Names, Race, Star, class, source IDs, assets and recipes remain frozen in their existing files; no art or parent recipe is edited.', '- 97 source descriptions are quoted verbatim in JSON as qualitative evidence. The other 55 remain explicitly missing; their roles and all Element placements are intentional Phimond authoring, never claimed as recovered source behavior.', '- Element IDs: `fire`, `water`, `wind`, `earth`, `light`, `dark`. Ice themes use water and thunder themes use wind in this initial vocabulary. This is an explicit design simplification, not an APK fact. No automatic Race mapping, stat multiplier, STAB or element chart is supplied.', '- Primary describes dominant intended native function; optional Secondary describes a usable supporting function. JSON records both concrete thematic rationale and the P13 native-pool function contract. P13 must realize these roles through concrete skills or explicitly reopen the assignment. No skill is granted here.', '- Poison/burn damage alone does not justify Disruptor; assigned Disruptors require control/impairment beyond HP loss. Self-only recovery/resistance alone does not justify Support.', '- Budget/template version: accepted P11 Q10/Q11 main shares, 75/25 blend, main budgets 100/110/122/136/160, Special148/172, growth2% of main base target; approved SR/SPD factors. Exact intermediates are Decimal. Nearest integer base and nearest .001 growth use half-up authoring quantization, except Bird SPD uses floor-to-grid of the exact +5% upper bound; every constraint is checked. This is catalog-authoring quantization, not a change to gameplay floor rules.', '- V1.1 encodes the owner-approved Bird SPD priority inside Species base/growth: the highest representable value at or below 105% of the exact SPD target. Other Races retain the neutral rounded target. At the same Star/class, ordered role blend, level and SPD grade, Bird grown SPD is strictly higher. Different roles, inheritance, equipment and effects can change matchup order. This is an authoring rule, not a runtime Race multiplier. Other Race identities remain proposed in P11-race-identity-direction.md; broader catalog balance findings remain open.', '- Base and growth guards run separately; modifiers, exact templates and realized normalized main budgets are included per record. Roles do not constrain owned-Pet inherited totals.', '', '## Reproduce / validate', '', 'From repository root:', '', '```sh', 'rtk proxy python3 .ai/plan/phases/P11-stats/evidence/build_species_catalog.py --write', 'rtk proxy python3 .ai/plan/phases/P11-stats/evidence/build_species_catalog.py --check', '```', '', 'The builder writes only these design artifacts and static evidence. `--check` independently checks committed JSON constraints and exact deterministic reproduction, without writing. It is not a stat engine or gameplay simulation. Source file hashes bind this catalog to the frozen inputs.', '', '## Assignment ledger', '', 'P=physical_dps, M=magic_dps, T=tank, S=support, D=disruptor, H=hybrid. “Missing” means source description absent, not authoring incomplete. Full six-stat values and provenance are in `P11-species-catalog.json`.', '', '| ID | Name | Element | Primary / Secondary | Source prose | Phimond design rationale |','|---|---|---|---|---|---|']
+    lines=['# P11 — 152 Species catalog v2: Race and Species identity','', 'Status: **AUTHORED DESIGN; NOT RUNTIME-ACTIVATED**, 2026-10-12.', '', 'These are Phimond authoring decisions under the owner’s delegated P11 completion scope. The frozen roster remains unchanged. This companion JSON is the complete stat/Element/role design, not a replacement runtime dataset, save migration, recovered APK table or P13 skill implementation.', '', '## Provenance and constraints', '', '- 152 frozen IDs: 135 Normal, 4 Special4★, 13 Special5★. Names, Race, Star, class, source IDs, assets and recipes remain frozen in their existing files; no art or parent recipe is edited.', '- 97 source descriptions are quoted verbatim in JSON as qualitative evidence. The other 55 remain explicitly missing; their roles and all Element placements are intentional Phimond authoring, never claimed as recovered source behavior.', '- Element IDs: `fire`, `water`, `wind`, `earth`, `light`, `dark`. Ice themes use water and thunder themes use wind in this initial vocabulary. This is an explicit design simplification, not an APK fact. No automatic Race mapping, stat multiplier, STAB or element chart is supplied.', '- Primary describes dominant intended native function; optional Secondary describes a usable supporting function. JSON records both concrete thematic rationale and the P13 native-pool function contract. P13 must realize these roles through concrete skills or explicitly reopen the assignment. No skill is granted here.', '- Poison/burn damage alone does not justify Disruptor; assigned Disruptors require control/impairment beyond HP loss. Self-only recovery/resistance alone does not justify Support.', '- Budget/template version: accepted P11 Q10/Q11 main shares, 75/25 blend, main budgets 100/110/122/136/160, Special148/172, growth2% of main base target; approved SR/SPD factors. Exact intermediates are Decimal. Nearest integer base and nearest .001 growth use half-up authoring quantization, with representable main-band clamping; Bird SPD and Undead SR use floor-to-grid of their exact +5% upper bounds; every constraint is checked. This is catalog-authoring quantization, not a change to gameplay floor rules.', '- V1.1 encodes the owner-approved Bird SPD priority inside Species base/growth: the highest representable value at or below 105% of the exact SPD target. V2 adds budget-conserving main-stat Race emphases and explicit per-Species accents; Undead SR uses the same upper-band flooring. At the same Star/class, ordered role blend, level and SPD grade, Bird grown SPD is strictly higher. Different roles, inheritance, equipment and effects can change matchup order. This is an authoring rule, not a runtime Race multiplier. The other seven Race directions were owner-approved; concrete modifier strengths are delegated authoring choices. Function briefs require P13 skills; broader combat balance remains unverified.', '- Base and growth guards run separately; modifiers, exact templates and realized normalized main budgets are included per record. Roles do not constrain owned-Pet inherited totals.', '', '## Reproduce / validate', '', 'From repository root:', '', '```sh', 'rtk proxy python3 .ai/plan/phases/P11-stats/evidence/build_species_catalog.py --write', 'rtk proxy python3 .ai/plan/phases/P11-stats/evidence/build_species_catalog.py --check', '```', '', 'The builder writes only these design artifacts and static evidence. `--check` independently checks committed JSON constraints and exact deterministic reproduction, without writing. It is not a stat engine or gameplay simulation. Source file hashes bind this catalog to the frozen inputs.', '', '## Assignment ledger', '', 'P=physical_dps, M=magic_dps, T=tank, S=support, D=disruptor, H=hybrid. “Missing” means source description absent, not authoring incomplete. Full six-stat values and provenance are in `P11-species-catalog.json`.', '', '| ID | Name | Element | Primary / Secondary | Source prose | Phimond design rationale |','|---|---|---|---|---|---|']
     for key,r in catalog['records'].items():
         roles=r['primary_role']+(' / '+r['secondary_role'] if r['secondary_role'] else '')
         lines.append(f"| {key} | {r['name_vi']} | {r['element_id']} | {roles} | {'Present' if r['source_description_vi'] else 'Missing'} | {r['rationale']} |")
+    lines+=['', '## Numeric and gameplay ledger', '', 'Order: HP / ATK / MAG / DEF / SPD / SR. Base integers; growth per level before grade. These briefs are intended functions for P13, not granted skills.', '', '| ID | Race | Base | Growth | Authored gameplay description |', '|---|---|---|---|---|']
+    for key,r in catalog['records'].items():
+        base=' / '.join(str(r['base_stats'][k]) for k in STATS)
+        growth=' / '.join(str(r['growth_baseline'][k]) for k in STATS)
+        lines.append(f"| {key} | {RACE_VI[r['race_id']]} | {base} | {growth} | {r['gameplay_description_vi']} |")
     lines+=['', '## Downstream acceptance', '', 'P13 owns the interaction chart, skill formulas/eligibility and actual native pools. P02/P07 own battle-mode viability testing; P15 owns pacing. Content activation and legacy14→152 mapping require a later additive implementation delivery with migration/rollback review. Passing this static catalog validator establishes only the approved numeric constraints and frozen-identity coverage.', '']
     return '\n'.join(lines)
 

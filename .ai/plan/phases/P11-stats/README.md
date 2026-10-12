@@ -1,6 +1,6 @@
 # P11 — Stats design baseline v1
 
-Date: 2026-10-12. **DESIGN COMPLETE; formal phase closure blocked by legacy layout smoke.**
+Date: 2026-10-12. **P11 DESIGN CLOSED; catalog v2 validated; layout delivery gate repaired and passing.**
 No runtime stat engine, migration, gameplay simulation harness or Special
 operation activation. The owner's last instruction delegates completion; see
 F01–F06 for agent-selected decisions versus individually approved answers.
@@ -27,7 +27,7 @@ to Lv1 and receives the fresh profile rolled at Egg creation; lower grades can
 still offset some inherited gain at the same level, disclosed in preview.
 
 P13 owns skill/Element combat content, P16 transactions/Plus/recipes, P15/P19
-real training-time and economy calibration. Design completion does not certify
+real training-time and economy calibration. Formula completion does not certify
 runtime correctness or measured player satisfaction. Legacy14 runtime remains
 active until a separately authorized versioned implementation/migration.
 
@@ -47,5 +47,16 @@ not balance approval; see the review for six prioritized findings and evidence.
 strictly higher grown SPD at the same Star/class, role blend, level and grade,
 without inheritance/gear/buffs. All21 Bird records now embody this preference
 within existing ±5% bounds; proof covers actual pairs and252 template cohorts.
-Previous review measurements refer to catalog v1; the seven other Race profiles
-and remaining catalog identity/Element/kit findings are still open.
+Previous review measurements refer to catalog v1; the seven other Race profiles were subsequently approved and authored in v2;
+Element coverage and P13 kit findings are tracked separately below.
+
+## Race/catalog v2 revision
+
+The owner approved the remaining seven Race directions. Catalog v2 authors
+all152 Species with budget-conserving Race emphases, explicit Species accents
+and adapted gameplay descriptions without absolute superlatives; source quotes
+remain archived unchanged.304 numeric layers pass all existing guards, including
+Bird priority.137 distinct vectors;27 Species still share stats and require
+P13 kit differentiation. The owner approved species_0107 as Wind; Normal5 covers all six Elements; runtime/combat certification remains downstream.
+
+[Design closure report](P11-closure.md) records scope and downstream gates.

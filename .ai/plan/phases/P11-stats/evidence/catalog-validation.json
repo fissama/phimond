@@ -3,6 +3,7 @@
   "scope": "static design artifact validation; no runtime, combat or long-run simulation",
   "species_records": 152,
   "layers_checked": 304,
+  "race_emphasis_checks": 166,
   "bird_spd_priority": {
     "birds": 21,
     "actual_same_cohort_pairs": 57,
@@ -28,20 +29,21 @@
     "dark": 36,
     "earth": 52,
     "fire": 18,
-    "light": 12,
+    "light": 11,
     "water": 18,
-    "wind": 16
+    "wind": 17
   },
   "checks": [
     "frozen ID/registry equality and source hashes",
     "frozen identity/name/Race/Star/class/source descriptions preserved",
-    "152 unique complete assignments",
+    "152 unique complete assignments; all six Elements covered by Normal5",
     "integer base / <=3-decimal growth / positive six stats",
     "exact targets and 75/25 secondary blending",
     "independent base/growth main-budget tolerances",
     "independent per-stat main +/-10%, auxiliary +/-5%",
     "Physical/Magic/Tank/Hybrid Primary signatures both layers",
     "Bird strict base SPD/nonlower growth against same-cohort non-Birds; all252 template cohorts",
+    "approved Race numeric emphases checked in both layers; explicit Species accents; authored descriptions contain no nhat superlatives",
     "source limitations retained; no inferred recovery",
     "generated JSON/Markdown deterministic reproduction"
   ],
