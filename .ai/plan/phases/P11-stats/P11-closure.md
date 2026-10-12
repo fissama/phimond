@@ -11,11 +11,11 @@ combat/economy balance. No next phase is launched by this delivery.
 - Inheritance credit preserves trained lineage and permits continued growth
   without a hard bonus cap; diminishing gains, grade-reset losses, Lv1 reset
   and future training-time/economy acceptance are explicitly disclosed.
--152 frozen Species have Element/roles, integer base, milli growth, Species
+- 152 frozen Species have Element/roles, integer base, milli growth, Species
   accents and separate authored descriptions. All eight approved Race directions
   are embodied in stats or P13 native-function briefs. Bird SPD invariant held.
 - Đại Bàng Vàng is Wind by owner approval; Normal5 covers all six Elements.
--304 numeric layers pass constraints.137 vectors,27 Species share stats; this
+- 304 numeric layers pass constraints.137 vectors,27 Species share stats; this
   is tracked for distinct usable P13 kits, not hidden as certified balance.
 - Source names/Race/Star/class/recipes remain frozen;97 source prose quotes
   preserved,55 missing. APK/video/web evidence is separated from authored rules.
