@@ -40,3 +40,12 @@ stat signatures are absent, and Normal5 Wind coverage is empty. Authoring v2 is
 recommended within existing bands, with P13 kit/value proof before activation.
 No numeric assignments changed in this review. Static design completeness is
 not balance approval; see the review for six prioritized findings and evidence.
+
+## Bird priority update — catalog v1.1
+
+[Owner-approved Race direction](P11-race-identity-direction.md): Bird has
+strictly higher grown SPD at the same Star/class, role blend, level and grade,
+without inheritance/gear/buffs. All21 Bird records now embody this preference
+within existing ±5% bounds; proof covers actual pairs and252 template cohorts.
+Previous review measurements refer to catalog v1; the seven other Race profiles
+and remaining catalog identity/Element/kit findings are still open.

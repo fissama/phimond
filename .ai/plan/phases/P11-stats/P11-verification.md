@@ -77,3 +77,12 @@ FAIL: LoginScreen rectangle expectations and missing BattleScene Window;2/4
 layouts fail. This existing issue is already recorded in ACTIVE.md, but the
 AGENTS smoke gate remains blocked. These checks do not exercise P11 runtime.
 See the dated handoff for final actual results and existing-workspace limitations.
+
+## Catalog v1.1 Bird update
+
+Catalog constraints/reproduction PASS for152 records/304 layers. Only21 Bird
+SPD base/growth pairs changed numerically.57 actual cross-Race same-cohort pairs
+and252 possible template cohorts pass strict integer-base advantage plus
+nonlower growth, proving strict ordering at every common grade/level. Earlier
+arithmetic/review snapshots are explicitly pinned to v1. New evidence:
+[Bird priority](evidence/bird-priority-20261012.json).

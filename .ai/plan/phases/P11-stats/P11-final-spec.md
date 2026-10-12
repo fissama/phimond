@@ -40,6 +40,25 @@ F03 deliberately extends protection beyond the old Reinforcement-only floor.
 These are visible product changes under the latest delegation, not discoveries
 about the original game. P10's historical decision record is not rewritten.
 
+## F07 — Owner-approved Bird SPD priority (catalog v1.1)
+
+On2026-10-12 the owner chose Bird leading at the same Star, role, level and
+grade, allowing different roles to exceed it. Comparisons also hold class equal
+and use the complete ordered Primary/Secondary blend, zero inheritance/gear/
+buffs. Catalog authoring sets Bird base/growth SPD to the highest representable
+value <=105% of its exact role/Star target; other Races keep neutral rounded
+values. Existing ±5% bounds remain. Strictly greater integer base SPD plus
+nonlower growth preserves strict grown SPD ordering for every common grade and
+legal level. The current validator enforces this for actual pairs and all252
+possible template cohorts. Future authoring must preserve the ordering as well
+as local bounds. This is embedded Species content, never a runtime Race bonus.
+
+Source descriptions may be adapted: avoid unsupported species-level “highest”
+claims in Phimond gameplay descriptions. Preserve verbatim source quotes as
+historical evidence. See [Race direction](P11-race-identity-direction.md) for
+scope and proposed identities of the other seven Races, which are not numeric
+assignments yet. The other catalog-review findings remain open.
+
 ## 1. Stat sources and state
 
 Six core stats: `hp`, `atk`, `mag`, `def`, `spd`, `status_resistance`.

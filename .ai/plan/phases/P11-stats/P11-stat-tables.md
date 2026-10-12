@@ -67,3 +67,11 @@ Physical/Tank79, Magic/Support103, Hybrid/Disruptor91 (base58+floor(.575×59)).
 
 SR .80×S/(S+100): S0/50/100/200/400 gives resistance0%/26.6667%/40%/53.3333%/64%.
 Probability only; not damage/duration.
+
+## Owner-approved Bird content priority — F07
+
+Catalog v1.1 authors Bird SPD at floor-to-grid(105% of the exact blended
+Star/class target), separately for integer base and milli growth. Other Races
+retain neutral rounded targets. This stays inside±5% and introduces no runtime
+multiplier. Same-cohort ordering is an additional authoring invariant; see
+[P11-race-identity-direction.md](P11-race-identity-direction.md).

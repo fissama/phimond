@@ -1,5 +1,11 @@
 # Review Element, role, base/growth của 152 Species — 2026-10-12
 
+Historical baseline: **catalog v1 before Bird v1.1**. F07 now implements the
+owner-approved within-cohort Bird SPD priority; the owner permits rewriting
+source-based gameplay descriptions and removing species superlatives. Thus
+source superlatives below are review evidence, not mandatory v1.1 rankings.
+Other role/Element/kit and Species differentiation findings remain open.
+
 **Kết luận: v1 đạt kiểm tra cấu trúc và ngân sách; chưa đủ để chốt cân bằng và
 bản sắc nội dung. Cần một lượt authoring v2 trước khi coi đây là stat catalog
 cuối cùng.** Review không đổi số hay identity của152 loài.

@@ -3,6 +3,13 @@
   "scope": "static design artifact validation; no runtime, combat or long-run simulation",
   "species_records": 152,
   "layers_checked": 304,
+  "bird_spd_priority": {
+    "birds": 21,
+    "actual_same_cohort_pairs": 57,
+    "template_cohorts": 252,
+    "comparison": "same Star/class, ordered role blend, level and SPD grade; no inheritance/equipment/effects",
+    "proof": "strict integer base SPD advantage and nonlower growth imply strict grown SPD advantage at every level with a common positive multiplier"
+  },
   "normal": 135,
   "special": 17,
   "special4": 4,
@@ -34,6 +41,7 @@
     "independent base/growth main-budget tolerances",
     "independent per-stat main +/-10%, auxiliary +/-5%",
     "Physical/Magic/Tank/Hybrid Primary signatures both layers",
+    "Bird strict base SPD/nonlower growth against same-cohort non-Birds; all252 template cohorts",
     "source limitations retained; no inferred recovery",
     "generated JSON/Markdown deterministic reproduction"
   ],

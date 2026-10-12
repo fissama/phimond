@@ -1,4 +1,4 @@
-# P11 — 152 Species catalog v1
+# P11 — 152 Species catalog v1.1: Bird speed priority
 
 Status: **DESIGN COMPLETE; NOT RUNTIME-ACTIVATED**, 2026-10-12.
 
@@ -11,8 +11,8 @@ These are Phimond authoring decisions under the owner’s delegated P11 completi
 - Element IDs: `fire`, `water`, `wind`, `earth`, `light`, `dark`. Ice themes use water and thunder themes use wind in this initial vocabulary. This is an explicit design simplification, not an APK fact. No automatic Race mapping, stat multiplier, STAB or element chart is supplied.
 - Primary describes dominant intended native function; optional Secondary describes a usable supporting function. JSON records both concrete thematic rationale and the P13 native-pool function contract. P13 must realize these roles through concrete skills or explicitly reopen the assignment. No skill is granted here.
 - Poison/burn damage alone does not justify Disruptor; assigned Disruptors require control/impairment beyond HP loss. Self-only recovery/resistance alone does not justify Support.
-- Budget/template version: accepted P11 Q10/Q11 main shares, 75/25 blend, main budgets 100/110/122/136/160, Special148/172, growth2% of main base target; approved SR/SPD factors. Exact intermediates are Decimal. Nearest integer base and nearest .001 growth use half-up authoring quantization, then every constraint is checked. This is catalog-authoring quantization, not a change to gameplay floor rules.
-- V1 chooses no extra species jitter: the small recorded modifiers come solely from quantization. Species with the same Star/class/role blend may share numeric vectors intentionally. Future distinct tuning must stay inside the same approved bounds and receive its own revision; raw budgets do not certify combat balance.
+- Budget/template version: accepted P11 Q10/Q11 main shares, 75/25 blend, main budgets 100/110/122/136/160, Special148/172, growth2% of main base target; approved SR/SPD factors. Exact intermediates are Decimal. Nearest integer base and nearest .001 growth use half-up authoring quantization, except Bird SPD uses floor-to-grid of the exact +5% upper bound; every constraint is checked. This is catalog-authoring quantization, not a change to gameplay floor rules.
+- V1.1 encodes the owner-approved Bird SPD priority inside Species base/growth: the highest representable value at or below 105% of the exact SPD target. Other Races retain the neutral rounded target. At the same Star/class, ordered role blend, level and SPD grade, Bird grown SPD is strictly higher. Different roles, inheritance, equipment and effects can change matchup order. This is an authoring rule, not a runtime Race multiplier. Other Race identities remain proposed in P11-race-identity-direction.md; broader catalog balance findings remain open.
 - Base and growth guards run separately; modifiers, exact templates and realized normalized main budgets are included per record. Roles do not constrain owned-Pet inherited totals.
 
 ## Reproduce / validate
