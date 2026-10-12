@@ -261,6 +261,8 @@ Không dùng phần nghiên cứu nguồn làm bằng chứng rằng mọi đề
 
 ### P11 — Hệ thống chỉ số pet và quái
 
+**P11 design baseline 2026-10-12:** [Current spec](phases/P11-stats/P11-final-spec.md) và [catalog152](phases/P11-stats/P11-species-catalog.md) hoàn thiện theo uỷ quyền owner. F02/F03 sửa rõ P10-D14/D16 và R03a bên dưới: giữ lineage credit mạnh hơn theo từng stat một lần, cộng credit do luyện mới, áp dụng cả Normal Star-up; không tính buff/gear vào di truyền. Đây là Phimond design, chưa runtime/migration. Formal closure còn chặn bởi legacy layout smoke; xem [readiness](phases/P11-stats/P11-readiness.md). Nội dung R03a cũ được giữ làm lịch sử, không ghi đè amendment này.
+
 **Outcome:** Người chơi hiểu sức mạnh pet đến từ đâu và có lý do giữ, luyện hoặc chọn một cá thể làm bố mẹ.
 
 - **P11-R01:** Thiết kế HP/ATK/MAG/DEF/SPD/Status Resistance theo baseline P10; một DEF dùng chung và một Status Resistance ảnh hưởng xác suất nhận status, không giảm thời hạn. **MP là resource riêng**, P11 chốt maxMP, tăng trưởng và hồi phục, P13 chốt tiêu thụ. Không có stat kháng nguyên tố riêng; Element chart thuộc P13. Công thức/hệ số phải được review trước triển khai; hiển thị stat kế thừa đã chốt theo P10-R05.

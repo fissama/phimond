@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "scope": "static design artifact validation; no runtime, combat or long-run simulation",
+  "species_records": 152,
+  "layers_checked": 304,
+  "normal": 135,
+  "special": 17,
+  "special4": 4,
+  "special5": 13,
+  "source_descriptions_present": 97,
+  "source_descriptions_missing": 55,
+  "primary_roles": {
+    "disruptor": 9,
+    "hybrid": 7,
+    "magic_dps": 41,
+    "physical_dps": 60,
+    "support": 10,
+    "tank": 25
+  },
+  "elements": {
+    "dark": 36,
+    "earth": 52,
+    "fire": 18,
+    "light": 12,
+    "water": 18,
+    "wind": 16
+  },
+  "checks": [
+    "frozen ID/registry equality and source hashes",
+    "frozen identity/name/Race/Star/class/source descriptions preserved",
+    "152 unique complete assignments",
+    "integer base / <=3-decimal growth / positive six stats",
+    "exact targets and 75/25 secondary blending",
+    "independent base/growth main-budget tolerances",
+    "independent per-stat main +/-10%, auxiliary +/-5%",
+    "Physical/Magic/Tank/Hybrid Primary signatures both layers",
+    "source limitations retained; no inferred recovery",
+    "generated JSON/Markdown deterministic reproduction"
+  ],
+  "source_species_sha256": "3ca9f5422d4507d62e580cebc82183c97fa4f099b9ecba8fb7c445d43f4b4482",
+  "source_registry_sha256": "5756de87ba78a8c936eed7f809079c257acd07f2ff7d04d813c83429b819d481"
+}

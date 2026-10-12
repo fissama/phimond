@@ -1,0 +1,505 @@
+{
+  "scope": "one-off exact design arithmetic; no runtime engine or simulation harness",
+  "checks": {
+    "catalog_growth_states": {
+      "passed": 4256,
+      "properties": [
+        "Lv1 fixed",
+        "exact milli product equals rational floor",
+        "monotonic grade at same level"
+      ]
+    },
+    "probability_table": "PASS",
+    "inheritance_exact_boundaries": "PASS: 5 exact boundaries and 4 just-below checks",
+    "long_run": "Closed-form Q=nE at 9 checkpoints through 10000; analytic unboundedness in spec; not gameplay simulation",
+    "grade_reset_negative_fixture": {
+      "species": "species_0001",
+      "same_level": 60,
+      "main_growth": "Perfect",
+      "child_growth": "D",
+      "old_Q_fusion_equivalents": 10,
+      "before_atk": 186.977,
+      "after_atk": 181.624,
+      "delta": -5.353
+    }
+  },
+  "inheritance_G_equals_R_fixed_training_1": [
+    {
+      "fusions": 0,
+      "main": {
+        "bonus_R50": 0.0,
+        "last_gain": 0.0,
+        "same_G50_total": 50.0
+      },
+      "aux": {
+        "bonus_R50": 0.0,
+        "last_gain": 0.0,
+        "same_G50_total": 50.0
+      }
+    },
+    {
+      "fusions": 1,
+      "main": {
+        "bonus_R50": 7.008,
+        "last_gain": 7.008,
+        "same_G50_total": 57.008
+      },
+      "aux": {
+        "bonus_R50": 1.961,
+        "last_gain": 1.961,
+        "same_G50_total": 51.961
+      }
+    },
+    {
+      "fusions": 2,
+      "main": {
+        "bonus_R50": 13.245,
+        "last_gain": 6.237,
+        "same_G50_total": 63.245
+      },
+      "aux": {
+        "bonus_R50": 3.851,
+        "last_gain": 1.89,
+        "same_G50_total": 53.851
+      }
+    },
+    {
+      "fusions": 5,
+      "main": {
+        "bonus_R50": 29.056,
+        "last_gain": 4.895,
+        "same_G50_total": 79.056
+      },
+      "aux": {
+        "bonus_R50": 9.16,
+        "last_gain": 1.715,
+        "same_G50_total": 59.16
+      }
+    },
+    {
+      "fusions": 10,
+      "main": {
+        "bonus_R50": 50.0,
+        "last_gain": 3.824,
+        "same_G50_total": 100.0
+      },
+      "aux": {
+        "bonus_R50": 17.082,
+        "last_gain": 1.508,
+        "same_G50_total": 67.082
+      }
+    },
+    {
+      "fusions": 25,
+      "main": {
+        "bonus_R50": 95.773,
+        "last_gain": 2.595,
+        "same_G50_total": 145.773
+      },
+      "aux": {
+        "bonus_R50": 36.602,
+        "last_gain": 1.162,
+        "same_G50_total": 86.602
+      }
+    },
+    {
+      "fusions": 100,
+      "main": {
+        "bonus_R50": 228.388,
+        "last_gain": 1.351,
+        "same_G50_total": 278.388
+      },
+      "aux": {
+        "bonus_R50": 100.0,
+        "last_gain": 0.669,
+        "same_G50_total": 150.0
+      }
+    },
+    {
+      "fusions": 1000,
+      "main": {
+        "bonus_R50": 817.467,
+        "last_gain": 0.432,
+        "same_G50_total": 867.467
+      },
+      "aux": {
+        "bonus_R50": 400.0,
+        "last_gain": 0.223,
+        "same_G50_total": 450.0
+      }
+    },
+    {
+      "fusions": 10000,
+      "main": {
+        "bonus_R50": 2689.069,
+        "last_gain": 0.137,
+        "same_G50_total": 2739.069
+      },
+      "aux": {
+        "bonus_R50": 1365.097,
+        "last_gain": 0.071,
+        "same_G50_total": 1415.097
+      }
+    }
+  ],
+  "species_0001_fresh_parents": [
+    {
+      "parent_level": 20,
+      "training_factor": "0",
+      "grown_B": {
+        "hp": 345,
+        "atk": 62,
+        "mag": 13,
+        "def": 27,
+        "spd": 59,
+        "status_resistance": 29
+      },
+      "child_inherited": {
+        "hp": 0.0,
+        "atk": 0.0,
+        "mag": 0.0,
+        "def": 0.0,
+        "spd": 0.0,
+        "status_resistance": 0.0
+      },
+      "child_total_same_level_B": {
+        "hp": 345.0,
+        "atk": 62.0,
+        "mag": 13.0,
+        "def": 27.0,
+        "spd": 59.0,
+        "status_resistance": 29.0
+      }
+    },
+    {
+      "parent_level": 21,
+      "training_factor": "1/40",
+      "grown_B": {
+        "hp": 350,
+        "atk": 63,
+        "mag": 14,
+        "def": 28,
+        "spd": 60,
+        "status_resistance": 30
+      },
+      "child_inherited": {
+        "hp": 1.31,
+        "atk": 0.235,
+        "mag": 0.052,
+        "def": 0.104,
+        "spd": 0.059,
+        "status_resistance": 0.029
+      },
+      "child_total_same_level_B": {
+        "hp": 351.31,
+        "atk": 63.235,
+        "mag": 14.052,
+        "def": 28.104,
+        "spd": 60.059,
+        "status_resistance": 30.029
+      }
+    },
+    {
+      "parent_level": 40,
+      "training_factor": "1/2",
+      "grown_B": {
+        "hp": 445,
+        "atk": 80,
+        "mag": 17,
+        "def": 35,
+        "spd": 79,
+        "status_resistance": 39
+      },
+      "child_inherited": {
+        "hp": 32.329,
+        "atk": 5.677,
+        "mag": 1.259,
+        "def": 2.559,
+        "spd": 1.567,
+        "status_resistance": 0.774
+      },
+      "child_total_same_level_B": {
+        "hp": 477.329,
+        "atk": 85.677,
+        "mag": 18.259,
+        "def": 37.559,
+        "spd": 80.567,
+        "status_resistance": 39.774
+      }
+    },
+    {
+      "parent_level": 60,
+      "training_factor": "1",
+      "grown_B": {
+        "hp": 545,
+        "atk": 98,
+        "mag": 21,
+        "def": 43,
+        "spd": 100,
+        "status_resistance": 50
+      },
+      "child_inherited": {
+        "hp": 75.977,
+        "atk": 13.007,
+        "mag": 3.056,
+        "def": 6.08,
+        "spd": 3.923,
+        "status_resistance": 1.961
+      },
+      "child_total_same_level_B": {
+        "hp": 620.977,
+        "atk": 111.007,
+        "mag": 24.056,
+        "def": 49.08,
+        "spd": 103.923,
+        "status_resistance": 51.961
+      }
+    },
+    {
+      "parent_level": 159,
+      "training_factor": "139/40",
+      "grown_B": {
+        "hp": 1040,
+        "atk": 187,
+        "mag": 41,
+        "def": 83,
+        "spd": 201,
+        "status_resistance": 100
+      },
+      "child_inherited": {
+        "hp": 390.0,
+        "atk": 60.667,
+        "mag": 18.096,
+        "def": 32.621,
+        "spd": 24.851,
+        "status_resistance": 12.369
+      },
+      "child_total_same_level_B": {
+        "hp": 1430.0,
+        "atk": 247.667,
+        "mag": 59.096,
+        "def": 115.621,
+        "spd": 225.851,
+        "status_resistance": 112.369
+      }
+    }
+  ],
+  "catalog_main_budget_ranges": {
+    "normal1:L159:B": {
+      "min": 414.0,
+      "max": 416.0
+    },
+    "normal1:L159:Perfect": {
+      "min": 444.9,
+      "max": 446.9
+    },
+    "normal1:L1:B": {
+      "min": 99.8,
+      "max": 101.3
+    },
+    "normal1:L1:Perfect": {
+      "min": 99.8,
+      "max": 101.3
+    },
+    "normal1:L60:B": {
+      "min": 216.0,
+      "max": 218.0
+    },
+    "normal1:L60:Perfect": {
+      "min": 227.4,
+      "max": 229.4
+    },
+    "normal2:L169:B": {
+      "min": 476.8,
+      "max": 479.9
+    },
+    "normal2:L169:Perfect": {
+      "min": 514.1,
+      "max": 516.1
+    },
+    "normal2:L1:B": {
+      "min": 109.5,
+      "max": 111.5
+    },
+    "normal2:L1:Perfect": {
+      "min": 109.5,
+      "max": 111.5
+    },
+    "normal2:L60:B": {
+      "min": 236.9,
+      "max": 239.9
+    },
+    "normal2:L60:Perfect": {
+      "min": 250.1,
+      "max": 252.1
+    },
+    "normal2:L70:B": {
+      "min": 259.4,
+      "max": 261.4
+    },
+    "normal2:L70:Perfect": {
+      "min": 274.2,
+      "max": 276.2
+    },
+    "normal3:L179:B": {
+      "min": 554.0,
+      "max": 556.0
+    },
+    "normal3:L179:Perfect": {
+      "min": 596.9,
+      "max": 599.9
+    },
+    "normal3:L1:B": {
+      "min": 121.5,
+      "max": 123.5
+    },
+    "normal3:L1:Perfect": {
+      "min": 121.5,
+      "max": 123.5
+    },
+    "normal3:L60:B": {
+      "min": 263.4,
+      "max": 265.4
+    },
+    "normal3:L60:Perfect": {
+      "min": 278.0,
+      "max": 280.0
+    },
+    "normal3:L80:B": {
+      "min": 312.5,
+      "max": 315.6
+    },
+    "normal3:L80:Perfect": {
+      "min": 332.0,
+      "max": 335.5
+    },
+    "normal4:L189:B": {
+      "min": 645.8,
+      "max": 646.8
+    },
+    "normal4:L189:Perfect": {
+      "min": 696.6,
+      "max": 697.6
+    },
+    "normal4:L1:B": {
+      "min": 136.0,
+      "max": 136.3
+    },
+    "normal4:L1:Perfect": {
+      "min": 136.0,
+      "max": 136.3
+    },
+    "normal4:L60:B": {
+      "min": 296.1,
+      "max": 296.4
+    },
+    "normal4:L60:Perfect": {
+      "min": 310.1,
+      "max": 311.2
+    },
+    "normal4:L90:B": {
+      "min": 376.5,
+      "max": 377.0
+    },
+    "normal4:L90:Perfect": {
+      "min": 399.5,
+      "max": 400.8
+    },
+    "normal5:L100:B": {
+      "min": 474.7,
+      "max": 476.2
+    },
+    "normal5:L100:Perfect": {
+      "min": 506.1,
+      "max": 507.1
+    },
+    "normal5:L199:B": {
+      "min": 792.1,
+      "max": 793.4
+    },
+    "normal5:L199:Perfect": {
+      "min": 854.6,
+      "max": 856.2
+    },
+    "normal5:L1:B": {
+      "min": 160.0,
+      "max": 160.0
+    },
+    "normal5:L1:Perfect": {
+      "min": 160.0,
+      "max": 160.0
+    },
+    "normal5:L60:B": {
+      "min": 346.2,
+      "max": 348.2
+    },
+    "normal5:L60:Perfect": {
+      "min": 365.2,
+      "max": 366.9
+    },
+    "special4:L189:B": {
+      "min": 701.1,
+      "max": 704.1
+    },
+    "special4:L189:Perfect": {
+      "min": 757.0,
+      "max": 760.0
+    },
+    "special4:L1:B": {
+      "min": 147.0,
+      "max": 149.0
+    },
+    "special4:L1:Perfect": {
+      "min": 147.0,
+      "max": 149.0
+    },
+    "special4:L60:B": {
+      "min": 320.6,
+      "max": 321.6
+    },
+    "special4:L60:Perfect": {
+      "min": 337.0,
+      "max": 340.0
+    },
+    "special4:L90:B": {
+      "min": 408.8,
+      "max": 410.8
+    },
+    "special4:L90:Perfect": {
+      "min": 434.4,
+      "max": 436.4
+    },
+    "special5:L100:B": {
+      "min": 510.8,
+      "max": 512.1
+    },
+    "special5:L100:Perfect": {
+      "min": 543.6,
+      "max": 546.1
+    },
+    "special5:L199:B": {
+      "min": 851.2,
+      "max": 852.3
+    },
+    "special5:L199:Perfect": {
+      "min": 918.3,
+      "max": 921.3
+    },
+    "special5:L1:B": {
+      "min": 171.0,
+      "max": 173.0
+    },
+    "special5:L1:Perfect": {
+      "min": 171.0,
+      "max": 173.0
+    },
+    "special5:L60:B": {
+      "min": 372.7,
+      "max": 374.8
+    },
+    "special5:L60:Perfect": {
+      "min": 392.8,
+      "max": 394.8
+    }
+  }
+}
