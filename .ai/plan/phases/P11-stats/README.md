@@ -30,3 +30,13 @@ P13 owns skill/Element combat content, P16 transactions/Plus/recipes, P15/P19
 real training-time and economy calibration. Design completion does not certify
 runtime correctness or measured player satisfaction. Legacy14 runtime remains
 active until a separately authorized versioned implementation/migration.
+
+## Catalog balance review — 2026-10-12
+
+[Review of all152 assignments](P11-catalog-review-20261012.md) confirms numeric
+constraints but does **not** approve final species identity/combat balance.
+V1 has79 distinct base/growth vectors;104 species share a vector; several source
+stat signatures are absent, and Normal5 Wind coverage is empty. Authoring v2 is
+recommended within existing bands, with P13 kit/value proof before activation.
+No numeric assignments changed in this review. Static design completeness is
+not balance approval; see the review for six prioritized findings and evidence.

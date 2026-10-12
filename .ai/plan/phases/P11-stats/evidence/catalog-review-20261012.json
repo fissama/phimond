@@ -1,0 +1,557 @@
+{
+  "scope": "catalog design review, not combat balance certification",
+  "species": 152,
+  "numeric_vectors": 79,
+  "duplicate_groups": 31,
+  "species_in_duplicate_groups": 104,
+  "duplicate_redundancies": 73,
+  "same_element_duplicate_groups": [
+    [
+      "species_0007",
+      "species_0040",
+      "species_0058",
+      "species_0071"
+    ],
+    [
+      "species_0039",
+      "species_0091",
+      "species_0095"
+    ],
+    [
+      "species_0070",
+      "species_0074",
+      "species_0076",
+      "species_0108",
+      "species_0112"
+    ],
+    [
+      "species_0003",
+      "species_0056"
+    ],
+    [
+      "species_0026",
+      "species_0114"
+    ],
+    [
+      "species_0004",
+      "species_0006",
+      "species_0131"
+    ],
+    [
+      "species_0024",
+      "species_0109"
+    ],
+    [
+      "species_0094",
+      "species_0128"
+    ],
+    [
+      "species_0005",
+      "species_0021",
+      "species_0075",
+      "species_0130"
+    ],
+    [
+      "species_0009",
+      "species_0011",
+      "species_0133"
+    ],
+    [
+      "species_0012",
+      "species_0034"
+    ],
+    [
+      "species_0016",
+      "species_0066",
+      "species_0122"
+    ],
+    [
+      "species_0027",
+      "species_0090"
+    ],
+    [
+      "species_0030",
+      "species_0044",
+      "species_0115"
+    ],
+    [
+      "species_0032",
+      "species_0082"
+    ],
+    [
+      "species_0046",
+      "species_0116"
+    ],
+    [
+      "species_0061",
+      "species_0096"
+    ],
+    [
+      "species_0062",
+      "species_0097"
+    ],
+    [
+      "species_0144",
+      "species_0152"
+    ]
+  ],
+  "distinct_role_blends": 24,
+  "element_distribution": {
+    "dark": 36,
+    "earth": 52,
+    "fire": 18,
+    "water": 18,
+    "light": 12,
+    "wind": 16
+  },
+  "normal5_elements": {
+    "water": 2,
+    "dark": 3,
+    "earth": 4,
+    "light": 4,
+    "fire": 1
+  },
+  "source_signature_flags": [
+    {
+      "id": "species_0001",
+      "name": "Nhện Vong Linh",
+      "reason": "high defense absent within Physical template",
+      "source": "Công kích và phòng ngự cực tốt ,poke vật lý."
+    },
+    {
+      "id": "species_0004",
+      "name": "Xác Ướp",
+      "reason": "high defense absent within Magic template",
+      "source": "Trí tuệ và phòng ngự trưởng thành khá cao, là Poke ma pháp ,kháng tính hỗn loạn của địch rất nổi bật ."
+    },
+    {
+      "id": "species_0006",
+      "name": "U Linh",
+      "reason": "high HP absent within Magic template",
+      "source": "Tri tuệ và hp trưởng thành cực tốt"
+    },
+    {
+      "id": "species_0007",
+      "name": "Chó Ác Ma",
+      "reason": "fast theme has no Species SPD modifier",
+      "source": "Dù biến thành xác chết nhưng chúng vẫn háu chiến , Sức Mạnh công kích mạnh ,khả năng di chuyển nhanh."
+    },
+    {
+      "id": "species_0028",
+      "name": "Thủy Linh",
+      "reason": "source high HP/DEF not differentiated from Support+Magic template",
+      "source": "Hp và phòng ngư trưởng thành khá cao ,là một poke ma pháp ,có kỹ năng nâng thuộc tính kháng ánh sáng và kỹ năng trị liệu cho nhóm."
+    },
+    {
+      "id": "species_0038",
+      "name": "Tinh Linh Bách Hoa",
+      "reason": "source highest DEF not encoded as a signature",
+      "source": "Là một poke có thể nói là tinh linh của loài hoa ,Có phòng ngự trưởng thành Cao nhất , Sử dụng kỹ năng Ma Pháp Trị Liệu mạnh nhất cho nhóm."
+    },
+    {
+      "id": "species_0039",
+      "name": "Rồng Có Cánh",
+      "reason": "fast/low-defense signature lost in standard Physical vector",
+      "source": "Có sức mạnh nhanh nhẹn trưởng thành cao ,là poke vật lý ,có kỹ năng tấn công nhanh khiến khả năng tự phòng thủ thấp."
+    },
+    {
+      "id": "species_0040",
+      "name": "Rồng Mào Đỏ",
+      "reason": "source highest physical strength not distinguished in template group",
+      "source": "Rồng màu đỏ tự hào nhất là sức mạnh trưởng thành cao nhất , chúng súng bái sức mạnh tấn công , nên rất ít dùng đầu óc suy nghĩ vấn đề."
+    },
+    {
+      "id": "species_0050",
+      "name": "Hải Long Ba Đầu",
+      "reason": "source low defense is not differentiated within Magic+Disruptor template",
+      "source": "Trí tuệ trưởng thành cao , kỹ năng ma pháp đa dạng , nhưng phòng ngự kém . Tuy vậy kỹ năng khống chế đa dạng hoàn toàn có thể đưa cuộc chiến theo hướng nó."
+    },
+    {
+      "id": "species_0054",
+      "name": "Yêu Tinh Biển",
+      "reason": "fast healer-offense theme has no Species SPD modifier",
+      "source": "Ác ma ẩn trong biển sâu ,công kích nhanh là đặc điểm của chúng , ngoài ra còn nắm bắt ma pháp trị liệu ."
+    },
+    {
+      "id": "species_0055",
+      "name": "Mắt Ác Ma",
+      "reason": "source low HP/DEF lost; template has same HP and higher DEF than solo Magic",
+      "source": "Trí tuệ và tinh thần trưởng thành cao ,có kỹ năng trị liệu kèm ,bù đắp cho khả năng phòng ngự Hp kém."
+    },
+    {
+      "id": "species_0057",
+      "name": "Báo Địa Ngục",
+      "reason": "very fast dual attacker has neutral SPD",
+      "source": "Ðiểm đảng sợ của chúng là rất nhanh, ngoài ra cũng là poke ma võ song thần."
+    },
+    {
+      "id": "species_0061",
+      "name": "Lợn Ác Ma",
+      "reason": "balanced Magic description represented by strongly skewed Magic template",
+      "source": "Là một Poke ma pháp ,mọi thuộc tính trưởng thành  đồng đều, Nhưng đừng xem thường nó , nếu không sẽ ăn quả khổ đấy!"
+    },
+    {
+      "id": "species_0063",
+      "name": "Ma Tướng Địa Ngục",
+      "reason": "slow offense theme has no Species SPD modifier",
+      "source": "Sức Mạnh ,Hp trưởng thành cao , nhưng tốc độ lại thấp .Có khả năng nâng cao công kích cho bản thân."
+    },
+    {
+      "id": "species_0093",
+      "name": "Ưng Trọc Ma",
+      "reason": "very fast theme shares vector with other physical healers",
+      "source": "Là thú săn bẩm sinh ,nó có tốc độ và khả năng công kích cực nhanh , ngoài ra còn có kỹ năng trị liệu cá thể."
+    },
+    {
+      "id": "species_0096",
+      "name": "Nữ Yêu Minh Ưng",
+      "reason": "balanced Magic description represented by strongly skewed Magic template",
+      "source": "‌Poke ma pháp trưởng thành đồng đều ,có vẻ bề ngoài khác với một số loài chim 1 sao."
+    },
+    {
+      "id": "species_0102",
+      "name": "Ưng Hồng Vũ",
+      "reason": "balanced Magic description represented by strongly skewed Magic template",
+      "source": "Ưng Hồng vũ Trưởng thành cân bằng , poke ma pháp ,kỹ năng công kích ma pháp tốc kẻ địch ,nâng tốc bản thân."
+    },
+    {
+      "id": "species_0106",
+      "name": "Chim Cú Địa Ngục",
+      "reason": "highest agility not encoded; slower than some same-Star units",
+      "source": "‌Poke ma pháp có sự nhanh nhẹn cao nhất ,có kỹ năng công kích giảm tốc kẻ địch."
+    },
+    {
+      "id": "species_0113",
+      "name": "Thiên Ngưu",
+      "reason": "fast dual attacker has neutral SPD",
+      "source": "‌Poke ra tay cần bằng nhanh ,có khả năng công kích nhóm ma pháp và vật lý , còn có khả năng kháng tính tối tốt."
+    },
+    {
+      "id": "species_0125",
+      "name": "Nhện Phu Nhân",
+      "reason": "extreme HP theme same HP as every solo Magic at same Star",
+      "source": "Hp trưởng thành cực cao , dưới ảnh hưởng của ma pháp Thánh Linh từ loài bướm bình thường , trở thành poke trí tuệ."
+    },
+    {
+      "id": "species_0128",
+      "name": "Chong Chóng Gió",
+      "reason": "high HP theme same HP as every solo Magic at same Star",
+      "source": "‌Hp và Trí tuệ trưởng thành khá cao,poke ma pháp mang sát thương quần thể là trò chơi tủ của nó."
+    },
+    {
+      "id": "species_0131",
+      "name": "Hư Không Hắc Ám",
+      "reason": "magic/speed theme has neutral SPD; cannot outsource innate speed to unspecified skills",
+      "source": "Hành giả trên Không ,là poke khả năng ma pháp và tốc độ, nhưng khả năng tấn công lại thấp."
+    }
+  ],
+  "main_budget_ranges": {
+    "B:Lv1": {
+      "normal1": {
+        "min": 99.8,
+        "max": 101.3
+      },
+      "normal2": {
+        "min": 109.5,
+        "max": 111.5
+      },
+      "normal3": {
+        "min": 121.5,
+        "max": 123.5
+      },
+      "normal4": {
+        "min": 136.0,
+        "max": 136.3
+      },
+      "normal5": {
+        "min": 160.0,
+        "max": 160.0
+      },
+      "special5": {
+        "min": 171.0,
+        "max": 173.0
+      },
+      "special4": {
+        "min": 147.0,
+        "max": 149.0
+      }
+    },
+    "B:Lv60": {
+      "normal1": {
+        "min": 216.0,
+        "max": 218.0
+      },
+      "normal2": {
+        "min": 236.9,
+        "max": 239.9
+      },
+      "normal3": {
+        "min": 263.4,
+        "max": 265.4
+      },
+      "normal4": {
+        "min": 296.1,
+        "max": 296.4
+      },
+      "normal5": {
+        "min": 346.2,
+        "max": 348.2
+      },
+      "special5": {
+        "min": 372.7,
+        "max": 374.8
+      },
+      "special4": {
+        "min": 320.6,
+        "max": 321.6
+      }
+    },
+    "B:base_cap": {
+      "normal1": {
+        "min": 216.0,
+        "max": 218.0
+      },
+      "normal2": {
+        "min": 259.4,
+        "max": 261.4
+      },
+      "normal3": {
+        "min": 312.5,
+        "max": 315.6
+      },
+      "normal4": {
+        "min": 376.5,
+        "max": 377.0
+      },
+      "normal5": {
+        "min": 474.7,
+        "max": 476.2
+      },
+      "special5": {
+        "min": 510.8,
+        "max": 512.1
+      },
+      "special4": {
+        "min": 408.8,
+        "max": 410.8
+      }
+    },
+    "B:cap_plus99": {
+      "normal1": {
+        "min": 414.0,
+        "max": 416.0
+      },
+      "normal2": {
+        "min": 476.8,
+        "max": 479.9
+      },
+      "normal3": {
+        "min": 554.0,
+        "max": 556.0
+      },
+      "normal4": {
+        "min": 645.8,
+        "max": 646.8
+      },
+      "normal5": {
+        "min": 792.1,
+        "max": 793.4
+      },
+      "special5": {
+        "min": 851.2,
+        "max": 852.3
+      },
+      "special4": {
+        "min": 701.1,
+        "max": 704.1
+      }
+    },
+    "Perfect:Lv1": {
+      "normal1": {
+        "min": 99.8,
+        "max": 101.3
+      },
+      "normal2": {
+        "min": 109.5,
+        "max": 111.5
+      },
+      "normal3": {
+        "min": 121.5,
+        "max": 123.5
+      },
+      "normal4": {
+        "min": 136.0,
+        "max": 136.3
+      },
+      "normal5": {
+        "min": 160.0,
+        "max": 160.0
+      },
+      "special5": {
+        "min": 171.0,
+        "max": 173.0
+      },
+      "special4": {
+        "min": 147.0,
+        "max": 149.0
+      }
+    },
+    "Perfect:Lv60": {
+      "normal1": {
+        "min": 227.4,
+        "max": 229.4
+      },
+      "normal2": {
+        "min": 250.1,
+        "max": 252.1
+      },
+      "normal3": {
+        "min": 278.0,
+        "max": 280.0
+      },
+      "normal4": {
+        "min": 310.1,
+        "max": 311.2
+      },
+      "normal5": {
+        "min": 365.2,
+        "max": 366.9
+      },
+      "special5": {
+        "min": 392.8,
+        "max": 394.8
+      },
+      "special4": {
+        "min": 337.0,
+        "max": 340.0
+      }
+    },
+    "Perfect:base_cap": {
+      "normal1": {
+        "min": 227.4,
+        "max": 229.4
+      },
+      "normal2": {
+        "min": 274.2,
+        "max": 276.2
+      },
+      "normal3": {
+        "min": 332.0,
+        "max": 335.5
+      },
+      "normal4": {
+        "min": 399.5,
+        "max": 400.8
+      },
+      "normal5": {
+        "min": 506.1,
+        "max": 507.1
+      },
+      "special5": {
+        "min": 543.6,
+        "max": 546.1
+      },
+      "special4": {
+        "min": 434.4,
+        "max": 436.4
+      }
+    },
+    "Perfect:cap_plus99": {
+      "normal1": {
+        "min": 444.9,
+        "max": 446.9
+      },
+      "normal2": {
+        "min": 514.1,
+        "max": 516.1
+      },
+      "normal3": {
+        "min": 596.9,
+        "max": 599.9
+      },
+      "normal4": {
+        "min": 696.6,
+        "max": 697.6
+      },
+      "normal5": {
+        "min": 854.6,
+        "max": 856.2
+      },
+      "special5": {
+        "min": 918.3,
+        "max": 921.3
+      },
+      "special4": {
+        "min": 757.0,
+        "max": 760.0
+      }
+    }
+  },
+  "strict_six_stat_Pareto_dominance_Lv60_B_same_class_star": [
+    [
+      "species_0019",
+      "species_0143"
+    ],
+    [
+      "species_0151",
+      "species_0148"
+    ]
+  ],
+  "source_missing_ids": [
+    "species_0009",
+    "species_0018",
+    "species_0019",
+    "species_0020",
+    "species_0021",
+    "species_0022",
+    "species_0023",
+    "species_0024",
+    "species_0027",
+    "species_0030",
+    "species_0035",
+    "species_0037",
+    "species_0051",
+    "species_0052",
+    "species_0053",
+    "species_0058",
+    "species_0068",
+    "species_0069",
+    "species_0070",
+    "species_0071",
+    "species_0072",
+    "species_0073",
+    "species_0074",
+    "species_0075",
+    "species_0076",
+    "species_0078",
+    "species_0079",
+    "species_0080",
+    "species_0087",
+    "species_0088",
+    "species_0090",
+    "species_0091",
+    "species_0094",
+    "species_0095",
+    "species_0100",
+    "species_0105",
+    "species_0107",
+    "species_0114",
+    "species_0124",
+    "species_0126",
+    "species_0136",
+    "species_0139",
+    "species_0140",
+    "species_0141",
+    "species_0142",
+    "species_0143",
+    "species_0144",
+    "species_0145",
+    "species_0146",
+    "species_0147",
+    "species_0148",
+    "species_0149",
+    "species_0150",
+    "species_0151",
+    "species_0152"
+  ]
+}

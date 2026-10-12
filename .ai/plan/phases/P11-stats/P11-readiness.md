@@ -51,3 +51,13 @@ claimed globally implemented/resolved. P10's historical register remains intact.
 
 These gates do not reopen numerical P11 choices automatically. If evidence
 requires tuning, revise the versioned design explicitly and record its impact.
+
+## Catalog balance review — 2026-10-12
+
+[Review of all152 assignments](P11-catalog-review-20261012.md) confirms numeric
+constraints but does **not** approve final species identity/combat balance.
+V1 has79 distinct base/growth vectors;104 species share a vector; several source
+stat signatures are absent, and Normal5 Wind coverage is empty. Authoring v2 is
+recommended within existing bands, with P13 kit/value proof before activation.
+No numeric assignments changed in this review. Static design completeness is
+not balance approval; see the review for six prioritized findings and evidence.
