@@ -103,3 +103,21 @@ verbatim,55 remain missing. Source/registry hashes and Bird SPD values remain
 unchanged. See evidence/race-catalog-review-20261012.json and the current
 catalog-validation.json. Older arithmetic/catalog review evidence remains pinned
 to its recorded catalog version and does not certify v2 combat balance.
+
+## 2026-10-13 effective roster160 follow-up
+
+Current --check:160 records/320 layers,14 existing role/numeric amendments and
+eight authored stable allocations;138 original stat profiles unchanged.
+Exact MP/six-stat projection matches pinned P13 v7 after stable remapping.
+Normal4/5 primary Physical/Magic coverage passes independently for all8 Races.
+Bird proof:67 actual pairs plus252 templates.146 vectors;25 Species in shared
+groups. Source152 --check also passes after authored registry append; original
+namespace corruption still rejected. P13 v7 generator reproduces unchanged.
+
+Seven focused generation/corruption regressions plus P13 compatibility passed;
+see extension-regression-20261013.json. Build, fresh Go race tests, canonical
+check (six Godot checks including contact/layout,7 load/3 planner tests, vet
+and typecheck) and min_smoke PASS. No P11 runtime or measured balance claim.
+Pinned design inputs permit reproduction before shared P10 changes are committed;
+if a live authored namespace exists, allocation mismatch is rejected. Offline
+static reproduction is not proof of live registry/art/runtime readiness.

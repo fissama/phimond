@@ -176,6 +176,12 @@ CHOICES = '''
 '''
 
 def digest(path):
+    if path == REGISTRY:
+        # The v2 evidence pins the original registry layer. P10 may append an
+        # authored namespace without rewriting any original allocation.
+        original = json.loads(path.read_text())
+        original.pop('authored_species', None)
+        return hashlib.sha256((json.dumps(original,ensure_ascii=False,indent=2)+'\n').encode()).hexdigest()
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 def rounded(value, growth):

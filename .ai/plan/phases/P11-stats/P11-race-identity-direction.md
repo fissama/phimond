@@ -125,3 +125,13 @@ share vectors. Equal stats are allowed when roles/native briefs differ; P13 must
 supply distinct usable kits rather than assume static numerical uniqueness
 establishes combat balance. All152 authored descriptions avoid “nhất”;97 source
 quotes are preserved verbatim and55 remain explicitly missing.
+
+## Roster160 / roles4–5★ follow-up, 2026-10-13
+
+Race IDs of source152 are unchanged. The eight new authored additions use the
+same approved Race directions, and14 existing role blends are revised. The
+[effective catalog160](P11-species-catalog-160.md) regenerates all affected
+base/growth/MP without changing the Race modifier strengths or budgets.
+Bird proof now covers67 actual pairs and252 template cohorts. Changed role
+factors can change a Bird's previous SPD value, while preserving its advantage
+in the new ordered-role cohort. Native skills and measured battle value remain P13.

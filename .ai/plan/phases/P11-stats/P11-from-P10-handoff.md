@@ -1,3 +1,7 @@
+> Current extension2026-10-13: the 152 source identities below remain historical
+> foundation. P10 adds eight authored IDs; current effective roster is160. See
+> [P11 reconciliation](P11-roster-160-reconciliation.md) and final-spec F10/F11.
+
 # Final P11 handoff amendment
 
 P11 design completion is defined by [final spec](P11-final-spec.md). F02/F03

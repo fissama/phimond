@@ -45,7 +45,7 @@ SR base20/growth.510. At Lv60 B: SPD100/SR50; at Lv159 B: SPD201/SR100.
 
 Same base/growth shares; independent Species modifiers. Blend75/25 then author.
 Main per-stat±10%; SPD/SR each±5% inclusive. Actual values:
-[catalog JSON](P11-species-catalog.json).
+[current catalog160 JSON](P11-species-catalog-160.json).
 
 ## Inheritance/resource defaults — delegated F02/F04
 
@@ -75,3 +75,11 @@ Star/class target), separately for integer base and milli growth. Other Races
 retain neutral rounded targets. This stays inside±5% and introduces no runtime
 multiplier. Same-cohort ordering is an additional authoring invariant; see
 [P11-race-identity-direction.md](P11-race-identity-direction.md).
+
+## Roster160 / top-tier role reconciliation — 2026-10-13
+
+The numeric tables above are unchanged. Fourteen ordered role blends change
+which targets each Species uses; base/growth and MP are regenerated independently.
+Current full values and the eight registered authored additions are in catalog160.
+[Change ledger](P11-roster-160-reconciliation.md) separates Normal coverage,
+Special directions and source evidence.

@@ -5,7 +5,7 @@ engine, gameplay migration, DB writes or simulation harness is delivered.
 
 This is the current normative P11 specification. Read with
 [formulas](P11-formulas.md), [tables](P11-stat-tables.md),
-[catalog](P11-species-catalog.md), [verification](P11-verification.md) and
+[current catalog160](P11-species-catalog-160.md), [verification](P11-verification.md) and
 [readiness](P11-readiness.md). The interview is preserved in
 [decision history](P11-design-decisions.md); historical OPEN/LOCKED statements
 there describe their checkpoint, not the final state.
@@ -332,3 +332,33 @@ interpreting golden plumage as appearance. Race Bird, Primary Physical, Star,
 class, recipes and identity remain unchanged. This is Phimond Element authoring;
 no recovered APK Element claim or automatic damage bonus. Normal5 now covers
 all six authored Elements. P13 still defines actual interactions and kit value.
+
+## F10 — Owner-requested effective roster160, 2026-10-13
+
+Current Species numeric authority is catalog v3 in P11-species-catalog-160.json:
+141 Normal and19 Special. Preserve the152 source identities and historical
+P11 v2 snapshot. P10 authored_species maps six Normal5 plus two Special
+Hybrid5 to species_0153–species_0160; proposal aliases and provenance remain
+explicit. No invented APK enums, art hashes or migration mapping. The new
+IDs/role directions are reconciled under the owner's request to update P11
+after the extension, not inferred full-phase P13 approval.
+
+## F11 — Four/five-star roles and Race stat reconciliation
+
+The14 role amendments and eight additions are enumerated in
+[P11-roster-160-reconciliation.md](P11-roster-160-reconciliation.md). Regenerate
+Species base/growth and MP from each revised ordered blend, preserving numeric
+tables, precision, grade distribution, inheritance and F07/F08 Race authoring.
+No source Race ID is changed by the current inputs. Every Race now has separate
+primary Physical/Magic Normal choices at4/5★; Hybrid and Special are not
+substitutes for that coverage. Preserve the three Normal Hybrid5 directions
+and the two new Special Hybrid5 briefs. These are kit/development contracts,
+not a bonus based on parents or an extra action. P13/P16/P20 consume the stable
+alias mapping and own skills/recipe operations; art/runtime remain gated.
+
+Validation independently checks320 layers, all guards and Bird ordering,
+source identity preservation, authored registration mapping, exact P13 v7
+numeric/MP parity and deterministic reproduction. Source152 validation hashes
+the original registry namespace; appending authored_species is permitted,
+changing original mappings remains rejected. Full current registry provenance
+is pinned separately in the effective manifest.

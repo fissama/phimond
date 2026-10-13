@@ -1,3 +1,10 @@
+> Current2026-10-13: effective v3 catalog160 validates320 layers and14 role
+> amendments. 152 source IDs +8 P10 authored allocations; identity/registration
+> inputs for the extension currently exist in shared P10 work awaiting its own
+> scoped delivery. Do not infer full P13 acceptance/art/runtime from P11 update.
+> [Reconciliation](P11-roster-160-reconciliation.md) is current; v2 results below
+> are historical152 evidence.
+
 # P11 — Design readiness and downstream gates
 
 Date: 2026-10-12. **P11 DESIGN CLOSED; catalog v2 validated; layout delivery gate repaired and passing.**

@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "checks": [
+    "repeated generation deterministic",
+    "out-of-band authored ATK rejected",
+    "frozen source Race mutation rejected",
+    "wrong authored proposal alias rejected",
+    "wrong MP rejected by numeric parity",
+    "duplicate stable identity rejected",
+    "original registry namespace mutation rejected",
+    "P13 candidate generator unchanged and v7 reproducible",
+    "exactly14 original stat profiles changed;138 preserved",
+    "pinned design reproduces offline with historical source registry"
+  ],
+  "note": "Static design regression checks executed in shared workspace; P10 input delivery and runtime remain separate"
+}

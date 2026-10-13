@@ -1,0 +1,297 @@
+{
+  "version": "P11-v3-effective-160-20261013",
+  "authorization": "owner requested P11 reconciliation with 160 expansion and revised top-tier directions, 2026-10-13",
+  "input_catalog_version": "P13-v7-owner-review-160",
+  "input_catalog_path": ".ai/plan/phases/P13-skills/P13-candidate-species-catalog-160.json",
+  "input_catalog_sha256": "5dc2fc1c831470adc54f2e2cbde09f63b3ec28e1aaf3953e90d1be7b9b8455f1",
+  "baseline_catalog_sha256": "0688dd40b462eaa52b807c403f5fa57f45cf7c903a439eea8db11a0b9543832c",
+  "numeric_projection_fields": [
+    "id",
+    "race_id",
+    "star",
+    "species_class",
+    "element_id",
+    "primary_role",
+    "secondary_role",
+    "base_stats",
+    "growth_baseline",
+    "mp_profile"
+  ],
+  "expected_numeric_projection_sha256": "663484ecc945e044a99a97cb6b88ab94535f960a7246a774ee5cdcfe787be5ee",
+  "role_amendments": [
+    {
+      "id": "species_0020",
+      "roles": [
+        "physical_dps",
+        "tank"
+      ],
+      "accent": "atk"
+    },
+    {
+      "id": "species_0035",
+      "roles": [
+        "magic_dps",
+        "support"
+      ],
+      "accent": "mag"
+    },
+    {
+      "id": "species_0037",
+      "roles": [
+        "magic_dps",
+        "disruptor"
+      ],
+      "accent": "mag"
+    },
+    {
+      "id": "species_0038",
+      "roles": [
+        "physical_dps",
+        "support"
+      ],
+      "accent": "atk"
+    },
+    {
+      "id": "species_0051",
+      "roles": [
+        "physical_dps",
+        "disruptor"
+      ],
+      "accent": "atk"
+    },
+    {
+      "id": "species_0069",
+      "roles": [
+        "hybrid",
+        "support"
+      ],
+      "accent": "dual"
+    },
+    {
+      "id": "species_0084",
+      "roles": [
+        "tank",
+        "physical_dps"
+      ],
+      "accent": "hp"
+    },
+    {
+      "id": "species_0103",
+      "roles": [
+        "magic_dps",
+        "disruptor"
+      ],
+      "accent": "mag"
+    },
+    {
+      "id": "species_0124",
+      "roles": [
+        "physical_dps",
+        "tank"
+      ],
+      "accent": "atk"
+    },
+    {
+      "id": "species_0126",
+      "roles": [
+        "magic_dps",
+        "support"
+      ],
+      "accent": "mag"
+    },
+    {
+      "id": "species_0141",
+      "roles": [
+        "magic_dps",
+        "support"
+      ],
+      "accent": "mag"
+    },
+    {
+      "id": "species_0145",
+      "roles": [
+        "tank",
+        "physical_dps"
+      ],
+      "accent": "def"
+    },
+    {
+      "id": "species_0148",
+      "roles": [
+        "magic_dps",
+        "support"
+      ],
+      "accent": "mag"
+    },
+    {
+      "id": "species_0150",
+      "roles": [
+        "physical_dps",
+        "tank"
+      ],
+      "accent": "atk"
+    }
+  ],
+  "additions": [
+    {
+      "id": "P13-NEW-01",
+      "name_vi": "Hươu Rêu Nguyệt",
+      "race_id": "beast",
+      "star": 5,
+      "species_class": "normal",
+      "element_id": "earth",
+      "role_ids": [
+        "magic_dps"
+      ],
+      "source_identity": {
+        "namespace": "phimond_p13_authored_proposal",
+        "proposal_id": "P13-NEW-01",
+        "apk_jar_source": false
+      },
+      "rationale": "Hươu có gạc phủ rêu và hạt sáng; silhouette khác Ngựa Bùn Cỏ. AoE phép nhẹ để farm, đơn thể phép và hồi phục phụ.",
+      "species_stat_accent": "mag"
+    },
+    {
+      "id": "P13-NEW-02",
+      "name_vi": "Thiết Giáp Long",
+      "race_id": "dragon",
+      "star": 5,
+      "species_class": "normal",
+      "element_id": "earth",
+      "role_ids": [
+        "physical_dps"
+      ],
+      "source_identity": {
+        "namespace": "phimond_p13_authored_proposal",
+        "proposal_id": "P13-NEW-02",
+        "apk_jar_source": false
+      },
+      "rationale": "Rồng thấp, giáp đá và đuôi chùy; khác Thánh Rồng Thái Cổ. Đơn thể vật lý, quét nhẹ, khiên phụ.",
+      "species_stat_accent": "atk"
+    },
+    {
+      "id": "P13-NEW-03",
+      "name_vi": "Tinh Vân Long",
+      "race_id": "dragon",
+      "star": 5,
+      "species_class": "normal",
+      "element_id": "light",
+      "role_ids": [
+        "magic_dps"
+      ],
+      "source_identity": {
+        "namespace": "phimond_p13_authored_proposal",
+        "proposal_id": "P13-NEW-03",
+        "apk_jar_source": false
+      },
+      "rationale": "Rồng mảnh, vây sao và lõi sáng; nhận diện phép từ xa. AoE phép nhẹ, phép đơn thể và dispel phụ.",
+      "species_stat_accent": "mag"
+    },
+    {
+      "id": "P13-NEW-04",
+      "name_vi": "Đao Ma Huyết Giáp",
+      "race_id": "demon",
+      "star": 5,
+      "species_class": "normal",
+      "element_id": "fire",
+      "role_ids": [
+        "physical_dps"
+      ],
+      "source_identity": {
+        "namespace": "phimond_p13_authored_proposal",
+        "proposal_id": "P13-NEW-04",
+        "apk_jar_source": false
+      },
+      "rationale": "Ác ma vai rộng, lưỡi đao và giáp nứt đỏ. Chém đơn thể, quét nhẹ và debuff phụ.",
+      "species_stat_accent": "atk"
+    },
+    {
+      "id": "P13-NEW-05",
+      "name_vi": "Ma Nhãn Hư Không",
+      "race_id": "demon",
+      "star": 5,
+      "species_class": "normal",
+      "element_id": "dark",
+      "role_ids": [
+        "magic_dps"
+      ],
+      "source_identity": {
+        "namespace": "phimond_p13_authored_proposal",
+        "proposal_id": "P13-NEW-05",
+        "apk_jar_source": false
+      },
+      "rationale": "Ác ma bay với một mắt và vòng ấn; khác Trụy Thiên Sứ. AoE phép nhẹ, phép đơn thể và control phụ.",
+      "species_stat_accent": "mag"
+    },
+    {
+      "id": "P13-NEW-06",
+      "name_vi": "Hộ Vệ Thạch Linh",
+      "race_id": "spirit",
+      "star": 5,
+      "species_class": "normal",
+      "element_id": "earth",
+      "role_ids": [
+        "physical_dps"
+      ],
+      "source_identity": {
+        "namespace": "phimond_p13_authored_proposal",
+        "proposal_id": "P13-NEW-06",
+        "apk_jar_source": false
+      },
+      "rationale": "Linh thể đá có nắm đấm lớn, lõi nhỏ; khác Nhân Sư và Cự Ma. Vật lý đơn thể, quét nhẹ và bảo vệ phụ.",
+      "species_stat_accent": "atk"
+    },
+    {
+      "id": "P13-SPECIAL-01",
+      "name_vi": "Long Thần Song Ấn",
+      "race_id": "dragon",
+      "star": 5,
+      "species_class": "special",
+      "element_id": "light",
+      "role_ids": [
+        "hybrid",
+        "support"
+      ],
+      "source_identity": {
+        "namespace": "phimond_p13_authored_proposal",
+        "proposal_id": "P13-SPECIAL-01",
+        "apk_jar_source": false
+      },
+      "rationale": "Rồng hai cụm giáp và vây ấn sáng, nhìn rõ cả móng/vuốt vật lý và lõi phép; không sao chép Thanh Long. Kit có hai damage channel, buff phụ; không cộng ATK+MAG trong một hit.",
+      "species_stat_accent": "dual"
+    },
+    {
+      "id": "P13-SPECIAL-02",
+      "name_vi": "Ma Chủ Song Cực",
+      "race_id": "demon",
+      "star": 5,
+      "species_class": "special",
+      "element_id": "dark",
+      "role_ids": [
+        "hybrid",
+        "disruptor"
+      ],
+      "source_identity": {
+        "namespace": "phimond_p13_authored_proposal",
+        "proposal_id": "P13-SPECIAL-02",
+        "apk_jar_source": false
+      },
+      "rationale": "Ác ma có một tay vũ khí và một tay ấn phép, silhouette khác Ma Vương Hút Máu. Kit vật lý/phép và debuff phụ, giữ đánh đổi sáu slot.",
+      "species_stat_accent": "dual"
+    }
+  ],
+  "proposal_to_stable": {
+    "P13-NEW-01": "species_0153",
+    "P13-NEW-02": "species_0154",
+    "P13-NEW-03": "species_0155",
+    "P13-NEW-04": "species_0156",
+    "P13-NEW-05": "species_0157",
+    "P13-NEW-06": "species_0158",
+    "P13-SPECIAL-01": "species_0159",
+    "P13-SPECIAL-02": "species_0160"
+  },
+  "mapping_source_path": ".ai/plan/phases/P10-pet-model/extension-20261013/mapping.json",
+  "mapping_source_sha256": "2dc6451c19f60f351fcab0fde6a222651f13a561969ac19841d3999214cfdbc8",
+  "registry_layer_policy": "P10 source namespace preserved; eight allocations from authored_species; no synthetic source enums",
+  "registry_full_sha256": "c3b72ae18495f6e9a8dfd99fada284d42ef8f71e2a2fcdf97e12e23ab030eb8d"
+}

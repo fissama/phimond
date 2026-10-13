@@ -1,3 +1,9 @@
+> 2026-10-13 follow-up: the design is reconciled to160 records in
+> [catalog v3](P11-species-catalog-160.md). The closure below is the original
+> 152-v2 delivery; its counts are historical. Current320-layer validation,
+> 14 role changes and registry dependencies are recorded in
+> [reconciliation](P11-roster-160-reconciliation.md) and handoff-20261013.md.
+
 # P11 — Stats design closure, 2026-10-12
 
 Status: **DESIGN CLOSED**. Current authority: final-spec F01–F09 and catalog v2.
