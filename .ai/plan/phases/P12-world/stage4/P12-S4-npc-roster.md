@@ -10,7 +10,7 @@ Hạng: **main** = chuỗi nhiệm vụ chính (P04 onboarding; P17 viết truy�
 
 | Map | main | free | heal | learn | shop | khác |
 |---|---|---|---|---|---|---|
-| `summoning_hall_main_hall` | — | 1 | — | — | — | events |
+| `summoning_hall_main_hall` | 1 | — | — | — | — | guide |
 | `emerald_forest_main_woods` | 1 | 1 | 1 | 1 | 1 | — |
 | `emerald_forest_deep_woods` | — | 2 | — | — | — | — |
 | `city_palace_gate` | 1 | — | — | — | — | guild |
@@ -90,7 +90,7 @@ Hạng: **main** = chuỗi nhiệm vụ chính (P04 onboarding; P17 viết truy�
 
 | Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
 |---|---|---|---|---|---|
-| **Triệu Linh Sư Mira** (`summoner_mira`) | free | events, free | -5.32, 0.36 | Npc | Map sự kiện (owner 2026-10-15): NPC đánh dấu phụ / sự kiện hằng ngày. Hướng dẫn chọn bệ nhận pet 1★ chuyển cho phase quest quyết. Nguồn có 4 biến thể ẩn cùng vị trí. |
+| **Triệu Linh Sư Mira** (`summoner_mira`) | main | quest, guide | -5.32, 0.36 | Npc | Người hướng dẫn đứng giữa; chọn bệ → nhận pet 1★ → mở khóa trụ một chiều tới Emerald. Nguồn có 4 biến thể ẩn cùng vị trí (4 trạng thái hội thoại). |
 
 ## emerald_forest_main_woods (4)
 

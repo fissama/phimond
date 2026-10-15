@@ -5,7 +5,7 @@ M = dict(hall='summoning_hall_main_hall', bia='emerald_forest_main_woods', sau='
  east='treasure_beach_east_beach', west='treasure_beach_west_beach', deep='treasure_beach_deep_sea',
  isl='treasure_beach_prosperity_island', ship='middle_corridor_main_hall')
 R = [
-('hall','summoner_mira','Triệu Linh Sư Mira','free',['events','free'],'Npc','Map sự kiện (owner 2026-10-15): NPC đánh dấu phụ / sự kiện hằng ngày. Hướng dẫn chọn bệ nhận pet 1★ chuyển cho phase quest quyết. Nguồn có 4 biến thể ẩn cùng vị trí.'),
+('hall','summoner_mira','Triệu Linh Sư Mira','main',['quest','guide'],'Npc','Người hướng dẫn đứng giữa; chọn bệ → nhận pet 1★ → mở khóa trụ một chiều tới Emerald. Nguồn có 4 biến thể ẩn cùng vị trí (4 trạng thái hội thoại).'),
 ('bia','forest_guide','Kiểm Lâm Lio','main',['quest','heal'],'Lisa','NPC runtime sẵn có (`forest_guide`). Chuỗi P04: di chuyển, nói chuyện, chiến đấu, bắt pet. Gần điểm xuất hiện.'),
 ('bia','bia_shop','Tiểu Thương Wen','service',['shop'],'Shop','Tạp hóa cơ bản (thuốc, bẫy).'),
 ('bia','bia_skill','Thợ Săn Rowan','service',['learn'],'Skill','Dạy kỹ năng bậc 1 (Lv1–10).'),
