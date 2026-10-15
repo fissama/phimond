@@ -1,8 +1,10 @@
 """Sinh .ai/plan/phases/P12-world/review/review-package.json từ roster Stage 4. Chạy: python3 tools/p12_review/build_package.py"""
-import json
+import json, sys
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 PH = ROOT / '.ai/plan/phases/P12-world'
+sys.path.insert(0, str(PH / 'stage4'))
+from roster_outer import NAME as ONAME, REGIONS
 OUT = PH / 'review/review-package.json'
 NAMES = {
  'summoning_hall_main_hall': 'Triệu Linh Điện', 'emerald_forest_main_woods': 'Bìa Rừng Lục Bảo',
@@ -31,6 +33,10 @@ dec = [
   'columns': [], 'rows': []}]
 by = {}
 for n in roster: by.setdefault(n['map_id'], []).append(n)
+dec.append({'id': 'S1-SCOPE-EXT', 'category': 'Stage 1 · Phạm vi', 'title': 'Mở rộng: 58 map của 11 vùng ngoài 17 map',
+  'summary': 'Sa Mạc, Mỏm Đá Gió, Đảo Ác Mộng, Lăng Mộ, Giao Điểm và 6 vùng cao Lv40+ (Tinh Không, Di Tích Cổ, Lâu Đài Ma, Cây Thế Giới, Tháp Chim, Mê Thành). Chỉ phần NPC; portal, cấp và vùng an toàn đã có ở thiết kế.',
+  'rationale': 'Owner yêu cầu 2026-10-15. Các map này vẫn ngoài phạm vi ma trận portal chi tiết; roster dùng số slot NPC trong APK 3.2, chưa có vị trí.',
+  'columns': ['Vùng', 'Map'], 'rows': [[r, ', '.join(ONAME[m] for m in ms)] for _, r, ms in REGIONS]})
 for mid, name in NAMES.items():
     ns = by.get(mid, [])
     new = sum(1 for n in ns if n['new'])
@@ -40,9 +46,17 @@ for mid, name in NAMES.items():
       'columns': ['Tên', 'Hạng', 'Vai trò', 'Nguồn', 'Ghi chú'],
       'rows': [[n['name_vi'], TIER[n['tier']], ', '.join(ROLE.get(r, r) for r in n['roles']),
                 'MỚI' if n['new'] else 'vị trí APK', n['note']] for n in ns]})
+for key, rname, ms in REGIONS:
+    ns = [n for m in ms for n in by.get(m, [])]
+    rows = [[ONAME[n['map_id']], n['name_vi'], TIER[n['tier']], ', '.join(ROLE.get(r, r) for r in n['roles']), n['note'].replace('MỚI (vị trí chưa trích từ APK). ', '')] for n in ns]
+    nomap = [ONAME[m] for m in ms if not by.get(m)]
+    dec.append({'id': 'S4-NPC-REG-' + key, 'category': 'Stage 4 · Roster NPC (vùng ngoài)', 'title': rname,
+      'summary': f'{len(ns)} NPC trên {len(ms)} map.' + (f' Không có NPC: {", ".join(nomap)}.' if nomap else ''),
+      'rationale': 'Hub an toàn có hồi máu/cửa hàng/kỹ năng; map quái chỉ NPC nhiệm vụ phụ. Tên là đề xuất, không lấy từ APK.',
+      'columns': ['Map', 'Tên', 'Hạng', 'Vai trò', 'Ghi chú'], 'rows': rows})
 pkg = {'schema_version': 1, 'phase': 'P12', 'revision': 'P12-owner-review-20261015',
  'title': 'P12 · Duyệt một lần: phạm vi, renderer, roster NPC',
- 'status': 'Chờ chủ dự án duyệt', 'summary': f'{len(roster)} mục (52 NPC + 1 hòm thư) trên 17 map.', 'decisions': dec}
+ 'status': 'Chờ chủ dự án duyệt', 'summary': f'{len(roster)} mục (106 NPC + 1 hòm thư) trên 75 map.', 'decisions': dec}
 OUT.parent.mkdir(parents=True, exist_ok=True)
 OUT.write_text(json.dumps(pkg, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 print('decisions', len(dec), 'npcs', len(roster))

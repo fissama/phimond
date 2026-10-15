@@ -1,6 +1,6 @@
 # P12 Stage 4 — Roster NPC đề xuất (nháp, chờ owner duyệt)
 
-52 NPC + 1 hòm thư (vật thể) trong 17 map: 40 gắn vào vị trí NPC gốc APK 3.2 (44 slot), 13 MỚI (cần đặt vị trí khi vẽ HD-2D). Sinh bằng `gen_npc_roster.py`; tên không dùng tên NPC trong APK.
+106 NPC + 1 hòm thư (vật thể) trong 75 map (17 map phạm vi + 58 map của 11 vùng mở rộng 2026-10-15): 40 gắn vào vị trí NPC gốc APK 3.2 (44 slot, chỉ 17 map đầu), 67 MỚI (cần đặt vị trí khi vẽ HD-2D). Sinh bằng `gen_npc_roster.py`; tên không dùng tên NPC trong APK.
 
 **Lưu ý:** tên object trong APK (`thaythuoc`, `TTTD`, `guild`…) là tên prefab, chưa đủ tin cậy để suy vai trò; vai trò ở đây là **thiết kế đề xuất**, chỉ dùng vị trí gốc làm sườn. Tọa độ APK chỉ là bản phác, bản vẽ HD-2D sẽ đặt lại.
 
@@ -27,6 +27,64 @@ Hạng: **main** = chuỗi nhiệm vụ chính (P04 onboarding; P17 viết truy�
 | `treasure_beach_deep_sea` | — | 1 | — | — | — | — |
 | `treasure_beach_prosperity_island` | — | 1 | — | — | — | — |
 | `middle_corridor_main_hall` | 1 | 1 | 1 | 1 | 1 | smith, story, teleport |
+| `desert_shicheng_ruins` | 1 | 1 | 1 | 1 | 1 | — |
+| `desert_entrance` | — | 1 | — | — | — | — |
+| `desert_sealed_land` | — | — | — | — | — | — |
+| `desert_hulu_tribe` | — | 1 | — | — | — | — |
+| `desert_barren_sands` | — | 1 | — | — | — | — |
+| `desert_disaster_sands` | — | — | — | — | — | — |
+| `windrock_mountain_camp` | 1 | 1 | 1 | 1 | 1 | — |
+| `windrock_mountain_stone_bridge` | — | 1 | — | — | — | — |
+| `windrock_mountain_howling_canyon` | — | — | — | — | — | — |
+| `windrock_mountain_mountain_range` | — | 1 | — | — | — | — |
+| `windrock_mountain_mountain_path` | — | 1 | — | — | — | — |
+| `windrock_mountain_summit` | — | 1 | — | — | — | — |
+| `nightmare_island_survivor_camp` | 1 | 1 | 1 | 1 | 1 | — |
+| `nightmare_island_east_magic_island` | — | 1 | — | — | — | — |
+| `nightmare_island_ruins` | — | 1 | — | — | — | — |
+| `nightmare_island_disaster_gate` | — | — | — | — | — | — |
+| `nightmare_island_resentment_path` | — | 1 | — | — | — | — |
+| `nightmare_island_despair_land` | — | 1 | — | — | — | — |
+| `tomb_region_camp` | 1 | 1 | 1 | 1 | 1 | — |
+| `tomb_region_resentment_path` | — | 1 | — | — | — | — |
+| `tomb_region_despair_path` | — | — | — | — | — | — |
+| `tomb_region_dead_ruins` | — | — | — | — | — | — |
+| `tomb_region_deep_ruins` | — | — | — | — | — | — |
+| `tomb_region_gods_tomb` | — | 1 | — | — | — | — |
+| `tomb_region_soul_cemetery` | — | 2 | — | — | — | — |
+| `tomb_region_unnamed_area_01` | — | — | — | — | — | — |
+| `tomb_region_unnamed_area_02` | — | — | — | — | — | — |
+| `crossroads_unnamed_area_01` | 1 | — | 1 | 1 | 1 | — |
+| `crossroads_unnamed_area_02` | — | — | — | — | — | — |
+| `crossroads_unnamed_area_03` | — | 1 | — | — | — | — |
+| `crossroads_unnamed_area_04` | — | 1 | — | — | — | — |
+| `crossroads_unnamed_area_05` | — | 1 | — | — | — | — |
+| `crossroads_unnamed_area_06` | — | — | — | — | — | — |
+| `astral_realm_unnamed_area_01` | 1 | — | 1 | 1 | 1 | — |
+| `astral_realm_spacetime_rift` | — | — | — | — | — | — |
+| `astral_realm_unnamed_area_02` | — | 1 | — | — | — | — |
+| `astral_realm_unnamed_area_03` | — | — | — | — | — | — |
+| `astral_realm_unnamed_area_04` | — | — | — | — | — | — |
+| `astral_realm_unnamed_area_05` | — | 1 | — | — | — | — |
+| `astral_realm_unnamed_area_06` | — | — | — | — | — | — |
+| `ancient_ruins_unnamed_area_01` | 1 | — | 1 | 1 | 1 | — |
+| `ancient_ruins_unnamed_area_02` | — | 1 | — | — | — | — |
+| `ancient_ruins_unnamed_area_03` | — | — | — | — | — | — |
+| `ancient_ruins_unnamed_area_04` | — | 1 | — | — | — | — |
+| `ancient_ruins_unnamed_area_05` | — | 1 | — | — | — | — |
+| `ancient_ruins_unnamed_area_06` | — | — | — | — | — | — |
+| `ghost_castle_gate` | 1 | — | 1 | 1 | 1 | — |
+| `ghost_castle_deep_woods` | — | — | — | — | — | — |
+| `ghost_castle_ancient_city_secret_chamber` | — | — | — | — | — | — |
+| `world_tree_gate` | 1 | — | 1 | 1 | 1 | — |
+| `world_tree_deep_woods` | — | — | — | — | — | — |
+| `world_tree_secret_chamber` | — | — | — | — | — | — |
+| `tower_region_main_tower` | 1 | — | 1 | 1 | 1 | — |
+| `tower_region_deep_woods` | — | 1 | — | — | — | — |
+| `tower_region_secret_floor` | — | — | — | — | — | — |
+| `immortal_maze_main_maze` | 1 | — | 1 | 1 | 1 | — |
+| `immortal_maze_floor` | — | 1 | — | — | — | — |
+| `immortal_maze_secret_floor` | — | — | — | — | — | — |
 
 ## summoning_hall_main_hall (1)
 
@@ -165,6 +223,350 @@ Hạng: **main** = chuỗi nhiệm vụ chính (P04 onboarding; P17 viết truy�
 | **Quản Kho Thuyền Moto** (`ship_shop`) | service | shop | -2.39, 1.81 | Npc (1) | Đồ Lv40+. |
 | **Thợ Rèn Tàu Harlo** (`ship_smith`) | service | smith | MỚI: chưa đặt | — | MỚI (owner 2026-10-15). Rèn trang bị Lv40+ (hook cho P14). |
 | **Lữ Khách Tàu Yuma** (`ship_free`) | free | free | -4.21, -1.96 | npc | Nhiệm vụ phụ vùng cao. |
+
+## desert_shicheng_ruins (4)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+| **Trạm Trưởng Sa Thạch Aven** (`desert_aven`) | main | quest, heal | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Trưởng hub: nhiệm vụ vùng (hook chuỗi chính) + hồi máu. |
+| **Thương Nhân Sa Mạc Brisa** (`desert_brisa`) | service | shop | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Cửa hàng của vùng. |
+| **Sư Phụ Hoang Sa Calder** (`desert_calder`) | service | learn | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Dạy kỹ năng; bậc do P13 quyết. |
+| **Lữ Khách Cát Vàng Dalia** (`desert_dalia`) | free | free | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Nhiệm vụ phụ nhẹ, truyện nền. |
+
+## desert_entrance (1)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+| **Người Tìm Nước Edda** (`desert_edda`) | free | free | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15). |
+
+## desert_sealed_land (0)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+
+## desert_hulu_tribe (1)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+| **Người Tìm Nước Fenwick** (`desert_fenwick`) | free | free | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15). |
+
+## desert_barren_sands (1)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+| **Người Tìm Nước Galen** (`desert_galen`) | free | free | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15). |
+
+## desert_disaster_sands (0)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+
+## windrock_mountain_camp (4)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+| **Trại Trưởng Phong Thạch Hesper** (`wind_hesper`) | main | quest, heal | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Trưởng hub: nhiệm vụ vùng (hook chuỗi chính) + hồi máu. |
+| **Thợ Đồ Sơn Cước Iris** (`wind_iris`) | service | shop | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Cửa hàng của vùng. |
+| **Sư Phụ Đá Gió Jorin** (`wind_jorin`) | service | learn | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Dạy kỹ năng; bậc do P13 quyết. |
+| **Người Chăn Dê Núi Kestra** (`wind_kestra`) | free | free | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Nhiệm vụ phụ nhẹ, truyện nền. |
+
+## windrock_mountain_stone_bridge (1)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+| **Thợ Săn Núi Loren** (`wind_loren`) | free | free | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15). |
+
+## windrock_mountain_howling_canyon (0)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+
+## windrock_mountain_mountain_range (1)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+| **Thợ Săn Núi Mirel** (`wind_mirel`) | free | free | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15). |
+
+## windrock_mountain_mountain_path (1)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+| **Thợ Săn Núi Nolan** (`wind_nolan`) | free | free | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15). |
+
+## windrock_mountain_summit (1)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+| **Thợ Săn Núi Orla** (`wind_orla`) | free | free | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15). |
+
+## nightmare_island_survivor_camp (3)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+| **Đội Trưởng Tàn Sinh Pavel** (`night_pavel`) | main | quest, heal | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Map hỗn hợp (NPC và quái trộn, owner 2026-10-15): được phép hồi máu. Hook chuỗi chính. |
+| **Tiểu Thương Sống Sót Quinn** (`night_quinn`) | service | shop, learn | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Map hỗn hợp: cửa hàng + dạy kỹ năng (bậc do P13). |
+| **Người Kể Chuyện Đảo Rhea** (`night_rhea`) | free | free | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Nhiệm vụ phụ, truyện nền. |
+
+## nightmare_island_east_magic_island (1)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+| **Người Sống Sót Soren** (`night_soren`) | free | free | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15). |
+
+## nightmare_island_ruins (1)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+| **Người Sống Sót Talia** (`night_talia`) | free | free | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15). |
+
+## nightmare_island_disaster_gate (0)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+
+## nightmare_island_resentment_path (1)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+| **Người Sống Sót Ulric** (`night_ulric`) | free | free | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15). |
+
+## nightmare_island_despair_land (1)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+| **Người Sống Sót Vesna** (`night_vesna`) | free | free | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15). |
+
+## tomb_region_camp (4)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+| **Quản Trạm Canh Lăng Wren** (`tomb_wren`) | main | quest, heal | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Trưởng hub: nhiệm vụ vùng (hook chuỗi chính) + hồi máu. |
+| **Người Bán Hương Nến Xan** (`tomb_xan`) | service | shop | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Cửa hàng của vùng. |
+| **Sư Phụ Linh Lăng Yara** (`tomb_yara`) | service | learn | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Dạy kỹ năng; bậc do P13 quyết. |
+| **Người Giữ Mộ Zora** (`tomb_zora`) | free | free | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Nhiệm vụ phụ nhẹ, truyện nền. |
+
+## tomb_region_resentment_path (1)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+| **Người Thắp Đèn Mộ Alder** (`tomb_alder`) | free | free | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15). |
+
+## tomb_region_despair_path (0)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+
+## tomb_region_dead_ruins (0)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+
+## tomb_region_deep_ruins (0)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+
+## tomb_region_gods_tomb (1)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+| **Người Thắp Đèn Mộ Bram** (`tomb_bram`) | free | free | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15). |
+
+## tomb_region_soul_cemetery (2)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+| **Người Thắp Đèn Mộ Cora** (`tomb_cora`) | free | free | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15). |
+| **Người Thắp Đèn Mộ Dov** (`tomb_dov`) | free | free | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15). |
+
+## tomb_region_unnamed_area_01 (0)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+
+## tomb_region_unnamed_area_02 (0)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+
+## crossroads_unnamed_area_01 (2)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+| **Trưởng Cổng Địa Đạo Elric** (`cross_elric`) | main | quest, heal | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Trưởng hub: nhiệm vụ vùng (hook chuỗi chính) + hồi máu. |
+| **Thợ Đèn Địa Đạo Fara** (`cross_fara`) | service | shop, learn | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Cửa hàng + dạy kỹ năng (bậc do P13). |
+
+## crossroads_unnamed_area_02 (0)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+
+## crossroads_unnamed_area_03 (1)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+| **Người Dò Đường Gwen** (`cross_gwen`) | free | free | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15). |
+
+## crossroads_unnamed_area_04 (1)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+| **Người Dò Đường Hale** (`cross_hale`) | free | free | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15). |
+
+## crossroads_unnamed_area_05 (1)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+| **Người Dò Đường Ines** (`cross_ines`) | free | free | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15). |
+
+## crossroads_unnamed_area_06 (0)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+
+## astral_realm_unnamed_area_01 (2)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+| **Tiên Sứ Tử Vân Joss** (`astral_joss`) | main | quest, heal | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Trưởng hub: nhiệm vụ vùng (hook chuỗi chính) + hồi máu. |
+| **Hiền Giả Vân Ảnh Kira** (`astral_kira`) | service | shop, learn | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Cửa hàng + dạy kỹ năng (bậc do P13). |
+
+## astral_realm_spacetime_rift (0)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+
+## astral_realm_unnamed_area_02 (1)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+| **Kẻ Ngắm Mây Lars** (`astral_lars`) | free | free | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15). |
+
+## astral_realm_unnamed_area_03 (0)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+
+## astral_realm_unnamed_area_04 (0)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+
+## astral_realm_unnamed_area_05 (1)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+| **Kẻ Ngắm Mây Mara** (`astral_mara`) | free | free | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15). |
+
+## astral_realm_unnamed_area_06 (0)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+
+## ancient_ruins_unnamed_area_01 (2)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+| **Thủ Hộ Tiền Sảnh Neth** (`ancient_neth`) | main | quest, heal | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Trưởng hub: nhiệm vụ vùng (hook chuỗi chính) + hồi máu. |
+| **Học Giả Ngọc Lục Olin** (`ancient_olin`) | service | shop, learn | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Cửa hàng + dạy kỹ năng (bậc do P13). |
+
+## ancient_ruins_unnamed_area_02 (1)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+| **Người Khảo Cổ Perrin** (`ancient_perrin`) | free | free | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15). |
+
+## ancient_ruins_unnamed_area_03 (0)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+
+## ancient_ruins_unnamed_area_04 (1)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+| **Người Khảo Cổ Rue** (`ancient_rue`) | free | free | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15). |
+
+## ancient_ruins_unnamed_area_05 (1)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+| **Người Khảo Cổ Sable** (`ancient_sable`) | free | free | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15). |
+
+## ancient_ruins_unnamed_area_06 (0)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+
+## ghost_castle_gate (2)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+| **Quản Cổng U Lâu Tove** (`ghost_tove`) | main | quest, heal | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Trưởng hub: nhiệm vụ vùng (hook chuỗi chính) + hồi máu. |
+| **Du Hồn Thương Nhân Una** (`ghost_una`) | service | shop, learn | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Cửa hàng + dạy kỹ năng (bậc do P13). |
+
+## ghost_castle_deep_woods (0)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+
+## ghost_castle_ancient_city_secret_chamber (0)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+
+## world_tree_gate (2)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+| **Hộ Vệ Thế Thụ Vik** (`tree_vik`) | main | quest, heal | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Trưởng hub: nhiệm vụ vùng (hook chuỗi chính) + hồi máu. |
+| **Dược Sư Lá Xanh Willa** (`tree_willa`) | service | shop, learn | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Cửa hàng + dạy kỹ năng (bậc do P13). |
+
+## world_tree_deep_woods (0)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+
+## world_tree_secret_chamber (0)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+
+## tower_region_main_tower (2)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+| **Điểu Sứ Yves** (`tower_yves`) | main | quest, heal | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Trưởng hub: nhiệm vụ vùng (hook chuỗi chính) + hồi máu. |
+| **Tăng Nhân Điểu Tháp Zane** (`tower_zane`) | service | shop, learn | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Cửa hàng + dạy kỹ năng (bậc do P13). |
+
+## tower_region_deep_woods (1)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+| **Người Quan Sát Chim Aria** (`tower_aria`) | free | free | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15). |
+
+## tower_region_secret_floor (0)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+
+## immortal_maze_main_maze (2)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+| **Dẫn Lộ Mê Thành Bex** (`maze_bex`) | main | quest, heal | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Trưởng hub: nhiệm vụ vùng (hook chuỗi chính) + hồi máu. |
+| **Thương Nhân Mê Cung Cleo** (`maze_cleo`) | service | shop, learn | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Cửa hàng + dạy kỹ năng (bậc do P13). |
+
+## immortal_maze_floor (1)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
+| **Kẻ Lạc Lối Dune** (`maze_dune`) | free | free | MỚI: chưa đặt | — | MỚI (vị trí chưa trích từ APK). Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15). |
+
+## immortal_maze_secret_floor (0)
+
+| Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
+|---|---|---|---|---|---|
 
 ## Phạm vi roster
 

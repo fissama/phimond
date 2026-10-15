@@ -4,7 +4,7 @@
   "revision": "P12-owner-review-20261015",
   "title": "P12 · Duyệt một lần: phạm vi, renderer, roster NPC",
   "status": "Chờ chủ dự án duyệt",
-  "summary": "53 mục (52 NPC + 1 hòm thư) trên 17 map.",
+  "summary": "107 mục (106 NPC + 1 hòm thư) trên 75 map.",
   "decisions": [
     {
       "id": "S1-SCOPE",
@@ -95,6 +95,63 @@
       "rationale": "Theo quyết định của bạn 2026-10-15. Hiệu năng sẽ được kiểm ở milestone M0 của kế hoạch port, không còn là điều kiện đóng P12.",
       "columns": [],
       "rows": []
+    },
+    {
+      "id": "S1-SCOPE-EXT",
+      "category": "Stage 1 · Phạm vi",
+      "title": "Mở rộng: 58 map của 11 vùng ngoài 17 map",
+      "summary": "Sa Mạc, Mỏm Đá Gió, Đảo Ác Mộng, Lăng Mộ, Giao Điểm và 6 vùng cao Lv40+ (Tinh Không, Di Tích Cổ, Lâu Đài Ma, Cây Thế Giới, Tháp Chim, Mê Thành). Chỉ phần NPC; portal, cấp và vùng an toàn đã có ở thiết kế.",
+      "rationale": "Owner yêu cầu 2026-10-15. Các map này vẫn ngoài phạm vi ma trận portal chi tiết; roster dùng số slot NPC trong APK 3.2, chưa có vị trí.",
+      "columns": [
+        "Vùng",
+        "Map"
+      ],
+      "rows": [
+        [
+          "Sa Mạc",
+          "Sa Thạch Cổ Thành, Cửa Ngõ Hoàng Mạc, Phong Ấn Cổ Địa, Bộ Lạc Hồ Lô, Hoang Sa Vô Tận, Tai Ương Sa Mạc"
+        ],
+        [
+          "Mỏm Đá Gió",
+          "Trại Phong Thạch, Cầu Thiên Thạch, Hẻm Gió Gào, Dãy Phong Lĩnh, Sơn Đạo Phong Vân, Đỉnh Thiên Phong"
+        ],
+        [
+          "Đảo Ác Mộng",
+          "Trại Tàn Sinh, Đông Đảo Huyền Thuật, Phế Tích Cổ Thành, Cổng Tai Kiếp, Oán Linh Hải Đạo, Tuyệt Vọng Hải Địa"
+        ],
+        [
+          "Lăng Mộ",
+          "Trạm Canh Lăng, Oán Linh Cổ Đạo, Tuyệt Vọng Chi Địa, Tàn Tích Tịch Diệt, Thâm Cung Tịch Diệt, Thần Lăng Vĩnh Miên, Bãi Vãng Sinh, Cồn Úa Vàng, Bãi Gai Khô"
+        ],
+        [
+          "Giao Điểm",
+          "Cổng Địa Đạo Lam Dạ, Hành Lang Rêu Biếc, Đoạn Thủy Quang, Ngã Ba Đêm Xanh, Hốc San Hô Tím, Đáy Địa Đạo"
+        ],
+        [
+          "Tinh Không",
+          "Tử Vân Lâm, Thời Không Liệt Khích, Lối Mây Tím, Bờ Hồ Vân Ảnh, Hốc Cổ Thụ, Rừng Hoàng Hôn, Tận Cùng Thời Không"
+        ],
+        [
+          "Di Tích Cổ",
+          "Tiền Sảnh Ngọc Lục, Phòng Tượng Cổ, Phòng Tinh Thạch, Hành Lang Thạch Vệ, Thâm Sảnh Ngọc Lục, Tận Điện Cổ Tích"
+        ],
+        [
+          "Lâu Đài Ma",
+          "Cổng U Lâu, U Lâm Bích Ba, Mật Thất Cổ Thành"
+        ],
+        [
+          "Cây Thế Giới",
+          "Thế Thụ Môn, Thế Thụ Thâm Lâm, Mật Thất Thế Thụ"
+        ],
+        [
+          "Tháp Chim",
+          "Điểu Tháp, Điểu Tháp Thâm Lâm, Điểu Tháp Mật Tầng"
+        ],
+        [
+          "Mê Thành",
+          "Trường Sinh Mê Thành, Bất Tử Mê Tầng, Bất Tử Mật Tầng"
+        ]
+      ]
     },
     {
       "id": "S4-NPC-summoning_hall_main_hall",
@@ -736,6 +793,560 @@
           "nhiệm vụ phụ",
           "vị trí APK",
           "Nhiệm vụ phụ vùng cao."
+        ]
+      ]
+    },
+    {
+      "id": "S4-NPC-REG-desert",
+      "category": "Stage 4 · Roster NPC (vùng ngoài)",
+      "title": "Sa Mạc",
+      "summary": "7 NPC trên 6 map. Không có NPC: Phong Ấn Cổ Địa, Tai Ương Sa Mạc.",
+      "rationale": "Hub an toàn có hồi máu/cửa hàng/kỹ năng; map quái chỉ NPC nhiệm vụ phụ. Tên là đề xuất, không lấy từ APK.",
+      "columns": [
+        "Map",
+        "Tên",
+        "Hạng",
+        "Vai trò",
+        "Ghi chú"
+      ],
+      "rows": [
+        [
+          "Sa Thạch Cổ Thành",
+          "Trạm Trưởng Sa Thạch Aven",
+          "Chính tuyến",
+          "nhiệm vụ, hồi máu",
+          "Trưởng hub: nhiệm vụ vùng (hook chuỗi chính) + hồi máu."
+        ],
+        [
+          "Sa Thạch Cổ Thành",
+          "Thương Nhân Sa Mạc Brisa",
+          "Dịch vụ",
+          "cửa hàng",
+          "Cửa hàng của vùng."
+        ],
+        [
+          "Sa Thạch Cổ Thành",
+          "Sư Phụ Hoang Sa Calder",
+          "Dịch vụ",
+          "học kỹ năng",
+          "Dạy kỹ năng; bậc do P13 quyết."
+        ],
+        [
+          "Sa Thạch Cổ Thành",
+          "Lữ Khách Cát Vàng Dalia",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "Nhiệm vụ phụ nhẹ, truyện nền."
+        ],
+        [
+          "Cửa Ngõ Hoàng Mạc",
+          "Người Tìm Nước Edda",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15)."
+        ],
+        [
+          "Bộ Lạc Hồ Lô",
+          "Người Tìm Nước Fenwick",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15)."
+        ],
+        [
+          "Hoang Sa Vô Tận",
+          "Người Tìm Nước Galen",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15)."
+        ]
+      ]
+    },
+    {
+      "id": "S4-NPC-REG-wind",
+      "category": "Stage 4 · Roster NPC (vùng ngoài)",
+      "title": "Mỏm Đá Gió",
+      "summary": "8 NPC trên 6 map. Không có NPC: Hẻm Gió Gào.",
+      "rationale": "Hub an toàn có hồi máu/cửa hàng/kỹ năng; map quái chỉ NPC nhiệm vụ phụ. Tên là đề xuất, không lấy từ APK.",
+      "columns": [
+        "Map",
+        "Tên",
+        "Hạng",
+        "Vai trò",
+        "Ghi chú"
+      ],
+      "rows": [
+        [
+          "Trại Phong Thạch",
+          "Trại Trưởng Phong Thạch Hesper",
+          "Chính tuyến",
+          "nhiệm vụ, hồi máu",
+          "Trưởng hub: nhiệm vụ vùng (hook chuỗi chính) + hồi máu."
+        ],
+        [
+          "Trại Phong Thạch",
+          "Thợ Đồ Sơn Cước Iris",
+          "Dịch vụ",
+          "cửa hàng",
+          "Cửa hàng của vùng."
+        ],
+        [
+          "Trại Phong Thạch",
+          "Sư Phụ Đá Gió Jorin",
+          "Dịch vụ",
+          "học kỹ năng",
+          "Dạy kỹ năng; bậc do P13 quyết."
+        ],
+        [
+          "Trại Phong Thạch",
+          "Người Chăn Dê Núi Kestra",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "Nhiệm vụ phụ nhẹ, truyện nền."
+        ],
+        [
+          "Cầu Thiên Thạch",
+          "Thợ Săn Núi Loren",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15)."
+        ],
+        [
+          "Dãy Phong Lĩnh",
+          "Thợ Săn Núi Mirel",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15)."
+        ],
+        [
+          "Sơn Đạo Phong Vân",
+          "Thợ Săn Núi Nolan",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15)."
+        ],
+        [
+          "Đỉnh Thiên Phong",
+          "Thợ Săn Núi Orla",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15)."
+        ]
+      ]
+    },
+    {
+      "id": "S4-NPC-REG-night",
+      "category": "Stage 4 · Roster NPC (vùng ngoài)",
+      "title": "Đảo Ác Mộng",
+      "summary": "7 NPC trên 6 map. Không có NPC: Cổng Tai Kiếp.",
+      "rationale": "Hub an toàn có hồi máu/cửa hàng/kỹ năng; map quái chỉ NPC nhiệm vụ phụ. Tên là đề xuất, không lấy từ APK.",
+      "columns": [
+        "Map",
+        "Tên",
+        "Hạng",
+        "Vai trò",
+        "Ghi chú"
+      ],
+      "rows": [
+        [
+          "Trại Tàn Sinh",
+          "Đội Trưởng Tàn Sinh Pavel",
+          "Chính tuyến",
+          "nhiệm vụ, hồi máu",
+          "Map hỗn hợp (NPC và quái trộn, owner 2026-10-15): được phép hồi máu. Hook chuỗi chính."
+        ],
+        [
+          "Trại Tàn Sinh",
+          "Tiểu Thương Sống Sót Quinn",
+          "Dịch vụ",
+          "cửa hàng, học kỹ năng",
+          "Map hỗn hợp: cửa hàng + dạy kỹ năng (bậc do P13)."
+        ],
+        [
+          "Trại Tàn Sinh",
+          "Người Kể Chuyện Đảo Rhea",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "Nhiệm vụ phụ, truyện nền."
+        ],
+        [
+          "Đông Đảo Huyền Thuật",
+          "Người Sống Sót Soren",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15)."
+        ],
+        [
+          "Phế Tích Cổ Thành",
+          "Người Sống Sót Talia",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15)."
+        ],
+        [
+          "Oán Linh Hải Đạo",
+          "Người Sống Sót Ulric",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15)."
+        ],
+        [
+          "Tuyệt Vọng Hải Địa",
+          "Người Sống Sót Vesna",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15)."
+        ]
+      ]
+    },
+    {
+      "id": "S4-NPC-REG-tomb",
+      "category": "Stage 4 · Roster NPC (vùng ngoài)",
+      "title": "Lăng Mộ",
+      "summary": "8 NPC trên 9 map. Không có NPC: Tuyệt Vọng Chi Địa, Tàn Tích Tịch Diệt, Thâm Cung Tịch Diệt, Cồn Úa Vàng, Bãi Gai Khô.",
+      "rationale": "Hub an toàn có hồi máu/cửa hàng/kỹ năng; map quái chỉ NPC nhiệm vụ phụ. Tên là đề xuất, không lấy từ APK.",
+      "columns": [
+        "Map",
+        "Tên",
+        "Hạng",
+        "Vai trò",
+        "Ghi chú"
+      ],
+      "rows": [
+        [
+          "Trạm Canh Lăng",
+          "Quản Trạm Canh Lăng Wren",
+          "Chính tuyến",
+          "nhiệm vụ, hồi máu",
+          "Trưởng hub: nhiệm vụ vùng (hook chuỗi chính) + hồi máu."
+        ],
+        [
+          "Trạm Canh Lăng",
+          "Người Bán Hương Nến Xan",
+          "Dịch vụ",
+          "cửa hàng",
+          "Cửa hàng của vùng."
+        ],
+        [
+          "Trạm Canh Lăng",
+          "Sư Phụ Linh Lăng Yara",
+          "Dịch vụ",
+          "học kỹ năng",
+          "Dạy kỹ năng; bậc do P13 quyết."
+        ],
+        [
+          "Trạm Canh Lăng",
+          "Người Giữ Mộ Zora",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "Nhiệm vụ phụ nhẹ, truyện nền."
+        ],
+        [
+          "Oán Linh Cổ Đạo",
+          "Người Thắp Đèn Mộ Alder",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15)."
+        ],
+        [
+          "Thần Lăng Vĩnh Miên",
+          "Người Thắp Đèn Mộ Bram",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15)."
+        ],
+        [
+          "Bãi Vãng Sinh",
+          "Người Thắp Đèn Mộ Cora",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15)."
+        ],
+        [
+          "Bãi Vãng Sinh",
+          "Người Thắp Đèn Mộ Dov",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15)."
+        ]
+      ]
+    },
+    {
+      "id": "S4-NPC-REG-cross",
+      "category": "Stage 4 · Roster NPC (vùng ngoài)",
+      "title": "Giao Điểm",
+      "summary": "5 NPC trên 6 map. Không có NPC: Hành Lang Rêu Biếc, Đáy Địa Đạo.",
+      "rationale": "Hub an toàn có hồi máu/cửa hàng/kỹ năng; map quái chỉ NPC nhiệm vụ phụ. Tên là đề xuất, không lấy từ APK.",
+      "columns": [
+        "Map",
+        "Tên",
+        "Hạng",
+        "Vai trò",
+        "Ghi chú"
+      ],
+      "rows": [
+        [
+          "Cổng Địa Đạo Lam Dạ",
+          "Trưởng Cổng Địa Đạo Elric",
+          "Chính tuyến",
+          "nhiệm vụ, hồi máu",
+          "Trưởng hub: nhiệm vụ vùng (hook chuỗi chính) + hồi máu."
+        ],
+        [
+          "Cổng Địa Đạo Lam Dạ",
+          "Thợ Đèn Địa Đạo Fara",
+          "Dịch vụ",
+          "cửa hàng, học kỹ năng",
+          "Cửa hàng + dạy kỹ năng (bậc do P13)."
+        ],
+        [
+          "Đoạn Thủy Quang",
+          "Người Dò Đường Gwen",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15)."
+        ],
+        [
+          "Ngã Ba Đêm Xanh",
+          "Người Dò Đường Hale",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15)."
+        ],
+        [
+          "Hốc San Hô Tím",
+          "Người Dò Đường Ines",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15)."
+        ]
+      ]
+    },
+    {
+      "id": "S4-NPC-REG-astral",
+      "category": "Stage 4 · Roster NPC (vùng ngoài)",
+      "title": "Tinh Không",
+      "summary": "4 NPC trên 7 map. Không có NPC: Thời Không Liệt Khích, Bờ Hồ Vân Ảnh, Hốc Cổ Thụ, Tận Cùng Thời Không.",
+      "rationale": "Hub an toàn có hồi máu/cửa hàng/kỹ năng; map quái chỉ NPC nhiệm vụ phụ. Tên là đề xuất, không lấy từ APK.",
+      "columns": [
+        "Map",
+        "Tên",
+        "Hạng",
+        "Vai trò",
+        "Ghi chú"
+      ],
+      "rows": [
+        [
+          "Tử Vân Lâm",
+          "Tiên Sứ Tử Vân Joss",
+          "Chính tuyến",
+          "nhiệm vụ, hồi máu",
+          "Trưởng hub: nhiệm vụ vùng (hook chuỗi chính) + hồi máu."
+        ],
+        [
+          "Tử Vân Lâm",
+          "Hiền Giả Vân Ảnh Kira",
+          "Dịch vụ",
+          "cửa hàng, học kỹ năng",
+          "Cửa hàng + dạy kỹ năng (bậc do P13)."
+        ],
+        [
+          "Lối Mây Tím",
+          "Kẻ Ngắm Mây Lars",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15)."
+        ],
+        [
+          "Rừng Hoàng Hôn",
+          "Kẻ Ngắm Mây Mara",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15)."
+        ]
+      ]
+    },
+    {
+      "id": "S4-NPC-REG-ancient",
+      "category": "Stage 4 · Roster NPC (vùng ngoài)",
+      "title": "Di Tích Cổ",
+      "summary": "5 NPC trên 6 map. Không có NPC: Phòng Tinh Thạch, Tận Điện Cổ Tích.",
+      "rationale": "Hub an toàn có hồi máu/cửa hàng/kỹ năng; map quái chỉ NPC nhiệm vụ phụ. Tên là đề xuất, không lấy từ APK.",
+      "columns": [
+        "Map",
+        "Tên",
+        "Hạng",
+        "Vai trò",
+        "Ghi chú"
+      ],
+      "rows": [
+        [
+          "Tiền Sảnh Ngọc Lục",
+          "Thủ Hộ Tiền Sảnh Neth",
+          "Chính tuyến",
+          "nhiệm vụ, hồi máu",
+          "Trưởng hub: nhiệm vụ vùng (hook chuỗi chính) + hồi máu."
+        ],
+        [
+          "Tiền Sảnh Ngọc Lục",
+          "Học Giả Ngọc Lục Olin",
+          "Dịch vụ",
+          "cửa hàng, học kỹ năng",
+          "Cửa hàng + dạy kỹ năng (bậc do P13)."
+        ],
+        [
+          "Phòng Tượng Cổ",
+          "Người Khảo Cổ Perrin",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15)."
+        ],
+        [
+          "Hành Lang Thạch Vệ",
+          "Người Khảo Cổ Rue",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15)."
+        ],
+        [
+          "Thâm Sảnh Ngọc Lục",
+          "Người Khảo Cổ Sable",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15)."
+        ]
+      ]
+    },
+    {
+      "id": "S4-NPC-REG-ghost",
+      "category": "Stage 4 · Roster NPC (vùng ngoài)",
+      "title": "Lâu Đài Ma",
+      "summary": "2 NPC trên 3 map. Không có NPC: U Lâm Bích Ba, Mật Thất Cổ Thành.",
+      "rationale": "Hub an toàn có hồi máu/cửa hàng/kỹ năng; map quái chỉ NPC nhiệm vụ phụ. Tên là đề xuất, không lấy từ APK.",
+      "columns": [
+        "Map",
+        "Tên",
+        "Hạng",
+        "Vai trò",
+        "Ghi chú"
+      ],
+      "rows": [
+        [
+          "Cổng U Lâu",
+          "Quản Cổng U Lâu Tove",
+          "Chính tuyến",
+          "nhiệm vụ, hồi máu",
+          "Trưởng hub: nhiệm vụ vùng (hook chuỗi chính) + hồi máu."
+        ],
+        [
+          "Cổng U Lâu",
+          "Du Hồn Thương Nhân Una",
+          "Dịch vụ",
+          "cửa hàng, học kỹ năng",
+          "Cửa hàng + dạy kỹ năng (bậc do P13)."
+        ]
+      ]
+    },
+    {
+      "id": "S4-NPC-REG-tree",
+      "category": "Stage 4 · Roster NPC (vùng ngoài)",
+      "title": "Cây Thế Giới",
+      "summary": "2 NPC trên 3 map. Không có NPC: Thế Thụ Thâm Lâm, Mật Thất Thế Thụ.",
+      "rationale": "Hub an toàn có hồi máu/cửa hàng/kỹ năng; map quái chỉ NPC nhiệm vụ phụ. Tên là đề xuất, không lấy từ APK.",
+      "columns": [
+        "Map",
+        "Tên",
+        "Hạng",
+        "Vai trò",
+        "Ghi chú"
+      ],
+      "rows": [
+        [
+          "Thế Thụ Môn",
+          "Hộ Vệ Thế Thụ Vik",
+          "Chính tuyến",
+          "nhiệm vụ, hồi máu",
+          "Trưởng hub: nhiệm vụ vùng (hook chuỗi chính) + hồi máu."
+        ],
+        [
+          "Thế Thụ Môn",
+          "Dược Sư Lá Xanh Willa",
+          "Dịch vụ",
+          "cửa hàng, học kỹ năng",
+          "Cửa hàng + dạy kỹ năng (bậc do P13)."
+        ]
+      ]
+    },
+    {
+      "id": "S4-NPC-REG-tower",
+      "category": "Stage 4 · Roster NPC (vùng ngoài)",
+      "title": "Tháp Chim",
+      "summary": "3 NPC trên 3 map. Không có NPC: Điểu Tháp Mật Tầng.",
+      "rationale": "Hub an toàn có hồi máu/cửa hàng/kỹ năng; map quái chỉ NPC nhiệm vụ phụ. Tên là đề xuất, không lấy từ APK.",
+      "columns": [
+        "Map",
+        "Tên",
+        "Hạng",
+        "Vai trò",
+        "Ghi chú"
+      ],
+      "rows": [
+        [
+          "Điểu Tháp",
+          "Điểu Sứ Yves",
+          "Chính tuyến",
+          "nhiệm vụ, hồi máu",
+          "Trưởng hub: nhiệm vụ vùng (hook chuỗi chính) + hồi máu."
+        ],
+        [
+          "Điểu Tháp",
+          "Tăng Nhân Điểu Tháp Zane",
+          "Dịch vụ",
+          "cửa hàng, học kỹ năng",
+          "Cửa hàng + dạy kỹ năng (bậc do P13)."
+        ],
+        [
+          "Điểu Tháp Thâm Lâm",
+          "Người Quan Sát Chim Aria",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15)."
+        ]
+      ]
+    },
+    {
+      "id": "S4-NPC-REG-maze",
+      "category": "Stage 4 · Roster NPC (vùng ngoài)",
+      "title": "Mê Thành",
+      "summary": "3 NPC trên 3 map. Không có NPC: Bất Tử Mật Tầng.",
+      "rationale": "Hub an toàn có hồi máu/cửa hàng/kỹ năng; map quái chỉ NPC nhiệm vụ phụ. Tên là đề xuất, không lấy từ APK.",
+      "columns": [
+        "Map",
+        "Tên",
+        "Hạng",
+        "Vai trò",
+        "Ghi chú"
+      ],
+      "rows": [
+        [
+          "Trường Sinh Mê Thành",
+          "Dẫn Lộ Mê Thành Bex",
+          "Chính tuyến",
+          "nhiệm vụ, hồi máu",
+          "Trưởng hub: nhiệm vụ vùng (hook chuỗi chính) + hồi máu."
+        ],
+        [
+          "Trường Sinh Mê Thành",
+          "Thương Nhân Mê Cung Cleo",
+          "Dịch vụ",
+          "cửa hàng, học kỹ năng",
+          "Cửa hàng + dạy kỹ năng (bậc do P13)."
+        ],
+        [
+          "Bất Tử Mê Tầng",
+          "Kẻ Lạc Lối Dune",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15)."
         ]
       ]
     }

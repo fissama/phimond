@@ -154,3 +154,13 @@ Giới hạn: tên `TransEnemy` và điểm spawn đánh số là suy luận t�
 - Quảng Trường thêm: Chủ Sàn Giao Dịch Ketra, Thủ Kho Odan (kho đồ) và Hòm Thư Thạch Trụ (vật thể cạnh Thủ Kho).
 - Hải Tặc Hào thêm Thợ Rèn Tàu Harlo.
 - Hệ quả cần lưu ý: Rừng Sâu, Bờ Đông, Bờ Tây, Vực Hải Lam, Đảo Phú Quý không còn hồi máu tại chỗ; người chơi về Bến Ngư Châu hoặc hồi sinh theo §7. Bước nhiệm vụ chính đi Hoàng Môn không còn ở Rừng Sâu; phase quest đặt NPC.
+
+## 9. Mở rộng roster sang 58 map ngoài phạm vi (owner 2026-10-15)
+
+Owner yêu cầu thêm NPC cho Sa Mạc, Mỏm Đá Gió, Đảo Ác Mộng, Lăng Mộ, Giao Điểm và 6 vùng cao Lv40+ (Tinh Không, Di Tích Cổ, Lâu Đài Ma, Cây Thế Giới, Tháp Chim, Mê Thành): 11 vùng, 58 map, **54 NPC mới**.
+
+- Số NPC mỗi map bằng số slot NPC của APK 3.2 (`apk-extract/map-scan.json`); vị trí chưa trích, đặt khi vẽ HD-2D.
+- Hub an toàn (map đầu của vùng): trưởng hub (nhiệm vụ vùng + hồi máu), cửa hàng, dạy kỹ năng, NPC phụ. Hub 2 NPC: trưởng hub + một NPC cửa hàng/kỹ năng.
+- Trại Tàn Sinh (map hỗn hợp): 3 NPC, được hồi máu và cửa hàng.
+- Map quái: chỉ NPC nhiệm vụ phụ. Map không có slot NPC trong APK (ví dụ Thời Không Liệt Khích, các map cụt) giữ trống.
+- Dữ liệu: `roster_outer.py`; `gen_npc_roster.py` gộp với `roster_data.py`. Portal của các map này vẫn ngoài ma trận chi tiết (xem §7.2 cho vùng an toàn).
