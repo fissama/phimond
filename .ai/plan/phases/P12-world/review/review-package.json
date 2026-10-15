@@ -1,0 +1,715 @@
+{
+  "schema_version": 1,
+  "phase": "P12",
+  "revision": "P12-owner-review-20261015",
+  "title": "P12 · Duyệt một lần: phạm vi, renderer, roster NPC",
+  "status": "Chờ chủ dự án duyệt",
+  "summary": "49 NPC trên 17 map.",
+  "decisions": [
+    {
+      "id": "S1-SCOPE",
+      "category": "Stage 1 · Phạm vi",
+      "title": "Phạm vi khảo sát chi tiết (review_detailed_scope)",
+      "summary": "17 map: Triệu Linh Điện, 2 map Emerald, 8 map thành (kể cả Điền Trang và Phòng thú cưng là map riêng từng người chơi), 5 map bãi biển và Hải Tặc Hào.",
+      "rationale": "Bạn đã chốt phạm vi trong hội thoại 2026-10-15; thẻ này ghi nhận chính thức thay cho mục review_detailed_scope còn \"unresolved\" ở app cũ. Duyệt phạm vi không cấp quyền chạy runtime.",
+      "columns": [
+        "Map",
+        "ID"
+      ],
+      "rows": [
+        [
+          "Triệu Linh Điện",
+          "summoning_hall_main_hall"
+        ],
+        [
+          "Bìa Rừng Lục Bảo",
+          "emerald_forest_main_woods"
+        ],
+        [
+          "Rừng Sâu Lục Bảo",
+          "emerald_forest_deep_woods"
+        ],
+        [
+          "Quảng Trường Thạch Trụ",
+          "city_square"
+        ],
+        [
+          "Thương Phố",
+          "city_market"
+        ],
+        [
+          "Hoàng Môn",
+          "city_palace_gate"
+        ],
+        [
+          "Vương Cung",
+          "city_royal_palace"
+        ],
+        [
+          "Vạn Sự Hội Sảnh",
+          "city_activity_hall"
+        ],
+        [
+          "Phòng thú cưng",
+          "city_pet_room"
+        ],
+        [
+          "Điền Trang Lục Dã",
+          "city_farm"
+        ],
+        [
+          "Huyết Chiến Đài",
+          "city_deathmatch_arena"
+        ],
+        [
+          "Bến Ngư Châu",
+          "treasure_beach_fishermen_beach"
+        ],
+        [
+          "Bờ Đông Ngọc Bích",
+          "treasure_beach_east_beach"
+        ],
+        [
+          "Bờ Tây Hoàng Sa",
+          "treasure_beach_west_beach"
+        ],
+        [
+          "Vực Hải Lam",
+          "treasure_beach_deep_sea"
+        ],
+        [
+          "Đảo Phú Quý",
+          "treasure_beach_prosperity_island"
+        ],
+        [
+          "Hải Tặc Hào",
+          "middle_corridor_main_hall"
+        ]
+      ]
+    },
+    {
+      "id": "S3-CLOSE",
+      "category": "Stage 3 · Renderer",
+      "title": "Chốt Three.js, bỏ benchmark tiếp",
+      "summary": "Client web dùng Three.js (ADR-0001). Không đo thêm trên iPhone 17 Pro Max / macOS Safari; benchmark Stage 3 đóng.",
+      "rationale": "Theo quyết định của bạn 2026-10-15. Hiệu năng sẽ được kiểm ở milestone M0 của kế hoạch port, không còn là điều kiện đóng P12.",
+      "columns": [],
+      "rows": []
+    },
+    {
+      "id": "S4-NPC-summoning_hall_main_hall",
+      "category": "Stage 4 · Roster NPC",
+      "title": "Triệu Linh Điện",
+      "summary": "1 NPC.",
+      "rationale": "Tên và vai trò là đề xuất thiết kế, không lấy từ tên trong APK. Chuỗi nhiệm vụ chính do phase quest quyết.",
+      "columns": [
+        "Tên",
+        "Hạng",
+        "Vai trò",
+        "Nguồn",
+        "Ghi chú"
+      ],
+      "rows": [
+        [
+          "Triệu Linh Sư Mira",
+          "Chính tuyến",
+          "nhiệm vụ, hướng dẫn",
+          "vị trí APK",
+          "Người hướng dẫn đứng giữa; chọn bệ → nhận pet 1★ → mở khóa trụ một chiều tới Emerald. Nguồn có 4 biến thể ẩn cùng vị trí (4 trạng thái hội thoại)."
+        ]
+      ]
+    },
+    {
+      "id": "S4-NPC-emerald_forest_main_woods",
+      "category": "Stage 4 · Roster NPC",
+      "title": "Bìa Rừng Lục Bảo",
+      "summary": "4 NPC.",
+      "rationale": "Tên và vai trò là đề xuất thiết kế, không lấy từ tên trong APK. Chuỗi nhiệm vụ chính do phase quest quyết.",
+      "columns": [
+        "Tên",
+        "Hạng",
+        "Vai trò",
+        "Nguồn",
+        "Ghi chú"
+      ],
+      "rows": [
+        [
+          "Kiểm Lâm Lio",
+          "Chính tuyến",
+          "nhiệm vụ, hồi máu",
+          "vị trí APK",
+          "NPC runtime sẵn có (`forest_guide`). Chuỗi P04: di chuyển, nói chuyện, chiến đấu, bắt pet. Gần điểm xuất hiện."
+        ],
+        [
+          "Tiểu Thương Wen",
+          "Dịch vụ",
+          "cửa hàng",
+          "vị trí APK",
+          "Tạp hóa cơ bản (thuốc, bẫy)."
+        ],
+        [
+          "Thợ Săn Rowan",
+          "Dịch vụ",
+          "học kỹ năng",
+          "vị trí APK",
+          "Dạy kỹ năng bậc 1 (Lv1–10)."
+        ],
+        [
+          "Người Hái Nấm Tuli",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "vị trí APK",
+          "Nhiệm vụ phụ nhẹ (thu thập)."
+        ]
+      ]
+    },
+    {
+      "id": "S4-NPC-emerald_forest_deep_woods",
+      "category": "Stage 4 · Roster NPC",
+      "title": "Rừng Sâu Lục Bảo",
+      "summary": "2 NPC (1 mới).",
+      "rationale": "Tên và vai trò là đề xuất thiết kế, không lấy từ tên trong APK. Chuỗi nhiệm vụ chính do phase quest quyết.",
+      "columns": [
+        "Tên",
+        "Hạng",
+        "Vai trò",
+        "Nguồn",
+        "Ghi chú"
+      ],
+      "rows": [
+        [
+          "Người Gác Rừng Mero",
+          "Chính tuyến",
+          "nhiệm vụ, hồi máu",
+          "vị trí APK",
+          "Nhận báo cáo khi qua rừng sâu; giao bước nhiệm vụ đi Hoàng Môn (lần đầu). Hồi máu tại bãi quái."
+        ],
+        [
+          "Cụ Rêu Tamo",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "MỚI",
+          "MỚI. Cụ già giữ rừng, truyện nền."
+        ]
+      ]
+    },
+    {
+      "id": "S4-NPC-city_square",
+      "category": "Stage 4 · Roster NPC",
+      "title": "Quảng Trường Thạch Trụ",
+      "summary": "7 NPC.",
+      "rationale": "Tên và vai trò là đề xuất thiết kế, không lấy từ tên trong APK. Chuỗi nhiệm vụ chính do phase quest quyết.",
+      "columns": [
+        "Tên",
+        "Hạng",
+        "Vai trò",
+        "Nguồn",
+        "Ghi chú"
+      ],
+      "rows": [
+        [
+          "Huấn Luyện Viên Elin",
+          "Chính tuyến",
+          "nhiệm vụ, học kỹ năng",
+          "vị trí APK",
+          "NPC runtime sẵn có (`trainer`). Trung tâm chuỗi P04 tại thành. Runtime hiện còn shop+heal; thiết kế chuyển sang Thương Phố/Selka."
+        ],
+        [
+          "Y Sư Selka",
+          "Dịch vụ",
+          "hồi máu",
+          "vị trí APK",
+          "Hồi máu/MP cho pet toàn đội."
+        ],
+        [
+          "Sư Phụ Kỹ Năng Doran",
+          "Dịch vụ",
+          "học kỹ năng",
+          "vị trí APK",
+          "Dạy kỹ năng bậc 2 (Lv10–40). Phân trường phái theo race: P13 quyết."
+        ],
+        [
+          "Người Kể Chuyện Hanae",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "vị trí APK",
+          "Truyện nền thành phố, nhiệm vụ phụ."
+        ],
+        [
+          "Trụ Sư Orsa",
+          "Dịch vụ",
+          "trụ dịch chuyển",
+          "vị trí APK",
+          "Vận hành trụ đá (U1). Menu chỉ hiện vùng đủ cấp. Tên nguồn TTTD + gợi ý loading \"Thủy tinh dịch chuyển phía Đông Quảng Trường\" cho thấy đây rất có thể là trụ gốc."
+        ],
+        [
+          "Đài Sứ Rena",
+          "Dịch vụ",
+          "đấu trường",
+          "vị trí APK",
+          "Đăng ký Huyết Chiến Đài theo bậc."
+        ],
+        [
+          "Quản Sự Nhiệm Vụ Tessa",
+          "Tự do",
+          "nhiệm vụ phụ, bảng nhiệm vụ",
+          "vị trí APK",
+          "Bảng nhiệm vụ phụ/hằng ngày (P08/P18)."
+        ]
+      ]
+    },
+    {
+      "id": "S4-NPC-city_market",
+      "category": "Stage 4 · Roster NPC",
+      "title": "Thương Phố",
+      "summary": "3 NPC.",
+      "rationale": "Tên và vai trò là đề xuất thiết kế, không lấy từ tên trong APK. Chuỗi nhiệm vụ chính do phase quest quyết.",
+      "columns": [
+        "Tên",
+        "Hạng",
+        "Vai trò",
+        "Nguồn",
+        "Ghi chú"
+      ],
+      "rows": [
+        [
+          "Chủ Tạp Hóa Bao",
+          "Dịch vụ",
+          "cửa hàng",
+          "vị trí APK",
+          "Vật phẩm tiêu hao, thức ăn pet."
+        ],
+        [
+          "Thợ Rèn Gorun",
+          "Dịch vụ",
+          "cửa hàng",
+          "vị trí APK",
+          "Trang bị (hook cho P14)."
+        ],
+        [
+          "Nhà Buôn Lữ Hành Zhen",
+          "Tự do",
+          "nhiệm vụ phụ, cửa hàng",
+          "vị trí APK",
+          "Hàng luân phiên/nhiệm vụ phụ."
+        ]
+      ]
+    },
+    {
+      "id": "S4-NPC-city_palace_gate",
+      "category": "Stage 4 · Roster NPC",
+      "title": "Hoàng Môn",
+      "summary": "2 NPC (1 mới).",
+      "rationale": "Tên và vai trò là đề xuất thiết kế, không lấy từ tên trong APK. Chuỗi nhiệm vụ chính do phase quest quyết.",
+      "columns": [
+        "Tên",
+        "Hạng",
+        "Vai trò",
+        "Nguồn",
+        "Ghi chú"
+      ],
+      "rows": [
+        [
+          "Thị Vệ Trưởng Karn",
+          "Chính tuyến",
+          "nhiệm vụ",
+          "MỚI",
+          "MỚI. Tiếp nhận người chơi lần đầu tới Hoàng Môn theo nhiệm vụ, chỉ đường về Quảng Trường."
+        ],
+        [
+          "Sứ Giả Bang Hội Ryo",
+          "Dịch vụ",
+          "bang hội",
+          "vị trí APK",
+          "Tư vấn/dẫn vào khu bang hội."
+        ]
+      ]
+    },
+    {
+      "id": "S4-NPC-city_royal_palace",
+      "category": "Stage 4 · Roster NPC",
+      "title": "Vương Cung",
+      "summary": "3 NPC.",
+      "rationale": "Tên và vai trò là đề xuất thiết kế, không lấy từ tên trong APK. Chuỗi nhiệm vụ chính do phase quest quyết.",
+      "columns": [
+        "Tên",
+        "Hạng",
+        "Vai trò",
+        "Nguồn",
+        "Ghi chú"
+      ],
+      "rows": [
+        [
+          "Đại Thần Cố Vấn Ezra",
+          "Chính tuyến",
+          "cốt truyện, nhiệm vụ",
+          "vị trí APK",
+          "Hook cốt truyện chính cho P17 (chưa viết tuyến)."
+        ],
+        [
+          "Quan Bang Hội Lorne",
+          "Dịch vụ",
+          "bang hội",
+          "vị trí APK",
+          "Lập/gia nhập bang hội."
+        ],
+        [
+          "Ngự Y Hoàng Cung Mina",
+          "Dịch vụ",
+          "hồi máu",
+          "vị trí APK",
+          "Hồi máu + giải trạng thái."
+        ]
+      ]
+    },
+    {
+      "id": "S4-NPC-city_activity_hall",
+      "category": "Stage 4 · Roster NPC",
+      "title": "Vạn Sự Hội Sảnh",
+      "summary": "2 NPC (1 mới).",
+      "rationale": "Tên và vai trò là đề xuất thiết kế, không lấy từ tên trong APK. Chuỗi nhiệm vụ chính do phase quest quyết.",
+      "columns": [
+        "Tên",
+        "Hạng",
+        "Vai trò",
+        "Nguồn",
+        "Ghi chú"
+      ],
+      "rows": [
+        [
+          "Sứ Quản Hoạt Động Thalia",
+          "Tự do",
+          "hoạt động, nhiệm vụ phụ",
+          "vị trí APK",
+          "Cổng vào hoạt động: Sói–Cừu, đấu trường PK/đội, chiến bang."
+        ],
+        [
+          "Nhân Viên Phần Thưởng Fia",
+          "Dịch vụ",
+          "phần thưởng",
+          "MỚI",
+          "MỚI. Nhận thưởng hoạt động/hằng ngày (P08)."
+        ]
+      ]
+    },
+    {
+      "id": "S4-NPC-city_pet_room",
+      "category": "Stage 4 · Roster NPC",
+      "title": "Phòng thú cưng",
+      "summary": "6 NPC (2 mới).",
+      "rationale": "Tên và vai trò là đề xuất thiết kế, không lấy từ tên trong APK. Chuỗi nhiệm vụ chính do phase quest quyết.",
+      "columns": [
+        "Tên",
+        "Hạng",
+        "Vai trò",
+        "Nguồn",
+        "Ghi chú"
+      ],
+      "rows": [
+        [
+          "Lão Sư Thuần Linh Haru",
+          "Chính tuyến",
+          "giám định, nhiệm vụ",
+          "vị trí APK",
+          "Bước giám định trong chuỗi P04 (Phòng thú cưng: giám định, cường hóa, lai tạo, ấp, cửa hàng pet)."
+        ],
+        [
+          "Chủ Tiệm Linh Thú Pomi",
+          "Dịch vụ",
+          "cửa hàng",
+          "vị trí APK",
+          "Đồ cho pet (thức ăn, huấn luyện)."
+        ],
+        [
+          "Thợ Cải Hoán Zeno",
+          "Dịch vụ",
+          "cường hóa",
+          "vị trí APK",
+          "Cường hóa/làm mới pet."
+        ],
+        [
+          "Tế Ti Ban Phúc Sana",
+          "Dịch vụ",
+          "hồi máu, ban phúc",
+          "vị trí APK",
+          "Hồi pet + ban phúc (buff ngắn)."
+        ],
+        [
+          "Thuật Sư Hợp Linh Vaen",
+          "Chính tuyến",
+          "lai tạo, công thức, nhiệm vụ",
+          "MỚI",
+          "MỚI. Tổng hợp pet → trứng, học công thức (thay phần breed/recipe của Oren). Bước \"tổng hợp → trứng\" của chuỗi P04."
+        ],
+        [
+          "Ấp Sư Nimu",
+          "Dịch vụ",
+          "ấp trứng",
+          "MỚI",
+          "MỚI. Ấp trứng/nở. P16 có thể dời việc ấp ra nông trại riêng sau."
+        ]
+      ]
+    },
+    {
+      "id": "S4-NPC-city_farm",
+      "category": "Stage 4 · Roster NPC",
+      "title": "Điền Trang Lục Dã",
+      "summary": "1 NPC.",
+      "rationale": "Tên và vai trò là đề xuất thiết kế, không lấy từ tên trong APK. Chuỗi nhiệm vụ chính do phase quest quyết.",
+      "columns": [
+        "Tên",
+        "Hạng",
+        "Vai trò",
+        "Nguồn",
+        "Ghi chú"
+      ],
+      "rows": [
+        [
+          "Quản Trang Oren",
+          "Dịch vụ",
+          "gửi/rút pet",
+          "vị trí APK",
+          "NPC runtime sẵn có (`ranch_keeper`). Owner 2026-10-15: NPC duy nhất ngoài nông trại, chỉ gửi/rút pet. Runtime hiện còn appraise, breed, strengthen, recipe, heal, quest: chuyển sang Phòng thú cưng khi migrate (chưa đổi runtime)."
+        ]
+      ]
+    },
+    {
+      "id": "S4-NPC-city_deathmatch_arena",
+      "category": "Stage 4 · Roster NPC",
+      "title": "Huyết Chiến Đài",
+      "summary": "2 NPC (1 mới).",
+      "rationale": "Tên và vai trò là đề xuất thiết kế, không lấy từ tên trong APK. Chuỗi nhiệm vụ chính do phase quest quyết.",
+      "columns": [
+        "Tên",
+        "Hạng",
+        "Vai trò",
+        "Nguồn",
+        "Ghi chú"
+      ],
+      "rows": [
+        [
+          "Đài Chủ Vale",
+          "Chính tuyến",
+          "đấu trường, hồi máu",
+          "vị trí APK",
+          "NPC runtime sẵn có (`arena_master`). Cổng đấu trường trong chuỗi P04."
+        ],
+        [
+          "Cựu Đấu Sĩ Garm",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "MỚI",
+          "MỚI. Truyện nền đấu trường."
+        ]
+      ]
+    },
+    {
+      "id": "S4-NPC-treasure_beach_fishermen_beach",
+      "category": "Stage 4 · Roster NPC",
+      "title": "Bến Ngư Châu",
+      "summary": "4 NPC.",
+      "rationale": "Tên và vai trò là đề xuất thiết kế, không lấy từ tên trong APK. Chuỗi nhiệm vụ chính do phase quest quyết.",
+      "columns": [
+        "Tên",
+        "Hạng",
+        "Vai trò",
+        "Nguồn",
+        "Ghi chú"
+      ],
+      "rows": [
+        [
+          "Hoa Tiêu Nia",
+          "Chính tuyến",
+          "nhiệm vụ, hồi máu",
+          "vị trí APK",
+          "NPC runtime sẵn có (`beach_guide`). Dẫn vào vùng bãi biển."
+        ],
+        [
+          "Ngư Thương Coda",
+          "Dịch vụ",
+          "cửa hàng",
+          "vị trí APK",
+          "Mồi, đồ biển."
+        ],
+        [
+          "Sư Phụ Hải Kỹ Marin",
+          "Dịch vụ",
+          "học kỹ năng",
+          "vị trí APK",
+          "Kỹ năng bậc 2 theo vùng biển."
+        ],
+        [
+          "Lão Ngư Dân Bako",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "vị trí APK",
+          "Nhiệm vụ phụ ngư nghiệp."
+        ]
+      ]
+    },
+    {
+      "id": "S4-NPC-treasure_beach_east_beach",
+      "category": "Stage 4 · Roster NPC",
+      "title": "Bờ Đông Ngọc Bích",
+      "summary": "2 NPC (1 mới).",
+      "rationale": "Tên và vai trò là đề xuất thiết kế, không lấy từ tên trong APK. Chuỗi nhiệm vụ chính do phase quest quyết.",
+      "columns": [
+        "Tên",
+        "Hạng",
+        "Vai trò",
+        "Nguồn",
+        "Ghi chú"
+      ],
+      "rows": [
+        [
+          "Trạm Trưởng Rinka",
+          "Dịch vụ",
+          "hồi máu, nhiệm vụ",
+          "vị trí APK",
+          "Trại nghỉ ngay bãi quái; nơi người chơi tới bằng trụ."
+        ],
+        [
+          "Người Nhặt Vỏ Sò Pua",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "MỚI",
+          "MỚI. Gần điểm xuất hiện."
+        ]
+      ]
+    },
+    {
+      "id": "S4-NPC-treasure_beach_west_beach",
+      "category": "Stage 4 · Roster NPC",
+      "title": "Bờ Tây Hoàng Sa",
+      "summary": "2 NPC (1 mới).",
+      "rationale": "Tên và vai trò là đề xuất thiết kế, không lấy từ tên trong APK. Chuỗi nhiệm vụ chính do phase quest quyết.",
+      "columns": [
+        "Tên",
+        "Hạng",
+        "Vai trò",
+        "Nguồn",
+        "Ghi chú"
+      ],
+      "rows": [
+        [
+          "Y Sư Lữ Hành Kuri",
+          "Dịch vụ",
+          "hồi máu",
+          "vị trí APK",
+          "Hồi máu bãi quái."
+        ],
+        [
+          "Họa Sĩ Bãi Cát Sen",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "MỚI",
+          "MỚI. Truyện nền."
+        ]
+      ]
+    },
+    {
+      "id": "S4-NPC-treasure_beach_deep_sea",
+      "category": "Stage 4 · Roster NPC",
+      "title": "Vực Hải Lam",
+      "summary": "1 NPC.",
+      "rationale": "Tên và vai trò là đề xuất thiết kế, không lấy từ tên trong APK. Chuỗi nhiệm vụ chính do phase quest quyết.",
+      "columns": [
+        "Tên",
+        "Hạng",
+        "Vai trò",
+        "Nguồn",
+        "Ghi chú"
+      ],
+      "rows": [
+        [
+          "Thợ Lặn Maro",
+          "Tự do",
+          "nhiệm vụ phụ, hồi máu",
+          "vị trí APK",
+          "Khoang khí nghỉ + nhiệm vụ phụ."
+        ]
+      ]
+    },
+    {
+      "id": "S4-NPC-treasure_beach_prosperity_island",
+      "category": "Stage 4 · Roster NPC",
+      "title": "Đảo Phú Quý",
+      "summary": "1 NPC (1 mới).",
+      "rationale": "Tên và vai trò là đề xuất thiết kế, không lấy từ tên trong APK. Chuỗi nhiệm vụ chính do phase quest quyết.",
+      "columns": [
+        "Tên",
+        "Hạng",
+        "Vai trò",
+        "Nguồn",
+        "Ghi chú"
+      ],
+      "rows": [
+        [
+          "Thuyền Trưởng Đảo Fenn",
+          "Tự do",
+          "nhiệm vụ phụ, hồi máu, cửa hàng",
+          "MỚI",
+          "MỚI. Cuối vùng: hồi máu, đồ báu vật, hook nhiệm vụ phụ."
+        ]
+      ]
+    },
+    {
+      "id": "S4-NPC-middle_corridor_main_hall",
+      "category": "Stage 4 · Roster NPC",
+      "title": "Hải Tặc Hào",
+      "summary": "6 NPC.",
+      "rationale": "Tên và vai trò là đề xuất thiết kế, không lấy từ tên trong APK. Chuỗi nhiệm vụ chính do phase quest quyết.",
+      "columns": [
+        "Tên",
+        "Hạng",
+        "Vai trò",
+        "Nguồn",
+        "Ghi chú"
+      ],
+      "rows": [
+        [
+          "Thuyền Trưởng Dorn",
+          "Chính tuyến",
+          "cốt truyện, nhiệm vụ",
+          "vị trí APK",
+          "Hook cốt truyện chính Lv40+ (P17)."
+        ],
+        [
+          "Hoa Tiêu Trụ Kael",
+          "Dịch vụ",
+          "trụ dịch chuyển",
+          "vị trí APK",
+          "Trụ trên tàu: 6 vùng cao, Điền Trang, Quảng Trường (U5)."
+        ],
+        [
+          "Y Sư Thuyền Lilo",
+          "Dịch vụ",
+          "hồi máu",
+          "vị trí APK",
+          "Hồi máu."
+        ],
+        [
+          "Sư Phụ Hải Chiến Zephyr",
+          "Dịch vụ",
+          "học kỹ năng",
+          "vị trí APK",
+          "Kỹ năng bậc 3 (Lv40+)."
+        ],
+        [
+          "Quản Kho Thuyền Moto",
+          "Dịch vụ",
+          "cửa hàng",
+          "vị trí APK",
+          "Đồ Lv40+."
+        ],
+        [
+          "Lữ Khách Tàu Yuma",
+          "Tự do",
+          "nhiệm vụ phụ",
+          "vị trí APK",
+          "Nhiệm vụ phụ vùng cao."
+        ]
+      ]
+    }
+  ]
+}

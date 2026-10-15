@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>P12 · Duyệt một lần</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<header><b>PHIMOND <span>P12 review</span></b><span id="save-state" role="status">Đang tải…</span><button id="save" class="primary" disabled>Lưu phản hồi</button></header>
+<div class="shell"><aside><nav id="nav" aria-label="Các nhóm duyệt"></nav><button id="export" class="secondary">Xuất JSON</button></aside>
+<main><h1 id="title"></h1><p id="intro"></p><div id="error" role="alert" hidden></div>
+<div class="bar"><span id="progress"></span><button id="approve-all" class="secondary">Duyệt tất cả mục đang chờ</button></div>
+<section id="content"></section>
+<section class="conclusion"><label for="notes">Góp ý chung</label><textarea id="notes" rows="3"></textarea>
+<div class="row"><label for="verdict">Kết luận</label><select id="verdict"><option value="draft">Đang xem — lưu nháp</option><option value="approved">Duyệt toàn bộ</option><option value="changes_requested">Yêu cầu sửa</option><option value="rejected">Từ chối</option></select><button id="submit" class="primary">Gửi kết luận</button></div>
+<p class="muted">Duyệt toàn bộ yêu cầu mọi nhóm đã được duyệt. <span id="hash"></span></p></section>
+</main></div><script src="/app.js"></script></body></html>
