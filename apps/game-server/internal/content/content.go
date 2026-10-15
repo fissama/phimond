@@ -4,8 +4,8 @@ package content
 import (
 	"encoding/json"
 	"fmt"
+	"io/fs"
 	"os"
-	"path/filepath"
 )
 
 type Evidence struct {
@@ -179,8 +179,8 @@ type Catalog struct {
 	Rules    Rules              `json:"rules"`
 }
 
-func read(root, name string, out any) error {
-	b, e := os.ReadFile(filepath.Join(root, name))
+func read(root fs.FS, name string, out any) error {
+	b, e := fs.ReadFile(root, name)
 	if e != nil {
 		return e
 	}
@@ -189,7 +189,11 @@ func read(root, name string, out any) error {
 	}
 	return nil
 }
-func Load(root string) (*Catalog, error) {
+// Load đọc catalog từ thư mục data trên đĩa.
+func Load(root string) (*Catalog, error) { return LoadFS(os.DirFS(root)) }
+
+// LoadFS đọc catalog từ một fs.FS (đĩa hoặc go:embed, dùng cho bản wasm demo).
+func LoadFS(root fs.FS) (*Catalog, error) {
 	c := &Catalog{}
 	for _, v := range []struct {
 		p string
@@ -205,7 +209,7 @@ func Load(root string) (*Catalog, error) {
 			h = m.Width
 		}
 		for i, species := range m.Spawns {
-			m.WildSpawns = append(m.WildSpawns, WildSpawn{ID: fmt.Sprintf("%s:%d", id, i), SpeciesID: species, X: min(m.Width-1, 12+i*5), Y: min(h-1, 10+(i%2)*5)})
+			m.WildSpawns = append(m.WildSpawns, WildSpawn{ID: fmt.Sprintf("%s:%d", id, i), SpeciesID: species, X: min(m.Width-1, 12+i*9), Y: min(h-1, 10+(i%2)*5)})
 		}
 		c.Maps[id] = m
 	}

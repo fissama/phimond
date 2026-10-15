@@ -91,9 +91,9 @@ func TestQuestRewardsOnlyOnce(t *testing.T) {
 	e := engine(t)
 	c := e.NewCharacter("t", "Test", 2)
 	command(t, e, c, "quest.accept", map[string]any{"quest_id": "first_steps"})
-	c.X = 39
+	c.X = 43
 	command(t, e, c, "world.portal", map[string]any{"portal_id": "forest_gate"})
-	c.X = 6
+	c.X = 16
 	gold := c.Gold
 	command(t, e, c, "quest.claim", map[string]any{"quest_id": "first_steps"})
 	if c.Gold <= gold {

@@ -57,7 +57,7 @@ func TestLearnedSkillsOnlyInheritedAndParentsArchived(t *testing.T) {
 	c.Pets = append(c.Pets, b)
 	c.Level = 30
 	c.MapID = "ranch"
-	c.X = 6
+	c.X = 16
 	c.Recipes = []string{"snail_refinement"}
 	c.Inventory["synthesis_soul"] = 3
 	c.Gold = 1000
@@ -104,7 +104,7 @@ func TestReplayAndInvalidTurn(t *testing.T) {
 	e := engine(t)
 	a := e.NewCharacter("a", "A", 19)
 	a.MapID = "forest"
-	a.X = 6
+	a.X = 16
 	command(t, e, a, "world.encounter", nil)
 	raw, _ := json.Marshal(a)
 	var b Character

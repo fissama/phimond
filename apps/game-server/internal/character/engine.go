@@ -14,7 +14,7 @@ func NewEngine(c *content.Catalog) *Engine { return &Engine{Data: c} }
 // pair, seeded by the supplied RNG seed, with the tutorial snail and a
 // starting inventory. Moved verbatim from internal/game/model.go.
 func (e *Engine) NewCharacter(id, name string, seed uint64) *Character {
-	c := &Character{ID: id, Name: name, Level: 1, Gold: 100, MapID: "severa", X: 6, Y: 12, Inventory: map[string]int{"capture_seal": 10, "potion": 5, "ether": 3, "synthesis_soul": 2}, Quests: map[string]*QuestState{}, Recipes: []string{}, Pets: []*pet.Pet{}, RNG: RNG{seed}}
+	c := &Character{ID: id, Name: name, Level: 1, Gold: 100, MapID: "severa", X: 16, Y: 12, Inventory: map[string]int{"capture_seal": 10, "potion": 5, "ether": 3, "synthesis_soul": 2}, Quests: map[string]*QuestState{}, Recipes: []string{}, Pets: []*pet.Pet{}, RNG: RNG{seed}}
 	p := e.NewPet(c, "snail", 3)
 	p.Appraised = true
 	c.Pets = append(c.Pets, p)

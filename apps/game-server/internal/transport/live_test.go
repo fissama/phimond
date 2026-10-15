@@ -138,15 +138,15 @@ func TestMovementSharedReadDedupAndCheckpoint(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if got := loadCharacter(t, raw); got.X != 7 || got.Revision != 1 {
+	if got := loadCharacter(t, raw); got.X != 17 || got.Revision != 1 {
 		t.Fatal(got)
 	}
 	raw, err = s.applyLive(ctx, "hero", move("walk1", "right"))
-	if err != nil || loadCharacter(t, raw).X != 7 {
+	if err != nil || loadCharacter(t, raw).X != 17 {
 		t.Fatal("duplicate moved", err)
 	}
 	raw, err = s.readLive(ctx, "hero")
-	if err != nil || loadCharacter(t, raw).X != 7 {
+	if err != nil || loadCharacter(t, raw).X != 17 {
 		t.Fatal("shared read stale", err)
 	}
 	if db.saves != 0 || db.receiptReads != 0 {
@@ -155,12 +155,12 @@ func TestMovementSharedReadDedupAndCheckpoint(t *testing.T) {
 	if err = s.flushLive(ctx, "hero"); err != nil {
 		t.Fatal(err)
 	}
-	if loadCharacter(t, db.raw).X != 7 || !db.receipts["walk1"] {
+	if loadCharacter(t, db.raw).X != 17 || !db.receipts["walk1"] {
 		t.Fatal("checkpoint missed position or receipt")
 	}
 	restarted := New(db, s.Game)
 	raw, err = restarted.applyLive(ctx, "hero", move("walk1", "right"))
-	if err != nil || loadCharacter(t, raw).X != 7 {
+	if err != nil || loadCharacter(t, raw).X != 17 {
 		t.Fatal("restart replayed persisted move", err)
 	}
 }
@@ -175,7 +175,7 @@ func TestDurableFailureKeepsSavedMovementButRollsBackEconomy(t *testing.T) {
 	}
 	raw, err := s.readLive(ctx, "hero")
 	c := loadCharacter(t, raw)
-	if err != nil || c.X != 7 || c.Gold != 100 || c.Inventory["potion"] != 5 || db.receipts["buy"] {
+	if err != nil || c.X != 17 || c.Gold != 100 || c.Inventory["potion"] != 5 || db.receipts["buy"] {
 		t.Fatal("failed purchase leaked", c, err)
 	}
 }
@@ -217,7 +217,7 @@ func TestCheckpointFailureQueuesMovesAndDrainsOnRecovery(t *testing.T) {
 	if err != nil {
 		t.Fatal("movement should still be accepted while checkpoint is failing", err)
 	}
-	if c := loadCharacter(t, raw); c.X != 8 {
+	if c := loadCharacter(t, raw); c.X != 18 {
 		t.Fatal("in-memory state did not advance", c.X)
 	}
 	db.failSave = false
@@ -225,7 +225,7 @@ func TestCheckpointFailureQueuesMovesAndDrainsOnRecovery(t *testing.T) {
 		t.Fatal(err)
 	}
 	raw, err = s.applyLive(ctx, "hero", move("walk3", "right"))
-	if err != nil || loadCharacter(t, raw).X != 9 {
+	if err != nil || loadCharacter(t, raw).X != 19 {
 		t.Fatal("could not resume", err)
 	}
 }
@@ -321,7 +321,7 @@ func TestBackgroundCheckpointDoesNotBlockMovesAndRetainsTail(t *testing.T) {
 	if err := s.flushLive(ctx, "hero"); err != nil {
 		t.Fatal(err)
 	}
-	if loadCharacter(t, db.raw).X != 8 || !db.receipts["one"] || !db.receipts["two"] {
+	if loadCharacter(t, db.raw).X != 18 || !db.receipts["one"] || !db.receipts["two"] {
 		t.Fatal("checkpoint discarded movements received during save")
 	}
 }
@@ -337,7 +337,7 @@ func TestUncertainCheckpointRetriesIdenticalBatch(t *testing.T) {
 		t.Fatal(err)
 	}
 	raw, err := s.applyLive(ctx, "hero", move("one", "right"))
-	if err != nil || loadCharacter(t, raw).X != 7 {
+	if err != nil || loadCharacter(t, raw).X != 17 {
 		t.Fatal("replayed checkpoint", err)
 	}
 }
@@ -350,7 +350,7 @@ func TestReceiptFilterFalsePositiveChecksDatabase(t *testing.T) {
 		entry.filter[i] = 255
 	}
 	raw, err := s.applyLive(ctx, "hero", move("new", "right"))
-	if err != nil || loadCharacter(t, raw).X != 7 {
+	if err != nil || loadCharacter(t, raw).X != 17 {
 		t.Fatal("false positive dropped new request", err)
 	}
 }
@@ -376,10 +376,10 @@ func Test2DMovement4Directions(t *testing.T) {
 		dir    string
 		expect struct{ x, y int }
 	}{
-		{"right", struct{ x, y int }{7, 12}},
-		{"down", struct{ x, y int }{7, 13}},
-		{"left", struct{ x, y int }{6, 13}},
-		{"up", struct{ x, y int }{6, 12}},
+		{"right", struct{ x, y int }{17, 12}},
+		{"down", struct{ x, y int }{17, 13}},
+		{"left", struct{ x, y int }{16, 13}},
+		{"up", struct{ x, y int }{16, 12}},
 	}
 	for i, step := range steps {
 		raw, err := s.applyLive(ctx, "hero", move(fmt.Sprintf("mv%d", i), step.dir))
