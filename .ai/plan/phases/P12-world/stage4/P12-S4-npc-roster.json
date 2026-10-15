@@ -1,0 +1,827 @@
+[
+ {
+  "id": "summoner_mira",
+  "map_id": "summoning_hall_main_hall",
+  "name_vi": "Triệu Linh Sư Mira",
+  "tier": "main",
+  "roles": [
+   "quest",
+   "guide"
+  ],
+  "source_object": "Npc",
+  "apk_xy": [
+   -5.32,
+   0.36
+  ],
+  "apk_sprite": "1",
+  "new": false,
+  "note": "Người hướng dẫn đứng giữa; chọn bệ → nhận pet 1★ → mở khóa trụ một chiều tới Emerald. Nguồn có 4 biến thể ẩn cùng vị trí (4 trạng thái hội thoại)."
+ },
+ {
+  "id": "forest_guide",
+  "map_id": "emerald_forest_main_woods",
+  "name_vi": "Kiểm Lâm Lio",
+  "tier": "main",
+  "roles": [
+   "quest",
+   "heal"
+  ],
+  "source_object": "Lisa",
+  "apk_xy": [
+   4.78,
+   1.59
+  ],
+  "apk_sprite": "68",
+  "new": false,
+  "note": "NPC runtime sẵn có (`forest_guide`). Chuỗi P04: di chuyển, nói chuyện, chiến đấu, bắt pet. Gần điểm xuất hiện."
+ },
+ {
+  "id": "bia_shop",
+  "map_id": "emerald_forest_main_woods",
+  "name_vi": "Tiểu Thương Wen",
+  "tier": "service",
+  "roles": [
+   "shop"
+  ],
+  "source_object": "Shop",
+  "apk_xy": [
+   15.13,
+   1.46
+  ],
+  "apk_sprite": "5",
+  "new": false,
+  "note": "Tạp hóa cơ bản (thuốc, bẫy)."
+ },
+ {
+  "id": "bia_skill",
+  "map_id": "emerald_forest_main_woods",
+  "name_vi": "Thợ Săn Rowan",
+  "tier": "service",
+  "roles": [
+   "learn"
+  ],
+  "source_object": "Skill",
+  "apk_xy": [
+   11.95,
+   1.39
+  ],
+  "apk_sprite": "7",
+  "new": false,
+  "note": "Dạy kỹ năng bậc 1 (Lv1–10)."
+ },
+ {
+  "id": "bia_free",
+  "map_id": "emerald_forest_main_woods",
+  "name_vi": "Người Hái Nấm Tuli",
+  "tier": "free",
+  "roles": [
+   "free"
+  ],
+  "source_object": "Npc",
+  "apk_xy": [
+   8.39,
+   1.36
+  ],
+  "apk_sprite": "6",
+  "new": false,
+  "note": "Nhiệm vụ phụ nhẹ (thu thập)."
+ },
+ {
+  "id": "sau_guard",
+  "map_id": "emerald_forest_deep_woods",
+  "name_vi": "Người Gác Rừng Mero",
+  "tier": "main",
+  "roles": [
+   "quest",
+   "heal"
+  ],
+  "source_object": "Vesa",
+  "apk_xy": [
+   45.18,
+   1.41
+  ],
+  "apk_sprite": "62",
+  "new": false,
+  "note": "Nhận báo cáo khi qua rừng sâu; giao bước nhiệm vụ đi Hoàng Môn (lần đầu). Hồi máu tại bãi quái."
+ },
+ {
+  "id": "sau_free",
+  "map_id": "emerald_forest_deep_woods",
+  "name_vi": "Cụ Rêu Tamo",
+  "tier": "free",
+  "roles": [
+   "free"
+  ],
+  "source_object": null,
+  "apk_xy": null,
+  "apk_sprite": null,
+  "new": true,
+  "note": "MỚI. Cụ già giữ rừng, truyện nền."
+ },
+ {
+  "id": "gate_captain",
+  "map_id": "city_palace_gate",
+  "name_vi": "Thị Vệ Trưởng Karn",
+  "tier": "main",
+  "roles": [
+   "quest"
+  ],
+  "source_object": null,
+  "apk_xy": null,
+  "apk_sprite": null,
+  "new": true,
+  "note": "MỚI. Tiếp nhận người chơi lần đầu tới Hoàng Môn theo nhiệm vụ, chỉ đường về Quảng Trường."
+ },
+ {
+  "id": "gate_guild",
+  "map_id": "city_palace_gate",
+  "name_vi": "Sứ Giả Bang Hội Ryo",
+  "tier": "service",
+  "roles": [
+   "guild"
+  ],
+  "source_object": "guild (1)",
+  "apk_xy": [
+   30.91,
+   -0.16
+  ],
+  "apk_sprite": "79",
+  "new": false,
+  "note": "Tư vấn/dẫn vào khu bang hội."
+ },
+ {
+  "id": "trainer_elin",
+  "map_id": "city_square",
+  "name_vi": "Huấn Luyện Viên Elin",
+  "tier": "main",
+  "roles": [
+   "quest",
+   "learn"
+  ],
+  "source_object": "thaythuoc",
+  "apk_xy": [
+   0.12,
+   0.6
+  ],
+  "apk_sprite": "6",
+  "new": false,
+  "note": "NPC runtime sẵn có (`trainer`). Trung tâm chuỗi P04 tại thành. Runtime hiện còn shop+heal; thiết kế chuyển sang Thương Phố/Selka."
+ },
+ {
+  "id": "sq_healer",
+  "map_id": "city_square",
+  "name_vi": "Y Sư Selka",
+  "tier": "service",
+  "roles": [
+   "heal"
+  ],
+  "source_object": "thaythuoc (3)",
+  "apk_xy": [
+   -11.23,
+   0.32
+  ],
+  "apk_sprite": "71",
+  "new": false,
+  "note": "Hồi máu/MP cho pet toàn đội."
+ },
+ {
+  "id": "sq_skill",
+  "map_id": "city_square",
+  "name_vi": "Sư Phụ Kỹ Năng Doran",
+  "tier": "service",
+  "roles": [
+   "learn"
+  ],
+  "source_object": "thaythuoc (5)",
+  "apk_xy": [
+   -9.51,
+   0.04
+  ],
+  "apk_sprite": "71",
+  "new": false,
+  "note": "Dạy kỹ năng bậc 2 (Lv10–40). Phân trường phái theo race: P13 quyết."
+ },
+ {
+  "id": "sq_free",
+  "map_id": "city_square",
+  "name_vi": "Người Kể Chuyện Hanae",
+  "tier": "free",
+  "roles": [
+   "free"
+  ],
+  "source_object": "thaythuoc (2)",
+  "apk_xy": [
+   -8.23,
+   -2.79
+  ],
+  "apk_sprite": "59",
+  "new": false,
+  "note": "Truyện nền thành phố, nhiệm vụ phụ."
+ },
+ {
+  "id": "sq_pillar",
+  "map_id": "city_square",
+  "name_vi": "Trụ Sư Orsa",
+  "tier": "service",
+  "roles": [
+   "teleport"
+  ],
+  "source_object": "TTTD",
+  "apk_xy": [
+   6.28,
+   -1.66
+  ],
+  "apk_sprite": "26",
+  "new": false,
+  "note": "Vận hành trụ đá (U1). Menu chỉ hiện vùng đủ cấp. Tên nguồn TTTD + gợi ý loading \"Thủy tinh dịch chuyển phía Đông Quảng Trường\" cho thấy đây rất có thể là trụ gốc."
+ },
+ {
+  "id": "sq_arena",
+  "map_id": "city_square",
+  "name_vi": "Đài Sứ Rena",
+  "tier": "service",
+  "roles": [
+   "arena"
+  ],
+  "source_object": "TTTD (2)",
+  "apk_xy": [
+   -2.44,
+   -2.09
+  ],
+  "apk_sprite": "78",
+  "new": false,
+  "note": "Đăng ký Huyết Chiến Đài theo bậc."
+ },
+ {
+  "id": "sq_board",
+  "map_id": "city_square",
+  "name_vi": "Quản Sự Nhiệm Vụ Tessa",
+  "tier": "free",
+  "roles": [
+   "free",
+   "quest_board"
+  ],
+  "source_object": "TTTD (3)",
+  "apk_xy": [
+   -6.12,
+   -0.06
+  ],
+  "apk_sprite": "69",
+  "new": false,
+  "note": "Bảng nhiệm vụ phụ/hằng ngày (P08/P18)."
+ },
+ {
+  "id": "mk_general",
+  "map_id": "city_market",
+  "name_vi": "Chủ Tạp Hóa Bao",
+  "tier": "service",
+  "roles": [
+   "shop"
+  ],
+  "source_object": "Npc (1)",
+  "apk_xy": [
+   65.31,
+   0.05
+  ],
+  "apk_sprite": "5",
+  "new": false,
+  "note": "Vật phẩm tiêu hao, thức ăn pet."
+ },
+ {
+  "id": "mk_smith",
+  "map_id": "city_market",
+  "name_vi": "Thợ Rèn Gorun",
+  "tier": "service",
+  "roles": [
+   "shop"
+  ],
+  "source_object": "Npc (2)",
+  "apk_xy": [
+   68.39,
+   0.05
+  ],
+  "apk_sprite": "8",
+  "new": false,
+  "note": "Trang bị (hook cho P14)."
+ },
+ {
+  "id": "mk_trader",
+  "map_id": "city_market",
+  "name_vi": "Nhà Buôn Lữ Hành Zhen",
+  "tier": "free",
+  "roles": [
+   "free",
+   "shop"
+  ],
+  "source_object": "Npc (3)",
+  "apk_xy": [
+   80.49,
+   0.28
+  ],
+  "apk_sprite": "7",
+  "new": false,
+  "note": "Hàng luân phiên/nhiệm vụ phụ."
+ },
+ {
+  "id": "pal_advisor",
+  "map_id": "city_royal_palace",
+  "name_vi": "Đại Thần Cố Vấn Ezra",
+  "tier": "main",
+  "roles": [
+   "story",
+   "quest"
+  ],
+  "source_object": "TTTD (1)",
+  "apk_xy": [
+   35.45,
+   17.8
+  ],
+  "apk_sprite": "77",
+  "new": false,
+  "note": "Hook cốt truyện chính cho P17 (chưa viết tuyến)."
+ },
+ {
+  "id": "pal_guild",
+  "map_id": "city_royal_palace",
+  "name_vi": "Quan Bang Hội Lorne",
+  "tier": "service",
+  "roles": [
+   "guild"
+  ],
+  "source_object": "guild",
+  "apk_xy": [
+   40.51,
+   17.44
+  ],
+  "apk_sprite": "83",
+  "new": false,
+  "note": "Lập/gia nhập bang hội."
+ },
+ {
+  "id": "pal_healer",
+  "map_id": "city_royal_palace",
+  "name_vi": "Ngự Y Hoàng Cung Mina",
+  "tier": "service",
+  "roles": [
+   "heal"
+  ],
+  "source_object": "thaythuoc (4)",
+  "apk_xy": [
+   43.75,
+   17.56
+  ],
+  "apk_sprite": "71",
+  "new": false,
+  "note": "Hồi máu + giải trạng thái."
+ },
+ {
+  "id": "act_events",
+  "map_id": "city_activity_hall",
+  "name_vi": "Sứ Quản Hoạt Động Thalia",
+  "tier": "free",
+  "roles": [
+   "events",
+   "free"
+  ],
+  "source_object": "guild (2)",
+  "apk_xy": [
+   -0.53,
+   16.07
+  ],
+  "apk_sprite": "79",
+  "new": false,
+  "note": "Cổng vào hoạt động: Sói–Cừu, đấu trường PK/đội, chiến bang."
+ },
+ {
+  "id": "act_reward",
+  "map_id": "city_activity_hall",
+  "name_vi": "Nhân Viên Phần Thưởng Fia",
+  "tier": "service",
+  "roles": [
+   "reward"
+  ],
+  "source_object": null,
+  "apk_xy": null,
+  "apk_sprite": null,
+  "new": true,
+  "note": "MỚI. Nhận thưởng hoạt động/hằng ngày (P08)."
+ },
+ {
+  "id": "pet_master",
+  "map_id": "city_pet_room",
+  "name_vi": "Lão Sư Thuần Linh Haru",
+  "tier": "main",
+  "roles": [
+   "appraise",
+   "quest"
+  ],
+  "source_object": "Ong Poke",
+  "apk_xy": [
+   -5.63,
+   -14.05
+  ],
+  "apk_sprite": "59",
+  "new": false,
+  "note": "Bước giám định trong chuỗi P04 (Phòng thú cưng: giám định, cường hóa, lai tạo, ấp, cửa hàng pet)."
+ },
+ {
+  "id": "pet_shop",
+  "map_id": "city_pet_room",
+  "name_vi": "Chủ Tiệm Linh Thú Pomi",
+  "tier": "service",
+  "roles": [
+   "shop"
+  ],
+  "source_object": "Shop",
+  "apk_xy": [
+   -2.34,
+   -14.03
+  ],
+  "apk_sprite": "5",
+  "new": false,
+  "note": "Đồ cho pet (thức ăn, huấn luyện)."
+ },
+ {
+  "id": "pet_enhance",
+  "map_id": "city_pet_room",
+  "name_vi": "Thợ Cải Hoán Zeno",
+  "tier": "service",
+  "roles": [
+   "strengthen"
+  ],
+  "source_object": "LamMoi",
+  "apk_xy": [
+   0.82,
+   -14.06
+  ],
+  "apk_sprite": "70",
+  "new": false,
+  "note": "Cường hóa/làm mới pet."
+ },
+ {
+  "id": "pet_bless",
+  "map_id": "city_pet_room",
+  "name_vi": "Tế Ti Ban Phúc Sana",
+  "tier": "service",
+  "roles": [
+   "heal",
+   "bless"
+  ],
+  "source_object": "ChucPhuc",
+  "apk_xy": [
+   3.61,
+   -14.06
+  ],
+  "apk_sprite": "215",
+  "new": false,
+  "note": "Hồi pet + ban phúc (buff ngắn)."
+ },
+ {
+  "id": "pet_fusion",
+  "map_id": "city_pet_room",
+  "name_vi": "Thuật Sư Hợp Linh Vaen",
+  "tier": "main",
+  "roles": [
+   "breed",
+   "recipe",
+   "quest"
+  ],
+  "source_object": null,
+  "apk_xy": null,
+  "apk_sprite": null,
+  "new": true,
+  "note": "MỚI. Tổng hợp pet → trứng, học công thức (thay phần breed/recipe của Oren). Bước \"tổng hợp → trứng\" của chuỗi P04."
+ },
+ {
+  "id": "pet_hatch",
+  "map_id": "city_pet_room",
+  "name_vi": "Ấp Sư Nimu",
+  "tier": "service",
+  "roles": [
+   "hatch"
+  ],
+  "source_object": null,
+  "apk_xy": null,
+  "apk_sprite": null,
+  "new": true,
+  "note": "MỚI. Ấp trứng/nở. P16 có thể dời việc ấp ra nông trại riêng sau."
+ },
+ {
+  "id": "ranch_keeper",
+  "map_id": "city_farm",
+  "name_vi": "Quản Trang Oren",
+  "tier": "service",
+  "roles": [
+   "storage"
+  ],
+  "source_object": "QuanLy",
+  "apk_xy": [
+   -3.51,
+   -25.71
+  ],
+  "apk_sprite": "1",
+  "new": false,
+  "note": "NPC runtime sẵn có (`ranch_keeper`). Owner 2026-10-15: NPC duy nhất ngoài nông trại, chỉ gửi/rút pet. Runtime hiện còn appraise, breed, strengthen, recipe, heal, quest: chuyển sang Phòng thú cưng khi migrate (chưa đổi runtime)."
+ },
+ {
+  "id": "arena_master",
+  "map_id": "city_deathmatch_arena",
+  "name_vi": "Đài Chủ Vale",
+  "tier": "main",
+  "roles": [
+   "arena",
+   "heal"
+  ],
+  "source_object": "thaythuoc (1)",
+  "apk_xy": [
+   39.65,
+   39.66
+  ],
+  "apk_sprite": "6",
+  "new": false,
+  "note": "NPC runtime sẵn có (`arena_master`). Cổng đấu trường trong chuỗi P04."
+ },
+ {
+  "id": "arena_free",
+  "map_id": "city_deathmatch_arena",
+  "name_vi": "Cựu Đấu Sĩ Garm",
+  "tier": "free",
+  "roles": [
+   "free"
+  ],
+  "source_object": null,
+  "apk_xy": null,
+  "apk_sprite": null,
+  "new": true,
+  "note": "MỚI. Truyện nền đấu trường."
+ },
+ {
+  "id": "beach_guide",
+  "map_id": "treasure_beach_fishermen_beach",
+  "name_vi": "Hoa Tiêu Nia",
+  "tier": "main",
+  "roles": [
+   "quest",
+   "heal"
+  ],
+  "source_object": "Walter (1)",
+  "apk_xy": [
+   -0.02,
+   1.82
+  ],
+  "apk_sprite": "6",
+  "new": false,
+  "note": "NPC runtime sẵn có (`beach_guide`). Dẫn vào vùng bãi biển."
+ },
+ {
+  "id": "fish_shop",
+  "map_id": "treasure_beach_fishermen_beach",
+  "name_vi": "Ngư Thương Coda",
+  "tier": "service",
+  "roles": [
+   "shop"
+  ],
+  "source_object": "Shop",
+  "apk_xy": [
+   4.94,
+   1.66
+  ],
+  "apk_sprite": "5",
+  "new": false,
+  "note": "Mồi, đồ biển."
+ },
+ {
+  "id": "fish_skill",
+  "map_id": "treasure_beach_fishermen_beach",
+  "name_vi": "Sư Phụ Hải Kỹ Marin",
+  "tier": "service",
+  "roles": [
+   "learn"
+  ],
+  "source_object": "Skill",
+  "apk_xy": [
+   -2.95,
+   1.91
+  ],
+  "apk_sprite": "7",
+  "new": false,
+  "note": "Kỹ năng bậc 2 theo vùng biển."
+ },
+ {
+  "id": "fish_free",
+  "map_id": "treasure_beach_fishermen_beach",
+  "name_vi": "Lão Ngư Dân Bako",
+  "tier": "free",
+  "roles": [
+   "free"
+  ],
+  "source_object": "Gustin",
+  "apk_xy": [
+   2.7,
+   1.8
+  ],
+  "apk_sprite": "3",
+  "new": false,
+  "note": "Nhiệm vụ phụ ngư nghiệp."
+ },
+ {
+  "id": "east_camp",
+  "map_id": "treasure_beach_east_beach",
+  "name_vi": "Trạm Trưởng Rinka",
+  "tier": "service",
+  "roles": [
+   "heal",
+   "quest"
+  ],
+  "source_object": "Saja",
+  "apk_xy": [
+   40.18,
+   1.94
+  ],
+  "apk_sprite": "61",
+  "new": false,
+  "note": "Trại nghỉ ngay bãi quái; nơi người chơi tới bằng trụ."
+ },
+ {
+  "id": "east_free",
+  "map_id": "treasure_beach_east_beach",
+  "name_vi": "Người Nhặt Vỏ Sò Pua",
+  "tier": "free",
+  "roles": [
+   "free"
+  ],
+  "source_object": null,
+  "apk_xy": null,
+  "apk_sprite": null,
+  "new": true,
+  "note": "MỚI. Gần điểm xuất hiện."
+ },
+ {
+  "id": "west_healer",
+  "map_id": "treasure_beach_west_beach",
+  "name_vi": "Y Sư Lữ Hành Kuri",
+  "tier": "service",
+  "roles": [
+   "heal"
+  ],
+  "source_object": "Ithaqua",
+  "apk_xy": [
+   -27.06,
+   1.47
+  ],
+  "apk_sprite": "58",
+  "new": false,
+  "note": "Hồi máu bãi quái."
+ },
+ {
+  "id": "west_free",
+  "map_id": "treasure_beach_west_beach",
+  "name_vi": "Họa Sĩ Bãi Cát Sen",
+  "tier": "free",
+  "roles": [
+   "free"
+  ],
+  "source_object": null,
+  "apk_xy": null,
+  "apk_sprite": null,
+  "new": true,
+  "note": "MỚI. Truyện nền."
+ },
+ {
+  "id": "deep_diver",
+  "map_id": "treasure_beach_deep_sea",
+  "name_vi": "Thợ Lặn Maro",
+  "tier": "free",
+  "roles": [
+   "free",
+   "heal"
+  ],
+  "source_object": "Walter",
+  "apk_xy": [
+   -9.92,
+   -13.68
+  ],
+  "apk_sprite": "77",
+  "new": false,
+  "note": "Khoang khí nghỉ + nhiệm vụ phụ."
+ },
+ {
+  "id": "isl_captain",
+  "map_id": "treasure_beach_prosperity_island",
+  "name_vi": "Thuyền Trưởng Đảo Fenn",
+  "tier": "free",
+  "roles": [
+   "free",
+   "heal",
+   "shop"
+  ],
+  "source_object": null,
+  "apk_xy": null,
+  "apk_sprite": null,
+  "new": true,
+  "note": "MỚI. Cuối vùng: hồi máu, đồ báu vật, hook nhiệm vụ phụ."
+ },
+ {
+  "id": "ship_captain",
+  "map_id": "middle_corridor_main_hall",
+  "name_vi": "Thuyền Trưởng Dorn",
+  "tier": "main",
+  "roles": [
+   "story",
+   "quest"
+  ],
+  "source_object": "Logan",
+  "apk_xy": [
+   -0.23,
+   -1.96
+  ],
+  "apk_sprite": "68",
+  "new": false,
+  "note": "Hook cốt truyện chính Lv40+ (P17)."
+ },
+ {
+  "id": "ship_pillar",
+  "map_id": "middle_corridor_main_hall",
+  "name_vi": "Hoa Tiêu Trụ Kael",
+  "tier": "service",
+  "roles": [
+   "teleport"
+  ],
+  "source_object": "TTTD",
+  "apk_xy": [
+   3.05,
+   1.87
+  ],
+  "apk_sprite": "26",
+  "new": false,
+  "note": "Trụ trên tàu: 6 vùng cao, Điền Trang, Quảng Trường (U5)."
+ },
+ {
+  "id": "ship_healer",
+  "map_id": "middle_corridor_main_hall",
+  "name_vi": "Y Sư Thuyền Lilo",
+  "tier": "service",
+  "roles": [
+   "heal"
+  ],
+  "source_object": "Npc",
+  "apk_xy": [
+   0.71,
+   1.81
+  ],
+  "apk_sprite": "6",
+  "new": false,
+  "note": "Hồi máu."
+ },
+ {
+  "id": "ship_skill",
+  "map_id": "middle_corridor_main_hall",
+  "name_vi": "Sư Phụ Hải Chiến Zephyr",
+  "tier": "service",
+  "roles": [
+   "learn"
+  ],
+  "source_object": "npc (1)",
+  "apk_xy": [
+   -5.15,
+   1.67
+  ],
+  "apk_sprite": "7",
+  "new": false,
+  "note": "Kỹ năng bậc 3 (Lv40+)."
+ },
+ {
+  "id": "ship_shop",
+  "map_id": "middle_corridor_main_hall",
+  "name_vi": "Quản Kho Thuyền Moto",
+  "tier": "service",
+  "roles": [
+   "shop"
+  ],
+  "source_object": "Npc (1)",
+  "apk_xy": [
+   -2.39,
+   1.81
+  ],
+  "apk_sprite": "5",
+  "new": false,
+  "note": "Đồ Lv40+."
+ },
+ {
+  "id": "ship_free",
+  "map_id": "middle_corridor_main_hall",
+  "name_vi": "Lữ Khách Tàu Yuma",
+  "tier": "free",
+  "roles": [
+   "free"
+  ],
+  "source_object": "npc",
+  "apk_xy": [
+   -4.21,
+   -1.96
+  ],
+  "apk_sprite": "8",
+  "new": false,
+  "note": "Nhiệm vụ phụ vùng cao."
+ }
+]
