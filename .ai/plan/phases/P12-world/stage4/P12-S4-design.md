@@ -150,7 +150,7 @@ Giới hạn: tên `TransEnemy` và điểm spawn đánh số là suy luận t�
 ## 8. Quy tắc NPC theo loại map (owner, web review 2026-10-15)
 
 - NPC hồi máu và cửa hàng chỉ ở map an toàn. Map có bãi quái chỉ có NPC nhiệm vụ phụ (hạng tự do). Ngoại lệ: 2 map hỗn hợp (Bìa Rừng Lục Bảo, Đảo Ác Mộng).
-- Triệu Linh Điện chính là Sảnh vẫy gọi (`SanhVayGoi`, luồng người chơi mới). Owner đã xác nhận và yêu cầu hoàn lại vai trò ban đầu của Mira: NPC chính tuyến, hướng dẫn chọn bệ và nhận pet 1★ (đảo lại nhận xét trước đó cho map này là map sự kiện).
+- Triệu Linh Điện chính là Sảnh vẫy gọi (`SanhVayGoi`, luồng người chơi mới). Owner đã xác nhận và yêu cầu hoàn lại vai trò ban đầu của Mira: NPC chính tuyến đầu tiên, hướng dẫn chọn bệ và nhận pet 1★ (đảo lại nhận xét trước đó cho map này là map sự kiện).
 - Quảng Trường thêm: Chủ Sàn Giao Dịch Ketra, Thủ Kho Odan (kho đồ) và Hòm Thư Thạch Trụ (vật thể cạnh Thủ Kho).
 - Hải Tặc Hào thêm Thợ Rèn Tàu Harlo.
 - Hệ quả cần lưu ý: Rừng Sâu, Bờ Đông, Bờ Tây, Vực Hải Lam, Đảo Phú Quý không còn hồi máu tại chỗ; người chơi về Bến Ngư Châu hoặc hồi sinh theo §7. Bước nhiệm vụ chính đi Hoàng Môn không còn ở Rừng Sâu; phase quest đặt NPC.

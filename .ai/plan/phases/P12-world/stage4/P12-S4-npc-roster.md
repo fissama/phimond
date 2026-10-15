@@ -90,7 +90,7 @@ Hạng: **main** = chuỗi nhiệm vụ chính (P04 onboarding; P17 viết truy�
 
 | Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
 |---|---|---|---|---|---|
-| **Triệu Linh Sư Mira** (`summoner_mira`) | main | quest, guide | -5.32, 0.36 | Npc | Người hướng dẫn đứng giữa; chọn bệ → nhận pet 1★ → mở khóa trụ một chiều tới Emerald. Nguồn có 4 biến thể ẩn cùng vị trí (4 trạng thái hội thoại). |
+| **Triệu Linh Sư Mira** (`summoner_mira`) | main | quest, guide | -5.32, 0.36 | Npc | NPC chính tuyến ĐẦU TIÊN (owner 2026-10-15). Người hướng dẫn đứng giữa; chọn bệ → nhận pet 1★ → mở khóa trụ một chiều tới Emerald. Nguồn có 4 biến thể ẩn cùng vị trí (4 trạng thái hội thoại). |
 
 ## emerald_forest_main_woods (4)
 
