@@ -7,7 +7,7 @@ Stage 4 (owner mở 2026-10-15) chỉ là **tài liệu và dữ liệu thiết 
 | File | Nội dung |
 |---|---|
 | [P12-S4-design.md](P12-S4-design.md) | Thiết kế chính: phạm vi 17 map, trụ teleport, cấp từng map, vùng an toàn và hồi sinh, quyết định của owner |
-| [P12-S4-npc-roster.md](P12-S4-npc-roster.md) / `.json` | Roster đề xuất 49 NPC (40 gắn vị trí gốc, 9 mới) |
+| [P12-S4-npc-roster.md](P12-S4-npc-roster.md) / `.json` | Roster đề xuất 52 NPC + 1 hòm thư (40 gắn vị trí gốc, 12 mới + hòm thư) |
 | [P12-S4-npc-matrix.md](P12-S4-npc-matrix.md) | 44 slot NPC gốc trong APK (vai trò gốc chỉ là suy đoán) |
 | [P12-S4-portal-matrix.md](P12-S4-portal-matrix.md) / `portal-matrix.json` | 45 portal chạm phạm vi |
 | `apk-extract/` | Dữ liệu thô trích từ APK: `npcs-raw.json`, `npcs.json` (đã lọc), `spawn-markers.json`, `map-scan.json` (quét 92 map) |
@@ -40,7 +40,7 @@ python3 -I gen_npc_matrix.py                # P12-S4-npc-matrix.md
 python3 -I gen_npc_roster.py                # P12-S4-npc-roster.md + .json
 ```
 
-Mỗi script trích APK mất khoảng nửa phút. Kết quả mong đợi khi chạy lại: `02` in 133 object trong AllNpc và lọc ra 44 NPC; `03` in 92 maps; `04` in 6 map; `gen_portal_matrix` in 45 portals; `gen_npc_roster` in 49 NPC, 9 mới.
+Mỗi script trích APK mất khoảng nửa phút. Kết quả mong đợi khi chạy lại: `02` in 133 object trong AllNpc và lọc ra 44 NPC; `03` in 92 maps; `04` in 6 map; `gen_portal_matrix` in 45 portals; `gen_npc_roster` in 53 mục (52 NPC + hòm thư), 13 mới.
 
 ## 4. Sửa roster NPC
 

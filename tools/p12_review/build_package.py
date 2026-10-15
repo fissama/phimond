@@ -18,7 +18,7 @@ ROLE = {'quest': 'nhiệm vụ', 'guide': 'hướng dẫn', 'heal': 'hồi máu'
  'free': 'nhiệm vụ phụ', 'teleport': 'trụ dịch chuyển', 'arena': 'đấu trường', 'quest_board': 'bảng nhiệm vụ',
  'story': 'cốt truyện', 'guild': 'bang hội', 'events': 'hoạt động', 'reward': 'phần thưởng', 'appraise': 'giám định',
  'strengthen': 'cường hóa', 'bless': 'ban phúc', 'breed': 'lai tạo', 'recipe': 'công thức', 'hatch': 'ấp trứng',
- 'storage': 'gửi/rút pet'}
+ 'storage': 'gửi/rút pet', 'exchange': 'sàn giao dịch', 'warehouse': 'kho đồ', 'mailbox': 'hòm thư', 'smith': 'rèn trang bị'}
 roster = json.load(open(PH / 'stage4/P12-S4-npc-roster.json', encoding='utf-8'))
 dec = [
  {'id': 'S1-SCOPE', 'category': 'Stage 1 · Phạm vi', 'title': 'Phạm vi khảo sát chi tiết (review_detailed_scope)',
@@ -42,7 +42,7 @@ for mid, name in NAMES.items():
                 'MỚI' if n['new'] else 'vị trí APK', n['note']] for n in ns]})
 pkg = {'schema_version': 1, 'phase': 'P12', 'revision': 'P12-owner-review-20261015',
  'title': 'P12 · Duyệt một lần: phạm vi, renderer, roster NPC',
- 'status': 'Chờ chủ dự án duyệt', 'summary': f'{len(roster)} NPC trên 17 map.', 'decisions': dec}
+ 'status': 'Chờ chủ dự án duyệt', 'summary': f'{len(roster)} mục (52 NPC + 1 hòm thư) trên 17 map.', 'decisions': dec}
 OUT.parent.mkdir(parents=True, exist_ok=True)
 OUT.write_text(json.dumps(pkg, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 print('decisions', len(dec), 'npcs', len(roster))

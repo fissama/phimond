@@ -83,7 +83,7 @@ Dữ liệu: [apk-extract/spawn-markers.json](apk-extract/spawn-markers.json). M
 |---|---|---|
 | Portal | **Xong (nháp)** | [P12-S4-portal-matrix.md](P12-S4-portal-matrix.md) |
 | Trụ / access | **Xong (nháp)** | §3, §4.2 |
-| NPC / dịch vụ | **Roster đề xuất đủ (chờ duyệt)** | [P12-S4-npc-roster.md](P12-S4-npc-roster.md): 49 NPC (40 gắn vị trí gốc, 9 mới) phủ chính tuyến, tự do, hồi máu, học kỹ năng, cửa hàng, dịch vụ pet. Bảng nguồn thô: [P12-S4-npc-matrix.md](P12-S4-npc-matrix.md) (44 slot APK; vai trò gốc chỉ là suy đoán) |
+| NPC / dịch vụ | **Roster đề xuất đủ (chờ duyệt)** | [P12-S4-npc-roster.md](P12-S4-npc-roster.md): 52 NPC + 1 hòm thư (40 gắn vị trí gốc, 12 mới + hòm thư) phủ chính tuyến, tự do, hồi máu, học kỹ năng, cửa hàng, dịch vụ pet. Bảng nguồn thô: [P12-S4-npc-matrix.md](P12-S4-npc-matrix.md) (44 slot APK; vai trò gốc chỉ là suy đoán) |
 | Spawn / vùng quái | **Có điểm spawn, thiếu danh tính** | §4.3; danh tính quái do P15/P10/P11 quyết |
 | Recovery / safe arrival | **Quy tắc đã chốt (§7)** | Chết/kẹt → vùng an toàn của map lớn hiện tại |
 | Template / instance / ownership | **Một phần** | **Điền Trang Lục Dã và Phòng thú cưng: map riêng từng người chơi** (owner 2026-10-15). Huyết Chiến Đài và phòng Sói–Cừu cần instance; chưa có bằng chứng APK |
@@ -146,3 +146,11 @@ Giới hạn: tên `TransEnemy` và điểm spawn đánh số là suy luận t�
 - Q14: bậc kỹ năng từng thầy do P13 quyết.
 - Chuỗi nhiệm vụ chính do phase quest quyết; P12 chỉ soạn NPC.
 - Đảo Ác Mộng: giữ Trại Tàn Sinh trộn lẫn như Bìa Rừng, không có vùng an toàn; chết/kẹt → Trại Tàn Sinh. Vùng an toàn của các vùng ngoài phạm vi đã đối chiếu APK (§7.2).
+
+## 8. Quy tắc NPC theo loại map (owner, web review 2026-10-15)
+
+- NPC hồi máu và cửa hàng chỉ ở map an toàn. Map có bãi quái chỉ có NPC nhiệm vụ phụ (hạng tự do). Ngoại lệ: 2 map hỗn hợp (Bìa Rừng Lục Bảo, Đảo Ác Mộng).
+- Triệu Linh Điện là map sự kiện: Mira là NPC phụ / sự kiện hằng ngày.
+- Quảng Trường thêm: Chủ Sàn Giao Dịch Ketra, Thủ Kho Odan (kho đồ) và Hòm Thư Thạch Trụ (vật thể cạnh Thủ Kho).
+- Hải Tặc Hào thêm Thợ Rèn Tàu Harlo.
+- Hệ quả cần lưu ý: Rừng Sâu, Bờ Đông, Bờ Tây, Vực Hải Lam, Đảo Phú Quý không còn hồi máu tại chỗ; người chơi về Bến Ngư Châu hoặc hồi sinh theo §7. Bước nhiệm vụ chính đi Hoàng Môn không còn ở Rừng Sâu; phase quest đặt NPC.

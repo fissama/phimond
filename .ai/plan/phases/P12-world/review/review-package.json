@@ -4,7 +4,7 @@
   "revision": "P12-owner-review-20261015",
   "title": "P12 · Duyệt một lần: phạm vi, renderer, roster NPC",
   "status": "Chờ chủ dự án duyệt",
-  "summary": "49 NPC trên 17 map.",
+  "summary": "53 mục (52 NPC + 1 hòm thư) trên 17 map.",
   "decisions": [
     {
       "id": "S1-SCOPE",
@@ -112,10 +112,10 @@
       "rows": [
         [
           "Triệu Linh Sư Mira",
-          "Chính tuyến",
-          "nhiệm vụ, hướng dẫn",
+          "Tự do",
+          "hoạt động, nhiệm vụ phụ",
           "vị trí APK",
-          "Người hướng dẫn đứng giữa; chọn bệ → nhận pet 1★ → mở khóa trụ một chiều tới Emerald. Nguồn có 4 biến thể ẩn cùng vị trí (4 trạng thái hội thoại)."
+          "Map sự kiện (owner 2026-10-15): NPC đánh dấu phụ / sự kiện hằng ngày. Hướng dẫn chọn bệ nhận pet 1★ chuyển cho phase quest quyết. Nguồn có 4 biến thể ẩn cùng vị trí."
         ]
       ]
     },
@@ -179,10 +179,10 @@
       "rows": [
         [
           "Người Gác Rừng Mero",
-          "Chính tuyến",
-          "nhiệm vụ, hồi máu",
+          "Tự do",
+          "nhiệm vụ phụ",
           "vị trí APK",
-          "Nhận báo cáo khi qua rừng sâu; giao bước nhiệm vụ đi Hoàng Môn (lần đầu). Hồi máu tại bãi quái."
+          "Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15), không hồi máu/cửa hàng. Bước đi Hoàng Môn lần đầu do phase quest đặt NPC."
         ],
         [
           "Cụ Rêu Tamo",
@@ -197,7 +197,7 @@
       "id": "S4-NPC-city_square",
       "category": "Stage 4 · Roster NPC",
       "title": "Quảng Trường Thạch Trụ",
-      "summary": "7 NPC.",
+      "summary": "10 NPC (3 mới).",
       "rationale": "Tên và vai trò là đề xuất thiết kế, không lấy từ tên trong APK. Chuỗi nhiệm vụ chính do phase quest quyết.",
       "columns": [
         "Tên",
@@ -255,6 +255,27 @@
           "nhiệm vụ phụ, bảng nhiệm vụ",
           "vị trí APK",
           "Bảng nhiệm vụ phụ/hằng ngày (P08/P18)."
+        ],
+        [
+          "Chủ Sàn Giao Dịch Ketra",
+          "Dịch vụ",
+          "sàn giao dịch",
+          "MỚI",
+          "MỚI (owner 2026-10-15). Sàn giao dịch giữa người chơi."
+        ],
+        [
+          "Thủ Kho Odan",
+          "Dịch vụ",
+          "kho đồ",
+          "MỚI",
+          "MỚI (owner 2026-10-15). Quản lý kho đồ (vật phẩm); kho pet vẫn ở Điền Trang."
+        ],
+        [
+          "Hòm Thư Thạch Trụ",
+          "Dịch vụ",
+          "hòm thư",
+          "MỚI",
+          "MỚI. Vật thể tương tác (không phải NPC) đặt cạnh Thủ Kho Odan; thư và đính kèm."
         ]
       ]
     },
@@ -563,10 +584,10 @@
       "rows": [
         [
           "Trạm Trưởng Rinka",
-          "Dịch vụ",
-          "hồi máu, nhiệm vụ",
+          "Tự do",
+          "nhiệm vụ phụ",
           "vị trí APK",
-          "Trại nghỉ ngay bãi quái; nơi người chơi tới bằng trụ."
+          "Bãi quái: chỉ nhiệm vụ phụ (không hồi máu). Gần điểm xuất hiện từ trụ."
         ],
         [
           "Người Nhặt Vỏ Sò Pua",
@@ -593,10 +614,10 @@
       "rows": [
         [
           "Y Sư Lữ Hành Kuri",
-          "Dịch vụ",
-          "hồi máu",
+          "Tự do",
+          "nhiệm vụ phụ",
           "vị trí APK",
-          "Hồi máu bãi quái."
+          "Bãi quái: đổi từ hồi máu sang nhiệm vụ phụ (hái thảo dược); hồi máu chỉ ở map an toàn."
         ],
         [
           "Họa Sĩ Bãi Cát Sen",
@@ -624,9 +645,9 @@
         [
           "Thợ Lặn Maro",
           "Tự do",
-          "nhiệm vụ phụ, hồi máu",
+          "nhiệm vụ phụ",
           "vị trí APK",
-          "Khoang khí nghỉ + nhiệm vụ phụ."
+          "Bãi quái: chỉ nhiệm vụ phụ."
         ]
       ]
     },
@@ -647,9 +668,9 @@
         [
           "Thuyền Trưởng Đảo Fenn",
           "Tự do",
-          "nhiệm vụ phụ, hồi máu, cửa hàng",
+          "nhiệm vụ phụ",
           "MỚI",
-          "MỚI. Cuối vùng: hồi máu, đồ báu vật, hook nhiệm vụ phụ."
+          "MỚI. Bãi quái: chỉ nhiệm vụ phụ; bỏ hồi máu và cửa hàng."
         ]
       ]
     },
@@ -657,7 +678,7 @@
       "id": "S4-NPC-middle_corridor_main_hall",
       "category": "Stage 4 · Roster NPC",
       "title": "Hải Tặc Hào",
-      "summary": "6 NPC.",
+      "summary": "7 NPC (1 mới).",
       "rationale": "Tên và vai trò là đề xuất thiết kế, không lấy từ tên trong APK. Chuỗi nhiệm vụ chính do phase quest quyết.",
       "columns": [
         "Tên",
@@ -701,6 +722,13 @@
           "cửa hàng",
           "vị trí APK",
           "Đồ Lv40+."
+        ],
+        [
+          "Thợ Rèn Tàu Harlo",
+          "Dịch vụ",
+          "rèn trang bị",
+          "MỚI",
+          "MỚI (owner 2026-10-15). Rèn trang bị Lv40+ (hook cho P14)."
         ],
         [
           "Lữ Khách Tàu Yuma",

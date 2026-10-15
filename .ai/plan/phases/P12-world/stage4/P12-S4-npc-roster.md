@@ -1,6 +1,6 @@
 # P12 Stage 4 — Roster NPC đề xuất (nháp, chờ owner duyệt)
 
-49 NPC trong 17 map: 40 gắn vào vị trí NPC gốc APK 3.2 (44 slot), 9 MỚI (cần đặt vị trí khi vẽ HD-2D). Sinh bằng `gen_npc_roster.py`; tên không dùng tên NPC trong APK.
+52 NPC + 1 hòm thư (vật thể) trong 17 map: 40 gắn vào vị trí NPC gốc APK 3.2 (44 slot), 13 MỚI (cần đặt vị trí khi vẽ HD-2D). Sinh bằng `gen_npc_roster.py`; tên không dùng tên NPC trong APK.
 
 **Lưu ý:** tên object trong APK (`thaythuoc`, `TTTD`, `guild`…) là tên prefab, chưa đủ tin cậy để suy vai trò; vai trò ở đây là **thiết kế đề xuất**, chỉ dùng vị trí gốc làm sườn. Tọa độ APK chỉ là bản phác, bản vẽ HD-2D sẽ đặt lại.
 
@@ -10,11 +10,11 @@ Hạng: **main** = chuỗi nhiệm vụ chính (P04 onboarding; P17 viết truy�
 
 | Map | main | free | heal | learn | shop | khác |
 |---|---|---|---|---|---|---|
-| `summoning_hall_main_hall` | 1 | — | — | — | — | guide |
+| `summoning_hall_main_hall` | — | 1 | — | — | — | events |
 | `emerald_forest_main_woods` | 1 | 1 | 1 | 1 | 1 | — |
-| `emerald_forest_deep_woods` | 1 | 1 | 1 | — | — | — |
+| `emerald_forest_deep_woods` | — | 2 | — | — | — | — |
 | `city_palace_gate` | 1 | — | — | — | — | guild |
-| `city_square` | 1 | 2 | 1 | 2 | — | arena, quest_board, teleport |
+| `city_square` | 1 | 2 | 1 | 2 | — | arena, exchange, mailbox, quest_board, teleport, warehouse |
 | `city_market` | — | 1 | — | — | 3 | — |
 | `city_royal_palace` | 1 | — | 1 | — | — | guild, story |
 | `city_activity_hall` | — | 1 | — | — | — | events, reward |
@@ -22,17 +22,17 @@ Hạng: **main** = chuỗi nhiệm vụ chính (P04 onboarding; P17 viết truy�
 | `city_farm` | — | — | — | — | — | storage |
 | `city_deathmatch_arena` | 1 | 1 | 1 | — | — | arena |
 | `treasure_beach_fishermen_beach` | 1 | 1 | 1 | 1 | 1 | — |
-| `treasure_beach_east_beach` | — | 1 | 1 | — | — | — |
-| `treasure_beach_west_beach` | — | 1 | 1 | — | — | — |
-| `treasure_beach_deep_sea` | — | 1 | 1 | — | — | — |
-| `treasure_beach_prosperity_island` | — | 1 | 1 | — | 1 | — |
-| `middle_corridor_main_hall` | 1 | 1 | 1 | 1 | 1 | story, teleport |
+| `treasure_beach_east_beach` | — | 2 | — | — | — | — |
+| `treasure_beach_west_beach` | — | 2 | — | — | — | — |
+| `treasure_beach_deep_sea` | — | 1 | — | — | — | — |
+| `treasure_beach_prosperity_island` | — | 1 | — | — | — | — |
+| `middle_corridor_main_hall` | 1 | 1 | 1 | 1 | 1 | smith, story, teleport |
 
 ## summoning_hall_main_hall (1)
 
 | Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
 |---|---|---|---|---|---|
-| **Triệu Linh Sư Mira** (`summoner_mira`) | main | quest, guide | -5.32, 0.36 | Npc | Người hướng dẫn đứng giữa; chọn bệ → nhận pet 1★ → mở khóa trụ một chiều tới Emerald. Nguồn có 4 biến thể ẩn cùng vị trí (4 trạng thái hội thoại). |
+| **Triệu Linh Sư Mira** (`summoner_mira`) | free | events, free | -5.32, 0.36 | Npc | Map sự kiện (owner 2026-10-15): NPC đánh dấu phụ / sự kiện hằng ngày. Hướng dẫn chọn bệ nhận pet 1★ chuyển cho phase quest quyết. Nguồn có 4 biến thể ẩn cùng vị trí. |
 
 ## emerald_forest_main_woods (4)
 
@@ -47,7 +47,7 @@ Hạng: **main** = chuỗi nhiệm vụ chính (P04 onboarding; P17 viết truy�
 
 | Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
 |---|---|---|---|---|---|
-| **Người Gác Rừng Mero** (`sau_guard`) | main | quest, heal | 45.18, 1.41 | Vesa | Nhận báo cáo khi qua rừng sâu; giao bước nhiệm vụ đi Hoàng Môn (lần đầu). Hồi máu tại bãi quái. |
+| **Người Gác Rừng Mero** (`sau_guard`) | free | free | 45.18, 1.41 | Vesa | Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15), không hồi máu/cửa hàng. Bước đi Hoàng Môn lần đầu do phase quest đặt NPC. |
 | **Cụ Rêu Tamo** (`sau_free`) | free | free | MỚI: chưa đặt | — | MỚI. Cụ già giữ rừng, truyện nền. |
 
 ## city_palace_gate (2)
@@ -57,7 +57,7 @@ Hạng: **main** = chuỗi nhiệm vụ chính (P04 onboarding; P17 viết truy�
 | **Thị Vệ Trưởng Karn** (`gate_captain`) | main | quest | MỚI: chưa đặt | — | MỚI. Tiếp nhận người chơi lần đầu tới Hoàng Môn theo nhiệm vụ, chỉ đường về Quảng Trường. |
 | **Sứ Giả Bang Hội Ryo** (`gate_guild`) | service | guild | 30.91, -0.16 | guild (1) | Tư vấn/dẫn vào khu bang hội. |
 
-## city_square (7)
+## city_square (10)
 
 | Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
 |---|---|---|---|---|---|
@@ -68,6 +68,9 @@ Hạng: **main** = chuỗi nhiệm vụ chính (P04 onboarding; P17 viết truy�
 | **Trụ Sư Orsa** (`sq_pillar`) | service | teleport | 6.28, -1.66 | TTTD | Vận hành trụ đá (U1). Menu chỉ hiện vùng đủ cấp. Tên nguồn TTTD + gợi ý loading "Thủy tinh dịch chuyển phía Đông Quảng Trường" cho thấy đây rất có thể là trụ gốc. |
 | **Đài Sứ Rena** (`sq_arena`) | service | arena | -2.44, -2.09 | TTTD (2) | Đăng ký Huyết Chiến Đài theo bậc. |
 | **Quản Sự Nhiệm Vụ Tessa** (`sq_board`) | free | free, quest_board | -6.12, -0.06 | TTTD (3) | Bảng nhiệm vụ phụ/hằng ngày (P08/P18). |
+| **Chủ Sàn Giao Dịch Ketra** (`sq_exchange`) | service | exchange | MỚI: chưa đặt | — | MỚI (owner 2026-10-15). Sàn giao dịch giữa người chơi. |
+| **Thủ Kho Odan** (`sq_warehouse`) | service | warehouse | MỚI: chưa đặt | — | MỚI (owner 2026-10-15). Quản lý kho đồ (vật phẩm); kho pet vẫn ở Điền Trang. |
+| **Hòm Thư Thạch Trụ** (`sq_mailbox`) | service | mailbox | MỚI: chưa đặt | — | MỚI. Vật thể tương tác (không phải NPC) đặt cạnh Thủ Kho Odan; thư và đính kèm. |
 
 ## city_market (3)
 
@@ -129,29 +132,29 @@ Hạng: **main** = chuỗi nhiệm vụ chính (P04 onboarding; P17 viết truy�
 
 | Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
 |---|---|---|---|---|---|
-| **Trạm Trưởng Rinka** (`east_camp`) | service | heal, quest | 40.18, 1.94 | Saja | Trại nghỉ ngay bãi quái; nơi người chơi tới bằng trụ. |
+| **Trạm Trưởng Rinka** (`east_camp`) | free | free | 40.18, 1.94 | Saja | Bãi quái: chỉ nhiệm vụ phụ (không hồi máu). Gần điểm xuất hiện từ trụ. |
 | **Người Nhặt Vỏ Sò Pua** (`east_free`) | free | free | MỚI: chưa đặt | — | MỚI. Gần điểm xuất hiện. |
 
 ## treasure_beach_west_beach (2)
 
 | Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
 |---|---|---|---|---|---|
-| **Y Sư Lữ Hành Kuri** (`west_healer`) | service | heal | -27.06, 1.47 | Ithaqua | Hồi máu bãi quái. |
+| **Y Sư Lữ Hành Kuri** (`west_healer`) | free | free | -27.06, 1.47 | Ithaqua | Bãi quái: đổi từ hồi máu sang nhiệm vụ phụ (hái thảo dược); hồi máu chỉ ở map an toàn. |
 | **Họa Sĩ Bãi Cát Sen** (`west_free`) | free | free | MỚI: chưa đặt | — | MỚI. Truyện nền. |
 
 ## treasure_beach_deep_sea (1)
 
 | Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
 |---|---|---|---|---|---|
-| **Thợ Lặn Maro** (`deep_diver`) | free | free, heal | -9.92, -13.68 | Walter | Khoang khí nghỉ + nhiệm vụ phụ. |
+| **Thợ Lặn Maro** (`deep_diver`) | free | free | -9.92, -13.68 | Walter | Bãi quái: chỉ nhiệm vụ phụ. |
 
 ## treasure_beach_prosperity_island (1)
 
 | Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
 |---|---|---|---|---|---|
-| **Thuyền Trưởng Đảo Fenn** (`isl_captain`) | free | free, heal, shop | MỚI: chưa đặt | — | MỚI. Cuối vùng: hồi máu, đồ báu vật, hook nhiệm vụ phụ. |
+| **Thuyền Trưởng Đảo Fenn** (`isl_captain`) | free | free | MỚI: chưa đặt | — | MỚI. Bãi quái: chỉ nhiệm vụ phụ; bỏ hồi máu và cửa hàng. |
 
-## middle_corridor_main_hall (6)
+## middle_corridor_main_hall (7)
 
 | Tên | Hạng | Vai trò | Vị trí APK (x,y) | Nguồn | Ghi chú |
 |---|---|---|---|---|---|
@@ -160,6 +163,7 @@ Hạng: **main** = chuỗi nhiệm vụ chính (P04 onboarding; P17 viết truy�
 | **Y Sư Thuyền Lilo** (`ship_healer`) | service | heal | 0.71, 1.81 | Npc | Hồi máu. |
 | **Sư Phụ Hải Chiến Zephyr** (`ship_skill`) | service | learn | -5.15, 1.67 | npc (1) | Kỹ năng bậc 3 (Lv40+). |
 | **Quản Kho Thuyền Moto** (`ship_shop`) | service | shop | -2.39, 1.81 | Npc (1) | Đồ Lv40+. |
+| **Thợ Rèn Tàu Harlo** (`ship_smith`) | service | smith | MỚI: chưa đặt | — | MỚI (owner 2026-10-15). Rèn trang bị Lv40+ (hook cho P14). |
 | **Lữ Khách Tàu Yuma** (`ship_free`) | free | free | -4.21, -1.96 | npc | Nhiệm vụ phụ vùng cao. |
 
 ## Phạm vi roster

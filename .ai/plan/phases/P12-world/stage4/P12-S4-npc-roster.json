@@ -3,10 +3,10 @@
   "id": "summoner_mira",
   "map_id": "summoning_hall_main_hall",
   "name_vi": "Triệu Linh Sư Mira",
-  "tier": "main",
+  "tier": "free",
   "roles": [
-   "quest",
-   "guide"
+   "events",
+   "free"
   ],
   "source_object": "Npc",
   "apk_xy": [
@@ -15,7 +15,7 @@
   ],
   "apk_sprite": "1",
   "new": false,
-  "note": "Người hướng dẫn đứng giữa; chọn bệ → nhận pet 1★ → mở khóa trụ một chiều tới Emerald. Nguồn có 4 biến thể ẩn cùng vị trí (4 trạng thái hội thoại)."
+  "note": "Map sự kiện (owner 2026-10-15): NPC đánh dấu phụ / sự kiện hằng ngày. Hướng dẫn chọn bệ nhận pet 1★ chuyển cho phase quest quyết. Nguồn có 4 biến thể ẩn cùng vị trí."
  },
  {
   "id": "forest_guide",
@@ -90,10 +90,9 @@
   "id": "sau_guard",
   "map_id": "emerald_forest_deep_woods",
   "name_vi": "Người Gác Rừng Mero",
-  "tier": "main",
+  "tier": "free",
   "roles": [
-   "quest",
-   "heal"
+   "free"
   ],
   "source_object": "Vesa",
   "apk_xy": [
@@ -102,7 +101,7 @@
   ],
   "apk_sprite": "62",
   "new": false,
-  "note": "Nhận báo cáo khi qua rừng sâu; giao bước nhiệm vụ đi Hoàng Môn (lần đầu). Hồi máu tại bãi quái."
+  "note": "Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15), không hồi máu/cửa hàng. Bước đi Hoàng Môn lần đầu do phase quest đặt NPC."
  },
  {
   "id": "sau_free",
@@ -269,6 +268,48 @@
   "apk_sprite": "69",
   "new": false,
   "note": "Bảng nhiệm vụ phụ/hằng ngày (P08/P18)."
+ },
+ {
+  "id": "sq_exchange",
+  "map_id": "city_square",
+  "name_vi": "Chủ Sàn Giao Dịch Ketra",
+  "tier": "service",
+  "roles": [
+   "exchange"
+  ],
+  "source_object": null,
+  "apk_xy": null,
+  "apk_sprite": null,
+  "new": true,
+  "note": "MỚI (owner 2026-10-15). Sàn giao dịch giữa người chơi."
+ },
+ {
+  "id": "sq_warehouse",
+  "map_id": "city_square",
+  "name_vi": "Thủ Kho Odan",
+  "tier": "service",
+  "roles": [
+   "warehouse"
+  ],
+  "source_object": null,
+  "apk_xy": null,
+  "apk_sprite": null,
+  "new": true,
+  "note": "MỚI (owner 2026-10-15). Quản lý kho đồ (vật phẩm); kho pet vẫn ở Điền Trang."
+ },
+ {
+  "id": "sq_mailbox",
+  "map_id": "city_square",
+  "name_vi": "Hòm Thư Thạch Trụ",
+  "tier": "service",
+  "roles": [
+   "mailbox"
+  ],
+  "source_object": null,
+  "apk_xy": null,
+  "apk_sprite": null,
+  "new": true,
+  "note": "MỚI. Vật thể tương tác (không phải NPC) đặt cạnh Thủ Kho Odan; thư và đính kèm."
  },
  {
   "id": "mk_general",
@@ -628,10 +669,9 @@
   "id": "east_camp",
   "map_id": "treasure_beach_east_beach",
   "name_vi": "Trạm Trưởng Rinka",
-  "tier": "service",
+  "tier": "free",
   "roles": [
-   "heal",
-   "quest"
+   "free"
   ],
   "source_object": "Saja",
   "apk_xy": [
@@ -640,7 +680,7 @@
   ],
   "apk_sprite": "61",
   "new": false,
-  "note": "Trại nghỉ ngay bãi quái; nơi người chơi tới bằng trụ."
+  "note": "Bãi quái: chỉ nhiệm vụ phụ (không hồi máu). Gần điểm xuất hiện từ trụ."
  },
  {
   "id": "east_free",
@@ -660,9 +700,9 @@
   "id": "west_healer",
   "map_id": "treasure_beach_west_beach",
   "name_vi": "Y Sư Lữ Hành Kuri",
-  "tier": "service",
+  "tier": "free",
   "roles": [
-   "heal"
+   "free"
   ],
   "source_object": "Ithaqua",
   "apk_xy": [
@@ -671,7 +711,7 @@
   ],
   "apk_sprite": "58",
   "new": false,
-  "note": "Hồi máu bãi quái."
+  "note": "Bãi quái: đổi từ hồi máu sang nhiệm vụ phụ (hái thảo dược); hồi máu chỉ ở map an toàn."
  },
  {
   "id": "west_free",
@@ -693,8 +733,7 @@
   "name_vi": "Thợ Lặn Maro",
   "tier": "free",
   "roles": [
-   "free",
-   "heal"
+   "free"
   ],
   "source_object": "Walter",
   "apk_xy": [
@@ -703,7 +742,7 @@
   ],
   "apk_sprite": "77",
   "new": false,
-  "note": "Khoang khí nghỉ + nhiệm vụ phụ."
+  "note": "Bãi quái: chỉ nhiệm vụ phụ."
  },
  {
   "id": "isl_captain",
@@ -711,15 +750,13 @@
   "name_vi": "Thuyền Trưởng Đảo Fenn",
   "tier": "free",
   "roles": [
-   "free",
-   "heal",
-   "shop"
+   "free"
   ],
   "source_object": null,
   "apk_xy": null,
   "apk_sprite": null,
   "new": true,
-  "note": "MỚI. Cuối vùng: hồi máu, đồ báu vật, hook nhiệm vụ phụ."
+  "note": "MỚI. Bãi quái: chỉ nhiệm vụ phụ; bỏ hồi máu và cửa hàng."
  },
  {
   "id": "ship_captain",
@@ -806,6 +843,20 @@
   "apk_sprite": "5",
   "new": false,
   "note": "Đồ Lv40+."
+ },
+ {
+  "id": "ship_smith",
+  "map_id": "middle_corridor_main_hall",
+  "name_vi": "Thợ Rèn Tàu Harlo",
+  "tier": "service",
+  "roles": [
+   "smith"
+  ],
+  "source_object": null,
+  "apk_xy": null,
+  "apk_sprite": null,
+  "new": true,
+  "note": "MỚI (owner 2026-10-15). Rèn trang bị Lv40+ (hook cho P14)."
  },
  {
   "id": "ship_free",

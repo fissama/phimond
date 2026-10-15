@@ -19,7 +19,7 @@ by=collections.OrderedDict((v,[]) for v in M.values())
 for o in out: by[o['map_id']].append(o)
 n_src=sum(1 for o in out if not o['new']); n_new=len(out)-n_src
 L=['# P12 Stage 4 — Roster NPC đề xuất (nháp, chờ owner duyệt)\n',
-f'{len(out)} NPC trong 17 map: {n_src} gắn vào vị trí NPC gốc APK 3.2 (44 slot), {n_new} MỚI (cần đặt vị trí khi vẽ HD-2D). Sinh bằng `gen_npc_roster.py`; tên không dùng tên NPC trong APK.\n',
+f'{len(out)-1} NPC + 1 hòm thư (vật thể) trong 17 map: {n_src} gắn vào vị trí NPC gốc APK 3.2 (44 slot), {n_new} MỚI (cần đặt vị trí khi vẽ HD-2D). Sinh bằng `gen_npc_roster.py`; tên không dùng tên NPC trong APK.\n',
 '**Lưu ý:** tên object trong APK (`thaythuoc`, `TTTD`, `guild`…) là tên prefab, chưa đủ tin cậy để suy vai trò; vai trò ở đây là **thiết kế đề xuất**, chỉ dùng vị trí gốc làm sườn. Tọa độ APK chỉ là bản phác, bản vẽ HD-2D sẽ đặt lại.\n',
 'Hạng: **main** = chuỗi nhiệm vụ chính (P04 onboarding; P17 viết truyện sau), **free** = NPC tự do/nhiệm vụ phụ (P18), **service** = dịch vụ.\n',
 '## Ma trận phủ theo map\n','| Map | main | free | heal | learn | shop | khác |','|---|---|---|---|---|---|---|']
