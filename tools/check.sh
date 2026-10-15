@@ -11,3 +11,7 @@ node --test tools/load_gameplay_test.mjs
 cd "$root/apps/web"
 npm test
 npm run typecheck
+cd "$root/apps/game-web"
+npm run typecheck
+npm test
+npm run build

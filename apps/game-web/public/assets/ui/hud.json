@@ -1,0 +1,1332 @@
+{
+  "source": "Spirit Beast World 3.2.apk",
+  "source_sha256": "4585589356c3aaebdf99589f0194d72e74c471cc71425d3b54f7e119437f72ac",
+  "method": "UnityPy Sprite.image; original Sprite polygon/alpha and slice; byte-for-byte copied from extracted PNGs",
+  "notes": [
+    "button_confirm and button_back share unlabeled oval Sprite. Render labels separately.",
+    "frame_chat is a 10x85 cyan background strip to stretch horizontally, not a complete ornamental frame.",
+    "APK3.2 D-pad and silver bar chrome differ from the older reference video."
+  ],
+  "assets": {
+    "row_menu": {
+      "path": "res://assets/reference/hud/row_menu.png",
+      "width": 346,
+      "height": 25,
+      "source_sprite": "tableitem_0",
+      "source_file": "sharedassets0.assets",
+      "source_id": 531,
+      "extracted_path": "Sprite/sharedassets0.assets_531_tableitem_0.png",
+      "png_sha256": "7e037a63fecbd02bbba07579fa974c8e3959b8e6d7863964abbb614fbebcb9a2",
+      "sprite_rect_bottom_left": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 346.0,
+        "height": 25.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 0,
+        "m_PathID": 185
+      }
+    },
+    "row_selected": {
+      "path": "res://assets/reference/hud/row_selected.png",
+      "width": 344,
+      "height": 25,
+      "source_sprite": "tableitem1_0",
+      "source_file": "sharedassets0.assets",
+      "source_id": 589,
+      "extracted_path": "Sprite/sharedassets0.assets_589_tableitem1_0.png",
+      "png_sha256": "cc674c2afb9b92daaa4267e6a71fcf9fbfacdf2ed21e6db6be53dfd625e30cc3",
+      "sprite_rect_bottom_left": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 344.0,
+        "height": 25.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 0,
+        "m_PathID": 243
+      }
+    },
+    "tab_menu": {
+      "path": "res://assets/reference/hud/tab_menu.png",
+      "width": 78,
+      "height": 25,
+      "source_sprite": "tab",
+      "source_file": "sharedassets0.assets",
+      "source_id": 578,
+      "extracted_path": "Sprite/sharedassets0.assets_578_tab.png",
+      "png_sha256": "07d1a18eda9f1b7457a37b80bb1a5fed7c12f5c5d580ba087d91a562280f84bb",
+      "sprite_rect_bottom_left": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 78.0,
+        "height": 25.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 0,
+        "m_PathID": 232
+      }
+    },
+    "button_accept": {
+      "path": "res://assets/reference/hud/button_accept.png",
+      "width": 63,
+      "height": 64,
+      "source_sprite": "DongY",
+      "source_file": "sharedassets0.assets",
+      "source_id": 636,
+      "extracted_path": "Sprite/sharedassets0.assets_636_DongY.png",
+      "png_sha256": "1b74465a7e7a7ec1243c1495fc844b30020df6c0a2f31b2ef333ed7b8737fde1",
+      "sprite_rect_bottom_left": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 64.0,
+        "height": 64.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 0,
+        "m_PathID": 290
+      }
+    },
+    "button_cancel": {
+      "path": "res://assets/reference/hud/button_cancel.png",
+      "width": 63,
+      "height": 64,
+      "source_sprite": "Huy 1",
+      "source_file": "sharedassets0.assets",
+      "source_id": 638,
+      "extracted_path": "Sprite/sharedassets0.assets_638_Huy_1.png",
+      "png_sha256": "aa59d5d0238834c561c836452947922ef6db8b21482dd7c64969bc891a93b22a",
+      "sprite_rect_bottom_left": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 64.0,
+        "height": 64.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 0,
+        "m_PathID": 292
+      }
+    },
+    "panel_menu": {
+      "path": "res://assets/reference/hud/panel_menu.png",
+      "width": 491,
+      "height": 232,
+      "source_sprite": "UI_0",
+      "source_file": "sharedassets0.assets",
+      "source_id": 354,
+      "extracted_path": "Sprite/sharedassets0.assets_354_UI_0.png",
+      "png_sha256": "c497133e7ca095f6eac104ba8139a008cbb43580d525c021cb94d4d5fd436a6d",
+      "sprite_rect_bottom_left": {
+        "x": 19.0,
+        "y": 44.0,
+        "width": 491.0,
+        "height": 232.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 0,
+        "m_PathID": 156
+      }
+    },
+    "dpad": {
+      "path": "res://assets/reference/hud/dpad.png",
+      "width": 128,
+      "height": 124,
+      "source_sprite": "UIall_10",
+      "source_file": "sharedassets1.assets",
+      "source_id": 62,
+      "extracted_path": "Sprite/sharedassets1.assets_62_UIall_10.png",
+      "png_sha256": "43806d0d9af53599a315ce483c59f9362ac681a1a87e8fc5c73bfd3d2005047d",
+      "sprite_rect_bottom_left": {
+        "x": 172.0,
+        "y": 112.0,
+        "width": 128.0,
+        "height": 124.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 4,
+        "m_PathID": 474
+      }
+    },
+    "button_round": {
+      "path": "res://assets/reference/hud/button_round.png",
+      "width": 60,
+      "height": 63,
+      "source_sprite": "UIall_15",
+      "source_file": "sharedassets1.assets",
+      "source_id": 125,
+      "extracted_path": "Sprite/sharedassets1.assets_125_UIall_15.png",
+      "png_sha256": "09815ceb29f2b0ca4bf87c768918c184dfa0d337d9f58cc1efc69d603244633e",
+      "sprite_rect_bottom_left": {
+        "x": 501.0,
+        "y": 120.0,
+        "width": 60.0,
+        "height": 64.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 4,
+        "m_PathID": 474
+      }
+    },
+    "button_round_red": {
+      "path": "res://assets/reference/hud/button_round_red.png",
+      "width": 60,
+      "height": 64,
+      "source_sprite": "UIall_20",
+      "source_file": "sharedassets1.assets",
+      "source_id": 126,
+      "extracted_path": "Sprite/sharedassets1.assets_126_UIall_20.png",
+      "png_sha256": "c6e855d61445c75223e20e1b74f810329fe6957f793f04b4696111dd938cbe77",
+      "sprite_rect_bottom_left": {
+        "x": 282.0,
+        "y": 25.0,
+        "width": 60.0,
+        "height": 64.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 4,
+        "m_PathID": 474
+      }
+    },
+    "bar_hp": {
+      "path": "res://assets/reference/hud/bar_hp.png",
+      "width": 106,
+      "height": 9,
+      "source_sprite": "UIall_8",
+      "source_file": "sharedassets1.assets",
+      "source_id": 130,
+      "extracted_path": "Sprite/sharedassets1.assets_130_UIall_8.png",
+      "png_sha256": "45932fe259c077426b58a9432876ac9e298f782f5686fcea0bbb5168d114c612",
+      "sprite_rect_bottom_left": {
+        "x": 20.0,
+        "y": 273.0,
+        "width": 106.0,
+        "height": 9.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 4,
+        "m_PathID": 474
+      }
+    },
+    "bar_mp": {
+      "path": "res://assets/reference/hud/bar_mp.png",
+      "width": 103,
+      "height": 8,
+      "source_sprite": "UIall_1",
+      "source_file": "sharedassets1.assets",
+      "source_id": 55,
+      "extracted_path": "Sprite/sharedassets1.assets_55_UIall_1.png",
+      "png_sha256": "73b4672ed8cad29397e07bc1685a25190d6e958422001637cac003b7980eab0e",
+      "sprite_rect_bottom_left": {
+        "x": 30.0,
+        "y": 263.0,
+        "width": 103.0,
+        "height": 8.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 4,
+        "m_PathID": 474
+      }
+    },
+    "bar_xp": {
+      "path": "res://assets/reference/hud/bar_xp.png",
+      "width": 112,
+      "height": 5,
+      "source_sprite": "UIall_7",
+      "source_file": "sharedassets1.assets",
+      "source_id": 133,
+      "extracted_path": "Sprite/sharedassets1.assets_133_UIall_7.png",
+      "png_sha256": "f4a75b2a5fa3a961b1b19ca38c8ba758abd351f14b8351412b0f7c9561212bbc",
+      "sprite_rect_bottom_left": {
+        "x": 2.0,
+        "y": 288.0,
+        "width": 112.0,
+        "height": 5.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 4,
+        "m_PathID": 474
+      }
+    },
+    "bar_green": {
+      "path": "res://assets/reference/hud/bar_green.png",
+      "width": 111,
+      "height": 5,
+      "source_sprite": "UIall_16",
+      "source_file": "sharedassets1.assets",
+      "source_id": 58,
+      "extracted_path": "Sprite/sharedassets1.assets_58_UIall_16.png",
+      "png_sha256": "ca25a1908aeec8b5cec902802f694e6a943e634436156d51aea2cc7f65071e54",
+      "sprite_rect_bottom_left": {
+        "x": 27.0,
+        "y": 255.0,
+        "width": 111.0,
+        "height": 5.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 4,
+        "m_PathID": 474
+      }
+    },
+    "frame_bars": {
+      "path": "res://assets/reference/hud/frame_bars.png",
+      "width": 139,
+      "height": 40,
+      "source_sprite": "UIall_4",
+      "source_file": "sharedassets1.assets",
+      "source_id": 123,
+      "extracted_path": "Sprite/sharedassets1.assets_123_UIall_4.png",
+      "png_sha256": "1a031461dbf48feececace6175fdb839ffa0cdaa5850f84f53b367eb8a46c38d",
+      "sprite_rect_bottom_left": {
+        "x": 33.0,
+        "y": 299.0,
+        "width": 139.0,
+        "height": 40.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 4,
+        "m_PathID": 474
+      }
+    },
+    "frame_portrait": {
+      "path": "res://assets/reference/hud/frame_portrait.png",
+      "width": 66,
+      "height": 57,
+      "source_sprite": "UIall_14",
+      "source_file": "sharedassets1.assets",
+      "source_id": 57,
+      "extracted_path": "Sprite/sharedassets1.assets_57_UIall_14.png",
+      "png_sha256": "193d7d16586cbcf734cfb80fddb2f2ed826f66d8f9244034b39f56c9def43979",
+      "sprite_rect_bottom_left": {
+        "x": 384.0,
+        "y": 100.0,
+        "width": 66.0,
+        "height": 58.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 4,
+        "m_PathID": 474
+      }
+    },
+    "frame_chat": {
+      "path": "res://assets/reference/hud/frame_chat.png",
+      "width": 10,
+      "height": 85,
+      "source_sprite": "chatbg_0",
+      "source_file": "resources.assets",
+      "source_id": 1850,
+      "extracted_path": "Sprite/resources.assets_1850_chatbg_0.png",
+      "png_sha256": "2c215aea1851a0ea438e0f1a16768847d66cc460ee211732517fc47cc7f09413",
+      "sprite_rect_bottom_left": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 10.0,
+        "height": 85.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 0,
+        "m_PathID": 283
+      }
+    },
+    "panel_controls": {
+      "path": "res://assets/reference/hud/panel_controls.png",
+      "width": 99,
+      "height": 90,
+      "source_sprite": "UIall_2",
+      "source_file": "sharedassets1.assets",
+      "source_id": 132,
+      "extracted_path": "Sprite/sharedassets1.assets_132_UIall_2.png",
+      "png_sha256": "9c8c02c205c83b60787aa6fffcece5af463fd0cd458b154ebe1a4b8166def4ce",
+      "sprite_rect_bottom_left": {
+        "x": 175.0,
+        "y": 252.0,
+        "width": 99.0,
+        "height": 90.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 4,
+        "m_PathID": 474
+      }
+    },
+    "panel_ornate": {
+      "path": "res://assets/reference/hud/panel_ornate.png",
+      "width": 150,
+      "height": 125,
+      "source_sprite": "UIall_9",
+      "source_file": "sharedassets1.assets",
+      "source_id": 54,
+      "extracted_path": "Sprite/sharedassets1.assets_54_UIall_9.png",
+      "png_sha256": "84d8829f0e86eded971ed4c56d8bc797cdff5e7c3e126b87cf8b079e52191d2f",
+      "sprite_rect_bottom_left": {
+        "x": 0.0,
+        "y": 114.0,
+        "width": 150.0,
+        "height": 125.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 4,
+        "m_PathID": 474
+      }
+    },
+    "button_confirm": {
+      "path": "res://assets/reference/hud/button_confirm.png",
+      "width": 67,
+      "height": 62,
+      "source_sprite": "UIall_3",
+      "source_file": "sharedassets1.assets",
+      "source_id": 60,
+      "extracted_path": "Sprite/sharedassets1.assets_60_UIall_3.png",
+      "png_sha256": "f0b9694abe1dcf6bac486c753c95923a2ec98ecf558905c1d64be465174c63d3",
+      "sprite_rect_bottom_left": {
+        "x": 377.0,
+        "y": 274.0,
+        "width": 67.0,
+        "height": 62.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 4,
+        "m_PathID": 474
+      }
+    },
+    "button_back": {
+      "path": "res://assets/reference/hud/button_back.png",
+      "width": 67,
+      "height": 62,
+      "source_sprite": "UIall_3",
+      "source_file": "sharedassets1.assets",
+      "source_id": 60,
+      "extracted_path": "Sprite/sharedassets1.assets_60_UIall_3.png",
+      "png_sha256": "f0b9694abe1dcf6bac486c753c95923a2ec98ecf558905c1d64be465174c63d3",
+      "sprite_rect_bottom_left": {
+        "x": 377.0,
+        "y": 274.0,
+        "width": 67.0,
+        "height": 62.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 4,
+        "m_PathID": 474
+      }
+    },
+    "button_menu": {
+      "path": "res://assets/reference/hud/button_menu.png",
+      "width": 102,
+      "height": 35,
+      "source_sprite": "UIall_21",
+      "source_file": "resources.assets",
+      "source_id": 2195,
+      "extracted_path": "Sprite/resources.assets_2195_UIall_21.png",
+      "png_sha256": "1692ddab9612e8c31f9c342f0a48efb9218219e1f3dff8918dd4305d50471a89",
+      "sprite_rect_bottom_left": {
+        "x": 357.0,
+        "y": 55.0,
+        "width": 102.0,
+        "height": 35.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 0,
+        "m_PathID": 474
+      }
+    },
+    "button_side": {
+      "path": "res://assets/reference/hud/button_side.png",
+      "width": 37,
+      "height": 48,
+      "source_sprite": "UIall_5",
+      "source_file": "sharedassets1.assets",
+      "source_id": 131,
+      "extracted_path": "Sprite/sharedassets1.assets_131_UIall_5.png",
+      "png_sha256": "29cddac076940c487bf0f7bd5a89855d6aa8aa36306e05b8dec5694d17563c14",
+      "sprite_rect_bottom_left": {
+        "x": 300.0,
+        "y": 282.0,
+        "width": 37.0,
+        "height": 48.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 4,
+        "m_PathID": 474
+      }
+    },
+    "button_orb": {
+      "path": "res://assets/reference/hud/button_orb.png",
+      "width": 58,
+      "height": 58,
+      "source_sprite": "UIall_12",
+      "source_file": "sharedassets1.assets",
+      "source_id": 59,
+      "extracted_path": "Sprite/sharedassets1.assets_59_UIall_12.png",
+      "png_sha256": "7a289585516c72c4d44c0577de7844d3770c1212aacbb5b56b47dd7ff68e32c2",
+      "sprite_rect_bottom_left": {
+        "x": 389.0,
+        "y": 174.0,
+        "width": 59.0,
+        "height": 58.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 4,
+        "m_PathID": 474
+      }
+    },
+    "frame_small": {
+      "path": "res://assets/reference/hud/frame_small.png",
+      "width": 40,
+      "height": 38,
+      "source_sprite": "UIall_13",
+      "source_file": "sharedassets1.assets",
+      "source_id": 129,
+      "extracted_path": "Sprite/sharedassets1.assets_129_UIall_13.png",
+      "png_sha256": "e36d3e04b590ed63e97ce6aa8c2426e337f4ed8cc6ddd879f74a320333c5f800",
+      "sprite_rect_bottom_left": {
+        "x": 471.0,
+        "y": 200.0,
+        "width": 40.0,
+        "height": 38.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 4,
+        "m_PathID": 474
+      }
+    },
+    "slot": {
+      "path": "res://assets/reference/hud/slot.png",
+      "width": 61,
+      "height": 61,
+      "source_sprite": "UIall_19",
+      "source_file": "resources.assets",
+      "source_id": 2193,
+      "extracted_path": "Sprite/resources.assets_2193_UIall_19.png",
+      "png_sha256": "19699b11e45475965911bd1e9fd035842c08bd5706a12f129197582afbc77aef",
+      "sprite_rect_bottom_left": {
+        "x": 188.0,
+        "y": 27.0,
+        "width": 61.0,
+        "height": 61.0
+      },
+      "sprite_border": {
+        "x": 4.0,
+        "y": 4.0,
+        "z": 4.0,
+        "w": 4.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 0,
+        "m_PathID": 474
+      }
+    },
+    "slot_light": {
+      "path": "res://assets/reference/hud/slot_light.png",
+      "width": 61,
+      "height": 61,
+      "source_sprite": "UIall_18",
+      "source_file": "sharedassets1.assets",
+      "source_id": 63,
+      "extracted_path": "Sprite/sharedassets1.assets_63_UIall_18.png",
+      "png_sha256": "1201d1de72752f170b71747ce403e87a3d1d9f99135ca1b64cc8be4f884c015b",
+      "sprite_rect_bottom_left": {
+        "x": 92.0,
+        "y": 27.0,
+        "width": 61.0,
+        "height": 61.0
+      },
+      "sprite_border": {
+        "x": 4.0,
+        "y": 4.0,
+        "z": 4.0,
+        "w": 4.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 4,
+        "m_PathID": 474
+      }
+    },
+    "ornament_corner": {
+      "path": "res://assets/reference/hud/ornament_corner.png",
+      "width": 22,
+      "height": 22,
+      "source_sprite": "UIall_0",
+      "source_file": "sharedassets1.assets",
+      "source_id": 127,
+      "extracted_path": "Sprite/sharedassets1.assets_127_UIall_0.png",
+      "png_sha256": "ec82c0e01d8bf12746e54e8e9e298a2e6d0359973438ab8c2c4a3708e35e634c",
+      "sprite_rect_bottom_left": {
+        "x": 4.0,
+        "y": 318.0,
+        "width": 22.0,
+        "height": 22.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 4,
+        "m_PathID": 474
+      }
+    },
+    "battle_actions": {
+      "path": "res://assets/reference/hud/battle_actions.png",
+      "width": 239,
+      "height": 44,
+      "source_sprite": "battlebg_0",
+      "source_file": "sharedassets1.assets",
+      "source_id": 107,
+      "extracted_path": "Sprite/sharedassets1.assets_107_battlebg_0.png",
+      "png_sha256": "54ebda8b288eda1e00cbeb83bc5e4f4e2c75fb1ce5ca8f644320945e7787006b",
+      "sprite_rect_bottom_left": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 239.0,
+        "height": 44.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 0,
+        "m_PathID": 38
+      }
+    },
+    "icon_attack": {
+      "path": "res://assets/reference/hud/icon_attack.png",
+      "width": 46,
+      "height": 48,
+      "source_sprite": "Attack_0",
+      "source_file": "sharedassets1.assets",
+      "source_id": 56,
+      "extracted_path": "Sprite/sharedassets1.assets_56_Attack_0.png",
+      "png_sha256": "f6575893fc11d36f3b7d7681dbb7087860753bb080d6b9b1d34d6f1a835a9957",
+      "sprite_rect_bottom_left": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 46.0,
+        "height": 48.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 0,
+        "m_PathID": 10
+      }
+    },
+    "icon_magic": {
+      "path": "res://assets/reference/hud/icon_magic.png",
+      "width": 48,
+      "height": 48,
+      "source_sprite": "Magic_0",
+      "source_file": "sharedassets1.assets",
+      "source_id": 64,
+      "extracted_path": "Sprite/sharedassets1.assets_64_Magic_0.png",
+      "png_sha256": "7076de09e327bb9c8b0389026f91f5e282a3f3015a0dc1ae354fa02d26ef3316",
+      "sprite_rect_bottom_left": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 48.0,
+        "height": 48.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 0,
+        "m_PathID": 40
+      }
+    },
+    "icon_inventory": {
+      "path": "res://assets/reference/hud/icon_inventory.png",
+      "width": 48,
+      "height": 46,
+      "source_sprite": "Iventory_0",
+      "source_file": "sharedassets1.assets",
+      "source_id": 122,
+      "extracted_path": "Sprite/sharedassets1.assets_122_Iventory_0.png",
+      "png_sha256": "f664c157d6f0c133e1537fe5e6e8b4cd4a93a45de4c88b1ae1bd6a9c0d7db705",
+      "sprite_rect_bottom_left": {
+        "x": 0.0,
+        "y": 2.0,
+        "width": 48.0,
+        "height": 46.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 0,
+        "m_PathID": 37
+      }
+    },
+    "icon_auto": {
+      "path": "res://assets/reference/hud/icon_auto.png",
+      "width": 47,
+      "height": 47,
+      "source_sprite": "Auto_0",
+      "source_file": "sharedassets1.assets",
+      "source_id": 124,
+      "extracted_path": "Sprite/sharedassets1.assets_124_Auto_0.png",
+      "png_sha256": "670cbb424c1f9660879afafe516e04a5c9df7ef4811c516d857a34654c091e9b",
+      "sprite_rect_bottom_left": {
+        "x": 0.0,
+        "y": 1.0,
+        "width": 48.0,
+        "height": 47.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 0,
+        "m_PathID": 18
+      }
+    },
+    "icon_run": {
+      "path": "res://assets/reference/hud/icon_run.png",
+      "width": 48,
+      "height": 47,
+      "source_sprite": "Run_0",
+      "source_file": "sharedassets1.assets",
+      "source_id": 128,
+      "extracted_path": "Sprite/sharedassets1.assets_128_Run_0.png",
+      "png_sha256": "ec28e559f2c2e77aaaf8ba6bdafd7c7ca26c2ebc349b752594050b32bee3ebc1",
+      "sprite_rect_bottom_left": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 48.0,
+        "height": 47.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 0,
+        "m_PathID": 22
+      }
+    },
+    "button_inventory": {
+      "path": "res://assets/reference/hud/button_inventory.png",
+      "width": 63,
+      "height": 64,
+      "source_sprite": "item",
+      "source_file": "sharedassets1.assets",
+      "source_id": 91,
+      "extracted_path": "Sprite/sharedassets1.assets_91_item.png",
+      "png_sha256": "0d919b0f72aaa7f334494771ee08d18beca7d35c11a99c27f07396512f0bf902",
+      "sprite_rect_bottom_left": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 64.0,
+        "height": 64.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 0,
+        "m_PathID": 17
+      }
+    },
+    "button_pet": {
+      "path": "res://assets/reference/hud/button_pet.png",
+      "width": 63,
+      "height": 64,
+      "source_sprite": "pet",
+      "source_file": "sharedassets1.assets",
+      "source_id": 112,
+      "extracted_path": "Sprite/sharedassets1.assets_112_pet.png",
+      "png_sha256": "0d185aea3885bcb8c7ddc01ac71b8b96a6c9aea4e21d7bece4d75e2fd8093975",
+      "sprite_rect_bottom_left": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 64.0,
+        "height": 64.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 0,
+        "m_PathID": 44
+      }
+    },
+    "button_settings": {
+      "path": "res://assets/reference/hud/button_settings.png",
+      "width": 63,
+      "height": 64,
+      "source_sprite": "CaiDat",
+      "source_file": "sharedassets1.assets",
+      "source_id": 101,
+      "extracted_path": "Sprite/sharedassets1.assets_101_CaiDat.png",
+      "png_sha256": "14e0c275c762a21b4e9fdc675376fbc56550129c81ac6e4e56edcd95295f4f9e",
+      "sprite_rect_bottom_left": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 64.0,
+        "height": 64.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 0,
+        "m_PathID": 29
+      }
+    },
+    "button_quest": {
+      "path": "res://assets/reference/hud/button_quest.png",
+      "width": 63,
+      "height": 64,
+      "source_sprite": "NV",
+      "source_file": "sharedassets1.assets",
+      "source_id": 103,
+      "extracted_path": "Sprite/sharedassets1.assets_103_NV.png",
+      "png_sha256": "2202fdaf0b27926a47087b5d21a50ff91ae8a8b15eb1b623d3d20402e4c1d1f8",
+      "sprite_rect_bottom_left": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 64.0,
+        "height": 64.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 0,
+        "m_PathID": 33
+      }
+    },
+    "button_shop": {
+      "path": "res://assets/reference/hud/button_shop.png",
+      "width": 63,
+      "height": 64,
+      "source_sprite": "shop",
+      "source_file": "sharedassets1.assets",
+      "source_id": 111,
+      "extracted_path": "Sprite/sharedassets1.assets_111_shop.png",
+      "png_sha256": "7a72c76e4d5b18b7405e8280903c6404ca5680c6663f91007a375cd2ef54f713",
+      "sprite_rect_bottom_left": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 64.0,
+        "height": 64.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 0,
+        "m_PathID": 43
+      }
+    },
+    "button_guild": {
+      "path": "res://assets/reference/hud/button_guild.png",
+      "width": 63,
+      "height": 64,
+      "source_sprite": "Bang",
+      "source_file": "sharedassets1.assets",
+      "source_id": 95,
+      "extracted_path": "Sprite/sharedassets1.assets_95_Bang.png",
+      "png_sha256": "b796c53f88d828639295e9148381a094656791b57e9f5cd4ed4a05ca35ceca16",
+      "sprite_rect_bottom_left": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 64.0,
+        "height": 64.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 0,
+        "m_PathID": 23
+      }
+    },
+    "icon_chat": {
+      "path": "res://assets/reference/hud/icon_chat.png",
+      "width": 60,
+      "height": 50,
+      "source_sprite": "chat",
+      "source_file": "sharedassets1.assets",
+      "source_id": 89,
+      "extracted_path": "Sprite/sharedassets1.assets_89_chat.png",
+      "png_sha256": "e06168a0c9d5462a79b0582e2dabd601b4b2d2ff8800bb84cdffc3c1e6ab30e5",
+      "sprite_rect_bottom_left": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 60.0,
+        "height": 60.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 0,
+        "m_PathID": 15
+      }
+    },
+    "selection": {
+      "path": "res://assets/reference/hud/selection.png",
+      "width": 27,
+      "height": 16,
+      "source_sprite": "Select_0",
+      "source_file": "resources.assets",
+      "source_id": 2194,
+      "extracted_path": "Sprite/resources.assets_2194_Select_0.png",
+      "png_sha256": "43a5f3ec86d399b1f4ca7f606051e342b2f38770aa7a828524fba13ce8a4277f",
+      "sprite_rect_bottom_left": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 27.0,
+        "height": 16.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 0,
+        "m_PathID": 492
+      }
+    },
+    "arrow_up": {
+      "path": "res://assets/reference/hud/arrow_up.png",
+      "width": 56,
+      "height": 36,
+      "source_sprite": "dir_arrow0_0",
+      "source_file": "sharedassets1.assets",
+      "source_id": 84,
+      "extracted_path": "Sprite/sharedassets1.assets_84_dir_arrow0_0.png",
+      "png_sha256": "2e8c4be79b07e1b216f050c12f4e165b651e37f7c204e6132a647796916aebdf",
+      "sprite_rect_bottom_left": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 56.0,
+        "height": 36.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 0,
+        "m_PathID": 9
+      }
+    },
+    "battle_win": {
+      "path": "res://assets/reference/hud/battle_win.png",
+      "width": 115,
+      "height": 40,
+      "source_sprite": "bwin",
+      "source_file": "sharedassets1.assets",
+      "source_id": 82,
+      "extracted_path": "Sprite/sharedassets1.assets_82_bwin.png",
+      "png_sha256": "cfc5342ba38c0571fa0bbb2bfccf3f046235027672a8ff18f70e8a8636273d06",
+      "sprite_rect_bottom_left": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 115.0,
+        "height": 40.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 0,
+        "m_PathID": 7
+      }
+    },
+    "battle_loss": {
+      "path": "res://assets/reference/hud/battle_loss.png",
+      "width": 111,
+      "height": 24,
+      "source_sprite": "blost",
+      "source_file": "sharedassets1.assets",
+      "source_id": 87,
+      "extracted_path": "Sprite/sharedassets1.assets_87_blost.png",
+      "png_sha256": "34fda199bbe46a4a91b2874a8e030fe84fec24d2755d6ba47fdcf02b15c870cb",
+      "sprite_rect_bottom_left": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 111.0,
+        "height": 24.0
+      },
+      "sprite_border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sprite_pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "texture_pointer": {
+        "m_FileID": 0,
+        "m_PathID": 13
+      }
+    }
+  }
+}
