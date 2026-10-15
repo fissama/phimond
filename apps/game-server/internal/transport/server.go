@@ -48,10 +48,11 @@ type Server struct {
 	mu          sync.Mutex
 	limits      map[string]window
 	connections map[string]int
+	cors        map[string]bool
 }
 
 func New(s Storage, e *character.Engine) *Server {
-	return &Server{metrics: newRuntimeMetrics(os.Getenv("GAME_METRICS") == "1"), Store: s, Game: e, limits: map[string]window{}, connections: map[string]int{}, live: map[string]*liveCharacter{}, sessions: map[string]sessionEntry{}}
+	return &Server{metrics: newRuntimeMetrics(os.Getenv("GAME_METRICS") == "1"), Store: s, Game: e, limits: map[string]window{}, connections: map[string]int{}, live: map[string]*liveCharacter{}, sessions: map[string]sessionEntry{}, cors: parseCORSOrigins(os.Getenv("GAME_CORS_ORIGINS"))}
 }
 func jsonResponse(w http.ResponseWriter, status int, data any) {
 	w.Header().Set("Content-Type", "application/json")
@@ -162,6 +163,9 @@ func (s *Server) Handler() http.Handler {
 	mux.HandleFunc("GET /ws", s.ws)
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("X-Content-Type-Options", "nosniff")
+		if s.applyCORS(w, r) {
+			return
+		}
 		ip, _, _ := net.SplitHostPort(r.RemoteAddr)
 		if !s.allow("http:"+ip, 600) {
 			fail(w, 429, "too many requests")
