@@ -30,3 +30,4 @@
 - **Historical phase:** P00 closed at `e66350b`; failed dev latency budget and no 50-CCU certification remain recorded there.
 
 Layout delivery gate repaired2026-10-12: `layout_audit.gd` verifies current scene geometry and is included in `tools/check.sh`. Runtime P11 remains separate.
+- 2026-10-15: Web client (Three.js) — bàn giao phiên ở `.ai/handoffs/2026-10-15-web-client-threejs.md` (map 60 ô, quái đi tuần, sửa nút chéo, demo wasm).
