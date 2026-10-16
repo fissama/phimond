@@ -1349,6 +1349,845 @@
           "Bãi quái: chỉ nhiệm vụ phụ (owner 2026-10-15)."
         ]
       ]
+    },
+    {
+      "id": "S4-REGISTRY",
+      "category": "Stage 4 · Ma trận còn lại",
+      "title": "Registry map canonical + spawn + hồi sinh",
+      "summary": "75 map trong phạm vi: loại map, cấp, số điểm spawn quái trong APK, nơi hồi sinh.",
+      "rationale": "Loại map suy luận từ APK 3.2 (trigger quái, điểm spawn, NPC). Cấp từng map đã duyệt cho 17 map đầu; vùng ngoài dùng dải của vùng. Danh tính quái do P15/P10/P11. Bản đầy đủ 92 map: stage4/P12-S4-map-registry.md.",
+      "columns": [
+        "Map",
+        "Nhóm",
+        "Loại",
+        "Cấp",
+        "Spawn",
+        "Hồi sinh về"
+      ],
+      "rows": [
+        [
+          "Triệu Linh Điện",
+          "Khởi đầu",
+          "dùng một lần",
+          "—",
+          0,
+          "Bìa Rừng Lục Bảo"
+        ],
+        [
+          "Quảng Trường Thạch Trụ",
+          "Thành phố",
+          "hub an toàn",
+          "—",
+          0,
+          "Quảng Trường Thạch Trụ"
+        ],
+        [
+          "Hoàng Môn",
+          "Thành phố",
+          "hub an toàn",
+          "—",
+          0,
+          "Quảng Trường Thạch Trụ"
+        ],
+        [
+          "Điền Trang Lục Dã",
+          "Thành phố",
+          "riêng từng người chơi",
+          "—",
+          0,
+          "Quảng Trường Thạch Trụ"
+        ],
+        [
+          "Phòng thú cưng",
+          "Thành phố",
+          "riêng từng người chơi",
+          "—",
+          0,
+          "Quảng Trường Thạch Trụ"
+        ],
+        [
+          "Thương Phố",
+          "Thành phố",
+          "hub an toàn",
+          "—",
+          0,
+          "Quảng Trường Thạch Trụ"
+        ],
+        [
+          "Vương Cung",
+          "Thành phố",
+          "hub an toàn",
+          "—",
+          0,
+          "Quảng Trường Thạch Trụ"
+        ],
+        [
+          "Vạn Sự Hội Sảnh",
+          "Thành phố",
+          "hub an toàn",
+          "—",
+          0,
+          "Quảng Trường Thạch Trụ"
+        ],
+        [
+          "Huyết Chiến Đài",
+          "Thành phố",
+          "instance",
+          "—",
+          0,
+          "Quảng Trường Thạch Trụ"
+        ],
+        [
+          "Bìa Rừng Lục Bảo",
+          "Emerald",
+          "hỗn hợp",
+          "1–5",
+          0,
+          "Bìa Rừng Lục Bảo"
+        ],
+        [
+          "Rừng Sâu Lục Bảo",
+          "Emerald",
+          "bãi quái",
+          "5–10",
+          6,
+          "Bìa Rừng Lục Bảo"
+        ],
+        [
+          "Bến Ngư Châu",
+          "Bãi biển",
+          "hub an toàn",
+          "—",
+          0,
+          "Bến Ngư Châu"
+        ],
+        [
+          "Bờ Đông Ngọc Bích",
+          "Bãi biển",
+          "bãi quái",
+          "10–12",
+          15,
+          "Bến Ngư Châu"
+        ],
+        [
+          "Vực Hải Lam",
+          "Bãi biển",
+          "bãi quái",
+          "13–14",
+          10,
+          "Bến Ngư Châu"
+        ],
+        [
+          "Bờ Tây Hoàng Sa",
+          "Bãi biển",
+          "bãi quái",
+          "12–13",
+          10,
+          "Bến Ngư Châu"
+        ],
+        [
+          "Đảo Phú Quý",
+          "Bãi biển",
+          "bãi quái",
+          "14–15",
+          10,
+          "Bến Ngư Châu"
+        ],
+        [
+          "Sa Thạch Cổ Thành",
+          "Sa Mạc",
+          "hub an toàn",
+          "—",
+          0,
+          "Sa Thạch Cổ Thành"
+        ],
+        [
+          "Cửa Ngõ Hoàng Mạc",
+          "Sa Mạc",
+          "bãi quái",
+          "15–20",
+          12,
+          "Sa Thạch Cổ Thành"
+        ],
+        [
+          "Phong Ấn Cổ Địa",
+          "Sa Mạc",
+          "bãi quái",
+          "15–20",
+          12,
+          "Sa Thạch Cổ Thành"
+        ],
+        [
+          "Bộ Lạc Hồ Lô",
+          "Sa Mạc",
+          "bãi quái",
+          "15–20",
+          10,
+          "Sa Thạch Cổ Thành"
+        ],
+        [
+          "Hoang Sa Vô Tận",
+          "Sa Mạc",
+          "bãi quái",
+          "15–20",
+          12,
+          "Sa Thạch Cổ Thành"
+        ],
+        [
+          "Tai Ương Sa Mạc",
+          "Sa Mạc",
+          "bãi quái",
+          "15–20",
+          10,
+          "Sa Thạch Cổ Thành"
+        ],
+        [
+          "Trại Phong Thạch",
+          "Mỏm Đá Gió",
+          "hub an toàn",
+          "—",
+          0,
+          "Trại Phong Thạch"
+        ],
+        [
+          "Cầu Thiên Thạch",
+          "Mỏm Đá Gió",
+          "bãi quái",
+          "20–25",
+          12,
+          "Trại Phong Thạch"
+        ],
+        [
+          "Hẻm Gió Gào",
+          "Mỏm Đá Gió",
+          "bãi quái",
+          "20–25",
+          12,
+          "Trại Phong Thạch"
+        ],
+        [
+          "Dãy Phong Lĩnh",
+          "Mỏm Đá Gió",
+          "bãi quái",
+          "20–25",
+          12,
+          "Trại Phong Thạch"
+        ],
+        [
+          "Sơn Đạo Phong Vân",
+          "Mỏm Đá Gió",
+          "bãi quái",
+          "20–25",
+          12,
+          "Trại Phong Thạch"
+        ],
+        [
+          "Đỉnh Thiên Phong",
+          "Mỏm Đá Gió",
+          "bãi quái",
+          "20–25",
+          10,
+          "Trại Phong Thạch"
+        ],
+        [
+          "Trại Tàn Sinh",
+          "Đảo Ác Mộng",
+          "hỗn hợp",
+          "25–30",
+          5,
+          "Trại Tàn Sinh"
+        ],
+        [
+          "Đông Đảo Huyền Thuật",
+          "Đảo Ác Mộng",
+          "bãi quái",
+          "25–30",
+          12,
+          "Trại Tàn Sinh"
+        ],
+        [
+          "Phế Tích Cổ Thành",
+          "Đảo Ác Mộng",
+          "bãi quái",
+          "25–30",
+          10,
+          "Trại Tàn Sinh"
+        ],
+        [
+          "Cổng Tai Kiếp",
+          "Đảo Ác Mộng",
+          "bãi quái",
+          "25–30",
+          10,
+          "Trại Tàn Sinh"
+        ],
+        [
+          "Oán Linh Hải Đạo",
+          "Đảo Ác Mộng",
+          "bãi quái",
+          "25–30",
+          12,
+          "Trại Tàn Sinh"
+        ],
+        [
+          "Tuyệt Vọng Hải Địa",
+          "Đảo Ác Mộng",
+          "bãi quái",
+          "25–30",
+          12,
+          "Trại Tàn Sinh"
+        ],
+        [
+          "Trạm Canh Lăng",
+          "Lăng Mộ",
+          "hub an toàn",
+          "—",
+          0,
+          "Trạm Canh Lăng"
+        ],
+        [
+          "Oán Linh Cổ Đạo",
+          "Lăng Mộ",
+          "bãi quái",
+          "30–35",
+          15,
+          "Trạm Canh Lăng"
+        ],
+        [
+          "Tuyệt Vọng Chi Địa",
+          "Lăng Mộ",
+          "bãi quái",
+          "30–35",
+          15,
+          "Trạm Canh Lăng"
+        ],
+        [
+          "Tàn Tích Tịch Diệt",
+          "Lăng Mộ",
+          "bãi quái",
+          "30–35",
+          0,
+          "Trạm Canh Lăng"
+        ],
+        [
+          "Thâm Cung Tịch Diệt",
+          "Lăng Mộ",
+          "bãi quái",
+          "30–35",
+          0,
+          "Trạm Canh Lăng"
+        ],
+        [
+          "Thần Lăng Vĩnh Miên",
+          "Lăng Mộ",
+          "bãi quái",
+          "30–35",
+          0,
+          "Trạm Canh Lăng"
+        ],
+        [
+          "Bãi Vãng Sinh",
+          "Lăng Mộ",
+          "bãi quái",
+          "30–35",
+          6,
+          "Trạm Canh Lăng"
+        ],
+        [
+          "Cồn Úa Vàng",
+          "Lăng Mộ",
+          "bãi quái",
+          "30–35",
+          0,
+          "Trạm Canh Lăng"
+        ],
+        [
+          "Bãi Gai Khô",
+          "Lăng Mộ",
+          "bãi quái",
+          "30–35",
+          0,
+          "Trạm Canh Lăng"
+        ],
+        [
+          "Cổng Địa Đạo Lam Dạ",
+          "Giao Điểm",
+          "hub an toàn",
+          "—",
+          0,
+          "Cổng Địa Đạo Lam Dạ"
+        ],
+        [
+          "Hành Lang Rêu Biếc",
+          "Giao Điểm",
+          "bãi quái",
+          "35–40",
+          12,
+          "Cổng Địa Đạo Lam Dạ"
+        ],
+        [
+          "Đoạn Thủy Quang",
+          "Giao Điểm",
+          "bãi quái",
+          "35–40",
+          12,
+          "Cổng Địa Đạo Lam Dạ"
+        ],
+        [
+          "Ngã Ba Đêm Xanh",
+          "Giao Điểm",
+          "bãi quái",
+          "35–40",
+          10,
+          "Cổng Địa Đạo Lam Dạ"
+        ],
+        [
+          "Hốc San Hô Tím",
+          "Giao Điểm",
+          "bãi quái",
+          "35–40",
+          10,
+          "Cổng Địa Đạo Lam Dạ"
+        ],
+        [
+          "Đáy Địa Đạo",
+          "Giao Điểm",
+          "bãi quái",
+          "35–40",
+          10,
+          "Cổng Địa Đạo Lam Dạ"
+        ],
+        [
+          "Hải Tặc Hào",
+          "Hải Tặc Hào",
+          "hub an toàn",
+          "—",
+          0,
+          "Hải Tặc Hào"
+        ],
+        [
+          "Tử Vân Lâm",
+          "Tinh Không",
+          "hub an toàn",
+          "—",
+          0,
+          "Tử Vân Lâm"
+        ],
+        [
+          "Thời Không Liệt Khích",
+          "Tinh Không",
+          "trung chuyển",
+          "—",
+          0,
+          "Tử Vân Lâm"
+        ],
+        [
+          "Lối Mây Tím",
+          "Tinh Không",
+          "bãi quái",
+          "40+",
+          10,
+          "Tử Vân Lâm"
+        ],
+        [
+          "Bờ Hồ Vân Ảnh",
+          "Tinh Không",
+          "bãi quái",
+          "40+",
+          10,
+          "Tử Vân Lâm"
+        ],
+        [
+          "Hốc Cổ Thụ",
+          "Tinh Không",
+          "bãi quái",
+          "40+",
+          12,
+          "Tử Vân Lâm"
+        ],
+        [
+          "Rừng Hoàng Hôn",
+          "Tinh Không",
+          "bãi quái",
+          "40+",
+          10,
+          "Tử Vân Lâm"
+        ],
+        [
+          "Tận Cùng Thời Không",
+          "Tinh Không",
+          "bãi quái",
+          "40+",
+          12,
+          "Tử Vân Lâm"
+        ],
+        [
+          "Tiền Sảnh Ngọc Lục",
+          "Di Tích Cổ",
+          "hub an toàn",
+          "—",
+          0,
+          "Tiền Sảnh Ngọc Lục"
+        ],
+        [
+          "Phòng Tượng Cổ",
+          "Di Tích Cổ",
+          "bãi quái",
+          "40+",
+          0,
+          "Tiền Sảnh Ngọc Lục"
+        ],
+        [
+          "Phòng Tinh Thạch",
+          "Di Tích Cổ",
+          "bãi quái",
+          "40+",
+          0,
+          "Tiền Sảnh Ngọc Lục"
+        ],
+        [
+          "Hành Lang Thạch Vệ",
+          "Di Tích Cổ",
+          "bãi quái",
+          "40+",
+          0,
+          "Tiền Sảnh Ngọc Lục"
+        ],
+        [
+          "Thâm Sảnh Ngọc Lục",
+          "Di Tích Cổ",
+          "bãi quái",
+          "40+",
+          0,
+          "Tiền Sảnh Ngọc Lục"
+        ],
+        [
+          "Tận Điện Cổ Tích",
+          "Di Tích Cổ",
+          "bãi quái",
+          "40+",
+          0,
+          "Tiền Sảnh Ngọc Lục"
+        ],
+        [
+          "Cổng U Lâu",
+          "Lâu Đài Ma",
+          "hub an toàn",
+          "—",
+          0,
+          "Cổng U Lâu"
+        ],
+        [
+          "U Lâm Bích Ba",
+          "Lâu Đài Ma",
+          "bãi quái",
+          "40+",
+          25,
+          "Cổng U Lâu"
+        ],
+        [
+          "Mật Thất Cổ Thành",
+          "Lâu Đài Ma",
+          "bãi quái",
+          "40+",
+          20,
+          "Cổng U Lâu"
+        ],
+        [
+          "Thế Thụ Môn",
+          "Cây Thế Giới",
+          "hub an toàn",
+          "—",
+          0,
+          "Thế Thụ Môn"
+        ],
+        [
+          "Thế Thụ Thâm Lâm",
+          "Cây Thế Giới",
+          "bãi quái",
+          "40+",
+          17,
+          "Thế Thụ Môn"
+        ],
+        [
+          "Mật Thất Thế Thụ",
+          "Cây Thế Giới",
+          "bãi quái",
+          "40+",
+          17,
+          "Thế Thụ Môn"
+        ],
+        [
+          "Điểu Tháp",
+          "Tháp Chim",
+          "hub an toàn",
+          "—",
+          0,
+          "Điểu Tháp"
+        ],
+        [
+          "Điểu Tháp Thâm Lâm",
+          "Tháp Chim",
+          "bãi quái",
+          "40+",
+          17,
+          "Điểu Tháp"
+        ],
+        [
+          "Điểu Tháp Mật Tầng",
+          "Tháp Chim",
+          "bãi quái",
+          "40+",
+          17,
+          "Điểu Tháp"
+        ],
+        [
+          "Trường Sinh Mê Thành",
+          "Mê Thành",
+          "hub an toàn",
+          "—",
+          0,
+          "Trường Sinh Mê Thành"
+        ],
+        [
+          "Bất Tử Mê Tầng",
+          "Mê Thành",
+          "bãi quái",
+          "40+",
+          30,
+          "Trường Sinh Mê Thành"
+        ],
+        [
+          "Bất Tử Mật Tầng",
+          "Mê Thành",
+          "bãi quái",
+          "40+",
+          30,
+          "Trường Sinh Mê Thành"
+        ]
+      ]
+    },
+    {
+      "id": "S4-SPAWN",
+      "category": "Stage 4 · Ma trận còn lại",
+      "title": "Vùng quái (spawn / area)",
+      "summary": "Số điểm spawn trong APK theo vùng. Danh tính, hành vi và số cấp quái được hoãn có chủ.",
+      "rationale": "P12 chỉ giữ khu vực và số điểm spawn. Danh tính quái P15/P10/P11, số cấp/XP P15, drop P19/P20. Map cụt trong Lăng Mộ, Di Tích Cổ có trigger quái nhưng không có điểm spawn đánh số.",
+      "columns": [
+        "Vùng",
+        "Map quái",
+        "Tổng điểm spawn",
+        "Map có trigger nhưng 0 điểm spawn"
+      ],
+      "rows": [
+        [
+          "Emerald",
+          2,
+          6,
+          "Bìa Rừng Lục Bảo"
+        ],
+        [
+          "Bãi biển",
+          4,
+          45,
+          "—"
+        ],
+        [
+          "Sa Mạc",
+          5,
+          56,
+          "—"
+        ],
+        [
+          "Mỏm Đá Gió",
+          5,
+          58,
+          "—"
+        ],
+        [
+          "Đảo Ác Mộng",
+          6,
+          61,
+          "—"
+        ],
+        [
+          "Lăng Mộ",
+          8,
+          36,
+          "Tàn Tích Tịch Diệt, Thâm Cung Tịch Diệt, Thần Lăng Vĩnh Miên, Cồn Úa Vàng, Bãi Gai Khô"
+        ],
+        [
+          "Giao Điểm",
+          5,
+          54,
+          "—"
+        ],
+        [
+          "Tinh Không",
+          5,
+          54,
+          "—"
+        ],
+        [
+          "Di Tích Cổ",
+          5,
+          0,
+          "Phòng Tượng Cổ, Phòng Tinh Thạch, Hành Lang Thạch Vệ, Thâm Sảnh Ngọc Lục, Tận Điện Cổ Tích"
+        ],
+        [
+          "Lâu Đài Ma",
+          2,
+          45,
+          "—"
+        ],
+        [
+          "Cây Thế Giới",
+          2,
+          34,
+          "—"
+        ],
+        [
+          "Tháp Chim",
+          2,
+          34,
+          "—"
+        ],
+        [
+          "Mê Thành",
+          2,
+          60,
+          "—"
+        ]
+      ]
+    },
+    {
+      "id": "S4-INSTANCE",
+      "category": "Stage 4 · Ma trận còn lại",
+      "title": "Template / instance / quyền sở hữu",
+      "summary": "Map riêng từng người chơi, instance đấu trường và hoạt động, map chung theo bang.",
+      "rationale": "Điền Trang và Phòng thú cưng riêng từng người chơi là quyết định của bạn. Các dòng còn lại là đề xuất: APK không cho biết map nào là instance. Logic phòng, hàng đợi và giới hạn người do phase sở hữu quyết (đấu trường, social, bang).",
+      "columns": [
+        "Map",
+        "Nhóm",
+        "Đề xuất",
+        "Trong phạm vi roster"
+      ],
+      "rows": [
+        [
+          "Điền Trang Lục Dã",
+          "Thành phố",
+          "riêng từng người chơi",
+          "có"
+        ],
+        [
+          "Phòng thú cưng",
+          "Thành phố",
+          "riêng từng người chơi",
+          "có"
+        ],
+        [
+          "Huyết Chiến Đài",
+          "Thành phố",
+          "instance",
+          "có"
+        ],
+        [
+          "Thành Lũy Bang Hội",
+          "Bang hội",
+          "chung theo bang",
+          "không"
+        ],
+        [
+          "Ngân Khố Bang",
+          "Bang hội",
+          "chung theo bang",
+          "không"
+        ],
+        [
+          "Kho Vật Tư Bang",
+          "Bang hội",
+          "chung theo bang",
+          "không"
+        ],
+        [
+          "Doanh Trại Bang",
+          "Bang hội",
+          "chung theo bang",
+          "không"
+        ],
+        [
+          "Quầy Hàng Bang",
+          "Bang hội",
+          "chung theo bang",
+          "không"
+        ],
+        [
+          "Chuồng Linh Thú",
+          "Bang hội",
+          "chung theo bang",
+          "không"
+        ],
+        [
+          "Chiến Địa Kết Minh",
+          "Bang hội",
+          "chung theo bang",
+          "không"
+        ],
+        [
+          "Cổ Điện Tế Lễ · Tầng I",
+          "Hoạt động / hầm ngục",
+          "instance",
+          "không"
+        ],
+        [
+          "Địa Lao · Tầng I",
+          "Hoạt động / hầm ngục",
+          "instance",
+          "không"
+        ],
+        [
+          "Đấu Trường Hỗn Mang",
+          "Hoạt động / hầm ngục",
+          "instance",
+          "không"
+        ],
+        [
+          "Đấu Trường Tổ Đội",
+          "Hoạt động / hầm ngục",
+          "instance",
+          "không"
+        ],
+        [
+          "Dương Xá",
+          "Sói–Cừu",
+          "instance",
+          "không"
+        ],
+        [
+          "Dương Lan",
+          "Sói–Cừu",
+          "instance",
+          "không"
+        ],
+        [
+          "Bãi Tranh Đoạt",
+          "Sói–Cừu",
+          "instance",
+          "không"
+        ],
+        [
+          "Lang Huyệt",
+          "Sói–Cừu",
+          "instance",
+          "không"
+        ],
+        [
+          "Lang Sào",
+          "Sói–Cừu",
+          "instance",
+          "không"
+        ]
+      ]
     }
   ]
 }

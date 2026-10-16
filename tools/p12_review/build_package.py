@@ -54,6 +54,28 @@ for key, rname, ms in REGIONS:
       'summary': f'{len(ns)} NPC trên {len(ms)} map.' + (f' Không có NPC: {", ".join(nomap)}.' if nomap else ''),
       'rationale': 'Hub an toàn có hồi máu/cửa hàng/kỹ năng; map quái chỉ NPC nhiệm vụ phụ. Tên là đề xuất, không lấy từ APK.',
       'columns': ['Map', 'Tên', 'Hạng', 'Vai trò', 'Ghi chú'], 'rows': rows})
+reg = json.load(open(PH / 'stage4/P12-S4-map-registry.json', encoding='utf-8'))
+KL = {'safe_hub': 'hub an toàn', 'field': 'bãi quái', 'mixed': 'hỗn hợp', 'instance': 'instance', 'private_per_player': 'riêng từng người chơi', 'guild_shared': 'chung theo bang', 'transit': 'trung chuyển', 'transit_once': 'dùng một lần'}
+inreg = [r for r in reg if r['in_scope']]
+dec.append({'id': 'S4-REGISTRY', 'category': 'Stage 4 · Ma trận còn lại', 'title': 'Registry map canonical + spawn + hồi sinh',
+  'summary': f'{len(inreg)} map trong phạm vi: loại map, cấp, số điểm spawn quái trong APK, nơi hồi sinh.',
+  'rationale': 'Loại map suy luận từ APK 3.2 (trigger quái, điểm spawn, NPC). Cấp từng map đã duyệt cho 17 map đầu; vùng ngoài dùng dải của vùng. Danh tính quái do P15/P10/P11. Bản đầy đủ 92 map: stage4/P12-S4-map-registry.md.',
+  'columns': ['Map', 'Nhóm', 'Loại', 'Cấp', 'Spawn', 'Hồi sinh về'],
+  'rows': [[r['name_vi'], r['group'], KL[r['kind']], r['level'] or '—', r['monster_spawn_markers'], r['respawn_to']] for r in inreg]})
+sp = {}
+for r in inreg:
+    if r['kind'] in ('field', 'mixed'): sp.setdefault(r['group'], []).append(r)
+dec.append({'id': 'S4-SPAWN', 'category': 'Stage 4 · Ma trận còn lại', 'title': 'Vùng quái (spawn / area)',
+  'summary': 'Số điểm spawn trong APK theo vùng. Danh tính, hành vi và số cấp quái được hoãn có chủ.',
+  'rationale': 'P12 chỉ giữ khu vực và số điểm spawn. Danh tính quái P15/P10/P11, số cấp/XP P15, drop P19/P20. Map cụt trong Lăng Mộ, Di Tích Cổ có trigger quái nhưng không có điểm spawn đánh số.',
+  'columns': ['Vùng', 'Map quái', 'Tổng điểm spawn', 'Map có trigger nhưng 0 điểm spawn'],
+  'rows': [[g, len(v), sum(x['monster_spawn_markers'] for x in v), ', '.join(x['name_vi'] for x in v if not x['monster_spawn_markers']) or '—'] for g, v in sp.items()]})
+oth = [r for r in reg if r['kind'] in ('instance', 'guild_shared', 'private_per_player')]
+dec.append({'id': 'S4-INSTANCE', 'category': 'Stage 4 · Ma trận còn lại', 'title': 'Template / instance / quyền sở hữu',
+  'summary': 'Map riêng từng người chơi, instance đấu trường và hoạt động, map chung theo bang.',
+  'rationale': 'Điền Trang và Phòng thú cưng riêng từng người chơi là quyết định của bạn. Các dòng còn lại là đề xuất: APK không cho biết map nào là instance. Logic phòng, hàng đợi và giới hạn người do phase sở hữu quyết (đấu trường, social, bang).',
+  'columns': ['Map', 'Nhóm', 'Đề xuất', 'Trong phạm vi roster'],
+  'rows': [[r['name_vi'], r['group'], KL[r['kind']], 'có' if r['in_scope'] else 'không'] for r in oth]})
 pkg = {'schema_version': 1, 'phase': 'P12', 'revision': 'P12-owner-review-20261015',
  'title': 'P12 · Duyệt một lần: phạm vi, renderer, roster NPC',
  'status': 'Chờ chủ dự án duyệt', 'summary': f'{len(roster)} mục (106 NPC + 1 hòm thư) trên 75 map.', 'decisions': dec}
