@@ -1,0 +1,837 @@
+{
+ "engine": "three",
+ "engineVersion": "three r170 WebGLRenderer",
+ "page": "https://671ac332-6091-4d75-86f0-b562d620683e.frame.claudeusercontent.com/_f/1792124293-8711/three/index.html?tier=high&auto=1&secs=60",
+ "when": "2026-10-16T04:58:40.727Z",
+ "tier": "high",
+ "dprCap": 2,
+ "dpr": 2,
+ "canvas": [
+  832,
+  290
+ ],
+ "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.0.1 Mobile/15E148 Safari/604.1",
+ "cores": 4,
+ "deviceMemoryGB": null,
+ "gl": {
+  "renderer": "Apple GPU",
+  "vendor": "Apple Inc.",
+  "version": "WebGL 2.0",
+  "maxTex": 16384
+ },
+ "load": {
+  "marksMs": {
+   "start": 0,
+   "json": 718,
+   "textures": 4012,
+   "ready": 4021,
+   "firstFrame": 4124
+  },
+  "domInteractiveMs": 1731,
+  "transferBytes": 2810993,
+  "textureBytesEstimate": 19557248
+ },
+ "render": {
+  "calls": 103,
+  "triangles": 190,
+  "geometries": 8,
+  "textures": 367
+ },
+ "memory": {
+  "jsHeapMB": null,
+  "note": "Safari không công bố heap; dùng Web Inspector Timeline/Instruments cho iOS"
+ },
+ "contextLost": 0,
+ "mapSwitches": [
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 5,
+   "totalMs": 5,
+   "at": 85158
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 3,
+   "totalMs": 4,
+   "at": 85507
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 3,
+   "totalMs": 4,
+   "at": 86074
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 3,
+   "totalMs": 4,
+   "at": 86424
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 2,
+   "totalMs": 2,
+   "at": 86972
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 3,
+   "totalMs": 4,
+   "at": 87291
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 3,
+   "totalMs": 4,
+   "at": 87807
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 4,
+   "totalMs": 4,
+   "at": 88124
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 3,
+   "totalMs": 4,
+   "at": 88641
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 4,
+   "totalMs": 4,
+   "at": 88957
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 3,
+   "totalMs": 4,
+   "at": 89474
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 3,
+   "totalMs": 3,
+   "at": 89790
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 4,
+   "totalMs": 4,
+   "at": 90324
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 4,
+   "totalMs": 4,
+   "at": 90674
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 3,
+   "totalMs": 4,
+   "at": 91241
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 4,
+   "totalMs": 4,
+   "at": 91591
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 3,
+   "totalMs": 3,
+   "at": 92157
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 5,
+   "totalMs": 5,
+   "at": 92512
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 5,
+   "totalMs": 5,
+   "at": 93075
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 4,
+   "totalMs": 4,
+   "at": 93425
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 3,
+   "totalMs": 3,
+   "at": 93990
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 4,
+   "totalMs": 4,
+   "at": 94341
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 3,
+   "totalMs": 3,
+   "at": 94907
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 2,
+   "totalMs": 2,
+   "at": 95256
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 4,
+   "totalMs": 4,
+   "at": 95824
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 4,
+   "totalMs": 4,
+   "at": 96158
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 4,
+   "totalMs": 4,
+   "at": 96691
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 3,
+   "totalMs": 4,
+   "at": 97008
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 3,
+   "totalMs": 3,
+   "at": 97524
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 4,
+   "totalMs": 4,
+   "at": 97841
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 4,
+   "totalMs": 4,
+   "at": 98358
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 4,
+   "totalMs": 4,
+   "at": 98675
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 6,
+   "totalMs": 6,
+   "at": 99193
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 3,
+   "totalMs": 3,
+   "at": 99524
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 4,
+   "totalMs": 4,
+   "at": 100075
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 3,
+   "totalMs": 3,
+   "at": 100424
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 3,
+   "totalMs": 3,
+   "at": 100991
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 3,
+   "totalMs": 3,
+   "at": 101341
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 3,
+   "totalMs": 4,
+   "at": 101908
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 3,
+   "totalMs": 3,
+   "at": 102258
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 3,
+   "totalMs": 4,
+   "at": 102825
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 2,
+   "totalMs": 2,
+   "at": 103173
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 3,
+   "totalMs": 4,
+   "at": 103742
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 7,
+   "totalMs": 7,
+   "at": 104095
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 3,
+   "totalMs": 4,
+   "at": 104659
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 3,
+   "totalMs": 4,
+   "at": 105009
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 3,
+   "totalMs": 3,
+   "at": 105558
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 3,
+   "totalMs": 3,
+   "at": 105891
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 3,
+   "totalMs": 3,
+   "at": 106425
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 4,
+   "totalMs": 4,
+   "at": 106742
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 5,
+   "totalMs": 5,
+   "at": 107260
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 3,
+   "totalMs": 4,
+   "at": 107576
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 4,
+   "totalMs": 4,
+   "at": 108092
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 4,
+   "totalMs": 4,
+   "at": 108409
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 3,
+   "totalMs": 4,
+   "at": 108942
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 3,
+   "totalMs": 3,
+   "at": 109275
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 3,
+   "totalMs": 3,
+   "at": 109842
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 3,
+   "totalMs": 3,
+   "at": 110192
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 4,
+   "totalMs": 4,
+   "at": 110759
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 3,
+   "totalMs": 3,
+   "at": 111109
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 3,
+   "totalMs": 3,
+   "at": 111675
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 3,
+   "totalMs": 3,
+   "at": 112025
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 3,
+   "totalMs": 3,
+   "at": 112592
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 3,
+   "totalMs": 4,
+   "at": 112943
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 3,
+   "totalMs": 3,
+   "at": 113509
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 3,
+   "totalMs": 3,
+   "at": 113859
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 4,
+   "totalMs": 4,
+   "at": 114426
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 4,
+   "totalMs": 5,
+   "at": 114777
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 4,
+   "totalMs": 4,
+   "at": 115326
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 3,
+   "totalMs": 4,
+   "at": 115643
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 6,
+   "totalMs": 7,
+   "at": 116163
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 4,
+   "totalMs": 4,
+   "at": 116477
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 5,
+   "totalMs": 5,
+   "at": 116994
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 4,
+   "totalMs": 4,
+   "at": 117310
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 3,
+   "totalMs": 3,
+   "at": 117827
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 4,
+   "totalMs": 4,
+   "at": 118143
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 3,
+   "totalMs": 3,
+   "at": 118676
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 2,
+   "totalMs": 2,
+   "at": 119025
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 4,
+   "totalMs": 4,
+   "at": 119593
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 3,
+   "totalMs": 4,
+   "at": 119944
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 4,
+   "totalMs": 4,
+   "at": 120510
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 4,
+   "totalMs": 4,
+   "at": 120860
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 4,
+   "totalMs": 4,
+   "at": 121427
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 4,
+   "totalMs": 5,
+   "at": 121778
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 3,
+   "totalMs": 3,
+   "at": 122343
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 4,
+   "totalMs": 4,
+   "at": 122694
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 4,
+   "totalMs": 4,
+   "at": 123260
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 3,
+   "totalMs": 4,
+   "at": 123610
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 5,
+   "totalMs": 5,
+   "at": 124178
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 3,
+   "totalMs": 3,
+   "at": 124510
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 3,
+   "totalMs": 4,
+   "at": 125044
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 3,
+   "totalMs": 3,
+   "at": 125360
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 4,
+   "totalMs": 4,
+   "at": 125877
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 3,
+   "totalMs": 3,
+   "at": 126194
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 1,
+   "totalMs": 1,
+   "at": 126708
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 3,
+   "totalMs": 3,
+   "at": 127027
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 4,
+   "totalMs": 4,
+   "at": 127544
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 3,
+   "totalMs": 3,
+   "at": 127877
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 4,
+   "totalMs": 4,
+   "at": 128428
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 3,
+   "totalMs": 3,
+   "at": 128777
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 4,
+   "totalMs": 4,
+   "at": 129344
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 4,
+   "totalMs": 5,
+   "at": 129695
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 3,
+   "totalMs": 4,
+   "at": 130261
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 3,
+   "totalMs": 4,
+   "at": 130611
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 1,
+   "totalMs": 1,
+   "at": 131175
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 3,
+   "totalMs": 4,
+   "at": 131528
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 3,
+   "totalMs": 3,
+   "at": 132094
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 3,
+   "totalMs": 3,
+   "at": 132444
+  },
+  {
+   "to": "emerald_forest_deep_woods",
+   "why": "door:to_deep",
+   "buildMs": 5,
+   "totalMs": 7,
+   "at": 133014
+  },
+  {
+   "to": "emerald_forest_main_woods",
+   "why": "door:to_main",
+   "buildMs": 4,
+   "totalMs": 5,
+   "at": 133362
+  }
+ ],
+ "input": {
+  "samples": 0,
+  "p50Ms": null,
+  "maxMs": null
+ },
+ "frames": {
+  "n": 3601,
+  "seconds": 60.02,
+  "fpsAvg": 60,
+  "avgMs": 16.67,
+  "p50Ms": 17,
+  "p95Ms": 17,
+  "p99Ms": 26,
+  "maxMs": 30,
+  "over16_7": 2285,
+  "over33": 0,
+  "over50": 0,
+  "warmupFrames": 0
+ },
+ "fps1pLow": 38.46
+}

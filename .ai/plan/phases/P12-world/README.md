@@ -31,7 +31,7 @@ Prototype Emerald không phải full gameplay MVP hoặc P12 closure; combat/far
 - [P12-world-names-master.md](P12-world-names-master.md): bảng tên JRPG tổng hợp, không dùng tên APK/JAR (owner 2026-10-14); mục A, B đã chốt; chờ duyệt mục C và tên Hải Tặc Hào.
 
 ### Việc còn lại
-Xem [P12-closure-checklist.md](P12-closure-checklist.md) (thay mục cũ 2026-10-14). U1 đã chốt; Stage 2 đóng; Stage 3 chờ số đo iPhone; Stage 4–5 chưa có quyền.
+Xem [P12-closure-checklist.md](P12-closure-checklist.md) (thay mục cũ 2026-10-14). U1 đã chốt; Stage 2 đóng; Stage 3 đóng 2026-10-16 (Three.js, iPhone high ~60 FPS); Stage 4–5 chưa có quyền.
 
 - [P12-stage2-audit.md](P12-stage2-audit.md): **Stage 2 audit Emerald + tuyến thành** (2026-10-14): vector cửa = điểm xuất hiện (122/130 trong bounds, trung vị 1,89 đơn vị), xác nhận mô hình trụ, JAR không có Emerald, rủi ro R-S2-1…5. Owner duyệt 2026-10-14 (4 mục); Stage 2 đóng, Stage 3 chưa mở.
 
