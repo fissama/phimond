@@ -1,0 +1,133 @@
+{
+ "passed": 17,
+ "total": 17,
+ "checks": [
+  {
+   "req": "R01",
+   "check": "mọi liên kết trỏ tới cổng có thật",
+   "pass": true,
+   "detail": "102 liên kết; lỗi: []"
+  },
+  {
+   "req": "R01",
+   "check": "mọi liên kết đã được owner duyệt",
+   "pass": true,
+   "detail": [
+    [
+     "approved",
+     102
+    ]
+   ]
+  },
+  {
+   "req": "R01",
+   "check": "mọi map trong phạm vi đến được từ Triệu Linh Điện",
+   "pass": true,
+   "detail": "không đến được: []"
+  },
+  {
+   "req": "R01",
+   "check": "mọi map trong phạm vi có đường về Quảng Trường (đường hồi phục)",
+   "pass": true,
+   "detail": "kẹt: []"
+  },
+  {
+   "req": "R01",
+   "check": "Triệu Linh Điện chỉ dùng một lần (không có đường quay lại)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "req": "R02",
+   "check": "không có NPC hồi máu/cửa hàng trong map quái",
+   "pass": true,
+   "detail": "vi phạm: []"
+  },
+  {
+   "req": "R02",
+   "check": "mọi NPC nằm trong map có trong registry",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "req": "R02",
+   "check": "mọi hub an toàn có ít nhất 1 NPC",
+   "pass": true,
+   "detail": "trống: []"
+  },
+  {
+   "req": "R02",
+   "check": "tên map trong phạm vi không trùng",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "req": "R03",
+   "check": "mọi map quái có điểm spawn đề xuất > 0",
+   "pass": true,
+   "detail": "thiếu: []"
+  },
+  {
+   "req": "R03",
+   "check": "mọi map quái có cấp",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "req": "R03",
+   "check": "tổng spawn khớp kế hoạch",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "req": "R04",
+   "check": "có map riêng từng người chơi (Điền Trang, Phòng thú cưng)",
+   "pass": true,
+   "detail": [
+    "Điền Trang Lục Dã",
+    "Phòng thú cưng"
+   ]
+  },
+  {
+   "req": "R04",
+   "check": "mọi map có respawn_to",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "req": "R05",
+   "check": "không có map cụt không lối ra",
+   "pass": true,
+   "detail": "cụt: []"
+  },
+  {
+   "req": "R01",
+   "check": "mẫu tầng: cấp mỗi tầng 1 cấp, nối liền 61→200, quái gác tầng 10k-1, Bia tầng 10k",
+   "pass": true,
+   "detail": [
+    [
+     "ghost",
+     true
+    ],
+    [
+     "tree",
+     true
+    ],
+    [
+     "tower",
+     true
+    ],
+    [
+     "maze",
+     true
+    ]
+   ]
+  },
+  {
+   "req": "R01",
+   "check": "trần cấp ghi trong JSON",
+   "pass": true,
+   "detail": 200
+  }
+ ]
+}

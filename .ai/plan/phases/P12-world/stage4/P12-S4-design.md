@@ -189,6 +189,6 @@ Nguồn: nhận xét owner trong `/portals.html` và hội thoại 2026-10-17. D
 - **Đổi tên (owner 2026-10-17):** U Lâm Bích Ba thành **U Linh Cổ Thành** (tên cũ đọc như rừng cây trong khi là thành cổ). Mã map `ghost_castle_deep_woods` giữ nguyên; tên nguồn APK "Rừng sâu Bích Ba" ghi ở `P12-naming-proposal-jrpg.md`.
 - Đồ thị cổng: theo hướng đi ở bảng trên, owner duyệt 2026-10-17 (`review/portal-edits/portal-graph.json`).
 - **Art direction (owner 2026-10-17):** khi vẽ lại bố cục HD2D cho map tầng, mỗi 10 tầng đổi bố cục ít nhiều để không lặp; càng vào sâu càng cảm giác nguy hiểm (tối hơn, hẹp hơn, bẫy dày hơn). Ghi vào `art_direction` trong `P12-S4-floor-templates.json` và brief map tầng.
-- **Đổi tên (owner 2026-10-17):** Điểu Tháp Thâm Lâm thành **Vân Tiêu Thiên Tầng** (tên cũ đọc như rừng). Tên mới do Claude chọn, chờ owner xác nhận. Mã map `tower_region_deep_woods` giữ nguyên.
+- **Đổi tên (owner 2026-10-17):** Điểu Tháp Thâm Lâm thành **Vân Tiêu Thiên Tầng** (tên cũ đọc như rừng). Tên mới do Claude đề xuất, owner duyệt 2026-10-17. Mã map `tower_region_deep_woods` giữ nguyên.
 - **Mục hoãn:** danh tính/cấp quái gác, hệ số Mật Tầng, drop, trần cấp được ghi trong `P12-closure-checklist.md` §5 để debate với owner ở phase nhận.
 - **Spawn (owner yêu cầu 2026-10-17):** xem `P12-S4-spawn-plan.json`; 543 điểm APK thành 664 điểm đề xuất.

@@ -54,7 +54,7 @@ Giữ nguyên 35 map bạn đã duyệt. Cột "Tên nguồn" giữ để truy n
 | `world_tree_deep_woods` | Rừng sâu Bích Ba | **Thế Thụ Thâm Lâm** | tên nguồn trùng |
 | `world_tree_secret_chamber` | Mật thất cây thế giới | **Mật Thất Thế Thụ** |  |
 | `tower_region_main_tower` | Tháp Chim | **Điểu Tháp** | 'Tháp Chim' là đề xuất sửa chính tả trong NAMING-REVIEW |
-| `tower_region_deep_woods` | Rừng sâu Bích Ba | **Vân Tiêu Thiên Tầng** | Owner yêu cầu đổi 2026-10-17 (trước đó: Điểu Tháp Thâm Lâm, vì "tháp + thâm lâm" đọc như rừng); Claude chọn tên mới, chờ owner xác nhận |
+| `tower_region_deep_woods` | Rừng sâu Bích Ba | **Vân Tiêu Thiên Tầng** | Owner yêu cầu đổi 2026-10-17 (trước đó: Điểu Tháp Thâm Lâm, vì "tháp + thâm lâm" đọc như rừng); Claude đề xuất tên mới, owner duyệt 2026-10-17 |
 | `tower_region_secret_floor` | Bí cảnh Tháp Chim — tầng | **Điểu Tháp Mật Tầng** |  |
 | `immortal_maze_main_maze` | Mê Thành Bất Tử | **Mê Thành Bất Tử** | giữ nguyên, đã hợp style |
 | `immortal_maze_floor` | Tầng | **Bất Tử Mê Tầng** | tên nguồn quá chung |
