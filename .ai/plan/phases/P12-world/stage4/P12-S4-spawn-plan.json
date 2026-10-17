@@ -1,0 +1,98 @@
+{
+ "version": 1,
+ "status": "đề xuất, chờ owner duyệt (owner yêu cầu 2026-10-17)",
+ "principle": "Số điểm spawn = số chỗ quái xuất hiện cùng lúc trên map. Tăng dần theo tiến trình: map đầu 4–8, vùng giữa 10–12, vùng sâu 12–14. Map cuối vùng nhiều hơn một chút vì là nơi luyện trước khi sang vùng sau. Giá trị APK chỉ giữ khi hợp lý; chỗ nào đổi ghi rõ lý do. Danh tính, mật độ thật và hồi sinh do P15/P10/P11 quyết.",
+ "changes": {
+  "emerald_forest_main_woods": [
+   0,
+   4,
+   "Bìa Rừng là map hỗn hợp để người mới luyện cấp 1–5; APK không có điểm spawn nên thêm 4 điểm ở rìa, xa NPC."
+  ],
+  "emerald_forest_deep_woods": [
+   6,
+   8,
+   "Bãi quái thật đầu tiên Lv5–10, 6 điểm ít hơn map Bờ Đông nhiều; tăng nhẹ để bước chuyển mượt."
+  ],
+  "treasure_beach_east_beach": [
+   15,
+   12,
+   "15 là nhiều nhất toàn game ở Lv10–12; hạ cho đúng nhịp tăng dần."
+  ],
+  "tomb_region_dead_ruins": [
+   0,
+   12,
+   "APK 0 điểm; map quái thì phải có spawn."
+  ],
+  "tomb_region_deep_ruins": [
+   0,
+   12,
+   "APK 0 điểm."
+  ],
+  "tomb_region_gods_tomb": [
+   0,
+   14,
+   "Map sâu nhất Lăng Mộ nên nhiều điểm nhất."
+  ],
+  "tomb_region_soul_cemetery": [
+   6,
+   10,
+   "6 điểm thấp hơn các map cùng vùng."
+  ],
+  "tomb_region_unnamed_area_01": [
+   0,
+   10,
+   "APK 0 điểm."
+  ],
+  "tomb_region_unnamed_area_02": [
+   0,
+   10,
+   "APK 0 điểm."
+  ],
+  "tomb_region_resentment_path": [
+   15,
+   14,
+   "Cân với 2 map ngoài cùng vùng; hạ 1 để Thần Lăng cao nhất."
+  ],
+  "tomb_region_despair_path": [
+   15,
+   14,
+   "Như trên."
+  ],
+  "astral_realm_unnamed_area_03": [
+   10,
+   10,
+   "Giữ."
+  ],
+  "astral_realm_unnamed_area_05": [
+   10,
+   12,
+   "Để dải 10,10,12,12,12 tăng đều theo cấp 41→60."
+  ],
+  "ancient_ruins_unnamed_area_02": [
+   0,
+   10,
+   "APK 0 điểm; Lv41–44 đầu dải."
+  ],
+  "ancient_ruins_unnamed_area_03": [
+   0,
+   10,
+   "APK 0 điểm."
+  ],
+  "ancient_ruins_unnamed_area_04": [
+   0,
+   12,
+   "APK 0 điểm."
+  ],
+  "ancient_ruins_unnamed_area_05": [
+   0,
+   12,
+   "APK 0 điểm."
+  ],
+  "ancient_ruins_unnamed_area_06": [
+   0,
+   12,
+   "APK 0 điểm; map cuối dải Lv57–60."
+  ]
+ },
+ "floor_maps_note": "Map tầng (U Linh Cổ Thành 25, Thế Thụ Thâm Lâm 17, Vân Tiêu Thiên Tầng 17, Bất Tử Mê Tầng 30) và mật thất giữ số APK làm số điểm cơ sở mỗi tầng. Đề xuất: mỗi 10 tầng thêm khoảng 10% mật độ để càng sâu càng nguy hiểm; con số thật do P15 quyết."
+}

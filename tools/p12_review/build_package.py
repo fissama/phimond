@@ -66,7 +66,7 @@ RN = {r['id']: r['name_vi'] for r in reg}
 FT = json.load(open(PH / 'stage4/P12-S4-floor-templates.json', encoding='utf-8'))
 dec.append({'id': 'S4-FLOORS', 'category': 'Stage 4 · Ma trận còn lại', 'title': 'Bốn vùng nhiều tầng: cấp từng tầng, hướng đi, quái gác, mật thất',
   'summary': 'Mỗi tầng 1 cấp. U Lâm và Thế Thụ cùng dải Lv61–120 (60 tầng), Điểu Tháp Lv121–160 (40 tầng), Mê Thành Lv161–200 (40 tầng).',
-  'rationale': 'Theo nhận xét của bạn 2026-10-17. Số tầng, dải cấp, race thứ hai của Lâu Đài Ma và dải Lv41–60 của Tinh Không/Di Tích Cổ là đề xuất của chúng tôi (để nối liền tới trần 200). Quái gác ở tầng 9, 19, 29… lấy loài 4★/5★, hạ xong mở 10 tầng kế. Bia Hồi Quy ở tầng 10, 20, 30… đưa về cổng an toàn. Đã đổi tên U Lâm Bích Ba thành U Linh Cổ Thành (owner 2026-10-17). Mật thất U Linh Cổ Thành/Thế Thụ vào từ tầng 60; Mật Tầng Điểu Tháp/Mê Thành quay về cổng vùng. Người Dẫn Mật Tầng ở tầng chẵn (Điểu Tháp, Mê Thành). Danh tính quái do P15/P10/P11, drop do P19/P20. Chi tiết: stage4/P12-S4-design.md §10; cấu hình: P12-S4-floor-templates.json.',
+  'rationale': 'Bạn đã duyệt mục này, ghi chú thêm: khi vẽ lại bố cục HD2D, mỗi 10 tầng đổi bố cục ít nhiều để không lặp, càng vào sâu càng cảm giác nguy hiểm; ghi vào hướng dẫn art. Theo nhận xét của bạn 2026-10-17. Số tầng, dải cấp, race thứ hai của Lâu Đài Ma và dải Lv41–60 của Tinh Không/Di Tích Cổ là đề xuất của chúng tôi (để nối liền tới trần 200). Quái gác ở tầng 9, 19, 29… lấy loài 4★/5★, hạ xong mở 10 tầng kế. Bia Hồi Quy ở tầng 10, 20, 30… đưa về cổng an toàn. Đã đổi tên U Lâm Bích Ba thành U Linh Cổ Thành (owner 2026-10-17). Mật thất U Linh Cổ Thành/Thế Thụ vào từ tầng 60; Mật Tầng Điểu Tháp/Mê Thành quay về cổng vùng. Người Dẫn Mật Tầng ở tầng chẵn (Điểu Tháp, Mê Thành). Danh tính quái do P15/P10/P11, drop do P19/P20. Chi tiết: stage4/P12-S4-design.md §10; cấu hình: P12-S4-floor-templates.json.',
   'columns': ['Vùng', 'Map mẫu tầng', 'Tầng', 'Cấp', 'Hướng đi', 'Race thiên về', 'Mật thất'],
   'rows': [[r['group'], RN[r['floor_map']], r['floors'], f"Lv{r['level_first']}–{r['level_last']}", r['direction'], ', '.join(r['races']), f"{RN[r['secret_map']]} · {r['secret']['access']} · Lv{r['secret']['level']} · {r['secret']['direction']} · về {r['secret']['returns_to']}"] for r in FT['regions']] +
           [['Tinh Không + Di Tích Cổ', '5 map quái mỗi vùng', '—', 'Lv41–60 (mỗi map 4 cấp: ' + ', '.join(FT['banded_fields']['bands']) + ')', '—', '—', '—'],
@@ -75,11 +75,12 @@ dec.append({'id': 'S4-FLOORS', 'category': 'Stage 4 · Ma trận còn lại', 't
 sp = {}
 for r in inreg:
     if r['kind'] in ('field', 'mixed'): sp.setdefault(r['group'], []).append(r)
+SPL = json.load(open(PH / 'stage4/P12-S4-spawn-plan.json', encoding='utf-8'))
 dec.append({'id': 'S4-SPAWN', 'category': 'Stage 4 · Ma trận còn lại', 'title': 'Vùng quái (spawn / area)',
-  'summary': 'Số điểm spawn trong APK theo vùng. Danh tính, hành vi và số cấp quái được hoãn có chủ.',
-  'rationale': 'P12 chỉ giữ khu vực và số điểm spawn. Danh tính quái P15/P10/P11, số cấp/XP P15, drop P19/P20. Map cụt trong Lăng Mộ, Di Tích Cổ có trigger quái nhưng không có điểm spawn đánh số.',
-  'columns': ['Vùng', 'Map quái', 'Tổng điểm spawn', 'Map có trigger nhưng 0 điểm spawn'],
-  'rows': [[g, len(v), sum(x['monster_spawn_markers'] for x in v), ', '.join(x['name_vi'] for x in v if not x['monster_spawn_markers']) or '—'] for g, v in sp.items()]})
+  'summary': 'Theo comment của bạn: đã thêm điểm spawn cho 10 map đang có 0 điểm và cân lại phân bố theo tiến trình. Tổng 543 điểm trong APK thành 664 điểm đề xuất.',
+  'rationale': SPL['principle'] + ' Danh tính quái P15/P10/P11, số cấp/XP P15, drop P19/P20. ' + SPL['floor_maps_note'] + ' Cột cuối liệt kê map đổi số điểm: APK → đề xuất, kèm lý do.',
+  'columns': ['Vùng', 'Map quái', 'Spawn APK', 'Spawn đề xuất', 'Map đổi (APK → đề xuất, lý do)'],
+  'rows': [[g, len(v), sum(x['monster_spawn_markers'] for x in v), sum(x['spawn_target'] for x in v), '; '.join(f"{x['name_vi']} {x['monster_spawn_markers']}→{x['spawn_target']} ({SPL['changes'][x['id']][2]})" for x in v if x['id'] in SPL['changes']) or 'giữ nguyên'] for g, v in sp.items()]})
 oth = [r for r in reg if r['kind'] in ('instance', 'guild_shared', 'private_per_player')]
 dec.append({'id': 'S4-INSTANCE', 'category': 'Stage 4 · Ma trận còn lại', 'title': 'Template / instance / quyền sở hữu',
   'summary': 'Map riêng từng người chơi, instance đấu trường và hoạt động, map chung theo bang.',

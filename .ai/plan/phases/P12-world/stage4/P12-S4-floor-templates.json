@@ -156,7 +156,13 @@
     20,
     30,
     40
-   ]
+   ],
+   "rename": {
+    "previous": "Điểu Tháp Thâm Lâm",
+    "current": "Vân Tiêu Thiên Tầng",
+    "decided": "2026-10-17",
+    "why": "Tên cũ đọc như rừng; tên mới do Claude chọn, chờ owner xác nhận."
+   }
   },
   {
    "key": "maze",
@@ -217,5 +223,15 @@
    "ancient_ruins_unnamed_area_05": 3,
    "ancient_ruins_unnamed_area_06": 4
   }
+ },
+ "art_direction": {
+  "owner": "2026-10-17",
+  "rule": "Mỗi 10 tầng đổi bố cục ít nhiều để không trùng lặp; càng vào sâu càng cảm giác nguy hiểm.",
+  "applies_to": [
+   "ghost_castle_deep_woods",
+   "world_tree_deep_woods",
+   "tower_region_deep_woods",
+   "immortal_maze_floor"
+  ]
  }
 }

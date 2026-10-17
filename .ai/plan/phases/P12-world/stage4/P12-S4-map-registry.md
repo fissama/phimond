@@ -3,7 +3,7 @@
 92 map APK 3.2; 75 map trong phạm vi roster. Sinh bằng `gen_map_registry.py` từ `apk-extract/map-scan.json`.
 Loại map là suy luận: có trigger quái hoặc điểm spawn → bãi quái; không quái mà có NPC → hub an toàn; instance/riêng/chung theo bang là **đề xuất**, APK chưa có bằng chứng. Cấp quái ngoài 17 map là dải vùng (APK), chưa chia từng map.
 
-| Map | Nhóm | Loại | Cấp | Điểm spawn | Slot NPC | Cửa | Hồi sinh về | Phạm vi |
+| Map | Nhóm | Loại | Cấp | Spawn APK → đề xuất | Slot NPC | Cửa | Hồi sinh về | Phạm vi |
 |---|---|---|---|---|---|---|---|---|
 | **Triệu Linh Điện** (`summoning_hall_main_hall`) | Khởi đầu | dùng một lần | — | 0 | 4 | 1 | Bìa Rừng Lục Bảo | có |
 | **Quảng Trường Thạch Trụ** (`city_square`) | Thành phố | hub an toàn | — | 0 | 7 | 2 | Quảng Trường Thạch Trụ | có |
@@ -14,10 +14,10 @@ Loại map là suy luận: có trigger quái hoặc điểm spawn → bãi quái
 | **Vương Cung** (`city_royal_palace`) | Thành phố | hub an toàn | — | 0 | 3 | 2 | Quảng Trường Thạch Trụ | có |
 | **Vạn Sự Hội Sảnh** (`city_activity_hall`) | Thành phố | hub an toàn | — | 0 | 1 | 1 | Quảng Trường Thạch Trụ | có |
 | **Huyết Chiến Đài** (`city_deathmatch_arena`) | Thành phố | instance | — | 0 | 1 | 1 | Quảng Trường Thạch Trụ | có |
-| **Bìa Rừng Lục Bảo** (`emerald_forest_main_woods`) | Emerald | hỗn hợp (NPC và quái) | 1–5 | 0 | 4 | 1 | Bìa Rừng Lục Bảo | có |
-| **Rừng Sâu Lục Bảo** (`emerald_forest_deep_woods`) | Emerald | bãi quái | 5–10 | 6 | 1 | 2 | Bìa Rừng Lục Bảo | có |
+| **Bìa Rừng Lục Bảo** (`emerald_forest_main_woods`) | Emerald | hỗn hợp (NPC và quái) | 1–5 | 0 → 4 | 4 | 1 | Bìa Rừng Lục Bảo | có |
+| **Rừng Sâu Lục Bảo** (`emerald_forest_deep_woods`) | Emerald | bãi quái | 5–10 | 6 → 8 | 1 | 2 | Bìa Rừng Lục Bảo | có |
 | **Bến Ngư Châu** (`treasure_beach_fishermen_beach`) | Bãi biển | hub an toàn | — | 0 | 4 | 3 | Bến Ngư Châu | có |
-| **Bờ Đông Ngọc Bích** (`treasure_beach_east_beach`) | Bãi biển | bãi quái | 10–12 | 15 | 1 | 2 | Bến Ngư Châu | có |
+| **Bờ Đông Ngọc Bích** (`treasure_beach_east_beach`) | Bãi biển | bãi quái | 10–12 | 15 → 12 | 1 | 2 | Bến Ngư Châu | có |
 | **Vực Hải Lam** (`treasure_beach_deep_sea`) | Bãi biển | bãi quái | 13–14 | 10 | 1 | 1 | Bến Ngư Châu | có |
 | **Bờ Tây Hoàng Sa** (`treasure_beach_west_beach`) | Bãi biển | bãi quái | 12–13 | 10 | 1 | 2 | Bến Ngư Châu | có |
 | **Đảo Phú Quý** (`treasure_beach_prosperity_island`) | Bãi biển | bãi quái | 14–15 | 10 | 0 | 1 | Bến Ngư Châu | có |
@@ -40,14 +40,14 @@ Loại map là suy luận: có trigger quái hoặc điểm spawn → bãi quái
 | **Oán Linh Hải Đạo** (`nightmare_island_resentment_path`) | Đảo Ác Mộng | bãi quái | 25–30 | 12 | 1 | 2 | Trại Tàn Sinh | có |
 | **Tuyệt Vọng Hải Địa** (`nightmare_island_despair_land`) | Đảo Ác Mộng | bãi quái | 25–30 | 12 | 1 | 1 | Trại Tàn Sinh | có |
 | **Trạm Canh Lăng** (`tomb_region_camp`) | Lăng Mộ | hub an toàn | — | 0 | 4 | 3 | Trạm Canh Lăng | có |
-| **Oán Linh Cổ Đạo** (`tomb_region_resentment_path`) | Lăng Mộ | bãi quái | 30–35 | 15 | 1 | 2 | Trạm Canh Lăng | có |
-| **Tuyệt Vọng Chi Địa** (`tomb_region_despair_path`) | Lăng Mộ | bãi quái | 30–35 | 15 | 0 | 2 | Trạm Canh Lăng | có |
-| **Tàn Tích Tịch Diệt** (`tomb_region_dead_ruins`) | Lăng Mộ | bãi quái | 30–35 | 0 | 0 | 2 | Trạm Canh Lăng | có |
-| **Thâm Cung Tịch Diệt** (`tomb_region_deep_ruins`) | Lăng Mộ | bãi quái | 30–35 | 0 | 0 | 1 | Trạm Canh Lăng | có |
-| **Thần Lăng Vĩnh Miên** (`tomb_region_gods_tomb`) | Lăng Mộ | bãi quái | 30–35 | 0 | 1 | 1 | Trạm Canh Lăng | có |
-| **Bãi Vãng Sinh** (`tomb_region_soul_cemetery`) | Lăng Mộ | bãi quái | 30–35 | 6 | 2 | 4 | Trạm Canh Lăng | có |
-| **Cồn Úa Vàng** (`tomb_region_unnamed_area_01`) | Lăng Mộ | bãi quái | 30–35 | 0 | 0 | 1 | Trạm Canh Lăng | có |
-| **Bãi Gai Khô** (`tomb_region_unnamed_area_02`) | Lăng Mộ | bãi quái | 30–35 | 0 | 0 | 1 | Trạm Canh Lăng | có |
+| **Oán Linh Cổ Đạo** (`tomb_region_resentment_path`) | Lăng Mộ | bãi quái | 30–35 | 15 → 14 | 1 | 2 | Trạm Canh Lăng | có |
+| **Tuyệt Vọng Chi Địa** (`tomb_region_despair_path`) | Lăng Mộ | bãi quái | 30–35 | 15 → 14 | 0 | 2 | Trạm Canh Lăng | có |
+| **Tàn Tích Tịch Diệt** (`tomb_region_dead_ruins`) | Lăng Mộ | bãi quái | 30–35 | 0 → 12 | 0 | 2 | Trạm Canh Lăng | có |
+| **Thâm Cung Tịch Diệt** (`tomb_region_deep_ruins`) | Lăng Mộ | bãi quái | 30–35 | 0 → 12 | 0 | 1 | Trạm Canh Lăng | có |
+| **Thần Lăng Vĩnh Miên** (`tomb_region_gods_tomb`) | Lăng Mộ | bãi quái | 30–35 | 0 → 14 | 1 | 1 | Trạm Canh Lăng | có |
+| **Bãi Vãng Sinh** (`tomb_region_soul_cemetery`) | Lăng Mộ | bãi quái | 30–35 | 6 → 10 | 2 | 4 | Trạm Canh Lăng | có |
+| **Cồn Úa Vàng** (`tomb_region_unnamed_area_01`) | Lăng Mộ | bãi quái | 30–35 | 0 → 10 | 0 | 1 | Trạm Canh Lăng | có |
+| **Bãi Gai Khô** (`tomb_region_unnamed_area_02`) | Lăng Mộ | bãi quái | 30–35 | 0 → 10 | 0 | 1 | Trạm Canh Lăng | có |
 | **Cổng Địa Đạo Lam Dạ** (`crossroads_unnamed_area_01`) | Giao Điểm | hub an toàn | — | 0 | 2 | 3 | Cổng Địa Đạo Lam Dạ | có |
 | **Hành Lang Rêu Biếc** (`crossroads_unnamed_area_02`) | Giao Điểm | bãi quái | 35–40 | 12 | 0 | 2 | Cổng Địa Đạo Lam Dạ | có |
 | **Đoạn Thủy Quang** (`crossroads_unnamed_area_03`) | Giao Điểm | bãi quái | 35–40 | 12 | 1 | 2 | Cổng Địa Đạo Lam Dạ | có |
@@ -60,14 +60,14 @@ Loại map là suy luận: có trigger quái hoặc điểm spawn → bãi quái
 | **Lối Mây Tím** (`astral_realm_unnamed_area_02`) | Tinh Không | bãi quái | 41–44 | 10 | 1 | 2 | Tử Vân Lâm | có |
 | **Bờ Hồ Vân Ảnh** (`astral_realm_unnamed_area_03`) | Tinh Không | bãi quái | 45–48 | 10 | 0 | 1 | Tử Vân Lâm | có |
 | **Hốc Cổ Thụ** (`astral_realm_unnamed_area_04`) | Tinh Không | bãi quái | 49–52 | 12 | 0 | 1 | Tử Vân Lâm | có |
-| **Rừng Hoàng Hôn** (`astral_realm_unnamed_area_05`) | Tinh Không | bãi quái | 53–56 | 10 | 1 | 2 | Tử Vân Lâm | có |
+| **Rừng Hoàng Hôn** (`astral_realm_unnamed_area_05`) | Tinh Không | bãi quái | 53–56 | 10 → 12 | 1 | 2 | Tử Vân Lâm | có |
 | **Tận Cùng Thời Không** (`astral_realm_unnamed_area_06`) | Tinh Không | bãi quái | 57–60 | 12 | 0 | 1 | Tử Vân Lâm | có |
 | **Tiền Sảnh Ngọc Lục** (`ancient_ruins_unnamed_area_01`) | Di Tích Cổ | hub an toàn | — | 0 | 2 | 4 | Tiền Sảnh Ngọc Lục | có |
-| **Phòng Tượng Cổ** (`ancient_ruins_unnamed_area_02`) | Di Tích Cổ | bãi quái | 41–44 | 0 | 1 | 1 | Tiền Sảnh Ngọc Lục | có |
-| **Phòng Tinh Thạch** (`ancient_ruins_unnamed_area_03`) | Di Tích Cổ | bãi quái | 45–48 | 0 | 0 | 1 | Tiền Sảnh Ngọc Lục | có |
-| **Hành Lang Thạch Vệ** (`ancient_ruins_unnamed_area_04`) | Di Tích Cổ | bãi quái | 49–52 | 0 | 1 | 2 | Tiền Sảnh Ngọc Lục | có |
-| **Thâm Sảnh Ngọc Lục** (`ancient_ruins_unnamed_area_05`) | Di Tích Cổ | bãi quái | 53–56 | 0 | 1 | 2 | Tiền Sảnh Ngọc Lục | có |
-| **Tận Điện Cổ Tích** (`ancient_ruins_unnamed_area_06`) | Di Tích Cổ | bãi quái | 57–60 | 0 | 0 | 1 | Tiền Sảnh Ngọc Lục | có |
+| **Phòng Tượng Cổ** (`ancient_ruins_unnamed_area_02`) | Di Tích Cổ | bãi quái | 41–44 | 0 → 10 | 1 | 1 | Tiền Sảnh Ngọc Lục | có |
+| **Phòng Tinh Thạch** (`ancient_ruins_unnamed_area_03`) | Di Tích Cổ | bãi quái | 45–48 | 0 → 10 | 0 | 1 | Tiền Sảnh Ngọc Lục | có |
+| **Hành Lang Thạch Vệ** (`ancient_ruins_unnamed_area_04`) | Di Tích Cổ | bãi quái | 49–52 | 0 → 12 | 1 | 2 | Tiền Sảnh Ngọc Lục | có |
+| **Thâm Sảnh Ngọc Lục** (`ancient_ruins_unnamed_area_05`) | Di Tích Cổ | bãi quái | 53–56 | 0 → 12 | 1 | 2 | Tiền Sảnh Ngọc Lục | có |
+| **Tận Điện Cổ Tích** (`ancient_ruins_unnamed_area_06`) | Di Tích Cổ | bãi quái | 57–60 | 0 → 12 | 0 | 1 | Tiền Sảnh Ngọc Lục | có |
 | **Cổng U Lâu** (`ghost_castle_gate`) | Lâu Đài Ma | hub an toàn | — | 0 | 2 | 2 | Cổng U Lâu | có |
 | **U Linh Cổ Thành** (`ghost_castle_deep_woods`) | Lâu Đài Ma | bãi quái | Tầng 1–60 = Lv61–120 | 25 | 0 | 2 | Cổng U Lâu | có |
 | **Mật Thất Cổ Thành** (`ghost_castle_ancient_city_secret_chamber`) | Lâu Đài Ma | bãi quái | Lv190–200 | 20 | 0 | 1 | Cổng U Lâu | có |
@@ -75,7 +75,7 @@ Loại map là suy luận: có trigger quái hoặc điểm spawn → bãi quái
 | **Thế Thụ Thâm Lâm** (`world_tree_deep_woods`) | Cây Thế Giới | bãi quái | Tầng 1–60 = Lv61–120 | 17 | 0 | 2 | Thế Thụ Môn | có |
 | **Mật Thất Thế Thụ** (`world_tree_secret_chamber`) | Cây Thế Giới | bãi quái | Lv190–200 | 17 | 0 | 1 | Thế Thụ Môn | có |
 | **Điểu Tháp** (`tower_region_main_tower`) | Tháp Chim | hub an toàn | — | 0 | 2 | 2 | Điểu Tháp | có |
-| **Điểu Tháp Thâm Lâm** (`tower_region_deep_woods`) | Tháp Chim | bãi quái | Tầng 1–40 = Lv121–160 | 17 | 1 | 2 | Điểu Tháp | có |
+| **Vân Tiêu Thiên Tầng** (`tower_region_deep_woods`) | Tháp Chim | bãi quái | Tầng 1–40 = Lv121–160 | 17 | 1 | 2 | Điểu Tháp | có |
 | **Điểu Tháp Mật Tầng** (`tower_region_secret_floor`) | Tháp Chim | bãi quái | Lv122–160 (theo tầng chẵn đã vào) | 17 | 0 | 1 | Điểu Tháp | có |
 | **Trường Sinh Mê Thành** (`immortal_maze_main_maze`) | Mê Thành | hub an toàn | — | 0 | 2 | 2 | Trường Sinh Mê Thành | có |
 | **Bất Tử Mê Tầng** (`immortal_maze_floor`) | Mê Thành | bãi quái | Tầng 1–40 = Lv161–200 | 30 | 1 | 2 | Trường Sinh Mê Thành | có |

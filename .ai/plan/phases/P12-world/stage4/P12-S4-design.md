@@ -175,7 +175,7 @@ Nguồn: nhận xét owner trong `/portals.html` và hội thoại 2026-10-17. D
 |---|---|---|---|---|---|---|
 | Lâu Đài Ma | U Linh Cổ Thành (`ghost_castle_deep_woods`) | 60 | Lv61–120 | phải → trái | Linh Thể, Ác Ma (race 2 do chúng tôi đề xuất) | Mật Thất Cổ Thành: vào từ tầng cuối, Lv190–200, quay về Cổng U Lâu |
 | Cây Thế Giới | Thế Thụ Thâm Lâm (`world_tree_deep_woods`) | 60 | Lv61–120 | trái → phải | Sâu, Thực Vật | Mật Thất Thế Thụ: vào từ tầng cuối, Lv190–200, quay về Thế Thụ Môn |
-| Tháp Chim | Điểu Tháp Thâm Lâm (`tower_region_deep_woods`) | 40 | Lv121–160 | trái → phải | Chim | Điểu Tháp Mật Tầng: Người Dẫn Mật Tầng ở tầng chẵn, hướng dưới → trên |
+| Tháp Chim | Vân Tiêu Thiên Tầng (`tower_region_deep_woods`) | 40 | Lv121–160 | trái → phải | Chim | Điểu Tháp Mật Tầng: Người Dẫn Mật Tầng ở tầng chẵn, hướng dưới → trên |
 | Mê Thành | Bất Tử Mê Tầng (`immortal_maze_floor`) | 40 | Lv161–200 | phải → trái | Bất Tử | Bất Tử Mật Tầng: Người Dẫn Mật Tầng ở tầng chẵn |
 
 - U Lâm và Thế Thụ cùng dải cấp, để người chơi chọn nơi cày. Điểu Tháp tiếp nối, Mê Thành chạm trần 200 (60 + 40 + 40 tầng nối liền với Lv61–200).
@@ -188,3 +188,7 @@ Nguồn: nhận xét owner trong `/portals.html` và hội thoại 2026-10-17. D
 - Số tầng thực tế (40–60) và trần cấp nằm trong JSON để đổi một chỗ; mọi con số đều đề xuất.
 - **Đổi tên (owner 2026-10-17):** U Lâm Bích Ba thành **U Linh Cổ Thành** (tên cũ đọc như rừng cây trong khi là thành cổ). Mã map `ghost_castle_deep_woods` giữ nguyên; tên nguồn APK "Rừng sâu Bích Ba" ghi ở `P12-naming-proposal-jrpg.md`.
 - Đồ thị cổng: theo hướng đi ở bảng trên, owner duyệt 2026-10-17 (`review/portal-edits/portal-graph.json`).
+- **Art direction (owner 2026-10-17):** khi vẽ lại bố cục HD2D cho map tầng, mỗi 10 tầng đổi bố cục ít nhiều để không lặp; càng vào sâu càng cảm giác nguy hiểm (tối hơn, hẹp hơn, bẫy dày hơn). Ghi vào `art_direction` trong `P12-S4-floor-templates.json` và brief map tầng.
+- **Đổi tên (owner 2026-10-17):** Điểu Tháp Thâm Lâm thành **Vân Tiêu Thiên Tầng** (tên cũ đọc như rừng). Tên mới do Claude chọn, chờ owner xác nhận. Mã map `tower_region_deep_woods` giữ nguyên.
+- **Mục hoãn:** danh tính/cấp quái gác, hệ số Mật Tầng, drop, trần cấp được ghi trong `P12-closure-checklist.md` §5 để debate với owner ở phase nhận.
+- **Spawn (owner yêu cầu 2026-10-17):** xem `P12-S4-spawn-plan.json`; 543 điểm APK thành 664 điểm đề xuất.

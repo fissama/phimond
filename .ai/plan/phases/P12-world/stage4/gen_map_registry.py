@@ -31,6 +31,7 @@ def respawn(m, g):
     return {'Khởi đầu': 'Bìa Rừng Lục Bảo', 'Emerald': 'Bìa Rừng Lục Bảo', 'Thành phố': 'Quảng Trường Thạch Trụ', 'Bãi biển': 'Bến Ngư Châu', 'Hải Tặc Hào': 'Hải Tặc Hào',
             'Đảo Ác Mộng': 'Trại Tàn Sinh'}.get(g) or (NAME[[mm for mm in REG if REG[mm][0] == g][0]] if g in {r[0] for r in REG.values()} else 'Quảng Trường Thạch Trụ')
 FT = json.load(open('P12-S4-floor-templates.json', encoding='utf-8'))
+SP = json.load(open('P12-S4-spawn-plan.json', encoding='utf-8'))['changes']
 FL_LV = {}
 for r_ in FT['regions']:
     FL_LV[r_['floor_map']] = f"Tầng 1–{r_['floors']} = Lv{r_['level_first']}–{r_['level_last']}"
@@ -43,14 +44,14 @@ for m, s in SCAN.items():
     lv = FL_LV.get(m, lv)
     hub = next((mm for mm in REG if REG[mm][0] == g), None)
     rows.append(dict(id=m, name_vi=NAME[m], group=g, kind=k, in_scope=m in CORE or m in REG, level=lv if k in ('field', 'mixed') else None,
-        monster_spawn_markers=s['markers'], has_monster_trigger=bool(s['trans_enemy']), apk_npc_slots=s['npcs'], apk_doors=s['doors'],
+        monster_spawn_markers=s['markers'], spawn_target=(SP[m][1] if m in SP else s['markers']), has_monster_trigger=bool(s['trans_enemy']), apk_npc_slots=s['npcs'], apk_doors=s['doors'],
         respawn_to=(respawn(m, g) if g in {r[0] for r in REG.values()} | {'Khởi đầu', 'Emerald', 'Thành phố', 'Bãi biển', 'Hải Tặc Hào'} and k not in ('instance', 'guild_shared') else 'Quảng Trường Thạch Trụ')))
 json.dump(rows, open('P12-S4-map-registry.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 KL = {'safe_hub': 'hub an toàn', 'field': 'bãi quái', 'mixed': 'hỗn hợp (NPC và quái)', 'instance': 'instance', 'private_per_player': 'riêng từng người chơi', 'guild_shared': 'chung theo bang', 'transit': 'trung chuyển', 'transit_once': 'dùng một lần'}
 L = ['# P12 Stage 4 — Registry map canonical (đề xuất, chờ owner duyệt)\n', f'{len(rows)} map APK 3.2; {sum(r["in_scope"] for r in rows)} map trong phạm vi roster. Sinh bằng `gen_map_registry.py` từ `apk-extract/map-scan.json`.',
      'Loại map là suy luận: có trigger quái hoặc điểm spawn → bãi quái; không quái mà có NPC → hub an toàn; instance/riêng/chung theo bang là **đề xuất**, APK chưa có bằng chứng. Cấp quái ngoài 17 map là dải vùng (APK), chưa chia từng map.\n',
-     '| Map | Nhóm | Loại | Cấp | Điểm spawn | Slot NPC | Cửa | Hồi sinh về | Phạm vi |', '|---|---|---|---|---|---|---|---|---|']
+     '| Map | Nhóm | Loại | Cấp | Spawn APK → đề xuất | Slot NPC | Cửa | Hồi sinh về | Phạm vi |', '|---|---|---|---|---|---|---|---|---|']
 for r in rows:
-    L.append(f"| **{r['name_vi']}** (`{r['id']}`) | {r['group']} | {KL[r['kind']]} | {r['level'] or '—'} | {r['monster_spawn_markers']} | {r['apk_npc_slots']} | {r['apk_doors']} | {r['respawn_to']} | {'có' if r['in_scope'] else 'không'} |")
+    L.append(f"| **{r['name_vi']}** (`{r['id']}`) | {r['group']} | {KL[r['kind']]} | {r['level'] or '—'} | {r['monster_spawn_markers']}{' → ' + str(r['spawn_target']) if r['spawn_target'] != r['monster_spawn_markers'] else ''} | {r['apk_npc_slots']} | {r['apk_doors']} | {r['respawn_to']} | {'có' if r['in_scope'] else 'không'} |")
 open('P12-S4-map-registry.md', 'w', encoding='utf-8').write('\n'.join(L) + '\n')
 import collections; print(len(rows), collections.Counter(r['kind'] for r in rows))
