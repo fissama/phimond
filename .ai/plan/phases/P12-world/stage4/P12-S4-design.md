@@ -192,3 +192,4 @@ Nguồn: nhận xét owner trong `/portals.html` và hội thoại 2026-10-17. D
 - **Đổi tên (owner 2026-10-17):** Điểu Tháp Thâm Lâm thành **Vân Tiêu Thiên Tầng** (tên cũ đọc như rừng). Tên mới do Claude đề xuất, owner duyệt 2026-10-17. Mã map `tower_region_deep_woods` giữ nguyên.
 - **Mục hoãn:** danh tính/cấp quái gác, hệ số Mật Tầng, drop, trần cấp được ghi trong `P12-closure-checklist.md` §5 để debate với owner ở phase nhận.
 - **Spawn (owner yêu cầu 2026-10-17):** xem `P12-S4-spawn-plan.json`; 543 điểm APK thành 664 điểm đề xuất.
+- **Huyết Chiến Đài (owner 2026-10-17):** map sự kiện hằng ngày vào giờ cố định. Một nhiệm vụ phụ ở Quảng Trường dịch chuyển người chơi vào map này; không có cổng thường. Lịch và phần thưởng do phase nhiệm vụ/arena quyết.

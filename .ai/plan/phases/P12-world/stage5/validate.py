@@ -34,7 +34,7 @@ def bfs(s, g):
 start = 'summoning_hall_main_hall'
 fw = bfs(start, adj); home = 'city_square'; bw = bfs(home, radj)
 sc = [r['id'] for r in scope if r['kind'] != 'transit_once']
-npc_entry = {'city_deathmatch_arena'}  # vào bằng NPC đấu trường, không qua cổng (Stage 4 duyệt)
+npc_entry = {'city_deathmatch_arena'}  # map sự kiện hằng ngày giờ cố định; vào bằng nhiệm vụ phụ ở Quảng Trường (owner 2026-10-17), không qua cổng
 sc_in = [m for m in sc if m not in npc_entry]
 chk('R01', 'mọi map trong phạm vi đến được từ Triệu Linh Điện', all(m in fw for m in sc_in), f'không đến được: {[m for m in sc_in if m not in fw]}')
 chk('R01', 'mọi map trong phạm vi có đường về Quảng Trường (đường hồi phục)', all(m in bw for m in sc), f'kẹt: {[m for m in sc if m not in bw]}')

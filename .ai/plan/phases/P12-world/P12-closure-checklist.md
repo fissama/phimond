@@ -52,6 +52,8 @@ Phạm vi: City / mọi map Forest / Beach / Farm / Arena liên quan + Sảnh v�
 | Logic nói chuyện/nhận pet ở Sảnh vẫy gọi | P04 (UI chọn: P03/P04) | — |
 | Va chạm HD-2D đầy đủ | P01 / Stage 4 | U3: dựng mới, không khôi phục gốc |
 | Tin nhắn Đội/Hội/Riêng/Thế giới | phase social | server chưa có |
+| Nhiệm vụ phụ ở Quảng Trường dịch chuyển vào Huyết Chiến Đài (sự kiện hằng ngày giờ cố định): lịch, điều kiện, phần thưởng | phase nhiệm vụ / arena | Owner 2026-10-17; P12 chỉ ghi quy tắc, map không có cổng thường |
+| R05 đọc hiểu tuyến đường, thiếu tài nguyên trên client thật | P01 | Owner tạm duyệt 2026-10-17 |
 | Danh tính quái gác tầng 9/19/…/59 và quái cuối vùng (4★/5★) | P15 (loài), P10 (race), P11 (chỉ số) | Owner 2026-10-17: ghi lại, **debate với owner khi tới phase đó** |
 | Cấp quái gác, cấp quái mật thất (Lv190–200), hệ số mạnh/exp của Mật Tầng, trần cấp 200 | P11/P15 | Như trên; trần cấp đang lưu ở `P12-S4-floor-templates.json` |
 | Tỷ lệ rớt (vật phẩm cường hóa 4★/5★ ở mật thất, phần thưởng quái gác) | P19/P20 | Như trên |
