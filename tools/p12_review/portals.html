@@ -5,11 +5,12 @@
 <div class="tools">
   <div class="seg" id="views"><button data-v="mind" class="on">Mind map</button><button data-v="split">Hai bản đồ</button></div>
   <div class="seg" id="modes" title="Chế độ thao tác trên ảnh map"><button data-m="link" class="on">Nối</button><button data-m="move">Di chuyển</button><button data-m="add">Thêm cổng</button></div>
+  <div class="seg" id="filters" title="Lọc liên kết theo trạng thái duyệt"><button data-f="all" class="on">Tất cả</button><button data-f="approved">Đã duyệt</button><button data-f="todo">Chưa duyệt</button><button data-f="pending">Chờ</button><button data-f="changes">Cần sửa</button><button data-f="edited">Mới sửa</button></div>
   <span id="stats" class="muted"></span><button id="next-flag" class="secondary">Điểm cần đặt kế tiếp</button><button id="approve-all" class="secondary">Duyệt các liên kết đang chờ</button>
 </div>
 <div id="error" role="alert" hidden></div>
 <main class="pmain">
-  <section id="v-mind"><div class="legend"><span class="k door"></span>cửa APK <span class="k pillar"></span>trụ <span class="k arrival"></span>điểm đến · đường liền xanh = duyệt, cam = cần sửa, xám = chờ, vàng nét đứt = trụ. Bấm một map để chọn làm bản đồ trái, Shift+bấm để chọn bên phải, bấm đúp hoặc bấm đường để mở hai bản đồ.</div><div class="mindwrap"><svg id="mind" role="img" aria-label="Sơ đồ liên kết giữa các map"></svg></div></section>
+  <section id="v-mind"><div class="legend"><span class="k door"></span>cửa APK <span class="k pillar"></span>trụ <span class="k arrival"></span>điểm đến · đường liền xanh = duyệt, cam = cần sửa, xám = chờ, vàng nét đứt = trụ, nét dày/viền tím/✎ = bạn mới sửa so với bản nháp APK, ↻ = liên kết giữa hai cửa trong cùng một map (qua tầng). Bấm một map để chọn làm bản đồ trái, Shift+bấm để chọn bên phải, bấm đúp hoặc bấm đường để mở hai bản đồ.</div><div class="mindwrap"><svg id="mind" role="img" aria-label="Sơ đồ liên kết giữa các map"></svg></div></section>
   <section id="v-split" hidden>
     <div class="split" id="split"><div class="pane" id="pane-A"></div><div class="pane" id="pane-B"></div><svg id="wire" aria-hidden="true"></svg></div>
     <p class="muted hint">Chế độ Nối: kéo từ một điểm sang điểm ở bản đồ kia (hoặc thả vào chỗ trống để tạo điểm đến mới). Di chuyển: kéo điểm để đổi vị trí. Thêm cổng: bấm lên ảnh.</p>

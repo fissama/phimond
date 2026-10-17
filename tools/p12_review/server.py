@@ -35,8 +35,8 @@ class ReviewServer(ThreadingHTTPServer):
     def portal_state(self):
         pkg,h=self.portal_base()
         if self.portal_edit.exists():
-            e=json.loads(self.portal_edit.read_text(encoding='utf-8'));return {'maps':pkg['maps'],'package_hash':h,'version':e['version'],'graph':e['graph'],'base_changed':e['base_hash']!=h,'updated_at':e.get('updated_at'),'notes':pkg.get('notes','')}
-        return {'maps':pkg['maps'],'package_hash':h,'version':0,'graph':{'ports':pkg['ports'],'links':pkg['links']},'base_changed':False,'updated_at':None,'notes':pkg.get('notes','')}
+            e=json.loads(self.portal_edit.read_text(encoding='utf-8'));return {'maps':pkg['maps'],'package_hash':h,'version':e['version'],'graph':e['graph'],'base_changed':e['base_hash']!=h,'updated_at':e.get('updated_at'),'notes':pkg.get('notes',''),'baseline':{'ports':pkg['ports'],'links':pkg['links']}}
+        return {'maps':pkg['maps'],'package_hash':h,'version':0,'graph':{'ports':pkg['ports'],'links':pkg['links']},'base_changed':False,'updated_at':None,'notes':pkg.get('notes',''),'baseline':{'ports':pkg['ports'],'links':pkg['links']}}
     def save_portals(self,payload):
         with self.lock:
             st=self.portal_state()

@@ -44,3 +44,16 @@
 
 .pad{padding:8px}#inspector label.inl{display:inline}.full{width:100%}
 #inspector input[type=text]{background:var(--card);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:5px}
+
+#filters button.on{background:#7e57c2}
+.chip.ed{background:#7e57c2;color:#fff}
+.mn.dim{opacity:.3}
+.me.ed{stroke-width:4}
+.wl.ed{stroke-width:5}
+.li.gone .t{text-decoration:line-through;opacity:.75}
+.li .t{flex:1;min-width:0}
+.diff{font-size:12px;color:#7e57c2;margin:4px 0}
+.flt-head{font-size:12px;color:var(--mut);padding:6px 8px;border-bottom:1px solid var(--line)}
+
+.selfb{cursor:pointer}.selfb circle{stroke:#fff;stroke-width:1.5}.selfb text{fill:#fff;font:700 10px sans-serif;pointer-events:none}
+.selfb.pending circle{fill:#9aa5a0}.selfb.approved circle{fill:#35b374}.selfb.changes_requested circle{fill:#ff9800}.selfb.ed circle{stroke:#7e57c2;stroke-width:3}
