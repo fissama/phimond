@@ -1,0 +1,166 @@
+{
+ "version": 1,
+ "status": "proposal",
+ "date": "2026-10-17",
+ "source": "owner web review + chat 2026-10-17",
+ "level_cap": 200,
+ "cap_note": "Trần 200 hoặc hơn; nới khi P11 đổi cap. Mỗi tầng đúng 1 cấp.",
+ "rules": {
+  "guard_every": 10,
+  "guard_star": "4★ hoặc 5★ (P15 chọn loài; đề xuất tầng cuối mỗi map luôn 5★)",
+  "guard_unlock": "Hạ quái gác tầng 10k thì mở cửa lên tầng 10k+1…10k+10 (cờ vĩnh viễn theo người chơi). Tầng 1–10 mở sẵn.",
+  "return_object": {
+   "name": "Bia Hồi Quy",
+   "kind": "vật thể (không phải NPC)",
+   "floors": "mọi tầng 10k",
+   "place": "cạnh cửa xuống tầng, trong vùng an toàn của tầng",
+   "to": "cổng an toàn của vùng",
+   "service": "chỉ dịch chuyển; không hồi máu, không cửa hàng"
+  },
+  "secret_floor_npc": {
+   "name": "Người Dẫn Mật Tầng",
+   "floors": "tầng chẵn",
+   "place": "cạnh cửa xuống tầng",
+   "to": "Mật Tầng của vùng, cấp = cấp tầng đang đứng; quái mạnh hơn, nhiều exp hơn (hệ số do P11/P15)",
+   "applies": [
+    "tower",
+    "maze"
+   ]
+  },
+  "door_back": "Cửa xuống tầng của tầng 1 dẫn về cổng an toàn; từ tầng 2 trở lên dẫn về tầng dưới (hai chiều).",
+  "monster_map_npc_exception": "Chỉ Bia Hồi Quy và Người Dẫn Mật Tầng (dịch vụ đi lại) được đặt trong map quái; NPC khác vẫn theo §8."
+ },
+ "regions": [
+  {
+   "key": "ghost",
+   "group": "Lâu Đài Ma",
+   "gate": "ghost_castle_gate",
+   "floor_map": "ghost_castle_deep_woods",
+   "secret_map": "ghost_castle_ancient_city_secret_chamber",
+   "floors": 60,
+   "level_first": 61,
+   "level_last": 120,
+   "direction": "phải → trái",
+   "entry_door": "P:ghost_castle_portal_002",
+   "exit_door": "P:ghost_castle_portal_001",
+   "gate_door": "P:ghost_castle_portal_004",
+   "races": [
+    "Linh Thể / Spirit",
+    "Ác Ma / Demon"
+   ],
+   "races_note": "Owner chưa nêu race thứ hai; đề xuất Ác Ma cho hợp Lâu Đài Ma.",
+   "secret": {
+    "access": "cửa lối ra của tầng cuối (tầng 60)",
+    "level": "190–200",
+    "direction": "dưới → trên",
+    "returns_to": "Cổng U Lâu",
+    "loot": "vật phẩm cường hóa trang bị 4★/5★ và đồ hiếm"
+   },
+   "rename": {
+    "current": "U Lâm Bích Ba",
+    "why": "Đọc như bản đồ rừng, trong khi đây là thành cổ.",
+    "options": [
+     "U Linh Cổ Thành",
+     "Vọng Hồn Cổ Thành",
+     "Thành Cổ Hàn Quang"
+    ],
+    "recommended": "U Linh Cổ Thành"
+   }
+  },
+  {
+   "key": "tree",
+   "group": "Cây Thế Giới",
+   "gate": "world_tree_gate",
+   "floor_map": "world_tree_deep_woods",
+   "secret_map": "world_tree_secret_chamber",
+   "floors": 60,
+   "level_first": 61,
+   "level_last": 120,
+   "direction": "trái → phải",
+   "entry_door": "P:world_tree_portal_002",
+   "exit_door": "P:world_tree_portal_003",
+   "gate_door": "P:world_tree_portal_004",
+   "races": [
+    "Sâu / Insect",
+    "Thực Vật / Plant"
+   ],
+   "secret": {
+    "access": "cửa lối ra của tầng cuối (tầng 60)",
+    "level": "190–200",
+    "direction": "dưới → trên",
+    "returns_to": "Thế Thụ Môn",
+    "loot": "vật phẩm cường hóa trang bị 4★/5★ và đồ hiếm"
+   }
+  },
+  {
+   "key": "tower",
+   "group": "Tháp Chim",
+   "gate": "tower_region_main_tower",
+   "floor_map": "tower_region_deep_woods",
+   "secret_map": "tower_region_secret_floor",
+   "floors": 40,
+   "level_first": 121,
+   "level_last": 160,
+   "direction": "trái → phải",
+   "entry_door": "P:tower_region_portal_002",
+   "exit_door": "P:tower_region_portal_003",
+   "gate_door": "P:tower_region_portal_004",
+   "races": [
+    "Chim / Bird"
+   ],
+   "secret": {
+    "access": "Người Dẫn Mật Tầng ở tầng chẵn",
+    "level": "122–160 (theo tầng chẵn đã vào)",
+    "direction": "dưới → trên (owner)",
+    "returns_to": "Điểu Tháp",
+    "loot": "đồ hiếm (do phase drop)"
+   }
+  },
+  {
+   "key": "maze",
+   "group": "Mê Thành",
+   "gate": "immortal_maze_main_maze",
+   "floor_map": "immortal_maze_floor",
+   "secret_map": "immortal_maze_secret_floor",
+   "floors": 40,
+   "level_first": 161,
+   "level_last": 200,
+   "direction": "phải → trái",
+   "entry_door": "P:immortal_maze_portal_003",
+   "exit_door": "P:immortal_maze_portal_002",
+   "gate_door": "P:immortal_maze_portal_004",
+   "races": [
+    "Bất Tử / Undead"
+   ],
+   "secret": {
+    "access": "Người Dẫn Mật Tầng ở tầng chẵn",
+    "level": "162–200 (theo tầng chẵn đã vào)",
+    "direction": "dưới → trên",
+    "returns_to": "Trường Sinh Mê Thành",
+    "loot": "đồ hiếm (do phase drop)"
+   }
+  }
+ ],
+ "banded_fields": {
+  "note": "Đề xuất để lấp Lv41–60 và nối liền tới trần 200: Tinh Không và Di Tích Cổ chạy song song, mỗi map một dải 4 cấp.",
+  "bands": [
+   "41–44",
+   "45–48",
+   "49–52",
+   "53–56",
+   "57–60"
+  ],
+  "maps": {
+   "astral_realm_unnamed_area_02": 0,
+   "astral_realm_unnamed_area_03": 1,
+   "astral_realm_unnamed_area_04": 2,
+   "astral_realm_unnamed_area_05": 3,
+   "astral_realm_unnamed_area_06": 4,
+   "ancient_ruins_unnamed_area_02": 0,
+   "ancient_ruins_unnamed_area_03": 1,
+   "ancient_ruins_unnamed_area_04": 2,
+   "ancient_ruins_unnamed_area_05": 3,
+   "ancient_ruins_unnamed_area_06": 4
+  }
+ }
+}

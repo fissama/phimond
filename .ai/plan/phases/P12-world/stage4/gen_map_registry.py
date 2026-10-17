@@ -30,10 +30,17 @@ def kind(m, s):
 def respawn(m, g):
     return {'Khởi đầu': 'Bìa Rừng Lục Bảo', 'Emerald': 'Bìa Rừng Lục Bảo', 'Thành phố': 'Quảng Trường Thạch Trụ', 'Bãi biển': 'Bến Ngư Châu', 'Hải Tặc Hào': 'Hải Tặc Hào',
             'Đảo Ác Mộng': 'Trại Tàn Sinh'}.get(g) or (NAME[[mm for mm in REG if REG[mm][0] == g][0]] if g in {r[0] for r in REG.values()} else 'Quảng Trường Thạch Trụ')
+FT = json.load(open('P12-S4-floor-templates.json', encoding='utf-8'))
+FL_LV = {}
+for r_ in FT['regions']:
+    FL_LV[r_['floor_map']] = f"Tầng 1–{r_['floors']} = Lv{r_['level_first']}–{r_['level_last']}"
+    FL_LV[r_['secret_map']] = 'Lv' + r_['secret']['level']
+for m_, i_ in FT['banded_fields']['maps'].items(): FL_LV[m_] = FT['banded_fields']['bands'][i_]
 rows = []
 for m, s in SCAN.items():
     g = group(m); k = kind(m, s); key = REG.get(m, (None, None))[1]
     lv = LV.get(m) or RLV.get(key) or ('40+' if key in HIGHK else None)
+    lv = FL_LV.get(m, lv)
     hub = next((mm for mm in REG if REG[mm][0] == g), None)
     rows.append(dict(id=m, name_vi=NAME[m], group=g, kind=k, in_scope=m in CORE or m in REG, level=lv if k in ('field', 'mixed') else None,
         monster_spawn_markers=s['markers'], has_monster_trigger=bool(s['trans_enemy']), apk_npc_slots=s['npcs'], apk_doors=s['doors'],
