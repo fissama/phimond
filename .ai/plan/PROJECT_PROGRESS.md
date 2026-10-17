@@ -21,7 +21,7 @@ số file hoặc số atlas. ID phase giữ nguyên, thứ tự theo master plan
 | Phase | Trạng thái / đầu ra tiếp theo |
 |---|---|
 | P11 stats | Scaffold NOT STARTED theo README; công thức, stat/role/Element assignment và O03/O04/O05/O08 |
-| P12 world | OPEN. Stage 1 xong phần lớn (còn `review_detailed_scope`); Stage 2 đóng 2026-10-14; Stage 3 đóng 2026-10-16 (Three.js, ADR-0001; iPhone high ~60 FPS); Stage 4–5 chưa có quyền. Chi tiết: `phases/P12-world/P12-closure-checklist.md` |
+| P12 world | **ĐÓNG 2026-10-17** (owner exit review). Stage 2 đóng 2026-10-14; Stage 3 đóng 2026-10-16 (Three.js, ADR-0001; iPhone high ~60 FPS); Stage 4 và 5 đóng 2026-10-17 (validate.py 17/17, 12 mục hoãn có chủ, R05 tạm duyệt, R06 chỉ đo iPhone high). Chi tiết: `phases/P12-world/P12-closure-checklist.md` |
 | P01 world slice | Chưa có closure; phụ thuộc P12, renderer/movement/collision/portal/web HUD |
 | P13 skill | Chưa có closure; candidate V7 chờ owner nghiệm thu: 160 loài, 97 skill, 28 recipe candidate; pool/eligibility/Element chart/combat rules |
 | P19 items | Chưa có closure; item foundation, mailbox, EXP share |

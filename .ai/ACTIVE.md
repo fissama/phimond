@@ -47,7 +47,7 @@ Cập nhật 2026-10-14. Đây là số liệu thiết kế candidate; **runtime
 | Recipe — nguồn APK | 17 | Giữ làm bằng chứng (disabled trong `data/p10`), không phải luật game. |
 | Runtime hiện tại | 14 loài / 29 skill / 6 recipe | Server vẫn nạp catalog cũ; migration 14→160 chưa thiết kế (P10-O08). |
 
-## P12 — documentation promoted; stage execution pending
+## P12 — CLOSED 2026-10-17 (documentation promoted; stages 1–5 done)
 
 D01–D60 preserved as approved_in_brainstorm; FLOW-01/Q-P12-01…09 scope approved in conversation2026-10-12. [Scope](plan/phases/P12-world/P12-scoped-design.md), [registry](plan/phases/P12-world/P12-decision-registry.md), [gaps](plan/phases/P12-world/P12-gap-analysis.md), [documentation amendments](plan/phases/P12-world/P12-spec-change-proposals.md). Selected flow keeps P12 open through Stage3 benchmark/Stage4 expansion/Stage5 review; separately approved P12 baseline can open an authorized P01 prototype after baseline and separate stage/scope approvals. Global coverage and all critical dependencies retained. Documentation/spec updates authorized; audit, source verification, prototype execution and engine migration remain unauthorized. P12 remains OPEN.
 
@@ -67,3 +67,4 @@ D01–D60 preserved as approved_in_brainstorm; FLOW-01/Q-P12-01…09 scope appro
 - 2026-10-15 (chốt): owner đồng ý hồi sinh Emerald ở Bìa Rừng; ấp trứng ở Phòng thú cưng; Nông trại + Phòng thú cưng là map riêng từng người chơi; bậc kỹ năng do P13; chuỗi nhiệm vụ chính do phase quest quyết (P12 chỉ soạn NPC). Roster 49 NPC chờ duyệt cuối. P12 vẫn OPEN.
 - 2026-10-15: quét APK 3.2 xác định vùng an toàn cho mọi vùng (`stage4/apk-extract/map-scan.json`, `P12-S4-design.md` §7.2). Sửa: Sa mạc = Sa Thạch Cổ Thành, Tinh Không = Tử Vân Lâm. Đảo Ác Mộng không có map an toàn thuần (Q15).
 - 2026-10-15: owner chốt Đảo Ác Mộng giữ Trại Tàn Sinh trộn lẫn (không vùng an toàn). Hết câu hỏi mở về NPC/vùng an toàn của Stage 4.
+- 2026-10-17: **P12 ĐÓNG** theo lệnh owner. Stage 4 đóng (35/35 thẻ review, đồ thị 102 liên kết, 21 điểm đến, 4 vùng nhiều tầng, spawn 543→664, tên Vân Tiêu Thiên Tầng); Stage 5 `stage5/validate.py` 17/17 PASS, README bằng chứng R01–R06. R05 tạm duyệt (runtime ở P01), R06 chỉ đo iPhone high. 12 mục hoãn có chủ ở `P12-closure-checklist.md` §5, debate với owner khi tới phase nhận (P15/P10/P11/P19/P20, P01, phase nhiệm vụ). [Checklist](plan/phases/P12-world/P12-closure-checklist.md)

@@ -1,6 +1,6 @@
 # P12 Stage 5 — Validation và review đóng phase
 
-Owner cấp quyền 2026-10-17. Stage 4 đã đóng cùng ngày. Stage 5 **chưa đóng phase**: phase chỉ đóng khi owner làm exit review (master spec, P12 Exit).
+Owner cấp quyền 2026-10-17. Stage 4 đã đóng cùng ngày. **P12 đóng 2026-10-17** sau owner exit review (master spec, P12 Exit).
 
 ## Chạy lại kiểm chứng
 
@@ -31,5 +31,5 @@ Chỉ đọc dữ liệu Stage 4 và `review/`, in PASS/FAIL, ghi `validation-re
 ## Việc để owner đóng phase
 
 1. R05 (tạm duyệt, runtime ở P01) và R06 (chỉ đo được iPhone high): owner đã chấp nhận 2026-10-17.
-2. Chấp nhận danh sách hoãn có chủ.
-3. Ra lệnh đóng P12 (cập nhật `PROJECT_PROGRESS` và master spec chỉ làm sau lệnh này).
+2. Danh sách hoãn có chủ: owner chấp nhận 2026-10-17.
+3. Ra lệnh đóng P12: owner đã ra lệnh 2026-10-17; `PROJECT_PROGRESS` và `ACTIVE.md` đã cập nhật.
