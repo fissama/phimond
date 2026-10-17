@@ -28,6 +28,7 @@ python3 tools/p12_review/server.py --port 8134    # --images <thư mục map-ima
 - Bảng bên phải: chọn liên kết để đổi chiều, bật một chiều, Chờ/Duyệt/Cần sửa/Từ chối, nhận xét, xóa. Nút "Điểm cần đặt kế tiếp" nhảy tới các điểm đến APK không cho biết.
 - Bộ lọc trên thanh công cụ: **Tất cả / Đã duyệt / Chưa duyệt / Chờ / Cần sửa / Mới sửa** (số liệu cập nhật theo từng lần bấm). Lọc áp dụng cho sơ đồ, đường nối hai bản đồ, danh sách liên kết và nút "Duyệt … liên kết chờ" (chỉ duyệt các liên kết đang hiện).
 - "Mới sửa" = khác bản nháp APK (liên kết mới, đổi đầu nối, đổi chiều một/hai chiều, có nhận xét mới). Dấu ✎ và nét dày/viền tím đánh dấu chúng; mục "Đã xóa" liệt kê liên kết bạn xóa kèm nút **Khôi phục**.
+- Bộ lọc **Claude sửa** liệt kê các liên kết Claude đã sửa hoặc thêm theo câu trả lời của bạn (nhãn xanh "Claude", lời giải thích hiện trong khung chi tiết); chúng về trạng thái Chờ để bạn duyệt lại. Bản trước đó được giữ ở `portal-edits/history/`.
 - Biểu tượng ↻ trên một map = liên kết nối hai cửa trong cùng map (đi tầng); bấm để mở map đó.
 - Lưu tại `.ai/plan/phases/P12-world/review/portal-edits/portal-graph.json` (mỗi lần lưu giữ bản trước trong `history/`). Chạy lại `build_portals.py` không xóa bản bạn đã sửa; khi dữ liệu gốc đổi, thanh trạng thái báo "dữ liệu gốc đã đổi".
 - Giới hạn: ảnh map là ảnh ghép sprite tĩnh, không chứng nhận collision hay đường đi; tọa độ cửa là của APK. Điểm đến của cửa một chiều không có trong APK được đề xuất cạnh cửa đối ứng (khoảng 1 đơn vị) hoặc đánh dấu "cần đặt".

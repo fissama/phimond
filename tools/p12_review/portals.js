@@ -14,7 +14,7 @@ function diffOf(l) {
 const isNew = l => diffOf(l).length > 0;
 const bTitle = id => { const p = P(id) || S.base.ports.find(x => x.id === id); return p ? portTitle(p) : id; };
 const goneLinks = () => S.base.links.filter(o => !S.links.some(l => l.id === o.id));
-function match(l, f = S.filter) { return f === 'all' || (f === 'approved' && l.status === 'approved') || (f === 'todo' && l.status !== 'approved') || (f === 'pending' && l.status === 'pending') || (f === 'changes' && (l.status === 'changes_requested' || l.status === 'rejected')) || (f === 'edited' && isNew(l)); }
+function match(l, f = S.filter) { return f === 'all' || (f === 'approved' && l.status === 'approved') || (f === 'todo' && l.status !== 'approved') || (f === 'pending' && l.status === 'pending') || (f === 'changes' && (l.status === 'changes_requested' || l.status === 'rejected')) || (f === 'edited' && isNew(l)) || (f === 'claude' && !!l.rev); }
 function restoreLink(o) {
   for (const id of [o.a, o.b]) if (!P(id)) { const bp = S.base.ports.find(p => p.id === id); if (bp) S.ports.push(JSON.parse(JSON.stringify(bp))); }
   if (P(o.a) && P(o.b)) { S.links.push(JSON.parse(JSON.stringify(o))); S.sel = { type: 'link', id: o.id }; mark(); render(); }
@@ -27,7 +27,7 @@ function toWorld(m, px) { const b = S.M[m].bounds; return [+(px[0] / 100 + b[0])
 function stats() {
   const c = { pending: 0, approved: 0, changes_requested: 0, rejected: 0 }; S.links.forEach(l => c[l.status]++);
   const flag = S.ports.filter(p => p.flag === 'cần đặt').length;
-  const FL = { all: 'Tất cả', approved: 'Đã duyệt', todo: 'Chưa duyệt', pending: 'Chờ', changes: 'Cần sửa', edited: 'Mới sửa' };
+  const FL = { all: 'Tất cả', approved: 'Đã duyệt', todo: 'Chưa duyệt', pending: 'Chờ', changes: 'Cần sửa', edited: 'Mới sửa', claude: 'Claude sửa' };
   document.querySelectorAll('#filters button').forEach(b => { const f = b.dataset.f, n = S.links.filter(l => match(l, f)).length + (f === 'edited' ? goneLinks().length : 0); b.textContent = `${FL[f]} ${n}`; b.classList.toggle('on', f === S.filter); });
   const np = S.links.filter(l => l.status === 'pending' && match(l)).length; $('approve-all').textContent = `Duyệt ${np} liên kết chờ${S.filter === 'all' ? '' : ' (đang lọc)'}`; $('approve-all').disabled = !np;
   $('stats').textContent = `${S.links.length} liên kết · duyệt ${c.approved} · cần sửa ${c.changes_requested + c.rejected} · chờ ${c.pending} · ${flag} điểm cần đặt` + (S.baseChanged ? ' · dữ liệu gốc đã đổi' : '');
@@ -67,7 +67,7 @@ function renderMind() {
     const bend = Math.min(60, n * 0.18), cx = mx - dy / n * bend, cy = my + dx / n * bend;
     const st = pr.ls.some(l => l.status === 'changes_requested' || l.status === 'rejected') ? 'changes_requested' : pr.ls.every(l => l.status === 'approved') ? 'approved' : 'pending';
     const pil = pr.ls.every(l => P(l.a).kind === 'pillar');
-    const e = sv('path', { class: `me ${st}${pil ? ' pillar' : ''}${pr.ls.some(isNew) ? ' ed' : ''}`, d: `M${p1[0]},${p1[1]} Q${cx},${cy} ${p2[0]},${p2[1]}`, 'marker-end': '' }, sv('title', { text: pr.ls.map(l => `${portTitle(P(l.a))} ${l.oneway ? '→' : '↔'} ${portTitle(P(l.b))}`).join('\n') }));
+    const e = sv('path', { class: `me ${st}${pil ? ' pillar' : ''}${pr.ls.some(x => isNew(x) || x.rev) ? ' ed' : ''}`, d: `M${p1[0]},${p1[1]} Q${cx},${cy} ${p2[0]},${p2[1]}`, 'marker-end': '' }, sv('title', { text: pr.ls.map(l => `${portTitle(P(l.a))} ${l.oneway ? '→' : '↔'} ${portTitle(P(l.b))}`).join('\n') }));
     e.onclick = () => { S.sel = { type: 'link', id: pr.ls[0].id }; openMaps(pr.a, pr.b); };
     g.append(e);
     if (pr.ls.every(l => l.oneway)) { const dir = pr.ls.every(l => P(l.a).map === pr.a) ? [pr.a, pr.b] : pr.ls.every(l => P(l.a).map === pr.b) ? [pr.b, pr.a] : null; if (dir) { const q = L.pos[dir[1]], t = 0.86, bx = (1 - t) * (1 - t) * L.pos[dir[0]][0] + 2 * (1 - t) * t * cx + t * t * q[0], by = (1 - t) * (1 - t) * L.pos[dir[0]][1] + 2 * (1 - t) * t * cy + t * t * q[1]; const ang = Math.atan2(q[1] - by, q[0] - bx) * 180 / Math.PI; g.append(sv('path', { d: 'M-6,-4 L4,0 L-6,4 Z', transform: `translate(${bx},${by}) rotate(${ang})`, fill: '#888', 'pointer-events': 'none' })); } }
@@ -172,7 +172,7 @@ function renderLinks() {
   box.append(h('div', { class: 'flt-head', text: global ? `Mọi map · ${ls.length} liên kết khớp bộ lọc${S.filter === 'edited' ? ` · ${goneLinks().length} đã xóa` : ''}` : `Hai map đang mở · ${ls.length} liên kết${S.filter === 'all' ? '' : ' khớp bộ lọc'}` }));
   if (!ls.length) box.append(h('p', { class: 'muted pad' }, 'Không có liên kết nào khớp.'));
   for (const l of ls) {
-    const it = h('div', { class: 'li' + (S.sel && S.sel.type === 'link' && S.sel.id === l.id ? ' sel' : '') }, h('span', { class: 'chip ' + l.status, text: STAT[l.status] }), isNew(l) ? h('span', { class: 'chip ed', text: '✎', title: diffOf(l).join('; ') }) : '', h('span', { class: 't', text: `${mapName(P(l.a).map)} ${l.oneway ? '→' : '↔'} ${mapName(P(l.b).map)}`, title: `${portTitle(P(l.a))} ${l.oneway ? '→' : '↔'} ${portTitle(P(l.b))}` }));
+    const it = h('div', { class: 'li' + (S.sel && S.sel.type === 'link' && S.sel.id === l.id ? ' sel' : '') }, h('span', { class: 'chip ' + l.status, text: STAT[l.status] }), isNew(l) ? h('span', { class: 'chip ed', text: '✎', title: diffOf(l).join('; ') }) : '', l.rev ? h('span', { class: 'chip cl', text: 'Claude', title: l.reply || '' }) : '', h('span', { class: 't', text: `${mapName(P(l.a).map)} ${l.oneway ? '→' : '↔'} ${mapName(P(l.b).map)}`, title: `${portTitle(P(l.a))} ${l.oneway ? '→' : '↔'} ${portTitle(P(l.b))}` }));
     it.onclick = () => { S.sel = { type: 'link', id: l.id }; const a = P(l.a).map, b = P(l.b).map; if (a !== S.A && a !== S.B && b !== S.A && b !== S.B) { S.A = a; S.B = b; } render(); };
     box.append(it);
   }
@@ -188,6 +188,7 @@ function renderInspector() {
     const l = S.links.find(x => x.id === S.sel.id); if (!l) { S.sel = null; return renderInspector(); }
     const a = P(l.a), b = P(l.b);
     box.append(h('b', { text: `${l.id} · ${l.origin === 'apk' ? 'APK' : l.origin === 'owner' ? 'Quyết định owner' : 'Bạn sửa'}` }), h('p', { text: `${portTitle(a)} ${l.oneway ? '→' : '↔'} ${portTitle(b)}` }), h('p', { class: 'muted', text: l.note || '' }));
+    if (l.reply) box.append(h('p', { class: 'reply', text: 'Claude (' + (l.rev || '') + '): ' + l.reply }));
     if (isNew(l)) box.append(h('p', { class: 'diff', text: '✎ Khác bản nháp APK: ' + diffOf(l).join('; ') }));
     const one = h('input', { type: 'checkbox', id: 'i-one' }); one.checked = l.oneway; one.onchange = () => { l.oneway = one.checked; mark(); render(); };
     box.append(h('label', { for: 'i-one' }, one, ' Một chiều (A → B)'));
