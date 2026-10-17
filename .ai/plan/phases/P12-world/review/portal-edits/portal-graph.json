@@ -1,8 +1,8 @@
 {
- "version": 1,
+ "version": 2,
  "base_hash": "dd0797b07b44211cf1d0a192b546fd28928a20cd88fb195d8acf14788802eb07",
- "updated_at": "2026-10-17T03:45:42.267836+00:00",
- "source": "owner_web_review",
+ "updated_at": "2026-10-17T05:33:29.288539+00:00",
+ "source": "owner_web_review+claude_revision_2026-10-17",
  "graph": {
   "ports": [
    {
@@ -1357,7 +1357,7 @@
      11.33
     ],
     "kind": "door",
-    "label": "Cửa → Cổng U Lâu",
+    "label": "Cửa → Cổng U Lâu (cửa lên tầng, phía tây)",
     "origin": "apk",
     "flag": null
    },
@@ -1369,7 +1369,7 @@
      11.69
     ],
     "kind": "door",
-    "label": "Cửa → Cổng U Lâu",
+    "label": "Cửa → Cổng U Lâu (cửa xuống tầng, phía đông)",
     "origin": "apk",
     "flag": null
    },
@@ -1429,7 +1429,7 @@
      12.1
     ],
     "kind": "door",
-    "label": "Cửa → Thế Thụ Môn",
+    "label": "Cửa → Thế Thụ Môn (cửa xuống tầng, phía tây)",
     "origin": "apk",
     "flag": null
    },
@@ -1441,7 +1441,7 @@
      12.2
     ],
     "kind": "door",
-    "label": "Cửa → Thế Thụ Môn",
+    "label": "Cửa → Thế Thụ Môn (cửa lên tầng, phía đông)",
     "origin": "apk",
     "flag": null
    },
@@ -1489,7 +1489,7 @@
      10.05
     ],
     "kind": "door",
-    "label": "Cửa → Điểu Tháp",
+    "label": "Cửa → Điểu Tháp (cửa xuống tầng, phía tây)",
     "origin": "apk",
     "flag": null
    },
@@ -1501,7 +1501,7 @@
      9.99
     ],
     "kind": "door",
-    "label": "Cửa → Điểu Tháp",
+    "label": "Cửa → Điểu Tháp (cửa lên tầng, phía đông)",
     "origin": "apk",
     "flag": null
    },
@@ -1549,7 +1549,7 @@
      9.83
     ],
     "kind": "door",
-    "label": "Cửa → Trường Sinh Mê Thành",
+    "label": "Cửa → Trường Sinh Mê Thành (cửa lên tầng, phía tây)",
     "origin": "apk",
     "flag": null
    },
@@ -1561,7 +1561,7 @@
      9.99
     ],
     "kind": "door",
-    "label": "Cửa → Trường Sinh Mê Thành",
+    "label": "Cửa → Trường Sinh Mê Thành (cửa xuống tầng, phía đông)",
     "origin": "apk",
     "flag": null
    },
@@ -2030,6 +2030,186 @@
     ],
     "kind": "arrival",
     "label": "Đến từ trụ Hải Tặc Hào",
+    "origin": "proposed",
+    "flag": "cần đặt"
+   },
+   {
+    "id": "FL:ghost:bia",
+    "map": "ghost_castle_deep_woods",
+    "xy": [
+     7.94,
+     11.69
+    ],
+    "kind": "pillar",
+    "label": "Bia Hồi Quy (tầng 10, 20, 30…)",
+    "origin": "revised",
+    "flag": null
+   },
+   {
+    "id": "AR:ghost:bia",
+    "map": "ghost_castle_gate",
+    "xy": [
+     4.38,
+     1.21
+    ],
+    "kind": "arrival",
+    "label": "Điểm đến từ Bia Hồi Quy",
+    "origin": "revised",
+    "flag": null
+   },
+   {
+    "id": "AR:ghost:last",
+    "map": "ghost_castle_ancient_city_secret_chamber",
+    "xy": [
+     -12.65,
+     21.89
+    ],
+    "kind": "arrival",
+    "label": "Điểm đến từ tầng cuối",
+    "origin": "revised",
+    "flag": "đề xuất đáy map"
+   },
+   {
+    "id": "FL:tree:bia",
+    "map": "world_tree_deep_woods",
+    "xy": [
+     -11.04,
+     12.1
+    ],
+    "kind": "pillar",
+    "label": "Bia Hồi Quy (tầng 10, 20, 30…)",
+    "origin": "revised",
+    "flag": null
+   },
+   {
+    "id": "AR:tree:bia",
+    "map": "world_tree_gate",
+    "xy": [
+     5.53,
+     0.82
+    ],
+    "kind": "arrival",
+    "label": "Điểm đến từ Bia Hồi Quy",
+    "origin": "revised",
+    "flag": null
+   },
+   {
+    "id": "AR:tree:last",
+    "map": "world_tree_secret_chamber",
+    "xy": [
+     -12.93,
+     20.87
+    ],
+    "kind": "arrival",
+    "label": "Điểm đến từ tầng cuối",
+    "origin": "revised",
+    "flag": "đề xuất đáy map"
+   },
+   {
+    "id": "FL:tower:bia",
+    "map": "tower_region_deep_woods",
+    "xy": [
+     -7.76,
+     10.05
+    ],
+    "kind": "pillar",
+    "label": "Bia Hồi Quy (tầng 10, 20, 30…)",
+    "origin": "revised",
+    "flag": null
+   },
+   {
+    "id": "AR:tower:bia",
+    "map": "tower_region_main_tower",
+    "xy": [
+     5.53,
+     0.82
+    ],
+    "kind": "arrival",
+    "label": "Điểm đến từ Bia Hồi Quy",
+    "origin": "revised",
+    "flag": null
+   },
+   {
+    "id": "FL:tower:mat",
+    "map": "tower_region_deep_woods",
+    "xy": [
+     -5.76,
+     10.05
+    ],
+    "kind": "pillar",
+    "label": "Người Dẫn Mật Tầng (tầng chẵn)",
+    "origin": "revised",
+    "flag": null
+   },
+   {
+    "id": "AR:tower:mat",
+    "map": "tower_region_secret_floor",
+    "xy": [
+     0.86,
+     19.41
+    ],
+    "kind": "arrival",
+    "label": "Điểm đến từ Người Dẫn Mật Tầng",
+    "origin": "revised",
+    "flag": "đề xuất đáy map"
+   },
+   {
+    "id": "FL:maze:bia",
+    "map": "immortal_maze_floor",
+    "xy": [
+     8.5,
+     9.99
+    ],
+    "kind": "pillar",
+    "label": "Bia Hồi Quy (tầng 10, 20, 30…)",
+    "origin": "revised",
+    "flag": null
+   },
+   {
+    "id": "AR:maze:bia",
+    "map": "immortal_maze_main_maze",
+    "xy": [
+     3.99,
+     0.82
+    ],
+    "kind": "arrival",
+    "label": "Điểm đến từ Bia Hồi Quy",
+    "origin": "revised",
+    "flag": null
+   },
+   {
+    "id": "FL:maze:mat",
+    "map": "immortal_maze_floor",
+    "xy": [
+     6.5,
+     9.99
+    ],
+    "kind": "pillar",
+    "label": "Người Dẫn Mật Tầng (tầng chẵn)",
+    "origin": "revised",
+    "flag": null
+   },
+   {
+    "id": "AR:maze:mat",
+    "map": "immortal_maze_secret_floor",
+    "xy": [
+     -9.46,
+     24.12
+    ],
+    "kind": "arrival",
+    "label": "Điểm đến từ Người Dẫn Mật Tầng",
+    "origin": "revised",
+    "flag": "đề xuất đáy map"
+   },
+   {
+    "id": "A:ghost_castle_portal_003",
+    "map": "ghost_castle_gate",
+    "xy": [
+     0.11,
+     -1.99
+    ],
+    "kind": "arrival",
+    "label": "Điểm đến từ Mật Thất Cổ Thành",
     "origin": "proposed",
     "flag": "cần đặt"
    }
@@ -2554,6 +2734,22 @@
     "comment": ""
    },
    {
+    "id": "L036",
+    "a": "P:ghost_castle_portal_003",
+    "b": "A:ghost_castle_portal_003",
+    "oneway": true,
+    "origin": "apk",
+    "note": "Một chiều (không có cửa đối ứng). Điểm đến không có trong APK, đề xuất: cần đặt.",
+    "door_ids": [
+     "ghost_castle_portal_003"
+    ],
+    "mode": "NEXTMAP",
+    "status": "pending",
+    "comment": "",
+    "reply": "Khôi phục theo câu trả lời 3: Mật Thất Cổ Thành về lại Cổng U Lâu.",
+    "rev": "2026-10-17"
+   },
+   {
     "id": "L039",
     "a": "P:ghost_castle_portal_005",
     "b": "A:ghost_castle_portal_005",
@@ -2570,8 +2766,8 @@
    {
     "id": "L040",
     "a": "P:immortal_maze_portal_004",
-    "b": "P:immortal_maze_portal_002",
-    "oneway": true,
+    "b": "P:immortal_maze_portal_003",
+    "oneway": false,
     "origin": "apk",
     "note": "Cửa hai chiều (ghép theo cửa đối ứng).",
     "door_ids": [
@@ -2579,8 +2775,10 @@
      "immortal_maze_portal_004"
     ],
     "mode": "NEXTMAP",
-    "status": "approved",
-    "comment": ""
+    "status": "pending",
+    "comment": "",
+    "reply": "Hai chiều. Vùng đi phải → trái: vào tầng ở cửa phía đông. Tầng 1 cửa xuống tầng về cổng vùng; từ tầng 2 cửa này về tầng dưới. Đã đổi đầu nối cho khớp hướng đi.",
+    "rev": "2026-10-17"
    },
    {
     "id": "L042",
@@ -2849,8 +3047,8 @@
    },
    {
     "id": "L060",
-    "a": "P:tower_region_portal_002",
-    "b": "P:tower_region_portal_004",
+    "a": "P:tower_region_portal_004",
+    "b": "P:tower_region_portal_002",
     "oneway": false,
     "origin": "apk",
     "note": "Cửa hai chiều (ghép theo cửa đối ứng).",
@@ -2859,8 +3057,10 @@
      "tower_region_portal_004"
     ],
     "mode": "NEXTMAP",
-    "status": "approved",
-    "comment": ""
+    "status": "pending",
+    "comment": "",
+    "reply": "Hai chiều. Vùng đi trái → phải: vào tầng ở cửa phía tây. Tầng 1 cửa xuống tầng về cổng vùng; từ tầng 2 cửa này về tầng dưới.",
+    "rev": "2026-10-17"
    },
    {
     "id": "L062",
@@ -3057,7 +3257,7 @@
     "id": "L075",
     "a": "P:world_tree_portal_004",
     "b": "P:world_tree_portal_002",
-    "oneway": true,
+    "oneway": false,
     "origin": "apk",
     "note": "Cửa hai chiều (ghép theo cửa đối ứng).",
     "door_ids": [
@@ -3065,8 +3265,10 @@
      "world_tree_portal_004"
     ],
     "mode": "NEXTMAP",
-    "status": "changes_requested",
-    "comment": "Thế Thụ Thâm Lâm sẽ chia nhiều từng theo từng level, và cuối map sẽ đi tới tầng tiếp theo của Thế Thụ Thâm Lâm. Riêng tầng cuối của Thế Thụ Thâm Lâm sẽ có một lối vào Mật thất Thế Thụ, trong đó gồm nhiều quá vật mạnh có khả năng rớt items hiếm"
+    "status": "pending",
+    "comment": "Thế Thụ Thâm Lâm sẽ chia nhiều từng theo từng level, và cuối map sẽ đi tới tầng tiếp theo của Thế Thụ Thâm Lâm. Riêng tầng cuối của Thế Thụ Thâm Lâm sẽ có một lối vào Mật thất Thế Thụ, trong đó gồm nhiều quá vật mạnh có khả năng rớt items hiếm",
+    "reply": "Hai chiều. Vùng đi trái → phải: vào tầng ở cửa phía tây. Tầng 1 cửa xuống tầng về cổng vùng; từ tầng 2 cửa này về tầng dưới. Đã đổi thành hai chiều.",
+    "rev": "2026-10-17"
    },
    {
     "id": "L077",
@@ -3297,56 +3499,178 @@
     "note": "Tạo trong web review.",
     "door_ids": [],
     "mode": null,
-    "status": "changes_requested",
-    "comment": "Điểu tháp sẽ chia nhiều từng theo từng level, và cuối map sẽ đi tới tầng tiếp theo của Điểu tháp, Mỗi 2 tần sẽ có 1 npc để vào Điểu tháp mật tầng nơi quái level cùng với ngoài Điểu tháp thâm lâm nhưng mạnh và nhiều exp hơn. Hoặc có thể quay về Điểu tháp bằng npc này"
+    "status": "pending",
+    "comment": "Điểu tháp sẽ chia nhiều từng theo từng level, và cuối map sẽ đi tới tầng tiếp theo của Điểu tháp, Mỗi 2 tần sẽ có 1 npc để vào Điểu tháp mật tầng nơi quái level cùng với ngoài Điểu tháp thâm lâm nhưng mạnh và nhiều exp hơn. Hoặc có thể quay về Điểu tháp bằng npc này",
+    "reply": "Hai chiều. Tầng N cửa lên ↔ tầng N+1 cửa xuống (cùng một map mẫu, đổi tầng).",
+    "rev": "2026-10-17"
    },
    {
     "id": "L096",
     "a": "P:ghost_castle_portal_004",
     "b": "P:ghost_castle_portal_002",
-    "oneway": true,
+    "oneway": false,
     "origin": "edited",
     "note": "Tạo trong web review.",
     "door_ids": [],
     "mode": null,
-    "status": "changes_requested",
-    "comment": "U lâm bích ba sẽ chia nhiều từng theo từng level, và cuối map sẽ đi tới tầng tiếp theo của U lâm bích ba. Riêng tầng cuối của U lâm bích ba sẽ có một lối vào Mật thất thành cổ, trong đó gồm nhiều quá vật mạnh có khả năng rớt items hiếm"
+    "status": "pending",
+    "comment": "U lâm bích ba sẽ chia nhiều từng theo từng level, và cuối map sẽ đi tới tầng tiếp theo của U lâm bích ba. Riêng tầng cuối của U lâm bích ba sẽ có một lối vào Mật thất thành cổ, trong đó gồm nhiều quá vật mạnh có khả năng rớt items hiếm",
+    "reply": "Hai chiều. Vùng đi phải → trái: vào tầng ở cửa phía đông. Tầng 1 cửa xuống tầng về cổng vùng; từ tầng 2 cửa này về tầng dưới. Đã đổi thành hai chiều.",
+    "rev": "2026-10-17"
    },
    {
     "id": "L097",
-    "a": "P:ghost_castle_portal_002",
-    "b": "P:ghost_castle_portal_001",
+    "a": "P:ghost_castle_portal_001",
+    "b": "P:ghost_castle_portal_002",
     "oneway": false,
     "origin": "edited",
     "note": "Tạo trong web review.",
     "door_ids": [],
     "mode": null,
-    "status": "changes_requested",
-    "comment": "U lâm bích ba sẽ chia nhiều từng theo từng level, và cuối map sẽ đi tới tầng tiếp theo của U lâm bích ba. Riêng tầng cuối của U lâm bích ba sẽ có một lối vào Mật thất thành cổ, trong đó gồm nhiều quá vật mạnh có khả năng rớt items hiếm"
+    "status": "pending",
+    "comment": "U lâm bích ba sẽ chia nhiều từng theo từng level, và cuối map sẽ đi tới tầng tiếp theo của U lâm bích ba. Riêng tầng cuối của U lâm bích ba sẽ có một lối vào Mật thất thành cổ, trong đó gồm nhiều quá vật mạnh có khả năng rớt items hiếm",
+    "reply": "Hai chiều. Tầng N cửa lên ↔ tầng N+1 cửa xuống (cùng một map mẫu, đổi tầng).",
+    "rev": "2026-10-17"
    },
    {
     "id": "L098",
-    "a": "P:immortal_maze_portal_003",
-    "b": "P:immortal_maze_portal_002",
+    "a": "P:immortal_maze_portal_002",
+    "b": "P:immortal_maze_portal_003",
     "oneway": false,
     "origin": "edited",
     "note": "Tạo trong web review.",
     "door_ids": [],
     "mode": null,
-    "status": "changes_requested",
-    "comment": "Bất Tử Mê Tầng sẽ chia nhiều từng theo từng level, và cuối map sẽ đi tới tầng tiếp theo của Bất Tử Mê Tầng, Mỗi 2 tầng sẽ có 1 npc để vào Bất tử mật tầng nơi quái level cùng với ngoài Điểu tháp thâm lâm nhưng mạnh và nhiều exp hơn. Hoặc có thể quay về Điểu tháp bằng npc này"
+    "status": "pending",
+    "comment": "Bất Tử Mê Tầng sẽ chia nhiều từng theo từng level, và cuối map sẽ đi tới tầng tiếp theo của Bất Tử Mê Tầng, Mỗi 2 tầng sẽ có 1 npc để vào Bất tử mật tầng nơi quái level cùng với ngoài Điểu tháp thâm lâm nhưng mạnh và nhiều exp hơn. Hoặc có thể quay về Điểu tháp bằng npc này",
+    "reply": "Hai chiều. Tầng N cửa lên ↔ tầng N+1 cửa xuống (cùng một map mẫu, đổi tầng).",
+    "rev": "2026-10-17"
    },
    {
     "id": "L099",
-    "a": "P:world_tree_portal_002",
-    "b": "P:world_tree_portal_003",
+    "a": "P:world_tree_portal_003",
+    "b": "P:world_tree_portal_002",
     "oneway": false,
     "origin": "edited",
     "note": "Tạo trong web review.",
     "door_ids": [],
     "mode": null,
-    "status": "changes_requested",
-    "comment": "Thế Thụ Thâm Lâm sẽ chia nhiều từng theo từng level, và cuối map sẽ đi tới tầng tiếp theo của Thế Thụ Thâm Lâm. Riêng tầng cuối của Thế Thụ Thâm Lâm sẽ có một lối vào Mật thất Thế Thụ, trong đó gồm nhiều quá vật mạnh có khả năng rớt items hiếm"
+    "status": "pending",
+    "comment": "Thế Thụ Thâm Lâm sẽ chia nhiều từng theo từng level, và cuối map sẽ đi tới tầng tiếp theo của Thế Thụ Thâm Lâm. Riêng tầng cuối của Thế Thụ Thâm Lâm sẽ có một lối vào Mật thất Thế Thụ, trong đó gồm nhiều quá vật mạnh có khả năng rớt items hiếm",
+    "reply": "Hai chiều. Tầng N cửa lên ↔ tầng N+1 cửa xuống (cùng một map mẫu, đổi tầng).",
+    "rev": "2026-10-17"
+   },
+   {
+    "id": "L100",
+    "a": "FL:ghost:bia",
+    "b": "AR:ghost:bia",
+    "oneway": true,
+    "origin": "revised",
+    "note": "Bia Hồi Quy → cổng vùng.",
+    "door_ids": [],
+    "mode": null,
+    "status": "pending",
+    "comment": "",
+    "reply": "Đề xuất của Claude theo câu trả lời 4: vật thể (không phải NPC) cạnh cửa xuống tầng ở mọi tầng 10k, đưa về cổng an toàn của vùng.",
+    "rev": "2026-10-17"
+   },
+   {
+    "id": "L101",
+    "a": "P:ghost_castle_portal_001",
+    "b": "AR:ghost:last",
+    "oneway": true,
+    "origin": "revised",
+    "note": "Chỉ tầng cuối của vùng: cửa lên tầng dẫn vào mật thất.",
+    "door_ids": [],
+    "mode": null,
+    "status": "pending",
+    "comment": "",
+    "reply": "Theo nhận xét của bạn: tầng cuối có lối vào mật thất. Mật thất đi dưới → trên, cửa ra ở phía trên về Cổng U Lâu.",
+    "rev": "2026-10-17"
+   },
+   {
+    "id": "L102",
+    "a": "FL:tree:bia",
+    "b": "AR:tree:bia",
+    "oneway": true,
+    "origin": "revised",
+    "note": "Bia Hồi Quy → cổng vùng.",
+    "door_ids": [],
+    "mode": null,
+    "status": "pending",
+    "comment": "",
+    "reply": "Đề xuất của Claude theo câu trả lời 4: vật thể (không phải NPC) cạnh cửa xuống tầng ở mọi tầng 10k, đưa về cổng an toàn của vùng.",
+    "rev": "2026-10-17"
+   },
+   {
+    "id": "L103",
+    "a": "P:world_tree_portal_003",
+    "b": "AR:tree:last",
+    "oneway": true,
+    "origin": "revised",
+    "note": "Chỉ tầng cuối của vùng: cửa lên tầng dẫn vào mật thất.",
+    "door_ids": [],
+    "mode": null,
+    "status": "pending",
+    "comment": "",
+    "reply": "Theo nhận xét của bạn: tầng cuối có lối vào mật thất. Mật thất đi dưới → trên, cửa ra ở phía trên về Thế Thụ Môn.",
+    "rev": "2026-10-17"
+   },
+   {
+    "id": "L104",
+    "a": "FL:tower:bia",
+    "b": "AR:tower:bia",
+    "oneway": true,
+    "origin": "revised",
+    "note": "Bia Hồi Quy → cổng vùng.",
+    "door_ids": [],
+    "mode": null,
+    "status": "pending",
+    "comment": "",
+    "reply": "Đề xuất của Claude theo câu trả lời 4: vật thể (không phải NPC) cạnh cửa xuống tầng ở mọi tầng 10k, đưa về cổng an toàn của vùng.",
+    "rev": "2026-10-17"
+   },
+   {
+    "id": "L105",
+    "a": "FL:tower:mat",
+    "b": "AR:tower:mat",
+    "oneway": true,
+    "origin": "revised",
+    "note": "Người Dẫn Mật Tầng → Mật Tầng.",
+    "door_ids": [],
+    "mode": null,
+    "status": "pending",
+    "comment": "",
+    "reply": "Đề xuất của Claude: NPC dịch vụ đi lại ở tầng chẵn; Mật Tầng đi dưới → trên, cửa ra ở phía trên về cổng vùng (liên kết đã duyệt).",
+    "rev": "2026-10-17"
+   },
+   {
+    "id": "L106",
+    "a": "FL:maze:bia",
+    "b": "AR:maze:bia",
+    "oneway": true,
+    "origin": "revised",
+    "note": "Bia Hồi Quy → cổng vùng.",
+    "door_ids": [],
+    "mode": null,
+    "status": "pending",
+    "comment": "",
+    "reply": "Đề xuất của Claude theo câu trả lời 4: vật thể (không phải NPC) cạnh cửa xuống tầng ở mọi tầng 10k, đưa về cổng an toàn của vùng.",
+    "rev": "2026-10-17"
+   },
+   {
+    "id": "L107",
+    "a": "FL:maze:mat",
+    "b": "AR:maze:mat",
+    "oneway": true,
+    "origin": "revised",
+    "note": "Người Dẫn Mật Tầng → Mật Tầng.",
+    "door_ids": [],
+    "mode": null,
+    "status": "pending",
+    "comment": "",
+    "reply": "Đề xuất của Claude: NPC dịch vụ đi lại ở tầng chẵn; Mật Tầng đi dưới → trên, cửa ra ở phía trên về cổng vùng (liên kết đã duyệt).",
+    "rev": "2026-10-17"
    }
   ]
  }
