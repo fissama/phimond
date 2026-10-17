@@ -1,8 +1,8 @@
 {
- "version": 2,
- "base_hash": "dd0797b07b44211cf1d0a192b546fd28928a20cd88fb195d8acf14788802eb07",
- "updated_at": "2026-10-17T05:33:29.288539+00:00",
- "source": "owner_web_review+claude_revision_2026-10-17",
+ "version": 5,
+ "base_hash": "cee1d2874bdfe351b25a19b6f88c27cc34c040b9a6fb666b53955b7112e7980e",
+ "updated_at": "2026-10-17T06:01:57.331220+00:00",
+ "source": "owner_web_review+claude_rename_2026-10-17",
  "graph": {
   "ports": [
    {
@@ -1393,7 +1393,7 @@
      1.21
     ],
     "kind": "door",
-    "label": "Cửa → U Lâm Bích Ba",
+    "label": "Cửa → U Linh Cổ Thành",
     "origin": "apk",
     "flag": null
    },
@@ -1473,12 +1473,12 @@
     "id": "P:tower_region_portal_001",
     "map": "tower_region_secret_floor",
     "xy": [
-     0.86,
-     27.58
+     -4,
+     27.41
     ],
     "kind": "door",
     "label": "Cửa → Điểu Tháp",
-    "origin": "apk",
+    "origin": "edited",
     "flag": null
    },
    {
@@ -2037,12 +2037,12 @@
     "id": "FL:ghost:bia",
     "map": "ghost_castle_deep_woods",
     "xy": [
-     7.94,
-     11.69
+     9.96,
+     13.33
     ],
     "kind": "pillar",
-    "label": "Bia Hồi Quy (tầng 10, 20, 30…)",
-    "origin": "revised",
+    "label": "Bia Hồi Quy (tầng 10, 20, … 60)",
+    "origin": "edited",
     "flag": null
    },
    {
@@ -2065,7 +2065,7 @@
      21.89
     ],
     "kind": "arrival",
-    "label": "Điểm đến từ tầng cuối",
+    "label": "Điểm đến từ tầng 60",
     "origin": "revised",
     "flag": "đề xuất đáy map"
    },
@@ -2073,12 +2073,12 @@
     "id": "FL:tree:bia",
     "map": "world_tree_deep_woods",
     "xy": [
-     -11.04,
-     12.1
+     -12.24,
+     13.08
     ],
     "kind": "pillar",
-    "label": "Bia Hồi Quy (tầng 10, 20, 30…)",
-    "origin": "revised",
+    "label": "Bia Hồi Quy (tầng 10, 20, … 60)",
+    "origin": "edited",
     "flag": null
    },
    {
@@ -2097,24 +2097,24 @@
     "id": "AR:tree:last",
     "map": "world_tree_secret_chamber",
     "xy": [
-     -12.93,
-     20.87
+     -12.01,
+     22.2
     ],
     "kind": "arrival",
-    "label": "Điểm đến từ tầng cuối",
-    "origin": "revised",
+    "label": "Điểm đến từ tầng 60",
+    "origin": "edited",
     "flag": "đề xuất đáy map"
    },
    {
     "id": "FL:tower:bia",
     "map": "tower_region_deep_woods",
     "xy": [
-     -7.76,
-     10.05
+     -9.78,
+     11.98
     ],
     "kind": "pillar",
-    "label": "Bia Hồi Quy (tầng 10, 20, 30…)",
-    "origin": "revised",
+    "label": "Bia Hồi Quy (tầng 10, 20, 30, 40)",
+    "origin": "edited",
     "flag": null
    },
    {
@@ -2133,36 +2133,36 @@
     "id": "FL:tower:mat",
     "map": "tower_region_deep_woods",
     "xy": [
-     -5.76,
-     10.05
+     -8.46,
+     12.06
     ],
     "kind": "pillar",
     "label": "Người Dẫn Mật Tầng (tầng chẵn)",
-    "origin": "revised",
+    "origin": "edited",
     "flag": null
    },
    {
     "id": "AR:tower:mat",
     "map": "tower_region_secret_floor",
     "xy": [
-     0.86,
-     19.41
+     6.14,
+     20.36
     ],
     "kind": "arrival",
     "label": "Điểm đến từ Người Dẫn Mật Tầng",
-    "origin": "revised",
+    "origin": "edited",
     "flag": "đề xuất đáy map"
    },
    {
     "id": "FL:maze:bia",
     "map": "immortal_maze_floor",
     "xy": [
-     8.5,
-     9.99
+     11.33,
+     12.72
     ],
     "kind": "pillar",
-    "label": "Bia Hồi Quy (tầng 10, 20, 30…)",
-    "origin": "revised",
+    "label": "Bia Hồi Quy (tầng 10, 20, 30, 40)",
+    "origin": "edited",
     "flag": null
    },
    {
@@ -2181,24 +2181,24 @@
     "id": "FL:maze:mat",
     "map": "immortal_maze_floor",
     "xy": [
-     6.5,
-     9.99
+     10.14,
+     12.7
     ],
     "kind": "pillar",
     "label": "Người Dẫn Mật Tầng (tầng chẵn)",
-    "origin": "revised",
+    "origin": "edited",
     "flag": null
    },
    {
     "id": "AR:maze:mat",
     "map": "immortal_maze_secret_floor",
     "xy": [
-     -9.46,
-     24.12
+     -10.31,
+     26.48
     ],
     "kind": "arrival",
     "label": "Điểm đến từ Người Dẫn Mật Tầng",
-    "origin": "revised",
+    "origin": "edited",
     "flag": "đề xuất đáy map"
    },
    {
@@ -2744,7 +2744,7 @@
      "ghost_castle_portal_003"
     ],
     "mode": "NEXTMAP",
-    "status": "pending",
+    "status": "approved",
     "comment": "",
     "reply": "Khôi phục theo câu trả lời 3: Mật Thất Cổ Thành về lại Cổng U Lâu.",
     "rev": "2026-10-17"
@@ -2775,7 +2775,7 @@
      "immortal_maze_portal_004"
     ],
     "mode": "NEXTMAP",
-    "status": "pending",
+    "status": "approved",
     "comment": "",
     "reply": "Hai chiều. Vùng đi phải → trái: vào tầng ở cửa phía đông. Tầng 1 cửa xuống tầng về cổng vùng; từ tầng 2 cửa này về tầng dưới. Đã đổi đầu nối cho khớp hướng đi.",
     "rev": "2026-10-17"
@@ -3057,7 +3057,7 @@
      "tower_region_portal_004"
     ],
     "mode": "NEXTMAP",
-    "status": "pending",
+    "status": "approved",
     "comment": "",
     "reply": "Hai chiều. Vùng đi trái → phải: vào tầng ở cửa phía tây. Tầng 1 cửa xuống tầng về cổng vùng; từ tầng 2 cửa này về tầng dưới.",
     "rev": "2026-10-17"
@@ -3265,8 +3265,8 @@
      "world_tree_portal_004"
     ],
     "mode": "NEXTMAP",
-    "status": "pending",
-    "comment": "Thế Thụ Thâm Lâm sẽ chia nhiều từng theo từng level, và cuối map sẽ đi tới tầng tiếp theo của Thế Thụ Thâm Lâm. Riêng tầng cuối của Thế Thụ Thâm Lâm sẽ có một lối vào Mật thất Thế Thụ, trong đó gồm nhiều quá vật mạnh có khả năng rớt items hiếm",
+    "status": "approved",
+    "comment": "",
     "reply": "Hai chiều. Vùng đi trái → phải: vào tầng ở cửa phía tây. Tầng 1 cửa xuống tầng về cổng vùng; từ tầng 2 cửa này về tầng dưới. Đã đổi thành hai chiều.",
     "rev": "2026-10-17"
    },
@@ -3499,8 +3499,8 @@
     "note": "Tạo trong web review.",
     "door_ids": [],
     "mode": null,
-    "status": "pending",
-    "comment": "Điểu tháp sẽ chia nhiều từng theo từng level, và cuối map sẽ đi tới tầng tiếp theo của Điểu tháp, Mỗi 2 tần sẽ có 1 npc để vào Điểu tháp mật tầng nơi quái level cùng với ngoài Điểu tháp thâm lâm nhưng mạnh và nhiều exp hơn. Hoặc có thể quay về Điểu tháp bằng npc này",
+    "status": "approved",
+    "comment": "",
     "reply": "Hai chiều. Tầng N cửa lên ↔ tầng N+1 cửa xuống (cùng một map mẫu, đổi tầng).",
     "rev": "2026-10-17"
    },
@@ -3513,7 +3513,7 @@
     "note": "Tạo trong web review.",
     "door_ids": [],
     "mode": null,
-    "status": "pending",
+    "status": "approved",
     "comment": "U lâm bích ba sẽ chia nhiều từng theo từng level, và cuối map sẽ đi tới tầng tiếp theo của U lâm bích ba. Riêng tầng cuối của U lâm bích ba sẽ có một lối vào Mật thất thành cổ, trong đó gồm nhiều quá vật mạnh có khả năng rớt items hiếm",
     "reply": "Hai chiều. Vùng đi phải → trái: vào tầng ở cửa phía đông. Tầng 1 cửa xuống tầng về cổng vùng; từ tầng 2 cửa này về tầng dưới. Đã đổi thành hai chiều.",
     "rev": "2026-10-17"
@@ -3527,7 +3527,7 @@
     "note": "Tạo trong web review.",
     "door_ids": [],
     "mode": null,
-    "status": "pending",
+    "status": "approved",
     "comment": "U lâm bích ba sẽ chia nhiều từng theo từng level, và cuối map sẽ đi tới tầng tiếp theo của U lâm bích ba. Riêng tầng cuối của U lâm bích ba sẽ có một lối vào Mật thất thành cổ, trong đó gồm nhiều quá vật mạnh có khả năng rớt items hiếm",
     "reply": "Hai chiều. Tầng N cửa lên ↔ tầng N+1 cửa xuống (cùng một map mẫu, đổi tầng).",
     "rev": "2026-10-17"
@@ -3541,7 +3541,7 @@
     "note": "Tạo trong web review.",
     "door_ids": [],
     "mode": null,
-    "status": "pending",
+    "status": "approved",
     "comment": "Bất Tử Mê Tầng sẽ chia nhiều từng theo từng level, và cuối map sẽ đi tới tầng tiếp theo của Bất Tử Mê Tầng, Mỗi 2 tầng sẽ có 1 npc để vào Bất tử mật tầng nơi quái level cùng với ngoài Điểu tháp thâm lâm nhưng mạnh và nhiều exp hơn. Hoặc có thể quay về Điểu tháp bằng npc này",
     "reply": "Hai chiều. Tầng N cửa lên ↔ tầng N+1 cửa xuống (cùng một map mẫu, đổi tầng).",
     "rev": "2026-10-17"
@@ -3555,8 +3555,8 @@
     "note": "Tạo trong web review.",
     "door_ids": [],
     "mode": null,
-    "status": "pending",
-    "comment": "Thế Thụ Thâm Lâm sẽ chia nhiều từng theo từng level, và cuối map sẽ đi tới tầng tiếp theo của Thế Thụ Thâm Lâm. Riêng tầng cuối của Thế Thụ Thâm Lâm sẽ có một lối vào Mật thất Thế Thụ, trong đó gồm nhiều quá vật mạnh có khả năng rớt items hiếm",
+    "status": "approved",
+    "comment": "",
     "reply": "Hai chiều. Tầng N cửa lên ↔ tầng N+1 cửa xuống (cùng một map mẫu, đổi tầng).",
     "rev": "2026-10-17"
    },
@@ -3569,9 +3569,9 @@
     "note": "Bia Hồi Quy → cổng vùng.",
     "door_ids": [],
     "mode": null,
-    "status": "pending",
+    "status": "approved",
     "comment": "",
-    "reply": "Đề xuất của Claude theo câu trả lời 4: vật thể (không phải NPC) cạnh cửa xuống tầng ở mọi tầng 10k, đưa về cổng an toàn của vùng.",
+    "reply": "Vật thể (không phải NPC) cạnh cửa xuống tầng ở tầng 10, 20, 30, 40, 50, 60 (Điểu Tháp và Mê Thành: 10 đến 40), đưa về cổng an toàn của vùng.",
     "rev": "2026-10-17"
    },
    {
@@ -3580,12 +3580,12 @@
     "b": "AR:ghost:last",
     "oneway": true,
     "origin": "revised",
-    "note": "Chỉ tầng cuối của vùng: cửa lên tầng dẫn vào mật thất.",
+    "note": "Chỉ tầng 60 (tầng cuối): cửa lên tầng dẫn vào mật thất.",
     "door_ids": [],
     "mode": null,
-    "status": "pending",
+    "status": "approved",
     "comment": "",
-    "reply": "Theo nhận xét của bạn: tầng cuối có lối vào mật thất. Mật thất đi dưới → trên, cửa ra ở phía trên về Cổng U Lâu.",
+    "reply": "Theo nhận xét của bạn: tầng 60 có lối vào mật thất. Mật thất đi dưới → trên, cửa ra ở phía trên về Cổng U Lâu.",
     "rev": "2026-10-17"
    },
    {
@@ -3597,9 +3597,9 @@
     "note": "Bia Hồi Quy → cổng vùng.",
     "door_ids": [],
     "mode": null,
-    "status": "pending",
+    "status": "approved",
     "comment": "",
-    "reply": "Đề xuất của Claude theo câu trả lời 4: vật thể (không phải NPC) cạnh cửa xuống tầng ở mọi tầng 10k, đưa về cổng an toàn của vùng.",
+    "reply": "Vật thể (không phải NPC) cạnh cửa xuống tầng ở tầng 10, 20, 30, 40, 50, 60 (Điểu Tháp và Mê Thành: 10 đến 40), đưa về cổng an toàn của vùng.",
     "rev": "2026-10-17"
    },
    {
@@ -3608,12 +3608,12 @@
     "b": "AR:tree:last",
     "oneway": true,
     "origin": "revised",
-    "note": "Chỉ tầng cuối của vùng: cửa lên tầng dẫn vào mật thất.",
+    "note": "Chỉ tầng 60 (tầng cuối): cửa lên tầng dẫn vào mật thất.",
     "door_ids": [],
     "mode": null,
-    "status": "pending",
+    "status": "approved",
     "comment": "",
-    "reply": "Theo nhận xét của bạn: tầng cuối có lối vào mật thất. Mật thất đi dưới → trên, cửa ra ở phía trên về Thế Thụ Môn.",
+    "reply": "Theo nhận xét của bạn: tầng 60 có lối vào mật thất. Mật thất đi dưới → trên, cửa ra ở phía trên về Thế Thụ Môn.",
     "rev": "2026-10-17"
    },
    {
@@ -3625,9 +3625,9 @@
     "note": "Bia Hồi Quy → cổng vùng.",
     "door_ids": [],
     "mode": null,
-    "status": "pending",
+    "status": "approved",
     "comment": "",
-    "reply": "Đề xuất của Claude theo câu trả lời 4: vật thể (không phải NPC) cạnh cửa xuống tầng ở mọi tầng 10k, đưa về cổng an toàn của vùng.",
+    "reply": "Vật thể (không phải NPC) cạnh cửa xuống tầng ở tầng 10, 20, 30, 40, 50, 60 (Điểu Tháp và Mê Thành: 10 đến 40), đưa về cổng an toàn của vùng.",
     "rev": "2026-10-17"
    },
    {
@@ -3639,9 +3639,9 @@
     "note": "Người Dẫn Mật Tầng → Mật Tầng.",
     "door_ids": [],
     "mode": null,
-    "status": "pending",
+    "status": "approved",
     "comment": "",
-    "reply": "Đề xuất của Claude: NPC dịch vụ đi lại ở tầng chẵn; Mật Tầng đi dưới → trên, cửa ra ở phía trên về cổng vùng (liên kết đã duyệt).",
+    "reply": "NPC dịch vụ đi lại ở tầng chẵn. Mật Tầng đi dưới → trên; cửa ra ở phía trên quay về cổng vùng (owner xác nhận giữ nguyên, không nhớ tầng đã rời).",
     "rev": "2026-10-17"
    },
    {
@@ -3653,9 +3653,9 @@
     "note": "Bia Hồi Quy → cổng vùng.",
     "door_ids": [],
     "mode": null,
-    "status": "pending",
+    "status": "approved",
     "comment": "",
-    "reply": "Đề xuất của Claude theo câu trả lời 4: vật thể (không phải NPC) cạnh cửa xuống tầng ở mọi tầng 10k, đưa về cổng an toàn của vùng.",
+    "reply": "Vật thể (không phải NPC) cạnh cửa xuống tầng ở tầng 10, 20, 30, 40, 50, 60 (Điểu Tháp và Mê Thành: 10 đến 40), đưa về cổng an toàn của vùng.",
     "rev": "2026-10-17"
    },
    {
@@ -3667,9 +3667,9 @@
     "note": "Người Dẫn Mật Tầng → Mật Tầng.",
     "door_ids": [],
     "mode": null,
-    "status": "pending",
+    "status": "approved",
     "comment": "",
-    "reply": "Đề xuất của Claude: NPC dịch vụ đi lại ở tầng chẵn; Mật Tầng đi dưới → trên, cửa ra ở phía trên về cổng vùng (liên kết đã duyệt).",
+    "reply": "NPC dịch vụ đi lại ở tầng chẵn. Mật Tầng đi dưới → trên; cửa ra ở phía trên quay về cổng vùng (owner xác nhận giữ nguyên, không nhớ tầng đã rời).",
     "rev": "2026-10-17"
    }
   ]
