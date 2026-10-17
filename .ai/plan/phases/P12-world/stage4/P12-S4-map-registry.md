@@ -69,7 +69,7 @@ Loại map là suy luận: có trigger quái hoặc điểm spawn → bãi quái
 | **Thâm Sảnh Ngọc Lục** (`ancient_ruins_unnamed_area_05`) | Di Tích Cổ | bãi quái | 53–56 | 0 | 1 | 2 | Tiền Sảnh Ngọc Lục | có |
 | **Tận Điện Cổ Tích** (`ancient_ruins_unnamed_area_06`) | Di Tích Cổ | bãi quái | 57–60 | 0 | 0 | 1 | Tiền Sảnh Ngọc Lục | có |
 | **Cổng U Lâu** (`ghost_castle_gate`) | Lâu Đài Ma | hub an toàn | — | 0 | 2 | 2 | Cổng U Lâu | có |
-| **U Lâm Bích Ba** (`ghost_castle_deep_woods`) | Lâu Đài Ma | bãi quái | Tầng 1–60 = Lv61–120 | 25 | 0 | 2 | Cổng U Lâu | có |
+| **U Linh Cổ Thành** (`ghost_castle_deep_woods`) | Lâu Đài Ma | bãi quái | Tầng 1–60 = Lv61–120 | 25 | 0 | 2 | Cổng U Lâu | có |
 | **Mật Thất Cổ Thành** (`ghost_castle_ancient_city_secret_chamber`) | Lâu Đài Ma | bãi quái | Lv190–200 | 20 | 0 | 1 | Cổng U Lâu | có |
 | **Thế Thụ Môn** (`world_tree_gate`) | Cây Thế Giới | hub an toàn | — | 0 | 2 | 2 | Thế Thụ Môn | có |
 | **Thế Thụ Thâm Lâm** (`world_tree_deep_woods`) | Cây Thế Giới | bãi quái | Tầng 1–60 = Lv61–120 | 17 | 0 | 2 | Thế Thụ Môn | có |

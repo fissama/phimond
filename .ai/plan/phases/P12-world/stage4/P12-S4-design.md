@@ -165,26 +165,26 @@ Owner yêu cầu thêm NPC cho Sa Mạc, Mỏm Đá Gió, Đảo Ác Mộng, Lă
 - Map quái: chỉ NPC nhiệm vụ phụ. Map không có slot NPC trong APK (ví dụ Thời Không Liệt Khích, các map cụt) giữ trống.
 - Dữ liệu: `roster_outer.py`; `gen_npc_roster.py` gộp với `roster_data.py`. Portal của các map này vẫn ngoài ma trận chi tiết (xem §7.2 cho vùng an toàn).
 
-## 10. Bốn vùng nhiều tầng: U Lâm (Lâu Đài Ma), Thế Thụ, Điểu Tháp, Mê Thành (owner 2026-10-17)
+## 10. Bốn vùng nhiều tầng: U Linh Cổ Thành (Lâu Đài Ma), Thế Thụ, Điểu Tháp, Mê Thành (owner 2026-10-17)
 
-Nguồn: nhận xét owner trong `/portals.html` và hội thoại 2026-10-17. Dữ liệu máy đọc: `P12-S4-floor-templates.json`. Trạng thái: **đề xuất chờ owner duyệt** (các số cấp, tầng và race thứ hai là suy luận từ yêu cầu).
+Nguồn: nhận xét owner trong `/portals.html` và hội thoại 2026-10-17. Dữ liệu máy đọc: `P12-S4-floor-templates.json`. Trạng thái: **owner đã duyệt đồ thị cổng 2026-10-17** (102 liên kết); cấp, số tầng, race thứ hai của Lâu Đài Ma và dải Lv41–60 vẫn chờ duyệt ở thẻ S4-FLOORS.
 
 **Mẫu tầng.** Mỗi map "Thâm Lâm/Mê Tầng" là một mẫu lặp lại theo tầng (cùng bố cục, quái đổi theo tầng). Mỗi tầng đúng 1 cấp. Cửa lối vào tầng và cửa lối ra là hai cửa APK sẵn có trong map; tầng N cửa lối ra nối tầng N+1 cửa lối vào (hai chiều). Cửa xuống tầng của tầng 1 dẫn về cổng an toàn của vùng.
 
 | Vùng | Map mẫu tầng | Tầng | Cấp | Hướng đi | Race thiên về | Mật thất |
 |---|---|---|---|---|---|---|
-| Lâu Đài Ma | U Lâm Bích Ba (`ghost_castle_deep_woods`) | 60 | Lv61–120 | phải → trái | Linh Thể, Ác Ma (race 2 do chúng tôi đề xuất) | Mật Thất Cổ Thành: vào từ tầng cuối, Lv190–200, quay về Cổng U Lâu |
+| Lâu Đài Ma | U Linh Cổ Thành (`ghost_castle_deep_woods`) | 60 | Lv61–120 | phải → trái | Linh Thể, Ác Ma (race 2 do chúng tôi đề xuất) | Mật Thất Cổ Thành: vào từ tầng cuối, Lv190–200, quay về Cổng U Lâu |
 | Cây Thế Giới | Thế Thụ Thâm Lâm (`world_tree_deep_woods`) | 60 | Lv61–120 | trái → phải | Sâu, Thực Vật | Mật Thất Thế Thụ: vào từ tầng cuối, Lv190–200, quay về Thế Thụ Môn |
 | Tháp Chim | Điểu Tháp Thâm Lâm (`tower_region_deep_woods`) | 40 | Lv121–160 | trái → phải | Chim | Điểu Tháp Mật Tầng: Người Dẫn Mật Tầng ở tầng chẵn, hướng dưới → trên |
 | Mê Thành | Bất Tử Mê Tầng (`immortal_maze_floor`) | 40 | Lv161–200 | phải → trái | Bất Tử | Bất Tử Mật Tầng: Người Dẫn Mật Tầng ở tầng chẵn |
 
 - U Lâm và Thế Thụ cùng dải cấp, để người chơi chọn nơi cày. Điểu Tháp tiếp nối, Mê Thành chạm trần 200 (60 + 40 + 40 tầng nối liền với Lv61–200).
 - Lv41–60 do Tinh Không và Di Tích Cổ nhận (đề xuất), 5 map mỗi vùng, mỗi map 4 cấp: 41–44, 45–48, 49–52, 53–56, 57–60.
-- **Quái gác tầng:** tầng 10, 20, 30… có 1 quái gác lấy từ loài 4★ hoặc 5★ (P15 chọn loài và hành vi; đề xuất tầng cuối mỗi map luôn 5★). Hạ quái gác tầng 10k thì mở các tầng 10k+1…10k+10 (cờ theo người chơi, vĩnh viễn). Số loài 4★/5★ cùng race trong P10 đủ cho 6 quái gác mỗi map.
-- **Bia Hồi Quy** (vật thể, không phải NPC): ở mọi tầng 10k, cạnh cửa xuống tầng, dịch chuyển về cổng an toàn của vùng. Chỉ làm dịch chuyển.
-- **Người Dẫn Mật Tầng** (Điểu Tháp và Mê Thành): ở tầng chẵn, đưa vào Mật Tầng với cấp bằng cấp tầng đang đứng; quái mạnh hơn và nhiều exp hơn (hệ số do P11/P15).
+- **Quái gác tầng:** ở tầng 9, 19, 29, 39, 49, 59 (U Linh Cổ Thành và Thế Thụ) và 9, 19, 29, 39 (Điểu Tháp, Mê Thành). Quái lấy từ loài 4★ hoặc 5★ (P15 chọn loài và hành vi; đề xuất tầng cuối mỗi map luôn 5★). Hạ quái gác tầng 10k-1 thì mở 10 tầng kế (10k…10k+9; quái gác tầng 59 mở tầng 60). Tầng 1–9 mở sẵn; cờ theo người chơi, vĩnh viễn. Số loài 4★/5★ cùng race trong P10 đủ cho 6 quái gác mỗi map.
+- **Bia Hồi Quy** (vật thể, không phải NPC): ở tầng 10, 20, 30, 40, 50, 60 (Điểu Tháp và Mê Thành: 10 đến 40), cạnh cửa xuống tầng, dịch chuyển về cổng an toàn của vùng. Chỉ làm dịch chuyển.
+- **Người Dẫn Mật Tầng** (Điểu Tháp và Mê Thành): ở tầng chẵn, đưa vào Mật Tầng với cấp bằng cấp tầng đang đứng; quái mạnh hơn và nhiều exp hơn (hệ số do P11/P15). Mật Tầng quay về cổng vùng, không nhớ tầng đã rời (owner xác nhận 2026-10-17).
 - **Ngoại lệ NPC trong map quái:** chỉ hai dịch vụ đi lại ở trên. Không tính vào roster 106 NPC; thuộc mẫu tầng.
-- **Mật thất vượt cấp** (U Lâm, Thế Thụ): vào từ tầng cuối, quái cấp cao vượt trội để pet nuôi lâu mới đánh được; rớt vật phẩm cường hóa trang bị 4★/5★ và đồ hiếm (drop do P19/P20).
+- **Mật thất vượt cấp** (U Linh Cổ Thành, Thế Thụ): vào từ cửa lên tầng của tầng 60, quái cấp cao vượt trội để pet nuôi lâu mới đánh được; rớt vật phẩm cường hóa trang bị 4★/5★ và đồ hiếm (drop do P19/P20).
 - Số tầng thực tế (40–60) và trần cấp nằm trong JSON để đổi một chỗ; mọi con số đều đề xuất.
-- **Đổi tên:** U Lâm Bích Ba đọc như rừng cây trong khi là thành cổ. Đề xuất: **U Linh Cổ Thành** (khớp Cổng U Lâu, Mật Thất Cổ Thành). Phương án khác: Vọng Hồn Cổ Thành, Thành Cổ Hàn Quang. Chưa đổi trong dữ liệu cho tới khi owner chọn.
-- Đồ thị cổng: đã sửa phiên bản 2 theo hướng đi ở bảng trên (xem `review/portal-edits/portal-graph.json`, lọc "Claude sửa").
+- **Đổi tên (owner 2026-10-17):** U Lâm Bích Ba thành **U Linh Cổ Thành** (tên cũ đọc như rừng cây trong khi là thành cổ). Mã map `ghost_castle_deep_woods` giữ nguyên; tên nguồn APK "Rừng sâu Bích Ba" ghi ở `P12-naming-proposal-jrpg.md`.
+- Đồ thị cổng: theo hướng đi ở bảng trên, owner duyệt 2026-10-17 (`review/portal-edits/portal-graph.json`).

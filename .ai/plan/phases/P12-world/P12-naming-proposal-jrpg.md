@@ -48,7 +48,7 @@ Giữ nguyên 35 map bạn đã duyệt. Cột "Tên nguồn" giữ để truy n
 | `ancient_ruins_unnamed_area_05` | (chưa đặt tên) | **Thâm Sảnh Ngọc Lục** | →06 · owner chọn B (2026-10-14) |
 | `ancient_ruins_unnamed_area_06` | (chưa đặt tên) | **Tận Điện Cổ Tích** | cụt · owner chọn B (2026-10-14) |
 | `ghost_castle_gate` | Cổng lâu đài ma | **Cổng U Lâu** |  |
-| `ghost_castle_deep_woods` | Rừng sâu Bích Ba | **U Lâm Bích Ba** | tên nguồn trùng với 2 map khác |
+| `ghost_castle_deep_woods` | Rừng sâu Bích Ba | **U Linh Cổ Thành** | tên nguồn trùng với 2 map khác. Owner đổi 2026-10-17 (trước đó: U Lâm Bích Ba, đọc như bản đồ rừng trong khi là thành cổ) |
 | `ghost_castle_ancient_city_secret_chamber` | Mật thất thành cổ | **Mật Thất Cổ Thành** |  |
 | `world_tree_gate` | Cổng cây thế giới | **Thế Thụ Môn** |  |
 | `world_tree_deep_woods` | Rừng sâu Bích Ba | **Thế Thụ Thâm Lâm** | tên nguồn trùng |

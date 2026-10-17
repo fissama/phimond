@@ -137,7 +137,7 @@
         ],
         [
           "Lâu Đài Ma",
-          "Cổng U Lâu, U Lâm Bích Ba, Mật Thất Cổ Thành"
+          "Cổng U Lâu, U Linh Cổ Thành, Mật Thất Cổ Thành"
         ],
         [
           "Cây Thế Giới",
@@ -1220,7 +1220,7 @@
       "id": "S4-NPC-REG-ghost",
       "category": "Stage 4 · Roster NPC (vùng ngoài)",
       "title": "Lâu Đài Ma",
-      "summary": "2 NPC trên 3 map. Không có NPC: U Lâm Bích Ba, Mật Thất Cổ Thành.",
+      "summary": "2 NPC trên 3 map. Không có NPC: U Linh Cổ Thành, Mật Thất Cổ Thành.",
       "rationale": "Hub an toàn có hồi máu/cửa hàng/kỹ năng; map quái chỉ NPC nhiệm vụ phụ. Tên là đề xuất, không lấy từ APK.",
       "columns": [
         "Map",
@@ -1878,7 +1878,7 @@
           "Cổng U Lâu"
         ],
         [
-          "U Lâm Bích Ba",
+          "U Linh Cổ Thành",
           "Lâu Đài Ma",
           "bãi quái",
           "Tầng 1–60 = Lv61–120",
@@ -1972,7 +1972,7 @@
       "category": "Stage 4 · Ma trận còn lại",
       "title": "Bốn vùng nhiều tầng: cấp từng tầng, hướng đi, quái gác, mật thất",
       "summary": "Mỗi tầng 1 cấp. U Lâm và Thế Thụ cùng dải Lv61–120 (60 tầng), Điểu Tháp Lv121–160 (40 tầng), Mê Thành Lv161–200 (40 tầng).",
-      "rationale": "Theo nhận xét của bạn 2026-10-17. Số tầng, dải cấp, race thứ hai của Lâu Đài Ma và dải Lv41–60 của Tinh Không/Di Tích Cổ là đề xuất của chúng tôi (để nối liền tới trần 200). Quái gác tầng 10k lấy loài 4★/5★, hạ xong mở 10 tầng kế. Bia Hồi Quy ở mọi tầng 10k đưa về cổng an toàn. Người Dẫn Mật Tầng ở tầng chẵn (Điểu Tháp, Mê Thành). Danh tính quái do P15/P10/P11, drop do P19/P20. Chi tiết: stage4/P12-S4-design.md §10; cấu hình: P12-S4-floor-templates.json.",
+      "rationale": "Theo nhận xét của bạn 2026-10-17. Số tầng, dải cấp, race thứ hai của Lâu Đài Ma và dải Lv41–60 của Tinh Không/Di Tích Cổ là đề xuất của chúng tôi (để nối liền tới trần 200). Quái gác ở tầng 9, 19, 29… lấy loài 4★/5★, hạ xong mở 10 tầng kế. Bia Hồi Quy ở tầng 10, 20, 30… đưa về cổng an toàn. Đã đổi tên U Lâm Bích Ba thành U Linh Cổ Thành (owner 2026-10-17). Mật thất U Linh Cổ Thành/Thế Thụ vào từ tầng 60; Mật Tầng Điểu Tháp/Mê Thành quay về cổng vùng. Người Dẫn Mật Tầng ở tầng chẵn (Điểu Tháp, Mê Thành). Danh tính quái do P15/P10/P11, drop do P19/P20. Chi tiết: stage4/P12-S4-design.md §10; cấu hình: P12-S4-floor-templates.json.",
       "columns": [
         "Vùng",
         "Map mẫu tầng",
@@ -1985,12 +1985,12 @@
       "rows": [
         [
           "Lâu Đài Ma",
-          "U Lâm Bích Ba",
+          "U Linh Cổ Thành",
           60,
           "Lv61–120",
           "phải → trái",
           "Linh Thể / Spirit, Ác Ma / Demon",
-          "Mật Thất Cổ Thành · cửa lối ra của tầng cuối (tầng 60) · Lv190–200 · dưới → trên · về Cổng U Lâu"
+          "Mật Thất Cổ Thành · cửa lên tầng của tầng 60 (tầng cuối) · Lv190–200 · dưới → trên · về Cổng U Lâu"
         ],
         [
           "Cây Thế Giới",
@@ -1999,7 +1999,7 @@
           "Lv61–120",
           "trái → phải",
           "Sâu / Insect, Thực Vật / Plant",
-          "Mật Thất Thế Thụ · cửa lối ra của tầng cuối (tầng 60) · Lv190–200 · dưới → trên · về Thế Thụ Môn"
+          "Mật Thất Thế Thụ · cửa lên tầng của tầng 60 (tầng cuối) · Lv190–200 · dưới → trên · về Thế Thụ Môn"
         ],
         [
           "Tháp Chim",
@@ -2030,55 +2030,21 @@
         ],
         [
           "Quái gác tầng",
-          "tầng 10, 20, 30…",
+          "U Linh Cổ Thành: 9, 19, 29, 39, 49, 59; Thế Thụ Thâm Lâm: 9, 19, 29, 39, 49, 59; Điểu Tháp Thâm Lâm: 9, 19, 29, 39; Bất Tử Mê Tầng: 9, 19, 29, 39",
           "—",
           "4★ hoặc 5★",
           "—",
           "cùng race của vùng",
-          "hạ xong mở 10 tầng kế"
+          "hạ quái gác tầng 10k-1 thì mở 10 tầng kế (tầng 59 mở tầng 60)"
         ],
         [
           "Bia Hồi Quy",
-          "mọi tầng 10k",
+          "U Linh Cổ Thành: 10, 20, 30, 40, 50, 60; Thế Thụ Thâm Lâm: 10, 20, 30, 40, 50, 60; Điểu Tháp Thâm Lâm: 10, 20, 30, 40; Bất Tử Mê Tầng: 10, 20, 30, 40",
           "—",
           "—",
           "—",
           "—",
-          "vật thể cạnh cửa xuống tầng, về cổng an toàn"
-        ]
-      ]
-    },
-    {
-      "id": "S4-NAME-GHOST",
-      "category": "Stage 4 · Ma trận còn lại",
-      "title": "Đổi tên map thành cổ \"U Lâm Bích Ba\"",
-      "summary": "Tên hiện tại đọc như bản đồ rừng. Đề xuất: U Linh Cổ Thành.",
-      "rationale": "Chọn một tên (ghi vào ô nhận xét) hoặc đề xuất tên khác. Chưa đổi trong dữ liệu cho tới khi bạn chọn; mã map ghost_castle_deep_woods giữ nguyên.",
-      "columns": [
-        "Phương án",
-        "Tên",
-        "Lý do"
-      ],
-      "rows": [
-        [
-          "Hiện tại",
-          "U Lâm Bích Ba",
-          "Đọc như bản đồ rừng, trong khi đây là thành cổ."
-        ],
-        [
-          "Đề xuất (khuyến nghị)",
-          "U Linh Cổ Thành",
-          "Khớp Cổng U Lâu, Mật Thất Cổ Thành"
-        ],
-        [
-          "Phương án khác",
-          "Vọng Hồn Cổ Thành",
-          "Cùng chủ đề thành cổ, linh thể"
-        ],
-        [
-          "Phương án khác",
-          "Thành Cổ Hàn Quang",
-          "Cùng chủ đề thành cổ, linh thể"
+          "vật thể cạnh cửa xuống tầng, về cổng an toàn của vùng"
         ]
       ]
     },

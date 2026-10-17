@@ -66,18 +66,12 @@ RN = {r['id']: r['name_vi'] for r in reg}
 FT = json.load(open(PH / 'stage4/P12-S4-floor-templates.json', encoding='utf-8'))
 dec.append({'id': 'S4-FLOORS', 'category': 'Stage 4 · Ma trận còn lại', 'title': 'Bốn vùng nhiều tầng: cấp từng tầng, hướng đi, quái gác, mật thất',
   'summary': 'Mỗi tầng 1 cấp. U Lâm và Thế Thụ cùng dải Lv61–120 (60 tầng), Điểu Tháp Lv121–160 (40 tầng), Mê Thành Lv161–200 (40 tầng).',
-  'rationale': 'Theo nhận xét của bạn 2026-10-17. Số tầng, dải cấp, race thứ hai của Lâu Đài Ma và dải Lv41–60 của Tinh Không/Di Tích Cổ là đề xuất của chúng tôi (để nối liền tới trần 200). Quái gác tầng 10k lấy loài 4★/5★, hạ xong mở 10 tầng kế. Bia Hồi Quy ở mọi tầng 10k đưa về cổng an toàn. Người Dẫn Mật Tầng ở tầng chẵn (Điểu Tháp, Mê Thành). Danh tính quái do P15/P10/P11, drop do P19/P20. Chi tiết: stage4/P12-S4-design.md §10; cấu hình: P12-S4-floor-templates.json.',
+  'rationale': 'Theo nhận xét của bạn 2026-10-17. Số tầng, dải cấp, race thứ hai của Lâu Đài Ma và dải Lv41–60 của Tinh Không/Di Tích Cổ là đề xuất của chúng tôi (để nối liền tới trần 200). Quái gác ở tầng 9, 19, 29… lấy loài 4★/5★, hạ xong mở 10 tầng kế. Bia Hồi Quy ở tầng 10, 20, 30… đưa về cổng an toàn. Đã đổi tên U Lâm Bích Ba thành U Linh Cổ Thành (owner 2026-10-17). Mật thất U Linh Cổ Thành/Thế Thụ vào từ tầng 60; Mật Tầng Điểu Tháp/Mê Thành quay về cổng vùng. Người Dẫn Mật Tầng ở tầng chẵn (Điểu Tháp, Mê Thành). Danh tính quái do P15/P10/P11, drop do P19/P20. Chi tiết: stage4/P12-S4-design.md §10; cấu hình: P12-S4-floor-templates.json.',
   'columns': ['Vùng', 'Map mẫu tầng', 'Tầng', 'Cấp', 'Hướng đi', 'Race thiên về', 'Mật thất'],
   'rows': [[r['group'], RN[r['floor_map']], r['floors'], f"Lv{r['level_first']}–{r['level_last']}", r['direction'], ', '.join(r['races']), f"{RN[r['secret_map']]} · {r['secret']['access']} · Lv{r['secret']['level']} · {r['secret']['direction']} · về {r['secret']['returns_to']}"] for r in FT['regions']] +
           [['Tinh Không + Di Tích Cổ', '5 map quái mỗi vùng', '—', 'Lv41–60 (mỗi map 4 cấp: ' + ', '.join(FT['banded_fields']['bands']) + ')', '—', '—', '—'],
-           ['Quái gác tầng', 'tầng 10, 20, 30…', '—', '4★ hoặc 5★', '—', 'cùng race của vùng', 'hạ xong mở 10 tầng kế'],
-           ['Bia Hồi Quy', 'mọi tầng 10k', '—', '—', '—', '—', 'vật thể cạnh cửa xuống tầng, về cổng an toàn']]})
-g = next(r for r in FT['regions'] if r['key'] == 'ghost')['rename']
-dec.append({'id': 'S4-NAME-GHOST', 'category': 'Stage 4 · Ma trận còn lại', 'title': 'Đổi tên map thành cổ "U Lâm Bích Ba"',
-  'summary': f"Tên hiện tại đọc như bản đồ rừng. Đề xuất: {g['recommended']}.",
-  'rationale': 'Chọn một tên (ghi vào ô nhận xét) hoặc đề xuất tên khác. Chưa đổi trong dữ liệu cho tới khi bạn chọn; mã map ghost_castle_deep_woods giữ nguyên.',
-  'columns': ['Phương án', 'Tên', 'Lý do'],
-  'rows': [['Hiện tại', g['current'], g['why']]] + [[('Đề xuất (khuyến nghị)' if o == g['recommended'] else 'Phương án khác'), o, 'Khớp Cổng U Lâu, Mật Thất Cổ Thành' if o == g['recommended'] else 'Cùng chủ đề thành cổ, linh thể'] for o in g['options']]})
+           ['Quái gác tầng', '; '.join(f"{RN[r['floor_map']]}: {', '.join(map(str, r['guard_floors']))}" for r in FT['regions']), '—', '4★ hoặc 5★', '—', 'cùng race của vùng', 'hạ quái gác tầng 10k-1 thì mở 10 tầng kế (tầng 59 mở tầng 60)'],
+           ['Bia Hồi Quy', '; '.join(f"{RN[r['floor_map']]}: {', '.join(map(str, r['return_object_floors']))}" for r in FT['regions']), '—', '—', '—', '—', 'vật thể cạnh cửa xuống tầng, về cổng an toàn của vùng']]})
 sp = {}
 for r in inreg:
     if r['kind'] in ('field', 'mixed'): sp.setdefault(r['group'], []).append(r)

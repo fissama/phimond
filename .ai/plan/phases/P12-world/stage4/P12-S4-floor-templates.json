@@ -8,11 +8,11 @@
  "rules": {
   "guard_every": 10,
   "guard_star": "4★ hoặc 5★ (P15 chọn loài; đề xuất tầng cuối mỗi map luôn 5★)",
-  "guard_unlock": "Hạ quái gác tầng 10k thì mở cửa lên tầng 10k+1…10k+10 (cờ vĩnh viễn theo người chơi). Tầng 1–10 mở sẵn.",
+  "guard_unlock": "Hạ quái gác tầng 10k-1 (9, 19, 29…) thì mở 10 tầng kế: 10k…10k+9 (tầng 59 mở tầng 60). Tầng 1–9 mở sẵn. Cờ vĩnh viễn theo người chơi.",
   "return_object": {
    "name": "Bia Hồi Quy",
    "kind": "vật thể (không phải NPC)",
-   "floors": "mọi tầng 10k",
+   "floors": "tầng 10, 20, 30, 40, 50, 60 (Điểu Tháp và Mê Thành: 10 đến 40)",
    "place": "cạnh cửa xuống tầng, trong vùng an toàn của tầng",
    "to": "cổng an toàn của vùng",
    "service": "chỉ dịch chuyển; không hồi máu, không cửa hàng"
@@ -28,7 +28,8 @@
    ]
   },
   "door_back": "Cửa xuống tầng của tầng 1 dẫn về cổng an toàn; từ tầng 2 trở lên dẫn về tầng dưới (hai chiều).",
-  "monster_map_npc_exception": "Chỉ Bia Hồi Quy và Người Dẫn Mật Tầng (dịch vụ đi lại) được đặt trong map quái; NPC khác vẫn theo §8."
+  "monster_map_npc_exception": "Chỉ Bia Hồi Quy và Người Dẫn Mật Tầng (dịch vụ đi lại) được đặt trong map quái; NPC khác vẫn theo §8.",
+  "guard_pattern": "tầng 9, 19, 29, 39, 49, 59 (tầng 9 + 10k)"
  },
  "regions": [
   {
@@ -50,22 +51,34 @@
    ],
    "races_note": "Owner chưa nêu race thứ hai; đề xuất Ác Ma cho hợp Lâu Đài Ma.",
    "secret": {
-    "access": "cửa lối ra của tầng cuối (tầng 60)",
+    "access": "cửa lên tầng của tầng 60 (tầng cuối)",
     "level": "190–200",
     "direction": "dưới → trên",
     "returns_to": "Cổng U Lâu",
     "loot": "vật phẩm cường hóa trang bị 4★/5★ và đồ hiếm"
    },
    "rename": {
-    "current": "U Lâm Bích Ba",
-    "why": "Đọc như bản đồ rừng, trong khi đây là thành cổ.",
-    "options": [
-     "U Linh Cổ Thành",
-     "Vọng Hồn Cổ Thành",
-     "Thành Cổ Hàn Quang"
-    ],
-    "recommended": "U Linh Cổ Thành"
-   }
+    "previous": "U Lâm Bích Ba",
+    "current": "U Linh Cổ Thành",
+    "decided": "2026-10-17",
+    "why": "Tên cũ đọc như bản đồ rừng, trong khi đây là thành cổ."
+   },
+   "guard_floors": [
+    9,
+    19,
+    29,
+    39,
+    49,
+    59
+   ],
+   "return_object_floors": [
+    10,
+    20,
+    30,
+    40,
+    50,
+    60
+   ]
   },
   {
    "key": "tree",
@@ -85,12 +98,28 @@
     "Thực Vật / Plant"
    ],
    "secret": {
-    "access": "cửa lối ra của tầng cuối (tầng 60)",
+    "access": "cửa lên tầng của tầng 60 (tầng cuối)",
     "level": "190–200",
     "direction": "dưới → trên",
     "returns_to": "Thế Thụ Môn",
     "loot": "vật phẩm cường hóa trang bị 4★/5★ và đồ hiếm"
-   }
+   },
+   "guard_floors": [
+    9,
+    19,
+    29,
+    39,
+    49,
+    59
+   ],
+   "return_object_floors": [
+    10,
+    20,
+    30,
+    40,
+    50,
+    60
+   ]
   },
   {
    "key": "tower",
@@ -113,8 +142,21 @@
     "level": "122–160 (theo tầng chẵn đã vào)",
     "direction": "dưới → trên (owner)",
     "returns_to": "Điểu Tháp",
-    "loot": "đồ hiếm (do phase drop)"
-   }
+    "loot": "đồ hiếm (do phase drop)",
+    "returns_note": "Giữ về cổng vùng (owner xác nhận 2026-10-17); không nhớ tầng đã rời."
+   },
+   "guard_floors": [
+    9,
+    19,
+    29,
+    39
+   ],
+   "return_object_floors": [
+    10,
+    20,
+    30,
+    40
+   ]
   },
   {
    "key": "maze",
@@ -137,8 +179,21 @@
     "level": "162–200 (theo tầng chẵn đã vào)",
     "direction": "dưới → trên",
     "returns_to": "Trường Sinh Mê Thành",
-    "loot": "đồ hiếm (do phase drop)"
-   }
+    "loot": "đồ hiếm (do phase drop)",
+    "returns_note": "Giữ về cổng vùng (owner xác nhận 2026-10-17); không nhớ tầng đã rời."
+   },
+   "guard_floors": [
+    9,
+    19,
+    29,
+    39
+   ],
+   "return_object_floors": [
+    10,
+    20,
+    30,
+    40
+   ]
   }
  ],
  "banded_fields": {
