@@ -1,6 +1,6 @@
 # Phimond — Tiến độ dự án
 
-**Cập nhật:** 2026-10-12.
+**Cập nhật:** 2026-10-20.
 **Nguồn phạm vi/phụ thuộc:** [Master spec §5](PHIMOND_MASTER_SPEC.md#5-roadmap-và-phụ-thuộc).
 **Điểm vào công việc:** [ACTIVE.md](../ACTIVE.md).
 
@@ -9,6 +9,7 @@
 | Phạm vi | Kết quả | Bằng chứng |
 |---|---|---|
 | P00 baseline | Đã đóng 2026-09-24, commit e66350b | [P00](phases/P00-baseline/README.md); latency budget dev FAILED, 50 CCU chưa được chứng nhận |
+| P13 skill design | Đã đóng 2026-10-20 | [Closure](phases/P13-skills/P13-closure.md); V7.1 hash 57c07796…; chi phí vàng/pacing thuộc P15/P19 |
 | P10 pet model design | Đã đóng 2026-09-30 | [Closure](phases/P10-pet-model/P10-closure.md); 152 species baseline (roster hiệu lực 160, xem bảng số liệu ở [ACTIVE.md](../ACTIVE.md)), 8 Race, D01–D46, 23 acceptance scenarios |
 | P10 redraw art riêng | **152/152 DONE — 100%**, owner-approved 2026-10-11 | [Redraw closure](phases/P10-pet-model/P10-redraw-closure-20261011.md); nhóm 4★–5★ **48/48** |
 
@@ -23,7 +24,6 @@ số file hoặc số atlas. ID phase giữ nguyên, thứ tự theo master plan
 | P11 stats | Scaffold NOT STARTED theo README; công thức, stat/role/Element assignment và O03/O04/O05/O08 |
 | P12 world | **ĐÓNG 2026-10-17** (owner exit review). Stage 2 đóng 2026-10-14; Stage 3 đóng 2026-10-16 (Three.js, ADR-0001; iPhone high ~60 FPS); Stage 4 và 5 đóng 2026-10-17 (validate.py 17/17, 12 mục hoãn có chủ, R05 tạm duyệt, R06 chỉ đo iPhone high). Chi tiết: `phases/P12-world/P12-closure-checklist.md` |
 | P01 world slice | Chưa có closure; phụ thuộc P12, renderer/movement/collision/portal/web HUD |
-| P13 skill | Chưa có closure; candidate V7 chờ owner nghiệm thu: 160 loài, 97 skill, 28 recipe candidate; pool/eligibility/Element chart/combat rules |
 | P19 items | Chưa có closure; item foundation, mailbox, EXP share |
 | P02 PvE | Chưa có closure; battle 1v3 và render animation/effect thật |
 | P14 equipment | Chưa có closure; trang bị và ngân sách sức mạnh |
