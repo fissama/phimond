@@ -1,0 +1,297 @@
+"""Additive roster review; never writes P10/P11 or activates proposed species."""
+import copy
+from collections import defaultdict
+import hashlib
+import json
+from pathlib import Path
+import p13_design as design
+import p13_candidate_catalog as candidate_stats
+
+ROOT = Path(__file__).resolve().parents[2]
+PHASE = ROOT / '.ai/plan/phases/P13-skills'
+# P10 registered stable IDs for the 8 proposals (P13-to-P10-eight-species-mapping.json). Proposal IDs stay as aliases.
+STABLE = json.loads((PHASE/'P13-to-P10-eight-species-mapping.json').read_text())['proposal_to_stable']
+
+def remap_ids(value):
+    """Replace proposal IDs by P10 stable IDs everywhere except the `proposal_id` alias field."""
+    if isinstance(value, str):
+        return STABLE.get(value, value)
+    if isinstance(value, list):
+        return [remap_ids(x) for x in value]
+    if isinstance(value, dict):
+        return {STABLE.get(k, k) if isinstance(k, str) else k: (v if k == 'proposal_id' else remap_ids(v)) for k, v in value.items()}
+    return value
+AMENDMENTS = {
+    'species_0035': ['magic_dps', 'support'],
+    'species_0038': ['physical_dps', 'support'],
+    'species_0069': ['hybrid', 'support'],
+    'species_0124': ['physical_dps', 'tank'],
+    'species_0148': ['magic_dps', 'support'],
+}
+ADDITIONAL = [
+    ('Thú', 'beast', 'magic_dps', 'Hươu Rêu Nguyệt', 'Địa', 'Hươu có gạc phủ rêu và hạt sáng; silhouette khác Ngựa Bùn Cỏ. AoE phép nhẹ để farm, đơn thể phép và hồi phục phụ.'),
+    ('Rồng', 'dragon', 'physical_dps', 'Thiết Giáp Long', 'Địa', 'Rồng thấp, giáp đá và đuôi chùy; khác Thánh Rồng Thái Cổ. Đơn thể vật lý, quét nhẹ, khiên phụ.'),
+    ('Rồng', 'dragon', 'magic_dps', 'Tinh Vân Long', 'Quang', 'Rồng mảnh, vây sao và lõi sáng; nhận diện phép từ xa. AoE phép nhẹ, phép đơn thể và dispel phụ.'),
+    ('Ác Ma', 'demon', 'physical_dps', 'Đao Ma Huyết Giáp', 'Hỏa', 'Ác ma vai rộng, lưỡi đao và giáp nứt đỏ. Chém đơn thể, quét nhẹ và debuff phụ.'),
+    ('Ác Ma', 'demon', 'magic_dps', 'Ma Nhãn Hư Không', 'Âm', 'Ác ma bay với một mắt và vòng ấn; khác Trụy Thiên Sứ. AoE phép nhẹ, phép đơn thể và control phụ.'),
+    ('Tinh Linh', 'spirit', 'physical_dps', 'Hộ Vệ Thạch Linh', 'Địa', 'Linh thể đá có nắm đấm lớn, lõi nhỏ; khác Nhân Sư và Cự Ma. Vật lý đơn thể, quét nhẹ và bảo vệ phụ.'),
+]
+NEW_ROLE_PROPOSALS = {
+    'species_0051': ['physical_dps', 'disruptor'],
+    'species_0103': ['magic_dps', 'disruptor'],
+    'species_0037': ['magic_dps', 'disruptor'],
+    'species_0141': ['magic_dps', 'support'],
+    'species_0020': ['physical_dps', 'tank'],
+    'species_0126': ['magic_dps', 'support'],
+    'species_0084': ['tank', 'physical_dps'],
+    'species_0145': ['tank', 'physical_dps'],
+    'species_0150': ['physical_dps', 'tank'],
+}
+SPECIAL_ADDITIONAL = [
+    dict(proposal_id='P13-SPECIAL-01',working_name='Long Thần Song Ấn',race='dragon',race_name='Rồng',star=5,species_class='special',roles=['hybrid','support'],proposed_element='Quang',status='proposal_not_registered',art_brief='Rồng hai cụm giáp và vây ấn sáng, nhìn rõ cả móng/vuốt vật lý và lõi phép; không sao chép Thanh Long. Kit có hai damage channel, buff phụ; không cộng ATK+MAG trong một hit.'),
+    dict(proposal_id='P13-SPECIAL-02',working_name='Ma Chủ Song Cực',race='demon',race_name='Ác Ma',star=5,species_class='special',roles=['hybrid','disruptor'],proposed_element='Âm',status='proposal_not_registered',art_brief='Ác ma có một tay vũ khí và một tay ấn phép, silhouette khác Ma Vương Hút Máu. Kit vật lý/phép và debuff phụ, giữ đánh đổi sáu slot.'),
+]
+SPECIAL_ADDITIONAL[0]['signature_skill_id'] = 'dual_seal_light'
+SPECIAL_ADDITIONAL[1]['signature_skill_id'] = 'inverse_seal_dark'
+SPECIAL_ADDITIONAL[0]['sample_build'] = ['dual_seal_light','sweep_light','bolt_light','wave_light_light','heal','cleanse']
+SPECIAL_ADDITIONAL[1]['sample_build'] = ['inverse_seal_dark','strike','sweep_light','bolt_dark','wave_dark_light','silence']
+
+def new_signatures():
+    rows=[
+        design.skill('dual_seal_light','Long Thần · Song ấn','physical','enemy_one',28,3,40,'1.50×ATK Quang lên một địch; hit thành công mới tăng MAG bản thân 30% trong 2 vòng, nhóm intellect. Chuẩn bị lượt phép sau; không thêm hit/action, không cộng ATK+MAG trong cùng hit. Dispel buff được. Chiếm 1/6 slot; chỉ Long Thần Song Ấn học, không kế thừa.',['physical_dps','hybrid'],inheritance=[],element='light',power='1.50',effect={'self_buff':'mag','amount':0.30}),
+        design.skill('inverse_seal_dark','Ma Chủ · Nghịch ấn','magic','enemy_one',28,3,40,'1.50×MAG Âm lên một địch; sau hit, 75% base chance giảm ATK địch 30% trong 2 vòng, nhóm weaken_atk; qua SR P11, cleanse được. Không làm mất action hoặc thêm hit. Chiếm 1/6 slot; chỉ Ma Chủ Song Cực học, không kế thừa.',['magic_dps','hybrid','disruptor'],inheritance=[],element='dark',power='1.50',effect={'stat':'atk','amount':-0.30,'chance':0.75}),
+    ]
+    for row,owner in zip(rows,SPECIAL_ADDITIONAL):
+        row.update(exclusive_species=owner['proposal_id'],rank_policy='fixed_rank_1',target_shape='single',damage_mode='damage_with_effect')
+    return rows
+# Alternative 4★ recipes give every Normal 4★ a matching Special path.
+FOUR_STAR_ALTERNATIVES = [
+    ('recipe_special_0003','species_0067','species_0035','hybrid','Ác Ma vật lý + Thực Vật phép → Thanh Long Ác Ma Hybrid.'),
+    ('recipe_special_0003','species_0067','species_0122','hybrid','Ác Ma vật lý + Côn Trùng phép → Thanh Long Ác Ma Hybrid.'),
+    ('recipe_special_0004','species_0015','species_0084','physical','Tử Thần + Tinh Tinh Rock Tank/vật lý: hướng vật lý, bố mẹ Thú giữ gốc race của Bạch Hổ.'),
+    ('recipe_special_0004','species_0051','species_0085','physical','Long Vương Hắc Ám + Đại Tuyết Quái: hai vật lý, có bố mẹ Thú.'),
+    ('recipe_special_0004','species_0104','species_0085','physical','Chim Đa Đa + Đại Tuyết Quái: hai vật lý, có bố mẹ Thú.'),
+    ('recipe_special_0005','species_0103','species_0016','magic','Chim Đại Phì + Pharaon: hai caster, có bố mẹ Chim.'),
+    ('recipe_special_0005','species_0103','species_0050','magic','Chim Đại Phì + Hải Long Ba Đầu: hai caster, có bố mẹ Chim.'),
+    ('recipe_special_0005','species_0103','species_0086','magic','Chim Đại Phì + Gấu Trúc Ma Pháp: hai caster, có bố mẹ Chim.'),
+    ('recipe_special_0007','species_0138','species_0036','tank','Thú Lớn Dung Nham + Hoa Ăn Thịt Người Ba Đầu: vật lý + vật lý/Tank cho Huyền Vũ.'),
+]
+# Authored candidate, distinct from the immutable ordered APK records.
+# Recipe selection identifies the result; parent slot order does not change it.
+FUSION_PROPOSALS = [
+    ('recipe_special_0001','species_0018','P13-NEW-05','magic','Hai caster Âm; giữ kit phép khi đi từ Normal lên Nữ Đế.'),
+    ('recipe_special_0002','species_0017','species_0107','physical','Giữ cặp vật lý nguồn; Tank có vật lý phụ.'),
+    ('recipe_special_0003','species_0066','species_0123','hybrid','Phép + vật lý có chủ đích để tạo Thanh Long Hybrid; không áp dụng cho Special chuyên phép.'),
+    ('recipe_special_0004','species_0085','species_0123','physical','Hai vật lý; tránh dùng Tank/control không có hướng vật lý làm bố mẹ chính.'),
+    ('recipe_special_0005','species_0103','species_0137','magic','Hai caster 4★; Chim Đại Phì chuyển primary phép, có bố mẹ Chim.'),
+    ('recipe_special_0006','species_0125','species_0141','magic','Phép + phép/Support phù hợp Support/control sử dụng MAG.'),
+    ('recipe_special_0007','species_0138','species_0084','tank','Linh vật lý + Thú Tank/vật lý cho Huyền Vũ; giữ bố mẹ cùng race Linh.'),
+    ('recipe_special_0008','P13-NEW-06','species_0124','physical','Vật lý + vật lý/Tank cho Cự Ma; không cần tiêu Nhân Sư Hybrid.'),
+    ('recipe_special_0009','species_0141','P13-NEW-03','magic','Hai caster; Support phụ của Totem hỗ trợ kit hồi phục.'),
+    ('recipe_special_0010','species_0037','species_0125','magic','Hai caster cho Linh Tiên Hoa Hương Support/phép; bỏ bố mẹ vật lý.'),
+    ('recipe_special_0011','species_0038','species_0147','physical','Hai hướng vật lý → Cây Cự Linh Tank/vật lý; giữ gốc race Thực Vật và khả năng đánh theo ATK.'),
+    ('recipe_special_0012','P13-NEW-05','species_0106','magic','Hai caster; không buộc người chơi bỏ hai Hybrid để nhận caster thuần.'),
+    ('recipe_special_0013','P13-NEW-01','species_0018','magic','Hai caster; Hươu Rêu Nguyệt là Normal Thú phép, Ngựa vẫn Special.'),
+    ('recipe_special_0014','P13-NEW-02','species_0088','physical','Hai vật lý cho Thú Vàng Một Sừng; không dùng Hybrid làm material mặc định.'),
+    ('recipe_special_0015','species_0147','species_0107','physical','Tank/vật lý + Chim vật lý → Đảo Thiên Đường vật lý/Tank; giữ race Chim, không tiêu caster.'),
+    ('recipe_special_0016','species_0124','P13-NEW-04','physical','Hai vật lý cho Đại Vương Bọ Cạp; không tiêu caster Độc Đằng Nữ.'),
+    ('recipe_special_0017','species_0106','species_0037','magic','Hai caster cho Chim Ái Thần Support/phép; thay cặp hai vật lý nguồn.'),
+]
+
+def fusion_review(byid, proposed_roles, proposed, source_pairs):
+    candidates={s['id']:dict(id=s['id'],name=s['name'],race=s['race'],star=s['star'],species_class=s['class'],roles=proposed_roles.get(s['id'],s['roles'])) for s in byid.values()}
+    candidates.update({s['proposal_id']:dict(id=s['proposal_id'],name=s['working_name'],race=s['race'],star=5,species_class='normal',roles=[s['primary_role']]) for s in proposed})
+    source={r['id']:r for r in source_pairs}
+    candidates.update({s['proposal_id']:dict(id=s['proposal_id'],name=s['working_name'],race=s['race'],star=5,species_class='special',roles=s['roles']) for s in SPECIAL_ADDITIONAL})
+    rows=[];uses={};all_uses={};seen=set()
+    def add(rid,a,b,target,channel,reason,old=None):
+        nonlocal rows
+        aid,bid=a['id'],b['id']
+        assert a['species_class']==b['species_class']=='normal'
+        assert a['star']==b['star']==target['star']
+        assert target['species_class']=='special'
+        assert target['race'] in {a['race'],b['race']},rid
+        assert aid!=bid
+        key=tuple(sorted([aid,bid]));assert key not in seen;seen.add(key)
+        if channel in ('physical','magic'):
+            required='physical_dps' if channel=='physical' else 'magic_dps'
+            assert all(required in x['roles'] for x in [a,b]),rid
+            assert required in target['roles'],rid
+        if channel=='hybrid':
+            assert all('hybrid' in x['roles'] for x in [a,b]) or (any('physical_dps' in x['roles'] for x in [a,b]) and any('magic_dps' in x['roles'] for x in [a,b]))
+            assert target['roles'][0]=='hybrid'
+        if channel=='tank':
+            assert any('tank' in x['roles'] for x in [a,b]),rid
+            assert 'tank' in target['roles'],rid
+        for x in [a,b]:
+            all_uses[x['id']]=all_uses.get(x['id'],0)+1
+            if x['star']==5:uses[x['id']]=uses.get(x['id'],0)+1
+        rows.append(dict(candidate_recipe_id=rid,source_recipe_id=old['id'] if old else None,target_id=target['id'],target=target['name'],target_race=target['race'],target_roles=target['roles'],parent_star=a['star'],parents=[a,b],source_parents=[old['main'],old['secondary']] if old else [],channel=channel,reason=reason,status='authored_proposal_not_enabled',changed=(aid,bid)!=(old['main_id'],old['secondary_id']) if old else True))
+    for rid,aid,bid,channel,reason in FUSION_PROPOSALS:
+        old=source[rid];a,b=candidates[aid],candidates[bid]
+        add('P13-FUSION-'+rid[-4:],a,b,candidates[old['target_id']],channel,reason,old)
+    for i,(rid,aid,bid,channel,reason) in enumerate(FOUR_STAR_ALTERNATIVES,1):
+        add(f'P13-FUSION-4ALT-{i:02}',candidates[aid],candidates[bid],candidates[source[rid]['target_id']],channel,reason)
+    add('P13-FUSION-HYBRID-01',candidates['species_0052'],candidates['species_0140'],candidates['P13-SPECIAL-01'],'hybrid','Thánh Rồng Thái Cổ + Nhân Sư, cả hai Hybrid: giữ đường phát triển song công của Rồng.')
+    add('P13-FUSION-HYBRID-02',candidates['species_0069'],candidates['species_0140'],candidates['P13-SPECIAL-02'],'hybrid','Trụy Thiên Sứ + Nhân Sư, cả hai Hybrid: giữ đường phát triển song công của Ác Ma.')
+    normal5=[x for x in candidates.values() if x['species_class']=='normal' and x['star']==5]
+    missing=[x for x in normal5 if x['id'] not in uses]
+    normal4=[x for x in candidates.values() if x['species_class']=='normal' and x['star']==4]
+    assert not missing
+    assert all(x['id'] in all_uses for x in normal4)
+    return dict(recipes=rows,parent_use=[dict(**candidates[sid],recipes=n) for sid,n in sorted(uses.items(),key=lambda x:(-x[1],x[0]))],normal5_without_proposed_recipe=missing,normal4_without_proposed_recipe=[x for x in normal4 if x['id'] not in all_uses],source_order_policy='preserve_evidence_only',candidate_order_policy='select_target_recipe_then_match_unordered_parents',balance_status='structural_coverage_and_role_alignment_not_combat_or_acquisition_certified',special_expansion='Hai Special Hybrid 5★ đã đưa vào candidate 160: Long Thần Song Ấn (Rồng) và Ma Chủ Song Cực (Ác Ma). Cả ba Normal Hybrid 5★ có recipe sang Special Hybrid 5★; không còn nhánh 158 bỏ lửng Hybrid.',counts=dict(normal4=len(normal4),normal5=len(normal5),special4=4,special5=15,recipes4=sum(x['parent_star']==4 for x in rows),recipes5=sum(x['parent_star']==5 for x in rows)))
+
+def build():
+    p = json.loads((PHASE/'review-package.json').read_text())
+    before = copy.deepcopy(p)
+    p['revision'] = 'P13-candidate-v7.1-20261019'
+    p['summary'] = 'Catalog candidate đủ 160 loài, stats/growth/MP và Native Pool đã sinh theo role review; 97 skill gồm hai signature độc quyền của Special Hybrid mới. 28 recipe giữ đủ đường Special cho Normal 4★/5★. Candidate chưa promote sang P10/P11/runtime; 8 loài mới đang chờ P10 đăng ký ID và vẽ.'
+    byid = {s['id']: s for s in p['species']}
+    proposed_roles = {**AMENDMENTS, **NEW_ROLE_PROPOSALS}
+    groups = []
+    for race in p['race_coverage']:
+        rid = race['race']
+        entries = {}
+        for label, cls, star in [('normal4','normal',4),('normal5','normal',5),('special4','special',4),('special5','special',5)]:
+            entries[label] = [dict(id=s['id'], name=s['name'], roles=s['roles'], proposed_roles=proposed_roles.get(s['id'], s['roles'])) for s in p['species'] if s['race']==rid and s['class']==cls and s['star']==star]
+        groups.append(dict(race=rid, name=race['name'], **entries))
+    recipes = json.loads((ROOT/'data/p10/special_recipes.json').read_text())['records']
+    pairs = []
+    for r in recipes.values():
+        a,b,t = [byid[r[k]] for k in ['main_species_id','secondary_species_id','target_species_id']]
+        assert a['class']==b['class']=='normal'
+        assert a['star']==b['star']==t['star']
+        pairs.append(dict(id=r['id'], main=a['name'], secondary=b['name'], target=t['name'], main_id=a['id'], secondary_id=b['id'], target_id=t['id'], parent_star=a['star'], target_roles=proposed_roles.get(t['id'],t['roles']), parent_roles=[proposed_roles.get(x['id'],x['roles']) for x in [a,b]], enabled=False))
+    reverse_pairs = []
+    for i,a in enumerate(pairs):
+        for b in pairs[i+1:]:
+            if a['main_id']==b['secondary_id'] and a['secondary_id']==b['main_id']:
+                reverse_pairs.append([a['id'],b['id']])
+    proposed = [dict(proposal_id=f'P13-NEW-{i:02}', race_name=r, race=rid, star=5, species_class='normal', primary_role=role, working_name=name, proposed_element=element, art_brief=brief, status='proposal_not_registered') for i,(r,rid,role,name,element,brief) in enumerate(ADDITIONAL,1)]
+    for g in groups:
+        for x in proposed:
+            if x['race']==g['race']:
+                g['normal5'].append(dict(id=x['proposal_id'],name=x['working_name'],roles=[x['primary_role']],proposed_roles=[x['primary_role']],is_new=True))
+        for x in SPECIAL_ADDITIONAL:
+            if x['race']==g['race']:
+                g['special5'].append(dict(id=x['proposal_id'],name=x['working_name'],roles=x['roles'],proposed_roles=x['roles'],is_new=True))
+    notes = [
+        'Phương án chính 160 loài: thêm 6 Normal 5★ và 2 Special Hybrid 5★. Normal 4★ có 17 loài, Normal 5★ có 20; Special 4★ có 4, Special 5★ có 15. Không dùng Special để lấp độ phủ Normal.',
+        'Mỗi race có primary vật lý + primary phép ở Normal 4★ và 5★. 4★ đổi Trưởng Lão Người Cây sang phép/Support, Long Vương Hắc Ám sang vật lý/Disruptor, Chim Đại Phì sang phép/Disruptor. Tinh Tinh Rock giữ Tank, secondary vật lý để có đường dung hợp phù hợp.',
+        'Normal 5★: Tinh Linh Bách Hoa vật lý/Support; Độc Đằng Nữ phép/Disruptor; Trùng Bất Tử Địa Huyệt vật lý/Tank; Totem phép/Support; Trụy Thiên Sứ Hybrid/Support. Thánh Rồng Thái Cổ và Nhân Sư giữ Hybrid. Sáu Normal mới lấp các kênh còn thiếu, không thay thế ba Hybrid.',
+        'Special 4★ giữ bốn bản sắc: Thanh Long Hybrid, Bạch Hổ vật lý, Chu Tước phép/Support, Huyền Vũ Tank/Support. Native kit theo role, signature đã review không thay đổi.',
+        'Special 5★: Thủ Lĩnh Hắc Ám vật lý/Tank; Trùng Mẫu Mào Vàng phép/Support; Ngựa Bùn Cỏ phép/Support; Cây Cự Linh Tank/vật lý; Đảo Thiên Đường vật lý/Tank. Các Special khác giữ role baseline. Long Thần Song Ấn (Rồng) và Ma Chủ Song Cực (Ác Ma) là hai Special Hybrid mới.',
+        'Recipe candidate: cùng Star, hai Normal khác species, ít nhất một bố mẹ cùng race với con. Con vật lý cần hai bố mẹ có hướng vật lý; con phép cần hai bố mẹ có hướng phép. Hybrid cho phép vật lý + phép hoặc Hybrid + Hybrid. Tank/Support có điều kiện và lý do theo kit; không dùng ngoại lệ này để ép caster tiêu pet vật lý.',
+        'Nữ Đế dùng Nữ Vương Bạch Cốt + Ma Nhãn Hư Không, đều phép. Thánh Rồng Thái Cổ + Nhân Sư → Long Thần Song Ấn; Trụy Thiên Sứ + Nhân Sư → Ma Chủ Song Cực. Ba Normal Hybrid đều có đường Special Hybrid 5★.',
+        'Chọn Special và recipe trước, đảo slot không đổi kết quả. Có 28 cặp candidate không trùng: 13 cặp cho 4 Special 4★ và 15 cặp cho 15 Special 5★. Mọi Normal 4★ và 5★ có ít nhất một đường dung hợp; không dùng Special làm material trong các recipe này.',
+        '17 recipe APK giữ riêng làm bằng chứng, không bắt buộc dùng làm luật game. Các recipe thay thế 4★ cho cùng Special phải có preview kết quả/kit, không random đổi species. Chi phí/xác suất/Plus và vai trò Chính/Phụ trong kế thừa vẫn thuộc P16/P20.',
+        'Ghép cùng damage channel chưa đảm bảo truyền được skill: current skills bố mẹ còn lọc Race whitelist của con. Cần preview skill truyền được; Native Pool của Special tự có kit theo role. Basic 0MP luôn còn; skill nhẹ vẫn riêng để farm, không bị tier mạnh thay thế.',
+        'Hybrid chia ngân sách ATK/MAG, không cộng hai stat trong một hit, không có hai action/vòng. Bộ sáu slot phải đánh đổi hai damage channel, tier farm và utility. Stat/growth dùng budget và role template P11 của species kết quả, không lấy trung bình stat hoặc total level bố mẹ để tăng power ngoài budget.',
+        'Độ phủ và độ hợp role được kiểm tra tự động; cân bằng số/trận/kinh tế còn cần author numeric stat/MP/pool theo role mới, nơi nhận pet và playtest P02/P07/P15/P16/P19/P20. Đây là bản nghiệm thu design, chưa bật runtime hay yêu cầu vẽ trước owner review.',
+    ]
+    p['roster_review'] = dict(groups=groups, recipes=pairs, reversed_pairs=reverse_pairs, proposed_species=proposed, proposed_special_species=SPECIAL_ADDITIONAL, notes=notes, baseline_total=152, proposed_total=160, star6_status='not_in_current_model_owner_confirmed', fusion_star_rule='normal5_plus_normal5_to_special5')
+    p['roster_review']['fusion_review']=fusion_review(byid,proposed_roles,proposed,pairs)
+    p['roster_review']['candidate_policy'] = dict(two_distinct_normal_parents=True, same_star_as_target=True, at_least_one_same_race_parent=True, no_unused_normal4_or_normal5=True, hybrid5_to_hybrid_special5=True, normal4_budget=136, special4_budget=148, normal5_budget=160, special5_budget=172, budget_provenance='P11 authored budget; not new measured balance')
+    p['skills']+=new_signatures()
+    catalog=candidate_stats.build(proposed_roles,proposed+SPECIAL_ADDITIONAL)
+    accents=copy.deepcopy(design.ACCENTS)
+    new_accents=[['heal','protect'],['counter'],['dispel'],['break_def'],['mana_burn'],['protect'],['magic_up','protect'],['weaken_mag','silence']]
+    for x,accent in zip(proposed+SPECIAL_ADDITIONAL,new_accents):accents[x['proposal_id'][-4:]]=accent
+    p['species']=design.build_species(p['skills'],catalog['records'],accents)
+    for row in p['species']:
+        row['mp_profile']=catalog['records'][row['id']]['mp_profile']
+        row['native_brief']['status']='authored_native_pool_candidate'
+    for x in SPECIAL_ADDITIONAL:
+        row=next(s for s in p['species'] if s['id']==x['proposal_id']);row['sample_build']=x['sample_build']
+    skill_byid={s['id']:s for s in p['skills']}
+    for row in p['species']:
+        assert len(row['sample_build'])<=6 and set(row['sample_build'])<=set(row['native_skills'])
+        assert set(row['native_skills'])<=set(skill_byid)
+        kinds={skill_byid[s]['kind'] for s in row['native_skills']}
+        if 'physical_dps' in row['roles']:assert 'physical' in kinds
+        if 'magic_dps' in row['roles']:assert 'magic' in kinds
+        if 'hybrid' in row['roles']:assert {'physical','magic'}<=kinds
+        for sid in row['native_skills']:
+            owner=skill_byid[sid].get('exclusive_species')
+            assert not owner or owner==row['id']
+    p['candidate_catalog_meta']=dict(version=catalog['catalog_version'],validation=catalog['validation'],path=str(PHASE/'P13-candidate-species-catalog-160.json'),id_status='152 preserved source IDs + 8 P10 stable IDs (species_0153-0160); proposal IDs kept only as aliases')
+    p['race_coverage']=[]
+    for race,name in design.RACES.items():
+        rows=[s for s in p['species'] if s['race']==race];physical=[s for s in rows if s['roles'][0]=='physical_dps'];magic=[s for s in rows if s['roles'][0]=='magic_dps'];gaps=[]
+        for star in range(1,6):
+            normal=[s for s in rows if s['star']==star and s['class']=='normal'];roles={r for s in normal for r in s['roles']}
+            if not ({'physical_dps','hybrid'}&roles):gaps.append(f'{star}★ thiếu role vật lý')
+            if not ({'magic_dps','hybrid'}&roles):gaps.append(f'{star}★ thiếu role phép')
+        p['race_coverage'].append(dict(race=race,name=name,total=len(rows),primary_physical=len(physical),primary_magic=len(magic),primary_hybrid=sum(s['roles'][0]=='hybrid' for s in rows),physical_examples=[s['name']+' ('+s['id']+')' for s in physical[:2]],magic_examples=[s['name']+' ('+s['id']+')' for s in magic[:2]],normal_star_gaps=gaps))
+    for new_special in SPECIAL_ADDITIONAL:
+        kit=new_special['sample_build']
+        assert len(kit)==len(set(kit))==6
+        assert all(s in skill_byid for s in kit)
+        assert {'physical','magic'} <= {skill_byid[s]['kind'] for s in kit}
+        assert {'sweep_light','wave_'+('light' if new_special['proposed_element']=='Quang' else 'dark')+'_light'} <= set(kit)
+    for d in p['decisions']:
+        if d['id']=='P13-D03':d['summary']=d['summary'].replace('7signature mới','9signature authored')
+        if d['id']=='P13-D04':
+            d['summary']+=' V7 thêm Long Thần · Song ấn và Ma Chủ · Nghịch ấn, mỗi skill chỉ thuộc một Special Hybrid mới, inheritance rỗng, rank1, 28MP/CD3/Lv40, chiếm một slot.'
+            d['acceptance']+=['Hai signature mới có đúng một owner, không vào common hoặc pool loài khác; buff/debuff dùng nhóm hiện có và có counterplay.']
+        if d['id']=='P13-D15':
+            d['title'] = '160 loài: role 4★/5★ và đầy đủ đường Special'
+            d['summary'] = 'Candidate 160 = 152 + 6 Normal 5★ + 2 Special Hybrid 5★. Mỗi race có Normal 4★/5★ primary vật lý và phép. 28 recipe: 13 ở 4★, 15 ở 5★; mọi Normal 4★/5★ tham gia ít nhất một recipe phù hợp. Nữ Đế dùng hai caster; ba Hybrid 5★ có đường Special Hybrid. Xem tab Normal / Special, bảng candidate riêng với bảng APK.'
+            d['acceptance'] = ['Không trộn Normal/Special khi xét độ phủ; không còn Normal 4★/5★ thiếu recipe candidate.', 'Mỗi recipe cùng Star, hai Normal khác species, ít nhất một bố mẹ cùng race với Special con.', 'Vật lý/phép phải phù hợp kit con; Hybrid 5★ lên Special Hybrid 5★, không lấy Hybrid làm material cho caster thuần.', 'Duyệt role amendments, 6 brief Normal và 2 brief Special Hybrid mới trước vẽ/promote catalog.', '28 cặp không trùng; chọn đích trước, đảo slot không đổi species. Hai recipe Hybrid mới đưa vào phương án chính, không còn lựa chọn 158 bỏ lửng.', 'Stats/MP/native/inherited pools phải sinh theo role/budget P11 sau roster acceptance; chưa chứng nhận combat/acquisition/economy balance từ static tests.', 'Giữ trần 5★ và bộ skill/signature đã review.']
+            d['summary']+=' Catalog V7 hiển thị đủ 160 species và stats/growth/MP/pool theo role mới; hai Special Hybrid có signature riêng. Không còn tab catalog baseline 152 làm catalog chính.'
+            d['acceptance']=[x.replace('Stats/MP/native/inherited pools phải sinh theo role/budget P11 sau roster acceptance; chưa chứng nhận combat/acquisition/economy balance từ static tests.','160 stats/growth/MP/native pools đã sinh và validate; owner duyệt candidate trước promote P10/P11. Chưa chứng nhận combat/acquisition/economy balance.') for x in d['acceptance']]
+            d['impact'] = 'Owner nghiệm thu catalog candidate 160; 8 loài mới đã có ID ổn định P10 (species_0153–0160), art chờ owner duyệt ở P10. P10/P11 source và runtime/DB chưa đổi.'
+    p['checks'].append(dict(name='Catalog candidate 160 và hai signature Hybrid',status='PASS',detail='160 species, 320 stat layers; role amendments giữ 152 source identity. 97 skill, hai signature mới exclusive/non-inheritable; 160 native pools có role function, builds ≤6.'))
+    vectors=defaultdict(list)
+    for row in p['species']:
+        key=tuple(sorted(row['base_stats'].items()))+tuple(sorted(row['growth_baseline'].items()))
+        vectors[key].append(row)
+    shared=[g for g in vectors.values() if len(g)>1]
+    assert all(len({tuple(sorted(s['native_skills'])) for s in g})==len(g) for g in shared)
+    for check in p['checks']:
+        if check['name']=='152 IDs + roles + references':check.update(name='160 species + roles + references',detail='152 source identities giữ nguyên; 8 loài mới dùng ID ổn định P10 species_0153–0160 (proposal ID chỉ là alias). Stats/growth/MP/pool sinh theo role candidate, 6-slot builds.')
+        elif check['name']=='7 exclusive Special signatures':check.update(name='9 exclusive authored Special signatures',detail='7 signature đã review + 2 Hybrid mới; mỗi skill đúng một owner, không kế thừa, rank1, chiếm 1/6 slot.')
+        elif check['name']=='27 species cùng vector':check.update(name=f'{sum(len(g) for g in shared)} species cùng vector',detail='Đã tính lại trên 160 species: mỗi nhóm cùng base/growth có Native Pool khác nhau.')
+        elif check['name']=='Pool size':check['detail']=f"{min(len(s['native_skills']) for s in p['species'])}–{max(len(s['native_skills']) for s in p['species'])} skills/species; không quota bằng nhau."
+    p['roster_review']['notes'][-1]='V7 đã sinh 160 stats/growth/MP/native pools và validate 320 stat layers theo budget P11. Hai Special Hybrid có signature riêng, 28MP/CD3/Lv40/rank1, không truyền. Combat/acquisition/economy balance vẫn cần P02/P07/P15/P16/P19/P20; chưa promote P10/P11/runtime.'
+    for row in p['species']:
+        if row['id'] in STABLE:
+            row['proposal_id'] = row['id']
+    for x in p['roster_review']['proposed_species'] + p['roster_review']['proposed_special_species']:
+        x['stable_id'] = STABLE[x['proposal_id']]
+        x['status'] = 'stable_id_registered_art_pending_owner_review'
+    p = remap_ids(p)
+    return p, before
+
+def write():
+    p,_ = build()
+    out = PHASE/'roster-review-package.json'
+    out.write_text(json.dumps(p,ensure_ascii=False,indent=2)+'\n')
+    (PHASE/'P13-skill-catalog.json').write_text(json.dumps({'version':p['revision'],'status':'candidate_v7_1_owner_approved','skills':p['skills']},ensure_ascii=False,indent=2)+'\n')
+    r=p['roster_review']
+    catalog=candidate_stats.build({**AMENDMENTS,**NEW_ROLE_PROPOSALS},r['proposed_species']+r['proposed_special_species'])
+    # P10 extension tooling reads this file keyed by proposal ID (its authoring input);
+    # keep that contract and expose the stable P10 ID as an extra field only.
+    back={v:k for k,v in STABLE.items()}
+    catalog['records']={back.get(k,k):v for k,v in catalog['records'].items()}
+    for pid,rec in catalog['records'].items():
+        if pid in STABLE:rec['stable_id']=STABLE[pid]
+    (PHASE/'P13-candidate-species-catalog-160.json').write_text(json.dumps(catalog,ensure_ascii=False,indent=2)+'\n')
+    lines=['# P13 — Review Normal / Special và cặp bố mẹ', '', 'Trạng thái: đề xuất để owner duyệt. Baseline 152; candidate 160 chưa kích hoạt.', '']
+    lines += ['- '+x for x in r['notes']]
+    lines += ['', '## 6 Normal 5★ cần brief/vẽ sau duyệt', '']
+    lines += [f"- {x['stable_id']} (proposal {x['proposal_id']}) — {x['working_name']} ({x['race_name']}, {x['primary_role']}, hệ {x['proposed_element']} đề xuất): {x['art_brief']}" for x in r['proposed_species']]
+    lines += ['', '## 2 Special Hybrid 5★ mới', '']
+    lines += [f"- {x['stable_id']} (proposal {x['proposal_id']}) — {x['working_name']} ({x['race_name']}): {x['art_brief']}" for x in r['proposed_special_species']]
+    lines += ['', '## Signature mới', '']
+    lines += [f"- {s['name']}: {s['description']} MP{s['mp']}, CD{s['cooldown']}, học Lv{s['learn_level']}, rank1." for s in p['skills'] if s['id'] in ['dual_seal_light','inverse_seal_dark']]
+    lines += ['', '## Recipe nguồn (không phải recipe mới hoặc runtime đã bật)', '']
+    lines += [f"- {x['id']}: {x['main']} [Chính] + {x['secondary']} [Phụ] → {x['target']} (bố mẹ {x['parent_star']}★)." for x in r['recipes']]
+    lines += ['', '## Recipe candidate — không bắt buộc giữ công thức APK', '']
+    lines += [f"- {x['target']}: {' + '.join(y['name'] for y in x['parents'])}. {x['reason']}" for x in r['fusion_review']['recipes']]
+    lines += ['', '## Gap còn lại', '', r['fusion_review']['special_expansion'], '', 'Normal 5★ chưa có recipe candidate: '+', '.join(x['name'] for x in r['fusion_review']['normal5_without_proposed_recipe'])]
+    (PHASE/'P13-owner-feedback-v7.md').write_text('\n'.join(lines)+'\n')
+    return hashlib.sha256(out.read_bytes()).hexdigest()
+
+if __name__=='__main__':
+    print(write())

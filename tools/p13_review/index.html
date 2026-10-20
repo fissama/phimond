@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>P13 · Nghiệm thu thiết kế</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<header><a class="brand" href="/">PHIMOND <span>design room</span></a><div class="phase-pill">P13 · Bản nghiệm thu</div><div id="save-state" role="status">Đang tải…</div><button id="save" class="primary" disabled>Lưu phản hồi</button></header>
+<div class="shell">
+<aside><div class="sidebar-label">PHASE 13</div><h2>Skill &<br>tương tác hệ</h2><p class="sidebar-copy">Đọc, thử đối chiếu và quyết định trước khi bàn giao.</p><nav aria-label="Các phần nghiệm thu">
+<button data-tab="decisions" class="active">01 <span>Quyết định</span><b id="decision-count">18</b></button>
+<button data-tab="roster">↳ <span>Normal / Special</span></button>
+<button data-tab="chart">02 <span>Ma trận hệ</span><b>6</b></button>
+<button data-tab="skills">03 <span>Danh mục skill</span><b id="skill-count">—</b></button>
+<button data-tab="species">04 <span id="species-label">Catalog candidate</span><b id="species-count">—</b></button>
+<button data-tab="scenarios">05 <span>Tình huống</span><b id="scenario-count">—</b></button>
+<button data-tab="evidence">06 <span>Nguồn & kiểm chứng</span></button>
+</nav><div class="sidebar-note"><span class="dot"></span> <span id="owner-state">Chủ dự án chưa nghiệm thu</span><p>Đây là thiết kế ứng viên. Các phép đo combat, migration và balance sẽ được kiểm chứng ở phase tích hợp.</p></div><button id="export" class="secondary">Xuất phản hồi JSON ↗</button></aside>
+<main><div class="eyebrow">BẢN THIẾT KẾ · 13 THÁNG 10, 2026</div><div class="page-title"><div><h1 id="heading">Một bộ skill có bản sắc.<br>Một vòng chơi có lựa chọn.</h1><p id="intro">Đang tải bản nghiệm thu…</p></div><div id="revision" class="revision"></div></div>
+<div id="error" role="alert" hidden></div>
+<section class="stats" id="stats" aria-label="Tiến độ phản hồi"></section>
+<div class="toolbar"><div id="section-title"></div><div id="filters"></div></div>
+<section id="content" aria-live="polite"></section>
+<section class="conclusion"><div><div class="eyebrow">KẾT LUẬN CỦA BẠN</div><h2>Nghiệm thu trước handoff</h2><p>Góp ý cụ thể có thể ghi ngay trên từng nhóm. Nếu cần sửa skill hoặc loài, ghi tên/ID ở đây để mình điều chỉnh đúng chỗ.</p></div><div><label for="notes">Góp ý chung / các mục cần sửa</label><textarea id="notes" rows="4" placeholder="Ví dụ: P13-D11 cần xem lại Hóa đá; species_0103 nên có…"></textarea><div class="verdict-row"><label for="verdict">Kết luận</label><select id="verdict"><option value="draft">Đang xem — lưu nháp</option><option value="approved">Duyệt toàn bộ</option><option value="changes_requested">Yêu cầu sửa</option><option value="rejected">Từ chối bản này</option></select><button id="submit" class="primary">Gửi kết luận</button></div><p id="submit-help" class="muted">Duyệt toàn bộ yêu cầu tất cả nhóm quyết định được duyệt.</p><p id="stored-verdict"></p></div></section>
+<footer><span id="hash"></span><span>Phản hồi được lưu local theo đúng phiên bản. Handoff chờ nghiệm thu.</span></footer>
+</main></div><script src="/app.js"></script></body></html>
