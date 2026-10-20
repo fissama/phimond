@@ -1,0 +1,3262 @@
+{
+  "version": "P13-candidate-v7.1-20261019",
+  "status": "candidate_v7_1_owner_approved",
+  "skills": [
+    {
+      "id": "strike",
+      "name": "Cường kích",
+      "kind": "physical",
+      "target": "enemy_one",
+      "mp": 8,
+      "cooldown": 0,
+      "learn_level": 1,
+      "element": "neutral",
+      "description": "Một địch, 1.20×ATK; không hiệu ứng phụ.",
+      "functions": [
+        "physical_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "1.20",
+      "effect": null,
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "damage_heal_3_ranks",
+      "action_channel": "physical",
+      "target_shape": "single",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "sweep",
+      "name": "Càn quét",
+      "kind": "physical",
+      "target": "enemy_all",
+      "mp": 18,
+      "cooldown": 1,
+      "learn_level": 5,
+      "element": "neutral",
+      "description": "AoE tất cả địch; mỗi target 0.75×ATK, hit/crit riêng. Damage thuần, không status. Tier mạnh hơn, trả thêm MP; không xóa/thay tier khác.",
+      "functions": [
+        "physical_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "0.75",
+      "effect": null,
+      "source_ids": [
+        "CanQuet"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "physical",
+      "tier_family": "sweep",
+      "tier_index": 2,
+      "target_shape": "aoe",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "pierce",
+      "name": "Xuyên giáp",
+      "kind": "physical",
+      "target": "enemy_one",
+      "mp": 12,
+      "cooldown": 1,
+      "learn_level": 10,
+      "element": "neutral",
+      "description": "1.00×ATK, bỏ qua 30% DEF hiệu lực; không bỏ qua khiên.",
+      "functions": [
+        "physical_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "1.00",
+      "effect": {
+        "penetration": 0.3
+      },
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "damage_heal_3_ranks",
+      "action_channel": "physical",
+      "target_shape": "single",
+      "damage_mode": "damage_with_effect"
+    },
+    {
+      "id": "double",
+      "name": "Liên kích",
+      "kind": "physical",
+      "target": "enemy_one",
+      "mp": 12,
+      "cooldown": 1,
+      "learn_level": 10,
+      "element": "neutral",
+      "description": "Hai hit 0.60×ATK; hit/crit riêng; cùng target, không đổi mục tiêu nếu chết.",
+      "functions": [
+        "physical_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "0.60",
+      "effect": {
+        "hits": 2
+      },
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "damage_heal_3_ranks",
+      "action_channel": "physical",
+      "target_shape": "single",
+      "damage_mode": "damage_with_effect"
+    },
+    {
+      "id": "drain",
+      "name": "Công kích hút máu",
+      "kind": "physical",
+      "target": "enemy_one",
+      "mp": 16,
+      "cooldown": 2,
+      "learn_level": 20,
+      "element": "neutral",
+      "description": "1.10×ATK; hồi 25% HP thực sự mất của target, sau khiên; không từ overkill.",
+      "functions": [
+        "physical_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "1.10",
+      "effect": null,
+      "source_ids": [
+        "CongKichHutMau"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "damage_heal_3_ranks",
+      "action_channel": "physical",
+      "target_shape": "single",
+      "damage_mode": "damage_with_effect"
+    },
+    {
+      "id": "counter",
+      "name": "Phản kích",
+      "kind": "buff",
+      "target": "self",
+      "mp": 12,
+      "cooldown": 2,
+      "learn_level": 10,
+      "element": "neutral",
+      "description": "2 vòng: tối đa 1 phản kích/vòng, 0.50×ATK sau khi sống sót qua đòn trực tiếp; không phản đòn phản kích/DoT.",
+      "functions": [
+        "tank"
+      ],
+      "inheritance": [
+        "beast",
+        "dragon",
+        "undead",
+        "insect"
+      ],
+      "power": null,
+      "effect": null,
+      "source_ids": [
+        "PhanKich"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "utility",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "bolt_fire",
+      "name": "Linh kích Hỏa",
+      "kind": "magic",
+      "target": "enemy_one",
+      "mp": 10,
+      "cooldown": 0,
+      "learn_level": 1,
+      "element": "fire",
+      "description": "1.20×MAG, một địch; bảng hệ theo skill và target.",
+      "functions": [
+        "magic_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "1.20",
+      "effect": null,
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "damage_heal_3_ranks",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "wave_fire",
+      "name": "Làm Nóng",
+      "kind": "magic",
+      "target": "enemy_all",
+      "mp": 20,
+      "cooldown": 1,
+      "learn_level": 5,
+      "element": "fire",
+      "description": "AoE tất cả địch; mỗi target 0.75×MAG, hit/crit riêng. Damage thuần, không status. Tier mạnh hơn, trả thêm MP; không xóa/thay tier khác.",
+      "functions": [
+        "magic_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "0.75",
+      "effect": null,
+      "source_ids": [
+        "LamNong"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "tier_family": "wave_fire",
+      "tier_index": 2,
+      "target_shape": "aoe",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "claw_fire",
+      "name": "Lợi trảo Hỏa",
+      "kind": "physical",
+      "target": "enemy_one",
+      "mp": 10,
+      "cooldown": 0,
+      "learn_level": 5,
+      "element": "fire",
+      "description": "1.10×ATK với element ghi rõ; không STAB.",
+      "functions": [
+        "physical_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "1.10",
+      "effect": null,
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "damage_heal_3_ranks",
+      "action_channel": "physical",
+      "target_shape": "single",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "bolt_water",
+      "name": "Linh kích Thủy",
+      "kind": "magic",
+      "target": "enemy_one",
+      "mp": 10,
+      "cooldown": 0,
+      "learn_level": 1,
+      "element": "water",
+      "description": "1.20×MAG, một địch; bảng hệ theo skill và target.",
+      "functions": [
+        "magic_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "1.20",
+      "effect": null,
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "damage_heal_3_ranks",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "wave_water",
+      "name": "Bão Tuyết",
+      "kind": "magic",
+      "target": "enemy_all",
+      "mp": 20,
+      "cooldown": 1,
+      "learn_level": 5,
+      "element": "water",
+      "description": "AoE tất cả địch; mỗi target 0.75×MAG, hit/crit riêng. Damage thuần, không status. Tier mạnh hơn, trả thêm MP; không xóa/thay tier khác.",
+      "functions": [
+        "magic_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "0.75",
+      "effect": null,
+      "source_ids": [
+        "BaoTuyet"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "tier_family": "wave_water",
+      "tier_index": 2,
+      "target_shape": "aoe",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "claw_water",
+      "name": "Lợi trảo Thủy",
+      "kind": "physical",
+      "target": "enemy_one",
+      "mp": 10,
+      "cooldown": 0,
+      "learn_level": 5,
+      "element": "water",
+      "description": "1.10×ATK với element ghi rõ; không STAB.",
+      "functions": [
+        "physical_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "1.10",
+      "effect": null,
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "damage_heal_3_ranks",
+      "action_channel": "physical",
+      "target_shape": "single",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "bolt_wind",
+      "name": "Linh kích Phong",
+      "kind": "magic",
+      "target": "enemy_one",
+      "mp": 10,
+      "cooldown": 0,
+      "learn_level": 1,
+      "element": "wind",
+      "description": "1.20×MAG, một địch; bảng hệ theo skill và target.",
+      "functions": [
+        "magic_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "1.20",
+      "effect": null,
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "damage_heal_3_ranks",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "wave_wind",
+      "name": "Thuật Lốc Xoáy",
+      "kind": "magic",
+      "target": "enemy_all",
+      "mp": 20,
+      "cooldown": 1,
+      "learn_level": 5,
+      "element": "wind",
+      "description": "AoE tất cả địch; mỗi target 0.75×MAG, hit/crit riêng. Damage thuần, không status. Tier mạnh hơn, trả thêm MP; không xóa/thay tier khác.",
+      "functions": [
+        "magic_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "0.75",
+      "effect": null,
+      "source_ids": [
+        "ThuatLocXoay"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "tier_family": "wave_wind",
+      "tier_index": 2,
+      "target_shape": "aoe",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "claw_wind",
+      "name": "Lợi trảo Phong",
+      "kind": "physical",
+      "target": "enemy_one",
+      "mp": 10,
+      "cooldown": 0,
+      "learn_level": 5,
+      "element": "wind",
+      "description": "1.10×ATK với element ghi rõ; không STAB.",
+      "functions": [
+        "physical_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "1.10",
+      "effect": null,
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "damage_heal_3_ranks",
+      "action_channel": "physical",
+      "target_shape": "single",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "bolt_earth",
+      "name": "Linh kích Địa",
+      "kind": "magic",
+      "target": "enemy_one",
+      "mp": 10,
+      "cooldown": 0,
+      "learn_level": 1,
+      "element": "earth",
+      "description": "1.20×MAG, một địch; bảng hệ theo skill và target.",
+      "functions": [
+        "magic_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "1.20",
+      "effect": null,
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "damage_heal_3_ranks",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "wave_earth",
+      "name": "Thuật Nứt Đất",
+      "kind": "magic",
+      "target": "enemy_all",
+      "mp": 20,
+      "cooldown": 1,
+      "learn_level": 5,
+      "element": "earth",
+      "description": "AoE tất cả địch; mỗi target 0.75×MAG, hit/crit riêng. Damage thuần, không status. Tier mạnh hơn, trả thêm MP; không xóa/thay tier khác.",
+      "functions": [
+        "magic_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "0.75",
+      "effect": null,
+      "source_ids": [
+        "ThuatNutDat"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "tier_family": "wave_earth",
+      "tier_index": 2,
+      "target_shape": "aoe",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "claw_earth",
+      "name": "Lợi trảo Địa",
+      "kind": "physical",
+      "target": "enemy_one",
+      "mp": 10,
+      "cooldown": 0,
+      "learn_level": 5,
+      "element": "earth",
+      "description": "1.10×ATK với element ghi rõ; không STAB.",
+      "functions": [
+        "physical_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "1.10",
+      "effect": null,
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "damage_heal_3_ranks",
+      "action_channel": "physical",
+      "target_shape": "single",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "bolt_light",
+      "name": "Linh kích Quang",
+      "kind": "magic",
+      "target": "enemy_one",
+      "mp": 10,
+      "cooldown": 0,
+      "learn_level": 1,
+      "element": "light",
+      "description": "1.20×MAG, một địch; bảng hệ theo skill và target.",
+      "functions": [
+        "magic_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "1.20",
+      "effect": null,
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "damage_heal_3_ranks",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "wave_light",
+      "name": "Cú đánh thôi sơn",
+      "kind": "magic",
+      "target": "enemy_all",
+      "mp": 20,
+      "cooldown": 1,
+      "learn_level": 5,
+      "element": "light",
+      "description": "AoE tất cả địch; mỗi target 0.75×MAG, hit/crit riêng. Damage thuần, không status. Tier mạnh hơn, trả thêm MP; không xóa/thay tier khác.",
+      "functions": [
+        "magic_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "0.75",
+      "effect": null,
+      "source_ids": [
+        "CuDanhThoiSon"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "tier_family": "wave_light",
+      "tier_index": 2,
+      "target_shape": "aoe",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "claw_light",
+      "name": "Lợi trảo Quang",
+      "kind": "physical",
+      "target": "enemy_one",
+      "mp": 10,
+      "cooldown": 0,
+      "learn_level": 5,
+      "element": "light",
+      "description": "1.10×ATK với element ghi rõ; không STAB.",
+      "functions": [
+        "physical_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "1.10",
+      "effect": null,
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "damage_heal_3_ranks",
+      "action_channel": "physical",
+      "target_shape": "single",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "bolt_dark",
+      "name": "Linh kích Âm",
+      "kind": "magic",
+      "target": "enemy_one",
+      "mp": 10,
+      "cooldown": 0,
+      "learn_level": 1,
+      "element": "dark",
+      "description": "1.20×MAG, một địch; bảng hệ theo skill và target.",
+      "functions": [
+        "magic_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "1.20",
+      "effect": null,
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "damage_heal_3_ranks",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "wave_dark",
+      "name": "Hủy Diệt",
+      "kind": "magic",
+      "target": "enemy_all",
+      "mp": 20,
+      "cooldown": 1,
+      "learn_level": 5,
+      "element": "dark",
+      "description": "AoE tất cả địch; mỗi target 0.75×MAG, hit/crit riêng. Damage thuần, không status. Tier mạnh hơn, trả thêm MP; không xóa/thay tier khác.",
+      "functions": [
+        "magic_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "0.75",
+      "effect": null,
+      "source_ids": [
+        "HuyDiet"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "tier_family": "wave_dark",
+      "tier_index": 2,
+      "target_shape": "aoe",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "claw_dark",
+      "name": "Lợi trảo Âm",
+      "kind": "physical",
+      "target": "enemy_one",
+      "mp": 10,
+      "cooldown": 0,
+      "learn_level": 5,
+      "element": "dark",
+      "description": "1.10×ATK với element ghi rõ; không STAB.",
+      "functions": [
+        "physical_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "1.10",
+      "effect": null,
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "damage_heal_3_ranks",
+      "action_channel": "physical",
+      "target_shape": "single",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "heal",
+      "name": "Trị liệu",
+      "kind": "heal",
+      "target": "ally_one",
+      "mp": 14,
+      "cooldown": 1,
+      "learn_level": 1,
+      "element": "neutral",
+      "description": "Hồi floor(1.50×MAG + 10) HP; self hợp lệ; không hồi sinh.",
+      "functions": [
+        "support"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": null,
+      "effect": null,
+      "source_ids": [
+        "TriLieu"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "damage_heal_3_ranks",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "group_heal",
+      "name": "Trị liệu nhóm",
+      "kind": "heal",
+      "target": "ally_all",
+      "mp": 28,
+      "cooldown": 2,
+      "learn_level": 20,
+      "element": "neutral",
+      "description": "Mỗi đồng minh còn sống hồi floor(0.85×MAG + 6); solo chỉ hồi một pet.",
+      "functions": [
+        "support"
+      ],
+      "inheritance": [
+        "plant",
+        "bird",
+        "spirit"
+      ],
+      "power": null,
+      "effect": null,
+      "source_ids": [
+        "TriLieuNhom"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "tier_family": "group_heal",
+      "tier_index": 1,
+      "target_shape": "aoe",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "shield",
+      "name": "Hộ thuẫn",
+      "kind": "shield",
+      "target": "ally_one",
+      "mp": 14,
+      "cooldown": 2,
+      "learn_level": 5,
+      "element": "neutral",
+      "description": "Khiên floor(1.20×MAG + 0.08×maxHP người thi triển), 2 vòng; cùng loại giữ lượng lớn hơn, không cộng dồn.",
+      "functions": [
+        "tank",
+        "support"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": null,
+      "effect": null,
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "guard",
+      "name": "Giáp hộ thân",
+      "kind": "buff",
+      "target": "self",
+      "mp": 10,
+      "cooldown": 2,
+      "learn_level": 1,
+      "element": "neutral",
+      "description": "DEF +25% trong 2 vòng, một nhóm armor; không nhân vô hạn.",
+      "functions": [
+        "tank"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": null,
+      "effect": null,
+      "source_ids": [
+        "ThuatTaoVo"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "utility",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "protect",
+      "name": "Che chở",
+      "kind": "buff",
+      "target": "ally_one",
+      "mp": 16,
+      "cooldown": 2,
+      "learn_level": 10,
+      "element": "neutral",
+      "description": "Cho ally/self DEF +20% trong 2 vòng; thay nhóm armor nếu mạnh hơn, không chuyển sát thương giữa actor.",
+      "functions": [
+        "tank",
+        "support"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": null,
+      "effect": null,
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "utility",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "regen",
+      "name": "Tái sinh",
+      "kind": "buff",
+      "target": "ally_one",
+      "mp": 16,
+      "cooldown": 3,
+      "learn_level": 15,
+      "element": "neutral",
+      "description": "2 lần cuối vòng kế tiếp, mỗi lần hồi floor(0.60×MAG + 4); paid active, không passive/free heal.",
+      "functions": [
+        "support",
+        "tank"
+      ],
+      "inheritance": [
+        "plant",
+        "beast"
+      ],
+      "power": null,
+      "effect": null,
+      "source_ids": [
+        "TaiSinh"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "haste",
+      "name": "Cấp tốc",
+      "kind": "buff",
+      "target": "ally_one",
+      "mp": 12,
+      "cooldown": 2,
+      "learn_level": 10,
+      "element": "neutral",
+      "description": "SPD +20% trong 2 vòng; có hiệu lực từ danh sách hành động vòng sau, không thêm lượt.",
+      "functions": [
+        "support"
+      ],
+      "inheritance": [
+        "bird",
+        "beast"
+      ],
+      "power": null,
+      "effect": null,
+      "source_ids": [
+        "TangToc"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "utility",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "beast_instinct",
+      "name": "Thú tính",
+      "kind": "buff",
+      "target": "self",
+      "mp": 12,
+      "cooldown": 2,
+      "learn_level": 10,
+      "element": "neutral",
+      "description": "ATK +20% trong 2 vòng, DEF −10% trong cùng thời gian; trả giá bằng chống chịu.",
+      "functions": [
+        "physical_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "beast",
+        "dragon"
+      ],
+      "power": null,
+      "effect": null,
+      "source_ids": [
+        "ThuTinh"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "utility",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "meditate",
+      "name": "Suy tưởng",
+      "kind": "resource",
+      "target": "ally_other",
+      "mp": 12,
+      "cooldown": 2,
+      "learn_level": 15,
+      "element": "neutral",
+      "description": "Chuyển 10 MP tới đồng minh khác, hao hụt 2 MP và 1 action; không dùng lên self, không tạo MP.",
+      "functions": [
+        "support"
+      ],
+      "inheritance": [
+        "spirit",
+        "beast"
+      ],
+      "power": null,
+      "effect": null,
+      "source_ids": [
+        "SuyTuong"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "attack_up",
+      "name": "Thiên thần hạ phàm",
+      "kind": "buff",
+      "target": "ally_all",
+      "mp": 24,
+      "cooldown": 3,
+      "learn_level": 20,
+      "element": "neutral",
+      "description": "ATK cả đội +20% trong 2 vòng, nhóm might; solo vẫn buff self.",
+      "functions": [
+        "support"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": null,
+      "effect": null,
+      "source_ids": [
+        "ThienThanHaPham"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "utility",
+      "target_shape": "aoe",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "magic_up",
+      "name": "Tim ác ma",
+      "kind": "buff",
+      "target": "ally_all",
+      "mp": 24,
+      "cooldown": 3,
+      "learn_level": 20,
+      "element": "neutral",
+      "description": "MAG cả đội +20% trong 2 vòng, nhóm intellect.",
+      "functions": [
+        "support"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": null,
+      "effect": null,
+      "source_ids": [
+        "TimAcMa"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "target_shape": "aoe",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "magic_focus",
+      "name": "Tập trung pháp lực",
+      "kind": "buff",
+      "target": "self",
+      "mp": 10,
+      "cooldown": 2,
+      "learn_level": 10,
+      "element": "neutral",
+      "description": "MAG +20% trong 2 vòng; không hồi MP.",
+      "functions": [
+        "magic_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": null,
+      "effect": null,
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "resilience",
+      "name": "Kiên tâm",
+      "kind": "buff",
+      "target": "self",
+      "mp": 10,
+      "cooldown": 3,
+      "learn_level": 10,
+      "element": "neutral",
+      "description": "SR +25% trong 2 vòng; không miễn nhiễm, không tăng tỉ lệ gây status.",
+      "functions": [
+        "tank"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": null,
+      "effect": null,
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "utility",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "revive",
+      "name": "Thuật phục sinh",
+      "kind": "revive",
+      "target": "ally_fainted",
+      "mp": 35,
+      "cooldown": 4,
+      "learn_level": 40,
+      "element": "neutral",
+      "description": "Hồi sinh ally khác đã chết, 25% maxHP, giữ MP hiện tại; tối đa 1 lần/actor/battle, không tự hồi sinh.",
+      "functions": [
+        "support"
+      ],
+      "inheritance": [],
+      "power": null,
+      "effect": null,
+      "source_ids": [
+        "PhucSinh",
+        "TrungSinh"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "sleep",
+      "name": "Ngủ say",
+      "kind": "control",
+      "target": "enemy_one",
+      "mp": 16,
+      "cooldown": 3,
+      "learn_level": 15,
+      "element": "neutral",
+      "description": "75% base chance: mất tối đa 1 action; direct hit đánh thức, không bonus damage.",
+      "functions": [
+        "disruptor"
+      ],
+      "inheritance": [
+        "bird",
+        "plant"
+      ],
+      "power": null,
+      "effect": {
+        "status": "sleep",
+        "chance": 0.75
+      },
+      "source_ids": [
+        "NguSay"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "bind",
+      "name": "Trói buộc",
+      "kind": "control",
+      "target": "enemy_one",
+      "mp": 14,
+      "cooldown": 2,
+      "learn_level": 10,
+      "element": "neutral",
+      "description": "80% base chance: chặn action vật lý trong 2 vòng; magic/support hợp lệ, basic sẽ bị chặn.",
+      "functions": [
+        "disruptor"
+      ],
+      "inheritance": [
+        "beast",
+        "plant",
+        "insect"
+      ],
+      "power": null,
+      "effect": {
+        "status": "bind",
+        "chance": 0.8
+      },
+      "source_ids": [
+        "TroiBuoc"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "silence",
+      "name": "Trầm mặc",
+      "kind": "control",
+      "target": "enemy_one",
+      "mp": 14,
+      "cooldown": 2,
+      "learn_level": 10,
+      "element": "neutral",
+      "description": "80% base chance: chặn skill channel magic (gồm heal/shield/control/resource) trong 2 vòng; channel physical/utility và basic vẫn hợp lệ; channel ghi từng skill.",
+      "functions": [
+        "disruptor"
+      ],
+      "inheritance": [
+        "demon",
+        "bird"
+      ],
+      "power": null,
+      "effect": {
+        "status": "silence",
+        "chance": 0.8
+      },
+      "source_ids": [
+        "TramMac"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "blind",
+      "name": "Làm mù",
+      "kind": "debuff",
+      "target": "enemy_one",
+      "mp": 12,
+      "cooldown": 2,
+      "learn_level": 10,
+      "element": "neutral",
+      "description": "85% base chance: accuracy −20 điểm phần trăm trong 2 vòng; không làm mọi đòn chắc miss.",
+      "functions": [
+        "disruptor"
+      ],
+      "inheritance": [
+        "plant",
+        "beast",
+        "bird"
+      ],
+      "power": null,
+      "effect": {
+        "status": "blind",
+        "chance": 0.85
+      },
+      "source_ids": [
+        "LamMu"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "petrify",
+      "name": "Hóa đá",
+      "kind": "control",
+      "target": "enemy_one",
+      "mp": 20,
+      "cooldown": 3,
+      "learn_level": 20,
+      "element": "neutral",
+      "description": "70% base chance: mất tối đa 1 action, DEF +25% khi tồn tại; vẫn nhận damage, không miễn nhiễm toàn phần.",
+      "functions": [
+        "disruptor"
+      ],
+      "inheritance": [
+        "insect",
+        "dragon"
+      ],
+      "power": null,
+      "effect": {
+        "status": "petrify",
+        "chance": 0.7
+      },
+      "source_ids": [
+        "HoaDa"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "confuse",
+      "name": "Hỗn loạn",
+      "kind": "control",
+      "target": "enemy_one",
+      "mp": 18,
+      "cooldown": 3,
+      "learn_level": 15,
+      "element": "neutral",
+      "description": "75% base chance: action kế tiếp thành basic vào một địch sống do server RNG chọn; không tấn công phe mình.",
+      "functions": [
+        "disruptor"
+      ],
+      "inheritance": [
+        "undead",
+        "spirit"
+      ],
+      "power": null,
+      "effect": {
+        "status": "confuse",
+        "chance": 0.75
+      },
+      "source_ids": [
+        "HonLoan"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "misfortune",
+      "name": "Vận xui",
+      "kind": "debuff",
+      "target": "enemy_one",
+      "mp": 14,
+      "cooldown": 2,
+      "learn_level": 15,
+      "element": "neutral",
+      "description": "80% base chance: lượng HP được hồi −25% trong 2 vòng; có thể giải, không tử hình tức thì.",
+      "functions": [
+        "disruptor"
+      ],
+      "inheritance": [
+        "spirit",
+        "undead",
+        "insect"
+      ],
+      "power": null,
+      "effect": {
+        "status": "misfortune",
+        "chance": 0.8
+      },
+      "source_ids": [
+        "VanXui"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "weaken_atk",
+      "name": "Suy nhược",
+      "kind": "debuff",
+      "target": "enemy_one",
+      "mp": 12,
+      "cooldown": 2,
+      "learn_level": 10,
+      "element": "neutral",
+      "description": "85% base chance: ATK −20% trong 2 vòng; áp dụng pipeline P11.",
+      "functions": [
+        "disruptor"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": null,
+      "effect": {
+        "stat": "atk",
+        "amount": -0.2,
+        "chance": 0.85
+      },
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "weaken_mag",
+      "name": "Tán linh",
+      "kind": "debuff",
+      "target": "enemy_one",
+      "mp": 12,
+      "cooldown": 2,
+      "learn_level": 10,
+      "element": "neutral",
+      "description": "85% base chance: MAG −20% trong 2 vòng; áp dụng pipeline P11.",
+      "functions": [
+        "disruptor"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": null,
+      "effect": {
+        "stat": "mag",
+        "amount": -0.2,
+        "chance": 0.85
+      },
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "break_def",
+      "name": "Phá giáp",
+      "kind": "debuff",
+      "target": "enemy_one",
+      "mp": 12,
+      "cooldown": 2,
+      "learn_level": 10,
+      "element": "neutral",
+      "description": "85% base chance: DEF −20% trong 2 vòng; áp dụng pipeline P11.",
+      "functions": [
+        "disruptor"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": null,
+      "effect": {
+        "stat": "def",
+        "amount": -0.2,
+        "chance": 0.85
+      },
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "slow",
+      "name": "Trì hoãn",
+      "kind": "debuff",
+      "target": "enemy_one",
+      "mp": 12,
+      "cooldown": 2,
+      "learn_level": 10,
+      "element": "neutral",
+      "description": "85% base chance: SPD −20% trong 2 vòng; áp dụng pipeline P11.",
+      "functions": [
+        "disruptor"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": null,
+      "effect": {
+        "stat": "spd",
+        "amount": -0.2,
+        "chance": 0.85
+      },
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "frailty",
+      "name": "Sinh lực suy yếu",
+      "kind": "debuff",
+      "target": "enemy_one",
+      "mp": 14,
+      "cooldown": 2,
+      "learn_level": 15,
+      "element": "neutral",
+      "description": "80% base chance: ATK và MAG −10% trong 2 vòng; thích ứng brief max-HP impairment để không tạo free heal/maxHP exploit.",
+      "functions": [
+        "disruptor"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": null,
+      "effect": {
+        "status": "frailty",
+        "chance": 0.8
+      },
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "poison",
+      "name": "Độc châm",
+      "kind": "physical",
+      "target": "enemy_one",
+      "mp": 14,
+      "cooldown": 2,
+      "learn_level": 10,
+      "element": "neutral",
+      "description": "0.80×ATK; sau hit, 70% base chance độc: mỗi tick 0.30×ATK nguồn, 2 tick. Độc đơn thuần không tạo role Disruptor.",
+      "functions": [
+        "physical_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "insect",
+        "bird",
+        "undead"
+      ],
+      "power": "0.80",
+      "effect": {
+        "status": "poison",
+        "chance": 0.7
+      },
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "damage_heal_3_ranks",
+      "action_channel": "physical",
+      "target_shape": "single",
+      "damage_mode": "damage_with_effect"
+    },
+    {
+      "id": "burn",
+      "name": "Hỏa ấn",
+      "kind": "magic",
+      "target": "enemy_one",
+      "mp": 14,
+      "cooldown": 2,
+      "learn_level": 10,
+      "element": "fire",
+      "description": "0.80×MAG Hỏa; sau hit, 70% base chance cháy: mỗi tick 0.30×MAG nguồn, 2 tick.",
+      "functions": [
+        "magic_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "0.80",
+      "effect": {
+        "status": "burn",
+        "chance": 0.7
+      },
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "damage_heal_3_ranks",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "damage_with_effect"
+    },
+    {
+      "id": "cleanse",
+      "name": "Thanh tẩy",
+      "kind": "cleanse",
+      "target": "ally_one",
+      "mp": 16,
+      "cooldown": 2,
+      "learn_level": 10,
+      "element": "neutral",
+      "description": "Gỡ 1 trạng thái xấu: control action trước, rồi silence/bind, rồi debuff, rồi DoT; hòa theo thời điểm cũ hơn.",
+      "functions": [
+        "support"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": null,
+      "effect": null,
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "wake",
+      "name": "Thức tỉnh",
+      "kind": "cleanse",
+      "target": "ally_one",
+      "mp": 8,
+      "cooldown": 1,
+      "learn_level": 5,
+      "element": "neutral",
+      "description": "Gỡ sleep cho ally/self; nếu không có status này, target không hợp lệ, không mất MP/action.",
+      "functions": [
+        "support"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": null,
+      "effect": {
+        "cleanse": "sleep"
+      },
+      "source_ids": [
+        "ThucTinh"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "free",
+      "name": "Chúc phúc tự do",
+      "kind": "cleanse",
+      "target": "ally_one",
+      "mp": 8,
+      "cooldown": 1,
+      "learn_level": 5,
+      "element": "neutral",
+      "description": "Gỡ bind cho ally/self; nếu không có status này, target không hợp lệ, không mất MP/action.",
+      "functions": [
+        "support"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": null,
+      "effect": {
+        "cleanse": "bind"
+      },
+      "source_ids": [
+        "ChucPhucTuDo"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "song",
+      "name": "Ca hát",
+      "kind": "cleanse",
+      "target": "ally_one",
+      "mp": 8,
+      "cooldown": 1,
+      "learn_level": 5,
+      "element": "neutral",
+      "description": "Gỡ silence cho ally/self; nếu không có status này, target không hợp lệ, không mất MP/action.",
+      "functions": [
+        "support"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": null,
+      "effect": {
+        "cleanse": "silence"
+      },
+      "source_ids": [
+        "CaHat"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "sight",
+      "name": "Làm sáng lại",
+      "kind": "cleanse",
+      "target": "ally_one",
+      "mp": 8,
+      "cooldown": 1,
+      "learn_level": 5,
+      "element": "neutral",
+      "description": "Gỡ blind cho ally/self; nếu không có status này, target không hợp lệ, không mất MP/action.",
+      "functions": [
+        "support"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": null,
+      "effect": {
+        "cleanse": "blind"
+      },
+      "source_ids": [
+        "LamSangLai"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "dissolve",
+      "name": "Hòa tan",
+      "kind": "cleanse",
+      "target": "ally_one",
+      "mp": 8,
+      "cooldown": 1,
+      "learn_level": 5,
+      "element": "neutral",
+      "description": "Gỡ petrify cho ally/self; nếu không có status này, target không hợp lệ, không mất MP/action.",
+      "functions": [
+        "support"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": null,
+      "effect": {
+        "cleanse": "petrify"
+      },
+      "source_ids": [
+        "HoaTan"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "order",
+      "name": "Trật tự",
+      "kind": "cleanse",
+      "target": "ally_one",
+      "mp": 8,
+      "cooldown": 1,
+      "learn_level": 5,
+      "element": "neutral",
+      "description": "Gỡ confuse cho ally/self; nếu không có status này, target không hợp lệ, không mất MP/action.",
+      "functions": [
+        "support"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": null,
+      "effect": {
+        "cleanse": "confuse"
+      },
+      "source_ids": [
+        "TratTu"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "bless",
+      "name": "Ban phước",
+      "kind": "cleanse",
+      "target": "ally_one",
+      "mp": 8,
+      "cooldown": 1,
+      "learn_level": 5,
+      "element": "neutral",
+      "description": "Gỡ misfortune cho ally/self; nếu không có status này, target không hợp lệ, không mất MP/action.",
+      "functions": [
+        "support"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": null,
+      "effect": {
+        "cleanse": "misfortune"
+      },
+      "source_ids": [
+        "BanPhuoc"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "dispel",
+      "name": "Phá phù",
+      "kind": "dispel",
+      "target": "enemy_one",
+      "mp": 14,
+      "cooldown": 2,
+      "learn_level": 15,
+      "element": "neutral",
+      "description": "Gỡ 1 buff: shield trước, rồi ATK/MAG, armor, SPD/SR; không gây damage; kiểm tra hit, không qua SR.",
+      "functions": [
+        "disruptor"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": null,
+      "effect": null,
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "extinguish",
+      "name": "Dập lửa",
+      "kind": "cleanse",
+      "target": "ally_one",
+      "mp": 8,
+      "cooldown": 1,
+      "learn_level": 5,
+      "element": "water",
+      "description": "Gỡ cháy; thêm khiên floor(0.50×MAG) trong 1 vòng. Target cần có burn.",
+      "functions": [
+        "support"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": null,
+      "effect": null,
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "mana_burn",
+      "name": "Thiêu đốt pháp lực",
+      "kind": "magic",
+      "target": "enemy_one",
+      "mp": 18,
+      "cooldown": 2,
+      "learn_level": 20,
+      "element": "neutral",
+      "description": "0.75×MAG damage; target mất tối đa floor(0.20×MAG nguồn) MP, tối đa 10 MP/hit; không chuyển MP về nguồn.",
+      "functions": [
+        "magic_dps",
+        "disruptor",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "0.75",
+      "effect": null,
+      "source_ids": [
+        "ThieuDotPhapLuc"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "damage_heal_3_ranks",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "dragon_breath",
+      "name": "Uy rồng phả hơi",
+      "kind": "magic",
+      "target": "enemy_one",
+      "mp": 28,
+      "cooldown": 3,
+      "learn_level": 40,
+      "element": "light",
+      "description": "1.70×MAG Quang, một địch; signature Thánh Rồng Thái Cổ, không kế thừa.",
+      "functions": [
+        "magic_dps",
+        "hybrid"
+      ],
+      "inheritance": [],
+      "power": "1.70",
+      "effect": null,
+      "source_ids": [
+        "UyRongPhaHoi"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "damage_heal_3_ranks",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "death_scythe",
+      "name": "Lưỡi hái tử thần",
+      "kind": "physical",
+      "target": "enemy_one",
+      "mp": 26,
+      "cooldown": 3,
+      "learn_level": 40,
+      "element": "dark",
+      "description": "1.50×ATK Âm + mark nhận hồi phục −25% (70% base chance), 2 vòng; giải được, không instant kill.",
+      "functions": [
+        "physical_dps"
+      ],
+      "inheritance": [],
+      "power": "1.50",
+      "effect": {
+        "status": "misfortune",
+        "chance": 0.7
+      },
+      "source_ids": [
+        "LuoiHai"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "damage_heal_3_ranks",
+      "action_channel": "physical",
+      "target_shape": "single",
+      "damage_mode": "damage_with_effect"
+    },
+    {
+      "id": "love_kiss",
+      "name": "Nụ hôn Ái Thần",
+      "kind": "shield",
+      "target": "ally_one",
+      "mp": 26,
+      "cooldown": 3,
+      "learn_level": 40,
+      "element": "neutral",
+      "description": "Khiên floor(1.80×MAG + 0.10×maxHP nguồn), 1 vòng; không miễn nhiễm. Signature Chim Ái Thần, không kế thừa.",
+      "functions": [
+        "support"
+      ],
+      "inheritance": [],
+      "power": null,
+      "effect": null,
+      "source_ids": [
+        "NuHon"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "azure_tide",
+      "name": "Thanh Long · Triều áp",
+      "kind": "magic",
+      "target": "enemy_one",
+      "mp": 24,
+      "cooldown": 3,
+      "learn_level": 30,
+      "element": "water",
+      "description": "1.10×MAG Thủy; sau hit, 70% base chance SPD target −20% trong 2 vòng. Giải debuff được; không thêm damage khi dập burn. Độc quyền species_0068; chiếm 1/6 slot, rank1 cố định, không kế thừa.",
+      "functions": [
+        "magic_dps",
+        "hybrid"
+      ],
+      "inheritance": [],
+      "power": "1.10",
+      "effect": {
+        "status": "slow",
+        "chance": 0.7,
+        "amount": -0.2
+      },
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "exclusive_species": "species_0068",
+      "target_shape": "single",
+      "damage_mode": "damage_with_effect"
+    },
+    {
+      "id": "tiger_gale",
+      "name": "Bạch Hổ · Phong trảo",
+      "kind": "physical",
+      "target": "enemy_one",
+      "mp": 24,
+      "cooldown": 3,
+      "learn_level": 30,
+      "element": "wind",
+      "description": "1.25×ATK Phong; sau hit thành công, self SPD +20% trong 2 vòng. Không thêm lượt; cùng nhóm haste, có thể dispel. Độc quyền species_0087; chiếm 1/6 slot, rank1 cố định, không kế thừa.",
+      "functions": [
+        "physical_dps"
+      ],
+      "inheritance": [],
+      "power": "1.25",
+      "effect": {
+        "self_buff": "spd",
+        "amount": 0.2
+      },
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "physical",
+      "exclusive_species": "species_0087",
+      "target_shape": "single",
+      "damage_mode": "damage_with_effect"
+    },
+    {
+      "id": "vermilion_ember",
+      "name": "Chu Tước · Ly hỏa",
+      "kind": "magic",
+      "target": "enemy_one",
+      "mp": 24,
+      "cooldown": 3,
+      "learn_level": 30,
+      "element": "fire",
+      "description": "1.10×MAG Hỏa; sau hit, 70% base chance burn 0.30×MAG nguồn mỗi tick, 2 tick. Water/cleanse dập được, không hồi sinh tự động. Độc quyền species_0105; chiếm 1/6 slot, rank1 cố định, không kế thừa.",
+      "functions": [
+        "magic_dps"
+      ],
+      "inheritance": [],
+      "power": "1.10",
+      "effect": {
+        "status": "burn",
+        "chance": 0.7,
+        "tick_power": "0.30"
+      },
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "exclusive_species": "species_0105",
+      "target_shape": "single",
+      "damage_mode": "damage_with_effect"
+    },
+    {
+      "id": "turtle_tide",
+      "name": "Huyền Vũ · Thủy giáp",
+      "kind": "shield",
+      "target": "ally_one",
+      "mp": 24,
+      "cooldown": 3,
+      "learn_level": 30,
+      "element": "water",
+      "description": "Gỡ burn nếu có rồi tạo khiên floor(1.20×MAG + 8%maxHP nguồn), 2 vòng. Ally/self còn sống hợp lệ dù không có burn; shield giữ strongest, dispel được. Độc quyền species_0139; chiếm 1/6 slot, rank1 cố định, không kế thừa.",
+      "functions": [
+        "tank",
+        "support"
+      ],
+      "inheritance": [],
+      "power": null,
+      "effect": {
+        "cleanse": "burn",
+        "shield_mag": "1.20",
+        "shield_hp": "0.08"
+      },
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "exclusive_species": "species_0139",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "empress_eclipse",
+      "name": "Nữ Đế · Minh ấn",
+      "kind": "magic",
+      "target": "enemy_one",
+      "mp": 28,
+      "cooldown": 3,
+      "learn_level": 40,
+      "element": "dark",
+      "description": "1.40×MAG Âm; sau hit, 70% base chance giảm HP được hồi 25% trong 2 vòng, cùng misfortune. Cleanse được; không instant kill. Độc quyền species_0019; chiếm 1/6 slot, rank1 cố định, không kế thừa.",
+      "functions": [
+        "magic_dps",
+        "disruptor"
+      ],
+      "inheritance": [],
+      "power": "1.40",
+      "effect": {
+        "status": "misfortune",
+        "chance": 0.7
+      },
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "exclusive_species": "species_0019",
+      "target_shape": "single",
+      "damage_mode": "damage_with_effect"
+    },
+    {
+      "id": "giant_bastion",
+      "name": "Cự Ma · Địa chấn hộ thể",
+      "kind": "physical",
+      "target": "enemy_one",
+      "mp": 28,
+      "cooldown": 3,
+      "learn_level": 40,
+      "element": "earth",
+      "description": "1.40×ATK Địa; sau hit thành công, self DEF +25% trong 2 vòng, cùng nhóm armor. Có thể dispel, không bỏ qua DEF target. Độc quyền species_0142; chiếm 1/6 slot, rank1 cố định, không kế thừa.",
+      "functions": [
+        "physical_dps",
+        "tank"
+      ],
+      "inheritance": [],
+      "power": "1.40",
+      "effect": {
+        "self_buff": "def",
+        "amount": 0.25
+      },
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "physical",
+      "exclusive_species": "species_0142",
+      "target_shape": "single",
+      "damage_mode": "damage_with_effect"
+    },
+    {
+      "id": "flower_radiance",
+      "name": "Hoa Hương · Quang tịnh",
+      "kind": "heal",
+      "target": "ally_one",
+      "mp": 28,
+      "cooldown": 3,
+      "learn_level": 40,
+      "element": "light",
+      "description": "Gỡ 1 status xấu theo priority cleanse, rồi hồi floor(1.50×MAG + 10) HP. Ally/self sống hợp lệ nếu thiếu HP hoặc có status xấu; không revive, không refill MP. Độc quyền species_0144; chiếm 1/6 slot, rank1 cố định, không kế thừa.",
+      "functions": [
+        "support"
+      ],
+      "inheritance": [],
+      "power": null,
+      "effect": {
+        "cleanse_one": true,
+        "heal_mag": "1.50",
+        "heal_flat": 10
+      },
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "exclusive_species": "species_0144",
+      "target_shape": "single",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "sweep_light",
+      "name": "Càn quét nhẹ",
+      "kind": "physical",
+      "target": "enemy_all",
+      "mp": 10,
+      "cooldown": 0,
+      "learn_level": 1,
+      "element": "neutral",
+      "description": "AoE tất cả địch; mỗi target 0.45×ATK, hit/crit riêng. Damage thuần, không status. Tier nhẹ cho farm ít MP; không xóa/thay tier khác.",
+      "functions": [
+        "physical_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "0.45",
+      "effect": null,
+      "source_ids": [
+        "CanQuetNhe"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "physical",
+      "tier_family": "sweep",
+      "tier_index": 1,
+      "target_shape": "aoe",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "sweep_advanced",
+      "name": "Càn quét cao cấp",
+      "kind": "physical",
+      "target": "enemy_all",
+      "mp": 26,
+      "cooldown": 1,
+      "learn_level": 20,
+      "element": "neutral",
+      "description": "AoE tất cả địch; mỗi target 1.05×ATK, hit/crit riêng. Damage thuần, không status. Tier mạnh hơn, trả thêm MP; không xóa/thay tier khác.",
+      "functions": [
+        "physical_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "1.05",
+      "effect": null,
+      "source_ids": [
+        "CanQuetCaoCap"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "physical",
+      "tier_family": "sweep",
+      "tier_index": 3,
+      "target_shape": "aoe",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "sweep_super",
+      "name": "Càn quét siêu cấp",
+      "kind": "physical",
+      "target": "enemy_all",
+      "mp": 36,
+      "cooldown": 2,
+      "learn_level": 40,
+      "element": "neutral",
+      "description": "AoE tất cả địch; mỗi target 1.35×ATK, hit/crit riêng. Damage thuần, không status. Tier mạnh hơn, trả thêm MP; không xóa/thay tier khác.",
+      "functions": [
+        "physical_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "1.35",
+      "effect": null,
+      "source_ids": [
+        "CanQuetSieuCap"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "physical",
+      "tier_family": "sweep",
+      "tier_index": 4,
+      "target_shape": "aoe",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "wave_fire_light",
+      "name": "Làm Nóng Nhẹ",
+      "kind": "magic",
+      "target": "enemy_all",
+      "mp": 12,
+      "cooldown": 0,
+      "learn_level": 1,
+      "element": "fire",
+      "description": "AoE tất cả địch; mỗi target 0.45×MAG, hit/crit riêng. Damage thuần, không status. Tier nhẹ cho farm ít MP; không xóa/thay tier khác.",
+      "functions": [
+        "magic_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "0.45",
+      "effect": null,
+      "source_ids": [
+        "LamNongNhe"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "tier_family": "wave_fire",
+      "tier_index": 1,
+      "target_shape": "aoe",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "wave_fire_advanced",
+      "name": "Làm nóng cao cấp",
+      "kind": "magic",
+      "target": "enemy_all",
+      "mp": 28,
+      "cooldown": 1,
+      "learn_level": 20,
+      "element": "fire",
+      "description": "AoE tất cả địch; mỗi target 1.05×MAG, hit/crit riêng. Damage thuần, không status. Tier mạnh hơn, trả thêm MP; không xóa/thay tier khác.",
+      "functions": [
+        "magic_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "1.05",
+      "effect": null,
+      "source_ids": [
+        "LamNongCaoCap"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "tier_family": "wave_fire",
+      "tier_index": 3,
+      "target_shape": "aoe",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "wave_fire_super",
+      "name": "Hỏa thiêu siêu cấp",
+      "kind": "magic",
+      "target": "enemy_all",
+      "mp": 38,
+      "cooldown": 2,
+      "learn_level": 40,
+      "element": "fire",
+      "description": "AoE tất cả địch; mỗi target 1.35×MAG, hit/crit riêng. Damage thuần, không status. Tier mạnh hơn, trả thêm MP; không xóa/thay tier khác.",
+      "functions": [
+        "magic_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "1.35",
+      "effect": null,
+      "source_ids": [
+        "HoaThieuSieuCap"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "tier_family": "wave_fire",
+      "tier_index": 4,
+      "target_shape": "aoe",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "wave_water_light",
+      "name": "Bão Tuyết Nhẹ",
+      "kind": "magic",
+      "target": "enemy_all",
+      "mp": 12,
+      "cooldown": 0,
+      "learn_level": 1,
+      "element": "water",
+      "description": "AoE tất cả địch; mỗi target 0.45×MAG, hit/crit riêng. Damage thuần, không status. Tier nhẹ cho farm ít MP; không xóa/thay tier khác.",
+      "functions": [
+        "magic_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "0.45",
+      "effect": null,
+      "source_ids": [
+        "BaoTuyetNhe"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "tier_family": "wave_water",
+      "tier_index": 1,
+      "target_shape": "aoe",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "wave_water_advanced",
+      "name": "Bão tuyết cao cấp",
+      "kind": "magic",
+      "target": "enemy_all",
+      "mp": 28,
+      "cooldown": 1,
+      "learn_level": 20,
+      "element": "water",
+      "description": "AoE tất cả địch; mỗi target 1.05×MAG, hit/crit riêng. Damage thuần, không status. Tier mạnh hơn, trả thêm MP; không xóa/thay tier khác.",
+      "functions": [
+        "magic_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "1.05",
+      "effect": null,
+      "source_ids": [
+        "BaoTuyetCaoCap"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "tier_family": "wave_water",
+      "tier_index": 3,
+      "target_shape": "aoe",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "wave_water_super",
+      "name": "Hàn băng siêu cấp",
+      "kind": "magic",
+      "target": "enemy_all",
+      "mp": 38,
+      "cooldown": 2,
+      "learn_level": 40,
+      "element": "water",
+      "description": "AoE tất cả địch; mỗi target 1.35×MAG, hit/crit riêng. Damage thuần, không status. Tier mạnh hơn, trả thêm MP; không xóa/thay tier khác.",
+      "functions": [
+        "magic_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "1.35",
+      "effect": null,
+      "source_ids": [
+        "HanBangSieuCap"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "tier_family": "wave_water",
+      "tier_index": 4,
+      "target_shape": "aoe",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "wave_wind_light",
+      "name": "Thuật Lốc Xoáy Nhẹ",
+      "kind": "magic",
+      "target": "enemy_all",
+      "mp": 12,
+      "cooldown": 0,
+      "learn_level": 1,
+      "element": "wind",
+      "description": "AoE tất cả địch; mỗi target 0.45×MAG, hit/crit riêng. Damage thuần, không status. Tier nhẹ cho farm ít MP; không xóa/thay tier khác.",
+      "functions": [
+        "magic_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "0.45",
+      "effect": null,
+      "source_ids": [
+        "ThuatLocXoayNhe"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "tier_family": "wave_wind",
+      "tier_index": 1,
+      "target_shape": "aoe",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "wave_wind_advanced",
+      "name": "Thuật Lốc Xoáy cao cấp",
+      "kind": "magic",
+      "target": "enemy_all",
+      "mp": 28,
+      "cooldown": 1,
+      "learn_level": 20,
+      "element": "wind",
+      "description": "AoE tất cả địch; mỗi target 1.05×MAG, hit/crit riêng. Damage thuần, không status. Tier mạnh hơn, trả thêm MP; không xóa/thay tier khác.",
+      "functions": [
+        "magic_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "1.05",
+      "effect": null,
+      "source_ids": [
+        "ThuatLocXoayCaoCap"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "tier_family": "wave_wind",
+      "tier_index": 3,
+      "target_shape": "aoe",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "wave_wind_super",
+      "name": "Thần phong siêu cấp",
+      "kind": "magic",
+      "target": "enemy_all",
+      "mp": 38,
+      "cooldown": 2,
+      "learn_level": 40,
+      "element": "wind",
+      "description": "AoE tất cả địch; mỗi target 1.35×MAG, hit/crit riêng. Damage thuần, không status. Tier mạnh hơn, trả thêm MP; không xóa/thay tier khác.",
+      "functions": [
+        "magic_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "1.35",
+      "effect": null,
+      "source_ids": [
+        "ThanPhongSieuCap"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "tier_family": "wave_wind",
+      "tier_index": 4,
+      "target_shape": "aoe",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "wave_earth_light",
+      "name": "Thuật Nứt Đất Nhẹ",
+      "kind": "magic",
+      "target": "enemy_all",
+      "mp": 12,
+      "cooldown": 0,
+      "learn_level": 1,
+      "element": "earth",
+      "description": "AoE tất cả địch; mỗi target 0.45×MAG, hit/crit riêng. Damage thuần, không status. Tier nhẹ cho farm ít MP; không xóa/thay tier khác.",
+      "functions": [
+        "magic_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "0.45",
+      "effect": null,
+      "source_ids": [
+        "ThuatNutDatNhe"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "tier_family": "wave_earth",
+      "tier_index": 1,
+      "target_shape": "aoe",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "wave_earth_advanced",
+      "name": "Thuật nứt đất cao cấp",
+      "kind": "magic",
+      "target": "enemy_all",
+      "mp": 28,
+      "cooldown": 1,
+      "learn_level": 20,
+      "element": "earth",
+      "description": "AoE tất cả địch; mỗi target 1.05×MAG, hit/crit riêng. Damage thuần, không status. Tier mạnh hơn, trả thêm MP; không xóa/thay tier khác.",
+      "functions": [
+        "magic_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "1.05",
+      "effect": null,
+      "source_ids": [
+        "ThuatNutDatCaoCap"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "tier_family": "wave_earth",
+      "tier_index": 3,
+      "target_shape": "aoe",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "wave_earth_super",
+      "name": "Đại địa siêu cấp",
+      "kind": "magic",
+      "target": "enemy_all",
+      "mp": 38,
+      "cooldown": 2,
+      "learn_level": 40,
+      "element": "earth",
+      "description": "AoE tất cả địch; mỗi target 1.35×MAG, hit/crit riêng. Damage thuần, không status. Tier mạnh hơn, trả thêm MP; không xóa/thay tier khác.",
+      "functions": [
+        "magic_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "1.35",
+      "effect": null,
+      "source_ids": [
+        "DaiDiaSieuCap"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "tier_family": "wave_earth",
+      "tier_index": 4,
+      "target_shape": "aoe",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "wave_light_light",
+      "name": "Cú đánh thôi sơn nhẹ",
+      "kind": "magic",
+      "target": "enemy_all",
+      "mp": 12,
+      "cooldown": 0,
+      "learn_level": 1,
+      "element": "light",
+      "description": "AoE tất cả địch; mỗi target 0.45×MAG, hit/crit riêng. Damage thuần, không status. Tier nhẹ cho farm ít MP; không xóa/thay tier khác.",
+      "functions": [
+        "magic_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "0.45",
+      "effect": null,
+      "source_ids": [
+        "CuDanhThoiSonNhe"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "tier_family": "wave_light",
+      "tier_index": 1,
+      "target_shape": "aoe",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "wave_light_advanced",
+      "name": "Cú đánh thôi sơn cao cấp",
+      "kind": "magic",
+      "target": "enemy_all",
+      "mp": 28,
+      "cooldown": 1,
+      "learn_level": 20,
+      "element": "light",
+      "description": "AoE tất cả địch; mỗi target 1.05×MAG, hit/crit riêng. Damage thuần, không status. Tier mạnh hơn, trả thêm MP; không xóa/thay tier khác.",
+      "functions": [
+        "magic_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "1.05",
+      "effect": null,
+      "source_ids": [
+        "CuDanhThoiSonCaoCap"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "tier_family": "wave_light",
+      "tier_index": 3,
+      "target_shape": "aoe",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "wave_light_super",
+      "name": "Quang minh siêu cấp",
+      "kind": "magic",
+      "target": "enemy_all",
+      "mp": 38,
+      "cooldown": 2,
+      "learn_level": 40,
+      "element": "light",
+      "description": "AoE tất cả địch; mỗi target 1.35×MAG, hit/crit riêng. Damage thuần, không status. Tier mạnh hơn, trả thêm MP; không xóa/thay tier khác.",
+      "functions": [
+        "magic_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "1.35",
+      "effect": null,
+      "source_ids": [
+        "QuangMinhSieuCap"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "tier_family": "wave_light",
+      "tier_index": 4,
+      "target_shape": "aoe",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "wave_dark_light",
+      "name": "Hủy Diệt Nhẹ",
+      "kind": "magic",
+      "target": "enemy_all",
+      "mp": 12,
+      "cooldown": 0,
+      "learn_level": 1,
+      "element": "dark",
+      "description": "AoE tất cả địch; mỗi target 0.45×MAG, hit/crit riêng. Damage thuần, không status. Tier nhẹ cho farm ít MP; không xóa/thay tier khác.",
+      "functions": [
+        "magic_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "0.45",
+      "effect": null,
+      "source_ids": [
+        "HuyDietNhe"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "tier_family": "wave_dark",
+      "tier_index": 1,
+      "target_shape": "aoe",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "wave_dark_advanced",
+      "name": "Hủy Diệt cao cấp",
+      "kind": "magic",
+      "target": "enemy_all",
+      "mp": 28,
+      "cooldown": 1,
+      "learn_level": 20,
+      "element": "dark",
+      "description": "AoE tất cả địch; mỗi target 1.05×MAG, hit/crit riêng. Damage thuần, không status. Tier mạnh hơn, trả thêm MP; không xóa/thay tier khác.",
+      "functions": [
+        "magic_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "1.05",
+      "effect": null,
+      "source_ids": [
+        "HuyDietCaoCap"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "tier_family": "wave_dark",
+      "tier_index": 3,
+      "target_shape": "aoe",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "wave_dark_super",
+      "name": "Hắc Ám siêu cấp",
+      "kind": "magic",
+      "target": "enemy_all",
+      "mp": 38,
+      "cooldown": 2,
+      "learn_level": 40,
+      "element": "dark",
+      "description": "AoE tất cả địch; mỗi target 1.35×MAG, hit/crit riêng. Damage thuần, không status. Tier mạnh hơn, trả thêm MP; không xóa/thay tier khác.",
+      "functions": [
+        "magic_dps",
+        "hybrid"
+      ],
+      "inheritance": [
+        "undead",
+        "plant",
+        "dragon",
+        "demon",
+        "beast",
+        "bird",
+        "insect",
+        "spirit"
+      ],
+      "power": "1.35",
+      "effect": null,
+      "source_ids": [
+        "HacAmSieuCap"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "tier_family": "wave_dark",
+      "tier_index": 4,
+      "target_shape": "aoe",
+      "damage_mode": "damage_only"
+    },
+    {
+      "id": "group_heal_super",
+      "name": "Trị liệu nhóm siêu cấp",
+      "kind": "heal",
+      "target": "ally_all",
+      "mp": 40,
+      "cooldown": 3,
+      "learn_level": 40,
+      "element": "neutral",
+      "description": "Mỗi ally sống hồi floor(1.10×MAG+10); heal cả đội, không damage, không revive. Skill riêng, giữ trị liệu nhóm ít MP.",
+      "functions": [
+        "support"
+      ],
+      "inheritance": [
+        "plant",
+        "bird",
+        "spirit"
+      ],
+      "power": null,
+      "effect": {
+        "heal_mag": "1.10",
+        "heal_flat": 10
+      },
+      "source_ids": [
+        "TriLieuNhomSieuCap"
+      ],
+      "provenance": "adapted_source",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "tier_family": "group_heal",
+      "tier_index": 2,
+      "target_shape": "aoe",
+      "damage_mode": "effect_only"
+    },
+    {
+      "id": "dual_seal_light",
+      "name": "Long Thần · Song ấn",
+      "kind": "physical",
+      "target": "enemy_one",
+      "mp": 28,
+      "cooldown": 3,
+      "learn_level": 40,
+      "element": "light",
+      "description": "1.50×ATK Quang lên một địch; hit thành công mới tăng MAG bản thân 30% trong 2 vòng, nhóm intellect. Chuẩn bị lượt phép sau; không thêm hit/action, không cộng ATK+MAG trong cùng hit. Dispel buff được. Chiếm 1/6 slot; chỉ Long Thần Song Ấn học, không kế thừa.",
+      "functions": [
+        "physical_dps",
+        "hybrid"
+      ],
+      "inheritance": [],
+      "power": "1.50",
+      "effect": {
+        "self_buff": "mag",
+        "amount": 0.3
+      },
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "physical",
+      "exclusive_species": "species_0159",
+      "target_shape": "single",
+      "damage_mode": "damage_with_effect"
+    },
+    {
+      "id": "inverse_seal_dark",
+      "name": "Ma Chủ · Nghịch ấn",
+      "kind": "magic",
+      "target": "enemy_one",
+      "mp": 28,
+      "cooldown": 3,
+      "learn_level": 40,
+      "element": "dark",
+      "description": "1.50×MAG Âm lên một địch; sau hit, 75% base chance giảm ATK địch 30% trong 2 vòng, nhóm weaken_atk; qua SR P11, cleanse được. Không làm mất action hoặc thêm hit. Chiếm 1/6 slot; chỉ Ma Chủ Song Cực học, không kế thừa.",
+      "functions": [
+        "magic_dps",
+        "hybrid",
+        "disruptor"
+      ],
+      "inheritance": [],
+      "power": "1.50",
+      "effect": {
+        "stat": "atk",
+        "amount": -0.3,
+        "chance": 0.75
+      },
+      "source_ids": [],
+      "provenance": "phimond_authored",
+      "rank_policy": "fixed_rank_1",
+      "action_channel": "magic",
+      "exclusive_species": "species_0160",
+      "target_shape": "single",
+      "damage_mode": "damage_with_effect"
+    }
+  ]
+}

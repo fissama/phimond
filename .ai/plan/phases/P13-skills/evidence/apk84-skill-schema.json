@@ -1,0 +1,995 @@
+{
+  "source": "/Users/phileanh/Downloads/Spirit Beast World 8.4 (1).xapk",
+  "sha256": "b8e02a75e49d5d02703a0b05ec52b450cdfaf69d544f04df2f4a2a465199a18e",
+  "metadata_version": 31,
+  "field_schema": {
+    "DataSkill": [
+      "listSkillModel"
+    ],
+    "SkillModelData": [
+      "ID",
+      "NameSkill",
+      "TypeChoose",
+      "TypesSkill",
+      "HeSkill",
+      "TypeCombat",
+      "TypeLoai",
+      "BuffType",
+      "YeuCaus",
+      "GioiThieu"
+    ],
+    "HeSkill": [
+      "value__",
+      "None",
+      "Dia",
+      "Thuy",
+      "Hoa",
+      "Phong",
+      "Quang",
+      "Am",
+      "VanXui",
+      "LangIm",
+      "HonLoan",
+      "NguSay",
+      "TroiBuoc",
+      "LamMu",
+      "HoaDa",
+      "Khong",
+      "LuoiHai"
+    ],
+    "TypeSkill": [
+      "value__",
+      "ChuDong",
+      "BiDong"
+    ],
+    "PokeInfo": [
+      "Instance",
+      "poke",
+      "saoPoke",
+      "hePokes",
+      "Id",
+      "CharacterId",
+      "IdPoke",
+      "DisplayName",
+      "GioiThieu",
+      "Status",
+      "IDPoKeChinh",
+      "IDPoKePhu",
+      "Race",
+      "LevelMax",
+      "Level",
+      "Exp",
+      "Cong",
+      "Sao",
+      "CurrentHP",
+      "CurrentMP",
+      "MaxExp",
+      "CongKich",
+      "SucManh",
+      "SucBen",
+      "TriTue",
+      "TinhThan",
+      "TocDo",
+      "PhongNgu",
+      "CTSucManh",
+      "CTSucBen",
+      "CTTriTue",
+      "CTTinhThan",
+      "CTTocDo",
+      "CTPhongNgu",
+      "CSLuc",
+      "CSKienNhan",
+      "CSTocDo",
+      "CSTri",
+      "CSMana",
+      "CSThu",
+      "PTLuc",
+      "PTKienNhan",
+      "PTTocDo",
+      "PTTri",
+      "PTMana",
+      "PTThu",
+      "KTLuc",
+      "KTKienNhan",
+      "KTTocDo",
+      "KTTri",
+      "KTMana",
+      "KTThu",
+      "BDLuc",
+      "BDKienNhan",
+      "BDTocDo",
+      "BDTri",
+      "BDMana",
+      "BDThu",
+      "TCTruongThanh",
+      "TCSucManh",
+      "TCChiuDung",
+      "TCNhanhNhen",
+      "TCTriTue",
+      "TCTinhThan",
+      "TCPhongNgu",
+      "AcTruongThanh",
+      "AcSucManh",
+      "AcChiuDung",
+      "AcTocDo",
+      "AcTriTue",
+      "AcTinhThan",
+      "AcPhongNgu",
+      "ListSkill",
+      "listTB",
+      "Dia",
+      "Thuy",
+      "Hoa",
+      "Phong",
+      "Quang",
+      "Am",
+      "VanXui",
+      "LangIm",
+      "HonLoan",
+      "NguSay",
+      "TroiBuoc",
+      "LamMu",
+      "HoaDa",
+      "Khong",
+      "SCong",
+      "STong",
+      "SSucManh",
+      "SChiuDung",
+      "SNhanhNhen",
+      "STriTue",
+      "STinhThan",
+      "SPhongNgu"
+    ],
+    "SkillPoke": [
+      "IdSkill",
+      "NameSkill",
+      "Level",
+      "type",
+      "Mana",
+      "Gia",
+      "Lv",
+      "GioiThieu",
+      "TypeChoose",
+      "TypesSkill",
+      "HeSkill",
+      "TypeCombat",
+      "TypeLoai",
+      "MP",
+      "view"
+    ],
+    "AttackSkill": [
+      "Attack",
+      "CongKichControl",
+      "Mu"
+    ],
+    "BuffSkill": [
+      "Tri",
+      "buffType",
+      "TriControl"
+    ],
+    "MagicSkill": [
+      "Tri",
+      "TriControl",
+      "Mu",
+      "ApplyDebuff"
+    ],
+    "Skill": [
+      "<ID>k__BackingField",
+      "NameSkill",
+      "TypeChoose",
+      "TypesSkill",
+      "HeSkill",
+      "TypeCombat",
+      "TypeLoai",
+      "YeuCaus",
+      "GioiThieu"
+    ]
+  },
+  "objects": [
+    {
+      "class": "DataSkill",
+      "file": "sharedassets0.assets",
+      "path_id": 744,
+      "bytes": 9024,
+      "name": "SkillAssetData",
+      "raw_prefix_hex": "00000000000000000000000001000000010000000b000000000000000e000000536b696c6c41737365744461746100003c0000000a00000043616e517565744e686500001000000043c3a06e207175c3a974206e68e1bab90100000000000000"
+    }
+  ],
+  "limits": [
+    "Field names and serialized presence do not recover original server execution/formulas."
+  ],
+  "aligned_strings": [
+    {
+      "offset": 28,
+      "text": "SkillAssetData"
+    },
+    {
+      "offset": 52,
+      "text": "CanQuetNhe"
+    },
+    {
+      "offset": 68,
+      "text": "Càn quét nhẹ"
+    },
+    {
+      "offset": 132,
+      "text": "Tấn công vật lý tất cả quái vật"
+    },
+    {
+      "offset": 180,
+      "text": "CuDanhThoiSonNhe"
+    },
+    {
+      "offset": 200,
+      "text": "Cú đánh thôi sơn nhẹ"
+    },
+    {
+      "offset": 276,
+      "text": "Tấn công ma pháp quang hệ tất cả quái vật "
+    },
+    {
+      "offset": 336,
+      "text": "ThuatNutDatNhe"
+    },
+    {
+      "offset": 356,
+      "text": "Thuật Nứt Đất Nhẹ"
+    },
+    {
+      "offset": 432,
+      "text": "Tấn công ma pháp địa hệ tất cả quái vật "
+    },
+    {
+      "offset": 492,
+      "text": "BaoTuyetNhe"
+    },
+    {
+      "offset": 508,
+      "text": "Bão Tuyết Nhẹ"
+    },
+    {
+      "offset": 576,
+      "text": "Tấn công ma pháp thủy hệ tất cả quái vật "
+    },
+    {
+      "offset": 636,
+      "text": "LamNongNhe"
+    },
+    {
+      "offset": 652,
+      "text": "Làm Nóng Nhẹ"
+    },
+    {
+      "offset": 716,
+      "text": "Tấn công ma pháp hỏa hệ tất cả quái vật "
+    },
+    {
+      "offset": 776,
+      "text": "ThuatLocXoayNhe"
+    },
+    {
+      "offset": 796,
+      "text": "Thuật Lốc Xoáy Nhẹ"
+    },
+    {
+      "offset": 872,
+      "text": "Tấn công ma pháp phong hệ tất cả quái vật "
+    },
+    {
+      "offset": 932,
+      "text": "HuyDietNhe"
+    },
+    {
+      "offset": 948,
+      "text": "Hủy Diệt Nhẹ"
+    },
+    {
+      "offset": 1016,
+      "text": "Tấn công ma pháp âm hệ tất cả quái vật "
+    },
+    {
+      "offset": 1076,
+      "text": "TriLieu"
+    },
+    {
+      "offset": 1088,
+      "text": "Trị liệu"
+    },
+    {
+      "offset": 1152,
+      "text": "Trị lệu HP cho 1 poke "
+    },
+    {
+      "offset": 1184,
+      "text": "CanQuet"
+    },
+    {
+      "offset": 1196,
+      "text": "Càn quét "
+    },
+    {
+      "offset": 1256,
+      "text": "Tấn công vật lý tất cả quái vật"
+    },
+    {
+      "offset": 1304,
+      "text": "CuDanhThoiSon"
+    },
+    {
+      "offset": 1324,
+      "text": "Cú đánh thôi sơn"
+    },
+    {
+      "offset": 1396,
+      "text": "Tấn công ma pháp quang hệ tất cả quái vật "
+    },
+    {
+      "offset": 1456,
+      "text": "ThuatNutDat"
+    },
+    {
+      "offset": 1472,
+      "text": "Thuật Nứt Đất"
+    },
+    {
+      "offset": 1540,
+      "text": "Tấn công ma pháp địa hệ tất cả quái vật "
+    },
+    {
+      "offset": 1600,
+      "text": "BaoTuyet"
+    },
+    {
+      "offset": 1612,
+      "text": "Bão Tuyết"
+    },
+    {
+      "offset": 1672,
+      "text": "Tấn công ma pháp thủy hệ tất cả quái vật "
+    },
+    {
+      "offset": 1732,
+      "text": "LamNong"
+    },
+    {
+      "offset": 1744,
+      "text": "Làm Nóng"
+    },
+    {
+      "offset": 1804,
+      "text": "Tấn công ma pháp hỏa hệ tất cả quái vật "
+    },
+    {
+      "offset": 1864,
+      "text": "ThuatLocXoay"
+    },
+    {
+      "offset": 1880,
+      "text": "Thuật Lốc Xoáy"
+    },
+    {
+      "offset": 1948,
+      "text": "Tấn công ma pháp phong hệ tất cả quái vật "
+    },
+    {
+      "offset": 2008,
+      "text": "HuyDiet"
+    },
+    {
+      "offset": 2020,
+      "text": "Hủy Diệt"
+    },
+    {
+      "offset": 2080,
+      "text": "Tấn công ma pháp âm hệ tất cả quái vật "
+    },
+    {
+      "offset": 2140,
+      "text": "TaiSinh"
+    },
+    {
+      "offset": 2152,
+      "text": "Tái sinh"
+    },
+    {
+      "offset": 2212,
+      "text": "20% tỉ lệ tự động hồi phục 20% HP tối đa"
+    },
+    {
+      "offset": 2272,
+      "text": "TrungSinh"
+    },
+    {
+      "offset": 2288,
+      "text": "Trùng sinh"
+    },
+    {
+      "offset": 2348,
+      "text": "Khi chết có 20% tỉ lệ sống lại với 50% HP và 50% MP tối đa"
+    },
+    {
+      "offset": 2428,
+      "text": "ThuatTaoVo"
+    },
+    {
+      "offset": 2444,
+      "text": "Thuật tạo vỏ"
+    },
+    {
+      "offset": 2516,
+      "text": "TangToc"
+    },
+    {
+      "offset": 2528,
+      "text": "Tăng tốc"
+    },
+    {
+      "offset": 2588,
+      "text": "20% được đánh trước"
+    },
+    {
+      "offset": 2620,
+      "text": "ThuTinh"
+    },
+    {
+      "offset": 2632,
+      "text": "Thú tính"
+    },
+    {
+      "offset": 2696,
+      "text": "SuyTuong"
+    },
+    {
+      "offset": 2708,
+      "text": "Suy tưởng"
+    },
+    {
+      "offset": 2768,
+      "text": "20% tự động hồi phục 10% MP tối đa"
+    },
+    {
+      "offset": 2820,
+      "text": "PhanKich"
+    },
+    {
+      "offset": 2832,
+      "text": "Phản kích"
+    },
+    {
+      "offset": 2896,
+      "text": "VanXui"
+    },
+    {
+      "offset": 2908,
+      "text": "Vận xui"
+    },
+    {
+      "offset": 2968,
+      "text": " Tấn công 1 quái vật có thể khiến chúng không thể tấn công vật lý và ma pháp, quái vật sẽ tự động chết sau 4 lượt "
+    },
+    {
+      "offset": 3124,
+      "text": "TramMac"
+    },
+    {
+      "offset": 3136,
+      "text": "Trầm mặc"
+    },
+    {
+      "offset": 3196,
+      "text": "Tấn công 1 quái vật có thể khiến chúng không thể tấn công ma pháp trong 3 lượt"
+    },
+    {
+      "offset": 3300,
+      "text": "LamMu"
+    },
+    {
+      "offset": 3312,
+      "text": "Làm mù"
+    },
+    {
+      "offset": 3368,
+      "text": "Giảm 90% tỉ lệ trúng đòn tấn công vật lý và phép thuật trong 3 lượt đấu"
+    },
+    {
+      "offset": 3468,
+      "text": "TroiBuoc"
+    },
+    {
+      "offset": 3480,
+      "text": "Trói buộc"
+    },
+    {
+      "offset": 3540,
+      "text": "Tấn công 1 quái vật có thể khiến chúng không thể tấn công vật lý trong 3 lượt"
+    },
+    {
+      "offset": 3648,
+      "text": "HoaDa"
+    },
+    {
+      "offset": 3660,
+      "text": "Hóa đá"
+    },
+    {
+      "offset": 3720,
+      "text": "Tấn công 1 quái vật có thể khiến chúng không thể tấn công vật lý và ma pháp, nhưng khiến chúng miễn dịch tất cả đòn tấn công vật lý và ma pháp trong 3 lượt"
+    },
+    {
+      "offset": 3928,
+      "text": "HonLoan"
+    },
+    {
+      "offset": 3940,
+      "text": "Hỗn loạn"
+    },
+    {
+      "offset": 4000,
+      "text": "Không thể kiểm soát sự tấn công của poke trong 3 lượt đấu, chúng sẽ ngẫu nhiên tấn công vật lý hoặc phép thuật"
+    },
+    {
+      "offset": 4152,
+      "text": "NguSay"
+    },
+    {
+      "offset": 4164,
+      "text": "Ngủ say"
+    },
+    {
+      "offset": 4224,
+      "text": "Tấn công 1 quái vật có thể khiến chúng không thể tấn công vật lý và ma pháp trong 3 lượt, chúng sẽ tỉnh dậy nếu bị tấn công lần 2 nhưng sát thương sẽ nhận gấp đôi"
+    },
+    {
+      "offset": 4444,
+      "text": "BanPhuoc"
+    },
+    {
+      "offset": 4456,
+      "text": "Ban phước"
+    },
+    {
+      "offset": 4516,
+      "text": "Hóa giải ảnh hưởng của vận xui"
+    },
+    {
+      "offset": 4564,
+      "text": "CaHat"
+    },
+    {
+      "offset": 4576,
+      "text": "Ca hát"
+    },
+    {
+      "offset": 4632,
+      "text": "Hóa giải ảnh hưởng của trầm mặc"
+    },
+    {
+      "offset": 4684,
+      "text": "LamSangLai"
+    },
+    {
+      "offset": 4700,
+      "text": "Làm sáng lại"
+    },
+    {
+      "offset": 4764,
+      "text": "Hóa giải ảnh hưởng của làm mù"
+    },
+    {
+      "offset": 4812,
+      "text": "ChucPhucTuDo"
+    },
+    {
+      "offset": 4828,
+      "text": "Chúc phúc tự do"
+    },
+    {
+      "offset": 4896,
+      "text": "Hóa giải ảnh hưởng của trói buộc"
+    },
+    {
+      "offset": 4948,
+      "text": "HoaTan"
+    },
+    {
+      "offset": 4960,
+      "text": "Hòa tan"
+    },
+    {
+      "offset": 5016,
+      "text": "Hóa giải ảnh hưởng của hóa đá"
+    },
+    {
+      "offset": 5064,
+      "text": "TratTu"
+    },
+    {
+      "offset": 5076,
+      "text": "Trật tự"
+    },
+    {
+      "offset": 5136,
+      "text": "Hóa giải ảnh hưởng của hỗn loạn"
+    },
+    {
+      "offset": 5188,
+      "text": "ThucTinh"
+    },
+    {
+      "offset": 5200,
+      "text": "Thức tỉnh"
+    },
+    {
+      "offset": 5264,
+      "text": "Hóa giải ảnh hưởng của ngủ say"
+    },
+    {
+      "offset": 5312,
+      "text": "ThieuDotPhapLuc"
+    },
+    {
+      "offset": 5332,
+      "text": "Thiêu đốt pháp lực"
+    },
+    {
+      "offset": 5388,
+      "text": "x"
+    },
+    {
+      "offset": 5408,
+      "text": "Sát thương từ kĩ năng sẽ trừ MP của đối phương"
+    },
+    {
+      "offset": 5476,
+      "text": "CongKichHutMau"
+    },
+    {
+      "offset": 5496,
+      "text": "Công kích hút máu"
+    },
+    {
+      "offset": 5548,
+      "text": "x"
+    },
+    {
+      "offset": 5568,
+      "text": "Gây sát thương vật lý cho đối thủ, sát thương sẽ chuyển hóa thành HP cho bản thân"
+    },
+    {
+      "offset": 5680,
+      "text": "ThienThanHaPham"
+    },
+    {
+      "offset": 5700,
+      "text": "Thiên thần hạ phàm"
+    },
+    {
+      "offset": 5752,
+      "text": "x"
+    },
+    {
+      "offset": 5772,
+      "text": "Tăng sức mạnh của cả đội lên 35% trong 2 lượt đấu"
+    },
+    {
+      "offset": 5844,
+      "text": "TimAcMa"
+    },
+    {
+      "offset": 5856,
+      "text": "Tim ác ma"
+    },
+    {
+      "offset": 5896,
+      "text": "x"
+    },
+    {
+      "offset": 5916,
+      "text": "Tăng trí tuệ của cả đội lên 35% trong 2 lượt đấu "
+    },
+    {
+      "offset": 5988,
+      "text": "UyRongPhaHoi"
+    },
+    {
+      "offset": 6004,
+      "text": "Uy rồng phả hơi"
+    },
+    {
+      "offset": 6052,
+      "text": "x"
+    },
+    {
+      "offset": 6072,
+      "text": "Kỹ năng độc quyền của Thánh Rồng Thái Cổ, kỹ năng này không thể kế thừa"
+    },
+    {
+      "offset": 6176,
+      "text": "CuDanhThoiSonCaoCap"
+    },
+    {
+      "offset": 6200,
+      "text": "Cú đánh thôi sơn cao cấp"
+    },
+    {
+      "offset": 6264,
+      "text": "Y"
+    },
+    {
+      "offset": 6280,
+      "text": "Tấn công ma pháp quang hệ tất cả quái vật "
+    },
+    {
+      "offset": 6340,
+      "text": "ThuatNutDatCaoCap"
+    },
+    {
+      "offset": 6364,
+      "text": "Thuật nứt đất cao cấp"
+    },
+    {
+      "offset": 6428,
+      "text": "Y"
+    },
+    {
+      "offset": 6444,
+      "text": "Tấn công ma pháp địa hệ tất cả quái vật "
+    },
+    {
+      "offset": 6504,
+      "text": "BaoTuyetCaoCap"
+    },
+    {
+      "offset": 6524,
+      "text": "Bão tuyết cao cấp"
+    },
+    {
+      "offset": 6580,
+      "text": "Y"
+    },
+    {
+      "offset": 6596,
+      "text": "Tấn công ma pháp thủy hệ tất cả quái vật "
+    },
+    {
+      "offset": 6656,
+      "text": "LamNongCaoCap"
+    },
+    {
+      "offset": 6676,
+      "text": "Làm nóng cao cấp"
+    },
+    {
+      "offset": 6728,
+      "text": "Y"
+    },
+    {
+      "offset": 6744,
+      "text": "Tấn công ma pháp hỏa hệ tất cả quái vật "
+    },
+    {
+      "offset": 6804,
+      "text": "ThuatLocXoayCaoCap"
+    },
+    {
+      "offset": 6828,
+      "text": "Thuật Lốc Xoáy cao cấp"
+    },
+    {
+      "offset": 6892,
+      "text": "Y"
+    },
+    {
+      "offset": 6908,
+      "text": "Tấn công ma pháp phong hệ tất cả quái vật "
+    },
+    {
+      "offset": 6968,
+      "text": "HuyDietCaoCap"
+    },
+    {
+      "offset": 6988,
+      "text": "Hủy Diệt cao cấp"
+    },
+    {
+      "offset": 7044,
+      "text": "Y"
+    },
+    {
+      "offset": 7060,
+      "text": "Tấn công ma pháp âm hệ tất cả quái vật "
+    },
+    {
+      "offset": 7120,
+      "text": "CanQuetCaoCap"
+    },
+    {
+      "offset": 7140,
+      "text": "Càn quét cao cấp"
+    },
+    {
+      "offset": 7192,
+      "text": "Y"
+    },
+    {
+      "offset": 7208,
+      "text": "Tấn công vật lý tất cả quái vật"
+    },
+    {
+      "offset": 7256,
+      "text": "CanQuetSieuCap"
+    },
+    {
+      "offset": 7276,
+      "text": "Càn quét siêu cấp"
+    },
+    {
+      "offset": 7332,
+      "text": "M"
+    },
+    {
+      "offset": 7348,
+      "text": "Tấn công vật lý tất cả quái vật"
+    },
+    {
+      "offset": 7396,
+      "text": "QuangMinhSieuCap"
+    },
+    {
+      "offset": 7416,
+      "text": "Quang minh siêu cấp"
+    },
+    {
+      "offset": 7472,
+      "text": "M"
+    },
+    {
+      "offset": 7488,
+      "text": "Tấn công ma pháp quang hệ tất cả quái vật "
+    },
+    {
+      "offset": 7548,
+      "text": "DaiDiaSieuCap"
+    },
+    {
+      "offset": 7568,
+      "text": "Đại địa siêu cấp"
+    },
+    {
+      "offset": 7628,
+      "text": "M"
+    },
+    {
+      "offset": 7644,
+      "text": "Tấn công ma pháp địa hệ tất cả quái vật "
+    },
+    {
+      "offset": 7704,
+      "text": "HanBangSieuCap"
+    },
+    {
+      "offset": 7724,
+      "text": "Hàn băng siêu cấp"
+    },
+    {
+      "offset": 7780,
+      "text": "M"
+    },
+    {
+      "offset": 7796,
+      "text": "Tấn công ma pháp thủy hệ tất cả quái vật "
+    },
+    {
+      "offset": 7856,
+      "text": "HoaThieuSieuCap"
+    },
+    {
+      "offset": 7876,
+      "text": "Hỏa thiêu siêu cấp"
+    },
+    {
+      "offset": 7932,
+      "text": "M"
+    },
+    {
+      "offset": 7948,
+      "text": "Tấn công ma pháp hỏa hệ tất cả quái vật "
+    },
+    {
+      "offset": 8008,
+      "text": "ThanPhongSieuCap"
+    },
+    {
+      "offset": 8028,
+      "text": "Thần phong siêu cấp"
+    },
+    {
+      "offset": 8084,
+      "text": "M"
+    },
+    {
+      "offset": 8100,
+      "text": "Tấn công ma pháp phong hệ tất cả quái vật "
+    },
+    {
+      "offset": 8160,
+      "text": "HacAmSieuCap"
+    },
+    {
+      "offset": 8176,
+      "text": "Hắc Ám siêu cấp"
+    },
+    {
+      "offset": 8232,
+      "text": "M"
+    },
+    {
+      "offset": 8248,
+      "text": "Tấn công ma pháp âm hệ tất cả quái vật "
+    },
+    {
+      "offset": 8308,
+      "text": "NuHon"
+    },
+    {
+      "offset": 8320,
+      "text": "Nụ Hôn Ái Thần"
+    },
+    {
+      "offset": 8388,
+      "text": "Miễn nhiễm sát thương trong 1 lượt"
+    },
+    {
+      "offset": 8436,
+      "text": "LuoiHai"
+    },
+    {
+      "offset": 8448,
+      "text": "Lưới Hái Tử Thần"
+    },
+    {
+      "offset": 8520,
+      "text": "Tước đoạt sự sống của đối phương sau 2 lượt, skill không thể hóa giải"
+    },
+    {
+      "offset": 8620,
+      "text": "PhucSinh"
+    },
+    {
+      "offset": 8632,
+      "text": "Thuật Phục Sinh"
+    },
+    {
+      "offset": 8700,
+      "text": "Hồi sinh lại đồng đội đã chết 100% hp và mp"
+    },
+    {
+      "offset": 8764,
+      "text": "TriLieuNhom"
+    },
+    {
+      "offset": 8780,
+      "text": "Trị liệu nhóm"
+    },
+    {
+      "offset": 8848,
+      "text": "Trị lệu HP cho cả đội"
+    },
+    {
+      "offset": 8884,
+      "text": "TriLieuNhomSieuCap"
+    },
+    {
+      "offset": 8908,
+      "text": "Trị liệu nhóm siêu cấp"
+    },
+    {
+      "offset": 8968,
+      "text": "x"
+    },
+    {
+      "offset": 8988,
+      "text": "Trị lệu HP cho cả đội"
+    }
+  ]
+}
