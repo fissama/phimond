@@ -1,0 +1,24 @@
+; P12 Stage 3 — Golden Scene Emerald HD-2D (Godot 4.7, Compatibility, Web). Chỉ để đo.
+config_version=5
+
+[application]
+config/name="P12 Stage3 Emerald HD-2D"
+run/main_scene="res://main.tscn"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+
+[display]
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="disabled"
+window/dpi/allow_hidpi=true
+window/vsync/vsync_mode=1
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/canvas_textures/default_texture_filter=0
+anti_aliasing/quality/msaa_3d=0
+
+[debug]
+gdscript/warnings/treat_warnings_as_errors=false
+gdscript/warnings/inference_on_variant=0
