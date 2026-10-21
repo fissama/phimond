@@ -1,0 +1,1 @@
+Skull face, ivory/brown anatomy and red core improved; Cast is visible. Move row2 has no intact source gutter at x466..559 because wing spread of adjacent poses overlaps horizontally. Reject intact-source gate. Retry with grounded alternating hind-leg walk and folded wings, consistent with original standing skeletal pose; do not clip wings.

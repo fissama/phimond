@@ -1,0 +1,1 @@
+Grounded Move now has intact gutters and distinct alternating steps. Cast row4 still has no empty gutter in x466..559 due to forward flare. Reject this source; retain walk and replace long directional flare with bright contained core pulse and upward short sparks below the skull.
