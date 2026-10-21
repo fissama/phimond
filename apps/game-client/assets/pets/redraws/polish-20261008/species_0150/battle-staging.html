@@ -1,0 +1,19 @@
+<!doctype html><meta charset="utf-8"><title>Đảo Thiên Đường — battle size diagnostic</title>
+<style>body{background:#242932;color:#eee;font:16px system-ui}canvas{image-rendering:pixelated;max-width:100%}</style>
+<h1>species_0150 — 80 px cell staging</h1><p>Diagnostic only. Mirrors room.gd actor height 80, 68 px row gap, label/HP offsets.</p>
+<canvas id="stage" width="640" height="440"></canvas>
+<script>
+const canvas=document.querySelector('canvas'),c=canvas.getContext('2d'),im=new Image();
+im.src='packed-v2.png';im.onload=()=>{
+ c.imageSmoothingEnabled=false;c.fillStyle='#456774';c.fillRect(0,0,640,440);
+ c.fillStyle='#375754';c.fillRect(0,330,640,110);
+ for(let i=0;i<3;i++){
+  const x=350,y=338-i*68;
+  c.strokeStyle='#53c7ff';c.lineWidth=2;c.beginPath();c.ellipse(x,y,30,9,0,0,Math.PI*2);c.stroke();
+  c.drawImage(im,0,0,281,281,x-40,y-80,80,80);
+  c.font='13px sans-serif';c.textAlign='center';c.fillStyle='#ffe8a8';c.fillText('Đảo Thiên Đường',x,y-76);
+  c.fillStyle='#151d23';c.fillRect(x-35,y+11,70,7);c.fillStyle='#68e4a2';c.fillRect(x-34,y+12,60,5);
+  c.font='10px sans-serif';c.fillStyle='#fff';c.fillText('100 / 100',x,y+33);
+ }
+};
+</script>
