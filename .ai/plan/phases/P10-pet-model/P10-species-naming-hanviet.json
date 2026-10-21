@@ -1,0 +1,1135 @@
+{
+  "schema_version": 1,
+  "decided": "2026-10-21",
+  "authority": "owner requested a consistent Han-Viet / JRPG naming style for all 160 species",
+  "scope": "display_name.vi only; species IDs, APK source identity and art are unchanged",
+  "style_rules": [
+    "Trật tự Hán-Việt: bổ ngữ trước, danh từ loài sau (Xích Viêm Lang, Băng Cốt Long, Địa Ngục Ma Vương).",
+    "Độ dài theo bậc sao: 1-2★ thường 2 âm tiết; 3-4★ 3-4 âm; 5★ và thần thú 4 âm hoặc tước hiệu.",
+    "Danh từ gốc theo loài: Long, Lang, Hổ, Hùng, Quy, Ưng, Điểu, Chu (nhện), Hạt (bọ cạp), Điệp (bướm), Trùng; Bất Tử dùng Thi/Cốt/Hồn; Ác Ma dùng Ma/Quỷ.",
+    "Ưu tiên từ đã quen qua truyện và game kiếm hiệp; không dùng chữ tiếng Anh, từ mượn, dịch máy hay từ suồng sã.",
+    "Không trùng tên map, tên race hoặc tên species khác; Tứ linh và các tên Hán-Việt đã tốt được giữ nguyên."
+  ],
+  "records": [
+    {
+      "id": "species_0001",
+      "name_vi": "Âm Chu",
+      "previous_name_vi": "Nhện Vong Linh",
+      "changed": true,
+      "meaning": "Nhện âm giới (chu = nhện)"
+    },
+    {
+      "id": "species_0002",
+      "name_vi": "Cốt Binh",
+      "previous_name_vi": "Chiến Sĩ Đầu Lâu",
+      "changed": true,
+      "meaning": "Lính xương"
+    },
+    {
+      "id": "species_0003",
+      "name_vi": "Hắc Giải",
+      "previous_name_vi": "Cua Hắc Ám",
+      "changed": true,
+      "meaning": "Cua đen (giải = cua)"
+    },
+    {
+      "id": "species_0004",
+      "name_vi": "Triền Thi",
+      "previous_name_vi": "Xác Ướp",
+      "changed": true,
+      "meaning": "Xác quấn vải, xác ướp"
+    },
+    {
+      "id": "species_0005",
+      "name_vi": "Cự Thi",
+      "previous_name_vi": "Xác Chết Ác Ma",
+      "changed": true,
+      "meaning": "Xác khổng lồ; khớp vai tường chậm, lì"
+    },
+    {
+      "id": "species_0006",
+      "name_vi": "Tử Hồn",
+      "previous_name_vi": "U Linh",
+      "changed": true,
+      "meaning": "Hồn ma tím; tránh trùng \"U Linh Cổ Thành\""
+    },
+    {
+      "id": "species_0007",
+      "name_vi": "Thi Lang",
+      "previous_name_vi": "Chó Ác Ma",
+      "changed": true,
+      "meaning": "Sói xác sống; tách khỏi Ngục Khuyển (0058)"
+    },
+    {
+      "id": "species_0008",
+      "name_vi": "Quỷ Hỏa",
+      "previous_name_vi": "Lửa Yêu",
+      "changed": true,
+      "meaning": "Lửa ma, ma trơi"
+    },
+    {
+      "id": "species_0009",
+      "name_vi": "Lợi Trảo Thi",
+      "previous_name_vi": "Xác Chết Vuốt Sắc",
+      "changed": true,
+      "meaning": "Xác vuốt sắc"
+    },
+    {
+      "id": "species_0010",
+      "name_vi": "Cốt Ngư",
+      "previous_name_vi": "Cá Xương",
+      "changed": true,
+      "meaning": "Cá xương"
+    },
+    {
+      "id": "species_0011",
+      "name_vi": "Đồ Phu",
+      "previous_name_vi": "Kẻ Đồ Tể",
+      "changed": true,
+      "meaning": "Đồ tể"
+    },
+    {
+      "id": "species_0012",
+      "name_vi": "Tàn Thi",
+      "previous_name_vi": "Xác Chết Nửa Người",
+      "changed": true,
+      "meaning": "Xác tàn, nửa người"
+    },
+    {
+      "id": "species_0013",
+      "name_vi": "Ma Ảnh",
+      "previous_name_vi": "Ma Ảnh",
+      "changed": false,
+      "meaning": "Bóng ma"
+    },
+    {
+      "id": "species_0014",
+      "name_vi": "Phệ Hồn Thảo",
+      "previous_name_vi": "Tinh Tinh Xanh Ma Giới",
+      "changed": true,
+      "meaning": "Cỏ nuốt hồn; hình là cây bẫy ruồi, không phải tinh tinh"
+    },
+    {
+      "id": "species_0015",
+      "name_vi": "Tử Thần",
+      "previous_name_vi": "Tử Thần",
+      "changed": false,
+      "meaning": ""
+    },
+    {
+      "id": "species_0016",
+      "name_vi": "Sa Thi Vương",
+      "previous_name_vi": "Pharaon",
+      "changed": true,
+      "meaning": "Vua xác cát; bỏ từ mượn \"Pharaon\""
+    },
+    {
+      "id": "species_0017",
+      "name_vi": "Băng Cốt Long",
+      "previous_name_vi": "Rồng Xương Băng",
+      "changed": true,
+      "meaning": "Rồng xương băng"
+    },
+    {
+      "id": "species_0018",
+      "name_vi": "Bạch Cốt Nữ Vương",
+      "previous_name_vi": "Nữ Vương Bạch Cốt",
+      "changed": true,
+      "meaning": "Đảo về trật tự Hán-Việt"
+    },
+    {
+      "id": "species_0019",
+      "name_vi": "Minh Giới Nữ Đế",
+      "previous_name_vi": "Nữ Đế Minh Giới",
+      "changed": true,
+      "meaning": "Đảo về trật tự Hán-Việt"
+    },
+    {
+      "id": "species_0020",
+      "name_vi": "Hắc Kỵ Vương",
+      "previous_name_vi": "Thủ Lĩnh Hắc Ám",
+      "changed": true,
+      "meaning": "Vua kỵ sĩ đen; hình là kỵ sĩ cưỡi ngựa"
+    },
+    {
+      "id": "species_0021",
+      "name_vi": "Tiên Chưởng",
+      "previous_name_vi": "Xương Rồng",
+      "changed": true,
+      "meaning": "Xương rồng (từ 仙人掌)"
+    },
+    {
+      "id": "species_0022",
+      "name_vi": "Hoa Tinh",
+      "previous_name_vi": "Yêu Tinh Hoa",
+      "changed": true,
+      "meaning": "Tinh linh hoa"
+    },
+    {
+      "id": "species_0023",
+      "name_vi": "Xích Linh Chi",
+      "previous_name_vi": "Nấm Hoa",
+      "changed": true,
+      "meaning": "Nấm linh chi đỏ; hình là nấm, không có hoa"
+    },
+    {
+      "id": "species_0024",
+      "name_vi": "Bích Hồ Thảo",
+      "previous_name_vi": "Tinh Tinh Xanh",
+      "changed": true,
+      "meaning": "Cỏ bình ngọc, cây nắp ấm; không phải tinh tinh"
+    },
+    {
+      "id": "species_0025",
+      "name_vi": "Hải Quỳ",
+      "previous_name_vi": "Hải Quỳ",
+      "changed": false,
+      "meaning": ""
+    },
+    {
+      "id": "species_0026",
+      "name_vi": "Quỷ Mộc",
+      "previous_name_vi": "Gỗ Quỷ",
+      "changed": true,
+      "meaning": "Cây quỷ"
+    },
+    {
+      "id": "species_0027",
+      "name_vi": "Quỷ Diện Quả",
+      "previous_name_vi": "Quả Mặt Quỷ",
+      "changed": true,
+      "meaning": "Quả mặt quỷ"
+    },
+    {
+      "id": "species_0028",
+      "name_vi": "Thủy Linh",
+      "previous_name_vi": "Thủy Linh",
+      "changed": false,
+      "meaning": ""
+    },
+    {
+      "id": "species_0029",
+      "name_vi": "Trúc Linh",
+      "previous_name_vi": "Trúc Địa Linh",
+      "changed": true,
+      "meaning": "Linh hồn trúc"
+    },
+    {
+      "id": "species_0030",
+      "name_vi": "Thực Nhân Hoa",
+      "previous_name_vi": "Hoa Ăn Thịt Người",
+      "changed": true,
+      "meaning": "Hoa ăn thịt người"
+    },
+    {
+      "id": "species_0031",
+      "name_vi": "Kim Thứ Quả",
+      "previous_name_vi": "Yêu Tinh Dứa",
+      "changed": true,
+      "meaning": "Quả gai vàng (dứa)"
+    },
+    {
+      "id": "species_0032",
+      "name_vi": "Chu Thần Hoa",
+      "previous_name_vi": "Hoa Môi",
+      "changed": true,
+      "meaning": "Hoa môi son (chu thần = môi đỏ)"
+    },
+    {
+      "id": "species_0033",
+      "name_vi": "Thái Dương Hoa",
+      "previous_name_vi": "Hoa Hướng Dương",
+      "changed": true,
+      "meaning": "Hoa mặt trời"
+    },
+    {
+      "id": "species_0034",
+      "name_vi": "Quỷ Nam Qua",
+      "previous_name_vi": "Bí Đỏ Quỷ Quái",
+      "changed": true,
+      "meaning": "Bí ngô quỷ (nam qua = bí đỏ)"
+    },
+    {
+      "id": "species_0035",
+      "name_vi": "Mộc Trưởng Lão",
+      "previous_name_vi": "Trưởng Lão Người Cây",
+      "changed": true,
+      "meaning": "Trưởng lão cây"
+    },
+    {
+      "id": "species_0036",
+      "name_vi": "Tam Thủ Thực Hoa",
+      "previous_name_vi": "Hoa ăn Thịt Người Ba Đầu",
+      "changed": true,
+      "meaning": "Hoa ăn thịt ba đầu"
+    },
+    {
+      "id": "species_0037",
+      "name_vi": "Độc Đằng Nữ",
+      "previous_name_vi": "Độc Đằng Nữ",
+      "changed": false,
+      "meaning": "Nàng dây leo độc"
+    },
+    {
+      "id": "species_0038",
+      "name_vi": "Bách Hoa Tiên Tử",
+      "previous_name_vi": "Tinh Linh Bách Hoa",
+      "changed": true,
+      "meaning": "Tiên tử trăm hoa"
+    },
+    {
+      "id": "species_0039",
+      "name_vi": "Dực Long",
+      "previous_name_vi": "Rồng Có Cánh",
+      "changed": true,
+      "meaning": "Rồng cánh"
+    },
+    {
+      "id": "species_0040",
+      "name_vi": "Xích Quan Long",
+      "previous_name_vi": "Rồng Mào Đỏ",
+      "changed": true,
+      "meaning": "Rồng mào đỏ"
+    },
+    {
+      "id": "species_0041",
+      "name_vi": "Cốt Xà",
+      "previous_name_vi": "Rắn Xương Trắng",
+      "changed": true,
+      "meaning": "Rắn xương"
+    },
+    {
+      "id": "species_0042",
+      "name_vi": "Tiểu Ma Long",
+      "previous_name_vi": "Tiểu Ma Long",
+      "changed": false,
+      "meaning": ""
+    },
+    {
+      "id": "species_0043",
+      "name_vi": "Thứ Bối Long",
+      "previous_name_vi": "Rồng Cổ Dài",
+      "changed": true,
+      "meaning": "Rồng lưng gai; hình không có cổ dài"
+    },
+    {
+      "id": "species_0044",
+      "name_vi": "Cốt Trảo Long",
+      "previous_name_vi": "Rồng Vuốt Xương",
+      "changed": true,
+      "meaning": "Rồng vuốt xương"
+    },
+    {
+      "id": "species_0045",
+      "name_vi": "Nham Long",
+      "previous_name_vi": "Nham Long",
+      "changed": false,
+      "meaning": ""
+    },
+    {
+      "id": "species_0046",
+      "name_vi": "Tiêm Nha Long",
+      "previous_name_vi": "Giáp Long Răng Nhọn",
+      "changed": true,
+      "meaning": "Rồng răng nhọn; tránh lẫn Thiết Giáp Long (0154)"
+    },
+    {
+      "id": "species_0047",
+      "name_vi": "Viêm Long",
+      "previous_name_vi": "Viêm Long",
+      "changed": false,
+      "meaning": ""
+    },
+    {
+      "id": "species_0048",
+      "name_vi": "Lôi Long",
+      "previous_name_vi": "Rồng Sấm",
+      "changed": true,
+      "meaning": "Rồng sấm"
+    },
+    {
+      "id": "species_0049",
+      "name_vi": "Phỉ Thúy Long",
+      "previous_name_vi": "Rồng Phỉ Thúy",
+      "changed": true,
+      "meaning": "Rồng ngọc phỉ thúy"
+    },
+    {
+      "id": "species_0050",
+      "name_vi": "Tam Thủ Hải Long",
+      "previous_name_vi": "Hải Long Ba Đầu",
+      "changed": true,
+      "meaning": "Rồng biển ba đầu"
+    },
+    {
+      "id": "species_0051",
+      "name_vi": "Hắc Long Vương",
+      "previous_name_vi": "Long Vương Hắc Ám",
+      "changed": true,
+      "meaning": "Vua rồng đen"
+    },
+    {
+      "id": "species_0052",
+      "name_vi": "Thái Cổ Thánh Long",
+      "previous_name_vi": "Thánh Rồng Thái Cổ",
+      "changed": true,
+      "meaning": "Rồng thánh thời thái cổ"
+    },
+    {
+      "id": "species_0053",
+      "name_vi": "Tiểu Ác Ma",
+      "previous_name_vi": "Tiểu Ác Ma",
+      "changed": false,
+      "meaning": ""
+    },
+    {
+      "id": "species_0054",
+      "name_vi": "Hải Yêu",
+      "previous_name_vi": "Yêu Tinh Biển",
+      "changed": true,
+      "meaning": "Yêu tinh biển"
+    },
+    {
+      "id": "species_0055",
+      "name_vi": "Tiểu Ma Nhãn",
+      "previous_name_vi": "Mắt Ác Ma",
+      "changed": true,
+      "meaning": "Mắt quỷ nhỏ; cùng họ với Ma Nhãn Hư Không (0157)"
+    },
+    {
+      "id": "species_0056",
+      "name_vi": "Long Trảo Quỷ",
+      "previous_name_vi": "Ma Móng Rồng",
+      "changed": true,
+      "meaning": "Quỷ móng rồng"
+    },
+    {
+      "id": "species_0057",
+      "name_vi": "Dạ Xoa",
+      "previous_name_vi": "Báo Địa Ngục",
+      "changed": true,
+      "meaning": "Quỷ cầm đinh ba; hình không phải con báo"
+    },
+    {
+      "id": "species_0058",
+      "name_vi": "Ngục Khuyển",
+      "previous_name_vi": "Chó Săn Ác Ma",
+      "changed": true,
+      "meaning": "Chó săn địa ngục"
+    },
+    {
+      "id": "species_0059",
+      "name_vi": "Ma Giáp Binh",
+      "previous_name_vi": "Tướng Chiến Ma Rồng",
+      "changed": true,
+      "meaning": "Chiến binh giáp quỷ"
+    },
+    {
+      "id": "species_0060",
+      "name_vi": "Ngục Thú",
+      "previous_name_vi": "Ma Thú Địa Ngục",
+      "changed": true,
+      "meaning": "Thú địa ngục"
+    },
+    {
+      "id": "species_0061",
+      "name_vi": "Ma Trư",
+      "previous_name_vi": "Lợn Ác Ma",
+      "changed": true,
+      "meaning": "Lợn quỷ"
+    },
+    {
+      "id": "species_0062",
+      "name_vi": "Dương Đầu Ma",
+      "previous_name_vi": "Quái Vật Đầu Dê",
+      "changed": true,
+      "meaning": "Quỷ đầu dê"
+    },
+    {
+      "id": "species_0063",
+      "name_vi": "Ma Tướng",
+      "previous_name_vi": "Ma Tướng Địa Ngục",
+      "changed": true,
+      "meaning": "Tướng quỷ"
+    },
+    {
+      "id": "species_0064",
+      "name_vi": "Ma Cơ",
+      "previous_name_vi": "Ma Muội",
+      "changed": true,
+      "meaning": "Nữ quỷ múa, quyến rũ"
+    },
+    {
+      "id": "species_0065",
+      "name_vi": "Chiêm Tinh Quỷ",
+      "previous_name_vi": "Thầy Bói Ác Ma",
+      "changed": true,
+      "meaning": "Quỷ bói sao"
+    },
+    {
+      "id": "species_0066",
+      "name_vi": "Đại Ác Ma",
+      "previous_name_vi": "Đại Ác Ma",
+      "changed": false,
+      "meaning": ""
+    },
+    {
+      "id": "species_0067",
+      "name_vi": "Địa Ngục Ma Vương",
+      "previous_name_vi": "Ma Vương Địa Ngục",
+      "changed": true,
+      "meaning": "Đảo về trật tự Hán-Việt"
+    },
+    {
+      "id": "species_0068",
+      "name_vi": "Thanh Long",
+      "previous_name_vi": "Thanh Long",
+      "changed": false,
+      "meaning": "Tứ linh"
+    },
+    {
+      "id": "species_0069",
+      "name_vi": "Đọa Thiên Sứ",
+      "previous_name_vi": "Trụy Thiên Sứ",
+      "changed": true,
+      "meaning": "Thiên sứ sa ngã (thuật ngữ quen hơn \"Trụy\")"
+    },
+    {
+      "id": "species_0070",
+      "name_vi": "Kim Chủy Thú",
+      "previous_name_vi": "Thú Móng Lớn",
+      "changed": true,
+      "meaning": "Thú mỏ vàng; hình nổi bật cái mỏ, không phải móng"
+    },
+    {
+      "id": "species_0071",
+      "name_vi": "Xích Ưng",
+      "previous_name_vi": "Ưng Đỏ",
+      "changed": true,
+      "meaning": "Ưng đỏ"
+    },
+    {
+      "id": "species_0072",
+      "name_vi": "Lâm Yêu",
+      "previous_name_vi": "Ma Cây",
+      "changed": true,
+      "meaning": "Yêu cây rừng; tránh lẫn Quỷ Mộc (0026)"
+    },
+    {
+      "id": "species_0073",
+      "name_vi": "Phú Quý Quy",
+      "previous_name_vi": "Rùa Phú Quý",
+      "changed": true,
+      "meaning": "Rùa phú quý"
+    },
+    {
+      "id": "species_0074",
+      "name_vi": "Lam Lang",
+      "previous_name_vi": "Sói Ngớ Ngẩn",
+      "changed": true,
+      "meaning": "Sói xanh lam; bỏ \"Ngớ Ngẩn\""
+    },
+    {
+      "id": "species_0075",
+      "name_vi": "Xuyên Sơn Giáp",
+      "previous_name_vi": "Tê Tê Vàng",
+      "changed": true,
+      "meaning": "Con tê tê"
+    },
+    {
+      "id": "species_0076",
+      "name_vi": "Kiếm Xỉ Hổ",
+      "previous_name_vi": "Thú Răng Kiếm",
+      "changed": true,
+      "meaning": "Hổ răng kiếm"
+    },
+    {
+      "id": "species_0077",
+      "name_vi": "Cực Băng Nga",
+      "previous_name_vi": "Thiên Nga Cực Địa",
+      "changed": true,
+      "meaning": "Chim cánh cụt vùng cực; hình không phải thiên nga"
+    },
+    {
+      "id": "species_0078",
+      "name_vi": "Miên Dương",
+      "previous_name_vi": "Dương Dương Dương",
+      "changed": true,
+      "meaning": "Con cừu; bỏ \"Dương Dương Dương\""
+    },
+    {
+      "id": "species_0079",
+      "name_vi": "Mặc Ngư",
+      "previous_name_vi": "Mực Hắc Ám",
+      "changed": true,
+      "meaning": "Con mực (cá mực)"
+    },
+    {
+      "id": "species_0080",
+      "name_vi": "Đao Ba Hùng",
+      "previous_name_vi": "Gấu Vết Dao",
+      "changed": true,
+      "meaning": "Gấu sẹo dao"
+    },
+    {
+      "id": "species_0081",
+      "name_vi": "Nham Quy",
+      "previous_name_vi": "Rùa Nham Thạch",
+      "changed": true,
+      "meaning": "Rùa đá nham thạch"
+    },
+    {
+      "id": "species_0082",
+      "name_vi": "Cự Nhĩ Tượng",
+      "previous_name_vi": "Voi Tai To",
+      "changed": true,
+      "meaning": "Voi tai to"
+    },
+    {
+      "id": "species_0083",
+      "name_vi": "Cửu Vĩ Hồ",
+      "previous_name_vi": "Cáo Chín Đuôi",
+      "changed": true,
+      "meaning": "Cáo chín đuôi"
+    },
+    {
+      "id": "species_0084",
+      "name_vi": "Thạch Viên",
+      "previous_name_vi": "Tinh Tinh Rock",
+      "changed": true,
+      "meaning": "Vượn đá; bỏ chữ tiếng Anh \"Rock\""
+    },
+    {
+      "id": "species_0085",
+      "name_vi": "Tuyết Mao Quái",
+      "previous_name_vi": "Đại Tuyết Quái",
+      "changed": true,
+      "meaning": "Quái tuyết lông trắng (mao = lông)"
+    },
+    {
+      "id": "species_0086",
+      "name_vi": "Ma Pháp Hùng Miêu",
+      "previous_name_vi": "Gấu Trúc Ma Pháp",
+      "changed": true,
+      "meaning": "Gấu trúc phép thuật (hùng miêu = gấu trúc)"
+    },
+    {
+      "id": "species_0087",
+      "name_vi": "Bạch Hổ",
+      "previous_name_vi": "Bạch Hổ",
+      "changed": false,
+      "meaning": "Tứ linh"
+    },
+    {
+      "id": "species_0088",
+      "name_vi": "Xích Viêm Lang",
+      "previous_name_vi": "Sói Xích Viêm",
+      "changed": true,
+      "meaning": "Sói lửa đỏ"
+    },
+    {
+      "id": "species_0089",
+      "name_vi": "Phong Điểu",
+      "previous_name_vi": "Chim Ong",
+      "changed": true,
+      "meaning": "Chim ruồi (蜂鳥); \"Chim Ong\" là dịch máy"
+    },
+    {
+      "id": "species_0090",
+      "name_vi": "Biên Bức",
+      "previous_name_vi": "Dơi",
+      "changed": true,
+      "meaning": "Con dơi"
+    },
+    {
+      "id": "species_0091",
+      "name_vi": "Hoa Quan Điểu",
+      "previous_name_vi": "Chim Chào Mào",
+      "changed": true,
+      "meaning": "Chim mào hoa"
+    },
+    {
+      "id": "species_0092",
+      "name_vi": "Lôi Điểu",
+      "previous_name_vi": "Chim Sấm",
+      "changed": true,
+      "meaning": "Chim sấm"
+    },
+    {
+      "id": "species_0093",
+      "name_vi": "Ma Ưng",
+      "previous_name_vi": "Ưng Trọc Ma",
+      "changed": true,
+      "meaning": "Ưng quỷ"
+    },
+    {
+      "id": "species_0094",
+      "name_vi": "Dạ Kiêu",
+      "previous_name_vi": "Chim Cú",
+      "changed": true,
+      "meaning": "Cú đêm"
+    },
+    {
+      "id": "species_0095",
+      "name_vi": "Thiết Ưng",
+      "previous_name_vi": "Ưng Trọc",
+      "changed": true,
+      "meaning": "Ưng sắt; tránh lẫn Ma Ưng"
+    },
+    {
+      "id": "species_0096",
+      "name_vi": "Ưng Yêu",
+      "previous_name_vi": "Nữ Yêu Minh Ưng",
+      "changed": true,
+      "meaning": "Yêu nữ mình ưng"
+    },
+    {
+      "id": "species_0097",
+      "name_vi": "Độc Nhãn Bức",
+      "previous_name_vi": "Dơi Một Mắt",
+      "changed": true,
+      "meaning": "Dơi một mắt"
+    },
+    {
+      "id": "species_0098",
+      "name_vi": "Mộ Nha",
+      "previous_name_vi": "Quạ Nghĩa Trang",
+      "changed": true,
+      "meaning": "Quạ nghĩa địa"
+    },
+    {
+      "id": "species_0099",
+      "name_vi": "Tê Điểu",
+      "previous_name_vi": "Tê Điểu",
+      "changed": false,
+      "meaning": "Chim mỏ sừng"
+    },
+    {
+      "id": "species_0100",
+      "name_vi": "Độc Trảo Anh Vũ",
+      "previous_name_vi": "Vẹt Độc Vuốt",
+      "changed": true,
+      "meaning": "Vẹt vuốt độc"
+    },
+    {
+      "id": "species_0101",
+      "name_vi": "Sư Thứu",
+      "previous_name_vi": "Đại Bàng Sư Tử",
+      "changed": true,
+      "meaning": "Đại bàng đầu sư tử (griffin)"
+    },
+    {
+      "id": "species_0102",
+      "name_vi": "Hồng Vũ Ưng",
+      "previous_name_vi": "Ưng Hồng Vũ",
+      "changed": true,
+      "meaning": "Đảo về trật tự Hán-Việt"
+    },
+    {
+      "id": "species_0103",
+      "name_vi": "Đại Phúc Điểu",
+      "previous_name_vi": "Chim Đại Phì",
+      "changed": true,
+      "meaning": "Chim tròn phúc hậu; bỏ \"Đại Phì\""
+    },
+    {
+      "id": "species_0104",
+      "name_vi": "Liệt Phong Ưng",
+      "previous_name_vi": "Chim Đa Đa",
+      "changed": true,
+      "meaning": "Ưng gió dữ; hình không phải chim đa đa"
+    },
+    {
+      "id": "species_0105",
+      "name_vi": "Chu Tước",
+      "previous_name_vi": "Chu Tước",
+      "changed": false,
+      "meaning": "Tứ linh"
+    },
+    {
+      "id": "species_0106",
+      "name_vi": "Địa Ngục Quái Điểu",
+      "previous_name_vi": "Chim Cú Địa Ngục",
+      "changed": true,
+      "meaning": "Quái điểu địa ngục; hình không phải cú"
+    },
+    {
+      "id": "species_0107",
+      "name_vi": "Kim Sí Đại Bằng",
+      "previous_name_vi": "Đại Bàng Vàng",
+      "changed": true,
+      "meaning": "Đại bàng cánh vàng"
+    },
+    {
+      "id": "species_0108",
+      "name_vi": "Độc Phong",
+      "previous_name_vi": "Ong Giết Người",
+      "changed": true,
+      "meaning": "Ong độc"
+    },
+    {
+      "id": "species_0109",
+      "name_vi": "Sa Hạt",
+      "previous_name_vi": "Bọ Cạp Sa Mạc",
+      "changed": true,
+      "meaning": "Bọ cạp cát (hạt = bọ cạp)"
+    },
+    {
+      "id": "species_0110",
+      "name_vi": "Thiết Đường Lang",
+      "previous_name_vi": "Bọ Ngựa Móng Sắt",
+      "changed": true,
+      "meaning": "Bọ ngựa sắt"
+    },
+    {
+      "id": "species_0111",
+      "name_vi": "Hoa Loa",
+      "previous_name_vi": "Ốc Sên Hoa",
+      "changed": true,
+      "meaning": "Ốc hoa (loa = ốc)"
+    },
+    {
+      "id": "species_0112",
+      "name_vi": "Sơn Chu",
+      "previous_name_vi": "Nhện Độc",
+      "changed": true,
+      "meaning": "Nhện núi"
+    },
+    {
+      "id": "species_0113",
+      "name_vi": "Thiên Ngưu",
+      "previous_name_vi": "Thiên Ngưu",
+      "changed": false,
+      "meaning": "Bọ xén tóc"
+    },
+    {
+      "id": "species_0114",
+      "name_vi": "Kiếm Giáp Trùng",
+      "previous_name_vi": "Bọ Cánh Cứng Răng Kiếm",
+      "changed": true,
+      "meaning": "Bọ cánh cứng hàm kiếm"
+    },
+    {
+      "id": "species_0115",
+      "name_vi": "Thứ Sa Trùng",
+      "previous_name_vi": "Giun Đất Móng Sắt",
+      "changed": true,
+      "meaning": "Sâu gai trong cát"
+    },
+    {
+      "id": "species_0116",
+      "name_vi": "Cự Trảo Trùng",
+      "previous_name_vi": "Châu Chấu Móng Lớn",
+      "changed": true,
+      "meaning": "Châu chấu càng lớn"
+    },
+    {
+      "id": "species_0117",
+      "name_vi": "Độc Giác Trùng",
+      "previous_name_vi": "Thú Một Sừng Vỏ Cứng",
+      "changed": true,
+      "meaning": "Bọ một sừng; tránh lẫn kỳ lân (0149)"
+    },
+    {
+      "id": "species_0118",
+      "name_vi": "Hoa Vũ Điệp",
+      "previous_name_vi": "Bướm Hoa Vũ",
+      "changed": true,
+      "meaning": "Bướm cánh hoa (điệp = bướm)"
+    },
+    {
+      "id": "species_0119",
+      "name_vi": "Ký Cư Giải",
+      "previous_name_vi": "Cua Ký Sinh",
+      "changed": true,
+      "meaning": "Ốc mượn hồn (寄居蟹); không phải cua ký sinh"
+    },
+    {
+      "id": "species_0120",
+      "name_vi": "Cự Ngao Hà",
+      "previous_name_vi": "Tôm Hùm Răng Cưa",
+      "changed": true,
+      "meaning": "Tôm càng lớn"
+    },
+    {
+      "id": "species_0121",
+      "name_vi": "Thủy Bào Hải Mã",
+      "previous_name_vi": "Hải Mã Bong Bóng",
+      "changed": true,
+      "meaning": "Cá ngựa bong bóng"
+    },
+    {
+      "id": "species_0122",
+      "name_vi": "Ách Vận Trùng",
+      "previous_name_vi": "Trùng Hốt Lỗ",
+      "changed": true,
+      "meaning": "Sâu xui rủi; khớp skill gây vận rủi"
+    },
+    {
+      "id": "species_0123",
+      "name_vi": "Thạch Thứ Trùng",
+      "previous_name_vi": "Trùng Gai Nhọn",
+      "changed": true,
+      "meaning": "Sâu gai hóa đá"
+    },
+    {
+      "id": "species_0124",
+      "name_vi": "Địa Huyệt Ma Trùng",
+      "previous_name_vi": "Trùng Bất Tử Địa Huyệt",
+      "changed": true,
+      "meaning": "Ma trùng hang đất; bỏ \"Bất Tử\" vì trùng tên race"
+    },
+    {
+      "id": "species_0125",
+      "name_vi": "Điệp Hậu",
+      "previous_name_vi": "Nhện Phu Nhân",
+      "changed": true,
+      "meaning": "Nữ hoàng bướm; hình là tiên cánh bướm, không có nhện"
+    },
+    {
+      "id": "species_0126",
+      "name_vi": "Kim Quan Chu Hậu",
+      "previous_name_vi": "Trùng Mẫu Mào Vàng",
+      "changed": true,
+      "meaning": "Nữ hoàng nhện đội mũ vàng; hình là nữ hoàng cưỡi nhện"
+    },
+    {
+      "id": "species_0127",
+      "name_vi": "Bảo Tương Yêu",
+      "previous_name_vi": "Quái Vật Rương Báu",
+      "changed": true,
+      "meaning": "Yêu hòm báu (tương = hòm, rương)"
+    },
+    {
+      "id": "species_0128",
+      "name_vi": "Phong Xa Linh",
+      "previous_name_vi": "Chong Chóng Gió",
+      "changed": true,
+      "meaning": "Linh chong chóng (phong xa = chong chóng gió)"
+    },
+    {
+      "id": "species_0129",
+      "name_vi": "Nham Quái",
+      "previous_name_vi": "Quái Vật Nham Thạch",
+      "changed": true,
+      "meaning": "Quái đá"
+    },
+    {
+      "id": "species_0130",
+      "name_vi": "Quỷ Diện Thạch",
+      "previous_name_vi": "Đá Mặt Quỷ",
+      "changed": true,
+      "meaning": "Đá mặt quỷ"
+    },
+    {
+      "id": "species_0131",
+      "name_vi": "Hư Ảnh",
+      "previous_name_vi": "Hư Không Hắc Ám",
+      "changed": true,
+      "meaning": "Bóng hư không"
+    },
+    {
+      "id": "species_0132",
+      "name_vi": "Ma Đạo Thư",
+      "previous_name_vi": "Sách Ma Pháp",
+      "changed": true,
+      "meaning": "Sách ma đạo"
+    },
+    {
+      "id": "species_0133",
+      "name_vi": "Ma Kiếm",
+      "previous_name_vi": "Ma Kiếm",
+      "changed": false,
+      "meaning": ""
+    },
+    {
+      "id": "species_0134",
+      "name_vi": "Thạch Khôi Lỗi",
+      "previous_name_vi": "Con Rối Gạch Đá",
+      "changed": true,
+      "meaning": "Con rối đá"
+    },
+    {
+      "id": "species_0135",
+      "name_vi": "Tiểu Sửu Hạp",
+      "previous_name_vi": "Thằng Hề Hộp",
+      "changed": true,
+      "meaning": "Chú hề trong hộp (tiểu sửu = chú hề)"
+    },
+    {
+      "id": "species_0136",
+      "name_vi": "Thảo Nhân Binh",
+      "previous_name_vi": "Chiến Sĩ Bù Nhìn",
+      "changed": true,
+      "meaning": "Lính bù nhìn (thảo nhân = bù nhìn)"
+    },
+    {
+      "id": "species_0137",
+      "name_vi": "Thủy Tinh Ma Kính",
+      "previous_name_vi": "Ma Gương Thủy Tinh",
+      "changed": true,
+      "meaning": "Gương ma thủy tinh"
+    },
+    {
+      "id": "species_0138",
+      "name_vi": "Dung Nham Cự Nhân",
+      "previous_name_vi": "Thú Lớn Dung Nham",
+      "changed": true,
+      "meaning": "Người khổng lồ dung nham"
+    },
+    {
+      "id": "species_0139",
+      "name_vi": "Huyền Vũ",
+      "previous_name_vi": "Huyền Vũ",
+      "changed": false,
+      "meaning": "Tứ linh"
+    },
+    {
+      "id": "species_0140",
+      "name_vi": "Nhân Sư",
+      "previous_name_vi": "Nhân Sư",
+      "changed": false,
+      "meaning": ""
+    },
+    {
+      "id": "species_0141",
+      "name_vi": "Thượng Cổ Đồ Đằng",
+      "previous_name_vi": "Totem Thượng Cổ",
+      "changed": true,
+      "meaning": "Vật tổ thượng cổ (đồ đằng = totem)"
+    },
+    {
+      "id": "species_0142",
+      "name_vi": "Thần Tướng Cự Ma",
+      "previous_name_vi": "Thần Tướng Cự Ma",
+      "changed": false,
+      "meaning": ""
+    },
+    {
+      "id": "species_0143",
+      "name_vi": "Đăng Thần",
+      "previous_name_vi": "Thần Đèn",
+      "changed": true,
+      "meaning": "Thần đèn"
+    },
+    {
+      "id": "species_0144",
+      "name_vi": "Linh Tiên Hoa Hương",
+      "previous_name_vi": "Linh Tiên Hoa Hương",
+      "changed": false,
+      "meaning": "Đã duyệt (Triệu Linh Điện)"
+    },
+    {
+      "id": "species_0145",
+      "name_vi": "Cự Linh Mộc",
+      "previous_name_vi": "Cây Cự Linh",
+      "changed": true,
+      "meaning": "Cây khổng lồ có linh hồn"
+    },
+    {
+      "id": "species_0146",
+      "name_vi": "Huyết Ma Vương",
+      "previous_name_vi": "Ma Vương Hút Máu",
+      "changed": true,
+      "meaning": "Ma vương khát máu; tách khỏi Địa Ngục Ma Vương"
+    },
+    {
+      "id": "species_0147",
+      "name_vi": "Viễn Cổ Tuyết Nhân",
+      "previous_name_vi": "Người Tuyết Viễn Cổ",
+      "changed": true,
+      "meaning": "Người tuyết viễn cổ"
+    },
+    {
+      "id": "species_0148",
+      "name_vi": "Vân Mao Đà",
+      "previous_name_vi": "Ngựa Bùn Cỏ",
+      "changed": true,
+      "meaning": "Lạc đà lông mây (alpaca); bỏ \"Ngựa Bùn Cỏ\" vì là chơi chữ tục 草泥马"
+    },
+    {
+      "id": "species_0149",
+      "name_vi": "Kim Kỳ Lân",
+      "previous_name_vi": "Thú Vàng Một Sừng",
+      "changed": true,
+      "meaning": "Kỳ lân vàng; đổi từ tên thuần Việt đã duyệt ở Triệu Linh Điện"
+    },
+    {
+      "id": "species_0150",
+      "name_vi": "Thiên Đường Điểu",
+      "previous_name_vi": "Đảo Thiên Đường",
+      "changed": true,
+      "meaning": "Chim thiên đường; \"Đảo\" là dịch sai"
+    },
+    {
+      "id": "species_0151",
+      "name_vi": "Độc Hạt Vương",
+      "previous_name_vi": "Đại Vương Bọ Cạp",
+      "changed": true,
+      "meaning": "Vua bọ cạp độc; đổi từ tên thuần Việt đã duyệt ở Triệu Linh Điện"
+    },
+    {
+      "id": "species_0152",
+      "name_vi": "Ái Thần Điểu",
+      "previous_name_vi": "Chim Ái Thần",
+      "changed": true,
+      "meaning": "Chim thần tình yêu"
+    },
+    {
+      "id": "species_0153",
+      "name_vi": "Nguyệt Đài Lộc",
+      "previous_name_vi": "Hươu Rêu Nguyệt",
+      "changed": true,
+      "meaning": "Hươu rêu trăng (đài = rêu, lộc = hươu)"
+    },
+    {
+      "id": "species_0154",
+      "name_vi": "Thiết Giáp Long",
+      "previous_name_vi": "Thiết Giáp Long",
+      "changed": false,
+      "meaning": ""
+    },
+    {
+      "id": "species_0155",
+      "name_vi": "Tinh Vân Long",
+      "previous_name_vi": "Tinh Vân Long",
+      "changed": false,
+      "meaning": ""
+    },
+    {
+      "id": "species_0156",
+      "name_vi": "Đao Ma Huyết Giáp",
+      "previous_name_vi": "Đao Ma Huyết Giáp",
+      "changed": false,
+      "meaning": ""
+    },
+    {
+      "id": "species_0157",
+      "name_vi": "Ma Nhãn Hư Không",
+      "previous_name_vi": "Ma Nhãn Hư Không",
+      "changed": false,
+      "meaning": ""
+    },
+    {
+      "id": "species_0158",
+      "name_vi": "Hộ Vệ Thạch Linh",
+      "previous_name_vi": "Hộ Vệ Thạch Linh",
+      "changed": false,
+      "meaning": ""
+    },
+    {
+      "id": "species_0159",
+      "name_vi": "Long Thần Song Ấn",
+      "previous_name_vi": "Long Thần Song Ấn",
+      "changed": false,
+      "meaning": ""
+    },
+    {
+      "id": "species_0160",
+      "name_vi": "Ma Chủ Song Cực",
+      "previous_name_vi": "Ma Chủ Song Cực",
+      "changed": false,
+      "meaning": ""
+    }
+  ]
+}
