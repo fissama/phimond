@@ -118,3 +118,10 @@ Newjobs/native-chasms-34 raw01(exec-840fa89c...):2independentnative768x384world6
 Existing12grounddecalsactual4xdarkviewed;fadedsealreplaced, othersporouscontoursbutgrainbusy. Markerjobs/spawn-marker-35raw01(exec-5b1639f4...):4generatedframes192x128,47unioncolors; framefilesseparateaux +768x128horizontalpackedexport +frames.json +qa-loop.gif. Source2x2,cutsregisteredtranslationonlybybodybottomcenter; actualall4frames4xdarkinspected,temporalplaybackpending. Minorgrainshimmer.
 Ninefloortexturescrosscorrelationmax0.0187273(interior480squaregrayscale); no recolorclones. Latestfloorsfull4xleft/rightQAcreatedbutstillneedview, thinrimcorridorsrepeatweaknessunresolved. Batch10combined28-partcontactrefreshedandviewed. Desertcontactrefreshedandviewedbeforelatestmarker/cracks;regenaftermanifest.
 Currentweak3: sandstoneedge(repeatreview+gatepending), sandstone/brickfloors(thinrims),sandmound(broadquietplane). Outstandingportalactive,same-maskpair;horizons2;dustdevil/torch/magicrune/oasissparkle4FX;3QAcompositions;palmpartassembly;older6propsfull4x. Dustdeviljob37currentlygeneratingbuilt-in. No laterkitstart, no runtime/commit/audittoolchange.
+
+### Đơn 09 chặng 3–5 (owner nộp 2026-10-22, đã review sơ bộ, chưa duyệt)
+Lưu tại `batch-05-octopath/_intake/don09-chang-3-5/`.
+- Tile: paving-01, hall-floor-stone đạt seam; paving-02 gần đạt; paving-03 và city-brick-path LỖI seam/lặp, cần vẽ lại.
+- Skyline: sai kích thước (2172×724), alpha 0–255 mềm, 291k màu, mép trái/phải không khớp, đáy không phủ kín → cần xử lý lại.
+- NPC: 4/7 có ảnh dùng được (Mira, Rowan, Tuli, Orsa); thiếu sheet 2 gốc (Doran, Ketra, Odan); hòm thư 2 trạng thái ổn về hình. Bảng tóm tắt file 12 gắn nhãn lệch, không dùng.
+- Chặng 1–2: vẫn chưa review.
