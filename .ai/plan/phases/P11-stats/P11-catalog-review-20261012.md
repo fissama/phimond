@@ -37,8 +37,8 @@ xử lý, không phải22 lỗi công thức đã được chứng minh.
 Builder targets() chỉ dùng Star/class/Primary/Secondary, rồi round_half_up;
 không có authored modifier theo Species.152 loài có79 vector base+growth khác nhau;
 31 nhóm trùng vector gồm104 loài.19 nhóm gồm50 loài còn trùng cả Element.
-Nhóm Physical1 gồm13 loài có cùng cả12 giá trị. Nhện Vong Linh, Chó Ác Ma,
-Rồng Có Cánh, Rồng Mào Đỏ đều cùng HP250/ATK45/MAG10/DEF20/SPD40/SR20,
+Nhóm Physical1 gồm13 loài có cùng cả12 giá trị. Âm Chu, Thi Lang,
+Dực Long, Xích Quan Long đều cùng HP250/ATK45/MAG10/DEF20/SPD40/SR20,
 growth5/.9/.2/.4/1.02/.51.
 
 Trùng stats không tự động làm game mất cân bằng: Native Skill Pools khác nhau
@@ -54,14 +54,14 @@ main±10%/aux±5%, giữ budget/tolerance và Primary guard. Không thêm random
 
 | Species | Nguồn nói | V1 đang thể hiện |
 |---|---|---|
-| 0039 Rồng Có Cánh | nhanh nhẹn cao, tự phòng thủ thấp | vector giống Nhện Vong Linh; Lv60B SPD100/DEF43 |
-| 0007 Chó Ác Ma | di chuyển nhanh | SPD100 tại Lv60B, bằng Physical1 trung tính |
-| 0057 Báo Địa Ngục | rất nhanh, ma võ song thần | Hybrid đúng hướng nhưng SPD100 trung tính |
-| 0131 Hư Không Hắc Ám | ma pháp và tốc độ | SPD100, cùng vector với Xác Ướp/U Linh |
-| 0106 Chim Cú Địa Ngục | nhanh nhẹn cao nhất | Normal5 Lv60B SPD110; Độc Đằng Nữ115, Trụy Thiên Sứ/Totem112 |
-| 0055 Mắt Ác Ma | HP/phòng thủ kém | HP bằng solo Magic1, DEF46 cao hơn solo Magic1 DEF43 tại Lv60 |
-| 0038 Tinh Linh Bách Hoa | phòng ngự trưởng thành cao nhất | DEF growth.880 thấp hơn Trùng Bất Tử Địa Huyệt1.120 cùng Normal5 |
-| 0125 Nhện Phu Nhân | HP trưởng thành cực cao | HP growth8.000 bằng solo Magic5 template, chưa có signature riêng |
+| 0039 Dực Long | nhanh nhẹn cao, tự phòng thủ thấp | vector giống Âm Chu; Lv60B SPD100/DEF43 |
+| 0007 Thi Lang | di chuyển nhanh | SPD100 tại Lv60B, bằng Physical1 trung tính |
+| 0057 Dạ Xoa | rất nhanh, ma võ song thần | Hybrid đúng hướng nhưng SPD100 trung tính |
+| 0131 Hư Ảnh | ma pháp và tốc độ | SPD100, cùng vector với Triền Thi/Tử Hồn |
+| 0106 Địa Ngục Quái Điểu | nhanh nhẹn cao nhất | Normal5 Lv60B SPD110; Độc Đằng Nữ115, Đọa Thiên Sứ/Totem112 |
+| 0055 Tiểu Ma Nhãn | HP/phòng thủ kém | HP bằng solo Magic1, DEF46 cao hơn solo Magic1 DEF43 tại Lv60 |
+| 0038 Bách Hoa Tiên Tử | phòng ngự trưởng thành cao nhất | DEF growth.880 thấp hơn Trùng Bất Tử Địa Huyệt1.120 cùng Normal5 |
+| 0125 Điệp Hậu | HP trưởng thành cực cao | HP growth8.000 bằng solo Magic5 template, chưa có signature riêng |
 
 Nguồn là mô tả định tính; không ép mọi chữ “cao nhất” thành xếp hạng tuyệt đối
 xuyên Star/class/buff. Nhưng cần định nghĩa cohort (cùng Star/class/role hoặc
@@ -91,8 +91,8 @@ phân biệt maxHP reduction với raw damage khi xác nhận Disruptor.
 ### R-C04 — Medium: coverage Element có khoảng trống ở Normal5
 
 Phân bố: earth52 (34.2%), dark36 (23.7%), fire18, water18, wind16, light12.
-Normal5 không có Wind; Fire chỉ có Sói Xích Viêm. Wind5 hiện chỉ có Special
-Thần Đèn. Special acquisition/source gates chưa mở, nên không được coi Special
+Normal5 không có Wind; Fire chỉ có Xích Viêm Lang. Wind5 hiện chỉ có Special
+Đăng Thần. Special acquisition/source gates chưa mở, nên không được coi Special
 Wind5 là phương án Normal progression luôn tiếp cận được.
 
 Không cần ép mỗi hệ bằng số lượng; chart và encounter supply mới quyết định
@@ -100,7 +100,7 @@ có mất cân bằng thật không. Hiện chưa có chart P13 nên độ lệc
 coverage có thể kiểm chứng, chưa phải bằng chứng Earth quá mạnh.
 
 **Sửa đề xuất:** lập coverage theo Star, role, acquisition và vùng. Cân nhắc
-Đại Bàng Vàng (107) Wind thay vì Light nếu native identity không cần holy magic;
+Kim Sí Đại Bằng (107) Wind thay vì Light nếu native identity không cần holy magic;
 đây là đề xuất authoring, không khẳng định element gốc. Cho phép giữ khoảng
 trống nếu có chủ ý và low-Star/high-level Wind có đường dùng rõ.
 
@@ -108,7 +108,7 @@ trống nếu có chủ ý và low-Star/high-level Wind có đường dùng rõ.
 
 Thunder→Wind và ice→Water có thể là cách gộp tốt, nhưng phải ghi Wind bao gồm
 storm/lightning và Water bao gồm ice; skill theme không tự quyết định pet element.
-Gấu Trúc Ma Pháp→Light, Đại Bàng Vàng→Light, Sách Ma Pháp→Light là lựa chọn
+Ma Pháp Hùng Miêu→Light, Kim Sí Đại Bằng→Light, Ma Đạo Thư→Light là lựa chọn
 sáng tác cần rationale cụ thể; “phương Đông”, “vàng” hay “ma pháp” tự chúng không
 chứng minh Light. Không gán lại Race và không thêm STAB/Race stat bonus.
 
@@ -119,8 +119,8 @@ và kiểm tra `skill.element` vs `target.element` cùng P13. Không mở thêm 
 ### R-C06 — Medium: có stat domination do rounding, cần định giá utility
 
 Cùng Special5, Lv60B, noinherit/gear:
-- Nữ Đế Minh Giới(019) so với Thần Đèn(143): năm stat giống nhau, SPD112>110.
-- Đại Vương Bọ Cạp(151) so với Ngựa Bùn Cỏ(148): năm stat giống nhau, SPD112>110;
+- Minh Giới Nữ Đế(019) so với Đăng Thần(143): năm stat giống nhau, SPD112>110.
+- Độc Hạt Vương(151) so với Vân Mao Đà(148): năm stat giống nhau, SPD112>110;
   cặp này còn cùng Earth.
 
 Các cặp chỉ khác Secondary Disruptor/Support: SR chênh nhỏ của template Support

@@ -27,7 +27,7 @@ Static results: [design arithmetic](evidence/design-arithmetic-20261012.json),
 
 ## Concrete reward example
 
-`species_0001` Nhện Vong Linh, both parents Normal1 Lv60 allB, no inheritance,
+`species_0001` Âm Chu, both parents Normal1 Lv60 allB, no inheritance,
 no gear: ATK=45+floor(.9×59)=98. Training factor1. New ATK credit14.7,
 bonus13.007. Child at the same Lv60 and B has111.007 ATK: +13.27%.
 The child actually hatches Lv1: ATK45+13.007=58.007 until retrained.

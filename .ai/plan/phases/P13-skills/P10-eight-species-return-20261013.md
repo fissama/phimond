@@ -4,7 +4,7 @@ P10 authoring/review roster now160: frozen152 +8 Phimond-authored5★ records. E
 
 | Proposal ID | Stable P10 ID | Name | Class / roles | Element |
 |---|---|---|---|---|
-| P13-NEW-01 | species_0153 | Hươu Rêu Nguyệt | Normal5★ / magic_dps | earth |
+| P13-NEW-01 | species_0153 | Nguyệt Đài Lộc | Normal5★ / magic_dps | earth |
 | P13-NEW-02 | species_0154 | Thiết Giáp Long | Normal5★ / physical_dps | earth |
 | P13-NEW-03 | species_0155 | Tinh Vân Long | Normal5★ / magic_dps | light |
 | P13-NEW-04 | species_0156 | Đao Ma Huyết Giáp | Normal5★ / physical_dps | fire |
@@ -17,8 +17,8 @@ Machine-readable mapping: [P13-to-P10-eight-species-mapping.json](P13-to-P10-eig
 
 P13 receiver should remap proposal species references in owners, pools, signatures and the28 candidate recipes. Existing skill IDs stay unchanged: `dual_seal_light` belongs to `species_0159`; `inverse_seal_dark` belongs to `species_0160`. Candidate parent references are:
 
-- `species_0052` Thánh Rồng Thái Cổ + `species_0140` Nhân Sư → `species_0159` Long Thần Song Ấn.
-- `species_0069` Trụy Thiên Sứ + `species_0140` Nhân Sư → `species_0160` Ma Chủ Song Cực.
+- `species_0052` Thái Cổ Thánh Long + `species_0140` Nhân Sư → `species_0159` Long Thần Song Ấn.
+- `species_0069` Đọa Thiên Sứ + `species_0140` Nhân Sư → `species_0160` Ma Chủ Song Cực.
 
 Do not replace the28 candidate recipes with the old17 source recipes or activate fusion. This document returns references, it does not edit/promote P13 candidate data.
 

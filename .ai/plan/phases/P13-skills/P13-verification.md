@@ -37,7 +37,7 @@ tab retained its prior hash; stale write correctly failed without overwriting
 the new revision. A fresh tab on8133 loaded the final exact hash with all18pending.
 
 Final candidate read-only browser checks:36-cell chart, source-ID search for
-HoaDa→Hóa đá, species search species_0103→Chim Đại Phì; narrow390×844 viewport
+HoaDa→Hóa đá, species search species_0103→Đại Phúc Điểu; narrow390×844 viewport
 with no body horizontal overflow, horizontally scrollable chart/navigation.
 Browser logs inspected: no JS errors/warnings at inspected checkpoint. Final
 viewport reset. Screenshots: `evidence/review-desktop.jpg`, `review-mobile.jpg`.

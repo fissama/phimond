@@ -12,26 +12,26 @@ No existing Race ID change was found in the current P10/P13 input. Race stat dir
 
 | ID / Name | Previous roles | Current roles |
 |---|---|---|
-| species_0020 — Thủ Lĩnh Hắc Ám | tank / physical_dps | physical_dps / tank |
-| species_0035 — Trưởng Lão Người Cây | tank / support | magic_dps / support |
+| species_0020 — Hắc Kỵ Vương | tank / physical_dps | physical_dps / tank |
+| species_0035 — Mộc Trưởng Lão | tank / support | magic_dps / support |
 | species_0037 — Độc Đằng Nữ | disruptor / magic_dps | magic_dps / disruptor |
-| species_0038 — Tinh Linh Bách Hoa | support / tank | physical_dps / support |
-| species_0051 — Long Vương Hắc Ám | hybrid | physical_dps / disruptor |
-| species_0069 — Trụy Thiên Sứ | support / magic_dps | hybrid / support |
-| species_0084 — Tinh Tinh Rock | tank / disruptor | tank / physical_dps |
-| species_0103 — Chim Đại Phì | disruptor / magic_dps | magic_dps / disruptor |
-| species_0124 — Trùng Bất Tử Địa Huyệt | tank | physical_dps / tank |
-| species_0126 — Trùng Mẫu Mào Vàng | support / disruptor | magic_dps / support |
-| species_0141 — Totem Thượng Cổ | support / magic_dps | magic_dps / support |
-| species_0145 — Cây Cự Linh | tank / support | tank / physical_dps |
-| species_0148 — Ngựa Bùn Cỏ | physical_dps / support | magic_dps / support |
-| species_0150 — Đảo Thiên Đường | tank / support | physical_dps / tank |
+| species_0038 — Bách Hoa Tiên Tử | support / tank | physical_dps / support |
+| species_0051 — Hắc Long Vương | hybrid | physical_dps / disruptor |
+| species_0069 — Đọa Thiên Sứ | support / magic_dps | hybrid / support |
+| species_0084 — Thạch Viên | tank / disruptor | tank / physical_dps |
+| species_0103 — Đại Phúc Điểu | disruptor / magic_dps | magic_dps / disruptor |
+| species_0124 — Địa Huyệt Ma Trùng | tank | physical_dps / tank |
+| species_0126 — Kim Quan Chu Hậu | support / disruptor | magic_dps / support |
+| species_0141 — Thượng Cổ Đồ Đằng | support / magic_dps | magic_dps / support |
+| species_0145 — Cự Linh Mộc | tank / support | tank / physical_dps |
+| species_0148 — Vân Mao Đà | physical_dps / support | magic_dps / support |
+| species_0150 — Thiên Đường Điểu | tank / support | physical_dps / tank |
 
 ## Eight authored additions
 
 | P13 alias | P10 stable ID | Name | Race / Class | Roles |
 |---|---|---|---|---|
-| P13-NEW-01 | species_0153 | Hươu Rêu Nguyệt | beast / normal5 | magic_dps |
+| P13-NEW-01 | species_0153 | Nguyệt Đài Lộc | beast / normal5 | magic_dps |
 | P13-NEW-02 | species_0154 | Thiết Giáp Long | dragon / normal5 | physical_dps |
 | P13-NEW-03 | species_0155 | Tinh Vân Long | dragon / normal5 | magic_dps |
 | P13-NEW-04 | species_0156 | Đao Ma Huyết Giáp | demon / normal5 | physical_dps |
@@ -43,11 +43,11 @@ No existing Race ID change was found in the current P10/P13 input. Race stat dir
 ## Development and numeric contract
 
 - Every Race has primary Physical and primary Magic Normal at 4/5★. Tank/Support/Disruptor secondary channels and Special do not count toward this coverage. Hybrid is its own channel, not counted as both specialists.
-- Preserve Normal Hybrid5 Thánh Rồng Thái Cổ, Nhân Sư and Trụy Thiên Sứ. Their direction reaches two Special Hybrid5: Long Thần Song Ấn and Ma Chủ Song Cực. Hybrid keeps ATK/MAG split, not two turns or ATK+MAG in one hit.
+- Preserve Normal Hybrid5 Thái Cổ Thánh Long, Nhân Sư and Đọa Thiên Sứ. Their direction reaches two Special Hybrid5: Long Thần Song Ấn and Ma Chủ Song Cực. Hybrid keeps ATK/MAG split, not two turns or ATK+MAG in one hit.
 - Special4 remains Thanh Long Hybrid, Bạch Hổ Physical, Chu Tước Magic/Support, Huyền Vũ Tank/Support. Special5 role amendments are shown above; other Species retain prior role.
 - Main targets remain Normal4=136/2.720, Special4=148/2.960, Normal5=160/3.200, Special5=172/3.440. Same tolerances, 75/25 blend, per-stat bands, integer base/milli growth and cumulative floor. No further premium or Race multiplier is added.
 - Parent/recipe directions inform kits and roster coverage. They never average parent stats into Species base/growth or bypass P11 inherited-credit rules. Recipe eligibility/operations/Plus stay P16/P20; candidate28 is separate from source17.
-- Existing Bird priority remains relative to ordered role blend. Example Chim Đại Phì now Magic/Disruptor, not Disruptor/Magic; its template SPD changes with that role order. It still leads non-Birds in the new matching cohort.
+- Existing Bird priority remains relative to ordered role blend. Example Đại Phúc Điểu now Magic/Disruptor, not Disruptor/Magic; its template SPD changes with that role order. It still leads non-Birds in the new matching cohort.
 - Same-grade/level/class role comparisons are required. Level/grade/inheritance/equipment can reverse individual matchups. Static authoring cannot establish measured combat or acquisition balance.
 
 ## Verification and source boundaries

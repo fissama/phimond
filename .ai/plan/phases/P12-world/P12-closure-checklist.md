@@ -17,7 +17,7 @@ Nguồn sự thật cho "P12 còn thiếu gì". Cập nhật mỗi khi một m�
 | # | Mục | Đề xuất hiện tại | Nơi ghi |
 |---|---|---|---|
 | A1 | ~~7 tên đổi mục C + Hải Tặc Hào~~ | **ĐÃ DUYỆT 2026-10-15** | [names master §C](P12-world-names-master.md) |
-| A2 | ~~3 thần thú Sảnh vẫy gọi~~ | **ĐÃ DUYỆT 2026-10-15:** Linh Tiên Hoa Hương `species_0144`, Đại Vương Bọ Cạp `species_0151`, Thú Vàng Một Sừng `species_0149` | [baseline U10](P12-emerald-baseline-package.md) |
+| A2 | ~~3 thần thú Sảnh vẫy gọi~~ | **ĐÃ DUYỆT 2026-10-15:** Linh Tiên Hoa Hương `species_0144`, Độc Hạt Vương `species_0151`, Kim Kỳ Lân `species_0149` | [baseline U10](P12-emerald-baseline-package.md) |
 | A3 | Câu cũ #4: tên minigame Sói–Cừu & khu dịch vụ bang | Sói–Cừu đã thơ hóa; dịch vụ bang chưa quyết | names master "Còn mở" |
 | A4 | `review_detailed_scope` | **ĐÃ CHỐT trong hội thoại 2026-10-15:** City 8 map (`city_square`, `city_market`, `city_royal_palace`, `city_palace_gate`, `city_pet_room` = CanPhong / Phòng thú cưng, `city_farm`, `city_deathmatch_arena`, `city_activity_hall`) + Emerald 2 map + Bãi biển 5 map + `summoning_hall_main_hall` + `middle_corridor_main_hall` (Hải Tặc Hào). Còn lại chỉ ở global draft | Owner còn cần đánh dấu trong `reviews.json` (công cụ duyệt) |
 | A5 | Gói baseline Emerald (tổng thể) | U1–U6, U8–U9 chốt; U10 chờ A2; U7 hoãn | baseline package |
