@@ -1,0 +1,10 @@
+Use case: stylized-concept. Production sheet of EXACTLY EIGHT individual compact forest dressing sprites in a strict TWO ROWS x FOUR COLUMNS grid, row-major: 1 low broad grass clump, 2 taller upright grass blades, 3 low wiry grass, 4 arching grass tuft; 5 tiny muted brick-red wildflower clump, 6 ochre-yellow wildflowers, 7 dusky violet wildflowers, 8 ivory-white wildflowers. Each fully isolated within central 55% of its cell, wide empty gaps, no shared ground patch, no overlaps. Background exactly pure solid #FF00FF for clean key removal. Source image 1 defines original forest plants and pink/yellow flower forms; images 2–3 approved pet sheets provide pixel edge/shading compatibility only. Octopath Traveler HD-2D environment PIXEL ART, restrained earthy moss/olive/sage greens and weathered umber materials, cool desaturated dark hue-tinted edges, warm subtle upper-left key, broad readable color clusters, 3–4 tones/material. No fluorescent greens, candy saturation, smooth vector edges or illustrative microtexture. Upright front billboards seen from 24 degrees above. No baked ground shadows, lighting glow, fog or scenery. Actual engine lighting comes later. All 8 sprites must have complete readable silhouettes at roughly 65–90px body height in final game art. Keep flowers small above leaves, no pots. No text, labels, grid lines or other objects.
+
+
+
+Ordered reference images:
+- /Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level4_rungsau/level4_rungsau_020.png / sha256 3547a7c71091860904d1bf74872f4b9c3136450daf4b5373189d85b5685c4c5c
+- /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png / sha256 fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da
+- /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png / sha256 043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3
+
+Route: built-in image_gen; model not exposed; raw SHA256 c20bed96263d356a44b7698837779b4370ae91963dc6b11e57f2be29f310a7f2

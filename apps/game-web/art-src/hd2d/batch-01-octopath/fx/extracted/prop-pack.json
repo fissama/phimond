@@ -1,0 +1,1353 @@
+{
+  "schema": "generate2dmap.prop_pack.v2",
+  "tool": {
+    "name": "extract_prop_pack",
+    "version": "0.4.0"
+  },
+  "input": "../raw-01.png",
+  "source_size": [
+    1264,
+    1244
+  ],
+  "source_sha256": "6cf71f93912597f8fbfdfb998532d2b2b15c59f72bf6153bddeeffdf5e970ab9",
+  "source_mode": "RGB",
+  "layout_mode": "grid",
+  "boxes_file": null,
+  "labels_file": null,
+  "background_mode": "chroma_key",
+  "art_source": "host_image",
+  "rows": 4,
+  "cols": 4,
+  "threshold": 100,
+  "edge_threshold": 150,
+  "despill_radius": 3,
+  "despill": {
+    "mode": "edge",
+    "applied": "edge",
+    "radius": 3,
+    "margin": 12,
+    "changed_px": 4257
+  },
+  "hygiene": {
+    "mode": "none",
+    "floor": 4,
+    "solid_min": 32,
+    "attach_radius": 2,
+    "connectivity": 8,
+    "floor_px": 0,
+    "detached_px": 0,
+    "detached_components": 0,
+    "max_removed_alpha": 0
+  },
+  "alpha_floor": 0,
+  "alpha_floor_pixels_removed": 0,
+  "trim_border": 0,
+  "edge_clean_depth": 0,
+  "component_mode": "all",
+  "component_padding": 8,
+  "min_component_area": 1,
+  "edge_touch_margin": 0,
+  "geometry": {
+    "connectivity": 8,
+    "alpha_geometry_threshold": 16,
+    "anchor_mode": "stance",
+    "support_band_fraction": 0.25,
+    "anchor_rounding": "whole pixels, half-up",
+    "grid_rounding": "nearest",
+    "keep_canvas": true,
+    "world_scale": null
+  },
+  "accepted": [
+    {
+      "index": 0,
+      "label": "f00",
+      "display_name": "f00",
+      "status": "accepted",
+      "image": "f00/prop.png",
+      "sha256": "d5781e62baa38f2fc35f442c5dcdd1b2edafd674eeebdcccd3c757e06ee24322",
+      "output_size": [
+        316,
+        311
+      ],
+      "grid": [
+        0,
+        0
+      ],
+      "cell_box": [
+        0,
+        0,
+        316,
+        311
+      ],
+      "source_box": [
+        0,
+        0,
+        316,
+        311
+      ],
+      "source_rect": [
+        0,
+        0,
+        316,
+        311
+      ],
+      "trim_offset": [
+        0,
+        0
+      ],
+      "padding": [
+        103,
+        116,
+        110,
+        63
+      ],
+      "anchor_px": [
+        155,
+        248
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 1,
+      "trim_applied": 0,
+      "crop_bbox": [
+        103,
+        116,
+        206,
+        248
+      ],
+      "padded_crop_bbox": [
+        0,
+        0,
+        316,
+        311
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 6599,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 1,
+      "label": "f01",
+      "display_name": "f01",
+      "status": "accepted",
+      "image": "f01/prop.png",
+      "sha256": "60dbfe30bd6d01c6f3003fdb5f0dbb79c3386539e79fc69c28913ddbd110cd23",
+      "output_size": [
+        316,
+        311
+      ],
+      "grid": [
+        0,
+        1
+      ],
+      "cell_box": [
+        316,
+        0,
+        632,
+        311
+      ],
+      "source_box": [
+        316,
+        0,
+        632,
+        311
+      ],
+      "source_rect": [
+        316,
+        0,
+        632,
+        311
+      ],
+      "trim_offset": [
+        0,
+        0
+      ],
+      "padding": [
+        89,
+        130,
+        79,
+        63
+      ],
+      "anchor_px": [
+        161,
+        248
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 1,
+      "trim_applied": 0,
+      "crop_bbox": [
+        89,
+        130,
+        237,
+        248
+      ],
+      "padded_crop_bbox": [
+        0,
+        0,
+        316,
+        311
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 6095,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 2,
+      "label": "f02",
+      "display_name": "f02",
+      "status": "accepted",
+      "image": "f02/prop.png",
+      "sha256": "8801704c751a06d0f5e7eb09e968640349b845dd9d0ec62550267dd5f3071985",
+      "output_size": [
+        316,
+        311
+      ],
+      "grid": [
+        0,
+        2
+      ],
+      "cell_box": [
+        632,
+        0,
+        948,
+        311
+      ],
+      "source_box": [
+        632,
+        0,
+        948,
+        311
+      ],
+      "source_rect": [
+        632,
+        0,
+        948,
+        311
+      ],
+      "trim_offset": [
+        0,
+        0
+      ],
+      "padding": [
+        86,
+        130,
+        89,
+        63
+      ],
+      "anchor_px": [
+        161,
+        248
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 1,
+      "trim_applied": 0,
+      "crop_bbox": [
+        86,
+        130,
+        227,
+        248
+      ],
+      "padded_crop_bbox": [
+        0,
+        0,
+        316,
+        311
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 6406,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 3,
+      "label": "f03",
+      "display_name": "f03",
+      "status": "accepted",
+      "image": "f03/prop.png",
+      "sha256": "6c2f8f7899b4f819b5a641bcb271a543d9b0920f9659b38e2d19a0e3186884de",
+      "output_size": [
+        316,
+        311
+      ],
+      "grid": [
+        0,
+        3
+      ],
+      "cell_box": [
+        948,
+        0,
+        1264,
+        311
+      ],
+      "source_box": [
+        948,
+        0,
+        1264,
+        311
+      ],
+      "source_rect": [
+        948,
+        0,
+        1264,
+        311
+      ],
+      "trim_offset": [
+        0,
+        0
+      ],
+      "padding": [
+        95,
+        120,
+        109,
+        63
+      ],
+      "anchor_px": [
+        159,
+        248
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 1,
+      "trim_applied": 0,
+      "crop_bbox": [
+        95,
+        120,
+        207,
+        248
+      ],
+      "padded_crop_bbox": [
+        0,
+        0,
+        316,
+        311
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 6253,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 4,
+      "label": "f04",
+      "display_name": "f04",
+      "status": "accepted",
+      "image": "f04/prop.png",
+      "sha256": "2486837fef6d090384d0b918e7eb1de50b01fe58854bf9224fc53a3ef0c194ff",
+      "output_size": [
+        316,
+        311
+      ],
+      "grid": [
+        1,
+        0
+      ],
+      "cell_box": [
+        0,
+        311,
+        316,
+        622
+      ],
+      "source_box": [
+        0,
+        311,
+        316,
+        622
+      ],
+      "source_rect": [
+        0,
+        311,
+        316,
+        622
+      ],
+      "trim_offset": [
+        0,
+        0
+      ],
+      "padding": [
+        132,
+        102,
+        104,
+        66
+      ],
+      "anchor_px": [
+        169,
+        245
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 1,
+      "trim_applied": 0,
+      "crop_bbox": [
+        132,
+        102,
+        212,
+        245
+      ],
+      "padded_crop_bbox": [
+        0,
+        0,
+        316,
+        311
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 6979,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 5,
+      "label": "f05",
+      "display_name": "f05",
+      "status": "accepted",
+      "image": "f05/prop.png",
+      "sha256": "e88c6ec8dc23a3b4d0b18ff6d1801a5214a899c5d72e553d9c3cc848ba6cd283",
+      "output_size": [
+        316,
+        311
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "cell_box": [
+        316,
+        311,
+        632,
+        622
+      ],
+      "source_box": [
+        316,
+        311,
+        632,
+        622
+      ],
+      "source_rect": [
+        316,
+        311,
+        632,
+        622
+      ],
+      "trim_offset": [
+        0,
+        0
+      ],
+      "padding": [
+        96,
+        130,
+        81,
+        93
+      ],
+      "anchor_px": [
+        166,
+        218
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 1,
+      "trim_applied": 0,
+      "crop_bbox": [
+        96,
+        130,
+        235,
+        218
+      ],
+      "padded_crop_bbox": [
+        0,
+        0,
+        316,
+        311
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 7454,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 6,
+      "label": "f06",
+      "display_name": "f06",
+      "status": "accepted",
+      "image": "f06/prop.png",
+      "sha256": "2d9952d53ef87db18c7b3911f30944a76d366ef0bc4ada90ed4a91c4f618d6d8",
+      "output_size": [
+        316,
+        311
+      ],
+      "grid": [
+        1,
+        2
+      ],
+      "cell_box": [
+        632,
+        311,
+        948,
+        622
+      ],
+      "source_box": [
+        632,
+        311,
+        948,
+        622
+      ],
+      "source_rect": [
+        632,
+        311,
+        948,
+        622
+      ],
+      "trim_offset": [
+        0,
+        0
+      ],
+      "padding": [
+        79,
+        129,
+        91,
+        72
+      ],
+      "anchor_px": [
+        204,
+        239
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 1,
+      "trim_applied": 0,
+      "crop_bbox": [
+        79,
+        129,
+        225,
+        239
+      ],
+      "padded_crop_bbox": [
+        0,
+        0,
+        316,
+        311
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 7056,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 7,
+      "label": "f07",
+      "display_name": "f07",
+      "status": "accepted",
+      "image": "f07/prop.png",
+      "sha256": "5180036116feceec78a7e1bc3622e6a8ea0882131f4cf0c118b6584f72693a37",
+      "output_size": [
+        316,
+        311
+      ],
+      "grid": [
+        1,
+        3
+      ],
+      "cell_box": [
+        948,
+        311,
+        1264,
+        622
+      ],
+      "source_box": [
+        948,
+        311,
+        1264,
+        622
+      ],
+      "source_rect": [
+        948,
+        311,
+        1264,
+        622
+      ],
+      "trim_offset": [
+        0,
+        0
+      ],
+      "padding": [
+        85,
+        96,
+        115,
+        72
+      ],
+      "anchor_px": [
+        138,
+        239
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 1,
+      "trim_applied": 0,
+      "crop_bbox": [
+        85,
+        96,
+        201,
+        239
+      ],
+      "padded_crop_bbox": [
+        0,
+        0,
+        316,
+        311
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 8146,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 8,
+      "label": "f08",
+      "display_name": "f08",
+      "status": "accepted",
+      "image": "f08/prop.png",
+      "sha256": "e21ed7e2760ffb374a388c7b139898e5845d46ce37e8e51b70e9c41ff48b4427",
+      "output_size": [
+        316,
+        311
+      ],
+      "grid": [
+        2,
+        0
+      ],
+      "cell_box": [
+        0,
+        622,
+        316,
+        933
+      ],
+      "source_box": [
+        0,
+        622,
+        316,
+        933
+      ],
+      "source_rect": [
+        0,
+        622,
+        316,
+        933
+      ],
+      "trim_offset": [
+        0,
+        0
+      ],
+      "padding": [
+        97,
+        96,
+        93,
+        106
+      ],
+      "anchor_px": [
+        160,
+        205
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 3,
+      "min_component_area": 1,
+      "trim_applied": 0,
+      "crop_bbox": [
+        97,
+        96,
+        223,
+        205
+      ],
+      "padded_crop_bbox": [
+        0,
+        0,
+        316,
+        311
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 3360,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 9,
+      "label": "f09",
+      "display_name": "f09",
+      "status": "accepted",
+      "image": "f09/prop.png",
+      "sha256": "a5a89e0b8f04403c161463eeb79ba34c2cdc2b251cdd77b53e814daa05303642",
+      "output_size": [
+        316,
+        311
+      ],
+      "grid": [
+        2,
+        1
+      ],
+      "cell_box": [
+        316,
+        622,
+        632,
+        933
+      ],
+      "source_box": [
+        316,
+        622,
+        632,
+        933
+      ],
+      "source_rect": [
+        316,
+        622,
+        632,
+        933
+      ],
+      "trim_offset": [
+        0,
+        0
+      ],
+      "padding": [
+        87,
+        89,
+        91,
+        87
+      ],
+      "anchor_px": [
+        202,
+        224
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 3,
+      "min_component_area": 1,
+      "trim_applied": 0,
+      "crop_bbox": [
+        87,
+        89,
+        225,
+        224
+      ],
+      "padded_crop_bbox": [
+        0,
+        0,
+        316,
+        311
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 3662,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 10,
+      "label": "f10",
+      "display_name": "f10",
+      "status": "accepted",
+      "image": "f10/prop.png",
+      "sha256": "dc47ddc903709b14677ce9eadf835b198f12cab21a28f4878f1ff0241f0c3dbc",
+      "output_size": [
+        316,
+        311
+      ],
+      "grid": [
+        2,
+        2
+      ],
+      "cell_box": [
+        632,
+        622,
+        948,
+        933
+      ],
+      "source_box": [
+        632,
+        622,
+        948,
+        933
+      ],
+      "source_rect": [
+        632,
+        622,
+        948,
+        933
+      ],
+      "trim_offset": [
+        0,
+        0
+      ],
+      "padding": [
+        91,
+        94,
+        107,
+        84
+      ],
+      "anchor_px": [
+        167,
+        227
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 3,
+      "min_component_area": 1,
+      "trim_applied": 0,
+      "crop_bbox": [
+        91,
+        94,
+        209,
+        227
+      ],
+      "padded_crop_bbox": [
+        0,
+        0,
+        316,
+        311
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 3681,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 11,
+      "label": "f11",
+      "display_name": "f11",
+      "status": "accepted",
+      "image": "f11/prop.png",
+      "sha256": "41b9037515a64e1779efdb32971702b07754baa374a4aa0fdbdb809cc4ec32fd",
+      "output_size": [
+        316,
+        311
+      ],
+      "grid": [
+        2,
+        3
+      ],
+      "cell_box": [
+        948,
+        622,
+        1264,
+        933
+      ],
+      "source_box": [
+        948,
+        622,
+        1264,
+        933
+      ],
+      "source_rect": [
+        948,
+        622,
+        1264,
+        933
+      ],
+      "trim_offset": [
+        0,
+        0
+      ],
+      "padding": [
+        84,
+        95,
+        100,
+        98
+      ],
+      "anchor_px": [
+        153,
+        213
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 3,
+      "min_component_area": 1,
+      "trim_applied": 0,
+      "crop_bbox": [
+        84,
+        95,
+        216,
+        213
+      ],
+      "padded_crop_bbox": [
+        0,
+        0,
+        316,
+        311
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 3660,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 12,
+      "label": "f12",
+      "display_name": "f12",
+      "status": "accepted",
+      "image": "f12/prop.png",
+      "sha256": "62107527ea820afcb186fd7edbc43a16a97d0219a6f5e64287de009ac14f206f",
+      "output_size": [
+        316,
+        311
+      ],
+      "grid": [
+        3,
+        0
+      ],
+      "cell_box": [
+        0,
+        933,
+        316,
+        1244
+      ],
+      "source_box": [
+        0,
+        933,
+        316,
+        1244
+      ],
+      "source_rect": [
+        0,
+        933,
+        316,
+        1244
+      ],
+      "trim_offset": [
+        0,
+        0
+      ],
+      "padding": [
+        90,
+        71,
+        90,
+        99
+      ],
+      "anchor_px": [
+        201,
+        212
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 5,
+      "min_component_area": 1,
+      "trim_applied": 0,
+      "crop_bbox": [
+        90,
+        71,
+        226,
+        212
+      ],
+      "padded_crop_bbox": [
+        0,
+        0,
+        316,
+        311
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 2219,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 13,
+      "label": "f13",
+      "display_name": "f13",
+      "status": "accepted",
+      "image": "f13/prop.png",
+      "sha256": "302d5eb5312c6b5365e964060b1093c033dcada09f2fb361639a7c44824be2e7",
+      "output_size": [
+        316,
+        311
+      ],
+      "grid": [
+        3,
+        1
+      ],
+      "cell_box": [
+        316,
+        933,
+        632,
+        1244
+      ],
+      "source_box": [
+        316,
+        933,
+        632,
+        1244
+      ],
+      "source_rect": [
+        316,
+        933,
+        632,
+        1244
+      ],
+      "trim_offset": [
+        0,
+        0
+      ],
+      "padding": [
+        86,
+        64,
+        80,
+        94
+      ],
+      "anchor_px": [
+        206,
+        217
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 4,
+      "min_component_area": 1,
+      "trim_applied": 0,
+      "crop_bbox": [
+        86,
+        64,
+        236,
+        217
+      ],
+      "padded_crop_bbox": [
+        0,
+        0,
+        316,
+        311
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 4297,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 14,
+      "label": "f14",
+      "display_name": "f14",
+      "status": "accepted",
+      "image": "f14/prop.png",
+      "sha256": "3c08d1e75ce5a990eda60a20c7e6f00a59db83df6fa86189977ece93ccb96f29",
+      "output_size": [
+        316,
+        311
+      ],
+      "grid": [
+        3,
+        2
+      ],
+      "cell_box": [
+        632,
+        933,
+        948,
+        1244
+      ],
+      "source_box": [
+        632,
+        933,
+        948,
+        1244
+      ],
+      "source_rect": [
+        632,
+        933,
+        948,
+        1244
+      ],
+      "trim_offset": [
+        0,
+        0
+      ],
+      "padding": [
+        74,
+        64,
+        85,
+        94
+      ],
+      "anchor_px": [
+        195,
+        217
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 4,
+      "min_component_area": 1,
+      "trim_applied": 0,
+      "crop_bbox": [
+        74,
+        64,
+        231,
+        217
+      ],
+      "padded_crop_bbox": [
+        0,
+        0,
+        316,
+        311
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 6182,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 15,
+      "label": "f15",
+      "display_name": "f15",
+      "status": "accepted",
+      "image": "f15/prop.png",
+      "sha256": "fb46d00a4e1284486fe1c367407d1ed484244e7fda423ff8844f8a10c0ee9bc1",
+      "output_size": [
+        316,
+        311
+      ],
+      "grid": [
+        3,
+        3
+      ],
+      "cell_box": [
+        948,
+        933,
+        1264,
+        1244
+      ],
+      "source_box": [
+        948,
+        933,
+        1264,
+        1244
+      ],
+      "source_rect": [
+        948,
+        933,
+        1264,
+        1244
+      ],
+      "trim_offset": [
+        0,
+        0
+      ],
+      "padding": [
+        84,
+        65,
+        96,
+        99
+      ],
+      "anchor_px": [
+        196,
+        212
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 6,
+      "min_component_area": 1,
+      "trim_applied": 0,
+      "crop_bbox": [
+        84,
+        65,
+        220,
+        212
+      ],
+      "padded_crop_bbox": [
+        0,
+        0,
+        316,
+        311
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 2490,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    }
+  ],
+  "rejected": [],
+  "edge_touch_props": [],
+  "warnings": [],
+  "qa": {
+    "status": "pass",
+    "method": "legacy #FF00FF key (100/150) and edge despill radius 3; alpha hygiene none; 8-connected components (all); checks measured on the published pixels",
+    "notProven": [
+      "that each label names the art in its cell or box",
+      "that a prop is complete: clipping is detected only where art meets the cell edge",
+      "keyed-edge quality beyond the edge fringe count",
+      "that anchors and suggested footprints match gameplay contact (both are measured from alpha)",
+      "runtime placement, collision or occlusion"
+    ],
+    "checks": [
+      {
+        "id": "accepted",
+        "status": "pass",
+        "value": 16,
+        "threshold": ">= 1"
+      },
+      {
+        "id": "edge_touch",
+        "status": "pass",
+        "value": [],
+        "threshold": 0
+      },
+      {
+        "id": "dropped_area",
+        "status": "pass",
+        "value": {},
+        "threshold": 0.01
+      },
+      {
+        "id": "strategy_aspect",
+        "status": "skipped",
+        "value": null,
+        "threshold": 1.6
+      },
+      {
+        "id": "edge_fringe",
+        "status": "pass",
+        "value": 0.0,
+        "threshold": 0.02
+      }
+    ],
+    "inputs": [
+      {
+        "path": "../raw-01.png",
+        "sha256": "6cf71f93912597f8fbfdfb998532d2b2b15c59f72bf6153bddeeffdf5e970ab9",
+        "bytes": 1328648
+      }
+    ],
+    "outputs": [
+      {
+        "path": "f00/prop.png",
+        "sha256": "d5781e62baa38f2fc35f442c5dcdd1b2edafd674eeebdcccd3c757e06ee24322",
+        "bytes": 19459
+      },
+      {
+        "path": "f01/prop.png",
+        "sha256": "60dbfe30bd6d01c6f3003fdb5f0dbb79c3386539e79fc69c28913ddbd110cd23",
+        "bytes": 18239
+      },
+      {
+        "path": "f02/prop.png",
+        "sha256": "8801704c751a06d0f5e7eb09e968640349b845dd9d0ec62550267dd5f3071985",
+        "bytes": 19112
+      },
+      {
+        "path": "f03/prop.png",
+        "sha256": "6c2f8f7899b4f819b5a641bcb271a543d9b0920f9659b38e2d19a0e3186884de",
+        "bytes": 18685
+      },
+      {
+        "path": "f04/prop.png",
+        "sha256": "2486837fef6d090384d0b918e7eb1de50b01fe58854bf9224fc53a3ef0c194ff",
+        "bytes": 19030
+      },
+      {
+        "path": "f05/prop.png",
+        "sha256": "e88c6ec8dc23a3b4d0b18ff6d1801a5214a899c5d72e553d9c3cc848ba6cd283",
+        "bytes": 19967
+      },
+      {
+        "path": "f06/prop.png",
+        "sha256": "2d9952d53ef87db18c7b3911f30944a76d366ef0bc4ada90ed4a91c4f618d6d8",
+        "bytes": 19297
+      },
+      {
+        "path": "f07/prop.png",
+        "sha256": "5180036116feceec78a7e1bc3622e6a8ea0882131f4cf0c118b6584f72693a37",
+        "bytes": 21745
+      },
+      {
+        "path": "f08/prop.png",
+        "sha256": "e21ed7e2760ffb374a388c7b139898e5845d46ce37e8e51b70e9c41ff48b4427",
+        "bytes": 10376
+      },
+      {
+        "path": "f09/prop.png",
+        "sha256": "a5a89e0b8f04403c161463eeb79ba34c2cdc2b251cdd77b53e814daa05303642",
+        "bytes": 11294
+      },
+      {
+        "path": "f10/prop.png",
+        "sha256": "dc47ddc903709b14677ce9eadf835b198f12cab21a28f4878f1ff0241f0c3dbc",
+        "bytes": 11279
+      },
+      {
+        "path": "f11/prop.png",
+        "sha256": "41b9037515a64e1779efdb32971702b07754baa374a4aa0fdbdb809cc4ec32fd",
+        "bytes": 11261
+      },
+      {
+        "path": "f12/prop.png",
+        "sha256": "62107527ea820afcb186fd7edbc43a16a97d0219a6f5e64287de009ac14f206f",
+        "bytes": 7450
+      },
+      {
+        "path": "f13/prop.png",
+        "sha256": "302d5eb5312c6b5365e964060b1093c033dcada09f2fb361639a7c44824be2e7",
+        "bytes": 11553
+      },
+      {
+        "path": "f14/prop.png",
+        "sha256": "3c08d1e75ce5a990eda60a20c7e6f00a59db83df6fa86189977ece93ccb96f29",
+        "bytes": 13454
+      },
+      {
+        "path": "f15/prop.png",
+        "sha256": "fb46d00a4e1284486fe1c367407d1ed484244e7fda423ff8844f8a10c0ee9bc1",
+        "bytes": 8099
+      }
+    ],
+    "tool": {
+      "name": "extract_prop_pack",
+      "version": "0.4.0"
+    }
+  }
+}

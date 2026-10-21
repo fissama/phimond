@@ -1,0 +1,343 @@
+{
+  "status": "pass",
+  "method": "forge_palette.build_palette (weighted k-means++ in OKLab over unique colours, reserved colours fixed, coverage skipping) then forge_palette.fit_report of every input: OKLab dE of each pixel with alpha >= the threshold to its nearest palette colour",
+  "notProven": [
+    "Visual quality of the palette: look at swatches.png and an applied frame.",
+    "Colours of pixels below the alpha threshold were not sampled or measured.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "palette_colors",
+      "status": "pass",
+      "value": 48,
+      "threshold": 48
+    },
+    {
+      "id": "inputs_without_samples",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0,
+      "files": []
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.134933,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../palette-inputs/fern-01.png",
+      "sha256": "264196aff8506676919b65646c8b6f3943efba9c13886fdd654f7a5fd4c1c8b7",
+      "bytes": 16953
+    },
+    {
+      "path": "../palette-inputs/fern-02.png",
+      "sha256": "6fd3e8922875f0a9fff8475afbcc62fdae9ec53ab7cc06a4852aef8a536b0a93",
+      "bytes": 26328
+    },
+    {
+      "path": "../palette-inputs/flower-bush.png",
+      "sha256": "a7fcfc550fa60390e2ca35fbc89655521ec3ff015a1d0b1ce93be9bde916d529",
+      "bytes": 39369
+    },
+    {
+      "path": "../palette-inputs/flower-purple.png",
+      "sha256": "dfd4065cc5587f20d687011bbe1953a7062389188e87bc1f2d369fb3a8b53077",
+      "bytes": 15304
+    },
+    {
+      "path": "../palette-inputs/flower-red.png",
+      "sha256": "4e454ccf86b83a9519985719b8b994c9d7b3a291d88413db50b73b9fb21f3fc2",
+      "bytes": 15276
+    },
+    {
+      "path": "../palette-inputs/flower-white.png",
+      "sha256": "1723c2cfc289f5d7d49d8742f965d0fd9cb18eb4b7a576382cc6a155e186a984",
+      "bytes": 16366
+    },
+    {
+      "path": "../palette-inputs/flower-yellow.png",
+      "sha256": "e2b2071770d3952868ea7d6b3c5a203682e7b5a9db6d674ceb722d762be2b20c",
+      "bytes": 13672
+    },
+    {
+      "path": "../palette-inputs/grass-01.png",
+      "sha256": "f0fca3732871012efeb52de3915db423693c44eadebb96f0ed1c1a40d061b62c",
+      "bytes": 15525
+    },
+    {
+      "path": "../palette-inputs/grass-02.png",
+      "sha256": "288daf12705cb8aca147644051599552f31a1fa311af73500af9c356757b43d8",
+      "bytes": 11129
+    },
+    {
+      "path": "../palette-inputs/grass-03.png",
+      "sha256": "b9111766e16d170086a2e92cf274bd1fe82b0438443c505fd8928d17652b7a48",
+      "bytes": 10319
+    },
+    {
+      "path": "../palette-inputs/grass-04.png",
+      "sha256": "02d21679b4d3442dcd8adb6b3ce66bd92b49aa3fed9437089c589728d661a49c",
+      "bytes": 18375
+    },
+    {
+      "path": "../palette-inputs/mushroom-ochre.png",
+      "sha256": "712cc0c721b7c5be837e1e2a7c831e47692e5cf79fe8c3afaa0924bacbad7974",
+      "bytes": 17890
+    },
+    {
+      "path": "../palette-inputs/mushroom-violet.png",
+      "sha256": "ed0aa988bf41d3db1550cce6065b7eac0e84d65811c4b61e16c3634ee615c2b4",
+      "bytes": 23913
+    },
+    {
+      "path": "../palette-inputs/rock-large.png",
+      "sha256": "4916ae3d361ac2b30943b869f8f6b5b7889d2299c5e0562c588e910aeed957d3",
+      "bytes": 73225
+    },
+    {
+      "path": "../palette-inputs/rock-medium.png",
+      "sha256": "5a889424f66c48c97b3e7d27eb90e2416611a8053c9e542aa61bf14409cdc03d",
+      "bytes": 29223
+    },
+    {
+      "path": "../palette-inputs/rock-small.png",
+      "sha256": "d1654cab9c4e310a3f78b51210abfac076e42b0c456ea0d4233d9c36714a6b0d",
+      "bytes": 15012
+    },
+    {
+      "path": "../palette-inputs/stump.png",
+      "sha256": "4aa68e3724995760fcd26d6f19e7b941751b7be52bbae94114d9b8df65ff663d",
+      "bytes": 35754
+    }
+  ],
+  "outputs": [
+    {
+      "path": "palette.json",
+      "sha256": "4f6db358d3f783f72370f2551a614ee59e48dc31981dc4ba392389eed8fc6680",
+      "bytes": 1962
+    },
+    {
+      "path": "palette.gpl",
+      "sha256": "f64f47303319701b21fa5edd11b6bc6f3d7e70c64ac39a9cbb1c6be98fffeaa0",
+      "bytes": 1017
+    },
+    {
+      "path": "palette.hex",
+      "sha256": "0609b6ef7e306de2b60b7e62173a5dd4428c1adc9ef228ccb2f136ff02e81d89",
+      "bytes": 336
+    },
+    {
+      "path": "swatches.png",
+      "sha256": "c172f3a864dcc8b592f5800212c9aa25834a54c3d0760e3a588f77361434ae09",
+      "bytes": 699
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "palette": {
+    "colors": 48,
+    "reserved": 0,
+    "transparent_index": 255,
+    "seed": 0
+  },
+  "fit": {
+    "../palette-inputs/fern-01.png": {
+      "measured_px": 5345,
+      "alpha_threshold": 128,
+      "off_palette_px": 5341,
+      "partial_alpha_px": 0,
+      "colors": 5123,
+      "palette_colors_used": 38,
+      "mean_delta_e": 0.021523,
+      "p95_delta_e": 0.037219,
+      "max_delta_e": 0.067205
+    },
+    "../palette-inputs/fern-02.png": {
+      "measured_px": 8589,
+      "alpha_threshold": 128,
+      "off_palette_px": 8587,
+      "partial_alpha_px": 0,
+      "colors": 7802,
+      "palette_colors_used": 41,
+      "mean_delta_e": 0.021589,
+      "p95_delta_e": 0.037309,
+      "max_delta_e": 0.095653
+    },
+    "../palette-inputs/flower-bush.png": {
+      "measured_px": 14642,
+      "alpha_threshold": 128,
+      "off_palette_px": 14636,
+      "partial_alpha_px": 0,
+      "colors": 13483,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.025288,
+      "p95_delta_e": 0.055844,
+      "max_delta_e": 0.132396
+    },
+    "../palette-inputs/flower-purple.png": {
+      "measured_px": 4417,
+      "alpha_threshold": 128,
+      "off_palette_px": 4415,
+      "partial_alpha_px": 0,
+      "colors": 4274,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.031627,
+      "p95_delta_e": 0.066363,
+      "max_delta_e": 0.113925
+    },
+    "../palette-inputs/flower-red.png": {
+      "measured_px": 4636,
+      "alpha_threshold": 128,
+      "off_palette_px": 4634,
+      "partial_alpha_px": 0,
+      "colors": 4470,
+      "palette_colors_used": 46,
+      "mean_delta_e": 0.029704,
+      "p95_delta_e": 0.06148,
+      "max_delta_e": 0.130912
+    },
+    "../palette-inputs/flower-white.png": {
+      "measured_px": 4771,
+      "alpha_threshold": 128,
+      "off_palette_px": 4765,
+      "partial_alpha_px": 0,
+      "colors": 4592,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.025752,
+      "p95_delta_e": 0.04706,
+      "max_delta_e": 0.103844
+    },
+    "../palette-inputs/flower-yellow.png": {
+      "measured_px": 4029,
+      "alpha_threshold": 128,
+      "off_palette_px": 4028,
+      "partial_alpha_px": 0,
+      "colors": 3896,
+      "palette_colors_used": 45,
+      "mean_delta_e": 0.02597,
+      "p95_delta_e": 0.047338,
+      "max_delta_e": 0.109156
+    },
+    "../palette-inputs/grass-01.png": {
+      "measured_px": 4888,
+      "alpha_threshold": 128,
+      "off_palette_px": 4885,
+      "partial_alpha_px": 0,
+      "colors": 4743,
+      "palette_colors_used": 42,
+      "mean_delta_e": 0.02696,
+      "p95_delta_e": 0.045849,
+      "max_delta_e": 0.109339
+    },
+    "../palette-inputs/grass-02.png": {
+      "measured_px": 3202,
+      "alpha_threshold": 128,
+      "off_palette_px": 3201,
+      "partial_alpha_px": 0,
+      "colors": 3141,
+      "palette_colors_used": 45,
+      "mean_delta_e": 0.02668,
+      "p95_delta_e": 0.047876,
+      "max_delta_e": 0.09477
+    },
+    "../palette-inputs/grass-03.png": {
+      "measured_px": 2859,
+      "alpha_threshold": 128,
+      "off_palette_px": 2858,
+      "partial_alpha_px": 0,
+      "colors": 2807,
+      "palette_colors_used": 47,
+      "mean_delta_e": 0.023988,
+      "p95_delta_e": 0.043678,
+      "max_delta_e": 0.092046
+    },
+    "../palette-inputs/grass-04.png": {
+      "measured_px": 5490,
+      "alpha_threshold": 128,
+      "off_palette_px": 5487,
+      "partial_alpha_px": 0,
+      "colors": 5302,
+      "palette_colors_used": 45,
+      "mean_delta_e": 0.024954,
+      "p95_delta_e": 0.045815,
+      "max_delta_e": 0.10473
+    },
+    "../palette-inputs/mushroom-ochre.png": {
+      "measured_px": 6227,
+      "alpha_threshold": 128,
+      "off_palette_px": 6223,
+      "partial_alpha_px": 0,
+      "colors": 5858,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.029706,
+      "p95_delta_e": 0.050084,
+      "max_delta_e": 0.134933
+    },
+    "../palette-inputs/mushroom-violet.png": {
+      "measured_px": 8566,
+      "alpha_threshold": 128,
+      "off_palette_px": 8561,
+      "partial_alpha_px": 0,
+      "colors": 8048,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.030601,
+      "p95_delta_e": 0.060228,
+      "max_delta_e": 0.101754
+    },
+    "../palette-inputs/rock-large.png": {
+      "measured_px": 30826,
+      "alpha_threshold": 128,
+      "off_palette_px": 30815,
+      "partial_alpha_px": 0,
+      "colors": 27303,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.023136,
+      "p95_delta_e": 0.041697,
+      "max_delta_e": 0.126359
+    },
+    "../palette-inputs/rock-medium.png": {
+      "measured_px": 10808,
+      "alpha_threshold": 128,
+      "off_palette_px": 10801,
+      "partial_alpha_px": 0,
+      "colors": 10205,
+      "palette_colors_used": 43,
+      "mean_delta_e": 0.02233,
+      "p95_delta_e": 0.038472,
+      "max_delta_e": 0.07401
+    },
+    "../palette-inputs/rock-small.png": {
+      "measured_px": 5686,
+      "alpha_threshold": 128,
+      "off_palette_px": 5674,
+      "partial_alpha_px": 0,
+      "colors": 5317,
+      "palette_colors_used": 43,
+      "mean_delta_e": 0.027702,
+      "p95_delta_e": 0.046273,
+      "max_delta_e": 0.080313
+    },
+    "../palette-inputs/stump.png": {
+      "measured_px": 13673,
+      "alpha_threshold": 128,
+      "off_palette_px": 13666,
+      "partial_alpha_px": 0,
+      "colors": 12602,
+      "palette_colors_used": 47,
+      "mean_delta_e": 0.02737,
+      "p95_delta_e": 0.043869,
+      "max_delta_e": 0.111101
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.134933,
+    "worst_p95_delta_e": 0.066363,
+    "off_palette_px": 138577
+  }
+}

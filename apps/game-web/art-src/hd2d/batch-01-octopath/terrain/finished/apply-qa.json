@@ -1,0 +1,197 @@
+{
+  "status": "pass",
+  "method": "forge_palette.quantize_image: OKLab-nearest palette colour per pixel (exact palette colours kept), alpha binary at the threshold, then the written PNGs re-read and measured with forge_palette.fit_report against the palette",
+  "notProven": [
+    "Visual quality after snapping: compare an output with its input.",
+    "Indexed PNGs are engine exports; they are not checked by builders.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "output_off_palette_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "output_partial_alpha_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.073758,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../inputs/dirt-floor-01.png",
+      "sha256": "8f739aa2adba8075a5057304a5dd22d71e1525110e37144335b3031ae188b091",
+      "bytes": 253764
+    },
+    {
+      "path": "../inputs/dirt-floor-02.png",
+      "sha256": "45829ec6a4452c2e21f07a11c79589c20a96ae3208f5b3a7478fae9211eb1985",
+      "bytes": 243739
+    },
+    {
+      "path": "../inputs/edge-grass-dirt.png",
+      "sha256": "1514f961c2c7b4783bc2422d670f9a14c62fd09c1dec10e25bc2cb2261fef657",
+      "bytes": 292597
+    },
+    {
+      "path": "../inputs/edge-grass-roots.png",
+      "sha256": "ff6d91ee1dfeea4dd2f9a47718f8af8ec38339ca9a93a469bc27dcf344b11f7e",
+      "bytes": 318495
+    },
+    {
+      "path": "../inputs/grass-floor-01.png",
+      "sha256": "20e47097e3b2a267ebf61b1f43e8213044dc92f1f3485a21a2428f5192ebe895",
+      "bytes": 302750
+    },
+    {
+      "path": "../inputs/grass-floor-02.png",
+      "sha256": "caf6bd377c6bbda4b83dde9e1e9a956c86f29593d4a9cc8655a1c861de7cebbf",
+      "bytes": 306605
+    },
+    {
+      "path": "../inputs/grass-floor-03.png",
+      "sha256": "430e5efe8fa8499e00343b1072a36864967ee895e39b213e551f7c047907e069",
+      "bytes": 317667
+    },
+    {
+      "path": "../../palette/palette.json",
+      "sha256": "4f6db358d3f783f72370f2551a614ee59e48dc31981dc4ba392389eed8fc6680",
+      "bytes": 1962
+    }
+  ],
+  "outputs": [
+    {
+      "path": "dirt-floor-01.png",
+      "sha256": "6593de964c2b968db1780255ee2ae4756d71629fdda5ca5352a68480c8b8648b",
+      "bytes": 24854
+    },
+    {
+      "path": "dirt-floor-02.png",
+      "sha256": "8a9a0c6c341caf24c74410f51211cdaf94641f27f1a6650404b706ffd8fca39d",
+      "bytes": 25459
+    },
+    {
+      "path": "edge-grass-dirt.png",
+      "sha256": "5845e9dd95e296ee368a6b129de3f5b50536e0a346bfb821c70322c856d5b6db",
+      "bytes": 53657
+    },
+    {
+      "path": "edge-grass-roots.png",
+      "sha256": "ccbe35b0dd73330bb25cb14fd349085e41c21d094b2933a76e847c0fa827286c",
+      "bytes": 84271
+    },
+    {
+      "path": "grass-floor-01.png",
+      "sha256": "946161da18393396cce7fac238d91a1af7a0bb42a5f053bfc001cf5f4d50773e",
+      "bytes": 63905
+    },
+    {
+      "path": "grass-floor-02.png",
+      "sha256": "c941bd8511d2564d7e1d961af07eb2fb5c84dd5b250ccae6df54100f17bc9e5a",
+      "bytes": 68556
+    },
+    {
+      "path": "grass-floor-03.png",
+      "sha256": "e509d307cf3f086bceff760235a3d37acdbd5f06a493f18bd93f9c71a93e60f1",
+      "bytes": 74156
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "fit": {
+    "dirt-floor-01.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 262140,
+      "partial_alpha_px": 0,
+      "colors": 16380,
+      "palette_colors_used": 18,
+      "mean_delta_e": 0.022404,
+      "p95_delta_e": 0.039547,
+      "max_delta_e": 0.050179
+    },
+    "dirt-floor-02.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 262143,
+      "partial_alpha_px": 0,
+      "colors": 10939,
+      "palette_colors_used": 15,
+      "mean_delta_e": 0.018863,
+      "p95_delta_e": 0.040352,
+      "max_delta_e": 0.053672
+    },
+    "edge-grass-dirt.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 262129,
+      "partial_alpha_px": 0,
+      "colors": 50232,
+      "palette_colors_used": 28,
+      "mean_delta_e": 0.02194,
+      "p95_delta_e": 0.039668,
+      "max_delta_e": 0.065391
+    },
+    "edge-grass-roots.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 262134,
+      "partial_alpha_px": 0,
+      "colors": 63162,
+      "palette_colors_used": 30,
+      "mean_delta_e": 0.024326,
+      "p95_delta_e": 0.03814,
+      "max_delta_e": 0.067621
+    },
+    "grass-floor-01.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 262120,
+      "partial_alpha_px": 0,
+      "colors": 48558,
+      "palette_colors_used": 22,
+      "mean_delta_e": 0.02348,
+      "p95_delta_e": 0.034474,
+      "max_delta_e": 0.067718
+    },
+    "grass-floor-02.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 262118,
+      "partial_alpha_px": 0,
+      "colors": 53248,
+      "palette_colors_used": 22,
+      "mean_delta_e": 0.023608,
+      "p95_delta_e": 0.039925,
+      "max_delta_e": 0.069729
+    },
+    "grass-floor-03.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 262127,
+      "partial_alpha_px": 0,
+      "colors": 55793,
+      "palette_colors_used": 21,
+      "mean_delta_e": 0.022517,
+      "p95_delta_e": 0.035119,
+      "max_delta_e": 0.073758
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.073758,
+    "worst_p95_delta_e": 0.040352,
+    "off_palette_px": 1834911
+  },
+  "locked_inputs": []
+}

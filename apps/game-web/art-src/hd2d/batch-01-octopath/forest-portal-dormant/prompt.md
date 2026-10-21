@@ -1,0 +1,10 @@
+Use case: two state sprites for a Phimond forest map-exit portal. Two side-by-side matching full rustic wood-and-old-stone gateway sprites on pure flat #FF00FF. LEFT dormant gate: weathered timber arch, roots on its feet, muted olive moss, two small old inset amber stones dull and unlit. RIGHT active state: EXACT SAME geometry, perspective, silhouette, dimensions and root placement; only the two inset stones and a thin carved outline along inner arch become bright ochre/gold in hard pixel steps. No written runes or glyphs. No external glow, rays, haze, magical curtain or background, the opening stays magenta/key-transparent. Engine handles light and transition effect. Whole gateway contained in central60% of each generous custom cell with blank margins, no clipping. Original forest source sets bark/moss material and world identity, pet sheets edge/shading only. Octopath Traveler HD-2D environment PIXEL ART, restrained earthy moss/olive/sage greens and weathered umber materials, cool desaturated dark hue-tinted edges, warm subtle upper-left key, broad readable color clusters, 3–4 tones/material. No fluorescent greens, candy saturation, smooth vector edges or illustrative microtexture. Upright front billboards seen from 24 degrees above. No baked ground shadows, lighting glow, fog or scenery. Actual engine lighting comes later. These are paired production states, not a scene. Do not add NPCs, objects or labels.
+
+
+
+Ordered reference images:
+- /Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level4_rungsau/level4_rungsau_009.png / sha256 570310157d19353452a153f3d6bb0b724d7899f89f23280496a5d4d53cfd41a4
+- /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png / sha256 fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da
+- /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png / sha256 043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3
+
+Route: built-in image_gen; model not exposed; raw SHA256 9ae8609d0da820bc92f4a86270d62dec64acae4ef8c9549722127e8a6fbc26e7

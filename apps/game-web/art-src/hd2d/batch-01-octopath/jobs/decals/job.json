@@ -1,0 +1,69 @@
+{
+  "id": "decals",
+  "extraction": "grid",
+  "extracted_dir": "extracted-preserve-fragments",
+  "min_component_area": 1,
+  "finish_dir": "pixel-finish-preserve-fragments",
+  "rows": 2,
+  "cols": 5,
+  "assets": [
+    {
+      "id": "pebbles-01",
+      "height": 64,
+      "category": "decal"
+    },
+    {
+      "id": "pebbles-02",
+      "height": 64,
+      "category": "decal"
+    },
+    {
+      "id": "pebbles-03",
+      "height": 64,
+      "category": "decal"
+    },
+    {
+      "id": "fallen-leaves-01",
+      "height": 64,
+      "category": "decal"
+    },
+    {
+      "id": "fallen-leaves-02",
+      "height": 64,
+      "category": "decal"
+    },
+    {
+      "id": "fallen-leaves-03",
+      "height": 64,
+      "category": "decal"
+    },
+    {
+      "id": "moss-patch-01",
+      "height": 64,
+      "category": "decal"
+    },
+    {
+      "id": "moss-patch-02",
+      "height": 64,
+      "category": "decal"
+    },
+    {
+      "id": "mud-patch",
+      "height": 90,
+      "category": "decal"
+    },
+    {
+      "id": "mushroom-ring",
+      "height": 140,
+      "category": "decal"
+    }
+  ],
+  "prompt": "Use case: game floor decals. Exactly TEN isolated small TOP-DOWN flat ground dressing decals in TWO ROWS x FIVE COLUMNS, left-to-right row-major: row1 = sparse grey pebbles, mixed grey/brown pebbles, small rounded shale chips, scattered dry ochre leaves, scattered brown curled leaves; row2 = sparse olive fallen leaves, small irregular sage moss patch, larger irregular olive moss patch, subtle dark brown mud smear, ring of tiny ochre mushrooms viewed from directly above. Each separate pattern fully inside central50% of its cell with very wide clean spacing. No opaque rectangular soil patches: empty gaps between pebbles/leaves/mushrooms remain exact flat magenta key. Moss/mud have irregular pixel silhouettes. First reference original forest floor defines mossy olive/brown material, second original forest log defines leaf/moss language. Pet refs support color-cluster style only. Octopath Traveler pixel-art ground dressing, restrained natural palette, hard crisp color clusters, 2–4 tones per material, no smooth gradients. Flat viewed from above, NO perspective, standing plants, ground shadows, glow, fog, text, labels, frames or guide grid. Background EXACT pure solid #FF00FF. These are isolated transparent-overlay sources, not full ground tiles or scenes.",
+  "refs": [
+    "/Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level4_rungsau/level4_rungsau_001.png",
+    "/Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level4_rungsau/level4_rungsau_007.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+  ],
+  "source_card": "Low-contrast original olive earth, small stone/leaf dressing, moss from original log. Ten required forest floor overlays; top-down camera and no opaque ground slab."
+}

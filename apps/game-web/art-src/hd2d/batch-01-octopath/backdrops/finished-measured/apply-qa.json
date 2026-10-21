@@ -1,0 +1,113 @@
+{
+  "status": "pass",
+  "method": "forge_palette.quantize_image: OKLab-nearest palette colour per pixel (exact palette colours kept), alpha binary at the threshold, then the written PNGs re-read and measured with forge_palette.fit_report against the palette",
+  "notProven": [
+    "Visual quality after snapping: compare an output with its input.",
+    "Indexed PNGs are engine exports; they are not checked by builders.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "output_off_palette_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "output_partial_alpha_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.200593,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../inputs-measured/forest-canopy-mid.png",
+      "sha256": "fcfe9aeb5e6d6e4113338d620f780d78dc976378d43e12fe46eda91c127ae88f",
+      "bytes": 1003624
+    },
+    {
+      "path": "../inputs-measured/forest-hedge-front.png",
+      "sha256": "51b89bab803fe5dea9b34c49228dd7ae03f31f41263d1f2a01245672d5a03cf9",
+      "bytes": 598151
+    },
+    {
+      "path": "../inputs-measured/forest-wall-far.png",
+      "sha256": "eb13d94342c788cfaccbd8457cf27571db73eb9d041837968cc63017092243dd",
+      "bytes": 669839
+    },
+    {
+      "path": "../palette/palette.json",
+      "sha256": "befe8b09f58e0422e98ec9ad443da27b92fb73ca605bb2f93398c33298eceaa1",
+      "bytes": 1924
+    }
+  ],
+  "outputs": [
+    {
+      "path": "forest-canopy-mid.png",
+      "sha256": "a68f01bf2f32250338cad7ee6ce933a7476879505f3cf3f5cd24439474fe09ee",
+      "bytes": 475149
+    },
+    {
+      "path": "forest-hedge-front.png",
+      "sha256": "b6029861cca9deb66f3eb92e47deb603fe31a1f3fd1436bb0c60c654c9de5157",
+      "bytes": 290311
+    },
+    {
+      "path": "forest-wall-far.png",
+      "sha256": "7c82fb401261c9b1d867bd98356151fa726930346ddcf25724b2bace36acca3f",
+      "bytes": 237260
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "fit": {
+    "forest-canopy-mid.png": {
+      "measured_px": 442971,
+      "alpha_threshold": 128,
+      "off_palette_px": 442914,
+      "partial_alpha_px": 0,
+      "colors": 254207,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.021696,
+      "p95_delta_e": 0.04007,
+      "max_delta_e": 0.200593
+    },
+    "forest-hedge-front.png": {
+      "measured_px": 251282,
+      "alpha_threshold": 128,
+      "off_palette_px": 251251,
+      "partial_alpha_px": 0,
+      "colors": 171409,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.023124,
+      "p95_delta_e": 0.047932,
+      "max_delta_e": 0.197285
+    },
+    "forest-wall-far.png": {
+      "measured_px": 336735,
+      "alpha_threshold": 128,
+      "off_palette_px": 336595,
+      "partial_alpha_px": 0,
+      "colors": 136909,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.019549,
+      "p95_delta_e": 0.033512,
+      "max_delta_e": 0.166325
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.200593,
+    "worst_p95_delta_e": 0.047932,
+    "off_palette_px": 1030760
+  },
+  "locked_inputs": []
+}

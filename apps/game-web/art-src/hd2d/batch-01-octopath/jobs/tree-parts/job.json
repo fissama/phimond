@@ -1,0 +1,74 @@
+{
+  "id": "tree-parts",
+  "selected_raw": "raw-02.png",
+  "revision_prompt_file": "repair-prompt.md",
+  "rows": 3,
+  "cols": 2,
+  "assets": [
+    {
+      "id": "tree-large-01-trunk",
+      "height": 220,
+      "part_of": "tree-large-01",
+      "attachment_offset_world": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "tree-large-01-canopy",
+      "height": 300,
+      "part_of": "tree-large-01",
+      "sway": true,
+      "attachment_offset_world": [
+        0,
+        0.859375
+      ]
+    },
+    {
+      "id": "tree-large-02-trunk",
+      "height": 220,
+      "part_of": "tree-large-02",
+      "attachment_offset_world": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "tree-large-02-canopy",
+      "height": 300,
+      "part_of": "tree-large-02",
+      "sway": true,
+      "attachment_offset_world": [
+        0,
+        0.859375
+      ]
+    },
+    {
+      "id": "tree-large-03-trunk",
+      "height": 220,
+      "part_of": "tree-large-03",
+      "attachment_offset_world": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "tree-large-03-canopy",
+      "height": 300,
+      "part_of": "tree-large-03",
+      "sway": true,
+      "attachment_offset_world": [
+        0,
+        0.859375
+      ]
+    }
+  ],
+  "prompt": "Use case: style-transfer / production separated tree layers. From the tree in attached image 1, produce THREE matched TRUNK + CANOPY pairs for separate engine sway layers. Exactly THREE ROWS x TWO COLUMNS, 6 isolated sprites total. Every row is one tree: LEFT bare rooted trunk and exposed branches ONLY, no leaf canopy; RIGHT its matching complete leafy crown ONLY with a few small internal branches, no trunk reaching down to ground. Row1 mature gnarled rounded oak matching source; row2 more slender young broadleaf tree with upright oval crown; row3 wide crooked old oak with asymmetric spreading crown. Each complete piece stays inside its own custom cell with generous blank magenta margin, no overlaps. Tree trunks must remain wide and rooted, not skinny poles; matching crown color/perspective must fit trunk naturally when superimposed. The eventual game tree is about410px tall: trunk part220px high, crown300px high, crown lower edge110px ABOVE root contact (110px overlap). Prioritize structurally sensible matching pieces. Background EXACT pure flat #FF00FF, no transparent simulation. Octopath Traveler HD-2D environment PIXEL ART, restrained earthy moss/olive/sage greens and weathered umber materials, cool desaturated dark hue-tinted edges, warm subtle upper-left key, broad readable color clusters, 3–4 tones/material. No fluorescent greens, candy saturation, smooth vector edges or illustrative microtexture. Upright front billboards seen from 24 degrees above. No baked ground shadows, lighting glow, fog or scenery. Actual engine lighting comes later. Preserve original Phimond tree identity from source2. Pet sheets3–4 edge compatibility only. Do not paint a ground mound, cast shadow, fog, atmospheric lighting or new scenery. No text, labels, guide lines or extra objects. Draw actual SEPARATE layers, never six whole trees.",
+  "refs": [
+    "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-00/octopath-tree/raw-01.png",
+    "/Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level4_rungsau/level4_rungsau_009.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+  ],
+  "source_card": "Original mature rooted broadleaf Phimond forest tree, revised muted Octopath direction. New output splits source-derived trunks/crowns for engine sway, with declared assembly offsets."
+}

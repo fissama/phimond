@@ -1,0 +1,53 @@
+{
+  "id": "compact-01",
+  "rows": 3,
+  "cols": 3,
+  "assets": [
+    {
+      "id": "rock-small",
+      "height": 64
+    },
+    {
+      "id": "rock-medium",
+      "height": 100
+    },
+    {
+      "id": "rock-large",
+      "height": 160
+    },
+    {
+      "id": "stump",
+      "height": 100
+    },
+    {
+      "id": "mushroom-ochre",
+      "height": 80
+    },
+    {
+      "id": "mushroom-violet",
+      "height": 96
+    },
+    {
+      "id": "flower-bush",
+      "height": 120
+    },
+    {
+      "id": "fern-01",
+      "height": 80,
+      "sway": true
+    },
+    {
+      "id": "fern-02",
+      "height": 100,
+      "sway": true
+    }
+  ],
+  "prompt": "Use case: stylized-concept. EXACTLY NINE isolated compact forest props in a THREE x THREE equal-cell grid, row-major: 1 small grey pebble cluster; 2 medium weathered grey mossy rock; 3 large squat rounded mossy boulder; 4 low old cut tree stump, visible rings and moss; 5 ochre mushroom cluster; 6 dusky violet mushroom cluster; 7 rounded low shrub with sparse muted pink flowers; 8 short open fern; 9 denser curled fern. Wide empty magenta margins; every complete prop within central 55% of its own cell, no overlapping or attached ground slabs. Background EXACT pure flat #FF00FF. Source 1 original mossy log/stump and source 2 original forest ferns define content/materials; pet sheets 3–4 pixel edges only. Octopath Traveler HD-2D environment PIXEL ART, restrained earthy moss/olive/sage greens and weathered umber materials, cool desaturated dark hue-tinted edges, warm subtle upper-left key, broad readable color clusters, 3–4 tones/material. No fluorescent greens, candy saturation, smooth vector edges or illustrative microtexture. Upright front billboards seen from 24 degrees above. No baked ground shadows, lighting glow, fog or scenery. Actual engine lighting comes later. Distinct simple silhouettes and 3–4 shade ramps, no text, letters, grid guides or labels. Aim 64–160px game body height; moss is muted sage, rocks charcoal/grey with warm worn edges, never luminous.",
+  "refs": [
+    "/Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level4_rungsau/level4_rungsau_007.png",
+    "/Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level4_rungsau/level4_rungsau_020.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+  ],
+  "source_card": "Original mossy forest wood, fern-like foliage and pink flowers; stone/mushroom variants required by forest kit brief, subdued original biome palette."
+}

@@ -1,0 +1,41 @@
+{
+  "id": "forest-backdrops",
+  "rows": 3,
+  "cols": 1,
+  "prompt": "Use case: parallax source sprite strips, not a composed scene. Draw EXACTLY THREE separate wide forest strips arranged as THREE ROWS of one landscape sheet. Each strip spans full canvas width and is independent, with pure solid #FF00FF blank separation between rows. Row1: distant woodland silhouette wall, simplified overlapping broadleaf crowns, subdued cool grey-teal and moss, low contrast, NO sky, no horizon water, no mountains. Row2: middle-distance dense oak canopy and a few partial old trunks, muted olive/sage/umber, tactile Octopath Traveler pixel clusters, more readable structure than far layer. Row3: low foreground hedge of ferns, small bushes and sparse tiny ochre/pink flowers, no large trees. At each row's LEFT/RIGHT edges continue identical heights, silhouettes and color patterns so the strip repeats seamlessly horizontally; no blank margin at left/right, no cut tree trunk at edge. Use the same dark muted base foliage at both ends, with canopy contours continuing naturally. Keep magenta empty above and below each strip, no shared terrain or ground slab. Original forest map image1 defines forest flora/content and greens/bark palette; pet images2–3 pixel edge quality only. Octopath-like restrained natural pixel art, large clear clusters, 3–4 tones, avoid neon foliage, smooth paintings, dithery noise. NO fog, atmospheric haze, depth blur, vignette, lighting beams, bloom, cast shadows, sky gradient or text. Engine supplies these later. Key background EXACT flat pure #FF00FF everywhere outside foliage. Lower foliage edge irregular; alpha fade will be created only by removing bottom background during export.",
+  "refs": [
+    "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/emerald_forest_main_woods.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+  ],
+  "source_card": "Original forest scene: thick broadleaf canopy, ancient trunks and fern hedge. Three isolated parallax layers; no composed scene or baked atmosphere.",
+  "assets": [
+    {
+      "id": "forest-wall-far",
+      "category": "backdrop_far",
+      "px": [
+        2048,
+        384
+      ],
+      "density": 64
+    },
+    {
+      "id": "forest-canopy-mid",
+      "category": "backdrop_mid",
+      "px": [
+        2048,
+        512
+      ],
+      "density": 128
+    },
+    {
+      "id": "forest-hedge-front",
+      "category": "backdrop_mid",
+      "px": [
+        2048,
+        256
+      ],
+      "density": 128
+    }
+  ]
+}

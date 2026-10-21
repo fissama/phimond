@@ -1,0 +1,891 @@
+{
+  "schema": "generate2dmap.prop_pack.v2",
+  "tool": {
+    "name": "extract_prop_pack",
+    "version": "0.4.0"
+  },
+  "input": "../raw-01.png",
+  "source_size": [
+    1774,
+    887
+  ],
+  "source_sha256": "414bd22d02fe255c7795c584865e4ab2b4777527552501bdfd532d7190d4f16d",
+  "source_mode": "RGB",
+  "layout_mode": "grid",
+  "boxes_file": null,
+  "labels_file": null,
+  "background_mode": "chroma_key",
+  "art_source": "host_image",
+  "rows": 2,
+  "cols": 5,
+  "threshold": 100,
+  "edge_threshold": 150,
+  "despill_radius": 3,
+  "despill": {
+    "mode": "edge",
+    "applied": "edge",
+    "radius": 3,
+    "margin": 12,
+    "changed_px": 16522
+  },
+  "hygiene": {
+    "mode": "both",
+    "floor": 4,
+    "solid_min": 32,
+    "attach_radius": 2,
+    "connectivity": 8,
+    "floor_px": 0,
+    "detached_px": 0,
+    "detached_components": 0,
+    "max_removed_alpha": 0
+  },
+  "alpha_floor": 4,
+  "alpha_floor_pixels_removed": 0,
+  "trim_border": 0,
+  "edge_clean_depth": 0,
+  "component_mode": "all",
+  "component_padding": 16,
+  "min_component_area": 1,
+  "edge_touch_margin": 0,
+  "geometry": {
+    "connectivity": 8,
+    "alpha_geometry_threshold": 16,
+    "anchor_mode": "stance",
+    "support_band_fraction": 0.25,
+    "anchor_rounding": "whole pixels, half-up",
+    "grid_rounding": "nearest",
+    "keep_canvas": false,
+    "world_scale": null
+  },
+  "accepted": [
+    {
+      "index": 0,
+      "label": "pebbles-01",
+      "display_name": "pebbles-01",
+      "status": "accepted",
+      "image": "pebbles-01/prop.png",
+      "sha256": "95dccb51c49368b16dc72a2bd6012dccb79a0544938bbf4c98b5349764befe07",
+      "output_size": [
+        217,
+        227
+      ],
+      "grid": [
+        0,
+        0
+      ],
+      "cell_box": [
+        0,
+        0,
+        355,
+        444
+      ],
+      "source_box": [
+        0,
+        0,
+        355,
+        444
+      ],
+      "source_rect": [
+        103,
+        161,
+        320,
+        388
+      ],
+      "trim_offset": [
+        103,
+        161
+      ],
+      "padding": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "anchor_px": [
+        105,
+        211
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 10,
+      "min_component_area": 1,
+      "trim_applied": 0,
+      "crop_bbox": [
+        119,
+        177,
+        304,
+        372
+      ],
+      "padded_crop_bbox": [
+        103,
+        161,
+        320,
+        388
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 6340,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 1,
+      "label": "pebbles-02",
+      "display_name": "pebbles-02",
+      "status": "accepted",
+      "image": "pebbles-02/prop.png",
+      "sha256": "31276f095a89d2c30091bd98942cba662f0faf17f3c2b667a97a34027523bcc0",
+      "output_size": [
+        242,
+        263
+      ],
+      "grid": [
+        0,
+        1
+      ],
+      "cell_box": [
+        355,
+        0,
+        710,
+        444
+      ],
+      "source_box": [
+        355,
+        0,
+        710,
+        444
+      ],
+      "source_rect": [
+        432,
+        143,
+        674,
+        406
+      ],
+      "trim_offset": [
+        77,
+        143
+      ],
+      "padding": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "anchor_px": [
+        106,
+        247
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 13,
+      "min_component_area": 1,
+      "trim_applied": 0,
+      "crop_bbox": [
+        93,
+        159,
+        303,
+        390
+      ],
+      "padded_crop_bbox": [
+        77,
+        143,
+        319,
+        406
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 11405,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 2,
+      "label": "pebbles-03",
+      "display_name": "pebbles-03",
+      "status": "accepted",
+      "image": "pebbles-03/prop.png",
+      "sha256": "6b733db269862c1c1610a619d4479b76f8d1699bd150238b6b855607f882cfe9",
+      "output_size": [
+        246,
+        276
+      ],
+      "grid": [
+        0,
+        2
+      ],
+      "cell_box": [
+        710,
+        0,
+        1064,
+        444
+      ],
+      "source_box": [
+        710,
+        0,
+        1064,
+        444
+      ],
+      "source_rect": [
+        767,
+        133,
+        1013,
+        409
+      ],
+      "trim_offset": [
+        57,
+        133
+      ],
+      "padding": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "anchor_px": [
+        117,
+        260
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 12,
+      "min_component_area": 1,
+      "trim_applied": 0,
+      "crop_bbox": [
+        73,
+        149,
+        287,
+        393
+      ],
+      "padded_crop_bbox": [
+        57,
+        133,
+        303,
+        409
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 11068,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 3,
+      "label": "fallen-leaves-01",
+      "display_name": "fallen-leaves-01",
+      "status": "accepted",
+      "image": "fallen-leaves-01/prop.png",
+      "sha256": "14d9aa94c6f5f2a60d4857be2138b2b70f75abdcbb0aea9def7da5ed515b0a84",
+      "output_size": [
+        262,
+        284
+      ],
+      "grid": [
+        0,
+        3
+      ],
+      "cell_box": [
+        1064,
+        0,
+        1419,
+        444
+      ],
+      "source_box": [
+        1064,
+        0,
+        1419,
+        444
+      ],
+      "source_rect": [
+        1104,
+        129,
+        1366,
+        413
+      ],
+      "trim_offset": [
+        40,
+        129
+      ],
+      "padding": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "anchor_px": [
+        153,
+        268
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 10,
+      "min_component_area": 1,
+      "trim_applied": 0,
+      "crop_bbox": [
+        56,
+        145,
+        286,
+        397
+      ],
+      "padded_crop_bbox": [
+        40,
+        129,
+        302,
+        413
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 12644,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 4,
+      "label": "fallen-leaves-02",
+      "display_name": "fallen-leaves-02",
+      "status": "accepted",
+      "image": "fallen-leaves-02/prop.png",
+      "sha256": "28c36578c94cb13c825c8cb9a1f66c57c8570c8e8b0f422615533f20232d8b3e",
+      "output_size": [
+        251,
+        272
+      ],
+      "grid": [
+        0,
+        4
+      ],
+      "cell_box": [
+        1419,
+        0,
+        1774,
+        444
+      ],
+      "source_box": [
+        1419,
+        0,
+        1774,
+        444
+      ],
+      "source_rect": [
+        1449,
+        133,
+        1700,
+        405
+      ],
+      "trim_offset": [
+        30,
+        133
+      ],
+      "padding": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "anchor_px": [
+        137,
+        256
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 10,
+      "min_component_area": 1,
+      "trim_applied": 0,
+      "crop_bbox": [
+        46,
+        149,
+        265,
+        389
+      ],
+      "padded_crop_bbox": [
+        30,
+        133,
+        281,
+        405
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 13589,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 5,
+      "label": "fallen-leaves-03",
+      "display_name": "fallen-leaves-03",
+      "status": "accepted",
+      "image": "fallen-leaves-03/prop.png",
+      "sha256": "94392c7ed10d989b303c6326fb2071c46a6dec103f9120fc962f089bc54e0716",
+      "output_size": [
+        252,
+        237
+      ],
+      "grid": [
+        1,
+        0
+      ],
+      "cell_box": [
+        0,
+        444,
+        355,
+        887
+      ],
+      "source_box": [
+        0,
+        444,
+        355,
+        887
+      ],
+      "source_rect": [
+        71,
+        518,
+        323,
+        755
+      ],
+      "trim_offset": [
+        71,
+        74
+      ],
+      "padding": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "anchor_px": [
+        143,
+        221
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 8,
+      "min_component_area": 1,
+      "trim_applied": 0,
+      "crop_bbox": [
+        87,
+        90,
+        307,
+        295
+      ],
+      "padded_crop_bbox": [
+        71,
+        74,
+        323,
+        311
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 11148,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 6,
+      "label": "moss-patch-01",
+      "display_name": "moss-patch-01",
+      "status": "accepted",
+      "image": "moss-patch-01/prop.png",
+      "sha256": "62867da0ebcf49337025e200889ec81910ea130d392c92366abadab3e82252f9",
+      "output_size": [
+        238,
+        231
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "cell_box": [
+        355,
+        444,
+        710,
+        887
+      ],
+      "source_box": [
+        355,
+        444,
+        710,
+        887
+      ],
+      "source_rect": [
+        437,
+        524,
+        675,
+        755
+      ],
+      "trim_offset": [
+        82,
+        80
+      ],
+      "padding": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "anchor_px": [
+        92,
+        215
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 13,
+      "min_component_area": 1,
+      "trim_applied": 0,
+      "crop_bbox": [
+        98,
+        96,
+        304,
+        295
+      ],
+      "padded_crop_bbox": [
+        82,
+        80,
+        320,
+        311
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 14656,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 7,
+      "label": "moss-patch-02",
+      "display_name": "moss-patch-02",
+      "status": "accepted",
+      "image": "moss-patch-02/prop.png",
+      "sha256": "1a238604ff23d721f910a53fccbdf321179db7001b664d73e7816019ed150ee1",
+      "output_size": [
+        279,
+        272
+      ],
+      "grid": [
+        1,
+        2
+      ],
+      "cell_box": [
+        710,
+        444,
+        1064,
+        887
+      ],
+      "source_box": [
+        710,
+        444,
+        1064,
+        887
+      ],
+      "source_rect": [
+        747,
+        505,
+        1026,
+        777
+      ],
+      "trim_offset": [
+        37,
+        61
+      ],
+      "padding": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "anchor_px": [
+        157,
+        256
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 16,
+      "min_component_area": 1,
+      "trim_applied": 0,
+      "crop_bbox": [
+        53,
+        77,
+        300,
+        317
+      ],
+      "padded_crop_bbox": [
+        37,
+        61,
+        316,
+        333
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 24869,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 8,
+      "label": "mud-patch",
+      "display_name": "mud-patch",
+      "status": "accepted",
+      "image": "mud-patch/prop.png",
+      "sha256": "5b8b15cd9a8903705ef6111a70beb254b28ec96a42be32e10fb24ddd91e54944",
+      "output_size": [
+        240,
+        255
+      ],
+      "grid": [
+        1,
+        3
+      ],
+      "cell_box": [
+        1064,
+        444,
+        1419,
+        887
+      ],
+      "source_box": [
+        1064,
+        444,
+        1419,
+        887
+      ],
+      "source_rect": [
+        1111,
+        508,
+        1351,
+        763
+      ],
+      "trim_offset": [
+        47,
+        64
+      ],
+      "padding": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "anchor_px": [
+        128,
+        239
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 58,
+      "min_component_area": 1,
+      "trim_applied": 0,
+      "crop_bbox": [
+        63,
+        80,
+        271,
+        303
+      ],
+      "padded_crop_bbox": [
+        47,
+        64,
+        287,
+        319
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 10493,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 9,
+      "label": "mushroom-ring",
+      "display_name": "mushroom-ring",
+      "status": "accepted",
+      "image": "mushroom-ring/prop.png",
+      "sha256": "19aa6143ea926f3af342afb82129a51fe09ea8219497e66f82b3b44ad7f94692",
+      "output_size": [
+        258,
+        243
+      ],
+      "grid": [
+        1,
+        4
+      ],
+      "cell_box": [
+        1419,
+        444,
+        1774,
+        887
+      ],
+      "source_box": [
+        1419,
+        444,
+        1774,
+        887
+      ],
+      "source_rect": [
+        1446,
+        515,
+        1704,
+        758
+      ],
+      "trim_offset": [
+        27,
+        71
+      ],
+      "padding": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "anchor_px": [
+        132,
+        227
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 12,
+      "min_component_area": 1,
+      "trim_applied": 0,
+      "crop_bbox": [
+        43,
+        87,
+        269,
+        298
+      ],
+      "padded_crop_bbox": [
+        27,
+        71,
+        285,
+        314
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 13119,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    }
+  ],
+  "rejected": [],
+  "edge_touch_props": [],
+  "warnings": [],
+  "qa": {
+    "status": "pass",
+    "method": "legacy #FF00FF key (100/150) and edge despill radius 3; alpha hygiene both; 8-connected components (all); checks measured on the published pixels",
+    "notProven": [
+      "that each label names the art in its cell or box",
+      "that a prop is complete: clipping is detected only where art meets the cell edge",
+      "keyed-edge quality beyond the edge fringe count",
+      "that anchors and suggested footprints match gameplay contact (both are measured from alpha)",
+      "runtime placement, collision or occlusion"
+    ],
+    "checks": [
+      {
+        "id": "accepted",
+        "status": "pass",
+        "value": 10,
+        "threshold": ">= 1"
+      },
+      {
+        "id": "edge_touch",
+        "status": "pass",
+        "value": [],
+        "threshold": 0
+      },
+      {
+        "id": "dropped_area",
+        "status": "pass",
+        "value": {},
+        "threshold": 0.01
+      },
+      {
+        "id": "strategy_aspect",
+        "status": "skipped",
+        "value": null,
+        "threshold": 1.6
+      },
+      {
+        "id": "edge_fringe",
+        "status": "pass",
+        "value": 0.0,
+        "threshold": 0.02
+      }
+    ],
+    "inputs": [
+      {
+        "path": "../raw-01.png",
+        "sha256": "414bd22d02fe255c7795c584865e4ab2b4777527552501bdfd532d7190d4f16d",
+        "bytes": 1481083
+      }
+    ],
+    "outputs": [
+      {
+        "path": "pebbles-01/prop.png",
+        "sha256": "95dccb51c49368b16dc72a2bd6012dccb79a0544938bbf4c98b5349764befe07",
+        "bytes": 18208
+      },
+      {
+        "path": "pebbles-02/prop.png",
+        "sha256": "31276f095a89d2c30091bd98942cba662f0faf17f3c2b667a97a34027523bcc0",
+        "bytes": 31457
+      },
+      {
+        "path": "pebbles-03/prop.png",
+        "sha256": "6b733db269862c1c1610a619d4479b76f8d1699bd150238b6b855607f882cfe9",
+        "bytes": 30772
+      },
+      {
+        "path": "fallen-leaves-01/prop.png",
+        "sha256": "14d9aa94c6f5f2a60d4857be2138b2b70f75abdcbb0aea9def7da5ed515b0a84",
+        "bytes": 37166
+      },
+      {
+        "path": "fallen-leaves-02/prop.png",
+        "sha256": "28c36578c94cb13c825c8cb9a1f66c57c8570c8e8b0f422615533f20232d8b3e",
+        "bytes": 37888
+      },
+      {
+        "path": "fallen-leaves-03/prop.png",
+        "sha256": "94392c7ed10d989b303c6326fb2071c46a6dec103f9120fc962f089bc54e0716",
+        "bytes": 30459
+      },
+      {
+        "path": "moss-patch-01/prop.png",
+        "sha256": "62867da0ebcf49337025e200889ec81910ea130d392c92366abadab3e82252f9",
+        "bytes": 43684
+      },
+      {
+        "path": "moss-patch-02/prop.png",
+        "sha256": "1a238604ff23d721f910a53fccbdf321179db7001b664d73e7816019ed150ee1",
+        "bytes": 68676
+      },
+      {
+        "path": "mud-patch/prop.png",
+        "sha256": "5b8b15cd9a8903705ef6111a70beb254b28ec96a42be32e10fb24ddd91e54944",
+        "bytes": 31640
+      },
+      {
+        "path": "mushroom-ring/prop.png",
+        "sha256": "19aa6143ea926f3af342afb82129a51fe09ea8219497e66f82b3b44ad7f94692",
+        "bytes": 37366
+      }
+    ],
+    "tool": {
+      "name": "extract_prop_pack",
+      "version": "0.4.0"
+    }
+  }
+}
