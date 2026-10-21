@@ -1,0 +1,15 @@
+Attempt1 original prompt:
+Production Phimond battle VFX animation sheet, muted Octopath HD2D pixelart, originalref1timing, petanchorspixelstyle only. EXACT6columns x6rows equalcells. Eachrow oneeffect6frames SAMECENTER SAMECANVAS SCALE. 24pxcleartransparentmargin. Art only no text,numbers,bloom,gradients,castshadows. crisp2–4tone clusters. Row1level_up palegold upwardspiral column andsmallstars: charge/rise/rise/peak/fragment/residue. Row2capture_seal parchment red geometricseal(noletters) flying fromleft towardfixedcenter then bursting inbindingring then ringcontracts thencapturedspark thenresidue. Row3ko_dissolve grayviolet motes fromdenseghost silhouette to progressivelysparse particles;NOactualpet. Row4defend_shield paleaqua hexagonal shield forms,solidifies,takeshit,ripples,diminishes,smallresidue. Row5escape_dust warmgray dustpuff grows,spreadsright,thins. Row6heal_hit jade healing plusshapes and leaves rise6phases. Transparentalpha,noscene,each cellspaced.
+
+Selected prompt:
+Production Phimond battle VFX animation sheet, muted Octopath HD2D pixelart, originalref1timing, petanchorspixelstyle only. EXACT6columns x6rows equalcells. Eachrow oneeffect6frames SAMECENTER SAMECANVAS SCALE. 24pxcleartransparentmargin. Art only no text,numbers,bloom,gradients,castshadows. crisp2–4tone clusters. Row1level_up palegold upwardspiral column andsmallstars: charge/rise/rise/peak/fragment/residue. Row2capture_seal parchment red geometricseal(noletters) flying fromleft towardfixedcenter then bursting inbindingring then ringcontracts thencapturedspark thenresidue. Row3ko_dissolve grayviolet motes fromdenseghost silhouette to progressivelysparse particles;NOactualpet. Row4defend_shield paleaqua hexagonal shield forms,solidifies,takeshit,ripples,diminishes,smallresidue. Row5escape_dust warmgray dustpuff grows,spreadsright,thins. Row6heal_hit jade healing plusshapes and leaves rise6phases. Transparentalpha,noscene,each cellspaced.
+CRITICAL RETAKE: OPAQUEPNG uniformpuremagenta #FF00FF flatkeybackground everywhereempty,including effectholesandgaps. No transparencyinraw,no blackbackground,nobggradient,noglow,nohaze,no gridlines. Hardopaque2–4shadepixels only for actualeffectcores. Exact6columns6rows equalcells. Samepivotandscale. Willkeyoutpuremagenta externally.
+
+Selected ordered references:
+1. /Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-07-octopath/source-fx.png sha256=25f65d558ac8a1acf1b77115bf88e597558b6c63055df5eaf5e6c7f3e1eb22cd
+2. /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png sha256=fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da
+3. /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png sha256=043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3
+
+Route: built-in image_gen; model not exposed; cost unknown.
+Raw SHA256: eac77723eed61ebff2cb426623583c8af0572e8b0750899952b655b15babdbbe
+Full per-attempt provenance: provenance.json

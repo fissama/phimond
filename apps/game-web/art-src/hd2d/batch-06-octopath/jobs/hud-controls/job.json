@@ -1,0 +1,558 @@
+{
+  "refs": [
+    "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-06-octopath/source-hud-contact.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/reference/ui/UI.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+  ],
+  "assets": [
+    {
+      "id": "dpad-base",
+      "box": [
+        0,
+        0,
+        410,
+        360
+      ],
+      "body": [
+        384,
+        372
+      ]
+    },
+    {
+      "id": "dpad-up-normal",
+      "box": [
+        430,
+        0,
+        760,
+        360
+      ],
+      "body": [
+        132,
+        132
+      ]
+    },
+    {
+      "id": "dpad-up-pressed",
+      "box": [
+        770,
+        0,
+        1080,
+        360
+      ],
+      "body": [
+        132,
+        132
+      ]
+    },
+    {
+      "id": "dpad-center",
+      "box": [
+        1090,
+        0,
+        1402,
+        360
+      ],
+      "body": [
+        108,
+        108
+      ]
+    },
+    {
+      "id": "chat-tab-normal",
+      "box": [
+        520,
+        365,
+        840,
+        580
+      ],
+      "body": [
+        234,
+        75
+      ]
+    },
+    {
+      "id": "chat-tab-selected",
+      "box": [
+        840,
+        365,
+        1160,
+        580
+      ],
+      "body": [
+        234,
+        75
+      ]
+    },
+    {
+      "id": "button-chat",
+      "box": [
+        1160,
+        365,
+        1402,
+        580
+      ],
+      "body": [
+        120,
+        100
+      ]
+    },
+    {
+      "id": "confirm-normal",
+      "box": [
+        0,
+        590,
+        405,
+        880
+      ],
+      "body": [
+        201,
+        186
+      ],
+      "angle": -37
+    },
+    {
+      "id": "confirm-pressed",
+      "box": [
+        410,
+        590,
+        770,
+        880
+      ],
+      "body": [
+        201,
+        186
+      ],
+      "angle": -37
+    },
+    {
+      "id": "confirm-disabled",
+      "box": [
+        780,
+        590,
+        1140,
+        880
+      ],
+      "body": [
+        201,
+        186
+      ],
+      "angle": -37
+    },
+    {
+      "id": "button-side",
+      "box": [
+        1140,
+        590,
+        1402,
+        880
+      ],
+      "body": [
+        90,
+        150
+      ]
+    },
+    {
+      "id": "ornament-corner",
+      "box": [
+        1180,
+        900,
+        1402,
+        1122
+      ],
+      "body": [
+        120,
+        120
+      ]
+    },
+    {
+      "id": "chat-world-normal",
+      "box": [
+        520,
+        365,
+        840,
+        580
+      ],
+      "body": [
+        234,
+        75
+      ],
+      "notes": "Shared tab chrome; runtime supplies channel label."
+    },
+    {
+      "id": "chat-world-selected",
+      "box": [
+        840,
+        365,
+        1160,
+        580
+      ],
+      "body": [
+        234,
+        75
+      ],
+      "notes": "Shared tab chrome; runtime supplies channel label."
+    },
+    {
+      "id": "chat-area-normal",
+      "box": [
+        520,
+        365,
+        840,
+        580
+      ],
+      "body": [
+        234,
+        75
+      ],
+      "notes": "Shared tab chrome; runtime supplies channel label."
+    },
+    {
+      "id": "chat-area-selected",
+      "box": [
+        840,
+        365,
+        1160,
+        580
+      ],
+      "body": [
+        234,
+        75
+      ],
+      "notes": "Shared tab chrome; runtime supplies channel label."
+    },
+    {
+      "id": "chat-party-normal",
+      "box": [
+        520,
+        365,
+        840,
+        580
+      ],
+      "body": [
+        234,
+        75
+      ],
+      "notes": "Shared tab chrome; runtime supplies channel label."
+    },
+    {
+      "id": "chat-party-selected",
+      "box": [
+        840,
+        365,
+        1160,
+        580
+      ],
+      "body": [
+        234,
+        75
+      ],
+      "notes": "Shared tab chrome; runtime supplies channel label."
+    },
+    {
+      "id": "chat-guild-normal",
+      "box": [
+        520,
+        365,
+        840,
+        580
+      ],
+      "body": [
+        234,
+        75
+      ],
+      "notes": "Shared tab chrome; runtime supplies channel label."
+    },
+    {
+      "id": "chat-guild-selected",
+      "box": [
+        840,
+        365,
+        1160,
+        580
+      ],
+      "body": [
+        234,
+        75
+      ],
+      "notes": "Shared tab chrome; runtime supplies channel label."
+    },
+    {
+      "id": "chat-private-normal",
+      "box": [
+        520,
+        365,
+        840,
+        580
+      ],
+      "body": [
+        234,
+        75
+      ],
+      "notes": "Shared tab chrome; runtime supplies channel label."
+    },
+    {
+      "id": "chat-private-selected",
+      "box": [
+        840,
+        365,
+        1160,
+        580
+      ],
+      "body": [
+        234,
+        75
+      ],
+      "notes": "Shared tab chrome; runtime supplies channel label."
+    },
+    {
+      "id": "chat-system-normal",
+      "box": [
+        520,
+        365,
+        840,
+        580
+      ],
+      "body": [
+        234,
+        75
+      ],
+      "notes": "Shared tab chrome; runtime supplies channel label."
+    },
+    {
+      "id": "chat-system-selected",
+      "box": [
+        840,
+        365,
+        1160,
+        580
+      ],
+      "body": [
+        234,
+        75
+      ],
+      "notes": "Shared tab chrome; runtime supplies channel label."
+    },
+    {
+      "id": "dpad-right-normal",
+      "box": [
+        430,
+        0,
+        760,
+        360
+      ],
+      "body": [
+        132,
+        132
+      ],
+      "rotate": 270
+    },
+    {
+      "id": "dpad-right-pressed",
+      "box": [
+        770,
+        0,
+        1080,
+        360
+      ],
+      "body": [
+        132,
+        132
+      ],
+      "rotate": 270
+    },
+    {
+      "id": "dpad-down-normal",
+      "box": [
+        430,
+        0,
+        760,
+        360
+      ],
+      "body": [
+        132,
+        132
+      ],
+      "rotate": 180
+    },
+    {
+      "id": "dpad-down-pressed",
+      "box": [
+        770,
+        0,
+        1080,
+        360
+      ],
+      "body": [
+        132,
+        132
+      ],
+      "rotate": 180
+    },
+    {
+      "id": "dpad-left-normal",
+      "box": [
+        430,
+        0,
+        760,
+        360
+      ],
+      "body": [
+        132,
+        132
+      ],
+      "rotate": 90
+    },
+    {
+      "id": "dpad-left-pressed",
+      "box": [
+        770,
+        0,
+        1080,
+        360
+      ],
+      "body": [
+        132,
+        132
+      ],
+      "rotate": 90
+    },
+    {
+      "id": "back-normal",
+      "box": [
+        0,
+        590,
+        405,
+        880
+      ],
+      "body": [
+        201,
+        186
+      ],
+      "notes": "Intentionally shared blank oval action chrome; runtime label distinguishes action.",
+      "angle": -37
+    },
+    {
+      "id": "back-pressed",
+      "box": [
+        410,
+        590,
+        770,
+        880
+      ],
+      "body": [
+        201,
+        186
+      ],
+      "notes": "Intentionally shared blank oval action chrome; runtime label distinguishes action.",
+      "angle": -37
+    },
+    {
+      "id": "back-disabled",
+      "box": [
+        780,
+        590,
+        1140,
+        880
+      ],
+      "body": [
+        201,
+        186
+      ],
+      "notes": "Intentionally shared blank oval action chrome; runtime label distinguishes action.",
+      "angle": -37
+    },
+    {
+      "id": "accept-normal",
+      "box": [
+        0,
+        590,
+        405,
+        880
+      ],
+      "body": [
+        201,
+        186
+      ],
+      "notes": "Intentionally shared blank oval action chrome; runtime label distinguishes action.",
+      "angle": -37
+    },
+    {
+      "id": "accept-pressed",
+      "box": [
+        410,
+        590,
+        770,
+        880
+      ],
+      "body": [
+        201,
+        186
+      ],
+      "notes": "Intentionally shared blank oval action chrome; runtime label distinguishes action.",
+      "angle": -37
+    },
+    {
+      "id": "accept-disabled",
+      "box": [
+        780,
+        590,
+        1140,
+        880
+      ],
+      "body": [
+        201,
+        186
+      ],
+      "notes": "Intentionally shared blank oval action chrome; runtime label distinguishes action.",
+      "angle": -37
+    },
+    {
+      "id": "cancel-normal",
+      "box": [
+        0,
+        590,
+        405,
+        880
+      ],
+      "body": [
+        201,
+        186
+      ],
+      "notes": "Intentionally shared blank oval action chrome; runtime label distinguishes action.",
+      "angle": -37
+    },
+    {
+      "id": "cancel-pressed",
+      "box": [
+        410,
+        590,
+        770,
+        880
+      ],
+      "body": [
+        201,
+        186
+      ],
+      "notes": "Intentionally shared blank oval action chrome; runtime label distinguishes action.",
+      "angle": -37
+    },
+    {
+      "id": "cancel-disabled",
+      "box": [
+        780,
+        590,
+        1140,
+        880
+      ],
+      "body": [
+        201,
+        186
+      ],
+      "notes": "Intentionally shared blank oval action chrome; runtime label distinguishes action.",
+      "angle": -37
+    }
+  ],
+  "kit": "world-controls",
+  "source_card": "Original APK reference HUD: thin silver stepped bars, circular gold filigree portrait/button rims, dark-blue chat/menu fields, tilted blue oval action buttons. Reference UI.png has asymmetric gold leaf curls around a flat blue center. These are content identities; Octopath palette and crisp pixel clustering are the redraw direction. Pet sheets supply pixel edge compatibility only."
+}

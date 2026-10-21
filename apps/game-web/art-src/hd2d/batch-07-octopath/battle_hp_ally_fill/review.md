@@ -1,0 +1,1 @@
+Independent ally HP fill. Generated pixels copied from battle_hp_ally/original-combined.png. Alpha margins16px; no painted replacement art. Use content_rect and frame fill_offset for registration. approved:false.

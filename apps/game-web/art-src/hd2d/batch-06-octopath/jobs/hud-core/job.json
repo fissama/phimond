@@ -1,0 +1,279 @@
+{
+  "refs": [
+    "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-06-octopath/source-hud-contact.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/reference/ui/UI.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+  ],
+  "assets": [
+    {
+      "id": "frame-portrait",
+      "box": [
+        0,
+        0,
+        310,
+        350
+      ],
+      "body": [
+        240,
+        240
+      ]
+    },
+    {
+      "id": "frame-bars",
+      "box": [
+        310,
+        0,
+        620,
+        350
+      ],
+      "body": [
+        360,
+        135
+      ]
+    },
+    {
+      "id": "hp-fill-framed",
+      "box": [
+        620,
+        0,
+        940,
+        350
+      ],
+      "body": [
+        318,
+        27
+      ]
+    },
+    {
+      "id": "mp-fill-framed",
+      "box": [
+        940,
+        0,
+        1254,
+        350
+      ],
+      "body": [
+        318,
+        27
+      ]
+    },
+    {
+      "id": "xp-fill-framed",
+      "box": [
+        0,
+        360,
+        315,
+        610
+      ],
+      "body": [
+        318,
+        27
+      ]
+    },
+    {
+      "id": "bar-track-framed",
+      "box": [
+        315,
+        360,
+        620,
+        610
+      ],
+      "body": [
+        318,
+        27
+      ]
+    },
+    {
+      "id": "bar-glint-framed",
+      "box": [
+        620,
+        360,
+        940,
+        610
+      ],
+      "body": [
+        318,
+        12
+      ]
+    },
+    {
+      "id": "badge-level",
+      "box": [
+        940,
+        350,
+        1254,
+        620
+      ],
+      "body": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "button-quest",
+      "box": [
+        320,
+        630,
+        625,
+        930
+      ],
+      "body": [
+        180,
+        180
+      ]
+    },
+    {
+      "id": "button-round",
+      "box": [
+        625,
+        630,
+        940,
+        930
+      ],
+      "body": [
+        180,
+        180
+      ]
+    },
+    {
+      "id": "button-round-red",
+      "box": [
+        940,
+        630,
+        1254,
+        930
+      ],
+      "body": [
+        180,
+        180
+      ]
+    },
+    {
+      "id": "currency-gold",
+      "box": [
+        490,
+        950,
+        700,
+        1220
+      ],
+      "body": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "currency-crystal",
+      "box": [
+        710,
+        950,
+        890,
+        1220
+      ],
+      "body": [
+        72,
+        108
+      ]
+    },
+    {
+      "id": "hp-fill",
+      "box": [
+        680,
+        184,
+        885,
+        211
+      ],
+      "body": [
+        318,
+        27
+      ],
+      "notes": "Isolated interior crop from generated stat strip; engine clips for current value."
+    },
+    {
+      "id": "mp-fill",
+      "box": [
+        988,
+        184,
+        1180,
+        211
+      ],
+      "body": [
+        318,
+        27
+      ],
+      "notes": "Isolated interior crop from generated stat strip; engine clips for current value."
+    },
+    {
+      "id": "xp-fill",
+      "box": [
+        60,
+        477,
+        250,
+        493
+      ],
+      "body": [
+        318,
+        27
+      ],
+      "notes": "Isolated interior crop from generated stat strip; engine clips for current value."
+    },
+    {
+      "id": "bar-track",
+      "box": [
+        370,
+        477,
+        560,
+        493
+      ],
+      "body": [
+        318,
+        27
+      ],
+      "notes": "Isolated interior crop from generated stat strip; engine clips for current value."
+    },
+    {
+      "id": "bar-glint",
+      "box": [
+        680,
+        475,
+        875,
+        482
+      ],
+      "body": [
+        318,
+        9
+      ],
+      "notes": "Isolated interior crop from generated stat strip; engine clips for current value."
+    },
+    {
+      "id": "xp-long-fill",
+      "box": [
+        60,
+        477,
+        250,
+        493
+      ],
+      "body": [
+        1440,
+        24
+      ],
+      "notes": "Isolated interior crop from generated stat strip; engine clips for current value."
+    },
+    {
+      "id": "hud-underlay",
+      "box": [
+        370,
+        477,
+        560,
+        493
+      ],
+      "body": [
+        960,
+        120
+      ],
+      "notes": "Isolated interior crop from generated stat strip; engine clips for current value."
+    }
+  ],
+  "kit": "world-hud",
+  "source_card": "Original APK reference HUD: thin silver stepped bars, circular gold filigree portrait/button rims, dark-blue chat/menu fields, tilted blue oval action buttons. Reference UI.png has asymmetric gold leaf curls around a flat blue center. These are content identities; Octopath palette and crisp pixel clustering are the redraw direction. Pet sheets supply pixel edge compatibility only."
+}

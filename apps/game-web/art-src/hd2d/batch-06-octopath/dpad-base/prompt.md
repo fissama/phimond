@@ -1,0 +1,11 @@
+Use case: fantasy game UI component atlas. Exactly 4 columns x 4 rows, sixteen independent components, transparent background and VERY GENEROUS gutters. No lettering, numbers, captions, watermark, screen mockup or characters. Redraw original APK component identities from image1 HUD montage and image2 ornamental panel; images3/4 pet anchors are pixel compatibility only. Octopath Traveler HD-2D UI art direction: crisp clustered pixels, restrained antique gold and ivory ornament on umber and desaturated blue-gray panels, madder accents, hard color steps, no glossy vector gradients. Front-on flat UI. Row1: ornate circular D-pad base with empty center and four directional socket rims; single upward arrow button normal; single upward arrow button pressed; round D-pad center medallion. Row2: empty wide chat panel with ornament only at corners and FLAT dark center (9slice); rectangular chat tab normal; rectangular chat tab selected; small double speech-bubble chat icon with NO dots or letters. Row3: blank oval confirm button tilted EXACTLY 37 degrees ascending to right normal; same tilted oval pressed; same tilted oval disabled gray; blank tall side tab pointing left. Row4: long flat notification banner with corner ornament; narrow hint banner; small toast panel; single gold filigree corner ornament. All label regions blank. Transparent border around every cell; isolated design-kit parts for separate PNG cropping, not a composed screen.
+
+
+Ordered references:
+{'path': '/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-06-octopath/source-hud-contact.png', 'sha256': '185446f5f5999c616080555a1200e7ee8061184680088f4e85c7c6b8d012bedb'}
+{'path': '/Users/phileanh/rust/phimond/apps/game-client/assets/reference/ui/UI.png', 'sha256': 'dedba6310459fb7301226aaef20e6aaf8f0b5c08234422515bfc6e67c80acee3'}
+{'path': '/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png', 'sha256': 'fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da'}
+{'path': '/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png', 'sha256': '043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3'}
+
+Route: built-in image_gen / art_source host_image. Raw SHA256 1fc978a928d69be6cca31c745643ec84f8cdecc550a658e1e365adb4cfe39938
+Ownership box [0, 0, 410, 360]
