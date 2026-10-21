@@ -2,6 +2,10 @@
 
 Cập nhật: 2026-10-20. Route duy nhất: built-in image_gen. Không commit; không sửa runtime/scene, tools/hd2d_audit, waivers hoặc check.sh. Mọi ảnh vẫn approved=false, chờ Claude duyệt song song; theo yêu cầu mới không dừng giữa chặng.
 
+## Đơn 09 (owner nộp trực tiếp)
+
+- 2026-10-22: Chặng 1 + 2 đã nộp, lưu tại `apps/game-web/art-src/hd2d/batch-05-octopath/_intake/don09-chang-1-2/`. Chưa review (đợi đủ chặng). Tiếp theo: Chặng 3 (sàn thành).
+
 ## ĐANG DỞ — đọc mục này để tiếp tục
 
 **Desert: chặng1 chưa đóng; có23 draft (4 floor,16 prop,3 backdrop), đang QA và mở rộng mảnh.**
@@ -96,3 +100,21 @@ Farnewjobs/review-far-opaque-22 raw29 (exec-694b79d6...): actualopaque sky+layer
 
 ### Batch10 loadingfill correction2026-10-21
 Batch10 jobs/review-loading-fill-23 raw03: tealcrystalfacets+agedcopperdivider, actualoriginalframebars+2batch06styles+2petanchors attachedwithhashes. New256×64fill48colors,seamXmean/max0,actualfinal/repeat3×/full4×dark/checker viewed, approved=false. Extractoneperiodbetweengeneratedbronzedividers,ONLYinnerbody321:418; cropnotpixelpainting, noedgecopy. Oldraw01/02retained. Processing usesdesertpackage rootargument toreadexistingBatch10manifest15idsinstead ofoldA-onlyexporter. Primarycontactregenerated; auxpartsneedcombinedcontactrefresh. Brightchunkyfacetsweakness noted.
+
+### Production format deviation2026-10-21 — mustread
+Masterexplicitlyrequires2×3/3×2andforbidssixobjectsonehorizontalrow. Severalnativecorrectionjobs usedhorizontalrowswhiletryingtoforceimage_gennativesmallsize; thiswasaprocessmistake,notanowner-approvedexception. Raw/promptsremainhonest; doNOTrename/recomposeasifgeneratedgrid. Noautomaticapprovalforaffectedassets; flagforClaudevisualreview. Futureprop sheetsmust2×3/3×2. Currentcactus/pillarrepairsnative-prop-clean-26are3×2.
+Farraw30globalpalettefinishingachieved41colorsseammax0, butactual3×repeatshowedverticalflatendzonebars=>SELFREJECT, recordedjobs/review-far-opaque-24/review-attempt.json. Nextfar27returnsLOWhorizonstripwith70%opaqueivoryskyandonlythinbase, no foregroundcliffsorwideflatbottomhalf. Do notclaimfarcomplete.
+
+### Latest checkpoint2026-10-21 — far candidate and remainingprops
+Far jobs/review-far-low-horizon-27 raw33:45colors, opaque, seamXmean/max0 withNOglobalaliasesneeded, lowhillbandandonlythinbase (~17%height). Actual3×repeat +detail4×dark/checker+all4full4×quarterpanels viewed; no verticalbufferbars. Candidate,approved=false. Supersedesfarraw29/30selfrejects.
+Newclean3×2props: jobs/native-stray-repairs-25 raw31 selectsbottomarchgate44colors andbottommiddle? dune44colors (readjobboxauthoritative), nostrays. jobs/native-prop-clean-26 raw32:middlecactustall39 andpillar37,nostrays. jobs/native-boulder-mound-28 raw34:middlelowmound33colors,nostrays; jobs/native-boulder-cactus-29 raw35:top-leftboulder44colors,nostrays. Mostrecent4propsstillneedactualfull4×checks before markinginspected. Nativecactus03 stilloldstray; native-cactus-clean-30 planned BEFOREdrawing320×512world2.5×4,6candidates3×2.
+Onlyfuturegenerationgrid2×3/3×2; previoushorizontalrowprocessdeviationsremainrecorded. Noapproval,noaudittoolsedited,nocommit/runtime. Needregeneratecontacts +gate afterlatestmetadata; finish sandstoneedge32colors, floorvisualrepeatquality, remainingmissingportal/marker/fx/directionaldecals/chasm/horizons/compositions.
+
+### Continuous checkpoint2026-10-21 — directional pieces, ravines, marker
+Latest official gate-checkpoint-20261021.log:173assets45errors0warnings acrossall3batch11 (positionalbatchargignored). Desertonlysandstoneedge seam16.8/7.9;44errorsoldwindrock. Desertsize_check actual`size OK`,size0. Gate pendingrerunafterlatestedgepalette/crops.
+ArchivedONLYthreeunrequestedextra02edgedraftfoldersunderjobs/edges-v2/rejected-exports; originalGemini85manifest andlayoutshavenoreferences; preservedallrawandfolders. Required01stripsredrawnusingjobs/edge-no-buffer-32raw05(exec-7dce32aa...), materialcontinuesatbothends, noflatsandbuffers. NaturalcolumnmatchingcropandglobalnearestsandtonealiasDDB776toD9B26Ballmatchingpixels; not spatialedgepainting. Actualmean/maxnonzero—donotclaimseam0; strictselfQAremainsflaggedevenifofficialgateaccepts.
+Sevenlatestnativeprops actualfull4xpanelreviewcompleted:archgate,dune,tallcactus,pillar,boulder03,mound,cactus03. Cleanconnectedcontours;weakmound33colors/broadsandplane, strongcactusribhighlights, noisystonegrain. Native1:1preserved.
+Newjobs/native-chasms-34 raw01(exec-840fa89c...):2independentnative768x384world6x3ravines47/40colors, noresampling. Final4x/strayQA stillpending. Newjobs/directional-decals-33raw01(exec-482e3799...):4caps44/43/44/48colors; decalsONLYusedstandarddensityfinishbecausegeneratedsourceignorednativeheight; no propresampling. Actual4xrevealedwestcropincludedsouthneighborfragments—adjustsourceboxes,rerunandinspectbeforepass. First2S-likecrackcandidatesrejected. Newjobs/cracks-seal-repair-36raw01(exec-2941f431...):2naturalbranchcrackpatches45/47colorsandfadedseal48colors(noletterlikeglyphs),actual4xdarkinspected. Oldfadedsealglyphversionrejected/preserved.
+Existing12grounddecalsactual4xdarkviewed;fadedsealreplaced, othersporouscontoursbutgrainbusy. Markerjobs/spawn-marker-35raw01(exec-5b1639f4...):4generatedframes192x128,47unioncolors; framefilesseparateaux +768x128horizontalpackedexport +frames.json +qa-loop.gif. Source2x2,cutsregisteredtranslationonlybybodybottomcenter; actualall4frames4xdarkinspected,temporalplaybackpending. Minorgrainshimmer.
+Ninefloortexturescrosscorrelationmax0.0187273(interior480squaregrayscale); no recolorclones. Latestfloorsfull4xleft/rightQAcreatedbutstillneedview, thinrimcorridorsrepeatweaknessunresolved. Batch10combined28-partcontactrefreshedandviewed. Desertcontactrefreshedandviewedbeforelatestmarker/cracks;regenaftermanifest.
+Currentweak3: sandstoneedge(repeatreview+gatepending), sandstone/brickfloors(thinrims),sandmound(broadquietplane). Outstandingportalactive,same-maskpair;horizons2;dustdevil/torch/magicrune/oasissparkle4FX;3QAcompositions;palmpartassembly;older6propsfull4x. Dustdeviljob37currentlygeneratingbuilt-in. No laterkitstart, no runtime/commit/audittoolchange.
