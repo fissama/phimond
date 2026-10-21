@@ -6,7 +6,7 @@ Names/descriptions are Vietnamese localization values; never use them as keys.
 | File | Purpose |
 |---|---|
 | `id_registry.json` | Frozen bijection from APK IDs to canonical species/item/recipe IDs |
-| `species.json` | 152 species identities, Race/Star/class, localized text and source asset links |
+| `species.json` | 152 frozen species identities, Race/Star/class, localized text and source asset links (the 160-species authoring roster is in the P11/P13 catalogs; 8 proposal IDs not registered here yet) |
 | `items.json` | 8 selected P10-related source item references; not the full APK item catalog |
 | `special_recipes.json` | 17 exact parent pairs using canonical foreign keys; disabled pending source rules |
 
@@ -71,3 +71,7 @@ Old/new readers must coexist or deploy behind a version gate; never silently
 accept unknown IDs. Rollback for this authoring-only stage is reverting
 `data/p10/` and its tooling/docs; no live save rewrite is involved. Once runtime
 migration occurs, rollback requires the later migration's backup/reverse plan.
+
+### Art acceptance —2026-10-21
+
+Redraw art160/160 is owner-approved and closed. Current path/hash/approval authority: `.ai/plan/phases/P10-pet-model/redraw-kit/owner-atlas-selection-160.json`. Historical152selection and eight-ID allocation snapshots remain reproducible. Allocation-time `art.approved:false` is not the live owner review ledger and does not activate runtime; consult the160manifest and its display/contact-origin profiles. No numeric/skill/recipe promotion follows from this art closure. Cached authored design records now include the stable_id field/P13 reference hash; baseline152source remains unchanged.
