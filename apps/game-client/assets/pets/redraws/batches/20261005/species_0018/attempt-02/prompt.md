@@ -1,0 +1,7 @@
+Edit target is image1, the new original-based Nữ Vương Bạch Cốt sheet. Images2/3 are original APK identity; images4/5 are ONLY approved pixel style anchors.
+Fix row2 walking and row4 casting. Keep ALL TWENTY characters facing LEFT; keep same original skull-mask, golden helmet, dark cape, purple robe and ONE silver axe.
+ROW2: make FOUR truly distinct walking leg articulations: front foot reachesLEFT; body passes over planted foot with rear knee bent; other foot reachesLEFT; other passing pose. Robe moves enough to reveal boots/knees. SAME left three-quarter camera throughout.
+ROW4: REMOVE ALL purple skulls, floating flames, auras and projectiles entirely. Casting through body poses ONLY: focus crouch; raise empty hand LEFT while other hand keeps AXE VISIBLE; thrust empty hand LEFT while axe remains in same other hand; lower arm and relax. NO magical FX. Axe clearly visible in every cell, same hand.
+ROW3: REMOVE huge crescent entirely; real physical axe swing only. Anticipate, overhead windup, impactLEFT with axe extended LEFT, recover. No impact slash FX.
+ROW1: preserve four breathing body states; ROW5 preserve stagger/weaken/collapse/fully prone facingLEFT, equipment retained.
+Make ALL20 figures smaller within their cells so each complete pose has at least30px CLEAR transparent space around it; no touching/crossing cell edges. No external particles whatsoever. Genuine alpha PNG4columns5rows1124x1405. Crisp chunky pixel shading exactly like approved anchors, no blur or extra ornamentation. Return full repaired20-frame sheet.

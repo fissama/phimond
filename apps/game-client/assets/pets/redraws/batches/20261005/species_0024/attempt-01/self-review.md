@@ -1,0 +1,1 @@
+Green pitcherplant broadcap/orangemouth/purplerearflower originalidentity. All20 leftprofile. R1rest/lift/settle/return;R2shuffle4bodycompressionphases;R3retract/rear/openmouthleft/recover;R4focus/bodyraise/mouthrelease/relax;R5flinch/sag/collapse/flattened. NoFX,goodclusters. MechanicalPASS;contactsheetgood;animationunverified;humanfalse.

@@ -1,0 +1,48 @@
+{
+  "mode": "builtin imagegen only",
+  "transparent_background": true,
+  "prompt_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0008/attempt-03/prompt-recovered.txt",
+  "prompt": "Create20pose sheet of ORIGINAL blue grinning flameghost in references1and2, pixelstyle refs3and4. Preserve its blueflame body, whiteeyes/teeth grin and originalsmall flame lobes. CAMERA absoluteLEFTSIDE PROFILE, mouth opens toSCREENLEFT, ONEnear eye dominant, far eyehiddenbehindflameedge. ALL20 faceLEFT. NOT symmetricfrontface. 4columns5rows; miniature sprites eachwholehead/body only120px wide/high with HUGE transparent spacing. Idle4different flame/bodycompressions;move4hover stretch/squash;attackcrouch/rear/openjawleft/recover;castgatherflame/upwardbody/leftbodyextension/settle;hurtflinch/sag/collapse/finalflattenedheadleft. No separateFXorparticles. Coarsepixelclusters2-4tones,darkoutline,NO smoothgradients. Genuinealphabackground.",
+  "referenced_image_paths": [
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/apk84/LuaYeu/portrait.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/apk84/LuaYeu/sprites.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+  ],
+  "inputs": [
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/apk84/LuaYeu/portrait.png",
+      "role": "original APK identity portrait",
+      "sha256": "01a9deb1c05a3ad925fbe3fbf066ea3b820043123b89812999878d8812e1a76c"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/apk84/LuaYeu/sprites.png",
+      "role": "original APK anatomy/equipment atlas",
+      "sha256": "3479c3f27d2c95dc87313f3787ee7973518a7b73a2ea889282a75d4345ec3ced"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "role": "approved DocDangNu style only",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "role": "approved DaoThienDuong style only",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "raw_sha256": "9674e2dec5bc857558c1d8706c75465cef3c8363b61f04f32c20f946709ec656",
+  "generated_source_path": "/Users/phileanh/.codex/generated_images/01a109eb-e660-7333-8bac-1eaab09607c9/exec-5d1b8900-1462-49db-8045-3c571c617912.png",
+  "recovery": {
+    "source_session": "/Users/phileanh/.codex/sessions/2026/10/05/rollout-2026-10-05T09-36-57-01a109eb-e660-7333-8bac-1eaab09607c9.jsonl",
+    "reference_args_line": 337,
+    "tool_call_line": 358,
+    "tool_call_id": "call_vLtPqBH959oGLj8dgoRaVscQ",
+    "generation_line": 360,
+    "generation_id": "exec-5d1b8900-1462-49db-8045-3c571c617912",
+    "generation_raw_bytes_sha256_matches_selected_raw": true,
+    "recorded_tool_call_source": "// @exec: {\"yield_time_ms\": 120000, \"max_output_tokens\": 1000}\nconst q=load(\"job\");const r=await tools.image_gen__imagegen({prompt:\"Create20pose sheet of ORIGINAL blue grinning flameghost in references1and2, pixelstyle refs3and4. Preserve its blueflame body, whiteeyes/teeth grin and originalsmall flame lobes. CAMERA absoluteLEFTSIDE PROFILE, mouth opens toSCREENLEFT, ONEnear eye dominant, far eyehiddenbehindflameedge. ALL20 faceLEFT. NOT symmetricfrontface. 4columns5rows; miniature sprites eachwholehead/body only120px wide/high with HUGE transparent spacing. Idle4different flame/bodycompressions;move4hover stretch/squash;attackcrouch/rear/openjawleft/recover;castgatherflame/upwardbody/leftbodyextension/settle;hurtflinch/sag/collapse/finalflattenedheadleft. No separateFXorparticles. Coarsepixelclusters2-4tones,darkoutline,NO smoothgradients. Genuinealphabackground.\",referenced_image_paths:q.refs,transparent_background:true});generatedImage(r);\n",
+    "prompt_source": "exact literal toolcall or exact recorded queue prompt/store mutations reconstructed; matches revisedPrompt",
+    "exact_request_prompt_reconstructed_and_matches_recorded_generation": true
+  }
+}

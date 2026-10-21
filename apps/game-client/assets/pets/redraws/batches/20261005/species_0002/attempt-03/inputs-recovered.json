@@ -1,0 +1,54 @@
+{
+  "mode": "builtin imagegen only",
+  "transparent_background": true,
+  "prompt_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0002/attempt-03/prompt-recovered.txt",
+  "prompt": "Edit first image only: change ROW4 COLUMN3 ONLY to skeleton facing LEFT with face fully visible, hold axe forward-left with both hands at chest height as release gesture. Never show back view. Keep other19 poses and body identity/palette/geometry/pixel style unchanged. Transparent background,4x5 grid. No FX. First image edit target, next2 original identity last2 style.",
+  "referenced_image_paths": [
+    "/Users/phileanh/.codex/generated_images/01a109eb-e660-7333-8bac-1eaab09607c9/exec-c3425eec-2654-4604-bb55-74d76bd3d5e8.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/apk84/ChienSiDauLau/portrait.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/apk84/ChienSiDauLau/sprites.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+  ],
+  "inputs": [
+    {
+      "path": "/Users/phileanh/.codex/generated_images/01a109eb-e660-7333-8bac-1eaab09607c9/exec-c3425eec-2654-4604-bb55-74d76bd3d5e8.png",
+      "role": "own generated edit target",
+      "sha256": "dc498ed83ad26e65d1fc30e6c8fa2c1c0c16e5fe9ca05f38ad1afc234c7e20ed"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/apk84/ChienSiDauLau/portrait.png",
+      "role": "original APK identity portrait",
+      "sha256": "5f086585825769c94ab536b4b7fce0ce439f9998c9161aaf69feb7640c8f4672"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/apk84/ChienSiDauLau/sprites.png",
+      "role": "original APK anatomy/equipment atlas",
+      "sha256": "650b4b7551f745490b749384c544869dae9ee0ebfabe35090c17821e41fee745"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "role": "approved DocDangNu style only",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "role": "approved DaoThienDuong style only",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "raw_sha256": "8b41c42c155d4ab58270ebff39592545c854a9f29dcc6286f604f51ce4db04ce",
+  "generated_source_path": "/Users/phileanh/.codex/generated_images/01a109eb-e660-7333-8bac-1eaab09607c9/exec-378e2837-041d-41bf-ac76-9a126fd8352d.png",
+  "recovery": {
+    "source_session": "/Users/phileanh/.codex/sessions/2026/10/05/rollout-2026-10-05T09-36-57-01a109eb-e660-7333-8bac-1eaab09607c9.jsonl",
+    "reference_args_line": 109,
+    "tool_call_line": 153,
+    "tool_call_id": "call_Xe4wgJKKhWCdv5kXEBdm3Nni",
+    "generation_line": 155,
+    "generation_id": "exec-378e2837-041d-41bf-ac76-9a126fd8352d",
+    "generation_raw_bytes_sha256_matches_selected_raw": true,
+    "recorded_tool_call_source": "// @exec: {\"yield_time_ms\": 120000, \"max_output_tokens\": 1000}\nconst q=load(\"job\"); const r=await tools.image_gen__imagegen({prompt:\"Edit first image only: change ROW4 COLUMN3 ONLY to skeleton facing LEFT with face fully visible, hold axe forward-left with both hands at chest height as release gesture. Never show back view. Keep other19 poses and body identity/palette/geometry/pixel style unchanged. Transparent background,4x5 grid. No FX. First image edit target, next2 original identity last2 style.\",referenced_image_paths:[\"/Users/phileanh/.codex/generated_images/01a109eb-e660-7333-8bac-1eaab09607c9/exec-c3425eec-2654-4604-bb55-74d76bd3d5e8.png\",...q.refs],transparent_background:true});generatedImage(r);\n",
+    "prompt_source": "exact literal toolcall or exact recorded queue prompt/store mutations reconstructed; matches revisedPrompt",
+    "exact_request_prompt_reconstructed_and_matches_recorded_generation": true
+  }
+}

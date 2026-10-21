@@ -1,0 +1,1 @@
+Green round cactus pinkcap/redbuds/leafarms originalidentity. All20 leftthreequarter; R1rest/lift/settle/return;R2contact/passing/opposite/passing;R3crouch/windup/leftarmstrike/recover;R4gather/raise/openarms/relax;R5flinch/sag/collapse/prone. NoFX,goodpixelclusters. MechanicalPASS;contactsheetgood;animationunverified;humanfalse.
