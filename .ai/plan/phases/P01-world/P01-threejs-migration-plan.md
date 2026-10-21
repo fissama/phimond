@@ -1,5 +1,6 @@
 # Kế hoạch triển khai: chuyển client game sang Three.js (v1.0, M0 được mở)
 
+- **Cập nhật 2026-10-21:** lộ trình M0–M8 dưới đây đã được thay bằng [`P01-scope.md`](P01-scope.md); `apps/game-web` chỉ là bản thử, client viết lại từ đầu. Giữ file này làm lịch sử quyết định và bảng parity hành vi.
 - **Ngày:** 2026-10-14. **Trạng thái:** DRAFT, đang debate với chủ dự án. Chưa được duyệt để viết code.
 - **ADR liên quan:** [ADR-0001](../../../decisions/ADR-0001-threejs-web-client.md) (Proposed).
 - **Mục tiêu:** port toàn bộ chức năng client Godot hiện tại sang Three.js (parity), rồi nhận P01 (world HD-2D, traversal, HUD/menu, cấu hình web) trên nền mới.
