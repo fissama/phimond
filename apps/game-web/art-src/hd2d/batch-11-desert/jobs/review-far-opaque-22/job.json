@@ -1,0 +1,50 @@
+{
+  "id": "review-far-opaque-22",
+  "state": "exported_pending_visual_review",
+  "route": "built-in image_gen",
+  "raw": "raw-29.png",
+  "palette_source": "palette.json",
+  "prompt": "ONE OPAQUE distantdesert panorama forPhimond,1536x512 horizontal repeat. NO TRANSPARENCY,NO MAGENTA. Ref1originaldesertcontent, approvedforestwallfar2+batch01contact3pixelartistDNA, petanchors4/5valueonly,no pets. OctopathHD2Drestrainedhandplacedpixelclusters, flatsteppedcolorsnotpainting/gradients/dither/fog/bloom.\nClear CONTINUOUS HORIZON. Upper40percentispaleivory warm-gray SKY #EEDCBE witha fewveryquietlongbrokenflatcloudclusters; opaque skynotemptycutout. Lower60percent is distant layered low dunes and windingerodedstone mesas: mutedochre sand warmupperleftfacesrust/graymauveseams ivorythinmineralcap. Small distantcollapseddesertdome offsetleftofcenter, one lowspiralwindwornspirefartheright. FARscale quietdetail, no bigforegroundrocks.\nImportantremoveoldfailure: NO broademptyflat sandblock occupyingbottomhalf. Groundarea contains overlappinglonglowduneridgeswithclearfacetedvalleysand3distinctdepthbands, silhouettehorizonreadableagainstsky. Small shapes in distance only. Loweredgecontinueslowduneplanesrighttobottom. Uniformpixelstylewith33–48earthypalettecolors. Pixelhardsurfaces,no atmosphericblur,noalphanoise.\nRepeat engineering: leftmost32pixels andrightmost32pixels must be EXACTsameflatrowprofile: #EEDCBE sky fromy0throughy223, #D9B26B fromy224throughy319, #B88A44 fromy320throughy511. No objects,clouds,gradient,highlights or speckles in thoseendzones. Allcentraldetailconnectsmoothlyintotheselevelprofilesbutallshapesrenderpixelhard. Leftandrightfileedgesmustidenticalperrow. No frame,nopresentationmargin,nosidefade,no lettering. Entireimagefullyopaque, skyalwaysfilled. Final1280x384 far density64px/world.",
+  "refs": [
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+      "sha256": "30a678461a1a1f13aafa1a925382223dda2abcba586bb3b343e87a683a6c04ea"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/forest-wall-far/final.png",
+      "sha256": "745ebb244eb1f19c5398ac02b90a958e76ad0b719a5218d736206c2cce7bcbb2"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/contact-sheet.png",
+      "sha256": "4347e8dafc3491cb1516c88379effbf92c32b2ac1b17a0776469eedb7fa94a05"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "assets": [
+    {
+      "id": "desert-dunes-wall-far",
+      "size": [
+        1280,
+        384
+      ],
+      "category": "backdrop_far",
+      "tileable": "x",
+      "opaque": true,
+      "stretch": true,
+      "colors": 48,
+      "box": [
+        0,
+        0,
+        2172,
+        724
+      ]
+    }
+  ]
+}

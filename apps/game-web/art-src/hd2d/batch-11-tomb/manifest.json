@@ -1,0 +1,265 @@
+{
+  "batch": "batch-11-tomb",
+  "kit": "tomb",
+  "name_vi": "Lăng Mộ",
+  "revision": 3,
+  "pilot_run": true,
+  "total_assets": 11,
+  "mechanical_pass": 11,
+  "approved": false,
+  "assets": [
+    {
+      "id": "tomb-brick-floor",
+      "category": "tile",
+      "kit": "tomb",
+      "file": "tomb-brick-floor/final.png",
+      "px": [
+        512,
+        512
+      ],
+      "world": [
+        4.0,
+        4.0
+      ],
+      "pivot": "center",
+      "tileable": "xy",
+      "frames": 1,
+      "fps": null,
+      "sha256": "86c48a35f86bd537b24554b2574023d57c27ca954f00ee6ccd8c3adc43ed27fc",
+      "mechanical_status": "pass",
+      "failures": [],
+      "colors": 34,
+      "edge_to_center_luma_diff": 0.74
+    },
+    {
+      "id": "tomb-graveyard-dirt",
+      "category": "tile",
+      "kit": "tomb",
+      "file": "tomb-graveyard-dirt/final.png",
+      "px": [
+        512,
+        512
+      ],
+      "world": [
+        4.0,
+        4.0
+      ],
+      "pivot": "center",
+      "tileable": "xy",
+      "frames": 1,
+      "fps": null,
+      "sha256": "cb79087c0b825abfb077430fe0f716a5d55bdf026e6a468b82209a917e86f339",
+      "mechanical_status": "pass",
+      "failures": [],
+      "colors": 32,
+      "edge_to_center_luma_diff": 0.41
+    },
+    {
+      "id": "tomb-tile-edge-decal",
+      "category": "tile",
+      "kit": "tomb",
+      "file": "tomb-tile-edge-decal/final.png",
+      "px": [
+        512,
+        512
+      ],
+      "world": [
+        4.0,
+        4.0
+      ],
+      "pivot": "center",
+      "tileable": "x",
+      "frames": 1,
+      "fps": null,
+      "sha256": "01f82b52869e1903f09dbf0769c8c0f2e023498b3440ba43293eb339075cb63f",
+      "mechanical_status": "pass",
+      "failures": [],
+      "colors": 36,
+      "edge_to_center_luma_diff": 1.59
+    },
+    {
+      "id": "tomb-gravestone-01",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-gravestone-01/final.png",
+      "px": [
+        161,
+        224
+      ],
+      "world": [
+        1.2578,
+        1.75
+      ],
+      "pivot": "bottom_center",
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "d932033c56e580e507cd1f90285f5e93fa510446f05675a04a55f8532b8f407f",
+      "mechanical_status": "pass",
+      "failures": [],
+      "colors": 34,
+      "edge_to_center_luma_diff": null
+    },
+    {
+      "id": "tomb-gravestone-02",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-gravestone-02/final.png",
+      "px": [
+        132,
+        224
+      ],
+      "world": [
+        1.0312,
+        1.75
+      ],
+      "pivot": "bottom_center",
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "db99a83ad736ec1a1d415f8a726727c392ed2ba35d701b5c58748f8da546b50d",
+      "mechanical_status": "pass",
+      "failures": [],
+      "colors": 34,
+      "edge_to_center_luma_diff": null
+    },
+    {
+      "id": "tomb-sarcophagus-01",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-sarcophagus-01/final.png",
+      "px": [
+        135,
+        238
+      ],
+      "world": [
+        1.0547,
+        1.8594
+      ],
+      "pivot": "bottom_center",
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "8a90fb0b8e9bb8d4748976442c0550fa3bab69c9d04d1f740c7dc561c7524ea6",
+      "mechanical_status": "pass",
+      "failures": [],
+      "colors": 36,
+      "edge_to_center_luma_diff": null
+    },
+    {
+      "id": "tomb-arch-gate",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-arch-gate/final.png",
+      "px": [
+        280,
+        260
+      ],
+      "world": [
+        2.1875,
+        2.0312
+      ],
+      "pivot": "bottom_center",
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "dca23b84101ff8f313882946b4db4f21d0ed8fcbbcb103af1c0de73f0afff47f",
+      "mechanical_status": "pass",
+      "failures": [],
+      "colors": 36,
+      "edge_to_center_luma_diff": null
+    },
+    {
+      "id": "tomb-portal-dormant",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-portal-dormant/final.png",
+      "px": [
+        216,
+        276
+      ],
+      "world": [
+        1.6875,
+        2.1562
+      ],
+      "pivot": "bottom_center",
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "c81d7d279363da53f57111c788683ecc4de5043f9ed21ba6cdf9683d40b09bf8",
+      "mechanical_status": "pass",
+      "failures": [],
+      "colors": 34,
+      "edge_to_center_luma_diff": null
+    },
+    {
+      "id": "tomb-portal-active",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-portal-active/final.png",
+      "px": [
+        216,
+        276
+      ],
+      "world": [
+        1.6875,
+        2.1562
+      ],
+      "pivot": "bottom_center",
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "f74dac359ca847fd10a0c2b92a337e61a683babd6cc8443ea2de4866e32f6412",
+      "mechanical_status": "pass",
+      "failures": [],
+      "colors": 38,
+      "edge_to_center_luma_diff": null
+    },
+    {
+      "id": "tomb-lantern-spirit",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-lantern-spirit/final.png",
+      "px": [
+        340,
+        144
+      ],
+      "world": [
+        2.6562,
+        1.125
+      ],
+      "pivot": "center",
+      "tileable": "none",
+      "frames": 4,
+      "fps": 5,
+      "sha256": "617a94d2aea327cbb2a7bfc00bd4e9c0db0abd4bda1d045367dd80c2123d706b",
+      "mechanical_status": "pass",
+      "failures": [],
+      "colors": 35,
+      "edge_to_center_luma_diff": null
+    },
+    {
+      "id": "tomb-necropolis-wall-far",
+      "category": "backdrop",
+      "kit": "tomb",
+      "file": "tomb-necropolis-wall-far/final.png",
+      "px": [
+        1024,
+        384
+      ],
+      "world": [
+        16.0,
+        6.0
+      ],
+      "pivot": "center",
+      "tileable": "x",
+      "frames": 1,
+      "fps": null,
+      "sha256": "e5bd892fd8a1812f57c199245fe6eead51f36d1f21497bfb9f7894c1bd817c2b",
+      "mechanical_status": "pass",
+      "failures": [],
+      "colors": 38,
+      "edge_to_center_luma_diff": null
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "id": "native-palm-parts-20",
+  "state": "exported_pending_visual_review",
+  "route": "built-in image_gen",
+  "raw": "raw-27.png",
+  "palette_source": "palette.json",
+  "prompt": "Phimond desert PALM PARTS, six isolated assembly sprites on flat#FF00FF magenta1536x1024 sheet.3columns2rows withclear64pxgaps, no labels/nogrid/noscenery/noshadows. ToprowTHREEdifferent barepalmTRUNKS, bottomrow correspondingTHREEseparateCANOPIES. Actualapprovedpalmtrunk2andcanopy3 specify pixelartistDNA; originaldesert1content/palette;petanchors4/5valueandoutlineonly. Earthyolive,ochre,rust,ivory,umber,mauve,33–48colorsperpart, warmupperleftlightbrownmaterialoutlinecoolshadows. Crispdeliberatepixelclusters,nogradient/dither/blur/painterliness.\nTopLEFTtrunk: weathereddatespalmslenderbentsegmentedumberbarkochreboneridgerings,sparseattachedrootbase andshortsmallolivebud atTOPONLY. TopCENTERtrunk: straightertrunkwithslightkinkleftanddeepermissingbarknotch, connectedrootbase, fewshorttopbuds. TopRIGHTtrunk: leaningrightwithbroaderrootflare andnaturaldiagonalbarkscars, smalltopbud. Eachtrunkabout100pixelswide400high atnativeworkingresolution. NO LARGEFRONDS orcoconutsontoprow.\nBottomLEFTcanopy: broadmutedolivefrondcrownwithleftwideloosearchingfronds andnarrowerrightfronds, tipsdryochreivory,2attachedochrecoconutsandshortcentralumberstemstub. BottomCENTERcanopy: uprightmorecompactcrownwith3highpointinginnerfrondsand2lowdrapedsidefronds,oneattachedsmallcoconutcluster,shortstem. BottomRIGHTcanopy: windsweptasymmetricalcrownwith2longrightleaningfrondsandbrokenshortleftfronds,3attachedcoconutsandshortstub. All6differentdrawing,notrecoloredclones. Canopiesabout420pixelswide240high. No fulltrunkinsidecrown.\nEntireorganic silhouettescomplete withampleblankspace, connectedfrondleafletstostems, no looseleafpixels/spineparticles/groundbase. Topandbottompartsseparated notwholepalmtrees. Nativegameart for128px/worldplayer168high; noresampledmasterlater. Keepnativeartcomfortablyunderplannedexportbounds, enough8pxpadding.",
+  "candidate_layout": "3trunkand3canopyvariants; selectonepairedassembly; unusedvariants remainrawonly",
+  "assets": [
+    {
+      "id": "desert-palm-trunk",
+      "size": [
+        256,
+        704
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        2,
+        5.5
+      ],
+      "height_relative_to_player": 4.198473282442748,
+      "content_provenance": "Owner-authorized regional interpretation, from original desert palette and approved batch03 palm material style.",
+      "box": [
+        620,
+        20,
+        910,
+        570
+      ]
+    },
+    {
+      "id": "desert-palm-canopy",
+      "size": [
+        768,
+        448
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        6,
+        3.5
+      ],
+      "height_relative_to_player": 2.6717557251908395,
+      "content_provenance": "Owner-authorized regional interpretation, from original desert palette and approved batch03 palm material style.",
+      "box": [
+        545,
+        570,
+        985,
+        975
+      ]
+    }
+  ],
+  "refs": [
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+      "sha256": "30a678461a1a1f13aafa1a925382223dda2abcba586bb3b343e87a683a6c04ea"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-03-octopath/palm-01-trunk/final.png",
+      "sha256": "63a353cf29cc27df05cf6afbdd9f8c390a961290dda23c2d26b4e7e4b4827111"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-03-octopath/palm-01-canopy/final.png",
+      "sha256": "98c36238d1a2065af819b57208fb32628df4f5de67424ce78cc130c1d87238df"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "selected_candidates": "middle trunk and middle canopy; other4 candidateparts retainedrawonly"
+}

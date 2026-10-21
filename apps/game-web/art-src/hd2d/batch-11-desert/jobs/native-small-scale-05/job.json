@@ -1,0 +1,97 @@
+{
+  "id": "native-small-scale-05",
+  "state": "exported_pending_visual_review",
+  "route": "built-in image_gen",
+  "raw": "raw-12.png",
+  "palette_source": "palette.json",
+  "prompt": "A1254x1254 flat #FF00FF canvas with SIX EXTREMELY MINUSCULE pixel game props. Each object only16pixels wide at actual canvas resolution, roughly1%ofcanvaswidth. NOT zoomed. Enormous empty space. Six tiny distant dots of artwork. Contents: ochre tied sack, cold metal charcoal stove, broken ochre urn(NO separate shards), flat desert rock, short pricklypear cactus, open twisted tumbleweed. Two columns three rows with centers(350,310),(900,310),(350,650),(900,650),(350,980),(900,980). Crisp tiny pixel art; no gradients/no dither/no labels/no shadow/no scattered debris. Native16x20 pixel objects; no enlargement whatsoever. Draw very simply, only2folds on sack, onecrack on pot,3broadrockfaces,2cactuspaddles,6thicktumbleweedbranches. Earthtone darkbrown outlines warm light coolshade. Match actual style and broad material pixelclusters of attached approvedcrate andsmallrock(ref2/3), originaldesertcontentref1, petanchorsref4/5valueonly. Six miniature nativepixel props on a vast empty magenta field, mostmagenta empty. Each artifact is much smaller than a128px object. No enlarged presentation, no inset. The six objects combined contain less than2000 nonmagenta pixels total.\n",
+  "refs": [
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+      "sha256": "30a678461a1a1f13aafa1a925382223dda2abcba586bb3b343e87a683a6c04ea"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/wooden-crate/final.png",
+      "sha256": "41eb988f9dcfeb2a6a00443fe2fd8fc804f21684302022e7fed8cc106577a83c"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-small/final.png",
+      "sha256": "880eddcf56b10952735033d68d3f8b97c4e8412933a383fa08317ca2fca1445f"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "assets": [
+    {
+      "id": "desert-camp-charcoal-stove",
+      "size": [
+        96,
+        96
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        0.75,
+        0.75
+      ],
+      "height_relative_to_player": 0.5725190839694656,
+      "box": [
+        750,
+        250,
+        970,
+        460
+      ]
+    },
+    {
+      "id": "desert-pottery-urn-broken",
+      "size": [
+        112,
+        128
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        0.875,
+        1
+      ],
+      "height_relative_to_player": 0.7633587786259541,
+      "box": [
+        300,
+        600,
+        520,
+        820
+      ]
+    },
+    {
+      "id": "desert-tumbleweed-02",
+      "size": [
+        112,
+        112
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        0.875,
+        0.875
+      ],
+      "height_relative_to_player": 0.6679389312977099,
+      "box": [
+        750,
+        930,
+        970,
+        1130
+      ]
+    }
+  ],
+  "not_selected": {
+    "sack": "Oversize; no export",
+    "small-rock-01": "Oversize; no export",
+    "small-cactus-01": "Oversize; no export"
+  }
+}

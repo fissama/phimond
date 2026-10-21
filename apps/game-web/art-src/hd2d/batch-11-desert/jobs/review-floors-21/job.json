@@ -1,0 +1,121 @@
+{
+  "id": "review-floors-21",
+  "state": "exported_pending_visual_review",
+  "route": "built-in image_gen",
+  "raw": "raw-28.png",
+  "palette_source": "palette.json",
+  "prompt": "Phimond terrain FOUR square seamlessfloor tiles in2x2 atlas1536square,4pixelmagenta gutters. Flat overhead gameplayground, pixelartist EXACTasapprovedgrassfloor2+dirtfloor3, originaldesert1palette/content,petanchors4/5valueanchorsonly.33–48colorsineachactualtile. No props,text,shadow,bloom,3D,painting,noise/dither.\nAllfour: backgroundgroundoneEXACTFLATbasecolorthroughoutgaps, no gradient/globalshading. Outer8pixels EVERYside/corner exactsamebasecolor, but NOwideemptyborder; motifdensity continuesrightup tothisthin8pxrim evenlyallover. No centerisland,noframe/bevel. Crispbrokenmaterialclusters2–4tones perfeature, quietfinegrainbutnotstippling. Featuresdistributedirregularly overwholefieldwithvariedangles andsizes, no rowsorlettershapes.\nTOPLEFTSAND01base#D9B26B: many SMALL broken straightwind-scratchstrokes4–14pixelslong, some intersectingatshallowangles. About60tinyfragmentgroups, subtledarkerochrelips andivory/rust/mauve/sagemineralflakeaccents. NO Scurves, hooks, crescents, longduneridges, swooshesorbigrepeatingripples. Barebasegapsbetweenfeatures.\nTOPRIGHTSAND02base#B88A44: verydifferenttexture ofshortCHOPPYdiagonalcrosswindnotches,smallirregularlowflatsandcrust patches withpaleedgeandtinybonegray/sage/rustchips. About55groups; no sand01strokeclusters reused, no arcs/S. Groundgapsuniformbase.\nBOTTOMLEFTSANDSTONEbase#A5522B: READABLEMOREDETAILED redstone surface, about55thinflatbrokenivory/graymineralveinsegments andunevenochre/ruststoneflakefacets embeddedflush. 35–45percentcoverage, notjustfewspots. Varylength6–30pixels, includeintersectingbranchfracturesandtinyolivelichenmarks, undercutcoolmauvelips, no raisedboulders/pavement/slabs. Flatredbasegaps, no broadislands.\nBOTTOMRIGHTSUNKENBRICKbase#D9B26B: MOREVISIBLE scattered buriedadobebrickpatches withbrokenbrickpieces about12–25pixelswide,35–45percentcoverage. Roughly40unevengroups of2–5shortbrickfragments withrustfacesochrebonewornedges coolmauvefissures occasionaloliveinlay. Disorderedangles andbrokenlengths, NOTgrid/regularpavingrows. Thinflushsurfacenot3Dprop, backgroundgapsflatbase.\nEach8pxflatouterrim blends intointeriorbackground, no broadblankcorridorwhen3x3repeated. Equalmotifdensitynearallfourrimsandcenter. Warmmaterialfacetsonly,no globaldirectionallight. Fullsquarecorners no rounding; distinctflatgroundtextures, NO proceduralrepeatSsymbols.",
+  "refs": [
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+      "sha256": "30a678461a1a1f13aafa1a925382223dda2abcba586bb3b343e87a683a6c04ea"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/grass-floor-01/final.png",
+      "sha256": "792b3a1c25fb3be8671af1a4e119ef7af3bbd5a89dd22e42e14206317697524c"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+      "sha256": "bd4ba8187917b9023a9f9c9bd7ddc8ad43cb269724cbe02c1137f299ea03dff3"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "assets": [
+    {
+      "id": "desert-sand-floor-01",
+      "size": [
+        512,
+        512
+      ],
+      "category": "floor",
+      "opaque": true,
+      "tileable": "xy",
+      "colors": 48,
+      "box": [
+        0,
+        0,
+        624,
+        624
+      ],
+      "palette_remap": {
+        "#D99E71": "#D9B26B",
+        "#C59553": "#D9B26B",
+        "#CE8959": "#D9B26B",
+        "#D2B794": "#D9B26B"
+      }
+    },
+    {
+      "id": "desert-sand-floor-02",
+      "size": [
+        512,
+        512
+      ],
+      "category": "floor",
+      "opaque": true,
+      "tileable": "xy",
+      "colors": 48,
+      "box": [
+        629,
+        0,
+        1254,
+        624
+      ],
+      "palette_remap": {
+        "#C2784C": "#B88A44",
+        "#CE8959": "#B88A44"
+      }
+    },
+    {
+      "id": "desert-sandstone-floor",
+      "size": [
+        512,
+        512
+      ],
+      "category": "floor",
+      "opaque": true,
+      "tileable": "xy",
+      "colors": 48,
+      "box": [
+        0,
+        629,
+        624,
+        1254
+      ],
+      "palette_remap": {
+        "#C2784C": "#A5522B",
+        "#A1502C": "#A5522B",
+        "#948A99": "#A5522B"
+      }
+    },
+    {
+      "id": "desert-sunken-brick-floor",
+      "size": [
+        512,
+        512
+      ],
+      "category": "floor",
+      "opaque": true,
+      "tileable": "xy",
+      "colors": 48,
+      "box": [
+        629,
+        629,
+        1254,
+        1254
+      ],
+      "palette_remap": {
+        "#D99E71": "#D9B26B",
+        "#C59553": "#D9B26B",
+        "#CE8959": "#D9B26B"
+      }
+    }
+  ],
+  "palette_finish_note": "Global palette-index consolidation on ALL matching pixels to each ground base: aliases recorded perasset. No spatialedgepainting/copying, no texture synthesis; foregroundmaterialramps also affected globally."
+}

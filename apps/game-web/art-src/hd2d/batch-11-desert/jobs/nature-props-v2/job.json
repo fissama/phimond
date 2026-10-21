@@ -1,0 +1,128 @@
+{
+  "id": "nature-props-v2",
+  "prompt": "Phimond desert environment sprite sheet SIX DIFFERENT isolated props,2columns x3rows,1536square, exact flat#FF00FF. Original desert reference1 CONTENT: dry spiral rock, cactus, bone and ruined ivory stone. Approved bush2 and facade3 STYLE only, deliberate pixel clusters and rich material values; no town roofs or grasslands. Pets4–5 outline/volume anchors only. Same painter as batch00–09 / Octopath inspired HD2D.\nEach prop fully visible with48pxclearance and64pxgap, no labels/grid/ground-plane/cast shadows. Frontal billboard24degrees above, visible top/front. Distinct silhouettes, not rotations/recolors. Warm upper-left/front, cool muted shadows, brown/olive outlines no black. 33–48colors of actual material detail per sprite; stone cream/gray/rust/ochre must remain distinct.\nTOP LEFT REPLACEMENT desert-boulder-02: asymmetrical wide three-mass RED SANDSTONE boulder cluster with irregular pale limestone veins, mauve/gray fractured mineral core exposed at left, small connected olive lichen crust, tiny attached woody dry root in right crevice. Rich stone layers but no repeated alternating stripes or sand pedestal. About500x260.\nTOP RIGHT desert-boulder-03: tall squat pale LIMESTONE outcrop, one huge broken sloping slab above two angular bases, rusty mineral inclusion on right, cool gray-violet crack faces, ochre weathering with sparse attached olive lichen. Different silhouette and geology than redboulder or spiralspire. About340x350.\nMIDDLE LEFT desert-sand-mound: compact asymmetrical modeled sand dune with a sharp curved crest bending left, two smaller attached wind-fold ridges at foot, gritty ochre/rust local surfaces and pale mineral flecks, small half-buried gray rock embedded atside. CLEAR raised volume, not oval/ellipse patch or flat ground decal. No drop shadow.\nMIDDLE RIGHT desert-cactus-03: three connected prickly-pear pads growing out of a short woody stump gripping a small attached mineral base. Sage/olive fleshy pads, pale spine dots wholly INSIDE silhouette, rust-dried old pad at foot, cream limestone/gray stones atbase. NO exterior needles or floating dots; not saguaro/barrel shape.\nBOTTOM LEFT desert-tumbleweed-01: compact irregular dry rolling thornbush, thick intertwined ochre/umber woody strands connected to dense central knot; multiple pale dead leaves and muted rust seedpods attached; twigs thicker than4rawpixels, continuous fullsilhouette no detachedbits, no wispy hairlines. Open holes magenta. About320x280.\nBOTTOM RIGHT desert-sphinx-ruin: large broken ancient desert guardian monument, broad worn feline-like stone head with simplified ears above partial forepaws and cracked low pedestal, ivory limestone/plaster peeled to rust sandstone core, recessed geometric sun disk on chest NO writing. One corner missing, distinctive calm eroded face, no gold shine or living animal. About500x360. Owner-authorized interpretation of desert ruin motif.\nNo painterly smooth gradients, 3D rendering, dither/noise, bloom, light rays, fog, translucency, pureblack or magenta fringe. Visible crisp squared pixel clusters2–4tones per material; whole objects game-ready for separate cutouts.",
+  "refs": [
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+      "sha256": "30a678461a1a1f13aafa1a925382223dda2abcba586bb3b343e87a683a6c04ea"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/bush-01/final.png",
+      "sha256": "15573d1325946dd41c0faa0ef7ea8bc4c7f7a7910ea85a93de16766a4f4f1830"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/city-facade-townhouse/final.png",
+      "sha256": "57c926e3ba82ed8af80f01f1234c27156002491ca5267881e7ba40bdd2efe060"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "state": "exported_pending_visual_review",
+  "route": "built-in image_gen",
+  "raw": "raw-04.png",
+  "palette_source": "palette.json",
+  "assets": [
+    {
+      "id": "desert-boulder-02",
+      "box": [
+        0,
+        20,
+        740,
+        435
+      ],
+      "size": [
+        576,
+        320
+      ],
+      "category": "prop",
+      "colors": 48,
+      "margin": 16
+    },
+    {
+      "id": "desert-boulder-03",
+      "box": [
+        760,
+        0,
+        1254,
+        440
+      ],
+      "size": [
+        384,
+        416
+      ],
+      "category": "prop",
+      "colors": 48,
+      "margin": 16
+    },
+    {
+      "id": "desert-sand-mound",
+      "box": [
+        0,
+        465,
+        755,
+        785
+      ],
+      "size": [
+        576,
+        288
+      ],
+      "category": "prop",
+      "colors": 48,
+      "margin": 16
+    },
+    {
+      "id": "desert-cactus-03",
+      "box": [
+        785,
+        440,
+        1215,
+        810
+      ],
+      "size": [
+        288,
+        320
+      ],
+      "category": "prop",
+      "colors": 48,
+      "margin": 16
+    },
+    {
+      "id": "desert-tumbleweed-01",
+      "box": [
+        30,
+        820,
+        515,
+        1220
+      ],
+      "size": [
+        320,
+        288
+      ],
+      "category": "prop",
+      "colors": 48,
+      "margin": 16
+    },
+    {
+      "id": "desert-sphinx-ruin",
+      "box": [
+        530,
+        802,
+        1254,
+        1254
+      ],
+      "size": [
+        672,
+        448
+      ],
+      "category": "prop",
+      "colors": 48,
+      "margin": 16
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "id": "native-micro-repair-15",
+  "state": "exported_pending_visual_review",
+  "route": "built-in image_gen",
+  "raw": "raw-22.png",
+  "palette_source": "palette.json",
+  "prompt": "Completely empty1254square #FF00FF canvas except SIX MINUSCULE native8x8pixelgameicons on ONE horizontalrow y625 centers150,340,530,720,910,1100. Vastblankspace,99.9%magenta. Not enlarged illustrations, no zoom. Keep each icon microscopic actualpixels.\n1 tinycreatureskull shortattachedhornsanddarkeyecavities, ivoryboneruststains graymauvefissuresochrewear andtinysagemossroot. Nativeicon8x7pixels. Export128x112 world1x0.875; source≤112x96.\n2 tinycurvedpartialribcage of5attachedribs with ONE connectingbackbone, ivoryochrerustmauve withtinyoliveattachedroot; no loosebones. Nativeicon8x6pixels. Export144x112 world1.125x0.875; source≤128x96.\n3 TUMBLEWEED ONLY DEAD TWIGS: openwindswept sideleaningnestof8connectedbrittleumberbranches withivorytips rustdryseedandONEtinyolive DEADleaf. NO FLOWERS,BUDS,FRUIT,ANTLERS. Irregularopenloopdistinctfromroundball. Native8x7pixels. Export128square world1x1; source≤112square.\n4 flat LOWfoldedochreCANVAS DRAWSTRINGPOUCH lyingonits side, gatheredmouthpointingsideways left, thickattachedrope ivorytoggle rustsewnpatch sageclothfold. No buckle/toolcase/walletroll. Native8wide3high, export100x64 world0.78125x0.5; source≤84x48.\n5 tiny UNLIT PORTABLE MAUVEMETALCHARCOALSTOVE,shortcylindricalbodyvisibleopenshallowcopperrim ivorygrayashinside rustterracottafootandshortumberhandlewithsagewrap. NOdomedoven,chimney,flame. Native8x7pixels. Export128x112 world1x0.875.\n6 squatBROKEN OPEN POTTERY URN with LARGEJAGGEDMISSINGCHUNKfromupperrightmouth, deepmauveinterior exposed,no lid,corkorplugintheopening. Ochreclay rustfracture ivoryrim olivebandbonewearmarks. ONEconnected silhouette, NOdetachedshards. Native7x8pixels. Export136square world1.0625square.\nAllsingleconnected sprites, darkbrownoutlines warmupperleftlightcoolmauveshadows, earthy33–48 subtletones ofmultiplematerials, broadcrispclusters. No gradients/dither/noise/text/castshadow/ground/loosepixels. Originaldesert1content,approvedwoodcrate2androck3exactartiststyle,petanchors4/5valuesonly. Player168pxhigh,128px/world; intendedworldsizesrecordedBEFOREgeneration. Onlycrop/key/palette/pad1:1afterward, never shrink. Minuscule8pxicons spreadacrossvastemptycanvas.",
+  "refs": [
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+      "sha256": "30a678461a1a1f13aafa1a925382223dda2abcba586bb3b343e87a683a6c04ea"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/wooden-crate/final.png",
+      "sha256": "41eb988f9dcfeb2a6a00443fe2fd8fc804f21684302022e7fed8cc106577a83c"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-small/final.png",
+      "sha256": "880eddcf56b10952735033d68d3f8b97c4e8412933a383fa08317ca2fca1445f"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "assets": [
+    {
+      "id": "desert-small-skull",
+      "size": [
+        128,
+        112
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        1,
+        0.875
+      ],
+      "height_relative_to_player": 0.6679389312977099,
+      "box": [
+        160,
+        490,
+        300,
+        650
+      ]
+    },
+    {
+      "id": "desert-small-ribs",
+      "size": [
+        144,
+        112
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        1.125,
+        0.875
+      ],
+      "height_relative_to_player": 0.6679389312977099,
+      "box": [
+        330,
+        490,
+        490,
+        650
+      ]
+    },
+    {
+      "id": "desert-tumbleweed-02",
+      "size": [
+        128,
+        128
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        1,
+        1
+      ],
+      "height_relative_to_player": 0.7633587786259541,
+      "box": [
+        510,
+        490,
+        670,
+        650
+      ]
+    },
+    {
+      "id": "desert-pottery-urn-broken",
+      "size": [
+        136,
+        136
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        1.0625,
+        1.0625
+      ],
+      "height_relative_to_player": 0.8110687022900763,
+      "box": [
+        1080,
+        490,
+        1240,
+        650
+      ]
+    }
+  ],
+  "not_selected": "Pouch and stove exceed predeclared footprint; preserve raw only"
+}

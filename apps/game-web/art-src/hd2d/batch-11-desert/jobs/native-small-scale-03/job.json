@@ -1,0 +1,103 @@
+{
+  "id": "native-small-scale-03",
+  "state": "exported_pending_visual_review",
+  "route": "built-in image_gen",
+  "raw": "raw-10.png",
+  "palette_source": "palette.json",
+  "prompt": "Create an extremely sparse1254x1254 magenta #FF00FF sprite sheet. Six MICROSCOPIC game sprites, each less than60pixels wide. They MUST look like tiny distant thumbnails surrounded by vast empty magenta. DO NOT ENLARGE TO FILL SPACE. Draw only1/3 the size you would normally draw small sprites. Actual pixel footprints: sack24x26, backpack48x56, crate48x32, stove40x36, broken urn40x56, tumbleweed52x48. Exact centers(350,310),(900,310),(350,650),(900,650),(350,980),(900,980). No other content at all. Octopath inspired crisp HD2D pixel clusters matching attached approved style. Simple ochre cloth sack with rope/rustpatch; olive backpack with ivory bedroll; dark wood crate with cloth; cold mauve metal/terracotta stove; broken ochre urn with olive band; tangled dry twig tumbleweed. Frontal view slightly above. Dark brown outlines upper-left warm light cool shadow. 33–48 subtle earthy palette colors, simple broad planes, few details. No ground, shadows, labels, gradients, dithering. References1original desert content,2–3approved pixel material style,4–5pet outline anchors. Player168px tall; every item is hand-held sized, far shorter. Final export canvases predeclared64x64,112x128,112x88,96x96,112x128,128x128 at128px/world; will only crop/pad at1:1. OVERSIZED drawing is unusable. Six genuinely tiny sprites, not enlarged illustrations.\n",
+  "refs": [
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+      "sha256": "30a678461a1a1f13aafa1a925382223dda2abcba586bb3b343e87a683a6c04ea"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/city-facade-townhouse/final.png",
+      "sha256": "57c926e3ba82ed8af80f01f1234c27156002491ca5267881e7ba40bdd2efe060"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/forest-portal-active/final.png",
+      "sha256": "f229e35b82a6849b59dfc884ff62f13398336c5092537a992e9d7ec40c0af9b4"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "scale_rule": {
+    "player_world_height": 1.31,
+    "pixels_per_world": 128,
+    "no_resampling": true
+  },
+  "assets": [
+    {
+      "id": "desert-camp-canvas-pack",
+      "size": [
+        112,
+        128
+      ],
+      "category": "prop",
+      "desired_world_size": [
+        0.875,
+        1
+      ],
+      "height_relative_to_player": 0.7633587786259541,
+      "native_pixels": true,
+      "box": [
+        750,
+        240,
+        1050,
+        460
+      ]
+    },
+    {
+      "id": "desert-camp-wood-crate",
+      "size": [
+        112,
+        88
+      ],
+      "category": "prop",
+      "desired_world_size": [
+        0.875,
+        0.6875
+      ],
+      "height_relative_to_player": 0.5248091603053435,
+      "native_pixels": true,
+      "box": [
+        250,
+        600,
+        530,
+        790
+      ]
+    },
+    {
+      "id": "desert-tumbleweed-01",
+      "size": [
+        128,
+        128
+      ],
+      "category": "prop",
+      "desired_world_size": [
+        1,
+        1
+      ],
+      "height_relative_to_player": 0.7633587786259541,
+      "native_pixels": true,
+      "box": [
+        750,
+        900,
+        1050,
+        1140
+      ]
+    }
+  ],
+  "rejection": "Generated1254sheet: objects exceeded predeclared pixel budgets. No shrinking/export. Redraw much smaller.",
+  "not_selected": {
+    "sack": "Exceeds64px canvas margin budget; redraw",
+    "stove": "Exceeds96px canvas margin budget; redraw",
+    "urn": "Loose fragments; redraw"
+  }
+}

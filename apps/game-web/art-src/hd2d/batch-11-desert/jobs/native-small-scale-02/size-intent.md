@@ -1,0 +1,1 @@
+Before generation: same predeclared world_size as native-small-scale-01. Draw tiny source footprints36x36,70x88,72x48,60x56,68x86,80x76; pad at1:1 into64x64,112x128,112x88,96x96,112x128,128x128. Absolutely no source resampling.

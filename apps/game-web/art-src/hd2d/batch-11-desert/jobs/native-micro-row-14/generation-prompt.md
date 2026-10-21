@@ -1,0 +1,9 @@
+An otherwise entirely blank1254x1254 magenta#FF00FFsquare with SIX EXTREMELY TINY 8x8 PIXEL ART MICRO-ICONS. Notillustrations, notzoomed. Actualnative8pxicons,distantdots,onlyonehorizontalrow y625 x150,340,530,720,910,1100. 99.9%blankmagenta. Do not increase icon sizes fordetail.
+1 a LOWFLAT ochrecoinpouch withrustpatch sagefold ivorytoggle anddarkrope, only8wide3high, foldedwalletnottallgatheredsack.
+2 lowdarkwoodcratewithochrebindingssageclothrustlatchivoryrope,8wide6high.
+3 squatcold mauvecharcoalstove copperrim terracottafoot ivoryash smallumberhandlewithsagewrap,8wide7high.Nochimneyflame.
+4 brokenochreurnonecrack rustfractureolivebandivoryrimcoolinterior darkwoodcorkATTACHED,7wide8high.Nolooseshards.
+5 shortyoungsaguaro2armsolivesageivoryinsideglintsrustbudandattachedochrebonerootstone,8wide8high.
+6 irregularOPENwindswepttwigloop tumbleweed connectedumberbranchesbonehighlightsrustseed sageleaf,8wide7high,distinctfromroundball.
+Six minuscule stamps drawninactualsmallnativepixels. Matchingapprovedwoodcrate2+smallrock3artistpixelstyle,originaldesert1content,petanchors4/5outlinesvalueonly. Warmupperleftlightdarkbrownoutlinescoolmauveshades, earthy33–48subtlecolorspericonfrommultimaterial accents, no gradient/dither/blur/shadows/text/loosepixels.
+FinalcanvasbudgetsPREDECLARED100x64,128x104,128x112,136x136,128x112,128x128 at128px/world,player168high. Mustallow8pixelclearmarginsandcopy1:1,no shrink. Tiny source8pixelicons atmostfew dozenactualpixels across; DO NOT enlarge to fill the1254canvas.

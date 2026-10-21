@@ -1,0 +1,116 @@
+{
+  "id": "native-scale-repair-08",
+  "state": "self_rejected_all_oversize_no_export",
+  "route": "built-in image_gen",
+  "raw": "raw-15.png",
+  "palette_source": "palette.json",
+  "prompt": "Produce a square sparse magenta (#FF00FF) pixel art sheet, six TINY native game props. Arrange2columns3rows, centers(400,350),(850,350),(400,700),(850,700),(400,1020),(850,1020), canvas1254square. All props around60–75pixels in actual dimensions exceptpouch must be only40x22pixels. VERY small isolated drawing surroundedby huge blank. Samepixelartist asapprovedcrate+rock ref2/3, desertcontentref1,petanchors4/5values. Simple readable broadpixelplanes, earthy48colorpalette with sand,rust,ivory,umber,olive,mauve; upperleftwarm light. No gradients,dither,no shadows,no ground,no debris,no floatingpixels,no text.\nTopLeft: FLAT LOW coin pouch, laid horizontally on its side, like a little foldedwallet with thick ivoryrope drawstring ALONG TOPEDGE, NOT a sack with an upright gatheredneck. Width40pixels height22pixels. Ochrecanvas rustpatch sagefold brownrope. Extremelysmall, broad3folds. It must fit inside a72x64pixel export including8px empty border =world0.5625x0.5, player168pixels.\nTopRight: coldportablecharcoalstove, width76height70px, squat mauvemetalbody terra-cottafoot copperrim ivoryash tinyattachedwoodhandlewrappedolivecloth. No chimney/flame. Export128x112=1x0.875world.\nMiddleLeft: brokenclayurn,70wide86high, ochreclay rustfracture ivoryrim oliveglazebandwithbonepattern coolmauveinterior anddarkwoodcork attachedhandle. No separateshards. Export136square=1.0625world.\nMiddleRight: smallflatlayeredsandstonerock,76wide48high, ivory diagonalvein rustbase mauvecrack andtinysagemoss. Export128x96=1x0.75world.\nBottomLeft: smallpricklypear,74wide76high,2broadolivepads tinyrustflower sandbonerootstone. Spinesstrictlyinsideoutline. Export128x112=1x0.875world.\nBottomRight: smallbarrelcactus,74wide72high with broadmutedoliveribsivoryinnerglintsrustbud andochregrayrootstones. Export128x112=1x0.875world.\nEach33–48 subtle palettecolors throughmultiplematerials; nativeobjects1:1 cropped later, absolutelycannotshrink. Vast blankmagenta. Especiallyflatpouchis muchtinier thanotherfive.",
+  "refs": [
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+      "sha256": "30a678461a1a1f13aafa1a925382223dda2abcba586bb3b343e87a683a6c04ea"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/wooden-crate/final.png",
+      "sha256": "41eb988f9dcfeb2a6a00443fe2fd8fc804f21684302022e7fed8cc106577a83c"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-small/final.png",
+      "sha256": "880eddcf56b10952735033d68d3f8b97c4e8412933a383fa08317ca2fca1445f"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "assets": [
+    {
+      "id": "desert-camp-canvas-sack",
+      "size": [
+        72,
+        64
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        0.5625,
+        0.5
+      ],
+      "height_relative_to_player": 0.38167938931297707
+    },
+    {
+      "id": "desert-camp-charcoal-stove",
+      "size": [
+        128,
+        112
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        1,
+        0.875
+      ],
+      "height_relative_to_player": 0.6679389312977099
+    },
+    {
+      "id": "desert-pottery-urn-broken",
+      "size": [
+        136,
+        136
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        1.0625,
+        1.0625
+      ],
+      "height_relative_to_player": 0.8110687022900763
+    },
+    {
+      "id": "desert-small-rock-01",
+      "size": [
+        128,
+        96
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        1,
+        0.75
+      ],
+      "height_relative_to_player": 0.5725190839694656
+    },
+    {
+      "id": "desert-small-cactus-01",
+      "size": [
+        128,
+        112
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        1,
+        0.875
+      ],
+      "height_relative_to_player": 0.6679389312977099
+    },
+    {
+      "id": "desert-small-cactus-02",
+      "size": [
+        128,
+        112
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        1,
+        0.875
+      ],
+      "height_relative_to_player": 0.6679389312977099
+    }
+  ]
+}

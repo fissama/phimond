@@ -1,0 +1,30 @@
+{
+  "id": "palette-v2",
+  "prompt": "Phimond desert kit production PALETTE swatch sheet, not scenery. Image1 original desert map is CONTENT/colorcontext. Images2 batch01 floor and3 batch02 paving are approved PIXEL STYLE/value grouping authorities. Images4/5 pet anchors show shared shadow volume; do not draw pets.\nDraw exactly48 solid flat color squares in an EIGHT COLUMN by SIX ROW regular grid. Equal square sizes and gaps; flat#FF00FF all around/between; wide64px outer margin. NO lettering,numbers,hex text,title,illustrations,borders or gradients inside swatches. Six material families, each row has8 distinct step colors running darkest atLEFT to lightest atRIGHT:\nrow1 warm dune sand/ochre, includes #B88A44 and #D9B26B then cream warm highlights;\nrow2 red-orange terracotta sandstone includes #A5522B, warm rust and burnt umber;\nrow3 ancient ivory/bone weathered limestone, greige shadows to ivory cream;\nrow4 COOL DESATURATED MAUVE/violet-brown shadow family, very muted graylavender, not purple neon;\nrow5 dusty sage/olive cactus greens, darkforest outline to pale green highlights, no electricgreen;\nrow6 weathered umber wood/bronze/cloth neutralwarmtones.\nThese48colors must work together as one restrained Octopath-like Phimond environment palette matching approved batch01/02 contrast. No pureblack or purewhite, no brightblue/neon/glow. Large enough contrast between adjacent colors that \u00b15RGB render variation will not create extra colors. Flat uniform squares only, pixel-edged. Landscape sheet, grid8x6.",
+  "refs": [
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+      "sha256": "30a678461a1a1f13aafa1a925382223dda2abcba586bb3b343e87a683a6c04ea"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/grass-floor-01/final.png",
+      "sha256": "792b3a1c25fb3be8671af1a4e119ef7af3bbd5a89dd22e42e14206317697524c"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/city-paving-01/final.png",
+      "sha256": "226e6c08233758f59be315327ec89e332aded4f5da96aec115277105f557cfa1"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "state": "palette_exported_needs_claude_review",
+  "route": "built-in image_gen",
+  "raw": "raw-01.png",
+  "raw_sha256": "e969a372bf7ebb893db8617288497c4d607129b41d9e8bf3d50fd816c05f3987"
+}

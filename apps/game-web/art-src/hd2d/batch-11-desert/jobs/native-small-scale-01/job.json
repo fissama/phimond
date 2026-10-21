@@ -1,0 +1,122 @@
+{
+  "id": "native-small-scale-01",
+  "state": "self_rejected_native_footprints_oversize",
+  "route": "built-in image_gen",
+  "raw": "raw-08.png",
+  "palette_source": "palette.json",
+  "prompt": "Phimond HD2D desert native-resolution SMALL prop sheet. Create exactly 1024x1024 pixels, solid flat #FF00FF. CRITICAL: six TINY sprites floating widely apart in a mostly EMPTY sheet, each occupies only about 5–10% of sheet width. Do NOT fill cells, do NOT enlarge them for illustration. Their actual raster dimensions matter: pixel scale 128px/world, player height168px. Draw direct native pixel art, minimal broad clusters, no miniature dense illustration that will be shrunk. No text, no scale ruler, no player.\nReferences attached:1 original desert for content;2 approved architecture,3 approved forest portal for actual artist/material pixel language only;4–5 approved pet anchors for outlines/value, no creatures. Same Octopath Traveler inspired HD2D style as refs2–3, warm upper-left light, brown outlines, mauve shadows, restrained ochre, ivory, sage, rust, umber. 33–48 subtly distinct material palette tones per sprite across broad simple clusters, no dithering, gradients, blur or ground shadows. All pixels connected except tumbleweed internal holes; no loose grains or floaters.\nPositions in requested1024x1024 sheet, all centered:\n(256,180): tied canvas sack, actual art about42x42px, never larger48x48. Ochre cloth, dark rope tie, one rust patch with ivory stitch and tiny olive fold. Export64x64px = world0.5x0.5; height38% player.\n(768,180): worn traveler backpack, actual art80x98px maximum96x112, green canvas, ochre straps, ivory rolled bedroll and rust pocket. Export112x128px =0.875x1.0world; height76% player.\n(256,510): low wooden supply crate, actual art88x62px maximum96x72, dark planks, ochre corner strap, folded ivory cloth attached on top, tiny rust latch. Export112x88px =0.875x0.6875world; height52% player.\n(768,510): portable cold charcoal stove, actual art70x70 maximum80x80, mauve metal, rusty terracotta foot, ivory ash, stout connected handles; no flame. Export96x96 =0.75x0.75world; height57%player.\n(256,840): squat broken pottery urn, actual art82x98 maximum96x112, ochre ceramic outer body, rust fracture, ivory broken rim, deep mauve interior, narrow olive glaze band. Export112x128 =0.875x1world; height76%player.\n(768,840): round asymmetrical tangled tumbleweed, actual art98x92 maximum112x112, ochre and umber thick connected twigs with cool shadows, a few ivory tips and tiny attached olive dry leaves, irregular see-through gaps. Export128x128 =1x1world; height76%player.\nHUGE blank magenta gaps. Each complete object strictly inside its native-pixel limits. Render actual tiny sprite size on1024canvas, not enlarged art.",
+  "refs": [
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+      "sha256": "30a678461a1a1f13aafa1a925382223dda2abcba586bb3b343e87a683a6c04ea"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/city-facade-townhouse/final.png",
+      "sha256": "57c926e3ba82ed8af80f01f1234c27156002491ca5267881e7ba40bdd2efe060"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/forest-portal-active/final.png",
+      "sha256": "f229e35b82a6849b59dfc884ff62f13398336c5092537a992e9d7ec40c0af9b4"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "scale_rule": {
+    "player_world_height": 1.31,
+    "pixels_per_world": 128,
+    "no_resampling": true
+  },
+  "assets": [
+    {
+      "id": "desert-camp-canvas-sack",
+      "size": [
+        64,
+        64
+      ],
+      "category": "prop",
+      "desired_world_size": [
+        0.5,
+        0.5
+      ],
+      "height_relative_to_player": 0.38167938931297707,
+      "native_pixels": true
+    },
+    {
+      "id": "desert-camp-canvas-pack",
+      "size": [
+        112,
+        128
+      ],
+      "category": "prop",
+      "desired_world_size": [
+        0.875,
+        1
+      ],
+      "height_relative_to_player": 0.7633587786259541,
+      "native_pixels": true
+    },
+    {
+      "id": "desert-camp-wood-crate",
+      "size": [
+        112,
+        88
+      ],
+      "category": "prop",
+      "desired_world_size": [
+        0.875,
+        0.6875
+      ],
+      "height_relative_to_player": 0.5248091603053435,
+      "native_pixels": true
+    },
+    {
+      "id": "desert-camp-charcoal-stove",
+      "size": [
+        96,
+        96
+      ],
+      "category": "prop",
+      "desired_world_size": [
+        0.75,
+        0.75
+      ],
+      "height_relative_to_player": 0.5725190839694656,
+      "native_pixels": true
+    },
+    {
+      "id": "desert-pottery-urn-broken",
+      "size": [
+        112,
+        128
+      ],
+      "category": "prop",
+      "desired_world_size": [
+        0.875,
+        1
+      ],
+      "height_relative_to_player": 0.7633587786259541,
+      "native_pixels": true
+    },
+    {
+      "id": "desert-tumbleweed-01",
+      "size": [
+        128,
+        128
+      ],
+      "category": "prop",
+      "desired_world_size": [
+        1,
+        1
+      ],
+      "height_relative_to_player": 0.7633587786259541,
+      "native_pixels": true
+    }
+  ],
+  "rejection": "Generated1254sheet: objects exceeded predeclared pixel budgets. No shrinking/export. Redraw much smaller."
+}

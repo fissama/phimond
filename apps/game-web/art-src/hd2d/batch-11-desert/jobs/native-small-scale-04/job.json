@@ -1,0 +1,116 @@
+{
+  "id": "native-small-scale-04",
+  "state": "self_rejected_all_native_budgets_exceeded",
+  "route": "built-in image_gen",
+  "raw": "raw-11.png",
+  "palette_source": "palette.json",
+  "prompt": "Phimond native tiny game props, exactly six on1254square solid#FF00FF canvas, 95% EMPTY MAGENTA. MICROSCOPIC sprites must be far smaller than normal illustrations, actual small pixels; never enlarge for legibility. Centers350,310 /900,310 /350,650 /900,650 /350,980 /900,980. Draw object widths only24–50px on1254canvas, very far apart. Native1px clusters, not high detail that must be reduced. Upper-left warm light coolmauve shadows darkbrown contours, OctopathHD2D sameapprovedartist as2–3. Ref1originaldesert;2–3approvedmaterial/pixelstyle;4–5petanchorsvalueonly. NO text, grid, castshadow, dust, loosefragments, glow, gradient, dithering. All components connected. Broadsimplematerial planes with33–48 subtle earthtoned colors, no noise.\nTOP LEFT: tiny tied ochre cloth sack,30wide30high MAXIMUM, just2folds, rustpatch, sagefold, ivoryrope tie. Export64x64 world0.5x0.5 compared168px player.\nTOP RIGHT: cold portable charcoal stove,44wide44high MAXIMUM, squat open mauve iron bowl with connected stout handles, terracotta foot and ivory ash. UNLIT; no chimney, flame or orange window. Export96x96 world0.75x0.75.\nMIDDLE LEFT: broken ochre pottery urn,46wide54highMAX, one chippedrim, deepcool interior, rustclay fracture, narrow olive band. ZERO detached pottery shards, everything in ONE silhouette. Export112x128 world0.875x1.\nMIDDLE RIGHT: small flat angular desert rock,44wide30highMAX, broad layered ochre/ivory mineral faces cool violet darkunderside, thinrustinclusion, attached olive drymoss. Not arandomclump. Export96x80 world0.75x0.625.\nBOTTOM LEFT: short squat pricklypear cactus,40wide46highMAX, two flattenedolivepaddles +rustbud attached atbaseon tinyochrestone; mutedivory shortspines INSIDE silhouette, no detached dots. Export80x96 world0.625x0.75.\nBOTTOM RIGHT: tumbleweed variant two,46wide40highMAX, distinct windswept sideleaning OPEN twig loop, thick connected umber branches withbone highlights andsage attacheddeadleaf; no round tightball. Export112x112 world0.875x0.875.\nOnly SIX TINY isolated sprites on vast empty magenta, smaller than a fingernail on this1254canvas. No scaling up.",
+  "refs": [
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+      "sha256": "30a678461a1a1f13aafa1a925382223dda2abcba586bb3b343e87a683a6c04ea"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/city-facade-townhouse/final.png",
+      "sha256": "57c926e3ba82ed8af80f01f1234c27156002491ca5267881e7ba40bdd2efe060"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/forest-portal-active/final.png",
+      "sha256": "f229e35b82a6849b59dfc884ff62f13398336c5092537a992e9d7ec40c0af9b4"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "assets": [
+    {
+      "id": "desert-camp-canvas-sack",
+      "size": [
+        64,
+        64
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        0.5,
+        0.5
+      ],
+      "height_relative_to_player": 0.38167938931297707
+    },
+    {
+      "id": "desert-camp-charcoal-stove",
+      "size": [
+        96,
+        96
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        0.75,
+        0.75
+      ],
+      "height_relative_to_player": 0.5725190839694656
+    },
+    {
+      "id": "desert-pottery-urn-broken",
+      "size": [
+        112,
+        128
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        0.875,
+        1
+      ],
+      "height_relative_to_player": 0.7633587786259541
+    },
+    {
+      "id": "desert-small-rock-01",
+      "size": [
+        96,
+        80
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        0.75,
+        0.625
+      ],
+      "height_relative_to_player": 0.47709923664122134
+    },
+    {
+      "id": "desert-small-cactus-01",
+      "size": [
+        80,
+        96
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        0.625,
+        0.75
+      ],
+      "height_relative_to_player": 0.5725190839694656
+    },
+    {
+      "id": "desert-tumbleweed-02",
+      "size": [
+        112,
+        112
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        0.875,
+        0.875
+      ],
+      "height_relative_to_player": 0.6679389312977099
+    }
+  ]
+}

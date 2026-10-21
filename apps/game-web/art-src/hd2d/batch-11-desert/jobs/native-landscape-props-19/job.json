@@ -1,0 +1,117 @@
+{
+  "id": "native-landscape-props-19",
+  "state": "exported_pending_visual_review",
+  "route": "built-in image_gen",
+  "raw": "raw-26.png",
+  "palette_source": "palette.json",
+  "prompt": "Phimond desert HD2D native pixel prop sheet,1536x1024,3columns2rows,flat#FF00FF with clear64pxgaps. Six distinct complete objects, no labels/no grid/no castgroundshadow/no sceneryplane. OriginalAPKref1dictatesdesertpalettecontent; approvedPALMTRUNK2+CANOPY3dictate exact pixelclusterartist/plantmaterial, not reuse pixels;petanchors4/5outlinesandvaluesonly. OctopathinspiredHD2D handplacedcrispclusters warmupperleftlight brownmaterialoutlines coolmauveshadow,33–48subtlecolors ochre/rust/ivory/olive/umber/mauve. No dither/gradients/blur/bloom. Allpixelsconnected, zerofloatingdust/spinetips. Drawdirectnativepixels, no enlargedmaster toshrink.\nTOPLEFT: bare DESERT PALM TRUNK separateassemblypart, slightlybenttapered segmentedumberbarkwithochreivorywornridgerings, weatheredrustscars, smallrootbaseandshortOLIVEbudatTOPONLY; NOlargefronds. Nativefootprintabout96x420; plannedexport192x640(world1.5x5;3.82playerheight). Fullrootandtopvisible.\nTOPCENTER: matching PALMCANOPY separatecrownonly, arching broadmutedolivesagefronds withbonedrytips, shortumberneckstub hangingdownmiddle,2ochrecoconutsattachedtogether. Topsidewarmcoolundersides, asymmetricalfullleftfrondsandnarrowrightfronds, norepeatingidenticalleafclumps. Nativefootprintabout460x220; export640x320(world5x2.5). Crownstemfitsontopoftrunk; notfulllongtrunk. No looseleafpixels.\nTOPRIGHT: TALLmaturesaguarocactus, onehighcrookedarm andonelowfork, thickolivegraygreensilhouettedribs tinyivoryspineclustersINSIDEedge, smallrustdrybud, attachedochre/ivoryrootrocks. Nativefootprint160x420; export256x576(world2x4.5;3.44playerheight).\nBOTTOMLEFT: RUINEDARCHGATE ofdesertivorysandstone,rustmortar, smallochreflutedposts, BROKENasymmetricystonearchwithdarkemptydooropening; oneattachedwoodbrace/root,tinysageatbase. Nativefootprint460x380; export768x640(world6x5;3.82playerheight). Separatefreestandingstonegate,noraisedgroundtile.\nBOTTOMCENTER: LARGENOMADTENT, lowbroadrectangularridgecanvasawningwith2woodridgeposts, ochrecanvasrustdrapedsideentrance andsagereinforcedpanelsivorybonetoggles; distinctstructurefromsmalltriangulartent. No gourds/signtext. Nativefootprint480x320; export640x448(world5x3.5;2.67playerheight).\nBOTTOMRIGHT: MEDIUMSANDDUNE lowasymmetricslopedcrescentmound, broadwarmochresandbodycoolmauveshelteredsideivorymineralcrusttinyruststonesandONEattachedsageplant; no loosegrainparticles. Nativefootprint460x160; export640x256(world5x2;1.53playerheight).\nWorldsizes recordedbeforegeneration; density128px/world, player168pxhigh. KeepdrawingSMALLERthanplannedexportcanvases toallow8pxtransparentborder, extractionmustcopy1:1NOresampling. Distinctsilhouettes/asymmetricorganiccontours.",
+  "refs": [
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+      "sha256": "30a678461a1a1f13aafa1a925382223dda2abcba586bb3b343e87a683a6c04ea"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-03-octopath/palm-01-trunk/final.png",
+      "sha256": "63a353cf29cc27df05cf6afbdd9f8c390a961290dda23c2d26b4e7e4b4827111"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-03-octopath/palm-01-canopy/final.png",
+      "sha256": "98c36238d1a2065af819b57208fb32628df4f5de67424ce78cc130c1d87238df"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "assets": [
+    {
+      "id": "desert-cactus-tall",
+      "size": [
+        256,
+        576
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        2,
+        4.5
+      ],
+      "height_relative_to_player": 3.4351145038167936,
+      "content_provenance": "Owner-authorized regional interpretation; original six maps inspected, extra kit assembly pieces requested by layout/minimum list; not claimed as exact recovered APK.",
+      "box": [
+        1150,
+        40,
+        1450,
+        580
+      ]
+    },
+    {
+      "id": "desert-arch-gate",
+      "size": [
+        768,
+        640
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        6,
+        5
+      ],
+      "height_relative_to_player": 3.8167938931297707,
+      "content_provenance": "Owner-authorized regional interpretation; original six maps inspected, extra kit assembly pieces requested by layout/minimum list; not claimed as exact recovered APK.",
+      "box": [
+        0,
+        570,
+        455,
+        970
+      ]
+    },
+    {
+      "id": "desert-nomad-tent-large",
+      "size": [
+        640,
+        448
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        5,
+        3.5
+      ],
+      "height_relative_to_player": 2.6717557251908395,
+      "content_provenance": "Owner-authorized regional interpretation; original six maps inspected, extra kit assembly pieces requested by layout/minimum list; not claimed as exact recovered APK.",
+      "box": [
+        455,
+        590,
+        1030,
+        970
+      ]
+    },
+    {
+      "id": "desert-sand-dune-medium",
+      "size": [
+        640,
+        256
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        5,
+        2
+      ],
+      "height_relative_to_player": 1.5267175572519083,
+      "content_provenance": "Owner-authorized regional interpretation; original six maps inspected, extra kit assembly pieces requested by layout/minimum list; not claimed as exact recovered APK.",
+      "box": [
+        1030,
+        700,
+        1536,
+        980
+      ]
+    }
+  ],
+  "not_selected": "Palmtrunk/canopy raw footprints exceed narrow predeclared native canvases; preserve raw, redraw thoseparts; no shrinking"
+}

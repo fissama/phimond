@@ -1,0 +1,152 @@
+{
+  "id": "native-structures-row-10",
+  "state": "exported_pending_visual_review",
+  "route": "built-in image_gen",
+  "raw": "raw-17.png",
+  "palette_source": "palette.json",
+  "prompt": "Native game asset strip1536x1024 with SIX SMALL objects in a SINGLE HORIZONTAL ROW at y512. Centers x128,384,640,896,1152,1408. HUGE empty magenta area above and below, flat#FF00FF. Every object no more than140pixelswide and100pixelshigh; small icons of world objects, but crisp pixelgame art, no UI framing. Do not arrange2x3. Allsix acrossone row. No enlargement or zoom.\nLefttoright:1 low drywell ofivorysandstoneochrerustwithdarkopeningandshortwoodcrank, 2 four broad irregularsandstonesteps withpaleedgesmauveshadowtinysagemoss,3 shortbrokenflutedivorycolumnlyinghorizontallywithonevolutecapitalrustband andattachedroot,4 compactochrecanvasnomadtentwoodframerustdoorflapsagerollivorytoggle,5 CONNECTED monster skull/ribcagebone skeleton warmivoryochrerustmauve withattachedroot nofragment,6 muchtinierhornedcreatureskullonly70wide50highdarkeyecavitieswarmbone ruststain.\nRef1 originaldesert content;approvedstyle2woodcrate+3smallrock for artistpixelclusters;4/5petanchors onlyoutline/value. OctopathHD2D browncontoursupperleftlight, earthtone33–48colorseachmultiplematerials, broadcleanpixelplanes. No gradient/dither/text/ground/shadow/bloom. Allpartsconnect, no detacheddust. Final nativeexport sizes well288x224(world2.25x1.75),stairs480x256(3.75x2),fallenpillar576x192(4.5x1.5),tent480x384(3.75x3),bones448x256(3.5x2),smallskull192x136(1.5x1.0625);128px/world, player168px. Draw well under these nativepixel budgets; no later shrinking. Onehorizontalrow SIX smallisolatedsprites, entiretopandbottom400pixelmagentaempty.",
+  "refs": [
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+      "sha256": "30a678461a1a1f13aafa1a925382223dda2abcba586bb3b343e87a683a6c04ea"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/wooden-crate/final.png",
+      "sha256": "41eb988f9dcfeb2a6a00443fe2fd8fc804f21684302022e7fed8cc106577a83c"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-small/final.png",
+      "sha256": "880eddcf56b10952735033d68d3f8b97c4e8412933a383fa08317ca2fca1445f"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "assets": [
+    {
+      "id": "desert-dry-well",
+      "size": [
+        288,
+        224
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        2.25,
+        1.75
+      ],
+      "height_relative_to_player": 1.3358778625954197,
+      "box": [
+        20,
+        400,
+        250,
+        620
+      ]
+    },
+    {
+      "id": "desert-stone-stairs",
+      "size": [
+        480,
+        256
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        3.75,
+        2
+      ],
+      "height_relative_to_player": 1.5267175572519083,
+      "box": [
+        250,
+        400,
+        500,
+        620
+      ]
+    },
+    {
+      "id": "desert-ruins-pillar-fallen",
+      "size": [
+        576,
+        192
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        4.5,
+        1.5
+      ],
+      "height_relative_to_player": 1.1450381679389312,
+      "box": [
+        500,
+        400,
+        750,
+        620
+      ]
+    },
+    {
+      "id": "desert-nomad-tent",
+      "size": [
+        480,
+        384
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        3.75,
+        3
+      ],
+      "height_relative_to_player": 2.2900763358778624,
+      "box": [
+        750,
+        380,
+        1040,
+        640
+      ]
+    },
+    {
+      "id": "desert-monster-bones",
+      "size": [
+        448,
+        256
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        3.5,
+        2
+      ],
+      "height_relative_to_player": 1.5267175572519083,
+      "box": [
+        1040,
+        400,
+        1370,
+        620
+      ]
+    },
+    {
+      "id": "desert-small-skull",
+      "size": [
+        192,
+        136
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        1.5,
+        1.0625
+      ],
+      "height_relative_to_player": 0.8110687022900763,
+      "box": [
+        1370,
+        450,
+        1520,
+        620
+      ]
+    }
+  ]
+}

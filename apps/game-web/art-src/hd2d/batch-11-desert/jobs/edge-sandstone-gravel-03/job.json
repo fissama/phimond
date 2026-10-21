@@ -1,0 +1,70 @@
+{
+  "id": "edge-sandstone-gravel-03",
+  "state": "exported_pending_visual_review",
+  "route": "built-in image_gen",
+  "raw": "raw-03.png",
+  "palette_source": "palette.json",
+  "prompt": "Phimond desert TWO horizontal terrain edge ribbons,1536x1024 landscape, one at y256 and one at y768, exactsolid#FF00FFbackground. Originaldesert1contentpalette, approvedgroundtransitions2/3pixelstyle notgrasscontent, petanchors4/5outlinevaluesonly. Overhead FLATGROUND, no tallrocks/no drop shadows/no raisedslab/no text. Warmochre/rust/ivory/umber/mauveearthtones deliberate squaredpixelclusters33–48colors, no gradient/dithernoise/blur.\nTOP RIBBON sand-to-RUSTSANDSTONE: fine rustredflatbrokenstoneflakes mixedwithivorythinmineralchips, uneven shallowfragmentstreaks andpalesandpockets. Not samepattern as crackedearthband, NOT hexagonalcrackedmud. Verylowgroundribbon.\nBOTTOM RIBBON sand-to-GRAVEL: clustersofsmallgraymauve/ivory/ochrepebbles andrustmineralgrit blendingintopalesand, variedstonefacetshapes, no boulders,no mudcracks.\nCRITICALREPEATGEOMETRY: BOTH ribbons traverseENTIREimagewidth atFIXEDLEVELHORIZONTALcenterlinesy256and768. BothfileedgesmustIDENTICALALPHAandCOLOR. Leftmost160pxandrightmost160pxofEACHribbon are perfectlyplain #D9B26Bpalesand, exactly64pxhigh: firsty224–287,secondy736–799; everythingelseinthoseendzonesflatmagenta. AbsolutelyNO grain/objects/shading/gradients inendzones. No sidefading,tilt,taper,roundedcaps; continue straightacrossleft/rightfileedges.\nOnlyCENTRAL1216pxvary irregularly at top/bottom ofribbons withthinfeatheredpixelcontours; heightswithin200–320and712–832 respectively. Vastempty#FF00FFgapbetweenribbons. Sidescontinuethroughfileedgesandendzonesmustexactlymatch. Matchflatgroundmateriallanguage ofapprovedrefs notdetailedillustration.",
+  "refs": [
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+      "sha256": "30a678461a1a1f13aafa1a925382223dda2abcba586bb3b343e87a683a6c04ea"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/edge-grass-dirt/final.png",
+      "sha256": "cea364b6f8306a6a2db0561b36b846d0e1252cf9b9c75f383a8f97a86a2c417d"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/edge-grass-roots/final.png",
+      "sha256": "7bf3e3700ef71963c08b435e2bc1a717799e46acef74ca018b27122d4541aab8"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "assets": [
+    {
+      "id": "desert-edge-sand-sandstone-01",
+      "size": [
+        512,
+        128
+      ],
+      "category": "decal",
+      "tileable": "x",
+      "stretch": true,
+      "keep_source_box": true,
+      "box": [
+        145,
+        180,
+        1391,
+        360
+      ]
+    },
+    {
+      "id": "desert-edge-sand-gravel-01",
+      "size": [
+        512,
+        128
+      ],
+      "category": "decal",
+      "tileable": "x",
+      "stretch": true,
+      "keep_source_box": true,
+      "box": [
+        145,
+        630,
+        1391,
+        820
+      ],
+      "palette_remap": {
+        "#E3B188": "#DDB776"
+      }
+    }
+  ],
+  "palette_finish_note": "GlobalpalettealiasE3B188toDDB776 for ALL matching visiblepixels, notspatialretouch. Removes endpointonepixel warmtone mismatch afterpalettefinish."
+}

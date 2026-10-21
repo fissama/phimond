@@ -1,0 +1,61 @@
+{
+  "id": "native-crate-stove-variants-17",
+  "state": "native_budget_rejected_preserved",
+  "route": "built-in image_gen",
+  "raw": "raw-24.png",
+  "palette_source": "palette.json",
+  "prompt": "A1254x1254square flat#FF00FFcanvas99.9%empty except SIX MICROSCOPIC 8x8 PIXELART STAMPS inONEhorizontalrow y625 centers150,340,530,720,910,1100. Actualnative8pixelart not enlarged illustrations. Allsix equallyTINY withvastblankspaceaboveandbelow. Nozoom.No text/grid/ground/shadows/debris.\nOddpositions1,3,5 are THREE DIFFERENT smallwoodcrate designcandidates: lowumberwoodboxochrebindingsrustlatchsagedrapedclothivoryrope. One withcornercloth,onewithcrossedtoprope,onewithtwopatchedplanks. EachstoutLEFTcarryinghandleconnectedatCENTERLEFTprojectsoutsideleftpost, so leftmostedgeonlyoccupiesshortcentralpartofheight, NOT fullstraightedge. Organicchippedpostcornersandunevencloth. Distinctcratevariants,no copying. Eachnative8wide6high. Final128x104(world1x0.8125),source≤112x88,player168high.\nEvenpositions2,4,6 are THREE DIFFERENT portableMETALcharcoalbrazier candidates: shortmauveironopencylinderwithcopperrimivorygrayCOLDash rustterracottafeet andverySHORTconnectedumberhandlewithsagewrap. Firstthreefeet,secondfourfeet,thirdroundlowstand. No longhandles. NO archedclayovenopening,no dome,no chimney,no flame. Native8wide7high each. Final140x120(world1.09375x0.9375),source≤124x104.\nCrispnativepixelclusters sameapprovedartistref2crate+3rock, originaldesert1palettecontent,petanchors4/5outlinevaluesonly. Warmupperleftcoolmauveshadebrownoutline earthy33–48 subtlecolorsperobject acrosswood/cloth/metal/stone/ash/rust/ivory/olive. No ditheringnoisegradientblur. Alldetailsconnected. Nativepixelscopied1:1nocodeshrinking. Sixtrulytiny8pixelstamps onvast1254squaremagenta.\n",
+  "refs": [
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+      "sha256": "30a678461a1a1f13aafa1a925382223dda2abcba586bb3b343e87a683a6c04ea"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/wooden-crate/final.png",
+      "sha256": "41eb988f9dcfeb2a6a00443fe2fd8fc804f21684302022e7fed8cc106577a83c"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-small/final.png",
+      "sha256": "880eddcf56b10952735033d68d3f8b97c4e8412933a383fa08317ca2fca1445f"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "assets": [
+    {
+      "id": "desert-camp-wood-crate",
+      "size": [
+        128,
+        104
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        1,
+        0.8125
+      ],
+      "height_relative_to_player": 0.6202290076335878
+    },
+    {
+      "id": "desert-camp-charcoal-stove",
+      "size": [
+        140,
+        120
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        1.09375,
+        0.9375
+      ],
+      "height_relative_to_player": 0.7156488549618321
+    }
+  ],
+  "candidate_layout": "6tiny8pxvariants; positions1/3/5crate,2/4/6stove; select1ofeach after native-budget and visual checks"
+}

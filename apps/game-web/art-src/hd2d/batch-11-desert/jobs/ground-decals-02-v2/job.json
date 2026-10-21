@@ -1,0 +1,128 @@
+{
+  "id": "ground-decals-02-v2",
+  "prompt": "Phimond desert reusable GROUND DECALS sheet, SIX isolated flat overhead surface pieces,2columns x3rows,1536square, exact#FF00FF. Original desert1 content palette: ruined ivory stone/rust sand/bone/eroded desert. Approved mud/moss decals2–3 exact pixel STYLE and irregular cutout contour references, not forest content. Pet anchors4–5 outline/value only, no creatures.\nEach whole decal fully visible with64px blank margins/gaps, irregular feathered pixel contour and transparent magenta holes, no filled rectangular/ellipse ground backing, no text/grid, no props raised in perspective or projected ground shadows.\nTOP LEFT desert-decal-sandstone-rubble: low flush scattered broken angular rusty sandstone flakes, cream limestone splinters and cool gray grit, some fine ochre mineral grains. Unequal broken crescent arrangement about450x260, empty spaces between pieces, no large rocks/mound.\nTOP RIGHT desert-decal-sunken-bricks: partial ruined adobe brick pattern sinking into sand, 2short misaligned fragments of rows, several missing brick shapes with irregular cracks/crumbly margins and sparse gray/ivory chips, translucent-looking edges accomplished by separated opaque pixel clusters onmagenta. Not a rectangle of floor tile; only scattered brick remnants and sand scuffs. About430x260.\nMIDDLE LEFT desert-decal-cracked-earth-patch: ragged branching dry-earth fissure patch, long thin jagged cracks and a few small flat clods, ochre/rust core and tiny ivory/gray mineral inclusions. Open star/river-delta outline with many transparent gaps, NO filled oval/square patch, about430x300.\nMIDDLE RIGHT desert-decal-ancient-rune-faded: partially erased ancient geometric SEAL TRACES impressed into sand, broken concentric arcs and interrupted radial segments, no letters/words/readableglyphs. Pale ivory/gray worn mineral fragments, ochre/rust shallow engraved recesses and sparse woody grit. Irregular incomplete ring footprint, center largely magenta, no complete circular disk or glow. About350x300.\nBOTTOM LEFT desert-edge-sand-sandstone-corner-01: CONVEX corner transition decal, a broken quarter-curve seam from left end toward top end, short irregular redstone and limestone slivers with pale sand grains feathering out around curve. Open uneven L/quarter-circle boundary, NO solid filled square/quadrant. Endpoints irregular taper, not meant torepeatX. About380square.\nBOTTOM RIGHT desert-edge-sand-sandstone-corner-02: CONCAVE inner corner transition, two unequal short jagged rubble arms curving toward a low central notch, sparse flush brickchips/dust along OUTSIDE of bend. Visibly different arrangement/material clustering from01, NOT rotated/flipped/recolored copy. Open irregular J/V footprint, no solid quadrant panel. About380square.\n33–48colors per decal in mineral/stone/dust/wood accents, crisp intentional squared pixel clusters2–4tones permaterial; dark brown samehue cuts, no black outline, warm upper-left local facets only. Exact approved batch00–09 / Octopath-inspired HD2D hand. No smoothpaint,3D,dither/noise,bloom,fog,castshadows,semialpha or magenta fringe. Surfaces must feel flush with terrain, separate sprites for Claude to compose.",
+  "refs": [
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+      "sha256": "30a678461a1a1f13aafa1a925382223dda2abcba586bb3b343e87a683a6c04ea"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/mud-patch/final.png",
+      "sha256": "b0759f3111b274228356d66fb95cce948d0ef805e6c53b1e6e96bccfdbe6bcdf"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/moss-patch-01/final.png",
+      "sha256": "90a3d3e1fc44cf5c1203890778f9be5ac42aa2b8994385a97ebe2cd0b0cde96b"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "state": "exported_pending_visual_review",
+  "route": "built-in image_gen",
+  "raw": "raw-01.png",
+  "palette_source": "palette.json",
+  "assets": [
+    {
+      "id": "desert-decal-sandstone-rubble",
+      "box": [
+        10,
+        40,
+        640,
+        425
+      ],
+      "size": [
+        384,
+        256
+      ],
+      "category": "decal",
+      "colors": 48,
+      "margin": 16
+    },
+    {
+      "id": "desert-decal-sunken-bricks",
+      "box": [
+        650,
+        50,
+        1254,
+        420
+      ],
+      "size": [
+        448,
+        288
+      ],
+      "category": "decal",
+      "colors": 48,
+      "margin": 16
+    },
+    {
+      "id": "desert-decal-cracked-earth-patch",
+      "box": [
+        10,
+        430,
+        650,
+        810
+      ],
+      "size": [
+        448,
+        320
+      ],
+      "category": "decal",
+      "colors": 48,
+      "margin": 16
+    },
+    {
+      "id": "desert-decal-ancient-rune-faded",
+      "box": [
+        675,
+        430,
+        1254,
+        825
+      ],
+      "size": [
+        384,
+        320
+      ],
+      "category": "decal",
+      "colors": 48,
+      "margin": 16
+    },
+    {
+      "id": "desert-edge-sand-sandstone-corner-01",
+      "box": [
+        10,
+        820,
+        620,
+        1235
+      ],
+      "size": [
+        384,
+        352
+      ],
+      "category": "decal",
+      "colors": 48,
+      "margin": 16
+    },
+    {
+      "id": "desert-edge-sand-sandstone-corner-02",
+      "box": [
+        650,
+        845,
+        1254,
+        1230
+      ],
+      "size": [
+        384,
+        352
+      ],
+      "category": "decal",
+      "colors": 48,
+      "margin": 16
+    }
+  ]
+}

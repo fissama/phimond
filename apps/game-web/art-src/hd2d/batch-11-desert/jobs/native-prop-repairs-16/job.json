@@ -1,0 +1,116 @@
+{
+  "id": "native-prop-repairs-16",
+  "state": "not_exported_native_sizes_exceeded",
+  "route": "built-in image_gen",
+  "raw": "raw-23.png",
+  "palette_source": "palette.json",
+  "prompt": "Six separated native Phimond desert gameprops onONEhorizontalrow on1254squareflat#FF00FFcanvas. Enormousblankmagentaaboveandbelow, y625centers150,340,530,720,910,1100. No labels/grid/groundshadow/debris. Drawallwithcrispbroadpixelclusters approvedwoodcrate2+smallrock3actualstyle, originaldesert1content,petanchors4/5outlinevaluesonly. Warmupperleftlight coolmauve shadebrownoutline, earthy33–48colors:ochre,rust,ivory,olive,umber,mauve. Nogradients,dither,blur. Completeconnectedobjects, zero strayparticles.\n1 TINYsmall woodcrate only8x6 nativepixelicon: umberplanks ochrebinding rustlatch ivoryrope sagecloth, ruggedchippedcorners. IMPORTANTstoutcarryinghandleprotrudes fromLEFTSIDE CENTER, connected toframe: leftmostsilhouetteis onlyshortcurvedhandle, NOT fullstraightheightofbox. Righttopclothdrapesirregularly, leftpostchipped. Final128x104(world1x0.8125), source≤112x88.\n2 TINYportableMETALcharcoalbrazier8x7pixelicon: shortmauvecylindricalmetalbody, OPENcopperrimwithivorygraycoldashes, rustterracottafeet, SHORTdarkwoodhandlewrappedtinyolivecloth. NO archedovenopening,no dome,no chimney,no fire. Final140x120(world1.09375x0.9375),source≤124x104.\n3 mediumdarkmauveboulder withtallangularasymmetricsplit rustmineral seam ivoryflakesandtinysageplantattached, native60wide60high (must NOT enlarge). Final256x224(world2x1.75).\n4 lowflatconnected sandmound ochrewithshortbrokenripples ivorymineralgrits rustpatch andtinyattachedsageroot, native80wide24high; no separategrains beyondsilhouette. Final320x128(world2.5x1).\n5 ONE weatheredbrokenivorystonepillar STANDINGupright shafttaperedflutedandbrokenangledcapital, ochre/rustcracks coolmauveindentations andtinyrootattachedbase; native36wide100high. Final256x384(world2x3), player168pxhigh.\n6 tallasymmetricsaguarocactus twounequalcurvedarms sageoliveribsivoryINSIDEspinesrustbud andsmallconnectedochrerootstones, native44wide90high. Final256x384(world2x3).\nEverypixelnativecopied1:1later, no shrinkingallowed. Allobjects farunderfinalpixelbudgets. First2especiallymicroscopic8pxicons muchsmallerthanlast4.",
+  "refs": [
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+      "sha256": "30a678461a1a1f13aafa1a925382223dda2abcba586bb3b343e87a683a6c04ea"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/wooden-crate/final.png",
+      "sha256": "41eb988f9dcfeb2a6a00443fe2fd8fc804f21684302022e7fed8cc106577a83c"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-small/final.png",
+      "sha256": "880eddcf56b10952735033d68d3f8b97c4e8412933a383fa08317ca2fca1445f"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "assets": [
+    {
+      "id": "desert-camp-wood-crate",
+      "size": [
+        128,
+        104
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        1,
+        0.8125
+      ],
+      "height_relative_to_player": 0.6202290076335878
+    },
+    {
+      "id": "desert-camp-charcoal-stove",
+      "size": [
+        140,
+        120
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        1.09375,
+        0.9375
+      ],
+      "height_relative_to_player": 0.7156488549618321
+    },
+    {
+      "id": "desert-boulder-03",
+      "size": [
+        256,
+        224
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        2,
+        1.75
+      ],
+      "height_relative_to_player": 1.3358778625954197
+    },
+    {
+      "id": "desert-sand-mound",
+      "size": [
+        320,
+        128
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        2.5,
+        1
+      ],
+      "height_relative_to_player": 0.7633587786259541
+    },
+    {
+      "id": "desert-ruins-pillar",
+      "size": [
+        256,
+        384
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        2,
+        3
+      ],
+      "height_relative_to_player": 2.2900763358778624
+    },
+    {
+      "id": "desert-cactus-03",
+      "size": [
+        256,
+        384
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        2,
+        3
+      ],
+      "height_relative_to_player": 2.2900763358778624
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+ONE production parallax cutout strip for Phimond desert: 1536x512, seamless horizontal repeat.
+Image1 original desert map CONTENT. Images2 approved forest-wall-far and3 batch01 contact sheet STYLE: same pixel painter, restrained color clusters, modeled material, not smooth painting. Images4–5 anchors only, no pets.
+Warm ochre low dunes and sparse pale gray wind-eroded mesas, with one tiny distant collapsed dome ruin. Far scenery only: low small shapes, sky exact #FF00FF, continuous plain ochre sand at bottom. Muted mauve stone shade, upper-left warm face. NO atmospheric fog, baked light, smooth gradient, grain, black outline, letters.
+EXACT geometry required for repeat: leftmost96pixels AND rightmost96pixels must be IDENTICAL plain end columns. In BOTH end zones the sky is magenta from y0 through y319; sand is a single flat color #D9B26B from y320 to bottom511. At x0 and x1535 the horizontal sky/sand boundary sits at the exact same y320. No pixels of any other color at either end. No dunes, pebbles, shadows, shading, gradients, rocks or decorations in these end96px. The center scenery connects gently down to these flat low end zones. Largest central mesa top near y130, dunes mostlyy260–340. Upper half mostly magenta. Avoid symmetric repeated central motifs.
+Within central1344pixels, deliberately chunky detailed desert pixel clusters with33–48 colors, dry eroded slab shapes and broken ridges, 2–4tones per material, same as approved batch00–09 / Octopath inspired HD2D. Keep much quieter than a foreground prop. Bottom plain base color must stay uniform across the whole width. Pixel hard edges no semitransparency. This is one asset, no panels/frame/text.
+
+Actual attachments:
+1. /Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png SHA256 30a678461a1a1f13aafa1a925382223dda2abcba586bb3b343e87a683a6c04ea
+2. /Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/forest-wall-far/final.png SHA256 745ebb244eb1f19c5398ac02b90a958e76ad0b719a5218d736206c2cce7bcbb2
+3. /Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/contact-sheet.png SHA256 4347e8dafc3491cb1516c88379effbf92c32b2ac1b17a0776469eedb7fa94a05
+4. /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png SHA256 fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da
+5. /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png SHA256 043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3

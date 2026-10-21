@@ -1,0 +1,53 @@
+{
+  "id": "native-structures-scale-09",
+  "state": "exported_pending_visual_review",
+  "route": "built-in image_gen",
+  "raw": "raw-16.png",
+  "palette_source": "palette.json",
+  "prompt": "Phimond desert native-resolution 6prop sheet,1254square flat#FF00FFbackground. Very widely spaced small sprites in2columns3rows. Each object depicted well within320x220nativepixels maximum, not enlarged to fillcell. Approved artiststyle refs2architecture+3portal (material clusters only), originalAPKdesert1content,petanchors4/5outlinesonly. Octopath inspiredHD2D pixels, darkbrown contours warmfrontupperleftlight coolmauveshadows, no smoothgradient,dither,glow,groundbase,castshadow,text.33–48 subtle earthlycolors from ochre/rust/ivory/olive/woodumber/mauve. Allpartsconnected withno loose stones/spinepixels. Shapecomplete≥32pixelclearance fromneighbors.\nTOPLEFT: low round DRY WELL of worn ivorysandstone ochrerim rustclaymortar coolmauveblackinterior onewoodencrankandshortsage rope tightlyattached; no tall roof. Actual drawing about160wide110high, export288x224(world2.25x1.75,1.34playerheight). Visibleinside well opening, naturalbrokenrim, smallattachedbase stones.\nTOPRIGHT: short STONE STAIRS 4broadunequal sandstone steps ascendingawayfromviewer, ivorywornnoses rustlowerstone mauvecrevices sparseattachedolivemoss. Actual drawingabout240wide120high, export480x256(world3.75x2,1.53playerheight). No scenery slabground,no separate debris, irregularstepped silhouette.\nMIDDLELEFT: FALLEN broken ivorycolumn laid horizontal withangledflutedshaft and one carvedvolutecapital, weathered ochrecracks rustironband coolmauveundersides tinyattachedroot. Actual drawingabout300wide100high; export576x192(world4.5x1.5,1.15playerheight); lowhorizontal nottallcolumn.\nMIDDLERIGHT: LOWnomad canvas tent with simpledarkwoodtriangularframe, ochrecloth, rustredfoldeddoorflap, oneoliveattachedroll, ivorybonetoggles. Actualdrawingabout260wide190high; export480x384(world3.75x3,2.29playerheight). Compactcamp structure no pavilion/gourd/no hangingstrings.\nBOTTOMLEFT: monsterbones group withgiantskull, curvedribcageandspine allconnected, warmivoryshadeochremauvefissures attachedrustearthandtinyolive grass, nofloatingbonefragments. Nativeactualabout270wide140high;export448x256(world3.5x2,1.53playerheight), nooversizegiantmountain.\nBOTTOMRIGHT: SMALL desertcreatureskullwithshortcurvedattachedhorns anddarkmauveeyecavities, subtleochre/ivoryboneplanes thinruststaining tinysage rootatbase. Actualdrawingonly90wide70high;export192x136(world1.5x1.0625,81%playerheight). This skull MUSTBE muchsmallerthanotherfiveprops.\nTiny artwork onlargeemptycanvas. Actualpixels copied1:1later, noresizing allowed. Do NOT enlarge.",
+  "refs": [
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+      "sha256": "30a678461a1a1f13aafa1a925382223dda2abcba586bb3b343e87a683a6c04ea"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/city-facade-townhouse/final.png",
+      "sha256": "57c926e3ba82ed8af80f01f1234c27156002491ca5267881e7ba40bdd2efe060"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/forest-portal-active/final.png",
+      "sha256": "f229e35b82a6849b59dfc884ff62f13398336c5092537a992e9d7ec40c0af9b4"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "assets": [
+    {
+      "id": "desert-nomad-tent",
+      "size": [
+        480,
+        384
+      ],
+      "category": "prop",
+      "native_pixels": true,
+      "desired_world_size": [
+        3.75,
+        3
+      ],
+      "height_relative_to_player": 2.2900763358778624,
+      "box": [
+        780,
+        380,
+        1300,
+        740
+      ]
+    }
+  ],
+  "not_selected": "well,stairs,pillar,bones,skull exceed native pixel budgets; tent fits candidate"
+}
