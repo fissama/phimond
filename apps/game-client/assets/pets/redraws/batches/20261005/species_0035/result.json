@@ -1,0 +1,50 @@
+{
+  "species_id": "species_0035",
+  "source_species_id": "TruongLaoNguoiCay",
+  "task_model": "gpt-6.1-sol",
+  "prompt_revision": 2,
+  "status": "ready_for_review",
+  "generation_calls": 4,
+  "raw_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0035/attempt-04/raw.png",
+  "raw_sha256": "20fd9520512d00f1b14e1929099047523f9089686619a2b0d2f0fbfa2039e9c9",
+  "mechanical_status": "pass",
+  "human_approved": false,
+  "blockers": [],
+  "visual_review": "All20normalalpha reviewed: original bark elder crown foliage rootfeet single heldstaff, fixedLEFTcamera, articulatedbreathing/rootwalk/staffLEFTstrike/raisedstaffcasting/collapse fullydown. Sourceoverlap repaired by builtin halfsize composition; no limbs erased. Body smaller typicalheightguidance from faintalpha preservation; human64pxreadability/playback pending.",
+  "candidate_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0035/attempt-04/packed.png",
+  "candidate_sha256": "081c3355f58a352b378e75771fa65241c1fd5c9bb1a4269d9027b1bd332c6dec",
+  "preview_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0035/attempt-04/preview/preview.html",
+  "resume_attempts": [
+    {
+      "path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0035/attempt-02/raw.png",
+      "sha256": "92a0a64787f39e63adf7370120e08e22aa024ae8a647396010aeee0a58e849e9",
+      "status": "requires sourceoverlap repair; compact-pose instruction not fully respected"
+    },
+    {
+      "path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0035/attempt-03/raw.png",
+      "sha256": "28464181662ed3e857131506783af819f773c1ec4165b055fe7630b6aab92387",
+      "status": "Attack R3C3 staff extends into C2 bounding rectangle; no safe rectangular packing without limb fragments"
+    },
+    {
+      "path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0035/attempt-04/raw.png",
+      "sha256": "20fd9520512d00f1b14e1929099047523f9089686619a2b0d2f0fbfa2039e9c9",
+      "status": "ready all20+checker+preview"
+    }
+  ],
+  "self_review_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0035/attempt-04/self-review.json",
+  "historical_raw_selections": [
+    {
+      "raw_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0035/attempt-01/raw.png",
+      "raw_sha256": "12464221ed04e7ede122495f94175f3c5caea33b0026221af390b8c63c4c4b02",
+      "generated_source_path": "/Users/phileanh/.codex/generated_images/01a109eb-e660-7333-8bac-1eaab09607c9/exec-436160b4-11e7-4e00-9db3-dd86efb98cba.png"
+    }
+  ],
+  "historical_generated_source_path": "/Users/phileanh/.codex/generated_images/01a109eb-e660-7333-8bac-1eaab09607c9/exec-436160b4-11e7-4e00-9db3-dd86efb98cba.png",
+  "selected_attempt": "attempt-04",
+  "input_metadata_paths": [
+    "apps/game-client/assets/pets/redraws/batches/20261005/species_0035/attempt-04/inputs-resume.json"
+  ],
+  "prompt_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0035/attempt-04/prompt.txt",
+  "animation_playback_verified": false,
+  "runtime_active": false
+}

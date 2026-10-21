@@ -1,0 +1,40 @@
+{
+  "species_id": "species_0048",
+  "source_species_id": "RongSam",
+  "task_model": "gpt-6.1-sol",
+  "prompt_revision": 2,
+  "status": "ready_for_review",
+  "generation_calls": 2,
+  "raw_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0048/attempt-02/raw.png",
+  "raw_sha256": "df04b0d72cde0d67055157b06d67008508683ea29b62b02cc8baac9f49c16401",
+  "mechanical_status": "pass",
+  "human_approved": false,
+  "blockers": [],
+  "visual_review": "All 20 normal-alpha frames inspected: original blue plated dragon, cream belly, spines and tail; fixed LEFT camera, alternating leg cycle, LEFT jaw strike, reared casting gesture, fully down final pose. Built-in composition repair removes source overlap. Below typical height guidance; human 64px readability and continuous playback remain pending.",
+  "candidate_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0048/attempt-02/packed.png",
+  "candidate_sha256": "351de3cea64953b4cd46215af8b43fe3a3b2651acaf6230b103ba6f8d773e970",
+  "preview_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0048/attempt-02/preview/preview.html",
+  "self_review_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0048/attempt-02/self-review.json",
+  "resume_attempts": [
+    {
+      "path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0048/attempt-02/raw.png",
+      "sha256": "df04b0d72cde0d67055157b06d67008508683ea29b62b02cc8baac9f49c16401",
+      "status": "ready all20+checker+preview"
+    }
+  ],
+  "historical_raw_selections": [
+    {
+      "raw_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0048/attempt-01/raw.png",
+      "raw_sha256": "c8e7b1724a31afbb2c6a587dbef31b98f344ed2669dc56790cba83c2e5499b6a",
+      "generated_source_path": "/Users/phileanh/.codex/generated_images/01a109eb-e660-7333-8bac-1eaab09607c9/exec-5ecd9bab-8691-485e-80c3-03bcc894df18.png"
+    }
+  ],
+  "historical_generated_source_path": "/Users/phileanh/.codex/generated_images/01a109eb-e660-7333-8bac-1eaab09607c9/exec-5ecd9bab-8691-485e-80c3-03bcc894df18.png",
+  "selected_attempt": "attempt-02",
+  "input_metadata_paths": [
+    "apps/game-client/assets/pets/redraws/batches/20261005/species_0048/attempt-02/inputs-resume.json"
+  ],
+  "prompt_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0048/attempt-02/prompt.txt",
+  "animation_playback_verified": false,
+  "runtime_active": false
+}

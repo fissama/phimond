@@ -1,0 +1,1 @@
+Attempt03 superseded by attempt02: halo repair was unnecessary. RGBA inspection found red fringe pixels alpha1; normal alpha compositing does not show the opaque red halo displayed by transparent image inspector. No source alpha erased. Attempt02 retains correct left-facing head and better prior geometry.
