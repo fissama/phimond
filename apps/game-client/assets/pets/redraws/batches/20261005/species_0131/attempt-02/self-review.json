@@ -1,0 +1,21 @@
+{
+  "species_id": "species_0131",
+  "candidate_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0131/attempt-02/packed-v2.png",
+  "candidate_sha256": "da12dae3293f5e585ae1f47457203eef402f4656bf12494d8c088180c9174971",
+  "all_20_poses_static_reviewed": true,
+  "status": "static_all20_pass_playback_pending",
+  "identity": "NN original portrait/atlas confirms one tapered blue/red spectral tail, two fists and red spikes; repair removes invented legs/feet in movement/cast.",
+  "camera": "fixed LEFT three-quarter all20",
+  "rows": [
+    "idle breathing with curvedtail responses",
+    "four hover phases and tailcurl/sway, no pairedlegs",
+    "fist retract/windup/leftpunch/recovery",
+    "gatherfists/raisedfist/leftrelease/loweredrecovery; single continuous tail",
+    "flinch crouch/collapse/finalfullyproneheadLEFT"
+  ],
+  "packing": "Explicit whole pose rectangles; col3/4 source boundary adjusted x840 to860 to retain complete attack/cast spike within its owner cell. All alpha retained, common NN scale only. Initial packed.png superseded by packed-v2.png.",
+  "style": "Dark outlines and larger blue/red clusters consistent with approved anchors; no alternate identity/style refs.",
+  "human_approved": false,
+  "runtime_active": false,
+  "blockers": []
+}
