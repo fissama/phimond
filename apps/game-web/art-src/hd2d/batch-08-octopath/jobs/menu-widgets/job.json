@@ -1,0 +1,138 @@
+{
+  "refs": [
+    "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-06-octopath/source-hud-contact.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/reference/ui/UI.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+  ],
+  "assets": [
+    {
+      "id": "scroll-track",
+      "box": [
+        100,
+        0,
+        340,
+        430
+      ],
+      "body": [
+        48,
+        360
+      ],
+      "notes": "Separate menu interaction primitive; runtime composes and labels."
+    },
+    {
+      "id": "scroll-thumb",
+      "box": [
+        500,
+        100,
+        730,
+        390
+      ],
+      "body": [
+        48,
+        90
+      ],
+      "notes": "Separate menu interaction primitive; runtime composes and labels."
+    },
+    {
+      "id": "lineage-link-horizontal",
+      "box": [
+        780,
+        150,
+        1312,
+        370
+      ],
+      "body": [
+        240,
+        24
+      ],
+      "notes": "Separate menu interaction primitive; runtime composes and labels."
+    },
+    {
+      "id": "lineage-link-vertical",
+      "box": [
+        100,
+        430,
+        350,
+        830
+      ],
+      "body": [
+        24,
+        240
+      ],
+      "notes": "Separate menu interaction primitive; runtime composes and labels."
+    },
+    {
+      "id": "lineage-node",
+      "box": [
+        450,
+        430,
+        810,
+        830
+      ],
+      "body": [
+        90,
+        90
+      ],
+      "notes": "Separate menu interaction primitive; runtime composes and labels."
+    },
+    {
+      "id": "lineage-branch",
+      "box": [
+        820,
+        430,
+        1312,
+        830
+      ],
+      "body": [
+        180,
+        180
+      ],
+      "notes": "Separate menu interaction primitive; runtime composes and labels."
+    },
+    {
+      "id": "quantity-minus",
+      "box": [
+        30,
+        830,
+        390,
+        1199
+      ],
+      "body": [
+        72,
+        72
+      ],
+      "notes": "Separate menu interaction primitive; runtime composes and labels."
+    },
+    {
+      "id": "quantity-plus",
+      "box": [
+        480,
+        830,
+        830,
+        1199
+      ],
+      "body": [
+        72,
+        72
+      ],
+      "notes": "Separate menu interaction primitive; runtime composes and labels."
+    },
+    {
+      "id": "fusion-material-slot",
+      "box": [
+        880,
+        830,
+        1312,
+        1199
+      ],
+      "body": [
+        156,
+        156
+      ],
+      "notes": "Separate menu interaction primitive; runtime composes and labels."
+    }
+  ],
+  "kit": "menu-widgets",
+  "source_card": "Original APK reference HUD: thin silver stepped bars, circular gold filigree portrait/button rims, dark-blue chat/menu fields, tilted blue oval action buttons. Reference UI.png has asymmetric gold leaf curls around a flat blue center. These are content identities; Octopath palette and crisp pixel clustering are the redraw direction. Pet sheets supply pixel edge compatibility only."
+}

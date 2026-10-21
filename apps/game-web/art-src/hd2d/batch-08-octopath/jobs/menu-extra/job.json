@@ -1,0 +1,243 @@
+{
+  "refs": [
+    "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-06-octopath/source-hud-contact.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/reference/ui/UI.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+  ],
+  "assets": [
+    {
+      "id": "toggle-off",
+      "box": [
+        710,
+        290,
+        1030,
+        490
+      ],
+      "body": [
+        180,
+        72
+      ]
+    },
+    {
+      "id": "toggle-on",
+      "box": [
+        1040,
+        290,
+        1400,
+        490
+      ],
+      "body": [
+        180,
+        72
+      ]
+    },
+    {
+      "id": "quantity-field",
+      "box": [
+        380,
+        550,
+        790,
+        780
+      ],
+      "body": [
+        300,
+        90
+      ]
+    },
+    {
+      "id": "pet-card",
+      "box": [
+        790,
+        490,
+        1030,
+        790
+      ],
+      "body": [
+        300,
+        420
+      ]
+    },
+    {
+      "id": "star-housing",
+      "box": [
+        1030,
+        540,
+        1400,
+        780
+      ],
+      "body": [
+        420,
+        108
+      ]
+    },
+    {
+      "id": "stat-block",
+      "box": [
+        0,
+        790,
+        330,
+        1080
+      ],
+      "body": [
+        540,
+        420
+      ]
+    },
+    {
+      "id": "portrait-rim",
+      "box": [
+        765,
+        790,
+        1015,
+        1080
+      ],
+      "body": [
+        240,
+        240
+      ]
+    },
+    {
+      "id": "button-primary-normal",
+      "box": [
+        0,
+        50,
+        355,
+        255
+      ],
+      "body": [
+        300,
+        90
+      ],
+      "slice": [
+        75,
+        42,
+        75,
+        42
+      ],
+      "notes": "Distinct generated normal/pressed/disabled material state; reviewed enlarged slicing preserves corner ornament."
+    },
+    {
+      "id": "button-primary-pressed",
+      "box": [
+        355,
+        50,
+        700,
+        255
+      ],
+      "body": [
+        300,
+        90
+      ],
+      "slice": [
+        75,
+        42,
+        75,
+        42
+      ],
+      "notes": "Distinct generated normal/pressed/disabled material state; reviewed enlarged slicing preserves corner ornament."
+    },
+    {
+      "id": "button-primary-disabled",
+      "box": [
+        700,
+        50,
+        1040,
+        255
+      ],
+      "body": [
+        300,
+        90
+      ],
+      "slice": [
+        75,
+        42,
+        75,
+        42
+      ],
+      "notes": "Distinct generated normal/pressed/disabled material state; reviewed enlarged slicing preserves corner ornament."
+    },
+    {
+      "id": "button-secondary-normal",
+      "box": [
+        1040,
+        50,
+        1400,
+        255
+      ],
+      "body": [
+        300,
+        90
+      ],
+      "slice": [
+        75,
+        42,
+        75,
+        42
+      ],
+      "notes": "Distinct generated normal/pressed/disabled material state; reviewed enlarged slicing preserves corner ornament."
+    },
+    {
+      "id": "button-secondary-pressed",
+      "box": [
+        0,
+        290,
+        355,
+        490
+      ],
+      "body": [
+        300,
+        90
+      ],
+      "slice": [
+        75,
+        42,
+        75,
+        42
+      ],
+      "notes": "Distinct generated normal/pressed/disabled material state; reviewed enlarged slicing preserves corner ornament."
+    },
+    {
+      "id": "button-secondary-disabled",
+      "box": [
+        355,
+        290,
+        700,
+        490
+      ],
+      "body": [
+        300,
+        90
+      ],
+      "slice": [
+        75,
+        42,
+        75,
+        42
+      ],
+      "notes": "Distinct generated normal/pressed/disabled material state; reviewed enlarged slicing preserves corner ornament."
+    },
+    {
+      "id": "row-disabled",
+      "box": [
+        1015,
+        790,
+        1400,
+        1080
+      ],
+      "body": [
+        1038,
+        75
+      ],
+      "slice": [
+        120,
+        35,
+        120,
+        35
+      ],
+      "notes": "Gray disabled row from original generated component."
+    }
+  ],
+  "kit": "menu-active",
+  "source_card": "Original APK reference HUD: thin silver stepped bars, circular gold filigree portrait/button rims, dark-blue chat/menu fields, tilted blue oval action buttons. Reference UI.png has asymmetric gold leaf curls around a flat blue center. These are content identities; Octopath palette and crisp pixel clustering are the redraw direction. Pet sheets supply pixel edge compatibility only."
+}

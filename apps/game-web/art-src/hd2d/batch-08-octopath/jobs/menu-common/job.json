@@ -1,0 +1,182 @@
+{
+  "refs": [
+    "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-06-octopath/source-hud-contact.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/reference/ui/UI.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+  ],
+  "assets": [
+    {
+      "id": "button-close",
+      "box": [
+        1200,
+        120,
+        1376,
+        360
+      ],
+      "body": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "tab-normal",
+      "box": [
+        0,
+        390,
+        335,
+        550
+      ],
+      "body": [
+        234,
+        75
+      ]
+    },
+    {
+      "id": "tab-selected",
+      "box": [
+        350,
+        390,
+        680,
+        550
+      ],
+      "body": [
+        234,
+        75
+      ]
+    },
+    {
+      "id": "slot-normal",
+      "box": [
+        30,
+        560,
+        310,
+        780
+      ],
+      "body": [
+        156,
+        156
+      ]
+    },
+    {
+      "id": "slot-selected",
+      "box": [
+        380,
+        560,
+        670,
+        780
+      ],
+      "body": [
+        156,
+        156
+      ]
+    },
+    {
+      "id": "slot-locked",
+      "box": [
+        730,
+        560,
+        1000,
+        780
+      ],
+      "body": [
+        156,
+        156
+      ]
+    },
+    {
+      "id": "slot-rare",
+      "box": [
+        1090,
+        560,
+        1376,
+        780
+      ],
+      "body": [
+        156,
+        156
+      ]
+    },
+    {
+      "id": "scrollbar",
+      "box": [
+        100,
+        780,
+        260,
+        1080
+      ],
+      "body": [
+        54,
+        360
+      ]
+    },
+    {
+      "id": "checkbox-off",
+      "box": [
+        395,
+        800,
+        610,
+        1040
+      ],
+      "body": [
+        72,
+        72
+      ]
+    },
+    {
+      "id": "checkbox-on",
+      "box": [
+        690,
+        800,
+        900,
+        1040
+      ],
+      "body": [
+        72,
+        72
+      ]
+    },
+    {
+      "id": "row-normal",
+      "box": [
+        680,
+        390,
+        1030,
+        550
+      ],
+      "body": [
+        1038,
+        75
+      ],
+      "slice": [
+        120,
+        35,
+        120,
+        35
+      ],
+      "notes": "Distinct normal/selected list state from original generated component."
+    },
+    {
+      "id": "row-selected",
+      "box": [
+        1040,
+        390,
+        1376,
+        550
+      ],
+      "body": [
+        1038,
+        75
+      ],
+      "slice": [
+        120,
+        35,
+        120,
+        35
+      ],
+      "notes": "Distinct normal/selected list state from original generated component."
+    }
+  ],
+  "kit": "menu-common",
+  "source_card": "Original APK reference HUD: thin silver stepped bars, circular gold filigree portrait/button rims, dark-blue chat/menu fields, tilted blue oval action buttons. Reference UI.png has asymmetric gold leaf curls around a flat blue center. These are content identities; Octopath palette and crisp pixel clustering are the redraw direction. Pet sheets supply pixel edge compatibility only."
+}

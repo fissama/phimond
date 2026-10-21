@@ -1,0 +1,266 @@
+{
+  "id": "battle-hud",
+  "cols": 6,
+  "rows": 4,
+  "refs": [
+    "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-09-octopath/source-hud.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+  ],
+  "prompt": "Phimond battle HUD component sprite sheet in muted OctopathTraveler HD2D pixelart, antiquebrass, darkweathered bluegray, ivory highlights. OriginalHUDref1 content silhouettes only, petanchorspixelstyle only. EXACT6columns x4rows equalcells. Eachone isolated transparent, wide24pxmargin. NO words,letters,numbers,fullscreenlayout orglow. Row1 sixactionicons: auto smallivory mechanicalgear with bluearrows;attack brownclaw;magic goldspiralstaff;inventory ochreleatherpouch;defend brassshield;run pinkwingedboot. Row2: blankroundbutton rim NORMAL; blankroundbutton rim PRESSED; blankroundbutton rim LOCKED(gray); emptywide unitnameplate brassframe; smallallied HPbarframe with jadefill; smallenemy HPbarframe with mutedcrimsonfill. Row3: blankvictorybanner laurel brass; blanklossbanner darktornribbon; blankturnbanner bronzeplaque; blankcapturesuccessbanner parchmentredseal; blanklevelupbanner goldenwings; battleactionstrip longdarkbronze blankpanel. Row4: targetmarker downwardgoldtriangle phase1,phase2brighter,phase3 loweredslightly,phase4 returns; battlefloor ring thin brokenstonecircle decal no ground; boundaryarc thin ivory dashed ovaldecal. Isolated components, rectangular banners horizontal, no bakedtext.\nCRITICAL RETAKE: OPAQUEuniformpuremagenta #FF00FF keybackground everywhereempty. No transparencyinraw,no backgroundgradient,nobloom,no groundlight,no haze,no gridlines. Keep emptyregionsmagenta including gaps. Same6columns4rows, exact24elements. Do notrenderUI text. Squarecells widegaps.",
+  "original_prompt": "Phimond battle HUD component sprite sheet in muted OctopathTraveler HD2D pixelart, antiquebrass, darkweathered bluegray, ivory highlights. OriginalHUDref1 content silhouettes only, petanchorspixelstyle only. EXACT6columns x4rows equalcells. Eachone isolated transparent, wide24pxmargin. NO words,letters,numbers,fullscreenlayout orglow. Row1 sixactionicons: auto smallivory mechanicalgear with bluearrows;attack brownclaw;magic goldspiralstaff;inventory ochreleatherpouch;defend brassshield;run pinkwingedboot. Row2: blankroundbutton rim NORMAL; blankroundbutton rim PRESSED; blankroundbutton rim LOCKED(gray); emptywide unitnameplate brassframe; smallallied HPbarframe with jadefill; smallenemy HPbarframe with mutedcrimsonfill. Row3: blankvictorybanner laurel brass; blanklossbanner darktornribbon; blankturnbanner bronzeplaque; blankcapturesuccessbanner parchmentredseal; blanklevelupbanner goldenwings; battleactionstrip longdarkbronze blankpanel. Row4: targetmarker downwardgoldtriangle phase1,phase2brighter,phase3 loweredslightly,phase4 returns; battlefloor ring thin brokenstonecircle decal no ground; boundaryarc thin ivory dashed ovaldecal. Isolated components, rectangular banners horizontal, no bakedtext.",
+  "selected_raw": "raw-02.png",
+  "key": [
+    255,
+    0,
+    255
+  ],
+  "source_card": "Original HUD blue actionbar,claw,autogear,spiralstaff,leatherpouch,pinkrun icon and victory/loss word assets viewed; redesigned as blank semantic banners andmutedbrass components. Defend newshield. UI @3x 960x640 design, icons256master. HPbars currentlycombinedframeandfill, runtime crop/redrawfill required.",
+  "assets": [
+    {
+      "id": "icon_auto",
+      "category": "icon",
+      "px": [
+        256,
+        256
+      ],
+      "slice": null
+    },
+    {
+      "id": "icon_attack",
+      "category": "icon",
+      "px": [
+        256,
+        256
+      ],
+      "slice": null
+    },
+    {
+      "id": "icon_magic",
+      "category": "icon",
+      "px": [
+        256,
+        256
+      ],
+      "slice": null
+    },
+    {
+      "id": "icon_inventory",
+      "category": "icon",
+      "px": [
+        256,
+        256
+      ],
+      "slice": null
+    },
+    {
+      "id": "icon_defend",
+      "category": "icon",
+      "px": [
+        256,
+        256
+      ],
+      "slice": null
+    },
+    {
+      "id": "icon_run",
+      "category": "icon",
+      "px": [
+        256,
+        256
+      ],
+      "slice": null
+    },
+    {
+      "id": "battle_button_normal",
+      "category": "ui_sprite",
+      "px": [
+        201,
+        186
+      ],
+      "slice": null
+    },
+    {
+      "id": "battle_button_pressed",
+      "category": "ui_sprite",
+      "px": [
+        201,
+        186
+      ],
+      "slice": null
+    },
+    {
+      "id": "battle_button_locked",
+      "category": "ui_sprite",
+      "px": [
+        201,
+        186
+      ],
+      "slice": null
+    },
+    {
+      "id": "battle_nameplate",
+      "category": "ui_9slice",
+      "px": [
+        384,
+        162
+      ],
+      "slice": [
+        48,
+        48,
+        48,
+        48
+      ]
+    },
+    {
+      "id": "battle_hp_ally",
+      "category": "ui_sprite",
+      "px": [
+        288,
+        120
+      ],
+      "slice": null
+    },
+    {
+      "id": "battle_hp_enemy",
+      "category": "ui_sprite",
+      "px": [
+        288,
+        120
+      ],
+      "slice": null
+    },
+    {
+      "id": "battle_win_banner",
+      "category": "ui_sprite",
+      "px": [
+        600,
+        180
+      ],
+      "slice": null
+    },
+    {
+      "id": "battle_loss_banner",
+      "category": "ui_sprite",
+      "px": [
+        600,
+        180
+      ],
+      "slice": null
+    },
+    {
+      "id": "battle_turn_banner",
+      "category": "ui_sprite",
+      "px": [
+        600,
+        180
+      ],
+      "slice": null
+    },
+    {
+      "id": "battle_capture_banner",
+      "category": "ui_sprite",
+      "px": [
+        600,
+        180
+      ],
+      "slice": null
+    },
+    {
+      "id": "battle_levelup_banner",
+      "category": "ui_sprite",
+      "px": [
+        600,
+        180
+      ],
+      "slice": null
+    },
+    {
+      "id": "battle_actions",
+      "category": "ui_9slice",
+      "px": [
+        960,
+        240
+      ],
+      "slice": [
+        96,
+        48,
+        96,
+        48
+      ]
+    },
+    {
+      "id": "battle_target",
+      "category": "fx",
+      "frames": 4,
+      "cell": 96,
+      "fps": 6,
+      "source_boxes": [
+        [
+          20,
+          790,
+          252,
+          905
+        ],
+        [
+          268,
+          790,
+          500,
+          905
+        ],
+        [
+          524,
+          790,
+          756,
+          905
+        ],
+        [
+          764,
+          790,
+          996,
+          905
+        ]
+      ],
+      "notes": "Four target marker phases, sourcephase3 purplegroundellipse removed by shared crop."
+    },
+    {
+      "id": "battle_floor_ring",
+      "category": "decal",
+      "px": [
+        512,
+        256
+      ],
+      "source_boxes": [
+        [
+          1024,
+          768,
+          1280,
+          1024
+        ]
+      ]
+    },
+    {
+      "id": "battle_boundary_arc",
+      "category": "decal",
+      "px": [
+        512,
+        256
+      ],
+      "source_boxes": [
+        [
+          1280,
+          768,
+          1536,
+          1024
+        ]
+      ]
+    }
+  ],
+  "y_bounds": [
+    70,
+    320,
+    550,
+    750,
+    1024
+  ]
+}

@@ -1,0 +1,15 @@
+Attempt1 original prompt:
+Production VFX sheet for Phimond muted Octopath Traveler HD-2D pixelart. Reference1 ORIGINALbattleFX sequence content/timing, refs2/3 pet pixelcontourandshade compatibility only. EXACT6columns x7rows uniformsquarecells. Eachrow is ONEeffect across6animationphases lefttoright: smallcharge, forming, strongcrescendo, peak, disperse, finalsmallwisps. Samefixed CENTERpivot andscale shared allcells; clear transparentgaps and32px cellmargins. NO frames, labels,text, backgrounds, bloom, gradients, smokeopacity blur. Cleanpixelclusters2–4tones. RowsTOPtoBOTTOM:1earth_cast ochre rock shard spiralcharging;2water_cast cool blue droplet ring charging;3wind_cast desaturatedsage gustspiral charging;4fire_cast copper red sparksandflame charging;5neutral_cast silverwhite pressurepulse charging;6light_cast palegold raycross charging;7dark_cast deepviolet fragmentspiral charging. All7elements, exactly6frames each. Output transparentalpha.
+
+Selected prompt:
+Production VFX sheet for Phimond muted Octopath Traveler HD-2D pixelart. Reference1 ORIGINALbattleFX sequence content/timing, refs2/3 pet pixelcontourandshade compatibility only. EXACT6columns x7rows uniformsquarecells. Eachrow is ONEeffect across6animationphases lefttoright: smallcharge, forming, strongcrescendo, peak, disperse, finalsmallwisps. Samefixed CENTERpivot andscale shared allcells; clear transparentgaps and32px cellmargins. NO frames, labels,text, backgrounds, bloom, gradients, smokeopacity blur. Cleanpixelclusters2–4tones. RowsTOPtoBOTTOM:1earth_cast ochre rock shard spiralcharging;2water_cast cool blue droplet ring charging;3wind_cast desaturatedsage gustspiral charging;4fire_cast copper red sparksandflame charging;5neutral_cast silverwhite pressurepulse charging;6light_cast palegold raycross charging;7dark_cast deepviolet fragmentspiral charging. All7elements, exactly6frames each. Output transparentalpha.
+CRITICAL RETAKE: Generate OPAQUEPNG on perfectly uniform puremagenta #FF00FF background in everyempty pixel,including gutters and effectholes. No background gradient whatsoever, no gridsquares,no cellborders,NO blackbackground. Effect core pixels fullyopaque hardedged. NO glow/no colored haze. DO NOT generate transparency in this raw; production pipeline removes puremagenta. Exact6column7row layout. Fixedsquare cells.
+
+Selected ordered references:
+1. /Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-07-octopath/source-fx.png sha256=25f65d558ac8a1acf1b77115bf88e597558b6c63055df5eaf5e6c7f3e1eb22cd
+2. /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png sha256=fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da
+3. /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png sha256=043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3
+
+Route: built-in image_gen; model not exposed; cost unknown.
+Raw SHA256: 822c0092efe5f172732c0d0836b6b9be2b468c9099d0ec49560781ed90311530
+Full per-attempt provenance: provenance.json
