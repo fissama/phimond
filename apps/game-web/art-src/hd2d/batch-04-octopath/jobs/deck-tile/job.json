@@ -1,0 +1,26 @@
+{
+  "id": "deck-tile",
+  "kind": "terrain",
+  "rows": 1,
+  "cols": 1,
+  "assets": [
+    {
+      "id": "ship-deck-tile",
+      "desc": "topdown seamless square weathered honey oak deckplanks with restrained end joints, complete texture no border",
+      "height": 512,
+      "category": "floor",
+      "px": [
+        512,
+        512
+      ],
+      "tileable": "xy"
+    }
+  ],
+  "refs": [
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/extracted/sbw_v32/Sprite/sharedassets11.assets_13_11.png",
+    "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/middle_corridor_main_hall.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png"
+  ],
+  "prompt": "One square seamlessly tiling deckplank FLOOR TEXTURE,512square outputtarget, flat topdown, planks horizontal. Entire canvas filled opaque. Precisely matching left-right and top-bottom edges. No objects, no rails, no vignette. PRIMARY Octopath Traveler HD-2D art direction, muted weathered timber, ivory canvas, dark forged metal and dull brass, refined large clean pixel clusters, hue-tinted dark edges,2-4tones, subtle upperleft warm key and cooler shade. Pet reference LAST only outline/pixel compatibility; no pet anatomy/saturated palette. Camera frontal billboard with slight top visible about24degrees. No cast shadows, fog, glow, gradients, floor, labels, text/numbers or white halo. Transparent background with wide empty spacing.\nCell1: topdown seamless square weathered honey oak deckplanks with restrained end joints, complete texture no border.",
+  "source_card": "Original map inspected: horizontal amber plank floor and dark timber upper hull, red skull banners, iron cannon on low wheeled timber carriage, open crates, rack and round table. Original level11 sprite contact and JAR arrows/doors/light/shadow/taskicon inspected before generation. New prescribed nautical props extend this material/role family without claiming original shape."
+}

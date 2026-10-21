@@ -1,0 +1,215 @@
+{
+  "status": "pass",
+  "method": "forge_palette.build_palette (weighted k-means++ in OKLab over unique colours, reserved colours fixed, coverage skipping) then forge_palette.fit_report of every input: OKLab dE of each pixel with alpha >= the threshold to its nearest palette colour",
+  "notProven": [
+    "Visual quality of the palette: look at swatches.png and an applied frame.",
+    "Colours of pixels below the alpha threshold were not sampled or measured.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "palette_colors",
+      "status": "pass",
+      "value": 48,
+      "threshold": 48
+    },
+    {
+      "id": "inputs_without_samples",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0,
+      "files": []
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.110124,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../inputs/arena-floor.png",
+      "sha256": "7f537708acf5f07a4f7cdcb28afb623d3f60bedd9aa743acc5acd44ba178e062",
+      "bytes": 381822
+    },
+    {
+      "path": "../inputs/city-brick-path.png",
+      "sha256": "2d80bae8d4c5cff20b34ddcef3120187295eeb615aa9ed393627d717c486c2fc",
+      "bytes": 389421
+    },
+    {
+      "path": "../inputs/city-paving-01.png",
+      "sha256": "8a111039d7de048b349be0c8d54329dd3aef3fc1f360a89a1acd88df153873ea",
+      "bytes": 422173
+    },
+    {
+      "path": "../inputs/city-paving-02.png",
+      "sha256": "8bb178c02b7910b1dec5fba9b1a1ec4ce4482c2634fb232e0a92da85ece81f7e",
+      "bytes": 404257
+    },
+    {
+      "path": "../inputs/city-paving-03.png",
+      "sha256": "9047227c1f9b3cbdc2a82944d8e55118c69c72e78f42c540f40e97d902ff24e7",
+      "bytes": 392531
+    },
+    {
+      "path": "../inputs/farm-tilled-01.png",
+      "sha256": "ab20f90dfa6febc0549f9ff36cdf3655c8b03f9ec899c17d976a4fba28744d15",
+      "bytes": 394465
+    },
+    {
+      "path": "../inputs/farm-tilled-02.png",
+      "sha256": "163d90fb2a9dc6a2942637e0b5edeac72e677b81141ec0ca22a88cbb2f33f528",
+      "bytes": 405047
+    },
+    {
+      "path": "../inputs/hall-floor-stone.png",
+      "sha256": "d0122ee915b16be62a3631b931afc863094581ec55b694a47ec8cb8019fc4269",
+      "bytes": 368247
+    },
+    {
+      "path": "../inputs/hall-floor-wood.png",
+      "sha256": "5a0db5d3697eb655eb6dbcb97ef3d49ad7ae5ed95a52b03424f9c8ca54b35584",
+      "bytes": 320184
+    }
+  ],
+  "outputs": [
+    {
+      "path": "palette.json",
+      "sha256": "72332740902b9b7922d3a313e3e8cb1ed49a649480b0dda77238275fa4171685",
+      "bytes": 1924
+    },
+    {
+      "path": "palette.gpl",
+      "sha256": "370877b4a94ae095b84ca6a51cc45c99b9f135ab621ecd1d467d4f7875a782da",
+      "bytes": 1020
+    },
+    {
+      "path": "palette.hex",
+      "sha256": "b21dfb737a48719bf728c15c2b7231a42e2962405800fa56f3d5fcd74f8a43d1",
+      "bytes": 336
+    },
+    {
+      "path": "swatches.png",
+      "sha256": "706f85f61520a9df06ff683c05fe8879ee60e6db46f82794ef3190c2d438c962",
+      "bytes": 683
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "palette": {
+    "colors": 48,
+    "reserved": 0,
+    "transparent_index": 255,
+    "seed": 0
+  },
+  "fit": {
+    "../inputs/arena-floor.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 261716,
+      "partial_alpha_px": 0,
+      "colors": 15958,
+      "palette_colors_used": 30,
+      "mean_delta_e": 0.00853,
+      "p95_delta_e": 0.01504,
+      "max_delta_e": 0.052245
+    },
+    "../inputs/city-brick-path.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 261989,
+      "partial_alpha_px": 0,
+      "colors": 39619,
+      "palette_colors_used": 42,
+      "mean_delta_e": 0.013583,
+      "p95_delta_e": 0.023692,
+      "max_delta_e": 0.052553
+    },
+    "../inputs/city-paving-01.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 261649,
+      "partial_alpha_px": 0,
+      "colors": 30925,
+      "palette_colors_used": 30,
+      "mean_delta_e": 0.00972,
+      "p95_delta_e": 0.017512,
+      "max_delta_e": 0.06458
+    },
+    "../inputs/city-paving-02.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 261569,
+      "partial_alpha_px": 0,
+      "colors": 28983,
+      "palette_colors_used": 28,
+      "mean_delta_e": 0.00897,
+      "p95_delta_e": 0.016323,
+      "max_delta_e": 0.054488
+    },
+    "../inputs/city-paving-03.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 261350,
+      "partial_alpha_px": 0,
+      "colors": 24251,
+      "palette_colors_used": 27,
+      "mean_delta_e": 0.008703,
+      "p95_delta_e": 0.015204,
+      "max_delta_e": 0.06208
+    },
+    "../inputs/farm-tilled-01.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 261246,
+      "partial_alpha_px": 0,
+      "colors": 14376,
+      "palette_colors_used": 28,
+      "mean_delta_e": 0.009014,
+      "p95_delta_e": 0.015628,
+      "max_delta_e": 0.063126
+    },
+    "../inputs/farm-tilled-02.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 261291,
+      "partial_alpha_px": 0,
+      "colors": 22764,
+      "palette_colors_used": 36,
+      "mean_delta_e": 0.010313,
+      "p95_delta_e": 0.019728,
+      "max_delta_e": 0.110124
+    },
+    "../inputs/hall-floor-stone.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 261324,
+      "partial_alpha_px": 0,
+      "colors": 14167,
+      "palette_colors_used": 33,
+      "mean_delta_e": 0.009389,
+      "p95_delta_e": 0.017201,
+      "max_delta_e": 0.037632
+    },
+    "../inputs/hall-floor-wood.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 261139,
+      "partial_alpha_px": 0,
+      "colors": 8551,
+      "palette_colors_used": 19,
+      "mean_delta_e": 0.008528,
+      "p95_delta_e": 0.015024,
+      "max_delta_e": 0.029649
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.110124,
+    "worst_p95_delta_e": 0.023692,
+    "off_palette_px": 2353273
+  }
+}

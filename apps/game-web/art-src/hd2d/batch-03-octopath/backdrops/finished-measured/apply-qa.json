@@ -1,0 +1,92 @@
+{
+  "status": "pass",
+  "method": "forge_palette.quantize_image: OKLab-nearest palette colour per pixel (exact palette colours kept), alpha binary at the threshold, then the written PNGs re-read and measured with forge_palette.fit_report against the palette",
+  "notProven": [
+    "Visual quality after snapping: compare an output with its input.",
+    "Indexed PNGs are engine exports; they are not checked by builders.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "output_off_palette_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "output_partial_alpha_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.1536,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../inputs-measured/coastal-cliff-mid.png",
+      "sha256": "b86c34304a47d9a21ba7938484fd46c2a6901597ede4f9250e86ce4e400ede15",
+      "bytes": 675293
+    },
+    {
+      "path": "../inputs-measured/sea-islands-far.png",
+      "sha256": "be75232dfad084cb77721c810778bff0a1386e7af12b08950a1bd89d80137b64",
+      "bytes": 350344
+    },
+    {
+      "path": "../palette/palette.json",
+      "sha256": "7ab9c9345852311e00e0f20638e4d03210c8ec18b72fb27c51fad5db565a17c6",
+      "bytes": 1924
+    }
+  ],
+  "outputs": [
+    {
+      "path": "coastal-cliff-mid.png",
+      "sha256": "fc0612016611847b89e1180f05e17d843d28f8a92550314cbf6edae3c52c0534",
+      "bytes": 279104
+    },
+    {
+      "path": "sea-islands-far.png",
+      "sha256": "04f315d92d5b20e4b6fc2f8f5d7d181fa696aafa7c1a2fa130bf9e1c2ae79ffb",
+      "bytes": 90140
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "fit": {
+    "coastal-cliff-mid.png": {
+      "measured_px": 318046,
+      "alpha_threshold": 128,
+      "off_palette_px": 317834,
+      "partial_alpha_px": 0,
+      "colors": 121883,
+      "palette_colors_used": 39,
+      "mean_delta_e": 0.015578,
+      "p95_delta_e": 0.03168,
+      "max_delta_e": 0.1536
+    },
+    "sea-islands-far.png": {
+      "measured_px": 233930,
+      "alpha_threshold": 128,
+      "off_palette_px": 232875,
+      "partial_alpha_px": 0,
+      "colors": 49019,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.010785,
+      "p95_delta_e": 0.025396,
+      "max_delta_e": 0.110692
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.1536,
+    "worst_p95_delta_e": 0.03168,
+    "off_palette_px": 550709
+  },
+  "locked_inputs": []
+}

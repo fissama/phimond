@@ -1,0 +1,282 @@
+{
+  "schema": "generate2dmap.prop_pack.v2",
+  "tool": {
+    "name": "extract_prop_pack",
+    "version": "0.4.0"
+  },
+  "input": "../raw-01.png",
+  "source_size": [
+    2057,
+    764
+  ],
+  "source_sha256": "368dee9b1ce79f2a89829ae89faff149ee7e858488f1cd04411be94a55f0bde4",
+  "source_mode": "RGB",
+  "layout_mode": "explicit_boxes",
+  "boxes_file": "../measured-boxes.json",
+  "labels_file": null,
+  "background_mode": "chroma_key",
+  "art_source": "host_image",
+  "rows": null,
+  "cols": null,
+  "threshold": 100,
+  "edge_threshold": 150,
+  "despill_radius": 3,
+  "despill": {
+    "mode": "edge",
+    "applied": "edge",
+    "radius": 3,
+    "margin": 12,
+    "changed_px": 6954
+  },
+  "hygiene": {
+    "mode": "none",
+    "floor": 4,
+    "solid_min": 32,
+    "attach_radius": 2,
+    "connectivity": 8,
+    "floor_px": 0,
+    "detached_px": 0,
+    "detached_components": 0,
+    "max_removed_alpha": 0
+  },
+  "alpha_floor": 0,
+  "alpha_floor_pixels_removed": 0,
+  "trim_border": 0,
+  "edge_clean_depth": 0,
+  "component_mode": "all",
+  "component_padding": 8,
+  "min_component_area": 1,
+  "edge_touch_margin": 0,
+  "geometry": {
+    "connectivity": 8,
+    "alpha_geometry_threshold": 16,
+    "anchor_mode": "stance",
+    "support_band_fraction": 0.25,
+    "anchor_rounding": "whole pixels, half-up",
+    "grid_rounding": null,
+    "keep_canvas": true,
+    "world_scale": null
+  },
+  "accepted": [
+    {
+      "index": 0,
+      "label": "far",
+      "display_name": "far",
+      "status": "accepted",
+      "image": "far/prop.png",
+      "sha256": "8207db3d40011b83adba62ab3b602e03e1f940ca4834fdd8100ba4d4383f9383",
+      "output_size": [
+        2057,
+        400
+      ],
+      "grid": null,
+      "cell_box": [
+        0,
+        0,
+        2057,
+        400
+      ],
+      "source_box": [
+        0,
+        0,
+        2057,
+        400
+      ],
+      "source_rect": [
+        0,
+        0,
+        2057,
+        400
+      ],
+      "trim_offset": [
+        0,
+        0
+      ],
+      "padding": [
+        0,
+        163,
+        0,
+        65
+      ],
+      "anchor_px": [
+        1029,
+        335
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 1,
+      "trim_applied": 0,
+      "crop_bbox": [
+        0,
+        163,
+        2057,
+        335
+      ],
+      "padded_crop_bbox": [
+        0,
+        0,
+        2057,
+        400
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 237039,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": true,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 1,
+      "label": "mid",
+      "display_name": "mid",
+      "status": "accepted",
+      "image": "mid/prop.png",
+      "sha256": "fe7ef0865b630d51511b8a44a7487fd946002803f9894446bdaea599fcc2235c",
+      "output_size": [
+        2057,
+        364
+      ],
+      "grid": null,
+      "cell_box": [
+        0,
+        400,
+        2057,
+        764
+      ],
+      "source_box": [
+        0,
+        400,
+        2057,
+        764
+      ],
+      "source_rect": [
+        0,
+        400,
+        2057,
+        764
+      ],
+      "trim_offset": [
+        0,
+        0
+      ],
+      "padding": [
+        0,
+        64,
+        0,
+        119
+      ],
+      "anchor_px": [
+        1029,
+        245
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 1,
+      "trim_applied": 0,
+      "crop_bbox": [
+        0,
+        64,
+        2057,
+        245
+      ],
+      "padded_crop_bbox": [
+        0,
+        0,
+        2057,
+        364
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 321510,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": true,
+      "edge_fringe_px": 0
+    }
+  ],
+  "rejected": [],
+  "edge_touch_props": [
+    "far",
+    "mid"
+  ],
+  "warnings": [
+    "props touch a cell edge (possible clipping): ['far', 'mid']"
+  ],
+  "qa": {
+    "status": "warn",
+    "method": "legacy #FF00FF key (100/150) and edge despill radius 3; alpha hygiene none; 8-connected components (all); checks measured on the published pixels",
+    "notProven": [
+      "that each label names the art in its cell or box",
+      "that a prop is complete: clipping is detected only where art meets the cell edge",
+      "keyed-edge quality beyond the edge fringe count",
+      "that anchors and suggested footprints match gameplay contact (both are measured from alpha)",
+      "runtime placement, collision or occlusion"
+    ],
+    "checks": [
+      {
+        "id": "accepted",
+        "status": "pass",
+        "value": 2,
+        "threshold": ">= 1"
+      },
+      {
+        "id": "edge_touch",
+        "status": "warn",
+        "value": [
+          "far",
+          "mid"
+        ],
+        "threshold": 0
+      },
+      {
+        "id": "dropped_area",
+        "status": "pass",
+        "value": {},
+        "threshold": 0.01
+      },
+      {
+        "id": "strategy_aspect",
+        "status": "skipped",
+        "value": null,
+        "threshold": 1.6
+      },
+      {
+        "id": "edge_fringe",
+        "status": "pass",
+        "value": 0.0,
+        "threshold": 0.02
+      }
+    ],
+    "inputs": [
+      {
+        "path": "../raw-01.png",
+        "sha256": "368dee9b1ce79f2a89829ae89faff149ee7e858488f1cd04411be94a55f0bde4",
+        "bytes": 1708885
+      },
+      {
+        "path": "../measured-boxes.json",
+        "sha256": "5d1efaa54308ca065a514065ab5b059e635648a60c7219c601b86ded0e59b83d",
+        "bytes": 318
+      }
+    ],
+    "outputs": [
+      {
+        "path": "far/prop.png",
+        "sha256": "8207db3d40011b83adba62ab3b602e03e1f940ca4834fdd8100ba4d4383f9383",
+        "bytes": 356253
+      },
+      {
+        "path": "mid/prop.png",
+        "sha256": "fe7ef0865b630d51511b8a44a7487fd946002803f9894446bdaea599fcc2235c",
+        "bytes": 680725
+      }
+    ],
+    "tool": {
+      "name": "extract_prop_pack",
+      "version": "0.4.0"
+    }
+  }
+}

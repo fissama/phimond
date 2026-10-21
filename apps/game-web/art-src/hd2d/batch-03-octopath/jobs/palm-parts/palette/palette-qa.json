@@ -1,0 +1,167 @@
+{
+  "status": "pass",
+  "method": "forge_palette.build_palette (weighted k-means++ in OKLab over unique colours, reserved colours fixed, coverage skipping) then forge_palette.fit_report of every input: OKLab dE of each pixel with alpha >= the threshold to its nearest palette colour",
+  "notProven": [
+    "Visual quality of the palette: look at swatches.png and an applied frame.",
+    "Colours of pixels below the alpha threshold were not sampled or measured.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "palette_colors",
+      "status": "pass",
+      "value": 48,
+      "threshold": 48
+    },
+    {
+      "id": "inputs_without_samples",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0,
+      "files": []
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.214703,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../palette-inputs/palm-01-canopy.png",
+      "sha256": "5e612909ae0a8f8e025d36d7173cb4565d4384eedb516022e20b6cf8f83abcfb",
+      "bytes": 148675
+    },
+    {
+      "path": "../palette-inputs/palm-01-trunk.png",
+      "sha256": "c14fcc9fd1fd758256d85f1c5ae6ae0d9896248485386a1b30b46ffe8b57fcf6",
+      "bytes": 46440
+    },
+    {
+      "path": "../palette-inputs/palm-02-canopy.png",
+      "sha256": "2a225be8155d4e0552799c8d97675ec60c5bcac721c031824a579357c42ac825",
+      "bytes": 123097
+    },
+    {
+      "path": "../palette-inputs/palm-02-trunk.png",
+      "sha256": "dce21687404b03d821c990afd6880f846ad171de161652421348a40b04696bf2",
+      "bytes": 54720
+    },
+    {
+      "path": "../palette-inputs/palm-03-canopy.png",
+      "sha256": "d3dead7f32229fcc8c623c3dd3f1172da1788768049db6513d8dafcf329b9204",
+      "bytes": 116664
+    },
+    {
+      "path": "../palette-inputs/palm-03-trunk.png",
+      "sha256": "188efe17acd5c73738bb8dacfe7035a52a0beea2d8a23d3f68e3e036a0771b9e",
+      "bytes": 54714
+    }
+  ],
+  "outputs": [
+    {
+      "path": "palette.json",
+      "sha256": "4f050ea09f6cb252281c63f7a7b84d4899d465b9cabd3821407ff61e805e9d55",
+      "bytes": 1924
+    },
+    {
+      "path": "palette.gpl",
+      "sha256": "9d2a09796995aa9c9fd8a98594772a7daabde765585aa58ac65540f75d7d4c27",
+      "bytes": 1020
+    },
+    {
+      "path": "palette.hex",
+      "sha256": "3ae326ade9a3b992de37ca92826aad60d54a5b6aaea293dc34173d84b4959ce6",
+      "bytes": 336
+    },
+    {
+      "path": "swatches.png",
+      "sha256": "157264e8e5a4dbdc27f727fc50de31caf9ae29003c747a17ede561896d5a9dca",
+      "bytes": 696
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "palette": {
+    "colors": 48,
+    "reserved": 0,
+    "transparent_index": 255,
+    "seed": 0
+  },
+  "fit": {
+    "../palette-inputs/palm-01-canopy.png": {
+      "measured_px": 63191,
+      "alpha_threshold": 128,
+      "off_palette_px": 63174,
+      "partial_alpha_px": 0,
+      "colors": 52658,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.019623,
+      "p95_delta_e": 0.036106,
+      "max_delta_e": 0.178048
+    },
+    "../palette-inputs/palm-01-trunk.png": {
+      "measured_px": 19012,
+      "alpha_threshold": 128,
+      "off_palette_px": 19001,
+      "partial_alpha_px": 0,
+      "colors": 15909,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.018487,
+      "p95_delta_e": 0.034917,
+      "max_delta_e": 0.089549
+    },
+    "../palette-inputs/palm-02-canopy.png": {
+      "measured_px": 50909,
+      "alpha_threshold": 128,
+      "off_palette_px": 50897,
+      "partial_alpha_px": 0,
+      "colors": 42217,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.019395,
+      "p95_delta_e": 0.035457,
+      "max_delta_e": 0.129678
+    },
+    "../palette-inputs/palm-02-trunk.png": {
+      "measured_px": 23363,
+      "alpha_threshold": 128,
+      "off_palette_px": 23356,
+      "partial_alpha_px": 0,
+      "colors": 18192,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.018171,
+      "p95_delta_e": 0.034825,
+      "max_delta_e": 0.105795
+    },
+    "../palette-inputs/palm-03-canopy.png": {
+      "measured_px": 48102,
+      "alpha_threshold": 128,
+      "off_palette_px": 48090,
+      "partial_alpha_px": 0,
+      "colors": 41449,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.019655,
+      "p95_delta_e": 0.035545,
+      "max_delta_e": 0.214703
+    },
+    "../palette-inputs/palm-03-trunk.png": {
+      "measured_px": 22648,
+      "alpha_threshold": 128,
+      "off_palette_px": 22633,
+      "partial_alpha_px": 0,
+      "colors": 20102,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.018394,
+      "p95_delta_e": 0.033098,
+      "max_delta_e": 0.106513
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.214703,
+    "worst_p95_delta_e": 0.036106,
+    "off_palette_px": 227151
+  }
+}

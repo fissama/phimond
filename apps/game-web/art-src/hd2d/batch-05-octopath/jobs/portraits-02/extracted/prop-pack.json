@@ -1,0 +1,438 @@
+{
+  "schema": "generate2dmap.prop_pack.v2",
+  "tool": {
+    "name": "extract_prop_pack",
+    "version": "0.4.0"
+  },
+  "input": "../raw-01.png",
+  "source_size": [
+    1312,
+    1199
+  ],
+  "source_sha256": "4a8a5156b9f65c34379748b554d61ed0929086fb269691f57490b0f72229a752",
+  "source_mode": "RGBA",
+  "layout_mode": "grid",
+  "boxes_file": null,
+  "labels_file": null,
+  "background_mode": "native_alpha",
+  "art_source": "host_image",
+  "rows": 2,
+  "cols": 2,
+  "threshold": 100,
+  "edge_threshold": 150,
+  "despill_radius": 0,
+  "despill": {
+    "mode": "off",
+    "applied": "off",
+    "radius": 0,
+    "margin": 12,
+    "changed_px": 0
+  },
+  "hygiene": {
+    "mode": "both",
+    "floor": 4,
+    "solid_min": 32,
+    "attach_radius": 2,
+    "connectivity": 8,
+    "floor_px": 38122,
+    "detached_px": 91,
+    "detached_components": 54,
+    "max_removed_alpha": 7
+  },
+  "alpha_floor": 4,
+  "alpha_floor_pixels_removed": 38122,
+  "trim_border": 0,
+  "edge_clean_depth": 0,
+  "component_mode": "all",
+  "component_padding": 8,
+  "min_component_area": "auto",
+  "edge_touch_margin": 0,
+  "geometry": {
+    "connectivity": 8,
+    "alpha_geometry_threshold": 16,
+    "anchor_mode": "stance",
+    "support_band_fraction": 0.25,
+    "anchor_rounding": "whole pixels, half-up",
+    "grid_rounding": "nearest",
+    "keep_canvas": false,
+    "world_scale": null
+  },
+  "accepted": [
+    {
+      "index": 0,
+      "label": "portrait-trainer-elin",
+      "display_name": "portrait-trainer_elin",
+      "status": "accepted",
+      "image": "portrait-trainer-elin/prop.png",
+      "sha256": "93b6d101d645277221bb0c12deaf102bdc49a48ba9a8d6563714a8db7d1438e7",
+      "output_size": [
+        507,
+        558
+      ],
+      "grid": [
+        0,
+        0
+      ],
+      "cell_box": [
+        0,
+        0,
+        656,
+        600
+      ],
+      "source_box": [
+        0,
+        0,
+        656,
+        600
+      ],
+      "source_rect": [
+        119,
+        31,
+        626,
+        589
+      ],
+      "trim_offset": [
+        119,
+        31
+      ],
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "anchor_px": [
+        254,
+        547
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 100,
+      "trim_applied": 0,
+      "crop_bbox": [
+        127,
+        39,
+        618,
+        581
+      ],
+      "padded_crop_bbox": [
+        119,
+        31,
+        626,
+        589
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 144348,
+      "dropped_components": 35,
+      "dropped_area": 82,
+      "edge_touch": false
+    },
+    {
+      "index": 1,
+      "label": "portrait-pal-advisor",
+      "display_name": "portrait-pal_advisor",
+      "status": "accepted",
+      "image": "portrait-pal-advisor/prop.png",
+      "sha256": "e1f935e8db2ecbc3504a73cd1c867e7afd17c4c637ca5c98be012b5cbabef41e",
+      "output_size": [
+        533,
+        541
+      ],
+      "grid": [
+        0,
+        1
+      ],
+      "cell_box": [
+        656,
+        0,
+        1312,
+        600
+      ],
+      "source_box": [
+        656,
+        0,
+        1312,
+        600
+      ],
+      "source_rect": [
+        689,
+        59,
+        1222,
+        600
+      ],
+      "trim_offset": [
+        33,
+        59
+      ],
+      "padding": [
+        8,
+        8,
+        8,
+        0
+      ],
+      "anchor_px": [
+        267,
+        541
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 2,
+      "min_component_area": 100,
+      "trim_applied": 0,
+      "crop_bbox": [
+        41,
+        67,
+        558,
+        600
+      ],
+      "padded_crop_bbox": [
+        33,
+        59,
+        566,
+        600
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 164604,
+      "dropped_components": 24,
+      "dropped_area": 54,
+      "edge_touch": true
+    },
+    {
+      "index": 2,
+      "label": "portrait-pet-master",
+      "display_name": "portrait-pet_master",
+      "status": "accepted",
+      "image": "portrait-pet-master/prop.png",
+      "sha256": "713c5a2266b5602871f986481c64f2a63ba1c469184a3dc4a4c26021cb6d8a79",
+      "output_size": [
+        581,
+        534
+      ],
+      "grid": [
+        1,
+        0
+      ],
+      "cell_box": [
+        0,
+        600,
+        656,
+        1199
+      ],
+      "source_box": [
+        0,
+        600,
+        656,
+        1199
+      ],
+      "source_rect": [
+        71,
+        628,
+        652,
+        1162
+      ],
+      "trim_offset": [
+        71,
+        28
+      ],
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "anchor_px": [
+        291,
+        525
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 100,
+      "trim_applied": 0,
+      "crop_bbox": [
+        79,
+        36,
+        644,
+        554
+      ],
+      "padded_crop_bbox": [
+        71,
+        28,
+        652,
+        562
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 191219,
+      "dropped_components": 13,
+      "dropped_area": 21,
+      "edge_touch": false
+    },
+    {
+      "index": 3,
+      "label": "portrait-pet-fusion",
+      "display_name": "portrait-pet_fusion",
+      "status": "accepted",
+      "image": "portrait-pet-fusion/prop.png",
+      "sha256": "d30a85d75b2b18af92f83d8edca903b1058c6b62256724a01ef9585de12a31dc",
+      "output_size": [
+        530,
+        562
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "cell_box": [
+        656,
+        600,
+        1312,
+        1199
+      ],
+      "source_box": [
+        656,
+        600,
+        1312,
+        1199
+      ],
+      "source_rect": [
+        678,
+        600,
+        1208,
+        1162
+      ],
+      "trim_offset": [
+        22,
+        0
+      ],
+      "padding": [
+        8,
+        0,
+        8,
+        8
+      ],
+      "anchor_px": [
+        265,
+        554
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 100,
+      "trim_applied": 0,
+      "crop_bbox": [
+        30,
+        0,
+        544,
+        554
+      ],
+      "padded_crop_bbox": [
+        22,
+        0,
+        552,
+        562
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 186958,
+      "dropped_components": 17,
+      "dropped_area": 38,
+      "edge_touch": true
+    }
+  ],
+  "rejected": [],
+  "edge_touch_props": [
+    "portrait-pal-advisor",
+    "portrait-pet-fusion"
+  ],
+  "warnings": [
+    "props touch a cell edge (possible clipping): ['portrait-pal-advisor', 'portrait-pet-fusion']"
+  ],
+  "qa": {
+    "status": "warn",
+    "method": "native alpha, not keyed; alpha hygiene both; 8-connected components (all); checks measured on the published pixels",
+    "notProven": [
+      "that each label names the art in its cell or box",
+      "that a prop is complete: clipping is detected only where art meets the cell edge",
+      "keyed-edge quality beyond the edge fringe count",
+      "that anchors and suggested footprints match gameplay contact (both are measured from alpha)",
+      "runtime placement, collision or occlusion"
+    ],
+    "checks": [
+      {
+        "id": "accepted",
+        "status": "pass",
+        "value": 4,
+        "threshold": ">= 1"
+      },
+      {
+        "id": "edge_touch",
+        "status": "warn",
+        "value": [
+          "portrait-pal-advisor",
+          "portrait-pet-fusion"
+        ],
+        "threshold": 0
+      },
+      {
+        "id": "dropped_area",
+        "status": "pass",
+        "value": {
+          "portrait-trainer-elin": 0.0006,
+          "portrait-pal-advisor": 0.0003,
+          "portrait-pet-master": 0.0001,
+          "portrait-pet-fusion": 0.0002
+        },
+        "threshold": 0.01
+      },
+      {
+        "id": "strategy_aspect",
+        "status": "skipped",
+        "value": null,
+        "threshold": 1.6
+      },
+      {
+        "id": "edge_fringe",
+        "status": "skipped",
+        "value": null,
+        "threshold": 0.02
+      }
+    ],
+    "inputs": [
+      {
+        "path": "../raw-01.png",
+        "sha256": "4a8a5156b9f65c34379748b554d61ed0929086fb269691f57490b0f72229a752",
+        "bytes": 1555594
+      }
+    ],
+    "outputs": [
+      {
+        "path": "portrait-trainer-elin/prop.png",
+        "sha256": "93b6d101d645277221bb0c12deaf102bdc49a48ba9a8d6563714a8db7d1438e7",
+        "bytes": 360706
+      },
+      {
+        "path": "portrait-pal-advisor/prop.png",
+        "sha256": "e1f935e8db2ecbc3504a73cd1c867e7afd17c4c637ca5c98be012b5cbabef41e",
+        "bytes": 363592
+      },
+      {
+        "path": "portrait-pet-master/prop.png",
+        "sha256": "713c5a2266b5602871f986481c64f2a63ba1c469184a3dc4a4c26021cb6d8a79",
+        "bytes": 417695
+      },
+      {
+        "path": "portrait-pet-fusion/prop.png",
+        "sha256": "d30a85d75b2b18af92f83d8edca903b1058c6b62256724a01ef9585de12a31dc",
+        "bytes": 405171
+      }
+    ],
+    "tool": {
+      "name": "extract_prop_pack",
+      "version": "0.4.0"
+    }
+  }
+}

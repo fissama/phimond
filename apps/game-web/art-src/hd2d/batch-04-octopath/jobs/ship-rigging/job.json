@@ -1,0 +1,44 @@
+{
+  "id": "ship-rigging",
+  "kind": "props",
+  "rows": 2,
+  "cols": 2,
+  "assets": [
+    {
+      "id": "mast-trunk",
+      "desc": "bare tall straight timber ship mast with crossbar and rope attachments, no sail fabric",
+      "height": 360,
+      "category": "prop",
+      "part_of": "mast-sail"
+    },
+    {
+      "id": "sail-cloth",
+      "desc": "ivory square ship sail, slightly billowing with short trailing rope ties; no mast or crossbar, separate sway cloth",
+      "height": 240,
+      "category": "prop_sway",
+      "part_of": "mast-sail",
+      "sway": true
+    },
+    {
+      "id": "pirate-flag",
+      "desc": "muted deep red hanging cloth pirate flag with dull gold SKULL emblem as original source, no pole, no letters",
+      "height": 170,
+      "category": "prop_sway",
+      "sway": true
+    },
+    {
+      "id": "teleport-pillar-high",
+      "desc": "tall faceted tealstone teleport crystal on dark purplestone and brass low ornamental plinth; no rune text, no glow, no levelnumbers",
+      "height": 190,
+      "category": "prop"
+    }
+  ],
+  "refs": [
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/extracted/sbw_v32/Sprite/sharedassets11.assets_10_13.png",
+    "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/middle_corridor_main_hall.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/extracted/sbw_v32/Sprite/sharedassets3.assets_136_26.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png"
+  ],
+  "prompt": "Four isolated nautical props in2x2grid. Mast and sail are deliberately separate parts, no assembled ship. PRIMARY Octopath Traveler HD-2D art direction, muted weathered timber, ivory canvas, dark forged metal and dull brass, refined large clean pixel clusters, hue-tinted dark edges,2-4tones, subtle upperleft warm key and cooler shade. Pet reference LAST only outline/pixel compatibility; no pet anatomy/saturated palette. Camera frontal billboard with slight top visible about24degrees. No cast shadows, fog, glow, gradients, floor, labels, text/numbers or white halo. Transparent background with wide empty spacing.\nCell1: bare tall straight timber ship mast with crossbar and rope attachments, no sail fabric.\nCell2: ivory square ship sail, slightly billowing with short trailing rope ties; no mast or crossbar, separate sway cloth.\nCell3: muted deep red hanging cloth pirate flag with dull gold SKULL emblem as original source, no pole, no letters.\nCell4: tall faceted tealstone teleport crystal on dark purplestone and brass low ornamental plinth; no rune text, no glow, no levelnumbers.",
+  "source_card": "Original map inspected: horizontal amber plank floor and dark timber upper hull, red skull banners, iron cannon on low wheeled timber carriage, open crates, rack and round table. Original level11 sprite contact and JAR arrows/doors/light/shadow/taskicon inspected before generation. New prescribed nautical props extend this material/role family without claiming original shape."
+}

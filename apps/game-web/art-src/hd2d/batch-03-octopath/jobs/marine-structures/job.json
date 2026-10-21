@@ -1,0 +1,42 @@
+{
+  "id": "marine-structures",
+  "kit": "beach",
+  "rows": 2,
+  "cols": 3,
+  "refs": [
+    "/Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level5_BaiBien/level5_BaiBien_016.png",
+    "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/treasure_beach_fishermen_beach.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+  ],
+  "prompt": "Use case: production coastal architecture cutouts, SIX whole separate sprites in TWO ROWS THREE COLUMNS with VERY generous empty magenta gutters. TOP LEFT: small intact weathered wooden fishing skiff seen3quarter side, narrow hull and one furled canvas sail, no water or sand beneath. TOP CENTER: second wider fishing boat drawn side-on with patched hull and simple oar, no sail and no water. TOP RIGHT: freestanding timber drying rack with hanging coarse fishing net, mesh gaps transparent/magenta, no fish. BOTTOM LEFT: complete small fisherman's timber hut with gray reed-thatched roof and simple blank wooden door, no porch floor. BOTTOM CENTER: complete modest old pale stone lighthouse with dusty red conical cap and dark glass lantern room, no rocks or ground around base. BOTTOM RIGHT: short straight wooden pier DECK SECTION on TWO thin timber supports, no handrail, open gaps below, no water or ground. Original1 worncurvedboat hull identity;2beach setting agedwood/slateblue. Pet refs pixel styleonly. Octopath Traveler inspired HD-2D PIXEL ART, restrained mature desaturated umber, cream, slategray, dusty red and dullbronze, broad crisp3-4tone clusters/material, hue-tinted dark outline, subtle upperleft key. Upright front billboard24degrees down, slight top surfaces, no severe isometric. Every object whole in central55percent of owncell, wide gaps, no clipping or overlap. Background exact pure flat #FF00FF including net and pier gaps. NO water, beach terrain, castgroundshadows, bloom, fog, labels, writing, people, unrelated scenic pieces, smoothvector or noisy phototexture.",
+  "source_card": "Original BaiBien016 curved aged wooden boat and original fisherman beach coastal palette. Brief-prescribed two fishboats, drying net, hut, lighthouse and modular pier; no water baked.",
+  "assets": [
+    {
+      "id": "fishing-boat-01",
+      "height": 250
+    },
+    {
+      "id": "fishing-boat-02",
+      "height": 200
+    },
+    {
+      "id": "drying-net-rack",
+      "height": 240
+    },
+    {
+      "id": "fisher-hut",
+      "height": 420,
+      "category": "backdrop_mid"
+    },
+    {
+      "id": "lighthouse",
+      "height": 600,
+      "category": "backdrop_mid"
+    },
+    {
+      "id": "pier-deck-section",
+      "height": 180
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "status": "pass",
+  "method": "forge_palette.build_palette (weighted k-means++ in OKLab over unique colours, reserved colours fixed, coverage skipping) then forge_palette.fit_report of every input: OKLab dE of each pixel with alpha >= the threshold to its nearest palette colour",
+  "notProven": [
+    "Visual quality of the palette: look at swatches.png and an applied frame.",
+    "Colours of pixels below the alpha threshold were not sampled or measured.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "palette_colors",
+      "status": "pass",
+      "value": 48,
+      "threshold": 48
+    },
+    {
+      "id": "inputs_without_samples",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0,
+      "files": []
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.145384,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../palette-inputs/drying-net-rack.png",
+      "sha256": "f65665c3742df5f0681f172de34363dbe8ebc5a598f98c8228c4cd90444e245f",
+      "bytes": 112392
+    },
+    {
+      "path": "../palette-inputs/fisher-hut.png",
+      "sha256": "94339d6a0d09b8d0c2668ea9176b4e09b44b3ac151fbf684d2d5c91bbee719f2",
+      "bytes": 342803
+    },
+    {
+      "path": "../palette-inputs/fishing-boat-01.png",
+      "sha256": "b8cee5f7335a949fc833fe84acf7ee7cba6429e59686be8bf9d47e59d01e38b7",
+      "bytes": 145588
+    },
+    {
+      "path": "../palette-inputs/fishing-boat-02.png",
+      "sha256": "576d05a44b700f57ea38e1a81c2ad4387bc1a164333b9571fcdc8e487ab5d6b4",
+      "bytes": 180333
+    },
+    {
+      "path": "../palette-inputs/lighthouse.png",
+      "sha256": "da3ddfe9b18efe55fd215e2eeb4db55fda7bba69e04ad627a229245643623c25",
+      "bytes": 182564
+    },
+    {
+      "path": "../palette-inputs/pier-deck-section.png",
+      "sha256": "64a720a88c782c83dfa52ce7e70e20287546ef6f51dcd4d65ab51634e7a658a2",
+      "bytes": 75331
+    }
+  ],
+  "outputs": [
+    {
+      "path": "palette.json",
+      "sha256": "01069fd975fc0dafc6b861236bfe920a8c30bcf88d20a92416026c67f40a12a5",
+      "bytes": 1924
+    },
+    {
+      "path": "palette.gpl",
+      "sha256": "86e85ee41f37efa5bca4b5d62f484b86b7cb364e82f841b9dc1a7429c217f99e",
+      "bytes": 1020
+    },
+    {
+      "path": "palette.hex",
+      "sha256": "41fc1fc0bbb5a6c4aca50357137c1881114fc57811dbc668fb6ba814c4724355",
+      "bytes": 336
+    },
+    {
+      "path": "swatches.png",
+      "sha256": "fbb0119911e94a3bc49c6a147ffc033e62044459ca5b73fa7a25774bc9e38a85",
+      "bytes": 694
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "palette": {
+    "colors": 48,
+    "reserved": 0,
+    "transparent_index": 255,
+    "seed": 0
+  },
+  "fit": {
+    "../palette-inputs/drying-net-rack.png": {
+      "measured_px": 34100,
+      "alpha_threshold": 128,
+      "off_palette_px": 34077,
+      "partial_alpha_px": 0,
+      "colors": 26397,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.023845,
+      "p95_delta_e": 0.051475,
+      "max_delta_e": 0.137207
+    },
+    "../palette-inputs/fisher-hut.png": {
+      "measured_px": 137842,
+      "alpha_threshold": 128,
+      "off_palette_px": 137759,
+      "partial_alpha_px": 0,
+      "colors": 81701,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.016821,
+      "p95_delta_e": 0.030069,
+      "max_delta_e": 0.145384
+    },
+    "../palette-inputs/fishing-boat-01.png": {
+      "measured_px": 54191,
+      "alpha_threshold": 128,
+      "off_palette_px": 54172,
+      "partial_alpha_px": 0,
+      "colors": 42917,
+      "palette_colors_used": 46,
+      "mean_delta_e": 0.019166,
+      "p95_delta_e": 0.033803,
+      "max_delta_e": 0.120703
+    },
+    "../palette-inputs/fishing-boat-02.png": {
+      "measured_px": 73851,
+      "alpha_threshold": 128,
+      "off_palette_px": 73799,
+      "partial_alpha_px": 0,
+      "colors": 52744,
+      "palette_colors_used": 46,
+      "mean_delta_e": 0.018207,
+      "p95_delta_e": 0.034504,
+      "max_delta_e": 0.095733
+    },
+    "../palette-inputs/lighthouse.png": {
+      "measured_px": 96729,
+      "alpha_threshold": 128,
+      "off_palette_px": 96676,
+      "partial_alpha_px": 0,
+      "colors": 50473,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.019437,
+      "p95_delta_e": 0.044182,
+      "max_delta_e": 0.131916
+    },
+    "../palette-inputs/pier-deck-section.png": {
+      "measured_px": 28135,
+      "alpha_threshold": 128,
+      "off_palette_px": 28112,
+      "partial_alpha_px": 0,
+      "colors": 22052,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.016427,
+      "p95_delta_e": 0.028353,
+      "max_delta_e": 0.106736
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.145384,
+    "worst_p95_delta_e": 0.051475,
+    "off_palette_px": 424595
+  }
+}

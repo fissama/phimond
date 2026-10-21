@@ -1,0 +1,22 @@
+{
+  "id": "teleport-ring",
+  "rows": 2,
+  "cols": 3,
+  "refs": [
+    "/Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level3_QTTP/level3_QTTP_007.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+  ],
+  "prompt": "Use case: production6frame magic-circle game sprite atlas, exactly TWO ROWS THREE COLUMNS of generous equal SQUARE cells. SIX separate TOP-DOWN PERFECT ROUND CIRCLES, not ellipses, no perspective, flat floor decals. Each circle same size and exact center in its cell, outermost25percent cell completely magenta. Read6frames left-to-right top-to-bottom: one restrained jade and dullgold teleport sigil, two thin concentric round rings, six evenly spaced tiny diamond-shaped ornaments; ring geometry stays SAME, diamond pattern rotates0,10,20,30,40,50degrees to form6phase repeating60degree cycle. Every frame same radius and line weight. No ring expands/shrinks, no bevel/stone platform, no text or runes or letters. Reference1 supplies jade and ancienttown material; last2pets pixel shading only. Octopath Traveler inspired HD-2D PIXEL ART, crisp deliberately stepped pixels, broad clusters, restrained jadegreen/palegold pixel source colors, desaturated dark outline accents. Pure flat exact #FF00FF background AND inside gaps between thin rings; engine will remove this color, add glow and project onto floor. NO bloom, halos, blur, ground, shadows, fog, particles beyond circle, labels, numbers or scene. Flat graphic visible at128px, detailed pixel master. Whole atlas landscape3:2, cells square, generous spacing so no shape touches cell boundaries.",
+  "source_card": "Original jade teleport platform geometric material. Six topdown geometric ring phases, no readable runes or baked bloom. Pixel alpha sprite source for engine light/shader; loop review pending.",
+  "assets": [
+    {
+      "id": "city-teleport-ring",
+      "category": "fx",
+      "kit": "city",
+      "cell": 320,
+      "frames": 6,
+      "fps": 8
+    }
+  ]
+}

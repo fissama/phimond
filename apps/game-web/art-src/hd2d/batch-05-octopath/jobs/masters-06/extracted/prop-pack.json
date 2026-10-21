@@ -1,0 +1,430 @@
+{
+  "schema": "generate2dmap.prop_pack.v2",
+  "tool": {
+    "name": "extract_prop_pack",
+    "version": "0.4.0"
+  },
+  "input": "../raw-01.png",
+  "source_size": [
+    1122,
+    1402
+  ],
+  "source_sha256": "4516eb3b357a5a311dd352402c50df6fcb5fe7924b2b19279a8695078165f307",
+  "source_mode": "RGBA",
+  "layout_mode": "grid",
+  "boxes_file": null,
+  "labels_file": null,
+  "background_mode": "native_alpha",
+  "art_source": "host_image",
+  "rows": 2,
+  "cols": 2,
+  "threshold": 100,
+  "edge_threshold": 150,
+  "despill_radius": 0,
+  "despill": {
+    "mode": "off",
+    "applied": "off",
+    "radius": 0,
+    "margin": 12,
+    "changed_px": 0
+  },
+  "hygiene": {
+    "mode": "both",
+    "floor": 4,
+    "solid_min": 32,
+    "attach_radius": 2,
+    "connectivity": 8,
+    "floor_px": 36223,
+    "detached_px": 51,
+    "detached_components": 21,
+    "max_removed_alpha": 6
+  },
+  "alpha_floor": 4,
+  "alpha_floor_pixels_removed": 36223,
+  "trim_border": 0,
+  "edge_clean_depth": 0,
+  "component_mode": "all",
+  "component_padding": 8,
+  "min_component_area": "auto",
+  "edge_touch_margin": 0,
+  "geometry": {
+    "connectivity": 8,
+    "alpha_geometry_threshold": 16,
+    "anchor_mode": "stance",
+    "support_band_fraction": 0.25,
+    "anchor_rounding": "whole pixels, half-up",
+    "grid_rounding": "nearest",
+    "keep_canvas": false,
+    "world_scale": null
+  },
+  "accepted": [
+    {
+      "index": 0,
+      "label": "npc-sau-free",
+      "display_name": "npc-sau_free",
+      "status": "accepted",
+      "image": "npc-sau-free/prop.png",
+      "sha256": "e35ef97be542622aa2dfb4797f3f43ae036c0a78b9e6dfe4436127b9d1683852",
+      "output_size": [
+        293,
+        639
+      ],
+      "grid": [
+        0,
+        0
+      ],
+      "cell_box": [
+        0,
+        0,
+        561,
+        701
+      ],
+      "source_box": [
+        0,
+        0,
+        561,
+        701
+      ],
+      "source_rect": [
+        150,
+        46,
+        443,
+        685
+      ],
+      "trim_offset": [
+        150,
+        46
+      ],
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "anchor_px": [
+        153,
+        630
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 100,
+      "trim_applied": 0,
+      "crop_bbox": [
+        158,
+        54,
+        435,
+        677
+      ],
+      "padded_crop_bbox": [
+        150,
+        46,
+        443,
+        685
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 132882,
+      "dropped_components": 50,
+      "dropped_area": 289,
+      "edge_touch": false
+    },
+    {
+      "index": 1,
+      "label": "npc-gate-captain",
+      "display_name": "npc-gate_captain",
+      "status": "accepted",
+      "image": "npc-gate-captain/prop.png",
+      "sha256": "8232abce47e254f6424606ffc081e3c843bf047fa0711d7322a7f36441742d44",
+      "output_size": [
+        330,
+        651
+      ],
+      "grid": [
+        0,
+        1
+      ],
+      "cell_box": [
+        561,
+        0,
+        1122,
+        701
+      ],
+      "source_box": [
+        561,
+        0,
+        1122,
+        701
+      ],
+      "source_rect": [
+        670,
+        34,
+        1000,
+        685
+      ],
+      "trim_offset": [
+        109,
+        34
+      ],
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "anchor_px": [
+        168,
+        642
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 100,
+      "trim_applied": 0,
+      "crop_bbox": [
+        117,
+        42,
+        431,
+        677
+      ],
+      "padded_crop_bbox": [
+        109,
+        34,
+        439,
+        685
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 131680,
+      "dropped_components": 46,
+      "dropped_area": 199,
+      "edge_touch": false
+    },
+    {
+      "index": 2,
+      "label": "npc-act-reward",
+      "display_name": "npc-act_reward",
+      "status": "accepted",
+      "image": "npc-act-reward/prop.png",
+      "sha256": "90ea9bfa44d97a4fa8204c72e3fd79cabcf8bfb2e3f77b8545613a45c8362cd4",
+      "output_size": [
+        293,
+        635
+      ],
+      "grid": [
+        1,
+        0
+      ],
+      "cell_box": [
+        0,
+        701,
+        561,
+        1402
+      ],
+      "source_box": [
+        0,
+        701,
+        561,
+        1402
+      ],
+      "source_rect": [
+        146,
+        732,
+        439,
+        1367
+      ],
+      "trim_offset": [
+        146,
+        31
+      ],
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "anchor_px": [
+        146,
+        627
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 100,
+      "trim_applied": 0,
+      "crop_bbox": [
+        154,
+        39,
+        431,
+        658
+      ],
+      "padded_crop_bbox": [
+        146,
+        31,
+        439,
+        666
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 112699,
+      "dropped_components": 40,
+      "dropped_area": 186,
+      "edge_touch": false
+    },
+    {
+      "index": 3,
+      "label": "npc-pet-fusion",
+      "display_name": "npc-pet_fusion",
+      "status": "accepted",
+      "image": "npc-pet-fusion/prop.png",
+      "sha256": "b923807bdc6b71f6f9859eced86fa340aa964835f81afc180ac310b16519c1b0",
+      "output_size": [
+        322,
+        661
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "cell_box": [
+        561,
+        701,
+        1122,
+        1402
+      ],
+      "source_box": [
+        561,
+        701,
+        1122,
+        1402
+      ],
+      "source_rect": [
+        681,
+        714,
+        1003,
+        1375
+      ],
+      "trim_offset": [
+        120,
+        13
+      ],
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "anchor_px": [
+        157,
+        652
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 100,
+      "trim_applied": 0,
+      "crop_bbox": [
+        128,
+        21,
+        434,
+        666
+      ],
+      "padded_crop_bbox": [
+        120,
+        13,
+        442,
+        674
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 136848,
+      "dropped_components": 50,
+      "dropped_area": 252,
+      "edge_touch": false
+    }
+  ],
+  "rejected": [],
+  "edge_touch_props": [],
+  "warnings": [],
+  "qa": {
+    "status": "pass",
+    "method": "native alpha, not keyed; alpha hygiene both; 8-connected components (all); checks measured on the published pixels",
+    "notProven": [
+      "that each label names the art in its cell or box",
+      "that a prop is complete: clipping is detected only where art meets the cell edge",
+      "keyed-edge quality beyond the edge fringe count",
+      "that anchors and suggested footprints match gameplay contact (both are measured from alpha)",
+      "runtime placement, collision or occlusion"
+    ],
+    "checks": [
+      {
+        "id": "accepted",
+        "status": "pass",
+        "value": 4,
+        "threshold": ">= 1"
+      },
+      {
+        "id": "edge_touch",
+        "status": "pass",
+        "value": [],
+        "threshold": 0
+      },
+      {
+        "id": "dropped_area",
+        "status": "pass",
+        "value": {
+          "npc-sau-free": 0.0022,
+          "npc-gate-captain": 0.0015,
+          "npc-act-reward": 0.0016,
+          "npc-pet-fusion": 0.0018
+        },
+        "threshold": 0.01
+      },
+      {
+        "id": "strategy_aspect",
+        "status": "skipped",
+        "value": null,
+        "threshold": 1.6
+      },
+      {
+        "id": "edge_fringe",
+        "status": "skipped",
+        "value": null,
+        "threshold": 0.02
+      }
+    ],
+    "inputs": [
+      {
+        "path": "../raw-01.png",
+        "sha256": "4516eb3b357a5a311dd352402c50df6fcb5fe7924b2b19279a8695078165f307",
+        "bytes": 1250675
+      }
+    ],
+    "outputs": [
+      {
+        "path": "npc-sau-free/prop.png",
+        "sha256": "e35ef97be542622aa2dfb4797f3f43ae036c0a78b9e6dfe4436127b9d1683852",
+        "bytes": 307371
+      },
+      {
+        "path": "npc-gate-captain/prop.png",
+        "sha256": "8232abce47e254f6424606ffc081e3c843bf047fa0711d7322a7f36441742d44",
+        "bytes": 307154
+      },
+      {
+        "path": "npc-act-reward/prop.png",
+        "sha256": "90ea9bfa44d97a4fa8204c72e3fd79cabcf8bfb2e3f77b8545613a45c8362cd4",
+        "bytes": 272973
+      },
+      {
+        "path": "npc-pet-fusion/prop.png",
+        "sha256": "b923807bdc6b71f6f9859eced86fa340aa964835f81afc180ac310b16519c1b0",
+        "bytes": 321282
+      }
+    ],
+    "tool": {
+      "name": "extract_prop_pack",
+      "version": "0.4.0"
+    }
+  }
+}

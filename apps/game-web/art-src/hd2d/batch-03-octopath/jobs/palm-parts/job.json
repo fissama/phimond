@@ -1,0 +1,88 @@
+{
+  "id": "palm-parts",
+  "kit": "beach",
+  "rows": 3,
+  "cols": 2,
+  "refs": [
+    "/Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level5_BaiBien/level5_BaiBien_018.png",
+    "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/treasure_beach_fishermen_beach.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+  ],
+  "prompt": "Use case: production SWAY-SPLIT PALM PARTS for HD-2D game. SIX separate pieces in THREE ROWS TWO COLUMNS; one matching palm design per row. LEFT column ONLY complete bare palm TRUNK ending in small leaf attachment tip, no foliage or ground. RIGHT column ONLY detached palm CANOPY of broad drooping fronds with a few coconuts clustered around a short central stalk, no long trunk. Row1 slim slightly curved trunk and wide symmetrical leaf crown. Row2 gently S-curved ridged trunk and asymmetric wind-swept crown. Row3 straighter ringed older trunk and fuller rounded drooping crown. All3 paired crowns fit on matching trunk tip; allow visible overlapping stalk. Original1 palm ridged trunk/droopingfrond identity,2beach materials; petrefs pixelshading only. Octopath Traveler inspired HD-2D environment PIXEL ART, restrained dark olive/moss fronds, ochre/umber bark, cool desaturated hue-tinted outline, subtle warm upperleft key, broad clean3-4tone clusters/material. Upright front billboard24degrees down. Tall trunks and wide canopies MUST fit central55percent of their generous cells; wide EMPTY margins between ALL pieces; no touching edges, no clipping or overlap. Pure flat #FF00FF background throughout including leaf gaps. No whole trees, grass, sand, ground shadows, fog, glow, text, labels, scene, smoothvector or tiny noisy texture. These are isolated engine-composable palm parts.",
+  "source_card": "Original BaiBien018 ridged curved palm and beach maple composition. Three trunk/canopy pairs, split for engine sway; canopy bottom295px above ground overlaps trunk65px at rest.",
+  "assets": [
+    {
+      "id": "palm-01-trunk",
+      "height": 360,
+      "part_of": "palm-01",
+      "source_attachment_px": [
+        380,
+        110
+      ]
+    },
+    {
+      "id": "palm-01-canopy",
+      "height": 250,
+      "part_of": "palm-01",
+      "sway": true,
+      "attachment_offset_world": [
+        0,
+        2.3046875,
+        0
+      ],
+      "source_attachment_px": [
+        906,
+        330
+      ]
+    },
+    {
+      "id": "palm-02-trunk",
+      "height": 360,
+      "part_of": "palm-02",
+      "source_attachment_px": [
+        400,
+        470
+      ]
+    },
+    {
+      "id": "palm-02-canopy",
+      "height": 250,
+      "part_of": "palm-02",
+      "sway": true,
+      "attachment_offset_world": [
+        0,
+        2.3046875,
+        0
+      ],
+      "source_attachment_px": [
+        884,
+        697
+      ]
+    },
+    {
+      "id": "palm-03-trunk",
+      "height": 360,
+      "part_of": "palm-03",
+      "source_attachment_px": [
+        372,
+        855
+      ]
+    },
+    {
+      "id": "palm-03-canopy",
+      "height": 250,
+      "part_of": "palm-03",
+      "sway": true,
+      "attachment_offset_world": [
+        0,
+        2.3046875,
+        0
+      ],
+      "source_attachment_px": [
+        906,
+        1080
+      ]
+    }
+  ]
+}

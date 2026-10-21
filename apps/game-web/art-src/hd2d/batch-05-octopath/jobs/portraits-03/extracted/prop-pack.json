@@ -1,0 +1,376 @@
+{
+  "schema": "generate2dmap.prop_pack.v2",
+  "tool": {
+    "name": "extract_prop_pack",
+    "version": "0.4.0"
+  },
+  "input": "../raw-01.png",
+  "source_size": [
+    1214,
+    1295
+  ],
+  "source_sha256": "6983c77eb494d53999c6eca742d9a9ae5ea1790b92c6925808fd57c73080b382",
+  "source_mode": "RGBA",
+  "layout_mode": "grid",
+  "boxes_file": null,
+  "labels_file": null,
+  "background_mode": "native_alpha",
+  "art_source": "host_image",
+  "rows": 2,
+  "cols": 2,
+  "threshold": 100,
+  "edge_threshold": 150,
+  "despill_radius": 0,
+  "despill": {
+    "mode": "off",
+    "applied": "off",
+    "radius": 0,
+    "margin": 12,
+    "changed_px": 0
+  },
+  "hygiene": {
+    "mode": "both",
+    "floor": 4,
+    "solid_min": 32,
+    "attach_radius": 2,
+    "connectivity": 8,
+    "floor_px": 30091,
+    "detached_px": 38,
+    "detached_components": 11,
+    "max_removed_alpha": 7
+  },
+  "alpha_floor": 4,
+  "alpha_floor_pixels_removed": 30091,
+  "trim_border": 0,
+  "edge_clean_depth": 0,
+  "component_mode": "all",
+  "component_padding": 8,
+  "min_component_area": "auto",
+  "edge_touch_margin": 0,
+  "geometry": {
+    "connectivity": 8,
+    "alpha_geometry_threshold": 16,
+    "anchor_mode": "stance",
+    "support_band_fraction": 0.25,
+    "anchor_rounding": "whole pixels, half-up",
+    "grid_rounding": "nearest",
+    "keep_canvas": false,
+    "world_scale": null
+  },
+  "accepted": [
+    {
+      "index": 0,
+      "label": "portrait-arena-master",
+      "display_name": "portrait-arena_master",
+      "status": "accepted",
+      "image": "portrait-arena-master/prop.png",
+      "sha256": "e92dcf3c058b287bcbb940ee9d1c8b8a0bf91b4740cc55917f842e3c470f1510",
+      "output_size": [
+        412,
+        585
+      ],
+      "grid": [
+        0,
+        0
+      ],
+      "cell_box": [
+        0,
+        0,
+        607,
+        648
+      ],
+      "source_box": [
+        0,
+        0,
+        607,
+        648
+      ],
+      "source_rect": [
+        80,
+        60,
+        492,
+        645
+      ],
+      "trim_offset": [
+        80,
+        60
+      ],
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "anchor_px": [
+        206,
+        577
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 100,
+      "trim_applied": 0,
+      "crop_bbox": [
+        88,
+        68,
+        484,
+        637
+      ],
+      "padded_crop_bbox": [
+        80,
+        60,
+        492,
+        645
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 152075,
+      "dropped_components": 53,
+      "dropped_area": 214,
+      "edge_touch": false
+    },
+    {
+      "index": 1,
+      "label": "portrait-beach-guide",
+      "display_name": "portrait-beach_guide",
+      "status": "accepted",
+      "image": "portrait-beach-guide/prop.png",
+      "sha256": "378385b87c197ab16482fa135fe4d1e284dba1bef1cf61995232f905ac495599",
+      "output_size": [
+        422,
+        580
+      ],
+      "grid": [
+        0,
+        1
+      ],
+      "cell_box": [
+        607,
+        0,
+        1214,
+        648
+      ],
+      "source_box": [
+        607,
+        0,
+        1214,
+        648
+      ],
+      "source_rect": [
+        726,
+        65,
+        1148,
+        645
+      ],
+      "trim_offset": [
+        119,
+        65
+      ],
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "anchor_px": [
+        211,
+        572
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 100,
+      "trim_applied": 0,
+      "crop_bbox": [
+        127,
+        73,
+        533,
+        637
+      ],
+      "padded_crop_bbox": [
+        119,
+        65,
+        541,
+        645
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 148771,
+      "dropped_components": 80,
+      "dropped_area": 320,
+      "edge_touch": false
+    },
+    {
+      "index": 2,
+      "label": "portrait-ship-captain",
+      "display_name": "portrait-ship_captain",
+      "status": "accepted",
+      "image": "portrait-ship-captain/prop.png",
+      "sha256": "789d49e4bbcde07a0e568a02249a605e806a08ff17ce02d79e0132043d4f9b96",
+      "output_size": [
+        442,
+        573
+      ],
+      "grid": [
+        1,
+        0
+      ],
+      "cell_box": [
+        0,
+        648,
+        607,
+        1295
+      ],
+      "source_box": [
+        0,
+        648,
+        607,
+        1295
+      ],
+      "source_rect": [
+        83,
+        679,
+        525,
+        1252
+      ],
+      "trim_offset": [
+        83,
+        31
+      ],
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "anchor_px": [
+        222,
+        565
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 100,
+      "trim_applied": 0,
+      "crop_bbox": [
+        91,
+        39,
+        517,
+        596
+      ],
+      "padded_crop_bbox": [
+        83,
+        31,
+        525,
+        604
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 168310,
+      "dropped_components": 38,
+      "dropped_area": 191,
+      "edge_touch": false
+    }
+  ],
+  "rejected": [
+    {
+      "index": 3,
+      "label": "",
+      "display_name": "skip",
+      "grid": [
+        1,
+        1
+      ],
+      "cell_box": [
+        607,
+        648,
+        1214,
+        1295
+      ],
+      "source_box": [
+        607,
+        648,
+        1214,
+        1295
+      ],
+      "status": "skipped-label"
+    }
+  ],
+  "edge_touch_props": [],
+  "warnings": [],
+  "qa": {
+    "status": "pass",
+    "method": "native alpha, not keyed; alpha hygiene both; 8-connected components (all); checks measured on the published pixels",
+    "notProven": [
+      "that each label names the art in its cell or box",
+      "that a prop is complete: clipping is detected only where art meets the cell edge",
+      "keyed-edge quality beyond the edge fringe count",
+      "that anchors and suggested footprints match gameplay contact (both are measured from alpha)",
+      "runtime placement, collision or occlusion"
+    ],
+    "checks": [
+      {
+        "id": "accepted",
+        "status": "pass",
+        "value": 3,
+        "threshold": ">= 1"
+      },
+      {
+        "id": "edge_touch",
+        "status": "pass",
+        "value": [],
+        "threshold": 0
+      },
+      {
+        "id": "dropped_area",
+        "status": "pass",
+        "value": {
+          "portrait-arena-master": 0.0014,
+          "portrait-beach-guide": 0.0021,
+          "portrait-ship-captain": 0.0011
+        },
+        "threshold": 0.01
+      },
+      {
+        "id": "strategy_aspect",
+        "status": "skipped",
+        "value": null,
+        "threshold": 1.6
+      },
+      {
+        "id": "edge_fringe",
+        "status": "skipped",
+        "value": null,
+        "threshold": 0.02
+      }
+    ],
+    "inputs": [
+      {
+        "path": "../raw-01.png",
+        "sha256": "6983c77eb494d53999c6eca742d9a9ae5ea1790b92c6925808fd57c73080b382",
+        "bytes": 1102378
+      }
+    ],
+    "outputs": [
+      {
+        "path": "portrait-arena-master/prop.png",
+        "sha256": "e92dcf3c058b287bcbb940ee9d1c8b8a0bf91b4740cc55917f842e3c470f1510",
+        "bytes": 366143
+      },
+      {
+        "path": "portrait-beach-guide/prop.png",
+        "sha256": "378385b87c197ab16482fa135fe4d1e284dba1bef1cf61995232f905ac495599",
+        "bytes": 360001
+      },
+      {
+        "path": "portrait-ship-captain/prop.png",
+        "sha256": "789d49e4bbcde07a0e568a02249a605e806a08ff17ce02d79e0132043d4f9b96",
+        "bytes": 361205
+      }
+    ],
+    "tool": {
+      "name": "extract_prop_pack",
+      "version": "0.4.0"
+    }
+  }
+}

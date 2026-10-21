@@ -1,0 +1,7 @@
+One horizontal wide repeating backdrop strip, aspect approximately3:1, frontal weathered ship hull woodwall, fills entire width, exact left/right seamless edge match; bottom edge alpha fades by finepixel dither, top edge opaque, no outer transparent side margins on repeatedaxes. PRIMARY Octopath Traveler HD-2D art direction, muted weathered timber, ivory canvas, dark forged metal and dull brass, refined large clean pixel clusters, hue-tinted dark edges,2-4tones, subtle upperleft warm key and cooler shade. Pet reference LAST only outline/pixel compatibility; no pet anatomy/saturated palette. Camera frontal billboard with slight top visible about24degrees. No cast shadows, fog, glow, gradients, floor, labels, text/numbers or white halo. Transparent background with wide empty spacing.
+Cell1: long straight interior ship hull wall: horizontal weathered timber with thick dark beam along bottom, no banners/windows/props.
+
+Ordered references:
+/Users/phileanh/rust/phimond/apps/game-client/assets/extracted/sbw_v32/Sprite/sharedassets11.assets_14_10.png SHA256 c135c9789d55bdf7795fc0d7602d66ab205fdeb692d0da59c5e2b1fd8b70ec9f
+/Users/phileanh/Downloads/Phimond-P12-Review/map-images/middle_corridor_main_hall.png SHA256 afa7b126e3ef7a649513855abf068c6853db8dc4db181d16e36b6392b7cb5808
+/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png SHA256 fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da

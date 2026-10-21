@@ -1,0 +1,386 @@
+{
+  "schema": "generate2dmap.prop_pack.v2",
+  "tool": {
+    "name": "extract_prop_pack",
+    "version": "0.4.0"
+  },
+  "input": "../raw-01.png",
+  "source_size": [
+    1347,
+    1168
+  ],
+  "source_sha256": "0e3c8e08f22c906cf4589c8a83b143a9206e08a86032a3557802abd009fe8313",
+  "source_mode": "RGBA",
+  "layout_mode": "grid",
+  "boxes_file": null,
+  "labels_file": null,
+  "background_mode": "native_alpha",
+  "art_source": "host_image",
+  "rows": 2,
+  "cols": 2,
+  "threshold": 100,
+  "edge_threshold": 150,
+  "despill_radius": 0,
+  "despill": {
+    "mode": "off",
+    "applied": "off",
+    "radius": 0,
+    "margin": 12,
+    "changed_px": 0
+  },
+  "hygiene": {
+    "mode": "both",
+    "floor": 4,
+    "solid_min": 32,
+    "attach_radius": 2,
+    "connectivity": 8,
+    "floor_px": 24528,
+    "detached_px": 22,
+    "detached_components": 12,
+    "max_removed_alpha": 6
+  },
+  "alpha_floor": 4,
+  "alpha_floor_pixels_removed": 24528,
+  "trim_border": 0,
+  "edge_clean_depth": 0,
+  "component_mode": "all",
+  "component_padding": 8,
+  "min_component_area": "auto",
+  "edge_touch_margin": 0,
+  "geometry": {
+    "connectivity": 8,
+    "alpha_geometry_threshold": 16,
+    "anchor_mode": "stance",
+    "support_band_fraction": 0.25,
+    "anchor_rounding": "whole pixels, half-up",
+    "grid_rounding": "nearest",
+    "keep_canvas": false,
+    "world_scale": null
+  },
+  "accepted": [
+    {
+      "index": 0,
+      "label": "npc-isl-captain",
+      "display_name": "npc-isl_captain",
+      "status": "accepted",
+      "image": "npc-isl-captain/prop.png",
+      "sha256": "6de7499fd2b1d5475e11e3a17a4dc5c90ae204fca28db7506d6e5185f1b9ae80",
+      "output_size": [
+        292,
+        525
+      ],
+      "grid": [
+        0,
+        0
+      ],
+      "cell_box": [
+        0,
+        0,
+        674,
+        584
+      ],
+      "source_box": [
+        0,
+        0,
+        674,
+        584
+      ],
+      "source_rect": [
+        235,
+        59,
+        527,
+        584
+      ],
+      "trim_offset": [
+        235,
+        59
+      ],
+      "padding": [
+        8,
+        8,
+        8,
+        0
+      ],
+      "anchor_px": [
+        150,
+        525
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 100,
+      "trim_applied": 0,
+      "crop_bbox": [
+        243,
+        67,
+        519,
+        584
+      ],
+      "padded_crop_bbox": [
+        235,
+        59,
+        527,
+        584
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 81230,
+      "dropped_components": 38,
+      "dropped_area": 78,
+      "edge_touch": true
+    },
+    {
+      "index": 1,
+      "label": "player-male",
+      "display_name": "player-male",
+      "status": "accepted",
+      "image": "player-male/prop.png",
+      "sha256": "0d8676640eb15b7771cbf1e72760996900e6303e28710efae44b08fe71c97cd4",
+      "output_size": [
+        373,
+        528
+      ],
+      "grid": [
+        0,
+        1
+      ],
+      "cell_box": [
+        674,
+        0,
+        1347,
+        584
+      ],
+      "source_box": [
+        674,
+        0,
+        1347,
+        584
+      ],
+      "source_rect": [
+        792,
+        56,
+        1165,
+        584
+      ],
+      "trim_offset": [
+        118,
+        56
+      ],
+      "padding": [
+        8,
+        8,
+        8,
+        0
+      ],
+      "anchor_px": [
+        193,
+        528
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 100,
+      "trim_applied": 0,
+      "crop_bbox": [
+        126,
+        64,
+        483,
+        584
+      ],
+      "padded_crop_bbox": [
+        118,
+        56,
+        491,
+        584
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 85549,
+      "dropped_components": 26,
+      "dropped_area": 55,
+      "edge_touch": true
+    },
+    {
+      "index": 2,
+      "label": "player-female",
+      "display_name": "player-female",
+      "status": "accepted",
+      "image": "player-female/prop.png",
+      "sha256": "c2b0ded456747490896271b5125276462534748ec879f47496ff849a56c7c33d",
+      "output_size": [
+        288,
+        556
+      ],
+      "grid": [
+        1,
+        0
+      ],
+      "cell_box": [
+        0,
+        584,
+        674,
+        1168
+      ],
+      "source_box": [
+        0,
+        584,
+        674,
+        1168
+      ],
+      "source_rect": [
+        230,
+        584,
+        518,
+        1140
+      ],
+      "trim_offset": [
+        230,
+        0
+      ],
+      "padding": [
+        8,
+        0,
+        8,
+        8
+      ],
+      "anchor_px": [
+        166,
+        546
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 3,
+      "min_component_area": 100,
+      "trim_applied": 0,
+      "crop_bbox": [
+        238,
+        0,
+        510,
+        548
+      ],
+      "padded_crop_bbox": [
+        230,
+        0,
+        518,
+        556
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 73296,
+      "dropped_components": 36,
+      "dropped_area": 88,
+      "edge_touch": true
+    }
+  ],
+  "rejected": [
+    {
+      "index": 3,
+      "label": "",
+      "display_name": "skip",
+      "grid": [
+        1,
+        1
+      ],
+      "cell_box": [
+        674,
+        584,
+        1347,
+        1168
+      ],
+      "source_box": [
+        674,
+        584,
+        1347,
+        1168
+      ],
+      "status": "skipped-label"
+    }
+  ],
+  "edge_touch_props": [
+    "npc-isl-captain",
+    "player-male",
+    "player-female"
+  ],
+  "warnings": [
+    "props touch a cell edge (possible clipping): ['npc-isl-captain', 'player-male', 'player-female']"
+  ],
+  "qa": {
+    "status": "warn",
+    "method": "native alpha, not keyed; alpha hygiene both; 8-connected components (all); checks measured on the published pixels",
+    "notProven": [
+      "that each label names the art in its cell or box",
+      "that a prop is complete: clipping is detected only where art meets the cell edge",
+      "keyed-edge quality beyond the edge fringe count",
+      "that anchors and suggested footprints match gameplay contact (both are measured from alpha)",
+      "runtime placement, collision or occlusion"
+    ],
+    "checks": [
+      {
+        "id": "accepted",
+        "status": "pass",
+        "value": 3,
+        "threshold": ">= 1"
+      },
+      {
+        "id": "edge_touch",
+        "status": "warn",
+        "value": [
+          "npc-isl-captain",
+          "player-male",
+          "player-female"
+        ],
+        "threshold": 0
+      },
+      {
+        "id": "dropped_area",
+        "status": "pass",
+        "value": {
+          "npc-isl-captain": 0.001,
+          "player-male": 0.0006,
+          "player-female": 0.0012
+        },
+        "threshold": 0.01
+      },
+      {
+        "id": "strategy_aspect",
+        "status": "skipped",
+        "value": null,
+        "threshold": 1.6
+      },
+      {
+        "id": "edge_fringe",
+        "status": "skipped",
+        "value": null,
+        "threshold": 0.02
+      }
+    ],
+    "inputs": [
+      {
+        "path": "../raw-01.png",
+        "sha256": "0e3c8e08f22c906cf4589c8a83b143a9206e08a86032a3557802abd009fe8313",
+        "bytes": 682488
+      }
+    ],
+    "outputs": [
+      {
+        "path": "npc-isl-captain/prop.png",
+        "sha256": "6de7499fd2b1d5475e11e3a17a4dc5c90ae204fca28db7506d6e5185f1b9ae80",
+        "bytes": 209849
+      },
+      {
+        "path": "player-male/prop.png",
+        "sha256": "0d8676640eb15b7771cbf1e72760996900e6303e28710efae44b08fe71c97cd4",
+        "bytes": 220913
+      },
+      {
+        "path": "player-female/prop.png",
+        "sha256": "c2b0ded456747490896271b5125276462534748ec879f47496ff849a56c7c33d",
+        "bytes": 197507
+      }
+    ],
+    "tool": {
+      "name": "extract_prop_pack",
+      "version": "0.4.0"
+    }
+  }
+}

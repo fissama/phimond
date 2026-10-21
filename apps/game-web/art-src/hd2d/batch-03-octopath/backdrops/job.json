@@ -1,0 +1,35 @@
+{
+  "id": "coastal-backdrops",
+  "rows": 2,
+  "cols": 1,
+  "refs": [
+    "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/treasure_beach_west_beach.png",
+    "/Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level5_BaiBien/level5_BaiBien_001.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+  ],
+  "prompt": "Use case: modular HD-2D parallax BACKDROP layers, TWO separate very wide horizontal strips stacked in TWO ROWS ONE COLUMN, clean solid magenta separation gutter at least80px high. NOT a complete scene. TOP STRIP: calm distant muted slateblue sea BAND with two low small rocky islands and tiny olive vegetation silhouettes above its straight horizon, no sky, no foreground waves, no ships. BOTTOM STRIP: long low weathered coastal CLIFF WALL silhouette of warm graybeige stratified stone, sparse muted olive scrub at irregular topedge, no sky or ground/water below. Both strips designed for horizontal left-right repeating: first/last160px at same base elevation and matching quiet rock/sea material, no obvious landmark cut off at side edges. Full artwork spans entire strip width, side edges intentionally meet repeats. Large magenta empty area ABOVE each strip and magenta below, no baked atmosphere. Original references provide subdued sea/slate/sand/wood island palette, pets crisp shading compatibility only. Octopath Traveler inspired HD-2D environment PIXEL ART, crisp stepped silhouettes and broad subtle3-4tone color clusters, mature muted saturation, hue-tinted cool outlines, subtle upperleft warm key on rock. No smooth gradients, vector look, fog, aerial haze, bloom, sky, sunlightshafts, castgroundshadows, words, labels, frames, buildings or composedbeach scene. Maintain separate two independent layers, not one unified picture.",
+  "source_card": "Original western beach sea/sand/slate identity, intended far sea+island layer and nearer coastal stone cliff layer from Batch3 brief. No sky/fog; bottom fade performed only as alpha finishing.",
+  "assets": [
+    {
+      "id": "sea-islands-far",
+      "kit": "beach",
+      "category": "backdrop_far",
+      "px": [
+        2048,
+        384
+      ],
+      "density": 64
+    },
+    {
+      "id": "coastal-cliff-mid",
+      "kit": "beach",
+      "category": "backdrop_mid",
+      "px": [
+        2048,
+        512
+      ],
+      "density": 128
+    }
+  ]
+}

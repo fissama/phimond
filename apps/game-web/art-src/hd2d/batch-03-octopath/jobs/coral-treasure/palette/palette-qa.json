@@ -1,0 +1,167 @@
+{
+  "status": "pass",
+  "method": "forge_palette.build_palette (weighted k-means++ in OKLab over unique colours, reserved colours fixed, coverage skipping) then forge_palette.fit_report of every input: OKLab dE of each pixel with alpha >= the threshold to its nearest palette colour",
+  "notProven": [
+    "Visual quality of the palette: look at swatches.png and an applied frame.",
+    "Colours of pixels below the alpha threshold were not sampled or measured.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "palette_colors",
+      "status": "pass",
+      "value": 48,
+      "threshold": 48
+    },
+    {
+      "id": "inputs_without_samples",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0,
+      "files": []
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.103205,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../palette-inputs/coral-brain.png",
+      "sha256": "e215dffe1c3ebd1a944546dcd6049c8cceaae4886cc28d486dbfc87ba349ff9b",
+      "bytes": 29552
+    },
+    {
+      "path": "../palette-inputs/coral-branching.png",
+      "sha256": "db3839141d14c4f24176856e2fc68b4290548e51b9bd234f6a9c7de5e66155b7",
+      "bytes": 35812
+    },
+    {
+      "path": "../palette-inputs/coral-tube.png",
+      "sha256": "00c162292ee48a20fedbbab52b684532df0a550238947b6e656c5f2059f8557e",
+      "bytes": 33778
+    },
+    {
+      "path": "../palette-inputs/pier-post.png",
+      "sha256": "563769cec712253a5b111577eafa57ac3239e061e7bc5e9c2ba7c5e1a57c6ebc",
+      "bytes": 42440
+    },
+    {
+      "path": "../palette-inputs/treasure-chest-closed.png",
+      "sha256": "739c72394bcb4776fed335f81e86878e7865aa36276bed96413c607b2211286f",
+      "bytes": 53061
+    },
+    {
+      "path": "../palette-inputs/treasure-chest-open.png",
+      "sha256": "109ca5ac8ea0cf739152b507025b12e595ee4013bf1355881ce37a4b2d7bb475",
+      "bytes": 59072
+    }
+  ],
+  "outputs": [
+    {
+      "path": "palette.json",
+      "sha256": "6701c7d9aeb310e5c9a916da3f466d1b25fea646cd0153d02578220d12dfaab5",
+      "bytes": 1924
+    },
+    {
+      "path": "palette.gpl",
+      "sha256": "1f164245c0ae9fe64694bf96bc4bd6cec604c7bc64c59a6f77a76e1d75520aa2",
+      "bytes": 1020
+    },
+    {
+      "path": "palette.hex",
+      "sha256": "6a68b3d88a4fcea788c04248c90e9200bf54fd3dc3a070718192a3a4bfe82689",
+      "bytes": 336
+    },
+    {
+      "path": "swatches.png",
+      "sha256": "3f7987f4f8ef9ee716264a5829e6f6767edc3f567c88969c53c32586516a2eb8",
+      "bytes": 694
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "palette": {
+    "colors": 48,
+    "reserved": 0,
+    "transparent_index": 255,
+    "seed": 0
+  },
+  "fit": {
+    "../palette-inputs/coral-brain.png": {
+      "measured_px": 10225,
+      "alpha_threshold": 128,
+      "off_palette_px": 10225,
+      "partial_alpha_px": 0,
+      "colors": 9948,
+      "palette_colors_used": 37,
+      "mean_delta_e": 0.026099,
+      "p95_delta_e": 0.04048,
+      "max_delta_e": 0.103205
+    },
+    "../palette-inputs/coral-branching.png": {
+      "measured_px": 11719,
+      "alpha_threshold": 128,
+      "off_palette_px": 11718,
+      "partial_alpha_px": 0,
+      "colors": 10904,
+      "palette_colors_used": 41,
+      "mean_delta_e": 0.027612,
+      "p95_delta_e": 0.047656,
+      "max_delta_e": 0.095762
+    },
+    "../palette-inputs/coral-tube.png": {
+      "measured_px": 12232,
+      "alpha_threshold": 128,
+      "off_palette_px": 12228,
+      "partial_alpha_px": 0,
+      "colors": 11190,
+      "palette_colors_used": 32,
+      "mean_delta_e": 0.025523,
+      "p95_delta_e": 0.045241,
+      "max_delta_e": 0.074874
+    },
+    "../palette-inputs/pier-post.png": {
+      "measured_px": 16433,
+      "alpha_threshold": 128,
+      "off_palette_px": 16429,
+      "partial_alpha_px": 0,
+      "colors": 14675,
+      "palette_colors_used": 36,
+      "mean_delta_e": 0.021563,
+      "p95_delta_e": 0.042627,
+      "max_delta_e": 0.094929
+    },
+    "../palette-inputs/treasure-chest-closed.png": {
+      "measured_px": 21987,
+      "alpha_threshold": 128,
+      "off_palette_px": 21972,
+      "partial_alpha_px": 0,
+      "colors": 17347,
+      "palette_colors_used": 33,
+      "mean_delta_e": 0.018542,
+      "p95_delta_e": 0.035605,
+      "max_delta_e": 0.086315
+    },
+    "../palette-inputs/treasure-chest-open.png": {
+      "measured_px": 25572,
+      "alpha_threshold": 128,
+      "off_palette_px": 25539,
+      "partial_alpha_px": 0,
+      "colors": 15991,
+      "palette_colors_used": 29,
+      "mean_delta_e": 0.01689,
+      "p95_delta_e": 0.032031,
+      "max_delta_e": 0.09571
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.103205,
+    "worst_p95_delta_e": 0.047656,
+    "off_palette_px": 98111
+  }
+}

@@ -1,0 +1,423 @@
+{
+  "schema": "generate2dmap.prop_pack.v2",
+  "tool": {
+    "name": "extract_prop_pack",
+    "version": "0.4.0"
+  },
+  "input": "../raw-01.png",
+  "source_size": [
+    1225,
+    1284
+  ],
+  "source_sha256": "08a9903172729bdd6789b31b4f5f4bb567d18a6e2a4cb55ff5084f9df63b1abf",
+  "source_mode": "RGBA",
+  "layout_mode": "explicit_boxes",
+  "boxes_file": "../boxes-reviewed-v2.json",
+  "labels_file": null,
+  "background_mode": "native_alpha",
+  "art_source": "host_image",
+  "rows": null,
+  "cols": null,
+  "threshold": 100,
+  "edge_threshold": 150,
+  "despill_radius": 0,
+  "despill": {
+    "mode": "off",
+    "applied": "off",
+    "radius": 0,
+    "margin": 12,
+    "changed_px": 0
+  },
+  "hygiene": {
+    "mode": "both",
+    "floor": 4,
+    "solid_min": 32,
+    "attach_radius": 2,
+    "connectivity": 8,
+    "floor_px": 40878,
+    "detached_px": 18,
+    "detached_components": 8,
+    "max_removed_alpha": 10
+  },
+  "alpha_floor": 4,
+  "alpha_floor_pixels_removed": 40878,
+  "trim_border": 0,
+  "edge_clean_depth": 0,
+  "component_mode": "all",
+  "component_padding": 8,
+  "min_component_area": "auto",
+  "edge_touch_margin": 0,
+  "geometry": {
+    "connectivity": 8,
+    "alpha_geometry_threshold": 16,
+    "anchor_mode": "stance",
+    "support_band_fraction": 0.25,
+    "anchor_rounding": "whole pixels, half-up",
+    "grid_rounding": null,
+    "keep_canvas": false,
+    "world_scale": null
+  },
+  "accepted": [
+    {
+      "index": 0,
+      "label": "portrait-summoner-mira",
+      "display_name": "portrait-summoner_mira",
+      "status": "accepted",
+      "image": "portrait-summoner-mira/prop.png",
+      "sha256": "793bd946f38ee7933d01a641ec0078dfecb29fbb68994fa67335ee5cef34f0c6",
+      "output_size": [
+        440,
+        629
+      ],
+      "grid": null,
+      "cell_box": [
+        0,
+        0,
+        612,
+        650
+      ],
+      "source_box": [
+        0,
+        0,
+        612,
+        650
+      ],
+      "source_rect": [
+        129,
+        21,
+        569,
+        650
+      ],
+      "trim_offset": [
+        129,
+        21
+      ],
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "anchor_px": [
+        237,
+        621
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 100,
+      "trim_applied": 0,
+      "crop_bbox": [
+        137,
+        29,
+        561,
+        642
+      ],
+      "padded_crop_bbox": [
+        129,
+        21,
+        569,
+        650
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 173857,
+      "dropped_components": 53,
+      "dropped_area": 204,
+      "edge_touch": false
+    },
+    {
+      "index": 1,
+      "label": "portrait-forest-guide",
+      "display_name": "portrait-forest_guide",
+      "status": "accepted",
+      "image": "portrait-forest-guide/prop.png",
+      "sha256": "dedcb0f3407938851d80c4698cf8a2edb947e24e452934f039e31bc02698aca2",
+      "output_size": [
+        467,
+        593
+      ],
+      "grid": null,
+      "cell_box": [
+        612,
+        0,
+        1225,
+        650
+      ],
+      "source_box": [
+        612,
+        0,
+        1225,
+        650
+      ],
+      "source_rect": [
+        688,
+        57,
+        1155,
+        650
+      ],
+      "trim_offset": [
+        76,
+        57
+      ],
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "anchor_px": [
+        234,
+        585
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 100,
+      "trim_applied": 0,
+      "crop_bbox": [
+        84,
+        65,
+        535,
+        642
+      ],
+      "padded_crop_bbox": [
+        76,
+        57,
+        543,
+        650
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 169585,
+      "dropped_components": 31,
+      "dropped_area": 120,
+      "edge_touch": false
+    },
+    {
+      "index": 2,
+      "label": "portrait-sau-guard",
+      "display_name": "portrait-sau_guard",
+      "status": "accepted",
+      "image": "portrait-sau-guard/prop.png",
+      "sha256": "6dbc27c88c3ee25997c3875b647f58950bdc3babc74bd20242150af60a866c3f",
+      "output_size": [
+        580,
+        617
+      ],
+      "grid": null,
+      "cell_box": [
+        0,
+        650,
+        612,
+        1284
+      ],
+      "source_box": [
+        0,
+        650,
+        612,
+        1284
+      ],
+      "source_rect": [
+        29,
+        651,
+        609,
+        1268
+      ],
+      "trim_offset": [
+        29,
+        1
+      ],
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "anchor_px": [
+        292,
+        606
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 100,
+      "trim_applied": 0,
+      "crop_bbox": [
+        37,
+        9,
+        601,
+        610
+      ],
+      "padded_crop_bbox": [
+        29,
+        1,
+        609,
+        618
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 233722,
+      "dropped_components": 53,
+      "dropped_area": 228,
+      "edge_touch": false
+    },
+    {
+      "index": 3,
+      "label": "portrait-gate-captain",
+      "display_name": "portrait-gate_captain",
+      "status": "accepted",
+      "image": "portrait-gate-captain/prop.png",
+      "sha256": "ebaf57917db3512708262fda01a0621cc4c09630516c86da8eb2198e9b63c2cd",
+      "output_size": [
+        544,
+        615
+      ],
+      "grid": null,
+      "cell_box": [
+        612,
+        650,
+        1225,
+        1284
+      ],
+      "source_box": [
+        612,
+        650,
+        1225,
+        1284
+      ],
+      "source_rect": [
+        656,
+        651,
+        1200,
+        1266
+      ],
+      "trim_offset": [
+        44,
+        1
+      ],
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "anchor_px": [
+        260,
+        605
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 100,
+      "trim_applied": 0,
+      "crop_bbox": [
+        52,
+        9,
+        580,
+        608
+      ],
+      "padded_crop_bbox": [
+        44,
+        1,
+        588,
+        616
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 221345,
+      "dropped_components": 49,
+      "dropped_area": 114,
+      "edge_touch": false
+    }
+  ],
+  "rejected": [],
+  "edge_touch_props": [],
+  "warnings": [],
+  "qa": {
+    "status": "pass",
+    "method": "native alpha, not keyed; alpha hygiene both; 8-connected components (all); checks measured on the published pixels",
+    "notProven": [
+      "that each label names the art in its cell or box",
+      "that a prop is complete: clipping is detected only where art meets the cell edge",
+      "keyed-edge quality beyond the edge fringe count",
+      "that anchors and suggested footprints match gameplay contact (both are measured from alpha)",
+      "runtime placement, collision or occlusion"
+    ],
+    "checks": [
+      {
+        "id": "accepted",
+        "status": "pass",
+        "value": 4,
+        "threshold": ">= 1"
+      },
+      {
+        "id": "edge_touch",
+        "status": "pass",
+        "value": [],
+        "threshold": 0
+      },
+      {
+        "id": "dropped_area",
+        "status": "pass",
+        "value": {
+          "portrait-summoner-mira": 0.0012,
+          "portrait-forest-guide": 0.0007,
+          "portrait-sau-guard": 0.001,
+          "portrait-gate-captain": 0.0005
+        },
+        "threshold": 0.01
+      },
+      {
+        "id": "strategy_aspect",
+        "status": "skipped",
+        "value": null,
+        "threshold": 1.6
+      },
+      {
+        "id": "edge_fringe",
+        "status": "skipped",
+        "value": null,
+        "threshold": 0.02
+      }
+    ],
+    "inputs": [
+      {
+        "path": "../raw-01.png",
+        "sha256": "08a9903172729bdd6789b31b4f5f4bb567d18a6e2a4cb55ff5084f9df63b1abf",
+        "bytes": 1604555
+      },
+      {
+        "path": "../boxes-reviewed-v2.json",
+        "sha256": "3a4852de877b681e779066d5d382ed833e050e851a472051acd9b5e0edcb7261",
+        "bytes": 509
+      }
+    ],
+    "outputs": [
+      {
+        "path": "portrait-summoner-mira/prop.png",
+        "sha256": "793bd946f38ee7933d01a641ec0078dfecb29fbb68994fa67335ee5cef34f0c6",
+        "bytes": 369302
+      },
+      {
+        "path": "portrait-forest-guide/prop.png",
+        "sha256": "dedcb0f3407938851d80c4698cf8a2edb947e24e452934f039e31bc02698aca2",
+        "bytes": 351590
+      },
+      {
+        "path": "portrait-sau-guard/prop.png",
+        "sha256": "6dbc27c88c3ee25997c3875b647f58950bdc3babc74bd20242150af60a866c3f",
+        "bytes": 466472
+      },
+      {
+        "path": "portrait-gate-captain/prop.png",
+        "sha256": "ebaf57917db3512708262fda01a0621cc4c09630516c86da8eb2198e9b63c2cd",
+        "bytes": 446798
+      }
+    ],
+    "tool": {
+      "name": "extract_prop_pack",
+      "version": "0.4.0"
+    }
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "id": "city-grounds",
+  "rows": 3,
+  "cols": 3,
+  "refs": [
+    "/Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level3_QTTP/level3_QTTP_001.png",
+    "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/city_activity_hall.png",
+    "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/city_farm.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+  ],
+  "prompt": "Use case: game texture atlas. EXACT THREE ROWS x THREE COLUMNS, nine equally sized SQUARE edge-to-edge ground textures, NO gutters, NO border lines or labels. Each square independently repeats seamlessly on ALL FOUR edges, with even non-directional illumination, NO vignette. TOP row three variants of old pale limestone town cobblestones: tightly fitted small irregular blocks; slightly larger rounded blocks; mixed worn rectangular blocks. Keep all3 very similar warm-gray value. MIDDLE row: reddish brown brick footpath laid running bond; dark umber indoor wooden plank floor; gray-beige smooth interior stone slab floor. BOTTOM row: fine dark tilled farm soil with short low parallel ridges, sparse; second tilled soil variant with small subdued seedlings; weathered pale arena stone floor with very subtle hairline cracks. Original1 pale city paving identity,2interiorstone,3farmsoil; pets outline palette compatibility only. Octopath Traveler inspired HD-2D PIXEL TEXTURES, restrained desaturated earth palette, crisp broad color clusters,2-4tones/material. Topdown flat texture, NO perspective, NO height horizon. Uniform flat base values through outer64pixels of each square, detail continues naturally across opposite edges; no empty bands, rectangular islands or distinctive central motif. Avoid hard bright/dark variation that exposes repetition. NO objects, grass tufts, debris, text, shadows, glow, checkerboards, transparency, frame, lines between tiles, tiny noisy phototexture or smooth gradients. Fill entire square atlas corner-to-corner.",
+  "source_card": "Original QTTP pale cobblestones, hall interior floor and farm material. Nine separate512square four-world-unit textures; seam QA required individually.",
+  "assets": [
+    {
+      "id": "city-paving-01",
+      "kit": "city",
+      "category": "floor",
+      "tileable": "xy",
+      "px": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "city-paving-02",
+      "kit": "city",
+      "category": "floor",
+      "tileable": "xy",
+      "px": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "city-paving-03",
+      "kit": "city",
+      "category": "floor",
+      "tileable": "xy",
+      "px": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "city-brick-path",
+      "kit": "city",
+      "category": "floor",
+      "tileable": "xy",
+      "px": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "hall-floor-wood",
+      "kit": "hall",
+      "category": "floor",
+      "tileable": "xy",
+      "px": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "hall-floor-stone",
+      "kit": "hall",
+      "category": "floor",
+      "tileable": "xy",
+      "px": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "farm-tilled-01",
+      "kit": "farm",
+      "category": "floor",
+      "tileable": "xy",
+      "px": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "farm-tilled-02",
+      "kit": "farm",
+      "category": "floor",
+      "tileable": "xy",
+      "px": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "arena-floor",
+      "kit": "arena",
+      "category": "floor",
+      "tileable": "xy",
+      "px": [
+        512,
+        512
+      ]
+    }
+  ],
+  "selected_raw": "raw-03.png",
+  "selected_raw_by_asset": {
+    "city-paving-01": "raw-03.png",
+    "city-paving-02": "raw-03.png",
+    "city-paving-03": "raw-03.png",
+    "city-brick-path": "raw-03.png",
+    "hall-floor-wood": "raw-01.png",
+    "hall-floor-stone": "raw-03.png",
+    "farm-tilled-01": "raw-02.png",
+    "farm-tilled-02": "raw-03.png",
+    "arena-floor": "raw-03.png"
+  },
+  "revision_prompt_file": "repair-03-prompt.md",
+  "selected_finished_by_asset": {
+    "city-paving-01": "finished-15bbf3ee/city-paving-01.png",
+    "city-paving-02": "finished-15bbf3ee/city-paving-02.png",
+    "city-paving-03": "finished-15bbf3ee/city-paving-03.png",
+    "city-brick-path": "finished-15bbf3ee/city-brick-path.png",
+    "hall-floor-wood": "finished/hall-floor-wood.png",
+    "hall-floor-stone": "finished-15bbf3ee/hall-floor-stone.png",
+    "farm-tilled-01": "finished-attempt2/farm-tilled-01.png",
+    "farm-tilled-02": "finished-15bbf3ee/farm-tilled-02.png",
+    "arena-floor": "finished-15bbf3ee/arena-floor.png"
+  }
+}
