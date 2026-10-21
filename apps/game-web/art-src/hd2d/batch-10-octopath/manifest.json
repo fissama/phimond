@@ -1,7 +1,7 @@
 {
   "batch": "10-octopath",
   "stage": "continuous-redraw",
-  "status": "in_progress_needs_claude_visual_review",
+  "status": "approved_with_redo",
   "approved": false,
   "assets": [
     {
@@ -58,10 +58,11 @@
       "raw_sha256": "167412a7485c4c797b6d97256d3499a87ef99a9c246ecdb2b1308c17d6655256",
       "sha256": "596b234706cb50162f6be1879aa280d7f5574afc07b35ebd2d60af5b971bd4f5",
       "palette": "palette/dawn.json",
-      "approved": false,
-      "status": "needs_claude_visual_review",
+      "approved": true,
+      "status": "approved",
       "mechanical_status": "pass",
-      "notes": "Dawn sky only; additional generated dawn palette, discrete stepped pixel bands; no sun/rays. Camera-aligned1280x720 layer. Binaryalpha.24px bottom coverage. No runtime activation."
+      "notes": "Dawn sky only; additional generated dawn palette, discrete stepped pixel bands; no sun/rays. Camera-aligned1280x720 layer. Binaryalpha.24px bottom coverage. No runtime activation.",
+      "approved_by": "claude 2026-10-21 (owner-delegated)"
     },
     {
       "id": "login-layer-2-citadel",
@@ -117,10 +118,11 @@
       "raw_sha256": "2806e5ca37db6eba94a69e3a5fea8f215f836935b0550be14c1788a141d154b6",
       "sha256": "51fdce2d2c9e24929a3ed70dc1564344128750f1ba3e748b513b24cd43208223",
       "palette": "palette/town.json",
-      "approved": false,
-      "status": "needs_claude_visual_review",
+      "approved": true,
+      "status": "approved",
       "mechanical_status": "pass",
-      "notes": "Ivory stone citadel and terracotta turrets derived from approved town facade, attached town ridge; upper sky alpha. Camera-aligned1280x720 layer. Binaryalpha.24px bottom coverage. No runtime activation."
+      "notes": "Ivory stone citadel and terracotta turrets derived from approved town facade, attached town ridge; upper sky alpha. Camera-aligned1280x720 layer. Binaryalpha.24px bottom coverage. No runtime activation.",
+      "approved_by": "claude 2026-10-21 (owner-delegated)"
     },
     {
       "id": "login-layer-3-forest",
@@ -176,10 +178,11 @@
       "raw_sha256": "b8eaf99d87662c4a1bf34042ca8dacd92a450b028263c24d62d9d2392c14d4c0",
       "sha256": "255682349d1e4b7ddf7617fe407971d471efd6eec77950feaa486b5812222f13",
       "palette": "palette/forest.json",
-      "approved": false,
-      "status": "needs_claude_visual_review",
+      "approved": true,
+      "status": "approved",
       "mechanical_status": "pass",
-      "notes": "Low woodland band redrawn twice to expose citadel; foliage language matches batch01 canopy reference. Camera-aligned1280x720 layer. Binaryalpha.24px bottom coverage. No runtime activation."
+      "notes": "Low woodland band redrawn twice to expose citadel; foliage language matches batch01 canopy reference. Camera-aligned1280x720 layer. Binaryalpha.24px bottom coverage. No runtime activation.",
+      "approved_by": "claude 2026-10-21 (owner-delegated)"
     },
     {
       "id": "login-layer-4-foreground",
@@ -235,10 +238,11 @@
       "raw_sha256": "b8eaf99d87662c4a1bf34042ca8dacd92a450b028263c24d62d9d2392c14d4c0",
       "sha256": "fcdbb74608dd1ad668971ccc1e85003b2a29cd1febef99bd573fc78637c73644",
       "palette": "palette/forest.json",
-      "approved": false,
-      "status": "needs_claude_visual_review",
+      "approved": true,
+      "status": "approved",
       "mechanical_status": "pass",
-      "notes": "Low meadow/fern/stone framing edge with worn ochre path, no building/creature; forest palette. Camera-aligned1280x720 layer. Binaryalpha.24px bottom coverage. No runtime activation."
+      "notes": "Low meadow/fern/stone framing edge with worn ochre path, no building/creature; forest palette. Camera-aligned1280x720 layer. Binaryalpha.24px bottom coverage. No runtime activation.",
+      "approved_by": "claude 2026-10-21 (owner-delegated)"
     },
     {
       "id": "logo-horizontal",
@@ -288,10 +292,11 @@
         930,
         420
       ],
-      "approved": false,
-      "status": "needs_claude_visual_review",
+      "approved": true,
+      "status": "approved",
       "mechanical_status": "pass",
-      "ui_scale": 3
+      "ui_scale": 3,
+      "approved_by": "claude 2026-10-21 (owner-delegated)"
     },
     {
       "id": "logo-badge",
@@ -341,10 +346,11 @@
         1448,
         450
       ],
-      "approved": false,
-      "status": "needs_claude_visual_review",
+      "approved": true,
+      "status": "approved",
       "mechanical_status": "pass",
-      "ui_scale": 3
+      "ui_scale": 3,
+      "approved_by": "claude 2026-10-21 (owner-delegated)"
     },
     {
       "id": "app-icon",
@@ -394,11 +400,12 @@
         820,
         1060
       ],
-      "approved": false,
-      "status": "needs_claude_visual_review",
+      "approved": true,
+      "status": "approved",
       "mechanical_status": "pass",
       "ui_scale": null,
-      "master_file": "app-icon/master-1024.png"
+      "master_file": "app-icon/master-1024.png",
+      "approved_by": "claude 2026-10-21 (owner-delegated)"
     },
     {
       "id": "map-card-frame",
@@ -453,10 +460,11 @@
         1400,
         1050
       ],
-      "approved": false,
-      "status": "needs_claude_visual_review",
+      "approved": true,
+      "status": "approved",
       "mechanical_status": "pass",
-      "ui_scale": 3
+      "ui_scale": 3,
+      "approved_by": "claude 2026-10-21 (owner-delegated)"
     },
     {
       "id": "loading-bar-frame",
@@ -511,10 +519,11 @@
         650,
         350
       ],
-      "approved": false,
-      "status": "needs_claude_visual_review",
+      "approved": true,
+      "status": "approved",
       "mechanical_status": "pass",
-      "ui_scale": 3
+      "ui_scale": 3,
+      "approved_by": "claude 2026-10-21 (owner-delegated)"
     },
     {
       "id": "loading-bar-fill",
@@ -565,9 +574,11 @@
         418
       ],
       "approved": false,
-      "status": "needs_claude_visual_review",
+      "status": "redo",
       "mechanical_status": "pass",
-      "ui_scale": 3
+      "ui_scale": 3,
+      "redo_reason": "Hoa văn tam giác xanh ngọc lệch phong cách bộ khung loading; vẽ lại dải fill liền mạch theo màu vàng/ngọc của frame.",
+      "reviewed_by": "claude 2026-10-21 (owner-delegated)"
     },
     {
       "id": "loading-bg",
@@ -623,10 +634,11 @@
         1672,
         941
       ],
-      "approved": false,
-      "status": "needs_claude_visual_review",
+      "approved": true,
+      "status": "approved",
       "mechanical_status": "pass",
-      "ui_scale": null
+      "ui_scale": null,
+      "approved_by": "claude 2026-10-21 (owner-delegated)"
     },
     {
       "id": "loading-ornament-corners",
@@ -679,8 +691,8 @@
         550,
         780
       ],
-      "approved": false,
-      "status": "needs_claude_visual_review",
+      "approved": true,
+      "status": "approved",
       "mechanical_status": "pass",
       "ui_scale": 3,
       "packed_parts": [
@@ -688,7 +700,8 @@
         "loading-corner-tr",
         "loading-corner-bl",
         "loading-corner-br"
-      ]
+      ],
+      "approved_by": "claude 2026-10-21 (owner-delegated)"
     },
     {
       "id": "intro-01-world",
@@ -744,10 +757,11 @@
         886,
         465
       ],
-      "approved": false,
-      "status": "needs_claude_visual_review",
+      "approved": true,
+      "status": "approved",
       "mechanical_status": "pass",
-      "ui_scale": null
+      "ui_scale": null,
+      "approved_by": "claude 2026-10-21 (owner-delegated)"
     },
     {
       "id": "intro-02-companion",
@@ -803,10 +817,11 @@
         1660,
         463
       ],
-      "approved": false,
-      "status": "needs_claude_visual_review",
+      "approved": true,
+      "status": "approved",
       "mechanical_status": "pass",
-      "ui_scale": null
+      "ui_scale": null,
+      "approved_by": "claude 2026-10-21 (owner-delegated)"
     },
     {
       "id": "intro-03-journey",
@@ -862,14 +877,20 @@
         949,
         924
       ],
-      "approved": false,
-      "status": "needs_claude_visual_review",
+      "approved": true,
+      "status": "approved",
       "mechanical_status": "pass",
-      "ui_scale": null
+      "ui_scale": null,
+      "approved_by": "claude 2026-10-21 (owner-delegated)"
     }
   ],
   "deferred_stages": [
     "D intro"
   ],
-  "login_panorama": "Not published before layer approval; qa-layer-stack.png is review-only."
+  "login_panorama": "Not published before layer approval; qa-layer-stack.png is review-only.",
+  "review": {
+    "by": "claude 2026-10-21 (owner-delegated)",
+    "decision_file": ".ai/design/hd2d-approval-20261021.json",
+    "redo": 1
+  }
 }
