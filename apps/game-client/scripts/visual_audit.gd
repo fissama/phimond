@@ -9,7 +9,7 @@ func _run() -> void:
 	for key in ["maps", "npcs", "skills", "items", "quests", "recipes"]:
 		client.catalog[key] = JSON.parse_string(FileAccess.get_file_as_string(data.path_join(key + "/" + key + ".json")))
 	client.catalog.species = JSON.parse_string(FileAccess.get_file_as_string(data.path_join("pets/species.json")))
-	var pet := {"id": "audit-pet", "species_id": "snail", "name": "Ốc Sen Hoa", "level": 12, "gender": "female", "star": 1, "generation": 1, "hp": 82, "max_hp": 120, "mp": 32, "max_mp": 45, "skills": ["tackle"], "quality": {}, "growth": {}, "resistances": {}, "status_resistances": {}}
+	var pet := {"id": "audit-pet", "species_id": "snail", "name": "Hoa Loa", "level": 12, "gender": "female", "star": 1, "generation": 1, "hp": 82, "max_hp": 120, "mp": 32, "max_mp": 45, "skills": ["tackle"], "quality": {}, "growth": {}, "resistances": {}, "status_resistances": {}}
 	client.state = {"id": "audit", "name": "Phimond", "map_id": "severa", "x": 8, "y": 12, "level": 12, "gold": 2400, "crystals": 15, "active_pet_id": pet.id, "pets": [pet], "quests": {}, "inventory": {"potion": 4}, "recipes": [], "battle": null}
 	client.revision = 1
 	var output := "/tmp/phimond-ui-before"
@@ -33,7 +33,7 @@ func _run() -> void:
 		world._open(page)
 		await _capture(output + "/" + page.to_lower() + ".png")
 	world.free()
-	client.state.battle = {"id": "audit-battle", "turn": 3, "phase": "active", "units": [{"id": "audit-pet", "species_id": "snail", "name": "Ốc Sen Hoa", "side": "player", "hp": 82, "max_hp": 120, "mp": 32, "max_mp": 45, "statuses": []}, {"id": "audit-enemy", "species_id": "mushroom", "name": "Nấm Hoa", "side": "enemy", "hp": 46, "max_hp": 90, "mp": 18, "max_mp": 24, "statuses": []}]}
+	client.state.battle = {"id": "audit-battle", "turn": 3, "phase": "active", "units": [{"id": "audit-pet", "species_id": "snail", "name": "Hoa Loa", "side": "player", "hp": 82, "max_hp": 120, "mp": 32, "max_mp": 45, "statuses": []}, {"id": "audit-enemy", "species_id": "mushroom", "name": "Xích Linh Chi", "side": "enemy", "hp": 46, "max_hp": 90, "mp": 18, "max_mp": 24, "statuses": []}]}
 	var battle = load("res://scenes/BattleScene.tscn").instantiate()
 	root.add_child(battle)
 	current_scene = battle
