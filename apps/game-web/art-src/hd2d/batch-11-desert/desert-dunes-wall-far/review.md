@@ -1,0 +1,1 @@
+Actual final,4x dark/checker and repeatX inspected. Raw02 has quiet distant mesas/dunes with tiny ruined dome.36colors, alpha ends identical; one warm highlight excluded globally to merge close tones, seamX0. No spatial patch/edge copying. Density64px/world. Weak point: very broad plain lower fill. Self-inspected draft; Claude approval pending.

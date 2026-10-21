@@ -1,0 +1,22 @@
+# desert-decal-sunken-bricks
+
+Route: built-in image_gen. Model not exposed.
+
+Phimond desert reusable GROUND DECALS sheet, SIX isolated flat overhead surface pieces,2columns x3rows,1536square, exact#FF00FF. Original desert1 content palette: ruined ivory stone/rust sand/bone/eroded desert. Approved mud/moss decals2–3 exact pixel STYLE and irregular cutout contour references, not forest content. Pet anchors4–5 outline/value only, no creatures.
+Each whole decal fully visible with64px blank margins/gaps, irregular feathered pixel contour and transparent magenta holes, no filled rectangular/ellipse ground backing, no text/grid, no props raised in perspective or projected ground shadows.
+TOP LEFT desert-decal-sandstone-rubble: low flush scattered broken angular rusty sandstone flakes, cream limestone splinters and cool gray grit, some fine ochre mineral grains. Unequal broken crescent arrangement about450x260, empty spaces between pieces, no large rocks/mound.
+TOP RIGHT desert-decal-sunken-bricks: partial ruined adobe brick pattern sinking into sand, 2short misaligned fragments of rows, several missing brick shapes with irregular cracks/crumbly margins and sparse gray/ivory chips, translucent-looking edges accomplished by separated opaque pixel clusters onmagenta. Not a rectangle of floor tile; only scattered brick remnants and sand scuffs. About430x260.
+MIDDLE LEFT desert-decal-cracked-earth-patch: ragged branching dry-earth fissure patch, long thin jagged cracks and a few small flat clods, ochre/rust core and tiny ivory/gray mineral inclusions. Open star/river-delta outline with many transparent gaps, NO filled oval/square patch, about430x300.
+MIDDLE RIGHT desert-decal-ancient-rune-faded: partially erased ancient geometric SEAL TRACES impressed into sand, broken concentric arcs and interrupted radial segments, no letters/words/readableglyphs. Pale ivory/gray worn mineral fragments, ochre/rust shallow engraved recesses and sparse woody grit. Irregular incomplete ring footprint, center largely magenta, no complete circular disk or glow. About350x300.
+BOTTOM LEFT desert-edge-sand-sandstone-corner-01: CONVEX corner transition decal, a broken quarter-curve seam from left end toward top end, short irregular redstone and limestone slivers with pale sand grains feathering out around curve. Open uneven L/quarter-circle boundary, NO solid filled square/quadrant. Endpoints irregular taper, not meant torepeatX. About380square.
+BOTTOM RIGHT desert-edge-sand-sandstone-corner-02: CONCAVE inner corner transition, two unequal short jagged rubble arms curving toward a low central notch, sparse flush brickchips/dust along OUTSIDE of bend. Visibly different arrangement/material clustering from01, NOT rotated/flipped/recolored copy. Open irregular J/V footprint, no solid quadrant panel. About380square.
+33–48colors per decal in mineral/stone/dust/wood accents, crisp intentional squared pixel clusters2–4tones permaterial; dark brown samehue cuts, no black outline, warm upper-left local facets only. Exact approved batch00–09 / Octopath-inspired HD2D hand. No smoothpaint,3D,dither/noise,bloom,fog,castshadows,semialpha or magenta fringe. Surfaces must feel flush with terrain, separate sprites for Claude to compose.
+
+Actual attachments (ordered):
+1. /Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png — SHA256 30a678461a1a1f13aafa1a925382223dda2abcba586bb3b343e87a683a6c04ea
+2. /Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/mud-patch/final.png — SHA256 b0759f3111b274228356d66fb95cce948d0ef805e6c53b1e6e96bccfdbe6bcdf
+3. /Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/moss-patch-01/final.png — SHA256 90a3d3e1fc44cf5c1203890778f9be5ac42aa2b8994385a97ebe2cd0b0cde96b
+4. /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png — SHA256 fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da
+5. /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png — SHA256 043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3
+
+Raw: raw-01.png; SHA256 7a2a24b8026fe2bcd5239cb462b7120e0c173e3d3dd04d2a4c58547aec85c565; source box [650, 50, 1254, 420]; sheet extraction polygon None. Final [448, 288]. Non-dithered 48color finish, nearest scaling. No content drawn with code.

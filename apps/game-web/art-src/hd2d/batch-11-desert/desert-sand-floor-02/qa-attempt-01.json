@@ -1,0 +1,29 @@
+{
+  "id": "desert-sand-floor-02",
+  "size": [
+    512,
+    512
+  ],
+  "mode": "RGBA",
+  "colors": 35,
+  "partial_alpha_pixels": 0,
+  "key_residue_pixels": 0,
+  "margin": 0,
+  "raw_integrity": true,
+  "sha256": "7bdf6a5c2d50b885d71e79bde93a7180e2b15da53210eaaec10c99bf449f6b84",
+  "visual_review": {
+    "status": "rejected_by_self_review",
+    "reason": "3x3 shows conspicuous square islands and wide empty lanes; raw01 not accepted despite zero edge differences on two tiles."
+  },
+  "failures": [
+    "SEAM_X_NONZERO",
+    "SEAM_Y_NONZERO",
+    "OUTER8_NOT_FLAT",
+    "VISUAL_GRID_LANES"
+  ],
+  "seam_x_mean": 0.047526041666666664,
+  "seam_x_max": 29,
+  "seam_y_mean": 0.047526041666666664,
+  "seam_y_max": 29,
+  "outer8_uniform": false
+}

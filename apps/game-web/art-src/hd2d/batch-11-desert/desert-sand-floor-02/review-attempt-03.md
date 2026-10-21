@@ -1,0 +1,1 @@
+SELF REJECT: actual 3x3 opened. The uniform perimeter is too broad compared with interior texture; conspicuous square grid. Mechanical seam0 on three tiles is insufficient. Redraw with smaller quieter details and only8px perimeter. No pixel edge patching. Claude approval=false.
