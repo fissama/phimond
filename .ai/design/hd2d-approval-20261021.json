@@ -1,0 +1,104 @@
+{
+ "date": "2026-10-21",
+ "reviewer": "claude",
+ "authority": "Owner ủy quyền trong chat 2026-10-21: 'Review tất cả assets hiện có, nếu không chê thì duyệt giúp mình.'",
+ "scope": [
+  "batch-01-octopath",
+  "batch-02-octopath",
+  "batch-03-octopath",
+  "batch-04-octopath",
+  "batch-05-octopath",
+  "batch-06-octopath",
+  "batch-07-octopath",
+  "batch-08-octopath",
+  "batch-09-octopath",
+  "batch-10-octopath"
+ ],
+ "excluded": {
+  "batch-00": "Mẫu style cũ, chỉ lưu trữ.",
+  "batch-11-*": "GPT đang vẽ lại, chưa nộp xong; không thuộc v1.0.0."
+ },
+ "default": "approve",
+ "redo": {
+  "batch-01-octopath": {
+   "deep-woods-giant-tree": "Bản bổ sung của Gemini: lẫn mảnh vụn/dải thừa của sheet, viền khử nền hoặc khác phong cách pixel của kit. Vẽ lại. Ngọn bị cắt phẳng ở mép trên."
+  },
+  "batch-02-octopath": {
+   "city-paving-01": "Tile không liền mạch: mép trái/phải hoặc trên/dưới lệch rõ khi lặp (seam 4–20 so với chênh lệch nội bộ 2–4). Vẽ lại bản liền mạch, không vá mép bằng code.",
+   "city-paving-02": "Tile không liền mạch: mép trái/phải hoặc trên/dưới lệch rõ khi lặp (seam 4–20 so với chênh lệch nội bộ 2–4). Vẽ lại bản liền mạch, không vá mép bằng code.",
+   "city-paving-03": "Tile không liền mạch: mép trái/phải hoặc trên/dưới lệch rõ khi lặp (seam 4–20 so với chênh lệch nội bộ 2–4). Vẽ lại bản liền mạch, không vá mép bằng code.",
+   "city-brick-path": "Tile không liền mạch: mép trái/phải hoặc trên/dưới lệch rõ khi lặp (seam 4–20 so với chênh lệch nội bộ 2–4). Vẽ lại bản liền mạch, không vá mép bằng code.",
+   "hall-floor-stone": "Tile không liền mạch: mép trái/phải hoặc trên/dưới lệch rõ khi lặp (seam 4–20 so với chênh lệch nội bộ 2–4). Vẽ lại bản liền mạch, không vá mép bằng code.",
+   "farm-tilled-01": "Tile không liền mạch: mép trái/phải hoặc trên/dưới lệch rõ khi lặp (seam 4–20 so với chênh lệch nội bộ 2–4). Vẽ lại bản liền mạch, không vá mép bằng code.",
+   "farm-tilled-02": "Tile không liền mạch: mép trái/phải hoặc trên/dưới lệch rõ khi lặp (seam 4–20 so với chênh lệch nội bộ 2–4). Vẽ lại bản liền mạch, không vá mép bằng code.",
+   "arena-floor": "Tile không liền mạch: mép trái/phải hoặc trên/dưới lệch rõ khi lặp (seam 4–20 so với chênh lệch nội bộ 2–4). Vẽ lại bản liền mạch, không vá mép bằng code.",
+   "farm-dirt-path-strip": "Tile không liền mạch: mép trái/phải hoặc trên/dưới lệch rõ khi lặp (seam 4–20 so với chênh lệch nội bộ 2–4). Vẽ lại bản liền mạch, không vá mép bằng code.",
+   "city-skyline-far": "Bản bổ sung của Gemini: lẫn mảnh vụn/dải thừa của sheet, viền khử nền hoặc khác phong cách pixel của kit. Vẽ lại.",
+   "arena-stands-far": "Bản bổ sung của Gemini: lẫn mảnh vụn/dải thừa của sheet, viền khử nền hoặc khác phong cách pixel của kit. Vẽ lại.",
+   "farm-hills-far": "Bản bổ sung của Gemini: lẫn mảnh vụn/dải thừa của sheet, viền khử nền hoặc khác phong cách pixel của kit. Vẽ lại.",
+   "royal-carpet-runner": "Bản bổ sung của Gemini: lẫn mảnh vụn/dải thừa của sheet, viền khử nền hoặc khác phong cách pixel của kit. Vẽ lại."
+  },
+  "batch-03-octopath": {
+   "sand-dry-warm": "Tile không liền mạch: mép trái/phải hoặc trên/dưới lệch rõ khi lặp (seam 4–20 so với chênh lệch nội bộ 2–4). Vẽ lại bản liền mạch, không vá mép bằng code.",
+   "sand-seagrass": "Tile không liền mạch: mép trái/phải hoặc trên/dưới lệch rõ khi lặp (seam 4–20 so với chênh lệch nội bộ 2–4). Vẽ lại bản liền mạch, không vá mép bằng code.",
+   "coastal-cliff-mid": "Tile không liền mạch: mép trái/phải hoặc trên/dưới lệch rõ khi lặp (seam 4–20 so với chênh lệch nội bộ 2–4). Vẽ lại bản liền mạch, không vá mép bằng code.",
+   "deep-sea-floor-tile": "Bản bổ sung của Gemini: lẫn mảnh vụn/dải thừa của sheet, viền khử nền hoặc khác phong cách pixel của kit. Vẽ lại. Còn viền magenta quanh tile."
+  },
+  "batch-05-octopath": {
+   "npc-act_events": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-ancient_01": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-bia_free": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-arena_master": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-beach_guide": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-ancient_03": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-crossroads_03": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-ship_healer": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-tower_01": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-crossroads_01": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-pet_master": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-ancient_05": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-tower_04": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-ancient_06": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-crossroads_06": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-fish_shop": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-mk_general": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-pet_shop": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-ship_shop": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-fish_skill": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-mk_trader": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-ship_skill": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-crossroads_04": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-deep_diver": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-tower_02": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-ship_captain": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-ghost_05": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-nightmare_03": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-ghost_06": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-nightmare_05": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-nightmare_06": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-ship_free": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-sq_skill": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-pal_healer": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-ranch_keeper": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-tower_03": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-ship_pillar": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-tomb_06": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này.",
+   "npc-tree_05": "Dùng chung đúng một ảnh (trùng hash) với NPC khác; giữ ảnh cho NPC ưu tiên trong nhóm, vẽ mới cho NPC này."
+  },
+  "batch-09-octopath": {
+   "rank33": "Còn mảnh vụn rời quanh huy hiệu (không dùng trong v1.0.0).",
+   "rank41": "Còn mảnh vụn rời quanh huy hiệu (không dùng trong v1.0.0).",
+   "rank53": "Còn mảnh vụn rời quanh huy hiệu (không dùng trong v1.0.0).",
+   "rank54": "Còn mảnh vụn rời quanh huy hiệu (không dùng trong v1.0.0)."
+  },
+  "batch-10-octopath": {
+   "loading-bar-fill": "Hoa văn tam giác xanh ngọc lệch phong cách bộ khung loading; vẽ lại dải fill liền mạch theo màu vàng/ngọc của frame."
+  }
+ },
+ "notes": {
+  "batch-05-octopath": "Sprite người chơi/NPC chỉ là ảnh tĩnh 1 khung: duyệt thiết kế; animation (đi/đứng 4 hướng cho người chơi, idle cho NPC) là đơn hàng riêng.",
+  "batch-07-octopath": "Icon/FX UI dùng alpha mềm: chấp nhận cho lớp UI (D6).",
+  "batch-09-octopath": "Icon alpha mềm chấp nhận cho UI (D6). Mảnh rời nhỏ ở skill_attack/sparkle là chủ ý.",
+  "batch-08-octopath": "Panel theo chủ đề chức năng (giấy cuộn, đá, gỗ, kim loại, xanh rừng); trùng ảnh giữa các panel cùng chủ đề được chấp nhận."
+ }
+}
