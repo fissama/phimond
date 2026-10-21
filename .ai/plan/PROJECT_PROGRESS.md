@@ -1,6 +1,6 @@
 # Phimond — Tiến độ dự án
 
-**Cập nhật:** 2026-10-20.
+**Cập nhật:** 2026-10-21 (P10redrawart).
 **Nguồn phạm vi/phụ thuộc:** [Master spec §5](PHIMOND_MASTER_SPEC.md#5-roadmap-và-phụ-thuộc).
 **Điểm vào công việc:** [ACTIVE.md](../ACTIVE.md).
 
@@ -11,7 +11,7 @@
 | P00 baseline | Đã đóng 2026-09-24, commit e66350b | [P00](phases/P00-baseline/README.md); latency budget dev FAILED, 50 CCU chưa được chứng nhận |
 | P13 skill design | Đã đóng 2026-10-20 | [Closure](phases/P13-skills/P13-closure.md); V7.1 hash 57c07796…; chi phí vàng/pacing thuộc P15/P19 |
 | P10 pet model design | Đã đóng 2026-09-30 | [Closure](phases/P10-pet-model/P10-closure.md); 152 species baseline (roster hiệu lực 160, xem bảng số liệu ở [ACTIVE.md](../ACTIVE.md)), 8 Race, D01–D46, 23 acceptance scenarios |
-| P10 redraw art riêng | **152/152 DONE — 100%**, owner-approved 2026-10-11 | [Redraw closure](phases/P10-pet-model/P10-redraw-closure-20261011.md); nhóm 4★–5★ **48/48** |
+| P10 redraw art riêng | **160/160 CLOSED —100%art**, owner-approved2026-10-21 | [160-art closure](phases/P10-pet-model/P10-redraw-closure-160-20261021.md); nhóm4★–5★ **56/56** |
 
 ## Trạng thái roadmap còn lại
 
@@ -42,11 +42,11 @@ số file hoặc số atlas. ID phase giữ nguyên, thứ tự theo master plan
 
 ## Atlas sẵn sàng bàn giao, tích hợp chưa nghiệm thu
 
-- [Selected manifest](phases/P10-pet-model/redraw-kit/owner-atlas-selection.json): 152 `owner_approved_done`, pin path + SHA-256.
-- [Final inventory](phases/P10-pet-model/redraw-kit/completion-20261011/done.json): roster art đủ 152 species.
-- [Mechanical evidence](phases/P10-pet-model/redraw-kit/completion-20261011/mechanical.json): 152/152 pass, 20 frame/atlas, RGBA 1124×1405.
-- Kiểm tra metadata/hashes ngày 2026-10-12: 152 selected files khớp SHA và 152 bản duyệt khớp phiên bản.
+- [Selected160manifest](phases/P10-pet-model/redraw-kit/owner-atlas-selection-160.json):160 `owner_approved_done`, pin path + SHA-256.
+- [Final inventory](phases/P10-pet-model/redraw-kit/completion-20261021/done.json): roster art đủ160species.
+- [Mechanical evidence](phases/P10-pet-model/redraw-kit/completion-20261021/mechanical.json):160/160pass, 20 frame/atlas, RGBA 1124×1405.
+- Kiểm tra2026-10-21:160selectedpath/hash khớp,304sourcePNG giữ nguyên;68unit testsPASS.0147 được duyệt là PNG+registeredprofile, không phải native170px/drop-inatlas.
 - Bước tích hợp: routing bằng ID, lazy loading/cache, pivot và scale theo tier có ngoại lệ theo loài; idle/move loop, attack/cast/die one-shot; test battle layout và độ rõ ở kích thước game.
 - Runtime catalog/save migration, công thức stat và luật Special còn theo phase sở hữu; art closure không đóng O01–O08 của P10.
 
-**Không có % hoàn thiện toàn project được chứng nhận.** 100% chỉ áp dụng cho phạm vi redraw 152 species đã được chủ dự án nghiệm thu.
+**Không có % hoàn thiện toàn project được chứng nhận.** 100% chỉ áp dụng cho phạm vi redraw160species đã được chủ dự án nghiệm thu.

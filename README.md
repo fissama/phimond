@@ -28,7 +28,7 @@ Arena I requires trainer level 10. Win at the Imperial Arena to unlock Treasure 
 - `apps/game-server`: Go domain, validated content, MySQL persistence, REST and WebSocket server.
 - `apps/game-client`: Godot rendering, UI and intent-only network client.
 - `apps/web`: Next.js companion encyclopedia, recipe planner and account journal.
-- `data`: 14 species, 29 skills, seven statuses, eight race definitions, six recipes, five rooms, four quests and configurable reconstructed rules.
+- `data`: 14 species, 29 skills, seven statuses, eight race definitions, six recipes, five rooms, four quests and configurable reconstructed rules. This is the live runtime catalog; the 160-species design roster, 97-skill and 28-recipe-candidate designs live under `.ai/plan/phases/` and are not activated.
 - `migrations`: versioned MySQL schema, restricted to a Phimond-marked database.
 - `packages/protocol`: v1 contract.
 - `docs`: architecture, database, gameplay, research and remaining scope.

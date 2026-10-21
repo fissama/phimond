@@ -18,3 +18,7 @@ cd "$root/apps/game-web"
 npm run typecheck
 npm test
 npm run build
+# Cổng art HD-2D (asset + layout map). Bỏ qua tạm: HD2D_ART_GATE=0 sh tools/check.sh
+if [ "${HD2D_ART_GATE:-1}" != "0" ]; then
+  sh "$root/tools/check_hd2d_art.sh"
+fi

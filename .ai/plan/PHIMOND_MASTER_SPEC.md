@@ -1,10 +1,10 @@
 # Phimond — Master Gameplay Spec & Phase Plan
 
 **Ngày baseline:** 2026-09-23  
-**Trạng thái:** Draft v5 — chốt training/combat và bổ sung items/công thức pet ngày 2026-09-23; để chia sprint; chưa phải implementation plan và chưa cấp phép tự triển khai toàn bộ roadmap.  
-**Mục tiêu:** Phát triển bản reconstruction hiện tại thành một game nuôi linh thú có vòng chơi hoàn chỉnh, điều khiển rõ ràng, combat có phản hồi tốt và phong cách gần client gốc; đạt trải nghiệm online nhiều người chơi với tối thiểu 50 người chơi hoạt động đồng thời trên cấu hình triển khai được kiểm chứng.  
-**Stack hiện tại:** Godot 4, Go, MySQL, Next.js companion.  
-**Nguồn trình bày chính:** video Pokezoo 4:33 đã được người dùng xác nhận; APK 3.2/8.4 cung cấp asset nhưng có khác biệt phiên bản.
+**Trạng thái:** Draft v6 — cập nhật định hướng HD-2D, desktop/mobile web và HUD/menu cấu hình ngày 2026-10-09 theo quyết định chủ dự án; giữ các luật gameplay đã chốt. Đây là master spec để chia phase/sprint, chưa phải implementation plan và chưa cấp phép tự triển khai roadmap.
+**Mục tiêu:** Phát triển bản reconstruction hiện tại thành một game nuôi linh thú có vòng chơi hoàn chỉnh, điều khiển rõ ràng, combat có phản hồi tốt, giữ cốt lõi game gốc đồng thời phát triển bản sắc HD-2D riêng của Phimond; đạt trải nghiệm online nhiều người chơi với tối thiểu 50 người chơi hoạt động đồng thời trên cấu hình triển khai được kiểm chứng.
+**Stack hiện tại:** Godot 4, Go, MySQL, Next.js companion. **Định hướng nền tảng ghi nhận 2026-10-09:** desktop web và mobile web; chưa chứng nhận thiết bị/trình duyệt hỗ trợ. Godot Web là candidate/default hiện tại; P12:D20–D22 đề xuất benchmark Godot 4 Web với Three.js trước chốt renderer production. Benchmark, selection và migration cần phê duyệt riêng.
+**Nguồn tham chiếu gốc:** video Pokezoo 4:33 đã được người dùng xác nhận; APK 3.2/8.4 cung cấp asset nhưng có khác biệt phiên bản. Video/asset giữ vai trò bằng chứng về nhận diện và flow gốc; môi trường HD-2D, HUD thích ứng web và menu cấu hình là hướng phát triển riêng được duyệt, không phải phục dựng lịch sử.
 
 ## 1. Cách sử dụng tài liệu
 
@@ -47,8 +47,8 @@ Một bản solo alpha được coi là có giá trị khi người chơi mới 
 ### Nguyên tắc không thương lượng
 
 1. Server quyết định vị trí hợp lệ, ownership, RNG, battle, chi phí, capture, progression và rewards. Client dự đoán chuyển động và trình bày kết quả; không tự tính kết quả gameplay.
-2. Gameplay nằm trong Godot. Next.js phục vụ tài khoản, bách khoa, planner, journal/phả hệ; không tạo HUD gameplay thứ hai.
-3. Video quyết định bố cục và flow khi có bằng chứng rõ. Giữ world viewport cố định, HUD ổn định, panel compact, raster/9-slice đúng tỷ lệ; không chuyển thành dashboard hoặc mobile gacha hiện đại.
+2. Runtime hiện hành và default client giữ Godot; Go authoritative. P12:D21 yêu cầu benchmark Godot 4 Web với Three.js trong phạm vi riêng được cấp quyền; không mặc định engine đã chọn trước benchmark. Renderer production/migration phải được chủ dự án phê duyệt sau evidence. Next.js phục vụ tài khoản, bách khoa, planner, journal/phả hệ; không tạo HUD gameplay thứ hai.
+3. Giữ tinh thần bố cục/flow gốc dựa trên video: vùng world rõ, HUD ổn định, nút điều khiển và log luôn hiện, panel compact, raster/9-slice đúng tỷ lệ. Được thích ứng kích thước cho desktop/mobile web và bổ sung menu cấu hình; giữ tỷ lệ world trong từng layout, không co giãn méo. Môi trường HD-2D theo quyết định 2026-10-09 được ưu tiên khi khác nền 2D gốc; không chuyển thành dashboard hoặc mobile gacha hiện đại.
 4. Mỗi chi tiết fidelity có nhãn: **observed / inferred / reconstructed / unknown**. Không dùng “100%” hoặc % fidelity nếu chưa có thước đo và dữ liệu đủ.
 5. Không đổi công thức gameplay chỉ để UI dễ triển khai. Chọn/chuyển ruleset là quyết định riêng, có kiểm thử và kế hoạch giữ save.
 6. Chỉ dùng database riêng `phimond_reconstruction` và môi trường test được định danh. Không đụng schema/dữ liệu cũ `philandz`.
@@ -59,9 +59,44 @@ Một bản solo alpha được coi là có giá trị khi người chơi mới 
 
 **Quyết định của chủ dự án:** Đồ họa hiện tại chỉ được chấp nhận ở mức **POC**, chưa phải chất lượng cuối cùng để đưa tới player. Không dùng ảnh baseline hiện tại làm mức trần chất lượng hoặc bằng chứng đã đạt release.
 
-**Giữ nguyên lối thiết kế đồ họa nhân vật và quái vật hiện tại:** silhouette, tỷ lệ cơ thể, nét tạo hình, bảng màu nhận diện và phong cách sprite/raster. Được hoàn thiện frame, animation, pivot, hướng nhìn, độ rõ, ánh sáng/hiệu ứng và độ nhất quán; không tự đổi sang realistic, 3D, chibi khác tỷ lệ hoặc vẽ lại làm mất nhận diện. Mọi đề xuất đổi art direction phải thành quyết định riêng của chủ dự án trước khi triển khai. Lưu bộ ảnh chuẩn của nhân vật/quái vật hiện tại tại P00 để so sánh xuyên các phase.
+**Giữ nguyên lối thiết kế đồ họa nhân vật và quái vật hiện tại:** silhouette, tỷ lệ cơ thể, nét tạo hình, bảng màu nhận diện và phong cách sprite/raster. Được hoàn thiện frame, animation, pivot, hướng nhìn, độ rõ, ánh sáng/hiệu ứng và độ nhất quán; không tự đổi nhân vật/pet sang realistic, model 3D, chibi khác tỷ lệ hoặc vẽ lại làm mất nhận diện. **Môi trường 3D đã được chủ dự án chọn trong định hướng HD-2D ngày 2026-10-09**, tách biệt với việc giữ sprite nhân vật/pet. Các thay đổi art direction khác vẫn cần quyết định riêng của chủ dự án. Lưu bộ ảnh chuẩn của nhân vật/quái vật hiện tại tại P00 để so sánh xuyên các phase.
 
 HUD, map, typography, icon, VFX, audio và chuyển cảnh cần tiếp tục hoàn thiện thành một trải nghiệm nhất quán. Polish không chỉ là trang trí: phải giúp đọc tình huống, chọn hành động và hiểu kết quả tốt hơn, đồng thời đáp ứng frame-time budget. P05 là mốc solo alpha được polish để chơi thử; P09 mới xét chất lượng cuối của bản phát hành đã chọn phạm vi.
+
+### HD-2D và bản sắc riêng — quyết định 2026-10-09
+
+**Art direction đã chọn:** môi trường 3D thật với Godot là runtime/default hiện hành, kết hợp nhân vật/pet sprite 2D hiện có; tham khảo chiều sâu, ánh sáng và vùng nét–mờ kiểu Octopath, không cam kết sao chép toàn bộ hiệu ứng hoặc chất lượng trên mọi điện thoại. Dựng lại môi trường dựa trên nhận diện các map gốc, phát triển phối cảnh, ánh sáng, nước/cây/chuyển động và không khí riêng cho Phimond.
+
+- Giữ core loop bắt–nuôi–luyện–dung hợp–xây đội, luật PvE/party/PvP và server authority đã chốt. Gameplay vẫn là X/Y trên mặt phẳng, map nối bằng portal; độ cao của kiến trúc/cảnh là trình bày, không tự thêm tầng đi lại, nhảy, platforming hoặc luật combat theo độ cao.
+- Dùng lại bộ sprite của roster 152 species theo trạng thái nghiệm thu từng asset; không redraw hàng loạt chỉ vì chuyển HD-2D. Điều chỉnh scale/pivot/bóng/vật liệu/animation là tích hợp; sửa art riêng khi có lỗi hoặc yêu cầu mới được duyệt. Candidate đã vẽ không mặc nhiên là art đã duyệt hoặc đã active trong runtime; giữ provenance và nguồn gốc.
+- Camera góc nhìn có kiểm soát, phù hợp sprite hiện có; không mặc định xoay tự do hoặc yêu cầu thêm mọi hướng vẽ. Tiền/hậu cảnh có độ mờ chọn lọc để tạo chiều sâu; vùng đang chơi và các bên trong combat phải đủ rõ. Pet ngoài vùng lấy nét có thể mờ, nhưng không làm mất target/HP/trạng thái hoặc tín hiệu quan trọng. HUD, nút và log nằm ngoài blur của world.
+- Mobile web là ràng buộc từ thiết kế, không phải port muộn. Godot Web/Compatibility hiện không có DOF camera tích hợp như Forward+/Mobile; P01 kiểm chứng cách tạo blur phù hợp web, không chốt shader/engine thay thế trong master spec. Có thể dùng bóng/ánh sáng tính trước và giảm hiệu ứng động mà vẫn giữ môi trường 3D thật.
+- Trước sản xuất hàng loạt môi trường, P01 phải có bằng chứng cảnh đại diện trên điện thoại/trình duyệt mục tiêu: frame time, bộ nhớ, tải đầu, đổi map và phục hồi. Taipei Rush là đối chứng khả năng web 3D, không phải benchmark chứng nhận Phimond hoặc lý do đổi khỏi Godot.
+
+**P12:D20–D22 — change control:** same Emerald Forest Logical World/asset scope cho benchmark Godot 4 Web và Three.js; không dùng khác gameplay/data/preset để so kết quả. Những yêu cầu Godot/Web Compatibility bên dưới mô tả candidate/default hiện tại, không loại Three.js khỏi benchmark. HD-2D/browser-first không chứng nhận production hoặc cấp quyền chuyển engine. Quyền chạy Stage 3 và quyết định renderer/migration tách biệt, cần owner approval riêng.
+
+**P12:D01–D12/D34 — fidelity boundary:** bảo toàn Map ID, identity, topology, chức năng và logic X/Y của world gốc đã xác minh hoặc reconstruction đã được duyệt; chưa chọn canonical map baseline theo roster APK8.4. Remaster hình ảnh có kiểm soát; thay layout/coordinate/collision/portal/progression phải có before/after/provenance và phê duyệt riêng. Fidelity không ghi đè các luật sản phẩm pet/combat/dung hợp đã chốt; không suy source gameplay từ hình ảnh. P12:D07 không mở lại redraw đã nghiệm thu hoặc tự đổi selected manifest.
+
+### HUD, menu và cấu hình chất lượng — phạm vi bắt buộc
+
+**Thứ tự sở hữu:** P01 thiết kế khung HUD và luồng menu trước khi tích hợp màn cấu hình; không đợi P05 mới có chỗ mở settings. Giữ 21 phase và ID hiện có, bổ sung requirement rõ trong P01/P05 thay vì tạo phase HUD riêng. P05 hoàn thiện và nghiệm thu UX toàn game.
+
+- HUD giữ nút điều khiển và log dễ thấy khi chơi trên web, không buộc người chơi dùng bàn phím. Layout phải phù hợp vùng an toàn, kích thước chạm, xoay/resize và bàn phím ảo; chốt phạm vi hướng màn hình trong spec P01. Menu mở/đóng/back/focus rõ, không để thao tác UI xuyên xuống world hoặc tiếp tục di chuyển do kẹt input. Không giả định mở settings sẽ pause server/combat online.
+- Lối vào trong game: **Menu → Cài đặt → Đồ hoạ**, có **Low / Medium / High** và mô tả dễ hiểu. Lưu lựa chọn trên thiết bị/trình duyệt khi lưu trữ khả dụng; fallback rõ nếu không lưu được. Chuyển mức an toàn, báo nếu cần tải lại cảnh; không mất tiến trình, reconnect sai hoặc giữ cả hai bộ texture vô hạn.
+- Low là phiên bản HD-2D đơn giản hơn, không đổi game về một art style khác. Giảm cả chi phí GPU lẫn bộ nhớ khi phù hợp: độ phân giải world, texture môi trường, bóng, blur, mật độ trang trí, nước/cây và hạt phụ. HUD/text vẫn rõ. Không giấu đối thủ/quái tương tác hoặc bỏ tín hiệu hit/status/target để đạt FPS; không đổi RNG, damage, tick, rewards hoặc tốc độ gameplay.
+
+| Thành phần | Low | Medium | High |
+|---|---|---|---|
+| Cảnh 3D, actor và thông tin gameplay | Đầy đủ trong phạm vi gameplay | Như Low | Như Low |
+| Độ phân giải world / texture môi trường | Bản nhẹ | Cân bằng | Chi tiết hơn trong budget |
+| Bóng / ánh sáng | Ưu tiên tính trước, bóng chân đơn giản | Bóng động chọn lọc | Chất lượng cao hơn trong budget |
+| Blur chiều sâu | Nhẹ, giải pháp đơn giản | Mức vừa | Chất lượng cao hơn; không làm mất khả năng đọc |
+| Chuyển động trang trí / hạt VFX phụ | Giảm | Vừa | Phong phú hơn |
+| HUD, nút, log, target, HP, tín hiệu combat | Đọc rõ và thao tác được | Như Low | Như Low |
+
+Bảng là hợp đồng chất lượng tương đối; thông số texture/render/blur cụ thể phải được đo và chốt trong P01, không phải preset đã triển khai. Lựa chọn giới hạn **30/60 FPS** tách khỏi Low/Medium/High, không hứa mọi máy đạt 60 FPS. Có thể đề xuất mức ban đầu; Auto/adaptive ngoài lựa chọn thủ công là tùy chọn cần chốt riêng, không tự ghi đè lựa chọn của người chơi.
+
+Chỉ tải/giữ tài nguyên đang cần với cache có giới hạn; không nạp mặc định toàn bộ 152 atlas và mọi map. Đo cả peak chuyển cảnh/đổi preset và xu hướng bộ nhớ sau nhiều lần lặp. Kích thước PNG tải xuống không đại diện RAM/GPU texture; sprite gốc được giữ, bản dùng runtime có thể tối ưu nếu bảo toàn chất lượng/provenance. Chưa chốt mức RAM, máy tối thiểu hoặc chứng nhận mobile web; P01 sở hữu lựa chọn và kiểm chứng ban đầu, P05/P09 nghiệm thu.
 
 ### Online multiplayer và mục tiêu 50 CCU
 
@@ -143,6 +178,28 @@ Các finding trên là review kỹ thuật; không sửa production code trong l
 
 ## 5. Roadmap và phụ thuộc
 
+### Tiến độ đã xác nhận —2026-10-12 (P10art cập nhật2026-10-21)
+
+Bảng tiến độ dự án: [PROJECT_PROGRESS.md](PROJECT_PROGRESS.md).
+
+| Phạm vi | Trạng thái | Bằng chứng / phần tiếp theo |
+|---|---|---|
+| P00 baseline | Đã đóng 2026-09-24 | Latency budget dev chưa đạt; chưa chứng nhận 50 CCU |
+| P10 pet model — thiết kế | Đã đóng 2026-09-30 | [P10 closure](phases/P10-pet-model/P10-closure.md); O01–O08 có phase sở hữu |
+| P10 redraw — phạm vi art riêng | **CLOSED160/160 (100%art)**, chủ dự án duyệt2026-10-21 | [160-art closure](phases/P10-pet-model/P10-redraw-closure-160-20261021.md); gồm **56/56** pet4★–5★ |
+| Tích hợp atlas đã duyệt | Chưa nghiệm thu runtime | Routing theo species ID/hash, pivot/scale theo tier, playback và kiểm chứng battle ở P01/P02/P03/P05 |
+| P11 stats | Design CLOSED2026-10-12; catalog v2, layout gate PASS; runtime chưa kích hoạt | [P11 closure](phases/P11-stats/P11-closure.md); P13/P15/P16/P19 triển khai và kiểm chứng tiếp |
+| P12 world | Phase tiếp theo theo dependency; chưa có closure trong workspace | World graph/map/NPC/farm, dùng hướng HD-2D đã chốt |
+
+160atlas art được chọn khóa đường dẫn/SHA-256 trong
+[owner-atlas-selection-160.json](phases/P10-pet-model/redraw-kit/owner-atlas-selection-160.json). Historical152snapshot giữ nguyên.0147 cần profile contact-origin/scale đã duyệt; closureART-I01–06 giữ các gate runtime.
+[Final160inventory](phases/P10-pet-model/redraw-kit/completion-20261021/done.json)
+là đầu vào cho tích hợp; không chọn ảnh bằng tên hoặc tự lấy attempt mới nhất.
+Bộ art đủ 1★–5★, gồm các Special theo roster; giữ dữ liệu APK gốc và lịch sử duyệt.
+Hoàn tất redraw không đóng các gate gameplay, migration, numeric formulas,
+hiệu năng hoặc nghiệm thu HD-2D. Không quy đổi160/160art thành100%toàn dự án.
+
+
 **ID là định danh ổn định, không phải thứ tự thực hiện.** Giữ P00–P18 và requirement IDs đã có; thêm P19 (items), P20 (công thức pet). Bảng và mô tả phase cùng thứ tự; không đổi hồ sơ/evidence P00 hay coi roadmap đã triển khai.
 
 | Thứ tự | Phase | Kết quả lớn | Phụ thuộc trước exit | Milestone |
@@ -151,7 +208,7 @@ Các finding trên là review kỹ thuật; không sửa production code trong l
 | 2 | P10 | Pet, 8 hệ tộc, sao, level và 3 slot mang theo | P00 | Pet design baseline |
 | 3 | P11 | Chỉ số, tăng trưởng và kế thừa | P10 | Stat design baseline |
 | 4 | P12 | World graph, loại map, quái/NPC và farm riêng | P10 | World design baseline |
-| 5 | P01 | Di chuyển, collision, portal, encounter lifecycle | P00, P12 | World slice |
+| 5 | P01 | World HD-2D, di chuyển/collision/portal, HUD/menu và cấu hình web | P00, P12 | World slice |
 | 6 | P13 | Skill pet/quái và tương tác giữa các hệ | P10, P11 | Combat rules design |
 | 7 | P19 | Hệ thống items, nguồn nhận/dùng và EXP share | P10, P11, P12, P13 | Item foundation |
 | 8 | P02 | PvE auto: pet đầu vs 3 quái | P01, P11, P13, P19 | Core combat |
@@ -161,7 +218,7 @@ Các finding trên là review kỹ thuật; không sửa production code trong l
 | 12 | P03 | Quản lý 3 pet, inventory, appraisal và chuẩn bị bố mẹ | P10, P11, P13, P14, P15, P19, P20 | Pet management |
 | 13 | P16 | Farm, dung hợp/cường hoá theo công thức, ấp/nở | P01, P03, P10, P12, P15, P20 | Breeding loop |
 | 14 | P04 | Onboarding, quest và cân bằng core loop | P01, P02, P03, P15, P16, P20 | Full solo loop |
-| 15 | P05 | Fidelity, UX, đóng gói và solo playtest | P04; tích hợp P10–P16, P19, P20 | **M1: Solo alpha** |
+| 15 | P05 | HD-2D polish, HUD/UX, đóng gói desktop/mobile web và solo playtest | P04; tích hợp P10–P16, P19, P20 | **M1: Solo alpha** |
 | 16 | P06 | Shared world, social nền tảng và 50 CCU | P01, P05, P12, P16 | Online world alpha |
 | 17 | P07 | Party tối đa 3 người và PvP 3 pet mỗi bên | P02, P03, P06, P13, P19 | **M2: Co-op/PvP cơ bản**, đã chọn |
 | 18 | P08 | Economy liên người chơi và meta theo nhánh | P03, P06, P14, P16, P19, P20; ranking cần P07 | **M3: Extended MMO**, tùy chọn |
@@ -282,10 +339,23 @@ Không dùng phần nghiên cứu nguồn làm bằng chứng rằng mọi đề
 - **P12-R03:** Mỗi vùng có NPC/dịch vụ, roster quái, phân bố/khu spawn và vai trò khám phá; level/XP cụ thể thuộc P15, lifecycle thuộc P01. Phân biệt quái chiến đấu với pet follower/trưng bày.
 - **P12-R04:** Phân biệt map template và instance: public world, private farm theo owner; điểm vào/ra, quyền truy cập và tính bền vững. P06 hiện thực presence; không chờ P06 mới phát hiện farm dùng chung sai owner.
 - **P12-R05:** Review route, readability, trở lại vùng cũ và thiếu tài nguyên; dành hook cho truyện P17, chưa viết truyện hoặc chốt toàn bộ số lượng map.
+- **P12-R06:** Định hướng cảnh HD-2D theo mục 2: giữ nhận diện vùng từ game gốc, phát triển môi trường 3D riêng, camera có kiểm soát và vùng chơi thoáng. Phân biệt hình khối trang trí với mặt phẳng X/Y có walkable/NPC/portal; không phát sinh tầng đi lại. Bàn giao ràng buộc cảnh/asset cho P01 kiểm chứng web trước sản xuất diện rộng.
 
-**Exit gate:** World graph, ma trận loại map/NPC/quái/quyền truy cập và tuyến mở vùng được review; không có portal cụt ngoài chủ ý, farm lẫn account hoặc mặc định quái xuất hiện ở khu an toàn.
+**Exit gate:** World graph, ma trận loại map/NPC/quái/quyền truy cập, tuyến mở vùng và ràng buộc cảnh HD-2D bàn giao P01 được review; không có portal cụt ngoài chủ ý, farm lẫn account hoặc mặc định quái xuất hiện ở khu an toàn.
 
-### P01 — World traversal, collision và encounter lifecycle
+**P12 documentation promotion — 2026-10-12:** [D01–D60](phases/P12-world/P12-decision-registry.md), [owner-approved supplemental scope](phases/P12-world/P12-scoped-design.md), [gaps](phases/P12-world/P12-gap-analysis.md), [pending SCPs](phases/P12-world/P12-spec-change-proposals.md). Owner authorized documentation/spec updates theo D01–D60/FLOW-01/Q01–Q09. Preservation/governance contracts được promotion trong các section liên quan; không gắn source verified, cấp quyền stage/engine migration hoặc đóng P12.
+
+**P12 staged scope — owner-authorized documentation promotion 2026-10-12:** World Registry và directed graph draft bao phủ các nguồn local được phép, không bỏ map chưa làm. Detailed scope đề xuất: City, toàn vùng Emerald Forest, Treasure Beach, Farm, arena/challenge phục vụ tuyến đó và mọi dependency critical về đường đi/unlock/recovery/tài nguyên; exact Map IDs/submaps cần owner duyệt sau inventory. Vùng ngoài scope có explicit unknown/deferred, owner/phase/reason; critical không defer.
+
+**Baseline entry khác phase closure:** owner-reviewed P12 baseline đủ identity/bounds/X-Y/collision, portal/access/safe arrival và tuyến Emerald tới safe hub + đường về hoặc recovery hợp lệ có thể mở một prototype P01 được cấp quyền riêng. Topology/access unresolved chặn phần phụ thuộc. Collision/safe arrival cục bộ chỉ reconstructed sau approval, không shortcut/gate bypass/interaction change; collision đổi connectivity phải xử lý như topology. Baseline không đóng P12, không hoàn tất P01 và không cấp quyền triển khai gameplay ngoài slice được duyệt. Dependency P01 trước full exit vẫn giữ; ngoại lệ entry chỉ cho prototype scope đã cấp quyền.
+
+**Giữ thứ tự D51:** Stage 1 global local-source audit → Stage 2 Emerald + critical outward links → Stage 3 Golden Scene/render rồi traversal/benchmark phối hợp P01 → Stage 4 detailed-world expansion → Stage 5 exit review. Mỗi stage có authorization riêng; Stage 3 diễn ra khi P12 còn mở và trước mass conversion. Prototype kiểm chứng X/Y/collision/portal/arrival/access; NPC/quái presentation không là service/spawn/combat acceptance. Engine selection/migration riêng sau benchmark evidence.
+
+**P12 Exit:** giữ P12-R01–R06 và exit gốc; thêm evidence/validation + complete scoped portal/NPC/spawn/access/type/ownership/recovery matrices, global coverage/conflict/deferred register, zero unresolved critical trong approved scope và owner exit review. Prototype readiness không thay P12 Exit; Golden Scene hoặc số stage hoàn tất không tự đóng phase. Phần không thuộc P12 giữ downstream owner; P12 phối hợp Stage 3 không phải nghiệm thu toàn P01.
+
+**P12:D37–D41/D46 — farm contract:** fixed layout (D40 Option A), không placement/decorations customization. Farm private/account-owned mặc định; owner invitation có read-only visits/di chuyển, server authorization/revocation; khách không dùng/lấy pet/egg/item. Selected display tham chiếu PetInstance thật; limited optional idle/roaming không copy inventory/EXP/ownership, có budget/evidence/approval. Pet display D39 không đổi layout D40. Faithful farm và functional expansion được duyệt phải phân biệt source/new; không coi mọi công trình/NPC vốn có ở bản gốc. P12 bàn giao layout/access contract; P03/P16 quản lý/display, P06/P07 visits/presence và P19/P16 bảo vệ assets. Không implement multiplayer visits hoặc cơ chế farm ở phase design.
+
+### P01 — World HD-2D, traversal, HUD/menu và cấu hình web
 
 **Outcome:** Người chơi đi tới đâu nhìn thấy đúng vị trí, tương tác đúng vật thể và không bị mắc kẹt/vào trận ngoài ý muốn.
 
@@ -297,9 +367,14 @@ Không dùng phần nghiên cứu nguồn làm bằng chứng rằng mọi đề
 
 - **P01-R06:** **Task review gameplay & game design bắt buộc:** Review cảm giác di chuyển, đường đi, khả năng đọc map, mật độ gặp quái, contact/cooldown và nhịp khám phá. Đo thao tác hụt, mắc kẹt và encounter ngoài ý muốn; chỉnh để di chuyển/gặp quái tự nhiên, kiểm tra silhouette nhân vật và quái vẫn rõ trên map. Thực hiện đủ review đầu/trong/cuối phase và lưu report theo mục 2.
 
-**Sprint đề xuất:** S01 coordinate/proximity contract; S02 collision + navigation + camera; S03 spawn lifecycle và transition/recovery.
+- **P01-R07:** Nền render môi trường 3D + sprite 2D theo mục 2; ánh xạ X/Y gameplay vào cảnh, camera/pivot/bóng/occlusion thống nhất. Kiểm chứng Web Compatibility và blur phù hợp web trên cảnh đại diện trước sản xuất hàng loạt môi trường; không đổi model server hoặc redraw roster mặc định.
+- **P01-R08:** Tải/giải phóng tài nguyên theo map và nhu cầu, cache hữu hạn; kiểm soát peak qua portal/đổi preset và giật do tải shader/texture. Chốt ma trận thiết bị/trình duyệt, budget bộ nhớ/tải/frame theo bằng chứng; đo riêng CPU/Wasm, texture/GPU và phần không quan sát được, không ghi một chỉ số heap là tổng RAM.
+- **P01-R09:** **HUD/menu foundation trước màn cấu hình:** chốt khung world/HUD/log/nút cảm ứng và luồng menu/back/focus, vùng an toàn, resize/xoay/keyboard ảo. Lối Menu → Cài đặt được review trước tích hợp P01-R10; không đợi P05 và không biến Next.js thành HUD gameplay thứ hai.
+- **P01-R10:** Menu → Cài đặt → Đồ hoạ có Low/Medium/High, giới hạn 30/60 FPS riêng, lưu lựa chọn/fallback và chuyển mức an toàn theo mục 2. Chứng minh giảm tài nguyên/chi phí thực ở Low bằng đo đạc, không chỉ đổi nhãn; giữ nguyên thông tin và luật gameplay, không tự pause online. Auto chưa bắt buộc.
 
-**Exit gate:** Chạy được một route city→forest→city→ranch bằng keyboard/D-pad/click; không xuyên chướng ngại/teleport; gặp đúng quái; rời trận không lặp vô hạn; vị trí khi reconnect khớp state hợp lệ. Playtest các góc map, cửa sổ đổi tỷ lệ và focus loss.
+**Sprint đề xuất:** coordinate/proximity và kiểm chứng HD-2D/mobile web trước sản xuất art diện rộng; collision/navigation/camera; HUD/menu foundation **trước** tích hợp cấu hình; asset lifecycle/presets; spawn/transition/recovery. Chia sprint cụ thể trong spec P01, không coi đây là implementation plan.
+
+**Exit gate:** Chạy được một route city→forest→city→ranch bằng keyboard/D-pad/click; không xuyên chướng ngại/teleport; gặp đúng quái; rời trận không lặp vô hạn; vị trí khi reconnect khớp state hợp lệ. Playtest các góc map, cửa sổ đổi tỷ lệ và focus loss. Có cảnh HD-2D đại diện chạy trên desktop web và điện thoại iOS/Android trong ma trận đã chọn; HUD/menu/cấu hình thao tác được, đổi preset/portal không tích luỹ tài nguyên vô hạn. Báo cáo budget, giới hạn và thiết bị chưa đạt; native smoke không thay bằng chứng web, chưa đạt gate thì chưa sản xuất hàng loạt môi trường.
 
 **Ngoài scope:** Shared-world ownership và party follow, thuộc P06/P07.
 
@@ -353,6 +428,8 @@ Không dùng phần nghiên cứu nguồn làm bằng chứng rằng mọi đề
 **Exit gate:** Chạm quái→auto pet đầu vs 3 quái, xử lý target đã chết/bị bắt và điều kiện kết thúc; chơi bằng UI thật đủ bốn kết quả; xem rõ hit/miss/heal/status trên wire thật; test duplicate request, stale turn, disconnect trước/sau ack và finishing blow. Không còn bug hướng/pivot ở bộ pet alpha.
 
 - **P02-R07:** Người chơi mang tối đa 3 pet, pet đầu ra trận solo; encounter sinh 3 quái với identity riêng, server quyết định loài/level theo map. Single/group target, chết/bắt/chạy và kết thúc trận phải xử lý nhiều quái; chọn loài/bố trí/đổi pet giữa trận là decision của phase, không tự bật cả 3 pet người chơi. Kế hoạch giữ/resume battle 1v1 cũ phải rõ.
+
+- **P02-R08:** Combat trong cảnh HD-2D ở cả Low/Medium/High: đủ vùng lấy nét cho actor/target, rõ HP/status/hit/capture/result; chỉ giảm chi tiết phụ. Đo VFX trên mobile web và kiểm tra đổi cấu hình không làm sai playback hoặc gửi lệnh thừa; là phần bắt buộc của exit gate P02.
 
 **Ngoài scope:** Party và PvP thuộc P07; auto farm không giám sát/offline chưa được chọn. Multi-target PvE thuộc chính P02.
 
@@ -451,21 +528,24 @@ Không dùng phần nghiên cứu nguồn làm bằng chứng rằng mọi đề
 
 **Exit gate:** Ít nhất một playthrough account mới tới dung hợp, nở con sử dụng được và mở beach không cần trợ giúp debug; lần hai kiểm tra save/recovery và thứ tự quest khác. Report chỉ ra thời gian/chi phí thực đo, chỗ phải grind và quyết định tuning. Không có dead-end khi hết potion/seal/vàng hoặc pet gục.
 
-### P05 — Fidelity, UX và solo alpha
+### P05 — HD-2D polish, HUD/UX, web packaging và solo alpha
 
 **Outcome:** Một bản solo alpha dễ chạy, dễ đọc, trình bày nhất quán và có thể đưa người khác chơi thử.
 
 - **P05-R01:** Hoàn thiện source mapping cho pet alpha, HUD, D-pad, shield, skill/item icons, panels/tabs/tooltips, background layers; ghi riêng asset khác phiên bản và chưa xác minh.
-- **P05-R02:** Side-by-side từng màn major với timestamp; typography Việt/Latin/CJK, selection/focus, truncation, scaling và resize ổn định. Chốt logical viewport dựa trên so sánh 960×640 hiện tại và tỷ lệ video, không âm thầm co giãn độc lập các control.
+- **P05-R02:** Side-by-side các yếu tố kế thừa với timestamp và art target HD-2D được duyệt cho phần mới; không dùng pixel-match nền 2D cũ làm gate cho cảnh 3D. Typography Việt/Latin/CJK, selection/focus, truncation, scaling và resize ổn định. Hoàn thiện layout từ P01 cho desktop/mobile web, giữ nút/log dễ thấy, tỷ lệ hợp lý và vùng chạm; ghi rõ khác biệt có chủ ý so với video.
 - **P05-R03:** VFX/audio feedback cho thao tác, hit/capture/result/portal; volume/mute và nguồn sử dụng asset rõ trước khi phân phối. Không lấy âm thanh khác game để mặc nhiên coi là bản gốc.
 - **P05-R04:** Account/logout/reconnect/settings/help thực dụng; bản build không phụ thuộc `.tools` của máy tác giả hoặc test script tự tạo account. User progress không bị mất vì đổi sang build mới.
 - **P05-R05:** External playtest theo kịch bản P01–P04, ghi blocker/friction bằng thời điểm và repro; baseline memory/frame/network trên máy được chọn. Kiểm tra companion API/catalog parity.
 
 - **P05-R06:** **Task review gameplay & game design bắt buộc:** Review toàn bộ solo loop với người chơi thử: hiểu mục tiêu, điều khiển, nhịp chơi, lựa chọn và chất lượng nghe/nhìn. Đóng visual debt POC trong phạm vi alpha theo ưu tiên ảnh hưởng người chơi; so sánh bộ ảnh chuẩn để bảo toàn thiết kế nhân vật/quái vật, ghi riêng nợ chất lượng còn lại trước release. Thực hiện đủ review đầu/trong/cuối phase và lưu report theo mục 2.
 
-**Sprint đề xuất:** S01 asset/render/localization; S02 audio/settings/packaging; S03 solo alpha playtest và sửa blocker.
+- **P05-R07:** Hoàn thiện HUD/menu trước nghiệm thu toàn bộ màn cấu hình kế thừa P01: khả năng tìm settings, back/confirm/focus, bàn phím ảo không che thao tác thiết yếu, log đọc được. Kiểm tra Low/Medium/High và 30/60 FPS, lưu lựa chọn qua reload, fallback storage, đổi preset trong world/combat/chuyển map; cùng thông tin gameplay trên mọi mức.
+- **P05-R08:** Build renderer Web được duyệt (Godot Web là default khi benchmark/chọn engine chưa hoàn tất) phân phối được trên HTTPS; kiểm chứng Safari iOS và Chrome Android trên thiết bị cụ thể cùng desktop web. Đo tải đầu/cache, phiên chơi dài, peak memory, chuyển app/khoá màn hình/quay lại, reconnect và lỗi context/tab reload. Chốt phạm vi hỗ trợ theo evidence; không coi PWA hoặc desktop native pass là chứng nhận mobile web.
 
-**Exit gate M1:** Tải/chạy/login→full solo loop→quit/login lại trên build phát hành thử; không debug controls, không mất dữ liệu và không blocker. Các fidelity gap còn lại có danh sách rõ. Không gắn nhãn “clone hoàn chỉnh”.
+**Sprint đề xuất:** S01 asset/render/localization và HUD/menu polish; S02 hoàn thiện cấu hình/audio/web packaging; S03 solo alpha playtest trên ma trận thiết bị và sửa blocker.
+
+**Exit gate M1:** Tải/chạy/login→full solo loop→quit/login lại trên build phát hành thử; không debug controls, không mất dữ liệu và không blocker. Các fidelity gap còn lại có danh sách rõ. HUD/menu/settings đạt P05-R07 và build web đạt P05-R08 trên ma trận được công bố; HD-2D là hướng riêng có đối chiếu nhận diện gốc, không gắn nhãn “clone hoàn chỉnh”.
 
 ### P06 — Shared world và social nền tảng
 
@@ -478,7 +558,7 @@ Không dùng phần nghiên cứu nguồn làm bằng chứng rằng mọi đề
 
 - **P06-R05:** **Task review gameplay & game design bắt buộc:** Review hai người cùng khám phá: nhận diện người khác, tranh/chia encounter, cảm giác đông map, nhiễu chat và khả năng tiếp tục solo. Playtest ownership/reconnect dưới góc nhìn công bằng và rõ ràng; kiểm tra remote actor không đổi tỷ lệ/phong cách thiết kế. Thực hiện đủ review đầu/trong/cuối phase và lưu report theo mục 2.
 
-- **P06-R06:** Đạt bộ kiểm thử 50 CCU tại mục 2: world fan-out, battle/mutation load, reconnect và client thật dưới tải. Profile rồi tối ưu interest range/delta cadence, queue/backpressure, contention, DB pool/query/checkpoint theo bottleneck đo được; không mặc định cần nhiều replica để đạt 50 CCU.
+- **P06-R06:** Chạy client HD-2D web thật trên ma trận thiết bị với preset phù hợp trong hot map, đo frame/memory và readability; server 50 CCU không thay bằng chứng client. Đạt bộ kiểm thử 50 CCU tại mục 2: world fan-out, battle/mutation load, reconnect và client thật dưới tải. Profile rồi tối ưu interest range/delta cadence, queue/backpressure, contention, DB pool/query/checkpoint theo bottleneck đo được; không mặc định cần nhiều replica để đạt 50 CCU.
 
 **Sprint đề xuất:** S01 two-client presence; S02 disconnect/resync + spawn ownership; S03 nearby/chat/friends tối thiểu; S04 tải 50 CCU và tuning/playtest đông người.
 
@@ -492,6 +572,8 @@ Không dùng phần nghiên cứu nguồn làm bằng chứng rằng mọi đề
 - **P07-R02:** Tái sử dụng multi-target PvE P02, mở rộng command ownership nhiều user, team/formation, target chết/không hợp lệ, thứ tự và timeout. PvP có 3 pet mỗi người (3v3); chốt bố trí, lượt/auto, điều kiện thắng và trường hợp thiếu pet hợp lệ. Số quái/độ khó encounter party cần chốt riêng; không mặc định tăng theo 3 quái mỗi user. Tương thích battle đang lưu.
 - **P07-R03:** Single/group/self skill mapping, synergy/triệt tiêu nhiều actor theo P13 và target UX, reconnect giữa lượt, auto/AFK policy không chiếm quyền người khác.
 - **P07-R04:** Reward/capture ownership, loot/XP split và leave/disconnect outcomes được chốt trước code; game không trao cùng một vật/pet cho hai owner ngoài rule đã chọn.
+
+- **P07-R06:** Kiểm chứng party/PvP trong cảnh HD-2D trên desktop/mobile web và Low/Medium/High: vẫn đọc rõ đủ actor/target/HP/status, không mất lợi thế thông tin ở Low. Đo frame/memory/VFX của trận nhiều chủ sở hữu; kết quả là điều kiện của exit gate P07.
 
 - **P07-R05:** **Task review gameplay & game design bắt buộc:** Review phối hợp nhóm, vai trò/lựa chọn, thời gian chờ đồng đội, đọc target/turn, chia thưởng và AFK. Chơi nhóm thật rồi chỉnh pacing và feedback; đánh giá đội hình đông có che sprite/UI hoặc làm mất nhận diện nhân vật/quái vật không. Thực hiện đủ review đầu/trong/cuối phase và lưu report theo mục 2.
 
@@ -540,7 +622,7 @@ Không dùng phần nghiên cứu nguồn làm bằng chứng rằng mọi đề
 
 - **P09-R06:** **Task review gameplay & game design bắt buộc:** Review gameplay/game design tổng thể trên release candidate: account mới và save cũ, cốt truyện chính P17, solo cùng online scope đã chọn, độ mượt, progression và recovery. Review hình ảnh ở chuẩn player-facing cuối cùng; xử lý visual debt chặn release, xác nhận nhân vật/quái vật giữ thiết kế gốc hiện tại và có kết luận go/no-go về trải nghiệm, không chỉ vận hành. Thực hiện đủ review đầu/trong/cuối phase và lưu report theo mục 2.
 
-- **P09-R07:** Chạy lại toàn bộ gate 50 CCU trên release candidate và cấu hình gần production, bao gồm MySQL/TLS/network thực tế; chứng minh soak, headroom, reconnect và frame pacing client. So sánh với P06, sửa regression rồi đo lại trước go/no-go; ghi rõ cấu hình hỗ trợ 50 CCU và giới hạn đã đo.
+- **P09-R07:** Kiểm định lại HD-2D/HUD/settings và budget web mục 7 trên thiết bị/trình duyệt công bố, gồm phiên dài, portal/preset, phục hồi và Low không mất thông tin gameplay. Chạy lại toàn bộ gate 50 CCU trên release candidate và cấu hình gần production, bao gồm MySQL/TLS/network thực tế; chứng minh soak, headroom, reconnect và frame pacing client. So sánh với P06, sửa regression rồi đo lại trước go/no-go; ghi rõ cấu hình hỗ trợ 50 CCU và giới hạn đã đo.
 
 **Sprint đề xuất:** S01 packaging/environment/restore; S02 load + observability + failure recovery; S03 release rehearsal và go/no-go.
 
@@ -558,11 +640,14 @@ Không dùng phần nghiên cứu nguồn làm bằng chứng rằng mọi đề
 
 ## 7. Quality gates chung
 
-Các con số dưới đây là **mục tiêu đề xuất để chốt ở P00**, không phải thông số game gốc hoặc thành tích đã đạt toàn hệ thống:
+Các budget baseline 2026-09-23 bên dưới là mục tiêu đề xuất, không phải thông số game gốc hoặc thành tích đã đạt. **Bổ sung HD-2D/web 2026-10-09 do P01 chốt bằng chứng ban đầu, P05/P06/P07/P09 kiểm định theo scope; không sửa lịch sử hoặc coi P00 đã chứng nhận mobile web.**
 
 | Mặt đo | Gate đề xuất | Cách lấy evidence |
 |---|---|---|
-| Frame pacing | Build 60Hz: p95 ≤16.7ms, p99 ≤33.3ms sau warmup trên máy baseline; ghi riêng cold-load spike | Route 10 phút gồm world/menu/battle; frame-time distribution, máy/build/resolution đi kèm |
+| Frame pacing | Giữ target 60Hz baseline: p95 ≤16.7ms, p99 ≤33.3ms sau warmup; profile 30 FPS có budget riêng chốt tại P01, không lấy pass 30 thay chứng nhận 60. Tách preset và FPS cap | Route world/menu/battle trên từng thiết bị/browser/preset/resolution; cold-load spike và phiên chơi dài để phát hiện nhiệt/tụt FPS |
+| Memory / tải web | Budget theo thiết bị chốt ở P01; cache hữu hạn, peak đổi map/preset nằm trong budget, không tăng không giới hạn qua lặp; chưa có ngưỡng RAM chung được chứng nhận | Ghi tải xuống, CPU/Wasm, texture/GPU ước tính và giới hạn đo; lặp portal/preset, mở roster/menu, phiên dài; không OOM/tab reload trong acceptance run |
+| HUD / cấu hình | Menu → Cài đặt → Đồ hoạ; Low/Medium/High + FPS cap, lưu/fallback, không mất thông tin hay khác luật chơi | P01 foundation/menu trước settings; P05 touch/resize/keyboard/reload và full loop trên Safari iOS/Chrome Android/desktop |
+| Phục hồi web | Quay lại từ background, mất kết nối/context hoặc reload có đường phục hồi state server; không double-spend/replay reward | P01 kiểm chứng đầu, P05 full loop, P09 release; ghi rõ cần reload khi không phục hồi context trực tiếp |
 | Input | Preview nhìn thấy ở frame kế tiếp khi không bị khóa; focus loss/keyup dừng đúng | Capture input và vị trí, không chỉ đo request latency |
 | Network | Không mất intent, replay chi phí hoặc stuck khi RTT 50/150/300ms, jitter và reconnect | Fault scenarios có request/revision/event trace; không hứa mượt tuyệt đối mọi mạng |
 | Online capacity | Tối thiểu 50 active CCU; soak 2 giờ, hot map và battle/mutation profiles theo mục 2 | Report server/DB/network + client thật dưới tải; reconnect/stress riêng; P06 và P09 bắt buộc |
@@ -572,13 +657,19 @@ Các con số dưới đây là **mục tiêu đề xuất để chốt ở P00*
 
 Một sprint xong phải có: task review gameplay/game design thuộc scope đã thực hiện, kiểm tra giữ thiết kế nhân vật/quái vật và cập nhật report phase, scope acceptance đạt, test liên quan qua, manual scenario tương ứng, bằng chứng lỗi trước/sau nếu là bug, không regress flow đã có, docs/decision/evidence cập nhật và rollback/build xác định được.
 
+**P12:D19/D22–D24 — benchmark targets:** Low mobile khoảng 30 FPS, mid mobile khoảng 30–60, high mobile khoảng 60 và desktop khoảng 60 là mục tiêu, không phải kết quả đo. Low/Medium/High tách FPS cap; occlusion/day-night và gameplay information giữ trên mọi tier, Auto chưa chốt. Compatibility/function/FPS/loading là hard gates trước balanced score: visual 30%, mobile performance 30%, input 15%, reuse 15%, maintainability 10%. Chốt device/browser/resolution/scene/network/cache/warmup, memory/loading/frame budgets trước benchmark. Không score bù failed gate; pass 30 FPS không chứng nhận 60Hz. Preload portal neighbors theo budget, cache hữu hạn, không tải mặc định mọi map/atlas.
+
+**P12:D28/D52 — evidence & authority:** giữ nhãn nguồn gốc `observed/confirmed/likely/inferred/reconstructed/unknown` trong raw record; không ánh xạ tự động observed/confirmed/likely thành verified. Verification per-record cần source locator/version, evidence resolution và review/checks được ghi; reconstructed chỉ usable ở gate cần approval rõ. Decision record tách `approval_status`, `evidence_status`, `spec_promotion_status`, `implementation_status`. Namespace `P12:D01`–`P12:D60` giữ ID questionnaire nguyên vẹn, không nhầm Master §8-Dxx hoặc P10-Dxx. Document approval không là source verification/runtime certification.
+
+**P12 supplemental evidence contract:** verified per-record/source-version cần locator, kiểm tra cách đọc và semantic proof, xử lý known conflicts; không yêu cầu cứng hai nguồn. Review theo gói tuyến/function với exact record list, before/after graph và annotated positions khi có source data; partial approval không bao gồm record phát sinh. Thiếu source thể hiện missing, không invent coords/edges. Local-first; critical gap còn lại phải trình targeted next investigation cho owner chọn.
+
 ## 8. Rủi ro và quyết định cần chốt ở phase sở hữu
 
 | ID | Quyết định / rủi ro | Mặc định để planning | Gate cần chốt |
 |---|---|---|---|
 | D01 | Target release gốc có nhiều phiên bản | Blue/gold footage là presentation baseline; yêu cầu sản phẩm mới ưu tiên khi khác reconstruction cũ | P00 provenance; P10/P16 thiết kế; P04 tích hợp ruleset |
 | D02 | Video chỉ 4:33, nhiều screen không có | Không bịa fidelity; APK/additional research tạo evidence riêng | Trước acceptance của screen thiếu nguồn |
-| D03 | Desktop hay mobile trước | Desktop Godot/Mac baseline hiện tại; chưa cam kết touch mobile export | P05 platform scope |
+| D03 | Nền tảng — **chốt 2026-10-09** | Desktop/mobile browser là định hướng; Godot Web và Three.js cần benchmark P12:D21 trước chốt production renderer. Native/Mac là môi trường phát triển, không thay chứng nhận browser; budget/device/engine migration cần duyệt riêng | P01 baseline web/ma trận thiết bị; P05 alpha; P09 release |
 | D04 | Private/shared spawn, respawn | Private contact cho solo; coordinate dựng lại phải được gắn nhãn | P01 lifecycle; P06 ownership |
 | D05 | Combat/roster — **đã chốt** | Mang 3 pet; PvE pet đầu vs 3 quái auto; PvP 3 pet/người; party tối đa 3 user mỗi user 1 pet. Swap/lượt/PvP formation và enemy count party chốt tại phase | P02, P03, P07 |
 | D06 | Equipment/capacity/storage | Trang bị pet bắt buộc theo yêu cầu mới; slot, capacity và compatibility chưa chốt | P14 equipment; P03 inventory; P16 farm/trứng |
@@ -600,8 +691,11 @@ Một sprint xong phải có: task review gameplay/game design thuộc scope đ�
 | D22 | Items/EXP share — **đã chốt hướng** | Item chia EXP giữa tối đa 3 pet mang theo; thiếu item phải tự farm; tỷ lệ/cách kích hoạt/thời hạn/tiêu item/giới hạn chưa chốt | P19/P15 |
 | D23 | Bản vẽ và công thức — **đã chốt** | Dùng bản vẽ 1 lần để học, công thức dùng lâu dài cho dung hợp/cường hoá; 1★–4★ rơi từ quái, 5★ chỉ event/admin, không rơi từ quái | P20/P19/P16 |
 | D24 | Chi tiết quyền công thức | Sao nhãn gắn với pet đích là convention đề xuất; chốt owner account hay character, một công thức áp một hay hai nhánh, học trùng/binding/trade. Không tự biến đề xuất thành luật | P20 |
+| D25 | Art direction — **chốt 2026-10-09** | HD-2D: cảnh 3D thật, sprite giữ nhận diện, chiều sâu/blur chọn lọc; X/Y phẳng và portal, gameplay gốc theo luật đã duyệt. Không redraw roster mặc định | P12 cảnh; P01 render/web; P02 combat; P05 polish |
+| D26 | HUD/menu/cấu hình — **chốt 2026-10-09** | HUD/nút/log luôn hiện khi chơi; khung menu trước settings. Low/Medium/High và 30/60 FPS riêng, lưu lựa chọn, giảm tài nguyên thực; Auto là tùy chọn chưa chốt | P01-R09 trước P01-R10; P05-R07/R08 nghiệm thu |
+| D27 | Khả năng mobile web HD-2D — **chưa chứng nhận** | Không cam kết RAM/FPS mọi máy; DOF web cần kiểm chứng riêng, asset loading có budget; Taipei Rush chỉ là tham chiếu khả thi | P01 trước art diện rộng; P06/P07 cảnh đông; P09 gate release |
 
-Không cần chốt tất cả ngay để bắt đầu P00. Phase không được tự ý lấp một quyết định chưa chốt bằng UI thành công giả hoặc cơ chế phá save.
+Ghi chú lịch sử: không cần chốt mọi quyết định để bắt đầu P00; P00 đã đóng theo hồ sơ phase. Quyết định mới 2026-10-09 thuộc các phase nêu trên, không mở lại P00. Phase không được tự ý lấp một quyết định chưa chốt bằng UI thành công giả hoặc cơ chế phá save.
 
 
 ### Các câu hỏi thiết kế tiếp theo sau khi chốt hai nhánh dung hợp
@@ -655,6 +749,8 @@ Các mục dưới là backlog interview của phase sở hữu, không mở r�
 - Chỉ đánh dấu P00 hoàn thành khi cả ba sprint và exit gate có bằng chứng; plan đã viết không có nghĩa code đã triển khai.
 
 ## 10. Nguồn nội bộ và cách cập nhật
+
+**Tham chiếu kỹ thuật cho quyết định 2026-10-09 (không phải evidence nghiệm thu):** [Godot Web export](https://docs.godotengine.org/en/stable/tutorials/export/exporting_for_web.html), [giới hạn DOF camera](https://docs.godotengine.org/en/stable/classes/class_cameraattributespractical.html), [WebGL memory/render budgets](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/WebGL_best_practices), [Taipei Rush](https://www.taipei-rush.app/). Kiểm tra lại hỗ trợ renderer ở phiên bản engine triển khai; không suy hiệu năng Phimond từ game khác.
 
 - [Video audit toàn timeline](../../docs/research/VIDEO_UI_AUDIT_2026-09-23.md)
 - [Gallery đối chiếu](../../docs/research/ui-comparison-2026-09-23/index.html)

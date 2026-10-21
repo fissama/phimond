@@ -135,8 +135,8 @@ Closed phases (cập nhật 2026-09-30):
 
 Active / next:
 - **P11 — stats system** → ChatGPT 5.6 Sol đang chạy song song với mình prep P12. Scaffold ở `.ai/plan/phases/P11-stats/`. P11 owner phải đọc `README.md` + `P11-from-P10-handoff.md` trước khi viết design.
-- **P12 — world graph + map types + NPC + farm** → owner là Mavis (mình). P12 sẽ tham chiếu P10 glossary, P11 element/role config (khi xong), 152 species IDs. Schedule: start sau khi P10 closure committed + P11 starts.
-- **P01 — movement + collision + portal + encounter** → owner Mavis. Phụ thuộc P12 (per master plan), không start trước P12.
+- **P12 — world graph + map types + NPC + farm** → owner là Mavis (mình). P12 sẽ tham chiếu P10 glossary, P11 element/role config (khi xong), 152 species IDs đã đóng băng + 8 proposal ID (roster hiệu lực 160; chi tiết ở `.ai/ACTIVE.md`). Schedule: start sau khi P10 closure committed + P11 starts.
+- **P01 — movement + collision + portal + encounter** → owner Mavis. Full exit phụ thuộc P12 (per master plan). Một prototype giới hạn được phép bắt đầu khi owner duyệt P12 design baseline và cấp quyền riêng cho Stage 3/scope P01; P12 vẫn mở qua các stages, không coi baseline là closure hoặc cấp quyền toàn P01. Xem P12 scope/Stage gates đã được promotion trong Master trước khi thực thi.
 
 Later (per master plan §5):
 - P13 — Skill pet/quái + hệ tương tác

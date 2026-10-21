@@ -2,6 +2,10 @@
 
 Status: **design baseline audited + LOCKED; closure confirmed** (2026-09-30).
 
+Separate redraw scope: **CLOSED160/160**, owner-approved2026-10-21, gồm56/56pet4★–5★. Read [160-art closure](P10-redraw-closure-160-20261021.md), [current160selection](redraw-kit/owner-atlas-selection-160.json), [inventory/evidence](redraw-kit/completion-20261021/done.json) and [handoff](handoff-redraw-160-20261021.md). Runtime integration remains pending, including approved scale/contact-origin profiles.
+
+Effective roster160 = frozen152 + eight Phimond-authored5★species(sixNormal,twoSpecialHybrid). Registry/mapping are in [extension report](extension-20261013/registry-report.md). Historical152 selection/closure stay frozen; current160selection includes owner-approved0138/0141/0147 replacements and eight extensions. Art approval doesnot activate runtime or change P11/P13/P16/P19/P20 rules.0147 is accepted as PNG+registered display profile; its native140.25px is not a standalone170px replacement.
+
 **Read [P10-closure.md](P10-closure.md) first** for the canonical exit-gate view (what is locked, what is deferred with owners, what's out of scope).
 
 ## Read in this order
@@ -27,5 +31,5 @@ original-server Special rules or save migration are inferred by normalization.
 
 ## Out of P10 scope (separate work)
 
-- **P10 pixel-sprite redraw** (art quality) — see [P10-redraw-plan.md](P10-redraw-plan.md). Owner-approved 2026-09-30, separate peer ownership, not part of design phase delivery.
+- **P10 pixel-sprite redraw** (art quality) — see [P10-redraw-plan.md](P10-redraw-plan.md). Contract approved 2026-09-30; all 152 selected atlases accepted and art scope closed 2026-10-11, not part of design phase delivery.
 - **Gameplay code** (numeric formulas, runtime mechanics, save migration) — owned by P11/P13/P16/P19/P20 per master plan.

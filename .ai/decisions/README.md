@@ -38,7 +38,7 @@ for that topic's rationale.
 
 | ID      | Title                                | Status   | Date       |
 | ------- | ------------------------------------ | -------- | ---------- |
-| _none yet_ |                                  |          |            |
+| ADR-0001 | Client game web dùng Three.js (apps/game-web), thay Godot Web | Accepted | 2026-10-14 |
 
 (Append each new ADR here on acceptance.)
 

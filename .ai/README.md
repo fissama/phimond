@@ -12,6 +12,7 @@ It is not a second wiki and not a duplicate of the codebase.
 | What should the code be doing?                  | Currently accepted product / phase specification. |
 | Why does an architectural choice exist?         | Latest accepted, non-superseded ADR.            |
 | What is currently being worked on?              | `.ai/ACTIVE.md`                                 |
+| Project / phase completion status?              | `.ai/plan/PROJECT_PROGRESS.md`                  |
 | Unfinished work crossing agent boundaries?      | Latest relevant handoff in `.ai/handoffs/`.     |
 | Archived / historical material?                 | `.ai/archive/` — **historical only**, never load into cold-start. |
 

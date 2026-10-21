@@ -33,7 +33,7 @@ Backend chính:
 
 Frontend game:
 
-* Godot 4.x.
+* Godot 4.x là runtime/default hiện tại; P12:D21 đề xuất benchmark Godot Web/Three.js trong phạm vi cấp quyền riêng, chưa chuyển engine.
 * GDScript.
 * Godot chỉ là game client, không phải authoritative game server.
 
@@ -254,7 +254,7 @@ Không biến player avatar thành combat class chính nếu không có bằng c
 
 # 6. WORLD STRUCTURE
 
-Game world phải được thiết kế theo mô hình 2D room/scene-based horizontal world.
+Logical World giữ mô hình 2D room/scene-based, tọa độ X/Y và portal. Visual World theo định hướng HD-2D của Master Spec working v6: môi trường 3D, actor/pet sprite 2D; elevation chỉ trình bày, không tự thêm tầng gameplay. Phiên bản renderer production vẫn phải theo quy trình SCP/benchmark được duyệt. Bảo toàn Map ID/topology/function đã verified hoặc reconstructed được duyệt; dữ liệu thiếu giữ unresolved.
 
 Không cần seamless open world.
 
@@ -1540,6 +1540,8 @@ Không silently invent exact historical values.
 
 ---
 
+P12 evidence clarification: preserve raw confidence; `confirmed`/`likely` trong dữ liệu cũ không tự thành `verified`. Evidence verification cần locator/version/review per record, và tách owner brainstorm approval/spec promotion/runtime validation. Source missing là unknown; reconstructed phải ghi nguồn thiết kế và approval trước critical playable gate. Không relabel gameplay data trong thay đổi tài liệu này.
+
 # 44. KNOWN UNKNOWN SYSTEMS
 
 Các phần hiện chưa được xác minh chính xác 100%:
@@ -1702,7 +1704,7 @@ Lineage là first-class feature.
 
 # 49. GAME CLIENT
 
-Godot chịu trách nhiệm:
+Client renderer được duyệt chịu trách nhiệm các mục dưới; Godot là runtime/default hiện hành. P12 benchmark candidate hoặc document promotion không chứng nhận renderer thay thế đã implemented:
 
 * rendering;
 * sprite/animation;
