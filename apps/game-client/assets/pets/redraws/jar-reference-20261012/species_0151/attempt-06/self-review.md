@@ -1,0 +1,2 @@
+Self-review: neat short beard and mature human jaw; purple muscular daddy upper body retained; broad orange/ivory pincers, purple lower scorpion and tail. Cyan row now cuts at ground under claw instead of generic floating beam/orb. Gold physical claw sweep and complete down poses retained.
+Mechanical PASS recorded on packed.png. Visual resemblance, apparent pincer bulk and walking cadence remain subject to owner animation review. Independent exact-hash review and runtime integration not performed.

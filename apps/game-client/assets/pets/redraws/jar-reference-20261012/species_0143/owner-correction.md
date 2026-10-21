@@ -1,0 +1,1 @@
+New correction: use exact owner-selected djinn reference, elegant curling S-tail physically attached to LEFT open nozzle; never straight cone. Lamp-only hopping and consistent left-facing orientation retained.
