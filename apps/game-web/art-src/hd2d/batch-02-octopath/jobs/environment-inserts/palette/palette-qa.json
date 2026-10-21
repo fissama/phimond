@@ -1,0 +1,199 @@
+{
+  "status": "pass",
+  "method": "forge_palette.build_palette (weighted k-means++ in OKLab over unique colours, reserved colours fixed, coverage skipping) then forge_palette.fit_report of every input: OKLab dE of each pixel with alpha >= the threshold to its nearest palette colour",
+  "notProven": [
+    "Visual quality of the palette: look at swatches.png and an applied frame.",
+    "Colours of pixels below the alpha threshold were not sampled or measured.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "palette_colors",
+      "status": "pass",
+      "value": 48,
+      "threshold": 48
+    },
+    {
+      "id": "inputs_without_samples",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0,
+      "files": []
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.203539,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../palette-inputs/arena-center-medallion.png",
+      "sha256": "e5473dde000ab46efb87d956f8aa2d3be9f5ddd7780a60615a6779fa27bddd9e",
+      "bytes": 158136
+    },
+    {
+      "path": "../palette-inputs/city-garden-border.png",
+      "sha256": "aa5ad908b4b43afc0d8a2b871aadc03cfacf1ede01f8ab8e985f20935e82e4ee",
+      "bytes": 132239
+    },
+    {
+      "path": "../palette-inputs/city-plaza-medallion.png",
+      "sha256": "9cb1d5254d83eaee511da73d59111e3feffcc9c84bd47716fe1a52c8052acd2c",
+      "bytes": 161837
+    },
+    {
+      "path": "../palette-inputs/farm-dirt-path-strip.png",
+      "sha256": "5719789cad5329871bd8223c6c860cce332d80eb971cacc931fd016090ecce9e",
+      "bytes": 200294
+    },
+    {
+      "path": "../palette-inputs/hall-wall-stone.png",
+      "sha256": "bdb351d1bf914e051b492c2d59c95308a924c7e6f751519cf47115ac034f5fba",
+      "bytes": 287587
+    },
+    {
+      "path": "../palette-inputs/hall-wall-timber.png",
+      "sha256": "9607642c6d019b37027128e3a2d2ed5d183bea6c3b9c729332db8940dda5ce01",
+      "bytes": 260849
+    },
+    {
+      "path": "../palette-inputs/palace-carpet-strip.png",
+      "sha256": "386bd0928f6204ca0e5d973fdc18e5bda9b862234d688347456def31759e2db4",
+      "bytes": 116521
+    },
+    {
+      "path": "../palette-inputs/summon-floor-emblem.png",
+      "sha256": "c2387d081e7a5a38c8dac8cbc6486c7250e248ec9a50b12750ba1789b01d90a0",
+      "bytes": 85232
+    }
+  ],
+  "outputs": [
+    {
+      "path": "palette.json",
+      "sha256": "ae8c34c9a960ca45b914aca89397956b70e4cb12d903e98913171aa81b6d5b99",
+      "bytes": 1924
+    },
+    {
+      "path": "palette.gpl",
+      "sha256": "bd8c39674fe3b52327d79f97b7db29cef47a91d6236235e02262265ae5e6ad16",
+      "bytes": 1020
+    },
+    {
+      "path": "palette.hex",
+      "sha256": "1a57bdb6a9725210efa9c5886a379ef9d4066f1e69c9258ca1b1f98e3cff5a28",
+      "bytes": 336
+    },
+    {
+      "path": "swatches.png",
+      "sha256": "45ead9e03cd8e80c5effa795986a0ce0397e3643f51b148f36bc5236a8e79d0e",
+      "bytes": 693
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "palette": {
+    "colors": 48,
+    "reserved": 0,
+    "transparent_index": 255,
+    "seed": 0
+  },
+  "fit": {
+    "../palette-inputs/arena-center-medallion.png": {
+      "measured_px": 103579,
+      "alpha_threshold": 128,
+      "off_palette_px": 103481,
+      "partial_alpha_px": 0,
+      "colors": 34842,
+      "palette_colors_used": 41,
+      "mean_delta_e": 0.01453,
+      "p95_delta_e": 0.025863,
+      "max_delta_e": 0.091733
+    },
+    "../palette-inputs/city-garden-border.png": {
+      "measured_px": 54056,
+      "alpha_threshold": 128,
+      "off_palette_px": 54023,
+      "partial_alpha_px": 0,
+      "colors": 42949,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.023616,
+      "p95_delta_e": 0.054116,
+      "max_delta_e": 0.203539
+    },
+    "../palette-inputs/city-plaza-medallion.png": {
+      "measured_px": 126296,
+      "alpha_threshold": 128,
+      "off_palette_px": 126165,
+      "partial_alpha_px": 0,
+      "colors": 30977,
+      "palette_colors_used": 42,
+      "mean_delta_e": 0.013193,
+      "p95_delta_e": 0.024493,
+      "max_delta_e": 0.116849
+    },
+    "../palette-inputs/farm-dirt-path-strip.png": {
+      "measured_px": 142965,
+      "alpha_threshold": 128,
+      "off_palette_px": 142837,
+      "partial_alpha_px": 0,
+      "colors": 25934,
+      "palette_colors_used": 43,
+      "mean_delta_e": 0.011619,
+      "p95_delta_e": 0.023608,
+      "max_delta_e": 0.102626
+    },
+    "../palette-inputs/hall-wall-stone.png": {
+      "measured_px": 303095,
+      "alpha_threshold": 128,
+      "off_palette_px": 302863,
+      "partial_alpha_px": 0,
+      "colors": 53433,
+      "palette_colors_used": 42,
+      "mean_delta_e": 0.014228,
+      "p95_delta_e": 0.027545,
+      "max_delta_e": 0.116849
+    },
+    "../palette-inputs/hall-wall-timber.png": {
+      "measured_px": 312789,
+      "alpha_threshold": 128,
+      "off_palette_px": 312726,
+      "partial_alpha_px": 0,
+      "colors": 44886,
+      "palette_colors_used": 42,
+      "mean_delta_e": 0.016951,
+      "p95_delta_e": 0.028468,
+      "max_delta_e": 0.116849
+    },
+    "../palette-inputs/palace-carpet-strip.png": {
+      "measured_px": 53919,
+      "alpha_threshold": 128,
+      "off_palette_px": 53845,
+      "partial_alpha_px": 0,
+      "colors": 19118,
+      "palette_colors_used": 26,
+      "mean_delta_e": 0.019105,
+      "p95_delta_e": 0.047666,
+      "max_delta_e": 0.08776
+    },
+    "../palette-inputs/summon-floor-emblem.png": {
+      "measured_px": 37177,
+      "alpha_threshold": 128,
+      "off_palette_px": 37171,
+      "partial_alpha_px": 0,
+      "colors": 23338,
+      "palette_colors_used": 47,
+      "mean_delta_e": 0.023624,
+      "p95_delta_e": 0.042169,
+      "max_delta_e": 0.08692
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.203539,
+    "worst_p95_delta_e": 0.054116,
+    "off_palette_px": 1133111
+  }
+}

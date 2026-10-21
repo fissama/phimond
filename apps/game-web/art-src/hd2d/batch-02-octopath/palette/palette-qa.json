@@ -1,0 +1,215 @@
+{
+  "status": "pass",
+  "method": "forge_palette.build_palette (weighted k-means++ in OKLab over unique colours, reserved colours fixed, coverage skipping) then forge_palette.fit_report of every input: OKLab dE of each pixel with alpha >= the threshold to its nearest palette colour",
+  "notProven": [
+    "Visual quality of the palette: look at swatches.png and an applied frame.",
+    "Colours of pixels below the alpha threshold were not sampled or measured.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "palette_colors",
+      "status": "pass",
+      "value": 48,
+      "threshold": 48
+    },
+    {
+      "id": "inputs_without_samples",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0,
+      "files": []
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.163668,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../palette-inputs/barrel.png",
+      "sha256": "ba03bd6890aee13f1c6da45afda928dddb721b780fba7a1f7c9f885dae1f8d7a",
+      "bytes": 33979
+    },
+    {
+      "path": "../palette-inputs/bench.png",
+      "sha256": "ce37a8fbaf4147bfcdaa97106cde1d0c3d61b31319f5e856d6739aa687a6c9f8",
+      "bytes": 39130
+    },
+    {
+      "path": "../palette-inputs/flowerpot-cream.png",
+      "sha256": "a744e87c4b296d9a51945c6205644ea3d49e04d27c7055662757b5d507294176",
+      "bytes": 41722
+    },
+    {
+      "path": "../palette-inputs/flowerpot-red.png",
+      "sha256": "065f74e67d6c84e9c00efcbb1da41529cbb0eb6abed9b6aefbe9648dfea7ce09",
+      "bytes": 38920
+    },
+    {
+      "path": "../palette-inputs/flowerpot-violet.png",
+      "sha256": "f973563a8e72f5506b5ad9a3a8fef5328190e9aea36dd06dea79ef215f433406",
+      "bytes": 36533
+    },
+    {
+      "path": "../palette-inputs/handcart.png",
+      "sha256": "bb936b1df06075e2b901b8541d764345e0f524b7fef1d4d46cb56ae63d83c6b1",
+      "bytes": 88056
+    },
+    {
+      "path": "../palette-inputs/streetlamp-unlit.png",
+      "sha256": "5bec05660082f7598be5b57bd972bbb5cec055e812b657e49cd4b892747713e8",
+      "bytes": 25298
+    },
+    {
+      "path": "../palette-inputs/well.png",
+      "sha256": "5c51d3a048a9c54135e7703c8765a2df2d6aced306add4ef8e7a740d87163a09",
+      "bytes": 97124
+    },
+    {
+      "path": "../palette-inputs/wooden-crate.png",
+      "sha256": "01819f7257a6afa9bcfa656bd5d575864642d439971eef0c51f28b9b506a91a0",
+      "bytes": 38213
+    }
+  ],
+  "outputs": [
+    {
+      "path": "palette.json",
+      "sha256": "df46e6d404fe2ec405bac279bd42f65ee95abf63df408e3e6f59120324f863c5",
+      "bytes": 1959
+    },
+    {
+      "path": "palette.gpl",
+      "sha256": "329c798f07d40edf17f0ede803053eaafd0cde3414db68277727efedea393d61",
+      "bytes": 1015
+    },
+    {
+      "path": "palette.hex",
+      "sha256": "ff5adb57b75962aa11f5d443b6f90b1c4fc92da25249676ce495dcb2051c7525",
+      "bytes": 336
+    },
+    {
+      "path": "swatches.png",
+      "sha256": "86ef28a30cbe6aec93b30992e90acc4b78712bcea55fc3c628a759373590627e",
+      "bytes": 701
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "palette": {
+    "colors": 48,
+    "reserved": 0,
+    "transparent_index": 255,
+    "seed": 0
+  },
+  "fit": {
+    "../palette-inputs/barrel.png": {
+      "measured_px": 12864,
+      "alpha_threshold": 128,
+      "off_palette_px": 12857,
+      "partial_alpha_px": 0,
+      "colors": 11131,
+      "palette_colors_used": 37,
+      "mean_delta_e": 0.020696,
+      "p95_delta_e": 0.038697,
+      "max_delta_e": 0.095933
+    },
+    "../palette-inputs/bench.png": {
+      "measured_px": 14165,
+      "alpha_threshold": 128,
+      "off_palette_px": 14146,
+      "partial_alpha_px": 0,
+      "colors": 12075,
+      "palette_colors_used": 43,
+      "mean_delta_e": 0.019854,
+      "p95_delta_e": 0.03843,
+      "max_delta_e": 0.076877
+    },
+    "../palette-inputs/flowerpot-cream.png": {
+      "measured_px": 13975,
+      "alpha_threshold": 128,
+      "off_palette_px": 13970,
+      "partial_alpha_px": 0,
+      "colors": 13000,
+      "palette_colors_used": 47,
+      "mean_delta_e": 0.024606,
+      "p95_delta_e": 0.045519,
+      "max_delta_e": 0.121757
+    },
+    "../palette-inputs/flowerpot-red.png": {
+      "measured_px": 13682,
+      "alpha_threshold": 128,
+      "off_palette_px": 13674,
+      "partial_alpha_px": 0,
+      "colors": 12890,
+      "palette_colors_used": 46,
+      "mean_delta_e": 0.030477,
+      "p95_delta_e": 0.052585,
+      "max_delta_e": 0.13018
+    },
+    "../palette-inputs/flowerpot-violet.png": {
+      "measured_px": 12354,
+      "alpha_threshold": 128,
+      "off_palette_px": 12351,
+      "partial_alpha_px": 0,
+      "colors": 11642,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.027949,
+      "p95_delta_e": 0.054406,
+      "max_delta_e": 0.124055
+    },
+    "../palette-inputs/handcart.png": {
+      "measured_px": 33927,
+      "alpha_threshold": 128,
+      "off_palette_px": 33902,
+      "partial_alpha_px": 0,
+      "colors": 24426,
+      "palette_colors_used": 45,
+      "mean_delta_e": 0.020259,
+      "p95_delta_e": 0.038376,
+      "max_delta_e": 0.163668
+    },
+    "../palette-inputs/streetlamp-unlit.png": {
+      "measured_px": 8827,
+      "alpha_threshold": 128,
+      "off_palette_px": 8822,
+      "partial_alpha_px": 0,
+      "colors": 7866,
+      "palette_colors_used": 38,
+      "mean_delta_e": 0.023006,
+      "p95_delta_e": 0.040505,
+      "max_delta_e": 0.067328
+    },
+    "../palette-inputs/well.png": {
+      "measured_px": 36865,
+      "alpha_threshold": 128,
+      "off_palette_px": 36837,
+      "partial_alpha_px": 0,
+      "colors": 31963,
+      "palette_colors_used": 46,
+      "mean_delta_e": 0.023028,
+      "p95_delta_e": 0.044209,
+      "max_delta_e": 0.073612
+    },
+    "../palette-inputs/wooden-crate.png": {
+      "measured_px": 14712,
+      "alpha_threshold": 128,
+      "off_palette_px": 14687,
+      "partial_alpha_px": 0,
+      "colors": 12133,
+      "palette_colors_used": 36,
+      "mean_delta_e": 0.017927,
+      "p95_delta_e": 0.031915,
+      "max_delta_e": 0.074632
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.163668,
+    "worst_p95_delta_e": 0.054406,
+    "off_palette_px": 161246
+  }
+}

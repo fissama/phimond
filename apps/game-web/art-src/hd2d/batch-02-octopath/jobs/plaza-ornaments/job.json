@@ -1,0 +1,56 @@
+{
+  "id": "plaza-ornaments",
+  "rows": 3,
+  "cols": 3,
+  "kit": "city",
+  "refs": [
+    "/Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level3_QTTP/level3_QTTP_026.png",
+    "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/city_palace_gate.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+  ],
+  "prompt": "Use case: modular HD-2D game sprites. NINE separate city plaza ornaments in THREE ROWS x THREE COLUMNS with huge empty gutters. TOP: dry circular carved stone fountain with a slender winged woman statue in center, reference1 identity, NO water whatsoever; independent heroic robed stone guardian statue on square plinth, no lettering; short THREE-step pale stone stair module facing front. MIDDLE: low stone balustrade section with four small rounded balusters and two endposts; deep red plain vertical cloth banner on narrow bronze pole; blue-gray plain forked cloth banner on narrow bronze pole. BOTTOM: compact pruned urban broadleaf tree with thin trunk and round crown; second urban tree with forked trunk and oval crown; decorative carved stone pillar with simple floral relief, no runes or writing. Original reference1 fountain form/material, reference2 weathered palace limestone and red roofs, last2 pixel pet shading compatibility only. Octopath Traveler environment PIXEL ART, mature restrained warm limestone/umber/olive/deep madder/blue-gray palette, clear broad pixel clusters,3-4 tones, cool hue-tinted outlines, subtle upper-left warm key, crisp hard stepped edges, no illustration microdetail. Camera upright front billboard24degrees downward. Each whole object inside central55percent of its cell, no touching edge, no overlaps. Exact pure #FF00FF background. No floors, ground shadows, glow, water, text, emblems, labels, fog, scenery. Flags and trees are standalone sway-ready objects, not attached to scenery.",
+  "source_card": "Winged female fountain from QTTP026; pale palace stone identity from city_palace_gate. Dry fountain body separated from future water FX. Plaza ornaments, blank banners and pruned trees follow Batch2.",
+  "assets": [
+    {
+      "id": "fountain-body",
+      "height": 320
+    },
+    {
+      "id": "city-statue",
+      "height": 280
+    },
+    {
+      "id": "stone-steps",
+      "height": 100
+    },
+    {
+      "id": "balustrade",
+      "height": 140
+    },
+    {
+      "id": "banner-red",
+      "height": 260,
+      "sway": true
+    },
+    {
+      "id": "banner-blue",
+      "height": 260,
+      "sway": true
+    },
+    {
+      "id": "city-tree-01",
+      "height": 290,
+      "sway": true
+    },
+    {
+      "id": "city-tree-02",
+      "height": 310,
+      "sway": true
+    },
+    {
+      "id": "city-carved-pillar",
+      "height": 250
+    }
+  ]
+}

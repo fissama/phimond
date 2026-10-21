@@ -1,0 +1,70 @@
+{
+  "id": "environment-inserts",
+  "rows": 4,
+  "cols": 2,
+  "refs": [
+    "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/city_square.png",
+    "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/city_royal_palace.png",
+    "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/summoning_hall_main_hall.png",
+    "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/city_pet_room.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png"
+  ],
+  "prompt": "Use case: modular HD-2D environment cutouts, EIGHT objects in FOUR ROWS x TWO COLUMNS, generous magenta gaps. ROW1 LEFT: short straight low stone garden retaining border with muted grass behind, front upright24degree view; RIGHT: flat circular pale limestone plaza medallion with simple radial geometric inlay, topdown round circle NO perspective. ROW2 LEFT: straight HORIZONTAL madder-red carpet SECTION with two narrow gold borders along LONG edges, NO tassels/end border, intended left-right repeating; RIGHT: flat topdown circular summoning floor geometric emblem, thin desaturated dullgold concentric rings and six small diamond ornaments, magenta transparent gaps, NO letters/runes/text. ROW3 LEFT: flat topdown arena center medallion simple engraved compass diamond inside ring, faded gold on gray stone, NO letters/numbers; RIGHT: straight rustic packed dirt footpath SECTION, fine even brown texture, short horizontal strip intended left-right repeating, no surrounding grass. ROW4 LEFT: freestanding interior wall module, ivory carved stone rectangular paneled wall and two modest halfcolumns, no ceiling or floor; RIGHT: freestanding interior dark timber plank wall module with one small shuttered window and two narrow vertical beams, no ceiling or floor. Keep matching edge profiles left-right for wall sections. References1citygarden/stone;2carpet/interiorstone;3summoningceremonialfloor;4petroomtimber. Last reference pet pixel style only. Octopath Traveler inspired environment PIXEL ART, restrained earthy/desaturated ivory/umber/madder/dullgold palette, broad crisp3-4tone clusters, stepped edges, subtle warm upperleft key/coolshadows. Entire each sprite central55percent of own cell, no clipping or overlap. Pure flat solid #FF00FF background, including ring gaps. No text, symbols resembling writing, ground cast shadows, glow, fog, people, plants except firstgardenborder, perspective scenes, tiny noisy texture or smooth vector illustration.",
+  "source_card": "Original city stone garden and plaza, palace red carpet, summoning floor ceremony and petroom timber. Isolated border/decals/repeat-intended strips/wall modules; repeat certification pending.",
+  "assets": [
+    {
+      "id": "city-garden-border",
+      "height": 120,
+      "category": "edge",
+      "kit": "city",
+      "repeat_x": true
+    },
+    {
+      "id": "city-plaza-medallion",
+      "height": 400,
+      "category": "decal",
+      "kit": "city",
+      "square_body": true
+    },
+    {
+      "id": "palace-carpet-strip",
+      "height": 110,
+      "category": "decal",
+      "kit": "palace",
+      "repeat_x": true
+    },
+    {
+      "id": "summon-floor-emblem",
+      "height": 320,
+      "category": "decal",
+      "kit": "hall",
+      "square_body": true
+    },
+    {
+      "id": "arena-center-medallion",
+      "height": 360,
+      "category": "decal",
+      "kit": "arena",
+      "square_body": true
+    },
+    {
+      "id": "farm-dirt-path-strip",
+      "height": 160,
+      "category": "edge",
+      "kit": "farm",
+      "repeat_x": true
+    },
+    {
+      "id": "hall-wall-stone",
+      "height": 360,
+      "category": "backdrop_mid",
+      "kit": "hall"
+    },
+    {
+      "id": "hall-wall-timber",
+      "height": 360,
+      "category": "backdrop_mid",
+      "kit": "hall"
+    }
+  ]
+}

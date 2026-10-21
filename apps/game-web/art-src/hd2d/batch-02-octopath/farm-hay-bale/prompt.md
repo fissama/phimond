@@ -1,0 +1,10 @@
+Use case: modular farm props for Octopath Traveler inspired HD-2D RPG, PIXEL ART. NINE independent isolated objects, exactly THREE ROWS x THREE COLUMNS, equal generous cells with HUGE magenta gutters. TOP: short rustic wooden fence rail SECTION with two horizontal rails and NO endposts; single freestanding rough fence POST; low loose hay pile. MIDDLE: second tied rectangular straw bale; long low wooden animal feeding trough with a little dry hay inside; empty woven harvest basket with handle. BOTTOM: complete small orchard apple tree with modest reddish apples, full visible trunk, NO ground; simple straw scarecrow with patched bluegray shirt and hat on wooden crossbar; clump of meadow wildflowers cream/mutedpink with olive leaves. Original farm reference defines rustic curved wood, straw and orchard setting; pet references pixel shading/outline compatibility only. Natural mature desaturated ochre straw, umber wood, muted olive leaves, cool blue-gray shadows, restrained red apples. Crisp broad clustered pixels,3-4tones/material, hue-tinted dark outline, subtle upperleft warm key, no tiny texture noise or smooth vector. Upright front billboard24degrees down, all whole objects centered in middle55percent of their own cell, no overlapping or touching cells or image edge. Background exact pure flat #FF00FF including open gaps. NO floors, terrain patches, cast ground shadows, glow, fog, text, signs, people, animals or scenery. Rail section and post are SEPARATE pieces for owner to assemble fences.
+
+
+
+Ordered reference images:
+- /Users/phileanh/Downloads/Phimond-P12-Review/map-images/city_farm.png / sha256 69b630cd3c744725d6565ee638e0ad4a4d7be52e3b57ce54f94d5c5bb2cd5f50
+- /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png / sha256 fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da
+- /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png / sha256 043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3
+
+Route: built-in image_gen; model not exposed; raw SHA256 b1098017c94ac97207bb0dc5d4ac2bb3732e63f85c9307e8c353d7a49cdc6f0d

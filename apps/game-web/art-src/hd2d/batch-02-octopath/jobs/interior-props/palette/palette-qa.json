@@ -1,0 +1,215 @@
+{
+  "status": "pass",
+  "method": "forge_palette.build_palette (weighted k-means++ in OKLab over unique colours, reserved colours fixed, coverage skipping) then forge_palette.fit_report of every input: OKLab dE of each pixel with alpha >= the threshold to its nearest palette colour",
+  "notProven": [
+    "Visual quality of the palette: look at swatches.png and an applied frame.",
+    "Colours of pixels below the alpha threshold were not sampled or measured.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "palette_colors",
+      "status": "pass",
+      "value": 48,
+      "threshold": 48
+    },
+    {
+      "id": "inputs_without_samples",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0,
+      "files": []
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.229245,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../palette-inputs/city-roof-module.png",
+      "sha256": "af57664dfad74e355d8fa6c45352495fb97784ad0448403ab14e7e6c55bd5491",
+      "bytes": 89601
+    },
+    {
+      "path": "../palette-inputs/hall-bookshelf.png",
+      "sha256": "e7cf5a61893c002576fedc6cc38c873c8fd74108ac4523e6b15c54a3279c79cd",
+      "bytes": 110614
+    },
+    {
+      "path": "../palette-inputs/hall-counter.png",
+      "sha256": "25898184e4f693a7ce87a4db4caa9808049ca277dcd15ce87886f0aadd7713a3",
+      "bytes": 111391
+    },
+    {
+      "path": "../palette-inputs/hall-quest-board.png",
+      "sha256": "6f49d2fa9a9db4ac9e0d6b7abdfe25f002dc05d1ff2c5216ecf5abefb7b93480",
+      "bytes": 79463
+    },
+    {
+      "path": "../palette-inputs/palace-column.png",
+      "sha256": "d2fc1491a0e19f147b66cff7cdad4302a131b1cca64c4c678cd0dd2255eb3106",
+      "bytes": 96422
+    },
+    {
+      "path": "../palette-inputs/palace-guard-statue.png",
+      "sha256": "2df65b0737a62f5c3d2fac6699864e2e45a67b0245c8ea7d2481050f48287163",
+      "bytes": 79712
+    },
+    {
+      "path": "../palette-inputs/pet-nest-blanket.png",
+      "sha256": "508a1f873ca3f5c57b2cb87544874aaf9bc506e4a11e591f3398ecf845029918",
+      "bytes": 58240
+    },
+    {
+      "path": "../palette-inputs/pet-nest-shelter.png",
+      "sha256": "31a57b055687b4a6d60e9b9404dc3731b924a6ca3694311b563915ad4c60ad02",
+      "bytes": 74601
+    },
+    {
+      "path": "../palette-inputs/pet-nest-straw.png",
+      "sha256": "5baf10c62ea31691d7e02c057c8b3e5e7857d94c69990e5862c827a3345ded68",
+      "bytes": 41117
+    }
+  ],
+  "outputs": [
+    {
+      "path": "palette.json",
+      "sha256": "1cab0be093bc18076f424bcf5b566338bbf8fffbe142998aa132c62cd7ca6f55",
+      "bytes": 1924
+    },
+    {
+      "path": "palette.gpl",
+      "sha256": "2bf833321ba777c6a9db7a600ae49739a972945f53a7edba52caa9822d075420",
+      "bytes": 1020
+    },
+    {
+      "path": "palette.hex",
+      "sha256": "01db0557dea80912546ee40d81b10b81a82322132ca5b80c0441f974b2cbf13e",
+      "bytes": 336
+    },
+    {
+      "path": "swatches.png",
+      "sha256": "7ae705b170b9cb2c061c10a5c05c1c74393a9e596d05fc853cd8142b23fbdbd9",
+      "bytes": 697
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "palette": {
+    "colors": 48,
+    "reserved": 0,
+    "transparent_index": 255,
+    "seed": 0
+  },
+  "fit": {
+    "../palette-inputs/city-roof-module.png": {
+      "measured_px": 32763,
+      "alpha_threshold": 128,
+      "off_palette_px": 32754,
+      "partial_alpha_px": 0,
+      "colors": 25520,
+      "palette_colors_used": 45,
+      "mean_delta_e": 0.021062,
+      "p95_delta_e": 0.040605,
+      "max_delta_e": 0.100887
+    },
+    "../palette-inputs/hall-bookshelf.png": {
+      "measured_px": 51142,
+      "alpha_threshold": 128,
+      "off_palette_px": 51114,
+      "partial_alpha_px": 0,
+      "colors": 32140,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.017814,
+      "p95_delta_e": 0.036285,
+      "max_delta_e": 0.083951
+    },
+    "../palette-inputs/hall-counter.png": {
+      "measured_px": 48350,
+      "alpha_threshold": 128,
+      "off_palette_px": 48308,
+      "partial_alpha_px": 0,
+      "colors": 31393,
+      "palette_colors_used": 44,
+      "mean_delta_e": 0.014659,
+      "p95_delta_e": 0.027497,
+      "max_delta_e": 0.086964
+    },
+    "../palette-inputs/hall-quest-board.png": {
+      "measured_px": 33396,
+      "alpha_threshold": 128,
+      "off_palette_px": 33385,
+      "partial_alpha_px": 0,
+      "colors": 21048,
+      "palette_colors_used": 45,
+      "mean_delta_e": 0.015072,
+      "p95_delta_e": 0.027986,
+      "max_delta_e": 0.074429
+    },
+    "../palette-inputs/palace-column.png": {
+      "measured_px": 38936,
+      "alpha_threshold": 128,
+      "off_palette_px": 38909,
+      "partial_alpha_px": 0,
+      "colors": 30000,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.019221,
+      "p95_delta_e": 0.033293,
+      "max_delta_e": 0.092704
+    },
+    "../palette-inputs/palace-guard-statue.png": {
+      "measured_px": 28578,
+      "alpha_threshold": 128,
+      "off_palette_px": 28565,
+      "partial_alpha_px": 0,
+      "colors": 25519,
+      "palette_colors_used": 47,
+      "mean_delta_e": 0.020226,
+      "p95_delta_e": 0.035606,
+      "max_delta_e": 0.229245
+    },
+    "../palette-inputs/pet-nest-blanket.png": {
+      "measured_px": 22490,
+      "alpha_threshold": 128,
+      "off_palette_px": 22477,
+      "partial_alpha_px": 0,
+      "colors": 19731,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.018487,
+      "p95_delta_e": 0.036519,
+      "max_delta_e": 0.100309
+    },
+    "../palette-inputs/pet-nest-shelter.png": {
+      "measured_px": 29778,
+      "alpha_threshold": 128,
+      "off_palette_px": 29765,
+      "partial_alpha_px": 0,
+      "colors": 19954,
+      "palette_colors_used": 45,
+      "mean_delta_e": 0.015247,
+      "p95_delta_e": 0.026692,
+      "max_delta_e": 0.079414
+    },
+    "../palette-inputs/pet-nest-straw.png": {
+      "measured_px": 14855,
+      "alpha_threshold": 128,
+      "off_palette_px": 14845,
+      "partial_alpha_px": 0,
+      "colors": 13085,
+      "palette_colors_used": 42,
+      "mean_delta_e": 0.015755,
+      "p95_delta_e": 0.027424,
+      "max_delta_e": 0.072753
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.229245,
+    "worst_p95_delta_e": 0.040605,
+    "off_palette_px": 300122
+  }
+}

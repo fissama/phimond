@@ -1,0 +1,55 @@
+{
+  "id": "interaction-states",
+  "rows": 4,
+  "cols": 2,
+  "refs": [
+    "/Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level3_QTTP/level3_QTTP_007.png",
+    "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/summoning_hall_main_hall.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+  ],
+  "prompt": "Use case: game interactive STATE PAIRS, exactly FOUR ROWS x TWO COLUMNS,8 separate whole sprites. For EVERY row the right sprite is a PIXEL-REGISTERED DUPLICATE of the left, SAME outline, size, contact and stone carving, change ONLY color of small inset gems/channels from dark to pale gold. NO external glow or beam. Row1: upright squat carved teleport STONE PILLAR on octagonal limestone plinth with restrained muted jade inlays, dormantLEFT / activeRIGHT. Row2: LOW circular stone summoning pedestal with scalloped outer rim, dark inlayLEFT / palegold insetRIGHT. Row3: LOW hexagonal stone summoning pedestal with three small upright corner fins, darkLEFT / palegold insetsRIGHT. Row4: LOW square stone summoning pedestal with rounded corners and shallow circular center recess, darkLEFT / palegold insetsRIGHT. All are EMPTY, no creatures, no orb, no statue. Original1 jade-carved town teleport floor supplies ancient stone/jade identity; source2 ceremonial summoning plinths supplies purplegray/ivory/dullgold trim. Petrefs pixel shading only. Octopath Traveler inspired HD-2D PIXEL ART, crisp stepped edges, broad3-4tone material clusters, restrained desaturated limestone/jade/umber/dullgold, subtle upperleft warm key/cool hue-tinted outlines. Front upright24degree down billboard, ground-top visible. Entire each object inside central55percent of its equal cell, big gutters, no clipping/overlap. Pure flat #FF00FF background. NO floor plane, shadows, fog, bloom, runes, text, numbers, symbols, labels, scenery. Pair alignment is CRITICAL, do not change any shapes between state columns.",
+  "source_card": "Town jade teleport slab and original summoning plinth/stone materials. Teleport upright pillar and three empty summoning pedestal designs, each dormant/active pair. State registration must be independently checked; no owner approval inferred.",
+  "assets": [
+    {
+      "id": "city-teleport-dormant",
+      "kit": "city",
+      "height": 280
+    },
+    {
+      "id": "city-teleport-active",
+      "kit": "city",
+      "height": 280
+    },
+    {
+      "id": "summon-pedestal-01-dormant",
+      "kit": "hall",
+      "height": 120
+    },
+    {
+      "id": "summon-pedestal-01-active",
+      "kit": "hall",
+      "height": 120
+    },
+    {
+      "id": "summon-pedestal-02-dormant",
+      "kit": "hall",
+      "height": 140
+    },
+    {
+      "id": "summon-pedestal-02-active",
+      "kit": "hall",
+      "height": 140
+    },
+    {
+      "id": "summon-pedestal-03-dormant",
+      "kit": "hall",
+      "height": 120
+    },
+    {
+      "id": "summon-pedestal-03-active",
+      "kit": "hall",
+      "height": 120
+    }
+  ]
+}

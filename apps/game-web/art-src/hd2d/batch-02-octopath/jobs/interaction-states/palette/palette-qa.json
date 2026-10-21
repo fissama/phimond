@@ -1,0 +1,199 @@
+{
+  "status": "pass",
+  "method": "forge_palette.build_palette (weighted k-means++ in OKLab over unique colours, reserved colours fixed, coverage skipping) then forge_palette.fit_report of every input: OKLab dE of each pixel with alpha >= the threshold to its nearest palette colour",
+  "notProven": [
+    "Visual quality of the palette: look at swatches.png and an applied frame.",
+    "Colours of pixels below the alpha threshold were not sampled or measured.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "palette_colors",
+      "status": "pass",
+      "value": 48,
+      "threshold": 48
+    },
+    {
+      "id": "inputs_without_samples",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0,
+      "files": []
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.132087,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../palette-inputs/city-teleport-active.png",
+      "sha256": "3f6dd47052d951fbd7ae08a0e6ae5ebfa33ae2d1064d86798af30149c44fc6f3",
+      "bytes": 104910
+    },
+    {
+      "path": "../palette-inputs/city-teleport-dormant.png",
+      "sha256": "80c9b18e3bf6449fc27ade4d7eb55f13cbe92aeffdde6856a310b4b4de767510",
+      "bytes": 104244
+    },
+    {
+      "path": "../palette-inputs/summon-pedestal-01-active.png",
+      "sha256": "1c750a6c297722df011b82f3d31468981d28818637381a9de399d26abc7a5b5c",
+      "bytes": 49486
+    },
+    {
+      "path": "../palette-inputs/summon-pedestal-01-dormant.png",
+      "sha256": "bcfa1fa57c0027d8402e7b7a3a3b9ad91e3e0b003e4b2beb6e5a07469d8faf58",
+      "bytes": 49102
+    },
+    {
+      "path": "../palette-inputs/summon-pedestal-02-active.png",
+      "sha256": "33ae0acdb5609d1ff8197692b50b7a1e5fcca05b7aafacfb57ab40f4666d49ff",
+      "bytes": 45725
+    },
+    {
+      "path": "../palette-inputs/summon-pedestal-02-dormant.png",
+      "sha256": "d3e86c345be53bcf0ca727045d856416bcaefe311969aefec1abeb702c49bd43",
+      "bytes": 45563
+    },
+    {
+      "path": "../palette-inputs/summon-pedestal-03-active.png",
+      "sha256": "89c2ef818d4f4cd8a727f8a0eff263a6467d0c5e65b478bac4bb757fdf025bf6",
+      "bytes": 51817
+    },
+    {
+      "path": "../palette-inputs/summon-pedestal-03-dormant.png",
+      "sha256": "4b5c529595ec386e724fd760ca3ca60df02ec10cbf611ca289112580046e65e5",
+      "bytes": 50712
+    }
+  ],
+  "outputs": [
+    {
+      "path": "palette.json",
+      "sha256": "1fc8dd40dd45e8c228d2eeb88f81152afc97276b4de2ce91c39f231952a3c9ed",
+      "bytes": 1924
+    },
+    {
+      "path": "palette.gpl",
+      "sha256": "39f0c1d9820ebd29f535cd8dcfcaafd5e1a0c58045d406ab10940f2460273623",
+      "bytes": 1020
+    },
+    {
+      "path": "palette.hex",
+      "sha256": "fd2396b58ef862ac86d7cb2380aa6a61da1982af8889823216503df42e7bed6e",
+      "bytes": 336
+    },
+    {
+      "path": "swatches.png",
+      "sha256": "04dbbb86760ef1720a697c50f16fcbe6f94566b19021a572e2709c9bb97db4d5",
+      "bytes": 696
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "palette": {
+    "colors": 48,
+    "reserved": 0,
+    "transparent_index": 255,
+    "seed": 0
+  },
+  "fit": {
+    "../palette-inputs/city-teleport-active.png": {
+      "measured_px": 44141,
+      "alpha_threshold": 128,
+      "off_palette_px": 44118,
+      "partial_alpha_px": 0,
+      "colors": 36095,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.018425,
+      "p95_delta_e": 0.037634,
+      "max_delta_e": 0.070782
+    },
+    "../palette-inputs/city-teleport-dormant.png": {
+      "measured_px": 44267,
+      "alpha_threshold": 128,
+      "off_palette_px": 44245,
+      "partial_alpha_px": 0,
+      "colors": 36016,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.018088,
+      "p95_delta_e": 0.037676,
+      "max_delta_e": 0.126863
+    },
+    "../palette-inputs/summon-pedestal-01-active.png": {
+      "measured_px": 18883,
+      "alpha_threshold": 128,
+      "off_palette_px": 18875,
+      "partial_alpha_px": 0,
+      "colors": 16175,
+      "palette_colors_used": 43,
+      "mean_delta_e": 0.017259,
+      "p95_delta_e": 0.034372,
+      "max_delta_e": 0.074211
+    },
+    "../palette-inputs/summon-pedestal-01-dormant.png": {
+      "measured_px": 18884,
+      "alpha_threshold": 128,
+      "off_palette_px": 18870,
+      "partial_alpha_px": 0,
+      "colors": 16231,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.017315,
+      "p95_delta_e": 0.035143,
+      "max_delta_e": 0.090367
+    },
+    "../palette-inputs/summon-pedestal-02-active.png": {
+      "measured_px": 16492,
+      "alpha_threshold": 128,
+      "off_palette_px": 16479,
+      "partial_alpha_px": 0,
+      "colors": 13869,
+      "palette_colors_used": 43,
+      "mean_delta_e": 0.017584,
+      "p95_delta_e": 0.035391,
+      "max_delta_e": 0.075891
+    },
+    "../palette-inputs/summon-pedestal-02-dormant.png": {
+      "measured_px": 16663,
+      "alpha_threshold": 128,
+      "off_palette_px": 16659,
+      "partial_alpha_px": 0,
+      "colors": 14138,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.017294,
+      "p95_delta_e": 0.035734,
+      "max_delta_e": 0.072253
+    },
+    "../palette-inputs/summon-pedestal-03-active.png": {
+      "measured_px": 21766,
+      "alpha_threshold": 128,
+      "off_palette_px": 21739,
+      "partial_alpha_px": 0,
+      "colors": 16984,
+      "palette_colors_used": 43,
+      "mean_delta_e": 0.016553,
+      "p95_delta_e": 0.034147,
+      "max_delta_e": 0.086657
+    },
+    "../palette-inputs/summon-pedestal-03-dormant.png": {
+      "measured_px": 21507,
+      "alpha_threshold": 128,
+      "off_palette_px": 21476,
+      "partial_alpha_px": 0,
+      "colors": 16639,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.016408,
+      "p95_delta_e": 0.034671,
+      "max_delta_e": 0.132087
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.132087,
+    "worst_p95_delta_e": 0.037676,
+    "off_palette_px": 202461
+  }
+}

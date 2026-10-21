@@ -1,0 +1,42 @@
+{
+  "id": "farm-buildings",
+  "kit": "farm",
+  "rows": 2,
+  "cols": 3,
+  "refs": [
+    "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/city_farm.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+  ],
+  "prompt": "Use case: production modular farm cutout pack. SIX completely isolated sprites in TWO ROWS x THREE COLUMNS, enormous empty magenta gutters. TOP LEFT: entire small rustic barn with curved straw-thatched roof, cream plaster and timber walls, open doorway solid magenta, low animal pen attached to right side, inspired by first reference farm hut. TOP CENTER: open-sided timber hay storage shed, weathered thatch roof and small haystack inside, no ground. TOP RIGHT: entire tapered stone windmill BODY with terracotta conical cap and small door, central wooden rotor axle on front, ABSOLUTELY NO blades or sails; separate blades animated later. BOTTOM LEFT: little open timber animal stable with simple sloped thatch roof and half-height stall door. BOTTOM CENTER: small sparse clump of muted violet meadow flowers and olivegrass. BOTTOM RIGHT: small clump of ochre-yellow meadow flowers with narrow muted green leaves. Reference1 rustic straw and timber farm identity; petrefs shading compatibility only. Octopath Traveler inspired HD-2D PIXEL ART, mature desaturated natural palette, warm umber/ochre/limestone, cool gray tinted outlines, broad3-4tone pixel clusters/material, crisp stepped edges. No fine noisy phototexture, no smooth vector illustration. Front upright billboard24degrees down, all objects complete and inside central55percent of own cells. Flat pure solid #FF00FF background also in doorway openings. NO floor, ground patches, cast shadows, glow, fog, labels, text, signs, animals, people, rotors or scenery.",
+  "source_card": "Original city_farm thatched cream/timber hut and pen. Standalone barn, hay shed, rotorless mill body and stable per farm brief; meadow color variants.",
+  "assets": [
+    {
+      "id": "farm-barn",
+      "height": 400,
+      "category": "backdrop_mid"
+    },
+    {
+      "id": "farm-hay-shed",
+      "height": 330
+    },
+    {
+      "id": "farm-windmill-body",
+      "height": 500
+    },
+    {
+      "id": "farm-stable",
+      "height": 320
+    },
+    {
+      "id": "farm-flowers-02",
+      "height": 100,
+      "sway": true
+    },
+    {
+      "id": "farm-flowers-03",
+      "height": 100,
+      "sway": true
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "status": "pass",
+  "method": "forge_palette.build_palette (weighted k-means++ in OKLab over unique colours, reserved colours fixed, coverage skipping) then forge_palette.fit_report of every input: OKLab dE of each pixel with alpha >= the threshold to its nearest palette colour",
+  "notProven": [
+    "Visual quality of the palette: look at swatches.png and an applied frame.",
+    "Colours of pixels below the alpha threshold were not sampled or measured.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "palette_colors",
+      "status": "pass",
+      "value": 48,
+      "threshold": 48
+    },
+    {
+      "id": "inputs_without_samples",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0,
+      "files": []
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.119631,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../palette-inputs/city-facade-artisan.png",
+      "sha256": "ef272b2b2f9c8c1b91fe71c073bdd84e8125889af5db8b3ac6ab0773ccb0dd92",
+      "bytes": 521820
+    },
+    {
+      "path": "../palette-inputs/city-facade-guild.png",
+      "sha256": "598b31a155a8e56347d470818933f0787a564cb3d3691259fd9bcc0081bfefa9",
+      "bytes": 516871
+    },
+    {
+      "path": "../palette-inputs/city-facade-shop.png",
+      "sha256": "0654660f4793faed0e1dad1a666eea9cf30c29bad38ad9f81d4170c22c5c0d77",
+      "bytes": 518233
+    },
+    {
+      "path": "../palette-inputs/city-facade-townhouse.png",
+      "sha256": "3c1bba5e51ebc1751741c8c4bd305c612b554c0d08d299e267e950f6157dad9c",
+      "bytes": 475976
+    }
+  ],
+  "outputs": [
+    {
+      "path": "palette.json",
+      "sha256": "81d64d5350dbeb47c86a5eb96df4ff1bb0ac7a5cb30b82a067a0afc94e80d0e8",
+      "bytes": 1924
+    },
+    {
+      "path": "palette.gpl",
+      "sha256": "f1f12961094d6897d6bf9bd09f8544e0d45ddb52cc8710a76f1abeba96c81947",
+      "bytes": 1020
+    },
+    {
+      "path": "palette.hex",
+      "sha256": "df36ffed937d15ef18943278d4e71c928e8e9e4ac2af99d11735e818978e7b16",
+      "bytes": 336
+    },
+    {
+      "path": "swatches.png",
+      "sha256": "f5654a9633e2f89b14891fc1eb824549fa08e4ee0a612271a887b4f32cad9a8e",
+      "bytes": 701
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "palette": {
+    "colors": 48,
+    "reserved": 0,
+    "transparent_index": 255,
+    "seed": 0
+  },
+  "fit": {
+    "../palette-inputs/city-facade-artisan.png": {
+      "measured_px": 277614,
+      "alpha_threshold": 128,
+      "off_palette_px": 277499,
+      "partial_alpha_px": 0,
+      "colors": 122527,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.01925,
+      "p95_delta_e": 0.036862,
+      "max_delta_e": 0.110198
+    },
+    "../palette-inputs/city-facade-guild.png": {
+      "measured_px": 254064,
+      "alpha_threshold": 128,
+      "off_palette_px": 253989,
+      "partial_alpha_px": 0,
+      "colors": 117516,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.017347,
+      "p95_delta_e": 0.034606,
+      "max_delta_e": 0.115159
+    },
+    "../palette-inputs/city-facade-shop.png": {
+      "measured_px": 252764,
+      "alpha_threshold": 128,
+      "off_palette_px": 252710,
+      "partial_alpha_px": 0,
+      "colors": 149491,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.020522,
+      "p95_delta_e": 0.038286,
+      "max_delta_e": 0.101842
+    },
+    "../palette-inputs/city-facade-townhouse.png": {
+      "measured_px": 218032,
+      "alpha_threshold": 128,
+      "off_palette_px": 217930,
+      "partial_alpha_px": 0,
+      "colors": 131253,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.020379,
+      "p95_delta_e": 0.038587,
+      "max_delta_e": 0.119631
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.119631,
+    "worst_p95_delta_e": 0.038587,
+    "off_palette_px": 1002128
+  }
+}

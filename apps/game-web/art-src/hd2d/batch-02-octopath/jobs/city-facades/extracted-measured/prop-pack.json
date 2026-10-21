@@ -1,0 +1,424 @@
+{
+  "schema": "generate2dmap.prop_pack.v2",
+  "tool": {
+    "name": "extract_prop_pack",
+    "version": "0.4.0"
+  },
+  "input": "../raw-01.png",
+  "source_size": [
+    1536,
+    1024
+  ],
+  "source_sha256": "52ff85d51dc7ebe244684d52508dbbeae79d8007f1cbfeffa55bcfbe7aa9cfc1",
+  "source_mode": "RGB",
+  "layout_mode": "explicit_boxes",
+  "boxes_file": "../measured-boxes.json",
+  "labels_file": null,
+  "background_mode": "chroma_key",
+  "art_source": "host_image",
+  "rows": null,
+  "cols": null,
+  "threshold": 100,
+  "edge_threshold": 150,
+  "despill_radius": 3,
+  "despill": {
+    "mode": "edge",
+    "applied": "edge",
+    "radius": 3,
+    "margin": 12,
+    "changed_px": 10226
+  },
+  "hygiene": {
+    "mode": "both",
+    "floor": 4,
+    "solid_min": 32,
+    "attach_radius": 2,
+    "connectivity": 8,
+    "floor_px": 0,
+    "detached_px": 0,
+    "detached_components": 0,
+    "max_removed_alpha": 0
+  },
+  "alpha_floor": 4,
+  "alpha_floor_pixels_removed": 0,
+  "trim_border": 0,
+  "edge_clean_depth": 0,
+  "component_mode": "all",
+  "component_padding": 16,
+  "min_component_area": "auto",
+  "edge_touch_margin": 0,
+  "geometry": {
+    "connectivity": 8,
+    "alpha_geometry_threshold": 16,
+    "anchor_mode": "stance",
+    "support_band_fraction": 0.25,
+    "anchor_rounding": "whole pixels, half-up",
+    "grid_rounding": null,
+    "keep_canvas": false,
+    "world_scale": null
+  },
+  "accepted": [
+    {
+      "index": 0,
+      "label": "city-facade-guild",
+      "display_name": "city-facade-guild",
+      "status": "accepted",
+      "image": "city-facade-guild/prop.png",
+      "sha256": "1c9ed4231495f496950f3df9124ce5957e997d6c11eb9d2072d322114a9b0ac2",
+      "output_size": [
+        605,
+        489
+      ],
+      "grid": null,
+      "cell_box": [
+        0,
+        0,
+        768,
+        500
+      ],
+      "source_box": [
+        0,
+        0,
+        768,
+        500
+      ],
+      "source_rect": [
+        119,
+        11,
+        724,
+        500
+      ],
+      "trim_offset": [
+        119,
+        11
+      ],
+      "padding": [
+        16,
+        16,
+        16,
+        10
+      ],
+      "anchor_px": [
+        303,
+        479
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 100,
+      "trim_applied": 0,
+      "crop_bbox": [
+        135,
+        27,
+        708,
+        490
+      ],
+      "padded_crop_bbox": [
+        119,
+        11,
+        724,
+        500
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 217558,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 1,
+      "label": "city-facade-shop",
+      "display_name": "city-facade-shop",
+      "status": "accepted",
+      "image": "city-facade-shop/prop.png",
+      "sha256": "0cbfc30d5fb66a8f4d8014867a9a77d8abc0a0ff1237366dfac4b872697cb22c",
+      "output_size": [
+        661,
+        493
+      ],
+      "grid": null,
+      "cell_box": [
+        768,
+        0,
+        1536,
+        500
+      ],
+      "source_box": [
+        768,
+        0,
+        1536,
+        500
+      ],
+      "source_rect": [
+        806,
+        7,
+        1467,
+        500
+      ],
+      "trim_offset": [
+        38,
+        7
+      ],
+      "padding": [
+        16,
+        16,
+        16,
+        13
+      ],
+      "anchor_px": [
+        330,
+        480
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 100,
+      "trim_applied": 0,
+      "crop_bbox": [
+        54,
+        23,
+        683,
+        487
+      ],
+      "padded_crop_bbox": [
+        38,
+        7,
+        699,
+        500
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 217645,
+      "dropped_components": 1,
+      "dropped_area": 4,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 2,
+      "label": "city-facade-artisan",
+      "display_name": "city-facade-artisan",
+      "status": "accepted",
+      "image": "city-facade-artisan/prop.png",
+      "sha256": "58480d5d59bf46ad7ee1956992a2bdce2ff6af9a8267925b53a7d9b4f536090a",
+      "output_size": [
+        659,
+        494
+      ],
+      "grid": null,
+      "cell_box": [
+        0,
+        500,
+        768,
+        1024
+      ],
+      "source_box": [
+        0,
+        500,
+        768,
+        1024
+      ],
+      "source_rect": [
+        84,
+        508,
+        743,
+        1002
+      ],
+      "trim_offset": [
+        84,
+        8
+      ],
+      "padding": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "anchor_px": [
+        330,
+        478
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 100,
+      "trim_applied": 0,
+      "crop_bbox": [
+        100,
+        24,
+        727,
+        486
+      ],
+      "padded_crop_bbox": [
+        84,
+        8,
+        743,
+        502
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 236811,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 3,
+      "label": "city-facade-townhouse",
+      "display_name": "city-facade-townhouse",
+      "status": "accepted",
+      "image": "city-facade-townhouse/prop.png",
+      "sha256": "bc0b838b12187c3c6a56494dd9dca1c01252b2e3b67f4e9b0238aeaed52f1ceb",
+      "output_size": [
+        663,
+        509
+      ],
+      "grid": null,
+      "cell_box": [
+        768,
+        500,
+        1536,
+        1024
+      ],
+      "source_box": [
+        768,
+        500,
+        1536,
+        1024
+      ],
+      "source_rect": [
+        804,
+        500,
+        1467,
+        1009
+      ],
+      "trim_offset": [
+        36,
+        0
+      ],
+      "padding": [
+        16,
+        4,
+        16,
+        16
+      ],
+      "anchor_px": [
+        331,
+        493
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 100,
+      "trim_applied": 0,
+      "crop_bbox": [
+        52,
+        4,
+        683,
+        493
+      ],
+      "padded_crop_bbox": [
+        36,
+        0,
+        699,
+        509
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 208482,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    }
+  ],
+  "rejected": [],
+  "edge_touch_props": [],
+  "warnings": [],
+  "qa": {
+    "status": "pass",
+    "method": "legacy #FF00FF key (100/150) and edge despill radius 3; alpha hygiene both; 8-connected components (all); checks measured on the published pixels",
+    "notProven": [
+      "that each label names the art in its cell or box",
+      "that a prop is complete: clipping is detected only where art meets the cell edge",
+      "keyed-edge quality beyond the edge fringe count",
+      "that anchors and suggested footprints match gameplay contact (both are measured from alpha)",
+      "runtime placement, collision or occlusion"
+    ],
+    "checks": [
+      {
+        "id": "accepted",
+        "status": "pass",
+        "value": 4,
+        "threshold": ">= 1"
+      },
+      {
+        "id": "edge_touch",
+        "status": "pass",
+        "value": [],
+        "threshold": 0
+      },
+      {
+        "id": "dropped_area",
+        "status": "pass",
+        "value": {
+          "city-facade-shop": 0.0
+        },
+        "threshold": 0.01
+      },
+      {
+        "id": "strategy_aspect",
+        "status": "skipped",
+        "value": null,
+        "threshold": 1.6
+      },
+      {
+        "id": "edge_fringe",
+        "status": "pass",
+        "value": 0.0,
+        "threshold": 0.02
+      }
+    ],
+    "inputs": [
+      {
+        "path": "../raw-01.png",
+        "sha256": "52ff85d51dc7ebe244684d52508dbbeae79d8007f1cbfeffa55bcfbe7aa9cfc1",
+        "bytes": 2290554
+      },
+      {
+        "path": "../measured-boxes.json",
+        "sha256": "cfa4f42ff99d339a980187b2eac7cf77a46ae7e723c1abb483ee687fb7e5404d",
+        "bytes": 500
+      }
+    ],
+    "outputs": [
+      {
+        "path": "city-facade-guild/prop.png",
+        "sha256": "1c9ed4231495f496950f3df9124ce5957e997d6c11eb9d2072d322114a9b0ac2",
+        "bytes": 493677
+      },
+      {
+        "path": "city-facade-shop/prop.png",
+        "sha256": "0cbfc30d5fb66a8f4d8014867a9a77d8abc0a0ff1237366dfac4b872697cb22c",
+        "bytes": 496068
+      },
+      {
+        "path": "city-facade-artisan/prop.png",
+        "sha256": "58480d5d59bf46ad7ee1956992a2bdce2ff6af9a8267925b53a7d9b4f536090a",
+        "bytes": 497025
+      },
+      {
+        "path": "city-facade-townhouse/prop.png",
+        "sha256": "bc0b838b12187c3c6a56494dd9dca1c01252b2e3b67f4e9b0238aeaed52f1ceb",
+        "bytes": 469474
+      }
+    ],
+    "tool": {
+      "name": "extract_prop_pack",
+      "version": "0.4.0"
+    }
+  }
+}

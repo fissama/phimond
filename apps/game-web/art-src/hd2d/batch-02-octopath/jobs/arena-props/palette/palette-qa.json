@@ -1,0 +1,167 @@
+{
+  "status": "pass",
+  "method": "forge_palette.build_palette (weighted k-means++ in OKLab over unique colours, reserved colours fixed, coverage skipping) then forge_palette.fit_report of every input: OKLab dE of each pixel with alpha >= the threshold to its nearest palette colour",
+  "notProven": [
+    "Visual quality of the palette: look at swatches.png and an applied frame.",
+    "Colours of pixels below the alpha threshold were not sampled or measured.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "palette_colors",
+      "status": "pass",
+      "value": 48,
+      "threshold": 48
+    },
+    {
+      "id": "inputs_without_samples",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0,
+      "files": []
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.12319,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../palette-inputs/arena-column.png",
+      "sha256": "ef42614c30a4d1ae00449a4e6dff11c48494b681149ff8fdde78a1736d393a65",
+      "bytes": 60689
+    },
+    {
+      "path": "../palette-inputs/arena-flag-red.png",
+      "sha256": "248a3066eca88fd2d5bd5dfacd40620a2d4ac1e714deb670e5ff3d11d209007e",
+      "bytes": 29701
+    },
+    {
+      "path": "../palette-inputs/arena-flag-teal.png",
+      "sha256": "d86edbdcc56509dd64c0b29caaa3be0b2ae0bcdb9b98873685a760318160ff91",
+      "bytes": 30688
+    },
+    {
+      "path": "../palette-inputs/arena-grandstand.png",
+      "sha256": "50b103e2d1e6e1b25a707587c3aab210f8c11cc19cbdc156bc7ebd896436e3a4",
+      "bytes": 217591
+    },
+    {
+      "path": "../palette-inputs/arena-standings-board.png",
+      "sha256": "4ee82f73eb50ab42b3563fd6f41867267138e1d405c720e9459b3649266e7ff6",
+      "bytes": 67518
+    },
+    {
+      "path": "../palette-inputs/arena-weapon-rack.png",
+      "sha256": "e25e054c06f3e048466b6a8f4e7710007f492f8085eb587c182585da6e275bd9",
+      "bytes": 52640
+    }
+  ],
+  "outputs": [
+    {
+      "path": "palette.json",
+      "sha256": "7e5a753a18f44742fec1ee0bb37fcb9459deb2da4133dbbd785265512817b895",
+      "bytes": 1924
+    },
+    {
+      "path": "palette.gpl",
+      "sha256": "c55d0ec84c76d57013c9570dc9554b356a66ad53b0ca2569aa3a0d205f2e1684",
+      "bytes": 1020
+    },
+    {
+      "path": "palette.hex",
+      "sha256": "e864e4289aed9ababb5877acd230bd19ff301e53a26a562b4a8207d582789f9d",
+      "bytes": 336
+    },
+    {
+      "path": "swatches.png",
+      "sha256": "7ffd073eb9e6881ffcee46ab943b94207f906ccfcf64e03ef214a282d9008a42",
+      "bytes": 693
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "palette": {
+    "colors": 48,
+    "reserved": 0,
+    "transparent_index": 255,
+    "seed": 0
+  },
+  "fit": {
+    "../palette-inputs/arena-column.png": {
+      "measured_px": 28325,
+      "alpha_threshold": 128,
+      "off_palette_px": 28312,
+      "partial_alpha_px": 0,
+      "colors": 22393,
+      "palette_colors_used": 43,
+      "mean_delta_e": 0.018941,
+      "p95_delta_e": 0.032826,
+      "max_delta_e": 0.103395
+    },
+    "../palette-inputs/arena-flag-red.png": {
+      "measured_px": 15265,
+      "alpha_threshold": 128,
+      "off_palette_px": 15241,
+      "partial_alpha_px": 0,
+      "colors": 9018,
+      "palette_colors_used": 40,
+      "mean_delta_e": 0.0143,
+      "p95_delta_e": 0.029656,
+      "max_delta_e": 0.084321
+    },
+    "../palette-inputs/arena-flag-teal.png": {
+      "measured_px": 15478,
+      "alpha_threshold": 128,
+      "off_palette_px": 15442,
+      "partial_alpha_px": 0,
+      "colors": 8985,
+      "palette_colors_used": 43,
+      "mean_delta_e": 0.01684,
+      "p95_delta_e": 0.03418,
+      "max_delta_e": 0.105472
+    },
+    "../palette-inputs/arena-grandstand.png": {
+      "measured_px": 138137,
+      "alpha_threshold": 128,
+      "off_palette_px": 137990,
+      "partial_alpha_px": 0,
+      "colors": 52569,
+      "palette_colors_used": 46,
+      "mean_delta_e": 0.019331,
+      "p95_delta_e": 0.037993,
+      "max_delta_e": 0.12319
+    },
+    "../palette-inputs/arena-standings-board.png": {
+      "measured_px": 37141,
+      "alpha_threshold": 128,
+      "off_palette_px": 36996,
+      "partial_alpha_px": 0,
+      "colors": 15276,
+      "palette_colors_used": 42,
+      "mean_delta_e": 0.015069,
+      "p95_delta_e": 0.031844,
+      "max_delta_e": 0.083721
+    },
+    "../palette-inputs/arena-weapon-rack.png": {
+      "measured_px": 21525,
+      "alpha_threshold": 128,
+      "off_palette_px": 21519,
+      "partial_alpha_px": 0,
+      "colors": 17186,
+      "palette_colors_used": 45,
+      "mean_delta_e": 0.019678,
+      "p95_delta_e": 0.038627,
+      "max_delta_e": 0.104393
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.12319,
+    "worst_p95_delta_e": 0.038627,
+    "off_palette_px": 255500
+  }
+}

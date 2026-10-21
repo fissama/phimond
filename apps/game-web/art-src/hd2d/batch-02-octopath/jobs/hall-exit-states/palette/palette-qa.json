@@ -1,0 +1,103 @@
+{
+  "status": "pass",
+  "method": "forge_palette.build_palette (weighted k-means++ in OKLab over unique colours, reserved colours fixed, coverage skipping) then forge_palette.fit_report of every input: OKLab dE of each pixel with alpha >= the threshold to its nearest palette colour",
+  "notProven": [
+    "Visual quality of the palette: look at swatches.png and an applied frame.",
+    "Colours of pixels below the alpha threshold were not sampled or measured.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "palette_colors",
+      "status": "pass",
+      "value": 48,
+      "threshold": 48
+    },
+    {
+      "id": "inputs_without_samples",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0,
+      "files": []
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.073153,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../palette-inputs/hall-exit-closed.png",
+      "sha256": "38735295fea25e7f6fa58b68bba6711de50639205cd64cdf0fab9c7a7852a0ed",
+      "bytes": 143784
+    },
+    {
+      "path": "../palette-inputs/hall-exit-open.png",
+      "sha256": "b742df4f603471df359c33047a500351f92f32eb49bfff317ba830bd9feeb3b6",
+      "bytes": 106291
+    }
+  ],
+  "outputs": [
+    {
+      "path": "palette.json",
+      "sha256": "1305a95847c75639d656d82a09cdb5b251226f60e9ec1a817eab9bf7d62d2130",
+      "bytes": 1924
+    },
+    {
+      "path": "palette.gpl",
+      "sha256": "ebd4fba6bbda8a81675c7ab75cb47f42e070c5eb756a7b4b4b01309a0dccc75f",
+      "bytes": 1020
+    },
+    {
+      "path": "palette.hex",
+      "sha256": "d96c9eb27341dfde53150c3bd8cc3f6961975f1a0f447cf30c60a7fafd561e37",
+      "bytes": 336
+    },
+    {
+      "path": "swatches.png",
+      "sha256": "767b6434dcc3e8780f33ea2ad35b45c7fb9ca6bdae6a6d66f9ff508df6054f17",
+      "bytes": 692
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "palette": {
+    "colors": 48,
+    "reserved": 0,
+    "transparent_index": 255,
+    "seed": 0
+  },
+  "fit": {
+    "../palette-inputs/hall-exit-closed.png": {
+      "measured_px": 57782,
+      "alpha_threshold": 128,
+      "off_palette_px": 57709,
+      "partial_alpha_px": 0,
+      "colors": 39862,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.014521,
+      "p95_delta_e": 0.028048,
+      "max_delta_e": 0.07018
+    },
+    "../palette-inputs/hall-exit-open.png": {
+      "measured_px": 38604,
+      "alpha_threshold": 128,
+      "off_palette_px": 38568,
+      "partial_alpha_px": 0,
+      "colors": 31674,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.015791,
+      "p95_delta_e": 0.029854,
+      "max_delta_e": 0.073153
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.073153,
+    "worst_p95_delta_e": 0.029854,
+    "off_palette_px": 96277
+  }
+}

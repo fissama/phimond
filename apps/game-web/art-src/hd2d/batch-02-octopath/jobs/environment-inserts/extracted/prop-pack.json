@@ -1,0 +1,733 @@
+{
+  "schema": "generate2dmap.prop_pack.v2",
+  "tool": {
+    "name": "extract_prop_pack",
+    "version": "0.4.0"
+  },
+  "input": "../raw-01.png",
+  "source_size": [
+    1536,
+    1024
+  ],
+  "source_sha256": "88192e19f1a8269ae54d1c2e05ae8761f0293823cc8cb3298fdff735999c4dc3",
+  "source_mode": "RGB",
+  "layout_mode": "auto_boxes",
+  "boxes_file": null,
+  "labels_file": null,
+  "background_mode": "chroma_key",
+  "art_source": "host_image",
+  "rows": null,
+  "cols": null,
+  "threshold": 100,
+  "edge_threshold": 150,
+  "despill_radius": 3,
+  "despill": {
+    "mode": "edge",
+    "applied": "edge",
+    "radius": 3,
+    "margin": 12,
+    "changed_px": 16753
+  },
+  "hygiene": {
+    "mode": "both",
+    "floor": 4,
+    "solid_min": 32,
+    "attach_radius": 2,
+    "connectivity": 8,
+    "floor_px": 0,
+    "detached_px": 0,
+    "detached_components": 0,
+    "max_removed_alpha": 0
+  },
+  "alpha_floor": 4,
+  "alpha_floor_pixels_removed": 0,
+  "trim_border": 0,
+  "edge_clean_depth": 0,
+  "component_mode": "all",
+  "component_padding": 16,
+  "min_component_area": "auto",
+  "edge_touch_margin": 0,
+  "geometry": {
+    "connectivity": 8,
+    "alpha_geometry_threshold": 16,
+    "anchor_mode": "stance",
+    "support_band_fraction": 0.25,
+    "anchor_rounding": "whole pixels, half-up",
+    "grid_rounding": null,
+    "keep_canvas": false,
+    "world_scale": null
+  },
+  "auto_boxes": {
+    "objects": 8,
+    "solid_alpha": 128,
+    "min_solid_area": 52,
+    "gap_px": 20,
+    "attach_px": 7,
+    "margin_px": 16,
+    "unowned_px": 0
+  },
+  "accepted": [
+    {
+      "index": 0,
+      "label": "sprite-1",
+      "display_name": "sprite-1",
+      "status": "accepted",
+      "image": "sprite-1/prop.png",
+      "sha256": "9b399a5e4fa943bc835aab93366abf38aa3027ce847f5cc958153df066807cb1",
+      "output_size": [
+        648,
+        160
+      ],
+      "grid": null,
+      "cell_box": [
+        61,
+        60,
+        709,
+        220
+      ],
+      "source_box": [
+        61,
+        60,
+        709,
+        220
+      ],
+      "source_rect": [
+        61,
+        60,
+        709,
+        220
+      ],
+      "trim_offset": [
+        0,
+        0
+      ],
+      "padding": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "anchor_px": [
+        324,
+        144
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 59,
+      "trim_applied": 0,
+      "crop_bbox": [
+        16,
+        16,
+        632,
+        144
+      ],
+      "padded_crop_bbox": [
+        0,
+        0,
+        648,
+        160
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 61686,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 1,
+      "label": "sprite-2",
+      "display_name": "sprite-2",
+      "status": "accepted",
+      "image": "sprite-2/prop.png",
+      "sha256": "6b531ab5d02a6dc7430efdcdc96d1d5f64c586bf58bb0b897ca23eb77162a115",
+      "output_size": [
+        368,
+        260
+      ],
+      "grid": null,
+      "cell_box": [
+        968,
+        0,
+        1336,
+        260
+      ],
+      "source_box": [
+        968,
+        0,
+        1336,
+        260
+      ],
+      "source_rect": [
+        968,
+        0,
+        1336,
+        260
+      ],
+      "trim_offset": [
+        0,
+        0
+      ],
+      "padding": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "anchor_px": [
+        184,
+        244
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 55,
+      "trim_applied": 0,
+      "crop_bbox": [
+        16,
+        16,
+        352,
+        244
+      ],
+      "padded_crop_bbox": [
+        0,
+        0,
+        368,
+        260
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 60491,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 2,
+      "label": "sprite-3",
+      "display_name": "sprite-3",
+      "status": "accepted",
+      "image": "sprite-3/prop.png",
+      "sha256": "1c311374fe74e2e9e99c12fda398d18943b615f4820ed690db1c52a2ceaeaf33",
+      "output_size": [
+        708,
+        183
+      ],
+      "grid": null,
+      "cell_box": [
+        30,
+        288,
+        738,
+        471
+      ],
+      "source_box": [
+        30,
+        288,
+        738,
+        471
+      ],
+      "source_rect": [
+        30,
+        288,
+        738,
+        471
+      ],
+      "trim_offset": [
+        0,
+        0
+      ],
+      "padding": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "anchor_px": [
+        354,
+        167
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 74,
+      "trim_applied": 0,
+      "crop_bbox": [
+        16,
+        16,
+        692,
+        167
+      ],
+      "padded_crop_bbox": [
+        0,
+        0,
+        708,
+        183
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 101801,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 3,
+      "label": "sprite-4",
+      "display_name": "sprite-4",
+      "status": "accepted",
+      "image": "sprite-4/prop.png",
+      "sha256": "b4dbf8c525c7be2fffe4b5280afd17e150b575aa3de4bf07e1d39bce4c297a95",
+      "output_size": [
+        374,
+        263
+      ],
+      "grid": null,
+      "cell_box": [
+        965,
+        253,
+        1339,
+        516
+      ],
+      "source_box": [
+        965,
+        253,
+        1339,
+        516
+      ],
+      "source_rect": [
+        965,
+        253,
+        1339,
+        516
+      ],
+      "trim_offset": [
+        0,
+        0
+      ],
+      "padding": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "anchor_px": [
+        187,
+        247
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 56,
+      "trim_applied": 0,
+      "crop_bbox": [
+        16,
+        16,
+        358,
+        247
+      ],
+      "padded_crop_bbox": [
+        0,
+        0,
+        374,
+        263
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 28580,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 4,
+      "label": "sprite-5",
+      "display_name": "sprite-5",
+      "status": "accepted",
+      "image": "sprite-5/prop.png",
+      "sha256": "836f1b3615530d62d13a357d41d838d09e9fa930bf14559746cbb9104814712e",
+      "output_size": [
+        385,
+        261
+      ],
+      "grid": null,
+      "cell_box": [
+        192,
+        492,
+        577,
+        753
+      ],
+      "source_box": [
+        192,
+        492,
+        577,
+        753
+      ],
+      "source_rect": [
+        192,
+        492,
+        577,
+        753
+      ],
+      "trim_offset": [
+        0,
+        0
+      ],
+      "padding": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "anchor_px": [
+        193,
+        245
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 58,
+      "trim_applied": 0,
+      "crop_bbox": [
+        16,
+        16,
+        369,
+        245
+      ],
+      "padded_crop_bbox": [
+        0,
+        0,
+        385,
+        261
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 64588,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 5,
+      "label": "sprite-6",
+      "display_name": "sprite-6",
+      "status": "accepted",
+      "image": "sprite-6/prop.png",
+      "sha256": "d5fc485821d7bd96dbbd330ff79bcbd9d79763df30cedf649c3927a7405fbb2c",
+      "output_size": [
+        766,
+        153
+      ],
+      "grid": null,
+      "cell_box": [
+        769,
+        553,
+        1535,
+        706
+      ],
+      "source_box": [
+        769,
+        553,
+        1535,
+        706
+      ],
+      "source_rect": [
+        769,
+        553,
+        1535,
+        706
+      ],
+      "trim_offset": [
+        0,
+        0
+      ],
+      "padding": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "anchor_px": [
+        383,
+        137
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 67,
+      "trim_applied": 0,
+      "crop_bbox": [
+        16,
+        16,
+        750,
+        137
+      ],
+      "padded_crop_bbox": [
+        0,
+        0,
+        766,
+        153
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 81779,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 6,
+      "label": "sprite-7",
+      "display_name": "sprite-7",
+      "status": "accepted",
+      "image": "sprite-7/prop.png",
+      "sha256": "46c61531f708b9ca5e28868278e34cffe50cd096fdccc4e02ec92fe4b7ed8812",
+      "output_size": [
+        614,
+        257
+      ],
+      "grid": null,
+      "cell_box": [
+        77,
+        746,
+        691,
+        1003
+      ],
+      "source_box": [
+        77,
+        746,
+        691,
+        1003
+      ],
+      "source_rect": [
+        77,
+        746,
+        691,
+        1003
+      ],
+      "trim_offset": [
+        0,
+        0
+      ],
+      "padding": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "anchor_px": [
+        307,
+        241
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 90,
+      "trim_applied": 0,
+      "crop_bbox": [
+        16,
+        16,
+        598,
+        241
+      ],
+      "padded_crop_bbox": [
+        0,
+        0,
+        614,
+        257
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 118499,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 7,
+      "label": "sprite-8",
+      "display_name": "sprite-8",
+      "status": "accepted",
+      "image": "sprite-8/prop.png",
+      "sha256": "6971c2d9da7db51e844f556dad15ff22e115332c0dda465b045bf704bdc583ab",
+      "output_size": [
+        617,
+        257
+      ],
+      "grid": null,
+      "cell_box": [
+        844,
+        741,
+        1461,
+        998
+      ],
+      "source_box": [
+        844,
+        741,
+        1461,
+        998
+      ],
+      "source_rect": [
+        844,
+        741,
+        1461,
+        998
+      ],
+      "trim_offset": [
+        0,
+        0
+      ],
+      "padding": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "anchor_px": [
+        308,
+        241
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 91,
+      "trim_applied": 0,
+      "crop_bbox": [
+        16,
+        16,
+        601,
+        241
+      ],
+      "padded_crop_bbox": [
+        0,
+        0,
+        617,
+        257
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 122241,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    }
+  ],
+  "rejected": [],
+  "edge_touch_props": [],
+  "warnings": [],
+  "qa": {
+    "status": "pass",
+    "method": "legacy #FF00FF key (100/150) and edge despill radius 3; alpha hygiene both; 8-connected components (all); checks measured on the published pixels",
+    "notProven": [
+      "that each label names the art in its cell or box",
+      "that a prop is complete: clipping is detected only where art meets the cell edge",
+      "keyed-edge quality beyond the edge fringe count",
+      "that anchors and suggested footprints match gameplay contact (both are measured from alpha)",
+      "runtime placement, collision or occlusion"
+    ],
+    "checks": [
+      {
+        "id": "accepted",
+        "status": "pass",
+        "value": 8,
+        "threshold": ">= 1"
+      },
+      {
+        "id": "edge_touch",
+        "status": "pass",
+        "value": [],
+        "threshold": 0
+      },
+      {
+        "id": "dropped_area",
+        "status": "pass",
+        "value": {},
+        "threshold": 0.01
+      },
+      {
+        "id": "strategy_aspect",
+        "status": "skipped",
+        "value": null,
+        "threshold": 1.6
+      },
+      {
+        "id": "edge_fringe",
+        "status": "pass",
+        "value": 0.0,
+        "threshold": 0.02
+      },
+      {
+        "id": "auto_box_unowned",
+        "status": "pass",
+        "value": 0,
+        "threshold": 0
+      }
+    ],
+    "inputs": [
+      {
+        "path": "../raw-01.png",
+        "sha256": "88192e19f1a8269ae54d1c2e05ae8761f0293823cc8cb3298fdff735999c4dc3",
+        "bytes": 2001880
+      }
+    ],
+    "outputs": [
+      {
+        "path": "sprite-1/prop.png",
+        "sha256": "9b399a5e4fa943bc835aab93366abf38aa3027ce847f5cc958153df066807cb1",
+        "bytes": 149678
+      },
+      {
+        "path": "sprite-2/prop.png",
+        "sha256": "6b531ab5d02a6dc7430efdcdc96d1d5f64c586bf58bb0b897ca23eb77162a115",
+        "bytes": 143724
+      },
+      {
+        "path": "sprite-3/prop.png",
+        "sha256": "1c311374fe74e2e9e99c12fda398d18943b615f4820ed690db1c52a2ceaeaf33",
+        "bytes": 205914
+      },
+      {
+        "path": "sprite-4/prop.png",
+        "sha256": "b4dbf8c525c7be2fffe4b5280afd17e150b575aa3de4bf07e1d39bce4c297a95",
+        "bytes": 89074
+      },
+      {
+        "path": "sprite-5/prop.png",
+        "sha256": "836f1b3615530d62d13a357d41d838d09e9fa930bf14559746cbb9104814712e",
+        "bytes": 151390
+      },
+      {
+        "path": "sprite-6/prop.png",
+        "sha256": "d5fc485821d7bd96dbbd330ff79bcbd9d79763df30cedf649c3927a7405fbb2c",
+        "bytes": 174101
+      },
+      {
+        "path": "sprite-7/prop.png",
+        "sha256": "46c61531f708b9ca5e28868278e34cffe50cd096fdccc4e02ec92fe4b7ed8812",
+        "bytes": 236002
+      },
+      {
+        "path": "sprite-8/prop.png",
+        "sha256": "6971c2d9da7db51e844f556dad15ff22e115332c0dda465b045bf704bdc583ab",
+        "bytes": 211279
+      },
+      {
+        "path": "auto-boxes.json",
+        "sha256": "7cd780d039fa10a303ed61a3a629b9f08ca225a20689bf69988519e2f37e526a",
+        "bytes": 1071
+      }
+    ],
+    "tool": {
+      "name": "extract_prop_pack",
+      "version": "0.4.0"
+    }
+  }
+}

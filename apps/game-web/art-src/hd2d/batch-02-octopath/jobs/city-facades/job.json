@@ -1,0 +1,39 @@
+{
+  "id": "city-facades",
+  "kit": "city",
+  "rows": 2,
+  "cols": 2,
+  "refs": [
+    "/Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level3_QTTP/level3_QTTP_010.png",
+    "/Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level3_QTTP/level3_QTTP_017.png",
+    "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/city_square.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+  ],
+  "prompt": "Use case: modular game architecture. FOUR completely separate upright building-front modules, exactly TWO ROWS x TWO COLUMNS with wide empty gutters, HD-2D Octopath Traveler inspired pixel art. Top-left pale weathered limestone guild facade with arched central OPEN doorway, two square side windows, small balcony, NO words/emblems, flat parapet. Top-right warm plaster and timber shopfront with arched OPEN doorway, two small bay windows and modest terracotta tile pitched roof. Bottom-left old gray limestone artisan facade with timber lintels, rectangular OPEN doorway and shuttered upper windows, shallow dark slate roof. Bottom-right cream plaster townhouse facade with curved timber framing, round OPEN doorway and two slim terracotta turret roofs, derived from reference2. Complete facades including outer walls and roof outline, no cut-off building pieces. Reference1 carved limestone guild identity and reference2 ochre/timber turret shop, map3 full context. Last2 pet pixel shading compatibility only. All four roughly similar scale, intended body height500pixels. Front upright billboard view24degrees downward with only slight top surfaces. Restrained warm limestone, weathered umber, dusty terracotta, gray slate, dark blue-gray cavities, subtle warm upperleft key. Crisp stepped PIXEL ART,3-4 broad clustered tones/material, no smooth illustration rendering, no tiny noise. Solid flat #FF00FF background with clear gutters and margin on every side. Doorway openings are ALSO solid magenta so engine can insert separate doors. No interiors, people, plants, signs, letters, numbers, crests, attached floors, ground shadows, bloom, fog, scenery, perspective streets or composed scene.",
+  "source_card": "QTTP010 half guild stone facade, QTTP017 half turreted shop and city_square complete silhouettes. Four standalone architectural modules with door apertures for later interactive doors; no baked scene.",
+  "assets": [
+    {
+      "id": "city-facade-guild",
+      "height": 500,
+      "category": "backdrop_mid"
+    },
+    {
+      "id": "city-facade-shop",
+      "height": 500,
+      "category": "backdrop_mid"
+    },
+    {
+      "id": "city-facade-artisan",
+      "height": 500,
+      "category": "backdrop_mid"
+    },
+    {
+      "id": "city-facade-townhouse",
+      "height": 500,
+      "category": "backdrop_mid"
+    }
+  ],
+  "boxes_file": "measured-boxes.json",
+  "extracted_dir": "extracted-measured"
+}

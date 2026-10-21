@@ -1,0 +1,167 @@
+{
+  "status": "pass",
+  "method": "forge_palette.build_palette (weighted k-means++ in OKLab over unique colours, reserved colours fixed, coverage skipping) then forge_palette.fit_report of every input: OKLab dE of each pixel with alpha >= the threshold to its nearest palette colour",
+  "notProven": [
+    "Visual quality of the palette: look at swatches.png and an applied frame.",
+    "Colours of pixels below the alpha threshold were not sampled or measured.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "palette_colors",
+      "status": "pass",
+      "value": 48,
+      "threshold": 48
+    },
+    {
+      "id": "inputs_without_samples",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0,
+      "files": []
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.157056,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../palette-inputs/farm-barn.png",
+      "sha256": "1e50141c1c2fd47f7fb5392700554a7fdff06d3af9260713eaf355bbb37737f3",
+      "bytes": 343040
+    },
+    {
+      "path": "../palette-inputs/farm-flowers-02.png",
+      "sha256": "d61229feca582f58a32c0d6f90841f465c4c7fe715724bc925905b8a0dcf4409",
+      "bytes": 24449
+    },
+    {
+      "path": "../palette-inputs/farm-flowers-03.png",
+      "sha256": "5eed4676682b9a9fe92bee4571ee2990c21078bc681151f30b39641f1dbb43e4",
+      "bytes": 26036
+    },
+    {
+      "path": "../palette-inputs/farm-hay-shed.png",
+      "sha256": "eb45f70cfac27da1b79c33f56824e14bc498143b075e3b7738055d4d20673298",
+      "bytes": 224007
+    },
+    {
+      "path": "../palette-inputs/farm-stable.png",
+      "sha256": "18a7dfe3a57ca48d838f65c20c489dc67eae10e87f227582de819d3abee03a51",
+      "bytes": 226190
+    },
+    {
+      "path": "../palette-inputs/farm-windmill-body.png",
+      "sha256": "78eedff04d7945b3d4a46ada1424674c3d9b6ac43300b9f66b633c9c9e1cd2f8",
+      "bytes": 246359
+    }
+  ],
+  "outputs": [
+    {
+      "path": "palette.json",
+      "sha256": "e5b13a65cf16dc9932c88559c6b7a2fad5109816fc9f495c738784d05a3d9575",
+      "bytes": 1924
+    },
+    {
+      "path": "palette.gpl",
+      "sha256": "3aa1ba1377ac09c626b7607af4da81b7d665fd6ccb5c19dbbe9c68803d6b895c",
+      "bytes": 1020
+    },
+    {
+      "path": "palette.hex",
+      "sha256": "693dd62a6b775d349434836a43c3d3be52a5daa72997a7748b37048d5a5ffb99",
+      "bytes": 336
+    },
+    {
+      "path": "swatches.png",
+      "sha256": "ebf5bb9d3062bfac06a909495684a8fea27cf4ac29296d18535ea6d9361c9dcb",
+      "bytes": 692
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "palette": {
+    "colors": 48,
+    "reserved": 0,
+    "transparent_index": 255,
+    "seed": 0
+  },
+  "fit": {
+    "../palette-inputs/farm-barn.png": {
+      "measured_px": 154150,
+      "alpha_threshold": 128,
+      "off_palette_px": 154102,
+      "partial_alpha_px": 0,
+      "colors": 93752,
+      "palette_colors_used": 45,
+      "mean_delta_e": 0.020557,
+      "p95_delta_e": 0.03676,
+      "max_delta_e": 0.157056
+    },
+    "../palette-inputs/farm-flowers-02.png": {
+      "measured_px": 6921,
+      "alpha_threshold": 128,
+      "off_palette_px": 6916,
+      "partial_alpha_px": 0,
+      "colors": 6749,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.031083,
+      "p95_delta_e": 0.061794,
+      "max_delta_e": 0.141625
+    },
+    "../palette-inputs/farm-flowers-03.png": {
+      "measured_px": 7751,
+      "alpha_threshold": 128,
+      "off_palette_px": 7750,
+      "partial_alpha_px": 0,
+      "colors": 7635,
+      "palette_colors_used": 44,
+      "mean_delta_e": 0.028389,
+      "p95_delta_e": 0.050999,
+      "max_delta_e": 0.135965
+    },
+    "../palette-inputs/farm-hay-shed.png": {
+      "measured_px": 86473,
+      "alpha_threshold": 128,
+      "off_palette_px": 86445,
+      "partial_alpha_px": 0,
+      "colors": 64716,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.020403,
+      "p95_delta_e": 0.035587,
+      "max_delta_e": 0.146236
+    },
+    "../palette-inputs/farm-stable.png": {
+      "measured_px": 103253,
+      "alpha_threshold": 128,
+      "off_palette_px": 103193,
+      "partial_alpha_px": 0,
+      "colors": 63778,
+      "palette_colors_used": 46,
+      "mean_delta_e": 0.019791,
+      "p95_delta_e": 0.034211,
+      "max_delta_e": 0.105961
+    },
+    "../palette-inputs/farm-windmill-body.png": {
+      "measured_px": 112866,
+      "alpha_threshold": 128,
+      "off_palette_px": 112843,
+      "partial_alpha_px": 0,
+      "colors": 79362,
+      "palette_colors_used": 45,
+      "mean_delta_e": 0.023891,
+      "p95_delta_e": 0.039845,
+      "max_delta_e": 0.080773
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.157056,
+    "worst_p95_delta_e": 0.061794,
+    "off_palette_px": 471249
+  }
+}

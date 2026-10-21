@@ -1,0 +1,53 @@
+{
+  "id": "farm-utility",
+  "kit": "farm",
+  "rows": 3,
+  "cols": 3,
+  "refs": [
+    "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/city_farm.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+  ],
+  "prompt": "Use case: modular farm props for Octopath Traveler inspired HD-2D RPG, PIXEL ART. NINE independent isolated objects, exactly THREE ROWS x THREE COLUMNS, equal generous cells with HUGE magenta gutters. TOP: short rustic wooden fence rail SECTION with two horizontal rails and NO endposts; single freestanding rough fence POST; low loose hay pile. MIDDLE: second tied rectangular straw bale; long low wooden animal feeding trough with a little dry hay inside; empty woven harvest basket with handle. BOTTOM: complete small orchard apple tree with modest reddish apples, full visible trunk, NO ground; simple straw scarecrow with patched bluegray shirt and hat on wooden crossbar; clump of meadow wildflowers cream/mutedpink with olive leaves. Original farm reference defines rustic curved wood, straw and orchard setting; pet references pixel shading/outline compatibility only. Natural mature desaturated ochre straw, umber wood, muted olive leaves, cool blue-gray shadows, restrained red apples. Crisp broad clustered pixels,3-4tones/material, hue-tinted dark outline, subtle upperleft warm key, no tiny texture noise or smooth vector. Upright front billboard24degrees down, all whole objects centered in middle55percent of their own cell, no overlapping or touching cells or image edge. Background exact pure flat #FF00FF including open gaps. NO floors, terrain patches, cast ground shadows, glow, fog, text, signs, people, animals or scenery. Rail section and post are SEPARATE pieces for owner to assemble fences.",
+  "source_card": "Original Dien Trang Luc Da map: rustic split-rail fences, thatch barn, circular feeder, foliage. Farm kit wooden fence pieces, straw, basket/trough, orchard/scarecrow and field flower prescribed by master brief.",
+  "assets": [
+    {
+      "id": "farm-fence-rail",
+      "height": 100
+    },
+    {
+      "id": "farm-fence-post",
+      "height": 140
+    },
+    {
+      "id": "farm-hay-loose",
+      "height": 120
+    },
+    {
+      "id": "farm-hay-bale",
+      "height": 130
+    },
+    {
+      "id": "farm-trough",
+      "height": 110
+    },
+    {
+      "id": "farm-basket",
+      "height": 130
+    },
+    {
+      "id": "farm-fruit-tree",
+      "height": 340,
+      "sway": true
+    },
+    {
+      "id": "farm-scarecrow",
+      "height": 250
+    },
+    {
+      "id": "farm-flowers-01",
+      "height": 95,
+      "sway": true
+    }
+  ]
+}

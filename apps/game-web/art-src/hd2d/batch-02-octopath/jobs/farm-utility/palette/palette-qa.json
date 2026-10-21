@@ -1,0 +1,215 @@
+{
+  "status": "pass",
+  "method": "forge_palette.build_palette (weighted k-means++ in OKLab over unique colours, reserved colours fixed, coverage skipping) then forge_palette.fit_report of every input: OKLab dE of each pixel with alpha >= the threshold to its nearest palette colour",
+  "notProven": [
+    "Visual quality of the palette: look at swatches.png and an applied frame.",
+    "Colours of pixels below the alpha threshold were not sampled or measured.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "palette_colors",
+      "status": "pass",
+      "value": 48,
+      "threshold": 48
+    },
+    {
+      "id": "inputs_without_samples",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0,
+      "files": []
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.121961,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../palette-inputs/farm-basket.png",
+      "sha256": "852461289f2a4d91d9e9e517ffcdd7a602af08095b0357731d1d3bc7953d66ad",
+      "bytes": 33114
+    },
+    {
+      "path": "../palette-inputs/farm-fence-post.png",
+      "sha256": "f62b0d342119931ad19005c6a497c595c18b1e5f060c8adf2878a77767b2162f",
+      "bytes": 15943
+    },
+    {
+      "path": "../palette-inputs/farm-fence-rail.png",
+      "sha256": "eb3cd43bb0fd78ed518d0c72cbddd92de28a03b9e1ea4332e737b1a23d9b9be1",
+      "bytes": 28633
+    },
+    {
+      "path": "../palette-inputs/farm-flowers-01.png",
+      "sha256": "99ab82919b75478e2efe687e54f7438ed7f0faacac9b73f4f0a17bb4082a1afe",
+      "bytes": 26577
+    },
+    {
+      "path": "../palette-inputs/farm-fruit-tree.png",
+      "sha256": "83f3177e4fc5e3322c5004ddad8ffcf9dae96b58b448d86086654edca6426fbe",
+      "bytes": 163181
+    },
+    {
+      "path": "../palette-inputs/farm-hay-bale.png",
+      "sha256": "d4e9292ae6ee3a752653016c3847fadb4bb22ec00734bd9317dc37d14a05bcb7",
+      "bytes": 53360
+    },
+    {
+      "path": "../palette-inputs/farm-hay-loose.png",
+      "sha256": "827ddde423cdcd520498bf37eca61409ac2d8eb65c5cc9d275c3164c68cebaf4",
+      "bytes": 53903
+    },
+    {
+      "path": "../palette-inputs/farm-scarecrow.png",
+      "sha256": "2604afd1dae9e3f12946582adcfa653f7c050ba44691ee133f97d5f73e04c0e9",
+      "bytes": 65754
+    },
+    {
+      "path": "../palette-inputs/farm-trough.png",
+      "sha256": "43380784cff36518838e023a7bb50e29c8ef643a0175122bb78fb54db9b33c23",
+      "bytes": 37909
+    }
+  ],
+  "outputs": [
+    {
+      "path": "palette.json",
+      "sha256": "16ae6fc402d4b7ede427f97519565596b4e2f74478bb89d073fdaeca6d43e7b7",
+      "bytes": 1924
+    },
+    {
+      "path": "palette.gpl",
+      "sha256": "356d83ebe9c6406eddea8168575ac07c0ce8cb5513304cd4b7c3c96c63f35f89",
+      "bytes": 1020
+    },
+    {
+      "path": "palette.hex",
+      "sha256": "d3639157496a8e098e1143ce685dbc58a63b85803b1608a476b77cafd4663a1f",
+      "bytes": 336
+    },
+    {
+      "path": "swatches.png",
+      "sha256": "2297036424e3a795e46b3ee8e64eae2380af6418fe19042298e24acd47b56705",
+      "bytes": 695
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "palette": {
+    "colors": 48,
+    "reserved": 0,
+    "transparent_index": 255,
+    "seed": 0
+  },
+  "fit": {
+    "../palette-inputs/farm-basket.png": {
+      "measured_px": 12191,
+      "alpha_threshold": 128,
+      "off_palette_px": 12183,
+      "partial_alpha_px": 0,
+      "colors": 10296,
+      "palette_colors_used": 30,
+      "mean_delta_e": 0.015825,
+      "p95_delta_e": 0.029239,
+      "max_delta_e": 0.084191
+    },
+    "../palette-inputs/farm-fence-post.png": {
+      "measured_px": 6485,
+      "alpha_threshold": 128,
+      "off_palette_px": 6481,
+      "partial_alpha_px": 0,
+      "colors": 5664,
+      "palette_colors_used": 31,
+      "mean_delta_e": 0.017731,
+      "p95_delta_e": 0.034373,
+      "max_delta_e": 0.109304
+    },
+    "../palette-inputs/farm-fence-rail.png": {
+      "measured_px": 11342,
+      "alpha_threshold": 128,
+      "off_palette_px": 11332,
+      "partial_alpha_px": 0,
+      "colors": 9564,
+      "palette_colors_used": 30,
+      "mean_delta_e": 0.017314,
+      "p95_delta_e": 0.034051,
+      "max_delta_e": 0.067205
+    },
+    "../palette-inputs/farm-flowers-01.png": {
+      "measured_px": 8065,
+      "alpha_threshold": 128,
+      "off_palette_px": 8063,
+      "partial_alpha_px": 0,
+      "colors": 7694,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.027293,
+      "p95_delta_e": 0.051784,
+      "max_delta_e": 0.121961
+    },
+    "../palette-inputs/farm-fruit-tree.png": {
+      "measured_px": 66919,
+      "alpha_threshold": 128,
+      "off_palette_px": 66885,
+      "partial_alpha_px": 0,
+      "colors": 52685,
+      "palette_colors_used": 45,
+      "mean_delta_e": 0.024175,
+      "p95_delta_e": 0.046572,
+      "max_delta_e": 0.107958
+    },
+    "../palette-inputs/farm-hay-bale.png": {
+      "measured_px": 19255,
+      "alpha_threshold": 128,
+      "off_palette_px": 19247,
+      "partial_alpha_px": 0,
+      "colors": 16609,
+      "palette_colors_used": 37,
+      "mean_delta_e": 0.017141,
+      "p95_delta_e": 0.029729,
+      "max_delta_e": 0.096024
+    },
+    "../palette-inputs/farm-hay-loose.png": {
+      "measured_px": 19596,
+      "alpha_threshold": 128,
+      "off_palette_px": 19594,
+      "partial_alpha_px": 0,
+      "colors": 17030,
+      "palette_colors_used": 39,
+      "mean_delta_e": 0.018764,
+      "p95_delta_e": 0.033686,
+      "max_delta_e": 0.088765
+    },
+    "../palette-inputs/farm-scarecrow.png": {
+      "measured_px": 24155,
+      "alpha_threshold": 128,
+      "off_palette_px": 24137,
+      "partial_alpha_px": 0,
+      "colors": 20604,
+      "palette_colors_used": 40,
+      "mean_delta_e": 0.023141,
+      "p95_delta_e": 0.051168,
+      "max_delta_e": 0.098562
+    },
+    "../palette-inputs/farm-trough.png": {
+      "measured_px": 14422,
+      "alpha_threshold": 128,
+      "off_palette_px": 14413,
+      "partial_alpha_px": 0,
+      "colors": 10967,
+      "palette_colors_used": 32,
+      "mean_delta_e": 0.01726,
+      "p95_delta_e": 0.033606,
+      "max_delta_e": 0.081239
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.121961,
+    "worst_p95_delta_e": 0.051784,
+    "off_palette_px": 182335
+  }
+}

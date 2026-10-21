@@ -1,0 +1,167 @@
+{
+  "status": "pass",
+  "method": "forge_palette.build_palette (weighted k-means++ in OKLab over unique colours, reserved colours fixed, coverage skipping) then forge_palette.fit_report of every input: OKLab dE of each pixel with alpha >= the threshold to its nearest palette colour",
+  "notProven": [
+    "Visual quality of the palette: look at swatches.png and an applied frame.",
+    "Colours of pixels below the alpha threshold were not sampled or measured.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "palette_colors",
+      "status": "pass",
+      "value": 48,
+      "threshold": 48
+    },
+    {
+      "id": "inputs_without_samples",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0,
+      "files": []
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.173043,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../palette-inputs/palace-chandelier.png",
+      "sha256": "442279975000fde5fab4260bb58cd132654be061dd6959ef2e66b64e2274728d",
+      "bytes": 34872
+    },
+    {
+      "path": "../palette-inputs/palace-curtain.png",
+      "sha256": "9f25bbc4a9778e5e8805b66bea732c5c98d0bc1c1e09f698529cf5f43747aefc",
+      "bytes": 108241
+    },
+    {
+      "path": "../palette-inputs/palace-gate.png",
+      "sha256": "fec8a0a3316852dda3092c6b544bd4514a2aad45f0dc238824852c5d64dab3a8",
+      "bytes": 323452
+    },
+    {
+      "path": "../palette-inputs/palace-throne.png",
+      "sha256": "74173a0c2c589fae8ee99cf8a3ff43045e5409c9e2c35d38f3c4b44176c98d60",
+      "bytes": 73900
+    },
+    {
+      "path": "../palette-inputs/palace-tower.png",
+      "sha256": "5dd90049136f99de05f9b6b7433802584ba90ddefeca99a0bf8e02f65e9fb42a",
+      "bytes": 157249
+    },
+    {
+      "path": "../palette-inputs/palace-wall-section.png",
+      "sha256": "3ef1f79ce87aba7987520289e8b7a009c1046afeea9d4772cdb9051b1877e106",
+      "bytes": 246147
+    }
+  ],
+  "outputs": [
+    {
+      "path": "palette.json",
+      "sha256": "ddc34342e63cf50b23d0e7a2bc6598004302bb0cf1e39093882eb4f074104a34",
+      "bytes": 1924
+    },
+    {
+      "path": "palette.gpl",
+      "sha256": "e583edb6d177f37622368db90cce876ba133f9b6672e713871951a476acc5167",
+      "bytes": 1020
+    },
+    {
+      "path": "palette.hex",
+      "sha256": "721cb6a9003665a6879ac850d52fdc576315b00d2024340c5b3dcfaae66e0855",
+      "bytes": 336
+    },
+    {
+      "path": "swatches.png",
+      "sha256": "3bc3d9ad7c379cf780d469e2b466e8f227291cedb767b8672542dacc1115c6f0",
+      "bytes": 695
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "palette": {
+    "colors": 48,
+    "reserved": 0,
+    "transparent_index": 255,
+    "seed": 0
+  },
+  "fit": {
+    "../palette-inputs/palace-chandelier.png": {
+      "measured_px": 11431,
+      "alpha_threshold": 128,
+      "off_palette_px": 11428,
+      "partial_alpha_px": 0,
+      "colors": 10164,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.021845,
+      "p95_delta_e": 0.03908,
+      "max_delta_e": 0.173043
+    },
+    "../palette-inputs/palace-curtain.png": {
+      "measured_px": 44636,
+      "alpha_threshold": 128,
+      "off_palette_px": 44633,
+      "partial_alpha_px": 0,
+      "colors": 30073,
+      "palette_colors_used": 45,
+      "mean_delta_e": 0.01775,
+      "p95_delta_e": 0.032876,
+      "max_delta_e": 0.082702
+    },
+    "../palette-inputs/palace-gate.png": {
+      "measured_px": 237173,
+      "alpha_threshold": 128,
+      "off_palette_px": 237123,
+      "partial_alpha_px": 0,
+      "colors": 85712,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.020199,
+      "p95_delta_e": 0.035997,
+      "max_delta_e": 0.139318
+    },
+    "../palette-inputs/palace-throne.png": {
+      "measured_px": 28329,
+      "alpha_threshold": 128,
+      "off_palette_px": 28314,
+      "partial_alpha_px": 0,
+      "colors": 23585,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.019009,
+      "p95_delta_e": 0.03494,
+      "max_delta_e": 0.091417
+    },
+    "../palette-inputs/palace-tower.png": {
+      "measured_px": 112883,
+      "alpha_threshold": 128,
+      "off_palette_px": 112841,
+      "partial_alpha_px": 0,
+      "colors": 45138,
+      "palette_colors_used": 46,
+      "mean_delta_e": 0.019085,
+      "p95_delta_e": 0.035519,
+      "max_delta_e": 0.09095
+    },
+    "../palette-inputs/palace-wall-section.png": {
+      "measured_px": 153452,
+      "alpha_threshold": 128,
+      "off_palette_px": 153401,
+      "partial_alpha_px": 0,
+      "colors": 63054,
+      "palette_colors_used": 40,
+      "mean_delta_e": 0.019072,
+      "p95_delta_e": 0.036948,
+      "max_delta_e": 0.089793
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.173043,
+    "worst_p95_delta_e": 0.03908,
+    "off_palette_px": 587740
+  }
+}

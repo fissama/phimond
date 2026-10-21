@@ -1,0 +1,792 @@
+{
+  "schema": "generate2dmap.prop_pack.v2",
+  "tool": {
+    "name": "extract_prop_pack",
+    "version": "0.4.0"
+  },
+  "input": "../raw-01.png",
+  "source_size": [
+    1536,
+    1024
+  ],
+  "source_sha256": "506907e89c6e6bae270935bed0043396e7c6da8c6e208215d238bd7ea4693104",
+  "source_mode": "RGB",
+  "layout_mode": "explicit_boxes",
+  "boxes_file": "../measured-boxes.json",
+  "labels_file": null,
+  "background_mode": "chroma_key",
+  "art_source": "host_image",
+  "rows": null,
+  "cols": null,
+  "threshold": 100,
+  "edge_threshold": 150,
+  "despill_radius": 3,
+  "despill": {
+    "mode": "edge",
+    "applied": "edge",
+    "radius": 3,
+    "margin": 12,
+    "changed_px": 10643
+  },
+  "hygiene": {
+    "mode": "both",
+    "floor": 4,
+    "solid_min": 32,
+    "attach_radius": 2,
+    "connectivity": 8,
+    "floor_px": 0,
+    "detached_px": 0,
+    "detached_components": 0,
+    "max_removed_alpha": 0
+  },
+  "alpha_floor": 4,
+  "alpha_floor_pixels_removed": 0,
+  "trim_border": 0,
+  "edge_clean_depth": 0,
+  "component_mode": "all",
+  "component_padding": 16,
+  "min_component_area": "auto",
+  "edge_touch_margin": 0,
+  "geometry": {
+    "connectivity": 8,
+    "alpha_geometry_threshold": 16,
+    "anchor_mode": "stance",
+    "support_band_fraction": 0.25,
+    "anchor_rounding": "whole pixels, half-up",
+    "grid_rounding": null,
+    "keep_canvas": false,
+    "world_scale": null
+  },
+  "accepted": [
+    {
+      "index": 0,
+      "label": "hall-bookshelf",
+      "display_name": "hall-bookshelf",
+      "status": "accepted",
+      "image": "hall-bookshelf/prop.png",
+      "sha256": "1d3c5bae6064a0fd032ab772335bcb5bf6bbec8299ca20e5383f016fe06b3376",
+      "output_size": [
+        364,
+        324
+      ],
+      "grid": null,
+      "cell_box": [
+        0,
+        0,
+        512,
+        370
+      ],
+      "source_box": [
+        0,
+        0,
+        512,
+        370
+      ],
+      "source_rect": [
+        96,
+        23,
+        460,
+        347
+      ],
+      "trim_offset": [
+        96,
+        23
+      ],
+      "padding": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "anchor_px": [
+        182,
+        308
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 100,
+      "trim_applied": 0,
+      "crop_bbox": [
+        112,
+        39,
+        444,
+        331
+      ],
+      "padded_crop_bbox": [
+        96,
+        23,
+        460,
+        347
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 75773,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 1,
+      "label": "hall-counter",
+      "display_name": "hall-counter",
+      "status": "accepted",
+      "image": "hall-counter/prop.png",
+      "sha256": "1aa2ac7e36e40f8fd935fe220e83e606d6038c441a1a71b72e0f102d53ceea35",
+      "output_size": [
+        499,
+        259
+      ],
+      "grid": null,
+      "cell_box": [
+        512,
+        0,
+        1024,
+        365
+      ],
+      "source_box": [
+        512,
+        0,
+        1024,
+        365
+      ],
+      "source_rect": [
+        524,
+        74,
+        1023,
+        333
+      ],
+      "trim_offset": [
+        12,
+        74
+      ],
+      "padding": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "anchor_px": [
+        249,
+        243
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 100,
+      "trim_applied": 0,
+      "crop_bbox": [
+        28,
+        90,
+        495,
+        317
+      ],
+      "padded_crop_bbox": [
+        12,
+        74,
+        511,
+        333
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 85972,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 2,
+      "label": "hall-quest-board",
+      "display_name": "hall-quest-board",
+      "status": "accepted",
+      "image": "hall-quest-board/prop.png",
+      "sha256": "490ca9e007f89f8e21a4090addb72c0a1f19bb3f54aa5a3d21e210d7fcd4cf5a",
+      "output_size": [
+        346,
+        337
+      ],
+      "grid": null,
+      "cell_box": [
+        1024,
+        0,
+        1536,
+        339
+      ],
+      "source_box": [
+        1024,
+        0,
+        1536,
+        339
+      ],
+      "source_rect": [
+        1096,
+        2,
+        1442,
+        339
+      ],
+      "trim_offset": [
+        72,
+        2
+      ],
+      "padding": [
+        16,
+        16,
+        16,
+        1
+      ],
+      "anchor_px": [
+        173,
+        336
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 99,
+      "trim_applied": 0,
+      "crop_bbox": [
+        88,
+        18,
+        402,
+        338
+      ],
+      "padded_crop_bbox": [
+        72,
+        2,
+        418,
+        339
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 64557,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 3,
+      "label": "pet-nest-straw",
+      "display_name": "pet-nest-straw",
+      "status": "accepted",
+      "image": "pet-nest-straw/prop.png",
+      "sha256": "21746af617d6c726d27d90239c3c8d36b0a2a766339211a43a49d873759b27d3",
+      "output_size": [
+        340,
+        194
+      ],
+      "grid": null,
+      "cell_box": [
+        0,
+        370,
+        512,
+        590
+      ],
+      "source_box": [
+        0,
+        370,
+        512,
+        590
+      ],
+      "source_rect": [
+        105,
+        396,
+        445,
+        590
+      ],
+      "trim_offset": [
+        105,
+        26
+      ],
+      "padding": [
+        16,
+        16,
+        16,
+        8
+      ],
+      "anchor_px": [
+        169,
+        186
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 64,
+      "trim_applied": 0,
+      "crop_bbox": [
+        121,
+        42,
+        429,
+        212
+      ],
+      "padded_crop_bbox": [
+        105,
+        26,
+        445,
+        220
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 42983,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 4,
+      "label": "pet-nest-blanket",
+      "display_name": "pet-nest-blanket",
+      "status": "accepted",
+      "image": "pet-nest-blanket/prop.png",
+      "sha256": "5c8fabfc7337e7267034ad960dde553d122bfea3b85b80bfdffb61b60d0aa51b",
+      "output_size": [
+        344,
+        195
+      ],
+      "grid": null,
+      "cell_box": [
+        512,
+        365,
+        1024,
+        591
+      ],
+      "source_box": [
+        512,
+        365,
+        1024,
+        591
+      ],
+      "source_rect": [
+        585,
+        396,
+        929,
+        591
+      ],
+      "trim_offset": [
+        73,
+        31
+      ],
+      "padding": [
+        16,
+        16,
+        16,
+        9
+      ],
+      "anchor_px": [
+        174,
+        186
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 66,
+      "trim_applied": 0,
+      "crop_bbox": [
+        89,
+        47,
+        401,
+        217
+      ],
+      "padded_crop_bbox": [
+        73,
+        31,
+        417,
+        226
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 45154,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 5,
+      "label": "pet-nest-shelter",
+      "display_name": "pet-nest-shelter",
+      "status": "accepted",
+      "image": "pet-nest-shelter/prop.png",
+      "sha256": "2811d93a35009d25db1086b277c4d81ada44e2738c2f7311c6b3974d26dcf39b",
+      "output_size": [
+        360,
+        284
+      ],
+      "grid": null,
+      "cell_box": [
+        1024,
+        339,
+        1536,
+        633
+      ],
+      "source_box": [
+        1024,
+        339,
+        1536,
+        633
+      ],
+      "source_rect": [
+        1066,
+        339,
+        1426,
+        623
+      ],
+      "trim_offset": [
+        42,
+        0
+      ],
+      "padding": [
+        16,
+        2,
+        16,
+        16
+      ],
+      "anchor_px": [
+        186,
+        268
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 86,
+      "trim_applied": 0,
+      "crop_bbox": [
+        58,
+        2,
+        386,
+        268
+      ],
+      "padded_crop_bbox": [
+        42,
+        0,
+        402,
+        284
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 58393,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 6,
+      "label": "palace-column",
+      "display_name": "palace-column",
+      "status": "accepted",
+      "image": "palace-column/prop.png",
+      "sha256": "033fdb040719e60b32ae06f1757036dfac18ffe97fc9e54c5402214770c5031f",
+      "output_size": [
+        192,
+        424
+      ],
+      "grid": null,
+      "cell_box": [
+        0,
+        590,
+        512,
+        1024
+      ],
+      "source_box": [
+        0,
+        590,
+        512,
+        1024
+      ],
+      "source_rect": [
+        174,
+        590,
+        366,
+        1014
+      ],
+      "trim_offset": [
+        174,
+        0
+      ],
+      "padding": [
+        16,
+        10,
+        16,
+        16
+      ],
+      "anchor_px": [
+        96,
+        408
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 100,
+      "trim_applied": 0,
+      "crop_bbox": [
+        190,
+        10,
+        350,
+        408
+      ],
+      "padded_crop_bbox": [
+        174,
+        0,
+        366,
+        424
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 38349,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 7,
+      "label": "palace-guard-statue",
+      "display_name": "palace-guard-statue",
+      "status": "accepted",
+      "image": "palace-guard-statue/prop.png",
+      "sha256": "739ee03c476820343df75bd8e5ecd5ae8158a003ff0ec671a489cc3e06426ef3",
+      "output_size": [
+        239,
+        427
+      ],
+      "grid": null,
+      "cell_box": [
+        600,
+        591,
+        930,
+        1024
+      ],
+      "source_box": [
+        600,
+        591,
+        930,
+        1024
+      ],
+      "source_rect": [
+        624,
+        591,
+        863,
+        1018
+      ],
+      "trim_offset": [
+        24,
+        0
+      ],
+      "padding": [
+        16,
+        9,
+        16,
+        16
+      ],
+      "anchor_px": [
+        120,
+        411
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 82,
+      "trim_applied": 0,
+      "crop_bbox": [
+        40,
+        9,
+        247,
+        411
+      ],
+      "padded_crop_bbox": [
+        24,
+        0,
+        263,
+        427
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 51596,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 8,
+      "label": "city-roof-module",
+      "display_name": "city-roof-module",
+      "status": "accepted",
+      "image": "city-roof-module/prop.png",
+      "sha256": "a4c8b4c4e6a65c32402c276b1c814b5f61765e6e47b5b700fd6cf6faf710372b",
+      "output_size": [
+        530,
+        345
+      ],
+      "grid": null,
+      "cell_box": [
+        930,
+        633,
+        1536,
+        1024
+      ],
+      "source_box": [
+        930,
+        633,
+        1536,
+        1024
+      ],
+      "source_rect": [
+        957,
+        645,
+        1487,
+        990
+      ],
+      "trim_offset": [
+        27,
+        12
+      ],
+      "padding": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "anchor_px": [
+        244,
+        329
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 100,
+      "trim_applied": 0,
+      "crop_bbox": [
+        43,
+        28,
+        541,
+        341
+      ],
+      "padded_crop_bbox": [
+        27,
+        12,
+        557,
+        357
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 80295,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    }
+  ],
+  "rejected": [],
+  "edge_touch_props": [],
+  "warnings": [],
+  "qa": {
+    "status": "pass",
+    "method": "legacy #FF00FF key (100/150) and edge despill radius 3; alpha hygiene both; 8-connected components (all); checks measured on the published pixels",
+    "notProven": [
+      "that each label names the art in its cell or box",
+      "that a prop is complete: clipping is detected only where art meets the cell edge",
+      "keyed-edge quality beyond the edge fringe count",
+      "that anchors and suggested footprints match gameplay contact (both are measured from alpha)",
+      "runtime placement, collision or occlusion"
+    ],
+    "checks": [
+      {
+        "id": "accepted",
+        "status": "pass",
+        "value": 9,
+        "threshold": ">= 1"
+      },
+      {
+        "id": "edge_touch",
+        "status": "pass",
+        "value": [],
+        "threshold": 0
+      },
+      {
+        "id": "dropped_area",
+        "status": "pass",
+        "value": {},
+        "threshold": 0.01
+      },
+      {
+        "id": "strategy_aspect",
+        "status": "skipped",
+        "value": null,
+        "threshold": 1.6
+      },
+      {
+        "id": "edge_fringe",
+        "status": "pass",
+        "value": 0.0,
+        "threshold": 0.02
+      }
+    ],
+    "inputs": [
+      {
+        "path": "../raw-01.png",
+        "sha256": "506907e89c6e6bae270935bed0043396e7c6da8c6e208215d238bd7ea4693104",
+        "bytes": 1982893
+      },
+      {
+        "path": "../measured-boxes.json",
+        "sha256": "6e58094dfff1c206cb7499ae48eff450712032b7bfd3f9ff673d3e861b3944ab",
+        "bytes": 1245
+      }
+    ],
+    "outputs": [
+      {
+        "path": "hall-bookshelf/prop.png",
+        "sha256": "1d3c5bae6064a0fd032ab772335bcb5bf6bbec8299ca20e5383f016fe06b3376",
+        "bytes": 157992
+      },
+      {
+        "path": "hall-counter/prop.png",
+        "sha256": "1aa2ac7e36e40f8fd935fe220e83e606d6038c441a1a71b72e0f102d53ceea35",
+        "bytes": 187188
+      },
+      {
+        "path": "hall-quest-board/prop.png",
+        "sha256": "490ca9e007f89f8e21a4090addb72c0a1f19bb3f54aa5a3d21e210d7fcd4cf5a",
+        "bytes": 143184
+      },
+      {
+        "path": "pet-nest-straw/prop.png",
+        "sha256": "21746af617d6c726d27d90239c3c8d36b0a2a766339211a43a49d873759b27d3",
+        "bytes": 105975
+      },
+      {
+        "path": "pet-nest-blanket/prop.png",
+        "sha256": "5c8fabfc7337e7267034ad960dde553d122bfea3b85b80bfdffb61b60d0aa51b",
+        "bytes": 108974
+      },
+      {
+        "path": "pet-nest-shelter/prop.png",
+        "sha256": "2811d93a35009d25db1086b277c4d81ada44e2738c2f7311c6b3974d26dcf39b",
+        "bytes": 136446
+      },
+      {
+        "path": "palace-column/prop.png",
+        "sha256": "033fdb040719e60b32ae06f1757036dfac18ffe97fc9e54c5402214770c5031f",
+        "bytes": 96136
+      },
+      {
+        "path": "palace-guard-statue/prop.png",
+        "sha256": "739ee03c476820343df75bd8e5ecd5ae8158a003ff0ec671a489cc3e06426ef3",
+        "bytes": 136422
+      },
+      {
+        "path": "city-roof-module/prop.png",
+        "sha256": "a4c8b4c4e6a65c32402c276b1c814b5f61765e6e47b5b700fd6cf6faf710372b",
+        "bytes": 201809
+      }
+    ],
+    "tool": {
+      "name": "extract_prop_pack",
+      "version": "0.4.0"
+    }
+  }
+}

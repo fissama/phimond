@@ -1,0 +1,167 @@
+{
+  "status": "pass",
+  "method": "forge_palette.build_palette (weighted k-means++ in OKLab over unique colours, reserved colours fixed, coverage skipping) then forge_palette.fit_report of every input: OKLab dE of each pixel with alpha >= the threshold to its nearest palette colour",
+  "notProven": [
+    "Visual quality of the palette: look at swatches.png and an applied frame.",
+    "Colours of pixels below the alpha threshold were not sampled or measured.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "palette_colors",
+      "status": "pass",
+      "value": 48,
+      "threshold": 48
+    },
+    {
+      "id": "inputs_without_samples",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0,
+      "files": []
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.164438,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../palette-inputs/awning-blue.png",
+      "sha256": "8f9ae3f5b524be65cab4a3a143e21d3f35393129bcbd69672e6771ee72e4d523",
+      "bytes": 99323
+    },
+    {
+      "path": "../palette-inputs/awning-green.png",
+      "sha256": "fb63e22c51df8bb60041920290387cbcda2f321929aa13e07615be015ebd79ae",
+      "bytes": 98559
+    },
+    {
+      "path": "../palette-inputs/awning-red.png",
+      "sha256": "6a355bedfa2859abb848d8e631d99f89fb6d340693e90b31a315e762985b3c05",
+      "bytes": 98564
+    },
+    {
+      "path": "../palette-inputs/market-cloth.png",
+      "sha256": "4b4fd0fbc1b3313b6dd8b283a18375dc7b171de35b6386a86f49de007e0cba61",
+      "bytes": 69001
+    },
+    {
+      "path": "../palette-inputs/market-produce.png",
+      "sha256": "c126d2407049dc535fbf12d2375b62cb25e9158d5522888b116c2de94767ebc2",
+      "bytes": 80836
+    },
+    {
+      "path": "../palette-inputs/market-weapons.png",
+      "sha256": "d8e5e78833fcd1e435bdb762a1fc7701233817ab8294342f386cf543ace8ab6a",
+      "bytes": 74798
+    }
+  ],
+  "outputs": [
+    {
+      "path": "palette.json",
+      "sha256": "2b8a2d46ae7fb80da79f2d63ff96d2e4d4eb6957457b296d536c9f6003caea59",
+      "bytes": 1924
+    },
+    {
+      "path": "palette.gpl",
+      "sha256": "1b2816fbc5cadd4c022801eb3f5591fa400200c51a9912aa8c30def667854ad2",
+      "bytes": 1020
+    },
+    {
+      "path": "palette.hex",
+      "sha256": "4e94ad097e0d95dee266a62d3ef590415458344e71988864c7335a4d49c02f96",
+      "bytes": 336
+    },
+    {
+      "path": "swatches.png",
+      "sha256": "c11eed2e0eb26cd7d6ae751deec04f8309b6175d9be0f6725ba7eb3649ef3b51",
+      "bytes": 698
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "palette": {
+    "colors": 48,
+    "reserved": 0,
+    "transparent_index": 255,
+    "seed": 0
+  },
+  "fit": {
+    "../palette-inputs/awning-blue.png": {
+      "measured_px": 43705,
+      "alpha_threshold": 128,
+      "off_palette_px": 43655,
+      "partial_alpha_px": 0,
+      "colors": 25187,
+      "palette_colors_used": 41,
+      "mean_delta_e": 0.017586,
+      "p95_delta_e": 0.034879,
+      "max_delta_e": 0.131455
+    },
+    "../palette-inputs/awning-green.png": {
+      "measured_px": 43750,
+      "alpha_threshold": 128,
+      "off_palette_px": 43734,
+      "partial_alpha_px": 0,
+      "colors": 28028,
+      "palette_colors_used": 40,
+      "mean_delta_e": 0.019481,
+      "p95_delta_e": 0.038691,
+      "max_delta_e": 0.097753
+    },
+    "../palette-inputs/awning-red.png": {
+      "measured_px": 43723,
+      "alpha_threshold": 128,
+      "off_palette_px": 43657,
+      "partial_alpha_px": 0,
+      "colors": 28230,
+      "palette_colors_used": 39,
+      "mean_delta_e": 0.016289,
+      "p95_delta_e": 0.03277,
+      "max_delta_e": 0.104605
+    },
+    "../palette-inputs/market-cloth.png": {
+      "measured_px": 28755,
+      "alpha_threshold": 128,
+      "off_palette_px": 28733,
+      "partial_alpha_px": 0,
+      "colors": 24389,
+      "palette_colors_used": 47,
+      "mean_delta_e": 0.022242,
+      "p95_delta_e": 0.042769,
+      "max_delta_e": 0.094847
+    },
+    "../palette-inputs/market-produce.png": {
+      "measured_px": 32177,
+      "alpha_threshold": 128,
+      "off_palette_px": 32154,
+      "partial_alpha_px": 0,
+      "colors": 26159,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.022522,
+      "p95_delta_e": 0.051484,
+      "max_delta_e": 0.164438
+    },
+    "../palette-inputs/market-weapons.png": {
+      "measured_px": 31285,
+      "alpha_threshold": 128,
+      "off_palette_px": 31248,
+      "partial_alpha_px": 0,
+      "colors": 23092,
+      "palette_colors_used": 45,
+      "mean_delta_e": 0.019926,
+      "p95_delta_e": 0.045955,
+      "max_delta_e": 0.102616
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.164438,
+    "worst_p95_delta_e": 0.051484,
+    "off_palette_px": 223181
+  }
+}
