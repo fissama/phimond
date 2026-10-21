@@ -87,9 +87,9 @@ def build_skills():
     add('dispel','Phá phù','dispel','enemy_one',14,2,15,'Gỡ 1 buff: shield trước, rồi ATK/MAG, armor, SPD/SR; không gây damage; kiểm tra hit, không qua SR.',['disruptor'])
     add('extinguish','Dập lửa','cleanse','ally_one',8,1,5,'Gỡ cháy; thêm khiên floor(0.50×MAG) trong 1 vòng. Target cần có burn.',['support'],element='water')
     add('mana_burn','Thiêu đốt pháp lực','magic','enemy_one',18,2,20,'0.75×MAG damage; target mất tối đa floor(0.20×MAG nguồn) MP, tối đa 10 MP/hit; không chuyển MP về nguồn.',['magic_dps','disruptor','hybrid'],power='0.75',source_ids=['ThieuDotPhapLuc'])
-    add('dragon_breath','Uy rồng phả hơi','magic','enemy_one',28,3,40,'1.70×MAG Quang, một địch; signature Thánh Rồng Thái Cổ, không kế thừa.',['magic_dps','hybrid'],inheritance=[],element='light',power='1.70',source_ids=['UyRongPhaHoi'])
+    add('dragon_breath','Uy rồng phả hơi','magic','enemy_one',28,3,40,'1.70×MAG Quang, một địch; signature Thái Cổ Thánh Long, không kế thừa.',['magic_dps','hybrid'],inheritance=[],element='light',power='1.70',source_ids=['UyRongPhaHoi'])
     add('death_scythe','Lưỡi hái tử thần','physical','enemy_one',26,3,40,'1.50×ATK Âm + mark nhận hồi phục −25% (70% base chance), 2 vòng; giải được, không instant kill.',['physical_dps'],inheritance=[],element='dark',power='1.50',effect={'status':'misfortune','chance':0.70},source_ids=['LuoiHai'])
-    add('love_kiss','Nụ hôn Ái Thần','shield','ally_one',26,3,40,'Khiên floor(1.80×MAG + 0.10×maxHP nguồn), 1 vòng; không miễn nhiễm. Signature Chim Ái Thần, không kế thừa.',['support'],inheritance=[],source_ids=['NuHon'])
+    add('love_kiss','Nụ hôn Ái Thần','shield','ally_one',26,3,40,'Khiên floor(1.80×MAG + 0.10×maxHP nguồn), 1 vòng; không miễn nhiễm. Signature Ái Thần Điểu, không kế thừa.',['support'],inheritance=[],source_ids=['NuHon'])
     # Owner review v8: authored species-exclusive kits, not recovered APK rules.
     signatures=[
         ('azure_tide','Thanh Long · Triều áp','species_0068','magic','enemy_one',24,30,'water','1.10',{'status':'slow','chance':0.70,'amount':-0.20},['magic_dps','hybrid'],'1.10×MAG Thủy; sau hit, 70% base chance SPD target −20% trong 2 vòng. Giải debuff được; không thêm damage khi dập burn.'),

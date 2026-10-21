@@ -29,11 +29,11 @@ AMENDMENTS = {
     'species_0148': ['magic_dps', 'support'],
 }
 ADDITIONAL = [
-    ('Thú', 'beast', 'magic_dps', 'Hươu Rêu Nguyệt', 'Địa', 'Hươu có gạc phủ rêu và hạt sáng; silhouette khác Ngựa Bùn Cỏ. AoE phép nhẹ để farm, đơn thể phép và hồi phục phụ.'),
-    ('Rồng', 'dragon', 'physical_dps', 'Thiết Giáp Long', 'Địa', 'Rồng thấp, giáp đá và đuôi chùy; khác Thánh Rồng Thái Cổ. Đơn thể vật lý, quét nhẹ, khiên phụ.'),
+    ('Thú', 'beast', 'magic_dps', 'Nguyệt Đài Lộc', 'Địa', 'Hươu có gạc phủ rêu và hạt sáng; silhouette khác Vân Mao Đà. AoE phép nhẹ để farm, đơn thể phép và hồi phục phụ.'),
+    ('Rồng', 'dragon', 'physical_dps', 'Thiết Giáp Long', 'Địa', 'Rồng thấp, giáp đá và đuôi chùy; khác Thái Cổ Thánh Long. Đơn thể vật lý, quét nhẹ, khiên phụ.'),
     ('Rồng', 'dragon', 'magic_dps', 'Tinh Vân Long', 'Quang', 'Rồng mảnh, vây sao và lõi sáng; nhận diện phép từ xa. AoE phép nhẹ, phép đơn thể và dispel phụ.'),
     ('Ác Ma', 'demon', 'physical_dps', 'Đao Ma Huyết Giáp', 'Hỏa', 'Ác ma vai rộng, lưỡi đao và giáp nứt đỏ. Chém đơn thể, quét nhẹ và debuff phụ.'),
-    ('Ác Ma', 'demon', 'magic_dps', 'Ma Nhãn Hư Không', 'Âm', 'Ác ma bay với một mắt và vòng ấn; khác Trụy Thiên Sứ. AoE phép nhẹ, phép đơn thể và control phụ.'),
+    ('Ác Ma', 'demon', 'magic_dps', 'Ma Nhãn Hư Không', 'Âm', 'Ác ma bay với một mắt và vòng ấn; khác Đọa Thiên Sứ. AoE phép nhẹ, phép đơn thể và control phụ.'),
     ('Tinh Linh', 'spirit', 'physical_dps', 'Hộ Vệ Thạch Linh', 'Địa', 'Linh thể đá có nắm đấm lớn, lõi nhỏ; khác Nhân Sư và Cự Ma. Vật lý đơn thể, quét nhẹ và bảo vệ phụ.'),
 ]
 NEW_ROLE_PROPOSALS = {
@@ -49,7 +49,7 @@ NEW_ROLE_PROPOSALS = {
 }
 SPECIAL_ADDITIONAL = [
     dict(proposal_id='P13-SPECIAL-01',working_name='Long Thần Song Ấn',race='dragon',race_name='Rồng',star=5,species_class='special',roles=['hybrid','support'],proposed_element='Quang',status='proposal_not_registered',art_brief='Rồng hai cụm giáp và vây ấn sáng, nhìn rõ cả móng/vuốt vật lý và lõi phép; không sao chép Thanh Long. Kit có hai damage channel, buff phụ; không cộng ATK+MAG trong một hit.'),
-    dict(proposal_id='P13-SPECIAL-02',working_name='Ma Chủ Song Cực',race='demon',race_name='Ác Ma',star=5,species_class='special',roles=['hybrid','disruptor'],proposed_element='Âm',status='proposal_not_registered',art_brief='Ác ma có một tay vũ khí và một tay ấn phép, silhouette khác Ma Vương Hút Máu. Kit vật lý/phép và debuff phụ, giữ đánh đổi sáu slot.'),
+    dict(proposal_id='P13-SPECIAL-02',working_name='Ma Chủ Song Cực',race='demon',race_name='Ác Ma',star=5,species_class='special',roles=['hybrid','disruptor'],proposed_element='Âm',status='proposal_not_registered',art_brief='Ác ma có một tay vũ khí và một tay ấn phép, silhouette khác Huyết Ma Vương. Kit vật lý/phép và debuff phụ, giữ đánh đổi sáu slot.'),
 ]
 SPECIAL_ADDITIONAL[0]['signature_skill_id'] = 'dual_seal_light'
 SPECIAL_ADDITIONAL[1]['signature_skill_id'] = 'inverse_seal_dark'
@@ -68,13 +68,13 @@ def new_signatures():
 FOUR_STAR_ALTERNATIVES = [
     ('recipe_special_0003','species_0067','species_0035','hybrid','Ác Ma vật lý + Thực Vật phép → Thanh Long Ác Ma Hybrid.'),
     ('recipe_special_0003','species_0067','species_0122','hybrid','Ác Ma vật lý + Côn Trùng phép → Thanh Long Ác Ma Hybrid.'),
-    ('recipe_special_0004','species_0015','species_0084','physical','Tử Thần + Tinh Tinh Rock Tank/vật lý: hướng vật lý, bố mẹ Thú giữ gốc race của Bạch Hổ.'),
-    ('recipe_special_0004','species_0051','species_0085','physical','Long Vương Hắc Ám + Đại Tuyết Quái: hai vật lý, có bố mẹ Thú.'),
-    ('recipe_special_0004','species_0104','species_0085','physical','Chim Đa Đa + Đại Tuyết Quái: hai vật lý, có bố mẹ Thú.'),
-    ('recipe_special_0005','species_0103','species_0016','magic','Chim Đại Phì + Pharaon: hai caster, có bố mẹ Chim.'),
-    ('recipe_special_0005','species_0103','species_0050','magic','Chim Đại Phì + Hải Long Ba Đầu: hai caster, có bố mẹ Chim.'),
-    ('recipe_special_0005','species_0103','species_0086','magic','Chim Đại Phì + Gấu Trúc Ma Pháp: hai caster, có bố mẹ Chim.'),
-    ('recipe_special_0007','species_0138','species_0036','tank','Thú Lớn Dung Nham + Hoa Ăn Thịt Người Ba Đầu: vật lý + vật lý/Tank cho Huyền Vũ.'),
+    ('recipe_special_0004','species_0015','species_0084','physical','Tử Thần + Thạch Viên Tank/vật lý: hướng vật lý, bố mẹ Thú giữ gốc race của Bạch Hổ.'),
+    ('recipe_special_0004','species_0051','species_0085','physical','Hắc Long Vương + Tuyết Mao Quái: hai vật lý, có bố mẹ Thú.'),
+    ('recipe_special_0004','species_0104','species_0085','physical','Liệt Phong Ưng + Tuyết Mao Quái: hai vật lý, có bố mẹ Thú.'),
+    ('recipe_special_0005','species_0103','species_0016','magic','Đại Phúc Điểu + Sa Thi Vương: hai caster, có bố mẹ Chim.'),
+    ('recipe_special_0005','species_0103','species_0050','magic','Đại Phúc Điểu + Tam Thủ Hải Long: hai caster, có bố mẹ Chim.'),
+    ('recipe_special_0005','species_0103','species_0086','magic','Đại Phúc Điểu + Ma Pháp Hùng Miêu: hai caster, có bố mẹ Chim.'),
+    ('recipe_special_0007','species_0138','species_0036','tank','Dung Nham Cự Nhân + Thực Nhân Hoa Ba Đầu: vật lý + vật lý/Tank cho Huyền Vũ.'),
 ]
 # Authored candidate, distinct from the immutable ordered APK records.
 # Recipe selection identifies the result; parent slot order does not change it.
@@ -83,19 +83,19 @@ FUSION_PROPOSALS = [
     ('recipe_special_0002','species_0017','species_0107','physical','Giữ cặp vật lý nguồn; Tank có vật lý phụ.'),
     ('recipe_special_0003','species_0066','species_0123','hybrid','Phép + vật lý có chủ đích để tạo Thanh Long Hybrid; không áp dụng cho Special chuyên phép.'),
     ('recipe_special_0004','species_0085','species_0123','physical','Hai vật lý; tránh dùng Tank/control không có hướng vật lý làm bố mẹ chính.'),
-    ('recipe_special_0005','species_0103','species_0137','magic','Hai caster 4★; Chim Đại Phì chuyển primary phép, có bố mẹ Chim.'),
+    ('recipe_special_0005','species_0103','species_0137','magic','Hai caster 4★; Đại Phúc Điểu chuyển primary phép, có bố mẹ Chim.'),
     ('recipe_special_0006','species_0125','species_0141','magic','Phép + phép/Support phù hợp Support/control sử dụng MAG.'),
     ('recipe_special_0007','species_0138','species_0084','tank','Linh vật lý + Thú Tank/vật lý cho Huyền Vũ; giữ bố mẹ cùng race Linh.'),
     ('recipe_special_0008','P13-NEW-06','species_0124','physical','Vật lý + vật lý/Tank cho Cự Ma; không cần tiêu Nhân Sư Hybrid.'),
     ('recipe_special_0009','species_0141','P13-NEW-03','magic','Hai caster; Support phụ của Totem hỗ trợ kit hồi phục.'),
     ('recipe_special_0010','species_0037','species_0125','magic','Hai caster cho Linh Tiên Hoa Hương Support/phép; bỏ bố mẹ vật lý.'),
-    ('recipe_special_0011','species_0038','species_0147','physical','Hai hướng vật lý → Cây Cự Linh Tank/vật lý; giữ gốc race Thực Vật và khả năng đánh theo ATK.'),
+    ('recipe_special_0011','species_0038','species_0147','physical','Hai hướng vật lý → Cự Linh Mộc Tank/vật lý; giữ gốc race Thực Vật và khả năng đánh theo ATK.'),
     ('recipe_special_0012','P13-NEW-05','species_0106','magic','Hai caster; không buộc người chơi bỏ hai Hybrid để nhận caster thuần.'),
-    ('recipe_special_0013','P13-NEW-01','species_0018','magic','Hai caster; Hươu Rêu Nguyệt là Normal Thú phép, Ngựa vẫn Special.'),
-    ('recipe_special_0014','P13-NEW-02','species_0088','physical','Hai vật lý cho Thú Vàng Một Sừng; không dùng Hybrid làm material mặc định.'),
-    ('recipe_special_0015','species_0147','species_0107','physical','Tank/vật lý + Chim vật lý → Đảo Thiên Đường vật lý/Tank; giữ race Chim, không tiêu caster.'),
-    ('recipe_special_0016','species_0124','P13-NEW-04','physical','Hai vật lý cho Đại Vương Bọ Cạp; không tiêu caster Độc Đằng Nữ.'),
-    ('recipe_special_0017','species_0106','species_0037','magic','Hai caster cho Chim Ái Thần Support/phép; thay cặp hai vật lý nguồn.'),
+    ('recipe_special_0013','P13-NEW-01','species_0018','magic','Hai caster; Nguyệt Đài Lộc là Normal Thú phép, Ngựa vẫn Special.'),
+    ('recipe_special_0014','P13-NEW-02','species_0088','physical','Hai vật lý cho Kim Kỳ Lân; không dùng Hybrid làm material mặc định.'),
+    ('recipe_special_0015','species_0147','species_0107','physical','Tank/vật lý + Chim vật lý → Thiên Đường Điểu vật lý/Tank; giữ race Chim, không tiêu caster.'),
+    ('recipe_special_0016','species_0124','P13-NEW-04','physical','Hai vật lý cho Độc Hạt Vương; không tiêu caster Độc Đằng Nữ.'),
+    ('recipe_special_0017','species_0106','species_0037','magic','Hai caster cho Ái Thần Điểu Support/phép; thay cặp hai vật lý nguồn.'),
 ]
 
 def fusion_review(byid, proposed_roles, proposed, source_pairs):
@@ -132,8 +132,8 @@ def fusion_review(byid, proposed_roles, proposed, source_pairs):
         add('P13-FUSION-'+rid[-4:],a,b,candidates[old['target_id']],channel,reason,old)
     for i,(rid,aid,bid,channel,reason) in enumerate(FOUR_STAR_ALTERNATIVES,1):
         add(f'P13-FUSION-4ALT-{i:02}',candidates[aid],candidates[bid],candidates[source[rid]['target_id']],channel,reason)
-    add('P13-FUSION-HYBRID-01',candidates['species_0052'],candidates['species_0140'],candidates['P13-SPECIAL-01'],'hybrid','Thánh Rồng Thái Cổ + Nhân Sư, cả hai Hybrid: giữ đường phát triển song công của Rồng.')
-    add('P13-FUSION-HYBRID-02',candidates['species_0069'],candidates['species_0140'],candidates['P13-SPECIAL-02'],'hybrid','Trụy Thiên Sứ + Nhân Sư, cả hai Hybrid: giữ đường phát triển song công của Ác Ma.')
+    add('P13-FUSION-HYBRID-01',candidates['species_0052'],candidates['species_0140'],candidates['P13-SPECIAL-01'],'hybrid','Thái Cổ Thánh Long + Nhân Sư, cả hai Hybrid: giữ đường phát triển song công của Rồng.')
+    add('P13-FUSION-HYBRID-02',candidates['species_0069'],candidates['species_0140'],candidates['P13-SPECIAL-02'],'hybrid','Đọa Thiên Sứ + Nhân Sư, cả hai Hybrid: giữ đường phát triển song công của Ác Ma.')
     normal5=[x for x in candidates.values() if x['species_class']=='normal' and x['star']==5]
     missing=[x for x in normal5 if x['id'] not in uses]
     normal4=[x for x in candidates.values() if x['species_class']=='normal' and x['star']==4]
@@ -177,12 +177,12 @@ def build():
                 g['special5'].append(dict(id=x['proposal_id'],name=x['working_name'],roles=x['roles'],proposed_roles=x['roles'],is_new=True))
     notes = [
         'Phương án chính 160 loài: thêm 6 Normal 5★ và 2 Special Hybrid 5★. Normal 4★ có 17 loài, Normal 5★ có 20; Special 4★ có 4, Special 5★ có 15. Không dùng Special để lấp độ phủ Normal.',
-        'Mỗi race có primary vật lý + primary phép ở Normal 4★ và 5★. 4★ đổi Trưởng Lão Người Cây sang phép/Support, Long Vương Hắc Ám sang vật lý/Disruptor, Chim Đại Phì sang phép/Disruptor. Tinh Tinh Rock giữ Tank, secondary vật lý để có đường dung hợp phù hợp.',
-        'Normal 5★: Tinh Linh Bách Hoa vật lý/Support; Độc Đằng Nữ phép/Disruptor; Trùng Bất Tử Địa Huyệt vật lý/Tank; Totem phép/Support; Trụy Thiên Sứ Hybrid/Support. Thánh Rồng Thái Cổ và Nhân Sư giữ Hybrid. Sáu Normal mới lấp các kênh còn thiếu, không thay thế ba Hybrid.',
+        'Mỗi race có primary vật lý + primary phép ở Normal 4★ và 5★. 4★ đổi Mộc Trưởng Lão sang phép/Support, Hắc Long Vương sang vật lý/Disruptor, Đại Phúc Điểu sang phép/Disruptor. Thạch Viên giữ Tank, secondary vật lý để có đường dung hợp phù hợp.',
+        'Normal 5★: Bách Hoa Tiên Tử vật lý/Support; Độc Đằng Nữ phép/Disruptor; Địa Huyệt Ma Trùng vật lý/Tank; Totem phép/Support; Đọa Thiên Sứ Hybrid/Support. Thái Cổ Thánh Long và Nhân Sư giữ Hybrid. Sáu Normal mới lấp các kênh còn thiếu, không thay thế ba Hybrid.',
         'Special 4★ giữ bốn bản sắc: Thanh Long Hybrid, Bạch Hổ vật lý, Chu Tước phép/Support, Huyền Vũ Tank/Support. Native kit theo role, signature đã review không thay đổi.',
-        'Special 5★: Thủ Lĩnh Hắc Ám vật lý/Tank; Trùng Mẫu Mào Vàng phép/Support; Ngựa Bùn Cỏ phép/Support; Cây Cự Linh Tank/vật lý; Đảo Thiên Đường vật lý/Tank. Các Special khác giữ role baseline. Long Thần Song Ấn (Rồng) và Ma Chủ Song Cực (Ác Ma) là hai Special Hybrid mới.',
+        'Special 5★: Hắc Kỵ Vương vật lý/Tank; Kim Quan Chu Hậu phép/Support; Vân Mao Đà phép/Support; Cự Linh Mộc Tank/vật lý; Thiên Đường Điểu vật lý/Tank. Các Special khác giữ role baseline. Long Thần Song Ấn (Rồng) và Ma Chủ Song Cực (Ác Ma) là hai Special Hybrid mới.',
         'Recipe candidate: cùng Star, hai Normal khác species, ít nhất một bố mẹ cùng race với con. Con vật lý cần hai bố mẹ có hướng vật lý; con phép cần hai bố mẹ có hướng phép. Hybrid cho phép vật lý + phép hoặc Hybrid + Hybrid. Tank/Support có điều kiện và lý do theo kit; không dùng ngoại lệ này để ép caster tiêu pet vật lý.',
-        'Nữ Đế dùng Nữ Vương Bạch Cốt + Ma Nhãn Hư Không, đều phép. Thánh Rồng Thái Cổ + Nhân Sư → Long Thần Song Ấn; Trụy Thiên Sứ + Nhân Sư → Ma Chủ Song Cực. Ba Normal Hybrid đều có đường Special Hybrid 5★.',
+        'Nữ Đế dùng Bạch Cốt Nữ Vương + Ma Nhãn Hư Không, đều phép. Thái Cổ Thánh Long + Nhân Sư → Long Thần Song Ấn; Đọa Thiên Sứ + Nhân Sư → Ma Chủ Song Cực. Ba Normal Hybrid đều có đường Special Hybrid 5★.',
         'Chọn Special và recipe trước, đảo slot không đổi kết quả. Có 28 cặp candidate không trùng: 13 cặp cho 4 Special 4★ và 15 cặp cho 15 Special 5★. Mọi Normal 4★ và 5★ có ít nhất một đường dung hợp; không dùng Special làm material trong các recipe này.',
         '17 recipe APK giữ riêng làm bằng chứng, không bắt buộc dùng làm luật game. Các recipe thay thế 4★ cho cùng Special phải có preview kết quả/kit, không random đổi species. Chi phí/xác suất/Plus và vai trò Chính/Phụ trong kế thừa vẫn thuộc P16/P20.',
         'Ghép cùng damage channel chưa đảm bảo truyền được skill: current skills bố mẹ còn lọc Race whitelist của con. Cần preview skill truyền được; Native Pool của Special tự có kit theo role. Basic 0MP luôn còn; skill nhẹ vẫn riêng để farm, không bị tier mạnh thay thế.',

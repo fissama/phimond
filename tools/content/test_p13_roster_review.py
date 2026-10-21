@@ -1,6 +1,12 @@
+import json
 import unittest
+from pathlib import Path
 from unittest.mock import patch
 import p13_roster_review as r
+
+# P13 packages are frozen with the names at review time; display names were renamed to
+# Han-Viet style afterwards (P10-species-naming-hanviet.json).
+RENAMES={x['id']:x['name_vi'] for x in json.loads((Path(__file__).resolve().parents[2]/'.ai/plan/phases/P10-pet-model/P10-species-naming-hanviet.json').read_text())['records']}
 
 class RosterReviewTests(unittest.TestCase):
     def test_groups_do_not_mix_class_or_star(self):
@@ -31,7 +37,8 @@ class RosterReviewTests(unittest.TestCase):
         self.assertEqual(len(candidate),160)
         for sid,before in original.items():
             for key in ['id','name','race','star','class','element','source_identity']:
-                self.assertEqual(before[key],candidate[sid][key])
+                expected=RENAMES[sid] if key=='name' else before[key]
+                self.assertEqual(expected,candidate[sid][key])
         self.assertEqual(p['candidate_catalog_meta']['validation']['layers_checked'],320)
         self.assertEqual(len(p['skills']),97)
         self.assertEqual(len(p['roster_review']['proposed_species']),6)
