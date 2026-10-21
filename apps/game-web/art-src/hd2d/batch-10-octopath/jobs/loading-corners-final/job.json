@@ -1,0 +1,92 @@
+{
+  "id": "loading-corners-final",
+  "prompt": "Phimond Batch10 loading UI production sprites, approved style match. Image1 APK original frame bars is CONTENT only. Image2 batch06 bar track and image3 batch06 corner are STYLE references, images4-5 pet outline/volume anchors only. Make a 2column x3row sheet (1536x1536) with SIX separate assets centered in equal cells, 48px+ magenta gaps, no labels. Background is flat #FF00FF.\nCell row1 left: a wide blank loading-bar-frame, about600x132, antique bronze bevel and small emerald stones ONLY within the48px end/corner zones. Straight edges across the middle horizontal part, uniform cross-section, no centered emblem. Interior hole flatmagenta. This must support9slice at48px corners with no deformation. 3xUI pixel art.\nCell row1 right: horizontal fill segment about560x48, jade/emerald glazed inset with stepped upper-left highlight, dark green lower bevel. NO end caps or ornaments. The entire left and right edge profiles IDENTICAL: vertical flat color bands across width, only horizontal material shading; no grain, diagonal streak or rounded ends. Designed to be repeatable onX.\nCell row2 left: TOP LEFT corner ornament, small right-angle bronze L framing an emerald square jewel with a short curling leaf on inside. Orthogonal legs extend right and down, no frame attached.\nCell row2 right: TOP RIGHT corner ornament, independently drawn right-angle bronze L, legs left and down, own curling leaf and tiny chips, not mirrored clone.\nCell row3 left: BOTTOM LEFT corner ornament, legs right and up, own small curling leaf and antique chips.\nCell row3 right: BOTTOM RIGHT corner ornament, legs left and up, independently drawn curling leaf, not copied/mirrored.\nAll four corner ornaments fit within a128px square, ample48px magenta around them. Same material and scale, all distinct carved wear detail. Crisp pixel clusters with2-4tones per material, dark warm outline not pure black, bronze/cream/umber plus cool emerald, no smooth gradients/no blur/no bloom/no text/no shadow. Match batch06 hand-crafted game pixels rather than vector illustration.",
+  "refs": [
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/reference/hud/frame_bars.png",
+      "sha256": "1a031461dbf48feececace6175fdb839ffa0cdaa5850f84f53b367eb8a46c38d"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-06-octopath/bar-track-framed/final.png",
+      "sha256": "5f4b865ea3d4d283931b7e4feee18901b57749cb7657ddb9661a745ee8b511f2"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-06-octopath/ornament-corner/final.png",
+      "sha256": "8bedccfcaf96a14a32e70fdab11c686261f9d965557e0c2f0504362d46c4e176"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "route": "built-in image_gen",
+  "state": "exported_pending_visual_review",
+  "raw": "raw-01.png",
+  "assets": [
+    {
+      "id": "loading-corner-tl",
+      "box": [
+        100,
+        400,
+        550,
+        780
+      ],
+      "size": [
+        192,
+        192
+      ],
+      "category": "ui_sprite",
+      "reserve_jade": true
+    },
+    {
+      "id": "loading-corner-tr",
+      "box": [
+        700,
+        400,
+        1150,
+        780
+      ],
+      "size": [
+        192,
+        192
+      ],
+      "category": "ui_sprite",
+      "reserve_jade": true
+    },
+    {
+      "id": "loading-corner-bl",
+      "box": [
+        100,
+        800,
+        550,
+        1150
+      ],
+      "size": [
+        192,
+        192
+      ],
+      "category": "ui_sprite",
+      "reserve_jade": true
+    },
+    {
+      "id": "loading-corner-br",
+      "box": [
+        700,
+        800,
+        1150,
+        1150
+      ],
+      "size": [
+        192,
+        192
+      ],
+      "category": "ui_sprite",
+      "reserve_jade": true
+    }
+  ],
+  "shared_palette": true
+}

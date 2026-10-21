@@ -1,0 +1,183 @@
+{
+  "status": "pass",
+  "method": "forge_palette.build_palette (weighted k-means++ in OKLab over unique colours, reserved colours fixed, coverage skipping) then forge_palette.fit_report of every input: OKLab dE of each pixel with alpha >= the threshold to its nearest palette colour",
+  "notProven": [
+    "Visual quality of the palette: look at swatches.png and an applied frame.",
+    "Colours of pixels below the alpha threshold were not sampled or measured.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "palette_colors",
+      "status": "pass",
+      "value": 48,
+      "threshold": 48
+    },
+    {
+      "id": "inputs_without_samples",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0,
+      "files": []
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.134968,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../palette-inputs/app-icon.png",
+      "sha256": "1e0874cc11c29cecb98ce607ee74b294698e0053a4b1e2d2b4a3618c15a7a734",
+      "bytes": 208602
+    },
+    {
+      "path": "../palette-inputs/loading-bar-fill.png",
+      "sha256": "25ec700733c6d33377a8500ab6d9b5affbcc9bfbd04607dc434ef8e3e5622a98",
+      "bytes": 7166
+    },
+    {
+      "path": "../palette-inputs/loading-bar-frame.png",
+      "sha256": "6031182a1e80398352d8edee01fa470d08ee510919b48d8b88fb76599616ca4c",
+      "bytes": 19309
+    },
+    {
+      "path": "../palette-inputs/loading-ornament-corners.png",
+      "sha256": "3e5936c4f60b182cdb50b2868c6c0fc2e960ee139945d5bba06cff613a497141",
+      "bytes": 71479
+    },
+    {
+      "path": "../palette-inputs/logo-badge.png",
+      "sha256": "38ae806287a2a3f4ebf39b8163123525940027a6bca2b7a4b8ca6c2218dc73d3",
+      "bytes": 218716
+    },
+    {
+      "path": "../palette-inputs/logo-horizontal.png",
+      "sha256": "a124cfb95e6f2de7e2e5de849684607e46389cc3bc4a9487a1843616dd344733",
+      "bytes": 55031
+    },
+    {
+      "path": "../palette-inputs/map-card-frame.png",
+      "sha256": "d173973c61e4c7933438c85403690a5d91e26ecb73e97b505d94cd4b8fa03e66",
+      "bytes": 150941
+    }
+  ],
+  "outputs": [
+    {
+      "path": "palette.json",
+      "sha256": "f6f9c861619a07a43e7c3780a7e52d38b07ce4e6a28c3b275bc8bec9132bb3d2",
+      "bytes": 1963
+    },
+    {
+      "path": "palette.gpl",
+      "sha256": "61bc63968d1b8591189bab14ddc4cf978dce4c2a4976d5cb3e2534de5d5a0651",
+      "bytes": 1019
+    },
+    {
+      "path": "palette.hex",
+      "sha256": "f90852d0f8fb8cf7ad4798c15e199d15ab3a82140516a679c02c014fd64860ea",
+      "bytes": 336
+    },
+    {
+      "path": "swatches.png",
+      "sha256": "e0ef060e4b915b6487d264fa40ade9e3c413a532759add3872e79118d18174f6",
+      "bytes": 693
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "palette": {
+    "colors": 48,
+    "reserved": 0,
+    "transparent_index": 255,
+    "seed": 0
+  },
+  "fit": {
+    "../palette-inputs/app-icon.png": {
+      "measured_px": 127718,
+      "alpha_threshold": 128,
+      "off_palette_px": 127532,
+      "partial_alpha_px": 0,
+      "colors": 26907,
+      "palette_colors_used": 38,
+      "mean_delta_e": 0.02093,
+      "p95_delta_e": 0.042249,
+      "max_delta_e": 0.109323
+    },
+    "../palette-inputs/loading-bar-fill.png": {
+      "measured_px": 2467,
+      "alpha_threshold": 128,
+      "off_palette_px": 2467,
+      "partial_alpha_px": 0,
+      "colors": 2058,
+      "palette_colors_used": 35,
+      "mean_delta_e": 0.023426,
+      "p95_delta_e": 0.045891,
+      "max_delta_e": 0.111446
+    },
+    "../palette-inputs/loading-bar-frame.png": {
+      "measured_px": 8041,
+      "alpha_threshold": 128,
+      "off_palette_px": 8034,
+      "partial_alpha_px": 0,
+      "colors": 4134,
+      "palette_colors_used": 41,
+      "mean_delta_e": 0.019832,
+      "p95_delta_e": 0.034501,
+      "max_delta_e": 0.09246
+    },
+    "../palette-inputs/loading-ornament-corners.png": {
+      "measured_px": 25292,
+      "alpha_threshold": 128,
+      "off_palette_px": 25290,
+      "partial_alpha_px": 0,
+      "colors": 14740,
+      "palette_colors_used": 47,
+      "mean_delta_e": 0.02222,
+      "p95_delta_e": 0.041195,
+      "max_delta_e": 0.134968
+    },
+    "../palette-inputs/logo-badge.png": {
+      "measured_px": 116506,
+      "alpha_threshold": 128,
+      "off_palette_px": 116053,
+      "partial_alpha_px": 0,
+      "colors": 29242,
+      "palette_colors_used": 33,
+      "mean_delta_e": 0.018629,
+      "p95_delta_e": 0.037359,
+      "max_delta_e": 0.063992
+    },
+    "../palette-inputs/logo-horizontal.png": {
+      "measured_px": 22878,
+      "alpha_threshold": 128,
+      "off_palette_px": 22878,
+      "partial_alpha_px": 0,
+      "colors": 10078,
+      "palette_colors_used": 31,
+      "mean_delta_e": 0.019349,
+      "p95_delta_e": 0.036149,
+      "max_delta_e": 0.133016
+    },
+    "../palette-inputs/map-card-frame.png": {
+      "measured_px": 150731,
+      "alpha_threshold": 128,
+      "off_palette_px": 150724,
+      "partial_alpha_px": 0,
+      "colors": 20530,
+      "palette_colors_used": 38,
+      "mean_delta_e": 0.012888,
+      "p95_delta_e": 0.041461,
+      "max_delta_e": 0.097427
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.134968,
+    "worst_p95_delta_e": 0.045891,
+    "off_palette_px": 452978
+  }
+}

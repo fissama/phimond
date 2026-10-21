@@ -1,0 +1,36 @@
+{
+  "id": "login-layer-1-sky",
+  "px": [
+    1280,
+    720
+  ],
+  "mode": "RGBA",
+  "colors": 64,
+  "color_limit": 64,
+  "partial_alpha_pixels": 0,
+  "key_residue_pixels": 0,
+  "alpha_margins": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "backdrop_edge_exception": "Side/bottom coverage intentional; whole viewport layer, no isolated prop is clipped.",
+  "bottom_24px_fully_opaque": true,
+  "source_raw": "raw-03.png",
+  "raw_integrity": true,
+  "sha256": "596b234706cb50162f6be1879aa280d7f5574afc07b35ebd2d60af5b971bd4f5",
+  "despill": {
+    "mode": "not_needed_opaque_sky"
+  },
+  "visual_review": {
+    "status": "self_inspected_4x_needs_claude",
+    "backgrounds": [
+      "checker",
+      "dark"
+    ],
+    "approval": false,
+    "note": "Unchanged sky/citadel verified hash from previous inspection; forest/foreground reviewed again after raw04 edit."
+  },
+  "failures": []
+}

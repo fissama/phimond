@@ -1,0 +1,102 @@
+{
+  "id": "branding-v2",
+  "route": "built-in image_gen",
+  "prompt": "Production sprite sheet for Phimond game, Batch10 branding. Image1 ORIGINAL APK CONTENT mascot: the friendly round PINK wing-eared spirit beast FACE with big ears, brown/pink ear tops, pale cheeks and dark eyes. Preserve this species identity, do NOT invent a canine wolf, bird, dragon or running blob. Images2-3 approved batch06 UI are STYLE authorities: stepped bronze/gold bevels, dark warm outlines, compact chunky pixel clusters. Images4-5 are pet outline/volume anchors only. Output FOUR isolated assets in 2columns x2rows, sheet 2048x1536, 64px blank outer margins and wide magenta gutters. Empty backdrop absolutely flat #FF00FF, no grid/text labels. All assets uncut, margins48px minimum.\nTop LEFT: horizontal logo, centered within cell, about880x270. EXACT ONLY TEXT \"PHIMOND\" (P H I M O N D), hand-drawn crisp pixel capital letters ivory with antique bronze bevel, not system typography. Small friendly pink mascot head beside word at left, small jade jewel accent. Text safely24px inside crest bounds. No subtitle or banner tail with extra words.\nTop RIGHT: circular logo-badge, about540x540, bronze ring with jade small corner jewels, pink wing-eared mascot FACE inside, muted navy inset. NO text.\nBottom LEFT: square app-icon master, about640x640, rounded stepped square outline bronze and emerald corners, same friendly pink mascot FACE large and readable at32x32. Muted navy backing confined inside icon. NO text.\nBottom RIGHT: blank map-card-frame for9slice; upright rectangle about510x610, thin antique bronze rim with small emerald sockets ONLY inside48px corner squares. Straight horizontal and vertical edges absolutely uniform and repeatable across their middle stretches. EMPTY HOLE entirely magenta, no parchment image. Nothing decorative outside corner squares. Frame stroke about12px. No middle-edge flourishes, text or center content. Keep rectangular outline.\nFinish: authentic pixel art matching batch06, not modern vector, not painterly/3D, no soft alpha or glow or baked ground shadow. Upper-left warm material highlight, 2-4 tones per material, restrained ~45 colors per asset. NO fog, no gradients, no noise/dithering. Only top-left asset contains lettering.",
+  "refs": [
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/reference/hud/button_pet.png",
+      "sha256": "0d185aea3885bcb8c7ddc01ac71b8b96a6c9aea4e21d7bece4d75e2fd8093975"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-06-octopath/frame-portrait/final.png",
+      "sha256": "ea198241da2a93f6e6bd71577014ac2f81ed2c154ef5c2497e4c97ee9d31f623"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-06-octopath/contact-sheet.png",
+      "sha256": "e5f46ccfa6f2521aaaf836d2b0eed9643c2b4585772fe41dd14741cc3f7bf50b"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "state": "exported_pending_visual_review",
+  "raw": "raw-01.png",
+  "assets": [
+    {
+      "id": "logo-horizontal",
+      "box": [
+        16,
+        60,
+        930,
+        420
+      ],
+      "size": [
+        1024,
+        320
+      ],
+      "category": "ui_sprite",
+      "reserve_jade": true
+    },
+    {
+      "id": "logo-badge",
+      "box": [
+        930,
+        0,
+        1448,
+        450
+      ],
+      "size": [
+        512,
+        512
+      ],
+      "category": "ui_sprite",
+      "reserve_jade": true
+    },
+    {
+      "id": "app-icon",
+      "box": [
+        100,
+        450,
+        820,
+        1060
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "master_size": [
+        1024,
+        1024
+      ],
+      "category": "icon",
+      "reserve_jade": true
+    },
+    {
+      "id": "map-card-frame",
+      "box": [
+        870,
+        450,
+        1400,
+        1050
+      ],
+      "size": [
+        288,
+        360
+      ],
+      "category": "ui_9slice",
+      "slice": [
+        48,
+        48,
+        48,
+        48
+      ],
+      "reserve_jade": true,
+      "margin": 8
+    }
+  ]
+}

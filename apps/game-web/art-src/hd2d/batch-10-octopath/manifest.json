@@ -1,0 +1,875 @@
+{
+  "batch": "10-octopath",
+  "stage": "continuous-redraw",
+  "status": "in_progress_needs_claude_visual_review",
+  "approved": false,
+  "assets": [
+    {
+      "id": "login-layer-1-sky",
+      "category": "backdrop_far",
+      "kit": "login",
+      "file": "login-layer-1-sky/final.png",
+      "px": [
+        1280,
+        720
+      ],
+      "size_px": [
+        1280,
+        720
+      ],
+      "world": [
+        20.0,
+        11.25
+      ],
+      "world_size": [
+        20.0,
+        11.25
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        640,
+        360
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 1,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/extracted/extended/rooms/sbw_v32_Texture2D_2020_06_14_231047_1470x603.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/tree-large-01-canopy/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/city-facade-townhouse/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-03.png",
+      "source_box": [
+        24,
+        24,
+        813,
+        454
+      ],
+      "raw_sha256": "167412a7485c4c797b6d97256d3499a87ef99a9c246ecdb2b1308c17d6655256",
+      "sha256": "596b234706cb50162f6be1879aa280d7f5574afc07b35ebd2d60af5b971bd4f5",
+      "palette": "palette/dawn.json",
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "notes": "Dawn sky only; additional generated dawn palette, discrete stepped pixel bands; no sun/rays. Camera-aligned1280x720 layer. Binaryalpha.24px bottom coverage. No runtime activation."
+    },
+    {
+      "id": "login-layer-2-citadel",
+      "category": "backdrop_mid",
+      "kit": "login",
+      "file": "login-layer-2-citadel/final.png",
+      "px": [
+        1280,
+        720
+      ],
+      "size_px": [
+        1280,
+        720
+      ],
+      "world": [
+        10.0,
+        5.625
+      ],
+      "world_size": [
+        10.0,
+        5.625
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        640,
+        360
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 1,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/extracted/extended/rooms/sbw_v32_Texture2D_2020_06_14_231047_1470x603.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/tree-large-01-canopy/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/city-facade-townhouse/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-01.png",
+      "source_box": [
+        860,
+        24,
+        1649,
+        454
+      ],
+      "raw_sha256": "2806e5ca37db6eba94a69e3a5fea8f215f836935b0550be14c1788a141d154b6",
+      "sha256": "51fdce2d2c9e24929a3ed70dc1564344128750f1ba3e748b513b24cd43208223",
+      "palette": "palette/town.json",
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "notes": "Ivory stone citadel and terracotta turrets derived from approved town facade, attached town ridge; upper sky alpha. Camera-aligned1280x720 layer. Binaryalpha.24px bottom coverage. No runtime activation."
+    },
+    {
+      "id": "login-layer-3-forest",
+      "category": "backdrop_mid",
+      "kit": "login",
+      "file": "login-layer-3-forest/final.png",
+      "px": [
+        1280,
+        720
+      ],
+      "size_px": [
+        1280,
+        720
+      ],
+      "world": [
+        10.0,
+        5.625
+      ],
+      "world_size": [
+        10.0,
+        5.625
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        640,
+        360
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 1,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/extracted/extended/rooms/sbw_v32_Texture2D_2020_06_14_231047_1470x603.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/tree-large-01-canopy/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/city-facade-townhouse/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-04.png",
+      "source_box": [
+        24,
+        487,
+        813,
+        917
+      ],
+      "raw_sha256": "b8eaf99d87662c4a1bf34042ca8dacd92a450b028263c24d62d9d2392c14d4c0",
+      "sha256": "255682349d1e4b7ddf7617fe407971d471efd6eec77950feaa486b5812222f13",
+      "palette": "palette/forest.json",
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "notes": "Low woodland band redrawn twice to expose citadel; foliage language matches batch01 canopy reference. Camera-aligned1280x720 layer. Binaryalpha.24px bottom coverage. No runtime activation."
+    },
+    {
+      "id": "login-layer-4-foreground",
+      "category": "backdrop_mid",
+      "kit": "login",
+      "file": "login-layer-4-foreground/final.png",
+      "px": [
+        1280,
+        720
+      ],
+      "size_px": [
+        1280,
+        720
+      ],
+      "world": [
+        10.0,
+        5.625
+      ],
+      "world_size": [
+        10.0,
+        5.625
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        640,
+        360
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 1,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/extracted/extended/rooms/sbw_v32_Texture2D_2020_06_14_231047_1470x603.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/tree-large-01-canopy/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/city-facade-townhouse/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-04.png",
+      "source_box": [
+        860,
+        487,
+        1649,
+        917
+      ],
+      "raw_sha256": "b8eaf99d87662c4a1bf34042ca8dacd92a450b028263c24d62d9d2392c14d4c0",
+      "sha256": "fcdbb74608dd1ad668971ccc1e85003b2a29cd1febef99bd573fc78637c73644",
+      "palette": "palette/forest.json",
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "notes": "Low meadow/fern/stone framing edge with worn ochre path, no building/creature; forest palette. Camera-aligned1280x720 layer. Binaryalpha.24px bottom coverage. No runtime activation."
+    },
+    {
+      "id": "logo-horizontal",
+      "category": "ui_sprite",
+      "kit": "branding-v2",
+      "file": "logo-horizontal/final.png",
+      "px": [
+        1024,
+        320
+      ],
+      "size_px": [
+        1024,
+        320
+      ],
+      "world": null,
+      "world_size": null,
+      "pivot": "center",
+      "pivot_px": [
+        512,
+        160
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 1,
+      "frame_px": null,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/reference/hud/button_pet.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-06-octopath/frame-portrait/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-06-octopath/contact-sheet.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-01.png",
+      "raw_sha256": "4c5dd1f6e4462715cf89ab6d0e0377f9c1883288e6eee17ad4d60fc6b790894b",
+      "sha256": "9df1525bc44241b7e2affa1dabf32980c2704a61eb3f412972f6f3539ca87787",
+      "source_box": [
+        16,
+        60,
+        930,
+        420
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": 3
+    },
+    {
+      "id": "logo-badge",
+      "category": "ui_sprite",
+      "kit": "branding-v2",
+      "file": "logo-badge/final.png",
+      "px": [
+        512,
+        512
+      ],
+      "size_px": [
+        512,
+        512
+      ],
+      "world": null,
+      "world_size": null,
+      "pivot": "center",
+      "pivot_px": [
+        256,
+        256
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 1,
+      "frame_px": null,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/reference/hud/button_pet.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-06-octopath/frame-portrait/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-06-octopath/contact-sheet.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-01.png",
+      "raw_sha256": "4c5dd1f6e4462715cf89ab6d0e0377f9c1883288e6eee17ad4d60fc6b790894b",
+      "sha256": "f37d5df6f85a8f0e7aef918e705e6aff6a29b77e115d4ad5b81fd54be41e5957",
+      "source_box": [
+        930,
+        0,
+        1448,
+        450
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": 3
+    },
+    {
+      "id": "app-icon",
+      "category": "icon",
+      "kit": "branding-icon-repair",
+      "file": "app-icon/final.png",
+      "px": [
+        256,
+        256
+      ],
+      "size_px": [
+        256,
+        256
+      ],
+      "world": null,
+      "world_size": null,
+      "pivot": "center",
+      "pivot_px": [
+        128,
+        128
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 1,
+      "frame_px": null,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-10-octopath/jobs/branding-v2/raw-01.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-06-octopath/frame-portrait/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-06-octopath/contact-sheet.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-02.png",
+      "raw_sha256": "193783164ab1e6c191cbc3de9b6b902f775b9246bee65417e1652ae1bb445d4a",
+      "sha256": "01b6c437963e6685c9e17754ee6e7c0268771477bee419f7715fc69f3cb34f56",
+      "source_box": [
+        100,
+        450,
+        820,
+        1060
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": null,
+      "master_file": "app-icon/master-1024.png"
+    },
+    {
+      "id": "map-card-frame",
+      "category": "ui_9slice",
+      "kit": "branding-v2",
+      "file": "map-card-frame/final.png",
+      "px": [
+        288,
+        360
+      ],
+      "size_px": [
+        288,
+        360
+      ],
+      "world": null,
+      "world_size": null,
+      "pivot": "center",
+      "pivot_px": [
+        144,
+        180
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "none",
+      "slice": [
+        48,
+        48,
+        48,
+        48
+      ],
+      "frames": 1,
+      "frame_px": null,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/reference/hud/button_pet.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-06-octopath/frame-portrait/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-06-octopath/contact-sheet.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-01.png",
+      "raw_sha256": "4c5dd1f6e4462715cf89ab6d0e0377f9c1883288e6eee17ad4d60fc6b790894b",
+      "sha256": "670bbd02cefa42425c63f9b2af24f4f615a1269106c8555fd09ee6d0dd6a06dd",
+      "source_box": [
+        870,
+        450,
+        1400,
+        1050
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": 3
+    },
+    {
+      "id": "loading-bar-frame",
+      "category": "ui_9slice",
+      "kit": "loading-bars-repair",
+      "file": "loading-bar-frame/final.png",
+      "px": [
+        576,
+        128
+      ],
+      "size_px": [
+        576,
+        128
+      ],
+      "world": null,
+      "world_size": null,
+      "pivot": "center",
+      "pivot_px": [
+        288,
+        64
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "none",
+      "slice": [
+        48,
+        48,
+        48,
+        48
+      ],
+      "frames": 1,
+      "frame_px": null,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-10-octopath/jobs/loading-ui-v2/raw-01.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-06-octopath/bar-track-framed/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-06-octopath/ornament-corner/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-02.png",
+      "raw_sha256": "a23c532a3d04f3ac8a0aa874e783382554acf5ae705803464ff5cc67632dfe97",
+      "sha256": "a95112a15af0ce017e08b4fa69bb319f5cc6113513cd62268631983652085064",
+      "source_box": [
+        0,
+        100,
+        650,
+        350
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": 3
+    },
+    {
+      "id": "loading-bar-fill",
+      "category": "ui_sprite",
+      "kit": "review-loading-fill-23",
+      "file": "loading-bar-fill/final.png",
+      "px": [
+        256,
+        64
+      ],
+      "size_px": [
+        256,
+        64
+      ],
+      "world": null,
+      "world_size": null,
+      "pivot": "center",
+      "pivot_px": [
+        128,
+        32
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "x",
+      "slice": null,
+      "frames": 1,
+      "frame_px": null,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/reference/hud/frame_bars.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-06-octopath/bar-track-framed/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-06-octopath/ornament-corner/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-03.png",
+      "raw_sha256": "e4d6f1e7983e6f4b42ef804a60bf3eb70079f222a4374d9dd726fc3ebbe3f352",
+      "sha256": "2f9ebc9947edef3ae6ef8e3aa6eebba05a210a8880c2200a4077c1c8b434491b",
+      "source_box": [
+        842,
+        321,
+        1271,
+        418
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": 3
+    },
+    {
+      "id": "loading-bg",
+      "category": "backdrop_mid",
+      "kit": "loading-bg-v2",
+      "file": "loading-bg/final.png",
+      "px": [
+        1280,
+        720
+      ],
+      "size_px": [
+        1280,
+        720
+      ],
+      "world": [
+        10.0,
+        5.625
+      ],
+      "world_size": [
+        10.0,
+        5.625
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        640,
+        360
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 1,
+      "frame_px": null,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/extracted/extended/rooms/sbw_v32_Texture2D_2020_06_14_231047_1470x603.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/tree-large-01-canopy/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/city-facade-townhouse/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-01.png",
+      "raw_sha256": "6ea5e91474715324c9a23ea7c3501e4cb4a356c8cb53edb707d890d4ebd64b5e",
+      "sha256": "84c5bb03eb6085e3bbf1e19ef625efb97b7dc2f856d80c3e39b42cdb01e1546d",
+      "source_box": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": null
+    },
+    {
+      "id": "loading-ornament-corners",
+      "category": "ui_sprite",
+      "kit": "loading-v2",
+      "file": "loading-ornament-corners/final.png",
+      "px": [
+        768,
+        192
+      ],
+      "size_px": [
+        768,
+        192
+      ],
+      "world": null,
+      "world_size": null,
+      "pivot": "center",
+      "pivot_px": [
+        96,
+        96
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 4,
+      "frame_px": [
+        192,
+        192
+      ],
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/reference/hud/frame_bars.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-06-octopath/bar-track-framed/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-06-octopath/ornament-corner/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-01.png",
+      "raw_sha256": "adbbf35cf06948a5cb02c0d14b19987946e3e459947c030675d60dac212c9c41",
+      "sha256": "26ec6bb0852a2f0caf1b70f1ce20644b3ebebca350eff0b721046b687f4c5218",
+      "source_box": [
+        100,
+        400,
+        550,
+        780
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": 3,
+      "packed_parts": [
+        "loading-corner-tl",
+        "loading-corner-tr",
+        "loading-corner-bl",
+        "loading-corner-br"
+      ]
+    },
+    {
+      "id": "intro-01-world",
+      "category": "backdrop_mid",
+      "kit": "intro-v2",
+      "file": "intro-01-world/final.png",
+      "px": [
+        1280,
+        720
+      ],
+      "size_px": [
+        1280,
+        720
+      ],
+      "world": [
+        10.0,
+        5.625
+      ],
+      "world_size": [
+        10.0,
+        5.625
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        640,
+        360
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 1,
+      "frame_px": null,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/extracted/extended/rooms/sbw_v32_Texture2D_2020_06_14_231047_1470x603.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/tree-large-01-canopy/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-05-octopath/player-male/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-01.png",
+      "raw_sha256": "393cc33ea807d9e52051b3620715dc7575d0d2c027213e36c2e960fd73b935f3",
+      "sha256": "4cb8a38845bb7b0846649dd850b26554c0df9a3c04d33169549d97deb69461dc",
+      "source_box": [
+        80,
+        12,
+        886,
+        465
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": null
+    },
+    {
+      "id": "intro-02-companion",
+      "category": "backdrop_mid",
+      "kit": "intro-v2",
+      "file": "intro-02-companion/final.png",
+      "px": [
+        1280,
+        720
+      ],
+      "size_px": [
+        1280,
+        720
+      ],
+      "world": [
+        10.0,
+        5.625
+      ],
+      "world_size": [
+        10.0,
+        5.625
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        640,
+        360
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 1,
+      "frame_px": null,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/extracted/extended/rooms/sbw_v32_Texture2D_2020_06_14_231047_1470x603.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/tree-large-01-canopy/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-05-octopath/player-male/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-01.png",
+      "raw_sha256": "393cc33ea807d9e52051b3620715dc7575d0d2c027213e36c2e960fd73b935f3",
+      "sha256": "9109ceb74dcf213d23642352a54512625f9b05bef067e7dc415a8608a0f07acf",
+      "source_box": [
+        979,
+        80,
+        1660,
+        463
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": null
+    },
+    {
+      "id": "intro-03-journey",
+      "category": "backdrop_mid",
+      "kit": "intro-v2",
+      "file": "intro-03-journey/final.png",
+      "px": [
+        1280,
+        720
+      ],
+      "size_px": [
+        1280,
+        720
+      ],
+      "world": [
+        10.0,
+        5.625
+      ],
+      "world_size": [
+        10.0,
+        5.625
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        640,
+        360
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 1,
+      "frame_px": null,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/extracted/extended/rooms/sbw_v32_Texture2D_2020_06_14_231047_1470x603.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/tree-large-01-canopy/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-05-octopath/player-male/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-01.png",
+      "raw_sha256": "393cc33ea807d9e52051b3620715dc7575d0d2c027213e36c2e960fd73b935f3",
+      "sha256": "c2e419b8f40ed25b4308d8b8a79f8878744157d811bec08178af9bd2e47f6bf7",
+      "source_box": [
+        170,
+        486,
+        949,
+        924
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": null
+    }
+  ],
+  "deferred_stages": [
+    "D intro"
+  ],
+  "login_panorama": "Not published before layer approval; qa-layer-stack.png is review-only."
+}

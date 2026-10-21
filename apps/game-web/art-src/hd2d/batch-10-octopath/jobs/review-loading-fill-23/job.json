@@ -1,0 +1,55 @@
+{
+  "id": "review-loading-fill-23",
+  "state": "exported_pending_visual_review",
+  "route": "built-in image_gen",
+  "raw": "raw-03.png",
+  "prompt": "Phimond loadingbar fill ONLY, antique fantasy HD2D PIXELART repeatstrip. OriginalAPKframebars1CONTENT only; approvedbatch06bartrack2+corner3 exactartist/style,petanchors4/5outline/valueonly. Flat#FF00FFbackground. ONE continuous long straight horizontal materialribbon across ENTIREfilewidth. No endcaps,noframe,nopresentationlabels.\nMaterial: muted TEAL CRYSTAL with clearlyvisible angularfacets, inset inthin agedCOPPER ribs separatingfourunequalwidth crystalsegments. Teal#246C72/#358B8D/#70B9B3, paleivoryglint#D0DFCC,copper#9A6536/#D7B97A andcoolumber/mauveshadow. Notgreenemeraldgradient, NOT a plain flatgreenrectangle. Deliberate stepped pixelplanes, tinychipstextureinsidefacets,33–48colors,2–4tones percrystal/copperplane, nobloomorwhiteglow,nosmoothshading/nodither.\nCanvas1536x512. Stripheight128 centeredverticallyy192–319. Topandbottomstraight, thinwarmcopper topbevel anddarkcoolbottomline. Centralfacetsactlike smallinlaidgemstones, no bigdiamondicons/noarrowtips.\nEngineering repeatX: in BOTH leftmost64pxandrightmost64px make the EXACT SAME verticalprofile, everyrowidenticalfromlefttoright in theseendzones. y0–191 #FF00FF; y192–199 darkumber#42352F;y200–207 copper#9A6536;y208–295 mediumteal#358B8D;y296–303 darkteal#246C72;y304–311copper#9A6536;y312–319darkumber#42352F;y320–511magenta. No endornaments orfade, colorcontinuesthroughtheimageedges. Allfoursegmentdetailsonlycentral1408px. No largegroundshadow,nottextorcharacters. ActualhandcraftedpixeljewelmetalfinishlikeapprovedUI,nottheolduntexturedgreenfill.",
+  "refs": [
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/reference/hud/frame_bars.png",
+      "sha256": "1a031461dbf48feececace6175fdb839ffa0cdaa5850f84f53b367eb8a46c38d"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-06-octopath/bar-track-framed/final.png",
+      "sha256": "5f4b865ea3d4d283931b7e4feee18901b57749cb7657ddb9661a745ee8b511f2"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-06-octopath/ornament-corner/final.png",
+      "sha256": "8bedccfcaf96a14a32e70fdab11c686261f9d965557e0c2f0504362d46c4e176"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "assets": [
+    {
+      "id": "loading-bar-fill",
+      "size": [
+        256,
+        64
+      ],
+      "category": "ui_sprite",
+      "tileable": "x",
+      "stretch": true,
+      "keep_source_box": true,
+      "colors": 48,
+      "box": [
+        842,
+        321,
+        1271,
+        418
+      ]
+    }
+  ],
+  "shared_palette": true,
+  "extraction_note": "Extract crystal FILL BODY only, excluding outerbarframe top/bottom. Oneperiodbetween copperdividercenters selectedby endpointQA; no texturepaint, edgecopy or contentgenerationwithcode.",
+  "endpoint_search_before_export": {
+    "mean": 0.0,
+    "max": 0
+  }
+}

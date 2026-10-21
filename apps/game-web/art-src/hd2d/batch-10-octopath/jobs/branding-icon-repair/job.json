@@ -1,0 +1,51 @@
+{
+  "id": "branding-icon-repair",
+  "route": "built-in image_gen",
+  "prompt": "Precise edit of image1 branding sheet: change ONLY the bottom-left app icon outer silhouette. Preserve all other assets and all mascot identity and \"PHIMOND\" lettering unchanged. Image1 is edit target/content only; images2-3 approved batch06 UI are style; images4-5 pet shade/outline anchors.\nThe app icon currently has nearly straight long vertical sides. Redraw its bronze/navy outer backing into a strongly rounded-square, large continuous corners of radius at least35%of width; straight part of each outer side at most30%of height. Keep a square overall footprint and the same pink wing-eared friendly face, jade tiny fittings integrated along curved corners. Every curved corner must have distinct stair-step pixel edges; NO small protruding ornaments at extreme sides making straight edge columns. Do not simply recolor or crop. Preserve width and height about510x480 in bottom-left panel. Do not cut ears, eyes or bronze border. Flat#FF00FF outside. Rest sheet layout stays1448x1086. Pixel art exactly same approved batch06 bronze and jade, 2-4tones per material, no bloom/fog/text additions/shadows.",
+  "refs": [
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-10-octopath/jobs/branding-v2/raw-01.png",
+      "sha256": "4c5dd1f6e4462715cf89ab6d0e0377f9c1883288e6eee17ad4d60fc6b790894b"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-06-octopath/frame-portrait/final.png",
+      "sha256": "ea198241da2a93f6e6bd71577014ac2f81ed2c154ef5c2497e4c97ee9d31f623"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-06-octopath/contact-sheet.png",
+      "sha256": "e5f46ccfa6f2521aaaf836d2b0eed9643c2b4585772fe41dd14741cc3f7bf50b"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "state": "exported_pending_visual_review",
+  "raw": "raw-02.png",
+  "assets": [
+    {
+      "id": "app-icon",
+      "box": [
+        100,
+        450,
+        820,
+        1060
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "master_size": [
+        1024,
+        1024
+      ],
+      "category": "icon",
+      "reserve_jade": true,
+      "raw": "raw-02.png"
+    }
+  ]
+}
