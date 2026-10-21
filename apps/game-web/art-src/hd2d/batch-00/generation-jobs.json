@@ -1,0 +1,105 @@
+{
+  "art_source": "host_image",
+  "route": "built-in image_gen",
+  "model": null,
+  "estimateUsd": null,
+  "forge_commit": "5324342fdfab72430f4e9604f3fe427009f8596d",
+  "jobs": [
+    {
+      "id": "forest-a-sheet",
+      "prompts": [
+        "Use case: stylized-concept. Asset type: isolated production game sprite sheet for Phimond HD-2D. Reference image 1 is CONTENT only: original emerald forest. Images 2 and 3 are STYLE only: approved pets, match hard pixel clusters, colored dark outline and 2–4 shade ramps, no smooth painting. Create exactly SIX separate sprites in a regular 3 column x 2 row grid on a 1536x1024 genuinely transparent canvas. Each cell 512x512, centered horizontally, baseline y=480 within cell, at least 32px clear space inside every cell. Top row: large full broadleaf emerald forest tree (whole trunk AND foliage, total height 410 pixels), round bush (height 145 pixels), upright grass clump (height 65 pixels). Bottom row: small yellow wildflower cluster (height 80px), pink wildflower cluster (height 80px), fern grass clump (height 80px). Tree crown full and rounded, roots visible; warm olive highlights, emerald mids, cool dark teal shade, earthy umber trunk, source's pink and yellow accents. Front billboard view seen slightly from above 24 degrees. Large crisp pixel blocks, 2px logical pixels, hue tinted outline. This is variant A, faithful warm lush original palette. All six independent, no shared ground, no shadows on ground, no scenery, no fog, no glow, no text, no labels, no borders. Export image to disk and return output path.",
+        "Edit the first input image ONLY to remove ALL colored haze, glow, fog and background surrounding its six sprites. Preserve the tree, shrub, grass and three flower/fern sprites pixel-for-pixel in design and palette. Put each complete object on completely empty TRANSPARENT alpha=0 background, the solid interior of every object must be fully opaque alpha=255. No colored atmospheric clouds, no gradients outside objects, no ground cast shadows whatsoever. Keep all six objects distinct with wide gaps; enlarge canvas margins if necessary to preserve the entire tree silhouette. Do not add text, labels or frames. These are cutout production pixel sprites, not a presentation poster.",
+        "Use case: stylized-concept. Create a PRODUCTION CUTOUT SPRITE PACK on a completely flat pure #FF00FF magenta background. NO transparency effect, NO gradient, NO glow or haze, NO cast shadows. Exactly six separate isolated forest objects, no overlaps, no ground patches, no labels: one full large broadleaf forest tree on left taking full height with a clear margin; at upper right one rounded bush; at lower right four small separate clumps: grass blades, yellow wildflowers, pink wildflowers, fern. Each silhouette completely contained and separated by wide blank magenta gaps. First reference is original forest content (brown trunk, lime/emerald foliage, pink and yellow flowers). Next two references are approved pet pixel style only. Crisp clean PIXEL ART, visible square pixel clusters and dark hue-tinted outlines, only 4 tones per material and 40 total solid colors per prop, NO antialiasing. Warm light upper left, cooler shade. Standing front billboards, seen slightly from above about 24 degrees. This is variant A: rich warm emerald and yellow-green. Flat key background must remain EXACTLY pure solid magenta up to the hard opaque object boundary, no painted lighting on background. Empty space on all four sides of every object. Do not paint any pixels resembling shadow underneath."
+      ],
+      "refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/emerald_forest_main_woods.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "raw": [
+        "raw-01.png",
+        "raw-02.png",
+        "raw-03.png"
+      ],
+      "selected_raw": "raw-03.png",
+      "notes": "First two attempts failed: diffuse colored alpha haze. Third uses removable magenta key. Cleanup attempt references raw-01.png only."
+    },
+    {
+      "id": "forest-b-sheet",
+      "prompts": [
+        "Use case: stylized-concept. Create a PRODUCTION CUTOUT SPRITE PACK on a completely flat pure #FF00FF magenta background. NO transparency effect, NO gradient, NO glow or haze, NO cast shadows. Exactly six separate isolated forest objects, no overlaps, no ground patches, no labels: one full large broadleaf forest tree on left taking full height with a clear margin; at upper right one rounded bush; at lower right four small separate clumps: grass blades, yellow wildflowers, pink wildflowers, fern. Each silhouette completely contained and separated by wide blank magenta gaps. First reference is original forest content (brown trunk, lime/emerald foliage, pink and yellow flowers). Next two references are approved pet pixel style only. Crisp clean PIXEL ART, visible square pixel clusters and dark hue-tinted outlines, only 4 tones per material and 40 total solid colors per prop, NO antialiasing. Warm light upper left, cooler shade. Standing front billboards, seen slightly from above about 24 degrees. This is variant B: restrained jade and moss green, cool teal shade, soft gold-green highlights; broader cleaner color clusters, less bright yellow foliage, a slightly asymmetrical rounded crown, gnarled trunk. Same original species of tree and plants, same warm upper-left lighting. Flat key background must remain EXACTLY pure solid magenta up to the hard opaque object boundary, no painted lighting on background. Empty space on all four sides of every object. Do not paint any pixels resembling shadow underneath."
+      ],
+      "refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/emerald_forest_main_woods.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "raw": [
+        "raw-01.png"
+      ],
+      "selected_raw": "raw-01.png"
+    },
+    {
+      "id": "city-sheet",
+      "prompts": [
+        "Use case: stylized-concept. Production HD-2D pixel-art cutout pack, NOT a composed scene. On a pure solid flat #FF00FF magenta background, make exactly FOUR distinct objects with generous empty gaps. Left half is option A: one standing fantasy town street lamp at upper left, one wooden barrel at lower left. Right half is option B: one standing fantasy town street lamp at upper right, one wooden barrel at lower right. All complete contained silhouettes, no object touching an edge. Lamp shape: slim charcoal iron post, pale cream stone foot, curled brass arm, warm amber glass lantern under a little copper tiled cap, unlit glass (engine lights it), height about five barrel heights. Barrel: round upright oak staves, 2 metal hoops, visible top, no text. A uses pale sandstone/brass/oak harmony; B uses slightly cooler limestone, aged bronze and deeper honey wood, same original-world identity. First reference original city sets content, fantasy town material and palette; pet references 2 and 3 set hue-tinted outline and 2–4 tone pixel shading only. Billboard front view slightly down 24 degrees. Crisp visible square pixels, controlled saturation, 40 colors per object; no photorealism, no soft shading. Warm upper-left key with cool object shade. NO text, numbers, glow, haze, ground, cast shadows or black background. Pure magenta key extends to every hard object edge. Keep lamps and barrels separated for individual PNG extraction."
+      ],
+      "refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/city_square.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "raw": [
+        "raw-01.png"
+      ],
+      "selected_raw": "raw-01.png"
+    },
+    {
+      "id": "terrain-sheet",
+      "prompts": [
+        "Use case: game textures. Create a square 1024x1024 atlas with exactly FOUR edge-to-edge square terrain tiles in a 2x2 grid, no gutter, frame, text, or border: top left forest grass variant A, top right forest grass variant B, bottom left fantasy city cobblestones variant A, bottom right city cobblestones variant B. Each tile has an independent 512x512 square repeat and must tile SEAMLESSLY in both X and Y: left and right edges match, top and bottom edges match, uniform material and lighting everywhere. Do not turn them into raised squares or perspective platforms. Full opaque planar surface fills every pixel. Source image 1 defines original forest ground: muted olive earth with sparse emerald/lime grass patches, low contrast with room for characters. Source image 2 defines original city ground: pale warm limestone irregular paving, thin sandy mortar, subtle wear. Source 3 and 4 approved pet art define pixel cluster and hue shading style ONLY. Clean crisp pixel art, large color clusters, four tones per material, no antialiasing, no smooth gradient, no fine noisy texture. Forest A warmer olive with modest sparse clover; forest B cooler moss jade and slightly denser grass, NO flowers or props. City A warm ivory/beige paving, city B cooler pale greige limestone, both original irregular worn stone identity. Even unlit surfaces; NO directional ground shadows, vignette, glows, fog, sky, grass tufts or raised objects. Do not outline the tile perimeter. These are texture assets for engine lighting, NOT a scene.",
+        "Edit ONLY the four outer edge bands of each of the four texture squares in input image 1 so EACH square tiles seamlessly on itself in both axes. Keep the same 2x2 layout, materials, palettes and all interior art. Treat the four quadrants as FOUR INDEPENDENT toroidal textures. For each quadrant separately the leftmost column and rightmost column must be IDENTICAL colors at corresponding y; its topmost row and bottommost row must be IDENTICAL colors at corresponding x. Continue those repeating patterns naturally inward for about 20 pixels. No gutters or frames or drawn border, no margin between the four squares. Forest two squares on top; pale stone two squares below. Remove any directional illumination around the tile perimeters. Tileability is a hard requirement for a real game renderer, not an illustrative approximation. No new objects, no text, no shadows. Output a square atlas.",
+        "Generate a production texture atlas, square, exactly 2 rows x 2 columns edge-to-edge, NO borders or gutters. Four INDEPENDENT perfectly seamless repeat tiles. Top left = olive earth and sparse grass, top right = moss earth and sparse grass, bottom left = pale ivory irregular limestone paving, bottom right = pale cool greige limestone paving. Source 1 and 2 define materials, pet references define crisp pixel shading only. LOW CONTRAST, EVEN LIGHTING, large flat color clusters and only 4 tones per surface. HARD TILING REQUIREMENT: each square's LEFT AND RIGHT edge must be exactly the same flat base material color, likewise its TOP AND BOTTOM edge, with uninterrupted natural base color through those edges. Grass fragments and stone boundaries should stay away from the very outermost 3 pixels of their own square, while base color stays continuous; do not draw an inset border. Use sparse small irregular flat paving stones embedded in pale mortar so the plain material between them connects naturally across the repeat. No raised rocks, no tufts, no ground shadows, no gradients, no vignette or central hotspot. Keep scale and identity faithful to original but flatter, simpler and less busy, to read under game characters. Flat top-down surface texture only. No perspective, text, frames, clouds or painted scenery."
+      ],
+      "refs": [
+        "/Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level4_rungsau/level4_rungsau_001.png",
+        "/Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level3_QTTP/level3_QTTP_003.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "raw": [
+        "raw-01.png",
+        "raw-02.png",
+        "raw-03.png"
+      ],
+      "selected_raw": "raw-03.png",
+      "notes": "Three attempts exhausted. Do not approve tileability without final numeric and visual QA.",
+      "selected_extract": "forge-terrain-03"
+    },
+    {
+      "id": "ui-sheet",
+      "prompts": [
+        "Use case: ui-mockup. Production CUTOUT game UI asset pack for Phimond HD-2D, not a full screen. Render a 3072x2048 sheet on EXACT pure solid #FF00FF magenta background. Exactly EIGHT isolated assets, generous empty gaps, no text or numbers. Arrange TWO COLUMNS, option A left and option B right. Each column: at top a large horizontal empty MENU PANEL, then below three separate identical-size tilted pill BUTTONS in normal, pressed and disabled states. Panel identity from input 1 and input 3: deep midnight-blue flat center, delicate old gold edge, elaborate asymmetric fantasy leaf scrollwork at left edge and corner ornaments, clean thin gold edge on other sides. Preserve that distinctive silhouette but redraw as crisp pixel art. Center MUST be flat and freely stretchable; ornaments limited to corner/edge regions for 9-slice; no embossed markings in center. Aim panel ~1476x696 at @3x original. Button identity from input 2: narrow diagonal oval, long axis rises from bottom left to top right at exactly 37 degrees, outer gilded rim, cyan/blue interior, entirely blank central text-safe area. Buttons aim 201x186. Normal cyan blue face, pressed deeper blue/inset bevel, disabled desaturated steel-blue with dull gold rim; same geometry in all three. A uses original sapphire/navy and bright antique gold. B uses slightly cooler indigo navy and restrained aged gold, simpler edge ornament; both match source motifs. Images 4 and 5 approved pet sheets define crisp pixel shading and colored outlines only. Clean square color clusters, 2–4 tones per material, no soft vector edges. NO built-in letters, symbols, word Choose, grid, labels, separators, drop shadows, glow, fog or gradient behind assets. Every asset fully contained with margin, no overlaps; hard opaque silhouette against flat magenta up to every edge.",
+        "Edit ONLY the two large menu PANELS in this source UI sheet to make them real ornament-preserving 9-slice assets. Keep their blue A / indigo B palette, old gold pixel trim, overall outer silhouettes, distinctive asymmetric left notches, and style. Return only those two panels, A on left and B on right, on a pure flat #FF00FF magenta key background with generous empty margins; omit the small buttons because they are already delivered separately. THE ESSENTIAL REPAIR: move ALL curly gold scrollwork into FIXED corner regions. The left and right edge MIDDLE 50% of each panel's height must be perfectly plain, straight thin gold vertical rails without any curl, bulge, leaf, gem or repeating ornament. The top and bottom edge middle 50% must likewise be plain straight thin gold rails. Any decorative curls from the source must be confined to the top-left and bottom-left fixed corner clusters; small right ornaments only in top-right and bottom-right corners. All corner ornament pixels fit within uppermost/lower-most 25% of panel height. Leave a flat solid navy center A and solid indigo center B, absolutely no gradient or texture. Corners will never scale; middle strips will stretch. Keep crisp square pixel clusters, hard 3-tone metal steps. No text, symbols, labels, glow, haze, ground or shadows. No blurred vector edges. Complete panel silhouettes, no clipping. This is a targeted repair of the existing approved-direction candidate, not a new design.\n\nReference/edit target: ui-sheet/raw-01.png. Only panels are revised. Buttons retain their original generation. Output: raw-02.png. Route: built-in image_gen.\n"
+      ],
+      "refs": [
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/reference/hud/panel_menu.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/reference/hud/button_confirm.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/reference/ui/UI.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "raw": [
+        "raw-01.png",
+        "raw-02.png"
+      ],
+      "selected_raw": "raw-01.png",
+      "repair_reference": {
+        "path": "ui-sheet/raw-01.png",
+        "sha256": "722e791204209126dd6cd2ef4082146f3c256c3451e8d028a02c78e2061c5656"
+      },
+      "notes": "Buttons use raw-01; repaired panels use raw-02; same UI palette."
+    }
+  ]
+}

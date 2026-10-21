@@ -1,0 +1,176 @@
+{
+  "status": "pass",
+  "method": "forge_palette.quantize_image: OKLab-nearest palette colour per pixel (exact palette colours kept), alpha binary at the threshold, then the written PNGs re-read and measured with forge_palette.fit_report against the palette",
+  "notProven": [
+    "Visual quality after snapping: compare an output with its input.",
+    "Indexed PNGs are engine exports; they are not checked by builders.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "output_off_palette_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "output_partial_alpha_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.161105,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../../finish-inputs/city/city-a-floor.png",
+      "sha256": "1a3398c1d7274715288e3003ba85c23ae60869f768626fe64d3d21d75fed57c4",
+      "bytes": 295754
+    },
+    {
+      "path": "../../finish-inputs/city/city-b-floor.png",
+      "sha256": "5a3fcb255ceb32f26bd092d086b680a72211f24eb8c047603ac70e1612aa3cc5",
+      "bytes": 285703
+    },
+    {
+      "path": "../../finish-inputs/city/city-barrel-a.png",
+      "sha256": "4137c51a82fe735e3ebd2c05d404cf1f4697ac4626ca4671d271f179e79318d4",
+      "bytes": 16907
+    },
+    {
+      "path": "../../finish-inputs/city/city-barrel-b.png",
+      "sha256": "b5d58b6d9931128b3c71d4fb63329dac7e31c79e7adb33f59bdea48d1b2ee7ba",
+      "bytes": 16792
+    },
+    {
+      "path": "../../finish-inputs/city/city-lamp-a.png",
+      "sha256": "45bf1e1b1dddc827b3e87448f29090e9cef5247d4a29cb25f75005db6d09e2cd",
+      "bytes": 43900
+    },
+    {
+      "path": "../../finish-inputs/city/city-lamp-b.png",
+      "sha256": "9b1b62500fef84b200e1b1aa053d003365ed6ee793145de1b1cbecf0641f6381",
+      "bytes": 44668
+    },
+    {
+      "path": "../../palettes/city/palette.json",
+      "sha256": "0afd80d396bd32a5f539b241097f302c03e084ae5f21bb05bf024461016f8bd4",
+      "bytes": 1950
+    }
+  ],
+  "outputs": [
+    {
+      "path": "city-a-floor.png",
+      "sha256": "f3cbc26a60c3bdfdadd807999486e0f010cd6cb528d8b43f9a08962610c49eef",
+      "bytes": 36189
+    },
+    {
+      "path": "city-b-floor.png",
+      "sha256": "edf09bc4806a6a4d62c4bfdc75346a52867a883c8a1a061c5cf7fa62559dc919",
+      "bytes": 34692
+    },
+    {
+      "path": "city-barrel-a.png",
+      "sha256": "1d2122dedbda2a9701cd9bd7a8d2377f35857de813ae77fcbfcc839115b28a9a",
+      "bytes": 9336
+    },
+    {
+      "path": "city-barrel-b.png",
+      "sha256": "f3378a188cd9b6369cf5619025b0dc78c77656a5c86cdd006a722a5e1f6fec76",
+      "bytes": 8988
+    },
+    {
+      "path": "city-lamp-a.png",
+      "sha256": "d98ef09c8cabddcb1c33f4ce4effc72e2ef24c9cab05cb73a24a99bbc572ce77",
+      "bytes": 23025
+    },
+    {
+      "path": "city-lamp-b.png",
+      "sha256": "c710a34258070780153669015ff7f3a0afdd709e78d827fc6aa58109d30741a9",
+      "bytes": 24531
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "fit": {
+    "city-a-floor.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 261474,
+      "partial_alpha_px": 0,
+      "colors": 4354,
+      "palette_colors_used": 10,
+      "mean_delta_e": 0.011242,
+      "p95_delta_e": 0.019693,
+      "max_delta_e": 0.045465
+    },
+    "city-b-floor.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 260361,
+      "partial_alpha_px": 0,
+      "colors": 3139,
+      "palette_colors_used": 8,
+      "mean_delta_e": 0.009799,
+      "p95_delta_e": 0.019967,
+      "max_delta_e": 0.044284
+    },
+    "city-barrel-a.png": {
+      "measured_px": 5950,
+      "alpha_threshold": 128,
+      "off_palette_px": 5949,
+      "partial_alpha_px": 0,
+      "colors": 5594,
+      "palette_colors_used": 47,
+      "mean_delta_e": 0.017938,
+      "p95_delta_e": 0.031609,
+      "max_delta_e": 0.086152
+    },
+    "city-barrel-b.png": {
+      "measured_px": 5884,
+      "alpha_threshold": 128,
+      "off_palette_px": 5883,
+      "partial_alpha_px": 0,
+      "colors": 5580,
+      "palette_colors_used": 45,
+      "mean_delta_e": 0.019888,
+      "p95_delta_e": 0.034375,
+      "max_delta_e": 0.089565
+    },
+    "city-lamp-a.png": {
+      "measured_px": 15730,
+      "alpha_threshold": 128,
+      "off_palette_px": 15726,
+      "partial_alpha_px": 0,
+      "colors": 14582,
+      "palette_colors_used": 46,
+      "mean_delta_e": 0.023142,
+      "p95_delta_e": 0.040612,
+      "max_delta_e": 0.161105
+    },
+    "city-lamp-b.png": {
+      "measured_px": 15790,
+      "alpha_threshold": 128,
+      "off_palette_px": 15786,
+      "partial_alpha_px": 0,
+      "colors": 14742,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.024555,
+      "p95_delta_e": 0.041453,
+      "max_delta_e": 0.118921
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.161105,
+    "worst_p95_delta_e": 0.041453,
+    "off_palette_px": 565179
+  },
+  "locked_inputs": []
+}

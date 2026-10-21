@@ -1,0 +1,36 @@
+{
+  "id": "forest-a-floor",
+  "rgba": true,
+  "size": [
+    512,
+    512
+  ],
+  "colors": 22,
+  "alpha_levels": [
+    255
+  ],
+  "margins": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "binary_alpha": true,
+  "density": [
+    128.0,
+    128.0
+  ],
+  "failures": [
+    "seam_mean_below_6",
+    "forge_wrap_seams"
+  ],
+  "warnings": [
+    "Forge source extraction: 20 visible px belong to no auto box (small or faint parts)."
+  ],
+  "seam_mean_255": {
+    "x": 1.946,
+    "y": 8.7155,
+    "threshold": 6
+  },
+  "forge_wrap_seams": "fail"
+}

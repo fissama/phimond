@@ -1,0 +1,1 @@
+Repack native host edit from attempt03, source retained in raw.png. All20source rectangles cover full canvas. Common scale, manual rowgroundroots[265,265,248,237,226], destination[140,210]. Fix independent reviewer rowground drift; no alpha erasure. See attempt01/prompt.md for identity and animation; native correction removes expansive FX.

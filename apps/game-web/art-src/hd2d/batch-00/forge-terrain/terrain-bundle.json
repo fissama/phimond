@@ -1,0 +1,453 @@
+{
+  "schema": "generate2dmap.terrain_tile_bundle.v2",
+  "source": {
+    "path": "../terrain-sheet/raw-01.png",
+    "sha256": "ca593e4875876d72be71970c91abf7635ace125642f433931abfc4f09f91296c",
+    "bytes": 1849685,
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGB",
+    "bit_depth": 8,
+    "conversion": "RGB -> RGBA"
+  },
+  "grid": {
+    "rows": 2,
+    "cols": 2,
+    "rounding": "exact",
+    "source_cell_size": [
+      627,
+      627
+    ],
+    "output_tile_size": [
+      512,
+      512
+    ]
+  },
+  "tile": {
+    "shape": "square",
+    "layer": "base",
+    "footprint": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        512.0,
+        0.0
+      ],
+      [
+        512.0,
+        512.0
+      ],
+      [
+        0.0,
+        512.0
+      ]
+    ]
+  },
+  "terrains": {
+    "forest": {
+      "display_name": "forest",
+      "row": 0,
+      "kind": "fill",
+      "variants": [
+        {
+          "path": "forest-1.png",
+          "source_cell": [
+            0,
+            0
+          ],
+          "source_box": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "resized": true,
+          "mean_luminance": 0.44132,
+          "contrast": 0.049287,
+          "border": {
+            "checked": true,
+            "frame": false,
+            "frames": [],
+            "max_delta": 0.0
+          },
+          "wrap": {
+            "x": {
+              "seam": 4.179688,
+              "adjacent_median": 0.874023,
+              "adjacent_p95": 2.572021,
+              "adjacent_max": 2.645996,
+              "seam_over_median": 4.782123,
+              "seam_over_p95": 1.625059,
+              "seam_ratio": 1.579627,
+              "near_median": 0.776611,
+              "verdict": "seam",
+              "method": "premultiplied RGBA column steps (0-255); join vs interior steps within 8 columns per side, whole edge and worst 4-row window"
+            },
+            "y": {
+              "seam": 9.849609,
+              "adjacent_median": 1.070557,
+              "adjacent_p95": 4.793579,
+              "adjacent_max": 9.178223,
+              "seam_over_median": 9.200456,
+              "seam_over_p95": 2.054751,
+              "seam_ratio": 1.341317,
+              "near_median": 0.821289,
+              "verdict": "seam",
+              "method": "premultiplied RGBA column steps (0-255); join vs interior steps within 8 columns per side, whole edge and worst 4-row window"
+            }
+          },
+          "sha256": "aedbb3239226b0ce5d90101b6a7c6cc2e08b3b7cbad5e63bcccdf94d0d591197"
+        },
+        {
+          "path": "forest-2.png",
+          "source_cell": [
+            0,
+            1
+          ],
+          "source_box": [
+            627,
+            0,
+            1254,
+            627
+          ],
+          "resized": true,
+          "mean_luminance": 0.42382,
+          "contrast": 0.061797,
+          "border": {
+            "checked": true,
+            "frame": false,
+            "frames": [],
+            "max_delta": 0.0
+          },
+          "wrap": {
+            "x": {
+              "seam": 6.361816,
+              "adjacent_median": 1.116211,
+              "adjacent_p95": 3.059937,
+              "adjacent_max": 4.785156,
+              "seam_over_median": 5.699475,
+              "seam_over_p95": 2.079068,
+              "seam_ratio": 1.32949,
+              "near_median": 0.78125,
+              "verdict": "seam",
+              "method": "premultiplied RGBA column steps (0-255); join vs interior steps within 8 columns per side, whole edge and worst 4-row window"
+            },
+            "y": {
+              "seam": 12.59375,
+              "adjacent_median": 1.153809,
+              "adjacent_p95": 5.821533,
+              "adjacent_max": 8.913086,
+              "seam_over_median": 10.914939,
+              "seam_over_p95": 2.163305,
+              "seam_ratio": 1.526912,
+              "near_median": 0.737061,
+              "verdict": "seam",
+              "method": "premultiplied RGBA column steps (0-255); join vs interior steps within 8 columns per side, whole edge and worst 4-row window"
+            }
+          },
+          "sha256": "43bd9cf3cd87033173208ccde3b6419607eff9456686e3b112633917dfc2b8bf"
+        }
+      ],
+      "variant_difference_min": 0.060545,
+      "cross_variant_seams": {
+        "pairs": 4,
+        "max_seam_ratio": 4.295764,
+        "not_continuous": [
+          {
+            "left": 1,
+            "right": 2,
+            "axis": "x",
+            "seam_ratio": 2.110816,
+            "verdict": "seam"
+          },
+          {
+            "left": 1,
+            "right": 2,
+            "axis": "y",
+            "seam_ratio": 1.736544,
+            "verdict": "seam"
+          },
+          {
+            "left": 2,
+            "right": 1,
+            "axis": "x",
+            "seam_ratio": 4.295764,
+            "verdict": "seam"
+          },
+          {
+            "left": 2,
+            "right": 1,
+            "axis": "y",
+            "seam_ratio": 1.481374,
+            "verdict": "seam"
+          }
+        ],
+        "note": "diagnostic only: variants are verified to wrap with themselves, not with each other"
+      }
+    },
+    "city": {
+      "display_name": "city",
+      "row": 1,
+      "kind": "fill",
+      "variants": [
+        {
+          "path": "city-1.png",
+          "source_cell": [
+            1,
+            0
+          ],
+          "source_box": [
+            0,
+            627,
+            627,
+            1254
+          ],
+          "resized": true,
+          "mean_luminance": 0.774743,
+          "contrast": 0.07495,
+          "border": {
+            "checked": true,
+            "frame": false,
+            "frames": [],
+            "max_delta": 0.0
+          },
+          "wrap": {
+            "x": {
+              "seam": 7.684082,
+              "adjacent_median": 1.171875,
+              "adjacent_p95": 3.163208,
+              "adjacent_max": 3.402344,
+              "seam_over_median": 6.557083,
+              "seam_over_p95": 2.429205,
+              "seam_ratio": 2.258467,
+              "near_median": 0.825684,
+              "verdict": "seam",
+              "method": "premultiplied RGBA column steps (0-255); join vs interior steps within 8 columns per side, whole edge and worst 4-row window"
+            },
+            "y": {
+              "seam": 10.48877,
+              "adjacent_median": 1.417725,
+              "adjacent_p95": 5.096069,
+              "adjacent_max": 6.77002,
+              "seam_over_median": 7.398312,
+              "seam_over_p95": 2.058208,
+              "seam_ratio": 1.549297,
+              "near_median": 1.054443,
+              "verdict": "seam",
+              "method": "premultiplied RGBA column steps (0-255); join vs interior steps within 8 columns per side, whole edge and worst 4-row window"
+            }
+          },
+          "sha256": "d50e619479e57b27e8376b7b54f750d5acb8dc7fc7fe40dc25f07cc74fac2863"
+        },
+        {
+          "path": "city-2.png",
+          "source_cell": [
+            1,
+            1
+          ],
+          "source_box": [
+            627,
+            627,
+            1254,
+            1254
+          ],
+          "resized": true,
+          "mean_luminance": 0.745663,
+          "contrast": 0.079166,
+          "border": {
+            "checked": true,
+            "frame": false,
+            "frames": [],
+            "max_delta": 0.0
+          },
+          "wrap": {
+            "x": {
+              "seam": 7.977051,
+              "adjacent_median": 0.924316,
+              "adjacent_p95": 3.259766,
+              "adjacent_max": 4.20459,
+              "seam_over_median": 8.630217,
+              "seam_over_p95": 2.447124,
+              "seam_ratio": 1.897224,
+              "near_median": 0.734863,
+              "verdict": "seam",
+              "method": "premultiplied RGBA column steps (0-255); join vs interior steps within 8 columns per side, whole edge and worst 4-row window"
+            },
+            "y": {
+              "seam": 9.341797,
+              "adjacent_median": 1.306641,
+              "adjacent_p95": 4.76709,
+              "adjacent_max": 5.591797,
+              "seam_over_median": 7.149477,
+              "seam_over_p95": 1.959644,
+              "seam_ratio": 1.670625,
+              "near_median": 1.14209,
+              "verdict": "seam",
+              "method": "premultiplied RGBA column steps (0-255); join vs interior steps within 8 columns per side, whole edge and worst 4-row window"
+            }
+          },
+          "sha256": "0e9fae736bc223abe497333b1f3e75d0dfe4b3d718b5853129964d6137c70075"
+        }
+      ],
+      "variant_difference_min": 0.046174,
+      "cross_variant_seams": {
+        "pairs": 4,
+        "max_seam_ratio": 3.315873,
+        "not_continuous": [
+          {
+            "left": 1,
+            "right": 2,
+            "axis": "x",
+            "seam_ratio": 2.373824,
+            "verdict": "seam"
+          },
+          {
+            "left": 1,
+            "right": 2,
+            "axis": "y",
+            "seam_ratio": 2.188875,
+            "verdict": "seam"
+          },
+          {
+            "left": 2,
+            "right": 1,
+            "axis": "x",
+            "seam_ratio": 3.315873,
+            "verdict": "seam"
+          },
+          {
+            "left": 2,
+            "right": 1,
+            "axis": "y",
+            "seam_ratio": 2.188677,
+            "verdict": "seam"
+          }
+        ],
+        "note": "diagnostic only: variants are verified to wrap with themselves, not with each other"
+      }
+    }
+  },
+  "runtime": {
+    "world_size": 4.0
+  },
+  "processing": {
+    "background_mode": "opaque",
+    "background_mode_requested": "opaque",
+    "cell_shape": "square",
+    "resampler": "nearest",
+    "grid_rounding": "exact",
+    "edge_policy": "seamless",
+    "wrap_aware_resize": false
+  },
+  "qc": {
+    "min_contrast": 0.035,
+    "min_variant_difference": 0.025,
+    "max_border_delta": 0.1,
+    "min_shape_coverage": 0.97,
+    "max_shape_spill": 0.03,
+    "max_seam_ratio": 1.25,
+    "warnings": [
+      "forest-1 has a seam (ratio 1.58 > 1.25) where its left/right edges wrap.",
+      "forest-1 has a seam (ratio 1.34 > 1.25) where its top/bottom edges wrap.",
+      "forest-2 has a seam (ratio 1.33 > 1.25) where its left/right edges wrap.",
+      "forest-2 has a seam (ratio 1.53 > 1.25) where its top/bottom edges wrap.",
+      "city-1 has a seam (ratio 2.26 > 1.25) where its left/right edges wrap.",
+      "city-1 has a seam (ratio 1.55 > 1.25) where its top/bottom edges wrap.",
+      "city-2 has a seam (ratio 1.90 > 1.25) where its left/right edges wrap.",
+      "city-2 has a seam (ratio 1.67 > 1.25) where its top/bottom edges wrap."
+    ],
+    "passed": false,
+    "seamless_verified": false
+  },
+  "qa": {
+    "status": "fail",
+    "method": "Grid slices of the atlas, background handled per --background-mode, resized to the tile size (Lanczos or nearest; wrap-aware for the seamless policy). Luminance contrast and mean thumbnail differences; drawn frames along opposite edges; footprint coverage and spill for iso/hex base tiles; for the seamless policy, premultiplied wrap and Wang-join steps normalised by the art's own steps near each edge.",
+    "notProven": [
+      "visual quality, style match and readability at game zoom",
+      "that each variant reads as the named terrain",
+      "seamlessness: no exact seam proof exists for image tiles (seamless_verified stays false)",
+      "joins between different variants of a fill row (measured as diagnostics only)"
+    ],
+    "checks": [
+      {
+        "id": "contrast",
+        "status": "pass",
+        "value": 0.049287,
+        "threshold": 0.035
+      },
+      {
+        "id": "variant_difference",
+        "status": "pass",
+        "value": 0.046174,
+        "threshold": 0.025
+      },
+      {
+        "id": "border_frame",
+        "status": "pass",
+        "value": 0,
+        "threshold": 0.1
+      },
+      {
+        "id": "shape_coverage",
+        "status": "skipped",
+        "value": null,
+        "threshold": 0.97
+      },
+      {
+        "id": "shape_spill",
+        "status": "skipped",
+        "value": null,
+        "threshold": 0.03
+      },
+      {
+        "id": "wrap_seams",
+        "status": "fail",
+        "value": 2.258467,
+        "threshold": 1.25
+      },
+      {
+        "id": "wang_seams",
+        "status": "skipped",
+        "value": null,
+        "threshold": null
+      }
+    ],
+    "inputs": [
+      {
+        "path": "../terrain-sheet/raw-01.png",
+        "sha256": "ca593e4875876d72be71970c91abf7635ace125642f433931abfc4f09f91296c",
+        "bytes": 1849685
+      }
+    ],
+    "outputs": [
+      {
+        "path": "forest-1.png",
+        "sha256": "aedbb3239226b0ce5d90101b6a7c6cc2e08b3b7cbad5e63bcccdf94d0d591197",
+        "bytes": 369431
+      },
+      {
+        "path": "forest-2.png",
+        "sha256": "43bd9cf3cd87033173208ccde3b6419607eff9456686e3b112633917dfc2b8bf",
+        "bytes": 378394
+      },
+      {
+        "path": "city-1.png",
+        "sha256": "d50e619479e57b27e8376b7b54f750d5acb8dc7fc7fe40dc25f07cc74fac2863",
+        "bytes": 367786
+      },
+      {
+        "path": "city-2.png",
+        "sha256": "0e9fae736bc223abe497333b1f3e75d0dfe4b3d718b5853129964d6137c70075",
+        "bytes": 365266
+      }
+    ],
+    "tool": {
+      "name": "extract_terrain_tiles.py",
+      "version": "0.4.0"
+    }
+  }
+}

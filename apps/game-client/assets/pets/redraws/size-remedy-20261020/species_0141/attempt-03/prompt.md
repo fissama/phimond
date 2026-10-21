@@ -1,0 +1,1 @@
+Repack only of attempt02 native host image edit. Same raw pixels. Explicit fullcoverage row5 sourceownership split x820 (gap808–832 without opaque art), no alpha deletion. Frame3 remains full fallenbody and frame4 owns its completecrest. See attempt02/prompt.md for exact artist edit prompt.

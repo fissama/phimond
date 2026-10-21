@@ -1,0 +1,92 @@
+{
+  "status": "pass",
+  "method": "forge_palette.quantize_image: OKLab-nearest palette colour per pixel (exact palette colours kept), alpha binary at the threshold, then the written PNGs re-read and measured with forge_palette.fit_report against the palette",
+  "notProven": [
+    "Visual quality after snapping: compare an output with its input.",
+    "Indexed PNGs are engine exports; they are not checked by builders.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "output_off_palette_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "output_partial_alpha_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.112466,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../../finish-inputs-panel-repair/ui-panel-a.png",
+      "sha256": "d0b8a9001db8e2d46514b2ec2b19b13a1145927efe0dcd7329ee425247173377",
+      "bytes": 418688
+    },
+    {
+      "path": "../../finish-inputs-panel-repair/ui-panel-b.png",
+      "sha256": "4bb4fe47d631b3e1512b899c02f5a00e60a99f8996f376ff135c294eb464c812",
+      "bytes": 423100
+    },
+    {
+      "path": "../../palettes/ui/palette.json",
+      "sha256": "add368922fe2726dd87c1c4868345e52b15684f513e7f5836f77213e64fca686",
+      "bytes": 1948
+    }
+  ],
+  "outputs": [
+    {
+      "path": "ui-panel-a.png",
+      "sha256": "feafdb8a57d1a7c9997eb0b1b3af5755f02481fb18e8deecdcd002fb5ec9ac7f",
+      "bytes": 67489
+    },
+    {
+      "path": "ui-panel-b.png",
+      "sha256": "bd1a417749b850cba9a160f7fc3a11477a382be660cfc4e1088e9bdbf1d966d6",
+      "bytes": 66393
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "fit": {
+    "ui-panel-a.png": {
+      "measured_px": 837563,
+      "alpha_threshold": 128,
+      "off_palette_px": 837550,
+      "partial_alpha_px": 0,
+      "colors": 39646,
+      "palette_colors_used": 34,
+      "mean_delta_e": 0.017602,
+      "p95_delta_e": 0.035801,
+      "max_delta_e": 0.112153
+    },
+    "ui-panel-b.png": {
+      "measured_px": 833836,
+      "alpha_threshold": 128,
+      "off_palette_px": 833772,
+      "partial_alpha_px": 0,
+      "colors": 41338,
+      "palette_colors_used": 34,
+      "mean_delta_e": 0.011701,
+      "p95_delta_e": 0.032967,
+      "max_delta_e": 0.112466
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.112466,
+    "worst_p95_delta_e": 0.035801,
+    "off_palette_px": 1671322
+  },
+  "locked_inputs": []
+}
