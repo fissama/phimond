@@ -7,25 +7,26 @@
 
 ## 1. Kết quả
 
-| Batch | Nội dung | Duyệt | Vẽ lại |
-|---|---|---|---|
-| 01 | Rừng Lục Bảo | 61 | 1 |
-| 02 | Thành, cung, sảnh, nông trại, đấu trường | 89 | 13 |
-| 03 | Bãi biển | 36 | 4 |
-| 04 | Tàu + ký hiệu dùng chung | 21 | 0 |
-| 05 | Người chơi, NPC, chân dung | 91 | 39 |
-| 06 | HUD thế giới | 66 | 0 |
-| 07 | HUD trận, FX, trạng thái | 71 | 0 |
-| 08 | Menu, panel, trứng, ngọc | 83 | 0 |
-| 09 | Icon | 118 | 4 |
-| 10 | Đăng nhập, loading, logo, intro | 14 | 1 |
-| **Tổng** | | **650** | **62** |
+| Batch | Nội dung | Duyệt | Vẽ lại | Không dùng |
+|---|---|---|---|---|
+| 01 | Rừng Lục Bảo | 61 | 1 | 0 |
+| 02 | Thành, cung, sảnh, nông trại, đấu trường | 89 | 13 | 0 |
+| 03 | Bãi biển | 36 | 4 | 0 |
+| 04 | Tàu + ký hiệu dùng chung | 21 | 0 | 0 |
+| 05 | Người chơi, NPC, chân dung | 51 | 21 | 58 |
+| 06 | HUD thế giới | 66 | 0 | 0 |
+| 07 | HUD trận, FX, trạng thái | 71 | 0 | 0 |
+| 08 | Menu, panel, trứng, ngọc | 83 | 0 | 0 |
+| 09 | Icon | 118 | 4 | 0 |
+| 10 | Đăng nhập, loading, logo, intro | 14 | 1 | 0 |
+| **Tổng** | | **610** | **44** | **58** |
 
 ## 2. Vì sao vẽ lại
 
 - **Tile không liền mạch (12):** `city-paving-01/02/03`, `city-brick-path`, `hall-floor-stone`, `farm-tilled-01/02`, `arena-floor`, `farm-dirt-path-strip`, `sand-dry-warm`, `sand-seagrass`, `coastal-cliff-mid`. Mép lệch 4–20 đơn vị màu so với 2–4 bên trong; ghép 2×2 thấy rõ đường cắt (nặng nhất ở paving-02). Đây đúng là các mục batch tự ghi `blocked`. `forest-canopy-mid` cũng ghi `blocked` nhưng chỉ lặp ngang và seam ngang = 0, nên duyệt.
 - **Mảnh Gemini bổ sung (6):** `city-skyline-far`, `arena-stands-far`, `royal-carpet-runner` còn dải/mảnh thừa của sheet; `farm-hills-far` vẽ kiểu vector phẳng, lệch kit; `deep-sea-floor-tile` còn viền magenta; `deep-woods-giant-tree` bị cắt phẳng ngọn. Duyệt 3 mảnh Gemini đạt: `royal-throne`, `palace-marble-pillar`, `prosperity-treasure-chest`.
-- **NPC trùng ảnh (39):** 19 nhóm dùng chung một ảnh. Mỗi nhóm giữ ảnh cho 1 NPC ưu tiên (Đợt A trước, rồi map lõi, rồi tier main); 39 NPC còn lại vẽ mới. 58 NPC roster chưa từng có ảnh không nằm trong manifest, vẫn là việc vẽ mới.
+- **NPC trùng ảnh hoặc sai loại (21):** 19 nhóm dùng chung một ảnh; mỗi nhóm giữ ảnh cho 1 NPC ưu tiên (Đợt A trước, rồi map lõi, rồi tier main), NPC còn lại vẽ mới. Thêm `sq_pillar` (Trụ Sư Orsa) và `ship_pillar` (Hoa Tiêu Trụ Kael): roster ghi là người vận hành trụ nhưng sprite là khối pha lê.
+- **Không dùng (58):** `npc-ancient_01…npc-tree_06` là bản Gemini đặt tên theo roster 49 cũ, không khớp ID nào trong roster P12 hiện hành (107 NPC). Không gán, chỉ giữ làm tham khảo; NPC vùng ngoài thật sự (55 ID) vẫn là việc vẽ mới.
 - **Khác (5):** `rank33/41/53/54` còn mảnh vụn; `loading-bar-fill` hoa văn lệch phong cách khung.
 
 ## 3. Đủ asset cho Đợt A (v1.0.0) chưa
@@ -40,9 +41,11 @@
 
 **Nhân vật (chặn phát hành):**
 - Người chơi nam/nữ chỉ có 1 ảnh tĩnh → cần idle + đi 4 hướng.
-- 19 NPC Đợt A: 14 có ảnh riêng; 2 trùng ảnh (`bia_free`, `sq_skill`); 3 chưa có ảnh (`sq_exchange`, `sq_warehouse`, `sq_mailbox`).
+- 19 mục Đợt A: 13 NPC có ảnh riêng; 3 cần vẽ lại (`bia_free`, `sq_skill` trùng ảnh; `sq_pillar` đang là khối pha lê); 2 NPC chưa có ảnh (`sq_exchange`, `sq_warehouse`); `sq_mailbox` là vật thể (hòm thư), vẽ thành prop.
 - Idle NPC: nên có, có thể để 1.0.z.
 
 **Không chặn:** HUD (06), menu (08), icon (09), FX trận (07), login/intro (10), atlas 160 linh thú.
 
-Đơn hàng GPT cho các mục chặn: [`gpt-redo/08-v1.0.0-blockers.md`](gpt-redo/08-v1.0.0-blockers.md).
+Đơn hàng GPT đầy đủ (chặng 1–5 chặn v1.0.0): [`gpt-redo/09-v1.0.0-full-redo-prompt.md`](gpt-redo/09-v1.0.0-full-redo-prompt.md), ảnh tham chiếu ở `gpt-redo/refs-v1.0.0/`.
+
+**Sửa 2026-10-21 (lượt sau):** bổ sung trạng thái `unused` và trả lại `sq_pillar`, `ship_pillar` (xem trên); số liệu bảng §1 đã cập nhật.
