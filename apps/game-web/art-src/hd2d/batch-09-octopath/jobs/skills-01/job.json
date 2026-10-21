@@ -1,0 +1,86 @@
+{
+  "id": "skills-01",
+  "cols": 4,
+  "rows": 4,
+  "y_bounds": [
+    0,
+    345,
+    615,
+    890,
+    1222
+  ],
+  "refs": [
+    "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-09-octopath/source-items.png",
+    "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-09-octopath/source-races.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+  ],
+  "prompt": "Production asset sheet for Phimond, muted Octopath Traveler HD-2D pixel art. Crisp large color clusters, 2–4 shade steps, dark hue-tinted contours, top-left warm highlights and cool shadows. Muted antique gold, parchment, patinated bronze. Pet sheets only calibrate pixel outline/color shading, NOT content. No words, no labels, no digits, no scenery, no glow/bloom, no cast shadows. Each icon isolated on genuine transparent alpha with very wide clear gaps, centered equal grid cells. Readable silhouette at32x32. Do not connect objects. EXACT order left-to-right row-by-row. Create exactly16 distinct skill icons in4columns x4rows equal square cells. Refer to original icon visual grammar but make semantic designs,no enclosing frames. Row1: attack silver claw slash; earth_strike ochre jagged shock-rock; petrify gray stone head; cleanse_doom golden broken skull chain. Row2: insect_boon green beetle and upward gold rays; water_strike blue wave impact; doom dark teal skull hourglass; cleanse_sleep blue open eye with dispelled crescent. Row3: spirit_boon violet spirit rising from blue egg; wind_strike silvergreen slicing wind plume; sleep closed eye and moon(noZletters); cleanse_silence silver bell with dispelled red slash. Row4: bird_boon feathered wing under golden upwardray; fire_strike copper orange flameburst; silence closed mouth with red crossedbars; cleanse_bind red broken rope loops. Exact16motifs, aligned4x4 cells. Reference item sheet as original material/color/shading context, race egg sheet for boon motifs.",
+  "source_card": "Runtime skill IDs and functions from data/skills/skills.json. Original APK item/Race motifs attached; historical one-to-one skill-image mapping not proven. Semantic draft redesign.",
+  "assets": [
+    {
+      "id": "skill_attack",
+      "content_id": "attack"
+    },
+    {
+      "id": "skill_earth_strike",
+      "content_id": "earth_strike"
+    },
+    {
+      "id": "skill_petrify",
+      "content_id": "petrify"
+    },
+    {
+      "id": "skill_cleanse_doom",
+      "content_id": "cleanse_doom"
+    },
+    {
+      "id": "skill_insect_boon",
+      "content_id": "insect_boon"
+    },
+    {
+      "id": "skill_water_strike",
+      "content_id": "water_strike"
+    },
+    {
+      "id": "skill_doom",
+      "content_id": "doom"
+    },
+    {
+      "id": "skill_cleanse_sleep",
+      "content_id": "cleanse_sleep"
+    },
+    {
+      "id": "skill_spirit_boon",
+      "content_id": "spirit_boon"
+    },
+    {
+      "id": "skill_wind_strike",
+      "content_id": "wind_strike"
+    },
+    {
+      "id": "skill_sleep",
+      "content_id": "sleep"
+    },
+    {
+      "id": "skill_cleanse_silence",
+      "content_id": "cleanse_silence"
+    },
+    {
+      "id": "skill_bird_boon",
+      "content_id": "bird_boon"
+    },
+    {
+      "id": "skill_fire_strike",
+      "content_id": "fire_strike"
+    },
+    {
+      "id": "skill_silence",
+      "content_id": "silence"
+    },
+    {
+      "id": "skill_cleanse_bind",
+      "content_id": "cleanse_bind"
+    }
+  ]
+}
