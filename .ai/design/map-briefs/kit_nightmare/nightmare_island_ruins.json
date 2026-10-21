@@ -1,0 +1,75 @@
+{
+ "map_id": "nightmare_island_ruins",
+ "name_vi": "Phế Tích Cổ Thành",
+ "group": "Đảo Ác Mộng",
+ "kit": "kit_nightmare",
+ "kit_name": "Đảo Ác Mộng",
+ "style": "Đất tím sẫm nứt phát quang, cây hắc ám, tinh thể bóng tối. Bảng màu: #3A2B52/#5B3F7A, vết nứt phát sáng #B26BFF, rêu độc #4E7A4A.",
+ "original_image": "map-images/nightmare_island_ruins.png",
+ "size_px": [
+  2248,
+  835
+ ],
+ "bounds_apk": [
+  -11.24,
+  9.502,
+  11.244,
+  17.852
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    5.59,
+    10.04
+   ],
+   "px": [
+    1683,
+    781
+   ],
+   "keepout_px": [
+    1583,
+    521,
+    1783,
+    781
+   ],
+   "id": "P:nightmare_island_portal_004",
+   "label": "Cửa → Trại Tàn Sinh",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "nightmare_island_survivor_camp",
+     "to_name": "Trại Tàn Sinh",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "npc",
+   "id": "night_talia",
+   "name": "Người Sống Sót Talia",
+   "tier": "free",
+   "roles": [
+    "free"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 12,
+  "medium": 5,
+  "large": 3,
+  "floor_decals": 9
+ },
+ "has_monster_zone": false
+}

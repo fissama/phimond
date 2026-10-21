@@ -1,0 +1,166 @@
+{
+ "map_id": "world_tree_gate",
+ "name_vi": "Thế Thụ Môn",
+ "group": "Cây Thế Giới",
+ "kit": "kit_world_tree",
+ "kit_name": "Cây Thế Giới",
+ "style": "Cành cây khổng lồ làm lối đi, lá to bằng mái nhà, quả thần phát sáng; xanh lục sáng + vàng kim.",
+ "original_image": "map-images/world_tree_gate.png",
+ "size_px": [
+  2476,
+  860
+ ],
+ "bounds_apk": [
+  -11.128,
+  -3.3,
+  13.637,
+  5.299
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    6.53,
+    0.82
+   ],
+   "px": [
+    1766,
+    448
+   ],
+   "keepout_px": [
+    1666,
+    188,
+    1866,
+    448
+   ],
+   "id": "P:world_tree_portal_004",
+   "label": "Cửa → Thế Thụ Thâm Lâm",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "world_tree_deep_woods",
+     "to_name": "Thế Thụ Thâm Lâm",
+     "oneway": true,
+     "status": "changes_requested"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    -9.97,
+    -0.17
+   ],
+   "px": [
+    116,
+    547
+   ],
+   "keepout_px": [
+    16,
+    287,
+    216,
+    547
+   ],
+   "id": "P:world_tree_portal_005",
+   "label": "Cửa → Hải Tặc Hào",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "middle_corridor_main_hall",
+     "to_name": "Hải Tặc Hào",
+     "oneway": true,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "arrival",
+   "apk_xy": [
+    1.25,
+    -2.3
+   ],
+   "px": [
+    1238,
+    760
+   ],
+   "keepout_px": [
+    1138,
+    500,
+    1338,
+    760
+   ],
+   "id": "A:world_tree_portal_001",
+   "label": "Điểm đến từ Mật Thất Thế Thụ",
+   "origin": "proposed",
+   "needs_placement": true,
+   "links": []
+  },
+  {
+   "kind": "arrival",
+   "apk_xy": [
+    -8.98,
+    -0.07
+   ],
+   "px": [
+    215,
+    537
+   ],
+   "keepout_px": [
+    115,
+    277,
+    315,
+    537
+   ],
+   "id": "AT:ship:world_tree_gate",
+   "label": "Đến từ trụ Hải Tặc Hào",
+   "origin": "proposed",
+   "needs_placement": false,
+   "links": []
+  },
+  {
+   "kind": "npc",
+   "id": "tree_vik",
+   "name": "Hộ Vệ Thế Thụ Vik",
+   "tier": "main",
+   "roles": [
+    "quest",
+    "heal"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  },
+  {
+   "kind": "npc",
+   "id": "tree_willa",
+   "name": "Dược Sư Lá Xanh Willa",
+   "tier": "service",
+   "roles": [
+    "shop",
+    "learn"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 14,
+  "medium": 6,
+  "large": 3,
+  "floor_decals": 10
+ },
+ "has_monster_zone": false
+}

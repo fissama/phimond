@@ -1,0 +1,59 @@
+{
+ "map_id": "astral_realm_unnamed_area_04",
+ "name_vi": "Hốc Cổ Thụ",
+ "group": "Tinh Không",
+ "kit": "kit_astral",
+ "kit_name": "Tinh Giới (Khe nứt thời không)",
+ "style": "Cảnh ma mị: rừng mây tím, hoàng hôn, hồ vân ảnh, cổ thụ; Khe nứt thời không phát sáng. Bảng màu: tím #5B4A9B, hồng hoàng hôn #E08AA0, vàng #F2C879.",
+ "original_image": "map-images/astral_realm_unnamed_area_04.png",
+ "size_px": [
+  2522,
+  856
+ ],
+ "bounds_apk": [
+  26.725,
+  -3.193,
+  51.946,
+  5.367
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    27.99,
+    0.09
+   ],
+   "px": [
+    126,
+    528
+   ],
+   "keepout_px": [
+    26,
+    268,
+    226,
+    528
+   ],
+   "id": "P:astral_realm_portal_005",
+   "label": "Cửa → Tử Vân Lâm",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "astral_realm_unnamed_area_01",
+     "to_name": "Tử Vân Lâm",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 14,
+  "medium": 6,
+  "large": 3,
+  "floor_decals": 10
+ },
+ "has_monster_zone": false
+}

@@ -1,0 +1,104 @@
+{
+ "map_id": "astral_realm_unnamed_area_05",
+ "name_vi": "Rừng Hoàng Hôn",
+ "group": "Tinh Không",
+ "kit": "kit_astral",
+ "kit_name": "Tinh Giới (Khe nứt thời không)",
+ "style": "Cảnh ma mị: rừng mây tím, hoàng hôn, hồ vân ảnh, cổ thụ; Khe nứt thời không phát sáng. Bảng màu: tím #5B4A9B, hồng hoàng hôn #E08AA0, vàng #F2C879.",
+ "original_image": "map-images/astral_realm_unnamed_area_05.png",
+ "size_px": [
+  2532,
+  903
+ ],
+ "bounds_apk": [
+  -10.819,
+  -16.78,
+  14.504,
+  -7.753
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    12.13,
+    -12.8
+   ],
+   "px": [
+    2295,
+    505
+   ],
+   "keepout_px": [
+    2195,
+    245,
+    2395,
+    505
+   ],
+   "id": "P:astral_realm_portal_007",
+   "label": "Cửa → Tận Cùng Thời Không",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "astral_realm_unnamed_area_06",
+     "to_name": "Tận Cùng Thời Không",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    -7.26,
+    -12.02
+   ],
+   "px": [
+    356,
+    427
+   ],
+   "keepout_px": [
+    256,
+    167,
+    456,
+    427
+   ],
+   "id": "P:astral_realm_portal_012",
+   "label": "Cửa → Tử Vân Lâm",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "astral_realm_unnamed_area_01",
+     "to_name": "Tử Vân Lâm",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "npc",
+   "id": "astral_mara",
+   "name": "Kẻ Ngắm Mây Mara",
+   "tier": "free",
+   "roles": [
+    "free"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 14,
+  "medium": 6,
+  "large": 3,
+  "floor_decals": 10
+ },
+ "has_monster_zone": false
+}

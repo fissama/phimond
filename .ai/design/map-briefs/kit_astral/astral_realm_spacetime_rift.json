@@ -1,0 +1,110 @@
+{
+ "map_id": "astral_realm_spacetime_rift",
+ "name_vi": "Thời Không Liệt Khích",
+ "group": "Tinh Không",
+ "kit": "kit_astral",
+ "kit_name": "Tinh Giới (Khe nứt thời không)",
+ "style": "Cảnh ma mị: rừng mây tím, hoàng hôn, hồ vân ảnh, cổ thụ; Khe nứt thời không phát sáng. Bảng màu: tím #5B4A9B, hồng hoàng hôn #E08AA0, vàng #F2C879.",
+ "original_image": "map-images/astral_realm_spacetime_rift.png",
+ "size_px": [
+  2410,
+  826
+ ],
+ "bounds_apk": [
+  -42.922,
+  -2.974,
+  -18.818,
+  5.282
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    -20.39,
+    2.17
+   ],
+   "px": [
+    2253,
+    311
+   ],
+   "keepout_px": [
+    2153,
+    51,
+    2353,
+    311
+   ],
+   "id": "P:astral_realm_portal_003",
+   "label": "Cửa → Tử Vân Lâm",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "astral_realm_unnamed_area_01",
+     "to_name": "Tử Vân Lâm",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    -40.44,
+    -0.64
+   ],
+   "px": [
+    248,
+    592
+   ],
+   "keepout_px": [
+    148,
+    332,
+    348,
+    592
+   ],
+   "id": "P:astral_realm_portal_013",
+   "label": "Cửa → Hải Tặc Hào",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "middle_corridor_main_hall",
+     "to_name": "Hải Tặc Hào",
+     "oneway": true,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "arrival",
+   "apk_xy": [
+    -39.46,
+    -0.46
+   ],
+   "px": [
+    346,
+    574
+   ],
+   "keepout_px": [
+    246,
+    314,
+    446,
+    574
+   ],
+   "id": "AT:ship:astral_realm_spacetime_rift",
+   "label": "Đến từ trụ Hải Tặc Hào",
+   "origin": "proposed",
+   "needs_placement": false,
+   "links": []
+  }
+ ],
+ "decor_budget_min": {
+  "small": 13,
+  "medium": 5,
+  "large": 3,
+  "floor_decals": 10
+ },
+ "has_monster_zone": false
+}

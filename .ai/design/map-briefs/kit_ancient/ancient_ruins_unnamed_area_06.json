@@ -1,0 +1,59 @@
+{
+ "map_id": "ancient_ruins_unnamed_area_06",
+ "name_vi": "Tận Điện Cổ Tích",
+ "group": "Di Tích Cổ",
+ "kit": "kit_ancient",
+ "kit_name": "Cổ Tích (Tiền Sảnh Ngọc Lục)",
+ "style": "Điện đá ngọc lục bích, tượng cổ, tinh thạch; chuỗi phòng trong nhà (có tường).",
+ "original_image": "map-images/ancient_ruins_unnamed_area_06.png",
+ "size_px": [
+  2404,
+  876
+ ],
+ "bounds_apk": [
+  59.359,
+  -16.68,
+  83.399,
+  -7.92
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    60.51,
+    -15.21
+   ],
+   "px": [
+    115,
+    729
+   ],
+   "keepout_px": [
+    15,
+    469,
+    215,
+    729
+   ],
+   "id": "P:ancient_ruins_portal_002",
+   "label": "Cửa → Thâm Sảnh Ngọc Lục",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "ancient_ruins_unnamed_area_05",
+     "to_name": "Thâm Sảnh Ngọc Lục",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 13,
+  "medium": 5,
+  "large": 3,
+  "floor_decals": 10
+ },
+ "has_monster_zone": false
+}

@@ -1,0 +1,12 @@
+Layout `desert_entrance` vòng 1: đúng hướng, chưa nghiệm thu. Claude tự chạy validator (0 lỗi) và xem toàn bộ ảnh bạn xuất ra đĩa — lần này đủ file, cảm ơn. Neo cổng/NPC giữ đúng px; bố cục 3 tầng, trạm Edda giữa map ổn. Nhưng validator không bắt được các lỗi sau, cần sửa và nộp lại vòng 2:
+
+1. Sprite bị cắt thẳng mép phải. Claude đã kiểm builder: kích thước world/tỉ lệ khung đều đúng, KHÔNG phải lỗi builder. Chính file asset bị cắt: cột pixel ngoài cùng bên phải (hoặc trái) đặc theo cả chiều cao sprite. Đo bằng bbox alpha, cột mép đặc >35% chiều cao: `desert-tumbleweed-01/02`, `desert-small-rock-02`, `desert-boulder-03`, `desert-cactus-dead`, `desert-decal-cracked-earth-patch`, `desert-stone-stairs` (mép phải đặc 340/340 px), `desert-edge-sand-sandstone-w` (mép phải 265/265), `desert-edge-sand-sandstone-corner-01/02` (mép trái 235/235, 231/232). Cần vẽ lại hoặc tái xuất các asset này để mép ngoài là rìa vật thể thật (alpha về 0 đi vào trong bằng đường viền tự nhiên), rồi chạy lại kiểm tra bbox-edge cho cả kit. Báo cáo "0 cảnh báo" của audit cũ bỏ sót lỗi này.
+2. Hai cổng không đồng nhất: tây dùng `portal-active` (đĩa lửa bị liềm đen che mất một phần), đông dùng `portal-dormant` (lỗ đen đặc, giống cái hố). Cả hai phải cùng trạng thái dormant đẹp, nhìn như cổng chứ không phải hố. Cổng đông đang chồng 3 asset (portal + stairs + arch-gate) tạo một mảng chữ nhật nâu nhạt phía trên vòm; dùng một cổng trọn vẹn.
+3. `desert-edge-sand-sandstone-corner-01` tại (2320,480) là decal chữ nhật cạnh thẳng, có chấm dither, đặt cạnh bậc thềm đông. Bỏ hoặc thay bằng decal chuyển tiếp mép mềm vẽ tay. Vết nứt/pebbles gần cổng đông có viền đen cứng; làm mềm.
+4. Gốc cọ có mảng đất nâu hình chữ nhật. Sau xương rồng cao và cọ có mảng cồn vàng lơ lửng viền cứng (halo chưa hết). Xử lý lại.
+5. Mảng cam quanh xương thú (decal bones) lệch màu so với cát và có mép cứng; đưa về tông cát.
+6. Prop vẫn thành hai dải ngang: lớp mid y 480–520 có 44 vật, lớp front y 700–760 có 32 vật, khoảng 540–680 trống. Hãy rải theo cụm ở nhiều độ sâu, lấp một phần khoảng trống bằng cụm nhỏ lệch tầng, giữ lối đi giữa.
+7. Ảnh gốc có cụm mỏm đá xoắn xám + xương rồng xanh nghiêng ở góc trái trên, nhưng 3 camera không thấy nó. Chứng minh bằng một zoom 2× vào vùng px [0–300, 100–320], hoặc dựng lại nó bằng asset phù hợp, đúng vị trí gốc.
+
+Nộp lại: layout.json mới, validator 0 lỗi, 3 cam + 3 zoom (cổng tây, cổng đông, Edda) + 1 zoom cụm đá/xương rồng góc trái, tất cả là file thật trên đĩa. Tự nhìn ảnh trước khi nói "đạt".
+Sau khi vòng 2 đạt mới chuyển sang sửa kit Núi Phong Thạch.

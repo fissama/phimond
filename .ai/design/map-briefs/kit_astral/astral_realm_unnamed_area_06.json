@@ -1,0 +1,59 @@
+{
+ "map_id": "astral_realm_unnamed_area_06",
+ "name_vi": "Tận Cùng Thời Không",
+ "group": "Tinh Không",
+ "kit": "kit_astral",
+ "kit_name": "Tinh Giới (Khe nứt thời không)",
+ "style": "Cảnh ma mị: rừng mây tím, hoàng hôn, hồ vân ảnh, cổ thụ; Khe nứt thời không phát sáng. Bảng màu: tím #5B4A9B, hồng hoàng hôn #E08AA0, vàng #F2C879.",
+ "original_image": "map-images/astral_realm_unnamed_area_06.png",
+ "size_px": [
+  2522,
+  856
+ ],
+ "bounds_apk": [
+  26.735,
+  -16.513,
+  51.956,
+  -7.953
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    28.11,
+    -13.07
+   ],
+   "px": [
+    138,
+    512
+   ],
+   "keepout_px": [
+    38,
+    252,
+    238,
+    512
+   ],
+   "id": "P:astral_realm_portal_008",
+   "label": "Cửa → Rừng Hoàng Hôn",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "astral_realm_unnamed_area_05",
+     "to_name": "Rừng Hoàng Hôn",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 14,
+  "medium": 6,
+  "large": 3,
+  "floor_decals": 10
+ },
+ "has_monster_zone": false
+}

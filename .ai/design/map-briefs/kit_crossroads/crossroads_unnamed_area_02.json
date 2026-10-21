@@ -1,0 +1,88 @@
+{
+ "map_id": "crossroads_unnamed_area_02",
+ "name_vi": "Hành Lang Rêu Biếc",
+ "group": "Giao Điểm",
+ "kit": "kit_crossroads",
+ "kit_name": "Ngã Tư / Địa Đạo (Giao Điểm)",
+ "style": "Hang địa đạo xanh lam đêm, rêu biếc, thủy quang, san hô tím. Một chuỗi phòng cùng nền, đổi sắc nhẹ theo phòng.",
+ "original_image": "map-images/crossroads_unnamed_area_02.png",
+ "size_px": [
+  2256,
+  837
+ ],
+ "bounds_apk": [
+  20.26,
+  -3.013,
+  42.82,
+  5.356
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    21.44,
+    0.47
+   ],
+   "px": [
+    118,
+    489
+   ],
+   "keepout_px": [
+    18,
+    229,
+    218,
+    489
+   ],
+   "id": "P:crossroads_portal_004",
+   "label": "Cửa → Cổng Địa Đạo Lam Dạ",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "crossroads_unnamed_area_01",
+     "to_name": "Cổng Địa Đạo Lam Dạ",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    41.56,
+    0.27
+   ],
+   "px": [
+    2130,
+    509
+   ],
+   "keepout_px": [
+    2030,
+    249,
+    2230,
+    509
+   ],
+   "id": "P:crossroads_portal_007",
+   "label": "Cửa → Đoạn Thủy Quang",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "crossroads_unnamed_area_03",
+     "to_name": "Đoạn Thủy Quang",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 13,
+  "medium": 5,
+  "large": 3,
+  "floor_decals": 9
+ },
+ "has_monster_zone": false
+}

@@ -1,0 +1,126 @@
+{
+ "map_id": "windrock_mountain_stone_bridge",
+ "name_vi": "Cầu Thiên Thạch",
+ "group": "Mỏm Đá Gió",
+ "kit": "kit_windrock",
+ "kit_name": "Núi Phong Thạch",
+ "style": "Đá xám lam, cỏ núi khô, tuyết lốm đốm trên cao, gió mạnh (cờ/cỏ nghiêng). Bảng màu đá #7B8794/#566070, cỏ khô #8A8F4E, tuyết #E8EEF4.",
+ "original_image": "map-images/windrock_mountain_stone_bridge.png",
+ "size_px": [
+  2248,
+  825
+ ],
+ "bounds_apk": [
+  -42.981,
+  -2.977,
+  -20.502,
+  5.27
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    -21.51,
+    0.2
+   ],
+   "px": [
+    2147,
+    507
+   ],
+   "keepout_px": [
+    2047,
+    247,
+    2247,
+    507
+   ],
+   "id": "P:windrock_mountain_portal_007",
+   "label": "Cửa → Trại Phong Thạch",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "windrock_mountain_camp",
+     "to_name": "Trại Phong Thạch",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    -41.89,
+    0.54
+   ],
+   "px": [
+    109,
+    473
+   ],
+   "keepout_px": [
+    9,
+    213,
+    209,
+    473
+   ],
+   "id": "P:windrock_mountain_portal_010",
+   "label": "Cửa → Quảng Trường Thạch Trụ",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "city_square",
+     "to_name": "Quảng Trường Thạch Trụ",
+     "oneway": true,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "arrival",
+   "apk_xy": [
+    -40.89,
+    0.6
+   ],
+   "px": [
+    209,
+    467
+   ],
+   "keepout_px": [
+    109,
+    207,
+    309,
+    467
+   ],
+   "id": "AT:square:windrock_mountain_stone_bridge",
+   "label": "Đến từ trụ Quảng Trường",
+   "origin": "proposed",
+   "needs_placement": false,
+   "links": []
+  },
+  {
+   "kind": "npc",
+   "id": "wind_loren",
+   "name": "Thợ Săn Núi Loren",
+   "tier": "free",
+   "roles": [
+    "free"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 12,
+  "medium": 5,
+  "large": 3,
+  "floor_decals": 9
+ },
+ "has_monster_zone": false
+}

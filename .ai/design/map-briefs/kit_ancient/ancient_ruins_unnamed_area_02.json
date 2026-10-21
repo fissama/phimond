@@ -1,0 +1,75 @@
+{
+ "map_id": "ancient_ruins_unnamed_area_02",
+ "name_vi": "Phòng Tượng Cổ",
+ "group": "Di Tích Cổ",
+ "kit": "kit_ancient",
+ "kit_name": "Cổ Tích (Tiền Sảnh Ngọc Lục)",
+ "style": "Điện đá ngọc lục bích, tượng cổ, tinh thạch; chuỗi phòng trong nhà (có tường).",
+ "original_image": "map-images/ancient_ruins_unnamed_area_02.png",
+ "size_px": [
+  2403,
+  876
+ ],
+ "bounds_apk": [
+  -10.791,
+  11.05,
+  13.235,
+  19.81
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    0.42,
+    11.85
+   ],
+   "px": [
+    1121,
+    796
+   ],
+   "keepout_px": [
+    1021,
+    536,
+    1221,
+    796
+   ],
+   "id": "P:ancient_ruins_portal_008",
+   "label": "Cửa → Tiền Sảnh Ngọc Lục",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "ancient_ruins_unnamed_area_01",
+     "to_name": "Tiền Sảnh Ngọc Lục",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "npc",
+   "id": "ancient_perrin",
+   "name": "Người Khảo Cổ Perrin",
+   "tier": "free",
+   "roles": [
+    "free"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 13,
+  "medium": 5,
+  "large": 3,
+  "floor_decals": 10
+ },
+ "has_monster_zone": false
+}

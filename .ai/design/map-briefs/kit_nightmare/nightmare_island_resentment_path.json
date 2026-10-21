@@ -1,0 +1,104 @@
+{
+ "map_id": "nightmare_island_resentment_path",
+ "name_vi": "Oán Linh Hải Đạo",
+ "group": "Đảo Ác Mộng",
+ "kit": "kit_nightmare",
+ "kit_name": "Đảo Ác Mộng",
+ "style": "Đất tím sẫm nứt phát quang, cây hắc ám, tinh thể bóng tối. Bảng màu: #3A2B52/#5B3F7A, vết nứt phát sáng #B26BFF, rêu độc #4E7A4A.",
+ "original_image": "map-images/nightmare_island_resentment_path.png",
+ "size_px": [
+  2248,
+  835
+ ],
+ "bounds_apk": [
+  -42.97,
+  -3.078,
+  -20.486,
+  5.272
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    -41.69,
+    0.52
+   ],
+   "px": [
+    128,
+    475
+   ],
+   "keepout_px": [
+    28,
+    215,
+    228,
+    475
+   ],
+   "id": "P:nightmare_island_portal_001",
+   "label": "Cửa → Tuyệt Vọng Hải Địa",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "nightmare_island_despair_land",
+     "to_name": "Tuyệt Vọng Hải Địa",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    -21.51,
+    0.2
+   ],
+   "px": [
+    2146,
+    507
+   ],
+   "keepout_px": [
+    2046,
+    247,
+    2246,
+    507
+   ],
+   "id": "P:nightmare_island_portal_007",
+   "label": "Cửa → Trại Tàn Sinh",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "nightmare_island_survivor_camp",
+     "to_name": "Trại Tàn Sinh",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "npc",
+   "id": "night_ulric",
+   "name": "Người Sống Sót Ulric",
+   "tier": "free",
+   "roles": [
+    "free"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 12,
+  "medium": 5,
+  "large": 3,
+  "floor_decals": 9
+ },
+ "has_monster_zone": false
+}

@@ -1,0 +1,110 @@
+{
+ "map_id": "tower_region_deep_woods",
+ "name_vi": "Vân Tiêu Thiên Tầng",
+ "group": "Tháp Chim",
+ "kit": "kit_tower",
+ "kit_name": "Điểu Tháp",
+ "style": "Tháp đá cao nhìn trên mây, đá lục giác phù văn, lan can kim loại; rừng Vân Tiêu Thiên Tầng xanh lam.",
+ "original_image": "map-images/tower_region_deep_woods.png",
+ "size_px": [
+  2642,
+  1174
+ ],
+ "bounds_apk": [
+  -12.858,
+  6.067,
+  13.557,
+  17.803
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    -9.76,
+    10.05
+   ],
+   "px": [
+    310,
+    775
+   ],
+   "keepout_px": [
+    210,
+    515,
+    410,
+    775
+   ],
+   "id": "P:tower_region_portal_002",
+   "label": "Cửa → Điểu Tháp",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "tower_region_main_tower",
+     "to_name": "Điểu Tháp",
+     "oneway": false,
+     "status": "approved"
+    },
+    {
+     "to_map": "tower_region_deep_woods",
+     "to_name": "Vân Tiêu Thiên Tầng",
+     "oneway": false,
+     "status": "changes_requested"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    9.88,
+    9.99
+   ],
+   "px": [
+    2274,
+    781
+   ],
+   "keepout_px": [
+    2174,
+    521,
+    2374,
+    781
+   ],
+   "id": "P:tower_region_portal_003",
+   "label": "Cửa → Điểu Tháp",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "tower_region_deep_woods",
+     "to_name": "Vân Tiêu Thiên Tầng",
+     "oneway": false,
+     "status": "changes_requested"
+    }
+   ]
+  },
+  {
+   "kind": "npc",
+   "id": "tower_aria",
+   "name": "Người Quan Sát Chim Aria",
+   "tier": "free",
+   "roles": [
+    "free"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 15,
+  "medium": 6,
+  "large": 3,
+  "floor_decals": 11
+ },
+ "has_monster_zone": false
+}

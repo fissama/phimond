@@ -1,0 +1,59 @@
+{
+ "map_id": "tomb_region_deep_ruins",
+ "name_vi": "Thâm Cung Tịch Diệt",
+ "group": "Lăng Mộ",
+ "kit": "kit_tomb",
+ "kit_name": "Lăng Mộ",
+ "style": "Gạch mộ rêu phong, đá xám xanh, ánh đèn ma xanh lục. Hai khu ngoài (Cồn Úa Vàng, Bãi Gai Khô) là sa mạc vàng cây gai khô.",
+ "original_image": "map-images/tomb_region_deep_ruins.png",
+ "size_px": [
+  2241,
+  886
+ ],
+ "bounds_apk": [
+  52.084,
+  -3.579,
+  74.493,
+  5.278
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    53.26,
+    0.17
+   ],
+   "px": [
+    118,
+    511
+   ],
+   "keepout_px": [
+    18,
+    251,
+    218,
+    511
+   ],
+   "id": "P:tomb_region_portal_007",
+   "label": "Cửa → Tàn Tích Tịch Diệt",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "tomb_region_dead_ruins",
+     "to_name": "Tàn Tích Tịch Diệt",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 12,
+  "medium": 5,
+  "large": 3,
+  "floor_decals": 9
+ },
+ "has_monster_zone": false
+}

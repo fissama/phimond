@@ -1,0 +1,104 @@
+{
+ "map_id": "windrock_mountain_mountain_path",
+ "name_vi": "Sơn Đạo Phong Vân",
+ "group": "Mỏm Đá Gió",
+ "kit": "kit_windrock",
+ "kit_name": "Núi Phong Thạch",
+ "style": "Đá xám lam, cỏ núi khô, tuyết lốm đốm trên cao, gió mạnh (cờ/cỏ nghiêng). Bảng màu đá #7B8794/#566070, cỏ khô #8A8F4E, tuyết #E8EEF4.",
+ "original_image": "map-images/windrock_mountain_mountain_path.png",
+ "size_px": [
+  2262,
+  938
+ ],
+ "bounds_apk": [
+  -70.194,
+  8.463,
+  -47.578,
+  17.84
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    -69.05,
+    12.65
+   ],
+   "px": [
+    114,
+    519
+   ],
+   "keepout_px": [
+    14,
+    259,
+    214,
+    519
+   ],
+   "id": "P:windrock_mountain_portal_001",
+   "label": "Cửa → Đỉnh Thiên Phong",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "windrock_mountain_summit",
+     "to_name": "Đỉnh Thiên Phong",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    -48.43,
+    12.74
+   ],
+   "px": [
+    2176,
+    510
+   ],
+   "keepout_px": [
+    2076,
+    250,
+    2276,
+    510
+   ],
+   "id": "P:windrock_mountain_portal_003",
+   "label": "Cửa → Dãy Phong Lĩnh",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "windrock_mountain_mountain_range",
+     "to_name": "Dãy Phong Lĩnh",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "npc",
+   "id": "wind_nolan",
+   "name": "Thợ Săn Núi Nolan",
+   "tier": "free",
+   "roles": [
+    "free"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 13,
+  "medium": 5,
+  "large": 3,
+  "floor_decals": 9
+ },
+ "has_monster_zone": false
+}

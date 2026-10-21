@@ -1,0 +1,178 @@
+{
+ "map_id": "tomb_region_soul_cemetery",
+ "name_vi": "Bãi Vãng Sinh",
+ "group": "Lăng Mộ",
+ "kit": "kit_tomb",
+ "kit_name": "Lăng Mộ",
+ "style": "Gạch mộ rêu phong, đá xám xanh, ánh đèn ma xanh lục. Hai khu ngoài (Cồn Úa Vàng, Bãi Gai Khô) là sa mạc vàng cây gai khô.",
+ "original_image": "map-images/tomb_region_soul_cemetery.png",
+ "size_px": [
+  2241,
+  886
+ ],
+ "bounds_apk": [
+  -11.251,
+  -17.209,
+  11.163,
+  -8.352
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    -10.14,
+    -13.63
+   ],
+   "px": [
+    111,
+    528
+   ],
+   "keepout_px": [
+    11,
+    268,
+    211,
+    528
+   ],
+   "id": "P:tomb_region_portal_005",
+   "label": "Cửa → Thần Lăng Vĩnh Miên",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "tomb_region_gods_tomb",
+     "to_name": "Thần Lăng Vĩnh Miên",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    4.89,
+    -15.28
+   ],
+   "px": [
+    1614,
+    693
+   ],
+   "keepout_px": [
+    1514,
+    433,
+    1714,
+    693
+   ],
+   "id": "P:tomb_region_portal_010",
+   "label": "Cửa → Bãi Gai Khô",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "tomb_region_unnamed_area_02",
+     "to_name": "Bãi Gai Khô",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    9.92,
+    -13.25
+   ],
+   "px": [
+    2117,
+    490
+   ],
+   "keepout_px": [
+    2017,
+    230,
+    2217,
+    490
+   ],
+   "id": "P:tomb_region_portal_014",
+   "label": "Cửa → Cồn Úa Vàng",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "tomb_region_unnamed_area_01",
+     "to_name": "Cồn Úa Vàng",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    -0.61,
+    -12.07
+   ],
+   "px": [
+    1064,
+    372
+   ],
+   "keepout_px": [
+    964,
+    112,
+    1164,
+    372
+   ],
+   "id": "P:tomb_region_portal_015",
+   "label": "Cửa → Trạm Canh Lăng",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "tomb_region_camp",
+     "to_name": "Trạm Canh Lăng",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "npc",
+   "id": "tomb_cora",
+   "name": "Người Thắp Đèn Mộ Cora",
+   "tier": "free",
+   "roles": [
+    "free"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  },
+  {
+   "kind": "npc",
+   "id": "tomb_dov",
+   "name": "Người Thắp Đèn Mộ Dov",
+   "tier": "free",
+   "roles": [
+    "free"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 12,
+  "medium": 5,
+  "large": 3,
+  "floor_decals": 9
+ },
+ "has_monster_zone": false
+}

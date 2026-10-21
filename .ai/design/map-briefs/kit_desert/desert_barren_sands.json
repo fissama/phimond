@@ -1,0 +1,75 @@
+{
+ "map_id": "desert_barren_sands",
+ "name_vi": "Hoang Sa Vô Tận",
+ "group": "Sa Mạc",
+ "kit": "kit_desert",
+ "kit_name": "Hoang mạc",
+ "style": "Cát vàng ấm, đá sa thạch đỏ cam, trời xanh gắt. Bảng màu: cát #D9B26B/#B88A44, đá #A5522B, bóng lạnh tím nhạt.",
+ "original_image": "map-images/desert_barren_sands.png",
+ "size_px": [
+  2514,
+  821
+ ],
+ "bounds_apk": [
+  -76.131,
+  -2.945,
+  -50.995,
+  5.262
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    -52.18,
+    0.34
+   ],
+   "px": [
+    2395,
+    492
+   ],
+   "keepout_px": [
+    2295,
+    232,
+    2495,
+    492
+   ],
+   "id": "P:desert_portal_001",
+   "label": "Cửa → Bộ Lạc Hồ Lô",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "desert_hulu_tribe",
+     "to_name": "Bộ Lạc Hồ Lô",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "npc",
+   "id": "desert_galen",
+   "name": "Người Tìm Nước Galen",
+   "tier": "free",
+   "roles": [
+    "free"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 14,
+  "medium": 6,
+  "large": 3,
+  "floor_decals": 10
+ },
+ "has_monster_zone": false
+}

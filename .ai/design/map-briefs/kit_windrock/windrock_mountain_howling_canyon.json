@@ -1,0 +1,59 @@
+{
+ "map_id": "windrock_mountain_howling_canyon",
+ "name_vi": "Hẻm Gió Gào",
+ "group": "Mỏm Đá Gió",
+ "kit": "kit_windrock",
+ "kit_name": "Núi Phong Thạch",
+ "style": "Đá xám lam, cỏ núi khô, tuyết lốm đốm trên cao, gió mạnh (cờ/cỏ nghiêng). Bảng màu đá #7B8794/#566070, cỏ khô #8A8F4E, tuyết #E8EEF4.",
+ "original_image": "map-images/windrock_mountain_howling_canyon.png",
+ "size_px": [
+  2248,
+  826
+ ],
+ "bounds_apk": [
+  20.379,
+  -3.017,
+  42.858,
+  5.242
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    21.57,
+    0.47
+   ],
+   "px": [
+    119,
+    477
+   ],
+   "keepout_px": [
+    19,
+    217,
+    219,
+    477
+   ],
+   "id": "P:windrock_mountain_portal_005",
+   "label": "Cửa → Trại Phong Thạch",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "windrock_mountain_camp",
+     "to_name": "Trại Phong Thạch",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 12,
+  "medium": 5,
+  "large": 3,
+  "floor_decals": 9
+ },
+ "has_monster_zone": false
+}

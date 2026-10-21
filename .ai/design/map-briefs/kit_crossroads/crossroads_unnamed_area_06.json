@@ -1,0 +1,59 @@
+{
+ "map_id": "crossroads_unnamed_area_06",
+ "name_vi": "Đáy Địa Đạo",
+ "group": "Giao Điểm",
+ "kit": "kit_crossroads",
+ "kit_name": "Ngã Tư / Địa Đạo (Giao Điểm)",
+ "style": "Hang địa đạo xanh lam đêm, rêu biếc, thủy quang, san hô tím. Một chuỗi phòng cùng nền, đổi sắc nhẹ theo phòng.",
+ "original_image": "map-images/crossroads_unnamed_area_06.png",
+ "size_px": [
+  2256,
+  837
+ ],
+ "bounds_apk": [
+  20.21,
+  -16.663,
+  42.77,
+  -8.294
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    22.89,
+    -12.22
+   ],
+   "px": [
+    268,
+    393
+   ],
+   "keepout_px": [
+    168,
+    133,
+    368,
+    393
+   ],
+   "id": "P:crossroads_portal_002",
+   "label": "Cửa → Ngã Ba Đêm Xanh",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "crossroads_unnamed_area_04",
+     "to_name": "Ngã Ba Đêm Xanh",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 13,
+  "medium": 5,
+  "large": 3,
+  "floor_decals": 9
+ },
+ "has_monster_zone": false
+}

@@ -1,0 +1,133 @@
+{
+ "map_id": "desert_hulu_tribe",
+ "name_vi": "Bộ Lạc Hồ Lô",
+ "group": "Sa Mạc",
+ "kit": "kit_desert",
+ "kit_name": "Hoang mạc",
+ "style": "Cát vàng ấm, đá sa thạch đỏ cam, trời xanh gắt. Bảng màu: cát #D9B26B/#B88A44, đá #A5522B, bóng lạnh tím nhạt.",
+ "original_image": "map-images/desert_hulu_tribe.png",
+ "size_px": [
+  2514,
+  821
+ ],
+ "bounds_apk": [
+  -44.341,
+  -2.945,
+  -19.205,
+  5.262
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    -20.36,
+    0.2
+   ],
+   "px": [
+    2398,
+    506
+   ],
+   "keepout_px": [
+    2298,
+    246,
+    2498,
+    506
+   ],
+   "id": "P:desert_portal_007",
+   "label": "Cửa → Sa Thạch Cổ Thành",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "desert_shicheng_ruins",
+     "to_name": "Sa Thạch Cổ Thành",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    -42.78,
+    0.34
+   ],
+   "px": [
+    156,
+    492
+   ],
+   "keepout_px": [
+    56,
+    232,
+    256,
+    492
+   ],
+   "id": "P:desert_portal_009",
+   "label": "Cửa → Hoang Sa Vô Tận",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "desert_barren_sands",
+     "to_name": "Hoang Sa Vô Tận",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    -23.99,
+    1.86
+   ],
+   "px": [
+    2035,
+    340
+   ],
+   "keepout_px": [
+    1935,
+    80,
+    2135,
+    340
+   ],
+   "id": "P:desert_portal_011",
+   "label": "Cửa → Tai Ương Sa Mạc",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "desert_disaster_sands",
+     "to_name": "Tai Ương Sa Mạc",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "npc",
+   "id": "desert_fenwick",
+   "name": "Người Tìm Nước Fenwick",
+   "tier": "free",
+   "roles": [
+    "free"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 14,
+  "medium": 6,
+  "large": 3,
+  "floor_decals": 10
+ },
+ "has_monster_zone": false
+}

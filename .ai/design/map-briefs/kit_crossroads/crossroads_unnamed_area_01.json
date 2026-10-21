@@ -1,0 +1,173 @@
+{
+ "map_id": "crossroads_unnamed_area_01",
+ "name_vi": "Cổng Địa Đạo Lam Dạ",
+ "group": "Giao Điểm",
+ "kit": "kit_crossroads",
+ "kit_name": "Ngã Tư / Địa Đạo (Giao Điểm)",
+ "style": "Hang địa đạo xanh lam đêm, rêu biếc, thủy quang, san hô tím. Một chuỗi phòng cùng nền, đổi sắc nhẹ theo phòng.",
+ "original_image": "map-images/crossroads_unnamed_area_01.png",
+ "size_px": [
+  2256,
+  837
+ ],
+ "bounds_apk": [
+  -11.33,
+  -3.013,
+  11.23,
+  5.356
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    -1.08,
+    -1.77
+   ],
+   "px": [
+    1025,
+    713
+   ],
+   "keepout_px": [
+    925,
+    453,
+    1125,
+    713
+   ],
+   "id": "P:crossroads_portal_003",
+   "label": "Cửa → Hốc San Hô Tím",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "crossroads_unnamed_area_05",
+     "to_name": "Hốc San Hô Tím",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    9.97,
+    0.42
+   ],
+   "px": [
+    2130,
+    494
+   ],
+   "keepout_px": [
+    2030,
+    234,
+    2230,
+    494
+   ],
+   "id": "P:crossroads_portal_006",
+   "label": "Cửa → Hành Lang Rêu Biếc",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "crossroads_unnamed_area_02",
+     "to_name": "Hành Lang Rêu Biếc",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    -10.19,
+    0.18
+   ],
+   "px": [
+    114,
+    518
+   ],
+   "keepout_px": [
+    14,
+    258,
+    214,
+    518
+   ],
+   "id": "P:crossroads_portal_010",
+   "label": "Cửa → Quảng Trường Thạch Trụ",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "city_square",
+     "to_name": "Quảng Trường Thạch Trụ",
+     "oneway": true,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "arrival",
+   "apk_xy": [
+    -9.19,
+    0.28
+   ],
+   "px": [
+    214,
+    508
+   ],
+   "keepout_px": [
+    114,
+    248,
+    314,
+    508
+   ],
+   "id": "AT:square:crossroads_unnamed_area_01",
+   "label": "Đến từ trụ Quảng Trường",
+   "origin": "proposed",
+   "needs_placement": false,
+   "links": []
+  },
+  {
+   "kind": "npc",
+   "id": "cross_elric",
+   "name": "Trưởng Cổng Địa Đạo Elric",
+   "tier": "main",
+   "roles": [
+    "quest",
+    "heal"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  },
+  {
+   "kind": "npc",
+   "id": "cross_fara",
+   "name": "Thợ Đèn Địa Đạo Fara",
+   "tier": "service",
+   "roles": [
+    "shop",
+    "learn"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 13,
+  "medium": 5,
+  "large": 3,
+  "floor_decals": 9
+ },
+ "has_monster_zone": false
+}

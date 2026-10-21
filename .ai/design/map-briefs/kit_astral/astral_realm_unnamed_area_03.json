@@ -1,0 +1,59 @@
+{
+ "map_id": "astral_realm_unnamed_area_03",
+ "name_vi": "Bờ Hồ Vân Ảnh",
+ "group": "Tinh Không",
+ "kit": "kit_astral",
+ "kit_name": "Tinh Giới (Khe nứt thời không)",
+ "style": "Cảnh ma mị: rừng mây tím, hoàng hôn, hồ vân ảnh, cổ thụ; Khe nứt thời không phát sáng. Bảng màu: tím #5B4A9B, hồng hoàng hôn #E08AA0, vàng #F2C879.",
+ "original_image": "map-images/astral_realm_unnamed_area_03.png",
+ "size_px": [
+  2531,
+  903
+ ],
+ "bounds_apk": [
+  -42.781,
+  10.68,
+  -17.466,
+  19.707
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    -20.03,
+    14.08
+   ],
+   "px": [
+    2275,
+    563
+   ],
+   "keepout_px": [
+    2175,
+    303,
+    2375,
+    563
+   ],
+   "id": "P:astral_realm_portal_010",
+   "label": "Cửa → Lối Mây Tím",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "astral_realm_unnamed_area_02",
+     "to_name": "Lối Mây Tím",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 14,
+  "medium": 6,
+  "large": 3,
+  "floor_decals": 10
+ },
+ "has_monster_zone": false
+}

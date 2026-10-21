@@ -1,0 +1,88 @@
+{
+ "map_id": "ghost_castle_deep_woods",
+ "name_vi": "U Linh Cổ Thành",
+ "group": "Lâu Đài Ma",
+ "kit": "kit_ghost_castle",
+ "kit_name": "Lâu Đài Ma",
+ "style": "Đá cẩm thạch đen nứt, rèm nhung rách, nến bạc, rừng U Lâm xanh bích.",
+ "original_image": "map-images/ghost_castle_deep_woods.png",
+ "size_px": [
+  2509,
+  826
+ ],
+ "bounds_apk": [
+  -13.8,
+  9.059,
+  11.294,
+  17.323
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    -12.77,
+    11.33
+   ],
+   "px": [
+    103,
+    599
+   ],
+   "keepout_px": [
+    3,
+    339,
+    203,
+    599
+   ],
+   "id": "P:ghost_castle_portal_001",
+   "label": "Cửa → Cổng U Lâu",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "ghost_castle_deep_woods",
+     "to_name": "U Linh Cổ Thành",
+     "oneway": false,
+     "status": "changes_requested"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    9.94,
+    11.69
+   ],
+   "px": [
+    2374,
+    563
+   ],
+   "keepout_px": [
+    2274,
+    303,
+    2474,
+    563
+   ],
+   "id": "P:ghost_castle_portal_002",
+   "label": "Cửa → Cổng U Lâu",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "ghost_castle_deep_woods",
+     "to_name": "U Linh Cổ Thành",
+     "oneway": false,
+     "status": "changes_requested"
+    }
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 14,
+  "medium": 6,
+  "large": 3,
+  "floor_decals": 10
+ },
+ "has_monster_zone": false
+}

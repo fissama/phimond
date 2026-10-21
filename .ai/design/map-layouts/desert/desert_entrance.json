@@ -1,0 +1,1567 @@
+{
+  "map_id": "desert_entrance",
+  "name_vi": "Cửa Ngõ Hoàng Mạc",
+  "version": "round-4",
+  "anchors": [
+    {
+      "id": "P:desert_portal_005",
+      "kind": "door",
+      "px": [
+        118,
+        490
+      ],
+      "moved": false,
+      "why": "Cổng Tây nối Sa Thạch Cổ Thành (khớp brief)"
+    },
+    {
+      "id": "P:desert_portal_010",
+      "kind": "door",
+      "px": [
+        2406,
+        441
+      ],
+      "moved": false,
+      "why": "Cổng Đông nối Quảng Trường Thạch Trụ (khớp brief)"
+    },
+    {
+      "id": "AT:square:desert_entrance",
+      "kind": "arrival",
+      "px": [
+        2306,
+        438
+      ],
+      "moved": false,
+      "why": "Điểm đến từ Quảng Trường (khớp brief)"
+    },
+    {
+      "id": "desert_edda",
+      "kind": "npc",
+      "px": [
+        1220,
+        510
+      ],
+      "moved": false,
+      "why": "Trạm nghỉ chân giữa sa mạc: Edda đứng bên lều du mục và giếng nước, đón lữ khách qua lại hai cổng"
+    }
+  ],
+  "placements": [
+    {
+      "asset": "desert-portal-dormant",
+      "px": [
+        118,
+        490
+      ],
+      "layer": "back",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Cổng sa thạch cổ đại Tây nối Sa Thạch Cổ Thành (dormant đồng nhất)"
+    },
+    {
+      "asset": "desert-ruins-pillar",
+      "px": [
+        60,
+        460
+      ],
+      "layer": "back",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Cột trụ đá sa thạch bên trái cổng Tây"
+    },
+    {
+      "asset": "desert-small-rock-01",
+      "px": [
+        280,
+        500
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Đá mốc ven lối đi phía Tây"
+    },
+    {
+      "asset": "desert-shadow-small-01",
+      "px": [
+        280,
+        502
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-small-rock-01"
+    },
+    {
+      "asset": "desert-small-cactus-02",
+      "px": [
+        330,
+        540
+      ],
+      "layer": "mid",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Xương rồng nhỏ ven đường"
+    },
+    {
+      "asset": "desert-shadow-small-02",
+      "px": [
+        330,
+        542
+      ],
+      "layer": "mid",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-small-cactus-02"
+    },
+    {
+      "asset": "desert-small-rock-03",
+      "px": [
+        300,
+        590
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Đá sa thạch nhỏ dải trung gian 590"
+    },
+    {
+      "asset": "desert-shadow-small-01",
+      "px": [
+        300,
+        592
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-small-rock-03"
+    },
+    {
+      "asset": "desert-tumbleweed-02",
+      "px": [
+        310,
+        650
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Cỏ lăn tầng trung gian 650 ven khúc rẽ Tây"
+    },
+    {
+      "asset": "desert-boulder-02",
+      "px": [
+        210,
+        680
+      ],
+      "layer": "front",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Đá tảng tiền cảnh góc Tây tầng 680"
+    },
+    {
+      "asset": "desert-shadow-small-01",
+      "px": [
+        210,
+        682
+      ],
+      "layer": "front",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-boulder-02"
+    },
+    {
+      "asset": "desert-tumbleweed-01",
+      "px": [
+        260,
+        740
+      ],
+      "layer": "front",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Cỏ lăn tiền cảnh Tây tầng 740"
+    },
+    {
+      "asset": "desert-palm-trunk",
+      "px": [
+        530,
+        410
+      ],
+      "layer": "back",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Thân cọ sa mạc vươn cao (chân thân cọ đã khử mảng đất vuông)"
+    },
+    {
+      "asset": "desert-palm-canopy",
+      "px": [
+        530,
+        410
+      ],
+      "layer": "back",
+      "scale": 1.0,
+      "sway": true,
+      "why": "Tán cọ đung đưa trong gió sa mạc"
+    },
+    {
+      "asset": "desert-cactus-tall",
+      "px": [
+        390,
+        420
+      ],
+      "layer": "back",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Xương rồng cột cao chót vót"
+    },
+    {
+      "asset": "desert-small-cactus-01",
+      "px": [
+        350,
+        450
+      ],
+      "layer": "back",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Cụm xương rồng nhỏ chân cồn cát"
+    },
+    {
+      "asset": "desert-boulder-03",
+      "px": [
+        580,
+        480
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Đá phong hóa đánh dấu khúc cua cát"
+    },
+    {
+      "asset": "desert-shadow-medium-01",
+      "px": [
+        580,
+        482
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-boulder-03"
+    },
+    {
+      "asset": "desert-small-rock-01",
+      "px": [
+        620,
+        510
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Mảnh đá sa thạch nhỏ ven khúc cua"
+    },
+    {
+      "asset": "desert-shadow-small-01",
+      "px": [
+        620,
+        512
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-small-rock-01"
+    },
+    {
+      "asset": "desert-small-cactus-01",
+      "px": [
+        560,
+        570
+      ],
+      "layer": "mid",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Xương rồng nhỏ tầng trung gian 570"
+    },
+    {
+      "asset": "desert-shadow-small-01",
+      "px": [
+        560,
+        572
+      ],
+      "layer": "mid",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-small-cactus-01"
+    },
+    {
+      "asset": "desert-small-rock-02",
+      "px": [
+        530,
+        640
+      ],
+      "layer": "mid",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Sỏi đá phong hóa tầng trung gian 640"
+    },
+    {
+      "asset": "desert-shadow-small-01",
+      "px": [
+        530,
+        642
+      ],
+      "layer": "mid",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-small-rock-02"
+    },
+    {
+      "asset": "desert-small-cactus-03",
+      "px": [
+        490,
+        690
+      ],
+      "layer": "front",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Xương rồng tai thỏ tiền cảnh tầng 690"
+    },
+    {
+      "asset": "desert-shadow-small-02",
+      "px": [
+        490,
+        692
+      ],
+      "layer": "front",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-small-cactus-03"
+    },
+    {
+      "asset": "desert-small-rock-02",
+      "px": [
+        440,
+        750
+      ],
+      "layer": "front",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Sỏi đá phong hóa mép tiền cảnh tầng 750"
+    },
+    {
+      "asset": "desert-shadow-small-01",
+      "px": [
+        440,
+        752
+      ],
+      "layer": "front",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-small-rock-02"
+    },
+    {
+      "asset": "desert-sand-mound",
+      "px": [
+        820,
+        390
+      ],
+      "layer": "back",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Gò cát thoai thoải chắn gió cát"
+    },
+    {
+      "asset": "desert-cactus-02",
+      "px": [
+        890,
+        430
+      ],
+      "layer": "back",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bụi xương rồng gai nhánh rộng"
+    },
+    {
+      "asset": "desert-pottery-urn-broken",
+      "px": [
+        780,
+        480
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bình gốm vỡ của đoàn lữ hành cổ"
+    },
+    {
+      "asset": "desert-shadow-small-01",
+      "px": [
+        780,
+        482
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-pottery-urn-broken"
+    },
+    {
+      "asset": "desert-small-rock-01",
+      "px": [
+        910,
+        520
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Mảnh sa thạch chỉ hướng"
+    },
+    {
+      "asset": "desert-shadow-small-01",
+      "px": [
+        910,
+        522
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-small-rock-01"
+    },
+    {
+      "asset": "desert-tumbleweed-01",
+      "px": [
+        750,
+        580
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Cỏ lăn cạnh dải đi bộ tầng 580"
+    },
+    {
+      "asset": "desert-small-cactus-02",
+      "px": [
+        950,
+        590
+      ],
+      "layer": "mid",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Xương rồng nhỏ tầng trung gian 590"
+    },
+    {
+      "asset": "desert-shadow-small-02",
+      "px": [
+        950,
+        592
+      ],
+      "layer": "mid",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-small-cactus-02"
+    },
+    {
+      "asset": "desert-small-rock-01",
+      "px": [
+        710,
+        610
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Mảnh đá phong hóa tầng 610"
+    },
+    {
+      "asset": "desert-shadow-small-01",
+      "px": [
+        710,
+        612
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-small-rock-01"
+    },
+    {
+      "asset": "desert-small-skull",
+      "px": [
+        660,
+        680
+      ],
+      "layer": "front",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Hộp sọ nhỏ vùi trong cát tầng 680"
+    },
+    {
+      "asset": "desert-shadow-small-01",
+      "px": [
+        660,
+        682
+      ],
+      "layer": "front",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-small-skull"
+    },
+    {
+      "asset": "desert-small-ribs",
+      "px": [
+        790,
+        695
+      ],
+      "layer": "front",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Mảnh xương sườn thú cổ tầng 695"
+    },
+    {
+      "asset": "desert-shadow-medium-01",
+      "px": [
+        790,
+        697
+      ],
+      "layer": "front",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-small-ribs"
+    },
+    {
+      "asset": "desert-monster-bones",
+      "px": [
+        730,
+        715
+      ],
+      "layer": "front",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bộ xương thú sừng khổng lồ tiền cảnh (đã hòa sắc cát vàng tự nhiên, mép mềm)"
+    },
+    {
+      "asset": "desert-small-rock-03",
+      "px": [
+        810,
+        755
+      ],
+      "layer": "front",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Mảnh đá hóa thạch tiền cảnh tầng 755"
+    },
+    {
+      "asset": "desert-shadow-small-01",
+      "px": [
+        810,
+        757
+      ],
+      "layer": "front",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-small-rock-03"
+    },
+    {
+      "asset": "desert-nomad-tent-large",
+      "px": [
+        1180,
+        410
+      ],
+      "layer": "back",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Lều du mục lớn của trạm nghỉ chân Edda"
+    },
+    {
+      "asset": "desert-nomad-stake-banner",
+      "px": [
+        1100,
+        430
+      ],
+      "layer": "back",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Cột cờ phướn dẫn đường của trạm tìm nước"
+    },
+    {
+      "asset": "desert-dry-well",
+      "px": [
+        1330,
+        450
+      ],
+      "layer": "back",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Giếng đá sa mạc cấp nước cho lữ khách"
+    },
+    {
+      "asset": "desert-camp-charcoal-stove",
+      "px": [
+        1360,
+        470
+      ],
+      "layer": "back",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bếp than cắm trại ngoài lều"
+    },
+    {
+      "asset": "desert-camp-canvas-pack",
+      "px": [
+        1060,
+        490
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bao hành lý du mục bên lều"
+    },
+    {
+      "asset": "desert-shadow-small-01",
+      "px": [
+        1060,
+        492
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-camp-canvas-pack"
+    },
+    {
+      "asset": "desert-camp-canvas-sack",
+      "px": [
+        1010,
+        505
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bao vải chứa lương thảo"
+    },
+    {
+      "asset": "desert-shadow-small-02",
+      "px": [
+        1010,
+        507
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-camp-canvas-sack"
+    },
+    {
+      "asset": "desert-pottery-urn-broken",
+      "px": [
+        1050,
+        560
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bình gốm dự trữ bên trái lều"
+    },
+    {
+      "asset": "desert-shadow-small-01",
+      "px": [
+        1050,
+        562
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-pottery-urn-broken"
+    },
+    {
+      "asset": "desert-tumbleweed-01",
+      "px": [
+        1110,
+        620
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Cỏ khô lăn qua trạm nghỉ tầng 620"
+    },
+    {
+      "asset": "desert-small-rock-03",
+      "px": [
+        1060,
+        670
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Đá phong hóa mép đường trạm nghỉ tầng 670"
+    },
+    {
+      "asset": "desert-shadow-small-01",
+      "px": [
+        1060,
+        672
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-small-rock-03"
+    },
+    {
+      "asset": "desert-small-rock-01",
+      "px": [
+        1090,
+        745
+      ],
+      "layer": "front",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Đá kê chân tiền cảnh tầng 745"
+    },
+    {
+      "asset": "desert-shadow-small-01",
+      "px": [
+        1090,
+        747
+      ],
+      "layer": "front",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-small-rock-01"
+    },
+    {
+      "asset": "desert-camp-wood-crate",
+      "px": [
+        1380,
+        505
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Thùng gỗ chứa dụng cụ đào giếng"
+    },
+    {
+      "asset": "desert-shadow-medium-02",
+      "px": [
+        1380,
+        507
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-camp-wood-crate"
+    },
+    {
+      "asset": "desert-pottery-urn-broken",
+      "px": [
+        1430,
+        510
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Chum gốm trữ nước bên giếng"
+    },
+    {
+      "asset": "desert-shadow-small-01",
+      "px": [
+        1430,
+        512
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-pottery-urn-broken"
+    },
+    {
+      "asset": "desert-camp-canvas-sack",
+      "px": [
+        1390,
+        570
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bao lương thảo bên phải giếng"
+    },
+    {
+      "asset": "desert-shadow-small-02",
+      "px": [
+        1390,
+        572
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-camp-canvas-sack"
+    },
+    {
+      "asset": "desert-small-cactus-01",
+      "px": [
+        1370,
+        630
+      ],
+      "layer": "mid",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Xương rồng nhỏ cạnh giếng tầng 630"
+    },
+    {
+      "asset": "desert-shadow-small-01",
+      "px": [
+        1370,
+        632
+      ],
+      "layer": "mid",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-small-cactus-01"
+    },
+    {
+      "asset": "desert-small-skull",
+      "px": [
+        1380,
+        660
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Xương sọ linh cẩu ven đường tầng 660"
+    },
+    {
+      "asset": "desert-shadow-small-01",
+      "px": [
+        1380,
+        662
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-small-skull"
+    },
+    {
+      "asset": "desert-small-cactus-03",
+      "px": [
+        1430,
+        700
+      ],
+      "layer": "front",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Xương rồng nhỏ nở hoa góc phải tầng 700"
+    },
+    {
+      "asset": "desert-shadow-small-02",
+      "px": [
+        1430,
+        702
+      ],
+      "layer": "front",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-small-cactus-03"
+    },
+    {
+      "asset": "desert-sphinx-ruin",
+      "px": [
+        1750,
+        400
+      ],
+      "layer": "back",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Tượng nhân sư phế tích chìm trong cát vàng"
+    },
+    {
+      "asset": "desert-ruins-wall-arch",
+      "px": [
+        1890,
+        410
+      ],
+      "layer": "back",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Đoạn tường vòm sa thạch cổ đại"
+    },
+    {
+      "asset": "desert-ruins-pillar-fallen",
+      "px": [
+        1830,
+        440
+      ],
+      "layer": "back",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Trụ đá gãy đổ bên cạnh nhân sư"
+    },
+    {
+      "asset": "desert-ancient-stele",
+      "px": [
+        1650,
+        475
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bia đá cổ khắc văn tự cổ thành"
+    },
+    {
+      "asset": "desert-shadow-medium-01",
+      "px": [
+        1650,
+        477
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-ancient-stele"
+    },
+    {
+      "asset": "desert-cactus-dead",
+      "px": [
+        1590,
+        485
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Thân cây khô cằn hóa đá bên phế tích"
+    },
+    {
+      "asset": "desert-shadow-medium-02",
+      "px": [
+        1590,
+        487
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-cactus-dead"
+    },
+    {
+      "asset": "desert-boulder-03",
+      "px": [
+        1960,
+        490
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Tảng đá sa thạch phong hóa góc phế tích"
+    },
+    {
+      "asset": "desert-shadow-medium-01",
+      "px": [
+        1960,
+        492
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-boulder-03"
+    },
+    {
+      "asset": "desert-small-rock-02",
+      "px": [
+        1620,
+        560
+      ],
+      "layer": "mid",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Đá vụn phế tích tầng 560"
+    },
+    {
+      "asset": "desert-shadow-small-01",
+      "px": [
+        1620,
+        562
+      ],
+      "layer": "mid",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-small-rock-02"
+    },
+    {
+      "asset": "desert-small-cactus-01",
+      "px": [
+        1690,
+        600
+      ],
+      "layer": "mid",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Xương rồng gai nhỏ tầng 600"
+    },
+    {
+      "asset": "desert-shadow-small-01",
+      "px": [
+        1690,
+        602
+      ],
+      "layer": "mid",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-small-cactus-01"
+    },
+    {
+      "asset": "desert-small-cactus-02",
+      "px": [
+        1680,
+        640
+      ],
+      "layer": "mid",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Xương rồng nhỏ tầng 640"
+    },
+    {
+      "asset": "desert-shadow-small-02",
+      "px": [
+        1680,
+        642
+      ],
+      "layer": "mid",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-small-cactus-02"
+    },
+    {
+      "asset": "desert-small-rock-01",
+      "px": [
+        1640,
+        670
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Mảnh đá vỡ phế tích tầng 670"
+    },
+    {
+      "asset": "desert-shadow-small-01",
+      "px": [
+        1640,
+        672
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-small-rock-01"
+    },
+    {
+      "asset": "desert-tumbleweed-01",
+      "px": [
+        1850,
+        630
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Cỏ lăn qua phế tích tầng 630"
+    },
+    {
+      "asset": "desert-tumbleweed-02",
+      "px": [
+        1880,
+        660
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Cỏ lăn tầng 660"
+    },
+    {
+      "asset": "desert-small-rock-03",
+      "px": [
+        1940,
+        710
+      ],
+      "layer": "front",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Mảnh đá sa thạch tầng 710"
+    },
+    {
+      "asset": "desert-shadow-small-01",
+      "px": [
+        1940,
+        712
+      ],
+      "layer": "front",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-small-rock-03"
+    },
+    {
+      "asset": "desert-small-rock-02",
+      "px": [
+        1850,
+        760
+      ],
+      "layer": "front",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Đá phong hóa tiền cảnh tầng 760"
+    },
+    {
+      "asset": "desert-shadow-small-01",
+      "px": [
+        1850,
+        762
+      ],
+      "layer": "front",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-small-rock-02"
+    },
+    {
+      "asset": "desert-portal-dormant",
+      "px": [
+        2406,
+        441
+      ],
+      "layer": "back",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Cổng sa thạch cổ đại Đông trọn vẹn dẫn tới Quảng Trường Thạch Trụ"
+    },
+    {
+      "asset": "desert-ruins-pillar",
+      "px": [
+        2250,
+        410
+      ],
+      "layer": "back",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Cột trụ đá đứng sừng sững bên lối vào"
+    },
+    {
+      "asset": "desert-ruins-wall",
+      "px": [
+        2120,
+        440
+      ],
+      "layer": "back",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Tường phế tích chắn gió cát mép đông"
+    },
+    {
+      "asset": "desert-cactus-02",
+      "px": [
+        2060,
+        485
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bụi xương rồng râm mát trước lối vào phế tích Đông"
+    },
+    {
+      "asset": "desert-shadow-large-01",
+      "px": [
+        2060,
+        487
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-cactus-02"
+    },
+    {
+      "asset": "desert-small-rock-02",
+      "px": [
+        2140,
+        500
+      ],
+      "layer": "mid",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Đá chỉ mốc ranh giới cổng Đông"
+    },
+    {
+      "asset": "desert-shadow-small-01",
+      "px": [
+        2140,
+        502
+      ],
+      "layer": "mid",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-small-rock-02"
+    },
+    {
+      "asset": "desert-small-rock-01",
+      "px": [
+        2190,
+        570
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Đá mốc tầng 570 trước lối vào"
+    },
+    {
+      "asset": "desert-shadow-small-01",
+      "px": [
+        2190,
+        572
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-small-rock-01"
+    },
+    {
+      "asset": "desert-tumbleweed-01",
+      "px": [
+        2240,
+        620
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Cỏ lăn tầng 620 trước cổng Đông"
+    },
+    {
+      "asset": "desert-small-cactus-03",
+      "px": [
+        2160,
+        660
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Xương rồng nhỏ cạnh chân tường tầng 660"
+    },
+    {
+      "asset": "desert-shadow-small-02",
+      "px": [
+        2160,
+        662
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-small-cactus-03"
+    },
+    {
+      "asset": "desert-small-rock-03",
+      "px": [
+        2420,
+        690
+      ],
+      "layer": "front",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Mảnh đá sa thạch tầng 690 góc Đông"
+    },
+    {
+      "asset": "desert-shadow-small-01",
+      "px": [
+        2420,
+        692
+      ],
+      "layer": "front",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-small-rock-03"
+    },
+    {
+      "asset": "desert-small-cactus-02",
+      "px": [
+        2280,
+        735
+      ],
+      "layer": "front",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Xương rồng nhỏ tiền cảnh tầng 735"
+    },
+    {
+      "asset": "desert-shadow-small-02",
+      "px": [
+        2280,
+        737
+      ],
+      "layer": "front",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Bóng tiếp đất cho desert-small-cactus-02"
+    },
+    {
+      "asset": "desert-decal-wind-sand-01",
+      "px": [
+        320,
+        520
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Chi tiết mặt đất sa mạc hữu cơ"
+    },
+    {
+      "asset": "desert-decal-footprints",
+      "px": [
+        600,
+        510
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Chi tiết mặt đất sa mạc hữu cơ"
+    },
+    {
+      "asset": "desert-decal-pebbles-desert",
+      "px": [
+        720,
+        530
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Chi tiết mặt đất sa mạc hữu cơ"
+    },
+    {
+      "asset": "desert-decal-bones-scatter",
+      "px": [
+        760,
+        700
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Chi tiết mặt đất sa mạc hữu cơ"
+    },
+    {
+      "asset": "desert-decal-wind-sand-02",
+      "px": [
+        980,
+        520
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Chi tiết mặt đất sa mạc hữu cơ"
+    },
+    {
+      "asset": "desert-decal-footprints",
+      "px": [
+        1160,
+        520
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Chi tiết mặt đất sa mạc hữu cơ"
+    },
+    {
+      "asset": "desert-decal-pebbles-desert",
+      "px": [
+        1280,
+        530
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Chi tiết mặt đất sa mạc hữu cơ"
+    },
+    {
+      "asset": "desert-decal-footprints",
+      "px": [
+        1400,
+        510
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Chi tiết mặt đất sa mạc hữu cơ"
+    },
+    {
+      "asset": "desert-decal-wind-sand-01",
+      "px": [
+        1550,
+        520
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Chi tiết mặt đất sa mạc hữu cơ"
+    },
+    {
+      "asset": "desert-decal-ancient-rune-faded",
+      "px": [
+        1720,
+        490
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Chi tiết mặt đất sa mạc hữu cơ"
+    },
+    {
+      "asset": "desert-decal-sandstone-rubble",
+      "px": [
+        1880,
+        500
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Chi tiết mặt đất sa mạc hữu cơ"
+    },
+    {
+      "asset": "desert-decal-wind-sand-02",
+      "px": [
+        2080,
+        510
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Chi tiết mặt đất sa mạc hữu cơ"
+    },
+    {
+      "asset": "desert-decal-footprints",
+      "px": [
+        2320,
+        490
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Chi tiết mặt đất sa mạc hữu cơ"
+    },
+    {
+      "asset": "desert-decal-pebbles-desert",
+      "px": [
+        2420,
+        520
+      ],
+      "layer": "mid",
+      "scale": 1.0,
+      "sway": false,
+      "why": "Chi tiết mặt đất sa mạc hữu cơ"
+    },
+    {
+      "asset": "desert-decal-wind-sand-01",
+      "px": [
+        180,
+        530
+      ],
+      "layer": "mid",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Mảng gió cát dạt trên bề mặt sa mạc"
+    },
+    {
+      "asset": "desert-decal-pebbles-desert",
+      "px": [
+        380,
+        540
+      ],
+      "layer": "mid",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Mảng gió cát dạt trên bề mặt sa mạc"
+    },
+    {
+      "asset": "desert-decal-wind-sand-01",
+      "px": [
+        580,
+        520
+      ],
+      "layer": "mid",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Mảng gió cát dạt trên bề mặt sa mạc"
+    },
+    {
+      "asset": "desert-decal-pebbles-desert",
+      "px": [
+        780,
+        540
+      ],
+      "layer": "mid",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Mảng gió cát dạt trên bề mặt sa mạc"
+    },
+    {
+      "asset": "desert-decal-wind-sand-01",
+      "px": [
+        980,
+        530
+      ],
+      "layer": "mid",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Mảng gió cát dạt trên bề mặt sa mạc"
+    },
+    {
+      "asset": "desert-decal-pebbles-desert",
+      "px": [
+        1180,
+        540
+      ],
+      "layer": "mid",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Mảng gió cát dạt trên bề mặt sa mạc"
+    },
+    {
+      "asset": "desert-decal-wind-sand-01",
+      "px": [
+        1380,
+        520
+      ],
+      "layer": "mid",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Mảng gió cát dạt trên bề mặt sa mạc"
+    },
+    {
+      "asset": "desert-decal-pebbles-desert",
+      "px": [
+        1580,
+        540
+      ],
+      "layer": "mid",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Mảng gió cát dạt trên bề mặt sa mạc"
+    },
+    {
+      "asset": "desert-decal-wind-sand-01",
+      "px": [
+        1780,
+        530
+      ],
+      "layer": "mid",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Mảng gió cát dạt trên bề mặt sa mạc"
+    },
+    {
+      "asset": "desert-decal-pebbles-desert",
+      "px": [
+        1980,
+        540
+      ],
+      "layer": "mid",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Mảng gió cát dạt trên bề mặt sa mạc"
+    },
+    {
+      "asset": "desert-decal-wind-sand-01",
+      "px": [
+        2180,
+        520
+      ],
+      "layer": "mid",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Mảng gió cát dạt trên bề mặt sa mạc"
+    },
+    {
+      "asset": "desert-decal-pebbles-desert",
+      "px": [
+        2380,
+        540
+      ],
+      "layer": "mid",
+      "scale": 0.85,
+      "sway": false,
+      "why": "Mảng gió cát dạt trên bề mặt sa mạc"
+    }
+  ]
+}

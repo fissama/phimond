@@ -1,0 +1,166 @@
+{
+ "map_id": "tower_region_main_tower",
+ "name_vi": "Điểu Tháp",
+ "group": "Tháp Chim",
+ "kit": "kit_tower",
+ "kit_name": "Điểu Tháp",
+ "style": "Tháp đá cao nhìn trên mây, đá lục giác phù văn, lan can kim loại; rừng Vân Tiêu Thiên Tầng xanh lam.",
+ "original_image": "map-images/tower_region_main_tower.png",
+ "size_px": [
+  2363,
+  1055
+ ],
+ "bounds_apk": [
+  -11.5,
+  -4.407,
+  12.128,
+  6.147
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    6.53,
+    0.82
+   ],
+   "px": [
+    1803,
+    533
+   ],
+   "keepout_px": [
+    1703,
+    273,
+    1903,
+    533
+   ],
+   "id": "P:tower_region_portal_004",
+   "label": "Cửa → Vân Tiêu Thiên Tầng",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "tower_region_deep_woods",
+     "to_name": "Vân Tiêu Thiên Tầng",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    -9.97,
+    -0.17
+   ],
+   "px": [
+    153,
+    632
+   ],
+   "keepout_px": [
+    53,
+    372,
+    253,
+    632
+   ],
+   "id": "P:tower_region_portal_005",
+   "label": "Cửa → Hải Tặc Hào",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "middle_corridor_main_hall",
+     "to_name": "Hải Tặc Hào",
+     "oneway": true,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "arrival",
+   "apk_xy": [
+    0.31,
+    -3.41
+   ],
+   "px": [
+    1181,
+    956
+   ],
+   "keepout_px": [
+    1081,
+    696,
+    1281,
+    956
+   ],
+   "id": "A:tower_region_portal_001",
+   "label": "Điểm đến từ Điểu Tháp Mật Tầng",
+   "origin": "proposed",
+   "needs_placement": true,
+   "links": []
+  },
+  {
+   "kind": "arrival",
+   "apk_xy": [
+    -8.98,
+    -0.07
+   ],
+   "px": [
+    252,
+    622
+   ],
+   "keepout_px": [
+    152,
+    362,
+    352,
+    622
+   ],
+   "id": "AT:ship:tower_region_main_tower",
+   "label": "Đến từ trụ Hải Tặc Hào",
+   "origin": "proposed",
+   "needs_placement": false,
+   "links": []
+  },
+  {
+   "kind": "npc",
+   "id": "tower_yves",
+   "name": "Điểu Sứ Yves",
+   "tier": "main",
+   "roles": [
+    "quest",
+    "heal"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  },
+  {
+   "kind": "npc",
+   "id": "tower_zane",
+   "name": "Tăng Nhân Điểu Tháp Zane",
+   "tier": "service",
+   "roles": [
+    "shop",
+    "learn"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 13,
+  "medium": 5,
+  "large": 3,
+  "floor_decals": 9
+ },
+ "has_monster_zone": false
+}

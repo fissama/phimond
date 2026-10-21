@@ -1,0 +1,59 @@
+{
+ "map_id": "nightmare_island_disaster_gate",
+ "name_vi": "Cổng Tai Kiếp",
+ "group": "Đảo Ác Mộng",
+ "kit": "kit_nightmare",
+ "kit_name": "Đảo Ác Mộng",
+ "style": "Đất tím sẫm nứt phát quang, cây hắc ám, tinh thể bóng tối. Bảng màu: #3A2B52/#5B3F7A, vết nứt phát sáng #B26BFF, rêu độc #4E7A4A.",
+ "original_image": "map-images/nightmare_island_disaster_gate.png",
+ "size_px": [
+  2248,
+  835
+ ],
+ "bounds_apk": [
+  -11.43,
+  -15.538,
+  11.054,
+  -7.185
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    -0.6,
+    -10.81
+   ],
+   "px": [
+    1083,
+    363
+   ],
+   "keepout_px": [
+    983,
+    103,
+    1183,
+    363
+   ],
+   "id": "P:nightmare_island_portal_003",
+   "label": "Cửa → Trại Tàn Sinh",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "nightmare_island_survivor_camp",
+     "to_name": "Trại Tàn Sinh",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 12,
+  "medium": 5,
+  "large": 3,
+  "floor_decals": 9
+ },
+ "has_monster_zone": false
+}

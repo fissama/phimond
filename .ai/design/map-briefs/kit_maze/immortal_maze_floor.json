@@ -1,0 +1,104 @@
+{
+ "map_id": "immortal_maze_floor",
+ "name_vi": "Bất Tử Mê Tầng",
+ "group": "Mê Thành",
+ "kit": "kit_maze",
+ "kit_name": "Mê Thành Bất Tử",
+ "style": "Tường mê cung dây leo rậm, cổng đá chuyển dịch, bẫy chông sàn; xanh rêu + đá xám.",
+ "original_image": "map-images/immortal_maze_floor.png",
+ "size_px": [
+  2560,
+  953
+ ],
+ "bounds_apk": [
+  -11.088,
+  7.79,
+  14.513,
+  17.315
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    -9.76,
+    9.83
+   ],
+   "px": [
+    133,
+    749
+   ],
+   "keepout_px": [
+    33,
+    489,
+    233,
+    749
+   ],
+   "id": "P:immortal_maze_portal_002",
+   "label": "Cửa → Trường Sinh Mê Thành",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "immortal_maze_floor",
+     "to_name": "Bất Tử Mê Tầng",
+     "oneway": false,
+     "status": "changes_requested"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    10.5,
+    9.99
+   ],
+   "px": [
+    2159,
+    733
+   ],
+   "keepout_px": [
+    2059,
+    473,
+    2259,
+    733
+   ],
+   "id": "P:immortal_maze_portal_003",
+   "label": "Cửa → Trường Sinh Mê Thành",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "immortal_maze_floor",
+     "to_name": "Bất Tử Mê Tầng",
+     "oneway": false,
+     "status": "changes_requested"
+    }
+   ]
+  },
+  {
+   "kind": "npc",
+   "id": "maze_dune",
+   "name": "Kẻ Lạc Lối Dune",
+   "tier": "free",
+   "roles": [
+    "free"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 14,
+  "medium": 6,
+  "large": 3,
+  "floor_decals": 10
+ },
+ "has_monster_zone": false
+}

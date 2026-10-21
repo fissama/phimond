@@ -1,0 +1,126 @@
+{
+ "map_id": "desert_entrance",
+ "name_vi": "Cửa Ngõ Hoàng Mạc",
+ "group": "Sa Mạc",
+ "kit": "kit_desert",
+ "kit_name": "Hoang mạc",
+ "style": "Cát vàng ấm, đá sa thạch đỏ cam, trời xanh gắt. Bảng màu: cát #D9B26B/#B88A44, đá #A5522B, bóng lạnh tím nhạt.",
+ "original_image": "map-images/desert_entrance.png",
+ "size_px": [
+  2514,
+  820
+ ],
+ "bounds_apk": [
+  19.019,
+  -2.828,
+  44.155,
+  5.372
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    20.2,
+    0.47
+   ],
+   "px": [
+    118,
+    490
+   ],
+   "keepout_px": [
+    18,
+    230,
+    218,
+    490
+   ],
+   "id": "P:desert_portal_005",
+   "label": "Cửa → Sa Thạch Cổ Thành",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "desert_shicheng_ruins",
+     "to_name": "Sa Thạch Cổ Thành",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    43.08,
+    0.96
+   ],
+   "px": [
+    2406,
+    441
+   ],
+   "keepout_px": [
+    2306,
+    181,
+    2506,
+    441
+   ],
+   "id": "P:desert_portal_010",
+   "label": "Cửa → Quảng Trường Thạch Trụ",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "city_square",
+     "to_name": "Quảng Trường Thạch Trụ",
+     "oneway": true,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "arrival",
+   "apk_xy": [
+    42.08,
+    0.99
+   ],
+   "px": [
+    2306,
+    438
+   ],
+   "keepout_px": [
+    2206,
+    178,
+    2406,
+    438
+   ],
+   "id": "AT:square:desert_entrance",
+   "label": "Đến từ trụ Quảng Trường",
+   "origin": "proposed",
+   "needs_placement": false,
+   "links": []
+  },
+  {
+   "kind": "npc",
+   "id": "desert_edda",
+   "name": "Người Tìm Nước Edda",
+   "tier": "free",
+   "roles": [
+    "free"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 14,
+  "medium": 6,
+  "large": 3,
+  "floor_decals": 10
+ },
+ "has_monster_zone": false
+}

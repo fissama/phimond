@@ -1,0 +1,59 @@
+{
+ "map_id": "desert_sealed_land",
+ "name_vi": "Phong Ấn Cổ Địa",
+ "group": "Sa Mạc",
+ "kit": "kit_desert",
+ "kit_name": "Hoang mạc",
+ "style": "Cát vàng ấm, đá sa thạch đỏ cam, trời xanh gắt. Bảng màu: cát #D9B26B/#B88A44, đá #A5522B, bóng lạnh tím nhạt.",
+ "original_image": "map-images/desert_sealed_land.png",
+ "size_px": [
+  2514,
+  823
+ ],
+ "bounds_apk": [
+  -44.201,
+  -14.885,
+  -19.065,
+  -6.658
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    -42.92,
+    -11.5
+   ],
+   "px": [
+    128,
+    484
+   ],
+   "keepout_px": [
+    28,
+    224,
+    228,
+    484
+   ],
+   "id": "P:desert_portal_003",
+   "label": "Cửa → Sa Thạch Cổ Thành",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "desert_shicheng_ruins",
+     "to_name": "Sa Thạch Cổ Thành",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 14,
+  "medium": 6,
+  "large": 3,
+  "floor_decals": 10
+ },
+ "has_monster_zone": false
+}

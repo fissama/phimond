@@ -1,0 +1,182 @@
+{
+ "map_id": "desert_shicheng_ruins",
+ "name_vi": "Sa Thạch Cổ Thành",
+ "group": "Sa Mạc",
+ "kit": "kit_desert",
+ "kit_name": "Hoang mạc",
+ "style": "Cát vàng ấm, đá sa thạch đỏ cam, trời xanh gắt. Bảng màu: cát #D9B26B/#B88A44, đá #A5522B, bóng lạnh tím nhạt.",
+ "original_image": "map-images/desert_shicheng_ruins.png",
+ "size_px": [
+  2249,
+  820
+ ],
+ "bounds_apk": [
+  -11.367,
+  -2.945,
+  11.126,
+  5.255
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    -0.47,
+    -2.24
+   ],
+   "px": [
+    1090,
+    750
+   ],
+   "keepout_px": [
+    990,
+    490,
+    1190,
+    750
+   ],
+   "id": "P:desert_portal_002",
+   "label": "Cửa → Phong Ấn Cổ Địa",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "desert_sealed_land",
+     "to_name": "Phong Ấn Cổ Địa",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    9.97,
+    0.42
+   ],
+   "px": [
+    2134,
+    484
+   ],
+   "keepout_px": [
+    2034,
+    224,
+    2234,
+    484
+   ],
+   "id": "P:desert_portal_006",
+   "label": "Cửa → Cửa Ngõ Hoàng Mạc",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "desert_entrance",
+     "to_name": "Cửa Ngõ Hoàng Mạc",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    -10.35,
+    0.65
+   ],
+   "px": [
+    102,
+    460
+   ],
+   "keepout_px": [
+    2,
+    200,
+    202,
+    460
+   ],
+   "id": "P:desert_portal_008",
+   "label": "Cửa → Bộ Lạc Hồ Lô",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "desert_hulu_tribe",
+     "to_name": "Bộ Lạc Hồ Lô",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "npc",
+   "id": "desert_aven",
+   "name": "Trạm Trưởng Sa Thạch Aven",
+   "tier": "main",
+   "roles": [
+    "quest",
+    "heal"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  },
+  {
+   "kind": "npc",
+   "id": "desert_brisa",
+   "name": "Thương Nhân Sa Mạc Brisa",
+   "tier": "service",
+   "roles": [
+    "shop"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  },
+  {
+   "kind": "npc",
+   "id": "desert_calder",
+   "name": "Sư Phụ Hoang Sa Calder",
+   "tier": "service",
+   "roles": [
+    "learn"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  },
+  {
+   "kind": "npc",
+   "id": "desert_dalia",
+   "name": "Lữ Khách Cát Vàng Dalia",
+   "tier": "free",
+   "roles": [
+    "free"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 12,
+  "medium": 5,
+  "large": 3,
+  "floor_decals": 9
+ },
+ "has_monster_zone": false
+}

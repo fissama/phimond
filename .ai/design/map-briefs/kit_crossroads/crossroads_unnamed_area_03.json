@@ -1,0 +1,104 @@
+{
+ "map_id": "crossroads_unnamed_area_03",
+ "name_vi": "Đoạn Thủy Quang",
+ "group": "Giao Điểm",
+ "kit": "kit_crossroads",
+ "kit_name": "Ngã Tư / Địa Đạo (Giao Điểm)",
+ "style": "Hang địa đạo xanh lam đêm, rêu biếc, thủy quang, san hô tím. Một chuỗi phòng cùng nền, đổi sắc nhẹ theo phòng.",
+ "original_image": "map-images/crossroads_unnamed_area_03.png",
+ "size_px": [
+  2256,
+  837
+ ],
+ "bounds_apk": [
+  52.08,
+  -3.013,
+  74.64,
+  5.356
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    53.26,
+    0.17
+   ],
+   "px": [
+    118,
+    519
+   ],
+   "keepout_px": [
+    18,
+    259,
+    218,
+    519
+   ],
+   "id": "P:crossroads_portal_005",
+   "label": "Cửa → Hành Lang Rêu Biếc",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "crossroads_unnamed_area_02",
+     "to_name": "Hành Lang Rêu Biếc",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    72.86,
+    0.47
+   ],
+   "px": [
+    2078,
+    489
+   ],
+   "keepout_px": [
+    1978,
+    229,
+    2178,
+    489
+   ],
+   "id": "P:crossroads_portal_011",
+   "label": "Cửa → Ngã Ba Đêm Xanh",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "crossroads_unnamed_area_04",
+     "to_name": "Ngã Ba Đêm Xanh",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "npc",
+   "id": "cross_gwen",
+   "name": "Người Dò Đường Gwen",
+   "tier": "free",
+   "roles": [
+    "free"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 13,
+  "medium": 5,
+  "large": 3,
+  "floor_decals": 9
+ },
+ "has_monster_zone": false
+}

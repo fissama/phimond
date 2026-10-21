@@ -1,0 +1,182 @@
+{
+ "map_id": "windrock_mountain_camp",
+ "name_vi": "Trại Phong Thạch",
+ "group": "Mỏm Đá Gió",
+ "kit": "kit_windrock",
+ "kit_name": "Núi Phong Thạch",
+ "style": "Đá xám lam, cỏ núi khô, tuyết lốm đốm trên cao, gió mạnh (cờ/cỏ nghiêng). Bảng màu đá #7B8794/#566070, cỏ khô #8A8F4E, tuyết #E8EEF4.",
+ "original_image": "map-images/windrock_mountain_camp.png",
+ "size_px": [
+  2261,
+  825
+ ],
+ "bounds_apk": [
+  -11.46,
+  -2.977,
+  11.148,
+  5.27
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    -5.03,
+    1.53
+   ],
+   "px": [
+    643,
+    374
+   ],
+   "keepout_px": [
+    543,
+    114,
+    743,
+    374
+   ],
+   "id": "P:windrock_mountain_portal_002",
+   "label": "Cửa → Dãy Phong Lĩnh",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "windrock_mountain_mountain_range",
+     "to_name": "Dãy Phong Lĩnh",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    9.97,
+    0.42
+   ],
+   "px": [
+    2143,
+    485
+   ],
+   "keepout_px": [
+    2043,
+    225,
+    2243,
+    485
+   ],
+   "id": "P:windrock_mountain_portal_006",
+   "label": "Cửa → Hẻm Gió Gào",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "windrock_mountain_howling_canyon",
+     "to_name": "Hẻm Gió Gào",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    -10.35,
+    -0.46
+   ],
+   "px": [
+    111,
+    573
+   ],
+   "keepout_px": [
+    11,
+    313,
+    211,
+    573
+   ],
+   "id": "P:windrock_mountain_portal_008",
+   "label": "Cửa → Cầu Thiên Thạch",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "windrock_mountain_stone_bridge",
+     "to_name": "Cầu Thiên Thạch",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "npc",
+   "id": "wind_hesper",
+   "name": "Trại Trưởng Phong Thạch Hesper",
+   "tier": "main",
+   "roles": [
+    "quest",
+    "heal"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  },
+  {
+   "kind": "npc",
+   "id": "wind_iris",
+   "name": "Thợ Đồ Sơn Cước Iris",
+   "tier": "service",
+   "roles": [
+    "shop"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  },
+  {
+   "kind": "npc",
+   "id": "wind_jorin",
+   "name": "Sư Phụ Đá Gió Jorin",
+   "tier": "service",
+   "roles": [
+    "learn"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  },
+  {
+   "kind": "npc",
+   "id": "wind_kestra",
+   "name": "Người Chăn Dê Núi Kestra",
+   "tier": "free",
+   "roles": [
+    "free"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 13,
+  "medium": 5,
+  "large": 3,
+  "floor_decals": 9
+ },
+ "has_monster_zone": false
+}

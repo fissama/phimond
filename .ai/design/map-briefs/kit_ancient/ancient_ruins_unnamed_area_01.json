@@ -1,0 +1,202 @@
+{
+ "map_id": "ancient_ruins_unnamed_area_01",
+ "name_vi": "Tiền Sảnh Ngọc Lục",
+ "group": "Di Tích Cổ",
+ "kit": "kit_ancient",
+ "kit_name": "Cổ Tích (Tiền Sảnh Ngọc Lục)",
+ "style": "Điện đá ngọc lục bích, tượng cổ, tinh thạch; chuỗi phòng trong nhà (có tường).",
+ "original_image": "map-images/ancient_ruins_unnamed_area_01.png",
+ "size_px": [
+  2403,
+  879
+ ],
+ "bounds_apk": [
+  -10.791,
+  -3.11,
+  13.235,
+  5.68
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    12.15,
+    0.07
+   ],
+   "px": [
+    2294,
+    561
+   ],
+   "keepout_px": [
+    2194,
+    301,
+    2394,
+    561
+   ],
+   "id": "P:ancient_ruins_portal_001",
+   "label": "Cửa → Phòng Tinh Thạch",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "ancient_ruins_unnamed_area_03",
+     "to_name": "Phòng Tinh Thạch",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    2.95,
+    1.62
+   ],
+   "px": [
+    1374,
+    406
+   ],
+   "keepout_px": [
+    1274,
+    146,
+    1474,
+    406
+   ],
+   "id": "P:ancient_ruins_portal_005",
+   "label": "Cửa → Phòng Tượng Cổ",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "ancient_ruins_unnamed_area_02",
+     "to_name": "Phòng Tượng Cổ",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    0.01,
+    -2.42
+   ],
+   "px": [
+    1080,
+    810
+   ],
+   "keepout_px": [
+    980,
+    550,
+    1180,
+    810
+   ],
+   "id": "P:ancient_ruins_portal_009",
+   "label": "Cửa → Hành Lang Thạch Vệ",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "ancient_ruins_unnamed_area_04",
+     "to_name": "Hành Lang Thạch Vệ",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    -9.64,
+    0.1
+   ],
+   "px": [
+    115,
+    558
+   ],
+   "keepout_px": [
+    15,
+    298,
+    215,
+    558
+   ],
+   "id": "P:ancient_ruins_portal_011",
+   "label": "Cửa → Hải Tặc Hào",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "middle_corridor_main_hall",
+     "to_name": "Hải Tặc Hào",
+     "oneway": true,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "arrival",
+   "apk_xy": [
+    -8.65,
+    0.21
+   ],
+   "px": [
+    214,
+    547
+   ],
+   "keepout_px": [
+    114,
+    287,
+    314,
+    547
+   ],
+   "id": "AT:ship:ancient_ruins_unnamed_area_01",
+   "label": "Đến từ trụ Hải Tặc Hào",
+   "origin": "proposed",
+   "needs_placement": false,
+   "links": []
+  },
+  {
+   "kind": "npc",
+   "id": "ancient_neth",
+   "name": "Thủ Hộ Tiền Sảnh Neth",
+   "tier": "main",
+   "roles": [
+    "quest",
+    "heal"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  },
+  {
+   "kind": "npc",
+   "id": "ancient_olin",
+   "name": "Học Giả Ngọc Lục Olin",
+   "tier": "service",
+   "roles": [
+    "shop",
+    "learn"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 13,
+  "medium": 5,
+  "large": 3,
+  "floor_decals": 10
+ },
+ "has_monster_zone": false
+}

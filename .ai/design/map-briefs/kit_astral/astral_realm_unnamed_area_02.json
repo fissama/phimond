@@ -1,0 +1,104 @@
+{
+ "map_id": "astral_realm_unnamed_area_02",
+ "name_vi": "Lối Mây Tím",
+ "group": "Tinh Không",
+ "kit": "kit_astral",
+ "kit_name": "Tinh Giới (Khe nứt thời không)",
+ "style": "Cảnh ma mị: rừng mây tím, hoàng hôn, hồ vân ảnh, cổ thụ; Khe nứt thời không phát sáng. Bảng màu: tím #5B4A9B, hồng hoàng hôn #E08AA0, vàng #F2C879.",
+ "original_image": "map-images/astral_realm_unnamed_area_02.png",
+ "size_px": [
+  2522,
+  856
+ ],
+ "bounds_apk": [
+  -10.815,
+  11.017,
+  14.406,
+  19.577
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    -9.46,
+    14.32
+   ],
+   "px": [
+    135,
+    526
+   ],
+   "keepout_px": [
+    35,
+    266,
+    235,
+    526
+   ],
+   "id": "P:astral_realm_portal_002",
+   "label": "Cửa → Bờ Hồ Vân Ảnh",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "astral_realm_unnamed_area_03",
+     "to_name": "Bờ Hồ Vân Ảnh",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    9.23,
+    12.44
+   ],
+   "px": [
+    2005,
+    714
+   ],
+   "keepout_px": [
+    1905,
+    454,
+    2105,
+    714
+   ],
+   "id": "P:astral_realm_portal_009",
+   "label": "Cửa → Tử Vân Lâm",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "astral_realm_unnamed_area_01",
+     "to_name": "Tử Vân Lâm",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "npc",
+   "id": "astral_lars",
+   "name": "Kẻ Ngắm Mây Lars",
+   "tier": "free",
+   "roles": [
+    "free"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 14,
+  "medium": 6,
+  "large": 3,
+  "floor_decals": 10
+ },
+ "has_monster_zone": false
+}

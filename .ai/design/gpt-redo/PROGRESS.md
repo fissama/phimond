@@ -1,0 +1,98 @@
+# HD-2D redraw — tiến độ sản xuất
+
+Cập nhật: 2026-10-20. Route duy nhất: built-in image_gen. Không commit; không sửa runtime/scene, tools/hd2d_audit, waivers hoặc check.sh. Mọi ảnh vẫn approved=false, chờ Claude duyệt song song; theo yêu cầu mới không dừng giữa chặng.
+
+## ĐANG DỞ — đọc mục này để tiếp tục
+
+**Desert: chặng1 chưa đóng; có23 draft (4 floor,16 prop,3 backdrop), đang QA và mở rộng mảnh.**
+- Owner đã cho phép nghiên cứu source + sáng tạo landmark theo tên map/style; không còn chặn nguồn. Đã nhìn đủ6 map gốc, hashes trong original-map-review.json. Gemini129file giữ nguyên trong _gemini/, không dùng style.
+- Palette48: palette.json, raw swatch/provenance jobs/palette-v2/. Không đổi kit48 để ép đủ màu.
+- jobs/props-clean-03/:6mảnh mới từ original + bush01/facade đã duyệt +2anchors. Cactus02(40màu), cactus-dead(34), wind-spire(39) đã nhìn final +4x tối/caro, draft self-inspected. Boulder02 chỉ30màu: chưa đạt, phải vẽ lại nhiều vật liệu hơn. Pillar mới41màu nhưng còn1pixel rời do scale, chưa đạt; không xóa bằng code. Cactus01 từ sheet này bị thay bằng vẽ mới jobs/landmarks-v2/ vì thiếu màu.
+- jobs/landmarks-v2/:5 landmark riêng + cactus01 mới. Entrance wind gate48màu; sealed disk40; Hulu gourd pavilion48; barren cairn45; disaster fossil chasm48; cactus01 có rễ/đá46. Đã mở final +4x tối/caro cả6, không có cụm rời<12px, không mất lề. 5landmark ghi rõ owner-authorized interpretation, không giả là recovered APK. Original house dome thuộc shicheng vẫn từ pilot, chưa đủ review. Raw-01 gốc cactus được giữ từ pilot; bản mới raw-04. Exporter đã bảo vệ raw-01 khỏi ghi đè.
+- Tile thử01/02/03 đều có vấn đề repeat-grid; giữ raw và qa/review-attempts. Hiện chọn raw04 jobs/tiles-repair-04/: sand01 35màu, sand02 33, sandstone37, cracked01 33; cả4 seamX/Y0, outer8phẳng sau chọn crop và dùng toàn palette48 (không tô/copy mép). Đã mở3x3 +detail4x tối/caro sand01/02/cracked. Sand01/02 là draft candidate, còn hành lang lặp hẹp là điểm yếu; KHÔNG approved. Cracked vẫn lộ grid rõ nên SELF REJECT. Sandstone raw04 vẫn lộ grid ở3x3, cần vẽ lại/chưa pass. Chưa có3floor được chốt tự QA.
+- Backdrop jobs/backdrops-pilot-v2/:3tầng1280x384 đã xuất,40/40/42màu nhưng seamX không0; mid/near phải sửa. Far vẽ lại riêng jobs/backdrop-far-repair-02/raw02, kiểu hình xa yên hơn và2đầu alpha khớp. Chọn palette subset bỏ1highlight #E3B188 toàn ảnh (không retouch không gian), kiểm seam lần mới nhất ởqa.json. Cần nhìn final4x vàrepeat bản finish mới nhất.
+- Props pilot5mảnh khác: dome ruin, boulder01, urn broken, dormant portal, monster bones. Đã xem crop4x tối từ phiên trước, CHƯA đủ review caro/toàn hình. Không tạo lại các raw này.
+- Exporter package.py: chỉ crop/key/palette/QA, densityfar64, khác128; kiểm33màu tối thiểu đã thêm; bảo vệraw01. check-strays.py chỉ kiểm, không xóa pixel. Metadata palette hiện ghi exact nearest kit palette cho export mới.
+- Gate checkpoint thật: art_gate.py batch-11-desert exit1; tool vẫn quét cả3kit batch11:108asset,41lỗi,0warning. 40lỗi windrock cũ và1layout desert_entrance vì các id trang trí cũ chưa được vẽ lại; không có lỗi gate gán trực tiếp từng desert sprite. Self QA vẫn có lỗi như trên; KHÔNG công bố đạt. Log gate-checkpoint.log.
+- Ba asset yếu nhất hiện tại: desert-sand-cracked-01 (repeat grid); desert-sandstone-floor (repeat grid); desert-boulder-02 (30màu). Mid/near backdrop seam và pillar stray cũng chưa đạt.
+- Đang làm tiếp: QA far mới, review5pilot, vẽ thêm4floor còn thiếu và sửa2floor grid; rồi edge/decal/shadow; ≥20prop bổ sung, backdrop mid/near, portalactive/marker/FX. Chặng2/3/4 chưa hoàn tất. Mọi approved=false. Không runtime, không commit.
+
+### Checkpoint tiếp theo — 2026-10-20 (đọc trước các số cũ ở trên)
+- Hiện manifest51draft:9floor +39prop +3backdrop. Không đồng nghĩa51đã đạt. Đọc qa.json từng id để biết reject/pending.
+- Stage1 có bản pilot để Claude xem song song: palette48; sand-floor01/02 candidate35/33colors và gravel-floor raw03 mới46colors; dome ruin40, urn34, portal dormant42; far36. Đã nhìn final/repeat +4x tối/caro các mảnh vừa nêu. Không dừng chờ duyệt. Gate checkpoint vẫn FAIL41như trên, layout còn thiếumảnh. Sand01/02 vẫn ghi hành lang lặp hẹp là điểm yếu; chưa approved.
+- Gravel raw02 đã tự trả vì grid; raw03 jobs/gravel-repair-03/ dùng ground phẳng xuyên suốt + cụm khoáng thưa, repeat không còn khung ô rỗng rõ. SeamX/Y0/outer8flat,46màu.
+- Far jobs/backdrop-far-repair-02/:36màu, seamX0, đã nhìn final4x tối/caro vàrepeat. Chỉ bỏ1highlight #E3B188 khỏi palette toàn ảnh, không tô/copy mép. Mảng dưới rộng/phẳng là điểm yếu.
+- jobs/floors-expanded-v2/raw05:thêm5floor vàthay sandstone. CẢ6 export chưa đạt: sand03(30màu), gravel cũ33(đã thay), cracked02(31), sandstone32, sunken-brick32, limestone-grit37; mépX/Y/outer8 chưa đạt. Chưa xem final4x/repeat của5còn lại. Phải sửa, không dùng làm floorđạt.
+- jobs/ruin-components-v2/:wall42,halfarch42,fallenpillar41,stairs42,stele42,drywell42. Chỉ fallenpillar còn1pixelrời sauNN;5mảnh khác alpha liền. CHƯA tự nhìn final4x nên review pending. Fallenpillar cắt polygon ở khe sheet để loại tip bia thuộc cell dưới; không sửa bên trong sprite. Toàn raw giữ nguyên.
+- jobs/camp-props-v2/:tent41(2componentnhỏ),sack37(1componentnhỏ),pack40(liền),crate31(thiếumàu),stove41(liền),banner40(liền). CHƯA nhìn4x, chưapass. Cần sửa các lỗi bằng vẽ lại nếu raw cũng rời; không xóa pixel code.
+- jobs/nature-props-v2/:boulder02 vẽ mới42(liền, đã thay bản30),boulder03 41(1stray),sandmound35(5stray),cactus03 43(1stray),tumbleweed01 43(1stray),sphinx46(liền). CHƯA nhìn final4x. Landmark sphinx là diễn giải mới từ chủ đề phế tích, không giả recovered source.
+- jobs/small-props-v2/:small-rock01/02/03:42/35/38colors;small-cactus01/02/03:35/34/40. Cả6không componentnhỏ. CHƯA nhìn final4x, không tựpass.
+- Ba điểm yếu hiện tại: sandstone-floor raw05(32màu+seam),cracked01(grid),camp-wood-crate31màu. Propstrays như trên cũng chưađạt. Không vẽ lại các bản đã tựQA sạch; sửa đúng id bị trả.
+- Việc đang dở: QA4x các prop mới; bổ sung review.md còn thiếu; sửa5floor vàcracked01; giải quyếtstrays/thiếumàu; làm edge/decal≥12/shadow4–6; sửabackdropmid/near; portalactive cùngmask/marker4frames/≥3FX; cuối kit3ảnhghépvàgate0. Chặng2/3/4 CHƯA xong. Không commit/runtime.
+
+### Checkpoint mới nhất — 2026-10-20, đang tiếp tục chặng2
+- Không còn chỉ3floor: đã có8floor sạch cơ học và đã nhìn3x3 +4x tối/caro: sand01/02, gravel raw03(46màu), cracked01/02 raw06(40/41), sandstone raw06(39), sunken-brick raw06(37), limestone-grit raw07(35). SeamX/Y0, outer8flat; xc cao nhất0.0338695. `tile-correlation-qa.json`.
+- jobs/quiet-floors-repair-06/ thay6floor. Sau chọn crop+palette subset toànảnh,4đạt như trên; sand03 vẫn lỗi mép, cần vẽ lại. Limestone trongsheetcũng lỗi, đã thay riêng raw07 jobs/limestone-floor-repair-07/. KHÔNG rerun cảjobraw06 làm ghiđè limestone đã sửa nếu không loại id đó khỏijob.
+- Sáu small-rock/cactus đã nhìn final1x và FULL4x tối/caro, đã ghi review từngid;35–42colors, khôngstray. Đừngvẽlại.
+- 6shadow jobs/shadows-v2/ đã vẽ bằng image_gen nativeRGBA, alpha0..183. Finish RGB chỉ1màu kit#2D2730, giữ alpha, khôngcodeblur/sinhhình. Đã nhìn FULL4x tối/caro cả6bảnmonochrome. Softalpha + ítmàu là ngoại lệshadowtheo02-kit-redo. Lưuý kháđậm ởfullopacity. Không approved.
+- 6dải chuyển tiếp512x128 jobs/edges-v2/:cả6chưađạt seamX, cracked01 chỉ32màu. Haiđầu band lệch1–3px từraw; không vá/copy mép. Dùngimage_gen sửa. Cóthể chỉgiữ1dảiđạtcho3cặpmaterial, không phải nộp mọi bảnthửhỏng. Giữraw01. Khôngtínhcácdraftnàyvàođủedgeđạt.
+- jobs/ground-decals-01-v2/:wind01/02,pebbles,footprints,bones,pottery đãxuất45/48/48/47/48/48màu,QA cơhọc sạch. CHƯA nhìnfinal4x, reviewpending. Footprints thực tế là7dấu rời theođường, khôngphải7cặp nhưprompt.
+- jobs/ground-decals-02-v2/:rubble,sunkenbricks,crackedpatch,fadedseal,2corner vừa tạo raw01; đangexport. ChưaQA4x. Angularsealtraces cóthểgợi chữ, cầnsoátkỹ/vẽlạinếugiốngglyph.
+- Gate gần nhất trước đợtshadow/edge/decal: `gate-checkpoint-20261020.log`,exit1,136asset/42lỗi/0warning;1seamY cracked02(cũ, nayđã sửa),40windrock và1layoutdesert. Chưa chạy lại sauđợt mới. Khôngđược tái dùng42lỗi nhưkếtquảhiện tại.
+- Việcsắp tới: tựQA12decalvàcácprop còn pending; sửaedges/sand03 vàstrays/thiếumàu; vẽ6transitionpatch/direction cònthiếu; mid/nearbackdrop sửa; portalactive/marker/FX; cácoldidprop cònthiếu(palm,chasm,tumbleweed02,skull/ribs,archgate,tallcactus,dunemedium,tentlarge),3ảnhghép vàgate. Khôngdừngchờduyệt.
+
+## Batch 10 — các chặng A/B/C/D đã có bản nộp
+
+Thư mục: apps/game-web/art-src/hd2d/batch-10-octopath/.
+- A: 4 lớp login riêng 1280×720. Forest và foreground sửa bằng raw04: có tán lá rộng + hẹp đứng, giảm đa số hoa. Đã tự nhìn 4× tối/caro. Bản Gemini 123 file giữ ở `_gemini-rejected/`.
+- B: 4 branding. Mascot đối chiếu nút pet APK, style UI batch06. Icon có master1024 + final256; raw02 sửa góc bo để hết bbox-edge. Frame9slice48px có ba ảnh ghép thử.
+- C: frame9slice48, fillX, loading-bg1280×720, 4 góc rời + atlas; spinner8 khung128×128@8fps. Chi tiết part phụ trong aux-manifest. Đã nhìn từng part 4×.
+- D: 3 intro1280×720,64 màu, tamer nhìn lưng/3⁄4 và DocDangNu nhất quán. Đã nhìn final và crop4× nền tối/caro. Raw/crop/prompt SHA256 đầy đủ trong jobs/intro-v2.
+- Có 15 id chính +13 part phụ. Panorama chỉ là `qa-layer-stack.png` để xem; chưa phát hành asset panorama từ các lớp chưa có Claude approval.
+- Check tại thời điểm trước khi archive desert: `art_gate.py --all`: 923 asset,338 lỗi,0 cảnh báo; KHÔNG có lỗi gán Batch10. Toàn kho vẫn FAIL. Xem gate-all.log.
+- Ba điểm yếu toàn batch: sky dải hơi đều; loading-fill seam không tuyệt đối0 (mean1.3177,max40 RGB); intro02 tay găng thô ở4×. Spinner còn lệch nhỏ giữa khung, loading-bg cỏ sáng. Không tự cấp approved.
+- Chi tiết file: README.md, manifest.json, aux-manifest.json, contact-sheet.png, review/qa/prompt từng asset.
+
+## Thứ tự còn lại — không đổi
+
+1. Desert: hoàn tất chặng1, rồi 2 (≥8 tile + edge/decal/shadow), 3 (≥36 prop + landmark từng map), 4 (backdrop/portal/marker/FX + 3 ảnh ghép thử + gate).
+2. Windrock (đọc02-kit-redo), 4 chặng.
+3. Tomb, đủ9 map và4 chặng.
+4. NPC batch05 trùng sprite (đọc04-batch-05-npc-redo).
+5. nightmare → crossroads → astral → ancient → ghost_castle → world_tree → tower → maze → guild → battlefield → maya → dungeon → arena2 → minigame. Mở ảnh gốc MỌI map của từng kit trước khi vẽ; PhầnC hd2d-maps-75-gemini-prompt.md là danh mục tối thiểu.
+
+## Quy tắc tiếp tục
+
+Đọc job.json + raw hiện có trước khi tạo ảnh. Không tạo lại cái đã đạt. Mỗi chặng cập nhật đây: file đã xuất, asset thiếu, kết quả check thật, 3 asset yếu nhất, việc dở. Tự nhìn final4× tối/caro trước khi ghi pass. Nếu Claude trả ảnh thì sửa rồi quay lại mạch này. Không dừng xin duyệt giữa chặng; chỉ báo chặn thật do thiếu ảnh/công cụ hoặc gate không thể sửa bằng vẽ lại.
+
+## Scale correction — latest2026-10-20
+
+Read07-review including BỔ SUNG. Scale overrides older “do not redraw small props” checkpoints: those earlier finals are oversized and must be replaced with fresh native drawing. Player1.31world≈168px;128px/world. Predeclare world_size and player comparison in every prop job before image_gen. Native export now refuses any source footprint requiring reduction; crop/key/palette/pad only.
+
+Replaced3: pack112×128(0.875×1), crate112×88(0.875×0.6875), tumbleweed01 128×128(1×1), jobs/native-small-scale-03 raw10. Actual38/35/35colors, no strays, viewed full4×dark/checker, approved=false. Attempts08/09 oversized preserved, NOT exported. Sack/stove/urn fromraw10 rejected for oversize or loose pieces. Newjob04 planned for those3 +smallrock01 +smallcactus01 +tumbleweed02.
+
+Size checker baseline this turn:18 manifest errors before replacement (16 oversize +2 relative area). Not zero yet; no claim gate passes. Pending remainingprops/floors/far/loadingfill and missingIDs per07-review. Three weaknesses now: old oversized sack, old oversized urn, old oversized dry-well. No runtime, no commit.
+
+## LATEST —2026-10-21, native scale correction
+
+20current native prop exports now have source1:1 (no downsampling), pre-generation desired_world_size + player-height comparisons in jobs and prompt.md. Native exporter refuses over-budget raw instead of shrinking. Selected current jobs: native-small-scale-03(pack,tumbleweed01), native-structures-row-10(well,stairs,fallenpillar,tent,bones), native-micro-row-12(3smallrocks+2cacti), native-micro-row-14(sack,crate,stove,cactus03), native-micro-repair-15(skull,ribs,tumbleweed02,urn). Earlier oversized/insufficient-color attempts raw08–22 kept; not all selected. Raw01 originals remain untouched.
+
+Actual size_check.py desert manifest: `size OK`, exit0. Full art_gate running, log gate-scale-20261021.log; it scans ALL3batch11 kits despite positional batch argument, so distinguish windrock errors. Do NOT claim allgate passes. 20finals actually viewed full4×dark/checker. Allcurrentnative33–48colors, no tiny components. Explicit SEMANTIC SELF REJECT stove: reads clayoven, must redraw metalportablebrazier; mechanical/sizechecks alone insufficient. Sack lyingflat reads foldedbundle (weak); fallenpillar visible shape smallwithinplannedcanvas (weak). New skull/ribs native128x112/144x112, generic small-* gate was stricter than skull/ribs rules; redrawn accordingly, no tool changes.
+
+Contact-sheet.png regenerated after manifest, plus qa-native-scale-overview.png (QA-only thumbnails; finals no resizing). Missingremainingprops palmtrunk/canopy,cactustall,tentlarge,archgate,chasm,dune etc; portal/marker/FX; floors/far/loadingfill corrections from07review;3edgevariants seam. Preserve previously generated crackededge exec-02891fd9-5901-4dbb-9013-c2d9c80ca230.png to job before export. Next: finish remainingprops and stove, edges/far/floors per07; no stopping for approval, no runtime/commit.
+
+### Latest follow-up2026-10-21
+Gate-scale-20261021.log:164assets49errors0warnings across3kits;desert[size]0,windrock[size]4. Desert3seams+cratebbox+layout. Crate/stove newly redrawn again native-crate-stove-center-18 raw25:crate160×128(1.25×1world),37colors,shortsidehandle;stove140×120(1.09375×0.9375world),47colors,actualmetalopenbrazier. Both full4×dark/checker inspected,nostrays. Earlier semanticreject/clayoven checkpoint superseded forstove. Gate must rerun forcratebbox. Newcrackededge recovered raw02 jobs/edge-cracked-single-02 (exec-02891fd9...). Exportjob refs were strings, fixed orderedpath+actualhash, rerun; inspectseams/repeat next. No audittools changed.
+
+### Latest landscape checkpoint2026-10-21
+26nativeprops now exported, all approved=false. New jobs/native-landscape-props-19 raw26: cactustall48colors,archgate48,tentlarge45,dune45. Actually viewed full4×dark/checker. Tallcactus4tinystrays,archgate1,dune4=>SELFREJECT, mustdrawagain,no pixel deletion. Tentlarge clean. jobs/native-palm-parts-20 raw27 selects middletrunk256×70435colors andmiddlecanopy768×44842colors; bothfull4×dark/checker seen,nofloaters. Canopy sway=true,pairtrunk; needs assemblyQA. Originalpartsraw26 overnarrowcanvas were NOT shrunk.
+Crackededge new512×12844colors seammax0, actual3×repeat+4×dark/checker seen. Remainder2mainseamedges sandstone/gravel being repaired. Contactsheet regenerated beforelastmetadatasave; regenerateagainatnextgate. Current weak3: tallcactus,archgate,dune (tinystrays). Exactgate latest gate-props-20261021.log, donotassumeallpasses.
+
+### Latest floor/edge/far checkpoint2026-10-21
+85draft assets,26nativeprops; no kit closure. Gate-props-20261021.log:170assets46errors0warnings across3batch11,desertonly2mainseams; layoutdesert_entrance validationnowpasses. Cratebboxresolved,newskull/ribs/palms/tent fillrequiredids. CustomselfQAstillstraysoldprops+tallcactus/archgate/dune.
+Newedgejobs/edge-sandstone-gravel-03 raw03: sandstone32colors,seam0=>REJECTcolorcount; gravel42colors,seammax0afterGLOBALaliasE3B188toDDB776(onepixelendpoint mismatch;allmatchingpixelsremapped,no spatialpatch). Bothrepeat/full4xreviewstillpending. Newcrackededge44colorsseam0alreadyselfinspectedrepeat+4x.
+Newfloorjobs/review-floors-21 raw28: sand01/02,sandstone,sunkenbrick35/37/36/36colors,seamXY0,outer8flat after documentedGLOBALpalettealiases onALLmatchingpixels. Actual3x3all4seen; no Ssymbols,butbranchingfracturemotifs repeatobviously; sandstone/brick stillthinrimcorridorvisible. Do NOT claim visualapproval or allfloorscomplete. Full4×checks pendinglatestfinish. Raw04/06prior attempts kept.
+Farnewjobs/review-far-opaque-22 raw29 (exec-694b79d6...): actualopaque sky+layereddunes+tinyoriginalruin/spire, nooldflatbottomhalf. Exportinprogress;seamlikelyneedsrepairbecausegenignoredflatendzones. Do notdownsampleprops, faronlydensity64. Remaining: repair3straylandscapeprops; sandstoneband33colors; farseam; floorrepeatquality; chasm01/02; directionaldecals6; portalactive/marker/FX/horizons; loadingbarfill;3QAcompositions. Continuewithoutapprovalpause.
+
+### Batch10 loadingfill correction2026-10-21
+Batch10 jobs/review-loading-fill-23 raw03: tealcrystalfacets+agedcopperdivider, actualoriginalframebars+2batch06styles+2petanchors attachedwithhashes. New256×64fill48colors,seamXmean/max0,actualfinal/repeat3×/full4×dark/checker viewed, approved=false. Extractoneperiodbetweengeneratedbronzedividers,ONLYinnerbody321:418; cropnotpixelpainting, noedgecopy. Oldraw01/02retained. Processing usesdesertpackage rootargument toreadexistingBatch10manifest15idsinstead ofoldA-onlyexporter. Primarycontactregenerated; auxpartsneedcombinedcontactrefresh. Brightchunkyfacetsweakness noted.

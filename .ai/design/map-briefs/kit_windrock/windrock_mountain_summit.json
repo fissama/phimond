@@ -1,0 +1,75 @@
+{
+ "map_id": "windrock_mountain_summit",
+ "name_vi": "Đỉnh Thiên Phong",
+ "group": "Mỏm Đá Gió",
+ "kit": "kit_windrock",
+ "kit_name": "Núi Phong Thạch",
+ "style": "Đá xám lam, cỏ núi khô, tuyết lốm đốm trên cao, gió mạnh (cờ/cỏ nghiêng). Bảng màu đá #7B8794/#566070, cỏ khô #8A8F4E, tuyết #E8EEF4.",
+ "original_image": "map-images/windrock_mountain_summit.png",
+ "size_px": [
+  2254,
+  904
+ ],
+ "bounds_apk": [
+  -97.544,
+  8.835,
+  -75.008,
+  17.88
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    -76.16,
+    12.77
+   ],
+   "px": [
+    2138,
+    511
+   ],
+   "keepout_px": [
+    2038,
+    251,
+    2238,
+    511
+   ],
+   "id": "P:windrock_mountain_portal_011",
+   "label": "Cửa → Sơn Đạo Phong Vân",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "windrock_mountain_mountain_path",
+     "to_name": "Sơn Đạo Phong Vân",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "npc",
+   "id": "wind_orla",
+   "name": "Thợ Săn Núi Orla",
+   "tier": "free",
+   "roles": [
+    "free"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 13,
+  "medium": 5,
+  "large": 3,
+  "floor_decals": 9
+ },
+ "has_monster_zone": false
+}

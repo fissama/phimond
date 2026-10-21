@@ -1,0 +1,104 @@
+{
+ "map_id": "ancient_ruins_unnamed_area_05",
+ "name_vi": "Thâm Sảnh Ngọc Lục",
+ "group": "Di Tích Cổ",
+ "kit": "kit_ancient",
+ "kit_name": "Cổ Tích (Tiền Sảnh Ngọc Lục)",
+ "style": "Điện đá ngọc lục bích, tượng cổ, tinh thạch; chuỗi phòng trong nhà (có tường).",
+ "original_image": "map-images/ancient_ruins_unnamed_area_05.png",
+ "size_px": [
+  2404,
+  876
+ ],
+ "bounds_apk": [
+  26.749,
+  -16.68,
+  50.789,
+  -7.92
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    49.76,
+    -15.21
+   ],
+   "px": [
+    2301,
+    729
+   ],
+   "keepout_px": [
+    2201,
+    469,
+    2401,
+    729
+   ],
+   "id": "P:ancient_ruins_portal_003",
+   "label": "Cửa → Tận Điện Cổ Tích",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "ancient_ruins_unnamed_area_06",
+     "to_name": "Tận Điện Cổ Tích",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    28.11,
+    -14.99
+   ],
+   "px": [
+    136,
+    707
+   ],
+   "keepout_px": [
+    36,
+    447,
+    236,
+    707
+   ],
+   "id": "P:ancient_ruins_portal_007",
+   "label": "Cửa → Hành Lang Thạch Vệ",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "ancient_ruins_unnamed_area_04",
+     "to_name": "Hành Lang Thạch Vệ",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "npc",
+   "id": "ancient_sable",
+   "name": "Người Khảo Cổ Sable",
+   "tier": "free",
+   "roles": [
+    "free"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 13,
+  "medium": 5,
+  "large": 3,
+  "floor_decals": 10
+ },
+ "has_monster_zone": false
+}

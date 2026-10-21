@@ -1,0 +1,59 @@
+{
+ "map_id": "tomb_region_unnamed_area_02",
+ "name_vi": "Bãi Gai Khô",
+ "group": "Lăng Mộ",
+ "kit": "kit_tomb",
+ "kit_name": "Lăng Mộ",
+ "style": "Gạch mộ rêu phong, đá xám xanh, ánh đèn ma xanh lục. Hai khu ngoài (Cồn Úa Vàng, Bãi Gai Khô) là sa mạc vàng cây gai khô.",
+ "original_image": "map-images/tomb_region_unnamed_area_02.png",
+ "size_px": [
+  2241,
+  886
+ ],
+ "bounds_apk": [
+  -11.376,
+  -30.979,
+  11.033,
+  -22.122
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    8.07,
+    -26.1
+   ],
+   "px": [
+    1945,
+    398
+   ],
+   "keepout_px": [
+    1845,
+    138,
+    2045,
+    398
+   ],
+   "id": "P:tomb_region_portal_011",
+   "label": "Cửa → Bãi Vãng Sinh",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "tomb_region_soul_cemetery",
+     "to_name": "Bãi Vãng Sinh",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 12,
+  "medium": 5,
+  "large": 3,
+  "floor_decals": 9
+ },
+ "has_monster_zone": false
+}

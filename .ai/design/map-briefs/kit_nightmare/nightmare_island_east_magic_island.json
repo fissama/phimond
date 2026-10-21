@@ -1,0 +1,126 @@
+{
+ "map_id": "nightmare_island_east_magic_island",
+ "name_vi": "Đông Đảo Huyền Thuật",
+ "group": "Đảo Ác Mộng",
+ "kit": "kit_nightmare",
+ "kit_name": "Đảo Ác Mộng",
+ "style": "Đất tím sẫm nứt phát quang, cây hắc ám, tinh thể bóng tối. Bảng màu: #3A2B52/#5B3F7A, vết nứt phát sáng #B26BFF, rêu độc #4E7A4A.",
+ "original_image": "map-images/nightmare_island_east_magic_island.png",
+ "size_px": [
+  2248,
+  835
+ ],
+ "bounds_apk": [
+  20.39,
+  -2.918,
+  42.874,
+  5.432
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    21.57,
+    0.47
+   ],
+   "px": [
+    118,
+    496
+   ],
+   "keepout_px": [
+    18,
+    236,
+    218,
+    496
+   ],
+   "id": "P:nightmare_island_portal_005",
+   "label": "Cửa → Trại Tàn Sinh",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "nightmare_island_survivor_camp",
+     "to_name": "Trại Tàn Sinh",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    41.86,
+    0.37
+   ],
+   "px": [
+    2147,
+    506
+   ],
+   "keepout_px": [
+    2047,
+    246,
+    2247,
+    506
+   ],
+   "id": "P:nightmare_island_portal_010",
+   "label": "Cửa → Quảng Trường Thạch Trụ",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "city_square",
+     "to_name": "Quảng Trường Thạch Trụ",
+     "oneway": true,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "arrival",
+   "apk_xy": [
+    40.86,
+    0.46
+   ],
+   "px": [
+    2047,
+    497
+   ],
+   "keepout_px": [
+    1947,
+    237,
+    2147,
+    497
+   ],
+   "id": "AT:square:nightmare_island_east_magic_island",
+   "label": "Đến từ trụ Quảng Trường",
+   "origin": "proposed",
+   "needs_placement": false,
+   "links": []
+  },
+  {
+   "kind": "npc",
+   "id": "night_soren",
+   "name": "Người Sống Sót Soren",
+   "tier": "free",
+   "roles": [
+    "free"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 12,
+  "medium": 5,
+  "large": 3,
+  "floor_decals": 9
+ },
+ "has_monster_zone": false
+}

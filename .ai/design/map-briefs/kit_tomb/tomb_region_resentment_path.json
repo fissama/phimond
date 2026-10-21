@@ -1,0 +1,126 @@
+{
+ "map_id": "tomb_region_resentment_path",
+ "name_vi": "Oán Linh Cổ Đạo",
+ "group": "Lăng Mộ",
+ "kit": "kit_tomb",
+ "kit_name": "Lăng Mộ",
+ "style": "Gạch mộ rêu phong, đá xám xanh, ánh đèn ma xanh lục. Hai khu ngoài (Cồn Úa Vàng, Bãi Gai Khô) là sa mạc vàng cây gai khô.",
+ "original_image": "map-images/tomb_region_resentment_path.png",
+ "size_px": [
+  2241,
+  886
+ ],
+ "bounds_apk": [
+  -73.326,
+  -3.579,
+  -50.917,
+  5.278
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    -72.29,
+    0.54
+   ],
+   "px": [
+    104,
+    474
+   ],
+   "keepout_px": [
+    4,
+    214,
+    204,
+    474
+   ],
+   "id": "P:tomb_region_portal_016",
+   "label": "Cửa → Quảng Trường Thạch Trụ",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "city_square",
+     "to_name": "Quảng Trường Thạch Trụ",
+     "oneway": true,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    -51.94,
+    0.47
+   ],
+   "px": [
+    2139,
+    481
+   ],
+   "keepout_px": [
+    2039,
+    221,
+    2239,
+    481
+   ],
+   "id": "P:tomb_region_portal_017",
+   "label": "Cửa → Tuyệt Vọng Chi Địa",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "tomb_region_despair_path",
+     "to_name": "Tuyệt Vọng Chi Địa",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "arrival",
+   "apk_xy": [
+    -71.29,
+    0.57
+   ],
+   "px": [
+    204,
+    471
+   ],
+   "keepout_px": [
+    104,
+    211,
+    304,
+    471
+   ],
+   "id": "AT:square:tomb_region_resentment_path",
+   "label": "Đến từ trụ Quảng Trường",
+   "origin": "proposed",
+   "needs_placement": false,
+   "links": []
+  },
+  {
+   "kind": "npc",
+   "id": "tomb_alder",
+   "name": "Người Thắp Đèn Mộ Alder",
+   "tier": "free",
+   "roles": [
+    "free"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 12,
+  "medium": 5,
+  "large": 3,
+  "floor_decals": 9
+ },
+ "has_monster_zone": false
+}

@@ -1,0 +1,144 @@
+{
+ "map_id": "ghost_castle_gate",
+ "name_vi": "Cổng U Lâu",
+ "group": "Lâu Đài Ma",
+ "kit": "kit_ghost_castle",
+ "kit_name": "Lâu Đài Ma",
+ "style": "Đá cẩm thạch đen nứt, rèm nhung rách, nến bạc, rừng U Lâm xanh bích.",
+ "original_image": "map-images/ghost_castle_gate.png",
+ "size_px": [
+  2241,
+  831
+ ],
+ "bounds_apk": [
+  -11.099,
+  -2.993,
+  11.31,
+  5.317
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    5.38,
+    1.21
+   ],
+   "px": [
+    1648,
+    411
+   ],
+   "keepout_px": [
+    1548,
+    151,
+    1748,
+    411
+   ],
+   "id": "P:ghost_castle_portal_004",
+   "label": "Cửa → U Linh Cổ Thành",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "ghost_castle_deep_woods",
+     "to_name": "U Linh Cổ Thành",
+     "oneway": true,
+     "status": "changes_requested"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    -9.97,
+    -0.17
+   ],
+   "px": [
+    113,
+    549
+   ],
+   "keepout_px": [
+    13,
+    289,
+    213,
+    549
+   ],
+   "id": "P:ghost_castle_portal_005",
+   "label": "Cửa → Hải Tặc Hào",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "middle_corridor_main_hall",
+     "to_name": "Hải Tặc Hào",
+     "oneway": true,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "arrival",
+   "apk_xy": [
+    -8.98,
+    -0.04
+   ],
+   "px": [
+    212,
+    536
+   ],
+   "keepout_px": [
+    112,
+    276,
+    312,
+    536
+   ],
+   "id": "AT:ship:ghost_castle_gate",
+   "label": "Đến từ trụ Hải Tặc Hào",
+   "origin": "proposed",
+   "needs_placement": false,
+   "links": []
+  },
+  {
+   "kind": "npc",
+   "id": "ghost_tove",
+   "name": "Quản Cổng U Lâu Tove",
+   "tier": "main",
+   "roles": [
+    "quest",
+    "heal"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  },
+  {
+   "kind": "npc",
+   "id": "ghost_una",
+   "name": "Du Hồn Thương Nhân Una",
+   "tier": "service",
+   "roles": [
+    "shop",
+    "learn"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 12,
+  "medium": 5,
+  "large": 3,
+  "floor_decals": 9
+ },
+ "has_monster_zone": false
+}

@@ -1,0 +1,75 @@
+{
+ "map_id": "nightmare_island_despair_land",
+ "name_vi": "Tuyệt Vọng Hải Địa",
+ "group": "Đảo Ác Mộng",
+ "kit": "kit_nightmare",
+ "kit_name": "Đảo Ác Mộng",
+ "style": "Đất tím sẫm nứt phát quang, cây hắc ám, tinh thể bóng tối. Bảng màu: #3A2B52/#5B3F7A, vết nứt phát sáng #B26BFF, rêu độc #4E7A4A.",
+ "original_image": "map-images/nightmare_island_despair_land.png",
+ "size_px": [
+  2248,
+  835
+ ],
+ "bounds_apk": [
+  -74.43,
+  -2.668,
+  -51.946,
+  5.682
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    -53.1,
+    0.51
+   ],
+   "px": [
+    2133,
+    517
+   ],
+   "keepout_px": [
+    2033,
+    257,
+    2233,
+    517
+   ],
+   "id": "P:nightmare_island_portal_011",
+   "label": "Cửa → Oán Linh Hải Đạo",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "nightmare_island_resentment_path",
+     "to_name": "Oán Linh Hải Đạo",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "npc",
+   "id": "night_vesna",
+   "name": "Người Sống Sót Vesna",
+   "tier": "free",
+   "roles": [
+    "free"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 12,
+  "medium": 5,
+  "large": 3,
+  "floor_decals": 9
+ },
+ "has_monster_zone": false
+}

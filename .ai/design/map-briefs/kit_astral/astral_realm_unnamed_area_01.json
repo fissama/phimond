@@ -1,0 +1,180 @@
+{
+ "map_id": "astral_realm_unnamed_area_01",
+ "name_vi": "Tử Vân Lâm",
+ "group": "Tinh Không",
+ "kit": "kit_astral",
+ "kit_name": "Tinh Giới (Khe nứt thời không)",
+ "style": "Cảnh ma mị: rừng mây tím, hoàng hôn, hồ vân ảnh, cổ thụ; Khe nứt thời không phát sáng. Bảng màu: tím #5B4A9B, hồng hoàng hôn #E08AA0, vàng #F2C879.",
+ "original_image": "map-images/astral_realm_unnamed_area_01.png",
+ "size_px": [
+  2532,
+  903
+ ],
+ "bounds_apk": [
+  -10.804,
+  -3.48,
+  14.514,
+  5.547
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    12.15,
+    0.07
+   ],
+   "px": [
+    2295,
+    548
+   ],
+   "keepout_px": [
+    2195,
+    288,
+    2395,
+    548
+   ],
+   "id": "P:astral_realm_portal_001",
+   "label": "Cửa → Hốc Cổ Thụ",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "astral_realm_unnamed_area_04",
+     "to_name": "Hốc Cổ Thụ",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    -9.74,
+    0.5
+   ],
+   "px": [
+    106,
+    505
+   ],
+   "keepout_px": [
+    6,
+    245,
+    206,
+    505
+   ],
+   "id": "P:astral_realm_portal_004",
+   "label": "Cửa → Thời Không Liệt Khích",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "astral_realm_spacetime_rift",
+     "to_name": "Thời Không Liệt Khích",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    4.13,
+    1.31
+   ],
+   "px": [
+    1493,
+    424
+   ],
+   "keepout_px": [
+    1393,
+    164,
+    1593,
+    424
+   ],
+   "id": "P:astral_realm_portal_006",
+   "label": "Cửa → Lối Mây Tím",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "astral_realm_unnamed_area_02",
+     "to_name": "Lối Mây Tím",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    6.86,
+    -1.83
+   ],
+   "px": [
+    1766,
+    738
+   ],
+   "keepout_px": [
+    1666,
+    478,
+    1866,
+    738
+   ],
+   "id": "P:astral_realm_portal_011",
+   "label": "Cửa → Rừng Hoàng Hôn",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "astral_realm_unnamed_area_05",
+     "to_name": "Rừng Hoàng Hôn",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "npc",
+   "id": "astral_joss",
+   "name": "Tiên Sứ Tử Vân Joss",
+   "tier": "main",
+   "roles": [
+    "quest",
+    "heal"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  },
+  {
+   "kind": "npc",
+   "id": "astral_kira",
+   "name": "Hiền Giả Vân Ảnh Kira",
+   "tier": "service",
+   "roles": [
+    "shop",
+    "learn"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 14,
+  "medium": 6,
+  "large": 3,
+  "floor_decals": 10
+ },
+ "has_monster_zone": false
+}

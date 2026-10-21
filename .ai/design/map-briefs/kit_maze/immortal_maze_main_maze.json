@@ -1,0 +1,166 @@
+{
+ "map_id": "immortal_maze_main_maze",
+ "name_vi": "Trường Sinh Mê Thành",
+ "group": "Mê Thành",
+ "kit": "kit_maze",
+ "kit_name": "Mê Thành Bất Tử",
+ "style": "Tường mê cung dây leo rậm, cổng đá chuyển dịch, bẫy chông sàn; xanh rêu + đá xám.",
+ "original_image": "map-images/immortal_maze_main_maze.png",
+ "size_px": [
+  2375,
+  950
+ ],
+ "bounds_apk": [
+  -11.068,
+  -4.21,
+  12.683,
+  5.285
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    4.99,
+    0.82
+   ],
+   "px": [
+    1606,
+    446
+   ],
+   "keepout_px": [
+    1506,
+    186,
+    1706,
+    446
+   ],
+   "id": "P:immortal_maze_portal_004",
+   "label": "Cửa → Bất Tử Mê Tầng",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "immortal_maze_floor",
+     "to_name": "Bất Tử Mê Tầng",
+     "oneway": true,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    -9.97,
+    -0.17
+   ],
+   "px": [
+    110,
+    546
+   ],
+   "keepout_px": [
+    10,
+    286,
+    210,
+    546
+   ],
+   "id": "P:immortal_maze_portal_005",
+   "label": "Cửa → Hải Tặc Hào",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "middle_corridor_main_hall",
+     "to_name": "Hải Tặc Hào",
+     "oneway": true,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "arrival",
+   "apk_xy": [
+    0.81,
+    -3.21
+   ],
+   "px": [
+    1188,
+    850
+   ],
+   "keepout_px": [
+    1088,
+    590,
+    1288,
+    850
+   ],
+   "id": "A:immortal_maze_portal_001",
+   "label": "Điểm đến từ Bất Tử Mật Tầng",
+   "origin": "proposed",
+   "needs_placement": true,
+   "links": []
+  },
+  {
+   "kind": "arrival",
+   "apk_xy": [
+    -8.97,
+    -0.1
+   ],
+   "px": [
+    210,
+    538
+   ],
+   "keepout_px": [
+    110,
+    278,
+    310,
+    538
+   ],
+   "id": "AT:ship:immortal_maze_main_maze",
+   "label": "Đến từ trụ Hải Tặc Hào",
+   "origin": "proposed",
+   "needs_placement": false,
+   "links": []
+  },
+  {
+   "kind": "npc",
+   "id": "maze_bex",
+   "name": "Dẫn Lộ Mê Thành Bex",
+   "tier": "main",
+   "roles": [
+    "quest",
+    "heal"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  },
+  {
+   "kind": "npc",
+   "id": "maze_cleo",
+   "name": "Thương Nhân Mê Cung Cleo",
+   "tier": "service",
+   "roles": [
+    "shop",
+    "learn"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 13,
+  "medium": 5,
+  "large": 3,
+  "floor_decals": 10
+ },
+ "has_monster_zone": false
+}

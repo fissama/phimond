@@ -1,0 +1,104 @@
+{
+ "map_id": "windrock_mountain_mountain_range",
+ "name_vi": "Dãy Phong Lĩnh",
+ "group": "Mỏm Đá Gió",
+ "kit": "kit_windrock",
+ "kit_name": "Núi Phong Thạch",
+ "style": "Đá xám lam, cỏ núi khô, tuyết lốm đốm trên cao, gió mạnh (cờ/cỏ nghiêng). Bảng màu đá #7B8794/#566070, cỏ khô #8A8F4E, tuyết #E8EEF4.",
+ "original_image": "map-images/windrock_mountain_mountain_range.png",
+ "size_px": [
+  2262,
+  938
+ ],
+ "bounds_apk": [
+  -43.014,
+  8.492,
+  -20.398,
+  17.87
+ ],
+ "px_per_unit": 100.0,
+ "y_up_assumed": true,
+ "anchors": [
+  {
+   "kind": "door",
+   "apk_xy": [
+    -41.93,
+    12.62
+   ],
+   "px": [
+    108,
+    525
+   ],
+   "keepout_px": [
+    8,
+    265,
+    208,
+    525
+   ],
+   "id": "P:windrock_mountain_portal_004",
+   "label": "Cửa → Sơn Đạo Phong Vân",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "windrock_mountain_mountain_path",
+     "to_name": "Sơn Đạo Phong Vân",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "door",
+   "apk_xy": [
+    -21.43,
+    12.65
+   ],
+   "px": [
+    2158,
+    522
+   ],
+   "keepout_px": [
+    2058,
+    262,
+    2258,
+    522
+   ],
+   "id": "P:windrock_mountain_portal_009",
+   "label": "Cửa → Trại Phong Thạch",
+   "origin": "apk",
+   "needs_placement": false,
+   "links": [
+    {
+     "to_map": "windrock_mountain_camp",
+     "to_name": "Trại Phong Thạch",
+     "oneway": false,
+     "status": "approved"
+    }
+   ]
+  },
+  {
+   "kind": "npc",
+   "id": "wind_mirel",
+   "name": "Thợ Săn Núi Mirel",
+   "tier": "free",
+   "roles": [
+    "free"
+   ],
+   "apk_xy": null,
+   "px": null,
+   "needs_placement": true,
+   "keepout_size_px": [
+    140,
+    180
+   ]
+  }
+ ],
+ "decor_budget_min": {
+  "small": 13,
+  "medium": 5,
+  "large": 3,
+  "floor_decals": 9
+ },
+ "has_monster_zone": false
+}
