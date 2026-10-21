@@ -1,0 +1,3250 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-13",
+  "status": "exact_current_candidate_review_completed_conditional_owner_review",
+  "scope": "P10 extension authoring and local review only",
+  "registry": {
+    "effective_count": 160,
+    "frozen_count": 152,
+    "authored_count": 8,
+    "preservation": "PASS 919 hashes and original registry fields",
+    "catalog": "PASS",
+    "mapping": "species_0153..0160 in brief order; six Normal/two Special all5star",
+    "issue": "RESOLVED: direct attempt-01 candidate_path removed; art.manifest_path is authoritative; extension checker rerun PASS"
+  },
+  "owner_direction": "Owner corrected all eight new species to LEFT-facing, matching prior152. Historical right-facing versions are superseded and not accepted.",
+  "tests": {
+    "focused_passed": 24,
+    "extension_tests": 10,
+    "baseline_catalog_tests": 9,
+    "web_review_tests": 3,
+    "source_partition_tests": 2,
+    "fresh_atlas_checks_passed": 8,
+    "exact_source_coverage_checks_passed": 8,
+    "raw05_06_byte_identity_checks_passed": 5,
+    "environment_note": "system Python web-test discovery initially failed missing PIL; bundled Pillow runtime passed",
+    "raw_byte_identity_scope": "only five currentattempt06 versions are byte-identical to their attempt05 raws;0156/0157/0158 attempt07 are fresh generated edits",
+    "root_reported_focused_tests_passed": 45,
+    "root_reported_tests_attribution": "Lead report; reviewer independently ran24focused tests before attempt07 art-only edits, plus fresh checks of allcurrenthashes/geometry/sourcecoverage"
+  },
+  "web_safety": "Authored source portrait absent, hash-bound review only, actual bytes rechecked on POST, no owner selection manifest or runtime activation writes. Idle/move loop only; attack/skill/down hold last frame.",
+  "historical_findings": {
+    "species_0153": [
+      "attempt-01/02: clipped neighboring stones/amber effects appear left of recovery frames R3C4/R4C4; source separation needs correction"
+    ],
+    "species_0154": [
+      "attempt-01: neighboring stone shards at R3C4/R4C4/R5C3; source separation needs correction"
+    ],
+    "species_0155": [
+      "attempt-01: oversized light beam crosses source columns",
+      "attempt-02: compact beam improved, but tiny yellow pulse slice at R4C4 left edge visible in full packed PNG"
+    ],
+    "species_0156": [
+      "attempt-01: full-body fire halo and neighboring flame fragments",
+      "attempt-02: two separate blades in R4C1–2 violate one-weapon identity; neighboring blade/effect slices R3C4/R4C4",
+      {
+        "attempt06_sha256": "7e7940324d0c81d00412dc71ab4ddc2f40539d30229dbc24348c1c6ed368e31c",
+        "disposition": "superseded by new imagegen attempt07 identity correction",
+        "notes": [
+          "Black/red broad armored demon, horns, cape and one visible sword in most frames; final lying collapse.",
+          "R3C2 wind-up does not visibly retain the blade: hand/arm pose reads as a fist. Occlusion or weapon persistence requires owner/artist judgement. No duplicated blade obvious in final skill row.",
+          "Fire halo/sweep wraps silhouette, partly obscuring arms at 64 px; soft shaded luminous FX are conditional, not pure pixel-style acceptance."
+        ]
+      }
+    ],
+    "species_0157": [
+      "attempt-01/02: only two visible rune accessories in some movement poses; fixed three-rune identity not reliably maintained",
+      {
+        "attempt06_sha256": "be3c164c19d591dd7582409347273d65c102b27179beecbd03f784ef18372737",
+        "disposition": "superseded by new imagegen attempt07 identity correction",
+        "notes": [
+          "One central eye, top/right/left diamond rune motif, hovering silhouette and fully lowered final mound.",
+          "R3C3 left rune is not a separate visible diamond; it is replaced/hidden by curled tendril FX. R4C3 left accessory is obscured/recast as a large diamond pulse. Fixed three-rune identity is not confidently maintained in all20 frames. Repair or explicit owner judgement required.",
+          "Purple surround/pulse uses soft luminous edges."
+        ]
+      }
+    ],
+    "species_0158": [
+      "attempt-01: neighboring impact/stone fragments at R3C2–4/R4C2/R5C3–4",
+      {
+        "attempt06_sha256": "0d9b78f0bc266a9b1098d54eaad77c7737d7f132c853d38b81395a0ca85f360d",
+        "disposition": "superseded by new imagegen attempt07 straight-punch correction",
+        "notes": [
+          "Two-legged stone body, two large fists, small head and green core; final completely collapsed heap.",
+          "Basic row impact is ground smash rather than clearly extended straight punch. Green earth spikes can dominate the body at 64 px; distinguish physical hit from caster eruption."
+        ]
+      }
+    ],
+    "species_0159": [
+      "attempt-01: signature forms seals before claw instead of claw then seals",
+      "attempt-02: signature order improved but tiny yellow/red neighboring effect slices remain R3C3/R4C3"
+    ],
+    "species_0160": [
+      "attempt-01/02: isolated foreign edge specks and clipped pulse fragment at R4C4; needs clean source gutters"
+    ]
+  },
+  "entries": [
+    {
+      "species_id": "species_0153",
+      "name": "Hươu Rêu Nguyệt",
+      "candidate_path": "apps/game-client/assets/pets/redraws/extension-20261013/species_0153/attempt-06/packed.png",
+      "sha256": "d55e2bc1467f717afff589a4e87cda58b7a338f98da3db90094ab1ef0a4ece48",
+      "raw_sha256": "5907b1fa399ffa5301b1ead5c8defac1226cfdd41bdfa1cd14803ec9b46f3a74",
+      "layout_sha256": "c2d0a6aee6a8d17d7fc889f235334bae3ab80729edce4f6d437fca062f065d70",
+      "packing_sha256": "4165096eb01f4634b3a5520ab5bdfde4f3c7256fa0c55a699c17897faf28b630",
+      "raw_byte_identical_to_attempt05": true,
+      "mechanical": {
+        "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/extension-20261013/species_0153/attempt-06/packed.png",
+        "sha256": "d55e2bc1467f717afff589a4e87cda58b7a338f98da3db90094ab1ef0a4ece48",
+        "status": "pass",
+        "issues": [],
+        "cells": [
+          {
+            "index": 0,
+            "row": 0,
+            "column": 0,
+            "alpha_bounds": [
+              52,
+              55,
+              257,
+              237
+            ],
+            "height_pixels": 182,
+            "height_cell_ratio": 0.647687,
+            "width_pixels": 205,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 1,
+            "row": 0,
+            "column": 1,
+            "alpha_bounds": [
+              83,
+              51,
+              234,
+              236
+            ],
+            "height_pixels": 185,
+            "height_cell_ratio": 0.658363,
+            "width_pixels": 151,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 2,
+            "row": 0,
+            "column": 2,
+            "alpha_bounds": [
+              58,
+              60,
+              224,
+              237
+            ],
+            "height_pixels": 177,
+            "height_cell_ratio": 0.629893,
+            "width_pixels": 166,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 3,
+            "row": 0,
+            "column": 3,
+            "alpha_bounds": [
+              51,
+              51,
+              227,
+              234
+            ],
+            "height_pixels": 183,
+            "height_cell_ratio": 0.651246,
+            "width_pixels": 176,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 4,
+            "row": 1,
+            "column": 0,
+            "alpha_bounds": [
+              53,
+              49,
+              256,
+              237
+            ],
+            "height_pixels": 188,
+            "height_cell_ratio": 0.669039,
+            "width_pixels": 203,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 5,
+            "row": 1,
+            "column": 1,
+            "alpha_bounds": [
+              80,
+              49,
+              256,
+              237
+            ],
+            "height_pixels": 188,
+            "height_cell_ratio": 0.669039,
+            "width_pixels": 176,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 6,
+            "row": 1,
+            "column": 2,
+            "alpha_bounds": [
+              80,
+              49,
+              248,
+              237
+            ],
+            "height_pixels": 188,
+            "height_cell_ratio": 0.669039,
+            "width_pixels": 168,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 7,
+            "row": 1,
+            "column": 3,
+            "alpha_bounds": [
+              74,
+              49,
+              223,
+              229
+            ],
+            "height_pixels": 180,
+            "height_cell_ratio": 0.640569,
+            "width_pixels": 149,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 8,
+            "row": 2,
+            "column": 0,
+            "alpha_bounds": [
+              59,
+              46,
+              244,
+              237
+            ],
+            "height_pixels": 191,
+            "height_cell_ratio": 0.679715,
+            "width_pixels": 185,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 9,
+            "row": 2,
+            "column": 1,
+            "alpha_bounds": [
+              68,
+              47,
+              232,
+              237
+            ],
+            "height_pixels": 190,
+            "height_cell_ratio": 0.676157,
+            "width_pixels": 164,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 10,
+            "row": 2,
+            "column": 2,
+            "alpha_bounds": [
+              56,
+              45,
+              248,
+              233
+            ],
+            "height_pixels": 188,
+            "height_cell_ratio": 0.669039,
+            "width_pixels": 192,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 11,
+            "row": 2,
+            "column": 3,
+            "alpha_bounds": [
+              72,
+              50,
+              228,
+              237
+            ],
+            "height_pixels": 187,
+            "height_cell_ratio": 0.66548,
+            "width_pixels": 156,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 12,
+            "row": 3,
+            "column": 0,
+            "alpha_bounds": [
+              67,
+              47,
+              234,
+              237
+            ],
+            "height_pixels": 190,
+            "height_cell_ratio": 0.676157,
+            "width_pixels": 167,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 13,
+            "row": 3,
+            "column": 1,
+            "alpha_bounds": [
+              57,
+              47,
+              216,
+              236
+            ],
+            "height_pixels": 189,
+            "height_cell_ratio": 0.672598,
+            "width_pixels": 159,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 14,
+            "row": 3,
+            "column": 2,
+            "alpha_bounds": [
+              40,
+              47,
+              259,
+              233
+            ],
+            "height_pixels": 186,
+            "height_cell_ratio": 0.661922,
+            "width_pixels": 219,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 15,
+            "row": 3,
+            "column": 3,
+            "alpha_bounds": [
+              83,
+              53,
+              228,
+              237
+            ],
+            "height_pixels": 184,
+            "height_cell_ratio": 0.654804,
+            "width_pixels": 145,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 16,
+            "row": 4,
+            "column": 0,
+            "alpha_bounds": [
+              58,
+              43,
+              234,
+              237
+            ],
+            "height_pixels": 194,
+            "height_cell_ratio": 0.690391,
+            "width_pixels": 176,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 17,
+            "row": 4,
+            "column": 1,
+            "alpha_bounds": [
+              58,
+              44,
+              251,
+              237
+            ],
+            "height_pixels": 193,
+            "height_cell_ratio": 0.686833,
+            "width_pixels": 193,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 18,
+            "row": 4,
+            "column": 2,
+            "alpha_bounds": [
+              75,
+              56,
+              237,
+              237
+            ],
+            "height_pixels": 181,
+            "height_cell_ratio": 0.644128,
+            "width_pixels": 162,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 19,
+            "row": 4,
+            "column": 3,
+            "alpha_bounds": [
+              61,
+              41,
+              228,
+              224
+            ],
+            "height_pixels": 183,
+            "height_cell_ratio": 0.651246,
+            "width_pixels": 167,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          }
+        ],
+        "occupied_cells": 20,
+        "distinct_cells": 20,
+        "visual_review_required": true,
+        "format": "PNG",
+        "mode": "RGBA",
+        "dimensions": [
+          1124,
+          1405
+        ]
+      },
+      "complete_source_partition_exactly_once": true,
+      "common_uniform_scale": 0.6588235294117646,
+      "viewed": [
+        "raw.png",
+        "packed.png",
+        "contact-64.png",
+        "contact-96.png",
+        "contact-192.png"
+      ],
+      "direction": "LEFT",
+      "fully_down": "confirmed visually",
+      "cross_cell_foreign_fragments": "No obvious clipped neighboring-fragment blocker in the current exact candidate; faint diffuse alpha remains.",
+      "independent_visual_status": "conditional_owner_review",
+      "notes": [
+        "Four-legged deer, paired branching antlers and short tail readable; distinct from a horse/unicorn.",
+        "Amber/moss effect cloud surrounds much of silhouette. At 64 px details merge; control soft halo/bloom before calling strict pixel-style compliance."
+      ],
+      "owner_approved": false,
+      "runtime_activated": false,
+      "gif_loops": [
+        0,
+        0,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "species_id": "species_0154",
+      "name": "Thiết Giáp Long",
+      "candidate_path": "apps/game-client/assets/pets/redraws/extension-20261013/species_0154/attempt-06/packed.png",
+      "sha256": "a9bbcf2a134c6a14013fd712886d6150ad0c9487bcb69698122cebc5ef9e8059",
+      "raw_sha256": "b813deea1317deb55509521350993136480430700d2b12b767100a9c08e1b504",
+      "layout_sha256": "367e2b727d595b6576047b4a3c7c005c98216456842d77e30db11128b52da30f",
+      "packing_sha256": "fad5c1ef54b412030cd8018f99b0bd6b410df5230a2f431967c145cd17e271e3",
+      "raw_byte_identical_to_attempt05": true,
+      "mechanical": {
+        "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/extension-20261013/species_0154/attempt-06/packed.png",
+        "sha256": "a9bbcf2a134c6a14013fd712886d6150ad0c9487bcb69698122cebc5ef9e8059",
+        "status": "pass",
+        "issues": [],
+        "cells": [
+          {
+            "index": 0,
+            "row": 0,
+            "column": 0,
+            "alpha_bounds": [
+              46,
+              97,
+              219,
+              237
+            ],
+            "height_pixels": 140,
+            "height_cell_ratio": 0.498221,
+            "width_pixels": 173,
+            "scale_observation": "below_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 1,
+            "row": 0,
+            "column": 1,
+            "alpha_bounds": [
+              47,
+              89,
+              234,
+              237
+            ],
+            "height_pixels": 148,
+            "height_cell_ratio": 0.52669,
+            "width_pixels": 187,
+            "scale_observation": "below_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 2,
+            "row": 0,
+            "column": 2,
+            "alpha_bounds": [
+              47,
+              72,
+              209,
+              235
+            ],
+            "height_pixels": 163,
+            "height_cell_ratio": 0.580071,
+            "width_pixels": 162,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 3,
+            "row": 0,
+            "column": 3,
+            "alpha_bounds": [
+              29,
+              85,
+              233,
+              237
+            ],
+            "height_pixels": 152,
+            "height_cell_ratio": 0.540925,
+            "width_pixels": 204,
+            "scale_observation": "below_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 4,
+            "row": 1,
+            "column": 0,
+            "alpha_bounds": [
+              63,
+              24,
+              233,
+              232
+            ],
+            "height_pixels": 208,
+            "height_cell_ratio": 0.740214,
+            "width_pixels": 170,
+            "scale_observation": "above_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 5,
+            "row": 1,
+            "column": 1,
+            "alpha_bounds": [
+              47,
+              29,
+              234,
+              237
+            ],
+            "height_pixels": 208,
+            "height_cell_ratio": 0.740214,
+            "width_pixels": 187,
+            "scale_observation": "above_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 6,
+            "row": 1,
+            "column": 2,
+            "alpha_bounds": [
+              47,
+              25,
+              243,
+              237
+            ],
+            "height_pixels": 212,
+            "height_cell_ratio": 0.754448,
+            "width_pixels": 196,
+            "scale_observation": "above_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 7,
+            "row": 1,
+            "column": 3,
+            "alpha_bounds": [
+              56,
+              23,
+              222,
+              237
+            ],
+            "height_pixels": 214,
+            "height_cell_ratio": 0.761566,
+            "width_pixels": 166,
+            "scale_observation": "above_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 8,
+            "row": 2,
+            "column": 0,
+            "alpha_bounds": [
+              46,
+              67,
+              233,
+              237
+            ],
+            "height_pixels": 170,
+            "height_cell_ratio": 0.604982,
+            "width_pixels": 187,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 9,
+            "row": 2,
+            "column": 1,
+            "alpha_bounds": [
+              47,
+              54,
+              232,
+              237
+            ],
+            "height_pixels": 183,
+            "height_cell_ratio": 0.651246,
+            "width_pixels": 185,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 10,
+            "row": 2,
+            "column": 2,
+            "alpha_bounds": [
+              45,
+              54,
+              224,
+              237
+            ],
+            "height_pixels": 183,
+            "height_cell_ratio": 0.651246,
+            "width_pixels": 179,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 11,
+            "row": 2,
+            "column": 3,
+            "alpha_bounds": [
+              37,
+              56,
+              214,
+              237
+            ],
+            "height_pixels": 181,
+            "height_cell_ratio": 0.644128,
+            "width_pixels": 177,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 12,
+            "row": 3,
+            "column": 0,
+            "alpha_bounds": [
+              46,
+              22,
+              242,
+              234
+            ],
+            "height_pixels": 212,
+            "height_cell_ratio": 0.754448,
+            "width_pixels": 196,
+            "scale_observation": "above_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 13,
+            "row": 3,
+            "column": 1,
+            "alpha_bounds": [
+              55,
+              22,
+              232,
+              237
+            ],
+            "height_pixels": 215,
+            "height_cell_ratio": 0.765125,
+            "width_pixels": 177,
+            "scale_observation": "above_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 14,
+            "row": 3,
+            "column": 2,
+            "alpha_bounds": [
+              45,
+              23,
+              241,
+              237
+            ],
+            "height_pixels": 214,
+            "height_cell_ratio": 0.761566,
+            "width_pixels": 196,
+            "scale_observation": "above_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 15,
+            "row": 3,
+            "column": 3,
+            "alpha_bounds": [
+              53,
+              22,
+              223,
+              237
+            ],
+            "height_pixels": 215,
+            "height_cell_ratio": 0.765125,
+            "width_pixels": 170,
+            "scale_observation": "above_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 16,
+            "row": 4,
+            "column": 0,
+            "alpha_bounds": [
+              52,
+              86,
+              232,
+              237
+            ],
+            "height_pixels": 151,
+            "height_cell_ratio": 0.537367,
+            "width_pixels": 180,
+            "scale_observation": "below_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 17,
+            "row": 4,
+            "column": 1,
+            "alpha_bounds": [
+              45,
+              87,
+              227,
+              237
+            ],
+            "height_pixels": 150,
+            "height_cell_ratio": 0.533808,
+            "width_pixels": 182,
+            "scale_observation": "below_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 18,
+            "row": 4,
+            "column": 2,
+            "alpha_bounds": [
+              40,
+              85,
+              239,
+              237
+            ],
+            "height_pixels": 152,
+            "height_cell_ratio": 0.540925,
+            "width_pixels": 199,
+            "scale_observation": "below_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 19,
+            "row": 4,
+            "column": 3,
+            "alpha_bounds": [
+              53,
+              85,
+              226,
+              237
+            ],
+            "height_pixels": 152,
+            "height_cell_ratio": 0.540925,
+            "width_pixels": 173,
+            "scale_observation": "below_typical",
+            "issues": [],
+            "duplicate_of": null
+          }
+        ],
+        "occupied_cells": 20,
+        "distinct_cells": 20,
+        "visual_review_required": true,
+        "format": "PNG",
+        "mode": "RGBA",
+        "dimensions": [
+          1124,
+          1405
+        ]
+      },
+      "complete_source_partition_exactly_once": true,
+      "common_uniform_scale": 0.6677018633540371,
+      "viewed": [
+        "raw.png",
+        "packed.png",
+        "contact-64.png",
+        "contact-96.png",
+        "contact-192.png"
+      ],
+      "direction": "LEFT",
+      "fully_down": "confirmed visually",
+      "cross_cell_foreign_fragments": "No obvious clipped neighboring-fragment blocker in the current exact candidate; faint diffuse alpha remains.",
+      "independent_visual_status": "conditional_owner_review",
+      "notes": [
+        "Low armored quadruped, one club tail, stable plating silhouette and completely prone down frame.",
+        "Movement poses change little in limb lift/stride; potential sliding rather than clear gait. Large surrounding earth debris and translucent highlights need game-scale judgement."
+      ],
+      "owner_approved": false,
+      "runtime_activated": false,
+      "gif_loops": [
+        0,
+        0,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "species_id": "species_0155",
+      "name": "Tinh Vân Long",
+      "candidate_path": "apps/game-client/assets/pets/redraws/extension-20261013/species_0155/attempt-06/packed.png",
+      "sha256": "436bd2368d6b7db939f0e2670dbb16ae991bd0011617ba419a7b7626d54fb657",
+      "raw_sha256": "cbd431c317e4f64c15548ae8a2b0f8f9e6d3135c7ce2d29a20c2c60f0d8a3549",
+      "layout_sha256": "2d20ceadf3edb4ac5108f3a40de7fa1dfd1add97e90206947853e26e848ae2b0",
+      "packing_sha256": "a902d309839b15e49f04524f38a5df01d994bd81de39ea0b40a674e2fb155648",
+      "raw_byte_identical_to_attempt05": true,
+      "mechanical": {
+        "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/extension-20261013/species_0155/attempt-06/packed.png",
+        "sha256": "436bd2368d6b7db939f0e2670dbb16ae991bd0011617ba419a7b7626d54fb657",
+        "status": "pass",
+        "issues": [],
+        "cells": [
+          {
+            "index": 0,
+            "row": 0,
+            "column": 0,
+            "alpha_bounds": [
+              60,
+              37,
+              224,
+              234
+            ],
+            "height_pixels": 197,
+            "height_cell_ratio": 0.701068,
+            "width_pixels": 164,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 1,
+            "row": 0,
+            "column": 1,
+            "alpha_bounds": [
+              72,
+              65,
+              243,
+              235
+            ],
+            "height_pixels": 170,
+            "height_cell_ratio": 0.604982,
+            "width_pixels": 171,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 2,
+            "row": 0,
+            "column": 2,
+            "alpha_bounds": [
+              35,
+              37,
+              241,
+              237
+            ],
+            "height_pixels": 200,
+            "height_cell_ratio": 0.711744,
+            "width_pixels": 206,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 3,
+            "row": 0,
+            "column": 3,
+            "alpha_bounds": [
+              34,
+              49,
+              209,
+              231
+            ],
+            "height_pixels": 182,
+            "height_cell_ratio": 0.647687,
+            "width_pixels": 175,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 4,
+            "row": 1,
+            "column": 0,
+            "alpha_bounds": [
+              84,
+              71,
+              245,
+              233
+            ],
+            "height_pixels": 162,
+            "height_cell_ratio": 0.576512,
+            "width_pixels": 161,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 5,
+            "row": 1,
+            "column": 1,
+            "alpha_bounds": [
+              48,
+              68,
+              234,
+              237
+            ],
+            "height_pixels": 169,
+            "height_cell_ratio": 0.601423,
+            "width_pixels": 186,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 6,
+            "row": 1,
+            "column": 2,
+            "alpha_bounds": [
+              71,
+              68,
+              228,
+              233
+            ],
+            "height_pixels": 165,
+            "height_cell_ratio": 0.587189,
+            "width_pixels": 157,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 7,
+            "row": 1,
+            "column": 3,
+            "alpha_bounds": [
+              48,
+              46,
+              210,
+              231
+            ],
+            "height_pixels": 185,
+            "height_cell_ratio": 0.658363,
+            "width_pixels": 162,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 8,
+            "row": 2,
+            "column": 0,
+            "alpha_bounds": [
+              60,
+              47,
+              225,
+              227
+            ],
+            "height_pixels": 180,
+            "height_cell_ratio": 0.640569,
+            "width_pixels": 165,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 9,
+            "row": 2,
+            "column": 1,
+            "alpha_bounds": [
+              47,
+              25,
+              243,
+              237
+            ],
+            "height_pixels": 212,
+            "height_cell_ratio": 0.754448,
+            "width_pixels": 196,
+            "scale_observation": "above_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 10,
+            "row": 2,
+            "column": 2,
+            "alpha_bounds": [
+              36,
+              26,
+              237,
+              237
+            ],
+            "height_pixels": 211,
+            "height_cell_ratio": 0.75089,
+            "width_pixels": 201,
+            "scale_observation": "above_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 11,
+            "row": 2,
+            "column": 3,
+            "alpha_bounds": [
+              43,
+              23,
+              223,
+              237
+            ],
+            "height_pixels": 214,
+            "height_cell_ratio": 0.761566,
+            "width_pixels": 180,
+            "scale_observation": "above_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 12,
+            "row": 3,
+            "column": 0,
+            "alpha_bounds": [
+              51,
+              94,
+              228,
+              237
+            ],
+            "height_pixels": 143,
+            "height_cell_ratio": 0.508897,
+            "width_pixels": 177,
+            "scale_observation": "below_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 13,
+            "row": 3,
+            "column": 1,
+            "alpha_bounds": [
+              48,
+              32,
+              231,
+              225
+            ],
+            "height_pixels": 193,
+            "height_cell_ratio": 0.686833,
+            "width_pixels": 183,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 14,
+            "row": 3,
+            "column": 2,
+            "alpha_bounds": [
+              23,
+              38,
+              243,
+              236
+            ],
+            "height_pixels": 198,
+            "height_cell_ratio": 0.704626,
+            "width_pixels": 220,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 15,
+            "row": 3,
+            "column": 3,
+            "alpha_bounds": [
+              39,
+              32,
+              234,
+              207
+            ],
+            "height_pixels": 175,
+            "height_cell_ratio": 0.622776,
+            "width_pixels": 195,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 16,
+            "row": 4,
+            "column": 0,
+            "alpha_bounds": [
+              60,
+              51,
+              221,
+              205
+            ],
+            "height_pixels": 154,
+            "height_cell_ratio": 0.548043,
+            "width_pixels": 161,
+            "scale_observation": "below_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 17,
+            "row": 4,
+            "column": 1,
+            "alpha_bounds": [
+              36,
+              56,
+              243,
+              236
+            ],
+            "height_pixels": 180,
+            "height_cell_ratio": 0.640569,
+            "width_pixels": 207,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 18,
+            "row": 4,
+            "column": 2,
+            "alpha_bounds": [
+              47,
+              87,
+              216,
+              230
+            ],
+            "height_pixels": 143,
+            "height_cell_ratio": 0.508897,
+            "width_pixels": 169,
+            "scale_observation": "below_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 19,
+            "row": 4,
+            "column": 3,
+            "alpha_bounds": [
+              49,
+              67,
+              220,
+              206
+            ],
+            "height_pixels": 139,
+            "height_cell_ratio": 0.494662,
+            "width_pixels": 171,
+            "scale_observation": "below_typical",
+            "issues": [],
+            "duplicate_of": null
+          }
+        ],
+        "occupied_cells": 20,
+        "distinct_cells": 20,
+        "visual_review_required": true,
+        "format": "PNG",
+        "mode": "RGBA",
+        "dimensions": [
+          1124,
+          1405
+        ]
+      },
+      "complete_source_partition_exactly_once": true,
+      "common_uniform_scale": 0.7439446366782005,
+      "viewed": [
+        "raw.png",
+        "packed.png",
+        "contact-64.png",
+        "contact-96.png",
+        "contact-192.png"
+      ],
+      "direction": "LEFT",
+      "fully_down": "confirmed visually",
+      "cross_cell_foreign_fragments": "No obvious clipped neighboring-fragment blocker in the current exact candidate; faint diffuse alpha remains.",
+      "independent_visual_status": "conditional_owner_review",
+      "notes": [
+        "Night-blue slender dragon, horns/wings/tail/chest light and star motif remain recognizable; left beam, lowered down pose.",
+        "Gold light effects use soft luminous edges; no strict no-bloom/style acceptance. Compactness improved over historical oversized beam."
+      ],
+      "owner_approved": false,
+      "runtime_activated": false,
+      "gif_loops": [
+        0,
+        0,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "species_id": "species_0156",
+      "name": "Đao Ma Huyết Giáp",
+      "candidate_path": "apps/game-client/assets/pets/redraws/extension-20261013/species_0156/attempt-07/packed.png",
+      "sha256": "a78a94ca0637ee421a946f8cb5cd800bf8162f2cf0bee90aa6f1b414027ce86c",
+      "raw_sha256": "d8678ec9cf079e24ccf654a1eb65498c013130ab6b79e9e4599fafde4776d21f",
+      "layout_sha256": "7c3620413a00500e482a1a8fcb374f222bb66a8fe0cf980863acc811199ac244",
+      "packing_sha256": "5e238501449cda0243423af37bd1063c3566a84f51e53a0e81558ce7896fb5f2",
+      "mechanical": {
+        "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/extension-20261013/species_0156/attempt-07/packed.png",
+        "sha256": "a78a94ca0637ee421a946f8cb5cd800bf8162f2cf0bee90aa6f1b414027ce86c",
+        "status": "pass",
+        "issues": [],
+        "cells": [
+          {
+            "index": 0,
+            "row": 0,
+            "column": 0,
+            "alpha_bounds": [
+              64,
+              37,
+              236,
+              236
+            ],
+            "height_pixels": 199,
+            "height_cell_ratio": 0.708185,
+            "width_pixels": 172,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 1,
+            "row": 0,
+            "column": 1,
+            "alpha_bounds": [
+              43,
+              36,
+              239,
+              233
+            ],
+            "height_pixels": 197,
+            "height_cell_ratio": 0.701068,
+            "width_pixels": 196,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 2,
+            "row": 0,
+            "column": 2,
+            "alpha_bounds": [
+              45,
+              40,
+              238,
+              236
+            ],
+            "height_pixels": 196,
+            "height_cell_ratio": 0.697509,
+            "width_pixels": 193,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 3,
+            "row": 0,
+            "column": 3,
+            "alpha_bounds": [
+              43,
+              50,
+              225,
+              237
+            ],
+            "height_pixels": 187,
+            "height_cell_ratio": 0.66548,
+            "width_pixels": 182,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 4,
+            "row": 1,
+            "column": 0,
+            "alpha_bounds": [
+              59,
+              61,
+              236,
+              237
+            ],
+            "height_pixels": 176,
+            "height_cell_ratio": 0.626335,
+            "width_pixels": 177,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 5,
+            "row": 1,
+            "column": 1,
+            "alpha_bounds": [
+              43,
+              61,
+              241,
+              237
+            ],
+            "height_pixels": 176,
+            "height_cell_ratio": 0.626335,
+            "width_pixels": 198,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 6,
+            "row": 1,
+            "column": 2,
+            "alpha_bounds": [
+              46,
+              61,
+              238,
+              233
+            ],
+            "height_pixels": 172,
+            "height_cell_ratio": 0.6121,
+            "width_pixels": 192,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 7,
+            "row": 1,
+            "column": 3,
+            "alpha_bounds": [
+              43,
+              60,
+              237,
+              232
+            ],
+            "height_pixels": 172,
+            "height_cell_ratio": 0.6121,
+            "width_pixels": 194,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 8,
+            "row": 2,
+            "column": 0,
+            "alpha_bounds": [
+              60,
+              22,
+              232,
+              237
+            ],
+            "height_pixels": 215,
+            "height_cell_ratio": 0.765125,
+            "width_pixels": 172,
+            "scale_observation": "above_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 9,
+            "row": 2,
+            "column": 1,
+            "alpha_bounds": [
+              37,
+              23,
+              219,
+              237
+            ],
+            "height_pixels": 214,
+            "height_cell_ratio": 0.761566,
+            "width_pixels": 182,
+            "scale_observation": "above_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 10,
+            "row": 2,
+            "column": 2,
+            "alpha_bounds": [
+              24,
+              22,
+              249,
+              237
+            ],
+            "height_pixels": 215,
+            "height_cell_ratio": 0.765125,
+            "width_pixels": 225,
+            "scale_observation": "above_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 11,
+            "row": 2,
+            "column": 3,
+            "alpha_bounds": [
+              56,
+              30,
+              229,
+              237
+            ],
+            "height_pixels": 207,
+            "height_cell_ratio": 0.736655,
+            "width_pixels": 173,
+            "scale_observation": "above_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 12,
+            "row": 3,
+            "column": 0,
+            "alpha_bounds": [
+              61,
+              60,
+              233,
+              237
+            ],
+            "height_pixels": 177,
+            "height_cell_ratio": 0.629893,
+            "width_pixels": 172,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 13,
+            "row": 3,
+            "column": 1,
+            "alpha_bounds": [
+              38,
+              60,
+              218,
+              237
+            ],
+            "height_pixels": 177,
+            "height_cell_ratio": 0.629893,
+            "width_pixels": 180,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 14,
+            "row": 3,
+            "column": 2,
+            "alpha_bounds": [
+              23,
+              60,
+              259,
+              236
+            ],
+            "height_pixels": 176,
+            "height_cell_ratio": 0.626335,
+            "width_pixels": 236,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 15,
+            "row": 3,
+            "column": 3,
+            "alpha_bounds": [
+              64,
+              60,
+              228,
+              237
+            ],
+            "height_pixels": 177,
+            "height_cell_ratio": 0.629893,
+            "width_pixels": 164,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 16,
+            "row": 4,
+            "column": 0,
+            "alpha_bounds": [
+              44,
+              42,
+              236,
+              237
+            ],
+            "height_pixels": 195,
+            "height_cell_ratio": 0.69395,
+            "width_pixels": 192,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 17,
+            "row": 4,
+            "column": 1,
+            "alpha_bounds": [
+              43,
+              42,
+              242,
+              237
+            ],
+            "height_pixels": 195,
+            "height_cell_ratio": 0.69395,
+            "width_pixels": 199,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 18,
+            "row": 4,
+            "column": 2,
+            "alpha_bounds": [
+              47,
+              44,
+              238,
+              237
+            ],
+            "height_pixels": 193,
+            "height_cell_ratio": 0.686833,
+            "width_pixels": 191,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 19,
+            "row": 4,
+            "column": 3,
+            "alpha_bounds": [
+              43,
+              42,
+              226,
+              220
+            ],
+            "height_pixels": 178,
+            "height_cell_ratio": 0.633452,
+            "width_pixels": 183,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          }
+        ],
+        "occupied_cells": 20,
+        "distinct_cells": 20,
+        "visual_review_required": true,
+        "format": "PNG",
+        "mode": "RGBA",
+        "dimensions": [
+          1124,
+          1405
+        ]
+      },
+      "complete_source_partition_exactly_once": true,
+      "common_uniform_scale": 0.6957928802588995,
+      "viewed": [
+        "raw.png",
+        "packed.png",
+        "contact-64.png",
+        "contact-96.png",
+        "contact-192.png"
+      ],
+      "direction": "LEFT",
+      "fully_down": "confirmed visually",
+      "cross_cell_foreign_fragments": "No obvious clipped neighboring-fragment blocker in the current exact candidate; faint diffuse alpha remains.",
+      "independent_visual_status": "conditional_owner_review",
+      "notes": [
+        "Black/red broad armored demon, horns, cape and one sword visibly retained through all row meanings; final lying collapse.",
+        "Prior wind-up issue resolved: R3C2 now clearly shows one raised blade, distinct from the arms. No duplicated blade observed.",
+        "Fire surround/sweep remains soft and dominant, partially masking arms at 64px. Style, effect compactness and battle readability remain conditional."
+      ],
+      "owner_approved": false,
+      "runtime_activated": false,
+      "gif_loops": [
+        0,
+        0,
+        null,
+        null,
+        null
+      ],
+      "generation_revision": "new imagegen attempt07, not a byte-identical attempt05 repack"
+    },
+    {
+      "species_id": "species_0157",
+      "name": "Ma Nhãn Hư Không",
+      "candidate_path": "apps/game-client/assets/pets/redraws/extension-20261013/species_0157/attempt-07/packed.png",
+      "sha256": "4de5b63b6049b192ca41abf522d2426feb5e88654c933e397de40bfd29ef374c",
+      "raw_sha256": "2bd47f8447446abaef41678e6f6dcbba82a73dbe58f43e2281d4deb60eab1af7",
+      "layout_sha256": "cf09a49f2b1572064a08ee191dbf2c2612f6859731e4f95bfd7a11f240db2b9d",
+      "packing_sha256": "860aae7a131d1dae95fc12699daab4beb7cdb030d8fcdf0a8ae3fbf6dad99f03",
+      "mechanical": {
+        "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/extension-20261013/species_0157/attempt-07/packed.png",
+        "sha256": "4de5b63b6049b192ca41abf522d2426feb5e88654c933e397de40bfd29ef374c",
+        "status": "pass",
+        "issues": [],
+        "cells": [
+          {
+            "index": 0,
+            "row": 0,
+            "column": 0,
+            "alpha_bounds": [
+              57,
+              36,
+              233,
+              236
+            ],
+            "height_pixels": 200,
+            "height_cell_ratio": 0.711744,
+            "width_pixels": 176,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 1,
+            "row": 0,
+            "column": 1,
+            "alpha_bounds": [
+              53,
+              38,
+              236,
+              237
+            ],
+            "height_pixels": 199,
+            "height_cell_ratio": 0.708185,
+            "width_pixels": 183,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 2,
+            "row": 0,
+            "column": 2,
+            "alpha_bounds": [
+              45,
+              46,
+              238,
+              237
+            ],
+            "height_pixels": 191,
+            "height_cell_ratio": 0.679715,
+            "width_pixels": 193,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 3,
+            "row": 0,
+            "column": 3,
+            "alpha_bounds": [
+              51,
+              36,
+              224,
+              236
+            ],
+            "height_pixels": 200,
+            "height_cell_ratio": 0.711744,
+            "width_pixels": 173,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 4,
+            "row": 1,
+            "column": 0,
+            "alpha_bounds": [
+              78,
+              75,
+              258,
+              236
+            ],
+            "height_pixels": 161,
+            "height_cell_ratio": 0.572954,
+            "width_pixels": 180,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 5,
+            "row": 1,
+            "column": 1,
+            "alpha_bounds": [
+              81,
+              27,
+              255,
+              237
+            ],
+            "height_pixels": 210,
+            "height_cell_ratio": 0.747331,
+            "width_pixels": 174,
+            "scale_observation": "above_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 6,
+            "row": 1,
+            "column": 2,
+            "alpha_bounds": [
+              59,
+              27,
+              245,
+              237
+            ],
+            "height_pixels": 210,
+            "height_cell_ratio": 0.747331,
+            "width_pixels": 186,
+            "scale_observation": "above_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 7,
+            "row": 1,
+            "column": 3,
+            "alpha_bounds": [
+              68,
+              77,
+              229,
+              236
+            ],
+            "height_pixels": 159,
+            "height_cell_ratio": 0.565836,
+            "width_pixels": 161,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 8,
+            "row": 2,
+            "column": 0,
+            "alpha_bounds": [
+              60,
+              34,
+              234,
+              221
+            ],
+            "height_pixels": 187,
+            "height_cell_ratio": 0.66548,
+            "width_pixels": 174,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 9,
+            "row": 2,
+            "column": 1,
+            "alpha_bounds": [
+              44,
+              24,
+              229,
+              230
+            ],
+            "height_pixels": 206,
+            "height_cell_ratio": 0.733096,
+            "width_pixels": 185,
+            "scale_observation": "above_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 10,
+            "row": 2,
+            "column": 2,
+            "alpha_bounds": [
+              33,
+              46,
+              232,
+              236
+            ],
+            "height_pixels": 190,
+            "height_cell_ratio": 0.676157,
+            "width_pixels": 199,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 11,
+            "row": 2,
+            "column": 3,
+            "alpha_bounds": [
+              42,
+              30,
+              228,
+              237
+            ],
+            "height_pixels": 207,
+            "height_cell_ratio": 0.736655,
+            "width_pixels": 186,
+            "scale_observation": "above_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 12,
+            "row": 3,
+            "column": 0,
+            "alpha_bounds": [
+              65,
+              32,
+              234,
+              228
+            ],
+            "height_pixels": 196,
+            "height_cell_ratio": 0.697509,
+            "width_pixels": 169,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 13,
+            "row": 3,
+            "column": 1,
+            "alpha_bounds": [
+              44,
+              22,
+              228,
+              218
+            ],
+            "height_pixels": 196,
+            "height_cell_ratio": 0.697509,
+            "width_pixels": 184,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 14,
+            "row": 3,
+            "column": 2,
+            "alpha_bounds": [
+              31,
+              23,
+              228,
+              219
+            ],
+            "height_pixels": 196,
+            "height_cell_ratio": 0.697509,
+            "width_pixels": 197,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 15,
+            "row": 3,
+            "column": 3,
+            "alpha_bounds": [
+              44,
+              63,
+              215,
+              237
+            ],
+            "height_pixels": 174,
+            "height_cell_ratio": 0.619217,
+            "width_pixels": 171,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 16,
+            "row": 4,
+            "column": 0,
+            "alpha_bounds": [
+              89,
+              39,
+              237,
+              221
+            ],
+            "height_pixels": 182,
+            "height_cell_ratio": 0.647687,
+            "width_pixels": 148,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 17,
+            "row": 4,
+            "column": 1,
+            "alpha_bounds": [
+              44,
+              24,
+              227,
+              221
+            ],
+            "height_pixels": 197,
+            "height_cell_ratio": 0.701068,
+            "width_pixels": 183,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 18,
+            "row": 4,
+            "column": 2,
+            "alpha_bounds": [
+              65,
+              70,
+              238,
+              237
+            ],
+            "height_pixels": 167,
+            "height_cell_ratio": 0.594306,
+            "width_pixels": 173,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 19,
+            "row": 4,
+            "column": 3,
+            "alpha_bounds": [
+              42,
+              23,
+              226,
+              215
+            ],
+            "height_pixels": 192,
+            "height_cell_ratio": 0.683274,
+            "width_pixels": 184,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          }
+        ],
+        "occupied_cells": 20,
+        "distinct_cells": 20,
+        "visual_review_required": true,
+        "format": "PNG",
+        "mode": "RGBA",
+        "dimensions": [
+          1124,
+          1405
+        ]
+      },
+      "complete_source_partition_exactly_once": true,
+      "common_uniform_scale": 0.7337883959044368,
+      "viewed": [
+        "raw.png",
+        "packed.png",
+        "contact-64.png",
+        "contact-96.png",
+        "contact-192.png"
+      ],
+      "direction": "LEFT",
+      "fully_down": "confirmed visually",
+      "cross_cell_foreign_fragments": "No obvious clipped neighboring-fragment blocker in the current exact candidate; faint diffuse alpha remains.",
+      "independent_visual_status": "conditional_owner_review",
+      "notes": [
+        "One central eye and three crown diamond rune accessories visible throughout all20frames; hover silhouette and final lowered mound clear.",
+        "Prior missing-rune issue resolved by crown placement. R4C2–3 add a temporary front diamondlike energy flare, spatially distinct from three crown runes; its resemblance to a fourth rune may warrant owner preference at game scale.",
+        "Purple glow/pulse remains soft; no strict noBloom/pixel-style acceptance claimed."
+      ],
+      "owner_approved": false,
+      "runtime_activated": false,
+      "gif_loops": [
+        0,
+        0,
+        null,
+        null,
+        null
+      ],
+      "generation_revision": "new imagegen attempt07, not a byte-identical attempt05 repack"
+    },
+    {
+      "species_id": "species_0158",
+      "name": "Hộ Vệ Thạch Linh",
+      "candidate_path": "apps/game-client/assets/pets/redraws/extension-20261013/species_0158/attempt-07/packed.png",
+      "sha256": "cd32829632e0124459f15c4a771ae54376db59f749a9f1037bf13c93596fb148",
+      "raw_sha256": "30da82c028cc09873215ca4ef151516c28c31db87270d4937ca02b29f23d3a4e",
+      "layout_sha256": "19208028ac31be64b1753bf8078f42e8e286871c6489c27d578627c0c5d6bd2d",
+      "packing_sha256": "493a4ac09a97e7816466aeb7f994dde5e3f097178eb7d9b20153d8c1edadae2d",
+      "mechanical": {
+        "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/extension-20261013/species_0158/attempt-07/packed.png",
+        "sha256": "cd32829632e0124459f15c4a771ae54376db59f749a9f1037bf13c93596fb148",
+        "status": "pass",
+        "issues": [],
+        "cells": [
+          {
+            "index": 0,
+            "row": 0,
+            "column": 0,
+            "alpha_bounds": [
+              67,
+              102,
+              181,
+              233
+            ],
+            "height_pixels": 131,
+            "height_cell_ratio": 0.466192,
+            "width_pixels": 114,
+            "scale_observation": "below_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 1,
+            "row": 0,
+            "column": 1,
+            "alpha_bounds": [
+              22,
+              93,
+              224,
+              237
+            ],
+            "height_pixels": 144,
+            "height_cell_ratio": 0.512456,
+            "width_pixels": 202,
+            "scale_observation": "below_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 2,
+            "row": 0,
+            "column": 2,
+            "alpha_bounds": [
+              63,
+              93,
+              226,
+              232
+            ],
+            "height_pixels": 139,
+            "height_cell_ratio": 0.494662,
+            "width_pixels": 163,
+            "scale_observation": "below_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 3,
+            "row": 0,
+            "column": 3,
+            "alpha_bounds": [
+              72,
+              101,
+              220,
+              231
+            ],
+            "height_pixels": 130,
+            "height_cell_ratio": 0.462633,
+            "width_pixels": 148,
+            "scale_observation": "below_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 4,
+            "row": 1,
+            "column": 0,
+            "alpha_bounds": [
+              78,
+              82,
+              223,
+              235
+            ],
+            "height_pixels": 153,
+            "height_cell_ratio": 0.544484,
+            "width_pixels": 145,
+            "scale_observation": "below_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 5,
+            "row": 1,
+            "column": 1,
+            "alpha_bounds": [
+              63,
+              99,
+              208,
+              230
+            ],
+            "height_pixels": 131,
+            "height_cell_ratio": 0.466192,
+            "width_pixels": 145,
+            "scale_observation": "below_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 6,
+            "row": 1,
+            "column": 2,
+            "alpha_bounds": [
+              78,
+              85,
+              226,
+              230
+            ],
+            "height_pixels": 145,
+            "height_cell_ratio": 0.516014,
+            "width_pixels": 148,
+            "scale_observation": "below_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 7,
+            "row": 1,
+            "column": 3,
+            "alpha_bounds": [
+              67,
+              101,
+              208,
+              237
+            ],
+            "height_pixels": 136,
+            "height_cell_ratio": 0.483986,
+            "width_pixels": 141,
+            "scale_observation": "below_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 8,
+            "row": 2,
+            "column": 0,
+            "alpha_bounds": [
+              84,
+              100,
+              216,
+              237
+            ],
+            "height_pixels": 137,
+            "height_cell_ratio": 0.487544,
+            "width_pixels": 132,
+            "scale_observation": "below_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 9,
+            "row": 2,
+            "column": 1,
+            "alpha_bounds": [
+              61,
+              109,
+              215,
+              236
+            ],
+            "height_pixels": 127,
+            "height_cell_ratio": 0.451957,
+            "width_pixels": 154,
+            "scale_observation": "below_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 10,
+            "row": 2,
+            "column": 2,
+            "alpha_bounds": [
+              54,
+              87,
+              226,
+              237
+            ],
+            "height_pixels": 150,
+            "height_cell_ratio": 0.533808,
+            "width_pixels": 172,
+            "scale_observation": "below_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 11,
+            "row": 2,
+            "column": 3,
+            "alpha_bounds": [
+              68,
+              87,
+              208,
+              228
+            ],
+            "height_pixels": 141,
+            "height_cell_ratio": 0.501779,
+            "width_pixels": 140,
+            "scale_observation": "below_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 12,
+            "row": 3,
+            "column": 0,
+            "alpha_bounds": [
+              75,
+              54,
+              211,
+              232
+            ],
+            "height_pixels": 178,
+            "height_cell_ratio": 0.633452,
+            "width_pixels": 136,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 13,
+            "row": 3,
+            "column": 1,
+            "alpha_bounds": [
+              50,
+              56,
+              215,
+              234
+            ],
+            "height_pixels": 178,
+            "height_cell_ratio": 0.633452,
+            "width_pixels": 165,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 14,
+            "row": 3,
+            "column": 2,
+            "alpha_bounds": [
+              54,
+              54,
+              238,
+              237
+            ],
+            "height_pixels": 183,
+            "height_cell_ratio": 0.651246,
+            "width_pixels": 184,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 15,
+            "row": 3,
+            "column": 3,
+            "alpha_bounds": [
+              77,
+              74,
+              208,
+              221
+            ],
+            "height_pixels": 147,
+            "height_cell_ratio": 0.523132,
+            "width_pixels": 131,
+            "scale_observation": "below_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 16,
+            "row": 4,
+            "column": 0,
+            "alpha_bounds": [
+              75,
+              86,
+              216,
+              237
+            ],
+            "height_pixels": 151,
+            "height_cell_ratio": 0.537367,
+            "width_pixels": 141,
+            "scale_observation": "below_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 17,
+            "row": 4,
+            "column": 1,
+            "alpha_bounds": [
+              60,
+              80,
+              217,
+              227
+            ],
+            "height_pixels": 147,
+            "height_cell_ratio": 0.523132,
+            "width_pixels": 157,
+            "scale_observation": "below_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 18,
+            "row": 4,
+            "column": 2,
+            "alpha_bounds": [
+              60,
+              87,
+              225,
+              237
+            ],
+            "height_pixels": 150,
+            "height_cell_ratio": 0.533808,
+            "width_pixels": 165,
+            "scale_observation": "below_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 19,
+            "row": 4,
+            "column": 3,
+            "alpha_bounds": [
+              69,
+              85,
+              209,
+              215
+            ],
+            "height_pixels": 130,
+            "height_cell_ratio": 0.462633,
+            "width_pixels": 140,
+            "scale_observation": "below_typical",
+            "issues": [],
+            "duplicate_of": null
+          }
+        ],
+        "occupied_cells": 20,
+        "distinct_cells": 20,
+        "visual_review_required": true,
+        "format": "PNG",
+        "mode": "RGBA",
+        "dimensions": [
+          1124,
+          1405
+        ]
+      },
+      "complete_source_partition_exactly_once": true,
+      "common_uniform_scale": 0.5735115431348723,
+      "viewed": [
+        "raw.png",
+        "packed.png",
+        "contact-64.png",
+        "contact-96.png",
+        "contact-192.png"
+      ],
+      "direction": "LEFT",
+      "fully_down": "confirmed visually",
+      "cross_cell_foreign_fragments": "No obvious clipped neighboring-fragment blocker in the current exact candidate; faint diffuse alpha remains.",
+      "independent_visual_status": "conditional_owner_review",
+      "notes": [
+        "Two-legged stone body, two large fists, small head and green core; final completely collapsed heap.",
+        "Prior basic-impact issue resolved: R3C2–3 now show a clear straight LEFT punch at shoulder height, while the ground smash stays in the skill row.",
+        "Green impact highlights and earth spikes remain luminous; style and actual battle display size/readability remain conditional."
+      ],
+      "owner_approved": false,
+      "runtime_activated": false,
+      "gif_loops": [
+        0,
+        0,
+        null,
+        null,
+        null
+      ],
+      "generation_revision": "new imagegen attempt07 straight-punch edit, not a byte-identical attempt05 repack"
+    },
+    {
+      "species_id": "species_0159",
+      "name": "Long Thần Song Ấn",
+      "candidate_path": "apps/game-client/assets/pets/redraws/extension-20261013/species_0159/attempt-06/packed.png",
+      "sha256": "61c965f2ccd6cdb61b8103ff36816f76f0fc1a0164a9a607d57f321397a3f721",
+      "raw_sha256": "68a1dd2f89400ec8c75c7c9109028ea477d5ab0e5e45a9fde49db81ac45d44e1",
+      "layout_sha256": "552d85b59449480f5ef945e62826212fda8d4e1858e151460b4d09c3297f8b3d",
+      "packing_sha256": "6c8f33e4532d1d943ef3e392cdc666c0a108aaeb68edecd330089e2cdfa7b93e",
+      "raw_byte_identical_to_attempt05": true,
+      "mechanical": {
+        "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/extension-20261013/species_0159/attempt-06/packed.png",
+        "sha256": "61c965f2ccd6cdb61b8103ff36816f76f0fc1a0164a9a607d57f321397a3f721",
+        "status": "pass",
+        "issues": [],
+        "cells": [
+          {
+            "index": 0,
+            "row": 0,
+            "column": 0,
+            "alpha_bounds": [
+              69,
+              76,
+              238,
+              237
+            ],
+            "height_pixels": 161,
+            "height_cell_ratio": 0.572954,
+            "width_pixels": 169,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 1,
+            "row": 0,
+            "column": 1,
+            "alpha_bounds": [
+              58,
+              77,
+              233,
+              233
+            ],
+            "height_pixels": 156,
+            "height_cell_ratio": 0.55516,
+            "width_pixels": 175,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 2,
+            "row": 0,
+            "column": 2,
+            "alpha_bounds": [
+              52,
+              72,
+              259,
+              237
+            ],
+            "height_pixels": 165,
+            "height_cell_ratio": 0.587189,
+            "width_pixels": 207,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 3,
+            "row": 0,
+            "column": 3,
+            "alpha_bounds": [
+              77,
+              72,
+              226,
+              237
+            ],
+            "height_pixels": 165,
+            "height_cell_ratio": 0.587189,
+            "width_pixels": 149,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 4,
+            "row": 1,
+            "column": 0,
+            "alpha_bounds": [
+              61,
+              48,
+              230,
+              237
+            ],
+            "height_pixels": 189,
+            "height_cell_ratio": 0.672598,
+            "width_pixels": 169,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 5,
+            "row": 1,
+            "column": 1,
+            "alpha_bounds": [
+              47,
+              46,
+              248,
+              237
+            ],
+            "height_pixels": 191,
+            "height_cell_ratio": 0.679715,
+            "width_pixels": 201,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 6,
+            "row": 1,
+            "column": 2,
+            "alpha_bounds": [
+              66,
+              46,
+              229,
+              237
+            ],
+            "height_pixels": 191,
+            "height_cell_ratio": 0.679715,
+            "width_pixels": 163,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 7,
+            "row": 1,
+            "column": 3,
+            "alpha_bounds": [
+              46,
+              46,
+              222,
+              237
+            ],
+            "height_pixels": 191,
+            "height_cell_ratio": 0.679715,
+            "width_pixels": 176,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 8,
+            "row": 2,
+            "column": 0,
+            "alpha_bounds": [
+              49,
+              52,
+              238,
+              237
+            ],
+            "height_pixels": 185,
+            "height_cell_ratio": 0.658363,
+            "width_pixels": 189,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 9,
+            "row": 2,
+            "column": 1,
+            "alpha_bounds": [
+              56,
+              52,
+              230,
+              237
+            ],
+            "height_pixels": 185,
+            "height_cell_ratio": 0.658363,
+            "width_pixels": 174,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 10,
+            "row": 2,
+            "column": 2,
+            "alpha_bounds": [
+              47,
+              52,
+              249,
+              237
+            ],
+            "height_pixels": 185,
+            "height_cell_ratio": 0.658363,
+            "width_pixels": 202,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 11,
+            "row": 2,
+            "column": 3,
+            "alpha_bounds": [
+              66,
+              52,
+              225,
+              237
+            ],
+            "height_pixels": 185,
+            "height_cell_ratio": 0.658363,
+            "width_pixels": 159,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 12,
+            "row": 3,
+            "column": 0,
+            "alpha_bounds": [
+              50,
+              61,
+              224,
+              237
+            ],
+            "height_pixels": 176,
+            "height_cell_ratio": 0.626335,
+            "width_pixels": 174,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 13,
+            "row": 3,
+            "column": 1,
+            "alpha_bounds": [
+              42,
+              61,
+              237,
+              237
+            ],
+            "height_pixels": 176,
+            "height_cell_ratio": 0.626335,
+            "width_pixels": 195,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 14,
+            "row": 3,
+            "column": 2,
+            "alpha_bounds": [
+              54,
+              61,
+              230,
+              237
+            ],
+            "height_pixels": 176,
+            "height_cell_ratio": 0.626335,
+            "width_pixels": 176,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 15,
+            "row": 3,
+            "column": 3,
+            "alpha_bounds": [
+              47,
+              61,
+              231,
+              233
+            ],
+            "height_pixels": 172,
+            "height_cell_ratio": 0.6121,
+            "width_pixels": 184,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 16,
+            "row": 4,
+            "column": 0,
+            "alpha_bounds": [
+              49,
+              55,
+              241,
+              237
+            ],
+            "height_pixels": 182,
+            "height_cell_ratio": 0.647687,
+            "width_pixels": 192,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 17,
+            "row": 4,
+            "column": 1,
+            "alpha_bounds": [
+              58,
+              55,
+              240,
+              237
+            ],
+            "height_pixels": 182,
+            "height_cell_ratio": 0.647687,
+            "width_pixels": 182,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 18,
+            "row": 4,
+            "column": 2,
+            "alpha_bounds": [
+              58,
+              55,
+              241,
+              237
+            ],
+            "height_pixels": 182,
+            "height_cell_ratio": 0.647687,
+            "width_pixels": 183,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 19,
+            "row": 4,
+            "column": 3,
+            "alpha_bounds": [
+              58,
+              58,
+              221,
+              237
+            ],
+            "height_pixels": 179,
+            "height_cell_ratio": 0.637011,
+            "width_pixels": 163,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          }
+        ],
+        "occupied_cells": 20,
+        "distinct_cells": 20,
+        "visual_review_required": true,
+        "format": "PNG",
+        "mode": "RGBA",
+        "dimensions": [
+          1124,
+          1405
+        ]
+      },
+      "complete_source_partition_exactly_once": true,
+      "common_uniform_scale": 0.6511627906976744,
+      "viewed": [
+        "raw.png",
+        "packed.png",
+        "contact-64.png",
+        "contact-96.png",
+        "contact-192.png"
+      ],
+      "direction": "LEFT",
+      "fully_down": "confirmed visually",
+      "cross_cell_foreign_fragments": "No obvious clipped neighboring-fragment blocker in the current exact candidate; faint diffuse alpha remains.",
+      "independent_visual_status": "conditional_owner_review",
+      "notes": [
+        "Green/ivory dragon, one tail, horns/wings/claws and two body seals preserved. Skill order now claw R4C2 then two seals brighten R4C3–4, matching signature. Final prone pose.",
+        "Gold surround and claw sweep have diffuse translucent glow; preserve readable claws/body and crisp effect clusters before strict no-bloom acceptance."
+      ],
+      "owner_approved": false,
+      "runtime_activated": false,
+      "gif_loops": [
+        0,
+        0,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "species_id": "species_0160",
+      "name": "Ma Chủ Song Cực",
+      "candidate_path": "apps/game-client/assets/pets/redraws/extension-20261013/species_0160/attempt-06/packed.png",
+      "sha256": "6b82ecb4b9b79fe4e8cf55696d6d0321f79713326c63500033ce8d417b3c8aaa",
+      "raw_sha256": "b753a8620ab77ed70a40ba5f2b3b5be83ea70822d973cdedbd38a2fca8b5e4d8",
+      "layout_sha256": "742ce3467c3d76114060e762816f7adf41e06755ea04fd29be77bd43199712b8",
+      "packing_sha256": "af0a370dcdfcad36c85b12437d36f1b59251fab2d5ec56ed0c34eff63d1ee595",
+      "raw_byte_identical_to_attempt05": true,
+      "mechanical": {
+        "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/extension-20261013/species_0160/attempt-06/packed.png",
+        "sha256": "6b82ecb4b9b79fe4e8cf55696d6d0321f79713326c63500033ce8d417b3c8aaa",
+        "status": "pass",
+        "issues": [],
+        "cells": [
+          {
+            "index": 0,
+            "row": 0,
+            "column": 0,
+            "alpha_bounds": [
+              58,
+              56,
+              247,
+              230
+            ],
+            "height_pixels": 174,
+            "height_cell_ratio": 0.619217,
+            "width_pixels": 189,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 1,
+            "row": 0,
+            "column": 1,
+            "alpha_bounds": [
+              33,
+              90,
+              248,
+              237
+            ],
+            "height_pixels": 147,
+            "height_cell_ratio": 0.523132,
+            "width_pixels": 215,
+            "scale_observation": "below_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 2,
+            "row": 0,
+            "column": 2,
+            "alpha_bounds": [
+              38,
+              69,
+              245,
+              235
+            ],
+            "height_pixels": 166,
+            "height_cell_ratio": 0.590747,
+            "width_pixels": 207,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 3,
+            "row": 0,
+            "column": 3,
+            "alpha_bounds": [
+              40,
+              82,
+              210,
+              232
+            ],
+            "height_pixels": 150,
+            "height_cell_ratio": 0.533808,
+            "width_pixels": 170,
+            "scale_observation": "below_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 4,
+            "row": 1,
+            "column": 0,
+            "alpha_bounds": [
+              58,
+              31,
+              241,
+              228
+            ],
+            "height_pixels": 197,
+            "height_cell_ratio": 0.701068,
+            "width_pixels": 183,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 5,
+            "row": 1,
+            "column": 1,
+            "alpha_bounds": [
+              39,
+              22,
+              243,
+              234
+            ],
+            "height_pixels": 212,
+            "height_cell_ratio": 0.754448,
+            "width_pixels": 204,
+            "scale_observation": "above_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 6,
+            "row": 1,
+            "column": 2,
+            "alpha_bounds": [
+              32,
+              24,
+              243,
+              237
+            ],
+            "height_pixels": 213,
+            "height_cell_ratio": 0.758007,
+            "width_pixels": 211,
+            "scale_observation": "above_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 7,
+            "row": 1,
+            "column": 3,
+            "alpha_bounds": [
+              49,
+              49,
+              214,
+              225
+            ],
+            "height_pixels": 176,
+            "height_cell_ratio": 0.626335,
+            "width_pixels": 165,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 8,
+            "row": 2,
+            "column": 0,
+            "alpha_bounds": [
+              58,
+              29,
+              218,
+              225
+            ],
+            "height_pixels": 196,
+            "height_cell_ratio": 0.697509,
+            "width_pixels": 160,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 9,
+            "row": 2,
+            "column": 1,
+            "alpha_bounds": [
+              47,
+              29,
+              245,
+              229
+            ],
+            "height_pixels": 200,
+            "height_cell_ratio": 0.711744,
+            "width_pixels": 198,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 10,
+            "row": 2,
+            "column": 2,
+            "alpha_bounds": [
+              32,
+              29,
+              246,
+              237
+            ],
+            "height_pixels": 208,
+            "height_cell_ratio": 0.740214,
+            "width_pixels": 214,
+            "scale_observation": "above_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 11,
+            "row": 2,
+            "column": 3,
+            "alpha_bounds": [
+              40,
+              25,
+              232,
+              234
+            ],
+            "height_pixels": 209,
+            "height_cell_ratio": 0.743772,
+            "width_pixels": 192,
+            "scale_observation": "above_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 12,
+            "row": 3,
+            "column": 0,
+            "alpha_bounds": [
+              69,
+              26,
+              247,
+              220
+            ],
+            "height_pixels": 194,
+            "height_cell_ratio": 0.690391,
+            "width_pixels": 178,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 13,
+            "row": 3,
+            "column": 1,
+            "alpha_bounds": [
+              33,
+              23,
+              240,
+              236
+            ],
+            "height_pixels": 213,
+            "height_cell_ratio": 0.758007,
+            "width_pixels": 207,
+            "scale_observation": "above_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 14,
+            "row": 3,
+            "column": 2,
+            "alpha_bounds": [
+              32,
+              24,
+              258,
+              237
+            ],
+            "height_pixels": 213,
+            "height_cell_ratio": 0.758007,
+            "width_pixels": 226,
+            "scale_observation": "above_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 15,
+            "row": 3,
+            "column": 3,
+            "alpha_bounds": [
+              52,
+              23,
+              214,
+              235
+            ],
+            "height_pixels": 212,
+            "height_cell_ratio": 0.754448,
+            "width_pixels": 162,
+            "scale_observation": "above_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 16,
+            "row": 4,
+            "column": 0,
+            "alpha_bounds": [
+              69,
+              34,
+              218,
+              237
+            ],
+            "height_pixels": 203,
+            "height_cell_ratio": 0.72242,
+            "width_pixels": 149,
+            "scale_observation": "above_typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 17,
+            "row": 4,
+            "column": 1,
+            "alpha_bounds": [
+              58,
+              28,
+              237,
+              191
+            ],
+            "height_pixels": 163,
+            "height_cell_ratio": 0.580071,
+            "width_pixels": 179,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 18,
+            "row": 4,
+            "column": 2,
+            "alpha_bounds": [
+              38,
+              25,
+              217,
+              190
+            ],
+            "height_pixels": 165,
+            "height_cell_ratio": 0.587189,
+            "width_pixels": 179,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          },
+          {
+            "index": 19,
+            "row": 4,
+            "column": 3,
+            "alpha_bounds": [
+              52,
+              43,
+              237,
+              219
+            ],
+            "height_pixels": 176,
+            "height_cell_ratio": 0.626335,
+            "width_pixels": 185,
+            "scale_observation": "typical",
+            "issues": [],
+            "duplicate_of": null
+          }
+        ],
+        "occupied_cells": 20,
+        "distinct_cells": 20,
+        "visual_review_required": true,
+        "format": "PNG",
+        "mode": "RGBA",
+        "dimensions": [
+          1124,
+          1405
+        ]
+      },
+      "complete_source_partition_exactly_once": true,
+      "common_uniform_scale": 0.7651245551601422,
+      "viewed": [
+        "raw.png",
+        "packed.png",
+        "contact-64.png",
+        "contact-96.png",
+        "contact-192.png"
+      ],
+      "direction": "LEFT",
+      "fully_down": "confirmed visually",
+      "cross_cell_foreign_fragments": "No obvious clipped neighboring-fragment blocker in the current exact candidate; faint diffuse alpha remains.",
+      "independent_visual_status": "conditional_owner_review",
+      "notes": [
+        "Armored demon with one retained weapon and separate casting hand; skill gathers seal then releases one left pulse; final lying down.",
+        "Layered seal/pulse effects occupy large fraction of cell and have soft luminous surround. At 64 px weapon/casting hand remain distinct but finer armor detail merges."
+      ],
+      "owner_approved": false,
+      "runtime_activated": false,
+      "gif_loops": [
+        0,
+        0,
+        null,
+        null,
+        null
+      ]
+    }
+  ],
+  "global_visual_condition": "Mechanical geometry and full raw coverage PASS do not certify noAA/noBlur/noBloom, meaningful gait, fixed anatomy/accessory counts or combat sizing. All final viewed candidates have smooth shading and luminous translucent FX; owner art addendum requests richer effects but retains crisp pixel/noBloom requirement. No strict style approval claimed.",
+  "human_approved": false,
+  "runtime_activated": false,
+  "reviewer_edited_art": false,
+  "current_target_versions": {
+    "species_0153": "attempt-06",
+    "species_0154": "attempt-06",
+    "species_0155": "attempt-06",
+    "species_0156": "attempt-07",
+    "species_0157": "attempt-07",
+    "species_0158": "attempt-07",
+    "species_0159": "attempt-06",
+    "species_0160": "attempt-06"
+  },
+  "hard_identity_blockers_remaining": []
+}

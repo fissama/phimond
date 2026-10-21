@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-08",
+  "selected": [
+    {
+      "species_id": "species_0037",
+      "name_vi": "Độc Đằng Nữ",
+      "status": "candidate_for_human_review",
+      "candidate_path": "apps/game-client/assets/pets/redraws/polish-20261008/species_0037/attempt-02/packed.png",
+      "candidate_sha256": "a5a2eb7bbc7b69ff107f65974758f9a12d7a6824619552d38faf621472a73f02",
+      "preview_path": "apps/game-client/assets/pets/redraws/polish-20261008/species_0037/attempt-02/preview/preview.html",
+      "human_approved": false,
+      "animation_playback_verified": false,
+      "runtime_active": false,
+      "idle_opaque_height": 166,
+      "review_note": "Vẽ sửa mắt/biểu cảm và pose cast; đóng atlas chuẩn. Cần kiểm tra playback và độ đọc khi scale."
+    },
+    {
+      "species_id": "species_0146",
+      "name_vi": "Ma Vương Hút Máu",
+      "status": "move_repair_unresolved",
+      "candidate_path": "apps/game-client/assets/pets/redraws/polish-20261008/species_0146/attempt-04/packed.png",
+      "candidate_sha256": "e801c3d364f919509c84af935c9e15fbe8b2be127fcaf980c03bde9cb7a47114",
+      "preview_path": "apps/game-client/assets/pets/redraws/polish-20261008/species_0146/attempt-04/preview/preview.html",
+      "human_approved": false,
+      "animation_playback_verified": false,
+      "runtime_active": false,
+      "idle_opaque_height": 168,
+      "review_note": "Giữ tạo hình và 4 hàng đã được owner chấp nhận; Move chưa đạt. Move-fix-03 bị owner từ chối vì dáng đi kỳ, nhấc gối quá cao và lặp chân trụ. Bốn lần sinh bổ sung chưa tạo chu kỳ trái–phải đúng nên không chọn.",
+      "owner_approved_frame_rows": [
+        1,
+        3,
+        4,
+        5
+      ],
+      "move_row_human_approved": false,
+      "focused_move_playback_reviewed": false,
+      "rejected_move_attempts": [
+        "move-fix-03",
+        "move-fix-04",
+        "move-fix-05",
+        "move-fix-05/single-step",
+        "move-fix-06"
+      ]
+    },
+    {
+      "species_id": "species_0150",
+      "name_vi": "Đảo Thiên Đường",
+      "status": "candidate_for_human_review",
+      "candidate_path": "apps/game-client/assets/pets/redraws/polish-20261008/species_0150/packed-v2.png",
+      "candidate_sha256": "4e4ed7a3c2b1d7a9679dea43a3045880082c5b27c5d3c74b9e8172ff8401cad2",
+      "preview_path": "apps/game-client/assets/pets/redraws/polish-20261008/species_0150/preview-v2/preview.html",
+      "human_approved": false,
+      "animation_playback_verified": false,
+      "runtime_active": false,
+      "idle_opaque_height": 160,
+      "review_note": "Sửa hàng hurt/down để hai pose cuối thực sự nằm gục; giữ đầu đỏ, cánh xanh và crest tím."
+    }
+  ],
+  "generation_calls": 13,
+  "original_files_verified": 305,
+  "historical_anchor_hashes_unchanged": true,
+  "issues": [
+    "species_0146 Move lacks a coherent alternating grounded walk; not approved for runtime."
+  ],
+  "move_fix": "unresolved; move-fix-03 rejected by owner, four further generations rejected in visual review"
+}

@@ -1,0 +1,187 @@
+{
+  "schema": "generate2dsprite.master.v1",
+  "tool": {
+    "name": "master_still",
+    "version": "0.4.0"
+  },
+  "created": "2026-10-15T10:04:38.435Z",
+  "name": "species_0155",
+  "subject": "a mature five-star night-blue constellation dragon, full body",
+  "identity_recap": "mature five-star night-blue constellation dragon, full body (The exact mature night-blue dragon from the reference: FOUR legs, TWO compact folded wings, swept brown-gold horns, ONE flexible long tail with a small golden star tip, ivory belly, gold star markings and glowing chest core. Preserve face, body, palette and proportions. ONE elegant mature dragon, not cute baby. No extra limbs or accessories. Master is the clean rest design; richer golden claw and three star-lance combat FX will be separate animation/FX jobs, not huge aura on the master)",
+  "facing": "left",
+  "view": "side view (profile to three-quarter)",
+  "finish": "pixel",
+  "class": "hero",
+  "framing": {
+    "canvas": [
+      1024,
+      1024
+    ],
+    "subject_height_px": 788,
+    "top_margin_px": 138,
+    "lead_px": 0,
+    "preset": "hero",
+    "subject_bbox": [
+      16,
+      138,
+      1008,
+      898
+    ],
+    "anchor": [
+      387.5,
+      898.0
+    ],
+    "opaque_area_px": 436834,
+    "width_limited": true
+  },
+  "key": "#00FF00",
+  "files": {
+    "master": {
+      "path": "master.png",
+      "sha256": "6ca5b13d41da6776e2fcd85d62ac74ac7229802fe5286216da8359fc92219edb",
+      "bytes": 658227,
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    "cutout": {
+      "path": "master_rgba.png",
+      "sha256": "ca70a4a43074ba76daa6021a5d9173f70787561595f4c5bdb6e2e1315b0db940",
+      "bytes": 788752,
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    "source": {
+      "path": "source.png",
+      "sha256": "6bd6b293235b20f2138a2164ed00da9063c11d8ccaa5384316bdff510854800c",
+      "bytes": 852570,
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    "spec": {
+      "path": "spec.json",
+      "sha256": "477eebdaac9464b843de6b91516d508c5884e43cd405d1d7999143f6b368805b",
+      "bytes": 2787
+    },
+    "prompt": null
+  },
+  "references": [
+    {
+      "role": "identity",
+      "path": "../../references/species_0155.png",
+      "sha256": "261f34e3fe01fafcde73ae5d70f995135265797ff5873721a27298279d784197",
+      "bytes": 44629,
+      "what": "previous authored character version; preserve ONLY the explicitly listed traits and apply owner corrections"
+    },
+    {
+      "role": "style",
+      "path": "../../references/species_0158.png",
+      "sha256": "bc2cc44d4d9e51759727201aaeff743038955c5fb0ed73f2675f6b998a20e6a0",
+      "bytes": 47292,
+      "what": "owner-approved Phimond stone guardian, STYLE ONLY"
+    }
+  ],
+  "transform": {
+    "mapping": "master = scale * source + offset (continuous pixel coordinates: pixel i spans [i, i + 1))",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "source_subject_bbox": [
+      134,
+      242,
+      1193,
+      1054
+    ],
+    "crop_box": [
+      128,
+      236,
+      1199,
+      1060
+    ],
+    "crop_margin_px": 6,
+    "scale": 0.9367327667610954,
+    "offset": [
+      -109.52219074598679,
+      -88.6893295561851
+    ],
+    "canvas": [
+      1024,
+      1024
+    ],
+    "resampler": "lanczos",
+    "premultiplied": true,
+    "alpha_floor_px": 17865,
+    "subject_parts": 1,
+    "ignored_parts": 7,
+    "ignored_px": 8,
+    "source_touches": [],
+    "key_rgb": [
+      0,
+      255,
+      0
+    ]
+  },
+  "route": "host_image",
+  "provenance": {
+    "command": "external",
+    "run": null,
+    "take": null,
+    "source_name": "master-proposal.png",
+    "source_sha256": "6bd6b293235b20f2138a2164ed00da9063c11d8ccaa5384316bdff510854800c",
+    "media": null,
+    "media_cli_source": null,
+    "edit": null
+  },
+  "matte": {
+    "requested": "soft",
+    "key_estimate": {
+      "key": [
+        0.0,
+        255.0,
+        0.0
+      ],
+      "source": "native_alpha",
+      "valid": false,
+      "ring_share": 0.0,
+      "coverage": 0.0,
+      "distance_from_declared": 0.0
+    },
+    "quality": "native_alpha",
+    "qa": {
+      "key": [
+        0.0,
+        255.0,
+        0.0
+      ],
+      "opaque_key_px": 0,
+      "outer_ring_spill_fraction": 0.0020079061303884043,
+      "semitransparent_fraction": 0.9976222502006402,
+      "enclosed_key_pockets": 0,
+      "key_hued_px": 0,
+      "visible_px": 534539,
+      "outer_ring_px": 15937,
+      "thresholds": {
+        "key_tolerance": 48.0,
+        "spill_threshold": 20.0,
+        "min_pocket_area": 16,
+        "opaque_alpha": 128,
+        "spill_hue_balance": 0.5
+      },
+      "method": "forge_matte.matte_qa v1: straight-colour key distance and dominance on the keyed image; two-channel keys count spill only where the key channels are balanced"
+    },
+    "key_choice": {
+      "status": "ok",
+      "overlap_share": 0.0,
+      "rule": "reject a key when more than 0.5% of subject pixels have key dominance >= 40; first acceptable candidate wins"
+    }
+  },
+  "warnings": [
+    "the subject is too wide for the hero framing: scaled to fit the width, 760 px tall instead of 788 px"
+  ]
+}

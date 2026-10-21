@@ -1,0 +1,185 @@
+{
+  "schema": "generate2dsprite.master.v1",
+  "tool": {
+    "name": "master_still",
+    "version": "0.4.0"
+  },
+  "created": "2026-10-15T10:04:38.425Z",
+  "name": "species_0157",
+  "subject": "an evil five-star void eye-maw with octopus tentacles, full body",
+  "identity_recap": "evil five-star void eye-maw with octopus tentacles, full body (A single frightening large ocular body of jagged black-violet shadow armor, with SIX flexible octopus tentacles and ivory horn-like plates. Its PUPIL is a CLOSED FANGED MOUTH, not a normal reptile pupil: a jagged dark central slit with interlocking ivory fang tips peeking from its edges, clearly a disguised maw inside the eye-shaped outline. On opening that same slit will become a fang-filled maw; no second eye or separate mouth. Remove ALL THREE floating diamond crown runes from previous design. No floating head ornaments or diamonds. Uncanny infernal void creature, mysterious, threatening, not cute. Non-gory, no blood or flesh. Count exactly six tapered tentacle tips with distinct separations)",
+  "facing": "left",
+  "view": "side view (profile to three-quarter)",
+  "finish": "pixel",
+  "class": "hero",
+  "framing": {
+    "canvas": [
+      1024,
+      1024
+    ],
+    "subject_height_px": 788,
+    "top_margin_px": 138,
+    "lead_px": 0,
+    "preset": "hero",
+    "subject_bbox": [
+      42,
+      138,
+      982,
+      926
+    ],
+    "anchor": [
+      494.5,
+      926.0
+    ],
+    "opaque_area_px": 449175,
+    "width_limited": false
+  },
+  "key": "#00FF00",
+  "files": {
+    "master": {
+      "path": "master.png",
+      "sha256": "80d6093970beb3c73d6c2827bfaaf35fa03b5b00e7ab96b6a8b39fb866943622",
+      "bytes": 714067,
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    "cutout": {
+      "path": "master_rgba.png",
+      "sha256": "445d0ae86f68735ea5e5f3ebb9b9a1d7eef576a084a6828b8e28ec2730d691b2",
+      "bytes": 850153,
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    "source": {
+      "path": "source.png",
+      "sha256": "0ec22f256c9e8f106509bdafb302093501497bd1fe283b5afb877747b111f084",
+      "bytes": 847791,
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    "spec": {
+      "path": "spec.json",
+      "sha256": "365f8097d3b2aae04c5d8e1526e0c015eddf8e1846ab356456a602ff7a747785",
+      "bytes": 3268
+    },
+    "prompt": null
+  },
+  "references": [
+    {
+      "role": "identity",
+      "path": "../../references/species_0157.png",
+      "sha256": "7d7ea52ced5e0e2f0306897a1b6fd28eed6943b780877c76caa53fa861e4f207",
+      "bytes": 40620,
+      "what": "previous authored character version; preserve ONLY the explicitly listed traits and apply owner corrections"
+    },
+    {
+      "role": "style",
+      "path": "../../references/species_0158.png",
+      "sha256": "bc2cc44d4d9e51759727201aaeff743038955c5fb0ed73f2675f6b998a20e6a0",
+      "bytes": 47292,
+      "what": "owner-approved Phimond stone guardian, STYLE ONLY"
+    }
+  ],
+  "transform": {
+    "mapping": "master = scale * source + offset (continuous pixel coordinates: pixel i spans [i, i + 1))",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "source_subject_bbox": [
+      232,
+      241,
+      1180,
+      1037
+    ],
+    "crop_box": [
+      226,
+      235,
+      1186,
+      1043
+    ],
+    "crop_margin_px": 6,
+    "scale": 0.9899497487437185,
+    "offset": [
+      -186.9045226130653,
+      -100.57788944723617
+    ],
+    "canvas": [
+      1024,
+      1024
+    ],
+    "resampler": "lanczos",
+    "premultiplied": true,
+    "alpha_floor_px": 23377,
+    "subject_parts": 1,
+    "ignored_parts": 19,
+    "ignored_px": 24,
+    "source_touches": [],
+    "key_rgb": [
+      0,
+      255,
+      0
+    ]
+  },
+  "route": "host_image",
+  "provenance": {
+    "command": "external",
+    "run": null,
+    "take": null,
+    "source_name": "master-proposal.png",
+    "source_sha256": "0ec22f256c9e8f106509bdafb302093501497bd1fe283b5afb877747b111f084",
+    "media": null,
+    "media_cli_source": null,
+    "edit": null
+  },
+  "matte": {
+    "requested": "soft",
+    "key_estimate": {
+      "key": [
+        0.0,
+        255.0,
+        0.0
+      ],
+      "source": "native_alpha",
+      "valid": false,
+      "ring_share": 0.0,
+      "coverage": 0.0,
+      "distance_from_declared": 0.0
+    },
+    "quality": "native_alpha",
+    "qa": {
+      "key": [
+        0.0,
+        255.0,
+        0.0
+      ],
+      "opaque_key_px": 0,
+      "outer_ring_spill_fraction": 0.0,
+      "semitransparent_fraction": 0.997883618392364,
+      "enclosed_key_pockets": 0,
+      "key_hued_px": 0,
+      "visible_px": 515975,
+      "outer_ring_px": 26294,
+      "thresholds": {
+        "key_tolerance": 48.0,
+        "spill_threshold": 20.0,
+        "min_pocket_area": 16,
+        "opaque_alpha": 128,
+        "spill_hue_balance": 0.5
+      },
+      "method": "forge_matte.matte_qa v1: straight-colour key distance and dominance on the keyed image; two-channel keys count spill only where the key channels are balanced"
+    },
+    "key_choice": {
+      "status": "ok",
+      "overlap_share": 0.0,
+      "rule": "reject a key when more than 0.5% of subject pixels have key dominance >= 40; first acceptable candidate wins"
+    }
+  },
+  "warnings": []
+}

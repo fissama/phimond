@@ -1,0 +1,548 @@
+{
+  "worker": "B",
+  "model": "gpt-6.1-sol",
+  "queue_indices": [
+    53,
+    101
+  ],
+  "assigned_species": 49,
+  "species_with_raw": 25,
+  "actual_raw_attempts": 41,
+  "ready_for_review": 17,
+  "existing_raw_blocked": 8,
+  "missing_quota_outputs": 24,
+  "human_approved": false,
+  "animation_playback_verified": false,
+  "orphan_audit": {
+    "generated_directory": "/Users/phileanh/.codex/generated_images/01a109ec-18e8-7e43-ac0e-610b76fac936",
+    "png_count": 41,
+    "unmatched_png_count": 0,
+    "mapped_orphans": 0,
+    "unsalvageable_orphans": 0,
+    "unknown_paths": []
+  },
+  "quota": {
+    "http_status": 429,
+    "error_type": "usage_limit_reached",
+    "resets_at": 1791253436,
+    "retries_after_quota": 0,
+    "fallback_used": false
+  },
+  "rows": [
+    {
+      "index": 53,
+      "species_id": "species_0054",
+      "status": "blocked",
+      "raw_count": 3,
+      "candidate_path": null,
+      "preview_path": null,
+      "blockers": [
+        "Original yellow flagpole not preserved all20 after thirdcall",
+        "Attack/cast articulation replaced by largeFX",
+        "Nonuniform layout and cross-cellFX"
+      ]
+    },
+    {
+      "index": 54,
+      "species_id": "species_0055",
+      "status": "ready_for_review",
+      "raw_count": 3,
+      "candidate_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0055/attempt-03/packed.png",
+      "preview_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0055/attempt-03/preview/preview.html",
+      "blockers": []
+    },
+    {
+      "index": 55,
+      "species_id": "species_0056",
+      "status": "blocked",
+      "raw_count": 3,
+      "candidate_path": null,
+      "preview_path": null,
+      "blockers": [
+        "Attempt3 attack R3C2 wing overlaps R3C3 effect, explicit packing splits neighbor wing; cannot use packed candidate",
+        "Attempt2 R4C2 changes to frontal camera",
+        "Generation outputs nonuniform grid"
+      ]
+    },
+    {
+      "index": 56,
+      "species_id": "species_0057",
+      "status": "blocked",
+      "raw_count": 3,
+      "candidate_path": null,
+      "preview_path": null,
+      "blockers": [
+        "Nonuniform raw1071x1469 grid",
+        "R3C3 long trident overlaps R3C2 horizontal area; whole-pose rectangular packing unsafe"
+      ]
+    },
+    {
+      "index": 57,
+      "species_id": "species_0058",
+      "status": "ready_for_review",
+      "raw_count": 1,
+      "candidate_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0058/attempt-01/packed-centered.png",
+      "preview_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0058/attempt-01/preview/preview.html",
+      "blockers": []
+    },
+    {
+      "index": 58,
+      "species_id": "species_0059",
+      "status": "blocked",
+      "raw_count": 3,
+      "candidate_path": null,
+      "preview_path": null,
+      "blockers": [
+        "Original blade missingR5C1/R5C2",
+        "Duplicated bladeR4C2"
+      ]
+    },
+    {
+      "index": 59,
+      "species_id": "species_0060",
+      "status": "ready_for_review",
+      "raw_count": 2,
+      "candidate_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0060/attempt-02/packed.png",
+      "preview_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0060/attempt-02/preview/preview.html",
+      "blockers": []
+    },
+    {
+      "index": 60,
+      "species_id": "species_0061",
+      "status": "ready_for_review",
+      "raw_count": 1,
+      "candidate_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0061/attempt-01/packed.png",
+      "preview_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0061/attempt-01/preview/preview.html",
+      "blockers": []
+    },
+    {
+      "index": 61,
+      "species_id": "species_0062",
+      "status": "blocked",
+      "raw_count": 3,
+      "candidate_path": null,
+      "preview_path": null,
+      "blockers": [
+        "R3C3 weapon becomes oversized detached crescent with scattered fragments; original held weapon silhouette not coherent. Green limbs and burgundycloth recovered, but attack/equipment require built-in repair afterquota.",
+        "Repair blocked by builtin imagegen usage_limit_reached"
+      ]
+    },
+    {
+      "index": 62,
+      "species_id": "species_0063",
+      "status": "ready_for_review",
+      "raw_count": 2,
+      "candidate_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0063/attempt-02/packed.png",
+      "preview_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0063/attempt-02/preview/preview.html",
+      "blockers": []
+    },
+    {
+      "index": 63,
+      "species_id": "species_0064",
+      "status": "ready_for_review",
+      "raw_count": 1,
+      "candidate_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0064/attempt-01/packed.png",
+      "preview_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0064/attempt-01/preview/preview.html",
+      "blockers": []
+    },
+    {
+      "index": 64,
+      "species_id": "species_0065",
+      "status": "ready_for_review",
+      "raw_count": 1,
+      "candidate_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0065/attempt-01/packed.png",
+      "preview_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0065/attempt-01/preview/preview.html",
+      "blockers": []
+    },
+    {
+      "index": 65,
+      "species_id": "species_0066",
+      "status": "ready_for_review",
+      "raw_count": 1,
+      "candidate_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0066/attempt-01/packed.png",
+      "preview_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0066/attempt-01/preview/preview.html",
+      "blockers": []
+    },
+    {
+      "index": 66,
+      "species_id": "species_0067",
+      "status": "ready_for_review",
+      "raw_count": 1,
+      "candidate_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0067/attempt-01/packed.png",
+      "preview_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0067/attempt-01/preview/preview.html",
+      "blockers": []
+    },
+    {
+      "index": 67,
+      "species_id": "species_0068",
+      "status": "ready_for_review",
+      "raw_count": 2,
+      "candidate_path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/batches/20261005/species_0068/attempt-02/packed-adjusted.png",
+      "preview_path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/batches/20261005/species_0068/attempt-02/preview/preview.html",
+      "blockers": []
+    },
+    {
+      "index": 68,
+      "species_id": "species_0069",
+      "status": "blocked",
+      "raw_count": 2,
+      "candidate_path": null,
+      "preview_path": null,
+      "blockers": [
+        "Red greatsword absent in cast R4C2 and R4C3. All20 static inspected; geometry whole after adjusted cuts, but equipment preservation fails.",
+        "Repair blocked by builtin imagegen usage_limit_reached"
+      ]
+    },
+    {
+      "index": 69,
+      "species_id": "species_0070",
+      "status": "ready_for_review",
+      "raw_count": 1,
+      "candidate_path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/batches/20261005/species_0070/attempt-01/packed.png",
+      "preview_path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/batches/20261005/species_0070/attempt-01/preview/preview.html",
+      "blockers": []
+    },
+    {
+      "index": 70,
+      "species_id": "species_0071",
+      "status": "ready_for_review",
+      "raw_count": 1,
+      "candidate_path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/batches/20261005/species_0071/attempt-01/packed-final.png",
+      "preview_path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/batches/20261005/species_0071/attempt-01/preview/preview.html",
+      "blockers": []
+    },
+    {
+      "index": 71,
+      "species_id": "species_0072",
+      "status": "ready_for_review",
+      "raw_count": 1,
+      "candidate_path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/batches/20261005/species_0072/attempt-01/packed-final.png",
+      "preview_path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/batches/20261005/species_0072/attempt-01/preview/preview.html",
+      "blockers": []
+    },
+    {
+      "index": 72,
+      "species_id": "species_0073",
+      "status": "blocked",
+      "raw_count": 1,
+      "candidate_path": null,
+      "preview_path": null,
+      "blockers": [
+        "Original portrait and all8 atlas frames show smaller green face with cream muzzle/eyes/own redcap at lower screen right behind primary head. Generated20 poses replace that second face with mushroom shell. Confirmed by parent original-source review; identity repair required.",
+        "Repair blocked by builtin imagegen usage_limit_reached"
+      ]
+    },
+    {
+      "index": 73,
+      "species_id": "species_0074",
+      "status": "ready_for_review",
+      "raw_count": 1,
+      "candidate_path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/batches/20261005/species_0074/attempt-01/packed-adjusted.png",
+      "preview_path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/batches/20261005/species_0074/attempt-01/preview/preview.html",
+      "blockers": []
+    },
+    {
+      "index": 74,
+      "species_id": "species_0075",
+      "status": "ready_for_review",
+      "raw_count": 1,
+      "candidate_path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/batches/20261005/species_0075/attempt-01/packed-adjusted.png",
+      "preview_path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/batches/20261005/species_0075/attempt-01/preview/preview.html",
+      "blockers": []
+    },
+    {
+      "index": 75,
+      "species_id": "species_0076",
+      "status": "blocked",
+      "raw_count": 1,
+      "candidate_path": null,
+      "preview_path": null,
+      "blockers": [
+        "R3C2 tail and R3C3 lunging paw/body have conflicting horizontal extents. Current explicit rectangle packing splits adjacent limb/body fragments; mechanicalPASS insufficient. Must built-in shrink/recompose whole attack figures, no alpha erasure.",
+        "Repair blocked by builtin imagegen usage_limit_reached"
+      ]
+    },
+    {
+      "index": 76,
+      "species_id": "species_0077",
+      "status": "blocked",
+      "raw_count": 0,
+      "candidate_path": null,
+      "preview_path": null,
+      "blockers": [
+        "Builtin imagegen HTTP429 usage_limit_reached; no output produced; resets_at1791253436"
+      ]
+    },
+    {
+      "index": 77,
+      "species_id": "species_0078",
+      "status": "blocked",
+      "raw_count": 0,
+      "candidate_path": null,
+      "preview_path": null,
+      "blockers": [
+        "Builtin imagegen HTTP429 usage_limit_reached; no output produced; resets_at1791253436"
+      ]
+    },
+    {
+      "index": 78,
+      "species_id": "species_0079",
+      "status": "blocked",
+      "raw_count": 0,
+      "candidate_path": null,
+      "preview_path": null,
+      "blockers": [
+        "Builtin imagegen HTTP429 usage_limit_reached; no output produced; resets_at1791253436"
+      ]
+    },
+    {
+      "index": 79,
+      "species_id": "species_0080",
+      "status": "ready_for_review",
+      "raw_count": 1,
+      "candidate_path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/batches/20261005/species_0080/attempt-01/packed-adjusted.png",
+      "preview_path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/batches/20261005/species_0080/attempt-01/preview/preview.html",
+      "blockers": []
+    },
+    {
+      "index": 80,
+      "species_id": "species_0081",
+      "status": "blocked",
+      "raw_count": 0,
+      "candidate_path": null,
+      "preview_path": null,
+      "blockers": [
+        "Builtin imagegen HTTP429 usage_limit_reached; no output produced; resets_at1791253436"
+      ]
+    },
+    {
+      "index": 81,
+      "species_id": "species_0082",
+      "status": "blocked",
+      "raw_count": 0,
+      "candidate_path": null,
+      "preview_path": null,
+      "blockers": [
+        "Builtin imagegen HTTP429 usage_limit_reached; no output produced; resets_at1791253436"
+      ]
+    },
+    {
+      "index": 82,
+      "species_id": "species_0083",
+      "status": "blocked",
+      "raw_count": 0,
+      "candidate_path": null,
+      "preview_path": null,
+      "blockers": [
+        "Builtin imagegen HTTP429 usage_limit_reached; no output produced; resets_at1791253436"
+      ]
+    },
+    {
+      "index": 83,
+      "species_id": "species_0084",
+      "status": "blocked",
+      "raw_count": 0,
+      "candidate_path": null,
+      "preview_path": null,
+      "blockers": [
+        "Builtin imagegen HTTP429 usage_limit_reached; no output produced; resets_at1791253436"
+      ]
+    },
+    {
+      "index": 84,
+      "species_id": "species_0085",
+      "status": "ready_for_review",
+      "raw_count": 1,
+      "candidate_path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/batches/20261005/species_0085/attempt-01/packed-adjusted.png",
+      "preview_path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/batches/20261005/species_0085/attempt-01/preview/preview.html",
+      "blockers": []
+    },
+    {
+      "index": 85,
+      "species_id": "species_0086",
+      "status": "blocked",
+      "raw_count": 0,
+      "candidate_path": null,
+      "preview_path": null,
+      "blockers": [
+        "Builtin imagegen HTTP429 usage_limit_reached; no output produced; resets_at1791253436"
+      ]
+    },
+    {
+      "index": 86,
+      "species_id": "species_0087",
+      "status": "blocked",
+      "raw_count": 0,
+      "candidate_path": null,
+      "preview_path": null,
+      "blockers": [
+        "Builtin imagegen HTTP429 usage_limit_reached; no output produced; resets_at1791253436"
+      ]
+    },
+    {
+      "index": 87,
+      "species_id": "species_0088",
+      "status": "blocked",
+      "raw_count": 0,
+      "candidate_path": null,
+      "preview_path": null,
+      "blockers": [
+        "Builtin imagegen HTTP429 usage_limit_reached; no output produced; resets_at1791253436"
+      ]
+    },
+    {
+      "index": 88,
+      "species_id": "species_0089",
+      "status": "blocked",
+      "raw_count": 0,
+      "candidate_path": null,
+      "preview_path": null,
+      "blockers": [
+        "Builtin imagegen HTTP429 usage_limit_reached; no output produced; resets_at1791253436"
+      ]
+    },
+    {
+      "index": 89,
+      "species_id": "species_0090",
+      "status": "blocked",
+      "raw_count": 0,
+      "candidate_path": null,
+      "preview_path": null,
+      "blockers": [
+        "Builtin imagegen HTTP429 usage_limit_reached; no output produced; resets_at1791253436"
+      ]
+    },
+    {
+      "index": 90,
+      "species_id": "species_0091",
+      "status": "blocked",
+      "raw_count": 0,
+      "candidate_path": null,
+      "preview_path": null,
+      "blockers": [
+        "Builtin imagegen HTTP429 usage_limit_reached; no output produced; resets_at1791253436"
+      ]
+    },
+    {
+      "index": 91,
+      "species_id": "species_0092",
+      "status": "blocked",
+      "raw_count": 0,
+      "candidate_path": null,
+      "preview_path": null,
+      "blockers": [
+        "Builtin imagegen HTTP429 usage_limit_reached; no output produced; resets_at1791253436"
+      ]
+    },
+    {
+      "index": 92,
+      "species_id": "species_0093",
+      "status": "blocked",
+      "raw_count": 0,
+      "candidate_path": null,
+      "preview_path": null,
+      "blockers": [
+        "Builtin imagegen HTTP429 usage_limit_reached; no output produced; resets_at1791253436"
+      ]
+    },
+    {
+      "index": 93,
+      "species_id": "species_0094",
+      "status": "blocked",
+      "raw_count": 0,
+      "candidate_path": null,
+      "preview_path": null,
+      "blockers": [
+        "Builtin imagegen HTTP429 usage_limit_reached; no output produced; resets_at1791253436"
+      ]
+    },
+    {
+      "index": 94,
+      "species_id": "species_0095",
+      "status": "blocked",
+      "raw_count": 0,
+      "candidate_path": null,
+      "preview_path": null,
+      "blockers": [
+        "Builtin imagegen HTTP429 usage_limit_reached; no output produced; resets_at1791253436"
+      ]
+    },
+    {
+      "index": 95,
+      "species_id": "species_0096",
+      "status": "blocked",
+      "raw_count": 0,
+      "candidate_path": null,
+      "preview_path": null,
+      "blockers": [
+        "Builtin imagegen HTTP429 usage_limit_reached; no output produced; resets_at1791253436"
+      ]
+    },
+    {
+      "index": 96,
+      "species_id": "species_0097",
+      "status": "blocked",
+      "raw_count": 0,
+      "candidate_path": null,
+      "preview_path": null,
+      "blockers": [
+        "Builtin imagegen HTTP429 usage_limit_reached; no output produced; resets_at1791253436"
+      ]
+    },
+    {
+      "index": 97,
+      "species_id": "species_0098",
+      "status": "blocked",
+      "raw_count": 0,
+      "candidate_path": null,
+      "preview_path": null,
+      "blockers": [
+        "Builtin imagegen HTTP429 usage_limit_reached; no output produced; resets_at1791253436"
+      ]
+    },
+    {
+      "index": 98,
+      "species_id": "species_0099",
+      "status": "blocked",
+      "raw_count": 0,
+      "candidate_path": null,
+      "preview_path": null,
+      "blockers": [
+        "Builtin imagegen HTTP429 usage_limit_reached; no output produced; resets_at1791253436"
+      ]
+    },
+    {
+      "index": 99,
+      "species_id": "species_0100",
+      "status": "blocked",
+      "raw_count": 0,
+      "candidate_path": null,
+      "preview_path": null,
+      "blockers": [
+        "Builtin imagegen HTTP429 usage_limit_reached; no output produced; resets_at1791253436"
+      ]
+    },
+    {
+      "index": 100,
+      "species_id": "species_0101",
+      "status": "blocked",
+      "raw_count": 0,
+      "candidate_path": null,
+      "preview_path": null,
+      "blockers": [
+        "Builtin imagegen HTTP429 usage_limit_reached; no output produced; resets_at1791253436"
+      ]
+    },
+    {
+      "index": 101,
+      "species_id": "species_0102",
+      "status": "blocked",
+      "raw_count": 0,
+      "candidate_path": null,
+      "preview_path": null,
+      "blockers": [
+        "Builtin imagegen HTTP429 usage_limit_reached; no output produced; resets_at1791253436"
+      ]
+    }
+  ]
+}

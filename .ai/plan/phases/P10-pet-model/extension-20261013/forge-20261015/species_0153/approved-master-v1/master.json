@@ -1,0 +1,185 @@
+{
+  "schema": "generate2dsprite.master.v1",
+  "tool": {
+    "name": "master_still",
+    "version": "0.4.0"
+  },
+  "created": "2026-10-15T10:04:38.381Z",
+  "name": "species_0153",
+  "subject": "an elegant five-star moss moon stag, full body",
+  "identity_recap": "elegant five-star moss moon stag, full body (A slender elegant mature brown stag on FOUR natural deer legs, amber eyes, cream chest, jade moss and delicate leaf buds. Exactly TWO natural woody antlers grow from realistic forehead roots: each main beam sweeps in a crescent CURVE but still branches into two or three slender DEER tines; brown wood with moss, not golden crescent jewelry. No solid moon shapes attached to head. Preserve brown body, small crescent flank marking and graceful proud personality. Tiny amber magical highlights at antler tips, no large aura)",
+  "facing": "left",
+  "view": "side view (profile to three-quarter)",
+  "finish": "pixel",
+  "class": "hero",
+  "framing": {
+    "canvas": [
+      1024,
+      1024
+    ],
+    "subject_height_px": 788,
+    "top_margin_px": 138,
+    "lead_px": 0,
+    "preset": "hero",
+    "subject_bbox": [
+      230,
+      138,
+      794,
+      926
+    ],
+    "anchor": [
+      541.0,
+      926.0
+    ],
+    "opaque_area_px": 196361,
+    "width_limited": false
+  },
+  "key": "#00FF00",
+  "files": {
+    "master": {
+      "path": "master.png",
+      "sha256": "e568681da2e88871e8b104398e22e5d2926b421e4ed3d1c4cfd7ab4bed496eb4",
+      "bytes": 352993,
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    "cutout": {
+      "path": "master_rgba.png",
+      "sha256": "6715259065a9305704e456abcd27d769bda52e281b51bd8d5e876740d9e8fec6",
+      "bytes": 438570,
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    "source": {
+      "path": "source.png",
+      "sha256": "da5812328fc08e3a88dd172d2c02a3d9a1f8da326f5e7f253d3076d1ed4f759a",
+      "bytes": 605842,
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    "spec": {
+      "path": "spec.json",
+      "sha256": "b319d8a97f853a74b59caa46df64abc2075dc4322dde1fcda6158f1079091b34",
+      "bytes": 2844
+    },
+    "prompt": null
+  },
+  "references": [
+    {
+      "role": "identity",
+      "path": "../../references/species_0153.png",
+      "sha256": "c62822ea53a5a5a32c0fc5276db8d901ac02b94b68dd3e2cfd32354b90bcec5b",
+      "bytes": 45009,
+      "what": "previous authored character version; preserve ONLY the explicitly listed traits and apply owner corrections"
+    },
+    {
+      "role": "style",
+      "path": "../../references/species_0158.png",
+      "sha256": "bc2cc44d4d9e51759727201aaeff743038955c5fb0ed73f2675f6b998a20e6a0",
+      "bytes": 47292,
+      "what": "owner-approved Phimond stone guardian, STYLE ONLY"
+    }
+  ],
+  "transform": {
+    "mapping": "master = scale * source + offset (continuous pixel coordinates: pixel i spans [i, i + 1))",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "source_subject_bbox": [
+      325,
+      146,
+      1008,
+      1102
+    ],
+    "crop_box": [
+      319,
+      140,
+      1014,
+      1108
+    ],
+    "crop_margin_px": 6,
+    "scale": 0.8242677824267782,
+    "offset": [
+      -37.37447698744768,
+      17.656903765690373
+    ],
+    "canvas": [
+      1024,
+      1024
+    ],
+    "resampler": "lanczos",
+    "premultiplied": true,
+    "alpha_floor_px": 21715,
+    "subject_parts": 1,
+    "ignored_parts": 15,
+    "ignored_px": 29,
+    "source_touches": [],
+    "key_rgb": [
+      0,
+      255,
+      0
+    ]
+  },
+  "route": "host_image",
+  "provenance": {
+    "command": "external",
+    "run": null,
+    "take": null,
+    "source_name": "master-proposal.png",
+    "source_sha256": "da5812328fc08e3a88dd172d2c02a3d9a1f8da326f5e7f253d3076d1ed4f759a",
+    "media": null,
+    "media_cli_source": null,
+    "edit": null
+  },
+  "matte": {
+    "requested": "soft",
+    "key_estimate": {
+      "key": [
+        0.0,
+        255.0,
+        0.0
+      ],
+      "source": "native_alpha",
+      "valid": false,
+      "ring_share": 0.0,
+      "coverage": 0.0,
+      "distance_from_declared": 0.0
+    },
+    "quality": "native_alpha",
+    "qa": {
+      "key": [
+        0.0,
+        255.0,
+        0.0
+      ],
+      "opaque_key_px": 0,
+      "outer_ring_spill_fraction": 0.012031684864054806,
+      "semitransparent_fraction": 0.9974632696538553,
+      "enclosed_key_pockets": 0,
+      "key_hued_px": 0,
+      "visible_px": 344538,
+      "outer_ring_px": 23355,
+      "thresholds": {
+        "key_tolerance": 48.0,
+        "spill_threshold": 20.0,
+        "min_pocket_area": 16,
+        "opaque_alpha": 128,
+        "spill_hue_balance": 0.5
+      },
+      "method": "forge_matte.matte_qa v1: straight-colour key distance and dominance on the keyed image; two-channel keys count spill only where the key channels are balanced"
+    },
+    "key_choice": {
+      "status": "ok",
+      "overlap_share": 0.0,
+      "rule": "reject a key when more than 0.5% of subject pixels have key dominance >= 40; first acceptable candidate wins"
+    }
+  },
+  "warnings": []
+}

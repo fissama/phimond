@@ -1,0 +1,96 @@
+[
+  {
+    "directory": "move-fix-04",
+    "prompt": "Use case: precise-object-edit. Repair the four WALK poses of MaVuongHutMau into a natural heavy shuffling walk. The provided high-knee2x2 sheet was REJECTED: it looks like marching/dancing and repeats the same contact pose instead of a coherent walk. Preserve its character identity/palette/pixel style but completely redraw the leg motion. Output only4 walking figures in a transparent2x2 sheet.\nSame stocky horned dark-teal demon, brown/gold skull armor, tan bat wings, one curved teal tail, exactlyONE silver cleaver in SAME foreground hand. LEFT-facing3/4 side camera all4; never mirror or turn camera. Use short original stubby legs. Heavy crouched posture, forward hunch, low center of mass. Blade held close beside thigh, raised just enough to expose toes/ankles, not horizontal high across chest. Face and design match the approved character.\nNATURAL LOW WALK: NO HIGH KNEE, NO KICK, NO GOOSE-STEP, NO BALLET, NO WIDE LUNGE. Knees always stay BELOW skirt/hip armor and only flex slightly. Toes always point LEFT and remain nearly parallel to floor; never point down steeply. Moving foot lifts only about4-6px at281-cell scale, passing close to ground. Short stride: contact feet only25-35px apart at281-cell scale. Both feet stay near under hips; no long stretched legs. Body bob only1-2px at281scale. Wings folded steady with subtle lag; tail slight counterbalance. Actual feet articulation, not wholebody sliding.\nDraw precise four phases using ONE consistent near leg (lighter visible kneeguard) and ONE far leg (slightly darker):\n1 TOP-LEFT NEAR-LEG FORWARD CONTACT: near foot modestly LEFT of hip planted flat, far foot modestly RIGHT/back with heel raised/toe on floor. Torso weight slightly forward.\n2 TOP-RIGHT NEAR-LEG SUPPORT / FAR-LEG PASSING: near foot now planted almost UNDER HIP, far foot passes beneath body towardLEFT just4-6px offground, knee only slightly bent. No foot at chest height and no pointed toes.\n3 BOTTOM-LEFT OPPOSITE CONTACT: FAR foot modestly LEFT/front planted, NEAR foot modestly RIGHT/back toe pushing off with heel raised. This MUST reverse NEAR versus FAR thigh/foot order relative to frame1, not copy same leg pose. Near gold kneeguard now at backRIGHT; far darker knee at frontLEFT.\n4 BOTTOM-RIGHT FAR-LEG SUPPORT / NEAR-LEG PASSING: far foot planted nearly UNDERHIP, near gold-kneeguarded leg passes forwardLEFT under belly with near foot only4-6px offground, almost flat toes. Different supporting leg fromframe2. Ends naturally transitioning into1 nearfoot contact.\nEach pose contains exactlyTWO connected legs/two feet and correct hip attachments. Foot sole contact baseline EXACTLY SAME in all4, stable shoulder/head placement and identical body proportions/scale. No forced huge negative space between legs, no giant gold kneeguard enlargement. Both ankle/claw silhouettes readable below lowered blade. No extra limbs/weapon swaps.\nPixel art dark stepped outlines and compact clusters, no smooth painting or anatomy change. Transparent square2x2 RGBA sheet, ideally1124x1124, with all4 characters centered in theircells and60px clear gutters. Same body height330px per562cell so source grid has ample space. No background, ground/shadow, labels/grid/FX. Render a coherent grounded walk cycle rather than four dramatic poses.",
+    "refs": [
+      "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/polish-20261008/species_0146/move-fix-03/raw.png",
+      "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/polish-20261008/species_0146/attempt-04/raw.png"
+    ],
+    "generated": "/Users/phileanh/.codex/generated_images/01a0e5c8-b07f-7471-bf62-96df6be6402c/exec-567fea01-339e-4f48-8423-6579dd0fc062.png",
+    "reason": "Low step improved but same supporting leg repeated; alternating gait failed.",
+    "tool": "image_gen.imagegen",
+    "image_model": "not_exposed",
+    "status": "rejected",
+    "runtime_active": false,
+    "raw_sha256": "4ac7cff7ff8e686e530ea0148cb66e57f49e2fc211fd6ff06f6994e6f7da6049",
+    "prompt_sha256": "20cc1162b73f275e90be3782168dcb7fbd0a80570b4d0a84c93a197079c02161",
+    "reference_hashes": [
+      {
+        "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/polish-20261008/species_0146/move-fix-03/raw.png",
+        "sha256": "b567790dae5a2dd6081b53e1285fbed4376d4ec91cfb1b385059dcb797bb8b31"
+      },
+      {
+        "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/polish-20261008/species_0146/attempt-04/raw.png",
+        "sha256": "6a2b8134f8016e4a7536d03085ce9bf29f48624b227ad68452ccb3de164f38fa"
+      }
+    ]
+  },
+  {
+    "directory": "move-fix-05",
+    "prompt": "Edit this exact 2x2 walk sprite sheet. The top two poses are usable. The BOTTOM TWO POSES ARE WRONG, they duplicate the same stepping leg. Preserve entire character style, proportions, head, horns, wings, tail, sword and upper body. Replace ONLY the legs and feet in the bottom two figures. Do not mirror the entire figure. Same left facing camera.\nBottom LEFT must be the opposite contact pose of top LEFT: the BIG FOREGROUND LEG currently on screen RIGHT must step FORWARD towards screen LEFT across in front of the other leg, its foot planted flat LEFT under the blade. The SMALL BACKGROUND LEG must move BACK toward screen RIGHT behind foreground thigh, visible rear toes on ground and heel raised. Foreground gold kneecap now LEFT of belt, background gold kneecap RIGHT behind. Draw clear overlapping thighs to show which leg passes in front.\nBottom RIGHT must be opposite passing pose of top RIGHT: BIG FOREGROUND LEG passes forward toward screen LEFT, its toes lifted only slightly from ground directly under the belly. SMALL BACKGROUND LEG supports on floor screen RIGHT under hip. GOLD FOREGROUND KNEECAP moves LEFT, NEVER stays high on screen RIGHT as in the reference.\nTopLEFT=foreground leg BACK/right, background FRONT/left. TopRIGHT=foreground right leg passing while background left supports. BottomLEFT=foreground FRONT/left, background BACK/right. BottomRIGHT=foreground passes under belly LEFT while background supports RIGHT. This is a two-leg alternating walk, not repeatedly lifting the right leg. Short stride, low knees, feet almost flat. Grounded heavy gait. Exactly two legs and two feet per figure, no extra claws or limbs. Match top figures' planted foot baseline in their cells. No camera flip, no body stretching. Transparent RGBA 2x2 sheet, all4 complete figures, clean empty gutters, no shadows or captions.",
+    "refs": [
+      "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/polish-20261008/species_0146/move-fix-04/raw.png"
+    ],
+    "generated": "/Users/phileanh/.codex/generated_images/01a0e5c8-b07f-7471-bf62-96df6be6402c/exec-837a1b73-978a-4651-b00b-e0aae31989d0.png",
+    "reason": "Targeted opposite leg correction still repeats near/far layout.",
+    "tool": "image_gen.imagegen",
+    "image_model": "not_exposed",
+    "status": "rejected",
+    "runtime_active": false,
+    "raw_sha256": "d017d9069c72e3b21725dec98ecd04987bac9371dce5a11dffe2d81647ea4300",
+    "prompt_sha256": "7e69684bafd3271f2791bc89a953977657aed1e26fb2bcb77b475abd26a56618",
+    "reference_hashes": [
+      {
+        "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/polish-20261008/species_0146/move-fix-04/raw.png",
+        "sha256": "4ac7cff7ff8e686e530ea0148cb66e57f49e2fc211fd6ff06f6994e6f7da6049"
+      }
+    ]
+  },
+  {
+    "directory": "move-fix-05/single-step",
+    "prompt": "Create ONE full-body sprite of this exact demon character in the OPPOSITE walking step. Reference is a right-leg-back pose. Draw right-leg-FORWARD instead. Keep head, blade hand and wings same facing left. Bring his LARGE foreground thigh and gold kneecap forward to the LEFT, foreground boot planted beneath the left edge of his belt. His other thinner background leg extends backwards to the RIGHT behind him, heel lifted with only toes touching ground. Clearly cross the foreground leg IN FRONT OF the background leg. The foreground leg must be on the LEFT and background on the RIGHT. Both legs short, bent slightly, natural squat heavy walk. No raised knee or kick. One horned teal demon, large tan bat wings, brown red gold armor and silver cleaver. Match pixel style and torso silhouette. Head at top, feet bottom. Left-facing three-quarter side view, no rotation or mirror. One figure only, transparent square background, ample padding, no shadows. Focus on a genuinely opposite contact pose: BIG foreground boot on LEFT, small rear boot on RIGHT.",
+    "refs": [
+      "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/polish-20261008/species_0146/move-fix-04/raw.png"
+    ],
+    "generated": "/Users/phileanh/.codex/generated_images/01a0e5c8-b07f-7471-bf62-96df6be6402c/exec-0450838a-ba8e-4011-98bf-c96fb1ae8f34.png",
+    "reason": "Single opposite-contact pose still has wrong foreground leg arrangement.",
+    "tool": "image_gen.imagegen",
+    "image_model": "not_exposed",
+    "status": "rejected",
+    "runtime_active": false,
+    "raw_sha256": "a8f2cc71b948ed5bb8c67391871493fd7c4d9124f6f382a58291b6a971d8cc1d",
+    "prompt_sha256": "b8083334eec09c236bb1b083ccbc7e13b68155ce37739419426f015d45501774",
+    "reference_hashes": [
+      {
+        "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/polish-20261008/species_0146/move-fix-04/raw.png",
+        "sha256": "4ac7cff7ff8e686e530ea0148cb66e57f49e2fc211fd6ff06f6994e6f7da6049"
+      }
+    ]
+  },
+  {
+    "directory": "move-fix-06",
+    "prompt": "Draw 4 animation frames of this exact horned winged teal demon walking LEFT. First image is a pose guide only: follow GREEN foreground leg and BLUE background leg positions in EVERY panel exactly, recolor them to character's existing skin/armor palette. This alternating near/far sequence is mandatory. Second image is the character design reference. Match its pixel art style, horns, armor, cleaver held in foreground hand, wing, tail and short stocky proportions. Output 2x2 transparent sprite sheet. Frames in reading order correspond to guide1,2,3,4. TOPLEFT foreground leg is forward LEFT; TOPRIGHT foreground leg supports underbody while far foot passes low offground; BOTTOMLEFT foreground leg is backwards RIGHT and background leg front LEFT; BOTTOMRIGHT foreground foot passes low offground while background supports underbody. In topLEFT big near kneecap/boot is LEFT of belt; bottomLEFT big near kneecap/boot RIGHT of belt. It is essential to reverse leg arrangement for opposite contact. Keep head/torso same camera, proportions and size. Heavy short natural steps with low lifted feet; no high knees or hopping. Stable floor baseline, slight 1-2px body bob when reduced. Cleaver remains held close just high enough to expose feet, slight weight lag. Body hunch same throughout, wings mostly steady. Each panel one complete character, generous margins and gutters. No diagram, no text, no ground or shadows. Exactly 2 connected legs per panel, same left-facing direction. Strong stepped pixel art clusters. Do not reuse identical lower-body silhouette across opposite contact frames.",
+    "refs": [
+      "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/polish-20261008/species_0146/move-fix-06/gait-guide.png",
+      "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/polish-20261008/species_0146/attempt-04/raw.png"
+    ],
+    "generated": "/Users/phileanh/.codex/generated_images/01a0e5c8-b07f-7471-bf62-96df6be6402c/exec-ebd2d3f7-5c0f-449c-9c19-d4e61f04306a.png",
+    "reason": "Pose guide not followed; repeated supporting leg; generated background/glow.",
+    "tool": "image_gen.imagegen",
+    "image_model": "not_exposed",
+    "status": "rejected",
+    "runtime_active": false,
+    "raw_sha256": "df6b80bde7fb645a4697d7989d430614c2a0a4c9e1055278e5115e312acf0920",
+    "prompt_sha256": "ad3f63c691b0a420483cc9bbbc01e080dff57b505ac0429ad1b8a5505bcf9dd6",
+    "reference_hashes": [
+      {
+        "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/polish-20261008/species_0146/move-fix-06/gait-guide.png",
+        "sha256": "6f6d298cefbd99decdb1ddecdf1051f36c380b09cb5b4ddc98313eaec9321ec4"
+      },
+      {
+        "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/polish-20261008/species_0146/attempt-04/raw.png",
+        "sha256": "6a2b8134f8016e4a7536d03085ce9bf29f48624b227ad68452ccb3de164f38fa"
+      }
+    ]
+  }
+]

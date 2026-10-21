@@ -1,0 +1,406 @@
+{
+  "status": "size_normalized_candidates_pending_owner_review",
+  "video_required": false,
+  "records": {
+    "species_0153": {
+      "status": "size_normalized_pending_owner_review",
+      "provenance": "Phimond-authored",
+      "generation_route": "host_image",
+      "source_master": {
+        "path": ".ai/plan/phases/P10-pet-model/extension-20261013/forge-20261015/species_0153/master-proposal.png",
+        "sha256": "da5812328fc08e3a88dd172d2c02a3d9a1f8da326f5e7f253d3076d1ed4f759a",
+        "owner_approved": true
+      },
+      "output": {
+        "format": "PNG RGBA",
+        "size": [
+          1124,
+          1405
+        ],
+        "grid": [
+          4,
+          5
+        ],
+        "cell": [
+          281,
+          281
+        ],
+        "alpha_safe_range": [
+          22,
+          259
+        ],
+        "distinct_frames": 20,
+        "shared_root": true,
+        "runtime_activated": false,
+        "path": "apps/game-client/assets/pets/redraws/extension-20261013/species_0153/attempt-18/packed.png",
+        "sha256": "9440cee7e3b913e0767321dbf12bd19ffeb7e4949f558e81a40e32baa11c7574",
+        "owner_approved": false
+      },
+      "rows": [
+        {
+          "row": 1,
+          "id": "idle",
+          "loop": true,
+          "motion": "Four subtle hover/breathing key poses, seamless return; keep anatomy, colors and root."
+        },
+        {
+          "row": 2,
+          "id": "move",
+          "loop": true,
+          "motion": "Four coordinated walk contacts with near/far leg alternation and tail follow-through."
+        },
+        {
+          "row": 3,
+          "id": "basic_attack",
+          "loop": false,
+          "motion": "Anticipation, windup, left-facing physical impact, recovery; rich compact effects readable at96px."
+        },
+        {
+          "row": 4,
+          "id": "skill",
+          "loop": false,
+          "motion": "Gather, form, left-facing release, dissipate. Dragon159 claw strike then both tail-end seals shine; dragon155 three gold star lances. FX sources separate, then composite within atlas-safe area."
+        },
+        {
+          "row": 5,
+          "id": "hurt_down",
+          "loop": false,
+          "motion": "Stagger, weaken, collapse, fully flat/prone down; preserve all appendages/weapon. Hold final frame."
+        }
+      ],
+      "base_facing": "left",
+      "rules": [
+        "20 different authored poses, consistent anatomy, palette, weapon, hair and pivot",
+        "One transparent RGBA PNG,4columns5rows,1124x1405,cells281x281,alpha[22,259)",
+        "Idle and move loop only;basic,skill,hurt-down playonce andholdlast",
+        "No video, no video extraction, no duplicate still pasted20times",
+        "Preserve3approvedatlases and152frozenatlases; newatlasneedsownerreview before runtime"
+      ],
+      "visual_notes": [
+        "Đã chỉnh size theo Linh Tiên; sửa vệt lẫn frame và giữ gạc gỗ, dáng bốn chân.",
+        "Chờ bạn duyệt size/nét và mức hiệu ứng."
+      ],
+      "strict_visual_accepted": false
+    },
+    "species_0155": {
+      "status": "size_normalized_pending_owner_review",
+      "provenance": "Phimond-authored",
+      "generation_route": "host_image",
+      "source_master": {
+        "path": ".ai/plan/phases/P10-pet-model/extension-20261013/forge-20261015/species_0155/master-proposal.png",
+        "sha256": "6bd6b293235b20f2138a2164ed00da9063c11d8ccaa5384316bdff510854800c",
+        "owner_approved": true
+      },
+      "output": {
+        "format": "PNG RGBA",
+        "size": [
+          1124,
+          1405
+        ],
+        "grid": [
+          4,
+          5
+        ],
+        "cell": [
+          281,
+          281
+        ],
+        "alpha_safe_range": [
+          22,
+          259
+        ],
+        "distinct_frames": 20,
+        "shared_root": true,
+        "runtime_activated": false,
+        "path": "apps/game-client/assets/pets/redraws/extension-20261013/species_0155/attempt-19/packed.png",
+        "sha256": "956269786448d4cc909d443c9ca74b8eced8d9ee262a46f75d60ccfe9cc3bc41",
+        "owner_approved": false
+      },
+      "rows": [
+        {
+          "row": 1,
+          "id": "idle",
+          "loop": true,
+          "motion": "Four subtle hover/breathing key poses, seamless return; keep anatomy, colors and root."
+        },
+        {
+          "row": 2,
+          "id": "move",
+          "loop": true,
+          "motion": "Four coordinated walk contacts with near/far leg alternation and tail follow-through."
+        },
+        {
+          "row": 3,
+          "id": "basic_attack",
+          "loop": false,
+          "motion": "Anticipation, windup, left-facing physical impact, recovery; rich compact effects readable at96px."
+        },
+        {
+          "row": 4,
+          "id": "skill",
+          "loop": false,
+          "motion": "Gather, form, left-facing release, dissipate. Dragon159 claw strike then both tail-end seals shine; dragon155 three gold star lances. FX sources separate, then composite within atlas-safe area."
+        },
+        {
+          "row": 5,
+          "id": "hurt_down",
+          "loop": false,
+          "motion": "Stagger, weaken, collapse, fully flat/prone down; preserve all appendages/weapon. Hold final frame."
+        }
+      ],
+      "base_facing": "left",
+      "rules": [
+        "20 different authored poses, consistent anatomy, palette, weapon, hair and pivot",
+        "One transparent RGBA PNG,4columns5rows,1124x1405,cells281x281,alpha[22,259)",
+        "Idle and move loop only;basic,skill,hurt-down playonce andholdlast",
+        "No video, no video extraction, no duplicate still pasted20times",
+        "Preserve3approvedatlases and152frozenatlases; newatlasneedsownerreview before runtime"
+      ],
+      "visual_notes": [
+        "Thân lớn hơn; sao đuôi đã khôi phục; ba tia sao hướng trái.",
+        "Còn chấm FX nhỏ; chờ duyệt nét và độ mượt."
+      ],
+      "strict_visual_accepted": false
+    },
+    "species_0157": {
+      "status": "size_normalized_pending_owner_review",
+      "provenance": "Phimond-authored",
+      "generation_route": "host_image",
+      "source_master": {
+        "path": ".ai/plan/phases/P10-pet-model/extension-20261013/forge-20261015/species_0157/master-proposal.png",
+        "sha256": "0ec22f256c9e8f106509bdafb302093501497bd1fe283b5afb877747b111f084",
+        "owner_approved": true
+      },
+      "output": {
+        "format": "PNG RGBA",
+        "size": [
+          1124,
+          1405
+        ],
+        "grid": [
+          4,
+          5
+        ],
+        "cell": [
+          281,
+          281
+        ],
+        "alpha_safe_range": [
+          22,
+          259
+        ],
+        "distinct_frames": 20,
+        "shared_root": true,
+        "runtime_activated": false,
+        "path": "apps/game-client/assets/pets/redraws/extension-20261013/species_0157/attempt-18/packed.png",
+        "sha256": "ec9fe3533c9d7433c93fe0a0581e81be16c02b89c1cf319805bb0757b0408521",
+        "owner_approved": false
+      },
+      "rows": [
+        {
+          "row": 1,
+          "id": "idle",
+          "loop": true,
+          "motion": "Four subtle hover/breathing key poses, seamless return; keep anatomy, colors and root."
+        },
+        {
+          "row": 2,
+          "id": "move",
+          "loop": true,
+          "motion": "Four floating bob/tentacle or twin-tail wave poses; no grounded walking."
+        },
+        {
+          "row": 3,
+          "id": "basic_attack",
+          "loop": false,
+          "motion": "Anticipation, windup, left-facing physical impact, recovery; rich compact effects readable at96px."
+        },
+        {
+          "row": 4,
+          "id": "skill",
+          "loop": false,
+          "motion": "Gather, form, left-facing release, dissipate. Dragon159 claw strike then both tail-end seals shine; dragon155 three gold star lances. FX sources separate, then composite within atlas-safe area."
+        },
+        {
+          "row": 5,
+          "id": "hurt_down",
+          "loop": false,
+          "motion": "Stagger, weaken, collapse, fully flat/prone down; preserve all appendages/weapon. Hold final frame."
+        }
+      ],
+      "base_facing": "left",
+      "rules": [
+        "20 different authored poses, consistent anatomy, palette, weapon, hair and pivot",
+        "One transparent RGBA PNG,4columns5rows,1124x1405,cells281x281,alpha[22,259)",
+        "Idle and move loop only;basic,skill,hurt-down playonce andholdlast",
+        "No video, no video extraction, no duplicate still pasted20times",
+        "Preserve3approvedatlases and152frozenatlases; newatlasneedsownerreview before runtime"
+      ],
+      "visual_notes": [
+        "Thân lớn hơn; đã bỏ cầu nối và mảnh thừa giữa frame; giữ tâm miệng nanh.",
+        "Xúc tu có chồng lấp; chờ duyệt hiệu ứng và số chi khi chuyển động."
+      ],
+      "strict_visual_accepted": false
+    },
+    "species_0159": {
+      "status": "size_normalized_pending_owner_review",
+      "provenance": "Phimond-authored",
+      "generation_route": "host_image",
+      "source_master": {
+        "path": ".ai/plan/phases/P10-pet-model/extension-20261013/forge-20261015/species_0159/master-wing-v2.png",
+        "sha256": "532b454cd48f873b23665a01a5a2af1fa01b69a1ad64df5a3698e2b1380ada99",
+        "owner_approved": false
+      },
+      "output": {
+        "format": "PNG RGBA",
+        "size": [
+          1124,
+          1405
+        ],
+        "grid": [
+          4,
+          5
+        ],
+        "cell": [
+          281,
+          281
+        ],
+        "alpha_safe_range": [
+          22,
+          259
+        ],
+        "distinct_frames": 20,
+        "shared_root": true,
+        "runtime_activated": false,
+        "path": "apps/game-client/assets/pets/redraws/extension-20261013/species_0159/attempt-20/packed.png",
+        "sha256": "cddffdd9e0c34f93e68b51c6ad26c3ae1e37cca1483116e21f45672c09ccea52",
+        "owner_approved": false
+      },
+      "rows": [
+        {
+          "row": 1,
+          "id": "idle",
+          "loop": true,
+          "motion": "Four subtle hover/breathing key poses, seamless return; keep anatomy, colors and root."
+        },
+        {
+          "row": 2,
+          "id": "move",
+          "loop": true,
+          "motion": "Four floating bob/tentacle or twin-tail wave poses; no grounded walking."
+        },
+        {
+          "row": 3,
+          "id": "basic_attack",
+          "loop": false,
+          "motion": "Anticipation, windup, left-facing physical impact, recovery; rich compact effects readable at96px."
+        },
+        {
+          "row": 4,
+          "id": "skill",
+          "loop": false,
+          "motion": "Gather, form, left-facing release, dissipate. Dragon159 claw strike then both tail-end seals shine; dragon155 three gold star lances. FX sources separate, then composite within atlas-safe area."
+        },
+        {
+          "row": 5,
+          "id": "hurt_down",
+          "loop": false,
+          "motion": "Stagger, weaken, collapse, fully flat/prone down; preserve all appendages/weapon. Hold final frame."
+        }
+      ],
+      "base_facing": "left",
+      "rules": [
+        "20 different authored poses, consistent anatomy, palette, weapon, hair and pivot",
+        "One transparent RGBA PNG,4columns5rows,1124x1405,cells281x281,alpha[22,259)",
+        "Idle and move loop only;basic,skill,hurt-down playonce andholdlast",
+        "No video, no video extraction, no duplicate still pasted20times",
+        "Preserve3approvedatlases and152frozenatlases; newatlasneedsownerreview before runtime"
+      ],
+      "visual_notes": [
+        "Thân lớn hơn; hai ấn đuôi nguyên vẹn; đã sửa mảnh móng lẫn ở hàng gục.",
+        "Cánh mới và độ rõ của nhịp vuốt rồi sáng hai ấn vẫn chờ bạn duyệt."
+      ],
+      "strict_visual_accepted": false
+    },
+    "species_0160": {
+      "status": "size_normalized_pending_owner_review",
+      "provenance": "Phimond-authored",
+      "generation_route": "host_image",
+      "source_master": {
+        "path": ".ai/plan/phases/P10-pet-model/extension-20261013/forge-20261015/species_0160/master-proposal.png",
+        "sha256": "768178e5967ec6804b40e4c6f5c6a2e78a960f820af9ed80d4a73d139f636121",
+        "owner_approved": true
+      },
+      "output": {
+        "format": "PNG RGBA",
+        "size": [
+          1124,
+          1405
+        ],
+        "grid": [
+          4,
+          5
+        ],
+        "cell": [
+          281,
+          281
+        ],
+        "alpha_safe_range": [
+          22,
+          259
+        ],
+        "distinct_frames": 20,
+        "shared_root": true,
+        "runtime_activated": false,
+        "path": "apps/game-client/assets/pets/redraws/extension-20261013/species_0160/attempt-22/packed.png",
+        "sha256": "fdb534475996cecf0913f708a58cdeca2906486336ce3d4875f175d35f373faf",
+        "owner_approved": false
+      },
+      "rows": [
+        {
+          "row": 1,
+          "id": "idle",
+          "loop": true,
+          "motion": "Four subtle hover/breathing key poses, seamless return; keep anatomy, colors and root."
+        },
+        {
+          "row": 2,
+          "id": "move",
+          "loop": true,
+          "motion": "Four coordinated walk contacts with near/far leg alternation and tail follow-through."
+        },
+        {
+          "row": 3,
+          "id": "basic_attack",
+          "loop": false,
+          "motion": "Anticipation, windup, left-facing physical impact, recovery; rich compact effects readable at96px."
+        },
+        {
+          "row": 4,
+          "id": "skill",
+          "loop": false,
+          "motion": "Gather, form, left-facing release, dissipate. Dragon159 claw strike then both tail-end seals shine; dragon155 three gold star lances. FX sources separate, then composite within atlas-safe area."
+        },
+        {
+          "row": 5,
+          "id": "hurt_down",
+          "loop": false,
+          "motion": "Stagger, weaken, collapse, fully flat/prone down; preserve all appendages/weapon. Hold final frame."
+        }
+      ],
+      "base_facing": "left",
+      "rules": [
+        "20 different authored poses, consistent anatomy, palette, weapon, hair and pivot",
+        "One transparent RGBA PNG,4columns5rows,1124x1405,cells281x281,alpha[22,259)",
+        "Idle and move loop only;basic,skill,hurt-down playonce andholdlast",
+        "No video, no video extraction, no duplicate still pasted20times",
+        "Preserve3approvedatlases and152frozenatlases; newatlasneedsownerreview before runtime"
+      ],
+      "visual_notes": [
+        "Thân lớn hơn; giữ tóc trắng ánh tím; đòn thường đã sửa thành lấy đà rồi đâm thương trái.",
+        "Chờ duyệt độ mượt bước chân, nét khuôn mặt và hiệu ứng."
+      ],
+      "strict_visual_accepted": false
+    }
+  }
+}
