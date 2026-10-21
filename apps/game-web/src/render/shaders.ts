@@ -68,7 +68,7 @@ varying vec2 vUv; varying float vDepth;
 ${FOG_COMMON}
 void main(){
   vec4 t = texture2D(map, vUv);
-  if (t.a < 0.04) discard;
+  if (t.a < 0.5) discard;
   vec3 c = (t.rgb / t.a) * uTint;
   c = mix(c, uFogColor, clamp(fogAmt(vDepth) * 0.85, 0.0, 0.95));
   gl_FragColor = vec4(c * t.a, t.a);

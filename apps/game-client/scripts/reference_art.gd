@@ -13,8 +13,18 @@ const NPCS = {
 	"arena_master": "level3_1024.png", "forest_guide": "level4_353.png",
 	"beach_guide": "level5_668.png"
 }
+# Explicit reviewed routes. Failed and unreviewed redraws never become runtime
+# art just because their directories exist. Original APK resources stay intact.
+const REFERENCE_SPECIES := ["DocDangNu", "DaoThienDuong"]
+const SHEET_SPECIES := {
+	"DocDangNu": "res://assets/pets/redraws/references/DocDangNu/frames.tres",
+	"DaoThienDuong": "res://assets/pets/redraws/references/DaoThienDuong/frames.tres",
+	"NuVuongBachCot": "res://assets/pets/apk84/NuVuongBachCot/frames.tres",
+	"MaVuongHutMau": "res://assets/pets/apk84/MaVuongHutMau/frames.tres"
+}
 static var cache: Dictionary = {}
 static var actors: Dictionary = {}
+static var sheet_frames: Dictionary = {}
 static var prepared := false
 
 func prepare() -> void:
@@ -57,7 +67,44 @@ func npc_texture(npc_id: String) -> Texture2D:
 	return cache.get(ROOT + "npcs/" + str(NPCS.get(npc_id, "")))
 
 func pet_texture(species_id: String, elapsed: float, action: String = "idle") -> Texture2D:
+	if species_id in SHEET_SPECIES:
+		return sheet_texture(species_id, action, elapsed)
 	return actor_texture(str(SPECIES.get(species_id, "")), action, elapsed)
+
+func sheet_texture(species_id: String, action: String, elapsed: float) -> Texture2D:
+	if not sheet_frames.has(species_id):
+		var path: String = SHEET_SPECIES.get(species_id, "")
+		if not ResourceLoader.exists(path):
+			return null
+		sheet_frames[species_id] = load(path)
+	var frames: SpriteFrames = sheet_frames[species_id]
+	if frames == null:
+		return null
+	var anim_name := action if frames.has_animation(action) else "idle"
+	if not frames.has_animation(anim_name):
+		return null
+	var count := frames.get_frame_count(anim_name)
+	if count == 0:
+		return null
+	var fps := frames.get_animation_speed(anim_name)
+	if fps <= 0.0:
+		fps = 4.0
+	var total_seconds := 0.0
+	for index in range(count):
+		total_seconds += frames.get_frame_duration(anim_name, index) / fps
+	if total_seconds <= 0.0:
+		return frames.get_frame_texture(anim_name, 0)
+	var age := maxf(elapsed, 0.0)
+	if frames.get_animation_loop(anim_name):
+		age = fposmod(age, total_seconds)
+	elif age >= total_seconds:
+		return frames.get_frame_texture(anim_name, count - 1)
+	for index in range(count):
+		var duration := frames.get_frame_duration(anim_name, index) / fps
+		if age < duration:
+			return frames.get_frame_texture(anim_name, index)
+		age -= duration
+	return frames.get_frame_texture(anim_name, count - 1)
 
 func actor_texture(actor: String, action: String, elapsed: float) -> Texture2D:
 	var animations: Dictionary = actors.get(actor, {})

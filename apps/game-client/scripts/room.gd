@@ -37,6 +37,7 @@ var _effects: Array[Dictionary] = []
 var _hit_areas: Array[Dictionary] = []
 var _unit_positions: Dictionary = {}
 var _hp_display: Dictionary = {}
+var _death_started: Dictionary = {}
 var _transition := 0.0
 
 func _ready() -> void:
@@ -103,6 +104,7 @@ func reset_presentation() -> void:
 	_finish_until = 0
 	_effects.clear()
 	_hp_display.clear()
+	_death_started.clear()
 	_battle = {}
 	_battle_id = ""
 	selected_target = ""
@@ -138,6 +140,7 @@ func _select_battle(next: Dictionary) -> void:
 		_finish_until = 0
 		_effects.clear()
 		_hp_display.clear()
+		_death_started.clear()
 		_unit_positions.clear()
 		selected_target = ""
 		for unit in next.get("units", []):
@@ -145,6 +148,9 @@ func _select_battle(next: Dictionary) -> void:
 				selected_target = str(unit.get("id", ""))
 				break
 	_battle = next
+	for unit in next.get("units", []):
+		if int(unit.get("hp", 0)) > 0:
+			_death_started.erase(str(unit.get("id", "")))
 
 func _queue_events(events: Array) -> void:
 	var start := elapsed
@@ -277,7 +283,11 @@ func _draw_world() -> void:
 	_actor(art.actor_texture("Boy", action, elapsed), player, 59, facing_left)
 	for pet in character.get("pets", []):
 		if pet.get("id") == character.get("active_pet_id"):
-			_actor(art.pet_texture(str(pet.get("species_id", "")), elapsed, action), player + Vector2(47 if facing_left else -47, 9), 46, facing_left)
+			var psid := str(pet.get("species_id", ""))
+			var is_sheet := psid in Art.REFERENCE_SPECIES
+			var pet_h := 60 if is_sheet else 46
+			var pet_flipped := (not facing_left) if is_sheet else facing_left
+			_actor(art.pet_texture(psid, elapsed, action), player + Vector2(47 if facing_left else -47, 9), pet_h, pet_flipped)
 	_label(player - Vector2(0, 67), str(character.get("name", "Phimond")), Color("e5ffff"), 12)
 
 func _draw_battle() -> void:
@@ -314,8 +324,12 @@ func _draw_battle() -> void:
 		if id == selected_target and int(unit.get("hp", 0)) > 0:
 			_ring(pos, BLUE, 30)
 			_label(pos - Vector2(0, 94), "▼", BLUE, 17)
-		# Source pets face left: mirror the left-side enemy toward its opponent.
-		_actor(art.pet_texture(str(unit.get("species_id", "")), elapsed, action), pos, 62, enemy, tint)
+		# Source and approved reference pets face left; mirror left-side enemies.
+		var usid := str(unit.get("species_id", ""))
+		var unit_is_sheet := usid in Art.REFERENCE_SPECIES
+		var unit_h := 80 if unit_is_sheet else 62
+		var animation_age := _battle_animation_age(id, action) if usid in Art.SHEET_SPECIES else elapsed
+		_actor(art.pet_texture(usid, animation_age, action), pos, unit_h, enemy, tint)
 		_label(pos - Vector2(0, 76), str(unit.get("name", "Creature")), GOLD if enemy else BLUE, 13)
 		var hp := float(unit.get("hp", 0))
 		var maximum := maxf(float(unit.get("max_hp", 1)), 1)
@@ -327,6 +341,20 @@ func _draw_battle() -> void:
 			_hit_areas.append({"rect": Rect2(pos - Vector2(43, 88), Vector2(86, 121)), "kind": "target", "id": id})
 	if _finish_until > 0:
 		_label(Vector2(size.x * 0.5, size.y * 0.32), str(_battle.get("result", "")).to_upper(), GOLD, 24)
+
+func _battle_animation_age(unit_id: String, action: String) -> float:
+	if action == "die":
+		if not _death_started.has(unit_id):
+			_death_started[unit_id] = elapsed
+		return maxf(0.0, elapsed - float(_death_started[unit_id]))
+	if action == "attack":
+		var age := 0.0
+		for effect in _effects:
+			var effect_age := elapsed - float(effect.start)
+			if effect.get("type") == "skill_cast" and str(effect.get("actor_id", "")) == unit_id and effect_age >= 0.0 and effect_age < 0.5:
+				age = effect_age
+		return age
+	return elapsed
 
 func _draw_effects() -> void:
 	for effect in _effects:
