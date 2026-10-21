@@ -32,158 +32,158 @@ P=physical_dps, M=magic_dps, T=tank, S=support, D=disruptor, H=hybrid. “Missin
 
 | ID | Name | Element | Primary / Secondary | Source prose | Phimond design rationale |
 |---|---|---|---|---|---|
-| species_0001 | Nhện Vong Linh | dark | physical_dps | Present | spectral physical hunter |
-| species_0002 | Chiến Sĩ Đầu Lâu | earth | tank / support | Present | durable bone guard with ally healing |
-| species_0003 | Cua Hắc Ám | dark | physical_dps / tank | Present | dark claw attacker with bulk |
-| species_0004 | Xác Ướp | dark | magic_dps | Present | curse caster; resistance is not a control skill |
-| species_0005 | Xác Chết Ác Ma | earth | tank | Present | slow durable corpse wall |
-| species_0006 | U Linh | dark | magic_dps | Present | spectral vitality caster |
-| species_0007 | Chó Ác Ma | fire | physical_dps | Present | aggressive infernal physical hound |
-| species_0008 | Lửa Yêu | fire | magic_dps / support | Present | flame caster with single-target recovery |
-| species_0009 | Xác Chết Vuốt Sắc | dark | physical_dps | Missing | authored claw attacker; source prose absent |
-| species_0010 | Cá Xương | water | physical_dps / tank | Present | aquatic bone bruiser |
-| species_0011 | Kẻ Đồ Tể | dark | physical_dps | Present | counterattacking butcher |
-| species_0012 | Xác Chết Nửa Người | dark | tank / disruptor | Present | bulky curse controller |
+| species_0001 | Âm Chu | dark | physical_dps | Present | spectral physical hunter |
+| species_0002 | Cốt Binh | earth | tank / support | Present | durable bone guard with ally healing |
+| species_0003 | Hắc Giải | dark | physical_dps / tank | Present | dark claw attacker with bulk |
+| species_0004 | Triền Thi | dark | magic_dps | Present | curse caster; resistance is not a control skill |
+| species_0005 | Cự Thi | earth | tank | Present | slow durable corpse wall |
+| species_0006 | Tử Hồn | dark | magic_dps | Present | spectral vitality caster |
+| species_0007 | Thi Lang | fire | physical_dps | Present | aggressive infernal physical hound |
+| species_0008 | Quỷ Hỏa | fire | magic_dps / support | Present | flame caster with single-target recovery |
+| species_0009 | Lợi Trảo Thi | dark | physical_dps | Missing | authored claw attacker; source prose absent |
+| species_0010 | Cốt Ngư | water | physical_dps / tank | Present | aquatic bone bruiser |
+| species_0011 | Đồ Phu | dark | physical_dps | Present | counterattacking butcher |
+| species_0012 | Tàn Thi | dark | tank / disruptor | Present | bulky curse controller |
 | species_0013 | Ma Ảnh | dark | physical_dps / support | Present | physical shade with cleanse support |
-| species_0014 | Tinh Tinh Xanh Ma Giới | earth | magic_dps / support | Present | forest occult caster with ally buffs |
+| species_0014 | Phệ Hồn Thảo | earth | magic_dps / support | Present | forest occult caster with ally buffs |
 | species_0015 | Tử Thần | dark | physical_dps / support | Present | death-themed attacker with petrification cleanse |
-| species_0016 | Pharaon | dark | magic_dps / disruptor | Present | confusion caster |
-| species_0017 | Rồng Xương Băng | water | physical_dps / tank | Present | ice-themed physical dragon |
-| species_0018 | Nữ Vương Bạch Cốt | dark | magic_dps / support | Missing | authored bone queen with ally protection |
-| species_0019 | Nữ Đế Minh Giới | dark | magic_dps / disruptor | Missing | authored underworld control caster |
-| species_0020 | Thủ Lĩnh Hắc Ám | dark | tank / physical_dps | Missing | authored armored dark commander |
-| species_0021 | Xương Rồng | earth | tank | Missing | authored thorn guard |
-| species_0022 | Yêu Tinh Hoa | light | support / magic_dps | Missing | authored flower healer with magic fallback |
-| species_0023 | Nấm Hoa | earth | disruptor | Missing | authored fungal action inhibition, beyond poison damage |
-| species_0024 | Tinh Tinh Xanh | earth | magic_dps | Missing | authored woodland caster |
+| species_0016 | Sa Thi Vương | dark | magic_dps / disruptor | Present | confusion caster |
+| species_0017 | Băng Cốt Long | water | physical_dps / tank | Present | ice-themed physical dragon |
+| species_0018 | Bạch Cốt Nữ Vương | dark | magic_dps / support | Missing | authored bone queen with ally protection |
+| species_0019 | Minh Giới Nữ Đế | dark | magic_dps / disruptor | Missing | authored underworld control caster |
+| species_0020 | Hắc Kỵ Vương | dark | tank / physical_dps | Missing | authored armored dark commander |
+| species_0021 | Tiên Chưởng | earth | tank | Missing | authored thorn guard |
+| species_0022 | Hoa Tinh | light | support / magic_dps | Missing | authored flower healer with magic fallback |
+| species_0023 | Xích Linh Chi | earth | disruptor | Missing | authored fungal action inhibition, beyond poison damage |
+| species_0024 | Bích Hồ Thảo | earth | magic_dps | Missing | authored woodland caster |
 | species_0025 | Hải Quỳ | water | magic_dps | Present | concealed aquatic group caster |
-| species_0026 | Gỗ Quỷ | earth | physical_dps / tank | Present | strong living-wood bruiser |
-| species_0027 | Quả Mặt Quỷ | dark | disruptor | Missing | authored fright and attack-debuff fruit |
+| species_0026 | Quỷ Mộc | earth | physical_dps / tank | Present | strong living-wood bruiser |
+| species_0027 | Quỷ Diện Quả | dark | disruptor | Missing | authored fright and attack-debuff fruit |
 | species_0028 | Thủy Linh | water | support / magic_dps | Present | team healer with aquatic magic |
-| species_0029 | Trúc Địa Linh | earth | tank / support | Present | bamboo guard with recovery |
-| species_0030 | Hoa Ăn Thịt Người | earth | physical_dps / disruptor | Missing | authored biting plant with binding |
-| species_0031 | Yêu Tinh Dứa | earth | physical_dps | Present | repeated physical damage does not imply Disruptor |
-| species_0032 | Hoa Môi | earth | physical_dps / tank | Present | sturdy flower fighter |
-| species_0033 | Hoa Hướng Dương | light | magic_dps / disruptor | Present | light-themed caster with defense reduction |
-| species_0034 | Bí Đỏ Quỷ Quái | dark | tank / disruptor | Present | pumpkin guard with binding |
-| species_0035 | Trưởng Lão Người Cây | earth | tank / support | Missing | authored elder tree protector |
-| species_0036 | Hoa ăn Thịt Người Ba Đầu | earth | physical_dps / tank | Present | multiheaded plant bruiser |
+| species_0029 | Trúc Linh | earth | tank / support | Present | bamboo guard with recovery |
+| species_0030 | Thực Nhân Hoa | earth | physical_dps / disruptor | Missing | authored biting plant with binding |
+| species_0031 | Kim Thứ Quả | earth | physical_dps | Present | repeated physical damage does not imply Disruptor |
+| species_0032 | Chu Thần Hoa | earth | physical_dps / tank | Present | sturdy flower fighter |
+| species_0033 | Thái Dương Hoa | light | magic_dps / disruptor | Present | light-themed caster with defense reduction |
+| species_0034 | Quỷ Nam Qua | dark | tank / disruptor | Present | pumpkin guard with binding |
+| species_0035 | Mộc Trưởng Lão | earth | tank / support | Missing | authored elder tree protector |
+| species_0036 | Tam Thủ Thực Hoa | earth | physical_dps / tank | Present | multiheaded plant bruiser |
 | species_0037 | Độc Đằng Nữ | earth | disruptor / magic_dps | Missing | authored vine binding and magic; poison alone insufficient |
-| species_0038 | Tinh Linh Bách Hoa | light | support / tank | Present | flower spirit team recovery with defensive emphasis |
-| species_0039 | Rồng Có Cánh | wind | physical_dps | Present | fast winged physical attacker |
-| species_0040 | Rồng Mào Đỏ | fire | physical_dps | Present | red dragon physical offense |
-| species_0041 | Rắn Xương Trắng | earth | magic_dps / tank | Present | intelligent resilient bone serpent |
+| species_0038 | Bách Hoa Tiên Tử | light | support / tank | Present | flower spirit team recovery with defensive emphasis |
+| species_0039 | Dực Long | wind | physical_dps | Present | fast winged physical attacker |
+| species_0040 | Xích Quan Long | fire | physical_dps | Present | red dragon physical offense |
+| species_0041 | Cốt Xà | earth | magic_dps / tank | Present | intelligent resilient bone serpent |
 | species_0042 | Tiểu Ma Long | dark | hybrid / support | Present | physical and magic dragon with minor healing |
-| species_0043 | Rồng Cổ Dài | earth | tank / disruptor | Present | high-vitality dragon with weakening |
-| species_0044 | Rồng Vuốt Xương | earth | physical_dps / disruptor | Present | claw attacker with defense reduction |
+| species_0043 | Thứ Bối Long | earth | tank / disruptor | Present | high-vitality dragon with weakening |
+| species_0044 | Cốt Trảo Long | earth | physical_dps / disruptor | Present | claw attacker with defense reduction |
 | species_0045 | Nham Long | earth | tank / magic_dps | Present | rock dragon with magic support offense |
-| species_0046 | Giáp Long Răng Nhọn | earth | magic_dps | Present | armored magic attacker with self enhancement |
+| species_0046 | Tiêm Nha Long | earth | magic_dps | Present | armored magic attacker with self enhancement |
 | species_0047 | Viêm Long | fire | physical_dps / support | Present | flame dragon with ally combat support |
-| species_0048 | Rồng Sấm | wind | magic_dps | Present | thunder-themed magic dragon |
-| species_0049 | Rồng Phỉ Thúy | earth | disruptor / tank | Present | weakening-focused durable emerald dragon |
-| species_0050 | Hải Long Ba Đầu | water | magic_dps / disruptor | Present | water caster with action control |
-| species_0051 | Long Vương Hắc Ám | dark | hybrid | Missing | authored dark dragon dual damage |
-| species_0052 | Thánh Rồng Thái Cổ | light | hybrid / support | Missing | authored ancient holy dragon with protection |
+| species_0048 | Lôi Long | wind | magic_dps | Present | thunder-themed magic dragon |
+| species_0049 | Phỉ Thúy Long | earth | disruptor / tank | Present | weakening-focused durable emerald dragon |
+| species_0050 | Tam Thủ Hải Long | water | magic_dps / disruptor | Present | water caster with action control |
+| species_0051 | Hắc Long Vương | dark | hybrid | Missing | authored dark dragon dual damage |
+| species_0052 | Thái Cổ Thánh Long | light | hybrid / support | Missing | authored ancient holy dragon with protection |
 | species_0053 | Tiểu Ác Ma | fire | magic_dps | Missing | authored small infernal caster |
-| species_0054 | Yêu Tinh Biển | water | physical_dps / support | Present | fast sea attacker with recovery |
-| species_0055 | Mắt Ác Ma | dark | magic_dps / support | Present | eye caster with healing |
-| species_0056 | Ma Móng Rồng | dark | physical_dps / tank | Present | armored demonic claw fighter |
-| species_0057 | Báo Địa Ngục | fire | hybrid | Present | infernal agile dual attacker |
-| species_0058 | Chó Săn Ác Ma | fire | physical_dps | Missing | authored infernal hunting hound |
-| species_0059 | Tướng Chiến Ma Rồng | fire | physical_dps / tank | Present | resilient demonic warrior |
-| species_0060 | Ma Thú Địa Ngục | earth | tank / physical_dps | Present | counterattacking durable beast |
-| species_0061 | Lợn Ác Ma | dark | magic_dps | Present | broadly balanced demonic caster |
-| species_0062 | Quái Vật Đầu Dê | dark | magic_dps / disruptor | Present | caster reducing enemy physical offense |
-| species_0063 | Ma Tướng Địa Ngục | fire | physical_dps / tank | Present | slow powerful demon general |
-| species_0064 | Ma Muội | dark | disruptor | Present | binding dancer and attack debuffer |
-| species_0065 | Thầy Bói Ác Ma | dark | magic_dps | Present | divination-themed high magic attacker |
+| species_0054 | Hải Yêu | water | physical_dps / support | Present | fast sea attacker with recovery |
+| species_0055 | Tiểu Ma Nhãn | dark | magic_dps / support | Present | eye caster with healing |
+| species_0056 | Long Trảo Quỷ | dark | physical_dps / tank | Present | armored demonic claw fighter |
+| species_0057 | Dạ Xoa | fire | hybrid | Present | infernal agile dual attacker |
+| species_0058 | Ngục Khuyển | fire | physical_dps | Missing | authored infernal hunting hound |
+| species_0059 | Ma Giáp Binh | fire | physical_dps / tank | Present | resilient demonic warrior |
+| species_0060 | Ngục Thú | earth | tank / physical_dps | Present | counterattacking durable beast |
+| species_0061 | Ma Trư | dark | magic_dps | Present | broadly balanced demonic caster |
+| species_0062 | Dương Đầu Ma | dark | magic_dps / disruptor | Present | caster reducing enemy physical offense |
+| species_0063 | Ma Tướng | fire | physical_dps / tank | Present | slow powerful demon general |
+| species_0064 | Ma Cơ | dark | disruptor | Present | binding dancer and attack debuffer |
+| species_0065 | Chiêm Tinh Quỷ | dark | magic_dps | Present | divination-themed high magic attacker |
 | species_0066 | Đại Ác Ma | dark | magic_dps / disruptor | Present | magic attacker with offensive debuffs |
-| species_0067 | Ma Vương Địa Ngục | fire | physical_dps / tank | Present | durable infernal physical king |
+| species_0067 | Địa Ngục Ma Vương | fire | physical_dps / tank | Present | durable infernal physical king |
 | species_0068 | Thanh Long | water | hybrid | Missing | authored azure dragon dual damage |
-| species_0069 | Trụy Thiên Sứ | dark | support / magic_dps | Missing | authored fallen angel protective magic |
-| species_0070 | Thú Móng Lớn | earth | physical_dps | Missing | authored large-claw beast |
-| species_0071 | Ưng Đỏ | fire | physical_dps | Missing | authored red raptor physical offense |
-| species_0072 | Ma Cây | earth | tank / disruptor | Missing | authored living tree guard with roots |
-| species_0073 | Rùa Phú Quý | water | tank / support | Missing | authored turtle guard with ally protection |
-| species_0074 | Sói Ngớ Ngẩn | earth | physical_dps | Missing | authored grounded wolf hunter |
-| species_0075 | Tê Tê Vàng | earth | tank | Missing | authored armored pangolin |
-| species_0076 | Thú Răng Kiếm | earth | physical_dps | Missing | authored saber-tooth attacker |
-| species_0077 | Thiên Nga Cực Địa | water | physical_dps / support | Present | polar bird with ally buffs |
-| species_0078 | Dương Dương Dương | earth | support | Missing | authored flock protector with recovery |
-| species_0079 | Mực Hắc Ám | water | disruptor / magic_dps | Missing | authored ink-based accuracy impairment and magic |
-| species_0080 | Gấu Vết Dao | earth | physical_dps / tank | Missing | authored sturdy scarred bear |
-| species_0081 | Rùa Nham Thạch | fire | tank / support | Present | lava turtle with group buffs |
-| species_0082 | Voi Tai To | earth | physical_dps / tank | Present | high-vitality physical elephant |
-| species_0083 | Cáo Chín Đuôi | fire | magic_dps / support | Present | fox caster with ally resource support |
-| species_0084 | Tinh Tinh Rock | earth | tank / disruptor | Present | vitality-focused ape with binding |
-| species_0085 | Đại Tuyết Quái | water | physical_dps / disruptor | Present | snow attacker with blindness |
-| species_0086 | Gấu Trúc Ma Pháp | light | magic_dps | Present | eastern magic panda |
+| species_0069 | Đọa Thiên Sứ | dark | support / magic_dps | Missing | authored fallen angel protective magic |
+| species_0070 | Kim Chủy Thú | earth | physical_dps | Missing | authored large-claw beast |
+| species_0071 | Xích Ưng | fire | physical_dps | Missing | authored red raptor physical offense |
+| species_0072 | Lâm Yêu | earth | tank / disruptor | Missing | authored living tree guard with roots |
+| species_0073 | Phú Quý Quy | water | tank / support | Missing | authored turtle guard with ally protection |
+| species_0074 | Lam Lang | earth | physical_dps | Missing | authored grounded wolf hunter |
+| species_0075 | Xuyên Sơn Giáp | earth | tank | Missing | authored armored pangolin |
+| species_0076 | Kiếm Xỉ Hổ | earth | physical_dps | Missing | authored saber-tooth attacker |
+| species_0077 | Cực Băng Nga | water | physical_dps / support | Present | polar bird with ally buffs |
+| species_0078 | Miên Dương | earth | support | Missing | authored flock protector with recovery |
+| species_0079 | Mặc Ngư | water | disruptor / magic_dps | Missing | authored ink-based accuracy impairment and magic |
+| species_0080 | Đao Ba Hùng | earth | physical_dps / tank | Missing | authored sturdy scarred bear |
+| species_0081 | Nham Quy | fire | tank / support | Present | lava turtle with group buffs |
+| species_0082 | Cự Nhĩ Tượng | earth | physical_dps / tank | Present | high-vitality physical elephant |
+| species_0083 | Cửu Vĩ Hồ | fire | magic_dps / support | Present | fox caster with ally resource support |
+| species_0084 | Thạch Viên | earth | tank / disruptor | Present | vitality-focused ape with binding |
+| species_0085 | Tuyết Mao Quái | water | physical_dps / disruptor | Present | snow attacker with blindness |
+| species_0086 | Ma Pháp Hùng Miêu | light | magic_dps | Present | eastern magic panda |
 | species_0087 | Bạch Hổ | wind | physical_dps | Missing | authored swift white tiger |
-| species_0088 | Sói Xích Viêm | fire | physical_dps | Missing | authored flame wolf hunter |
-| species_0089 | Chim Ong | wind | physical_dps / support | Present | small bird attacker with recovery |
-| species_0090 | Dơi | dark | disruptor | Missing | authored bat disorientation beyond HP damage |
-| species_0091 | Chim Chào Mào | wind | physical_dps | Missing | authored crested aerial attacker |
-| species_0092 | Chim Sấm | wind | physical_dps / tank | Present | thunder bird with physical group attack |
-| species_0093 | Ưng Trọc Ma | dark | physical_dps / support | Present | swift dark raptor with healing |
-| species_0094 | Chim Cú | wind | magic_dps | Missing | authored owl wind caster |
-| species_0095 | Ưng Trọc | wind | physical_dps | Missing | authored aerial scavenger fighter |
-| species_0096 | Nữ Yêu Minh Ưng | dark | magic_dps | Present | dark harpy caster |
-| species_0097 | Dơi Một Mắt | dark | magic_dps / disruptor | Present | vitality caster with slowing |
-| species_0098 | Quạ Nghĩa Trang | dark | physical_dps / support | Present | grave raven with ally speed support |
+| species_0088 | Xích Viêm Lang | fire | physical_dps | Missing | authored flame wolf hunter |
+| species_0089 | Phong Điểu | wind | physical_dps / support | Present | small bird attacker with recovery |
+| species_0090 | Biên Bức | dark | disruptor | Missing | authored bat disorientation beyond HP damage |
+| species_0091 | Hoa Quan Điểu | wind | physical_dps | Missing | authored crested aerial attacker |
+| species_0092 | Lôi Điểu | wind | physical_dps / tank | Present | thunder bird with physical group attack |
+| species_0093 | Ma Ưng | dark | physical_dps / support | Present | swift dark raptor with healing |
+| species_0094 | Dạ Kiêu | wind | magic_dps | Missing | authored owl wind caster |
+| species_0095 | Thiết Ưng | wind | physical_dps | Missing | authored aerial scavenger fighter |
+| species_0096 | Ưng Yêu | dark | magic_dps | Present | dark harpy caster |
+| species_0097 | Độc Nhãn Bức | dark | magic_dps / disruptor | Present | vitality caster with slowing |
+| species_0098 | Mộ Nha | dark | physical_dps / support | Present | grave raven with ally speed support |
 | species_0099 | Tê Điểu | wind | physical_dps | Present | physical bird; self resistance does not imply Support |
-| species_0100 | Vẹt Độc Vuốt | wind | physical_dps | Missing | authored poison-claw attacker; poison not control |
-| species_0101 | Đại Bàng Sư Tử | wind | physical_dps / disruptor | Present | griffin attacker with slowing |
-| species_0102 | Ưng Hồng Vũ | fire | magic_dps | Present | red-feather caster with self speed |
-| species_0103 | Chim Đại Phì | wind | disruptor / magic_dps | Present | sleep and group slow with magic fallback |
-| species_0104 | Chim Đa Đa | wind | physical_dps / support | Present | bird attacker with speed and silence cleanse |
+| species_0100 | Độc Trảo Anh Vũ | wind | physical_dps | Missing | authored poison-claw attacker; poison not control |
+| species_0101 | Sư Thứu | wind | physical_dps / disruptor | Present | griffin attacker with slowing |
+| species_0102 | Hồng Vũ Ưng | fire | magic_dps | Present | red-feather caster with self speed |
+| species_0103 | Đại Phúc Điểu | wind | disruptor / magic_dps | Present | sleep and group slow with magic fallback |
+| species_0104 | Liệt Phong Ưng | wind | physical_dps / support | Present | bird attacker with speed and silence cleanse |
 | species_0105 | Chu Tước | fire | magic_dps / support | Missing | authored vermilion bird with recovery |
-| species_0106 | Chim Cú Địa Ngục | dark | magic_dps / disruptor | Present | fast infernal owl with slowing |
-| species_0107 | Đại Bàng Vàng | wind | physical_dps | Missing | owner-approved wind eagle physical offense; golden plumage is visual theme |
-| species_0108 | Ong Giết Người | earth | physical_dps | Present | venom attacker; no control role from venom alone |
-| species_0109 | Bọ Cạp Sa Mạc | earth | magic_dps | Present | earth magic scorpion directly described in source |
-| species_0110 | Bọ Ngựa Móng Sắt | earth | tank / physical_dps | Present | armored mantis physical guard |
-| species_0111 | Ốc Sên Hoa | water | tank | Present | heavily defended snail |
-| species_0112 | Nhện Độc | earth | physical_dps | Present | authored mountain spider claw offense |
+| species_0106 | Địa Ngục Quái Điểu | dark | magic_dps / disruptor | Present | fast infernal owl with slowing |
+| species_0107 | Kim Sí Đại Bằng | wind | physical_dps | Missing | owner-approved wind eagle physical offense; golden plumage is visual theme |
+| species_0108 | Độc Phong | earth | physical_dps | Present | venom attacker; no control role from venom alone |
+| species_0109 | Sa Hạt | earth | magic_dps | Present | earth magic scorpion directly described in source |
+| species_0110 | Thiết Đường Lang | earth | tank / physical_dps | Present | armored mantis physical guard |
+| species_0111 | Hoa Loa | water | tank | Present | heavily defended snail |
+| species_0112 | Sơn Chu | earth | physical_dps | Present | authored mountain spider claw offense |
 | species_0113 | Thiên Ngưu | earth | hybrid | Present | explicitly physical and magic beetle |
-| species_0114 | Bọ Cánh Cứng Răng Kiếm | earth | physical_dps / tank | Missing | authored armored saber beetle |
-| species_0115 | Giun Đất Móng Sắt | earth | physical_dps / disruptor | Present | burrowing attacker with max-HP debuff |
-| species_0116 | Châu Chấu Móng Lớn | earth | magic_dps | Present | magic and poison locust; poison not control |
-| species_0117 | Thú Một Sừng Vỏ Cứng | earth | magic_dps / tank | Present | sturdy magic beetle with self vitality |
-| species_0118 | Bướm Hoa Vũ | wind | support / magic_dps | Present | butterfly group healing with magic fallback |
-| species_0119 | Cua Ký Sinh | water | tank / hybrid | Present | aquatic guard with both damage modes |
-| species_0120 | Tôm Hùm Răng Cưa | water | physical_dps / support | Present | lobster with curse cleanse and ally vitality |
-| species_0121 | Hải Mã Bong Bóng | water | magic_dps / disruptor | Present | sea caster with max-HP impairment |
-| species_0122 | Trùng Hốt Lỗ | dark | magic_dps / disruptor | Present | curse insect with misfortune impairment |
-| species_0123 | Trùng Gai Nhọn | earth | physical_dps / disruptor | Present | physical insect with petrification |
-| species_0124 | Trùng Bất Tử Địa Huyệt | earth | tank | Missing | authored durable underground insect |
-| species_0125 | Nhện Phu Nhân | light | magic_dps | Present | vitality-focused spirit-touched caster |
-| species_0126 | Trùng Mẫu Mào Vàng | earth | support / disruptor | Missing | authored brood protector with enemy binding |
-| species_0127 | Quái Vật Rương Báu | earth | physical_dps / support | Present | chest fighter with recovery |
-| species_0128 | Chong Chóng Gió | wind | magic_dps | Present | wind construct area magic |
-| species_0129 | Quái Vật Nham Thạch | fire | physical_dps / tank | Present | lava physical bruiser |
-| species_0130 | Đá Mặt Quỷ | earth | tank | Present | stone guard with petrification resistance |
-| species_0131 | Hư Không Hắc Ám | dark | magic_dps | Present | void caster with speed emphasis reserved for skills |
-| species_0132 | Sách Ma Pháp | light | magic_dps / support | Present | spellbook caster with healing |
+| species_0114 | Kiếm Giáp Trùng | earth | physical_dps / tank | Missing | authored armored saber beetle |
+| species_0115 | Thứ Sa Trùng | earth | physical_dps / disruptor | Present | burrowing attacker with max-HP debuff |
+| species_0116 | Cự Trảo Trùng | earth | magic_dps | Present | magic and poison locust; poison not control |
+| species_0117 | Độc Giác Trùng | earth | magic_dps / tank | Present | sturdy magic beetle with self vitality |
+| species_0118 | Hoa Vũ Điệp | wind | support / magic_dps | Present | butterfly group healing with magic fallback |
+| species_0119 | Ký Cư Giải | water | tank / hybrid | Present | aquatic guard with both damage modes |
+| species_0120 | Cự Ngao Hà | water | physical_dps / support | Present | lobster with curse cleanse and ally vitality |
+| species_0121 | Thủy Bào Hải Mã | water | magic_dps / disruptor | Present | sea caster with max-HP impairment |
+| species_0122 | Ách Vận Trùng | dark | magic_dps / disruptor | Present | curse insect with misfortune impairment |
+| species_0123 | Thạch Thứ Trùng | earth | physical_dps / disruptor | Present | physical insect with petrification |
+| species_0124 | Địa Huyệt Ma Trùng | earth | tank | Missing | authored durable underground insect |
+| species_0125 | Điệp Hậu | light | magic_dps | Present | vitality-focused spirit-touched caster |
+| species_0126 | Kim Quan Chu Hậu | earth | support / disruptor | Missing | authored brood protector with enemy binding |
+| species_0127 | Bảo Tương Yêu | earth | physical_dps / support | Present | chest fighter with recovery |
+| species_0128 | Phong Xa Linh | wind | magic_dps | Present | wind construct area magic |
+| species_0129 | Nham Quái | fire | physical_dps / tank | Present | lava physical bruiser |
+| species_0130 | Quỷ Diện Thạch | earth | tank | Present | stone guard with petrification resistance |
+| species_0131 | Hư Ảnh | dark | magic_dps | Present | void caster with speed emphasis reserved for skills |
+| species_0132 | Ma Đạo Thư | light | magic_dps / support | Present | spellbook caster with healing |
 | species_0133 | Ma Kiếm | dark | physical_dps | Present | magic sword physical attack with self vitality |
-| species_0134 | Con Rối Gạch Đá | earth | physical_dps / disruptor | Present | stone construct with weakening |
-| species_0135 | Thằng Hề Hộp | dark | magic_dps / tank | Present | sturdy magic jack-in-box |
-| species_0136 | Chiến Sĩ Bù Nhìn | earth | disruptor / physical_dps | Missing | authored scarecrow binding and physical fallback |
-| species_0137 | Ma Gương Thủy Tinh | light | magic_dps / disruptor | Present | reflective caster with misfortune impairment |
-| species_0138 | Thú Lớn Dung Nham | fire | physical_dps / disruptor | Present | lava bruiser with group magic-offense debuff |
+| species_0134 | Thạch Khôi Lỗi | earth | physical_dps / disruptor | Present | stone construct with weakening |
+| species_0135 | Tiểu Sửu Hạp | dark | magic_dps / tank | Present | sturdy magic jack-in-box |
+| species_0136 | Thảo Nhân Binh | earth | disruptor / physical_dps | Missing | authored scarecrow binding and physical fallback |
+| species_0137 | Thủy Tinh Ma Kính | light | magic_dps / disruptor | Present | reflective caster with misfortune impairment |
+| species_0138 | Dung Nham Cự Nhân | fire | physical_dps / disruptor | Present | lava bruiser with group magic-offense debuff |
 | species_0139 | Huyền Vũ | water | tank / support | Missing | authored sacred turtle protector |
 | species_0140 | Nhân Sư | earth | hybrid | Missing | authored sphinx dual attacker |
-| species_0141 | Totem Thượng Cổ | earth | support / magic_dps | Missing | authored totem ally buffs with magic fallback |
+| species_0141 | Thượng Cổ Đồ Đằng | earth | support / magic_dps | Missing | authored totem ally buffs with magic fallback |
 | species_0142 | Thần Tướng Cự Ma | earth | physical_dps / tank | Missing | authored giant warrior bruiser |
-| species_0143 | Thần Đèn | wind | magic_dps / support | Missing | authored djinn with ally protection |
+| species_0143 | Đăng Thần | wind | magic_dps / support | Missing | authored djinn with ally protection |
 | species_0144 | Linh Tiên Hoa Hương | light | support / magic_dps | Missing | authored flower spirit healer |
-| species_0145 | Cây Cự Linh | earth | tank / support | Missing | authored great tree protector |
-| species_0146 | Ma Vương Hút Máu | dark | magic_dps | Missing | authored vampiric caster; self recovery not Support |
-| species_0147 | Người Tuyết Viễn Cổ | water | tank / physical_dps | Missing | authored ancient snow guard |
-| species_0148 | Ngựa Bùn Cỏ | earth | physical_dps / support | Missing | authored grass-mud mount with ally protection |
-| species_0149 | Thú Vàng Một Sừng | light | physical_dps | Missing | authored golden unicorn attacker |
-| species_0150 | Đảo Thiên Đường | water | tank / support | Missing | authored island guardian with ally protection |
-| species_0151 | Đại Vương Bọ Cạp | earth | physical_dps / disruptor | Missing | authored scorpion king with binding beyond poison |
-| species_0152 | Chim Ái Thần | light | support / magic_dps | Missing | authored love bird healer with magic fallback |
+| species_0145 | Cự Linh Mộc | earth | tank / support | Missing | authored great tree protector |
+| species_0146 | Huyết Ma Vương | dark | magic_dps | Missing | authored vampiric caster; self recovery not Support |
+| species_0147 | Viễn Cổ Tuyết Nhân | water | tank / physical_dps | Missing | authored ancient snow guard |
+| species_0148 | Vân Mao Đà | earth | physical_dps / support | Missing | authored grass-mud mount with ally protection |
+| species_0149 | Kim Kỳ Lân | light | physical_dps | Missing | authored golden unicorn attacker |
+| species_0150 | Thiên Đường Điểu | water | tank / support | Missing | authored island guardian with ally protection |
+| species_0151 | Độc Hạt Vương | earth | physical_dps / disruptor | Missing | authored scorpion king with binding beyond poison |
+| species_0152 | Ái Thần Điểu | light | support / magic_dps | Missing | authored love bird healer with magic fallback |
 
 ## Numeric and gameplay ledger
 
