@@ -1,0 +1,2 @@
+Gray blue wolf with blue mane, orange muzzle and pale claws preserved. All20 LEFT. Idle breathing, alternate four-legged steps, crouch/paw windup/lunge/recover, crouch/howl/paw release/relax, flinch/sink/collapse/prone. Light composite whole poses after varied column cuts.
+Mechanical PASS. Reviewed all20 static packed poses and original references. Single common nearest-neighbor scale preserves allalpha. Human approved false. Animation playback unverified. Body height below typical guidance possible.

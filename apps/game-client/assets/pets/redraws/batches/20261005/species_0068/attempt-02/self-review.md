@@ -1,0 +1,2 @@
+Green long dragon, yellow horns, pale belly and white whiskers preserved. Idle breathing; articulated four-legged steps; crouch/rear/lunge/recover attack; head/paw focus/raise/release/relax cast; flinch/lower/crouch/prone down. All20 LEFT; no added FX or fragments.
+Mechanical PASS. Reviewed all20 static packed poses and original references. Single common nearest-neighbor scale preserves allalpha. Human approved false. Animation playback unverified. Body height below typical guidance possible.

@@ -1,0 +1,2 @@
+Orange red bird beast, dark blue head/wings, yellow beak/claws preserved. All20 LEFT. Idle breathing, four steps, crouch/windup/lunge/recover, focused claw gesture/raise/release/relax, flinch/sink/collapse/prone. Light composite clean after explicit boundary adjustment.
+Mechanical PASS. Reviewed all20 static packed poses and original references. Single common nearest-neighbor scale preserves allalpha. Human approved false. Animation playback unverified. Body height below typical guidance possible.

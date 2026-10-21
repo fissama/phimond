@@ -1,0 +1,3 @@
+All20 static inspected against original portrait/atlas and approved anchors.
+Original portrait and all8 atlas frames show smaller green face with cream muzzle/eyes/own redcap at lower screen right behind primary head. Generated20 poses replace that second face with mushroom shell. Confirmed by parent original-source review; identity repair required.
+Human approved false. No image/alpha erased. Quota prevents targeted builtin repair.

@@ -1,0 +1,2 @@
+White shaggy round beast, gray underside, beige claws and pink flower preserved. All20 LEFT. Idle/steps; physical crouch/windup/paw lunge/recover; hands focus/raise/release/relax; flinch/sink/collapse/prone. Light composite whole poses.
+Mechanical PASS. Reviewed all20 static packed poses and original references. Single common nearest-neighbor scale preserves allalpha. Human approved false. Animation playback unverified. Body height below typical guidance possible.

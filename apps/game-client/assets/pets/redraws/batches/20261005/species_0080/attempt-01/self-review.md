@@ -1,0 +1,2 @@
+Brown round bear with pale X belly, short ears and limbs preserved. All20 LEFT. Idle breathing, alternating steps, fist windup/punch/recover, focus/raised paw/release/relax, flinch/sink/collapse/prone. Light composite clean after row/attack cut adjustments.
+Mechanical PASS. Reviewed all20 static packed poses and original references. Single common nearest-neighbor scale preserves allalpha. Human approved false. Animation playback unverified. Body height below typical guidance possible.

@@ -1,0 +1,3 @@
+All20 static inspected against original portrait/atlas and approved anchors.
+R3C2 tail and R3C3 lunging paw/body have conflicting horizontal extents. Current explicit rectangle packing splits adjacent limb/body fragments; mechanicalPASS insufficient. Must built-in shrink/recompose whole attack figures, no alpha erasure.
+Human approved false. No image/alpha erased. Quota prevents targeted builtin repair.
