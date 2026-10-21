@@ -1,0 +1,1 @@
+Fresh face/design improved, but wing spread leaves no intact source column gutter near x350.5. Reject source; regenerate compact silhouettes with more whitespace, no deletion of alpha or pose clipping.

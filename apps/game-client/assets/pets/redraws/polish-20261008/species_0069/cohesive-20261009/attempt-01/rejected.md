@@ -1,0 +1,1 @@
+Superseded under owner refinement: the frame set is coherent but feather texture is overly dense and the face occupies too little of the body for intended clarity. Rebuild fresh broader shapes and a deliberate readable face; do not reuse this image as a generation reference.

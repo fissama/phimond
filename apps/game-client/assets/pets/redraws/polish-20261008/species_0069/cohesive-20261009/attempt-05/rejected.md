@@ -1,0 +1,1 @@
+Cast effect is visually clear and compact, but physical attack swords still leave no intact horizontal source gutter near x512. Reject intact-source packing gate. Face/design and magic have improved; spacing must accommodate full sword length without clipping.

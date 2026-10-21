@@ -1,0 +1,1 @@
+Face and body design improved under new owner direction, but source rows have no safe empty gutter near y841 and several poses touch outer edges. Rejected intact-source gate; do not clip or erase alpha to pack.

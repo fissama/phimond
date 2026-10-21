@@ -1,0 +1,1 @@
+Cast charge/release is now plainly visible, but no safe intact source gutter near x561 due to extended spell energy. Reject for source overlap. Compact palm seal and short energy fragments required; preserve clear contrast without a long jet.

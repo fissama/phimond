@@ -1,0 +1,1 @@
+Intact source/mechanical packing pass and fresh insect face, jaw/leg separation improve. Rejected visual behavior: R3C3 basic mandible attack contains green glowing energy beads that belong to Cast. Regenerate only-original-reference full cohesive atlas with no magic in rows1-3; keep clear emerald Cast in row4.
