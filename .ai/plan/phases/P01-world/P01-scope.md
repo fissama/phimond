@@ -1,6 +1,6 @@
 # P01 — Scope và lộ trình phiên bản (v1.0.0 → v1.2.x)
 
-- **Ngày:** 2026-10-21. **Trạng thái:** owner đã chốt hướng trong chat 2026-10-21; chờ owner trả lời §7 trước khi viết code.
+- **Ngày:** 2026-10-21. **Trạng thái:** owner đã chốt hướng và §7 trong chat 2026-10-21; sẵn sàng viết code.
 - **Nguồn:** master spec §6 P01 (P01-R01…R10), P12 (đã đóng 2026-10-17), duyệt art [`hd2d-art-approval-20261021.md`](../../../design/hd2d-art-approval-20261021.md).
 - Thay thế phần lộ trình M0–M8 của [`P01-threejs-migration-plan.md`](P01-threejs-migration-plan.md): `apps/game-web` chỉ là bản thử Three.js, không dùng tiếp (xem §3).
 
@@ -56,7 +56,7 @@ Hồi sinh/kẹt: Bìa Rừng và Rừng Sâu → Bìa Rừng; Hoàng Môn và Q
 
 ## 5. Art cho Đợt A
 
-Chi tiết ở [`hd2d-art-approval-20261021.md`](../../../design/hd2d-art-approval-20261021.md) §3. Tóm tắt: **dựng được cả 5 map ngay**; 4 nhóm cần GPT vẽ lại trước khi phát hành 1.0.0, dùng placeholder trong lúc chờ. Đơn hàng: [`gpt-redo/08-v1.0.0-blockers.md`](../../../design/gpt-redo/08-v1.0.0-blockers.md).
+Chi tiết ở [`hd2d-art-approval-20261021.md`](../../../design/hd2d-art-approval-20261021.md) §3. Tóm tắt: **dựng được cả 5 map ngay**; 4 nhóm cần GPT vẽ lại trước khi phát hành 1.0.0, dùng placeholder trong lúc chờ. Đơn hàng: [`gpt-redo/09-v1.0.0-full-redo-prompt.md`](../../../design/gpt-redo/09-v1.0.0-full-redo-prompt.md) (chặng 1–5 chặn 1.0.0).
 
 ## 6. Sổ nợ (làm sau, có chủ)
 
@@ -69,7 +69,7 @@ Chi tiết ở [`hd2d-art-approval-20261021.md`](../../../design/hd2d-art-approv
 | N05 | Art vẽ lại ngoài Đợt A (tile thành/nông trại/đấu trường/biển, nền xa, NPC trùng còn lại) | Trước 1.1.0 / 1.2.0 |
 | N06 | Rừng Sâu dùng chung kit Bìa Rừng (tối hơn bằng ánh sáng); bộ "rừng sâu" riêng | 1.0.z |
 
-## 7. Cần owner trả lời trước khi code
+## 7. Owner đã chốt (2026-10-21)
 
-1. **Người chơi mới ở Triệu Linh Điện** (phần thuộc P04 làm tối giản): (a) bấm 1 trong 3 bệ đá → xác nhận → nhận pet → dịch chuyển tới Bìa Rừng; hay (b) nói chuyện với Mira, tự nhận 1 pet cố định. Đề xuất (a). Lưu ý: server vẫn chạy 14 loài cũ, nên 3 pet khởi đầu Tiên Chưởng / Sa Hạt / Xích Ưng tạm gắn với 3 loài cũ gần nhất cho tới N02.
-2. Đặt tên thư mục client mới là `apps/client`?
+1. **Người chơi mới ở Triệu Linh Điện:** phương án (a) — bấm 1 trong 3 bệ đá → xác nhận → nhận pet → dịch chuyển một chiều tới Bìa Rừng. Server vẫn chạy 14 loài cũ, nên 3 pet khởi đầu Tiên Chưởng / Sa Hạt / Xích Ưng tạm gắn với 3 loài cũ gần nhất cho tới N02. Trải nghiệm đầy đủ (hội thoại Mira, giới thiệu) thuộc P04 (N03).
+2. **Client mới:** thư mục `apps/client`.
