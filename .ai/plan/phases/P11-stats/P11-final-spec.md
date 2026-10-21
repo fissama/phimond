@@ -327,7 +327,7 @@ combat balance; repeated vectors may require distinct kits in P13.
 
 ## F09 — Owner-approved Normal5 Wind coverage
 
-The owner selected species_0107 (Đại Bàng Vàng) as Wind rather than Light,
+The owner selected species_0107 (Kim Sí Đại Bằng) as Wind rather than Light,
 interpreting golden plumage as appearance. Race Bird, Primary Physical, Star,
 class, recipes and identity remain unchanged. This is Phimond Element authoring;
 no recovered APK Element claim or automatic damage bonus. Normal5 now covers
