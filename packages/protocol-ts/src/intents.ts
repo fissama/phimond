@@ -19,13 +19,15 @@ export interface IntentMap {
   'pet.release': { pet_id: string };
   'pet.strengthen': { pet_id: string; donor_id: string };
   'pet.heal': Record<string, never>;
+  /** v1.0.0: dùng thuốc ngoài trận (mặc định linh thú đang theo). */
+  'item.use': { item_id: string; pet_id?: string };
   'breeding.synthesize': { parent_a: string; parent_b: string; recipe_id: string; blessing: 0 | 1 };
   'recipe.learn': { recipe_id: string };
   'quest.accept': { quest_id: string };
   'quest.claim': { quest_id: string };
   'shop.buy': { item_id: string; quantity: number };
   'arena.challenge': Record<string, never>;
-  'battle.action': { battle_id: string; turn: number; choice: BattleChoice; skill_id?: string; item_id?: string };
+  'battle.action': { battle_id: string; turn: number; choice: BattleChoice; skill_id?: string; item_id?: string; target_id?: string };
 }
 export type IntentOp = keyof IntentMap;
 

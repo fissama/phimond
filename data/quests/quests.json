@@ -1,19 +1,21 @@
 {
-  "first_steps": {
-    "id": "first_steps",
-    "name": "Lối vào rừng sâu",
-    "description": "Đi tới Rừng Sâu Lục Bảo.",
-    "kind": "reach_map",
-    "target": "emerald_forest_deep_woods",
+  "first_battle": {
+    "id": "first_battle",
+    "name": "Đòn đầu tiên",
+    "description": "Chạm vào một linh thú hoang ở Bìa Rừng và thắng trận. Bấm Tự động nếu chưa quen.",
+    "kind": "battle_win",
+    "target": "",
     "count": 1,
-    "gold": 30,
-    "xp": 20,
+    "gold": 20,
+    "xp": 25,
     "items": {
-      "capture_seal": 5
+      "potion": 3
     },
     "recipe": "",
+    "requires": "",
+    "giver": "forest_guide",
     "confidence": "reconstructed",
-    "source": "Phimond reconstruction v1; exact historical value unverified"
+    "source": "Phimond v1.0.0 chuỗi nhiệm vụ Đợt A (thiết kế mới, không phải dữ liệu lịch sử)"
   },
   "first_capture": {
     "id": "first_capture",
@@ -29,12 +31,30 @@
     },
     "recipe": "snail_refinement",
     "confidence": "reconstructed",
-    "source": "Phimond reconstruction v1; exact historical value unverified"
+    "source": "Phimond reconstruction v1; exact historical value unverified",
+    "requires": "first_battle",
+    "giver": "forest_guide"
+  },
+  "meet_rowan": {
+    "id": "meet_rowan",
+    "name": "Lời mời của thợ săn",
+    "description": "Thợ Săn Rowan ở Bìa Rừng dạy kỹ năng cho linh thú. Tới nói chuyện với ông.",
+    "kind": "talk_npc",
+    "target": "bia_skill",
+    "count": 1,
+    "gold": 20,
+    "xp": 20,
+    "items": {},
+    "recipe": "",
+    "requires": "first_capture",
+    "giver": "forest_guide",
+    "confidence": "reconstructed",
+    "source": "Phimond v1.0.0 chuỗi nhiệm vụ Đợt A (thiết kế mới, không phải dữ liệu lịch sử)"
   },
   "field_training": {
     "id": "field_training",
     "name": "Học từ hoang dã",
-    "description": "Thắng ba trận với thú hoang.",
+    "description": "Thắng ba trận với thú hoang ở Bìa Rừng.",
     "kind": "battle_win",
     "target": "",
     "count": 3,
@@ -46,7 +66,98 @@
     },
     "recipe": "",
     "confidence": "reconstructed",
-    "source": "Phimond reconstruction v1; exact historical value unverified"
+    "source": "Phimond reconstruction v1; exact historical value unverified",
+    "requires": "meet_rowan",
+    "giver": "forest_guide"
+  },
+  "first_steps": {
+    "id": "first_steps",
+    "name": "Lối vào rừng sâu",
+    "description": "Đi tới Rừng Sâu Lục Bảo. Thú ở đó mạnh hơn: nên đạt cấp 4–5 trước.",
+    "kind": "reach_map",
+    "target": "emerald_forest_deep_woods",
+    "count": 1,
+    "gold": 30,
+    "xp": 20,
+    "items": {
+      "capture_seal": 5
+    },
+    "recipe": "",
+    "confidence": "reconstructed",
+    "source": "Phimond reconstruction v1; exact historical value unverified",
+    "requires": "field_training",
+    "giver": "forest_guide"
+  },
+  "elder_tamo": {
+    "id": "elder_tamo",
+    "name": "Lời của Cụ Rêu",
+    "description": "Hỏi Cụ Rêu Tamo trong Rừng Sâu về đường tới kinh thành.",
+    "kind": "talk_npc",
+    "target": "sau_free",
+    "count": 1,
+    "gold": 30,
+    "xp": 30,
+    "items": {
+      "ether": 2
+    },
+    "recipe": "",
+    "requires": "first_steps",
+    "giver": "forest_guide",
+    "confidence": "reconstructed",
+    "source": "Phimond v1.0.0 chuỗi nhiệm vụ Đợt A (thiết kế mới, không phải dữ liệu lịch sử)"
+  },
+  "wolf_hunt": {
+    "id": "wolf_hunt",
+    "name": "Sói Rừng Sâu",
+    "description": "Đàn sói làm khách qua đường sợ hãi. Thắng hai trận với Sói Rừng ở Rừng Sâu.",
+    "kind": "battle_win",
+    "target": "wolf",
+    "count": 2,
+    "gold": 60,
+    "xp": 80,
+    "items": {
+      "potion": 3,
+      "capture_seal": 3
+    },
+    "recipe": "",
+    "requires": "elder_tamo",
+    "giver": "sau_guard",
+    "confidence": "reconstructed",
+    "source": "Phimond v1.0.0 chuỗi nhiệm vụ Đợt A (thiết kế mới, không phải dữ liệu lịch sử)"
+  },
+  "to_gate": {
+    "id": "to_gate",
+    "name": "Tới Hoàng Môn",
+    "description": "Đi hết Rừng Sâu về phía đông bắc để tới Hoàng Môn.",
+    "kind": "reach_map",
+    "target": "city_palace_gate",
+    "count": 1,
+    "gold": 40,
+    "xp": 40,
+    "items": {},
+    "recipe": "",
+    "requires": "wolf_hunt",
+    "giver": "sau_guard",
+    "confidence": "reconstructed",
+    "source": "Phimond v1.0.0 chuỗi nhiệm vụ Đợt A (thiết kế mới, không phải dữ liệu lịch sử)"
+  },
+  "report_tessa": {
+    "id": "report_tessa",
+    "name": "Báo cáo Quản Sự",
+    "description": "Thị Vệ Trưởng Karn bảo bạn xuống Quảng Trường gặp Quản Sự Nhiệm Vụ Tessa.",
+    "kind": "talk_npc",
+    "target": "sq_board",
+    "count": 1,
+    "gold": 80,
+    "xp": 60,
+    "items": {
+      "synthesis_soul": 1
+    },
+    "recipe": "",
+    "requires": "to_gate",
+    "giver": "gate_captain",
+    "confidence": "reconstructed",
+    "source": "Phimond v1.0.0 chuỗi nhiệm vụ Đợt A (thiết kế mới, không phải dữ liệu lịch sử)"
   },
   "next_generation": {
     "id": "next_generation",
@@ -62,6 +173,8 @@
     },
     "recipe": "",
     "confidence": "reconstructed",
-    "source": "Phimond reconstruction v1; exact historical value unverified"
+    "source": "Phimond reconstruction v1; exact historical value unverified",
+    "requires": "report_tessa",
+    "giver": "trainer_elin"
   }
 }

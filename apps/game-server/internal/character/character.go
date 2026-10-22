@@ -76,12 +76,14 @@ type Character struct {
 	Inventory   map[string]int         `json:"inventory"`
 	Recipes     []string               `json:"recipes"`
 	Quests      map[string]*QuestState `json:"quests"`
-	ArenaTier   int                    `json:"arena_tier"`
-	Battle      *Battle                `json:"battle"`
-	History     []*Battle              `json:"battle_history,omitempty"`
-	RNG         RNG                    `json:"rng"`
-	Counter     int                    `json:"counter"`
-	Events      []Event                `json:"last_events,omitempty"`
+	// Talks đếm số lần nói chuyện với từng NPC (xoay câu thoại).
+	Talks     map[string]int `json:"talks,omitempty"`
+	ArenaTier int            `json:"arena_tier"`
+	Battle    *Battle        `json:"battle"`
+	History   []*Battle      `json:"battle_history,omitempty"`
+	RNG       RNG            `json:"rng"`
+	Counter   int            `json:"counter"`
+	Events    []Event        `json:"last_events,omitempty"`
 	// Visited là các map đã từng vào (P01: cổng Rừng Sâu đổi đích sau lần đầu tới Hoàng Môn).
 	Visited []string `json:"visited,omitempty"`
 	// SpawnHidden: điểm quái đang ẩn sau trận → thời điểm hiện lại (Unix ms). Quái riêng từng người (P01-R05).

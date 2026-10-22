@@ -91,6 +91,9 @@ func TestQuestRewardsOnlyOnce(t *testing.T) {
 	e := engine(t)
 	c := veteran(e, "t", "Test", 2)
 	atService(e, c)
+	c.Quests["field_training"] = &QuestState{Progress: 3, Claimed: true} // chuỗi Đợt A: first_steps cần field_training
+	lio := e.Data.NPCs["forest_guide"]
+	c.X, c.Y = lio.X+1, lio.Y // nhận ở người giao (Kiểm Lâm Lio)
 	command(t, e, c, "quest.accept", map[string]any{"quest_id": "first_steps"})
 	home := *c
 	c.X, c.Y = 33, 6 // trong cổng sang Rừng Sâu

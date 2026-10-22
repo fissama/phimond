@@ -89,6 +89,22 @@ func (e *Engine) apply(c *Character, op string, d Intent) ([]Event, error) {
 		}
 		e.progress(c, "talk_npc", n.ID)
 		line := n.Dialogue
+		if len(n.Lines) > 0 {
+			// Câu thoại đổi theo tiến độ: câu gốc khi mới gặp, sau đó xoay theo số nhiệm vụ đã xong và số lần ghé.
+			done := 0
+			for _, q := range c.Quests {
+				if q.Claimed {
+					done++
+				}
+			}
+			if i := (done + c.Talks[n.ID]) % (len(n.Lines) + 1); i > 0 {
+				line = n.Lines[i-1]
+			}
+			if c.Talks == nil {
+				c.Talks = map[string]int{}
+			}
+			c.Talks[n.ID]++
+		}
 		if line == "" {
 			line = "Mỗi linh thú mang câu chuyện của mọi thế hệ trước nó."
 		}
@@ -211,6 +227,30 @@ func (e *Engine) apply(c *Character, op string, d Intent) ([]Event, error) {
 		c.Gold -= cost
 		c.Inventory[it.ID] += d.Quantity
 		return []Event{event("item_gain", fmt.Sprintf("%s ×%d", it.Name, d.Quantity)), event("currency_spend", fmt.Sprintf("Spent %d gold", cost))}, nil
+	case "item.use":
+		// Dùng thuốc ngoài trận cho linh thú (mặc định linh thú đang theo).
+		it, ok := e.Data.Items[d.ItemID]
+		if !ok || (it.Kind != "heal" && it.Kind != "mp") || c.Inventory[it.ID] < 1 {
+			return nil, fmt.Errorf("Không dùng được vật phẩm này")
+		}
+		id := d.PetID
+		if id == "" {
+			id = c.ActivePetID
+		}
+		p, err := findPet(c, id)
+		if err != nil {
+			return nil, err
+		}
+		if (it.Kind == "heal" && p.HP >= p.MaxHP) || (it.Kind == "mp" && p.MP >= p.MaxMP) {
+			return nil, fmt.Errorf("%s đang đầy", p.Name)
+		}
+		c.Inventory[it.ID]--
+		if it.Kind == "heal" {
+			p.HP = min(p.MaxHP, p.HP+it.Power)
+		} else {
+			p.MP = min(p.MaxMP, p.MP+it.Power)
+		}
+		return []Event{event("item_spend", "Used "+it.Name)}, nil
 	case "quest.accept":
 		if err := e.near(c, "quest"); err != nil {
 			return nil, err
@@ -221,6 +261,16 @@ func (e *Engine) apply(c *Character, op string, d Intent) ([]Event, error) {
 		}
 		if _, ok = c.Quests[q.ID]; ok {
 			return nil, fmt.Errorf("quest already accepted")
+		}
+		if q.Requires != "" {
+			if prev := c.Quests[q.Requires]; prev == nil || !prev.Claimed {
+				return nil, fmt.Errorf("Hãy hoàn thành nhiệm vụ trước đó")
+			}
+		}
+		if q.Giver != "" {
+			if _, err := e.npcNear(c, q.Giver); err != nil {
+				return nil, fmt.Errorf("Hãy gặp %s để nhận nhiệm vụ này", e.Data.NPCs[q.Giver].Name)
+			}
 		}
 		c.Quests[q.ID] = &QuestState{}
 		if q.Kind == "reach_map" && q.Target == c.MapID {
