@@ -82,20 +82,8 @@ export function Hud({ world, ch }: { world: GameWorld; ch: Character }) {
         </span>
       )}
 
-      <div class="hud-menu">
-        <button class="rbtn pet" data-testid="menu-pets" aria-label="Linh thú" onClick={() => (overlay.value = { kind: 'menu', page: 'pets' })}>
-          <span>Linh thú</span>
-        </button>
-        <button class="rbtn bag" data-testid="menu-bag" aria-label="Túi đồ" onClick={() => (overlay.value = { kind: 'menu', page: 'bag' })}>
-          <span>Túi đồ</span>
-        </button>
-        <button class="rbtn quest" data-testid="menu-quests" aria-label="Nhiệm vụ" onClick={() => (overlay.value = { kind: 'menu', page: 'quests' })}>
-          <span>Nhiệm vụ</span>
-        </button>
-        <button class="rbtn settings" data-testid="menu-open" aria-label="Menu" onClick={() => (overlay.value = { kind: 'menu', page: 'root' })}>
-          <span>Menu</span>
-        </button>
-      </div>
+      <MenuFan />
+      <div class="hud-bar" aria-hidden="true" />
 
       {settings.value.dpad && <DPad world={world} />}
 
@@ -153,6 +141,38 @@ function Minimap({ world, ch }: { world: GameWorld; ch: Character }) {
   return (
     <div class="hud-minimap" data-testid="hud-minimap" aria-label="Bản đồ nhỏ">
       <canvas ref={ref} />
+    </div>
+  );
+}
+
+/** Một nút Menu; bấm mới sổ các nút Linh thú, Túi đồ, Nhiệm vụ, Cài đặt (như bản runtime). */
+function MenuFan() {
+  const [open, setOpen] = useState(false);
+  const go = (page: 'pets' | 'bag' | 'quests' | 'settings') => {
+    setOpen(false);
+    overlay.value = { kind: 'menu', page };
+  };
+  return (
+    <div class={`hud-menu ${open ? 'open' : ''}`}>
+      <button class="rbtn main" data-testid="menu-open" aria-label="Menu" aria-expanded={open} onClick={() => setOpen(!open)}>
+        <span>Menu</span>
+      </button>
+      {open && (
+        <div class="fan">
+          <button class="rbtn pet" data-testid="menu-pets" aria-label="Linh thú" onClick={() => go('pets')}>
+            <span>Linh thú</span>
+          </button>
+          <button class="rbtn bag" data-testid="menu-bag" aria-label="Túi đồ" onClick={() => go('bag')}>
+            <span>Túi đồ</span>
+          </button>
+          <button class="rbtn quest" data-testid="menu-quests" aria-label="Nhiệm vụ" onClick={() => go('quests')}>
+            <span>Nhiệm vụ</span>
+          </button>
+          <button class="rbtn settings" data-testid="menu-settings" aria-label="Cài đặt" onClick={() => go('settings')}>
+            <span>Cài đặt</span>
+          </button>
+        </div>
+      )}
     </div>
   );
 }

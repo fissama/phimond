@@ -21,7 +21,7 @@
 button { font: inherit; color: inherit; cursor: pointer; }
 button:disabled { opacity: 0.45; cursor: default; }
 
-.game { position: absolute; inset: 0; overflow: hidden; }
+.game { position: absolute; inset: 0; overflow: hidden; --bar-h: calc(136px + var(--safe-b)); }
 .game canvas { touch-action: none; }
 
 .panel {
@@ -67,7 +67,7 @@ button:disabled { opacity: 0.45; cursor: default; }
 .hud { position: absolute; inset: 0; pointer-events: none; }
 .hud > * { pointer-events: auto; }
 .hud .toasts, .hud span[data-testid] { pointer-events: none; }
-.hud.in-battle .dpad, .hud.in-battle .hud-actions, .hud.in-battle .hud-menu, .hud.in-battle .chat, .hud.in-battle .hud-map { display: none; }
+.hud.in-battle .hud-bar, .hud.in-battle .dpad, .hud.in-battle .hud-actions, .hud.in-battle .hud-menu, .hud.in-battle .chat, .hud.in-battle .hud-map { display: none; }
 
 /* Mục tiêu hiện tại (dưới ô trạng thái) và bản đồ nhỏ (góc trên phải) */
 .hud-goal { position: absolute; top: calc(86px + var(--safe-t)); left: calc(10px + var(--safe-l)); max-width: min(260px, 42vw); display: grid; gap: 1px; padding: 5px 10px; font-size: 12px; line-height: 1.35; color: var(--text); background: rgba(12, 17, 28, 0.62); border-left: 3px solid var(--gold); border-radius: 0 6px 6px 0; text-shadow: 0 1px 2px #000; }
@@ -75,12 +75,16 @@ button:disabled { opacity: 0.45; cursor: default; }
 .hud-goal span { color: var(--muted); }
 .hud-minimap { position: absolute; top: calc(8px + var(--safe-t)); right: calc(10px + var(--safe-r)); padding: 3px; background: rgba(12, 17, 28, 0.7); border: 2px solid var(--line); border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); line-height: 0; }
 .hud-minimap canvas { display: block; width: 150px; height: auto; max-height: 100px; image-rendering: pixelated; border-radius: 4px; }
+.hud-bar { position: absolute; left: 0; right: 0; bottom: 0; height: var(--bar-h); pointer-events: none !important; background-color: #20231f; border-top: 3px solid #b88a3a; box-shadow: 0 -2px 0 #4a3512, 0 -8px 18px rgba(0, 0, 0, 0.45), inset 0 3px 0 rgba(255, 224, 150, 0.35); }
+.hud-menu .fan { display: flex; flex-direction: column; gap: 18px; margin-top: 18px; animation: fan 0.14s ease-out; }
+@keyframes fan { from { opacity: 0; transform: translateY(-8px); } }
+.hud-menu .rbtn.main { box-shadow: none; }
 .hud-menu { position: absolute; top: calc(124px + var(--safe-t)); right: calc(10px + var(--safe-r)); display: flex; flex-direction: column; gap: 18px; }
 .hud.compact .hud-menu { top: calc(8px + var(--safe-t)); }
 .hud.compact .hud-menu .rbtn span { display: none; }
 .hud-menu .btn { min-width: 92px; font-size: 13px; padding: 6px 10px; }
 
-.dpad { position: absolute; left: calc(14px + var(--safe-l)); bottom: calc(14px + var(--safe-b)); width: 150px; height: 150px; touch-action: none; }
+.dpad { position: absolute; left: calc(14px + var(--safe-l)); bottom: calc(6px + var(--safe-b)); width: 150px; height: 150px; touch-action: none; transform: scale(0.86); transform-origin: left bottom; }
 .dpad button { width: 48px !important; height: 48px !important; }
 .dpad .up { left: 51px !important; top: 2px !important; } .dpad .down { left: 51px !important; bottom: 2px !important; top: auto !important; }
 .dpad .left { left: 2px !important; top: 51px !important; } .dpad .right { right: 2px !important; left: auto !important; top: 51px !important; }
@@ -103,7 +107,7 @@ button:disabled { opacity: 0.45; cursor: default; }
 
 .chat {
   position: absolute; left: 50%; transform: translateX(-50%); bottom: calc(8px + var(--safe-b));
-  width: min(480px, calc(100vw - 2 * 190px)); min-width: 240px; padding: 4px 6px 6px; font-size: 12px;
+  width: min(520px, calc(100vw - 2 * 200px)); min-width: 240px; padding: 4px 6px 6px; font-size: 12px;
   transition: opacity 0.6s; opacity: 0.95;
   background: rgba(9, 15, 30, 0.7); border: 1px solid var(--line-soft); border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
 }
@@ -172,6 +176,7 @@ button:disabled { opacity: 0.45; cursor: default; }
   .battle .log { height: 60px; }
 }
 @media (max-width: 520px) {
+  .game { --bar-h: calc(120px + var(--safe-b)); }
   .chat { display: none; }
   .hud-map { top: calc(78px + var(--safe-t)); }
 }
@@ -187,7 +192,9 @@ button:disabled { opacity: 0.45; cursor: default; }
   .hud-menu .rbtn span { display: none; }
   .round.a { width: 78px !important; height: 74px !important; font-size: 12px; }
   .round.b { width: 62px !important; height: 58px !important; }
-  .dpad { transform: scale(0.88); transform-origin: left bottom; }
+  .game { --bar-h: calc(96px + var(--safe-b)); }
+  .dpad { transform: scale(0.62); transform-origin: left bottom; }
+  .chat.open .lines { height: 56px; }
   .chat.min .lines { height: 30px; }
 }
 /* Màn hình hẹp (điện thoại dựng đứng): tên map xuống dưới bản đồ nhỏ, mục tiêu gọn lại. */

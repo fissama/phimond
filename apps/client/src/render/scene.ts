@@ -4,10 +4,12 @@ import { PRESETS, type Quality } from '../state/settings.ts';
 import { asset, hd2dUrl, textures } from './assets.ts';
 import { animate, blobShadow, propSprite } from './sprites.ts';
 import { spawnAmbient, type Ambient } from './ambient.ts';
+import type { Light } from './daylight.ts';
+import { makeAtmosphere, type Lamp } from './atmosphere.ts';
 
 /** Ánh sáng/không khí theo chủ đề map. */
-export const THEMES: Record<string, { sky: number; fog: [number, number, number] | null; ambient: number; sun: number; sunColor: number; tint: number; ground: number }> = {
-  hall: { sky: 0x1a1410, fog: null, ambient: 0.75, sun: 0.9, sunColor: 0xffd9a8, tint: 0xfff0dc, ground: 0xffffff },
+export const THEMES: Record<string, { indoor?: boolean; sky: number; fog: [number, number, number] | null; ambient: number; sun: number; sunColor: number; tint: number; ground: number }> = {
+  hall: { indoor: true, sky: 0x1a1410, fog: null, ambient: 0.75, sun: 0.9, sunColor: 0xffd9a8, tint: 0xfff0dc, ground: 0xffffff },
   forest: { sky: 0x9cc6e8, fog: [0xb9d8c4, 26, 60], ambient: 1.0, sun: 1.3, sunColor: 0xfff2d6, tint: 0xffffff, ground: 0xffffff },
   deep_forest: { sky: 0x4f6b58, fog: [0x5d7a66, 14, 44], ambient: 0.7, sun: 0.85, sunColor: 0xd6f0d0, tint: 0xc8dcc4, ground: 0xb5c9b0 },
   city: { sky: 0x8ec3ef, fog: [0xc4dcef, 30, 70], ambient: 1.0, sun: 1.25, sunColor: 0xfff4e2, tint: 0xffffff, ground: 0xffffff },
@@ -129,6 +131,8 @@ export interface BuiltScene {
   /** Đối tượng bấm được (bệ đá, trụ) — userData {kind, id}. */
   pickables: THREE.Object3D[];
   update(dt: number, player?: THREE.Vector3 | null): void;
+  /** Đèn lồng/tia nắng/bụi theo giờ trong ngày. */
+  setLight(l: Light): void;
   dispose(): void;
 }
 
@@ -139,6 +143,7 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
   const T = THEMES[theme]!;
   const group = new THREE.Group();
   const animated: THREE.Object3D[] = [];
+  const lamps: Lamp[] = [];
   const pickables: THREE.Object3D[] = [];
   const disposables: { dispose(): void }[] = [];
   const W = map.width;
@@ -242,6 +247,12 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
       if (decor && hash(x, y) > P.decor) continue;
       const pick = /[1-3]/.test(ch) ? { kind: 'pedestal', index: Number(ch) - 1 } : ch === 'O' ? { kind: 'pillar' } : undefined;
       place(opts[Math.floor(hash(x, y) * opts.length)]!, x, y, { decor, jitter: decor || ch === 'b' || ch === 'r', ...(pick ? { pick } : {}) });
+      if (ch === 'L' && P.fx) {
+        const lid = opts[0]!;
+        const a = asset(lid);
+        const h = a ? a.px[1] / 128 : 2;
+        lamps.push({ x: x + 0.5, y: h * (theme === 'hall' ? 0.5 : 0.92), z: y + 0.5, size: theme === 'hall' ? 1.7 : 3.2, color: theme === 'hall' ? 0xffa850 : 0xffc878 });
+      }
       if (ch === 'A') place(['market-produce', 'market-cloth', 'market-weapons'][Math.floor(hash(y, x) * 3)]!, x, y + 0.35);
       if (ch === 'F' && P.fx) propJobs.push(fx('fountain-water', x + 0.5, y + 0.3, 1.2));
       if (ch === 'O' && P.fx) propJobs.push(fx('city-teleport-ring', x + 0.5, y + 0.6, 0.05));
@@ -547,12 +558,17 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
   const ambient: Ambient[] = [];
   if (theme === 'city') void spawnAmbient(map, group, P.shadows === 'blob', P.decor).then((a) => ambient.push(...a)).catch(() => {});
 
+  const atmo = P.fx ? makeAtmosphere(group, { theme, W, H, lamps, shafts: theme === 'forest' || theme === 'deep_forest' || theme === 'city', motes: Math.round((theme === 'hall' ? 40 : 70) * P.decor) }) : null;
   let time = 0;
   return {
     group,
     pickables,
+    setLight(l: Light) {
+      atmo?.setLight(l);
+    },
     update(dt: number, player?: THREE.Vector3 | null) {
       time += dt;
+      atmo?.update(dt);
       for (const a of ambient) a.update(dt, player ?? null);
       for (const o of animated) {
         animate(o, dt);
@@ -570,6 +586,7 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
         }
       });
       disposables.forEach((d) => d.dispose());
+      atmo?.dispose();
     },
   };
 }

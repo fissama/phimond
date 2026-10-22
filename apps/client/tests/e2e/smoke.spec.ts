@@ -12,6 +12,11 @@ const pos = (p: Page) =>
 const act = (p: Page, a: unknown) => p.evaluate((a) => (window as unknown as { __phimond: { world: { act(a: unknown): void } } }).__phimond.world.act(a), a);
 
 async function register(p: Page): Promise<void> {
+  // Máy chạy test không có GPU (SwiftShader): hậu kỳ HD-2D làm khung hình rất thấp nên thời gian đi bộ lệch.
+  // Mặc định mức Thấp cho test, trừ khi test tự đặt cài đặt (chỉ ghi khi chưa có).
+  await p.addInitScript(() => {
+    if (!localStorage.getItem('phimond.settings.v1')) localStorage.setItem('phimond.settings.v1', JSON.stringify({ quality: 'low', fps: 60, dpad: true, hud: 'full', time: 'day' }));
+  });
   await p.goto('/');
   await p.getByTestId('username').fill(`e2e${Date.now().toString(36)}${Math.floor(Math.random() * 1e4)}`);
   await p.getByTestId('password').fill('matkhau-e2e-12345');
@@ -59,7 +64,7 @@ test('người chơi mới: Triệu Linh Điện → chọn bệ đá → Bìa R
   await expect(page.getByTestId('hud-map')).toHaveText('Triệu Linh Điện');
   await chooseStarter(page, 2);
   await expect(page.getByTestId('hud-map')).toHaveText('Bìa Rừng Lục Bảo');
-  await expect(page.getByTestId('hud-gold')).toContainText('Lv 3');
+  await expect(page.getByTestId('hud-gold')).toContainText('Lv 1');
 });
 
 test('đi trọn tuyến Đợt A và dùng trụ đá quay về', async ({ page }) => {

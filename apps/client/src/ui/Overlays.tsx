@@ -177,7 +177,7 @@ function Settings() {
   return (
     <>
       <h2>Cài đặt · Đồ họa</h2>
-      <p class="muted">Mức thấp giảm độ phân giải, tắt bóng đổ và hiệu ứng phụ, bớt trang trí. Quái, NPC và thông tin trận giữ nguyên ở mọi mức.</p>
+      <p class="muted">Thấp: giảm độ phân giải, tắt bóng đổ, hiệu ứng và hậu kỳ. Trung bình: thêm chỉnh màu theo giờ, làm mờ dải trên/dưới kiểu HD-2D, đèn và tia nắng. Cao: thêm bloom và bóng thật. Quái, NPC và thông tin trận giữ nguyên ở mọi mức.</p>
       <div class="list">
         <div>
           <div class="muted">Chất lượng</div>
@@ -211,6 +211,14 @@ function Settings() {
           <div class="seg" data-testid="hud-density">
             <button class={`btn ${s.hud === 'full' ? 'on' : ''}`} data-testid="hud-full" onClick={() => updateSettings({ hud: 'full' })}>Đầy đủ</button>
             <button class={`btn ${s.hud === 'compact' ? 'on' : ''}`} data-testid="hud-compact" onClick={() => updateSettings({ hud: 'compact' })}>Gọn</button>
+          </div>
+        </div>
+        <div>
+          <div class="muted">Thời gian trong game (ánh sáng ngoài trời)</div>
+          <div class="seg" data-testid="time-mode">
+            {([['auto', 'Theo giờ máy'], ['day', 'Ban ngày'], ['dusk', 'Hoàng hôn'], ['night', 'Ban đêm']] as const).map(([k, label]) => (
+              <button key={k} class={`btn ${s.time === k ? 'on' : ''}`} data-testid={`time-${k}`} onClick={() => updateSettings({ time: k })}>{label}</button>
+            ))}
           </div>
         </div>
         {settingsVolatile.value && <p class="muted">Trình duyệt không cho lưu cài đặt; lựa chọn chỉ giữ tới khi tải lại trang.</p>}

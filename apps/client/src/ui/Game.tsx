@@ -80,7 +80,7 @@ export function Game() {
       <div
         ref={host}
         data-testid="world"
-        style={{ position: 'absolute', inset: 0 }}
+        style={{ position: 'absolute', inset: 0, bottom: 'var(--bar-h)' }}
         onPointerDown={(e) => (start.current = { x: e.clientX, y: e.clientY, t: performance.now() })}
         onPointerUp={(e) => {
           const s = start.current;

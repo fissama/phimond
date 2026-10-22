@@ -1,6 +1,8 @@
 import * as THREE from 'three';
 import type { MapDef, Npc, WildSpawn } from '@phimond/protocol';
-import { PRESETS, type FpsCap, type Quality } from '../state/settings.ts';
+import { PRESETS, settings, type FpsCap, type Quality } from '../state/settings.ts';
+import { INDOOR, lightAt, type Light } from './daylight.ts';
+import { Post } from './post.ts';
 import { asset, textures } from './assets.ts';
 import { buildScene, THEMES, type BuiltScene } from './scene.ts';
 import { blobShadow, CharacterSprite, PetSprite, propSprite } from './sprites.ts';
@@ -39,10 +41,15 @@ export class Engine {
   private playerBlob: THREE.Mesh | null = null;
   private readonly npcs = new Map<string, Actor & { sprite: CharacterSprite | THREE.Object3D }>();
   private readonly spawns = new Map<string, Actor & { sprite: PetSprite; base: Cell; t: number }>();
+  /** Thần thú 5★ trưng bày trên bệ đá (chỉ là mô hình, không nhận được). */
+  private readonly showcases: { root: THREE.Group; sprite: PetSprite; t: number; baseY: number }[] = [];
   private readonly labels: HTMLDivElement;
   private readonly target = new THREE.Vector3();
   private readonly ray = new THREE.Raycaster();
   private readonly resizeObs: ResizeObserver;
+  private post: Post | null = null;
+  private lightClock = 0;
+  private indoor = false;
   private raf = 0;
   private last = 0;
   private cap: FpsCap = 60;
@@ -77,6 +84,13 @@ export class Engine {
     this.renderer.shadowMap.enabled = P.shadows === 'real';
     this.renderer.shadowMap.type = THREE.PCFShadowMap;
     this.sun.castShadow = P.shadows === 'real';
+    if (P.post === 'none') {
+      this.post?.dispose();
+      this.post = null;
+    } else {
+      this.post ??= new Post(this.renderer, this.scene, this.camera);
+      this.post.setQuality(q);
+    }
     if (P.shadowMapSize) this.sun.shadow.mapSize.set(P.shadowMapSize, P.shadowMapSize);
     this.resize();
   }
@@ -115,6 +129,8 @@ export class Engine {
     const blob = PRESETS[this.quality].shadows === 'blob';
     this.world = await buildScene(map, this.quality);
     this.scene.add(this.world.group);
+    this.indoor = T.indoor === true;
+    this.updateLight(0, true);
 
     if (!this.player) {
       this.player = await CharacterSprite.create(playerAsset, { castShadow: real });
@@ -150,6 +166,20 @@ export class Engine {
     );
 
     await Promise.all(map.wild_spawns.map((s) => this.addSpawn(s, blob, real)));
+    await Promise.all(
+      map.pedestals.map(async (p) => {
+        const display = (p as { display?: string }).display;
+        if (!display) return;
+        const sprite = await PetSprite.create(display, { castShadow: real, scale: 0.95 });
+        const root = new THREE.Group();
+        root.add(sprite.root);
+        const baseY = 0.62;
+        root.position.set(p.x + 0.5, baseY, p.y + 0.5);
+        root.traverse((o) => (o.userData = { ...o.userData, kind: 'pedestal', index: p.index }));
+        this.scene.add(root);
+        this.showcases.push({ root, sprite, t: Math.random() * 6, baseY });
+      }),
+    );
   }
 
   private async addSpawn(s: WildSpawn, blob: boolean, real: boolean): Promise<void> {
@@ -182,6 +212,17 @@ export class Engine {
     }
     this.npcs.clear();
     this.spawns.clear();
+    for (const c of this.showcases) {
+      this.scene.remove(c.root);
+      c.root.traverse((o) => {
+        const m = o as THREE.Mesh;
+        if (m.isMesh) {
+          m.geometry.dispose();
+          (m.material as THREE.Material).dispose();
+        }
+      });
+    }
+    this.showcases.length = 0;
     textures.unpinAll();
   }
 
@@ -208,6 +249,7 @@ export class Engine {
     const objs: THREE.Object3D[] = [];
     for (const a of this.npcs.values()) objs.push(a.root);
     for (const a of this.spawns.values()) if (a.root.visible) objs.push(a.root);
+    for (const c of this.showcases) objs.push(c.root);
     if (this.world) objs.push(...this.world.pickables);
     const hits = this.ray.intersectObjects(objs, true);
     for (const h of hits) {
@@ -240,6 +282,7 @@ export class Engine {
     cancelAnimationFrame(this.raf);
     this.unloadMap();
     this.resizeObs.disconnect();
+    this.post?.dispose();
     this.renderer.dispose();
     this.renderer.domElement.remove();
     this.labels.remove();
@@ -262,9 +305,18 @@ export class Engine {
       s.sprite.setRow(Math.abs(Math.cos(s.t * 0.7)) > 0.3 ? 'move' : 'idle');
       s.sprite.update(dt, Math.cos(s.t * 0.7) > 0);
     }
+    for (const c of this.showcases) {
+      // Thần thú lơ lửng nhẹ trên bệ.
+      c.t += dt;
+      c.root.position.y = c.baseY + Math.sin(c.t * 1.6) * 0.05;
+      c.sprite.setRow('idle');
+      c.sprite.update(dt, false);
+    }
     this.world?.update(dt, this.playerRoot.position);
     this.updateCamera(Math.min(1, dt * 6));
-    this.renderer.render(this.scene, this.camera);
+    this.updateLight(dt);
+    if (this.post) this.post.render(dt);
+    else this.renderer.render(this.scene, this.camera);
     this.updateLabels();
   }
 
@@ -321,5 +373,19 @@ export class Engine {
     this.renderer.domElement.style.height = '100%';
     this.camera.aspect = w / h;
     this.camera.updateProjectionMatrix();
+    this.post?.setSize(w, h, this.renderer.getPixelRatio());
   }
+
+  /** Cập nhật ánh sáng theo giờ (mỗi giây một lần): hậu kỳ + đèn/tia nắng trong cảnh. */
+  private updateLight(dt: number, force = false): void {
+    this.lightClock -= dt;
+    if (this.lightClock > 0 && !force) return;
+    this.lightClock = 1;
+    const l: Light = this.indoor ? INDOOR : lightAt(settings.value.time);
+    this.post?.setLight(l);
+    this.world?.setLight(l);
+    this.light = l;
+  }
+  /** Ánh sáng hiện tại (cho debug/test). */
+  light: Light = INDOOR;
 }

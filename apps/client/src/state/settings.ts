@@ -1,4 +1,5 @@
 import { signal } from '@preact/signals';
+import type { TimeMode } from '../render/daylight.ts';
 
 export type Quality = 'low' | 'medium' | 'high';
 export type FpsCap = 30 | 60;
@@ -9,6 +10,8 @@ export interface Settings {
   dpad: boolean;
   /** Mật độ HUD: 'full' có mục tiêu, bản đồ nhỏ, chat; 'compact' chỉ giữ điều khiển và trạng thái. */
   hud: 'full' | 'compact';
+  /** Thời gian trong game: theo giờ máy hoặc cố định ngày/hoàng hôn/đêm. */
+  time: TimeMode;
 }
 
 /**
@@ -30,15 +33,17 @@ export const PRESETS: Record<Quality, {
   /** Nền xa và lớp sương. */
   backdrop: boolean;
   antialias: boolean;
+  /** Hậu kỳ HD-2D: none = không; grade = tilt-shift + chỉnh màu theo giờ + tối góc; full = thêm bloom. */
+  post: 'none' | 'grade' | 'full';
   textureBudgetMB: number;
 }> = {
-  low: { label: 'Thấp', renderScale: 0.75, maxPixelRatio: 1, shadows: 'none', shadowMapSize: 0, decor: 0.35, fx: false, backdrop: true, antialias: false, textureBudgetMB: 96 },
-  medium: { label: 'Trung bình', renderScale: 1, maxPixelRatio: 1.5, shadows: 'blob', shadowMapSize: 0, decor: 0.8, fx: true, backdrop: true, antialias: false, textureBudgetMB: 160 },
-  high: { label: 'Cao', renderScale: 1, maxPixelRatio: 2, shadows: 'real', shadowMapSize: 2048, decor: 1, fx: true, backdrop: true, antialias: true, textureBudgetMB: 256 },
+  low: { label: 'Thấp', renderScale: 0.75, maxPixelRatio: 1, shadows: 'none', shadowMapSize: 0, decor: 0.35, fx: false, backdrop: true, antialias: false, post: 'none', textureBudgetMB: 96 },
+  medium: { label: 'Trung bình', renderScale: 1, maxPixelRatio: 1.5, shadows: 'blob', shadowMapSize: 0, decor: 0.8, fx: true, backdrop: true, antialias: false, post: 'grade', textureBudgetMB: 160 },
+  high: { label: 'Cao', renderScale: 1, maxPixelRatio: 2, shadows: 'real', shadowMapSize: 2048, decor: 1, fx: true, backdrop: true, antialias: true, post: 'full', textureBudgetMB: 256 },
 };
 
 const KEY = 'phimond.settings.v1';
-const DEFAULTS: Settings = { quality: 'medium', fps: 60, dpad: true, hud: 'full' };
+const DEFAULTS: Settings = { quality: 'medium', fps: 60, dpad: true, hud: 'full', time: 'auto' };
 
 function load(): Settings {
   try {
@@ -50,6 +55,7 @@ function load(): Settings {
       fps: v.fps === 30 ? 30 : 60,
       dpad: v.dpad !== false,
       hud: v.hud === 'compact' ? 'compact' : 'full',
+      time: v.time === 'day' || v.time === 'dusk' || v.time === 'night' ? v.time : 'auto',
     };
   } catch {
     return { ...DEFAULTS };
