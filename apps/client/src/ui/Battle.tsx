@@ -8,6 +8,15 @@ import { FrameBar } from './Hud.tsx';
 import { battleResultOpen, pushLog } from '../state/ui.ts';
 import { damageGlyphs, iconFor, uiUrl } from './skin.ts';
 
+/** Tên hiển thị của đơn vị; quái cùng tên (encounter 2–3 quái giống nhau) có hậu tố A/B/C theo thứ tự đội hình. */
+function labelOf(units: BattleT['units'], id?: string): string {
+  const u = units.find((x) => x.id === id);
+  if (!u) return '';
+  const base = viName(u.name);
+  const same = units.filter((x) => x.side === u.side && viName(x.name) === base);
+  return same.length > 1 ? `${base} ${String.fromCharCode(65 + same.indexOf(u))}` : base;
+}
+
 type Choice = 'attack' | 'skill' | 'capture' | 'defend' | 'item' | 'auto' | 'flee';
 const BANNER: Record<string, string> = { win: 'battle_win_banner', loss: 'battle_loss_banner', capture: 'battle_capture_banner' };
 const RESULT: Record<string, string> = { win: 'Chiến thắng!', loss: 'Thất bại', capture: 'Bắt thành công!', flee: 'Đã chạy thoát', draw: 'Hòa' };
@@ -23,6 +32,9 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
   const [acting, setActing] = useState<string | null>(null);
   const [floats, setFloats] = useState<{ id: number; unit: string; text: string; heal: boolean }[]>([]);
   const [menu, setMenu] = useState<'skill' | 'item' | null>(null);
+  // Chế độ chọn mục tiêu (khi còn ≥2 quái sống): hành động chờ xác nhận bằng cách chạm vào quái.
+  const [pending, setPending] = useState<{ choice: Choice; extra: { skill_id?: string } } | null>(null);
+  const [aim, setAim] = useState<string | null>(null);
   const [sending, setSending] = useState(false);
   const [playing, setPlaying] = useState(false);
   const last = useRef<BattleT | null>(null);
@@ -48,7 +60,7 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
       session.onBatch((b) => {
         const battle = b.character.battle ?? (b.presentation?.completed_battle as BattleT | undefined) ?? null;
         if (!battle || b.events.length === 0) return;
-        const unitName = (id?: string) => viName(battle.units.find((u) => u.id === id)?.name ?? '');
+        const unitName = (id?: string) => labelOf(battle.units, id);
         const evs = b.events as BattleEvent[];
         setPlaying(true);
         evs.forEach((e, i) =>
@@ -111,19 +123,28 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
   }, [lines]);
   useEffect(() => {
     if (live && !startLv.current) startLv.current = { pet: chRef.current.pets.find((p) => p.id === chRef.current.active_pet_id)?.level ?? 0, me: chRef.current.level, id: live.id };
-    if (live && lines.length === 0) setLines([`Một linh thú hoang xuất hiện!`]);
+    if (live && lines.length === 0) {
+      const n = live.units.filter((u) => u.side === 'enemy').length;
+      setLines([n > 1 ? `${n} linh thú hoang xuất hiện!` : `Một linh thú hoang xuất hiện!`]);
+    }
+    setPending(null);
+    setAim(null);
     if (!live && !finished) setLines([]);
   }, [live?.id]);
 
   if (!view) return null;
   const me = view.units.find((u) => u.side === 'player');
-  const foe = view.units.find((u) => u.side === 'enemy');
+  const foes = view.units.filter((u) => u.side === 'enemy');
+  const allies = view.units.filter((u) => u.side === 'player');
+  const aliveFoes = foes.filter((u) => u.hp > 0);
+  const foe = foes[0];
   const pet = ch.pets.find((p) => p.id === me?.id);
   const busy = sending || playing || !live;
 
-  const act = async (choice: Choice, extra: { skill_id?: string; item_id?: string } = {}) => {
+  const act = async (choice: Choice, extra: { skill_id?: string; item_id?: string; target_id?: string } = {}) => {
     if (!live) return;
     setMenu(null);
+    setPending(null);
     setSending(true);
     await session.send('battle.action', { battle_id: live.id, turn: live.turn, choice, ...extra }).then((r) => {
       if (!r.ok) setLines((l) => [...l, r.message]);
@@ -131,6 +152,19 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
     setSending(false);
   };
 
+  // Hành động nhắm 1 mục tiêu: một quái sống → gửi thẳng; nhiều quái → vào chế độ chọn (mặc định mục tiêu lần trước).
+  const aimed = aim && aliveFoes.some((u) => u.id === aim) ? aim : aliveFoes[0]?.id;
+  const begin = (choice: Choice, extra: { skill_id?: string } = {}) => {
+    if (aliveFoes.length <= 1) return void act(choice, { ...extra, target_id: aliveFoes[0]?.id });
+    setMenu(null);
+    setMore(false);
+    setPending({ choice, extra });
+  };
+  const pick = (id: string) => {
+    if (!pending) return;
+    setAim(id);
+    void act(pending.choice, { ...pending.extra, target_id: id });
+  };
   const bgKey = ch.map_id.includes('deep') ? 'deep_forest' : ch.map_id.includes('gate') ? 'gate' : ch.map_id.startsWith('city') ? 'city' : ch.map_id.includes('hall') ? 'hall' : 'forest';
   const lvOf = (u: typeof foe) => (u as unknown as { level?: number } | undefined)?.level;
   const seals = ch.inventory['capture_seal'] ?? 0;
@@ -141,7 +175,7 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
     u && (
       <div class="foe-plate" data-testid="battle-enemy">
         <div class="nm">
-          <b>{viName(u.name)}</b>
+          <b>{labelOf(view.units, u.id)}</b>
           <em>{lvOf(u) ? `Lv ${lvOf(u)}` : 'Hoang dã'}</em>
         </div>
         <div class="fb">
@@ -159,16 +193,18 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
       </div>
     );
 
-  const myPlate = (u: typeof me) =>
-    u && (
-      <div class="my-plate hud-card" data-testid="battle-player">
+  const myPlate = (u: typeof me, idx: number) => {
+    if (!u) return null;
+    const pet = ch.pets.find((p) => p.id === u.id);
+    return (
+      <div class="my-plate hud-card" data-testid="battle-player" key={u.id} style={{ top: `calc(${8 + idx * 82}px + var(--safe-t))` }}>
         <div class="ring">
           <PetPortrait species={u.species_id} size={46} />
           {pet && <div class="badge">{pet.level}</div>}
         </div>
         <div class="stack">
           <div class="nm">
-            <b>{viName(u.name)}</b>
+            <b>{labelOf(view.units, u.id)}</b>
             {u.statuses.length > 0 && <span class="st">{u.statuses.map((s) => world.content.cat.statuses[s.id]?.name ?? s.id).join(' · ')}</span>}
           </div>
           <FrameBar kind="hp" row={0} v={u.hp} max={u.max_hp} label="HP" />
@@ -177,16 +213,27 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
         </div>
       </div>
     );
+  };
 
-  const fighter = (u: typeof me, side: 'player' | 'enemy') => {
+  const fighter = (u: typeof me, side: 'player' | 'enemy', n = 1) => {
     if (!u) return null;
     const row = u.hp <= 0 ? 'down' : acting === u.id ? 'attack' : 'idle';
+    const targetable = side === 'enemy' && pending !== null && u.hp > 0;
+    // Đội hình 1–3 quái: sprite nhỏ dần theo số lượng và không vượt nửa bề ngang màn hình.
+    const size = Math.max(96, Math.min(260 - (n - 1) * 52, (window.innerWidth * (window.innerWidth < 700 ? 0.86 : 0.46)) / n)) * (window.innerHeight < 500 ? 0.62 : 1);
     return (
-      <div class={`fighter ${side} ${hit === u.id ? 'hit' : ''} ${row}`}>
+      <div
+        class={`fighter ${side} ${hit === u.id ? 'hit' : ''} ${row} ${targetable ? 'targetable' : ''} ${targetable && aimed === u.id ? 'aimed' : ''}`}
+        data-testid={targetable ? 'foe-target' : undefined}
+        data-unit={u.id}
+        onClick={targetable ? () => pick(u.id) : undefined}
+        onMouseEnter={targetable ? () => setAim(u.id) : undefined}
+      >
         {side === 'enemy' && enemyPlate(u)}
         <div class="sprite-wrap">
+          {targetable && <div class="tmark" aria-hidden="true" />}
           <div class="shadow" />
-          <PetAnimated species={u.species_id} size={260 * (window.innerHeight < 500 ? 0.62 : 1)} row={row} />
+          <PetAnimated species={u.species_id} size={size} row={row} />
           {floats
             .filter((f) => f.unit === u.id)
             .map((f) => (
@@ -219,10 +266,10 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
         <div class="turn" style={{ backgroundImage: `url(${uiUrl('battle_turn_banner')})` }}>
           <b>{finished ? 'Kết thúc' : `Lượt ${view.turn}`}</b>
         </div>
-        {myPlate(me)}
+        {allies.map((u, i) => myPlate(u, i))}
         <div class="stage">
-          <div class="side left">{fighter(foe, 'enemy')}</div>
-          <div class="side right">{fighter(me, 'player')}</div>
+          <div class={`side left n${foes.length}`}>{foes.map((u) => fighter(u, 'enemy', foes.length))}</div>
+          <div class={`side right n${allies.length}`}>{allies.map((u) => fighter(u, 'player', allies.length))}</div>
         </div>
         {finished && !live && (
           <div class="result" onClick={close}>
@@ -247,15 +294,25 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
             </div>
           </div>
         )}
-        {live && (
+        {live && pending && (
+          <div class="cmdwrap">
+            <div class="aimbar" data-testid="aim-bar">
+              <span>Chọn mục tiêu</span>
+              <button class="btn" data-testid="aim-cancel" onClick={() => setPending(null)}>
+                Hủy
+              </button>
+            </div>
+          </div>
+        )}
+        {live && !pending && (
           <div class="cmdwrap">
             {sub && (
               <div class="cmdsub">
                 {menu === 'skill' &&
                   skills.map((id) => {
-                    const sk = world.content.cat.skills[id] as unknown as { name: string; mp_cost?: number };
+                    const sk = world.content.cat.skills[id] as unknown as { name: string; mp_cost?: number; target?: string };
                     return (
-                      <button key={id} class="btn" disabled={busy || (me?.mp ?? 0) < (sk?.mp_cost ?? 0)} onClick={() => void act('skill', { skill_id: id })}>
+                      <button key={id} class="btn" disabled={busy || (me?.mp ?? 0) < (sk?.mp_cost ?? 0)} onClick={() => (sk?.target === 'self' ? void act('skill', { skill_id: id }) : begin('skill', { skill_id: id }))}>
                         {sk?.name ?? id} · {sk?.mp_cost ?? 0} MP
                       </button>
                     );
@@ -281,9 +338,9 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
               </div>
             )}
             <div class="cmds">
-              {round('attack', 'Tấn công', 'icon_attack', busy, '', () => void act('attack'))}
+              {round('attack', 'Tấn công', 'icon_attack', busy, '', () => begin('attack'))}
               {round('skill', 'Kỹ năng', 'icon_magic', busy || skills.length === 0, skills.length === 0 ? 'Chưa có' : '', () => (setMore(false), setMenu('skill')))}
-              {round('capture', `Bắt (${seals})`, 'capture_seal', busy || seals === 0, seals === 0 ? 'Hết Phù' : '', () => void act('capture'))}
+              {round('capture', `Bắt (${seals})`, 'capture_seal', busy || seals === 0, seals === 0 ? 'Hết Phù' : '', () => begin('capture'))}
               {round('flee', 'Chạy', 'icon_run', busy, '', () => void act('flee'))}
               <button class={`bbtn more ${more ? 'on' : ''}`} aria-label="Thêm" data-testid="act-more" onClick={() => (setMenu(null), setMore(!more))}>
                 <b>⋯</b>

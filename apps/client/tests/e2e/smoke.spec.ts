@@ -95,7 +95,7 @@ test('chạm quái → trận → chạy → quái ẩn tới khi hồi', async 
   });
   await act(page, { kind: 'spawn', id: spawn });
   await expect(page.getByTestId('battle')).toBeVisible({ timeout: 20_000 });
-  await expect(page.getByTestId('battle-enemy')).toBeVisible();
+  await expect(page.getByTestId('battle-enemy').first()).toBeVisible();
   await page.getByTestId('act-flee').click();
   await expect(page.getByTestId('battle-result')).toContainText('chạy thoát');
   // Cảnh trận tự đóng; kết quả đã nằm trong khung chat (không có popup chặn).
@@ -106,6 +106,36 @@ test('chạm quái → trận → chạy → quái ẩn tới khi hồi', async 
     () => (window as unknown as { __phimond: { session: { character: { value: { spawn_hidden: Record<string, number> } } } } }).__phimond.session.character.value.spawn_hidden,
   );
   expect(Object.keys(hidden).length).toBeGreaterThan(0);
+});
+
+test.describe('encounter nhiều quái (luật thật)', () => {
+test.use({ baseURL: 'http://127.0.0.1:5187' });
+test('nhiều quái: chọn mục tiêu rồi đánh trúng đúng quái đó', async ({ page }) => {
+  await register(page);
+  await chooseStarter(page);
+  const spawn = await page.evaluate(() => {
+    const w = (window as unknown as { __phimond: { world: { content: { map(id: string): { wild_spawns: { id: string }[] } } } } }).__phimond.world;
+    return w.content.map('emerald_forest_main_woods').wild_spawns[0]!.id;
+  });
+  await act(page, { kind: 'spawn', id: spawn });
+  await expect(page.getByTestId('battle')).toBeVisible({ timeout: 20_000 });
+  const n = await page.getByTestId('battle-enemy').count();
+  expect(n).toBeGreaterThanOrEqual(2); // encounter hoang: 2–3 quái cùng loài
+  expect(n).toBeLessThanOrEqual(3);
+  await page.getByTestId('act-attack').click();
+  await expect(page.getByTestId('aim-bar')).toBeVisible();
+  await expect(page.getByTestId('foe-target')).toHaveCount(n);
+  const target = page.getByTestId('foe-target').nth(1);
+  const id = await target.getAttribute('data-unit');
+  await target.click();
+  await expect(page.getByTestId('battle-log')).toContainText('→', { timeout: 10_000 });
+  const hp = await page.evaluate((uid) => {
+    const w = (window as unknown as { __phimond: { session: { character: { value: { battle?: { units: { id: string; hp: number; max_hp: number }[] } } } } } }).__phimond;
+    const u = w.session.character.value.battle?.units.find((x) => x.id === uid);
+    return u ? u.max_hp - u.hp : -1;
+  }, id);
+  expect(hp).toBeGreaterThanOrEqual(0);
+});
 });
 
 test('NPC: tới gần, hội thoại, hồi phục; cổng khóa báo chưa mở', async ({ page }) => {

@@ -187,6 +187,29 @@ button:disabled { opacity: 0.45; cursor: default; }
 .battle .fighter.attack.player .sprite-wrap { animation: lunge-l 0.42s ease-out; }
 .battle .fighter.hit .sprite { animation: hit 0.3s; }
 .battle .fighter.down .sprite { opacity: 0.55; filter: grayscale(1); }
+/* Đội hình 1–3 quái cùng loài: so le trước/sau kiểu Octopath, quái gục mờ dần. */
+.battle .side.left { gap: 0; align-items: flex-end; }
+.battle .side.left.n2 .fighter, .battle .side.left.n3 .fighter { margin-left: -4%; }
+.battle .side.left.n2 .fighter:nth-child(1) { transform: translateY(-34px); }
+.battle .side.left.n2 .fighter:nth-child(2) { transform: translateY(6px); }
+.battle .side.left.n3 .fighter:nth-child(1) { transform: translateY(-40px); }
+.battle .side.left.n3 .fighter:nth-child(2) { transform: translateY(8px); }
+.battle .side.left.n3 .fighter:nth-child(3) { transform: translateY(-40px); }
+.battle .side.left.n2 .foe-plate, .battle .side.left.n3 .foe-plate { width: 138px; padding: 3px 8px 4px; }
+.battle .side.left.n3 .foe-plate .nm { font-size: 12px; }
+.battle .side.right.n2, .battle .side.right.n3 { flex-direction: column-reverse; align-items: flex-start; }
+.battle .fighter.enemy.down { opacity: 0.4; transition: opacity 0.6s; }
+.battle .fighter.enemy.down .foe-plate { opacity: 0.5; }
+/* Chọn mục tiêu: kim cương cyan dưới chân + mũi tên trên tên, như game gốc. */
+.battle .fighter.targetable { cursor: pointer; }
+.battle .fighter.targetable .tmark { position: absolute; left: 50%; bottom: -6px; width: 54px; height: 54px; transform: translateX(-50%) scaleY(0.42) rotate(45deg); border: 3px solid #5eeaff; background: rgba(94, 234, 255, 0.18); box-shadow: 0 0 14px #5eeaff, inset 0 0 10px rgba(94, 234, 255, 0.5); opacity: 0.55; z-index: 0; }
+.battle .fighter.targetable.aimed .tmark { opacity: 1; background: rgba(94, 234, 255, 0.34); animation: tpulse 0.9s ease-in-out infinite; }
+.battle .fighter.targetable.aimed .foe-plate { border-color: #5eeaff; box-shadow: 0 0 10px rgba(94, 234, 255, 0.7); }
+.battle .fighter.targetable.aimed .foe-plate::before { content: '▼'; position: absolute; left: 50%; top: -17px; transform: translateX(-50%); color: #5eeaff; font-size: 16px; text-shadow: 0 0 6px #5eeaff; animation: tbounce 0.7s ease-in-out infinite alternate; }
+.battle .foe-plate { position: relative; }
+.battle .aimbar { display: flex; align-items: center; gap: 14px; padding: 8px 20px; border-radius: 30px; background: rgba(8, 12, 24, 0.86); border: 1px solid #5eeaff; color: #c9f7ff; font-size: 15px; box-shadow: 0 0 14px rgba(94, 234, 255, 0.35); }
+@keyframes tpulse { 50% { transform: translateX(-50%) scaleY(0.42) rotate(45deg) scale(1.12); } }
+@keyframes tbounce { to { transform: translateX(-50%) translateY(5px); } }
 @keyframes lunge-l { 40% { transform: translateX(-90px); } }
 @keyframes lunge-r { 40% { transform: translateX(90px); } }
 @keyframes hit { 30% { filter: brightness(2.5); margin-left: 6px; } }
@@ -262,4 +285,16 @@ button:disabled { opacity: 0.45; cursor: default; }
   .hud-status { max-width: 56vw; }
   .hud-goal { max-width: 150px; }
   .hud-minimap canvas { width: 96px; }
+}
+
+/* Màn dọc: quái hàng trên, linh thú mình hàng dưới; đội hình 2–3 quái không tràn khung. */
+@media (max-width: 700px) {
+  .battle .stage { grid-template-columns: 1fr; grid-template-rows: 1fr 1fr; padding: 92px 2% 118px; }
+  .battle .side.left, .battle .side.right { justify-content: center; padding: 0; align-items: flex-end; }
+  .battle .side.right.n2, .battle .side.right.n3 { flex-direction: row; }
+  .battle .side.left.n2 .foe-plate, .battle .side.left.n3 .foe-plate { width: 100px; padding: 2px 5px 3px; }
+  .battle .side.left.n2 .foe-plate .nm em, .battle .side.left.n3 .foe-plate .nm em { display: none; }
+  .battle .side.left.n2 .fighter, .battle .side.left.n3 .fighter { margin-left: -2%; }
+  .battle .turn { left: auto; right: 8px; transform: none; width: 120px; height: 36px; font-size: 13px; }
+  .battle .cmds { gap: 6px; padding: 6px 12px 14px; }
 }
