@@ -182,6 +182,119 @@ No shadows, no text.
 
 ---
 
+## Kết quả vòng 1 (2026-10-22) và việc còn lại
+
+Ảnh gốc lưu ở `apps/game-web/art-src/hd2d/batch-12-city/_intake/don10-web-r1/`. Cả 9 sheet: nền magenta phẳng (≈ #FC02FA, khử được), viền hồng ít, không có chữ, không đổ bóng. Style khớp kit đã duyệt.
+
+| Sheet | Kết luận | Ghi chú |
+|---|---|---|
+| 1 Dân phố | **Đạt (tĩnh)** | 6 người đẹp, đúng style. Chiều cao không đều (lính 503 px, bé gái 359 px), Claude chuẩn hóa khi cắt: người lớn ~168 px, lính ~176 px, trẻ em ~128 px. Còn thiếu khung động → sheet **A1–A6**. |
+| 2A Mặt tiền | **Đạt** | Quán trọ, tiệm bánh, sàn giao dịch. Sàn giao dịch mái xanh lam: giữ, dùng ở Thương Phố hoặc gần Hoàng Môn cho hợp màu. |
+| 2B Mặt tiền | **Đạt** | Nhà kho, nhà tháp chuông, nhà góc. Nhà tĩnh, không cần động. |
+| 3 Đồ phố 2 | **Đạt (tĩnh)** | Biển treo, dây cờ, bao tải, xe bán hàng, bồn sư tử, cây cắt tỉa. Biển treo, dây cờ, nước bồn cần khung động → sheet **P1–P2**. |
+| 4 Decal | **Vẽ lại** | Vẽ thành cụm đá lát nổi có viên đá riêng, không khớp nền city-paving-02 và nhìn như ụ đá. Cánh hoa hồng dễ bị khử nhầm với nền magenta. Vẽ lại dạng **chỉ phần phủ lên** → sheet **4R**. |
+| 5 Động vật | **Đạt (tĩnh)** | Cần vòng lặp → sheet **A7–A9**. |
+| 6 Mảnh nối | **Đạt** | Ngõ vòm, cột ống máng, tường hộp hoa, hàng rào. Claude căn lại chân (baseline) khi cắt. |
+| 7 Dải mái | **Đạt** | Ảnh 2012×781, dải 2012×342 chạm hai mép (sai quy tắc lề nhưng lại tiện cho lặp). Hai đầu chênh nhẹ; Claude tìm điểm cắt khớp ở khe giữa hai mái. Không cần vẽ lại trừ khi thấy đường nối trong game. |
+| 8 Hoàng Môn | **Đạt** | Chòi lính, bồn cây dài, cột cờ, tường thành, cặp sư tử. Hai sư tử gần như bản soi gương: chấp nhận. Lá cờ cột cờ cần khung động → sheet **P1**. |
+| 9 Đồ phố 3 | Chưa có | P3, làm sau. |
+
+Nguyên tắc chuyển động: **nhà, tường, mảnh nối đứng yên**. Dân phố, động vật và đồ có vải, nước, lửa thì động. Mọi thứ đã có ảnh tĩnh nhưng chưa có khung động vẫn được engine cho động nhẹ (thở, nhún, lắc), nên vào game được ngay; khung vẽ tay thay vào khi có.
+
+### Cách vẽ khung động với ChatGPT web
+
+- **Mỗi lần gọi một đối tượng.** Đính kèm **ảnh tĩnh của chính đối tượng đó** (Claude cắt sẵn ở `refs-v1.0.1-city/anim-refs/`) để GPT giữ đúng thiết kế.
+- Sheet 1536×1024, lưới **4 cột × 2 hàng**, ô 384×512. Mỗi hàng là một vòng lặp 4 khung đọc từ trái sang phải. Khung 4 nối liền khung 1.
+- Chân (hoặc đế) đứng **cùng một đường chân và cùng vị trí ngang** trong mọi ô, để khung không bị trôi.
+- Chỉ phần được nêu là cử động; mặt, áo, màu, kích thước giữ y hệt ảnh tham chiếu.
+- Thêm vào Phần 0 khi vẽ khung động (dán một lần, ngay sau Phần 0):
+
+```text
+ANIMATION RULES (for the next sheets)
+- I attach ONE finished sprite. Redraw exactly that same design in every frame: same face, costume, colours, outline, pixel size. Do not redesign or restyle it.
+- Sheet 1536×1024, grid 4 columns × 2 rows, each cell 384×512 px. Each row is one looping animation of 4 frames, read left to right; frame 4 must loop smoothly back to frame 1.
+- Same scale in every cell. The feet (or base) sit on the same baseline at the same horizontal position in every cell of a row — only the moving parts change.
+- Small, natural motion (2–8 px), not exaggerated cartoon poses.
+- Flat pure magenta #FF00FF background, no grid lines, no labels, no shadows, no text.
+Reply only with the image.
+```
+
+### A1–A6 — Dân phố (6 lần gọi, P1)
+
+Mỗi lần đính kèm ảnh tĩnh của một người: `townsfolk-boy`, `townsfolk-girl`, `townsfolk-elder`, `townsfolk-baker`, `townsfolk-guard`, `townsfolk-traveller`.
+
+```text
+ANIM A<n> — the attached townsperson. Same 3/4 view facing down-left.
+Row 1 — IDLE loop, 4 frames: standing in place, gentle breathing (shoulders and chest rise 2–3 px on frames 2–3), one eye blink on frame 3, held item sways slightly.
+Row 2 — WALK loop, 4 frames, the SAME person turned to face RIGHT in side 3/4 view: contact (left foot forward), passing (feet together, body 3 px higher), contact (right foot forward), passing. Arms swing opposite to legs; held item stays in the same hand.
+```
+
+Ghi chú riêng thêm vào cuối prompt theo người: lão ông — "the cane moves forward with the right foot, walks slowly with a slight stoop"; lính — "the spear stays upright, steps are firm, no arm swing on the spear arm"; bé trai — "light bouncy steps"; người bán bánh — "the basket stays on her arm".
+
+Engine tự lật ảnh để đi sang trái; không cần vẽ hướng trái.
+
+### A7–A9 — Động vật (3 lần gọi, P2)
+
+Đính kèm ảnh tĩnh tương ứng từ sheet 5.
+
+```text
+ANIM A7 — pigeons (attach both pigeon sprites).
+Row 1 — one grey pigeon PECKING loop, 4 frames: head up, head down to the ground, head down pecking, head up again; body still.
+Row 2 — the same pigeon FLYING loop seen from the side, 4 frames: wings up, wings level, wings down, wings level. Body stays at the same height in every cell.
+```
+
+```text
+ANIM A8 — cat and dog (attach both sprites).
+Row 1 — the orange cat sitting, 4 frames: tail tip flicks left, centre, right, centre; one ear twitch on frame 2; one blink on frame 3.
+Row 2 — the brown dog lying down, 4 frames: slow breathing (belly rises 2 px on frames 2–3), tail wags on frames 2 and 4, ear lifts on frame 3.
+```
+
+```text
+ANIM A9 — butterfly and crow (attach both sprites).
+Row 1 — ONE white-and-yellow butterfly, 4 frames: wings fully open, half closed, closed (seen edge-on), half closed. Body at the same point in every cell.
+Row 2 — the black crow standing, 4 frames: still, head turns left, small hop with feet 4 px off the baseline, landing with wings slightly open.
+```
+
+### P1–P2 — Đồ phố động (2 lần gọi, P2)
+
+```text
+ANIM P1 — cloth in the wind (attach the bunting string from Sheet 3 and the blue pennant flagpole from Sheet 8).
+Row 1 — the bunting string, 4 frames: the triangular flags flutter in a gentle breeze, rope sags slightly differently each frame; the two posts never move.
+Row 2 — the flagpole, 4 frames: the long blue pennant waves (a ripple travels from the pole to the tip); the pole and gold finial never move.
+```
+
+```text
+ANIM P2 — water and swinging sign (attach the lion wall fountain and the hanging shop sign from Sheet 3).
+Row 1 — the fountain, 4 frames: ONLY the water changes — the stream from the lion's mouth and the ripples and sparkles in the basin shift each frame; stone stays pixel-identical.
+Row 2 — the hanging sign, 4 frames: the sign board swings gently on its two chains (tilt −4°, 0°, +4°, 0°); the post and bracket never move.
+```
+
+Phần engine tự làm (không cần vẽ): đèn lồng nhấp nháy (ánh sáng), lá cây cắt tỉa và bồn hoa lay nhẹ, bướm bay theo đường cong, bồ câu bay lên khi người chơi tới gần, người qua đường đi lại theo đường trong map.
+
+### 4R — Decal mặt đất, vẽ lại (1 lần gọi, P1)
+
+Đính kèm `current-city-square.png`. Không cần Phần "ANIMATION RULES".
+
+```text
+SHEET 4R — Ground overlay decals, redo. These are laid ON TOP of an existing cream cobblestone floor in the game, so draw ONLY the added detail — DO NOT draw any paving stones, cobbles, ground or background texture around or under it. Seen straight from above, flat, no height, no perspective. Size 1536×1024, grid 3 columns × 2 rows, each decal fits within ~320×320 px.
+1) Crack lines: thin dark-brown branching cracks plus 4–5 small loose stone chips.
+2) Square dark-iron drain grate with a thin dark rim (~110×110 px), nothing around it.
+3) Rain puddle: one flat irregular blob of muted blue-grey water with two small light-blue highlight streaks; no stones, no rim.
+4) Scattered fallen petals and leaves: WHITE and pale YELLOW petals and small green leaves only — absolutely no pink, red-violet or magenta colours.
+5) Chalk drawing: thin pale-white and pale-blue chalk lines forming hopscotch squares and one circle; no numbers, letters or symbols inside.
+6) Two long parallel wagon wheel ruts: darker sand-brown worn stripes with a few small pebbles, running diagonally.
+Flat pure magenta #FF00FF background, no shadows, no text.
+```
+
+### Thứ tự đề nghị
+
+1. **4R** (P1, để mặt đất hết trơn).
+2. **A1–A6** (P1, dân phố đi lại là thay đổi lớn nhất). Trong lúc chờ, Claude đưa bản tĩnh vào game với chuyển động engine.
+3. **A7–A9, P1–P2** (P2).
+4. Sheet 9 (P3).
+
+---
+
 ## Nhận lại
 
 - Gửi lại ảnh trong chat với Claude, ghi số sheet. Claude cắt và lưu vào `apps/game-web/art-src/hd2d/batch-12-city/<id>/` (raw giữ nguyên + final), cập nhật manifest, chạy kiểm tra, rồi đặt vào map và gửi ảnh chụp để owner duyệt.
