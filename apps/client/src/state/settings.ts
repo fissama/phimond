@@ -12,6 +12,8 @@ export interface Settings {
   hud: 'full' | 'compact';
   /** Thời gian trong game: theo giờ máy hoặc cố định ngày/hoàng hôn/đêm. */
   time: TimeMode;
+  /** Âm lượng hiệu ứng 0–1 (0 = tắt). */
+  sound: number;
 }
 
 /**
@@ -43,7 +45,7 @@ export const PRESETS: Record<Quality, {
 };
 
 const KEY = 'phimond.settings.v1';
-const DEFAULTS: Settings = { quality: 'medium', fps: 60, dpad: true, hud: 'full', time: 'auto' };
+const DEFAULTS: Settings = { quality: 'medium', fps: 60, dpad: true, hud: 'full', time: 'auto', sound: 0.6 };
 
 function load(): Settings {
   try {
@@ -56,6 +58,7 @@ function load(): Settings {
       dpad: v.dpad !== false,
       hud: v.hud === 'compact' ? 'compact' : 'full',
       time: v.time === 'day' || v.time === 'dusk' || v.time === 'night' ? v.time : 'auto',
+      sound: typeof v.sound === 'number' && v.sound >= 0 && v.sound <= 1 ? v.sound : DEFAULTS.sound,
     };
   } catch {
     return { ...DEFAULTS };

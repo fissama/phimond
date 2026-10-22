@@ -5,6 +5,7 @@ import { Engine, type Pick } from '../render/engine.ts';
 import { prefetch, hd2dUrl } from '../render/assets.ts';
 import { settings } from '../state/settings.ts';
 import { battleResultOpen, closeOverlay, fatal, loading, overlay, pushLog, toast } from '../state/ui.ts';
+import { sfx } from '../ui/sound.ts';
 import { chebyshev, type Cell, type Direction } from '../world/coords.ts';
 import { Mover } from '../world/mover.ts';
 import { around, findPath, rectCells } from '../world/path.ts';
@@ -109,6 +110,9 @@ export class GameWorld {
     for (const e of b.events) {
       if (ch.battle || e.type === 'battle_start' || e.type === 'battle_capture' || ['damage', 'heal', 'miss', 'skill_cast', 'status_applied', 'defend'].includes(e.type)) continue;
       if (e.type === 'npc_dialogue') continue;
+      if (e.type === 'quest_complete' || e.type === 'quest_accept') sfx('level');
+      else if (e.type === 'item_spend' || e.type === 'pet_heal') sfx('magic');
+      else if (e.type === 'currency_gain' && !b.presentation?.completed_battle) sfx('coin');
       pushLog(eventText(e), e.type === 'map_enter' ? 'area' : 'system');
     }
     if (!this.mover) return;
