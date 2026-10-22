@@ -33,3 +33,19 @@ Numeric intent fields must be JSON integers. Godot parses received JSON numbers 
 - Client treats character as authoritative immediately, keeping the terminal battle only as a render cache. Effects complete before world input/contact/NPC resumes. Disconnect clears the cache; resuming state is not historical effect playback.
 - `PhimondClient.state_batch_received(revision, character, events, presentation)` is the atomic active-renderer signal. Legacy `state_updated`/`events_received` consumers remain supported; active room must not process both paths.
 - Presentation is additive; an old server without it restores authoritative state but cannot supply new terminal feedback. No save migration or new gameplay outcome calculation is needed.
+
+## P01 world 2D (v1.0.0, ADR-P01-01) — cộng thêm
+
+Tọa độ là ô nguyên `(x, y)`: x sang phải, y xuống dưới, 1 ô = 1 đơn vị world. Map nạp từ `data/maps/p01/*.json`; 5 map cũ (`severa`, `forest`, `beach`, `ranch`, `arena`) đã gỡ.
+
+- `/api/content` → `maps[id]` thêm: `kind`, `theme`, `level` (cấp quái khuyến nghị, không phải điều kiện vào), `spawn_default {x,y,face}`, `respawn_to`, `walk` (lưới RLE: hàng nối bằng `/`, `.` đi được, `#` chặn; ô NPC/trụ đã bị chặn sẵn), `layout` (bố cục cảnh cho client), `facades`, `backdrop`, `pedestals [{index,x,y,starter,species}]`, `pillar {x,y,npc,dest:[{map,arrive,locked,min_level}]}`, `wild_spawns [{id,zone,species_id,x,y,respawn_s}]`.
+  `portals[]` đổi thành `{id, rect:[x,y,w,h], to, arrive:{x,y,face}, locked?, requires?, redirect?:{if_visited,to,arrive}}` (không còn `x/spawn`).
+  `npcs[id]` lấy vị trí từ map, thêm `face`, `dialogue`.
+- `world.move`: từ chối ô bị chặn (`"Không đi được vào đó"`), không tăng revision.
+- `world.portal {portal_id}`: hợp lệ khi đứng **trong** `rect`. Cổng `locked` → `"Khu vực này chưa mở"` (khi đứng trong/kề). `requires:"has_pet"` cần có pet. Có `redirect` và đã từng vào `if_visited` thì đi tới `redirect.to`. Đặt `map_id/x/y = arrive`.
+- `npc.interact`, mọi dịch vụ NPC (`pet.heal`, `shop.buy`, `pet.learn`, `quest.*`…): đứng kề NPC, Chebyshev ≤ 1 (cả chéo). Sự kiện `npc_dialogue` có `actor_id` = id NPC.
+- `starter.choose {pedestal}` (mới): chỉ khi chưa có pet và đứng kề bệ; nhận pet khởi đầu đã giám định rồi dịch chuyển một chiều tới điểm đến của cổng `requires:"has_pet"` (Bìa Rừng). Sự kiện `starter_chosen`, `map_enter`.
+- `pillar.travel {map_id}` (mới): đứng kề trụ hoặc NPC vận hành; đích `locked` → `"Khu vực này chưa mở"`. Sự kiện `teleport`, `map_enter`.
+- `world.encounter {spawn_id}`: đứng kề điểm quái (Chebyshev ≤ 1) và điểm quái không đang ẩn. Mọi kết quả trận hoang (thắng/thua/bắt/chạy/hòa) làm điểm đó ẩn `respawn_s` giây **riêng cho người chơi đó**. Thua: về `spawn_default` của `respawn_to`, hồi đầy HP/MP mọi pet, sự kiện `map_enter` + `respawn`. Bỏ `spawn_id` vẫn là gặp ngẫu nhiên kiểu cũ ở map có quái.
+- Snapshot nhân vật thêm `visited: [map_id]`, `spawn_hidden: {spawn_id: unix_ms}` (chỉ điểm còn ẩn), `server_time_ms`; battle thêm `spawn_id`.
+- Nhân vật mới: ở `summoning_hall_main_hall`, chưa có pet. Nhân vật ở map/ô không còn hợp lệ được đưa về `spawn_default` (map cũ → Quảng Trường, hoặc Triệu Linh Điện nếu chưa có pet) ở intent kế tiếp.

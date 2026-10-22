@@ -26,7 +26,7 @@ func command(t *testing.T, e *Engine, c *Character, op string, d map[string]any)
 }
 func TestIndividualVarianceAndAppraisal(t *testing.T) {
 	e := engine(t)
-	c := e.NewCharacter("trainer", "Trainer", 123)
+	c := veteran(e, "trainer", "Trainer", 123)
 	p := c.Pets[0]
 	q := e.NewPet(c, "snail", 1)
 	if reflect.DeepEqual(p.Quality, q.Quality) {
@@ -46,7 +46,7 @@ func TestIndividualVarianceAndAppraisal(t *testing.T) {
 }
 func TestLearnedSkillsOnlyInheritedAndParentsArchived(t *testing.T) {
 	e := engine(t)
-	c := e.NewCharacter("t", "T", 44)
+	c := veteran(e, "t", "T", 44)
 	a := c.Pets[0]
 	a.Level = 30
 	a.Gender = "female"
@@ -56,8 +56,7 @@ func TestLearnedSkillsOnlyInheritedAndParentsArchived(t *testing.T) {
 	b.Skills = []string{"attack"}
 	c.Pets = append(c.Pets, b)
 	c.Level = 30
-	c.MapID = "ranch"
-	c.X = 16
+	atService(e, c)
 	c.Recipes = []string{"snail_refinement"}
 	c.Inventory["synthesis_soul"] = 3
 	c.Gold = 1000
@@ -81,7 +80,7 @@ func TestLearnedSkillsOnlyInheritedAndParentsArchived(t *testing.T) {
 }
 func TestCaptureProbabilityDistribution(t *testing.T) {
 	e := engine(t)
-	c := e.NewCharacter("t", "T", 7)
+	c := veteran(e, "t", "T", 7)
 	p := e.NewPet(c, "snail", 1)
 	low := e.CaptureChance(p, 1, p.MaxHP, 1)
 	high := e.CaptureChance(p, p.MaxHP, p.MaxHP, 1)
@@ -102,9 +101,8 @@ func TestCaptureProbabilityDistribution(t *testing.T) {
 }
 func TestReplayAndInvalidTurn(t *testing.T) {
 	e := engine(t)
-	a := e.NewCharacter("a", "A", 19)
-	a.MapID = "forest"
-	a.X = 16
+	a := veteran(e, "a", "A", 19)
+	a.MapID = "emerald_forest_main_woods"
 	command(t, e, a, "world.encounter", nil)
 	raw, _ := json.Marshal(a)
 	var b Character
@@ -131,7 +129,7 @@ func TestReplayAndInvalidTurn(t *testing.T) {
 }
 func TestRejectUnknownAndUnauthorizedIntents(t *testing.T) {
 	e := engine(t)
-	c := e.NewCharacter("t", "T", 1)
+	c := veteran(e, "t", "T", 1)
 	for _, op := range []string{"give_gold", "pet.appraise", "breeding.synthesize", "battle.action"} {
 		before, _ := json.Marshal(c)
 		_, err := e.Apply(c, op, json.RawMessage(`{"pet_id":"someone_else"}`))
@@ -146,7 +144,7 @@ func TestRejectUnknownAndUnauthorizedIntents(t *testing.T) {
 }
 func TestSynthesisDistribution(t *testing.T) {
 	e := engine(t)
-	c := e.NewCharacter("t", "T", 42)
+	c := veteran(e, "t", "T", 42)
 	a := e.NewPet(c, "snail", 30)
 	b := e.NewPet(c, "flower_fairy", 30)
 	a.Quality["strength"] = 1000
@@ -181,8 +179,8 @@ func TestSynthesisDistribution(t *testing.T) {
 func TestMultipleGenerationsPreserveLearnedSkillAndAncestors(t *testing.T) {
 	e := engine(t)
 	e.Data.Rules.SkillInheritance = 1
-	c := e.NewCharacter("family", "Family", 55)
-	c.MapID = "ranch"
+	c := veteran(e, "family", "Family", 55)
+	atService(e, c)
 	c.Level = 30
 	c.Gold = 1000
 	c.Inventory["synthesis_soul"] = 5

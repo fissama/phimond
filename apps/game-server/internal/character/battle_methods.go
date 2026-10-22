@@ -37,7 +37,8 @@ func (e *Engine) startBattle(c *Character, arena bool, contactSpecies ...string)
 		if len(contactSpecies) > 0 {
 			species = contactSpecies[0]
 		}
-		level = max(1, min(c.Level, e.Data.Maps[c.MapID].MinLevel+4)-c.RNG.Int(2))
+		lo, hi := e.Data.Maps[c.MapID].LevelRange()
+		level = max(lo, min(hi, c.Level+1-c.RNG.Int(3)))
 	}
 	enemy := e.NewPet(c, species, level)
 	if arena {
@@ -255,6 +256,9 @@ func (e *Engine) battleAction(c *Character, d Intent) ([]Event, error) {
 			}
 		}
 		emit(event("battle_"+b.Result, "Battle ended: "+b.Result))
+		if !b.Arena {
+			e.afterWildBattle(c, b, emit)
+		}
 		c.History = append(c.History, b)
 		if len(c.History) > 20 {
 			c.History = c.History[len(c.History)-20:]

@@ -4,28 +4,38 @@ import (
 	"encoding/json"
 	"phimond/server/internal/content"
 	"phimond/server/internal/pet"
+	"time"
 )
 
 // NewEngine builds an Engine backed by the supplied catalog. Moved verbatim
 // from internal/game/model.go.
-func NewEngine(c *content.Catalog) *Engine { return &Engine{Data: c} }
+func NewEngine(c *content.Catalog) *Engine { return &Engine{Data: c, Now: time.Now} }
 
-// NewCharacter allocates a fresh Character for the given account id/name
-// pair, seeded by the supplied RNG seed, with the tutorial snail and a
-// starting inventory. Moved verbatim from internal/game/model.go.
+// StartMap là nơi người chơi mới xuất hiện (P01 §7 câu 1): Triệu Linh Điện, chưa có pet.
+const StartMap = "summoning_hall_main_hall"
+
+// NewCharacter tạo nhân vật mới ở Triệu Linh Điện, chưa có pet; người chơi chọn bệ đá để nhận
+// pet khởi đầu (intent starter.choose). Túi đồ khởi đầu giữ như bản cũ.
 func (e *Engine) NewCharacter(id, name string, seed uint64) *Character {
-	c := &Character{ID: id, Name: name, Level: 1, Gold: 100, MapID: "severa", X: 16, Y: 12, Inventory: map[string]int{"capture_seal": 10, "potion": 5, "ether": 3, "synthesis_soul": 2}, Quests: map[string]*QuestState{}, Recipes: []string{}, Pets: []*pet.Pet{}, RNG: RNG{seed}}
-	p := e.NewPet(c, "snail", 3)
+	m := e.Data.Maps[StartMap]
+	c := &Character{ID: id, Name: name, Level: 1, Gold: 100, MapID: StartMap, X: m.SpawnDefault.X, Y: m.SpawnDefault.Y, Inventory: map[string]int{"capture_seal": 10, "potion": 5, "ether": 3, "synthesis_soul": 2}, Quests: map[string]*QuestState{}, Recipes: []string{}, Pets: []*pet.Pet{}, RNG: RNG{seed}, Visited: []string{StartMap}}
+	return c
+}
+
+// GiveStarter thêm pet khởi đầu đã giám định và đặt làm pet chính (dùng cho bệ đá và test).
+func (e *Engine) GiveStarter(c *Character, species string, level int) *pet.Pet {
+	p := e.NewPet(c, species, level)
 	p.Appraised = true
 	c.Pets = append(c.Pets, p)
 	c.ActivePetID = p.ID
-	return c
+	return p
 }
 
 // Snapshot builds the public, deterministic view of the character by
 // stripping the RNG, history, last events and un-appraised pet internals.
 // Moved verbatim from internal/game/model.go.
 func (e *Engine) Snapshot(c *Character) map[string]any {
+	now := e.nowMS()
 	b, _ := json.Marshal(c)
 	var out map[string]any
 	json.Unmarshal(b, &out)
@@ -33,6 +43,18 @@ func (e *Engine) Snapshot(c *Character) map[string]any {
 	delete(out, "counter")
 	delete(out, "battle_history")
 	delete(out, "last_events")
+	// Chỉ công bố điểm quái còn đang ẩn, kèm giờ server để client tự tính thời gian còn lại.
+	hidden := map[string]int64{}
+	for id, until := range c.SpawnHidden {
+		if until > now {
+			hidden[id] = until
+		}
+	}
+	out["spawn_hidden"] = hidden
+	out["server_time_ms"] = now
+	if out["visited"] == nil {
+		out["visited"] = []string{}
+	}
 	for _, p := range out["pets"].([]any) {
 		m := p.(map[string]any)
 		if !m["appraised"].(bool) {

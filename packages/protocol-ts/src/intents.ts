@@ -8,6 +8,10 @@ export interface IntentMap {
   'world.move': { direction: Direction };
   'world.portal': { portal_id: string };
   'world.encounter': { spawn_id?: string };
+  /** P01: chọn bệ đá ở Triệu Linh Điện (đứng kề bệ). */
+  'starter.choose': { pedestal: number };
+  /** P01: dùng trụ đá dịch chuyển (đứng kề trụ hoặc Trụ Sư). */
+  'pillar.travel': { map_id: string };
   'npc.interact': { npc_id: string };
   'pet.appraise': { pet_id: string };
   'pet.activate': { pet_id: string };

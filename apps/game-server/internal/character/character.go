@@ -6,6 +6,7 @@ import (
 	"phimond/server/internal/content"
 	"phimond/server/internal/pet"
 	"sort"
+	"time"
 )
 
 // StatKeys is the canonical stat order used for pet quality and growth
@@ -81,6 +82,10 @@ type Character struct {
 	RNG         RNG                    `json:"rng"`
 	Counter     int                    `json:"counter"`
 	Events      []Event                `json:"last_events,omitempty"`
+	// Visited là các map đã từng vào (P01: cổng Rừng Sâu đổi đích sau lần đầu tới Hoàng Môn).
+	Visited []string `json:"visited,omitempty"`
+	// SpawnHidden: điểm quái đang ẩn sau trận → thời điểm hiện lại (Unix ms). Quái riêng từng người (P01-R05).
+	SpawnHidden map[string]int64 `json:"spawn_hidden,omitempty"`
 }
 
 // Battle is the live battle aggregate. The Commands and Events slices still
@@ -96,6 +101,7 @@ type Battle struct {
 	Seed     uint64         `json:"seed"`
 	RNG      RNG            `json:"rng"`
 	Arena    bool           `json:"arena"`
+	SpawnID  string         `json:"spawn_id,omitempty"`
 	Commands []Intent       `json:"commands"`
 	Events   []Event        `json:"events"`
 	Sequence int            `json:"sequence"`
@@ -121,6 +127,8 @@ type Intent struct {
 	BattleID  string `json:"battle_id"`
 	Turn      int    `json:"turn"`
 	Choice    string `json:"choice"`
+	Pedestal  *int   `json:"pedestal,omitempty"`
+	MapID     string `json:"map_id,omitempty"`
 }
 
 // Engine is the orchestrator over the content catalog. Methods on *Engine
@@ -129,7 +137,18 @@ type Intent struct {
 // packages would create an import cycle through the methods the Apply
 // dispatcher must call. The structural split (data types in pet/ and
 // battle/) preserves the §3 layout while keeping the call graph acyclic.
-type Engine struct{ Data *content.Catalog }
+type Engine struct {
+	Data *content.Catalog
+	// Now là đồng hồ cho cooldown quái; test thay bằng đồng hồ giả.
+	Now func() time.Time
+}
+
+func (e *Engine) nowMS() int64 {
+	if e.Now == nil {
+		return time.Now().UnixMilli()
+	}
+	return e.Now().UnixMilli()
+}
 
 // id allocates a monotonic per-character id of the given kind. Moved
 // verbatim from internal/game/model.go.

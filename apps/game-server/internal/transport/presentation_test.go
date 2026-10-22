@@ -19,7 +19,7 @@ import (
 func TestStatePresentationContract(t *testing.T) {
 	s, db := liveFixture(t)
 	c := loadCharacter(t, db.raw)
-	c.MapID = "forest"
+	c.MapID = "emerald_forest_main_woods"
 	if _, err := s.Game.Apply(c, "world.encounter", json.RawMessage(`{}`)); err != nil {
 		t.Fatal(err)
 	}
@@ -102,7 +102,7 @@ func TestPublicBattleFeedbackFixtures(t *testing.T) {
 			for seed := uint64(1); seed < 300 && !found; seed++ {
 				s, db := liveFixture(t)
 				c := loadCharacter(t, db.raw)
-				c.MapID = "forest"
+				c.MapID = "emerald_forest_main_woods"
 				if _, err := s.Game.Apply(c, "world.encounter", json.RawMessage(`{}`)); err != nil {
 					t.Fatal(err)
 				}

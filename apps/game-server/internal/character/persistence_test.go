@@ -28,7 +28,7 @@ func TestMySQLBreedingSurvivesReconnect(t *testing.T) {
 	defer s.Close()
 	name := fmt.Sprintf("lineage_%d", time.Now().UnixNano()%1000000000000)
 	_, id, err := s.Register(ctx, name, "integration-password", func(id string) (json.RawMessage, error) {
-		c := e.NewCharacter(id, name, 99)
+		c := veteran(e, id, name, 99)
 		a := c.Pets[0]
 		a.Level = 30
 		a.Gender = "female"
@@ -36,7 +36,7 @@ func TestMySQLBreedingSurvivesReconnect(t *testing.T) {
 		b := e.NewPet(c, "flower_fairy", 30)
 		b.Gender = "male"
 		c.Pets = append(c.Pets, b)
-		c.MapID = "ranch"
+		atService(e, c)
 		c.Level = 30
 		c.Recipes = []string{"snail_refinement"}
 		c.Gold = 1000

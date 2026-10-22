@@ -3,6 +3,7 @@ package character
 import (
 	"fmt"
 	"math"
+	"phimond/server/internal/world"
 )
 
 // abs returns the absolute value of v. Moved verbatim from
@@ -18,16 +19,14 @@ func abs(v int) int {
 // internal/game/service.go.
 func clamp(x, a, b float64) float64 { return math.Max(a, math.Min(b, x)) }
 
-// near reports whether the character is adjacent (within three tiles) to
-// an NPC with the given role on the current map. Moved verbatim from
-// internal/game/service.go.
+// near báo nhân vật đứng kề (Chebyshev ≤ 1, P01-R04) một NPC có vai role trên map hiện tại.
 func (e *Engine) near(c *Character, role string) error {
 	for _, n := range e.Data.NPCs {
-		if n.MapID == c.MapID && abs(n.X-c.X) <= 3 && has(n.Roles, role) {
+		if n.MapID == c.MapID && world.Chebyshev(n.X, n.Y, c.X, c.Y) <= interactRange && has(n.Roles, role) {
 			return nil
 		}
 	}
-	return fmt.Errorf("move close to an NPC offering %s", role)
+	return fmt.Errorf("Hãy đến gần NPC có chức năng %s", role)
 }
 
 // progress credits quest counters when a tracked kind/target event fires

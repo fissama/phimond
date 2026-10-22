@@ -8,19 +8,24 @@ import (
 
 func TestContactEncounterMatchesVisibleSpawn(t *testing.T) {
 	e := engine(t)
-	c := e.NewCharacter("contact", "Contact", 31)
-	c.MapID, c.X, c.Y = "forest", 12, 10
-	command(t, e, c, "world.encounter", map[string]any{"spawn_id": "forest:0"})
-	if c.Battle == nil || c.Battle.Units[1].SpeciesID != "snail" {
-		t.Fatal("contact must encounter visible snail")
+	c := veteran(e, "contact", "Contact", 31)
+	s := e.Data.Maps[c.MapID].WildSpawns[0]
+	c.X, c.Y = s.X+1, s.Y // đứng kề (kể cả chéo đều được)
+	if !e.Data.Maps[c.MapID].Grid().Walkable(c.X, c.Y) {
+		c.X, c.Y = s.X, s.Y
+	}
+	command(t, e, c, "world.encounter", map[string]any{"spawn_id": s.ID})
+	if c.Battle == nil || c.Battle.Units[1].SpeciesID != s.SpeciesID || c.Battle.SpawnID != s.ID {
+		t.Fatal("contact must encounter the visible spawn")
 	}
 }
 
 func TestContactEncounterRejectsRemoteAndForeignSpawn(t *testing.T) {
-	for _, id := range []string{"forest:0", "beach:0", "forest:99"} {
+	e0 := engine(t)
+	foreign := e0.Data.Maps["emerald_forest_deep_woods"].WildSpawns[0].ID
+	for _, id := range []string{"emerald_forest_main_woods:z1:0", foreign, "emerald_forest_main_woods:z1:99"} {
 		e := engine(t)
-		c := e.NewCharacter("remote", "Remote", 31)
-		c.MapID, c.X, c.Y = "forest", 1, 1
+		c := veteran(e, "remote", "Remote", 31) // đứng ở spawn_default, xa vùng quái
 		raw, _ := json.Marshal(c)
 		var before Character
 		json.Unmarshal(raw, &before)

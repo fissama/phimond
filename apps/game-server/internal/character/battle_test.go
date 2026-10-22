@@ -9,7 +9,7 @@ import (
 
 func combatFixture(t *testing.T) (*Engine, *Battle, *battle.Unit, *battle.Unit) {
 	e := engine(t)
-	c := e.NewCharacter("test", "Test", 31)
+	c := veteran(e, "test", "Test", 31)
 	p := e.NewPet(c, "snail", 5)
 	q := e.NewPet(c, "wolf", 5)
 	a, b := unit(p, "player"), unit(q, "enemy")
@@ -63,8 +63,8 @@ func TestStatusBehavior(t *testing.T) {
 }
 func TestDoomExpiresAndSpendsNoExtraTurn(t *testing.T) {
 	e := engine(t)
-	c := e.NewCharacter("t", "Test", 1)
-	c.MapID = "forest"
+	c := veteran(e, "t", "Test", 1)
+	c.MapID = "emerald_forest_main_woods"
 	command(t, e, c, "world.encounter", nil)
 	c.Battle.Units[1].Statuses = []battle.ActiveStatus{{ID: "doom", Remaining: 1, AppliedTurn: 0}}
 	command(t, e, c, "battle.action", map[string]any{"battle_id": c.Battle.ID, "turn": 1, "choice": "defend"})
@@ -74,8 +74,8 @@ func TestDoomExpiresAndSpendsNoExtraTurn(t *testing.T) {
 }
 func TestBattleRejectsUnlearnedSkillWithoutSpendingOrRNG(t *testing.T) {
 	e := engine(t)
-	c := e.NewCharacter("t", "Test", 3)
-	c.MapID = "forest"
+	c := veteran(e, "t", "Test", 3)
+	c.MapID = "emerald_forest_main_woods"
 	command(t, e, c, "world.encounter", nil)
 	raw, _ := json.Marshal(c)
 	d, _ := json.Marshal(map[string]any{"battle_id": c.Battle.ID, "turn": 1, "choice": "skill", "skill_id": "fire_strike"})
@@ -89,11 +89,13 @@ func TestBattleRejectsUnlearnedSkillWithoutSpendingOrRNG(t *testing.T) {
 }
 func TestQuestRewardsOnlyOnce(t *testing.T) {
 	e := engine(t)
-	c := e.NewCharacter("t", "Test", 2)
+	c := veteran(e, "t", "Test", 2)
+	atService(e, c)
 	command(t, e, c, "quest.accept", map[string]any{"quest_id": "first_steps"})
-	c.X = 43
-	command(t, e, c, "world.portal", map[string]any{"portal_id": "forest_gate"})
-	c.X = 16
+	home := *c
+	c.X, c.Y = 34, 13 // trong cổng sang Rừng Sâu
+	command(t, e, c, "world.portal", map[string]any{"portal_id": "to_deep_woods"})
+	c.MapID, c.X, c.Y = home.MapID, home.X, home.Y
 	gold := c.Gold
 	command(t, e, c, "quest.claim", map[string]any{"quest_id": "first_steps"})
 	if c.Gold <= gold {
@@ -106,8 +108,8 @@ func TestQuestRewardsOnlyOnce(t *testing.T) {
 }
 func TestCaptureConsumesSealAndRetainsVariance(t *testing.T) {
 	e := engine(t)
-	c := e.NewCharacter("t", "Test", 8)
-	c.MapID = "forest"
+	c := veteran(e, "t", "Test", 8)
+	c.MapID = "emerald_forest_main_woods"
 	command(t, e, c, "world.encounter", nil)
 	wild := c.Battle.Units[1]
 	wild.HP = 1
@@ -125,8 +127,8 @@ func TestCaptureConsumesSealAndRetainsVariance(t *testing.T) {
 }
 func TestSynthesisRejectsWithoutCostAndLineageCyclesBounded(t *testing.T) {
 	e := engine(t)
-	c := e.NewCharacter("t", "Test", 1)
-	c.MapID = "ranch"
+	c := veteran(e, "t", "Test", 1)
+	atService(e, c)
 	c.Recipes = []string{"snail_refinement"}
 	before, _ := json.Marshal(c)
 	_, err := e.Apply(c, "breeding.synthesize", json.RawMessage(`{"recipe_id":"snail_refinement","parent_a":"foreign","parent_b":"foreign"}`))
@@ -141,8 +143,8 @@ func TestSynthesisRejectsWithoutCostAndLineageCyclesBounded(t *testing.T) {
 }
 func TestDefendProtectsSlowerPet(t *testing.T) {
 	e := engine(t)
-	c := e.NewCharacter("t", "Test", 999)
-	c.MapID = "forest"
+	c := veteran(e, "t", "Test", 999)
+	c.MapID = "emerald_forest_main_woods"
 	command(t, e, c, "world.encounter", nil)
 	c.Battle.Units[0].Pet.Speed = 1
 	c.Battle.Units[1].Pet.Speed = 100
@@ -172,8 +174,8 @@ func TestHPBuffAndExpiry(t *testing.T) {
 }
 func TestPublicBattleHistoryDoesNotExposeHiddenTraitsOrRNG(t *testing.T) {
 	e := engine(t)
-	c := e.NewCharacter("t", "Test", 2)
-	c.MapID = "forest"
+	c := veteran(e, "t", "Test", 2)
+	c.MapID = "emerald_forest_main_woods"
 	command(t, e, c, "world.encounter", nil)
 	command(t, e, c, "battle.action", map[string]any{"battle_id": c.Battle.ID, "turn": 1, "choice": "flee"})
 	b, _ := json.Marshal(e.PublicHistory(c))

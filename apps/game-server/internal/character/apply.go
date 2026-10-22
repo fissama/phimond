@@ -56,6 +56,7 @@ func (e *Engine) apply(c *Character, op string, d Intent) ([]Event, error) {
 	if op == "character.get" {
 		return []Event{}, nil
 	}
+	e.normalizeLocation(c)
 	if op == "battle.action" {
 		return e.battleAction(c, d)
 	}
@@ -64,58 +65,15 @@ func (e *Engine) apply(c *Character, op string, d Intent) ([]Event, error) {
 	}
 	switch op {
 	case "world.move":
-		dx, dy := 0, 0
-		switch d.Direction {
-		case "left":
-			dx = -1
-		case "right":
-			dx = 1
-		case "up":
-			dy = -1
-		case "down":
-			dy = 1
-		default:
-			return nil, fmt.Errorf("invalid direction")
-		}
-		m := e.Data.Maps[c.MapID]
-		nx := c.X + dx
-		ny := c.Y + dy
-		// Default to a square grid if a map has no explicit Height (legacy
-		// content) so existing JSON files don't break loading.
-		h := m.Height
-		if h <= 0 {
-			h = m.Width
-		}
-		if nx < 0 || nx >= m.Width || ny < 0 || ny >= h {
-			return nil, fmt.Errorf("use a portal at the map edge")
-		}
-		c.X = nx
-		c.Y = ny
-		return []Event{}, nil
+		return e.move(c, d.Direction)
 	case "world.portal":
-		for _, p := range e.Data.Maps[c.MapID].Portals {
-			if p.ID == d.PortalID && abs(c.X-p.X) <= 2 {
-				dest := e.Data.Maps[p.To]
-				if c.Level < dest.MinLevel || c.ArenaTier < dest.ArenaRequired {
-					return nil, fmt.Errorf("requires trainer level %d and arena tier %d", dest.MinLevel, dest.ArenaRequired)
-				}
-				c.MapID = p.To
-				c.X = p.Spawn
-				e.progress(c, "reach_map", p.To)
-				return []Event{event("map_enter", dest.Name)}, nil
-			}
-		}
-		return nil, fmt.Errorf("no nearby portal")
+		return e.portal(c, d.PortalID)
 	case "world.encounter":
-		if d.SpawnID != "" {
-			for _, spawn := range e.Data.Maps[c.MapID].WildSpawns {
-				if spawn.ID == d.SpawnID && abs(c.X-spawn.X) <= 1 && abs(c.Y-spawn.Y) <= 1 {
-					return e.startBattle(c, false, spawn.SpeciesID)
-				}
-			}
-			return nil, fmt.Errorf("wild beast is not nearby")
-		}
-		return e.startBattle(c, false)
+		return e.encounter(c, d.SpawnID)
+	case "starter.choose":
+		return e.chooseStarter(c, d.Pedestal)
+	case "pillar.travel":
+		return e.pillarTravel(c, d.MapID)
 	case "arena.challenge":
 		if err := e.near(c, "arena"); err != nil {
 			return nil, err
@@ -125,12 +83,16 @@ func (e *Engine) apply(c *Character, op string, d Intent) ([]Event, error) {
 		}
 		return e.startBattle(c, true)
 	case "npc.interact":
-		n, ok := e.Data.NPCs[d.NPCID]
-		if !ok || n.MapID != c.MapID || abs(c.X-n.X) > 3 {
-			return nil, fmt.Errorf("NPC is not nearby")
+		n, err := e.npcNear(c, d.NPCID)
+		if err != nil {
+			return nil, err
 		}
 		e.progress(c, "talk_npc", n.ID)
-		return []Event{event("npc_dialogue", n.Name+": A beast carries the story of every generation before it.")}, nil
+		line := n.Dialogue
+		if line == "" {
+			line = "Mỗi linh thú mang câu chuyện của mọi thế hệ trước nó."
+		}
+		return []Event{{Type: "npc_dialogue", ActorID: n.ID, Message: n.Name + ": " + line}}, nil
 	case "pet.appraise":
 		if err := e.near(c, "appraise"); err != nil {
 			return nil, err

@@ -1,73 +1,251 @@
 {
-  "trainer": {
-    "id": "trainer",
-    "name": "Trainer Elin",
-    "map_id": "severa",
-    "x": 19,
-    "y": 12,
+  "summoner_mira": {
+    "id": "summoner_mira",
+    "name": "Triệu Linh Sư Mira",
+    "map_id": "",
+    "x": 0,
+    "y": 0,
     "roles": [
-      "quest",
-      "learn",
-      "shop",
-      "heal"
+      "guide"
     ],
-    "confidence": "reconstructed",
-    "source": "Original Phimond NPC/presentation"
-  },
-  "ranch_keeper": {
-    "id": "ranch_keeper",
-    "name": "Keeper Oren",
-    "map_id": "ranch",
-    "x": 19,
-    "y": 12,
-    "roles": [
-      "appraise",
-      "breed",
-      "strengthen",
-      "recipe",
-      "heal",
-      "quest"
-    ],
-    "confidence": "reconstructed",
-    "source": "Original Phimond NPC/presentation"
-  },
-  "arena_master": {
-    "id": "arena_master",
-    "name": "Marshal Vale",
-    "map_id": "arena",
-    "x": 19,
-    "y": 12,
-    "roles": [
-      "arena",
-      "heal"
-    ],
-    "confidence": "reconstructed",
-    "source": "Original Phimond NPC/presentation"
+    "dialogue": "Chào mừng đến Triệu Linh Điện. Hãy chọn một trong ba bệ đá — linh thú trên bệ sẽ theo bạn suốt hành trình.",
+    "confidence": "designed",
+    "source": "P01 v1.0.0 Đợt A — roster P12-S4 (vị trí trong data/maps/p01)"
   },
   "forest_guide": {
     "id": "forest_guide",
-    "name": "Forester Lio",
-    "map_id": "forest",
-    "x": 19,
-    "y": 12,
+    "name": "Kiểm Lâm Lio",
+    "map_id": "",
+    "x": 0,
+    "y": 0,
     "roles": [
       "quest",
       "heal"
     ],
-    "confidence": "reconstructed",
-    "source": "Original Phimond NPC/presentation"
+    "dialogue": "Rừng Lục Bảo hiền hòa ở bìa, nhưng càng vào sâu thú càng dữ. Mệt thì quay lại đây, ta chữa cho linh thú của bạn.",
+    "confidence": "designed",
+    "source": "P01 v1.0.0 Đợt A — roster P12-S4 (vị trí trong data/maps/p01)"
   },
-  "beach_guide": {
-    "id": "beach_guide",
-    "name": "Tidewatcher Nia",
-    "map_id": "beach",
-    "x": 19,
-    "y": 12,
+  "bia_shop": {
+    "id": "bia_shop",
+    "name": "Tiểu Thương Wen",
+    "map_id": "",
+    "x": 0,
+    "y": 0,
+    "roles": [
+      "shop"
+    ],
+    "dialogue": "Thuốc hồi phục, ấn phong ấn… cần gì cứ chọn, giá phải chăng!",
+    "confidence": "designed",
+    "source": "P01 v1.0.0 Đợt A — roster P12-S4 (vị trí trong data/maps/p01)"
+  },
+  "bia_skill": {
+    "id": "bia_skill",
+    "name": "Thợ Săn Rowan",
+    "map_id": "",
+    "x": 0,
+    "y": 0,
+    "roles": [
+      "learn"
+    ],
+    "dialogue": "Linh thú mạnh nhờ kỹ năng. Ta dạy những chiêu cơ bản cho người mới.",
+    "confidence": "designed",
+    "source": "P01 v1.0.0 Đợt A — roster P12-S4 (vị trí trong data/maps/p01)"
+  },
+  "bia_free": {
+    "id": "bia_free",
+    "name": "Người Hái Nấm Tuli",
+    "map_id": "",
+    "x": 0,
+    "y": 0,
+    "roles": [
+      "free"
+    ],
+    "dialogue": "Nấm vàng ăn được, nấm tím thì đừng! Mình hái cả buổi sáng mới đầy giỏ.",
+    "confidence": "designed",
+    "source": "P01 v1.0.0 Đợt A — roster P12-S4 (vị trí trong data/maps/p01)"
+  },
+  "sau_guard": {
+    "id": "sau_guard",
+    "name": "Người Gác Rừng Mero",
+    "map_id": "",
+    "x": 0,
+    "y": 0,
+    "roles": [
+      "free"
+    ],
+    "dialogue": "Đi tiếp về phía đông bắc là tới Hoàng Môn. Thú trong Rừng Sâu mạnh hơn, cẩn thận.",
+    "confidence": "designed",
+    "source": "P01 v1.0.0 Đợt A — roster P12-S4 (vị trí trong data/maps/p01)"
+  },
+  "sau_free": {
+    "id": "sau_free",
+    "name": "Cụ Rêu Tamo",
+    "map_id": "",
+    "x": 0,
+    "y": 0,
+    "roles": [
+      "free"
+    ],
+    "dialogue": "Ta giữ khu rừng này đã sáu mươi mùa lá rụng. Cây nào cũng có chuyện của nó.",
+    "confidence": "designed",
+    "source": "P01 v1.0.0 Đợt A — roster P12-S4 (vị trí trong data/maps/p01)"
+  },
+  "gate_captain": {
+    "id": "gate_captain",
+    "name": "Thị Vệ Trưởng Karn",
+    "map_id": "",
+    "x": 0,
+    "y": 0,
+    "roles": [
+      "quest"
+    ],
+    "dialogue": "Lữ khách từ Rừng Lục Bảo? Đi thẳng xuống phía nam là Quảng Trường Thạch Trụ.",
+    "confidence": "designed",
+    "source": "P01 v1.0.0 Đợt A — roster P12-S4 (vị trí trong data/maps/p01)"
+  },
+  "gate_guild": {
+    "id": "gate_guild",
+    "name": "Sứ Giả Bang Hội Ryo",
+    "map_id": "",
+    "x": 0,
+    "y": 0,
+    "roles": [
+      "guild"
+    ],
+    "dialogue": "Khu bang hội đang được chuẩn bị. Quay lại sau nhé.",
+    "confidence": "designed",
+    "source": "P01 v1.0.0 Đợt A — roster P12-S4 (vị trí trong data/maps/p01)"
+  },
+  "trainer_elin": {
+    "id": "trainer_elin",
+    "name": "Huấn Luyện Viên Elin",
+    "map_id": "",
+    "x": 0,
+    "y": 0,
     "roles": [
       "quest",
+      "learn"
+    ],
+    "dialogue": "Mỗi linh thú mang câu chuyện của mọi thế hệ trước nó. Ta giúp bạn rèn luyện chúng.",
+    "confidence": "designed",
+    "source": "P01 v1.0.0 Đợt A — roster P12-S4 (vị trí trong data/maps/p01)"
+  },
+  "sq_healer": {
+    "id": "sq_healer",
+    "name": "Y Sư Selka",
+    "map_id": "",
+    "x": 0,
+    "y": 0,
+    "roles": [
       "heal"
     ],
-    "confidence": "reconstructed",
-    "source": "Original Phimond NPC/presentation"
+    "dialogue": "Linh thú của bạn trông mệt. Để ta hồi phục cho cả đội.",
+    "confidence": "designed",
+    "source": "P01 v1.0.0 Đợt A — roster P12-S4 (vị trí trong data/maps/p01)"
+  },
+  "sq_skill": {
+    "id": "sq_skill",
+    "name": "Sư Phụ Kỹ Năng Doran",
+    "map_id": "",
+    "x": 0,
+    "y": 0,
+    "roles": [
+      "learn"
+    ],
+    "dialogue": "Kỹ năng bậc cao cần căn cơ vững. Chọn linh thú, ta xem nó học được gì.",
+    "confidence": "designed",
+    "source": "P01 v1.0.0 Đợt A — roster P12-S4 (vị trí trong data/maps/p01)"
+  },
+  "sq_free": {
+    "id": "sq_free",
+    "name": "Người Kể Chuyện Hanae",
+    "map_id": "",
+    "x": 0,
+    "y": 0,
+    "roles": [
+      "free"
+    ],
+    "dialogue": "Trụ đá giữa quảng trường kết nối mọi miền. Ngày xưa người ta đi bộ cả tháng mới tới biển.",
+    "confidence": "designed",
+    "source": "P01 v1.0.0 Đợt A — roster P12-S4 (vị trí trong data/maps/p01)"
+  },
+  "sq_pillar": {
+    "id": "sq_pillar",
+    "name": "Trụ Sư Orsa",
+    "map_id": "",
+    "x": 0,
+    "y": 0,
+    "roles": [
+      "teleport"
+    ],
+    "dialogue": "Thủy tinh dịch chuyển đã sẵn sàng. Bạn muốn tới đâu?",
+    "confidence": "designed",
+    "source": "P01 v1.0.0 Đợt A — roster P12-S4 (vị trí trong data/maps/p01)"
+  },
+  "sq_arena": {
+    "id": "sq_arena",
+    "name": "Đài Sứ Rena",
+    "map_id": "",
+    "x": 0,
+    "y": 0,
+    "roles": [
+      "arena_info"
+    ],
+    "dialogue": "Huyết Chiến Đài sắp mở. Hãy rèn luyện linh thú cho tới ngày đó.",
+    "confidence": "designed",
+    "source": "P01 v1.0.0 Đợt A — roster P12-S4 (vị trí trong data/maps/p01)"
+  },
+  "sq_board": {
+    "id": "sq_board",
+    "name": "Quản Sự Nhiệm Vụ Tessa",
+    "map_id": "",
+    "x": 0,
+    "y": 0,
+    "roles": [
+      "quest"
+    ],
+    "dialogue": "Bảng nhiệm vụ hôm nay đây. Nhận việc, làm xong quay lại lấy thưởng.",
+    "confidence": "designed",
+    "source": "P01 v1.0.0 Đợt A — roster P12-S4 (vị trí trong data/maps/p01)"
+  },
+  "sq_exchange": {
+    "id": "sq_exchange",
+    "name": "Chủ Sàn Giao Dịch Ketra",
+    "map_id": "",
+    "x": 0,
+    "y": 0,
+    "roles": [
+      "exchange"
+    ],
+    "dialogue": "Sàn giao dịch chưa mở cửa. Hàng hóa đang trên đường về.",
+    "confidence": "designed",
+    "source": "P01 v1.0.0 Đợt A — roster P12-S4 (vị trí trong data/maps/p01)"
+  },
+  "sq_warehouse": {
+    "id": "sq_warehouse",
+    "name": "Thủ Kho Odan",
+    "map_id": "",
+    "x": 0,
+    "y": 0,
+    "roles": [
+      "warehouse"
+    ],
+    "dialogue": "Kho đồ đang được sắp xếp lại. Ít hôm nữa quay lại.",
+    "confidence": "designed",
+    "source": "P01 v1.0.0 Đợt A — roster P12-S4 (vị trí trong data/maps/p01)"
+  },
+  "sq_mailbox": {
+    "id": "sq_mailbox",
+    "name": "Hòm Thư Thạch Trụ",
+    "map_id": "",
+    "x": 0,
+    "y": 0,
+    "roles": [
+      "mailbox"
+    ],
+    "dialogue": "Hòm thư chưa hoạt động.",
+    "confidence": "designed",
+    "source": "P01 v1.0.0 Đợt A — roster P12-S4 (vị trí trong data/maps/p01)"
   }
 }
