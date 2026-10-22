@@ -7,6 +7,8 @@ import (
 	"log"
 	"os"
 	"os/signal"
+	"strconv"
+	"strings"
 	"phimond/server/internal/character"
 	"phimond/server/internal/content"
 	"phimond/server/internal/devstore"
@@ -22,6 +24,17 @@ func main() {
 	catalog, err := content.Load(dataDir)
 	if err != nil {
 		log.Fatal(err)
+	}
+	// Chỉ dev/e2e: GAME_ENCOUNTER_WEIGHTS="1" ép encounter 1 quái (test đi bộ không bị 3 quái hạ trước khi chạy kịp).
+	if w := os.Getenv("GAME_ENCOUNTER_WEIGHTS"); w != "" {
+		catalog.Rules.EncounterWeights = nil
+		for _, part := range strings.Split(w, ",") {
+			n, convErr := strconv.Atoi(strings.TrimSpace(part))
+			if convErr != nil {
+				log.Fatalf("GAME_ENCOUNTER_WEIGHTS: %v", convErr)
+			}
+			catalog.Rules.EncounterWeights = append(catalog.Rules.EncounterWeights, n)
+		}
 	}
 	addr := os.Getenv("GAME_ADDR")
 	if addr == "" {

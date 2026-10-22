@@ -36,6 +36,7 @@ func TestMySQLWireRecovery(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
+	catalog.Rules.EncounterWeights = []int{1} // test cũ giả định encounter 1v1; nhiều quái có test riêng
 	engine := character.NewEngine(catalog)
 	for _, mode := range []string{"before_forward", "after_commit", "timeout_after_commit", "rtt300"} {
 		t.Run(mode, func(t *testing.T) {

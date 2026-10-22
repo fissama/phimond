@@ -249,6 +249,8 @@ type Rules struct {
 	BattleGold          int      `json:"battle_gold"`
 	MaxLevel            int      `json:"max_level"`
 	BattleTurnCap       int      `json:"battle_turn_cap"`
+	// EncounterWeights[i] = trọng số encounter hoang có i+1 quái cùng loài (rỗng = luôn 1 quái, tương thích dữ liệu cũ).
+	EncounterWeights    []int    `json:"encounter_weights"`
 	Elements            []string `json:"elements"`
 	MovementAllowedKeys []string `json:"movement_allowed_keys"`
 	Evidence

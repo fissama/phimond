@@ -13,6 +13,7 @@ func engine(t *testing.T) *Engine {
 	if err != nil {
 		t.Fatal(err)
 	}
+	c.Rules.EncounterWeights = []int{1} // test cũ giả định encounter 1v1; nhiều quái có test riêng
 	return NewEngine(c)
 }
 func command(t *testing.T, e *Engine, c *Character, op string, d map[string]any) []Event {

@@ -115,6 +115,7 @@ func liveFixture(t *testing.T) (*Server, *memoryStore) {
 	if err != nil {
 		t.Fatal(err)
 	}
+	catalog.Rules.EncounterWeights = []int{1} // test cũ giả định encounter 1v1; nhiều quái có test riêng
 	// Quầy hàng thử nghiệm cạnh điểm đứng để các test giao dịch bền vững có dịch vụ shop thật.
 	catalog.NPCs["test_merchant"] = content.NPC{ID: "test_merchant", Name: "Test", MapID: "city_square", X: 15, Y: 5, Roles: []string{"shop"}}
 	e := character.NewEngine(catalog)

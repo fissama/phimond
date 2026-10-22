@@ -127,6 +127,7 @@ type Intent struct {
 	BattleID  string `json:"battle_id"`
 	Turn      int    `json:"turn"`
 	Choice    string `json:"choice"`
+	TargetID  string `json:"target_id,omitempty"`
 	Pedestal  *int   `json:"pedestal,omitempty"`
 	MapID     string `json:"map_id,omitempty"`
 }

@@ -14,6 +14,7 @@ func TestPublicContentAndStrictAuthBoundary(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
+	c.Rules.EncounterWeights = []int{1} // test cũ giả định encounter 1v1; nhiều quái có test riêng
 	s := New(nil, character.NewEngine(c))
 	h := s.Handler()
 	for _, tt := range []struct {

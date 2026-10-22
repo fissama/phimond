@@ -40,15 +40,72 @@ func (e *Engine) startBattle(c *Character, arena bool, contactSpecies ...string)
 		lo, hi := e.Data.Maps[c.MapID].LevelRange()
 		level = max(lo, min(hi, c.Level+1-c.RNG.Int(3)))
 	}
-	enemy := e.NewPet(c, species, level)
-	if arena {
-		enemy.Skills = append(enemy.Skills, "neutral_strike")
+	// Encounter hoang dã: 1 pet của người chơi đấu 1–3 quái CÙNG LOÀI (trọng số trong rules.encounter_weights, mặc
+	// định 40% hai quái / 60% ba quái); đấu trường luôn 1 đối thủ.
+	count := 1
+	if !arena {
+		count = e.encounterSize(c)
+	}
+	units := []*battle.Unit{unit(p, "player")}
+	var first *pet.Pet
+	for i := 0; i < count; i++ {
+		enemy := e.NewPet(c, species, level)
+		if arena {
+			enemy.Skills = append(enemy.Skills, "neutral_strike")
+		}
+		if first == nil {
+			first = enemy
+		}
+		units = append(units, unit(enemy, "enemy"))
 	}
 	seed := c.RNG.Next()
-	b := &Battle{ID: c.id("battle"), Turn: 1, Phase: "WAIT_COMMAND", Units: []*battle.Unit{unit(p, "player"), unit(enemy, "enemy")}, Seed: seed, RNG: RNG{seed}, Arena: arena, Commands: []Intent{}, Events: []Event{}}
+	b := &Battle{ID: c.id("battle"), Turn: 1, Phase: "WAIT_COMMAND", Units: units, Seed: seed, RNG: RNG{seed}, Arena: arena, Commands: []Intent{}, Events: []Event{}}
 	c.Battle = b
-	return []Event{event("battle_start", "Encountered "+enemy.Name)}, nil
+	return []Event{event("battle_start", "Encountered "+first.Name)}, nil
 }
+
+// encounterSize rolls how many wild monsters join the encounter, from rules.encounter_weights.
+func (e *Engine) encounterSize(c *Character) int {
+	w := e.Data.Rules.EncounterWeights
+	total := 0
+	for _, v := range w {
+		total += max(0, v)
+	}
+	if total <= 0 {
+		return 1
+	}
+	r := c.RNG.Int(total)
+	for i, v := range w {
+		if r < max(0, v) {
+			return i + 1
+		}
+		r -= max(0, v)
+	}
+	return 1
+}
+
+// sideUnits returns the units on one side (stable battle order).
+func sideUnits(b *Battle, side string) []*battle.Unit {
+	out := []*battle.Unit{}
+	for _, u := range b.Units {
+		if u.Side == side {
+			out = append(out, u)
+		}
+	}
+	return out
+}
+
+// firstAlive returns the first living unit among us, or nil.
+func firstAlive(us []*battle.Unit) *battle.Unit {
+	for _, u := range us {
+		if u.HP > 0 {
+			return u
+		}
+	}
+	return nil
+}
+
+func anyAlive(us []*battle.Unit) bool { return firstAlive(us) != nil }
 
 // blocked reports whether u's statuses block actions of the given kind.
 // Moved verbatim from internal/game/battle.go.
@@ -83,7 +140,24 @@ func (e *Engine) battleAction(c *Character, d Intent) ([]Event, error) {
 	if e.Data.Rules.BattleTurnCap > 0 && b.Turn >= e.Data.Rules.BattleTurnCap {
 		return nil, fmt.Errorf("battle turn limit reached")
 	}
-	player, enemy := b.Units[0], b.Units[1]
+	player := b.Units[0]
+	foes := sideUnits(b, "enemy")
+	// Mục tiêu: target_id hợp lệ (còn sống, phe địch) hoặc quái còn sống đầu tiên.
+	enemy := firstAlive(foes)
+	if enemy == nil {
+		return nil, fmt.Errorf("no living enemy")
+	}
+	if d.TargetID != "" {
+		found := false
+		for _, u := range foes {
+			if u.ID == d.TargetID && u.HP > 0 {
+				enemy, found = u, true
+			}
+		}
+		if !found {
+			return nil, fmt.Errorf("invalid target")
+		}
+	}
 	kind := d.Choice
 	skill := content.Skill{}
 	item := content.Item{}
@@ -102,7 +176,7 @@ func (e *Engine) battleAction(c *Character, d Intent) ([]Event, error) {
 		}
 		kind = skill.Kind
 	case "capture":
-		if b.Arena || !e.Data.Species[enemy.SpeciesID].Catchable || enemy.HP <= 0 {
+		if b.Arena || !e.Data.Species[enemy.SpeciesID].Catchable {
 			return nil, fmt.Errorf("target cannot be captured")
 		}
 		if c.Inventory["capture_seal"] < 1 {
@@ -130,14 +204,17 @@ func (e *Engine) battleAction(c *Character, d Intent) ([]Event, error) {
 		player.Defending = true
 	}
 	b.Phase = "CALCULATE_ORDER"
-	order := []*battle.Unit{player, enemy}
+	order := append([]*battle.Unit{}, b.Units...)
 	sort.SliceStable(order, func(i, j int) bool {
 		return float64(order[i].Pet.Speed)*e.multiplier(order[i], "speed") > float64(order[j].Pet.Speed)*e.multiplier(order[j], "speed")
 	})
 	b.Phase = "EXECUTE_ACTIONS"
 	for _, u := range order {
-		if player.HP <= 0 || enemy.HP <= 0 || b.Result != "" {
+		if player.HP <= 0 || !anyAlive(foes) || b.Result != "" {
 			break
+		}
+		if u.HP <= 0 {
+			continue
 		}
 		if u.Side == "enemy" {
 			s := e.Data.Skills["attack"]
@@ -172,9 +249,12 @@ func (e *Engine) battleAction(c *Character, d Intent) ([]Event, error) {
 				p.HP = max(1, enemy.HP)
 				p.MP = enemy.MP
 				c.Pets = append(c.Pets, p)
-				b.Result = "capture"
+				enemy.HP = 0 // rời sân; XP vẫn tính như quái bị hạ
+				if !anyAlive(foes) {
+					b.Result = "capture"
+				}
 				e.progress(c, "pet_capture", p.SpeciesID)
-				emit(event("pet_capture", p.Name+" joined your ranch. Visit the keeper for appraisal."))
+				emit(Event{Type: "pet_capture", ActorID: player.ID, TargetID: enemy.ID, Message: p.Name + " joined your ranch. Visit the keeper for appraisal."})
 			} else {
 				emit(event("capture_failed", "The beast broke free"))
 			}
@@ -230,7 +310,7 @@ func (e *Engine) battleAction(c *Character, d Intent) ([]Event, error) {
 	if b.Result == "" {
 		if player.HP <= 0 {
 			b.Result = "loss"
-		} else if enemy.HP <= 0 {
+		} else if !anyAlive(foes) {
 			b.Result = "win"
 		} else if e.Data.Rules.BattleTurnCap > 0 && b.Turn >= e.Data.Rules.BattleTurnCap {
 			b.Result = "draw"
@@ -243,11 +323,18 @@ func (e *Engine) battleAction(c *Character, d Intent) ([]Event, error) {
 	if b.Result != "" {
 		b.Phase = "FINISHED"
 		if b.Result == "win" || b.Result == "capture" {
-			xp := e.Data.Rules.BattleXP * max(1, enemy.Pet.Level)
+			// Mỗi quái bị hạ/bắt cộng XP và vàng riêng (quái cùng cấp nên XP = n × một quái).
+			xp, gold := 0, 0
+			for _, u := range foes {
+				if u.HP <= 0 {
+					xp += e.Data.Rules.BattleXP * max(1, u.Pet.Level)
+					gold += e.Data.Rules.BattleGold
+				}
+			}
 			e.petXP(p, xp)
 			e.trainerXP(c, xp)
-			c.Gold += e.Data.Rules.BattleGold
-			emit(event("currency_gain", fmt.Sprintf("Earned %d gold and %d experience", e.Data.Rules.BattleGold, xp)))
+			c.Gold += gold
+			emit(event("currency_gain", fmt.Sprintf("Earned %d gold and %d experience", gold, xp)))
 			if b.Result == "win" {
 				e.progress(c, "battle_win", enemy.SpeciesID)
 				if b.Arena {
