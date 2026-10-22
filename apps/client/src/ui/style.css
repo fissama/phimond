@@ -46,9 +46,10 @@ button:disabled { opacity: 0.45; cursor: default; }
 
 /* ---------- HUD ---------- */
 .hud-status {
-  position: absolute; top: calc(8px + var(--safe-t)); left: calc(8px + var(--safe-l));
-  display: flex; gap: 8px; align-items: center; padding: 6px 10px 6px 6px; max-width: min(360px, 60vw);
+  position: absolute; top: calc(8px + var(--safe-t)); left: calc(10px + var(--safe-l));
+  display: flex; gap: 4px; align-items: center; max-width: min(380px, 62vw); color: var(--text);
 }
+.hud-status .who, .hud-status .sub { text-shadow: 0 1px 2px #000; }
 .hud-status .who { font-weight: 700; font-size: 14px; }
 .hud-status .sub { font-size: 12px; color: var(--muted); }
 .lv { display: inline-block; background: var(--line); color: #1d1405; font-weight: 800; border-radius: 4px; padding: 0 5px; font-size: 12px; margin-right: 6px; }
@@ -63,10 +64,13 @@ button:disabled { opacity: 0.45; cursor: default; }
 .hud-map { position: absolute; top: calc(10px + var(--safe-t)); left: 50%; transform: translateX(-50%); padding: 4px 14px; font-size: 13px; font-weight: 600; white-space: nowrap; }
 .hud-net { position: absolute; top: calc(44px + var(--safe-t)); left: 50%; transform: translateX(-50%); padding: 6px 12px; font-size: 13px; display: flex; gap: 8px; align-items: center; }
 
-.hud-menu { position: absolute; top: calc(8px + var(--safe-t)); right: calc(8px + var(--safe-r)); display: flex; flex-direction: column; gap: 6px; }
+.hud-menu { position: absolute; top: calc(8px + var(--safe-t)); right: calc(10px + var(--safe-r)); display: flex; flex-direction: column; gap: 20px; }
 .hud-menu .btn { min-width: 92px; font-size: 13px; padding: 6px 10px; }
 
 .dpad { position: absolute; left: calc(14px + var(--safe-l)); bottom: calc(14px + var(--safe-b)); width: 150px; height: 150px; touch-action: none; }
+.dpad button { width: 48px !important; height: 48px !important; }
+.dpad .up { left: 51px !important; top: 2px !important; } .dpad .down { left: 51px !important; bottom: 2px !important; top: auto !important; }
+.dpad .left { left: 2px !important; top: 51px !important; } .dpad .right { right: 2px !important; left: auto !important; top: 51px !important; }
 .dpad button {
   position: absolute; width: 50px; height: 50px; border-radius: 10px; font-size: 20px;
   background: rgba(20, 27, 44, 0.75); border: 1px solid var(--line-soft); color: var(--gold);
@@ -98,7 +102,8 @@ button:disabled { opacity: 0.45; cursor: default; }
 
 /* ---------- Lớp phủ ---------- */
 .scrim { position: absolute; inset: 0; background: rgba(5, 8, 14, 0.45); display: grid; place-items: center; z-index: 20; padding: 16px; }
-.dialog { width: min(560px, 100%); max-height: min(86vh, 640px); overflow: auto; padding: 16px; }
+.dialog { position: relative; width: min(560px, 100%); max-height: min(86vh, 640px); overflow: auto; padding: 4px 6px; }
+.dialog > h2, .dialog .npc-head { padding-right: 36px; }
 .dialog h2 { margin: 0 0 8px; font-size: 18px; color: var(--gold); }
 .dialog p { margin: 0 0 12px; line-height: 1.5; }
 .dialog .row { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -125,7 +130,7 @@ button:disabled { opacity: 0.45; cursor: default; }
 .battle .card { padding: 6px 10px; min-width: 180px; }
 .battle .bottom { padding: 10px calc(12px + var(--safe-r)) calc(12px + var(--safe-b)) calc(12px + var(--safe-l)); display: grid; grid-template-columns: 1fr auto; gap: 10px; }
 .battle .log { height: 96px; overflow: auto; padding: 8px 10px; font-size: 13px; line-height: 1.5; }
-.battle .cmds { display: grid; grid-template-columns: repeat(4, minmax(72px, auto)); gap: 6px; align-content: start; }
+.battle .cmds { display: grid; grid-template-columns: repeat(4, 64px); gap: 20px 10px; align-content: start; justify-content: center; padding: 8px 12px 22px !important; }
 .battle .result { position: absolute; inset: 0; display: grid; place-items: center; }
 .float { position: absolute; font-weight: 800; font-size: 22px; color: #fff; text-shadow: 0 2px 4px #000; animation: rise 0.9s forwards; pointer-events: none; }
 .float.heal { color: #9be89a; }
@@ -145,3 +150,5 @@ button:disabled { opacity: 0.45; cursor: default; }
   .hud-map { top: calc(78px + var(--safe-t)); }
 }
 @keyframes petframes { from { background-position-x: 0; } to { background-position-x: calc(var(--s) * -4); } }
+
+.battle .cmds.sub { grid-template-columns: repeat(2, minmax(130px, auto)); gap: 6px; padding: 8px 12px !important; }

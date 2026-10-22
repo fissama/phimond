@@ -132,3 +132,15 @@ describe('Mover', () => {
     expect(m.path).toHaveLength(0);
   });
 });
+
+describe('Mover nhấn nhanh', () => {
+  it('nhấn và nhả phím trước khung hình kế tiếp vẫn đi đúng một ô', () => {
+    const sent: Direction[] = [];
+    const m = new Mover(grid(), 'm', { x: 1, y: 3 }, (d) => (sent.push(d), new Promise(() => undefined)));
+    m.tap = 'right';
+    m.held = null;
+    for (let i = 0; i < 20; i++) m.update(0.05);
+    expect(sent).toEqual(['right']);
+    expect(m.cell).toEqual({ x: 2, y: 3 });
+  });
+});

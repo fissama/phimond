@@ -4,7 +4,7 @@ import type { Batch, Session } from '../net/session.ts';
 import { Engine, type Pick } from '../render/engine.ts';
 import { prefetch, hd2dUrl } from '../render/assets.ts';
 import { settings } from '../state/settings.ts';
-import { battleResultOpen, closeOverlay, loading, overlay, pushLog, toast } from '../state/ui.ts';
+import { battleResultOpen, closeOverlay, fatal, loading, overlay, pushLog, toast } from '../state/ui.ts';
 import { chebyshev, type Cell, type Direction } from '../world/coords.ts';
 import { Mover } from '../world/mover.ts';
 import { around, findPath, rectCells } from '../world/path.ts';
@@ -110,7 +110,10 @@ export class GameWorld {
     const map = this.content.map(ch.map_id);
     const grid = this.content.grid(ch.map_id);
     if (!map || !grid) {
-      toast(`Không có dữ liệu map ${ch.map_id}`);
+      // Thường do server đang chạy bản cũ (catalog chưa có map P01/lưới đi): báo rõ thay vì đứng im.
+      fatal.value = map
+        ? `Server chưa có dữ liệu va chạm của "${map.name}". Hãy build lại và chạy server bản mới (apps/game-server).`
+        : `Server gửi map "${ch.map_id}" không có trong dữ liệu P01. Hãy build lại và chạy server bản mới (apps/game-server), rồi tải lại trang.`;
       return;
     }
     if (this.loadingMap === map.id) return;
@@ -276,7 +279,10 @@ export class GameWorld {
   // ------------------------------------------------------------ điều khiển
   setHeld(dir: Direction | null): void {
     if (!this.mover) return;
-    if (dir) this.mover.path = [];
+    if (dir) {
+      this.mover.path = [];
+      this.mover.tap = dir;
+    }
     this.mover.held = dir;
   }
 

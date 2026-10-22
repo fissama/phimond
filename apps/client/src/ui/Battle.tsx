@@ -5,8 +5,10 @@ import { eventText, viName } from '../game/content.ts';
 import { session } from '../state/app.ts';
 import { PetAnimated } from './PetArt.tsx';
 import { battleResultOpen } from '../state/ui.ts';
+import { damageGlyphs, iconFor, uiUrl } from './skin.ts';
 
 type Choice = 'attack' | 'skill' | 'capture' | 'defend' | 'item' | 'auto' | 'flee';
+const BANNER: Record<string, string> = { win: 'battle_win_banner', loss: 'battle_loss_banner', capture: 'battle_capture_banner' };
 const RESULT: Record<string, string> = { win: 'Chiến thắng!', loss: 'Thất bại', capture: 'Bắt thành công!', flee: 'Đã chạy thoát', draw: 'Hòa' };
 
 /**
@@ -90,10 +92,10 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
         <div class="card panel">
           <b>{viName(u.name)}</b>
           <div class="bars">
-            <div class="bar hp" title={`HP ${u.hp}/${u.max_hp}`}>
+            <div class="uibar hp" title={`HP ${u.hp}/${u.max_hp}`}>
               <i style={{ width: `${(100 * u.hp) / Math.max(1, u.max_hp)}%` }} />
             </div>
-            <div class="bar mp" title={`MP ${u.mp}/${u.max_mp}`}>
+            <div class="uibar mp" title={`MP ${u.mp}/${u.max_mp}`}>
               <i style={{ width: `${(100 * u.mp) / Math.max(1, u.max_mp)}%` }} />
             </div>
           </div>
@@ -107,14 +109,22 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
           {floats
             .filter((f) => f.unit === u.id)
             .map((f) => (
-              <span key={f.id} class={`float ${f.heal ? 'heal' : ''}`} style={{ left: '40%', top: '20%' }}>
-                {f.text}
+              <span key={f.id} class={`float dmg ${f.heal ? 'heal' : 'hurt'}`} style={{ left: '35%', top: '20%' }}>
+                {damageGlyphs(f.text).map((src, i) => (
+                  <img key={i} src={src} alt={i === 0 ? f.text : ''} />
+                ))}
               </span>
             ))}
         </div>
       </div>
     );
 
+  const cmd = (id: string, label: string, icon: string, disabled: boolean, onClick: () => void) => (
+    <button class="bbtn" disabled={disabled} data-testid={`act-${id}`} aria-label={label} onClick={onClick}>
+      {iconFor(icon) ? <img src={iconFor(icon)!} alt="" /> : label}
+      <span>{label}</span>
+    </button>
+  );
   const seals = ch.inventory['capture_seal'] ?? 0;
   const skills = (pet?.skills ?? []).filter((s) => s !== 'attack');
   const consumables = Object.entries(ch.inventory).filter(([id, n]) => n > 0 && /potion|ether/.test(id));
@@ -126,14 +136,20 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
         {unitCard(foe, 'enemy')}
         {finished && !live && (
           <div class="result">
-            <div class="dialog panel" style={{ width: 'min(420px, 92vw)' }} data-testid="battle-result">
-              <h2>{RESULT[finished.battle.result] ?? 'Trận đấu kết thúc'}</h2>
+            <div class="dialog skin-confirm" style={{ width: 'min(460px, 92vw)', textAlign: 'center' }} data-testid="battle-result">
+              {BANNER[finished.battle.result] ? (
+                <div class="banner" style={{ backgroundImage: `url(${uiUrl(BANNER[finished.battle.result]!)})`, backgroundSize: '100% 100%', margin: '0 auto 8px' }}>
+                  <b style={{ fontSize: 20, color: '#3a2508', marginTop: '6%' }}>{RESULT[finished.battle.result]}</b>
+                </div>
+              ) : (
+                <h2>{RESULT[finished.battle.result] ?? 'Trận đấu kết thúc'}</h2>
+              )}
               <div class="list">
                 {finished.lines.map((l, i) => (
                   <div key={i}>{l}</div>
                 ))}
               </div>
-              <button class="btn primary" data-testid="battle-continue" onClick={() => (setFinished(null), setLines([]))}>
+              <button class="btn primary" style={{ marginTop: 10 }} data-testid="battle-continue" onClick={() => (setFinished(null), setLines([]))}>
                 Tiếp tục
               </button>
             </div>
@@ -141,22 +157,22 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
         )}
       </div>
       <div class="bottom">
-        <div class="log panel" ref={logRef} data-testid="battle-log">
+        <div class="log skin-dialogue" ref={logRef} data-testid="battle-log">
           {lines.map((l, i) => (
             <div key={i}>{l}</div>
           ))}
         </div>
         {live && (
-          <div class="cmds">
+          <div class={`cmds ${menu ? 'sub' : ''}`}>
             {menu === null && (
               <>
-                <button class="btn primary" disabled={busy} data-testid="act-attack" onClick={() => void act('attack')}>Tấn công</button>
-                <button class="btn" disabled={busy || skills.length === 0} data-testid="act-skill" onClick={() => setMenu('skill')}>Kỹ năng</button>
-                <button class="btn" disabled={busy || seals === 0} data-testid="act-capture" onClick={() => void act('capture')}>Bắt ({seals})</button>
-                <button class="btn" disabled={busy} data-testid="act-defend" onClick={() => void act('defend')}>Phòng thủ</button>
-                <button class="btn" disabled={busy || consumables.length === 0} data-testid="act-item" onClick={() => setMenu('item')}>Vật phẩm</button>
-                <button class="btn" disabled={busy} data-testid="act-auto" onClick={() => void act('auto')}>Tự động</button>
-                <button class="btn danger" disabled={busy} data-testid="act-flee" onClick={() => void act('flee')}>Chạy</button>
+                {cmd('attack', 'Tấn công', 'icon_attack', busy, () => void act('attack'))}
+                {cmd('skill', 'Kỹ năng', 'icon_magic', busy || skills.length === 0, () => setMenu('skill'))}
+                {cmd('capture', `Bắt (${seals})`, 'capture_seal', busy || seals === 0, () => void act('capture'))}
+                {cmd('defend', 'Phòng thủ', 'icon_defend', busy, () => void act('defend'))}
+                {cmd('item', 'Vật phẩm', 'icon_inventory', busy || consumables.length === 0, () => setMenu('item'))}
+                {cmd('auto', 'Tự động', 'icon_auto', busy, () => void act('auto'))}
+                {cmd('flee', 'Chạy', 'icon_run', busy, () => void act('flee'))}
               </>
             )}
             {menu === 'skill' &&

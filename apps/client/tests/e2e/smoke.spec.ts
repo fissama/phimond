@@ -131,3 +131,29 @@ test('đăng nhập sai báo lỗi rõ ràng', async ({ page }) => {
   await page.getByTestId('login').click();
   await expect(page.getByTestId('login-error')).toBeVisible();
 });
+
+test('điều khiển thật: nhấn phím, giữ phím, D-pad, click mặt đất', async ({ page }) => {
+  await register(page);
+  const at = async () => {
+    await page.waitForTimeout(400);
+    await expect.poll(async () => (await pos(page)).settled, { timeout: 5000 }).toBe(true);
+    return pos(page);
+  };
+  const s0 = await at(); // Triệu Linh Điện (9,9)
+  await page.keyboard.press('ArrowLeft'); // nhấn nhanh: đúng một ô
+  expect((await at()).x).toBe(s0.x - 1);
+  await page.keyboard.down('ArrowUp');
+  await page.waitForTimeout(700);
+  await page.keyboard.up('ArrowUp');
+  const s2 = await at();
+  expect(s2.y).toBeLessThan(s0.y - 1); // giữ phím: đi nhiều ô
+  const d = (await page.getByTestId('dpad-right').boundingBox())!;
+  await page.mouse.move(d.x + d.width / 2, d.y + d.height / 2);
+  await page.mouse.down();
+  await page.waitForTimeout(600);
+  await page.mouse.up();
+  expect((await at()).x).toBeGreaterThan(s2.x);
+  const before = JSON.stringify(await at());
+  await page.mouse.click(640, 470); // chạm mặt đất dưới nhân vật
+  await expect.poll(async () => JSON.stringify(await pos(page)), { timeout: 8000 }).not.toBe(before);
+});

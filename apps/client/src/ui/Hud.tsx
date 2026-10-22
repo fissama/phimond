@@ -17,22 +17,26 @@ export function Hud({ world, ch }: { world: GameWorld; ch: Character }) {
   const status = session.status.value;
   return (
     <>
-      <div class="hud-status panel" data-testid="hud-status-panel">
-        {pet ? <PetPortrait species={pet.species_id} /> : <div class="portrait" />}
-        <div>
+      <div class="hud-status" data-testid="hud-status-panel">
+        <div class="ring">
+          {pet ? <PetPortrait species={pet.species_id} /> : <div class="portrait" />}
+          <div class="badge" title="Cấp nhân vật">{ch.level}</div>
+        </div>
+        <div class="plate">
           <div class="who" data-testid="hud-name">
-            <span class="lv">Lv {ch.level}</span>
             {ch.name}
           </div>
           <div class="sub" data-testid="hud-gold">
-            {ch.gold} vàng{pet ? ` · ${viName(pet.name)} Lv ${pet.level}` : ' · chưa có linh thú'}
+            <i class="coin" />
+            {ch.gold}
+            {pet ? ` · ${viName(pet.name)} Lv ${pet.level}` : ' · chưa có linh thú'}
           </div>
           {pet && (
             <div class="bars">
-              <div class="bar hp" title={`HP ${pet.hp}/${pet.max_hp}`}>
+              <div class="uibar hp" title={`HP ${pet.hp}/${pet.max_hp}`}>
                 <i style={{ width: pct(pet.hp, pet.max_hp) }} />
               </div>
-              <div class="bar mp" title={`MP ${pet.mp}/${pet.max_mp}`}>
+              <div class="uibar mp" title={`MP ${pet.mp}/${pet.max_mp}`}>
                 <i style={{ width: pct(pet.mp, pet.max_mp) }} />
               </div>
             </div>
@@ -41,7 +45,7 @@ export function Hud({ world, ch }: { world: GameWorld; ch: Character }) {
       </div>
 
       {map && (
-        <div class="hud-map panel" data-testid="hud-map">
+        <div class="hud-map" data-testid="hud-map">
           {map.name}
         </div>
       )}
@@ -50,7 +54,7 @@ export function Hud({ world, ch }: { world: GameWorld; ch: Character }) {
       </span>
 
       {status !== 'online' && (
-        <div class="hud-net panel" data-testid="hud-status">
+        <div class="hud-net" data-testid="hud-status">
           {status === 'connecting' ? 'Đang kết nối…' : 'Mất kết nối máy chủ'}
           {status === 'offline' && (
             <button class="btn small" onClick={() => void session.connect().catch(() => undefined)}>
@@ -66,17 +70,17 @@ export function Hud({ world, ch }: { world: GameWorld; ch: Character }) {
       )}
 
       <div class="hud-menu">
-        <button class="btn" data-testid="menu-pets" onClick={() => (overlay.value = { kind: 'menu', page: 'pets' })}>
-          Linh thú
+        <button class="rbtn pet" data-testid="menu-pets" aria-label="Linh thú" onClick={() => (overlay.value = { kind: 'menu', page: 'pets' })}>
+          <span>Linh thú</span>
         </button>
-        <button class="btn" data-testid="menu-bag" onClick={() => (overlay.value = { kind: 'menu', page: 'bag' })}>
-          Túi đồ
+        <button class="rbtn bag" data-testid="menu-bag" aria-label="Túi đồ" onClick={() => (overlay.value = { kind: 'menu', page: 'bag' })}>
+          <span>Túi đồ</span>
         </button>
-        <button class="btn" data-testid="menu-quests" onClick={() => (overlay.value = { kind: 'menu', page: 'quests' })}>
-          Nhiệm vụ
+        <button class="rbtn quest" data-testid="menu-quests" aria-label="Nhiệm vụ" onClick={() => (overlay.value = { kind: 'menu', page: 'quests' })}>
+          <span>Nhiệm vụ</span>
         </button>
-        <button class="btn" data-testid="menu-open" onClick={() => (overlay.value = { kind: 'menu', page: 'root' })}>
-          Menu
+        <button class="rbtn settings" data-testid="menu-open" aria-label="Menu" onClick={() => (overlay.value = { kind: 'menu', page: 'root' })}>
+          <span>Menu</span>
         </button>
       </div>
 
@@ -94,7 +98,7 @@ export function Hud({ world, ch }: { world: GameWorld; ch: Character }) {
       <Chat />
       <div class="toasts" data-testid="toasts">
         {toasts.value.map((t) => (
-          <div key={t.id} class="toast panel">
+          <div key={t.id} class="toast">
             {t.text}
           </div>
         ))}
@@ -128,6 +132,7 @@ function DPad({ world }: { world: GameWorld }) {
   );
   return (
     <div class="dpad">
+      <div class="center" />
       {btn('up', '▲')}
       {btn('left', '◀')}
       {btn('right', '▶')}
@@ -141,7 +146,7 @@ function Chat() {
   const [min, setMin] = useState(false);
   const lines = log.value.filter((l) => tab === 'all' || l.tab === tab).slice(-30);
   return (
-    <div class={`chat panel ${min ? 'min' : ''}`} data-testid="chat">
+    <div class={`chat ${min ? 'min' : ''}`} data-testid="chat">
       <div class="tabs">
         {LOG_TABS.map((t) => (
           <button key={t.id} class={tab === t.id ? 'on' : ''} onClick={() => (tab === t.id ? setMin(!min) : setTab(t.id))}>

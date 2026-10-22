@@ -28,6 +28,8 @@ export class Mover {
   mapId: string;
   facing: Direction = 'down';
   held: Direction | null = null;
+  /** Bước lẻ từ một lần nhấn nhanh (nhấn và nhả trước khung hình kế tiếp vẫn đi một ô). */
+  tap: Direction | null = null;
   path: Cell[] = [];
   pending = 0;
   paused = false;
@@ -101,6 +103,7 @@ export class Mover {
 
   stop(): void {
     this.held = null;
+    this.tap = null;
     this.path = [];
     this.onPathDone = null;
   }
@@ -143,8 +146,8 @@ export class Mover {
         this.path = [];
         return false;
       }
-    } else if (this.held) {
-      dir = this.held;
+    } else if (this.held || this.tap) {
+      dir = this.held ?? this.tap;
     }
     if (!dir) return false;
     this.facing = dir;
@@ -159,6 +162,7 @@ export class Mover {
     }
     if (this.pending >= MAX_PENDING) return false;
     if (fromPath) this.path.shift();
+    this.tap = null;
     this.from = { ...this.cell };
     this.cell = next;
     this.progress = 0;

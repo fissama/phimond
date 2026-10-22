@@ -53,3 +53,6 @@ export const loading = signal<string | null>(null);
 
 /** Bảng kết quả trận còn mở (world vẫn dừng di chuyển tới khi người chơi bấm Tiếp tục). */
 export const battleResultOpen = signal(false);
+
+/** Lỗi không chơi tiếp được (vd server bản cũ): hiện toàn màn hình với hướng dẫn. */
+export const fatal = signal<string | null>(null);

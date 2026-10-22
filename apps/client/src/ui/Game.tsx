@@ -3,11 +3,12 @@ import { Content } from '../game/content.ts';
 import { GameWorld } from '../game/world.ts';
 import { Engine } from '../render/engine.ts';
 import { session } from '../state/app.ts';
-import { closeOverlay, loading, overlay } from '../state/ui.ts';
+import { closeOverlay, fatal, loading, overlay } from '../state/ui.ts';
 import type { Direction } from '../world/coords.ts';
 import { Battle } from './Battle.tsx';
 import { Hud } from './Hud.tsx';
 import { Overlays } from './Overlays.tsx';
+import { uiUrl } from './skin.ts';
 
 const KEYS: Record<string, Direction> = {
   ArrowLeft: 'left', ArrowRight: 'right', ArrowUp: 'up', ArrowDown: 'down',
@@ -91,9 +92,16 @@ export function Game() {
       {world && ch && <Hud world={world} ch={ch} />}
       {world && ch && <Battle world={world} ch={ch} />}
       {world && ch && <Overlays world={world} ch={ch} />}
-      {loading.value && (
-        <div class="loading" data-testid="loading">
-          {loading.value}
+      {fatal.value && (
+        <div class="loading" data-testid="fatal" style={{ fontSize: 16, padding: 24, textAlign: 'center', lineHeight: 1.6 }}>
+          {fatal.value}
+        </div>
+      )}
+      {loading.value && !fatal.value && (
+        <div class="loading" data-testid="loading" style={{ display: 'grid', gap: 14, justifyItems: 'center', alignContent: 'center' }}>
+          <img src={uiUrl('logo-badge')} alt="" style={{ width: 96, imageRendering: 'pixelated' }} />
+          <div>{loading.value}</div>
+          <div class="loadbar" />
         </div>
       )}
     </div>

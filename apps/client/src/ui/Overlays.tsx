@@ -1,4 +1,4 @@
-import { useState } from 'preact/hooks';
+import { useEffect, useState } from 'preact/hooks';
 import type { Character, Pet } from '@phimond/protocol';
 import type { GameWorld } from '../game/world.ts';
 import { currentMap } from '../game/world.ts';
@@ -8,17 +8,34 @@ import { PRESETS, settings, settingsVolatile, updateSettings, type Quality } fro
 import { closeOverlay, overlay } from '../state/ui.ts';
 import { session } from '../state/app.ts';
 import { PetPortrait } from './PetArt.tsx';
+import { iconFor } from './skin.ts';
+import { useSignal } from '@preact/signals';
 
 type Rules = { heal_cost?: number; learn_cost?: number; appraisal_cost?: number };
 
 export function Overlays({ world, ch }: { world: GameWorld; ch: Character }) {
   const o = overlay.value;
+  const npcTab = useSignal<string | null>(null);
   if (o.kind === 'none') return null;
+  // Khung panel theo loại nội dung (bộ UI batch 08).
+  const skin =
+    o.kind === 'menu'
+      ? ({ root: 'large', pets: 'pets', bag: 'bag', quests: 'quest', settings: 'settings' } as const)[o.page]
+      : o.kind === 'npc'
+        ? npcTab.value === 'shop'
+          ? 'shop'
+          : npcTab.value === 'learn'
+            ? 'learn'
+            : npcTab.value === 'quest'
+              ? 'quest'
+              : 'dialogue'
+        : 'confirm';
   return (
     <div class="scrim" data-testid="overlay" onPointerDown={(e) => e.target === e.currentTarget && closeOverlay()}>
-      <div class="dialog panel" role="dialog">
+      <div class={`dialog skin-${skin}`} role="dialog">
+        <button class="btn-close" aria-label="Đóng" data-testid="overlay-close" style={{ position: 'absolute', top: 2, right: 2, zIndex: 2 }} onClick={closeOverlay} />
         {o.kind === 'menu' && <Menu page={o.page} world={world} ch={ch} />}
-        {o.kind === 'npc' && <NpcDialog npcId={o.npcId} line={o.line} world={world} ch={ch} />}
+        {o.kind === 'npc' && <NpcDialog key={o.npcId} npcId={o.npcId} line={o.line} world={world} ch={ch} onTab={(t) => (npcTab.value = t)} />}
         {o.kind === 'pedestal' && <PedestalConfirm index={o.index} world={world} />}
         {o.kind === 'pillar' && <PillarMenu world={world} ch={ch} />}
       </div>
@@ -113,6 +130,7 @@ function Bag({ world, ch }: { world: GameWorld; ch: Character }) {
         {items.length === 0 && <p class="muted">Túi trống.</p>}
         {items.map(([id, n]) => (
           <div class="item" key={id}>
+            {iconFor(id) && <img class="icon" src={iconFor(id)!} alt="" />}
             <div class="grow">{world.content.itemName(id)}</div>
             <b>×{n}</b>
           </div>
@@ -196,9 +214,16 @@ function Settings() {
 }
 
 // ------------------------------------------------------------------ NPC
-function NpcDialog({ npcId, line, world, ch }: { npcId: string; line: string; world: GameWorld; ch: Character }) {
+const ROLE_ICON: Record<string, string> = { heal: 'npc_healer', shop: 'npc_shop', learn: 'npc_skill', quest: 'npc_quest', teleport: 'npc_teleport', guild: 'npc_guild', arena_info: 'npc_arena' };
+
+function NpcDialog({ npcId, line, world, ch, onTab }: { npcId: string; line: string; world: GameWorld; ch: Character; onTab: (t: string | null) => void }) {
   const n = world.content.cat.npcs[npcId];
-  const [tab, setTab] = useState<string | null>(null);
+  const [tab, setTabState] = useState<string | null>(null);
+  const setTab = (t: string | null) => {
+    setTabState(t);
+    onTab(t);
+  };
+  useEffect(() => onTab(null), []);
   if (!n) return null;
   const rules = (world.content.cat as unknown as { rules?: Rules }).rules ?? {};
   const roles = n.roles.filter((r) => r !== 'free' && r !== 'guide');
@@ -215,7 +240,8 @@ function NpcDialog({ npcId, line, world, ch }: { npcId: string; line: string; wo
       {roles.length > 0 && (
         <div class="seg" style={{ marginBottom: 10 }}>
           {roles.map((r) => (
-            <button key={r} class={`btn ${tab === r ? 'on' : ''}`} data-testid={`npc-role-${r}`} onClick={() => (r === 'teleport' ? (overlay.value = { kind: 'pillar' }) : setTab(r))}>
+            <button key={r} class={`tab ${tab === r ? 'on' : ''}`} data-testid={`npc-role-${r}`} onClick={() => (r === 'teleport' ? (overlay.value = { kind: 'pillar' }) : setTab(r))}>
+              {ROLE_ICON[r] && iconFor(ROLE_ICON[r]) && <img class="icon" style={{ width: 22, height: 22, verticalAlign: -5, marginRight: 4 }} src={iconFor(ROLE_ICON[r])!} alt="" />}
               {ROLE_LABEL[r] ?? r}
             </button>
           ))}
@@ -249,6 +275,7 @@ function Shop({ world, ch }: { world: GameWorld; ch: Character }) {
         .filter((i) => (i.price ?? 0) > 0)
         .map((i) => (
           <div class="item" key={i.id}>
+            {iconFor(i.id) && <img class="icon" src={iconFor(i.id)!} alt="" />}
             <div class="grow">
               {i.name}
               <div class="muted">
@@ -283,6 +310,7 @@ function Learn({ world, ch, cost }: { world: GameWorld; ch: Character; cost: num
         const lv = s?.learn_level ?? 1;
         return (
           <div class="item" key={id}>
+            {iconFor(`skill_${id}`) && <img class="icon" src={iconFor(`skill_${id}`)!} alt="" />}
             <div class="grow">
               {s?.name ?? id}
               <div class="muted">
