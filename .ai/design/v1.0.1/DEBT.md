@@ -19,3 +19,6 @@ Các mục đánh giá gameplay thuộc Phase sau, giữ lại ở dạng nợ. 
 | D13 | Combat | Trận đấu là cảnh DOM trên nền cảnh thế giới làm mờ, chưa phải diorama 3D riêng; chưa có hiệu ứng kỹ năng, chưa có tên Lv cho quái hoang (server không gửi level trong BattleUnit). | Sau v1.0.1 |
 | D14 | HUD | EXP cần lên cấp (cấp × 25) đang hard-code ở client theo `data/balance/rules.json`; nên server gửi `xp_next` trong snapshot. | Cùng đợt chỉnh server |
 | D15 | Combat | Encounter 3 quái làm pet mới có thể chết trước khi kịp Chạy; thành phần encounter theo party, AoE, mục tiêu đồng đội cho 3v3 chưa có. Xem `COMBAT-HUD-SPEC.md` cờ 1–4. | Phase cân bằng / PvP 3v3 |
+| D16 | Âm thanh | Âm thanh hiện tổng hợp bằng WebAudio (đánh, phép, thắng/thua, tiền, nút); chưa có nhạc nền theo map và bộ âm thanh vẽ riêng. | Khi có âm thanh |
+| D17 | NPC | Hội thoại dùng sprite NPC thu nhỏ làm chân dung; game gốc/Octopath dùng tranh bán thân. | Khi GPT có lượt (GPT-REMAINING 14) |
+| D18 | Cân bằng | Hệ số `wild_scale`/`pack_scale`/`damage_scale` chỉnh bằng mô phỏng auto (`balance_test.go`), chưa thử với người chơi thật và kỹ năng trạng thái. Pet khởi đầu biết sẵn đòn hệ (lệch learn_level 2). | Phase cân bằng |

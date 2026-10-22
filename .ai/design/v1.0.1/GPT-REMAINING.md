@@ -15,5 +15,11 @@ Quy tắc chung: 1 ô = 128 px, người cao ~168 px trong khung 192×192, chân
 9. **Nền trận đấu theo từng map** (5 ảnh 1920×1080: forest, deep_forest, gate, city, hall): prompt và ảnh mẫu đã soạn sẵn trong `battle-bg/PROMPTS.md`. Đặt vào `apps/client/public/battle/battle-bg-<key>.png`.
 10. **Hiệu ứng kỹ năng** theo hệ (lửa, nước, cây, đất, thú, côn trùng): 6 khung/hiệu ứng, nền ma-gen-ta, kiểu pixel cùng độ phân giải pet.
 11. **Khung thanh chỉ số có nhãn** (HP, MP, EXP) tách riêng nhãn khỏi thanh để không phải vẽ chữ đè lên khung.
-12. **Khung chat màu xanh nhạt** như game gốc (hiện dùng `chat-panel` xanh đậm), kèm tab xếp sát nhau cùng ngôn ngữ khung vàng.
+12. ~~Khung chat màu xanh nhạt~~ (đã làm bằng `chat-panel-light`, dùng chung cho log trận).
 13. **Dải trang trí thanh dưới** (thanh đá có hoa văn ở giữa) để D-pad, chat, nút Chọn nằm trên một khung liền.
+
+## Bổ sung đợt 6 (review vòng 2)
+14. **Chân dung bán thân NPC** cho 19 NPC (khung hội thoại 256×256, nền ma-gen-ta, cùng phong cách sprite), ưu tiên Mira, Lio, Rowan, Tamo, Mero, Karn, Tessa, Selka.
+15. **Ảnh chọn starter**: 3 tranh linh thú khởi đầu cỡ lớn (Tiên Chưởng, Sa Hạt, Xích Ưng) cho thẻ chọn bệ.
+16. **Vòng cảnh báo quái trên map** (thay vòng vẽ bằng canvas): vòng rune đỏ cam 4 khung nhấp nháy, nhìn từ trên xuống.
+17. Nhắc lại ưu tiên: nền trận (mục 9) và đường đất cong/thảm thành phố (mục 5, 8) là hai thứ người chơi khó tính còn nhìn ra đầu tiên.

@@ -16,12 +16,12 @@ Cập nhật 2026-10-22. Chủ game quyết: **đánh quái hoang = 1 pet đấu
 | Bắt | Bắt 1 con: con đó rời sân (HP→0), vẫn tính XP; trận chỉ kết thúc `capture` khi không còn quái sống, `win` nếu hạ nốt bằng đánh. |
 | Thưởng | XP = tổng theo từng quái bị hạ/bắt (BattleXP × cấp quái). Vàng = BattleGold × số quái (**xem cờ 2**). |
 | Kết thúc | Thắng khi hết quái sống; thua khi pet mình hết HP. Mỗi quái sống ra đòn 1 lần/lượt nhắm pet mình. |
-| Bố cục | Ngang: quái bên trái so le (A trên, B dưới, C trên), pet bên phải. Dọc (<700px): quái hàng trên, pet hàng dưới. 3v3: `side.right` đã render nhiều ally + nhiều thẻ trạng thái (xếp dọc bên trái trên). |
+| Bố cục | Đặt theo điểm chân trên mặt đất phối cảnh (bóng đúng chân). Ngang: quái chéo A (13%,60%) → B (27%,70%) → C (41%,80%), pet (72%,74%). Dọc (<700px): quái hàng trên, pet hàng dưới. 3v3: phe mình đã render nhiều ally theo slot (68%,60%) · (80%,71%) · (70%,82%), thẻ trạng thái xếp dọc góc trên trái. |
 
 ## Cờ cần chủ game quyết
 1. **Xung đột master spec P02-R07**: ghi "3 quái với identity riêng" và chưa chốt thành phần encounter, trái với quyết định "2–3 quái giống nhau, P(3)>P(2)". Chưa sửa master spec. Đề xuất sửa: *"Encounter hoang gồm 2–3 quái cùng loài và cùng cấp (xác suất cấu hình, mặc định 40%/60%); identity khác nhau chỉ áp dụng cho boss/sự kiện. Thành phần encounter khi party >1 người quyết riêng."*
 2. **Vàng ×số quái**: mới chọn nhân theo số quái để thưởng tăng theo rủi ro; nếu muốn giữ 1 phần vàng cố định, đổi trong `battleAction`.
-3. **Cân bằng**: e2e cho thấy pet mới ở Rừng Sâu có thể bị 3 quái hạ trước khi kịp bấm Chạy (quái nhanh hơn ra đòn trước). Cần xử lý ở phase cân bằng (D3): giảm sát thương khi >1 quái, hoặc cho Chạy có lượt ưu tiên, hoặc giảm cấp quái theo số lượng.
+3. **Cân bằng** (đã xử lý đợt 6): Chạy đi trước mọi đòn; quái hoang ×0.85, đàn ×0.55/×0.4; `damage_scale` 1.0; pet khởi đầu biết đòn hệ; Tự động dùng đòn mạnh nhất. Pet Lv1 auto thắng ≥92% ở Bìa Rừng (xem `REVIEW-v1.0.0-VONG-2.md`).
 4. **Chưa có**: AoE, chọn mục tiêu cho đồng đội/hồi máu (3v3), mục tiêu tự đổi khi quái gục giữa lượt (server hiện bỏ qua con gục), hiệu ứng kỹ năng.
 
 ## Kiểm
