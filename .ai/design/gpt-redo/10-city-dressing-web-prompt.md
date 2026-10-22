@@ -292,6 +292,11 @@ Flat pure magenta #FF00FF background, no shadows, no text.
 - Sheet 8 v2 (sư tử quay mặt vào nhau) **thay** bản v1. Sheet 1 v2 đạt, để dành.
 - Vòng 3 đơn giản hơn: mỗi lần chỉ xin 3–4 tư thế đứng cạnh nhau, bắt buộc image gen, mỗi lần một chat mới. Gói: `don10-r3-goi-gpt/`. Động vật/đồ còn lại engine tự làm động.
 
+### Vòng 3 — nhận (2026-10-22)
+
+- Đủ 11 lần gọi, vẽ bằng image gen. Đã cắt vào `batch-12-city` (xem README của batch) và đưa vào Quảng Trường + Hoàng Môn: người đi đường đi lại, bồ câu bay khi người chơi tới gần, mèo vẫy đuôi, cờ cột phấp phới, nước bồn sư tử chảy, decal mặt đất, nhà/mảnh nối mới, dải mái lớp giữa.
+- Còn có thể làm tốt hơn (không chặn): tư thế bước "chân kia trước" cho 6 người đi đường (GPT vẽ 2 tư thế bước giống nhau).
+
 ### Thứ tự đề nghị
 
 1. **4R** (P1, để mặt đất hết trơn).

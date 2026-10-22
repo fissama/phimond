@@ -262,7 +262,7 @@ export class Engine {
       s.sprite.setRow(Math.abs(Math.cos(s.t * 0.7)) > 0.3 ? 'move' : 'idle');
       s.sprite.update(dt, Math.cos(s.t * 0.7) > 0);
     }
-    this.world?.update(dt);
+    this.world?.update(dt, this.playerRoot.position);
     this.updateCamera(Math.min(1, dt * 6));
     this.renderer.render(this.scene, this.camera);
     this.updateLabels();

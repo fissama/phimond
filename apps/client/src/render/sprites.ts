@@ -71,6 +71,8 @@ export class CharacterSprite {
   private mode: 'idle' | 'run' = 'idle';
   private t = Math.random();
   private flip = false;
+  /** Tốc độ khung khi chạy/đi (người đi đường đi chậm dùng số nhỏ). */
+  runFps = 12;
 
   static async create(id: string, opts: SpriteOpts = {}): Promise<CharacterSprite> {
     const s = new CharacterSprite();
@@ -112,7 +114,7 @@ export class CharacterSprite {
       mat.needsUpdate = true;
       if (this.mesh.customDepthMaterial) (this.mesh.customDepthMaterial as THREE.MeshDepthMaterial).map = strip.tex;
     }
-    const fps = this.mode === 'run' ? 12 : 6;
+    const fps = this.mode === 'run' ? this.runFps : 6;
     strip.tex.offset.x = (Math.floor(this.t * fps) % strip.frames) / strip.frames;
     this.mesh.scale.x = this.flip ? -1 : 1;
   }

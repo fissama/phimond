@@ -181,12 +181,30 @@ def main():
             assets[k] = {"category": "prop", "px": list(fig.size), "pivot_px": [fig.width / 2, fig.height], "frames": 1,
                          "world": [fig.width / 128, fig.height / 128], **prov}
 
+    # 2b) Đồ thành phố đơn 10 (batch-12-city, cắt bằng tools/p01/cut_city_batch12.py). Chưa duyệt → provisional.
+    b12 = SRC / "batch-12-city"
+    if (b12 / "manifest.json").exists():
+        for i in manifest_items("batch-12-city"):
+            src = b12 / i["file"]
+            if not src.exists() or i["id"] in assets:
+                continue
+            shutil.copyfile(src, OUT / f"{i['id']}.png")
+            extra = {} if i.get("approved") else dict(prov)
+            if i.get("run_strip") and (b12 / i["run_strip"]).exists():
+                shutil.copyfile(b12 / i["run_strip"], OUT / f"{i['id']}.run.png")
+                extra["run_frames"] = i.get("run_frames") or 1
+            for k in ("breathe", "flutter"):
+                if i.get(k):
+                    extra[k] = True
+            assets[i["id"]] = entry(i, list(Image.open(src).size), extra)
+
     (OUT / "assets.json").write_text(json.dumps(assets, ensure_ascii=False, indent=1) + "\n")
 
     # 3) Atlas linh thú.
-    if PETS_OUT.exists():
-        shutil.rmtree(PETS_OUT)
-    shutil.copytree(PETS_SRC, PETS_OUT)
+    if PETS_SRC.exists():
+        if PETS_OUT.exists():
+            shutil.rmtree(PETS_OUT)
+        shutil.copytree(PETS_SRC, PETS_OUT)
 
     # 4) Bộ UI HD-2D đã duyệt (HUD, trận, menu, icon, font số) → apps/client/public/ui.
     ui_out = ROOT / "apps/client/public/ui"

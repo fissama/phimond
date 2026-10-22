@@ -71,7 +71,8 @@ test('đi trọn tuyến Đợt A và dùng trụ đá quay về', async ({ page
   await walk(page, { x: 25, y: 6 }, 'city_square');
   await walk(page, { x: 0, y: 5 }, 'city_palace_gate');
   await walk(page, { x: 25, y: 6 }, 'city_square');
-  // Trụ đá: đi tới, mở bảng, đích khóa không bấm được, về Bìa Rừng.
+  // Trụ đá: đi tới, mở bảng, đích khóa không bấm được, về Bìa Rừng. (Lệnh gửi lúc đang tải map bị bỏ → chờ tải xong.)
+  await expect(page.getByTestId('loading')).toHaveCount(0, { timeout: 20_000 });
   await act(page, { kind: 'pillar' });
   await expect(page.getByTestId('travel-city_farm')).toBeDisabled({ timeout: 20_000 });
   await page.getByTestId('travel-emerald_forest_main_woods').click();

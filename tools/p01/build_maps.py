@@ -11,6 +11,9 @@ Bố cục là dữ liệu chuẩn duy nhất cho va chạm (R02). Ký tự `lay
             H mặt tiền nhà (neo đáy-giữa)   F đài phun   C cột   w giếng   x thùng/hòm
             L đèn   B ghế   S tượng   Q bảng nhiệm vụ   K kệ sách   O trụ dịch chuyển
             1 2 3 bệ triệu hồi   s cửa hàng (quầy)
+            A sạp mái hiên   W giếng   n cờ   k xe đẩy
+            (đơn 10) P bồn sư tử   V xe bán hàng   X bao tải   Y cây cắt tỉa   G biển treo
+                     J/j sư tử đá (nhìn phải/trái)   Z cột cờ
 NPC luôn chặn ô đứng của mình (cộng thêm khi tính `walk`).
 Rừng sinh bằng RNG cố định (seed theo map) để kết quả ổn định giữa các lần chạy.
 """
@@ -262,7 +265,8 @@ def palace_gate():
     ]
     def put(x, y, ch):
         rows[y] = rows[y][:x] + ch + rows[y][x + 1:]
-    for x, y, ch in [(8, 2, "n"), (16, 2, "n"), (7, 9, "b"), (18, 9, "b"), (21, 8, "k"), (5, 8, "x")]:
+    for x, y, ch in [(8, 2, "Z"), (16, 2, "Z"), (7, 9, "b"), (18, 9, "b"), (21, 8, "k"), (5, 8, "x"),
+                     (10, 2, "J"), (14, 2, "j")]:
         put(x, y, ch)
     g = from_rows(rows)
     return {
@@ -315,7 +319,9 @@ def city_square():
         rows[y] = rows[y][:x] + ch + rows[y][x + 1:]
     # Bày biện: chợ có mái hiên, giếng, xe đẩy, cờ, chậu hoa dọc vỉa hè (P01 review 2026-10-22).
     for x, y, ch in [(18, 9, "A"), (21, 9, "A"), (24, 10, "A"), (3, 7, "W"), (28, 10, "k"), (29, 9, "x"),
-                     (6, 2, "n"), (26, 2, "n"), (11, 2, "b"), (19, 2, "b"), (17, 7, "b")]:
+                     (6, 2, "n"), (26, 2, "n"), (11, 2, "b"), (19, 2, "b"), (17, 7, "b"),
+                     # Đơn 10: bồn sư tử, cây cắt tỉa hai bên đài phun, biển treo, xe bán hàng + bao tải.
+                     (8, 2, "P"), (13, 2, "Y"), (17, 2, "Y"), (24, 2, "G"), (16, 10, "V"), (17, 10, "X")]:
         put(x, y, ch)
     g = from_rows(rows)
     return {

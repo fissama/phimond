@@ -12,6 +12,9 @@ export interface AssetInfo {
   idle_frames?: number;
   run_frames?: number;
   provisional?: boolean;
+  /** Đơn 10: động vật/đồ tĩnh được engine làm động nhẹ. */
+  breathe?: boolean;
+  flutter?: boolean;
 }
 
 export interface PetAtlas {
