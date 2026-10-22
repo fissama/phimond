@@ -8,6 +8,8 @@ export default defineConfig({
   plugins: [preact()],
   base: './',
   resolve: { preserveSymlinks: true },
+  // Gói protocol nội bộ (symlink) không pre-bundle để sửa schema có hiệu lực ngay.
+  optimizeDeps: { exclude: ['@phimond/protocol'], include: ['zod'] },
   build: { target: 'es2022', sourcemap: true, outDir: 'dist' },
   server: {
     host: '127.0.0.1',

@@ -12,10 +12,15 @@ export default defineConfig({
   timeout: 60_000,
   retries: 0,
   reporter: [['list']],
-  use: { baseURL: `http://127.0.0.1:${WEB_PORT}`, trace: 'retain-on-failure' },
+  use: {
+    baseURL: `http://127.0.0.1:${WEB_PORT}`,
+    trace: 'retain-on-failure',
+  },
+  workers: 2,
   // webkit/iphone cần `npx playwright install webkit` trên máy dev.
   projects: [
-    { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
+    // WebGL trên máy không có GPU (CI/container) qua SwiftShader; trên Mac có GPU vẫn chạy được.
+    { name: 'chromium', use: { ...devices['Desktop Chrome'], launchOptions: { args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'] } } },
     { name: 'webkit', use: { ...devices['Desktop Safari'] } },
     { name: 'iphone', use: { ...devices['iPhone 15 Pro Max'] } },
   ],

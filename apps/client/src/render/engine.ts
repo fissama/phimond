@@ -1,116 +1,321 @@
 import * as THREE from 'three';
-import { cellCenter, type Cell } from '../world/coords.ts';
+import type { MapDef, Npc, WildSpawn } from '@phimond/protocol';
+import { PRESETS, type FpsCap, type Quality } from '../state/settings.ts';
+import { asset, textures } from './assets.ts';
+import { buildScene, THEMES, type BuiltScene } from './scene.ts';
+import { blobShadow, CharacterSprite, PetSprite, propSprite } from './sprites.ts';
+import type { Cell, Direction } from '../world/coords.ts';
 
-export type FpsCap = 30 | 60;
+export type Pick =
+  | { kind: 'ground'; cell: Cell }
+  | { kind: 'npc'; id: string }
+  | { kind: 'spawn'; id: string }
+  | { kind: 'pedestal'; index: number }
+  | { kind: 'pillar' };
 
-export interface MapView {
-  id: string;
-  width: number;
-  height: number;
-  portals: Cell[];
-  npcs: Cell[];
+interface Actor {
+  root: THREE.Group;
+  label: HTMLDivElement | null;
 }
 
+const PITCH = 0.66; // rad, góc nhìn xuống
+const DIST = 20;
+const FOV = 24;
+
 /**
- * Renderer khung S0: mặt đất dạng lưới theo kích thước map, điểm đánh dấu người chơi/NPC/cổng.
- * Cảnh HD-2D thật (kit, ánh sáng, bóng, sprite) thay thế phần này ở S2/S5; API công khai giữ nguyên.
+ * Renderer world: cảnh HD-2D, camera bám người chơi, NPC/quái/người chơi, chọn đối tượng bằng chạm/click,
+ * nhãn tên (DOM), giới hạn FPS và mức đồ họa.
  */
 export class Engine {
   readonly renderer: THREE.WebGLRenderer;
-  private readonly scene = new THREE.Scene();
-  private readonly camera = new THREE.PerspectiveCamera(30, 1, 0.1, 200);
-  private readonly mapGroup = new THREE.Group();
-  private readonly player: THREE.Mesh;
+  readonly scene = new THREE.Scene();
+  readonly camera = new THREE.PerspectiveCamera(FOV, 1, 0.5, 160);
+  private readonly hemi = new THREE.HemisphereLight(0xffffff, 0x5a5048, 1);
+  private readonly sun = new THREE.DirectionalLight(0xffffff, 1.2);
+  private world: BuiltScene | null = null;
+  private map: MapDef | null = null;
+  private player: CharacterSprite | null = null;
+  private readonly playerRoot = new THREE.Group();
+  private playerBlob: THREE.Mesh | null = null;
+  private readonly npcs = new Map<string, Actor & { sprite: CharacterSprite | THREE.Object3D }>();
+  private readonly spawns = new Map<string, Actor & { sprite: PetSprite; base: Cell; t: number }>();
+  private readonly labels: HTMLDivElement;
   private readonly target = new THREE.Vector3();
+  private readonly ray = new THREE.Raycaster();
+  private readonly resizeObs: ResizeObserver;
   private raf = 0;
   private last = 0;
   private cap: FpsCap = 60;
-  private readonly resizeObs: ResizeObserver;
-  frames = 0;
+  private quality: Quality = 'medium';
+  private frameCb: ((dt: number) => void) | null = null;
+  /** Thời gian khung gần nhất (ms) để đo/HUD debug. */
+  readonly frameTimes: number[] = [];
 
   constructor(private readonly host: HTMLElement) {
     this.renderer = new THREE.WebGLRenderer({ antialias: false, powerPreference: 'high-performance' });
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    this.renderer.setClearColor(0x0f1420);
+    this.renderer.outputColorSpace = THREE.SRGBColorSpace;
     this.renderer.domElement.dataset.testid = 'world-canvas';
+    this.renderer.domElement.style.display = 'block';
     host.appendChild(this.renderer.domElement);
-
-    this.scene.add(new THREE.HemisphereLight(0xfff4e0, 0x404858, 1.2));
-    const sun = new THREE.DirectionalLight(0xffffff, 1.4);
-    sun.position.set(-6, 12, 8);
-    this.scene.add(sun, this.mapGroup);
-
-    this.player = new THREE.Mesh(new THREE.BoxGeometry(0.7, 1.3, 0.7), new THREE.MeshLambertMaterial({ color: 0x3355cc }));
-    this.player.position.y = 0.65;
-    this.scene.add(this.player);
-
+    this.labels = document.createElement('div');
+    this.labels.style.cssText = 'position:absolute;inset:0;pointer-events:none;overflow:hidden';
+    host.appendChild(this.labels);
+    this.sun.position.set(-8, 14, 10);
+    this.scene.add(this.hemi, this.sun, this.sun.target, this.playerRoot);
     this.resizeObs = new ResizeObserver(() => this.resize());
     this.resizeObs.observe(host);
-    this.resize();
   }
 
   setFpsCap(cap: FpsCap): void {
     this.cap = cap;
   }
 
-  loadMap(m: MapView): void {
-    this.mapGroup.clear();
-    const ground = new THREE.Mesh(
-      new THREE.PlaneGeometry(m.width, m.height),
-      new THREE.MeshLambertMaterial({ color: 0x5c7a4a }),
-    );
-    ground.rotation.x = -Math.PI / 2;
-    ground.position.set(m.width / 2, 0, m.height / 2);
-    const grid = new THREE.GridHelper(Math.max(m.width, m.height), Math.max(m.width, m.height), 0x2c3a24, 0x46603a);
-    grid.position.set(Math.max(m.width, m.height) / 2, 0.01, Math.max(m.width, m.height) / 2);
-    this.mapGroup.add(ground, grid);
-    const marker = (c: Cell, color: number, h: number) => {
-      const mesh = new THREE.Mesh(new THREE.CylinderGeometry(0.35, 0.35, h, 12), new THREE.MeshLambertMaterial({ color }));
-      const p = cellCenter(c);
-      mesh.position.set(p.x, h / 2, p.z);
-      this.mapGroup.add(mesh);
-    };
-    m.portals.forEach((c) => marker(c, 0x9b59d0, 0.1));
-    m.npcs.forEach((c) => marker(c, 0xe0b040, 1.2));
+  setQuality(q: Quality): void {
+    this.quality = q;
+    const P = PRESETS[q];
+    textures.budget = P.textureBudgetMB * 1024 * 1024;
+    this.renderer.shadowMap.enabled = P.shadows === 'real';
+    this.renderer.shadowMap.type = THREE.PCFShadowMap;
+    this.sun.castShadow = P.shadows === 'real';
+    if (P.shadowMapSize) this.sun.shadow.mapSize.set(P.shadowMapSize, P.shadowMapSize);
+    this.resize();
   }
 
-  setPlayer(c: Cell): void {
-    const p = cellCenter(c);
-    this.player.position.x = p.x;
-    this.player.position.z = p.z;
+  get currentQuality(): Quality {
+    return this.quality;
+  }
+
+  onFrame(cb: (dt: number) => void): void {
+    this.frameCb = cb;
+  }
+
+  /** Dựng cảnh map mới (giải phóng cảnh cũ). NPC/quái/người chơi được dựng lại theo dữ liệu map. */
+  async loadMap(map: MapDef, npcs: Npc[], playerAsset: string): Promise<void> {
+    this.unloadMap();
+    this.map = map;
+    const T = THEMES[map.theme] ?? THEMES.forest!;
+    this.scene.background = new THREE.Color(T.sky);
+    this.scene.fog = T.fog && PRESETS[this.quality].backdrop ? new THREE.Fog(T.fog[0], T.fog[1], T.fog[2]) : null;
+    this.hemi.intensity = T.ambient;
+    this.sun.intensity = T.sun;
+    this.sun.color.set(T.sunColor);
+    const W = map.width;
+    const H = map.height || map.width;
+    const sc = this.sun.shadow.camera;
+    sc.left = -W;
+    sc.right = W;
+    sc.top = H;
+    sc.bottom = -H;
+    sc.far = 120;
+    this.sun.position.set(W / 2 - 10, 24, H / 2 + 16);
+    this.sun.target.position.set(W / 2, 0, H / 2);
+    sc.updateProjectionMatrix();
+
+    const real = PRESETS[this.quality].shadows === 'real';
+    const blob = PRESETS[this.quality].shadows === 'blob';
+    this.world = await buildScene(map, this.quality);
+    this.scene.add(this.world.group);
+
+    if (!this.player) {
+      this.player = await CharacterSprite.create(playerAsset, { castShadow: real });
+      this.playerRoot.add(this.player.root);
+    }
+    if (this.playerBlob) this.playerRoot.remove(this.playerBlob);
+    this.playerBlob = blob ? blobShadow(0.42) : null;
+    if (this.playerBlob) this.playerRoot.add(this.playerBlob);
+
+    await Promise.all(
+      npcs.map(async (n) => {
+        const id = `npc-${n.id}`;
+        let sprite: CharacterSprite | THREE.Object3D;
+        const root = new THREE.Group();
+        if (asset(id)?.category === 'npc') {
+          const cs = await CharacterSprite.create(id, { castShadow: real, tint: T.tint });
+          sprite = cs;
+          root.add(cs.root);
+        } else {
+          // Hòm thư là vật thể, không phải NPC.
+          const prop = n.id === 'sq_mailbox' ? await propSprite('city-mailbox', { castShadow: real }) : null;
+          sprite = prop ?? new THREE.Mesh(new THREE.BoxGeometry(0.6, 1.4, 0.6), new THREE.MeshBasicMaterial({ color: 0xc9a24a }));
+          if (!prop) (sprite as THREE.Mesh).position.y = 0.7;
+          root.add(sprite);
+        }
+        if (n.face === 'left' && sprite instanceof CharacterSprite) sprite.setMotion(false, true);
+        if (blob) root.add(blobShadow(0.42));
+        root.position.set(n.x + 0.5, 0, n.y + 0.5);
+        root.traverse((o) => (o.userData = { ...o.userData, kind: 'npc', id: n.id }));
+        this.scene.add(root);
+        this.npcs.set(n.id, { root, sprite, label: this.makeLabel(n.name, 'npc') });
+      }),
+    );
+
+    await Promise.all(map.wild_spawns.map((s) => this.addSpawn(s, blob, real)));
+  }
+
+  private async addSpawn(s: WildSpawn, blob: boolean, real: boolean): Promise<void> {
+    const sprite = await PetSprite.create(s.species_id, { castShadow: real });
+    const root = new THREE.Group();
+    root.add(sprite.root);
+    if (blob) root.add(blobShadow(0.38));
+    root.position.set(s.x + 0.5, 0, s.y + 0.5);
+    root.traverse((o) => (o.userData = { ...o.userData, kind: 'spawn', id: s.id }));
+    this.scene.add(root);
+    this.spawns.set(s.id, { root, sprite, label: null, base: { x: s.x, y: s.y }, t: Math.random() * 10 });
+  }
+
+  unloadMap(): void {
+    if (this.world) {
+      this.scene.remove(this.world.group);
+      this.world.dispose();
+      this.world = null;
+    }
+    for (const a of [...this.npcs.values(), ...this.spawns.values()]) {
+      this.scene.remove(a.root);
+      a.label?.remove();
+      a.root.traverse((o) => {
+        const m = o as THREE.Mesh;
+        if (m.isMesh) {
+          m.geometry.dispose();
+          (m.material as THREE.Material).dispose();
+        }
+      });
+    }
+    this.npcs.clear();
+    this.spawns.clear();
+    textures.unpinAll();
+  }
+
+  /** Vị trí hiển thị người chơi (số thực, theo ô) + trạng thái để chọn khung. */
+  setPlayer(pos: { x: number; y: number }, moving: boolean, facing: Direction): void {
+    this.playerRoot.position.set(pos.x + 0.5, 0, pos.y + 0.5);
+    this.player?.setMotion(moving, facing === 'left' ? true : facing === 'right' ? false : undefined);
+  }
+
+  setSpawnVisible(id: string, visible: boolean): void {
+    const s = this.spawns.get(id);
+    if (s) s.root.visible = visible;
+  }
+
+  snapCamera(): void {
+    this.updateCamera(1);
+  }
+
+  /** Chọn đối tượng tại tọa độ màn hình: NPC/quái/bệ/trụ trước, rồi đến ô mặt đất. */
+  pick(clientX: number, clientY: number): Pick | null {
+    const rect = this.renderer.domElement.getBoundingClientRect();
+    const ndc = new THREE.Vector2(((clientX - rect.left) / rect.width) * 2 - 1, -((clientY - rect.top) / rect.height) * 2 + 1);
+    this.ray.setFromCamera(ndc, this.camera);
+    const objs: THREE.Object3D[] = [];
+    for (const a of this.npcs.values()) objs.push(a.root);
+    for (const a of this.spawns.values()) if (a.root.visible) objs.push(a.root);
+    if (this.world) objs.push(...this.world.pickables);
+    const hits = this.ray.intersectObjects(objs, true);
+    for (const h of hits) {
+      const u = h.object.userData as { kind?: string; id?: string; index?: number };
+      if (u.kind === 'npc' && u.id) return { kind: 'npc', id: u.id };
+      if (u.kind === 'spawn' && u.id) return { kind: 'spawn', id: u.id };
+      if (u.kind === 'pedestal' && u.index !== undefined) return { kind: 'pedestal', index: u.index };
+      if (u.kind === 'pillar') return { kind: 'pillar' };
+    }
+    const p = new THREE.Vector3();
+    if (this.ray.ray.intersectPlane(new THREE.Plane(new THREE.Vector3(0, 1, 0), 0), p)) return { kind: 'ground', cell: { x: Math.floor(p.x), y: Math.floor(p.z) } };
+    return null;
   }
 
   start(): void {
     const tick = (t: number) => {
       this.raf = requestAnimationFrame(tick);
-      // Giới hạn FPS: bỏ khung khi chưa đủ khoảng (dung sai 1 ms cho màn 60/120 Hz).
-      const minDt = 1000 / this.cap - 1;
-      if (t - this.last < minDt) return;
+      const minDt = 1000 / this.cap - 1.5;
+      if (this.last && t - this.last < minDt) return;
+      const dt = this.last ? Math.min(0.1, (t - this.last) / 1000) : 1 / 60;
+      this.frameTimes.push(t - this.last);
+      if (this.frameTimes.length > 240) this.frameTimes.shift();
       this.last = t;
-      this.frame();
+      this.frame(dt);
     };
     this.raf = requestAnimationFrame(tick);
   }
 
   dispose(): void {
     cancelAnimationFrame(this.raf);
+    this.unloadMap();
     this.resizeObs.disconnect();
     this.renderer.dispose();
     this.renderer.domElement.remove();
+    this.labels.remove();
   }
 
-  private frame(): void {
-    // Camera HD-2D: nhìn chéo xuống, bám người chơi.
-    this.target.copy(this.player.position);
-    this.camera.position.set(this.target.x, this.target.y + 9, this.target.z + 13);
-    this.camera.lookAt(this.target);
+  stats(): { calls: number; triangles: number; textures: number; geometries: number; cacheMB: number } {
+    const i = this.renderer.info;
+    return { calls: i.render.calls, triangles: i.render.triangles, textures: i.memory.textures, geometries: i.memory.geometries, cacheMB: textures.stats().mb };
+  }
+
+  private frame(dt: number): void {
+    this.frameCb?.(dt);
+    this.player?.update(dt);
+    for (const n of this.npcs.values()) if (n.sprite instanceof CharacterSprite) n.sprite.update(dt);
+    for (const s of this.spawns.values()) {
+      // Quái đi lắc nhẹ quanh điểm của nó (không rời ô: vị trí luật vẫn là điểm cố định).
+      s.t += dt;
+      const ox = Math.sin(s.t * 0.7) * 0.25;
+      s.root.position.x = s.base.x + 0.5 + ox;
+      s.sprite.setRow(Math.abs(Math.cos(s.t * 0.7)) > 0.3 ? 'move' : 'idle');
+      s.sprite.update(dt, Math.cos(s.t * 0.7) > 0);
+    }
+    this.world?.update(dt);
+    this.updateCamera(Math.min(1, dt * 6));
     this.renderer.render(this.scene, this.camera);
-    this.frames += 1;
+    this.updateLabels();
+  }
+
+  private updateCamera(k: number): void {
+    const map = this.map;
+    const p = this.playerRoot.position;
+    let tx = p.x;
+    let tz = p.z;
+    if (map) {
+      const W = map.width;
+      const H = map.height || map.width;
+      const halfW = DIST * Math.tan(THREE.MathUtils.degToRad(FOV / 2)) * this.camera.aspect;
+      tx = W <= halfW * 2 ? W / 2 : THREE.MathUtils.clamp(tx, halfW - 0.5, W - halfW + 0.5);
+      tz = THREE.MathUtils.clamp(tz, 3, H - 1.5);
+    }
+    this.target.x += (tx - this.target.x) * k;
+    this.target.z += (tz - this.target.z) * k;
+    this.target.y = 0.8;
+    this.camera.position.set(this.target.x, this.target.y + DIST * Math.sin(PITCH), this.target.z + DIST * Math.cos(PITCH));
+    this.camera.lookAt(this.target);
+  }
+
+  private makeLabel(text: string, kind: 'npc'): HTMLDivElement {
+    const d = document.createElement('div');
+    d.textContent = text;
+    d.className = `label label-${kind}`;
+    d.style.cssText =
+      'position:absolute;transform:translate(-50%,-100%);font-size:12px;font-weight:600;color:#fff6dc;white-space:nowrap;text-shadow:0 1px 2px #000,0 0 3px #000;';
+    this.labels.appendChild(d);
+    return d;
+  }
+
+  private updateLabels(): void {
+    const w = this.host.clientWidth;
+    const h = this.host.clientHeight;
+    const v = new THREE.Vector3();
+    for (const n of this.npcs.values()) {
+      if (!n.label) continue;
+      v.set(n.root.position.x, 1.75, n.root.position.z).project(this.camera);
+      const on = v.z < 1 && Math.abs(v.x) < 1.1 && Math.abs(v.y) < 1.1;
+      n.label.style.display = on ? 'block' : 'none';
+      if (on) n.label.style.left = `${((v.x + 1) / 2) * w}px`;
+      if (on) n.label.style.top = `${((1 - v.y) / 2) * h}px`;
+    }
   }
 
   private resize(): void {
     const w = this.host.clientWidth || 1;
     const h = this.host.clientHeight || 1;
+    const P = PRESETS[this.quality];
+    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, P.maxPixelRatio) * P.renderScale);
     this.renderer.setSize(w, h, false);
     this.renderer.domElement.style.width = '100%';
     this.renderer.domElement.style.height = '100%';

@@ -80,7 +80,9 @@ export class Session {
 
   /** Đăng nhập hoặc đăng ký, nạp catalog rồi mở WebSocket. */
   async login(username: string, password: string, register = false): Promise<void> {
-    const res = await this.wire.request('POST', register ? '/api/register' : '/api/login', { username, password });
+    const res = await this.wire
+      .request('POST', register ? '/api/register' : '/api/login', { username, password })
+      .catch(() => ({ status: 0, json: null }));
     if (res.status !== 200) throw new Error(errorText(res.json, res.status));
     const auth = AuthResponse.parse(res.json);
     this.token = auth.token;
@@ -246,10 +248,19 @@ function parse(raw: string): ServerMessage | null {
   }
 }
 
+/** Dịch thông báo lỗi tiếng Anh thường gặp của server (đăng nhập, giới hạn tần suất). */
+const SERVER_TEXT: [RegExp, string][] = [
+  [/Unable to sign in\/register/i, 'Không đăng nhập/đăng ký được. Tên tài khoản 3–24 ký tự (không trùng), mật khẩu 10–72 ký tự.'],
+  [/too many/i, 'Thao tác quá nhanh, thử lại sau ít giây.'],
+  [/unauthori[sz]ed|invalid session/i, 'Phiên đăng nhập đã hết hạn, hãy đăng nhập lại.'],
+];
+
 function errorText(json: unknown, status: number): string {
   // Server trả {"message": "..."} khi lỗi (transport.fail).
   if (json && typeof json === 'object' && 'message' in json && typeof (json as { message: unknown }).message === 'string') {
-    return (json as { message: string }).message;
+    const m = (json as { message: string }).message;
+    return SERVER_TEXT.find(([re]) => re.test(m))?.[1] ?? m;
   }
+  if (status === 0 || status >= 500) return 'Máy chủ không phản hồi, thử lại sau.';
   return `Lỗi máy chủ (${status})`;
 }
