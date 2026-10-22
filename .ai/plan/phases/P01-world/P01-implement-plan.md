@@ -202,3 +202,16 @@ Combat p95 1659 ms đo ở P00 là rủi ro đã biết. 1.0.0 cần **không t�
 | Greybox lệch với cảnh đã dựng (đi xuyên vật trang trí) | Lưới đi là nguồn chuẩn; S5 có lớp debug vẽ lưới đè cảnh; validator chạy mỗi commit |
 | Art nhân vật chính chưa đạt kịp RC | Review chặng 1–2 ngay trong S1; nếu lỗi, đặt GPT vẽ lại sớm |
 | Combat chậm từ P00 | Không thuộc cổng 1.0.0, nhưng đo và báo; mở ticket riêng nếu tệ hơn |
+
+## 11. Trạng thái dev (2026-10-22)
+
+Phần dev S0–S5 và phần cài đặt đồ họa của S6 đã xong, chờ owner thử tay. Commit: `f6ead93d` (S0), `28a36c48` (S1 server), `dae01fa3` (art client), `73361c58` (client S2–S6), `382fc637` (check.sh, script xóa DB dev), `3f044e3c`.
+
+| Hạng mục | Trạng thái |
+|---|---|
+| Server: 5 map Đợt A, va chạm, cổng/NPC hai trục, bệ đá, trụ, vòng đời quái, hồi sinh | Xong, `go test -race` xanh |
+| Client: render HD-2D, di chuyển (phím, D-pad, chạm), A*, pipeline move, chuyển map, HUD, menu, NPC, trận đấu | Xong, vitest 20 + Playwright 6 kịch bản xanh (Chromium) |
+| Cài đặt Thấp/Trung bình/Cao + 30/60 FPS, lưu lựa chọn | Xong; chưa đo (benchmark S6) |
+| Xóa dữ liệu dev (D3) | Có `tools/p01/reset_dev_db.sh` (sao lưu rồi xóa); owner tự chạy. Nhân vật cũ vẫn chơi được (tự về Quảng Trường) |
+| Art chặn 1.0.0 | Dùng bản tạm từ `_intake/` (`provisional`); nhân vật chính một hướng |
+| Chưa làm (owner yêu cầu sau) | Benchmark `?bench=`, đo trên iPhone/Safari, QA thủ công, review R06, chạy E2E trên WebKit, `tools/load_gameplay.mjs`/`latency.mjs` theo map mới |
