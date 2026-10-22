@@ -33,6 +33,14 @@ func (e *Engine) placeAt(c *Character, mapID string, p world.Point) []Event {
 }
 
 // normalizeLocation đưa nhân vật về chỗ hợp lệ nếu map/ô cũ không còn (vd dữ liệu trước P01).
+// NormalizeLocation là normalizeLocation cho tầng transport: sửa vị trí ngay khi nạp nhân vật để
+// snapshot đầu tiên gửi client đã hợp lệ. Trả true nếu có thay đổi.
+func (e *Engine) NormalizeLocation(c *Character) bool {
+	before := [3]any{c.MapID, c.X, c.Y}
+	e.normalizeLocation(c)
+	return before != [3]any{c.MapID, c.X, c.Y}
+}
+
 func (e *Engine) normalizeLocation(c *Character) {
 	m, ok := e.Data.Maps[c.MapID]
 	if ok && m.Grid().Walkable(c.X, c.Y) {

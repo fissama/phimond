@@ -445,3 +445,19 @@ func TestSessionCacheRevalidatesAfterBoundedInterval(t *testing.T) {
 		t.Fatal("expired cache masked database failure", err)
 	}
 }
+
+// Nhân vật lưu ở map cũ (trước P01) phải được đưa về chỗ hợp lệ ngay ở snapshot đầu tiên.
+func TestLegacyLocationNormalizedOnLoad(t *testing.T) {
+	s, db := liveFixture(t)
+	c := loadCharacter(t, db.raw)
+	c.MapID, c.X, c.Y = "severa", 16, 12
+	db.raw, _ = json.Marshal(c)
+	raw, err := s.readLive(context.Background(), "hero")
+	if err != nil {
+		t.Fatal(err)
+	}
+	got := loadCharacter(t, raw)
+	if got.MapID != "city_square" || !s.Game.Data.Maps["city_square"].Grid().Walkable(got.X, got.Y) {
+		t.Fatalf("map cũ không được chuẩn hóa: %s (%d,%d)", got.MapID, got.X, got.Y)
+	}
+}
