@@ -1,6 +1,6 @@
 # P01 — Scope và lộ trình phiên bản (v1.0.0 → v1.2.x)
 
-- **Ngày:** 2026-10-21. **Trạng thái:** owner đã chốt hướng và §7 trong chat 2026-10-21; sẵn sàng viết code.
+- **Ngày:** 2026-10-21. **Trạng thái:** owner đã chốt hướng và §7 trong chat 2026-10-21; sẵn sàng viết code. Kế hoạch triển khai: [`P01-implement-plan.md`](P01-implement-plan.md).
 - **Nguồn:** master spec §6 P01 (P01-R01…R10), P12 (đã đóng 2026-10-17), duyệt art [`hd2d-art-approval-20261021.md`](../../../design/hd2d-art-approval-20261021.md).
 - Thay thế phần lộ trình M0–M8 của [`P01-threejs-migration-plan.md`](P01-threejs-migration-plan.md): `apps/game-web` chỉ là bản thử Three.js, không dùng tiếp (xem §3).
 
