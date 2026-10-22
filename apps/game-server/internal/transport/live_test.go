@@ -116,12 +116,12 @@ func liveFixture(t *testing.T) (*Server, *memoryStore) {
 		t.Fatal(err)
 	}
 	// Quầy hàng thử nghiệm cạnh điểm đứng để các test giao dịch bền vững có dịch vụ shop thật.
-	catalog.NPCs["test_merchant"] = content.NPC{ID: "test_merchant", Name: "Test", MapID: "city_square", X: 15, Y: 11, Roles: []string{"shop"}}
+	catalog.NPCs["test_merchant"] = content.NPC{ID: "test_merchant", Name: "Test", MapID: "city_square", X: 15, Y: 5, Roles: []string{"shop"}}
 	e := character.NewEngine(catalog)
-	// Nhân vật đã chọn pet khởi đầu, đứng ở Quảng Trường (16,12) — vùng lát đá trống quanh đó.
+	// Nhân vật đã chọn pet khởi đầu, đứng ở Quảng Trường (16,6) — vùng lát đá trống quanh đó.
 	c := e.NewCharacter("hero", "Hero", 5)
 	e.GiveStarter(c, "snail", 3)
-	c.MapID, c.X, c.Y = "city_square", 16, 12
+	c.MapID, c.X, c.Y = "city_square", 16, 6
 	raw, _ := json.Marshal(c)
 	db := &memoryStore{raw: raw, receipts: map[string]bool{}}
 	return New(db, e), db
@@ -373,7 +373,7 @@ func TestInvalidMovementDoesNotConsumeRevisionOrReceipt(t *testing.T) {
 }
 
 // Test2DMovement4Directions exercises all four cardinal world.move directions
-// and verifies state.x / state.y advance correctly. Ô (16..17, 11..12) ở
+// and verifies state.x / state.y advance correctly. Ô (16..17, 5..6) ở
 // Quảng Trường đều đi được.
 func Test2DMovement4Directions(t *testing.T) {
 	s, _ := liveFixture(t)
@@ -382,10 +382,10 @@ func Test2DMovement4Directions(t *testing.T) {
 		dir    string
 		expect struct{ x, y int }
 	}{
-		{"right", struct{ x, y int }{17, 12}},
-		{"up", struct{ x, y int }{17, 11}},
-		{"left", struct{ x, y int }{16, 11}},
-		{"down", struct{ x, y int }{16, 12}},
+		{"right", struct{ x, y int }{17, 6}},
+		{"up", struct{ x, y int }{17, 5}},
+		{"left", struct{ x, y int }{16, 5}},
+		{"down", struct{ x, y int }{16, 6}},
 	}
 	for i, step := range steps {
 		raw, err := s.applyLive(ctx, "hero", move(fmt.Sprintf("mv%d", i), step.dir))
@@ -409,7 +409,7 @@ func Test2DMovementOutOfBounds(t *testing.T) {
 	for i := 0; i < 40; i++ {
 		raw, err := s.applyLive(ctx, "hero", move(fmt.Sprintf("up%d", i), "up"))
 		if err != nil {
-			if i < 5 || !strings.Contains(err.Error(), "Không đi được") {
+			if i < 2 || !strings.Contains(err.Error(), "Không đi được") {
 				t.Fatalf("step %d: %v", i, err)
 			}
 			raw, _ = s.readLive(ctx, "hero")

@@ -66,11 +66,11 @@ test('đi trọn tuyến Đợt A và dùng trụ đá quay về', async ({ page
   test.setTimeout(150_000);
   await register(page);
   await chooseStarter(page);
-  await walk(page, { x: 35, y: 13 }, 'emerald_forest_deep_woods');
-  await walk(page, { x: 43, y: 4 }, 'city_palace_gate'); // lần đầu: Hoàng Môn
-  await walk(page, { x: 15, y: 21 }, 'city_square');
-  await walk(page, { x: 20, y: 2 }, 'city_palace_gate');
-  await walk(page, { x: 15, y: 21 }, 'city_square');
+  await walk(page, { x: 33, y: 6 }, 'emerald_forest_deep_woods');
+  await walk(page, { x: 37, y: 5 }, 'city_palace_gate'); // lần đầu: Hoàng Môn
+  await walk(page, { x: 25, y: 6 }, 'city_square');
+  await walk(page, { x: 0, y: 5 }, 'city_palace_gate');
+  await walk(page, { x: 25, y: 6 }, 'city_square');
   // Trụ đá: đi tới, mở bảng, đích khóa không bấm được, về Bìa Rừng.
   await act(page, { kind: 'pillar' });
   await expect(page.getByTestId('travel-city_farm')).toBeDisabled({ timeout: 20_000 });
@@ -108,9 +108,9 @@ test('NPC: tới gần, hội thoại, hồi phục; cổng khóa báo chưa m�
   await page.getByTestId('npc-role-heal').click();
   await page.getByTestId('do-heal').click();
   await page.getByTestId('npc-close').click();
-  await walk(page, { x: 35, y: 13 }, 'emerald_forest_deep_woods');
-  await walk(page, { x: 43, y: 4 }, 'city_palace_gate');
-  await walk(page, { x: 10, y: 4 });
+  await walk(page, { x: 33, y: 6 }, 'emerald_forest_deep_woods');
+  await walk(page, { x: 37, y: 5 }, 'city_palace_gate');
+  await walk(page, { x: 4, y: 2 });
   await expect(page.getByTestId('toasts')).toContainText('chưa mở', { timeout: 10_000 });
 });
 
@@ -139,7 +139,7 @@ test('điều khiển thật: nhấn phím, giữ phím, D-pad, click mặt đ�
     await expect.poll(async () => (await pos(page)).settled, { timeout: 5000 }).toBe(true);
     return pos(page);
   };
-  const s0 = await at(); // Triệu Linh Điện (9,9)
+  const s0 = await at(); // Triệu Linh Điện (9,7)
   await page.keyboard.press('ArrowLeft'); // nhấn nhanh: đúng một ô
   expect((await at()).x).toBe(s0.x - 1);
   await page.keyboard.down('ArrowUp');

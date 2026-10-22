@@ -93,7 +93,7 @@ func TestQuestRewardsOnlyOnce(t *testing.T) {
 	atService(e, c)
 	command(t, e, c, "quest.accept", map[string]any{"quest_id": "first_steps"})
 	home := *c
-	c.X, c.Y = 34, 13 // trong cổng sang Rừng Sâu
+	c.X, c.Y = 33, 6 // trong cổng sang Rừng Sâu
 	command(t, e, c, "world.portal", map[string]any{"portal_id": "to_deep_woods"})
 	c.MapID, c.X, c.Y = home.MapID, home.X, home.Y
 	gold := c.Gold

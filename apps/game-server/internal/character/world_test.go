@@ -34,19 +34,19 @@ func TestNewPlayerStartsInHallAndChoosesStarter(t *testing.T) {
 		t.Fatal("người chơi mới phải ở Triệu Linh Điện, chưa có pet")
 	}
 	// Cửa ra cần có pet.
-	c.X, c.Y = 9, 12
+	c.X, c.Y = 9, 9
 	mustFail(t, e, c, "world.portal", map[string]any{"portal_id": "hall_exit"}, "chọn linh thú")
 	// Bệ ở xa thì không chọn được.
-	c.X, c.Y = 9, 9
+	c.X, c.Y = 9, 7
 	mustFail(t, e, c, "starter.choose", map[string]any{"pedestal": 1}, "gần bệ")
 	mustFail(t, e, c, "starter.choose", map[string]any{"pedestal": 7}, "Không có bệ")
-	// Đứng chéo kề bệ 1 (9,5).
-	c.X, c.Y = 10, 6
+	// Đứng chéo kề bệ 1 (9,3).
+	c.X, c.Y = 10, 4
 	ev := command(t, e, c, "starter.choose", map[string]any{"pedestal": 1})
 	if len(c.Pets) != 1 || c.Pets[0].SpeciesID != "spider" || c.ActivePetID != c.Pets[0].ID || !c.Pets[0].Appraised {
 		t.Fatal("không nhận đúng pet khởi đầu")
 	}
-	if c.MapID != "emerald_forest_main_woods" || c.X != 5 || c.Y != 13 || !has(c.Visited, c.MapID) {
+	if c.MapID != "emerald_forest_main_woods" || c.X != 3 || c.Y != 6 || !has(c.Visited, c.MapID) {
 		t.Fatalf("phải dịch chuyển một chiều tới Bìa Rừng, đang ở %s (%d,%d)", c.MapID, c.X, c.Y)
 	}
 	if ev[0].Type != "starter_chosen" || ev[len(ev)-1].Type != "map_enter" {
@@ -65,23 +65,23 @@ func TestMoveBlockedByCollision(t *testing.T) {
 	if c.X != 3 || c.Y != 3 || c.Revision != rev+1 {
 		t.Fatal("bước hợp lệ phải đi một ô")
 	}
-	c.X, c.Y = 4, 5 // kề bệ 0 (5,5): bệ chặn ô
+	c.X, c.Y = 4, 3 // kề bệ 0 (5,3): bệ chặn ô
 	mustFail(t, e, c, "world.move", map[string]any{"direction": "right"}, "Không đi được")
 }
 
 func TestPortalNeedsRectAndRedirectsAfterFirstVisit(t *testing.T) {
 	e := engine(t)
 	c := veteran(e, "p", "P", 1)
-	c.MapID, c.X, c.Y = "emerald_forest_deep_woods", 40, 4 // ngay ngoài vùng cổng (42..43, 3..5)
+	c.MapID, c.X, c.Y = "emerald_forest_deep_woods", 35, 5 // ngay ngoài vùng cổng (37, 4..6)
 	mustFail(t, e, c, "world.portal", map[string]any{"portal_id": "to_city"}, "Không có cổng")
-	c.X = 42
+	c.X = 37
 	command(t, e, c, "world.portal", map[string]any{"portal_id": "to_city"})
-	if c.MapID != "city_palace_gate" || c.X != 15 || c.Y != 18 {
+	if c.MapID != "city_palace_gate" || c.X != 2 || c.Y != 6 {
 		t.Fatalf("lần đầu phải tới Hoàng Môn, đang ở %s", c.MapID)
 	}
-	c.MapID, c.X, c.Y = "emerald_forest_deep_woods", 43, 5
+	c.MapID, c.X, c.Y = "emerald_forest_deep_woods", 37, 4
 	command(t, e, c, "world.portal", map[string]any{"portal_id": "to_city"})
-	if c.MapID != "city_square" || c.X != 19 || c.Y != 22 {
+	if c.MapID != "city_square" || c.X != 2 || c.Y != 6 {
 		t.Fatalf("lần sau phải tới Quảng Trường, đang ở %s", c.MapID)
 	}
 }
@@ -89,16 +89,16 @@ func TestPortalNeedsRectAndRedirectsAfterFirstVisit(t *testing.T) {
 func TestLockedPortalExplainsNotOpen(t *testing.T) {
 	e := engine(t)
 	c := veteran(e, "l", "L", 1)
-	c.MapID, c.X, c.Y = "city_square", 21, 23 // kề cổng sang Thương Phố (21..22, 24)
+	c.MapID, c.X, c.Y = "city_square", 30, 5 // kề cổng sang Thương Phố (31, 4..6)
 	mustFail(t, e, c, "world.portal", map[string]any{"portal_id": "square_to_market"}, "chưa mở")
-	c.X, c.Y = 10, 10
+	c.X, c.Y = 10, 8
 	mustFail(t, e, c, "world.portal", map[string]any{"portal_id": "square_to_market"}, "Không có cổng")
 }
 
 func TestNPCRangeUsesBothAxes(t *testing.T) {
 	e := engine(t)
 	c := veteran(e, "n", "N", 1)
-	g := e.Data.NPCs["forest_guide"] // (7, 11)
+	g := e.Data.NPCs["forest_guide"] // (6, 4)
 	c.X, c.Y = g.X, g.Y+2            // cùng cột, cách 2 hàng: trục X trùng nhưng phải bị từ chối
 	mustFail(t, e, c, "npc.interact", map[string]any{"npc_id": "forest_guide"}, "gần NPC")
 	c.X, c.Y = g.X+1, g.Y+1
@@ -116,13 +116,13 @@ func TestNPCRangeUsesBothAxes(t *testing.T) {
 func TestPillarTravel(t *testing.T) {
 	e := engine(t)
 	c := veteran(e, "t", "T", 1)
-	c.MapID, c.X, c.Y = "city_square", 19, 14
+	c.MapID, c.X, c.Y = "city_square", 16, 6
 	mustFail(t, e, c, "pillar.travel", map[string]any{"map_id": "emerald_forest_main_woods"}, "gần trụ")
-	c.X, c.Y = 6, 16 // kề trụ (7,16)
+	c.X, c.Y = 5, 8 // kề trụ (6,8)
 	mustFail(t, e, c, "pillar.travel", map[string]any{"map_id": "city_farm"}, "chưa mở")
 	mustFail(t, e, c, "pillar.travel", map[string]any{"map_id": "nowhere"}, "Không có điểm đến")
 	command(t, e, c, "pillar.travel", map[string]any{"map_id": "emerald_forest_main_woods"})
-	if c.MapID != "emerald_forest_main_woods" || c.X != 6 || c.Y != 13 {
+	if c.MapID != "emerald_forest_main_woods" || c.X != 3 || c.Y != 6 {
 		t.Fatal("trụ phải đưa về Bìa Rừng")
 	}
 }

@@ -100,15 +100,31 @@ def forest_border(g: Grid, rng, depth=2):
 
 
 # ---------------------------------------------------------------- 5 map
+# Kích thước theo game gốc (P01 review 2026-10-22): map gốc là dải ngang ~20–28 đơn vị, vùng đi sâu ~4–6.
+# Bản HD-2D rộng hơn gốc ~20–30% và sâu 7–9 ô (camera nghiêng cần chiều sâu), cổng ở hai mép trái/phải.
+
+def strip_forest(rng, w, h, *, top=2, bottom=2):
+    """Rừng dải ngang: hàng cây dày phía trên, bụi phía dưới, mép trái/phải kín (cổng đục riêng)."""
+    g = Grid(w, h, ".")
+    for y in range(h):
+        for x in range(w):
+            if y < top or y >= h - bottom or x == 0 or x == w - 1:
+                g.set(x, y, "#")
+    # Hàng cây/bụi sát rìa để mép rừng có chiều sâu (vẫn chặn).
+    for x in range(1, w - 1):
+        if rng.random() < 0.45:
+            g.set(x, top, rng.choice("Ttb"))
+        if rng.random() < 0.35:
+            g.set(x, h - bottom - 1, rng.choice("bbr"))
+    return g
+
+
 def summoning_hall():
     rows = [
         "###################",
-        "###################",
         "##K==C=======C==K##",
         "##===============##",
-        "##===============##",
         "##===1===2===3===##",
-        "##===============##",
         "##===============##",
         "##=L===========L=##",
         "##===============##",
@@ -125,43 +141,39 @@ def summoning_hall():
         "theme": "hall",
         "level": None,
         "grid": g,
-        "spawn_default": {"x": 9, "y": 9, "face": "up"},
+        "spawn_default": {"x": 9, "y": 7, "face": "up"},
         "respawn_to": "emerald_forest_main_woods",
         "portals": [
-            {"id": "hall_exit", "rect": [8, 12, 3, 2], "to": "emerald_forest_main_woods",
-             "arrive": {"x": 5, "y": 13, "face": "right"}, "requires": "has_pet"},
+            {"id": "hall_exit", "rect": [8, 9, 3, 2], "to": "emerald_forest_main_woods",
+             "arrive": {"x": 3, "y": 6, "face": "right"}, "requires": "has_pet"},
         ],
         "pedestals": [
-            {"index": 0, "x": 5, "y": 5, "starter": "tien_chuong", "species": "flower_fairy"},
-            {"index": 1, "x": 9, "y": 5, "starter": "sa_hat", "species": "spider"},
-            {"index": 2, "x": 13, "y": 5, "starter": "xich_ung", "species": "sea_demon"},
+            {"index": 0, "x": 5, "y": 3, "starter": "tien_chuong", "species": "flower_fairy"},
+            {"index": 1, "x": 9, "y": 3, "starter": "sa_hat", "species": "spider"},
+            {"index": 2, "x": 13, "y": 3, "starter": "xich_ung", "species": "sea_demon"},
         ],
-        "npcs": [{"id": "summoner_mira", "x": 9, "y": 3, "face": "down"}],
+        "npcs": [{"id": "summoner_mira", "x": 9, "y": 1, "face": "down"}],
         "spawn_zones": [],
         "backdrop": None,
     }
 
 
 def forest_main():
-    rng = random.Random(1101)
-    g = Grid(36, 26, ".")
-    forest_border(g, rng)
-    # Lối vào từ Triệu Linh Điện (tây), đường đất sang Rừng Sâu (đông).
-    carve_path(g, [(2, 13), (14, 13), (14, 11), (24, 11), (24, 13), (33, 13)])
-    g.rect(34, 12, 2, 3, ",")  # lối ra phía đông xuyên rìa
-    # Bãi trống quanh NPC.
-    g.rect(4, 7, 10, 12, ".")
-    carve_path(g, [(2, 13), (8, 13)])
-    # Cây và trang trí; vùng quái cỏ cao ở đông nam.
-    scatter(g, rng, "TTtb", 26, (3, 3, 30, 20), spacing=2)
-    scatter(g, rng, "r", 5, (3, 3, 30, 20), spacing=2)
-    g.rect(20, 15, 12, 7, ".")
-    scatter(g, rng, "g", 30, (20, 15, 12, 7), spacing=0)
-    scatter(g, rng, "fm", 18, (3, 3, 30, 20), spacing=1)
-    g.rect(4, 7, 9, 12, ".")
-    carve_path(g, [(2, 13), (14, 13)])
-    scatter(g, rng, "f", 6, (4, 7, 9, 12), spacing=1)
-    g.set(9, 8, "s")  # quầy Tiểu Thương Wen
+    rng = random.Random(2101)
+    g = strip_forest(rng, 34, 13)
+    carve_path(g, [(1, 6), (12, 6), (12, 7), (33, 7)])
+    g.rect(33, 5, 1, 3, ",")  # lối sang Rừng Sâu (mép đông)
+    g.rect(2, 3, 13, 8, ".")  # bãi trống NPC
+    carve_path(g, [(1, 6), (12, 6)])
+    scatter(g, rng, "Tt", 7, (16, 3, 17, 2), spacing=2)
+    scatter(g, rng, "br", 5, (16, 9, 17, 2), spacing=2)
+    g.rect(19, 3, 12, 7, g.get(19, 3) if False else ".")
+    carve_path(g, [(12, 7), (33, 7)])
+    scatter(g, rng, "g", 26, (19, 3, 12, 7), spacing=0)
+    scatter(g, rng, "fm", 14, (2, 3, 30, 8), spacing=1)
+    scatter(g, rng, "t", 3, (19, 3, 12, 7), spacing=2)
+    g.set(9, 2, "s")  # quầy Tiểu Thương Wen (sát hàng cây)
+    scatter(g, rng, "f", 4, (2, 3, 12, 8), spacing=1)
     return {
         "id": "emerald_forest_main_woods",
         "name": "Bìa Rừng Lục Bảo",
@@ -169,20 +181,20 @@ def forest_main():
         "theme": "forest",
         "level": [1, 5],
         "grid": g,
-        "spawn_default": {"x": 6, "y": 13, "face": "right"},
+        "spawn_default": {"x": 3, "y": 6, "face": "right"},
         "respawn_to": "emerald_forest_main_woods",
         "portals": [
-            {"id": "to_deep_woods", "rect": [34, 12, 2, 3], "to": "emerald_forest_deep_woods",
-             "arrive": {"x": 4, "y": 15, "face": "right"}},
+            {"id": "to_deep_woods", "rect": [33, 5, 1, 3], "to": "emerald_forest_deep_woods",
+             "arrive": {"x": 2, "y": 6, "face": "right"}},
         ],
         "npcs": [
-            {"id": "forest_guide", "x": 7, "y": 11, "face": "down"},
-            {"id": "bia_shop", "x": 10, "y": 8, "face": "down"},
-            {"id": "bia_skill", "x": 11, "y": 16, "face": "down"},
-            {"id": "bia_free", "x": 5, "y": 17, "face": "right"},
+            {"id": "forest_guide", "x": 6, "y": 4, "face": "down"},
+            {"id": "bia_shop", "x": 10, "y": 3, "face": "down"},
+            {"id": "bia_skill", "x": 13, "y": 9, "face": "up"},
+            {"id": "bia_free", "x": 4, "y": 9, "face": "right"},
         ],
         "spawn_zones": [
-            {"id": "z1", "rect": [20, 15, 12, 7], "species": ["snail", "flower_fairy", "mushroom", "spider"],
+            {"id": "z1", "rect": [19, 3, 12, 7], "species": ["snail", "flower_fairy", "mushroom", "spider"],
              "max_alive": 4, "respawn_s": 25},
         ],
         "backdrop": "forest-wall-far",
@@ -190,23 +202,20 @@ def forest_main():
 
 
 def forest_deep():
-    rng = random.Random(1102)
-    g = Grid(44, 30, ".")
-    forest_border(g, rng)
-    carve_path(g, [(2, 15), (12, 15), (12, 9), (30, 9), (30, 4), (40, 4)])
-    carve_path(g, [(12, 15), (12, 22), (26, 22)])
-    g.rect(0, 14, 3, 3, ",")   # lối về Bìa Rừng (tây)
-    g.rect(40, 3, 4, 3, ",")   # lối ra Hoàng Môn / Quảng Trường (đông bắc)
-    g.rect(4, 13, 6, 6, ".")
-    scatter(g, rng, "TTTtb", 48, (3, 3, 38, 24), spacing=2)
-    scatter(g, rng, "r", 8, (3, 3, 38, 24), spacing=2)
-    for z in [(16, 11, 12, 8), (28, 16, 12, 9), (14, 23, 12, 4)]:
-        g.rect(*z, ".")
-        scatter(g, rng, "g", 22, z, spacing=0)
-    scatter(g, rng, "m", 14, (3, 3, 38, 24), spacing=1)
-    g.rect(4, 13, 6, 6, ".")
-    carve_path(g, [(0, 15), (12, 15)])
-    carve_path(g, [(30, 4), (43, 4)])
+    rng = random.Random(2102)
+    g = strip_forest(rng, 38, 13)
+    carve_path(g, [(1, 6), (10, 6), (10, 8), (24, 8), (24, 5), (37, 5)])
+    g.rect(0, 5, 1, 3, ",")   # lối về Bìa Rừng (tây)
+    g.rect(37, 4, 1, 3, ",")  # lối ra Hoàng Môn / Quảng Trường (đông)
+    g.rect(2, 3, 5, 7, ".")
+    for z in [(8, 3, 9, 7), (19, 3, 8, 7), (28, 3, 7, 7)]:
+        scatter(g, rng, "g", 16, z, spacing=0)
+    scatter(g, rng, "Ttb", 9, (8, 3, 28, 2), spacing=2)
+    scatter(g, rng, "r", 4, (8, 8, 28, 2), spacing=2)
+    scatter(g, rng, "m", 10, (2, 3, 34, 7), spacing=1)
+    g.rect(2, 3, 5, 7, ".")
+    carve_path(g, [(0, 6), (10, 6)])
+    carve_path(g, [(24, 5), (37, 5)])
     return {
         "id": "emerald_forest_deep_woods",
         "name": "Rừng Sâu Lục Bảo",
@@ -214,24 +223,24 @@ def forest_deep():
         "theme": "deep_forest",
         "level": [5, 10],
         "grid": g,
-        "spawn_default": {"x": 5, "y": 15, "face": "right"},
+        "spawn_default": {"x": 3, "y": 6, "face": "right"},
         "respawn_to": "emerald_forest_main_woods",
         "portals": [
-            {"id": "to_main_woods", "rect": [0, 14, 2, 3], "to": "emerald_forest_main_woods",
-             "arrive": {"x": 32, "y": 13, "face": "left"}},
+            {"id": "to_main_woods", "rect": [0, 5, 1, 3], "to": "emerald_forest_main_woods",
+             "arrive": {"x": 31, "y": 6, "face": "left"}},
             # Lần đầu tới Hoàng Môn theo cốt truyện; các lần sau đi thẳng Quảng Trường (P01-scope §2).
-            {"id": "to_city", "rect": [42, 3, 2, 3], "to": "city_palace_gate",
-             "arrive": {"x": 15, "y": 18, "face": "up"},
-             "redirect": {"if_visited": "city_palace_gate", "to": "city_square", "arrive": {"x": 19, "y": 22, "face": "up"}}},
+            {"id": "to_city", "rect": [37, 4, 1, 3], "to": "city_palace_gate",
+             "arrive": {"x": 2, "y": 6, "face": "right"},
+             "redirect": {"if_visited": "city_palace_gate", "to": "city_square", "arrive": {"x": 2, "y": 6, "face": "right"}}},
         ],
         "npcs": [
-            {"id": "sau_guard", "x": 6, "y": 12, "face": "down"},
-            {"id": "sau_free", "x": 8, "y": 18, "face": "up"},
+            {"id": "sau_guard", "x": 5, "y": 3, "face": "down"},
+            {"id": "sau_free", "x": 4, "y": 9, "face": "up"},
         ],
         "spawn_zones": [
-            {"id": "z1", "rect": [16, 11, 12, 8], "species": ["mushroom", "spider", "wolf"], "max_alive": 3, "respawn_s": 30},
-            {"id": "z2", "rect": [28, 16, 12, 9], "species": ["wolf", "spider", "flower_fairy"], "max_alive": 3, "respawn_s": 30},
-            {"id": "z3", "rect": [14, 23, 12, 4], "species": ["snail", "mushroom"], "max_alive": 2, "respawn_s": 30},
+            {"id": "z1", "rect": [8, 3, 9, 7], "species": ["mushroom", "spider", "wolf"], "max_alive": 3, "respawn_s": 30},
+            {"id": "z2", "rect": [19, 3, 8, 7], "species": ["wolf", "spider", "flower_fairy"], "max_alive": 3, "respawn_s": 30},
+            {"id": "z3", "rect": [28, 3, 7, 7], "species": ["snail", "mushroom"], "max_alive": 2, "respawn_s": 30},
         ],
         "backdrop": "forest-wall-far",
     }
@@ -239,28 +248,17 @@ def forest_deep():
 
 def palace_gate():
     rows = [
-        "##############################",
-        "##############################",
-        "##########H#####H#####H#######",
-        "#C::::::::::::::::::::::::::C#",
-        "#::L::::::::::::::::::::::L::#",
-        "#::::::::::::::::::::::::::::#",
-        "#::::::::S::::::::::S::::::::#",
-        "#::::::::::::::::::::::::::::#",
-        "#b::::::::::::::::::::::::::b#",
-        "#::::::::::::::::::::::::::::#",
-        "#::::::::::::++++::::::::::::#",
-        "#:::::t::::::++++::::::t:::::#",
-        "#::::::::::::++++::::::::::::#",
-        "#::::::::::::++++::::::::::::#",
-        "#b:::::::::::++++:::::::::::b#",
-        "#::::::::::::++++::::::::::::#",
-        "#::L:::::::::++++:::::::::L::#",
-        "#::::::::::::++++::::::::::::#",
-        "#::::::::::::++++::::::::::::#",
-        "#::::::::::::++++::::::::::::#",
-        "#############++++#############",
-        "#############++++#############",
+        "##########################",
+        "####H#######H#######H#####",
+        "#C::::::::::::::::::::::C#",
+        "#:L:b::::S:::::S::::b:L:##",
+        "#::::::::::::::::::::::::#",
+        "#::::::::+++++++++::::::::",
+        "#::::::::+++++++++::::::::",
+        "#::::::::+++++++++::::::::",
+        "#::::::::::::::::::::::::#",
+        "#bt" + ":" * 20 + "tb#",
+        "##########################",
     ]
     g = from_rows(rows)
     return {
@@ -270,18 +268,18 @@ def palace_gate():
         "theme": "city",
         "level": None,
         "grid": g,
-        "spawn_default": {"x": 15, "y": 17, "face": "up"},
+        "spawn_default": {"x": 12, "y": 6, "face": "up"},
         "respawn_to": "city_square",
-        "facades": {"10,2": "city-facade-shop", "16,2": "palace-gate", "22,2": "city-facade-townhouse"},
+        "facades": {"4,1": "city-facade-shop", "12,1": "palace-gate", "20,1": "city-facade-townhouse"},
         "portals": [
-            {"id": "gate_to_square", "rect": [13, 20, 4, 2], "to": "city_square",
-             "arrive": {"x": 20, "y": 5, "face": "down"}},
-            {"id": "gate_to_market", "rect": [10, 3, 1, 1], "to": "city_market", "locked": True},
-            {"id": "gate_to_palace", "rect": [16, 3, 1, 1], "to": "city_royal_palace", "locked": True},
+            {"id": "gate_to_square", "rect": [25, 5, 1, 3], "to": "city_square",
+             "arrive": {"x": 2, "y": 6, "face": "right"}},
+            {"id": "gate_to_market", "rect": [4, 2, 1, 1], "to": "city_market", "locked": True},
+            {"id": "gate_to_palace", "rect": [12, 2, 1, 1], "to": "city_royal_palace", "locked": True},
         ],
         "npcs": [
-            {"id": "gate_captain", "x": 14, "y": 8, "face": "down"},
-            {"id": "gate_guild", "x": 22, "y": 6, "face": "down"},
+            {"id": "gate_captain", "x": 14, "y": 4, "face": "down"},
+            {"id": "gate_guild", "x": 19, "y": 4, "face": "down"},
         ],
         "spawn_zones": [],
         "backdrop": "city-skyline-far",
@@ -290,34 +288,25 @@ def palace_gate():
 
 def city_square():
     rows = [
-        "######################################",
-        "######################################",
-        "#####H#######H######::#####H######H###",
-        "#C:::::::::::::::::::::::::::::::::::C",
-        "#::L:::::::::::::::::::::::::::::::L:#",
-        "#::::::::::::::::::::::::::::::::::::#",
-        "#:::B::::::::::::::::::::::::::::B:::#",
-        "#::::::::::::::::::::::::::::::::::::#",
-        "#::::::::t:::::::::::::::::::t:::::::#",
-        "#::::::::::::::::::::::::::::::::::::#",
-        "#::::::::::::::::::###:::::::::::::::#",
-        "#::::::::::::::::::#F#:::::::::::::::#",
-        "#::::::::::::::::::::::::::::::::::::#",
-        "#::::::::::::::::::::::::::::::::::::#",
-        "#b:::::::::::::::::::::::::::::::::Q:#",
-        "#::::::::::::::::::::::::::::::::::::#",
-        "#::::::O:::::::::::::::::::::::::::::#",
-        "#::::::::::::::::::::::::::::::::::::#",
-        "#::L:::::::::::::::::::::::::::::::L:#",
-        "#::::::::t:::::::::::::::::::t:::::::#",
-        "#::::::::::::::::::::::::::::::::::::#",
-        "#::::::::::::::::::::::::::::::::::::#",
-        "#:::::::::::::::::+++::::::::::::::::#",
-        "#::::::x:::::::::::::::::::::::::::::#",
-        "#####################++###############",
-        "######################################",
+        "################################",
+        "####H######H#######H######H#####",
+        "#C::::::::::::###:::::::::::::C#",
+        "#:L:::::::::::#F#::::::::::::L:#",
+        "::::::::::::::::::::::::::::::::",
+        "::::B::::::::::::::::::::::B::::",
+        "::::::::::::::::::::::::::::::::",
+        "#:::::::t::::::::::::::t::::::Q#",
+        "#:::::O::::::::+++:::::::::::::#",
+        "#b::x:::::::::::::::::::::::::b#",
+        "#:::::::::::::::::::::::::::::::",
+        "################################",
     ]
-    rows[3] = rows[3][:-1] + "#"
+    rows = [r if len(r) == 32 else r[:32] for r in rows]
+    rows[4] = "#" + rows[4][1:-1] + "#"
+    rows[5] = "::" + rows[5][2:-2] + "::"
+    rows[6] = "::" + rows[6][2:-2] + "::"
+    rows[4] = "::" + rows[4][2:-2] + "::"
+    rows[10] = "#" + rows[10][1:-1] + "#"
     g = from_rows(rows)
     return {
         "id": "city_square",
@@ -326,30 +315,30 @@ def city_square():
         "theme": "city",
         "level": None,
         "grid": g,
-        "spawn_default": {"x": 19, "y": 14, "face": "down"},
+        "spawn_default": {"x": 16, "y": 6, "face": "down"},
         "respawn_to": "city_square",
-        "facades": {"5,2": "city-facade-guild", "13,2": "city-facade-artisan", "27,2": "city-facade-shop", "34,2": "city-facade-townhouse"},
+        "facades": {"4,1": "city-facade-guild", "11,1": "city-facade-artisan", "19,1": "city-facade-shop", "26,1": "city-facade-townhouse"},
         "portals": [
-            {"id": "square_to_gate", "rect": [20, 2, 2, 2], "to": "city_palace_gate",
-             "arrive": {"x": 15, "y": 18, "face": "up"}},
-            {"id": "square_to_market", "rect": [21, 24, 2, 1], "to": "city_market", "locked": True},
+            {"id": "square_to_gate", "rect": [0, 4, 1, 3], "to": "city_palace_gate",
+             "arrive": {"x": 23, "y": 6, "face": "left"}},
+            {"id": "square_to_market", "rect": [31, 4, 1, 3], "to": "city_market", "locked": True},
         ],
-        "pillar": {"x": 7, "y": 16, "npc": "sq_pillar", "dest": [
-            {"map": "emerald_forest_main_woods", "arrive": {"x": 6, "y": 13, "face": "right"}},
+        "pillar": {"x": 6, "y": 8, "npc": "sq_pillar", "dest": [
+            {"map": "emerald_forest_main_woods", "arrive": {"x": 3, "y": 6, "face": "right"}},
             {"map": "city_farm", "locked": True},
             {"map": "treasure_beach_east_shore", "locked": True},
         ]},
         "npcs": [
-            {"id": "trainer_elin", "x": 16, "y": 13, "face": "down"},
-            {"id": "sq_healer", "x": 11, "y": 6, "face": "down"},
-            {"id": "sq_skill", "x": 25, "y": 6, "face": "down"},
-            {"id": "sq_free", "x": 30, "y": 16, "face": "left"},
-            {"id": "sq_pillar", "x": 8, "y": 17, "face": "down"},
-            {"id": "sq_arena", "x": 31, "y": 10, "face": "down"},
-            {"id": "sq_board", "x": 34, "y": 15, "face": "left"},
-            {"id": "sq_exchange", "x": 6, "y": 10, "face": "right"},
-            {"id": "sq_warehouse", "x": 10, "y": 21, "face": "up"},
-            {"id": "sq_mailbox", "x": 8, "y": 22, "face": "up"},
+            {"id": "trainer_elin", "x": 13, "y": 5, "face": "down"},
+            {"id": "sq_healer", "x": 9, "y": 3, "face": "down"},
+            {"id": "sq_skill", "x": 22, "y": 3, "face": "down"},
+            {"id": "sq_free", "x": 25, "y": 8, "face": "left"},
+            {"id": "sq_pillar", "x": 7, "y": 9, "face": "up"},
+            {"id": "sq_arena", "x": 26, "y": 3, "face": "down"},
+            {"id": "sq_board", "x": 29, "y": 7, "face": "left"},
+            {"id": "sq_exchange", "x": 4, "y": 3, "face": "down"},
+            {"id": "sq_warehouse", "x": 11, "y": 9, "face": "up"},
+            {"id": "sq_mailbox", "x": 13, "y": 9, "face": "up"},
         ],
         "spawn_zones": [],
         "backdrop": "city-skyline-far",
