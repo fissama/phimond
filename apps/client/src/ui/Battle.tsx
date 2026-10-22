@@ -3,8 +3,9 @@ import type { Battle as BattleT, BattleEvent, Character } from '@phimond/protoco
 import type { GameWorld } from '../game/world.ts';
 import { eventText, viName } from '../game/content.ts';
 import { session } from '../state/app.ts';
-import { PetAnimated } from './PetArt.tsx';
-import { battleResultOpen } from '../state/ui.ts';
+import { PetAnimated, PetPortrait } from './PetArt.tsx';
+import { FrameBar } from './Hud.tsx';
+import { battleResultOpen, pushLog } from '../state/ui.ts';
 import { damageGlyphs, iconFor, uiUrl } from './skin.ts';
 
 type Choice = 'attack' | 'skill' | 'capture' | 'defend' | 'item' | 'auto' | 'flee';
@@ -26,6 +27,17 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
   const [playing, setPlaying] = useState(false);
   const last = useRef<BattleT | null>(null);
   const logRef = useRef<HTMLDivElement>(null);
+  const closeTimer = useRef(0);
+  const startLv = useRef<{ pet: number; me: number; id: string } | null>(null);
+  const chRef = useRef(ch);
+  chRef.current = ch;
+  const [more, setMore] = useState(false);
+  const [shake, setShake] = useState(false);
+  const close = () => {
+    window.clearTimeout(closeTimer.current);
+    setFinished(null);
+    setLines([]);
+  };
 
   const live = ch.battle;
   if (live) last.current = live;
@@ -42,7 +54,7 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
         evs.forEach((e, i) =>
           setTimeout(() => {
             setLines((l) => {
-              const t = eventText(e, unitName);
+              const t = e.type === 'damage' && e.actor_id && e.actor_id !== e.target_id ? `${unitName(e.actor_id)} → ${unitName(e.target_id)}: −${e.amount ?? 0} HP` : eventText(e, unitName);
               return l[l.length - 1] === t ? l : [...l.slice(-40), t];
             });
             if (e.type === 'skill_cast' || e.type === 'miss' || (e.type === 'damage' && e.actor_id)) {
@@ -51,6 +63,10 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
             }
             if ((e.type === 'damage' || e.type === 'heal') && e.target_id) {
               setHit(e.type === 'damage' ? e.target_id : null);
+              if (e.type === 'damage') {
+                setShake(true);
+                setTimeout(() => setShake(false), 220);
+              }
               const id = Math.random();
               setFloats((f) => [...f, { id, unit: e.target_id!, text: `${e.type === 'heal' ? '+' : '-'}${e.amount ?? 0}`, heal: e.type === 'heal' }]);
               setTimeout(() => setFloats((f) => f.filter((x) => x.id !== id)), 900);
@@ -62,8 +78,24 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
                 const done = b.presentation.completed_battle as BattleT;
                 const rewards = evs.filter((x) => /currency|pet_capture|respawn|item_gain|level_up|pet_learn/.test(x.type)).map((x) => eventText(x, unitName));
                 // Kết quả, vàng, EXP, vật phẩm do world ghi vào khung chat (không popup chặn); cảnh trận tự đóng sau một nhịp.
+                // Server không gửi sự kiện lên cấp: so cấp trước/sau trận để báo (cả khung thưởng lẫn chat).
+                const s0 = startLv.current;
+                const after = b.character;
+                const petAfter = after.pets.find((p) => p.id === after.active_pet_id);
+                if (s0 && petAfter && petAfter.level > s0.pet) {
+                  const t = `${viName(petAfter.name)} lên cấp ${petAfter.level}!`;
+                  rewards.push(t);
+                  pushLog(t, 'system');
+                }
+                if (s0 && after.level > s0.me) {
+                  const t = `Bạn lên cấp ${after.level}!`;
+                  rewards.push(t);
+                  pushLog(t, 'system');
+                }
+                startLv.current = null;
                 setFinished({ battle: done, lines: rewards });
-                setTimeout(() => (setFinished(null), setLines([])), 1700);
+                const long = rewards.some((l) => /lên cấp|Lv|Bắt được|Học được/.test(l)) || done.result === 'capture' || done.result === 'win';
+                closeTimer.current = window.setTimeout(close, long ? 4200 : 1700);
               }
             }
           }, i * 300),
@@ -78,6 +110,7 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
     if (logRef.current) logRef.current.scrollTop = logRef.current.scrollHeight;
   }, [lines]);
   useEffect(() => {
+    if (live && !startLv.current) startLv.current = { pet: chRef.current.pets.find((p) => p.id === chRef.current.active_pet_id)?.level ?? 0, me: chRef.current.level, id: live.id };
     if (live && lines.length === 0) setLines([`Một linh thú hoang xuất hiện!`]);
     if (!live && !finished) setLines([]);
   }, [live?.id]);
@@ -98,87 +131,164 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
     setSending(false);
   };
 
-  const unitCard = (u: typeof me, side: 'player' | 'enemy') => {
-    if (!u) return null;
-    const lv = side === 'player' ? pet?.level : (u as unknown as { level?: number }).level;
-    const status = u.statuses.map((s) => world.content.cat.statuses[s.id]?.name ?? s.id).join(', ');
-    return (
-      <div class={`plate ${side}`} data-testid={`battle-${side}`}>
-        <div class="card">
-          <div class="nm">
-            <b>{viName(u.name)}</b>
-            {lv ? <em>Lv {lv}</em> : null}
-          </div>
-          <div class="uibar hp" title={`HP ${u.hp}/${u.max_hp}`}>
-            <i style={{ width: `${(100 * u.hp) / Math.max(1, u.max_hp)}%` }} />
-            <span>{u.hp}/{u.max_hp}</span>
-          </div>
-          {side === 'player' && (
-            <div class="uibar mp" title={`MP ${u.mp}/${u.max_mp}`}>
-              <i style={{ width: `${(100 * u.mp) / Math.max(1, u.max_mp)}%` }} />
-              <span>{u.mp}/{u.max_mp}</span>
-            </div>
-          )}
-          {status && <div class="st">{status}</div>}
-        </div>
-      </div>
-    );
-  };
-  const fighter = (u: typeof me, side: 'player' | 'enemy') => {
-    if (!u) return null;
-    const row = u.hp <= 0 ? 'down' : hit === u.id ? 'hurt' : acting === u.id ? 'attack' : 'idle';
-    return (
-      <div class={`fighter ${side} ${hit === u.id ? 'hit' : ''} ${row}`}>
-        <div class="shadow" />
-        <PetAnimated species={u.species_id} size={(side === 'player' ? 300 : 270) * (window.innerHeight < 500 ? 0.62 : 1)} row={row === 'hurt' ? 'idle' : row} />
-        {floats
-          .filter((f) => f.unit === u.id)
-          .map((f) => (
-            <span key={f.id} class={`float dmg ${f.heal ? 'heal' : 'hurt'}`} style={{ left: '30%', top: '4%' }}>
-              {damageGlyphs(f.text).map((src, i) => (
-                <img key={i} src={src} alt={i === 0 ? f.text : ''} />
-              ))}
-            </span>
-          ))}
-      </div>
-    );
-  };
-
-  const cmd = (id: string, label: string, icon: string, disabled: boolean, onClick: () => void) => (
-    <button class="bbtn" disabled={disabled} data-testid={`act-${id}`} aria-label={label} onClick={onClick}>
-      {iconFor(icon) ? <img src={iconFor(icon)!} alt="" /> : label}
-      <span>{label}</span>
-    </button>
-  );
+  const bgKey = ch.map_id.includes('deep') ? 'deep_forest' : ch.map_id.includes('gate') ? 'gate' : ch.map_id.startsWith('city') ? 'city' : ch.map_id.includes('hall') ? 'hall' : 'forest';
+  const lvOf = (u: typeof foe) => (u as unknown as { level?: number } | undefined)?.level;
   const seals = ch.inventory['capture_seal'] ?? 0;
   const skills = (pet?.skills ?? []).filter((s) => s !== 'attack');
   const consumables = Object.entries(ch.inventory).filter(([id, n]) => n > 0 && /potion|ether/.test(id));
 
+  const enemyPlate = (u: typeof foe) =>
+    u && (
+      <div class="foe-plate" data-testid="battle-enemy">
+        <div class="nm">
+          <b>{viName(u.name)}</b>
+          <em>{lvOf(u) ? `Lv ${lvOf(u)}` : 'Hoang dã'}</em>
+        </div>
+        <div class="fb">
+          <em class="hp">HP</em>
+          <div class="fbar hp r0" title={`HP ${u.hp}/${u.max_hp}`}>
+            <div class="track">
+              <i class="fill" style={{ clipPath: `inset(0 ${100 - (100 * u.hp) / Math.max(1, u.max_hp)}% 0 0)` }} />
+            </div>
+            <span>
+              {u.hp}/{u.max_hp}
+            </span>
+          </div>
+        </div>
+        {u.statuses.length > 0 && <div class="st">{u.statuses.map((s) => world.content.cat.statuses[s.id]?.name ?? s.id).join(' · ')}</div>}
+      </div>
+    );
+
+  const myPlate = (u: typeof me) =>
+    u && (
+      <div class="my-plate hud-card" data-testid="battle-player">
+        <div class="ring">
+          <PetPortrait species={u.species_id} size={46} />
+          {pet && <div class="badge">{pet.level}</div>}
+        </div>
+        <div class="stack">
+          <div class="nm">
+            <b>{viName(u.name)}</b>
+            {u.statuses.length > 0 && <span class="st">{u.statuses.map((s) => world.content.cat.statuses[s.id]?.name ?? s.id).join(' · ')}</span>}
+          </div>
+          <FrameBar kind="hp" row={0} v={u.hp} max={u.max_hp} label="HP" />
+          <FrameBar kind="mp" row={1} v={u.mp} max={u.max_mp} label="MP" />
+          {pet && <FrameBar kind="xp" row={2} v={pet.xp} max={pet.level * 25} label="EXP" />}
+        </div>
+      </div>
+    );
+
+  const fighter = (u: typeof me, side: 'player' | 'enemy') => {
+    if (!u) return null;
+    const row = u.hp <= 0 ? 'down' : acting === u.id ? 'attack' : 'idle';
+    return (
+      <div class={`fighter ${side} ${hit === u.id ? 'hit' : ''} ${row}`}>
+        {side === 'enemy' && enemyPlate(u)}
+        <div class="sprite-wrap">
+          <div class="shadow" />
+          <PetAnimated species={u.species_id} size={260 * (window.innerHeight < 500 ? 0.62 : 1)} row={row} />
+          {floats
+            .filter((f) => f.unit === u.id)
+            .map((f) => (
+              <span key={f.id} class={`float dmg ${f.heal ? 'heal' : 'hurt'}`}>
+                {damageGlyphs(f.text).map((src, i) => (
+                  <img key={i} src={src} alt={i === 0 ? f.text : ''} />
+                ))}
+              </span>
+            ))}
+        </div>
+      </div>
+    );
+  };
+
+  const round = (id: string, label: string, icon: string, disabled: boolean, why: string, onClick: () => void) => (
+    <button class="bbtn" disabled={disabled} data-testid={`act-${id}`} aria-label={label} title={disabled ? why : label} onClick={onClick}>
+      {iconFor(icon) ? <img src={iconFor(icon)!} alt="" /> : label}
+      <span>{disabled && why ? why : label}</span>
+    </button>
+  );
+  const sub = menu !== null || more;
+
   return (
-    <div class="battle" data-testid="battle">
+    <div class={`battle ${shake ? 'shake' : ''}`} data-testid="battle">
       <div class="scene">
+        <img class="bg" src={`${import.meta.env.BASE_URL}battle/battle-bg-${bgKey}.png`} alt="" onError={(e) => ((e.currentTarget as HTMLImageElement).style.display = 'none')} />
         <div class="vignette" />
         <div class="ground" />
+        <div class="motes" aria-hidden="true" />
         <div class="turn" style={{ backgroundImage: `url(${uiUrl('battle_turn_banner')})` }}>
           <b>{finished ? 'Kết thúc' : `Lượt ${view.turn}`}</b>
         </div>
-        {unitCard(me, 'player')}
-        {unitCard(foe, 'enemy')}
+        {myPlate(me)}
         <div class="stage">
           <div class="side left">{fighter(foe, 'enemy')}</div>
           <div class="side right">{fighter(me, 'player')}</div>
         </div>
-        {finished && !live && BANNER[finished.battle.result] && (
-          <div class="result" data-testid="battle-result">
-            <div class="banner" style={{ backgroundImage: `url(${uiUrl(BANNER[finished.battle.result]!)})`, backgroundSize: '100% 100%' }}>
-              <b>{RESULT[finished.battle.result]}</b>
+        {finished && !live && (
+          <div class="result" onClick={close}>
+            <div class="rwd" data-testid="battle-result">
+              {BANNER[finished.battle.result] ? (
+                <div class="banner" style={{ backgroundImage: `url(${uiUrl(BANNER[finished.battle.result]!)})`, backgroundSize: '100% 100%' }}>
+                  <b>{RESULT[finished.battle.result]}</b>
+                </div>
+              ) : (
+                <div class="banner plain">
+                  <b>{RESULT[finished.battle.result] ?? 'Trận đấu kết thúc'}</b>
+                </div>
+              )}
+              {finished.lines.length > 0 && (
+                <div class="lines">
+                  {finished.lines.map((l, i) => (
+                    <div key={i}>{l}</div>
+                  ))}
+                </div>
+              )}
+              <small>Chạm để tiếp tục</small>
             </div>
           </div>
         )}
-        {finished && !live && !BANNER[finished.battle.result] && (
-          <div class="result" data-testid="battle-result">
-            <div class="banner plain">
-              <b>{RESULT[finished.battle.result] ?? 'Trận đấu kết thúc'}</b>
+        {live && (
+          <div class="cmdwrap">
+            {sub && (
+              <div class="cmdsub">
+                {menu === 'skill' &&
+                  skills.map((id) => {
+                    const sk = world.content.cat.skills[id] as unknown as { name: string; mp_cost?: number };
+                    return (
+                      <button key={id} class="btn" disabled={busy || (me?.mp ?? 0) < (sk?.mp_cost ?? 0)} onClick={() => void act('skill', { skill_id: id })}>
+                        {sk?.name ?? id} · {sk?.mp_cost ?? 0} MP
+                      </button>
+                    );
+                  })}
+                {menu === 'item' &&
+                  consumables.map(([id, n]) => (
+                    <button key={id} class="btn" disabled={busy} onClick={() => void act('item', { item_id: id })}>
+                      {world.content.itemName(id)} ×{n}
+                    </button>
+                  ))}
+                {menu === null && more && (
+                  <>
+                    {round('defend', 'Phòng thủ', 'icon_defend', busy, '', () => (setMore(false), void act('defend')))}
+                    {round('item', 'Vật phẩm', 'icon_inventory', busy || consumables.length === 0, 'Trống', () => (setMore(false), setMenu('item')))}
+                    {round('auto', 'Tự động', 'icon_auto', busy, '', () => (setMore(false), void act('auto')))}
+                  </>
+                )}
+                {menu !== null && (
+                  <button class="btn" onClick={() => setMenu(null)}>
+                    Trở về
+                  </button>
+                )}
+              </div>
+            )}
+            <div class="cmds">
+              {round('attack', 'Tấn công', 'icon_attack', busy, '', () => void act('attack'))}
+              {round('skill', 'Kỹ năng', 'icon_magic', busy || skills.length === 0, skills.length === 0 ? 'Chưa có' : '', () => (setMore(false), setMenu('skill')))}
+              {round('capture', `Bắt (${seals})`, 'capture_seal', busy || seals === 0, seals === 0 ? 'Hết Phù' : '', () => void act('capture'))}
+              {round('flee', 'Chạy', 'icon_run', busy, '', () => void act('flee'))}
+              <button class={`bbtn more ${more ? 'on' : ''}`} aria-label="Thêm" data-testid="act-more" onClick={() => (setMenu(null), setMore(!more))}>
+                <b>⋯</b>
+                <span>Thêm</span>
+              </button>
             </div>
           </div>
         )}
@@ -189,41 +299,6 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
             <div key={l + i}>{l}</div>
           ))}
         </div>
-        {live && (
-          <div class={`cmds ${menu ? 'sub' : ''}`}>
-            {menu === null && (
-              <>
-                {cmd('attack', 'Tấn công', 'icon_attack', busy, () => void act('attack'))}
-                {cmd('skill', 'Kỹ năng', 'icon_magic', busy || skills.length === 0, () => setMenu('skill'))}
-                {cmd('capture', `Bắt (${seals})`, 'capture_seal', busy || seals === 0, () => void act('capture'))}
-                {cmd('defend', 'Phòng thủ', 'icon_defend', busy, () => void act('defend'))}
-                {cmd('item', 'Vật phẩm', 'icon_inventory', busy || consumables.length === 0, () => setMenu('item'))}
-                {cmd('auto', 'Tự động', 'icon_auto', busy, () => void act('auto'))}
-                {cmd('flee', 'Chạy', 'icon_run', busy, () => void act('flee'))}
-              </>
-            )}
-            {menu === 'skill' &&
-              skills.map((id) => {
-                const s = world.content.cat.skills[id] as unknown as { name: string; mp_cost?: number };
-                return (
-                  <button key={id} class="btn" disabled={busy || (me?.mp ?? 0) < (s?.mp_cost ?? 0)} onClick={() => void act('skill', { skill_id: id })}>
-                    {s?.name ?? id} · {s?.mp_cost ?? 0} MP
-                  </button>
-                );
-              })}
-            {menu === 'item' &&
-              consumables.map(([id, n]) => (
-                <button key={id} class="btn" disabled={busy} onClick={() => void act('item', { item_id: id })}>
-                  {world.content.itemName(id)} ×{n}
-                </button>
-              ))}
-            {menu !== null && (
-              <button class="btn" onClick={() => setMenu(null)}>
-                Trở về
-              </button>
-            )}
-          </div>
-        )}
       </div>
     </div>
   );

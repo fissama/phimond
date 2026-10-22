@@ -25,8 +25,8 @@ export function Hud({ world, ch }: { world: GameWorld; ch: Character }) {
   return (
     <div class={`hud ${compact ? 'compact' : ''} ${inBattle ? 'in-battle' : ''}`}>
       <div class="hud-status" data-testid="hud-status-panel">
-        <div class="pet-row">
-          <div class="ring">
+        <div class="pet-row hud-card">
+          <div class="ring" role="button" aria-label="Linh thú" onClick={() => (overlay.value = { kind: 'menu', page: 'pets' })}>
             {pet ? <PetPortrait species={pet.species_id} /> : <div class="portrait" />}
             {pet && <div class="badge" title="Cấp linh thú">{pet.level}</div>}
           </div>
@@ -41,7 +41,7 @@ export function Hud({ world, ch }: { world: GameWorld; ch: Character }) {
             )}
           </div>
         </div>
-        <div class="me-row">
+        <div class="me-row hud-card">
           <div class="lvl" title="Cấp nhân vật">
             Lv {ch.level}
           </div>
@@ -116,16 +116,19 @@ export function Hud({ world, ch }: { world: GameWorld; ch: Character }) {
 }
 
 /** Thanh chỉ số khung vàng (frame-bars) + ruột tô theo tỉ lệ; chữ số nằm trên thanh. */
-function FrameBar({ kind, row, v, max, label, slim }: { kind: 'hp' | 'mp' | 'xp'; row: number; v: number; max: number; label: string; slim?: boolean }) {
+export function FrameBar({ kind, row, v, max, label, slim }: { kind: 'hp' | 'mp' | 'xp'; row: number; v: number; max: number; label: string; slim?: boolean }) {
   const p = Math.max(0, Math.min(100, (v / Math.max(1, max)) * 100));
   return (
-    <div class={`fbar ${kind} r${row} ${slim ? 'slim' : ''}`} title={`${label} ${v}/${max}`} data-testid={`fbar-${kind}`}>
-      <div class="track">
-        <i class="fill" style={{ clipPath: `inset(0 ${100 - p}% 0 0)` }} />
+    <div class={`fb ${slim ? 'slim' : ''}`} data-testid={`fbar-${kind}`}>
+      <em class={kind}>{label}</em>
+      <div class={`fbar ${kind} r${row} ${slim ? 'slim' : ''} ${kind === 'hp' && p < 25 ? 'low' : ''}`} title={`${label} ${Math.floor(v)}/${max}`}>
+        <div class="track">
+          <i class="fill" style={{ clipPath: `inset(0 ${100 - p}% 0 0)` }} />
+        </div>
+        <span>
+          {Math.floor(v)}/{max}
+        </span>
       </div>
-      <span>
-        {label} {Math.floor(v)}/{max}
-      </span>
     </div>
   );
 }
@@ -249,7 +252,7 @@ function Chat() {
   return (
     <div class={`chat ${open ? 'open' : 'min'} ${idle && !open ? 'idle' : ''}`} data-testid="chat">
       <div class="tabs">
-        {LOG_TABS.map((t) => (
+        {LOG_TABS.filter((t) => t.id === 'all' || t.id === 'system' || t.id === 'area').map((t) => (
           <button key={t.id} class={tab === t.id ? 'on' : ''} onClick={() => (setTab(t.id), setOpen(true))}>
             {t.label}
           </button>
