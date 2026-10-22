@@ -43,7 +43,7 @@ func TestNewPlayerStartsInHallAndChoosesStarter(t *testing.T) {
 	// Đứng chéo kề bệ 1 (9,3).
 	c.X, c.Y = 10, 4
 	ev := command(t, e, c, "starter.choose", map[string]any{"pedestal": 1})
-	if len(c.Pets) != 1 || c.Pets[0].SpeciesID != "spider" || c.ActivePetID != c.Pets[0].ID || !c.Pets[0].Appraised {
+	if len(c.Pets) != 1 || c.Pets[0].SpeciesID != "sa_hat" || c.ActivePetID != c.Pets[0].ID || !c.Pets[0].Appraised {
 		t.Fatal("không nhận đúng pet khởi đầu")
 	}
 	if c.MapID != "emerald_forest_main_woods" || c.X != 3 || c.Y != 6 || !has(c.Visited, c.MapID) {

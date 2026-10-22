@@ -107,6 +107,8 @@ type Pedestal struct {
 	Y       int    `json:"y"`
 	Starter string `json:"starter"`
 	Species string `json:"species"`
+	// Display là thần thú 5★ trưng bày trên bệ (chỉ hiển thị phía client; nhận được pet 1★ Species).
+	Display string `json:"display,omitempty"`
 }
 
 // NPCPlace là vị trí NPC trong file map; map là nguồn chuẩn cho vị trí.

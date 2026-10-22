@@ -144,18 +144,18 @@ def summoning_hall():
         "theme": "hall",
         "level": None,
         "grid": g,
-        "spawn_default": {"x": 9, "y": 7, "face": "up"},
+        "spawn_default": {"x": 9, "y": 8, "face": "up"},
         "respawn_to": "emerald_forest_main_woods",
         "portals": [
             {"id": "hall_exit", "rect": [8, 9, 3, 2], "to": "emerald_forest_main_woods",
              "arrive": {"x": 3, "y": 6, "face": "right"}, "requires": "has_pet"},
         ],
         "pedestals": [
-            {"index": 0, "x": 5, "y": 3, "starter": "tien_chuong", "species": "flower_fairy"},
-            {"index": 1, "x": 9, "y": 3, "starter": "sa_hat", "species": "spider"},
-            {"index": 2, "x": 13, "y": 3, "starter": "xich_ung", "species": "sea_demon"},
+            {"index": 0, "x": 5, "y": 3, "starter": "tien_chuong", "species": "tien_chuong", "display": "showcase_flower"},
+            {"index": 1, "x": 9, "y": 3, "starter": "sa_hat", "species": "sa_hat", "display": "showcase_scorpion"},
+            {"index": 2, "x": 13, "y": 3, "starter": "xich_ung", "species": "xich_ung", "display": "showcase_unicorn"},
         ],
-        "npcs": [{"id": "summoner_mira", "x": 9, "y": 1, "face": "down"}],
+        "npcs": [{"id": "summoner_mira", "x": 9, "y": 6, "face": "down"}],
         "spawn_zones": [],
         "backdrop": None,
     }

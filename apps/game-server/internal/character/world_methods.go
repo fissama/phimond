@@ -133,7 +133,7 @@ func (e *Engine) chooseStarter(c *Character, idx *int) ([]Event, error) {
 		if world.Chebyshev(c.X, c.Y, p.X, p.Y) > interactRange {
 			return nil, fmt.Errorf("Hãy đến gần bệ đá hơn")
 		}
-		pt := e.GiveStarter(c, p.Species, 3)
+		pt := e.GiveStarter(c, p.Species, 1)
 		ev := []Event{event("starter_chosen", pt.Name+" đã chọn bạn")}
 		for _, exit := range m.Portals {
 			if exit.Requires == "has_pet" && exit.Arrive != nil {
