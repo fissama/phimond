@@ -197,3 +197,32 @@ export function blobShadow(radius: number): THREE.Mesh {
 }
 
 export type { AssetInfo };
+
+let ringTex: THREE.CanvasTexture | null = null;
+/** Vòng cảnh báo dưới chân quái hoang (đỏ cam, viền đứt), nằm sát mặt đất. */
+export function foeRing(): THREE.Mesh {
+  if (!ringTex) {
+    const c = document.createElement('canvas');
+    c.width = c.height = 128;
+    const g = c.getContext('2d')!;
+    g.strokeStyle = 'rgba(255,96,64,0.95)';
+    g.lineWidth = 7;
+    g.setLineDash([16, 10]);
+    g.beginPath();
+    g.arc(64, 64, 52, 0, Math.PI * 2);
+    g.stroke();
+    const grad = g.createRadialGradient(64, 64, 10, 64, 64, 56);
+    grad.addColorStop(0, 'rgba(255,80,50,0.0)');
+    grad.addColorStop(1, 'rgba(255,80,50,0.28)');
+    g.fillStyle = grad;
+    g.beginPath();
+    g.arc(64, 64, 52, 0, Math.PI * 2);
+    g.fill();
+    ringTex = new THREE.CanvasTexture(c);
+  }
+  const m = new THREE.Mesh(new THREE.PlaneGeometry(0.95, 0.95), new THREE.MeshBasicMaterial({ map: ringTex, transparent: true, depthWrite: false, opacity: 0.6 }));
+  m.rotation.x = -Math.PI / 2;
+  m.position.y = 0.015;
+  m.renderOrder = 1;
+  return m;
+}

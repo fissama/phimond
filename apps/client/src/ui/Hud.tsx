@@ -4,7 +4,7 @@ import { currentMap, interactHint, type GameWorld } from '../game/world.ts';
 import { viName } from '../game/content.ts';
 import { currentGoal } from '../game/goal.ts';
 import { settings } from '../state/settings.ts';
-import { battleResultOpen, closeOverlay, log, LOG_TABS, overlay, toasts, type LogTab } from '../state/ui.ts';
+import { battleResultOpen, closeOverlay, log, LOG_TABS, overlay, pushLog, toasts, type LogTab } from '../state/ui.ts';
 import type { Direction } from '../world/coords.ts';
 import { session } from '../state/app.ts';
 import { PetPortrait } from './PetArt.tsx';
@@ -22,10 +22,21 @@ export function Hud({ world, ch }: { world: GameWorld; ch: Character }) {
   const compact = settings.value.hud === 'compact';
   const goal = currentGoal(ch, world.content);
   const hint = interactHint.value;
+  // Cảnh báo máu thấp (đánh giá P0-2): viền thẻ pet nháy đỏ dưới 30%, nhắc một lần mỗi khi tụt qua ngưỡng.
+  const low = !!pet && pet.hp > 0 && pet.hp < pet.max_hp * 0.3;
+  const down = !!pet && pet.hp <= 0;
+  const warned = useRef(false);
+  useEffect(() => {
+    if ((low || down) && !inBattle && !warned.current) {
+      warned.current = true;
+      pushLog(down ? `${viName(pet!.name)} đã kiệt sức — tới Kiểm Lâm Lio (Bìa Rừng) hoặc Y Sư Selka (Quảng Trường) để hồi phục.` : `${viName(pet!.name)} còn ít máu — nên hồi phục trước khi đụng quái.`, 'system');
+    }
+    if (!low && !down) warned.current = false;
+  }, [low, down, inBattle]);
   return (
     <div class={`hud ${compact ? 'compact' : ''} ${inBattle ? 'in-battle' : ''}`}>
       <div class="hud-status" data-testid="hud-status-panel">
-        <div class="pet-row hud-card">
+        <div class={`pet-row hud-card ${low ? 'danger' : ''} ${down ? 'danger down' : ''}`}>
           <div class="ring" role="button" aria-label="Linh thú" onClick={() => (overlay.value = { kind: 'menu', page: 'pets' })}>
             {pet ? <PetPortrait species={pet.species_id} /> : <div class="portrait" />}
             {pet && <div class="badge" title="Cấp linh thú">{pet.level}</div>}
@@ -99,7 +110,7 @@ export function Hud({ world, ch }: { world: GameWorld; ch: Character }) {
           Trở về
         </button>
         <button class={`round a ${hint ? 'ready' : ''}`} data-testid="btn-select" onClick={() => world.primary()}>
-          {hint ?? 'Chọn'}
+          <span class={`lbl ${(hint ?? 'Chọn').length > 6 ? 'long' : ''}`}>{hint ?? 'Chọn'}</span>
         </button>
       </div>
 
@@ -141,7 +152,7 @@ function Minimap({ world, ch }: { world: GameWorld; ch: Character }) {
   useEffect(() => {
     const cv = ref.current;
     if (!cv || !grid) return;
-    const k = Math.max(3, Math.min(8, Math.floor(160 / Math.max(grid.w, grid.h))));
+    const k = Math.max(4, Math.min(10, Math.floor(220 / Math.max(grid.w, grid.h * 1.6))));
     cv.width = grid.w * k;
     cv.height = grid.h * k;
     const g = cv.getContext('2d')!;
@@ -150,7 +161,7 @@ function Minimap({ world, ch }: { world: GameWorld; ch: Character }) {
     for (let y = 0; y < grid.h; y++)
       for (let x = 0; x < grid.w; x++)
         if (grid.walkable(x, y)) {
-          g.fillStyle = (x + y) % 2 ? '#3c4a3a' : '#435342';
+          g.fillStyle = (x + y) % 2 ? '#6f8f62' : '#78996a';
           g.fillRect(x * k, y * k, k, k);
         }
     const dot = (x: number, y: number, c: string, r = k) => {
@@ -161,8 +172,11 @@ function Minimap({ world, ch }: { world: GameWorld; ch: Character }) {
     for (const n of world.content.npcsOn(map.id)) dot(n.x, n.y, '#7fd6e8', Math.max(3, k));
     for (const q of map.pedestals) dot(q.x, q.y, '#c98ae8', Math.max(3, k));
     if (map.pillar) dot(map.pillar.x, map.pillar.y, '#c98ae8', Math.max(3, k));
+    // Quái đang hiện trên đồng (chấm đỏ) để người chơi chủ động tránh hoặc tìm đánh.
+    const hidden = ch.spawn_hidden ?? {};
+    for (const w of map.wild_spawns ?? []) if (!(hidden as Record<string, number>)[w.id]) dot(w.x, w.y, '#ff6b5a', Math.max(3, k));
     dot(ch.x, ch.y, '#ffffff', Math.max(4, k + 1));
-  }, [map.id, ch.x, ch.y, grid]);
+  }, [map.id, ch.x, ch.y, grid, JSON.stringify(ch.spawn_hidden ?? {})]);
   return (
     <div class="hud-minimap" data-testid="hud-minimap" aria-label="Bản đồ nhỏ">
       <canvas ref={ref} />

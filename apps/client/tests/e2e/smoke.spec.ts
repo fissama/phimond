@@ -138,6 +138,51 @@ test('nhiều quái: chọn mục tiêu rồi đánh trúng đúng quái đó', 
 });
 });
 
+test.describe('vòng chơi đầu (luật thật)', () => {
+  test.use({ baseURL: 'http://127.0.0.1:5187' });
+  test('nhận nhiệm vụ đầu ở Lio, bật Tự động thắng 2–3 quái, báo cáo nhận thưởng', async ({ page }) => {
+    test.setTimeout(150_000);
+    await register(page);
+    await chooseStarter(page);
+    await act(page, { kind: 'npc', id: 'forest_guide' });
+    await expect(page.getByTestId('npc-close')).toBeVisible({ timeout: 15_000 });
+    await page.getByTestId('npc-role-quest').click();
+    await page.getByTestId('quest-accept-first_battle').click();
+    await page.getByTestId('npc-close').click();
+    await expect(page.getByTestId('hud-goal')).toContainText('Đòn đầu tiên');
+    const spawn = await page.evaluate(() => {
+      const w = (window as unknown as { __phimond: { world: { content: { map(id: string): { wild_spawns: { id: string }[] } } } } }).__phimond.world;
+      return w.content.map('emerald_forest_main_woods').wild_spawns[0]!.id;
+    });
+    await act(page, { kind: 'spawn', id: spawn });
+    await expect(page.getByTestId('battle')).toBeVisible({ timeout: 20_000 });
+    await page.getByTestId('battle-speed').click(); // ×2
+    await page.getByTestId('act-auto').click();
+    await expect(page.getByTestId('battle-result')).toContainText('Chiến thắng', { timeout: 100_000 });
+    await expect(page.getByTestId('battle')).toHaveCount(0, { timeout: 15_000 });
+    await expect(page.getByTestId('hud-goal')).toContainText('báo cáo');
+    await act(page, { kind: 'npc', id: 'forest_guide' });
+    await expect(page.getByTestId('npc-close')).toBeVisible({ timeout: 15_000 });
+    await page.getByTestId('npc-role-quest').click();
+    await page.getByTestId('quest-claim-first_battle').click();
+    await expect(page.getByTestId('quest-accept-first_capture')).toBeVisible();
+  });
+});
+
+test('menu: chi tiết linh thú và dùng thuốc ngoài trận', async ({ page }) => {
+  await register(page);
+  await chooseStarter(page);
+  await page.getByTestId('menu-open').click();
+  await page.getByTestId('menu-pets').click();
+  await page.locator('[data-testid^="pet-detail-"]').first().click();
+  await expect(page.getByText('Kỹ năng', { exact: true })).toBeVisible();
+  await expect(page.locator('.pd-skill')).toHaveCount(2); // Đòn Đánh + đòn hệ biết sẵn
+  await page.getByTestId('overlay-close').click();
+  await page.getByTestId('menu-open').click();
+  await page.getByTestId('menu-bag').click();
+  await expect(page.getByTestId('use-potion')).toBeDisabled(); // máu đầy
+});
+
 test('NPC: tới gần, hội thoại, hồi phục; cổng khóa báo chưa mở', async ({ page }) => {
   test.setTimeout(120_000);
   await register(page);

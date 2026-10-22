@@ -76,9 +76,19 @@ export const MAP_NAMES: Record<string, string> = {
 };
 
 export const STARTERS: Record<string, { name: string; blurb: string }> = {
-  tien_chuong: { name: 'Tiên Chưởng', blurb: 'Hệ mộc, bền bỉ và hồi phục tốt.' },
-  sa_hat: { name: 'Sa Hạt', blurb: 'Hệ thổ, cứng cáp, đòn đánh chắc.' },
-  xich_ung: { name: 'Xích Ưng', blurb: 'Hệ hỏa, nhanh nhẹn, tấn công mạnh.' },
+  tien_chuong: { name: 'Tiên Chưởng', blurb: 'Hệ Quang, thiên về phép: đòn Quang Ba mạnh, sau này học được hồi máu.' },
+  sa_hat: { name: 'Sa Hạt', blurb: 'Hệ Thổ, thiên về đánh: chắc chắn, dễ chơi nhất cho người mới.' },
+  xich_ung: { name: 'Xích Ưng', blurb: 'Hệ Vô, nhanh nhẹn và trâu bò: thường ra đòn trước.' },
+};
+
+export const ELEMENT_VI: Record<string, string> = { earth: 'Thổ', water: 'Thủy', wind: 'Phong', fire: 'Hỏa', neutral: 'Vô', light: 'Quang', dark: 'Ám' };
+export const RACE_VI: Record<string, string> = { plant: 'Thực vật', insect: 'Côn trùng', beast: 'Thú', undead: 'Bất tử', dragon: 'Rồng', fish: 'Thủy tộc', bird: 'Phi cầm', demon: 'Ma' };
+export const ITEM_DESC: Record<string, string> = {
+  capture_seal: 'Dùng trong trận để bắt linh thú hoang. Quái càng yếu máu càng dễ bắt.',
+  potion: 'Hồi 35 HP cho linh thú. Dùng được trong và ngoài trận.',
+  ether: 'Hồi 20 MP cho linh thú. Dùng được trong và ngoài trận.',
+  synthesis_soul: 'Nguyên liệu tổng hợp thế hệ mới ở Điền Trang (mở ở bản sau).',
+  blessing_leaf: 'Nguyên liệu cường hóa linh thú (mở ở bản sau).',
 };
 
 export const ROLE_LABEL: Record<string, string> = {

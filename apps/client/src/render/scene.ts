@@ -278,7 +278,8 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
   }
 
   // Viền ngoài map: nền kéo dài + cây (rừng) để camera không lộ khoảng trống ở mép.
-  const skirtFloor = theme === 'hall' ? null : theme === 'city' ? 'city-paving-03' : 'grass-floor-01';
+  // Điện: nối sàn đá tối ra ngoài lan can để 1/3 dưới màn không còn là khoảng đen (đánh giá v1.0.0 P1).
+  const skirtFloor = theme === 'hall' ? 'hall-floor-stone' : theme === 'city' ? 'city-paving-03' : 'grass-floor-01';
   if (skirtFloor && asset(skirtFloor)) {
     propJobs.push(
       (async () => {
@@ -287,7 +288,7 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
         const geo = new THREE.PlaneGeometry(W + 2 * M, H + 2 * M);
         const uv = geo.getAttribute('uv') as THREE.BufferAttribute;
         for (let i = 0; i < uv.count; i++) uv.setXY(i, (uv.getX(i) * (W + 2 * M)) / 4, (uv.getY(i) * (H + 2 * M)) / 4);
-        const shade = theme === 'deep_forest' ? T.ground : theme === 'city' ? 0xc8c0b0 : 0xe4ebdc;
+        const shade = theme === 'hall' ? 0x3c3229 : theme === 'deep_forest' ? T.ground : theme === 'city' ? 0xc8c0b0 : 0xe4ebdc;
         const mat = P.shadows === 'none' ? new THREE.MeshBasicMaterial({ map: tex, color: shade }) : new THREE.MeshLambertMaterial({ map: tex, color: shade });
         const m = new THREE.Mesh(geo, mat);
         m.rotation.x = -Math.PI / 2;
@@ -525,6 +526,9 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
     place('barrel', 1.9, 9.4);
     place('barrel', W - 2.9, 9.4);
     place('wooden-crate', W - 1.8, 9.9);
+    // Tiền sảnh ngoài lan can: hàng chậu cây và đèn đuốc thấp, chỉ trang trí (ngoài lưới đi được).
+    for (const x of [1.5, 4.5, 14.5, 17.5]) place('palace-long-planter', x, 12.6);
+    for (const x of [7.2, W - 7.2]) place('hall-torch', x, 12.2);
   }
 
   // Nền xa (dải 64 px/đơn vị) sau mép trên map.

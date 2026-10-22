@@ -78,7 +78,7 @@ export function installSkin(): void {
     `.round{border:0;color:#fff3cf;text-shadow:0 1px 2px #000;font-weight:800;}`,
     `.round.a{${sprite('confirm-normal')}width:96px;height:90px;}.round.a:active{${sprite('confirm-pressed')}}`,
     `.round.b{${sprite('back-normal')}width:78px;height:72px;font-size:13px;}.round.b:active{${sprite('back-pressed')}}`,
-    `.chat .body{${nine('chat-panel-light', [100, 80, 100, 80], 0.26)}}`,
+    `.chat .body,.battle .log{${nine('chat-panel-light', [100, 80, 100, 80], 0.26)}}`,
     `.chat .tabs button{${sprite('chat-tab-normal')}color:#e9e1c8;}`,
     `.chat .tabs button.on{${sprite('chat-tab-selected')}color:#fff;}`,
     `.toast{${nine('toast-panel', [84, 51, 84, 51], 0.26)}padding:0 8px;}`,

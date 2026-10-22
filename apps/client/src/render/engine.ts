@@ -5,7 +5,7 @@ import { INDOOR, lightAt, type Light } from './daylight.ts';
 import { Post } from './post.ts';
 import { asset, textures } from './assets.ts';
 import { buildScene, THEMES, type BuiltScene } from './scene.ts';
-import { blobShadow, CharacterSprite, PetSprite, propSprite } from './sprites.ts';
+import { blobShadow, CharacterSprite, foeRing, PetSprite, propSprite } from './sprites.ts';
 import type { Cell, Direction } from '../world/coords.ts';
 
 export type Pick =
@@ -187,6 +187,10 @@ export class Engine {
     const root = new THREE.Group();
     root.add(sprite.root);
     if (blob) root.add(blobShadow(0.38));
+    // Vòng đỏ dưới chân: quái hoang đụng vào là vào trận, khác hẳn đồ trang trí (đánh giá v1.0.0).
+    const ring = foeRing();
+    ring.name = 'foe-ring';
+    root.add(ring);
     root.position.set(s.x + 0.5, 0, s.y + 0.5);
     root.traverse((o) => (o.userData = { ...o.userData, kind: 'spawn', id: s.id }));
     this.scene.add(root);
@@ -304,6 +308,8 @@ export class Engine {
       s.root.position.x = s.base.x + 0.5 + ox;
       s.sprite.setRow(Math.abs(Math.cos(s.t * 0.7)) > 0.3 ? 'move' : 'idle');
       s.sprite.update(dt, Math.cos(s.t * 0.7) > 0);
+      const ring = s.root.getObjectByName('foe-ring') as THREE.Mesh | undefined;
+      if (ring) (ring.material as THREE.MeshBasicMaterial).opacity = 0.45 + 0.3 * Math.sin(s.t * 3);
     }
     for (const c of this.showcases) {
       // Thần thú lơ lửng nhẹ trên bệ.
@@ -358,8 +364,16 @@ export class Engine {
       v.set(n.root.position.x, 1.75, n.root.position.z).project(this.camera);
       const on = v.z < 1 && Math.abs(v.x) < 1.1 && Math.abs(v.y) < 1.1;
       n.label.style.display = on ? 'block' : 'none';
-      if (on) n.label.style.left = `${((v.x + 1) / 2) * w}px`;
-      if (on) n.label.style.top = `${((1 - v.y) / 2) * h}px`;
+      if (!on) continue;
+      // Tên NPC rõ khi người chơi lại gần, mờ và nhỏ khi ở xa (đỡ rối ở Quảng Trường); không tràn mép màn.
+      const d = Math.hypot(n.root.position.x - this.playerRoot.position.x, n.root.position.z - this.playerRoot.position.z);
+      const near = d < 4.5;
+      n.label.style.opacity = near ? '1' : d < 8 ? '0.7' : '0.45';
+      n.label.style.fontSize = near ? '13px' : '11px';
+      n.label.style.zIndex = near ? '2' : '1';
+      const half = n.label.offsetWidth / 2 + 6;
+      n.label.style.left = `${Math.max(half, Math.min(w - half, ((v.x + 1) / 2) * w))}px`;
+      n.label.style.top = `${((1 - v.y) / 2) * h}px`;
     }
   }
 

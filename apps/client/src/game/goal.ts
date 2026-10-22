@@ -1,5 +1,6 @@
 import type { Character } from '@phimond/protocol';
 import type { Content } from './content.ts';
+import { npcLabel, questHint, questViews } from './quests.ts';
 
 /**
  * Mục tiêu hiện tại hiện ở HUD (đánh giá G2: người mới không biết làm gì). Suy ra từ trạng thái nhân vật,
@@ -14,13 +15,12 @@ export function currentGoal(ch: Character, content: Content): { title: string; d
       detail: ch.map_id.includes('summoning_hall') ? 'Đi tới một bệ đá rồi bấm Chọn' : 'Về Triệu Linh Điện để chọn bệ đá',
     };
   }
-  const quests = Object.values(content.cat.quests) as { id: string; name: string; count?: number }[];
-  const active = quests.map((q) => ({ q, s: ch.quests[q.id] })).filter((x) => x.s && !x.s.claimed);
-  const ready = active.find((x) => x.s!.progress >= (x.q.count ?? 1));
-  if (ready) return { title: ready.q.name, detail: 'Hoàn thành — quay lại báo cáo' };
-  if (active[0]) return { title: active[0].q.name, detail: `Tiến độ ${active[0].s!.progress}/${active[0].q.count ?? 1}` };
-  const started = quests.some((q) => ch.quests[q.id]);
-  return started
-    ? { title: 'Khám phá Đợt A', detail: 'Ghé Quảng Trường Thạch Trụ để mở đường tới nơi mới' }
-    : { title: 'Nhận nhiệm vụ đầu tiên', detail: 'Hỏi Kiểm Lâm Lio ở Bìa Rừng Lục Bảo' };
+  const views = questViews(ch, content);
+  const ready = views.find((v) => v.ready);
+  if (ready) return { title: ready.q.name, detail: 'Xong — báo cáo ở NPC nhiệm vụ gần nhất để nhận thưởng' };
+  const active = views.find((v) => v.s && !v.s.claimed);
+  if (active) return { title: active.q.name, detail: questHint(active, content) };
+  const next = views.find((v) => v.available && v.q.kind !== 'pet_breed');
+  if (next) return { title: next.q.name, detail: `Nhận nhiệm vụ: gặp ${npcLabel(content, next.q.giver) || 'NPC nhiệm vụ'}` };
+  return { title: 'Hoàn thành Đợt A', detail: 'Luyện linh thú, bắt thêm bạn mới — Điền Trang mở ở bản sau' };
 }
