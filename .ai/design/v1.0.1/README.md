@@ -66,3 +66,6 @@ Chưa kiểm: iPhone/Safari thật, hiệu năng GPU thật.
 - **HUD trái:** hai thẻ cùng một ngôn ngữ khung (thẻ pet, thẻ người chơi), nhãn HP/MP/EXP tách khỏi thanh (chữ ≥ 11 px), HP dưới 25% nháy, chạm chân dung mở menu Linh thú.
 - **Chat:** chỉ còn 3 tab đang có nội dung (Tất cả, Hệ thống, Khu vực); khung xanh nhạt (`ui/chat-panel-light.png`, tô lại từ `chat-panel.png`, ruột xanh nhạt, viền vàng giữ nguyên) và chữ tối như game gốc.
 - Chưa làm: hàng chờ lượt, icon trạng thái (còn chữ), âm thanh, hiệu ứng kỹ năng, Lv quái (cần server): xem DEBT D13.
+
+## Đợt 5 (2026-10-22): 1 pet đấu 2–3 quái cùng loài
+Server sinh 2–3 quái giống nhau (40%/60%, `rules.encounter_weights`), nhận `target_id`, thưởng cộng theo từng quái. Client: đội hình so le, chọn mục tiêu (kim cương cyan), hậu tố A/B/C, bố cục dọc. Chi tiết, cờ xung đột P02-R07 và vấn đề cân bằng: `COMBAT-HUD-SPEC.md`.

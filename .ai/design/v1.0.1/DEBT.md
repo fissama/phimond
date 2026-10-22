@@ -18,3 +18,4 @@ Các mục đánh giá gameplay thuộc Phase sau, giữ lại ở dạng nợ. 
 | D12 | HD-2D | Ánh sáng thật theo đèn (hiện là quầng cộng sáng + chỉnh màu toàn cảnh), bóng đổ theo giờ, thời tiết (mưa, sương), nước phản chiếu. Chưa đo hiệu năng bloom trên iPhone/Safari. | Sau khi đo D4 |
 | D13 | Combat | Trận đấu là cảnh DOM trên nền cảnh thế giới làm mờ, chưa phải diorama 3D riêng; chưa có hiệu ứng kỹ năng, chưa có tên Lv cho quái hoang (server không gửi level trong BattleUnit). | Sau v1.0.1 |
 | D14 | HUD | EXP cần lên cấp (cấp × 25) đang hard-code ở client theo `data/balance/rules.json`; nên server gửi `xp_next` trong snapshot. | Cùng đợt chỉnh server |
+| D15 | Combat | Encounter 3 quái làm pet mới có thể chết trước khi kịp Chạy; thành phần encounter theo party, AoE, mục tiêu đồng đội cho 3v3 chưa có. Xem `COMBAT-HUD-SPEC.md` cờ 1–4. | Phase cân bằng / PvP 3v3 |
