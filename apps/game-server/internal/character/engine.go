@@ -26,6 +26,13 @@ func (e *Engine) NewCharacter(id, name string, seed uint64) *Character {
 func (e *Engine) GiveStarter(c *Character, species string, level int) *pet.Pet {
 	p := e.NewPet(c, species, level)
 	p.Appraised = true
+	// Linh thú khởi đầu biết sẵn đòn hệ đầu tiên của loài để trận đầu có kỹ năng dùng được.
+	for _, id := range e.Data.Species[species].Skills {
+		if s, ok := e.Data.Skills[id]; ok && id != "attack" && s.Target == "enemy" && (s.Kind == "physical" || s.Kind == "magic") {
+			p.Skills = append(p.Skills, id)
+			break
+		}
+	}
 	c.Pets = append(c.Pets, p)
 	c.ActivePetID = p.ID
 	return p

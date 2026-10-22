@@ -24,6 +24,7 @@ export const BattleUnit = z
     name: z.string(),
     side: z.enum(['player', 'enemy']),
     species_id: z.string(),
+    level: z.number().optional(),
     hp: z.number(),
     max_hp: z.number(),
     mp: z.number().optional().default(0),

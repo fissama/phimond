@@ -185,6 +185,8 @@ type NPC struct {
 	Face     string   `json:"face,omitempty"`
 	Roles    []string `json:"roles"`
 	Dialogue string   `json:"dialogue,omitempty"`
+	// Lines: câu thoại thêm, đổi theo tiến độ (số nhiệm vụ đã xong) để NPC không lặp một câu mãi.
+	Lines []string `json:"lines,omitempty"`
 	Evidence
 }
 type Item struct {
@@ -222,35 +224,43 @@ type Quest struct {
 	XP          int            `json:"xp"`
 	Items       map[string]int `json:"items"`
 	Recipe      string         `json:"recipe"`
+	// Requires: nhiệm vụ phải hoàn thành (đã nhận thưởng) trước khi nhận nhiệm vụ này (chuỗi Đợt A).
+	Requires string `json:"requires,omitempty"`
+	// Giver: NPC giao nhiệm vụ; nhận phải đứng gần NPC này (báo cáo ở NPC nhiệm vụ nào cũng được).
+	Giver string `json:"giver,omitempty"`
 	Evidence
 }
 type Rules struct {
-	ID                  string   `json:"id"`
-	QualityMin          int      `json:"quality_min"`
-	QualityMax          int      `json:"quality_max"`
-	QualityCap          int      `json:"quality_cap"`
-	GenerationBonus     int      `json:"generation_bonus"`
-	MutationRange       int      `json:"mutation_range"`
-	SkillInheritance    float64  `json:"skill_inheritance"`
-	AppraisalCost       int      `json:"appraisal_cost"`
-	LearnCost           int      `json:"learn_cost"`
-	HealCost            int      `json:"heal_cost"`
-	HPBase              int      `json:"hp_base"`
-	HPScale             float64  `json:"hp_scale"`
-	MPBase              int      `json:"mp_base"`
-	MPScale             float64  `json:"mp_scale"`
-	DamageScale         float64  `json:"damage_scale"`
-	CritMultiplier      float64  `json:"crit_multiplier"`
-	CaptureHPScale      float64  `json:"capture_hp_scale"`
-	CaptureStatusBonus  float64  `json:"capture_status_bonus"`
-	CaptureCap          float64  `json:"capture_cap"`
-	XPPerLevel          int      `json:"xp_per_level"`
-	BattleXP            int      `json:"battle_xp"`
-	BattleGold          int      `json:"battle_gold"`
-	MaxLevel            int      `json:"max_level"`
-	BattleTurnCap       int      `json:"battle_turn_cap"`
+	ID                 string  `json:"id"`
+	QualityMin         int     `json:"quality_min"`
+	QualityMax         int     `json:"quality_max"`
+	QualityCap         int     `json:"quality_cap"`
+	GenerationBonus    int     `json:"generation_bonus"`
+	MutationRange      int     `json:"mutation_range"`
+	SkillInheritance   float64 `json:"skill_inheritance"`
+	AppraisalCost      int     `json:"appraisal_cost"`
+	LearnCost          int     `json:"learn_cost"`
+	HealCost           int     `json:"heal_cost"`
+	HPBase             int     `json:"hp_base"`
+	HPScale            float64 `json:"hp_scale"`
+	MPBase             int     `json:"mp_base"`
+	MPScale            float64 `json:"mp_scale"`
+	DamageScale        float64 `json:"damage_scale"`
+	CritMultiplier     float64 `json:"crit_multiplier"`
+	CaptureHPScale     float64 `json:"capture_hp_scale"`
+	CaptureStatusBonus float64 `json:"capture_status_bonus"`
+	CaptureCap         float64 `json:"capture_cap"`
+	XPPerLevel         int     `json:"xp_per_level"`
+	BattleXP           int     `json:"battle_xp"`
+	BattleGold         int     `json:"battle_gold"`
+	MaxLevel           int     `json:"max_level"`
+	BattleTurnCap      int     `json:"battle_turn_cap"`
 	// EncounterWeights[i] = trọng số encounter hoang có i+1 quái cùng loài (rỗng = luôn 1 quái, tương thích dữ liệu cũ).
-	EncounterWeights    []int    `json:"encounter_weights"`
+	EncounterWeights []int `json:"encounter_weights"`
+	// PackScale[i] = hệ số HP và sát thương của mỗi quái khi encounter có i+1 quái (rỗng/thiếu = 1).
+	PackScale []float64 `json:"pack_scale"`
+	// WildScale nhân HP và sát thương mọi quái hoang (0 = 1); pet người chơi được nuôi nên mạnh hơn quái cùng cấp.
+	WildScale           float64  `json:"wild_scale"`
 	Elements            []string `json:"elements"`
 	MovementAllowedKeys []string `json:"movement_allowed_keys"`
 	Evidence
@@ -461,6 +471,16 @@ func (c *Catalog) validateEffects() error {
 		if q.Recipe != "" {
 			if _, ok := c.Recipes[q.Recipe]; !ok {
 				return fmt.Errorf("unknown quest recipe")
+			}
+		}
+		if q.Requires != "" {
+			if _, ok := c.Quests[q.Requires]; !ok || q.Requires == id {
+				return fmt.Errorf("quest %s requires unknown quest %s", id, q.Requires)
+			}
+		}
+		if q.Giver != "" {
+			if n, ok := c.NPCs[q.Giver]; !ok || !contains(n.Roles, "quest") {
+				return fmt.Errorf("quest %s giver %s is not a quest NPC", id, q.Giver)
 			}
 		}
 	}

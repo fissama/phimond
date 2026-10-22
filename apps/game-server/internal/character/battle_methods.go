@@ -13,7 +13,7 @@ import (
 // from internal/game/battle.go. It is kept in this package so the lowercase
 // helper stays in scope of the test package without exporting it.
 func unit(p *pet.Pet, side string) *battle.Unit {
-	return &battle.Unit{ID: p.ID, Name: p.Name, Side: side, SpeciesID: p.SpeciesID, HP: p.HP, MP: p.MP, MaxHP: p.MaxHP, MaxMP: p.MaxMP, Statuses: []battle.ActiveStatus{}, Buffs: []battle.Buff{}, Pet: p}
+	return &battle.Unit{ID: p.ID, Name: p.Name, Side: side, SpeciesID: p.SpeciesID, Level: p.Level, HP: p.HP, MP: p.MP, MaxHP: p.MaxHP, MaxMP: p.MaxMP, Statuses: []battle.ActiveStatus{}, Buffs: []battle.Buff{}, Pet: p}
 }
 
 // startBattle rolls a wild pet (or a fixed arena opponent) and returns the
@@ -56,7 +56,24 @@ func (e *Engine) startBattle(c *Character, arena bool, contactSpecies ...string)
 		if first == nil {
 			first = enemy
 		}
-		units = append(units, unit(enemy, "enemy"))
+		u := unit(enemy, "enemy")
+		// Quái hoang yếu hơn pet nuôi cùng cấp (rules.wild_scale), đàn quái yếu thêm theo rules.pack_scale
+		// để 1 pet vẫn thắng được 2–3 quái cùng cấp. Chỉ áp lên đơn vị trong trận; pet bắt được giữ chỉ số gốc.
+		if !arena {
+			scale := 1.0
+			if w := e.Data.Rules.WildScale; w > 0 {
+				scale *= w
+			}
+			if ps := e.Data.Rules.PackScale; count > 1 && count <= len(ps) && ps[count-1] > 0 {
+				scale *= ps[count-1]
+			}
+			if scale != 1 {
+				u.MaxHP = max(1, int(math.Round(float64(u.MaxHP)*scale)))
+				u.HP = u.MaxHP
+				u.Power = scale
+			}
+		}
+		units = append(units, u)
 	}
 	seed := c.RNG.Next()
 	b := &Battle{ID: c.id("battle"), Turn: 1, Phase: "WAIT_COMMAND", Units: units, Seed: seed, RNG: RNG{seed}, Arena: arena, Commands: []Intent{}, Events: []Event{}}
@@ -162,8 +179,18 @@ func (e *Engine) battleAction(c *Character, d Intent) ([]Event, error) {
 	skill := content.Skill{}
 	item := content.Item{}
 	switch d.Choice {
-	case "attack", "auto":
+	case "attack":
 		skill = e.Data.Skills["attack"]
+		kind = skill.Kind
+	case "auto":
+		// Tự động: đòn sát thương mạnh nhất còn đủ MP, không thì đánh thường.
+		skill = e.Data.Skills["attack"]
+		for _, id := range player.Pet.Skills {
+			s, ok := e.Data.Skills[id]
+			if ok && s.Target == "enemy" && (s.Kind == "physical" || s.Kind == "magic") && s.MPCost <= player.MP && !e.blocked(player, s.Kind) && s.Power > skill.Power {
+				skill = s
+			}
+		}
 		kind = skill.Kind
 	case "skill":
 		var ok bool
@@ -209,6 +236,11 @@ func (e *Engine) battleAction(c *Character, d Intent) ([]Event, error) {
 		return float64(order[i].Pet.Speed)*e.multiplier(order[i], "speed") > float64(order[j].Pet.Speed)*e.multiplier(order[j], "speed")
 	})
 	b.Phase = "EXECUTE_ACTIONS"
+	// Chạy luôn đi trước mọi đòn đánh: chạm quái là lựa chọn của người chơi, rút lui không bị phạt máu.
+	if d.Choice == "flee" && !e.blocked(player, "flee") {
+		b.Result = "flee"
+		emit(event("battle_flee", "You returned to the path"))
+	}
 	for _, u := range order {
 		if player.HP <= 0 || !anyAlive(foes) || b.Result != "" {
 			break
@@ -246,7 +278,7 @@ func (e *Engine) battleAction(c *Character, d Intent) ([]Event, error) {
 			emit(event("item_spend", "Used one binding seal"))
 			if b.RNG.Float() < chance {
 				p := enemy.Pet
-				p.HP = max(1, enemy.HP)
+				p.HP = max(1, int(math.Ceil(float64(enemy.HP)/float64(max(1, enemy.MaxHP))*float64(p.MaxHP))))
 				p.MP = enemy.MP
 				c.Pets = append(c.Pets, p)
 				enemy.HP = 0 // rời sân; XP vẫn tính như quái bị hạ
@@ -417,6 +449,9 @@ func (e *Engine) cast(b *Battle, actor, target *battle.Unit, s content.Skill, em
 		if target.Defending {
 			damage *= .5
 		}
+		if actor.Power > 0 {
+			damage *= actor.Power
+		}
 		amount := min(target.HP, max(1, int(damage)))
 		target.HP -= amount
 		emit(Event{Type: "damage", ActorID: actor.ID, TargetID: target.ID, Amount: amount, Message: fmt.Sprintf("%s takes %d damage", target.Name, amount)})
@@ -478,7 +513,11 @@ func (e *Engine) cast(b *Battle, actor, target *battle.Unit, s content.Skill, em
 // current buffs, clamping current resources. Moved verbatim from
 // internal/game/battle.go.
 func (e *Engine) refreshResources(u *battle.Unit) {
-	u.MaxHP = int(float64(u.Pet.MaxHP) * e.multiplier(u, "max_hp"))
+	scale := 1.0
+	if u.Power > 0 {
+		scale = u.Power // quái hoang/đàn: HP tối đa giữ theo hệ số lúc vào trận
+	}
+	u.MaxHP = max(1, int(math.Round(float64(u.Pet.MaxHP)*e.multiplier(u, "max_hp")*scale)))
 	u.MaxMP = int(float64(u.Pet.MaxMP) * e.multiplier(u, "max_mp"))
 	u.HP = min(u.HP, u.MaxHP)
 	u.MP = min(u.MP, u.MaxMP)

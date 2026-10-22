@@ -27,6 +27,7 @@ type Unit struct {
 	Name      string         `json:"name"`
 	Side      string         `json:"side"`
 	SpeciesID string         `json:"species_id"`
+	Level     int            `json:"level"`
 	HP        int            `json:"hp"`
 	MaxHP     int            `json:"max_hp"`
 	MP        int            `json:"mp"`
@@ -35,4 +36,6 @@ type Unit struct {
 	Buffs     []Buff         `json:"buffs"`
 	Pet       *pet.Pet       `json:"pet"`
 	Defending bool           `json:"defending"`
+	// Power nhân sát thương gây ra (0 = 1). Quái theo đàn yếu hơn quái lẻ (rules.pack_scale).
+	Power float64 `json:"power,omitempty"`
 }
