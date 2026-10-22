@@ -188,7 +188,7 @@ export class Engine {
   /** Vị trí hiển thị người chơi (số thực, theo ô) + trạng thái để chọn khung. */
   setPlayer(pos: { x: number; y: number }, moving: boolean, facing: Direction): void {
     this.playerRoot.position.set(pos.x + 0.5, 0, pos.y + 0.5);
-    this.player?.setMotion(moving, facing === 'left' ? true : facing === 'right' ? false : undefined);
+    this.player?.setMotion(moving, facing === 'left' ? true : facing === 'right' ? false : undefined, facing === 'up' ? 'up' : facing === 'down' ? 'down' : null);
   }
 
   setSpawnVisible(id: string, visible: boolean): void {

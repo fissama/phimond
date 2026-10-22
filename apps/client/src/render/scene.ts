@@ -297,6 +297,104 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
       }
   }
 
+  if (theme === 'forest' || theme === 'deep_forest') dressForest();
+
+  /**
+   * Bộ viền rừng theo lớp + chuyển tiếp đường đất (artwork phát hành, batch-13-release). Có asset mới thì dùng, thiếu thì
+   * cảnh vẫn dựng như cũ (cây rải ở rìa). Tán xa → thân giữa → bờ bụi gần camera; mảnh rìa đất phủ lên mép đường.
+   */
+  function dressForest(): void {
+    const has = (id: string) => !!asset(id);
+    const wOf = (id: string) => asset(id)?.world?.[0] ?? 4;
+    const put = (id: string, x: number, z: number, o: { flip?: boolean; tint?: number; scale?: number } = {}) => {
+      propJobs.push(
+        (async () => {
+          const s = await propSprite(id, { tint: o.tint ?? T.tint });
+          if (!s) return;
+          s.position.set(x, 0, z);
+          if (o.scale) s.scale.setScalar(o.scale);
+          if (o.flip) s.scale.x *= -1;
+          group.add(s);
+        })(),
+      );
+    };
+    const deep = theme === 'deep_forest';
+    const rects = (map.portals ?? []).map((p) => p.rect).filter((r): r is [number, number, number, number] => !!r);
+    // 1) Mép trên: tán xa mờ xanh + hàng thân cây giữa, hai lớp lệch nhịp, lật xen kẽ để không lặp.
+    if (has('forest-far-canopy')) {
+      const w = wOf('forest-far-canopy') * 0.95;
+      for (let x = -5, i = 0; x < W + 6; x += w - 0.5, i++) put('forest-far-canopy', x + w / 2, 0.4 + (hash(i, 3) - 0.5) * 0.3, { flip: i % 2 === 1, tint: deep ? 0x8fa896 : 0xc9dccf });
+    }
+    if (has('forest-mid-trunks')) {
+      const w = wOf('forest-mid-trunks');
+      for (let x = -3, i = 0; x < W + 4; x += w * 0.78 + hash(i, 5) * 0.9, i++) {
+        // Chừa chỗ cho cổng (không chắn lối ra).
+        if (rects.some((r) => Math.abs(r[0] + r[2] / 2 - x) < w * 0.7 && r[1] < 3)) continue;
+        put('forest-mid-trunks', x, 1.25 + hash(i, 9) * 0.3, { flip: hash(i, 2) < 0.5 });
+      }
+    }
+    // 2) Mép dưới (phía camera): bờ bụi/đá thấp, xen hai kiểu, để không lộ khoảng trống mà vẫn thấy lối đi.
+    const banks = ['forest-fg-bank', 'forest-cam-bank'].filter(has);
+    if (banks.length) {
+      for (let x = -3, i = 0; x < W + 3; x += 3.2 + hash(i, 7) * 0.6, i++) {
+        if (rects.some((r) => r[1] > H - 4 && Math.abs(r[0] + r[2] / 2 - x) < 2.5)) continue;
+        put(banks[i % banks.length]!, x, H - 0.15 + hash(i, 4) * 0.25, { flip: hash(i, 6) < 0.5, scale: 0.9 });
+      }
+    }
+    // 3) Hai góc dưới: góc rễ + đá (lật ngang cho góc phải).
+    if (has('forest-corner')) {
+      put('forest-corner', 0.4, H - 0.3, { scale: 0.95 });
+      put('forest-corner', W - 0.4, H - 0.3, { scale: 0.95, flip: true });
+    }
+    // 4) Cổng ra: vòng thân cây ôm lối đi ở mỗi cổng sát mép.
+    if (has('forest-portal-arch'))
+      for (const [rx, ry, rw, rh] of rects) {
+        const edgeX = rx <= 1 || rx + rw >= W - 1;
+        const edgeY = ry <= 1 || ry + rh >= H - 1;
+        if (!edgeX && !edgeY) continue;
+        put('forest-portal-arch', rx + rw / 2 + (rx > W / 2 ? 0.4 : -0.4), ry + rh + 0.4, { scale: 0.95 });
+      }
+    // 5) Chuyển tiếp đường đất ↔ cỏ: mảnh rìa phủ lên mép (cỏ lấn vào đất, không còn cạnh chữ nhật).
+    const dirt = (x: number, y: number) => (layout[y]?.[x] ?? '#') === ',';
+    const grassy = (x: number, y: number) => /[.TbtfgmrsF]/.test(layout[y]?.[x] ?? '#');
+    const fringe = (id: string, x: number, z: number, flipX: boolean, flipZ: boolean) => {
+      if (!has(id)) return;
+      propJobs.push(
+        (async () => {
+          const a = asset(id)!;
+          const tex = await textures.get(hd2dUrl(id));
+          const k = 0.8; // mảnh vẽ 4 ô → thu còn ~3.2 ô để bám theo mép
+          const geo = new THREE.PlaneGeometry((a.px[0] / 128) * k, (a.px[1] / 128) * k);
+          const mat = new THREE.MeshBasicMaterial({ map: tex, transparent: true, alphaTest: 0.35, depthWrite: false, color: T.ground });
+          const m = new THREE.Mesh(geo, mat);
+          m.rotation.x = -Math.PI / 2;
+          m.position.set(x, 0.012, z);
+          m.scale.set(flipX ? -1 : 1, flipZ ? -1 : 1, 1);
+          m.renderOrder = 0;
+          group.add(m);
+          disposables.push(geo, mat);
+        })(),
+      );
+    };
+    // Mép bắc/nam: chạy dọc theo hàng; mép tây/đông: chạy dọc theo cột. Bước 2.6 ô, lệch nhịp theo hash.
+    for (let y = 1; y < H - 1; y++) {
+      let n = 0;
+      let s = 0;
+      for (let x = 1; x < W - 1; x++) {
+        if (dirt(x, y) && grassy(x, y - 1) && n++ % 3 === 1) fringe('path-fringe-gn', x + 0.5, y + 0.05 + (hash(x, y) - 0.5) * 0.3, hash(x, y) < 0.5, false);
+        if (dirt(x, y) && grassy(x, y + 1) && s++ % 3 === 1) fringe('path-fringe-gs', x + 0.5, y + 0.95 + (hash(y, x) - 0.5) * 0.3, hash(y, x) < 0.5, false);
+      }
+    }
+    for (let x = 1; x < W - 1; x++) {
+      let w = 0;
+      let e = 0;
+      for (let y = 1; y < H - 1; y++) {
+        if (dirt(x, y) && grassy(x - 1, y) && w++ % 3 === 1) fringe('path-fringe-gw', x + 0.05, y + 0.5, false, hash(x, y) < 0.5);
+        if (dirt(x, y) && grassy(x + 1, y) && e++ % 3 === 1) fringe('path-fringe-ge', x + 0.95, y + 0.5, false, hash(y, x) < 0.5);
+      }
+    }
+  }
+
   // Điểm nhấn sàn.
   if (theme === 'hall') propJobs.push(decal('summon-floor-emblem', W / 2, 5.5, 1.2));
   if (map.id === 'city_square') propJobs.push(decal('city-plaza-medallion', 20, 16, 1.4));
@@ -398,7 +496,7 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
 
   // Tường điện (hall): dải tường ở mép trên.
   if (theme === 'hall')
-    for (let x = 1; x < W - 1; x += 3) place('hall-wall-stone', x, 1.6);
+    for (let x = 1; x < W - 1; x += 3) place('hall-wall-stone', x, 0.35); // lùi sau hàng 1 để không che Mira (đánh giá G1)
 
   // Nền xa (dải 64 px/đơn vị) sau mép trên map.
   if (P.backdrop && map.backdrop && asset(map.backdrop)) {

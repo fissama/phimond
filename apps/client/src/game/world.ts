@@ -13,6 +13,11 @@ import { Content, eventText } from './content.ts';
 /** Map và vị trí đang hiển thị (cho HUD). */
 export const currentMap = signal<MapDef | null>(null);
 
+/** Gợi ý hành động của nút "Chọn" (null = không có gì ở gần). Cập nhật khi nhân vật đổi ô. */
+export const interactHint = signal<string | null>(null);
+/** Số ô quanh điểm chạm để tìm ô đi được gần nhất khi chạm vào ô bị chặn (đánh giá T3). */
+const SNAP_RADIUS = 2;
+
 /**
  * Điều phối world phía client: nhận trạng thái server, điều khiển di chuyển, tự kích hoạt cổng/quái khi đứng đúng chỗ,
  * tương tác NPC/bệ/trụ, chuyển map. Server luôn là nguồn sự thật; ở đây chỉ chọn intent để gửi.
@@ -76,7 +81,15 @@ export class GameWorld {
     this.engine.onFrame((dt) => this.frame(dt));
     this.engine.start();
     this.absorb(ch);
+    this.welcome(ch);
     await this.enterMap(ch);
+  }
+
+  /** Vài dòng hệ thống đầu tiên để hộp chat không trống và người mới biết cách chơi (đánh giá G2/L1). */
+  private welcome(ch: Character): void {
+    pushLog('Chào mừng đến Phimond!');
+    if (!ch.pets.some((p) => !p.retired)) pushLog('Hãy chạm vào một bệ đá trong Triệu Linh Điện để nhận linh thú đầu tiên.');
+    pushLog('Di chuyển: chạm vào cảnh, phím mũi tên/WASD hoặc nút điều hướng. Tương tác: nút Chọn, phím E hoặc Space.');
   }
 
   dispose(): void {
@@ -178,6 +191,41 @@ export class GameWorld {
     this.engine.setPlayer(m.pos, m.moving, m.facing);
     if (Math.random() < 0.05) this.refreshSpawns();
     if (m.settled && !this.busy) this.checkTriggers();
+    const key = `${m.cell.x},${m.cell.y}`;
+    if (key !== this.hintKey) {
+      this.hintKey = key;
+      interactHint.value = this.nearby()?.label ?? null;
+    }
+  }
+
+  private hintKey = '';
+
+  /** Thứ gần nhất trong tầm 1 ô mà nút "Chọn" sẽ tương tác. */
+  private nearby(): { label: string; run: () => void } | null {
+    const m = this.mover;
+    const map = currentMap.value;
+    if (!m || !map) return null;
+    const c = m.cell;
+    const npc = this.content.npcsOn(map.id).find((n) => chebyshev(n, c) <= 1);
+    if (npc) return { label: 'Nói chuyện', run: () => void this.talk(npc.id) };
+    const ped = map.pedestals.find((p) => chebyshev(p, c) <= 1);
+    if (ped) return { label: 'Chọn bệ', run: () => (overlay.value = { kind: 'pedestal', index: ped.index }) };
+    if (map.pillar && chebyshev(map.pillar, c) <= 1) return { label: 'Dùng trụ', run: () => (overlay.value = { kind: 'pillar' }) };
+    return null;
+  }
+
+  /** Ô đi được gần nhất (Chebyshev ≤ SNAP_RADIUS), ưu tiên ô gần điểm chạm rồi gần người chơi. */
+  private snapWalkable(grid: { walkable(x: number, y: number): boolean }, c: Cell, from: Cell): Cell | null {
+    let best: Cell | null = null;
+    let bd = Infinity;
+    for (let dy = -SNAP_RADIUS; dy <= SNAP_RADIUS; dy++)
+      for (let dx = -SNAP_RADIUS; dx <= SNAP_RADIUS; dx++) {
+        const q = { x: c.x + dx, y: c.y + dy };
+        if (!grid.walkable(q.x, q.y)) continue;
+        const d = Math.hypot(dx, dy) * 10 + chebyshev(q, from) * 0.1;
+        if (d < bd) (bd = d), (best = q);
+      }
+    return best;
   }
 
   private serverNow(): number {
@@ -279,6 +327,7 @@ export class GameWorld {
   // ------------------------------------------------------------ điều khiển
   setHeld(dir: Direction | null): void {
     if (!this.mover) return;
+    if (dir && this.mover.paused && overlay.value.kind !== 'none') toast('Đóng bảng đang mở để tiếp tục di chuyển');
     if (dir) {
       this.mover.path = [];
       this.mover.tap = dir;
@@ -295,7 +344,12 @@ export class GameWorld {
   act(p: Pick): void {
     const m = this.mover;
     const map = currentMap.value;
-    if (!m || !map || m.paused) return;
+    if (!m || !map) return;
+    if (m.paused) {
+      // Menu/hội thoại/trận đang mở: nói rõ vì sao nhân vật không đi (đánh giá T2).
+      if (overlay.value.kind !== 'none') toast('Đóng bảng đang mở để tiếp tục di chuyển');
+      return;
+    }
     const grid = this.content.grid(map.id)!;
     const goTo = (goals: Cell[], then: () => void) => {
       const path = findPath(grid, m.cell, goals);
@@ -308,12 +362,15 @@ export class GameWorld {
     };
     switch (p.kind) {
       case 'ground': {
-        if (!grid.walkable(p.cell.x, p.cell.y)) {
+        let target = p.cell;
+        if (!grid.walkable(target.x, target.y)) {
           const npcHere = this.content.npcsOn(map.id).find((n) => n.x === p.cell.x && n.y === p.cell.y);
           if (npcHere) return this.act({ kind: 'npc', id: npcHere.id });
-          return toast('Không đi vào đó được');
+          const near = this.snapWalkable(grid, target, m.cell);
+          if (!near) return toast('Không đi vào đó được');
+          target = near;
         }
-        const path = findPath(grid, m.cell, [p.cell]);
+        const path = findPath(grid, m.cell, [target]);
         if (!path) return toast('Không đi tới được');
         m.walkTo(path);
         return;
@@ -344,15 +401,8 @@ export class GameWorld {
 
   /** Nút "Chọn": tương tác với thứ gần nhất trong tầm 1 ô (NPC, bệ, trụ). */
   primary(): void {
-    const m = this.mover;
-    const map = currentMap.value;
-    if (!m || !map) return;
-    const c = m.cell;
-    const npc = this.content.npcsOn(map.id).find((n) => chebyshev(n, c) <= 1);
-    if (npc) return void this.talk(npc.id);
-    const ped = map.pedestals.find((p) => chebyshev(p, c) <= 1);
-    if (ped) return void (overlay.value = { kind: 'pedestal', index: ped.index });
-    if (map.pillar && chebyshev(map.pillar, c) <= 1) return void (overlay.value = { kind: 'pillar' });
+    const t = this.nearby();
+    if (t) return t.run();
     toast('Không có gì để tương tác ở gần');
   }
 

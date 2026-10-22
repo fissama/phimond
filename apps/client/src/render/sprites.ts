@@ -62,30 +62,36 @@ export function animate(mesh: THREE.Object3D, dt: number): void {
 
 /**
  * Nhân vật (người chơi/NPC) có dải khung idle/run 192×192. Thiếu dải thì dùng ảnh tĩnh.
- * Hướng: dải hiện tại chỉ có một hướng (nhìn sang phải) — lật ngang khi đi sang trái. Bộ 3 hướng của đơn 09 sẽ thay.
+ * Hướng: dải ngang nhìn sang phải (lật khi đi trái); dải xuống/lên (nếu có) dùng khi đi dọc. Thiếu dải dọc → dùng dải ngang.
  */
 export class CharacterSprite {
   readonly root = new THREE.Group();
   private mesh: THREE.Mesh | null = null;
-  private strips: Partial<Record<'idle' | 'run' | 'still', { tex: THREE.Texture; frames: number }>> = {};
-  private mode: 'idle' | 'run' = 'idle';
+  private strips: Partial<Record<'idle' | 'run' | 'runDown' | 'runUp' | 'still', { tex: THREE.Texture; frames: number }>> = {};
+  private mode: 'idle' | 'run' | 'runDown' | 'runUp' = 'idle';
   private t = Math.random();
   private flip = false;
+  private vertical = false;
   /** Tốc độ khung khi chạy/đi (người đi đường đi chậm dùng số nhỏ). */
   runFps = 12;
 
   static async create(id: string, opts: SpriteOpts = {}): Promise<CharacterSprite> {
     const s = new CharacterSprite();
     const a = asset(id);
-    const load = async (kind: 'idle' | 'run', frames?: number) => {
+    const load = async (key: 'idle' | 'run' | 'runDown' | 'runUp', kind: 'idle' | 'run' | 'run-down' | 'run-up', frames?: number) => {
       if (!frames) return;
       const t = (await textures.get(hd2dUrl(id, kind))).clone();
       t.repeat.set(1 / frames, 1);
       t.needsUpdate = true;
-      s.strips[kind] = { tex: t, frames };
+      s.strips[key] = { tex: t, frames };
     };
     if (a) {
-      await Promise.all([load('idle', a.idle_frames), load('run', a.run_frames)]);
+      await Promise.all([
+        load('idle', 'idle', a.idle_frames),
+        load('run', 'run', a.run_frames),
+        load('runDown', 'run-down', a.run_down_frames),
+        load('runUp', 'run-up', a.run_up_frames),
+      ]);
       if (!s.strips.idle) s.strips.still = { tex: await textures.get(hd2dUrl(id)), frames: 1 };
     }
     const first = s.strips.idle ?? s.strips.still;
@@ -98,9 +104,12 @@ export class CharacterSprite {
     return s;
   }
 
-  setMotion(running: boolean, faceLeft?: boolean): void {
-    this.mode = running && this.strips.run ? 'run' : 'idle';
+  /** `vertical`: đang đi lên/xuống (dùng dải dọc nếu có). `faceLeft` chỉ cập nhật khi đi ngang. */
+  setMotion(running: boolean, faceLeft?: boolean, vertical?: 'up' | 'down' | null): void {
     if (faceLeft !== undefined) this.flip = faceLeft;
+    const v = vertical === 'down' ? this.strips.runDown && 'runDown' : vertical === 'up' ? this.strips.runUp && 'runUp' : null;
+    this.vertical = !!v;
+    this.mode = running ? (v || (this.strips.run ? 'run' : 'idle')) : 'idle';
   }
 
   update(dt: number): void {
@@ -114,9 +123,9 @@ export class CharacterSprite {
       mat.needsUpdate = true;
       if (this.mesh.customDepthMaterial) (this.mesh.customDepthMaterial as THREE.MeshDepthMaterial).map = strip.tex;
     }
-    const fps = this.mode === 'run' ? this.runFps : 6;
+    const fps = this.mode === 'idle' ? 6 : this.runFps;
     strip.tex.offset.x = (Math.floor(this.t * fps) % strip.frames) / strip.frames;
-    this.mesh.scale.x = this.flip ? -1 : 1;
+    this.mesh.scale.x = this.flip && !this.vertical ? -1 : 1;
   }
 }
 

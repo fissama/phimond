@@ -11,6 +11,9 @@ export interface AssetInfo {
   tileable?: string | null;
   idle_frames?: number;
   run_frames?: number;
+  /** Dải đi bộ hướng xuống/lên (khung nhìn thẳng vào/ra khỏi màn hình). Thiếu → dùng dải ngang. */
+  run_down_frames?: number;
+  run_up_frames?: number;
   provisional?: boolean;
   /** Đơn 10: động vật/đồ tĩnh được engine làm động nhẹ. */
   breathe?: boolean;
@@ -27,7 +30,7 @@ export interface PetAtlas {
 }
 
 const BASE = import.meta.env.BASE_URL;
-export const hd2dUrl = (id: string, kind?: 'idle' | 'run') => `${BASE}hd2d/${id}${kind ? '.' + kind : ''}.png`;
+export const hd2dUrl = (id: string, kind?: 'idle' | 'run' | 'run-down' | 'run-up') => `${BASE}hd2d/${id}${kind ? '.' + kind : ''}.png`;
 export const petUrl = (file: string) => `${BASE}pets/${file}`;
 
 let manifest: Record<string, AssetInfo> = {};

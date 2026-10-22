@@ -206,6 +206,13 @@ function Settings() {
             <button class={`btn ${!s.dpad ? 'on' : ''}`} onClick={() => updateSettings({ dpad: false })}>Ẩn</button>
           </div>
         </div>
+        <div>
+          <div class="muted">Mật độ giao diện</div>
+          <div class="seg" data-testid="hud-density">
+            <button class={`btn ${s.hud === 'full' ? 'on' : ''}`} data-testid="hud-full" onClick={() => updateSettings({ hud: 'full' })}>Đầy đủ</button>
+            <button class={`btn ${s.hud === 'compact' ? 'on' : ''}`} data-testid="hud-compact" onClick={() => updateSettings({ hud: 'compact' })}>Gọn</button>
+          </div>
+        </div>
         {settingsVolatile.value && <p class="muted">Trình duyệt không cho lưu cài đặt; lựa chọn chỉ giữ tới khi tải lại trang.</p>}
       </div>
       <Back />

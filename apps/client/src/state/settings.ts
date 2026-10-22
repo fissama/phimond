@@ -7,6 +7,8 @@ export interface Settings {
   quality: Quality;
   fps: FpsCap;
   dpad: boolean;
+  /** Mật độ HUD: 'full' có mục tiêu, bản đồ nhỏ, chat; 'compact' chỉ giữ điều khiển và trạng thái. */
+  hud: 'full' | 'compact';
 }
 
 /**
@@ -36,7 +38,7 @@ export const PRESETS: Record<Quality, {
 };
 
 const KEY = 'phimond.settings.v1';
-const DEFAULTS: Settings = { quality: 'medium', fps: 60, dpad: true };
+const DEFAULTS: Settings = { quality: 'medium', fps: 60, dpad: true, hud: 'full' };
 
 function load(): Settings {
   try {
@@ -47,6 +49,7 @@ function load(): Settings {
       quality: v.quality === 'low' || v.quality === 'high' || v.quality === 'medium' ? v.quality : DEFAULTS.quality,
       fps: v.fps === 30 ? 30 : 60,
       dpad: v.dpad !== false,
+      hud: v.hud === 'compact' ? 'compact' : 'full',
     };
   } catch {
     return { ...DEFAULTS };
