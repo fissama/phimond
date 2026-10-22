@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import json
 import shutil
+import sys
 from pathlib import Path
 
 import numpy as np
@@ -97,7 +98,45 @@ def tile512(path: Path) -> Image.Image:
     return im.quantize(48, method=Image.Quantize.MEDIANCUT).convert("RGBA")
 
 
+def import_batches(assets: dict[str, dict], prov: dict) -> None:
+    """2b) Đồ thành phố đơn 10 (batch-12-city) và artwork phát hành (batch-13-release, tools/p01/cut_release_art.py).
+    Chưa duyệt → provisional. Mục `override` chỉ thay dải đi bộ (run/run-down/run-up) của nhân vật đã duyệt."""
+    for batch in ("batch-12-city", "batch-13-release"):
+        bdir = SRC / batch
+        if not (bdir / "manifest.json").exists():
+            continue
+        for i in manifest_items(batch):
+            if i.get("override") and i["id"] in assets:
+                for kind, key in (("run", "run_strip"), ("run-down", "run_down_strip"), ("run-up", "run_up_strip")):
+                    if i.get(key) and (bdir / i[key]).exists():
+                        shutil.copyfile(bdir / i[key], OUT / f"{i['id']}.{kind}.png")
+                        fk = key.replace("_strip", "_frames")
+                        assets[i["id"]][fk] = i.get(fk) or 1
+                continue
+            if "file" not in i:
+                continue
+            src = bdir / i["file"]
+            if not src.exists() or i["id"] in assets:
+                continue
+            shutil.copyfile(src, OUT / f"{i['id']}.png")
+            extra = {} if i.get("approved") else dict(prov)
+            if i.get("run_strip") and (bdir / i["run_strip"]).exists():
+                shutil.copyfile(bdir / i["run_strip"], OUT / f"{i['id']}.run.png")
+                extra["run_frames"] = i.get("run_frames") or 1
+            for k in ("breathe", "flutter"):
+                if i.get(k):
+                    extra[k] = True
+            assets[i["id"]] = entry(i, list(Image.open(src).size), extra)
+
+
 def main():
+    if "--merge" in sys.argv:
+        # Chỉ gộp batch-12/13 vào assets.json sẵn có: không xóa public/hd2d, không đụng pets/ui.
+        assets = json.loads((OUT / "assets.json").read_text())
+        import_batches(assets, {"provisional": True})
+        (OUT / "assets.json").write_text(json.dumps(assets, ensure_ascii=False, indent=1) + "\n")
+        print(f"hd2d (merge): {len(assets)} asset")
+        return
     if OUT.exists():
         shutil.rmtree(OUT)
     OUT.mkdir(parents=True)
@@ -181,22 +220,7 @@ def main():
             assets[k] = {"category": "prop", "px": list(fig.size), "pivot_px": [fig.width / 2, fig.height], "frames": 1,
                          "world": [fig.width / 128, fig.height / 128], **prov}
 
-    # 2b) Đồ thành phố đơn 10 (batch-12-city, cắt bằng tools/p01/cut_city_batch12.py). Chưa duyệt → provisional.
-    b12 = SRC / "batch-12-city"
-    if (b12 / "manifest.json").exists():
-        for i in manifest_items("batch-12-city"):
-            src = b12 / i["file"]
-            if not src.exists() or i["id"] in assets:
-                continue
-            shutil.copyfile(src, OUT / f"{i['id']}.png")
-            extra = {} if i.get("approved") else dict(prov)
-            if i.get("run_strip") and (b12 / i["run_strip"]).exists():
-                shutil.copyfile(b12 / i["run_strip"], OUT / f"{i['id']}.run.png")
-                extra["run_frames"] = i.get("run_frames") or 1
-            for k in ("breathe", "flutter"):
-                if i.get(k):
-                    extra[k] = True
-            assets[i["id"]] = entry(i, list(Image.open(src).size), extra)
+    import_batches(assets, prov)
 
     (OUT / "assets.json").write_text(json.dumps(assets, ensure_ascii=False, indent=1) + "\n")
 

@@ -2864,7 +2864,8 @@
   "sway": false,
   "tileable": null,
   "idle_frames": 4,
-  "run_frames": 8
+  "run_frames": 6,
+  "run_down_frames": 6
  },
  "player-female": {
   "category": "player",
@@ -2881,7 +2882,7 @@
   "sway": false,
   "tileable": null,
   "idle_frames": 4,
-  "run_frames": 8
+  "run_frames": 6
  },
  "npc-act_reward": {
   "category": "npc",
@@ -4335,5 +4336,245 @@
   "tileable": null,
   "provisional": true,
   "run_frames": 2
+ },
+ "path-fringe-gn": {
+  "category": "ground_patch",
+  "px": [
+   465,
+   477
+  ],
+  "pivot_px": [
+   232.5,
+   238.5
+  ],
+  "frames": 1,
+  "fps": null,
+  "sway": false,
+  "tileable": null,
+  "world": [
+   3.6328125,
+   3.7265625
+  ],
+  "provisional": true
+ },
+ "path-fringe-gs": {
+  "category": "ground_patch",
+  "px": [
+   471,
+   467
+  ],
+  "pivot_px": [
+   235.5,
+   233.5
+  ],
+  "frames": 1,
+  "fps": null,
+  "sway": false,
+  "tileable": null,
+  "world": [
+   3.6796875,
+   3.6484375
+  ],
+  "provisional": true
+ },
+ "path-fringe-gw": {
+  "category": "ground_patch",
+  "px": [
+   465,
+   464
+  ],
+  "pivot_px": [
+   232.5,
+   232.0
+  ],
+  "frames": 1,
+  "fps": null,
+  "sway": false,
+  "tileable": null,
+  "world": [
+   3.6328125,
+   3.625
+  ],
+  "provisional": true
+ },
+ "path-fringe-ge": {
+  "category": "ground_patch",
+  "px": [
+   468,
+   466
+  ],
+  "pivot_px": [
+   234.0,
+   233.0
+  ],
+  "frames": 1,
+  "fps": null,
+  "sway": false,
+  "tileable": null,
+  "world": [
+   3.65625,
+   3.640625
+  ],
+  "provisional": true
+ },
+ "path-cap-n": {
+  "category": "ground_patch",
+  "px": [
+   480,
+   481
+  ],
+  "pivot_px": [
+   240.0,
+   240.5
+  ],
+  "frames": 1,
+  "fps": null,
+  "sway": false,
+  "tileable": null,
+  "world": [
+   3.75,
+   3.7578125
+  ],
+  "provisional": true
+ },
+ "path-cap-s": {
+  "category": "ground_patch",
+  "px": [
+   466,
+   469
+  ],
+  "pivot_px": [
+   233.0,
+   234.5
+  ],
+  "frames": 1,
+  "fps": null,
+  "sway": false,
+  "tileable": null,
+  "world": [
+   3.640625,
+   3.6640625
+  ],
+  "provisional": true
+ },
+ "forest-far-canopy": {
+  "category": "prop",
+  "px": [
+   505,
+   344
+  ],
+  "pivot_px": [
+   252.5,
+   344
+  ],
+  "frames": 1,
+  "fps": null,
+  "sway": false,
+  "tileable": null,
+  "world": [
+   3.9453125,
+   2.6875
+  ],
+  "provisional": true
+ },
+ "forest-mid-trunks": {
+  "category": "prop",
+  "px": [
+   493,
+   464
+  ],
+  "pivot_px": [
+   246.5,
+   464
+  ],
+  "frames": 1,
+  "fps": null,
+  "sway": false,
+  "tileable": null,
+  "world": [
+   3.8515625,
+   3.625
+  ],
+  "provisional": true
+ },
+ "forest-fg-bank": {
+  "category": "prop",
+  "px": [
+   493,
+   239
+  ],
+  "pivot_px": [
+   246.5,
+   239
+  ],
+  "frames": 1,
+  "fps": null,
+  "sway": false,
+  "tileable": null,
+  "world": [
+   3.8515625,
+   1.8671875
+  ],
+  "provisional": true
+ },
+ "forest-corner": {
+  "category": "prop",
+  "px": [
+   488,
+   425
+  ],
+  "pivot_px": [
+   244.0,
+   425
+  ],
+  "frames": 1,
+  "fps": null,
+  "sway": false,
+  "tileable": null,
+  "world": [
+   3.8125,
+   3.3203125
+  ],
+  "provisional": true
+ },
+ "forest-cam-bank": {
+  "category": "prop",
+  "px": [
+   490,
+   274
+  ],
+  "pivot_px": [
+   245.0,
+   274
+  ],
+  "frames": 1,
+  "fps": null,
+  "sway": false,
+  "tileable": null,
+  "world": [
+   3.828125,
+   2.140625
+  ],
+  "provisional": true
+ },
+ "forest-portal-arch": {
+  "category": "prop",
+  "px": [
+   490,
+   475
+  ],
+  "pivot_px": [
+   245.0,
+   475
+  ],
+  "frames": 1,
+  "fps": null,
+  "sway": false,
+  "tileable": null,
+  "world": [
+   3.828125,
+   3.7109375
+  ],
+  "provisional": true
  }
 }
