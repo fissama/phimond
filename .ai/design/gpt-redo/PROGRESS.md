@@ -125,3 +125,8 @@ Lưu tại `batch-05-octopath/_intake/don09-chang-3-5/`.
 - Skyline: sai kích thước (2172×724), alpha 0–255 mềm, 291k màu, mép trái/phải không khớp, đáy không phủ kín → cần xử lý lại.
 - NPC: 4/7 có ảnh dùng được (Mira, Rowan, Tuli, Orsa); thiếu sheet 2 gốc (Doran, Ketra, Odan); hòm thư 2 trạng thái ổn về hình. Bảng tóm tắt file 12 gắn nhãn lệch, không dùng.
 - Chặng 1–2: vẫn chưa review.
+
+### Đơn 10 (owner nộp 2026-10-22): brick-path, paving-03, npc-sheet-2 — lưu ở `_intake/don10-v1.0.0-remaining/`
+- brick-path: seam đạt, lặp ngang chu kỳ 256 px (chấp nhận).
+- paving-03: seam số đạt nhưng có mạch dọc thẳng suốt tile → sửa bằng roll từng hàng.
+- npc-sheet-2: đúng thiết kế, nhân vật cao ~445 px (spec 550), nền lệch nhẹ, viền hồng ~1.6k px → key bằng code.
