@@ -7,6 +7,7 @@ Chạy từ gốc repo (cần Pillow + numpy):
 Kết quả:
 - apps/client/public/hd2d/<id>.png (+ <id>.idle.png / <id>.run.png cho người chơi/NPC)
 - apps/client/public/hd2d/assets.json: kích thước, pivot, số khung, cờ `provisional`
+- apps/client/public/ui/: bộ UI HD-2D đã duyệt (HUD, trận, menu, icon) + ui.json (kích thước, 9-slice)
 - apps/client/public/i18n/vi.json: tên tiếng Việt của nội dung
 - apps/client/public/pets/: atlas linh thú P10 (14 loài cũ hiển thị bằng atlas P10, nợ N02)
 
@@ -187,7 +188,25 @@ def main():
         shutil.rmtree(PETS_OUT)
     shutil.copytree(PETS_SRC, PETS_OUT)
 
-    # 4) Bản dịch tên nội dung (loài, vật phẩm, kỹ năng…) sang tiếng Việt.
+    # 4) Bộ UI HD-2D đã duyệt (HUD, trận, menu, icon, font số) → apps/client/public/ui.
+    ui_out = ROOT / "apps/client/public/ui"
+    if ui_out.exists():
+        shutil.rmtree(ui_out)
+    ui_out.mkdir(parents=True)
+    ui: dict[str, dict] = {}
+    for batch in ["batch-06-octopath", "batch-07-octopath", "batch-08-octopath", "batch-09-octopath", "batch-10-octopath"]:
+        for i in manifest_items(batch):
+            if not i.get("approved") or i.get("category") not in ("ui_sprite", "ui_9slice", "icon", "font"):
+                continue
+            src = SRC / batch / i["file"]
+            if not src.exists():
+                continue
+            shutil.copyfile(src, ui_out / f"{i['id']}.png")
+            ui[i["id"]] = {"px": list(Image.open(src).size), "slice": i.get("slice")}
+    (ui_out / "ui.json").write_text(json.dumps(ui, ensure_ascii=False, indent=1) + "\n")
+    print(f"ui: {len(ui)} asset → {ui_out.relative_to(ROOT)}")
+
+    # 5) Bản dịch tên nội dung (loài, vật phẩm, kỹ năng…) sang tiếng Việt.
     vi = ROOT / "apps/game-web/public/assets/i18n/vi.json"
     if vi.exists():
         (ROOT / "apps/client/public/i18n").mkdir(parents=True, exist_ok=True)
