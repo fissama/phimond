@@ -69,6 +69,14 @@ function propsFor(theme: string, ch: string): string[] {
       return ['city-teleport-active'];
     case 'x':
       return ['barrel', 'wooden-crate'];
+    case 'A':
+      return ['awning-red', 'awning-green', 'awning-blue'];
+    case 'W':
+      return ['well'];
+    case 'n':
+      return ['banner-red', 'banner-blue'];
+    case 'k':
+      return ['handcart'];
     case '1':
       return ['summon-pedestal-01-dormant'];
     case '2':
@@ -200,6 +208,7 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
       if (decor && hash(x, y) > P.decor) continue;
       const pick = /[1-3]/.test(ch) ? { kind: 'pedestal', index: Number(ch) - 1 } : ch === 'O' ? { kind: 'pillar' } : undefined;
       place(opts[Math.floor(hash(x, y) * opts.length)]!, x, y, { decor, jitter: decor || ch === 'b' || ch === 'r', ...(pick ? { pick } : {}) });
+      if (ch === 'A') place(['market-produce', 'market-cloth', 'market-weapons'][Math.floor(hash(y, x) * 3)]!, x, y + 0.35);
       if (ch === 'F' && P.fx) propJobs.push(fx('fountain-water', x + 0.5, y + 0.3, 1.2));
       if (ch === 'O' && P.fx) propJobs.push(fx('city-teleport-ring', x + 0.5, y + 0.6, 0.05));
     }
@@ -258,10 +267,64 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
   if (theme === 'hall') propJobs.push(decal('summon-floor-emblem', W / 2, 5.5, 1.2));
   if (map.id === 'city_square') propJobs.push(decal('city-plaza-medallion', 20, 16, 1.4));
 
-  // Mặt tiền nhà (H) theo map.facades "x,y" → asset.
+  // Mặt tiền nhà (H) theo map.facades "x,y" → asset; thành phố: lấp kín dãy nhà phía trên (không để khe trống).
+  const facadeSpans: [number, number][] = [];
   for (const [k, id] of Object.entries(map.facades ?? {})) {
     const [fx_, fy] = k.split(',').map(Number);
-    if (Number.isFinite(fx_) && Number.isFinite(fy)) place(id, fx_!, fy! + 0.4);
+    if (!Number.isFinite(fx_) || !Number.isFinite(fy)) continue;
+    place(id, fx_!, fy! + 0.4);
+    const w = asset(id)?.world?.[0] ?? 5;
+    facadeSpans.push([fx_! + 0.5 - w / 2, fx_! + 0.5 + w / 2]);
+  }
+  if (theme === 'city') dressCity();
+
+  function dressCity(): void {
+    const isGate = map.id === 'city_palace_gate';
+    // 1) Dãy nhà liền: lấp khoảng giữa các mặt tiền đã đặt bằng nhà/tường/tháp.
+    const fillers = isGate ? ['palace-wall-section', 'palace-tower'] : ['city-facade-townhouse', 'city-facade-artisan', 'city-facade-shop', 'city-facade-guild'];
+    const spans = facadeSpans.sort((p, q) => p[0] - q[0]);
+    const gaps: [number, number][] = [];
+    let cur = -4;
+    for (const [l, r] of spans) {
+      if (l - cur > 0.6) gaps.push([cur, l]);
+      cur = Math.max(cur, r);
+    }
+    if (W + 4 - cur > 0.6) gaps.push([cur, W + 4]);
+    let k = 0;
+    for (const [l, r] of gaps) {
+      let x = l;
+      while (r - x > 0.6) {
+        let id = fillers[k++ % fillers.length]!;
+        let w = asset(id)?.world?.[0] ?? 4;
+        if (w > r - x + 0.8) {
+          id = isGate ? 'palace-tower' : 'palace-tower';
+          w = asset(id)?.world?.[0] ?? 2;
+        }
+        // Nhà lấp đứng lùi sau một chút để mặt tiền chính (có cửa) nổi lên trước.
+        place(id, x + w / 2 - 0.5, 1.15);
+        x += w - 0.2;
+      }
+    }
+    // 2) Viền vườn hoa dọc mép dưới và hai mép bên (trừ lối ra).
+    const gb = asset('city-garden-border')?.world?.[0] ?? 4.5;
+    for (let x = -1; x < W + 1; x += gb - 0.1) place('city-garden-border', x + gb / 2 - 0.5, H - 0.75);
+    for (const side of [0, W - 1]) {
+      for (let y = 2; y < H - 1; y++) {
+        const open = /[:+,.]/.test(layout[y]![side] ?? '#');
+        if (open) continue;
+        if (y % 3 === 0) place(hash(side, y) < 0.5 ? 'city-tree-01' : 'city-tree-02', side + (side === 0 ? -0.3 : 0.3), y);
+        else if (y % 3 === 2) place('flowerpot-' + ['red', 'cream', 'violet'][y % 3]!, side, y);
+      }
+      // Cờ hai bên lối ra.
+      for (let y = 2; y < H - 1; y++) {
+        const open = /[:+,.]/.test(layout[y]![side] ?? '#');
+        const prevOpen = /[:+,.]/.test(layout[y - 1]?.[side] ?? '#');
+        const nextOpen = /[:+,.]/.test(layout[y + 1]?.[side] ?? '#');
+        if (!open && (prevOpen || nextOpen)) place(side === 0 ? 'banner-blue' : 'banner-red', side, y);
+      }
+    }
+    // 3) Thảm đỏ trên lối gạch ở Hoàng Môn.
+    if (isGate) for (let x = 9; x < 18; x += 3.3) propJobs.push(decal('palace-carpet-strip', x + 1.6, 6.5, 1));
   }
 
   // Tường điện (hall): dải tường ở mép trên.
