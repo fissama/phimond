@@ -134,6 +134,7 @@ export class Engine {
 
     if (!this.player) {
       this.player = await CharacterSprite.create(playerAsset, { castShadow: real });
+      this.player.enableSilhouette();
       this.playerRoot.add(this.player.root);
     }
     if (this.playerBlob) this.playerRoot.remove(this.playerBlob);
@@ -372,6 +373,12 @@ export class Engine {
       n.label.style.fontSize = near ? '13px' : '11px';
       n.label.style.zIndex = near ? '2' : '1';
       const half = n.label.offsetWidth / 2 + 6;
+      // Tránh vùng HUD hai góc trên (thẻ trạng thái, bản đồ nhỏ, nút Menu).
+      const topPx = ((1 - v.y) / 2) * h;
+      if (topPx < 200 && (((v.x + 1) / 2) * w < 270 || ((v.x + 1) / 2) * w > w - 230)) {
+        n.label.style.display = 'none';
+        continue;
+      }
       n.label.style.left = `${Math.max(half, Math.min(w - half, ((v.x + 1) / 2) * w))}px`;
       n.label.style.top = `${((1 - v.y) / 2) * h}px`;
     }

@@ -67,7 +67,7 @@ button:disabled { opacity: 0.45; cursor: default; }
 .fb em.hp { color: #ff9a8f; } .fb em.mp { color: #8cc2ff; } .fb em.xp { color: #ffe08a; }
 .fbar.low .fill { animation: lowhp 0.9s ease-in-out infinite; }
 @keyframes lowhp { 50% { filter: brightness(1.9) saturate(1.6); } }
-.hud-card { background: linear-gradient(rgba(14, 20, 36, 0.8), rgba(8, 12, 24, 0.84)); border: 1px solid rgba(214, 178, 96, 0.75); border-radius: 10px; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.55), 0 2px 8px rgba(0, 0, 0, 0.5); }
+.hud-card { background: linear-gradient(rgba(14, 20, 36, 0.93), rgba(8, 12, 24, 0.95)); border: 1px solid rgba(214, 178, 96, 0.75); border-radius: 10px; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.55), 0 2px 8px rgba(0, 0, 0, 0.5); }
 .hud-status .pet-row { padding: 5px 8px 5px 4px; }
 .hud-status .ring { cursor: pointer; }
 .ring { position: relative; flex: none; }
@@ -359,5 +359,8 @@ button:disabled { opacity: 0.45; cursor: default; }
 .set-row { grid-template-columns: 96px 1fr; }
 .set-note { margin-left: 104px !important; }
 .battle .aimbar span { white-space: nowrap; }
-.battle .rwd .banner:not(.plain) { width: 300px; height: 112px; }
-.battle .rwd .banner:not(.plain) b { font-size: 19px; margin-top: 6%; }
+.battle .rwd .banner:not(.plain) { width: min(460px, 88vw); height: auto; }
+.battle .rwd .banner:not(.plain) b { font-size: 17px; margin-top: 3%; letter-spacing: 0.2px; }
+.dialog { width: min(620px, 100%); }
+.set-row .seg .btn { padding: 0 10px; font-size: 13.5px; min-height: 32px; }
+.set-grid { gap: 6px; }

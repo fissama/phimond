@@ -189,6 +189,16 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
 
   // --- Vật thể theo ký tự bố cục.
   const propJobs: Promise<void>[] = [];
+  // Vật cao phía trước người chơi (cây, nhà) mờ đi khi che nhân vật, như HD-2D (đánh giá: nhân vật mất sau tán cây).
+  const occluders: { obj: THREE.Object3D; mats: THREE.MeshBasicMaterial[]; hw: number; h: number; cur: number }[] = [];
+  const addOccluder = (obj: THREE.Object3D, hw: number, h: number) => {
+    const mats: THREE.MeshBasicMaterial[] = [];
+    obj.traverse((o) => {
+      const m = (o as THREE.Mesh).material as THREE.MeshBasicMaterial | undefined;
+      if ((o as THREE.Mesh).isMesh && m && m.map) mats.push(m);
+    });
+    if (mats.length) occluders.push({ obj, mats, hw, h, cur: 1 });
+  };
   const place = (id: string, x: number, y: number, opts: { decor?: boolean; pick?: Record<string, unknown>; jitter?: boolean } = {}) => {
     propJobs.push(
       (async () => {
@@ -211,6 +221,9 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
           if (P.shadows === 'blob') g.add(blobShadow(0.9));
           g.position.set(x + 0.5, 0, y + 0.6);
           group.add(g);
+          const cw = (asset(id + '-canopy')?.px[0] ?? 256) / 128;
+          const th = (asset(id + '-trunk')?.px[1] ?? 236) / 128;
+          addOccluder(g, cw * 0.5, th * 0.62 + (asset(id + '-canopy')?.px[1] ?? 256) / 128);
           return;
         }
         if (!asset(id) && FALLBACK[id]) id = FALLBACK[id]!;
@@ -229,6 +242,8 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
         }
         if (s.userData.anim) animated.push(s);
         group.add(s);
+        const ah = (asset(id)?.px[1] ?? 0) / 128;
+        if (ah >= 1.8 && !opts.decor) addOccluder(s, ((asset(id)?.px[0] ?? 128) / 128) * 0.45, ah);
         if (P.shadows === 'blob' && !opts.decor) {
           const b = blobShadow(Math.min(1.1, (asset(id)?.px[0] ?? 128) / 256));
           b.position.set(s.position.x, 0.02, s.position.z);
@@ -327,6 +342,8 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
           if (o.scale) s.scale.setScalar(o.scale);
           if (o.flip) s.scale.x *= -1;
           group.add(s);
+          const ph = ((asset(id)?.px[1] ?? 0) / 128) * (o.scale ?? 1);
+          if (ph >= 1.2) addOccluder(s, ((asset(id)?.px[0] ?? 128) / 128) * 0.5 * (o.scale ?? 1), ph);
         })(),
       );
     };
@@ -592,6 +609,23 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
       time += dt;
       atmo?.update(dt);
       for (const a of ambient) a.update(dt, player ?? null);
+      if (player)
+        for (const o of occluders) {
+          const dz = o.obj.position.z - player.z; // vật ở hàng trước (gần camera hơn) người chơi
+          // Camera nhìn xuống ~38° và sprite nghiêng: vật cao h che được các ô phía sau tới khoảng h·1.6.
+          const hide = dz > 0.05 && dz < o.h * 1.6 && Math.abs(o.obj.position.x - player.x) < o.hw + 0.4;
+          const want = hide ? 0.38 : 1;
+          if (Math.abs(o.cur - want) < 0.01) continue;
+          o.cur += (want - o.cur) * Math.min(1, dt * 8);
+          for (const m of o.mats) {
+            const tr = o.cur < 0.99;
+            if (m.transparent !== tr) m.needsUpdate = true; // three biên dịch lại: vật liệu đục ép alpha = 1 (OPAQUE)
+            m.transparent = tr;
+            m.opacity = o.cur;
+            m.alphaTest = 0.5 * o.cur; // alphaTest so với alpha đã nhân opacity: hạ theo để tán cây mờ chứ không biến mất
+            m.depthWrite = o.cur >= 0.99;
+          }
+        }
       for (const o of animated) {
         animate(o, dt);
         if (o.userData.sway !== undefined) o.rotation.z = Math.sin(time * 0.8 + (o.userData.sway as number)) * 0.015;

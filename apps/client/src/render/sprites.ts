@@ -72,6 +72,7 @@ export class CharacterSprite {
   private t = Math.random();
   private flip = false;
   private vertical = false;
+  private ghost: THREE.Mesh | null = null;
   /** Tốc độ khung khi chạy/đi (người đi đường đi chậm dùng số nhỏ). */
   runFps = 12;
 
@@ -104,6 +105,20 @@ export class CharacterSprite {
     return s;
   }
 
+  /**
+   * Bóng xuyên vật cản: bản sao mờ xanh chỉ vẽ ở chỗ bị cây/nhà che (depthFunc Greater), để người chơi không bao giờ
+   * mất dấu nhân vật sau tán cây (đánh giá v1.0.0).
+   */
+  enableSilhouette(): void {
+    if (!this.mesh || this.ghost) return;
+    const src = this.mesh.material as THREE.MeshBasicMaterial;
+    const mat = new THREE.MeshBasicMaterial({ map: src.map, transparent: true, opacity: 0.45, color: 0x8fd6ff, alphaTest: 0.3, depthWrite: false, depthFunc: THREE.GreaterDepth });
+    this.ghost = new THREE.Mesh(this.mesh.geometry, mat);
+    this.ghost.rotation.copy(this.mesh.rotation);
+    this.ghost.renderOrder = 20;
+    this.root.add(this.ghost);
+  }
+
   /** `vertical`: đang đi lên/xuống (dùng dải dọc nếu có). `faceLeft` chỉ cập nhật khi đi ngang. */
   setMotion(running: boolean, faceLeft?: boolean, vertical?: 'up' | 'down' | null): void {
     if (faceLeft !== undefined) this.flip = faceLeft;
@@ -126,6 +141,14 @@ export class CharacterSprite {
     const fps = this.mode === 'idle' ? 6 : this.runFps;
     strip.tex.offset.x = (Math.floor(this.t * fps) % strip.frames) / strip.frames;
     this.mesh.scale.x = this.flip && !this.vertical ? -1 : 1;
+    if (this.ghost) {
+      const gm = this.ghost.material as THREE.MeshBasicMaterial;
+      if (gm.map !== strip.tex) {
+        gm.map = strip.tex;
+        gm.needsUpdate = true;
+      }
+      this.ghost.scale.x = this.mesh.scale.x;
+    }
   }
 }
 
