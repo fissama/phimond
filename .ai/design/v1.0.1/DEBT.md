@@ -14,3 +14,5 @@ Các mục đánh giá gameplay thuộc Phase sau, giữ lại ở dạng nợ. 
 | D8 | HUD | Cho người chơi tự đặt lại vị trí điều khiển; chat có nội dung thật (kênh Thế giới/Khu vực/Đội/Riêng chờ server). | Phase xã hội |
 | D9 | HUD | Khung ảnh riêng cho bản đồ nhỏ, khung mục tiêu, chat (hiện dùng CSS thuần, không có sprite duyệt). Xem `GPT-REMAINING.md` mục UI. | Khi GPT có lượt |
 | D10 | N2 | Chỉnh fringe đường đất để hết lộ nhịp ô vuông; có thể cần thêm biến thể từ GPT. | Sau khi duyệt ảnh trong cảnh |
+| D11 | starter | 3 loài khởi đầu mới dùng chỉ số mượn từ Hoa Tinh/Sơn Chu/Lam Lang; chưa có chỉ số, kỹ năng P11/P13 riêng. Pet Lv1 đấu quái Bìa Rừng chưa cân bằng. Server vẫn dùng 14 loài cũ cho quái. | P11 |
+| D12 | HD-2D | Ánh sáng thật theo đèn (hiện là quầng cộng sáng + chỉnh màu toàn cảnh), bóng đổ theo giờ, thời tiết (mưa, sương), nước phản chiếu. Chưa đo hiệu năng bloom trên iPhone/Safari. | Sau khi đo D4 |

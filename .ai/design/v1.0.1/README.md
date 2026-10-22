@@ -41,3 +41,10 @@ Chưa kiểm: iPhone/Safari thật, hiệu năng GPU thật.
 ## Xem thêm
 - `DEBT.md`: nợ kỹ thuật/nội dung chưa làm (Phase sau).
 - `GPT-REMAINING.md`: danh sách việc vẽ còn lại, gửi GPT khi hết giới hạn.
+
+## Đợt 2 (2026-10-22): sảnh, menu, hiệu ứng HD-2D, thanh dưới
+
+- **Sảnh vẫy gọi:** Mira đứng trước 3 bục (9,6), người chơi vào ở (9,8). Trên bục là 3 thần thú 5★ (Linh Tiên Hoa Hương `0144`, Độc Hạt Vương `0151`, Kim Kỳ Lân `0149`, trưng bày, lơ lửng nhẹ, chạm được). Chọn bục nào thì nhận pet 1★ Lv1 cùng race: Tiên Chưởng (cây), Sa Hạt (côn trùng), Xích Ưng (thú). Dữ liệu: `pedestals[].species/display` trong `build_maps.py`; loài mới `tien_chuong`, `sa_hat`, `xich_ung` trong `data/pets/species.json` (chỉ số mượn từ loài cũ tương đương, chờ cân bằng P11); atlas thêm bằng `tools/build-web-assets/legacy-species-map.json` + `build_assets.py`.
+- **Menu phải:** một nút Menu, bấm mới sổ Linh thú, Túi đồ, Nhiệm vụ, Cài đặt.
+- **Hiệu ứng HD-2D** (`render/post.ts`, `daylight.ts`, `atmosphere.ts`): Cao = tilt-shift + bloom + chỉnh màu theo giờ + tối góc + quầng sáng đèn + tia nắng + hạt bụi/phấn hoa; Trung bình = tilt-shift + chỉnh màu + đèn/tia nắng (không bloom); Thấp = không hậu kỳ. Giờ theo đồng hồ máy (sáng, ban ngày, hoàng hôn, đêm); Cài đặt → "Thời gian trong game" để ép cố định. Sảnh là trong nhà nên ánh nến cố định.
+- **Thanh dưới:** dải đá che cả cạnh dưới, cảnh 3D kết thúc phía trên thanh; D-pad, chat, nút Chọn/Trở về nằm trong thanh.
