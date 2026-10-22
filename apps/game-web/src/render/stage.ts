@@ -231,7 +231,7 @@ export class Stage {
       const defn = this.pres.definition; const pl = this.scn!.data.pillar;
       // Cổng cùng x gộp thành một "trụ" (map trung tâm); cổng lẻ là cửa kim cương xanh ở mép map như bản gốc.
       const groups = new Map<number, typeof defn.portals>();
-      for (const p of defn.portals) groups.set(p.x, [...(groups.get(p.x) ?? []), p]);
+      for (const p of defn.portals) { const px = p.x ?? p.rect?.[0] ?? 0; groups.set(px, [...(groups.get(px) ?? []), p]); } // P01: portal có rect thay x
       for (const [gx, list] of groups) {
         const first = list[0]!; const hub = list.length > 1 && !!pl;
         const g0 = this.grid(gx, (defn.height || 24) / 2); const mid = (this.scn!.data.walk.x0 + this.scn!.data.walk.x1) / 2;

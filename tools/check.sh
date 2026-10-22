@@ -6,6 +6,9 @@ cd "$root/apps/game-server"
 go test -race ./...
 go vet ./...
 cd "$root"
+# P01: 5 map Đợt A hợp lệ (BFS, cổng, điểm đến, NPC, điểm quái) và client mới
+python3 tools/p01/build_maps.py --check
+(cd "$root/apps/client" && npm run check)
 node tools/check_godot.mjs
 node --test tools/load_gameplay_test.mjs
 # Cổng thiết kế P13 (skill/roster candidate V7.1, review server)

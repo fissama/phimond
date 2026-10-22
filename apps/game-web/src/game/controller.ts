@@ -147,7 +147,7 @@ export class Game {
     if (c.battle || this.pres.isAnimating() || s.busy.value) return;
     let pt: { x: number; y: number } | null = null;
     if (kind === 'npc') { const n = cat.npcs[id]; if (n) pt = { x: n.x, y: n.y ?? 12 }; }
-    else if (kind === 'portal') { const p = cat.maps[c.map_id]?.portals.find((q) => q.id === id); if (p) pt = { x: p.x, y: 12 }; }
+    else if (kind === 'portal') { const p = cat.maps[c.map_id]?.portals.find((q) => q.id === id); if (p) pt = { x: p.x ?? p.rect?.[0] ?? 0, y: 12 }; }
     else { const sp = cat.maps[c.map_id]?.wild_spawns.find((q) => q.id === id); if (sp) pt = { x: sp.x, y: sp.y }; }
     if (!pt) return;
     this.close();
@@ -225,7 +225,7 @@ export class Game {
       const npc = this.nearestNpc();
       if (npc) { this.approach('npc', npc.id); return; }
       const cat = this.catalog.value;
-      const near = (cat?.maps[c.map_id]?.portals ?? []).filter((p) => Math.abs(p.x - c.x) <= 2);
+      const near = (cat?.maps[c.map_id]?.portals ?? []).filter((p) => Math.abs((p.x ?? p.rect?.[0] ?? -99) - c.x) <= 2);
       if (near.length > 1) { this.open('Teleport'); return; }
       if (near[0]) { this.approach('portal', near[0].id); return; }
       this.message('Hãy chọn người hướng dẫn, cổng hoặc linh thú trên bản đồ.');
