@@ -45,13 +45,25 @@ button:disabled { opacity: 0.45; cursor: default; }
 .btn.small { min-height: 32px; padding: 4px 10px; font-size: 13px; }
 
 /* ---------- HUD ---------- */
-.hud-status {
-  position: absolute; top: calc(8px + var(--safe-t)); left: calc(10px + var(--safe-l));
-  display: flex; gap: 4px; align-items: center; max-width: min(380px, 62vw); color: var(--text);
-}
-.hud-status .who, .hud-status .sub { text-shadow: 0 1px 2px #000; }
-.hud-status .who { font-weight: 700; font-size: 14px; }
-.hud-status .sub { font-size: 12px; color: var(--muted); }
+.hud-status { position: absolute; top: calc(8px + var(--safe-t)); left: calc(10px + var(--safe-l)); display: grid; gap: 4px; width: 236px; color: var(--text); }
+.hud-status .pet-row { display: flex; gap: 2px; align-items: center; }
+.hud-status .stack { display: grid; gap: 0; flex: 1; min-width: 0; }
+.hud-status .nm { font-size: 13px; font-weight: 700; text-shadow: 0 1px 2px #000; padding-left: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hud-status .me-row { display: grid; grid-template-columns: auto 1fr; grid-template-areas: 'lv who' 'bar bar' 'gold gold'; gap: 0 6px; align-items: center; padding: 3px 8px 4px 10px; background: rgba(10, 14, 26, 0.62); border: 1px solid rgba(214, 178, 96, 0.55); border-radius: 8px; }
+.hud-status .me-row .lvl { grid-area: lv; font-weight: 800; font-size: 12px; color: #ffe29a; text-shadow: 0 1px 2px #000; }
+.hud-status .me-row .who { grid-area: who; font-weight: 700; font-size: 13px; text-shadow: 0 1px 2px #000; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hud-status .me-row .fbar { grid-area: bar; }
+.hud-status .me-row .gold { grid-area: gold; font-size: 12px; color: #ffe9b0; text-shadow: 0 1px 2px #000; }
+.vh { position: absolute; left: -9999px; }
+.fbar { position: relative; height: 22px; background-size: 100% 300%; background-repeat: no-repeat; image-rendering: pixelated; }
+.fbar.r0 { background-position: 0 0; } .fbar.r1 { background-position: 0 50%; } .fbar.r2 { background-position: 0 100%; }
+.fbar .track { position: absolute; left: 9%; right: 9%; top: 26%; bottom: 26%; overflow: hidden; border-radius: 2px; }
+.fbar .fill { position: absolute; inset: 0; background-size: 100% 100%; transition: clip-path 0.3s; image-rendering: pixelated; }
+.fbar.hp .fill { background-image: var(--fill-hp); } .fbar.mp .fill { background-image: var(--fill-mp); } .fbar.xp .fill { background-image: var(--fill-xp); }
+.fbar > span { position: absolute; inset: 0; display: grid; place-items: center; font-size: 9.5px; font-weight: 800; letter-spacing: 0.02em; color: #fff; text-shadow: 0 1px 1px #000, 0 0 3px #000; }
+.fbar.slim { height: 16px; margin-top: 1px; } .fbar.slim > span { font-size: 9px; }
+.hud-status .ring { position: relative; flex: none; }
+.bars { display: grid; gap: 3px; margin-top: 4px; min-width: 120px; }
 .lv { display: inline-block; background: var(--line); color: #1d1405; font-weight: 800; border-radius: 4px; padding: 0 5px; font-size: 12px; margin-right: 6px; }
 .bars { display: grid; gap: 3px; margin-top: 4px; min-width: 120px; }
 .bar { height: 7px; background: rgba(255, 255, 255, 0.12); border-radius: 4px; overflow: hidden; }
@@ -70,7 +82,7 @@ button:disabled { opacity: 0.45; cursor: default; }
 .hud.in-battle .hud-bar, .hud.in-battle .dpad, .hud.in-battle .hud-actions, .hud.in-battle .hud-menu, .hud.in-battle .chat, .hud.in-battle .hud-map { display: none; }
 
 /* Mục tiêu hiện tại (dưới ô trạng thái) và bản đồ nhỏ (góc trên phải) */
-.hud-goal { position: absolute; top: calc(86px + var(--safe-t)); left: calc(10px + var(--safe-l)); max-width: min(260px, 42vw); display: grid; gap: 1px; padding: 5px 10px; font-size: 12px; line-height: 1.35; color: var(--text); background: rgba(12, 17, 28, 0.62); border-left: 3px solid var(--gold); border-radius: 0 6px 6px 0; text-shadow: 0 1px 2px #000; }
+.hud-goal { position: absolute; top: calc(184px + var(--safe-t)); left: calc(10px + var(--safe-l)); max-width: min(260px, 42vw); display: grid; gap: 1px; padding: 5px 10px; font-size: 12px; line-height: 1.35; color: var(--text); background: rgba(12, 17, 28, 0.62); border-left: 3px solid var(--gold); border-radius: 0 6px 6px 0; text-shadow: 0 1px 2px #000; }
 .hud-goal b { color: var(--gold); font-size: 13px; }
 .hud-goal span { color: var(--muted); }
 .hud-minimap { position: absolute; top: calc(8px + var(--safe-t)); right: calc(10px + var(--safe-r)); padding: 3px; background: rgba(12, 17, 28, 0.7); border: 2px solid var(--line); border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); line-height: 0; }
@@ -105,22 +117,17 @@ button:disabled { opacity: 0.45; cursor: default; }
 @media (prefers-reduced-motion: reduce) { .round.a.ready { animation: none; filter: drop-shadow(0 0 6px #ffd98a); } }
 .round.b { background: radial-gradient(#3a4664, #1c2438); color: var(--text); }
 
-.chat {
-  position: absolute; left: 50%; transform: translateX(-50%); bottom: calc(8px + var(--safe-b));
-  width: min(520px, calc(100vw - 2 * 200px)); min-width: 240px; padding: 4px 6px 6px; font-size: 12px;
-  transition: opacity 0.6s; opacity: 0.95;
-  background: rgba(9, 15, 30, 0.7); border: 1px solid var(--line-soft); border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
-}
-.chat.idle { opacity: 0.38; }
-.chat.min .lines { height: 38px; overflow: hidden; cursor: pointer; position: relative; }
-.chat.min .lines .expand { position: absolute; right: 6px; bottom: 0; font-size: 10px; color: var(--gold); opacity: 0.8; }
-.chat.open .lines { height: 92px; }
-.chat .tabs .fold { min-width: 36px !important; margin-left: auto; }
-.chat .tabs { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; }
-.chat .tabs button { background: none; border: 0; padding: 3px 7px; color: var(--muted); border-radius: 4px; white-space: nowrap; font-size: 12px; }
-.chat .tabs button.on { color: var(--gold); background: rgba(201, 162, 74, 0.14); }
-.chat .lines { height: 68px; overflow-y: auto; padding: 2px 4px; line-height: 1.45; }
-.chat .lines .area { color: #9fd6ff; }
+.chat { position: absolute; left: 50%; transform: translateX(-50%); bottom: calc(10px + var(--safe-b)); width: min(600px, calc(100vw - 2 * 196px)); min-width: 260px; font-size: 12.5px; transition: opacity 0.6s; }
+.chat.idle { opacity: 0.55; }
+.chat .tabs { display: flex; gap: 2px; margin: 0 14px -3px; position: relative; z-index: 1; }
+.chat .tabs button { flex: 1 1 0; min-width: 0; height: 24px; padding: 0 4px; font-size: 11.5px; white-space: nowrap; color: #cdd7ea; border: 0; background-color: rgba(18, 28, 52, 0.82); border-radius: 6px 6px 0 0; }
+.chat .tabs button.on { color: #ffe29a; font-weight: 700; }
+.chat .tabs .fold { flex: 0 0 34px; }
+.chat .body { position: relative; padding: 0 2px; }
+.chat .lines { height: 56px; font-size: 12.5px; line-height: 18.5px; overflow-y: auto; overflow-x: hidden; padding: 0 6px; color: #eaf1ff; text-shadow: 0 1px 1px #000; scrollbar-width: thin; }
+.chat.min .lines { overflow: hidden; cursor: pointer; }
+.chat.open .lines { height: 150px; }
+.chat .lines .area { color: #9fd6ff; } .chat .lines .system { color: #fff1c4; }
 
 .toasts { position: absolute; top: 34%; left: 50%; transform: translateX(-50%); display: grid; gap: 6px; pointer-events: none; z-index: 30; }
 .toast { padding: 8px 14px; font-size: 14px; text-align: center; animation: pop 0.18s ease-out; }
@@ -148,20 +155,46 @@ button:disabled { opacity: 0.45; cursor: default; }
 
 .loading { position: absolute; inset: 0; background: #0b0f18; display: grid; place-items: center; z-index: 40; color: var(--gold); font-size: 20px; letter-spacing: 1px; }
 
-/* ---------- Trận đấu ---------- */
-.battle { position: absolute; inset: 0; z-index: 15; display: grid; grid-template-rows: 1fr auto; background: linear-gradient(rgba(8, 12, 20, 0.62), rgba(8, 12, 20, 0.86)); }
-.battle .field { position: relative; display: flex; justify-content: space-around; align-items: center; padding: 40px 6% 0; }
-.battle .unit { display: grid; justify-items: center; gap: 6px; min-width: 150px; }
-.battle .unit .sprite { width: 180px; height: 180px; background-repeat: no-repeat; image-rendering: pixelated; }
-.battle .unit.enemy .sprite { transform: scaleX(1); }
-.battle .unit.player .sprite { transform: scaleX(-1); }
-.battle .unit.hit .sprite { animation: hit 0.3s; }
-@keyframes hit { 30% { filter: brightness(2.5); transform: translateX(6px) scaleX(var(--sx, 1)); } }
-.battle .card { padding: 6px 10px; min-width: 180px; }
-.battle .bottom { padding: 10px calc(12px + var(--safe-r)) calc(12px + var(--safe-b)) calc(12px + var(--safe-l)); display: grid; grid-template-columns: 1fr auto; gap: 10px; }
-.battle .log { height: 96px; overflow: auto; padding: 8px 10px; font-size: 13px; line-height: 1.5; }
+/* ---------- Trận đấu (cảnh ngang kiểu Octopath: quái trái, đồng đội phải) ---------- */
+.battle { position: absolute; inset: 0; z-index: 15; display: grid; grid-template-rows: 1fr auto; background: linear-gradient(rgba(255, 190, 120, 0.12), rgba(10, 16, 40, 0.5) 60%, rgba(4, 6, 16, 0.85)); backdrop-filter: blur(4px) saturate(1.35) brightness(0.88) contrast(1.05); }
+.battle .scene { position: relative; overflow: hidden; }
+.battle .vignette { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 50% 60%, transparent 40%, rgba(2, 4, 12, 0.7) 100%); }
+.battle .ground { position: absolute; left: -5%; right: -5%; bottom: 0; height: 46%; height: 52%; background: linear-gradient(rgba(60, 90, 60, 0), rgba(46, 74, 52, 0.5) 30%, rgba(20, 34, 28, 0.8)); }
+.battle .stage { position: absolute; inset: 0; display: grid; grid-template-columns: 1fr 1fr; align-items: end; padding: 0 6% 9%; }
+.battle .side { position: relative; display: flex; align-items: flex-end; }
+.battle .side.left { justify-content: flex-start; padding-left: 8%; }
+.battle .side.right { justify-content: flex-end; padding-right: 8%; }
+.battle .fighter { position: relative; display: grid; justify-items: center; }
+.battle .fighter .sprite { background-repeat: no-repeat; image-rendering: pixelated; filter: drop-shadow(0 6px 6px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 14px rgba(255, 224, 160, 0.25)); }
+.battle .fighter.enemy .sprite { transform: scaleX(-1); }
+.battle .fighter.player .sprite { transform: scaleX(1); }
+.battle .fighter .shadow { position: absolute; bottom: -4px; width: 78%; height: 22px; background: radial-gradient(ellipse, rgba(0, 0, 0, 0.6), transparent 70%); }
+.battle .fighter.attack.enemy { animation: lunge-r 0.42s ease-out; }
+.battle .fighter.attack.player { animation: lunge-l 0.42s ease-out; }
+.battle .fighter.hit .sprite { animation: hit 0.3s; }
+.battle .fighter.down .sprite { opacity: 0.55; filter: grayscale(1); }
+@keyframes lunge-l { 40% { transform: translateX(-70px); } }
+@keyframes lunge-r { 40% { transform: translateX(70px); } }
+@keyframes hit { 30% { filter: brightness(2.5); margin-left: 6px; } }
+.battle .turn { position: absolute; left: 50%; top: calc(8px + var(--safe-t)); transform: translateX(-50%); width: 180px; height: 46px; background-size: 100% 100%; display: grid; place-items: center; color: #fff3cf; text-shadow: 0 1px 2px #000; font-size: 15px; image-rendering: pixelated; }
+.battle .plate { position: absolute; top: calc(8px + var(--safe-t)); }
+.battle .plate.player { right: calc(10px + var(--safe-r)); }
+.battle .plate.enemy { left: calc(10px + var(--safe-l)); }
+.battle .card { width: 230px; min-height: 78px; padding: 10px 16px 12px; display: grid; gap: 4px; align-content: center; }
+.battle .card .nm { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; font-size: 14px; }
+.battle .card .nm em { font-style: normal; font-size: 12px; color: #ffe29a; }
+.battle .card .uibar { position: relative; height: 13px; width: 100%; }
+.battle .card .uibar > i { background-size: 100% 100%; }
+.battle .card .uibar span { position: absolute; inset: 0; display: grid; place-items: center; font-size: 10px; font-weight: 700; text-shadow: 0 1px 2px #000; color: #fff; }
+.battle .card .st { font-size: 11px; color: #cfe; }
+.battle .result { position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none; animation: pop 0.25s ease-out; }
+.battle .banner { display: grid; place-items: center; }
+.battle .banner b { font-size: 22px; color: #3a2508; margin-top: 4%; }
+.battle .banner.plain { background: rgba(10, 14, 26, 0.8); border: 1px solid #ffe29a66; border-radius: 6px; padding: 8px 28px; aspect-ratio: auto; }
+.battle .banner.plain b { color: #ffe29a; margin: 0; }
+.battle .bottom { padding: 8px calc(12px + var(--safe-r)) calc(10px + var(--safe-b)) calc(12px + var(--safe-l)); display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: end; }
+.battle .log { height: 96px; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 14px 4px; font-size: 13px; line-height: 20px; }
 .battle .cmds { display: grid; grid-template-columns: repeat(4, 64px); gap: 20px 10px; align-content: start; justify-content: center; padding: 8px 12px 22px !important; }
-.battle .result { position: absolute; inset: 0; display: grid; place-items: center; }
 .float { position: absolute; font-weight: 800; font-size: 22px; color: #fff; text-shadow: 0 2px 4px #000; animation: rise 0.9s forwards; pointer-events: none; }
 .float.heal { color: #9be89a; }
 @keyframes rise { to { transform: translateY(-40px); opacity: 0; } }
@@ -170,10 +203,9 @@ button:disabled { opacity: 0.45; cursor: default; }
   .hud-menu .btn { min-width: 0; padding: 5px 8px; font-size: 12px; min-height: 34px; }
   .chat { width: calc(100vw - 2 * 170px); min-width: 180px; }
   .chat .lines { height: 44px; }
-  .battle .unit .sprite { width: 120px; height: 120px; }
-  .battle .field { padding-top: 16px; }
+  .battle .card { width: 168px; min-height: 60px; padding: 6px 10px; }
   .battle .bottom { grid-template-columns: 1fr; }
-  .battle .log { height: 60px; }
+  .battle .log { height: 52px; }
 }
 @media (max-width: 520px) {
   .game { --bar-h: calc(120px + var(--safe-b)); }
@@ -187,6 +219,11 @@ button:disabled { opacity: 0.45; cursor: default; }
 /* Màn hình thấp (điện thoại nằm ngang): bỏ phần phụ, thu nhỏ nút để không chồng lên nhau. */
 @media (max-height: 500px) {
   .hud-goal, .hud-minimap { display: none; }
+  .hud-status { width: 200px; gap: 2px; }
+  .hud-status .me-row .gold { display: none; }
+  .hud-status .me-row { padding: 1px 8px 2px; }
+  .fbar { height: 18px; }
+  .fbar.slim { height: 14px; }
   .hud-menu, .hud.compact .hud-menu { top: calc(8px + var(--safe-t)); gap: 10px; }
   .hud-menu .rbtn { width: 46px !important; height: 46px !important; }
   .hud-menu .rbtn span { display: none; }
@@ -194,8 +231,8 @@ button:disabled { opacity: 0.45; cursor: default; }
   .round.b { width: 62px !important; height: 58px !important; }
   .game { --bar-h: calc(96px + var(--safe-b)); }
   .dpad { transform: scale(0.62); transform-origin: left bottom; }
-  .chat.open .lines { height: 56px; }
-  .chat.min .lines { height: 30px; }
+  .chat.open .lines { height: 70px; }
+  .chat.min .lines { height: 34px; }
 }
 /* Màn hình hẹp (điện thoại dựng đứng): tên map xuống dưới bản đồ nhỏ, mục tiêu gọn lại. */
 @media (max-width: 520px) {

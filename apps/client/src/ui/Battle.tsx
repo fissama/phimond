@@ -19,6 +19,7 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
   const [finished, setFinished] = useState<{ battle: BattleT; lines: string[] } | null>(null);
   const [lines, setLines] = useState<string[]>([]);
   const [hit, setHit] = useState<string | null>(null);
+  const [acting, setActing] = useState<string | null>(null);
   const [floats, setFloats] = useState<{ id: number; unit: string; text: string; heal: boolean }[]>([]);
   const [menu, setMenu] = useState<'skill' | 'item' | null>(null);
   const [sending, setSending] = useState(false);
@@ -40,7 +41,14 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
         setPlaying(true);
         evs.forEach((e, i) =>
           setTimeout(() => {
-            setLines((l) => [...l.slice(-40), eventText(e, unitName)]);
+            setLines((l) => {
+              const t = eventText(e, unitName);
+              return l[l.length - 1] === t ? l : [...l.slice(-40), t];
+            });
+            if (e.type === 'skill_cast' || e.type === 'miss' || (e.type === 'damage' && e.actor_id)) {
+              setActing(e.actor_id || null);
+              setTimeout(() => setActing(null), 420);
+            }
             if ((e.type === 'damage' || e.type === 'heal') && e.target_id) {
               setHit(e.type === 'damage' ? e.target_id : null);
               const id = Math.random();
@@ -51,10 +59,14 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
               setPlaying(false);
               setTimeout(() => setHit(null), 250);
               if (!b.character.battle && b.presentation?.completed_battle) {
-                setFinished({ battle: b.presentation.completed_battle as BattleT, lines: evs.filter((x) => /currency|pet_capture|respawn|item_gain/.test(x.type)).map((x) => eventText(x, unitName)) });
+                const done = b.presentation.completed_battle as BattleT;
+                const rewards = evs.filter((x) => /currency|pet_capture|respawn|item_gain|level_up|pet_learn/.test(x.type)).map((x) => eventText(x, unitName));
+                // Kết quả, vàng, EXP, vật phẩm do world ghi vào khung chat (không popup chặn); cảnh trận tự đóng sau một nhịp.
+                setFinished({ battle: done, lines: rewards });
+                setTimeout(() => (setFinished(null), setLines([])), 1700);
               }
             }
-          }, i * 320),
+          }, i * 300),
         );
       }),
     [],
@@ -86,38 +98,51 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
     setSending(false);
   };
 
-  const unitCard = (u: typeof me, side: 'player' | 'enemy') =>
-    u && (
-      <div class={`unit ${side} ${hit === u.id ? 'hit' : ''}`} data-testid={`battle-${side}`}>
-        <div class="card panel">
-          <b>{viName(u.name)}</b>
-          <div class="bars">
-            <div class="uibar hp" title={`HP ${u.hp}/${u.max_hp}`}>
-              <i style={{ width: `${(100 * u.hp) / Math.max(1, u.max_hp)}%` }} />
-            </div>
+  const unitCard = (u: typeof me, side: 'player' | 'enemy') => {
+    if (!u) return null;
+    const lv = side === 'player' ? pet?.level : (u as unknown as { level?: number }).level;
+    const status = u.statuses.map((s) => world.content.cat.statuses[s.id]?.name ?? s.id).join(', ');
+    return (
+      <div class={`plate ${side}`} data-testid={`battle-${side}`}>
+        <div class="card">
+          <div class="nm">
+            <b>{viName(u.name)}</b>
+            {lv ? <em>Lv {lv}</em> : null}
+          </div>
+          <div class="uibar hp" title={`HP ${u.hp}/${u.max_hp}`}>
+            <i style={{ width: `${(100 * u.hp) / Math.max(1, u.max_hp)}%` }} />
+            <span>{u.hp}/{u.max_hp}</span>
+          </div>
+          {side === 'player' && (
             <div class="uibar mp" title={`MP ${u.mp}/${u.max_mp}`}>
               <i style={{ width: `${(100 * u.mp) / Math.max(1, u.max_mp)}%` }} />
+              <span>{u.mp}/{u.max_mp}</span>
             </div>
-          </div>
-          <div class="muted" style={{ fontSize: 12 }}>
-            HP {u.hp}/{u.max_hp}
-            {u.statuses.length > 0 && ` · ${u.statuses.map((s) => world.content.cat.statuses[s.id]?.name ?? s.id).join(', ')}`}
-          </div>
-        </div>
-        <div style={{ position: 'relative' }}>
-          <PetAnimated species={u.species_id} size={180} row={u.hp <= 0 ? 'down' : 'idle'} />
-          {floats
-            .filter((f) => f.unit === u.id)
-            .map((f) => (
-              <span key={f.id} class={`float dmg ${f.heal ? 'heal' : 'hurt'}`} style={{ left: '35%', top: '20%' }}>
-                {damageGlyphs(f.text).map((src, i) => (
-                  <img key={i} src={src} alt={i === 0 ? f.text : ''} />
-                ))}
-              </span>
-            ))}
+          )}
+          {status && <div class="st">{status}</div>}
         </div>
       </div>
     );
+  };
+  const fighter = (u: typeof me, side: 'player' | 'enemy') => {
+    if (!u) return null;
+    const row = u.hp <= 0 ? 'down' : hit === u.id ? 'hurt' : acting === u.id ? 'attack' : 'idle';
+    return (
+      <div class={`fighter ${side} ${hit === u.id ? 'hit' : ''} ${row}`}>
+        <div class="shadow" />
+        <PetAnimated species={u.species_id} size={(side === 'player' ? 300 : 270) * (window.innerHeight < 500 ? 0.62 : 1)} row={row === 'hurt' ? 'idle' : row} />
+        {floats
+          .filter((f) => f.unit === u.id)
+          .map((f) => (
+            <span key={f.id} class={`float dmg ${f.heal ? 'heal' : 'hurt'}`} style={{ left: '30%', top: '4%' }}>
+              {damageGlyphs(f.text).map((src, i) => (
+                <img key={i} src={src} alt={i === 0 ? f.text : ''} />
+              ))}
+            </span>
+          ))}
+      </div>
+    );
+  };
 
   const cmd = (id: string, label: string, icon: string, disabled: boolean, onClick: () => void) => (
     <button class="bbtn" disabled={disabled} data-testid={`act-${id}`} aria-label={label} onClick={onClick}>
@@ -131,35 +156,37 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
 
   return (
     <div class="battle" data-testid="battle">
-      <div class="field">
+      <div class="scene">
+        <div class="vignette" />
+        <div class="ground" />
+        <div class="turn" style={{ backgroundImage: `url(${uiUrl('battle_turn_banner')})` }}>
+          <b>{finished ? 'Kết thúc' : `Lượt ${view.turn}`}</b>
+        </div>
         {unitCard(me, 'player')}
         {unitCard(foe, 'enemy')}
-        {finished && !live && (
-          <div class="result">
-            <div class="dialog skin-confirm" style={{ width: 'min(460px, 92vw)', textAlign: 'center' }} data-testid="battle-result">
-              {BANNER[finished.battle.result] ? (
-                <div class="banner" style={{ backgroundImage: `url(${uiUrl(BANNER[finished.battle.result]!)})`, backgroundSize: '100% 100%', margin: '0 auto 8px' }}>
-                  <b style={{ fontSize: 20, color: '#3a2508', marginTop: '6%' }}>{RESULT[finished.battle.result]}</b>
-                </div>
-              ) : (
-                <h2>{RESULT[finished.battle.result] ?? 'Trận đấu kết thúc'}</h2>
-              )}
-              <div class="list">
-                {finished.lines.map((l, i) => (
-                  <div key={i}>{l}</div>
-                ))}
-              </div>
-              <button class="btn primary" style={{ marginTop: 10 }} data-testid="battle-continue" onClick={() => (setFinished(null), setLines([]))}>
-                Tiếp tục
-              </button>
+        <div class="stage">
+          <div class="side left">{fighter(foe, 'enemy')}</div>
+          <div class="side right">{fighter(me, 'player')}</div>
+        </div>
+        {finished && !live && BANNER[finished.battle.result] && (
+          <div class="result" data-testid="battle-result">
+            <div class="banner" style={{ backgroundImage: `url(${uiUrl(BANNER[finished.battle.result]!)})`, backgroundSize: '100% 100%' }}>
+              <b>{RESULT[finished.battle.result]}</b>
+            </div>
+          </div>
+        )}
+        {finished && !live && !BANNER[finished.battle.result] && (
+          <div class="result" data-testid="battle-result">
+            <div class="banner plain">
+              <b>{RESULT[finished.battle.result] ?? 'Trận đấu kết thúc'}</b>
             </div>
           </div>
         )}
       </div>
       <div class="bottom">
         <div class="log skin-dialogue" ref={logRef} data-testid="battle-log">
-          {lines.map((l, i) => (
-            <div key={i}>{l}</div>
+          {lines.slice(-3).map((l, i) => (
+            <div key={l + i}>{l}</div>
           ))}
         </div>
         {live && (

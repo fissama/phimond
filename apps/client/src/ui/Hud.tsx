@@ -9,7 +9,8 @@ import type { Direction } from '../world/coords.ts';
 import { session } from '../state/app.ts';
 import { PetPortrait } from './PetArt.tsx';
 
-const pct = (a: number, b: number) => `${Math.max(0, Math.min(100, (a / Math.max(1, b)) * 100))}%`;
+/** Cùng công thức server: lên cấp khi XP ≥ cấp × 25 (data/balance/rules.json → xp_per_level). */
+const XP_PER_LEVEL = 25;
 
 /** Bố cục HUD gốc (P01-R09): Lv + pet trái trên, menu phải, D-pad trái dưới, Chọn/Trở về phải dưới, chat 6 tab giữa dưới. */
 export function Hud({ world, ch }: { world: GameWorld; ch: Character }) {
@@ -24,29 +25,35 @@ export function Hud({ world, ch }: { world: GameWorld; ch: Character }) {
   return (
     <div class={`hud ${compact ? 'compact' : ''} ${inBattle ? 'in-battle' : ''}`}>
       <div class="hud-status" data-testid="hud-status-panel">
-        <div class="ring">
-          {pet ? <PetPortrait species={pet.species_id} /> : <div class="portrait" />}
-          <div class="badge" title="Cấp nhân vật">{ch.level}</div>
+        <div class="pet-row">
+          <div class="ring">
+            {pet ? <PetPortrait species={pet.species_id} /> : <div class="portrait" />}
+            {pet && <div class="badge" title="Cấp linh thú">{pet.level}</div>}
+          </div>
+          <div class="stack">
+            <div class="nm">{pet ? <b>{viName(pet.name)}</b> : <span class="muted">Chưa có linh thú</span>}</div>
+            {pet && (
+              <>
+                <FrameBar kind="hp" row={0} v={pet.hp} max={pet.max_hp} label="HP" />
+                <FrameBar kind="mp" row={1} v={pet.mp} max={pet.max_mp} label="MP" />
+                <FrameBar kind="xp" row={2} v={pet.xp} max={pet.level * XP_PER_LEVEL} label="EXP" />
+              </>
+            )}
+          </div>
         </div>
-        <div class="plate">
+        <div class="me-row">
+          <div class="lvl" title="Cấp nhân vật">
+            Lv {ch.level}
+          </div>
           <div class="who" data-testid="hud-name">
             {ch.name}
           </div>
-          <div class="sub" data-testid="hud-gold">
+          <FrameBar kind="xp" row={2} v={ch.xp} max={ch.level * XP_PER_LEVEL} label="EXP" slim />
+          <div class="gold" data-testid="hud-gold">
             <i class="coin" />
             {ch.gold}
-            {pet ? ` · ${viName(pet.name)} Lv ${pet.level}` : ' · chưa có linh thú'}
+            <span class="vh"> · Lv {ch.level}</span>
           </div>
-          {pet && (
-            <div class="bars">
-              <div class="uibar hp" title={`HP ${pet.hp}/${pet.max_hp}`}>
-                <i style={{ width: pct(pet.hp, pet.max_hp) }} />
-              </div>
-              <div class="uibar mp" title={`MP ${pet.mp}/${pet.max_mp}`}>
-                <i style={{ width: pct(pet.mp, pet.max_mp) }} />
-              </div>
-            </div>
-          )}
         </div>
       </div>
 
@@ -104,6 +111,21 @@ export function Hud({ world, ch }: { world: GameWorld; ch: Character }) {
           </div>
         ))}
       </div>
+    </div>
+  );
+}
+
+/** Thanh chỉ số khung vàng (frame-bars) + ruột tô theo tỉ lệ; chữ số nằm trên thanh. */
+function FrameBar({ kind, row, v, max, label, slim }: { kind: 'hp' | 'mp' | 'xp'; row: number; v: number; max: number; label: string; slim?: boolean }) {
+  const p = Math.max(0, Math.min(100, (v / Math.max(1, max)) * 100));
+  return (
+    <div class={`fbar ${kind} r${row} ${slim ? 'slim' : ''}`} title={`${label} ${v}/${max}`} data-testid={`fbar-${kind}`}>
+      <div class="track">
+        <i class="fill" style={{ clipPath: `inset(0 ${100 - p}% 0 0)` }} />
+      </div>
+      <span>
+        {label} {Math.floor(v)}/{max}
+      </span>
     </div>
   );
 }
@@ -216,7 +238,7 @@ function Chat() {
   const [open, setOpen] = useState(false);
   const [idle, setIdle] = useState(false);
   const all = log.value;
-  const lines = all.filter((l) => tab === 'all' || l.tab === tab).slice(open ? -30 : -2);
+  const lines = all.filter((l) => tab === 'all' || l.tab === tab).slice(open ? -30 : -3);
   const last = all.length ? all[all.length - 1]!.id : 0;
   // Tự mờ khi lâu không có tin mới (không che cảnh); có tin mới hoặc mở ra thì hiện lại.
   useEffect(() => {
@@ -226,32 +248,31 @@ function Chat() {
   }, [last, open]);
   return (
     <div class={`chat ${open ? 'open' : 'min'} ${idle && !open ? 'idle' : ''}`} data-testid="chat">
-      {open && (
-        <div class="tabs">
-          {LOG_TABS.map((t) => (
-            <button key={t.id} class={tab === t.id ? 'on' : ''} onClick={() => setTab(t.id)}>
-              {t.label}
-            </button>
-          ))}
-          <button class="fold" aria-label="Thu gọn chat" onClick={() => setOpen(false)}>
-            ▾
+      <div class="tabs">
+        {LOG_TABS.map((t) => (
+          <button key={t.id} class={tab === t.id ? 'on' : ''} onClick={() => (setTab(t.id), setOpen(true))}>
+            {t.label}
           </button>
-        </div>
-      )}
-      <div
-        class="lines"
-        onClick={() => !open && setOpen(true)}
-        ref={(el) => {
-          if (el) el.scrollTop = el.scrollHeight;
-        }}
-      >
-        {lines.length === 0 && <div class="muted">{tab === 'all' || tab === 'system' || tab === 'area' ? 'Chưa có tin nhắn' : 'Kênh trò chuyện sẽ mở ở bản sau'}</div>}
-        {lines.map((l) => (
-          <div key={l.id} class={l.tab}>
-            {l.text}
-          </div>
         ))}
-        {!open && <span class="expand" aria-hidden="true">▴ Trò chuyện</span>}
+        <button class="fold" aria-label={open ? 'Thu gọn chat' : 'Mở rộng chat'} onClick={() => setOpen(!open)}>
+          {open ? '▾' : '▴'}
+        </button>
+      </div>
+      <div class="body">
+        <div
+          class="lines"
+          onClick={() => !open && setOpen(true)}
+          ref={(el) => {
+            if (el) el.scrollTop = el.scrollHeight;
+          }}
+        >
+          {lines.length === 0 && <div class="muted">{tab === 'all' || tab === 'system' || tab === 'area' ? 'Chưa có tin nhắn' : 'Kênh trò chuyện sẽ mở ở bản sau'}</div>}
+          {lines.map((l) => (
+            <div key={l.id} class={l.tab}>
+              {l.text}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

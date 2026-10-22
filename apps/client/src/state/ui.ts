@@ -19,6 +19,8 @@ export interface LogLine {
 let nextId = 1;
 export const log = signal<LogLine[]>([]);
 export function pushLog(text: string, tab: LogLine['tab'] = 'system'): void {
+  const prev = log.value[log.value.length - 1];
+  if (prev && prev.text === text && prev.tab === tab && /^(Đã chạy thoát|Chiến thắng!|Thất bại…)$/.test(text)) return; // server gửi hai sự kiện kết thúc
   log.value = [...log.value.slice(-79), { id: nextId++, tab, text }];
 }
 

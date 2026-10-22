@@ -40,9 +40,11 @@ async function walk(p: Page, cell: { x: number; y: number }, untilMap?: string):
   for (let i = 0; i < 150; i++) {
     await p.waitForTimeout(200);
     if (await p.getByTestId('battle').count()) {
-      await p.getByTestId('act-flee').click();
-      await p.getByTestId('battle-continue').click({ timeout: 10_000 });
+      // Cảnh trận tự đóng sau kết quả; chỉ bấm Chạy khi còn trong lượt (nút còn hiện).
+      if (await p.getByTestId('act-flee').count()) await p.getByTestId('act-flee').click().catch(() => undefined);
+      await expect(p.getByTestId('battle')).toHaveCount(0, { timeout: 15_000 });
       await act(p, { kind: 'ground', cell });
+      continue;
     }
     const s = await pos(p);
     if (untilMap ? s.map === untilMap && s.settled : s.x === cell.x && s.y === cell.y && s.settled) return;
@@ -96,8 +98,9 @@ test('chạm quái → trận → chạy → quái ẩn tới khi hồi', async 
   await expect(page.getByTestId('battle-enemy')).toBeVisible();
   await page.getByTestId('act-flee').click();
   await expect(page.getByTestId('battle-result')).toContainText('chạy thoát');
-  await page.getByTestId('battle-continue').click();
-  await expect(page.getByTestId('battle')).toHaveCount(0);
+  // Cảnh trận tự đóng; kết quả đã nằm trong khung chat (không có popup chặn).
+  await expect(page.getByTestId('battle')).toHaveCount(0, { timeout: 15_000 });
+  await expect(page.getByTestId('chat')).toContainText('chạy thoát');
   // Quái vừa đánh (có thể là con khác chặn đường đi) phải đang ẩn phía server.
   const hidden = await page.evaluate(
     () => (window as unknown as { __phimond: { session: { character: { value: { spawn_hidden: Record<string, number> } } } } }).__phimond.session.character.value.spawn_hidden,
@@ -148,6 +151,8 @@ test('điều khiển thật: nhấn phím, giữ phím, D-pad, click mặt đ�
   const s0 = await at(); // Triệu Linh Điện (9,7)
   await page.keyboard.press('ArrowLeft'); // nhấn nhanh: đúng một ô
   expect((await at()).x).toBe(s0.x - 1);
+  await page.keyboard.press('ArrowLeft'); // lệch hẳn sang trái: Mira đứng ở (9,6) chặn đường sang phải
+  expect((await at()).x).toBe(s0.x - 2);
   await page.keyboard.down('ArrowUp');
   await page.waitForTimeout(700);
   await page.keyboard.up('ArrowUp');

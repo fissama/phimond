@@ -107,7 +107,7 @@ export class GameWorld {
     const ch = b.character;
     this.absorb(ch);
     for (const e of b.events) {
-      if (ch.battle || e.type.startsWith('battle_') || ['damage', 'heal', 'miss', 'skill_cast', 'status_applied', 'defend'].includes(e.type)) continue;
+      if (ch.battle || e.type === 'battle_start' || e.type === 'battle_capture' || ['damage', 'heal', 'miss', 'skill_cast', 'status_applied', 'defend'].includes(e.type)) continue;
       if (e.type === 'npc_dialogue') continue;
       pushLog(eventText(e), e.type === 'map_enter' ? 'area' : 'system');
     }
