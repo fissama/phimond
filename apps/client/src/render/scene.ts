@@ -509,6 +509,24 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
   if (theme === 'hall')
     for (let x = 1; x < W - 1; x += 3) place('hall-wall-stone', x, 0.35); // lùi sau hàng 1 để không che Mira (đánh giá G1)
 
+  // Viền chặn của điện: cột + cờ dọc hai bên, chậu cây dài và thùng ở phía trước. Người chơi nhìn là biết đây là tường/vật chắn,
+  // không phải khoảng trống đi tiếp được (các ô '#').
+  if (theme === 'hall') {
+    for (const y of [2, 4, 6, 8]) {
+      place('palace-marble-pillar', 1, y);
+      place('palace-marble-pillar', W - 2, y);
+    }
+    for (const y of [3, 5, 7]) {
+      place(y === 5 ? 'banner-blue' : 'banner-red', 0.9, y);
+      place(y === 5 ? 'banner-blue' : 'banner-red', W - 1.9, y);
+    }
+    for (const x of [2.2, 5.7, 13.3, 16.8]) place('palace-long-planter', x, 10.3);
+    place('wooden-crate', 0.8, 9.9);
+    place('barrel', 1.9, 9.4);
+    place('barrel', W - 2.9, 9.4);
+    place('wooden-crate', W - 1.8, 9.9);
+  }
+
   // Nền xa (dải 64 px/đơn vị) sau mép trên map.
   if (P.backdrop && map.backdrop && asset(map.backdrop)) {
     propJobs.push(

@@ -21,10 +21,13 @@ const GRADE = {
     sat: { value: 1 },
     bright: { value: 1 },
     vig: { value: 0.32 },
+    contrast: { value: 1 },
+    shade: { value: new THREE.Vector3(0, 0, 0) },
+    hi: { value: new THREE.Vector3(0, 0, 0) },
   },
   vertexShader: `varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }`,
   fragmentShader: `
-    uniform sampler2D tDiffuse; uniform vec2 res; uniform float blur; uniform vec3 tint; uniform float sat; uniform float bright; uniform float vig;
+    uniform sampler2D tDiffuse; uniform vec2 res; uniform float blur; uniform vec3 tint; uniform float sat; uniform float bright; uniform float vig; uniform float contrast; uniform vec3 shade; uniform vec3 hi;
     varying vec2 vUv;
     void main(){
       // Tilt-shift: giữ nét dải giữa, mờ dần lên/xuống (lấy mẫu vòng 8 điểm).
@@ -43,6 +46,10 @@ const GRADE = {
       }
       float l = dot(c, vec3(0.299, 0.587, 0.114));
       c = mix(vec3(l), c, sat) * tint * bright;
+      // Tách tông + tương phản: vùng tối ngả màu (xanh tím), vùng sáng ngả ấm — nét phối màu HD-2D.
+      float lum = dot(c, vec3(0.299, 0.587, 0.114));
+      c += shade * (1.0 - smoothstep(0.0, 0.55, lum)) + hi * smoothstep(0.5, 1.0, lum);
+      c = (c - 0.5) * contrast + 0.5;
       vec2 q = vUv - 0.5;
       c *= 1.0 - vig * smoothstep(0.25, 0.85, dot(q, q) * 2.2);
       gl_FragColor = vec4(c, 1.0);
@@ -84,6 +91,10 @@ export class Post {
     (u.tint!.value as THREE.Vector3).set(l.tint[0], l.tint[1], l.tint[2]);
     u.sat!.value = l.sat;
     u.bright!.value = l.bright;
+    u.contrast!.value = l.contrast;
+    (u.shade!.value as THREE.Vector3).set(l.shade[0], l.shade[1], l.shade[2]);
+    (u.hi!.value as THREE.Vector3).set(l.hi[0], l.hi[1], l.hi[2]);
+    u.vig!.value = 0.3 + l.night * 0.22;
     // Ban đêm bloom mạnh hơn để đèn lồng tỏa sáng.
     this.bloom.strength = (this.quality === 'high' ? 0.3 : 0) + l.night * 0.35;
     this.bloom.threshold = 0.82 - l.night * 0.2;

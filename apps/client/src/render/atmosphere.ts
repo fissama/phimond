@@ -119,7 +119,7 @@ export function makeAtmosphere(
   }
 
   let t = 0;
-  let L: Light = { tint: [1, 1, 1], sat: 1, bright: 1, night: 0, day: 1 };
+  let L: Light = { tint: [1, 1, 1], sat: 1, bright: 1, contrast: 1, shade: [0, 0, 0], hi: [0, 0, 0], night: 0, day: 1 };
   return {
     update(dt) {
       t += dt;
