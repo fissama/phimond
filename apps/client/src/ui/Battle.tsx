@@ -35,6 +35,8 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
   // Chế độ chọn mục tiêu (khi còn ≥2 quái sống): hành động chờ xác nhận bằng cách chạm vào quái.
   const [pending, setPending] = useState<{ choice: Choice; extra: { skill_id?: string } } | null>(null);
   const [aim, setAim] = useState<string | null>(null);
+  // Tự động (PvE): bật thì mỗi lượt tự gửi 'auto' tới khi tắt hoặc hết trận; chạm lại để dừng và về lệnh tay.
+  const [autoOn, setAutoOn] = useState(false);
   const [sending, setSending] = useState(false);
   const [playing, setPlaying] = useState(false);
   const last = useRef<BattleT | null>(null);
@@ -129,6 +131,7 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
     }
     setPending(null);
     setAim(null);
+    setAutoOn(false);
     if (!live && !finished) setLines([]);
   }, [live?.id]);
 
@@ -140,6 +143,11 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
   const foe = foes[0];
   const pet = ch.pets.find((p) => p.id === me?.id);
   const busy = sending || playing || !live;
+  useEffect(() => {
+    if (!autoOn || !live || busy || pending) return;
+    const t = window.setTimeout(() => void act('auto'), 650);
+    return () => window.clearTimeout(t);
+  }, [autoOn, live?.id, live?.turn, busy, !!pending]);
 
   const act = async (choice: Choice, extra: { skill_id?: string; item_id?: string; target_id?: string } = {}) => {
     if (!live) return;
@@ -327,7 +335,6 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
                   <>
                     {round('defend', 'Phòng thủ', 'icon_defend', busy, '', () => (setMore(false), void act('defend')))}
                     {round('item', 'Vật phẩm', 'icon_inventory', busy || consumables.length === 0, 'Trống', () => (setMore(false), setMenu('item')))}
-                    {round('auto', 'Tự động', 'icon_auto', busy, '', () => (setMore(false), void act('auto')))}
                   </>
                 )}
                 {menu !== null && (
@@ -338,6 +345,10 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
               </div>
             )}
             <div class="cmds">
+              <button class={`bbtn auto ${autoOn ? 'on' : ''}`} data-testid="act-auto" aria-pressed={autoOn} aria-label="Tự động" disabled={!live || (!autoOn && busy)} onClick={() => (setMore(false), setMenu(null), setAutoOn(!autoOn))}>
+                {iconFor('icon_auto') ? <img src={iconFor('icon_auto')!} alt="" /> : null}
+                <span>{autoOn ? 'Dừng' : 'Tự động'}</span>
+              </button>
               {round('attack', 'Tấn công', 'icon_attack', busy, '', () => begin('attack'))}
               {round('skill', 'Kỹ năng', 'icon_magic', busy || skills.length === 0, skills.length === 0 ? 'Chưa có' : '', () => (setMore(false), setMenu('skill')))}
               {round('capture', `Bắt (${seals})`, 'capture_seal', busy || seals === 0, seals === 0 ? 'Hết Phù' : '', () => begin('capture'))}

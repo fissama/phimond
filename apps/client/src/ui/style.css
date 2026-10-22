@@ -240,6 +240,8 @@ button:disabled { opacity: 0.45; cursor: default; }
 .battle .dmg img { height: 64px; }
 .float { position: absolute; font-weight: 800; font-size: 26px; color: #fff; text-shadow: 0 2px 4px #000; animation: rise 1s forwards; pointer-events: none; }
 .float.heal { color: #9be89a; }
+.battle .bbtn.auto.on { filter: drop-shadow(0 0 8px #5eeaff) brightness(1.25); }
+.battle .bbtn.auto.on span { color: #5eeaff; }
 @keyframes rise { to { transform: translateY(-40px); opacity: 0; } }
 
 @media (max-width: 700px), (max-height: 500px) {
