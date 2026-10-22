@@ -286,6 +286,12 @@ SHEET 4R — Ground overlay decals, redo. These are laid ON TOP of an existing c
 Flat pure magenta #FF00FF background, no shadows, no text.
 ```
 
+### Vòng 2 → vòng 3 (2026-10-22)
+
+- Gói vòng 2 bị ChatGPT làm bằng Python (dịch/lật ảnh), không có khung động thật → bỏ. Decal vẽ bằng code, dùng tạm 4/6 món. Chi tiết: `apps/game-web/art-src/hd2d/batch-12-city/_intake/don10-web-r2/README.md`.
+- Sheet 8 v2 (sư tử quay mặt vào nhau) **thay** bản v1. Sheet 1 v2 đạt, để dành.
+- Vòng 3 đơn giản hơn: mỗi lần chỉ xin 3–4 tư thế đứng cạnh nhau, bắt buộc image gen, mỗi lần một chat mới. Gói: `don10-r3-goi-gpt/`. Động vật/đồ còn lại engine tự làm động.
+
 ### Thứ tự đề nghị
 
 1. **4R** (P1, để mặt đất hết trơn).
