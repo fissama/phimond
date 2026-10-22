@@ -57,3 +57,12 @@ Chưa kiểm: iPhone/Safari thật, hiệu năng GPU thật.
 - **Viền chặn Triệu Linh Điện**: cột đá hai bên, cờ treo, chậu cây dài và thùng ở phía trước. Rừng và thành phố đã có viền từ đợt trước.
 - **Ngày đêm** (`daylight.ts`, `post.ts`): thêm tương phản, tách tông bóng tối/vùng sáng. Xem `OCTOPATH-ASSESSMENT.md`.
 - E2E: bỏ bước bấm Tiếp tục; test D-pad đi lệch trái 2 ô vì Mira chặn (9,6).
+
+## Đợt 4 (2026-10-22): sửa theo nhận xét "player khó tính"
+
+- **Combat:** bảng của mình (chân dung, Lv, HP/MP/EXP pet) ở góc trên trái như game gốc; bảng quái nổi ngay trên đầu quái (tên, "Hoang dã" vì server chưa gửi Lv, HP); hai con thú đứng gần nhau, cùng cỡ; menu lệnh nổi dạng thuốc dưới sân khấu (Tấn công, Kỹ năng, Bắt, Chạy, Thêm → Phòng thủ/Vật phẩm/Tự động); nút khóa ghi lý do ("Hết Phù", "Chưa có", "Trống"); số sát thương to hơn, màn rung khi trúng, lướt tới khi đánh, ánh sáng rìa + hạt bụi + tia sáng; log ghi rõ "Ai → Ai: −X HP".
+- **Thắng:** khung thưởng không chặn (vàng, EXP, lên cấp pet/người chơi, học chiêu, bắt được) hiện phía trên, chạm là qua, tự đóng sau 4,2 s (1,7 s khi chạy trốn). Cũng ghi vào chat. Client tự so cấp trước/sau trận vì server không gửi sự kiện lên cấp.
+- **Nền combat:** nạp `public/battle/battle-bg-<key>.png` (`forest`, `deep_forest`, `gate`, `city`, `hall`) nếu có; chưa có thì dùng nền thế giới làm mờ. Prompt + ảnh mẫu để gửi GPT: `battle-bg/PROMPTS.md`, `battle-bg/refs/`.
+- **HUD trái:** hai thẻ cùng một ngôn ngữ khung (thẻ pet, thẻ người chơi), nhãn HP/MP/EXP tách khỏi thanh (chữ ≥ 11 px), HP dưới 25% nháy, chạm chân dung mở menu Linh thú.
+- **Chat:** chỉ còn 3 tab đang có nội dung (Tất cả, Hệ thống, Khu vực); khung xanh nhạt (`ui/chat-panel-light.png`, tô lại từ `chat-panel.png`, ruột xanh nhạt, viền vàng giữ nguyên) và chữ tối như game gốc.
+- Chưa làm: hàng chờ lượt, icon trạng thái (còn chữ), âm thanh, hiệu ứng kỹ năng, Lv quái (cần server): xem DEBT D13.

@@ -12,7 +12,7 @@ Quy tắc chung: 1 ô = 128 px, người cao ~168 px trong khung 192×192, chân
 8. **Biến thể mảnh chuyển đường đất** để phá nhịp lặp (xem DEBT D10).
 
 ## Bổ sung đợt 3 (combat, HUD, chat)
-9. **Nền trận đấu theo địa hình** (rừng, rừng sâu, thành phố): 1 ảnh ngang 1920×1080, kiểu diorama HD-2D, mặt đất nằm ở 1/3 dưới, không có nhân vật; thay lớp nền làm mờ hiện tại.
+9. **Nền trận đấu theo từng map** (5 ảnh 1920×1080: forest, deep_forest, gate, city, hall): prompt và ảnh mẫu đã soạn sẵn trong `battle-bg/PROMPTS.md`. Đặt vào `apps/client/public/battle/battle-bg-<key>.png`.
 10. **Hiệu ứng kỹ năng** theo hệ (lửa, nước, cây, đất, thú, côn trùng): 6 khung/hiệu ứng, nền ma-gen-ta, kiểu pixel cùng độ phân giải pet.
 11. **Khung thanh chỉ số có nhãn** (HP, MP, EXP) tách riêng nhãn khỏi thanh để không phải vẽ chữ đè lên khung.
 12. **Khung chat màu xanh nhạt** như game gốc (hiện dùng `chat-panel` xanh đậm), kèm tab xếp sát nhau cùng ngôn ngữ khung vàng.
