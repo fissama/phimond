@@ -34,7 +34,7 @@ Mỗi map Đợt A có một file `data/maps/p01/<map_id>.json`, server và clie
   "spawn_default": {"x": 24, "y": 20},
   "respawn_to": "city_square",
   "portals": [{"id":"sq_to_gate","rect":[22,31,4,1],"to":"city_palace_gate","arrive":{"x":24,"y":3,"face":"down"},"locked":false}],
-  "pillar": {"npc":"sq_pillar","dest":[{"map":"emerald_forest_main_woods","arrive":{"x":6,"y":12}},{"map":"coast_east","locked":true}]},
+  "pillar": {"npc":"sq_pillar","dest":[{"map":"emerald_forest_main_woods","arrive":{"x":6,"y":12}},{"map":"<id P12 Bờ Đông>","locked":true}]},
   "npcs": [{"id":"sq_skill","x":10,"y":14,"face":"down"}],
   "spawn_zones": [],                                             // map field: vùng + mật độ theo P12-S4-spawn-plan.json
   "scene": "scenes/city_square.scene.json"                       // chỉ client: đặt kit HD-2D, ánh sáng, camera
