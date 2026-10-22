@@ -48,3 +48,12 @@ Chưa kiểm: iPhone/Safari thật, hiệu năng GPU thật.
 - **Menu phải:** một nút Menu, bấm mới sổ Linh thú, Túi đồ, Nhiệm vụ, Cài đặt.
 - **Hiệu ứng HD-2D** (`render/post.ts`, `daylight.ts`, `atmosphere.ts`): Cao = tilt-shift + bloom + chỉnh màu theo giờ + tối góc + quầng sáng đèn + tia nắng + hạt bụi/phấn hoa; Trung bình = tilt-shift + chỉnh màu + đèn/tia nắng (không bloom); Thấp = không hậu kỳ. Giờ theo đồng hồ máy (sáng, ban ngày, hoàng hôn, đêm); Cài đặt → "Thời gian trong game" để ép cố định. Sảnh là trong nhà nên ánh nến cố định.
 - **Thanh dưới:** dải đá che cả cạnh dưới, cảnh 3D kết thúc phía trên thanh; D-pad, chat, nút Chọn/Trở về nằm trong thanh.
+
+## Đợt 3 (2026-10-22): combat ngang, HUD trái, chat, viền chặn, ngày đêm
+
+- **Trận đấu** (`ui/Battle.tsx`): cảnh ngang kiểu Octopath, quái bên trái (lật mặt), linh thú mình bên phải, bảng tên trên cùng (quái trái, mình phải: tên, Lv, HP, MP), banner "Lượt N", menu lệnh dùng sprite `battle_*`, log 3 dòng. Kết quả, vàng, EXP, vật phẩm, lên cấp **ghi vào khung chat**, không còn popup vàng hay hộp kết quả bắt bấm Tiếp tục: cảnh tự đóng sau ~1,7 s. Giữ testid `battle`, `battle-player/enemy`, `battle-log`, `act-*`, `battle-result` (banner mờ); bỏ `battle-continue`.
+- **HUD trái trên**: chân dung pet + cấp pet (badge) + 3 thanh khung vàng HP/MP/EXP (sprite `frame-bars`, ruột `hp/mp/xp-fill`), dưới là dải người chơi: Lv + tên + EXP + vàng. EXP cần = cấp × 25 (`xp_per_level`).
+- **Chat**: tab luôn hiện phía trên, khung `chat-panel` viền vàng, 3 dòng khi thu gọn, mở rộng bằng nút ▴/▾ hoặc bấm tab; nằm giữa D-pad và nút Chọn/Trở về trong thanh dưới.
+- **Viền chặn Triệu Linh Điện**: cột đá hai bên, cờ treo, chậu cây dài và thùng ở phía trước. Rừng và thành phố đã có viền từ đợt trước.
+- **Ngày đêm** (`daylight.ts`, `post.ts`): thêm tương phản, tách tông bóng tối/vùng sáng. Xem `OCTOPATH-ASSESSMENT.md`.
+- E2E: bỏ bước bấm Tiếp tục; test D-pad đi lệch trái 2 ô vì Mira chặn (9,6).

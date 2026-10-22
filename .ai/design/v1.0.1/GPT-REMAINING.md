@@ -10,3 +10,10 @@ Quy tắc chung: 1 ô = 128 px, người cao ~168 px trong khung 192×192, chân
 6. **Mảnh nối mặt tiền nhà** (ngõ, ống máng, cột).
 7. **Khung UI**: bản đồ nhỏ, khung Mục tiêu, hộp chat cùng ngôn ngữ khung vàng với HUD; bảng Menu có vùng nội dung rộng hơn nút (đã sửa bằng CSS, vẽ lại cho đẹp hơn).
 8. **Biến thể mảnh chuyển đường đất** để phá nhịp lặp (xem DEBT D10).
+
+## Bổ sung đợt 3 (combat, HUD, chat)
+9. **Nền trận đấu theo địa hình** (rừng, rừng sâu, thành phố): 1 ảnh ngang 1920×1080, kiểu diorama HD-2D, mặt đất nằm ở 1/3 dưới, không có nhân vật; thay lớp nền làm mờ hiện tại.
+10. **Hiệu ứng kỹ năng** theo hệ (lửa, nước, cây, đất, thú, côn trùng): 6 khung/hiệu ứng, nền ma-gen-ta, kiểu pixel cùng độ phân giải pet.
+11. **Khung thanh chỉ số có nhãn** (HP, MP, EXP) tách riêng nhãn khỏi thanh để không phải vẽ chữ đè lên khung.
+12. **Khung chat màu xanh nhạt** như game gốc (hiện dùng `chat-panel` xanh đậm), kèm tab xếp sát nhau cùng ngôn ngữ khung vàng.
+13. **Dải trang trí thanh dưới** (thanh đá có hoa văn ở giữa) để D-pad, chat, nút Chọn nằm trên một khung liền.

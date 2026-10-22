@@ -16,3 +16,5 @@ Các mục đánh giá gameplay thuộc Phase sau, giữ lại ở dạng nợ. 
 | D10 | N2 | Chỉnh fringe đường đất để hết lộ nhịp ô vuông; có thể cần thêm biến thể từ GPT. | Sau khi duyệt ảnh trong cảnh |
 | D11 | starter | 3 loài khởi đầu mới dùng chỉ số mượn từ Hoa Tinh/Sơn Chu/Lam Lang; chưa có chỉ số, kỹ năng P11/P13 riêng. Pet Lv1 đấu quái Bìa Rừng chưa cân bằng. Server vẫn dùng 14 loài cũ cho quái. | P11 |
 | D12 | HD-2D | Ánh sáng thật theo đèn (hiện là quầng cộng sáng + chỉnh màu toàn cảnh), bóng đổ theo giờ, thời tiết (mưa, sương), nước phản chiếu. Chưa đo hiệu năng bloom trên iPhone/Safari. | Sau khi đo D4 |
+| D13 | Combat | Trận đấu là cảnh DOM trên nền cảnh thế giới làm mờ, chưa phải diorama 3D riêng; chưa có hiệu ứng kỹ năng, chưa có tên Lv cho quái hoang (server không gửi level trong BattleUnit). | Sau v1.0.1 |
+| D14 | HUD | EXP cần lên cấp (cấp × 25) đang hard-code ở client theo `data/balance/rules.json`; nên server gửi `xp_next` trong snapshot. | Cùng đợt chỉnh server |
