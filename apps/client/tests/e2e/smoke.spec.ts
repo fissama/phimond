@@ -21,6 +21,15 @@ async function register(p: Page): Promise<void> {
   await p.getByTestId('username').fill(`e2e${Date.now().toString(36)}${Math.floor(Math.random() * 1e4)}`);
   await p.getByTestId('password').fill('matkhau-e2e-12345');
   await p.getByTestId('register').click();
+  await createCharacter(p, 'Tester', 'male');
+}
+
+/** Đăng ký xong: màn chọn nhân vật → ô 1 → tạo nhân vật → vào thế giới. */
+async function createCharacter(p: Page, name: string, gender: 'male' | 'female', slot = 1): Promise<void> {
+  await p.getByTestId(`slot-${slot}`).click({ timeout: 20_000 });
+  await p.getByTestId(`gender-${gender}`).click({ timeout: 20_000 });
+  await p.getByTestId('char-name').fill(name);
+  await p.getByTestId('char-create').click();
   await expect(p.getByTestId('hud-status')).toHaveText('Trực tuyến', { timeout: 20_000 });
   await expect(p.getByTestId('loading')).toHaveCount(0, { timeout: 20_000 });
 }
@@ -75,9 +84,9 @@ test('đi trọn tuyến Đợt A và dùng trụ đá quay về', async ({ page
   await chooseStarter(page);
   await walk(page, { x: 33, y: 6 }, 'emerald_forest_deep_woods');
   await walk(page, { x: 37, y: 5 }, 'city_palace_gate'); // lần đầu: Hoàng Môn
-  await walk(page, { x: 25, y: 6 }, 'city_square');
-  await walk(page, { x: 0, y: 5 }, 'city_palace_gate');
-  await walk(page, { x: 25, y: 6 }, 'city_square');
+  await walk(page, { x: 0, y: 6 }, 'city_square'); // bản phác APK: Quảng Trường là mép trái của Hoàng Môn
+  await walk(page, { x: 31, y: 5 }, 'city_palace_gate'); // Hoàng Môn là mép phải của Quảng Trường
+  await walk(page, { x: 0, y: 6 }, 'city_square');
   // Trụ đá: đi tới, mở bảng, đích khóa không bấm được, về Bìa Rừng. (Lệnh gửi lúc đang tải map bị bỏ → chờ tải xong.)
   await expect(page.getByTestId('loading')).toHaveCount(0, { timeout: 20_000 });
   await act(page, { kind: 'pillar' });
@@ -194,7 +203,7 @@ test('NPC: tới gần, hội thoại, hồi phục; cổng khóa báo chưa m�
   await page.getByTestId('npc-close').click();
   await walk(page, { x: 33, y: 6 }, 'emerald_forest_deep_woods');
   await walk(page, { x: 37, y: 5 }, 'city_palace_gate');
-  await walk(page, { x: 4, y: 2 });
+  await walk(page, { x: 25, y: 6 }); // cổng sang Chợ (mép phải Hoàng Môn)
   await expect(page.getByTestId('toasts')).toContainText('chưa mở', { timeout: 10_000 });
 });
 
@@ -242,4 +251,38 @@ test('điều khiển thật: nhấn phím, giữ phím, D-pad, click mặt đ�
   const before = JSON.stringify(await at());
   await page.mouse.click(640, 470); // chạm mặt đất dưới nhân vật
   await expect.poll(async () => JSON.stringify(await pos(page)), { timeout: 8000 }).not.toBe(before);
+});
+
+test('3 ô nhân vật độc lập: chọn nam/nữ, đặt tên, giữa vòng triệu hồi, đổi nhân vật', async ({ page }) => {
+  await page.addInitScript(() => localStorage.setItem('phimond.settings.v1', JSON.stringify({ quality: 'low', fps: 60, dpad: true, hud: 'full', time: 'day' })));
+  await page.goto('/');
+  await page.getByTestId('username').fill(`sl${Date.now().toString(36)}${Math.floor(Math.random() * 1e4)}`);
+  await page.getByTestId('password').fill('matkhau-e2e-12345');
+  await page.getByTestId('register').click();
+  // Tên không hợp lệ bị server từ chối, vẫn ở bước tạo.
+  await page.getByTestId('slot-1').click();
+  await page.getByTestId('gender-female').click();
+  await page.getByTestId('char-name').fill('<b>');
+  await page.getByTestId('char-create').click();
+  await expect(page.getByTestId('create-error')).toBeVisible();
+  await page.getByTestId('char-name').fill('Ngọc Anh');
+  await page.getByTestId('char-create').click();
+  await expect(page.getByTestId('hud-status')).toHaveText('Trực tuyến', { timeout: 20_000 });
+  await expect(page.getByTestId('loading')).toHaveCount(0, { timeout: 20_000 });
+  const first = await pos(page);
+  expect(first).toMatchObject({ map: 'summoning_hall_main_hall', x: 9, y: 5 });
+  await expect(page.getByTestId('hud-name')).toContainText('Ngọc Anh');
+  // Đổi nhân vật → ô 1 đã có tên, ô 2 trống; tạo nhân vật nam ở ô 2.
+  await page.keyboard.press('KeyM');
+  await page.getByTestId('switch-char').click();
+  await expect(page.getByTestId('slot-1')).toContainText('Ngọc Anh');
+  await expect(page.getByTestId('slot-2')).toContainText('Ô trống');
+  await createCharacter(page, 'Hải Long', 'male', 2);
+  await expect(page.getByTestId('hud-name')).toContainText('Hải Long');
+  // Quay lại ô 1: vẫn là nhân vật cũ.
+  await page.keyboard.press('KeyM');
+  await page.getByTestId('switch-char').click();
+  await page.getByTestId('slot-1').click();
+  await expect(page.getByTestId('hud-status')).toHaveText('Trực tuyến', { timeout: 20_000 });
+  await expect(page.getByTestId('hud-name')).toContainText('Ngọc Anh');
 });

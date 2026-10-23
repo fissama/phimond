@@ -40,8 +40,8 @@ func TestNewPlayerStartsInHallAndChoosesStarter(t *testing.T) {
 	c.X, c.Y = 9, 7
 	mustFail(t, e, c, "starter.choose", map[string]any{"pedestal": 1}, "gần bệ")
 	mustFail(t, e, c, "starter.choose", map[string]any{"pedestal": 7}, "Không có bệ")
-	// Đứng chéo kề bệ 1 (9,3).
-	c.X, c.Y = 10, 4
+	// Đứng chéo kề bệ 1 (9,2): bệ giữa lùi sau hai bệ bên (cung 3 bệ).
+	c.X, c.Y = 10, 3
 	ev := command(t, e, c, "starter.choose", map[string]any{"pedestal": 1})
 	if len(c.Pets) != 1 || c.Pets[0].SpeciesID != "sa_hat" || c.ActivePetID != c.Pets[0].ID || !c.Pets[0].Appraised {
 		t.Fatal("không nhận đúng pet khởi đầu")
@@ -81,7 +81,7 @@ func TestPortalNeedsRectAndRedirectsAfterFirstVisit(t *testing.T) {
 	}
 	c.MapID, c.X, c.Y = "emerald_forest_deep_woods", 37, 4
 	command(t, e, c, "world.portal", map[string]any{"portal_id": "to_city"})
-	if c.MapID != "city_square" || c.X != 2 || c.Y != 6 {
+	if c.MapID != "city_square" || c.X != 29 || c.Y != 6 {
 		t.Fatalf("lần sau phải tới Quảng Trường, đang ở %s", c.MapID)
 	}
 }
@@ -89,7 +89,7 @@ func TestPortalNeedsRectAndRedirectsAfterFirstVisit(t *testing.T) {
 func TestLockedPortalExplainsNotOpen(t *testing.T) {
 	e := engine(t)
 	c := veteran(e, "l", "L", 1)
-	c.MapID, c.X, c.Y = "city_square", 30, 5 // kề cổng sang Thương Phố (31, 4..6)
+	c.MapID, c.X, c.Y = "city_square", 1, 5 // kề cổng sang Thương Phố (0, 4..6, mép trái theo bản phác APK)
 	mustFail(t, e, c, "world.portal", map[string]any{"portal_id": "square_to_market"}, "chưa mở")
 	c.X, c.Y = 10, 8
 	mustFail(t, e, c, "world.portal", map[string]any{"portal_id": "square_to_market"}, "Không có cổng")
@@ -118,7 +118,7 @@ func TestPillarTravel(t *testing.T) {
 	c := veteran(e, "t", "T", 1)
 	c.MapID, c.X, c.Y = "city_square", 16, 6
 	mustFail(t, e, c, "pillar.travel", map[string]any{"map_id": "emerald_forest_main_woods"}, "gần trụ")
-	c.X, c.Y = 5, 8 // kề trụ (6,8)
+	c.X, c.Y = 24, 8 // kề trụ (25,8) dưới-phải Quảng Trường (P12 U1)
 	mustFail(t, e, c, "pillar.travel", map[string]any{"map_id": "city_farm"}, "chưa mở")
 	mustFail(t, e, c, "pillar.travel", map[string]any{"map_id": "nowhere"}, "Không có điểm đến")
 	command(t, e, c, "pillar.travel", map[string]any{"map_id": "emerald_forest_main_woods"})

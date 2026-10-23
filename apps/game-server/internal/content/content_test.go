@@ -55,3 +55,35 @@ func TestSummoningHallLayout(t *testing.T) {
 		t.Fatalf("Mira phải ở trên vòng triệu hồi (hàng %d), đang ở hàng %d", m.SpawnDefault.Y, mira.Y)
 	}
 }
+
+// Bố cục tương đối theo bản phác APK/P12 đã chốt: trụ teleport dưới-phải Quảng Trường (U1); Quảng Trường đi sang
+// Hoàng Môn bằng mép phải và sang Chợ bằng mép trái; Hoàng Môn thứ tự cổng trái→phải: Quảng Trường, cung điện, Chợ;
+// Sảnh xếp 3 bệ thành cung (bệ giữa lùi sau).
+func TestRelativeLayoutFollowsApkSketch(t *testing.T) {
+	c, e := Load("../../../../data")
+	if e != nil {
+		t.Fatal(e)
+	}
+	sq, gate, hall := c.Maps["city_square"], c.Maps["city_palace_gate"], c.Maps["summoning_hall_main_hall"]
+	if sq.Pillar == nil || sq.Pillar.X <= sq.Width/2 || sq.Pillar.Y <= sq.Height/2 {
+		t.Fatalf("trụ teleport phải ở dưới-phải Quảng Trường: %+v", sq.Pillar)
+	}
+	cx := func(m Map, id string) int {
+		for _, p := range m.Portals {
+			if p.ID == id {
+				return p.Rect[0] + p.Rect[2]/2
+			}
+		}
+		t.Fatalf("thiếu cổng %s", id)
+		return 0
+	}
+	if !(cx(sq, "square_to_market") < sq.Width/2 && cx(sq, "square_to_gate") > sq.Width/2) {
+		t.Fatal("Quảng Trường: Chợ bên trái, Hoàng Môn bên phải")
+	}
+	if !(cx(gate, "gate_to_square") < cx(gate, "gate_to_palace") && cx(gate, "gate_to_palace") < cx(gate, "gate_to_market")) {
+		t.Fatal("Hoàng Môn: thứ tự cổng trái→phải phải là Quảng Trường, cung điện, Chợ")
+	}
+	if !(hall.Pedestals[1].Y < hall.Pedestals[0].Y && hall.Pedestals[1].Y < hall.Pedestals[2].Y) {
+		t.Fatal("Sảnh: bệ giữa phải lùi sau hai bệ bên (cung 3 bệ)")
+	}
+}

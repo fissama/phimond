@@ -199,7 +199,7 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
     });
     if (mats.length) occluders.push({ obj, mats, hw, h, cur: 1 });
   };
-  const place = (id: string, x: number, y: number, opts: { decor?: boolean; pick?: Record<string, unknown>; jitter?: boolean } = {}) => {
+  const place = (id: string, x: number, y: number, opts: { decor?: boolean; pick?: Record<string, unknown>; jitter?: boolean; scaleX?: number } = {}) => {
     propJobs.push(
       (async () => {
         if (id.startsWith('tree-large-')) {
@@ -236,6 +236,7 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
         const jx = opts.jitter ? (hash(x, y) - 0.5) * 0.5 : 0;
         const jz = opts.jitter ? (hash(y, x) - 0.5) * 0.4 : 0;
         s.position.set(x + 0.5 + jx, 0, y + 0.55 + jz);
+        if (opts.scaleX) s.scale.x *= opts.scaleX;
         if (opts.pick) {
           s.userData = { ...s.userData, ...opts.pick };
           pickables.push(s);
@@ -280,8 +281,10 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
         if (layout[y]![x] !== '#') continue;
         const nearOpen = [[1, 0], [-1, 0], [0, 1], [0, -1]].some(([dx, dy]) => /[.,fgm]/.test(layout[y + dy!]?.[x + dx!] ?? ''));
         const r = hash(x, y);
-        if (nearOpen && r < 0.55) place(r < 0.2 ? 'tree-large-0' + (1 + Math.floor(r * 15)) : r < 0.4 ? 'tree-small-0' + (1 + (x % 2)) : 'bush-0' + (1 + (y % 3)), x, y, { jitter: true });
-        else if (!nearOpen && r < 0.12) place('tree-large-0' + (1 + (x % 3)), x, y);
+        // Hàng sát camera (3 hàng dưới): chỉ bụi và cây nhỏ. Cây lớn ở phía trước che nửa màn và lối ra (đánh giá map v1.0.0).
+        const front = y >= H - 3;
+        if (nearOpen && r < 0.55) place(!front && r < 0.2 ? 'tree-large-0' + (1 + Math.floor(r * 15)) : r < (front ? 0.2 : 0.4) ? 'tree-small-0' + (1 + (x % 2)) : 'bush-0' + (1 + (y % 3)), x, y, { jitter: true });
+        else if (!nearOpen && !front && r < 0.12) place('tree-large-0' + (1 + (x % 3)), x, y);
       }
     // Trang trí mặt đất (đặt nằm): lá rụng, đá cuội, rêu.
     const decals = ['fallen-leaves-01', 'fallen-leaves-02', 'pebbles-01', 'moss-patch-01', 'moss-patch-02'];
@@ -300,19 +303,23 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
       (async () => {
         const tex = await textures.get(hd2dUrl(skirtFloor), { repeat: true });
         const M = 24;
-        const geo = new THREE.PlaneGeometry(W + 2 * M, H + 2 * M);
+        // Phố: sàn lát chỉ chạy từ chân dãy nhà trở ra; phía sau nhà là tường hậu, không còn mặt sàn kéo xa nhìn xuyên qua cổng vòm.
+        const zN = theme === 'city' ? 1.0 : -M;
+        const depth = H + M - zN;
+        const geo = new THREE.PlaneGeometry(W + 2 * M, depth);
         const uv = geo.getAttribute('uv') as THREE.BufferAttribute;
-        for (let i = 0; i < uv.count; i++) uv.setXY(i, (uv.getX(i) * (W + 2 * M)) / 4, (uv.getY(i) * (H + 2 * M)) / 4);
+        for (let i = 0; i < uv.count; i++) uv.setXY(i, (uv.getX(i) * (W + 2 * M)) / 4, (uv.getY(i) * depth) / 4);
         const shade = theme === 'hall' ? 0x3c3229 : theme === 'deep_forest' ? T.ground : theme === 'city' ? 0xc8c0b0 : 0xe4ebdc;
         const mat = P.shadows === 'none' ? new THREE.MeshBasicMaterial({ map: tex, color: shade }) : new THREE.MeshLambertMaterial({ map: tex, color: shade });
         const m = new THREE.Mesh(geo, mat);
         m.rotation.x = -Math.PI / 2;
-        m.position.set(W / 2, -0.02, H / 2);
+        m.position.set(W / 2, -0.02, zN + depth / 2);
         group.add(m);
         disposables.push(geo, mat);
       })(),
     );
   }
+  if (theme === 'city') backWall();
   if (theme === 'forest' || theme === 'deep_forest') {
     const ring = 6;
     for (let y = -ring; y < H + ring; y++)
@@ -322,6 +329,59 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
         const r = hash(x + 101, y + 57);
         if (r < 0.2 * Math.max(0.5, P.decor)) place(r < 0.12 ? 'tree-large-0' + (1 + (Math.abs(x + y) % 3)) : 'tree-small-0' + (1 + (Math.abs(x) % 2)), x, y, { jitter: true });
       }
+  }
+
+  /**
+   * Tường hậu sau dãy nhà: mặt tường gạch sẫm cao ngang mặt tiền, tối dần xuống chân. Cổng vòm, ngõ và khe giữa các mặt tiền
+   * nhìn vào thấy một bức tường/sân sau thay vì mặt sàn kéo ra xa hay nền trống (đánh giá map v1.0.0).
+   */
+  function backWall(): void {
+    const c = document.createElement('canvas');
+    c.width = c.height = 128;
+    const g = c.getContext('2d')!;
+    const base: [number, number, number] = map.id === 'city_palace_gate' ? [112, 104, 96] : [118, 98, 80];
+    g.fillStyle = `rgb(${base[0]},${base[1]},${base[2]})`;
+    g.fillRect(0, 0, 128, 128);
+    for (let row = 0; row < 8; row++) {
+      for (let col = 0; col < 4; col++) {
+        const off = row % 2 ? 16 : 0;
+        const k = hash(col + 3, row + 7);
+        const v = Math.round((k - 0.5) * 26);
+        g.fillStyle = `rgb(${base[0] + v},${base[1] + v},${base[2] + v})`;
+        g.fillRect(col * 32 + off + 1, row * 16 + 1, 30, 14);
+      }
+    }
+    g.fillStyle = 'rgba(40,30,24,0.55)';
+    for (let row = 0; row <= 8; row++) g.fillRect(0, row * 16, 128, 1);
+    const tex = new THREE.CanvasTexture(c);
+    tex.wrapS = tex.wrapT = THREE.RepeatWrapping;
+    tex.magFilter = THREE.NearestFilter;
+    const wWall = W + 30;
+    const hWall = 4.4;
+    tex.repeat.set(wWall / 2, hWall / 2);
+    const geo = new THREE.PlaneGeometry(wWall, hWall);
+    const col = document.createElement('canvas');
+    col.width = 4;
+    col.height = 64;
+    const cg = col.getContext('2d')!;
+    const grad = cg.createLinearGradient(0, 0, 0, 64);
+    grad.addColorStop(0, 'rgba(0,0,0,0)');
+    grad.addColorStop(1, 'rgba(10,6,4,0.78)');
+    cg.fillStyle = grad;
+    cg.fillRect(0, 0, 4, 64);
+    const shade = new THREE.CanvasTexture(col);
+    const mat = new THREE.MeshBasicMaterial({ map: tex, fog: false, color: 0xe8e2da });
+    const wall = new THREE.Mesh(geo, mat);
+    wall.position.set(W / 2, hWall / 2 - 0.02, 0.9);
+    group.add(wall);
+    // Bóng đổ xuống chân tường (tối dần về phía sàn): lớp gradient đặt sát mặt tường.
+    const sgeo = new THREE.PlaneGeometry(wWall, hWall);
+    const smat = new THREE.MeshBasicMaterial({ map: shade, transparent: true, depthWrite: false, fog: false });
+    const sh = new THREE.Mesh(sgeo, smat);
+    sh.position.set(W / 2, hWall / 2 - 0.02, 0.92);
+    sh.renderOrder = 1;
+    group.add(sh);
+    disposables.push(geo, mat, tex, sgeo, smat, shade);
   }
 
   if (theme === 'forest' || theme === 'deep_forest') dressForest();
@@ -462,6 +522,8 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
     let k = 0;
     let c = 0;
     for (const [l, r] of gaps) {
+      // Hoàng Môn: tường thành kéo giãn lấp hết khe, tháp đứng chồng lên trước (không còn mảng tường hậu phẳng hở giữa các khối).
+      if (isGate && has('palace-wall-section') && r - l > 0.6) place('palace-wall-section', (l + r) / 2 - 0.5, 0.6, { scaleX: Math.min(2.4, (r - l) / wOf('palace-wall-section', 4.6) + 0.25) });
       let x = l;
       while (r - x > 0.5) {
         const room = r - x;
@@ -509,7 +571,7 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
       }
     }
     // 4) Thảm đỏ trên lối gạch ở Hoàng Môn.
-    if (isGate) for (let x = 9; x < 18; x += 3.3) propJobs.push(decal('palace-carpet-strip', x + 1.6, 6.5, 1));
+    if (isGate) propJobs.push(decal('palace-carpet-strip', 13.5, 5.6, 2, Math.PI / 2)); // chạy dọc trục cổng cung điện, từ chân cổng xuống sân
     // 5) Dây cờ trên khu chợ, hàng rào sắt cạnh lối ra.
     if (!isGate && has('city-bunting')) place('city-bunting', 19.5, 8.75, { decor: true });
     // 6) Decal mặt đất rải thưa trên đá lát (không phủ lối gạch).
@@ -570,7 +632,7 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
     );
   }
 
-  async function decal(id: string, x: number, z: number, scale = 1) {
+  async function decal(id: string, x: number, z: number, scale = 1, spin = 0) {
     const a = asset(id);
     if (!a) return;
     const tex = await textures.get(hd2dUrl(id));
@@ -578,6 +640,7 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
     const mat = new THREE.MeshBasicMaterial({ map: tex, transparent: true, depthWrite: false, color: T.ground });
     const m = new THREE.Mesh(geo, mat);
     m.rotation.x = -Math.PI / 2;
+    m.rotation.z = spin;
     m.position.set(x, 0.01, z);
     m.renderOrder = 0;
     group.add(m);

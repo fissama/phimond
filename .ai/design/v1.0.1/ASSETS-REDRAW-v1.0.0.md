@@ -1,5 +1,7 @@
 # Danh sách asset cần vẽ lại từ v1.0.0 (gửi ChatGPT)
 
+> Trạng thái từng mục (đã vẽ / đã duyệt) nằm ở `CHECKLIST-REDRAW-CODEX.md`. File này giữ quy cách và prompt mẫu.
+
 Gộp từ `GPT-REMAINING.md` (mục 1–17) và phần mới sau đợt rà chuyển động. Quy tắc gửi: **từng ảnh một kèm prompt, không gửi zip**; tên file đặt đúng như cột "Lưu thành".
 
 ## Quy ước chung (dán đầu mỗi prompt)

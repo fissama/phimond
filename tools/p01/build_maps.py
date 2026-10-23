@@ -122,12 +122,17 @@ def strip_forest(rng, w, h, *, top=2, bottom=2):
     return g
 
 
+def mirror_rows(rows: list[str]) -> list[str]:
+    """Lật trái-phải bố cục (bản phác APK/P12: Quảng Trường và Hoàng Môn đặt cổng, trụ, NPC theo hướng ngược bản v1.0.0 đầu)."""
+    return [r[::-1] for r in rows]
+
+
 def summoning_hall():
     rows = [
         "###################",
         "##K==C=======C==K##",
         "##===============##",
-        "##===1===2===3===##",
+        "##===1=======3===##",
         "##===============##",
         "##=L===========L=##",
         "##===============##",
@@ -136,6 +141,7 @@ def summoning_hall():
         "########===########",
         "########===########",
     ]
+    rows[2] = rows[2][:9] + "2" + rows[2][10:]  # cung 3 bệ (P12 U10): bệ giữa lùi sau hai bệ bên
     g = from_rows(rows)
     return {
         "id": "summoning_hall_main_hall",
@@ -144,7 +150,7 @@ def summoning_hall():
         "theme": "hall",
         "level": None,
         "grid": g,
-        "spawn_default": {"x": 9, "y": 8, "face": "up"},
+        "spawn_default": {"x": 9, "y": 5, "face": "down"},
         "respawn_to": "emerald_forest_main_woods",
         "portals": [
             {"id": "hall_exit", "rect": [8, 9, 3, 2], "to": "emerald_forest_main_woods",
@@ -152,10 +158,10 @@ def summoning_hall():
         ],
         "pedestals": [
             {"index": 0, "x": 5, "y": 3, "starter": "tien_chuong", "species": "tien_chuong", "display": "showcase_flower"},
-            {"index": 1, "x": 9, "y": 3, "starter": "sa_hat", "species": "sa_hat", "display": "showcase_scorpion"},
+            {"index": 1, "x": 9, "y": 2, "starter": "sa_hat", "species": "sa_hat", "display": "showcase_scorpion"},
             {"index": 2, "x": 13, "y": 3, "starter": "xich_ung", "species": "xich_ung", "display": "showcase_unicorn"},
         ],
-        "npcs": [{"id": "summoner_mira", "x": 9, "y": 6, "face": "down"}],
+        "npcs": [{"id": "summoner_mira", "x": 14, "y": 4, "face": "down"}],
         "spawn_zones": [],
         "backdrop": None,
     }
@@ -175,7 +181,7 @@ def forest_main():
     scatter(g, rng, "g", 26, (19, 3, 12, 7), spacing=0)
     scatter(g, rng, "fm", 14, (2, 3, 30, 8), spacing=1)
     scatter(g, rng, "t", 3, (19, 3, 12, 7), spacing=2)
-    g.set(9, 2, "s")  # quầy Tiểu Thương Wen (sát hàng cây)
+    g.set(15, 2, "s")  # quầy Tiểu Thương Wen (sát hàng cây)
     scatter(g, rng, "f", 4, (2, 3, 12, 8), spacing=1)
     return {
         "id": "emerald_forest_main_woods",
@@ -191,10 +197,11 @@ def forest_main():
              "arrive": {"x": 2, "y": 6, "face": "right"}},
         ],
         "npcs": [
-            {"id": "forest_guide", "x": 6, "y": 4, "face": "down"},
-            {"id": "bia_shop", "x": 10, "y": 3, "face": "down"},
-            {"id": "bia_skill", "x": 13, "y": 9, "face": "up"},
-            {"id": "bia_free", "x": 4, "y": 9, "face": "right"},
+            # Thứ tự trái → phải theo bản phác APK: Lio, Tuli, Rowan, Wen.
+            {"id": "forest_guide", "x": 5, "y": 4, "face": "down"},
+            {"id": "bia_free", "x": 8, "y": 9, "face": "right"},
+            {"id": "bia_skill", "x": 12, "y": 9, "face": "up"},
+            {"id": "bia_shop", "x": 15, "y": 3, "face": "down"},
         ],
         "spawn_zones": [
             {"id": "z1", "rect": [19, 3, 12, 7], "species": ["snail", "flower_fairy", "mushroom", "spider"],
@@ -234,10 +241,10 @@ def forest_deep():
             # Lần đầu tới Hoàng Môn theo cốt truyện; các lần sau đi thẳng Quảng Trường (P01-scope §2).
             {"id": "to_city", "rect": [37, 4, 1, 3], "to": "city_palace_gate",
              "arrive": {"x": 2, "y": 6, "face": "right"},
-             "redirect": {"if_visited": "city_palace_gate", "to": "city_square", "arrive": {"x": 2, "y": 6, "face": "right"}}},
+             "redirect": {"if_visited": "city_palace_gate", "to": "city_square", "arrive": {"x": 29, "y": 6, "face": "left"}}},
         ],
         "npcs": [
-            {"id": "sau_guard", "x": 5, "y": 3, "face": "down"},
+            {"id": "sau_guard", "x": 27, "y": 4, "face": "down"},
             {"id": "sau_free", "x": 4, "y": 9, "face": "up"},
         ],
         "spawn_zones": [
@@ -256,9 +263,9 @@ def palace_gate():
         "#C::::::::::::::::::::::C#",
         "#:L:b::::S:::::S::::b:L:##",
         "#::::::::::::::::::::::::#",
-        "#::::::::+++++++++::::::::",
-        "#::::::::+++++++++::::::::",
-        "#::::::::+++++++++::::::::",
+        "#:::::::::::::::::::::::::",
+        "#:::::::::::::::::::::::::",
+        "#:::::::::::::::::::::::::",
         "#::::::::::::::::::::::::#",
         "#bt" + ":" * 20 + "tb#",
         "##########################",
@@ -266,8 +273,15 @@ def palace_gate():
     def put(x, y, ch):
         rows[y] = rows[y][:x] + ch + rows[y][x + 1:]
     for x, y, ch in [(8, 2, "Z"), (16, 2, "Z"), (7, 9, "b"), (18, 9, "b"), (21, 8, "k"), (5, 8, "x"),
-                     (10, 2, "J"), (14, 2, "j")]:
+                     (10, 2, "j"), (14, 2, "J")]:
         put(x, y, ch)
+    rows = mirror_rows(rows)  # bản phác APK: cổng Quảng Trường bên trái, Chợ bên phải, cổng cung điện ở giữa
+    # Lối thảm đỏ dọc theo trục cổng cung điện (x=12..14), từ chân cổng xuống sân.
+    for y in range(2, 9):
+        for x in (12, 13, 14):
+            rows[y] = rows[y][:x] + "+" + rows[y][x + 1:]
+    for y in (5, 6, 7):  # hai mép trái/phải đều mở: trái về Quảng Trường, phải sang Chợ
+        rows[y] = ":" + rows[y][1:-1] + ":"
     g = from_rows(rows)
     return {
         "id": "city_palace_gate",
@@ -278,16 +292,16 @@ def palace_gate():
         "grid": g,
         "spawn_default": {"x": 12, "y": 6, "face": "up"},
         "respawn_to": "city_square",
-        "facades": {"4,1": "city-facade-shop", "12,1": "palace-gate", "20,1": "city-facade-townhouse"},
+        "facades": {"5,1": "city-facade-townhouse", "13,1": "palace-gate", "21,1": "city-facade-shop"},
         "portals": [
-            {"id": "gate_to_square", "rect": [25, 5, 1, 3], "to": "city_square",
-             "arrive": {"x": 2, "y": 6, "face": "right"}},
-            {"id": "gate_to_market", "rect": [4, 2, 1, 1], "to": "city_market", "locked": True},
-            {"id": "gate_to_palace", "rect": [12, 2, 1, 1], "to": "city_royal_palace", "locked": True},
+            {"id": "gate_to_square", "rect": [0, 5, 1, 3], "to": "city_square",
+             "arrive": {"x": 29, "y": 6, "face": "left"}},
+            {"id": "gate_to_market", "rect": [25, 5, 1, 3], "to": "city_market", "locked": True},
+            {"id": "gate_to_palace", "rect": [13, 2, 1, 1], "to": "city_royal_palace", "locked": True},
         ],
         "npcs": [
-            {"id": "gate_captain", "x": 14, "y": 4, "face": "down"},
-            {"id": "gate_guild", "x": 19, "y": 4, "face": "down"},
+            {"id": "gate_captain", "x": 11, "y": 4, "face": "down"},
+            {"id": "gate_guild", "x": 6, "y": 4, "face": "down"},
         ],
         "spawn_zones": [],
         "backdrop": "city-skyline-far",
@@ -323,6 +337,7 @@ def city_square():
                      # Đơn 10: bồn sư tử, cây cắt tỉa hai bên đài phun, biển treo, xe bán hàng + bao tải.
                      (8, 2, "P"), (13, 2, "Y"), (17, 2, "Y"), (24, 2, "G"), (16, 10, "V"), (17, 10, "X")]:
         put(x, y, ch)
+    rows = mirror_rows(rows)  # bản phác APK: cổng Hoàng Môn bên phải, Chợ bên trái, trụ teleport dưới-phải (P12 U1)
     g = from_rows(rows)
     return {
         "id": "city_square",
@@ -331,30 +346,30 @@ def city_square():
         "theme": "city",
         "level": None,
         "grid": g,
-        "spawn_default": {"x": 16, "y": 6, "face": "down"},
+        "spawn_default": {"x": 15, "y": 6, "face": "down"},
         "respawn_to": "city_square",
-        "facades": {"4,1": "city-facade-guild", "11,1": "city-facade-artisan", "19,1": "city-facade-shop", "26,1": "city-facade-townhouse"},
+        "facades": {"27,1": "city-facade-guild", "20,1": "city-facade-artisan", "12,1": "city-facade-shop", "5,1": "city-facade-townhouse"},
         "portals": [
-            {"id": "square_to_gate", "rect": [0, 4, 1, 3], "to": "city_palace_gate",
-             "arrive": {"x": 23, "y": 6, "face": "left"}},
-            {"id": "square_to_market", "rect": [31, 4, 1, 3], "to": "city_market", "locked": True},
+            {"id": "square_to_gate", "rect": [31, 4, 1, 3], "to": "city_palace_gate",
+             "arrive": {"x": 2, "y": 6, "face": "right"}},
+            {"id": "square_to_market", "rect": [0, 4, 1, 3], "to": "city_market", "locked": True},
         ],
-        "pillar": {"x": 6, "y": 8, "npc": "sq_pillar", "dest": [
+        "pillar": {"x": 25, "y": 8, "npc": "sq_pillar", "dest": [
             {"map": "emerald_forest_main_woods", "arrive": {"x": 3, "y": 6, "face": "right"}},
             {"map": "city_farm", "locked": True},
             {"map": "treasure_beach_east_shore", "locked": True},
         ]},
         "npcs": [
-            {"id": "trainer_elin", "x": 13, "y": 5, "face": "down"},
-            {"id": "sq_healer", "x": 9, "y": 3, "face": "down"},
-            {"id": "sq_skill", "x": 22, "y": 3, "face": "down"},
-            {"id": "sq_free", "x": 25, "y": 8, "face": "left"},
-            {"id": "sq_pillar", "x": 7, "y": 9, "face": "up"},
-            {"id": "sq_arena", "x": 26, "y": 3, "face": "down"},
-            {"id": "sq_board", "x": 29, "y": 7, "face": "left"},
-            {"id": "sq_exchange", "x": 4, "y": 3, "face": "down"},
-            {"id": "sq_warehouse", "x": 11, "y": 9, "face": "up"},
-            {"id": "sq_mailbox", "x": 13, "y": 9, "face": "up"},
+            {"id": "trainer_elin", "x": 18, "y": 5, "face": "down"},
+            {"id": "sq_healer", "x": 3, "y": 3, "face": "down"},
+            {"id": "sq_skill", "x": 9, "y": 3, "face": "down"},
+            {"id": "sq_free", "x": 6, "y": 8, "face": "right"},
+            {"id": "sq_pillar", "x": 24, "y": 9, "face": "up"},
+            {"id": "sq_arena", "x": 5, "y": 3, "face": "down"},
+            {"id": "sq_board", "x": 2, "y": 7, "face": "right"},
+            {"id": "sq_exchange", "x": 27, "y": 3, "face": "down"},
+            {"id": "sq_warehouse", "x": 20, "y": 9, "face": "up"},
+            {"id": "sq_mailbox", "x": 17, "y": 9, "face": "up"},
         ],
         "spawn_zones": [],
         "backdrop": "city-skyline-far",
