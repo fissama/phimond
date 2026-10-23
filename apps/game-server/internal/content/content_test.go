@@ -31,3 +31,27 @@ func TestRejectBadEffectAndRecipeDefinitions(t *testing.T) {
 		}
 	}
 }
+
+// Bố cục Triệu Linh Điện (v1.0.0): nhân vật xuất hiện giữa vòng triệu hồi; Mira đứng bên phải, dưới trụ thần thú
+// vàng (trụ thứ ba) nhưng vẫn ở hàng trên vòng triệu hồi của người chơi.
+func TestSummoningHallLayout(t *testing.T) {
+	c, e := Load("../../../../data")
+	if e != nil {
+		t.Fatal(e)
+	}
+	m, ok := c.Maps["summoning_hall_main_hall"]
+	if !ok || len(m.Pedestals) != 3 {
+		t.Fatal("thiếu bản đồ sảnh hoặc trụ")
+	}
+	if m.SpawnDefault.X != m.Width/2 {
+		t.Fatalf("điểm xuất hiện lệch tâm vòng triệu hồi: x=%d, tâm=%d", m.SpawnDefault.X, m.Width/2)
+	}
+	gold := m.Pedestals[2]
+	mira := c.NPCs["summoner_mira"]
+	if mira.X != gold.X+1 || mira.Y != gold.Y+1 {
+		t.Fatalf("Mira phải ở chéo phải-dưới trụ vàng (%d,%d), đang ở (%d,%d)", gold.X, gold.Y, mira.X, mira.Y)
+	}
+	if mira.Y >= m.SpawnDefault.Y {
+		t.Fatalf("Mira phải ở trên vòng triệu hồi (hàng %d), đang ở hàng %d", m.SpawnDefault.Y, mira.Y)
+	}
+}

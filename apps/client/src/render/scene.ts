@@ -425,7 +425,7 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
   }
 
   // Điểm nhấn sàn.
-  if (theme === 'hall') propJobs.push(decal('summon-floor-emblem', W / 2, 5.5, 1.2));
+  if (theme === 'hall') propJobs.push(decal('summon-floor-emblem', (map.spawn_default?.x ?? 9) + 0.5, (map.spawn_default?.y ?? 5) + 0.5, 1.2)); // tâm vòng = ô xuất hiện của nhân vật
   if (map.id === 'city_square') propJobs.push(decal('city-plaza-medallion', 20, 16, 1.4));
 
   // Mặt tiền nhà (H) theo map.facades "x,y" → asset; thành phố: lấp kín dãy nhà phía trên (không để khe trống).

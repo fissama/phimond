@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import type { MapDef } from '@phimond/protocol';
 import { Grid } from '../world/grid.ts';
 import { findPath } from '../world/path.ts';
+import { walkSpeed } from '../world/smooth.ts';
 import { asset } from './assets.ts';
 import { blobShadow, CharacterSprite, propSprite, animate } from './sprites.ts';
 
@@ -42,6 +43,7 @@ class Walker {
   private wait: number;
   private pos: THREE.Vector2;
   private t = 0;
+  private vel = 0;
   constructor(
     readonly sprite: CharacterSprite,
     readonly root: THREE.Group,
@@ -60,6 +62,7 @@ class Walker {
     this.t += dt;
     if (this.path.length === 0) {
       this.wait -= dt;
+      this.vel = 0;
       this.sprite.setMotion(false);
       if (this.wait <= 0) this.pick();
     } else {
@@ -69,7 +72,9 @@ class Walker {
       const dx = tx - this.pos.x;
       const dy = ty - this.pos.y;
       const d = Math.hypot(dx, dy);
-      const step = this.speed * dt;
+      // Tăng/giảm tốc dần (đi tiếp qua góc thì giữ đà): không phóng đi hết tốc rồi khựng lại.
+      this.vel = walkSpeed(this.vel, this.speed, d + this.path.length - 1, dt);
+      const step = this.vel * dt;
       if (d <= step) {
         this.pos.set(tx, ty);
         this.path.shift();
@@ -78,10 +83,11 @@ class Walker {
         this.pos.x += (dx / d) * step;
         this.pos.y += (dy / d) * step;
       }
-      this.sprite.setMotion(true, Math.abs(dx) > 0.01 ? dx < 0 : undefined);
+      this.sprite.travel(Math.min(d, step));
+      const vert = Math.abs(dy) > Math.abs(dx);
+      this.sprite.setMotion(true, !vert && Math.abs(dx) > 0.01 ? dx < 0 : undefined, vert ? (dy > 0 ? 'down' : 'up') : null); // có dải dọc thì dùng, thiếu thì rơi về dải ngang
     }
-    const moving = this.path.length > 0;
-    this.root.position.set(this.pos.x, moving ? Math.abs(Math.sin(this.t * this.speed * Math.PI)) * 0.035 : 0, this.pos.y);
+    this.root.position.set(this.pos.x, 0, this.pos.y);
     this.sprite.update(dt);
   }
 
@@ -183,7 +189,8 @@ export async function spawnAmbient(map: MapDef, group: THREE.Group, blob: boolea
   for (let i = 0; i < count; i++) {
     const id = names[i]!;
     const sprite = await CharacterSprite.create(id);
-    sprite.runFps = 5;
+    sprite.framesPerCell = 3.2; // dải 2 khung: một chu kỳ ≈ 0.6 ô
+    sprite.bobAmp = 0.035;
     const root = new THREE.Group();
     root.add(sprite.root);
     if (blob) root.add(blobShadow(0.32));

@@ -7,6 +7,7 @@ import { asset, textures } from './assets.ts';
 import { buildScene, THEMES, type BuiltScene } from './scene.ts';
 import { blobShadow, CharacterSprite, foeRing, PetSprite, propSprite } from './sprites.ts';
 import type { Cell, Direction } from '../world/coords.ts';
+import { follow } from '../world/smooth.ts';
 
 export type Pick =
   | { kind: 'ground'; cell: Cell }
@@ -23,6 +24,8 @@ interface Actor {
 const PITCH = 0.66; // rad, góc nhìn xuống
 const DIST = 20;
 const FOV = 24;
+/** Độ nhạy đuổi theo vị trí logic của hình người chơi (1/giây): ~40ms trễ, đủ mượt mà không thấy lệch. */
+const PLAYER_FOLLOW = 24;
 
 /**
  * Renderer world: cảnh HD-2D, camera bám người chơi, NPC/quái/người chơi, chọn đối tượng bằng chạm/click,
@@ -38,6 +41,8 @@ export class Engine {
   private map: MapDef | null = null;
   private player: CharacterSprite | null = null;
   private readonly playerRoot = new THREE.Group();
+  private frameDt = 1 / 60;
+  private summon: { t: number; beam: THREE.Mesh } | null = null;
   private playerBlob: THREE.Mesh | null = null;
   private readonly npcs = new Map<string, Actor & { sprite: CharacterSprite | THREE.Object3D }>();
   private readonly spawns = new Map<string, Actor & { sprite: PetSprite; base: Cell; t: number }>();
@@ -232,9 +237,61 @@ export class Engine {
   }
 
   /** Vị trí hiển thị người chơi (số thực, theo ô) + trạng thái để chọn khung. */
-  setPlayer(pos: { x: number; y: number }, moving: boolean, facing: Direction): void {
+  /** Đặt thẳng vào ô (vào map, dịch chuyển): không trượt từ chỗ cũ. */
+  placePlayer(pos: { x: number; y: number }): void {
     this.playerRoot.position.set(pos.x + 0.5, 0, pos.y + 0.5);
-    this.player?.setMotion(moving, facing === 'left' ? true : facing === 'right' ? false : undefined, facing === 'up' ? 'up' : facing === 'down' ? 'down' : null);
+  }
+
+  /** Nhân vật hiện ra giữa vòng triệu hồi: cột sáng hạ xuống rồi dáng người hiện dần từ chân lên. */
+  summonIn(): void {
+    if (this.summon) {
+      this.scene.remove(this.summon.beam);
+      this.summon.beam.geometry.dispose();
+      (this.summon.beam.material as THREE.Material).dispose();
+    }
+    const mat = new THREE.MeshBasicMaterial({ color: 0xffe2a0, transparent: true, opacity: 0, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide });
+    const beam = new THREE.Mesh(new THREE.CylinderGeometry(0.55, 0.7, 4.2, 24, 1, true), mat);
+    beam.position.set(this.playerRoot.position.x, 2.1, this.playerRoot.position.z);
+    beam.renderOrder = 15;
+    this.scene.add(beam);
+    this.summon = { t: 0, beam };
+    this.player?.root.scale.set(1, 0.02, 1);
+  }
+
+  private stepSummon(dt: number): void {
+    const s = this.summon;
+    if (!s) return;
+    s.t += dt;
+    const k = Math.min(1, s.t / 1.3);
+    const body = 1 - Math.pow(1 - Math.max(0, (s.t - 0.35) / 0.95), 3); // hiện dần từ chân lên
+    this.player?.root.scale.set(1, Math.max(0.02, Math.min(1, body)), 1);
+    (s.beam.material as THREE.MeshBasicMaterial).opacity = Math.sin(Math.PI * Math.min(1, s.t / 1.7)) * 0.45;
+    s.beam.scale.set(1 + 0.25 * k, 1, 1 + 0.25 * k);
+    s.beam.position.set(this.playerRoot.position.x, 2.1, this.playerRoot.position.z);
+    if (s.t > 1.7) {
+      this.player?.root.scale.set(1, 1, 1);
+      this.scene.remove(s.beam);
+      s.beam.geometry.dispose();
+      (s.beam.material as THREE.Material).dispose();
+      this.summon = null;
+    }
+  }
+
+  setPlayer(pos: { x: number; y: number }, moving: boolean, facing: Direction): void {
+    const p = this.playerRoot.position;
+    const tx = pos.x + 0.5;
+    const tz = pos.y + 0.5;
+    const gap = Math.hypot(tx - p.x, tz - p.z);
+    // Hình đuổi theo vị trí logic (đuôi ~40ms) nên bước ô/nhịp khung hình không gây giật; dịch chuyển xa thì đặt thẳng.
+    const near = gap < 3;
+    const nx = near ? follow(p.x, tx, this.frameDt, PLAYER_FOLLOW) : tx;
+    const nz = near ? follow(p.z, tz, this.frameDt, PLAYER_FOLLOW) : tz;
+    const d = near ? Math.hypot(nx - p.x, nz - p.z) : 0;
+    this.player?.travel(d);
+    p.set(nx, 0, nz);
+    // Còn đang trượt về đích thì vẫn là đang đi (không hiện dáng đứng khi chân còn di chuyển).
+    const running = moving || Math.hypot(tx - nx, tz - nz) > 0.04;
+    this.player?.setMotion(running, facing === 'left' ? true : facing === 'right' ? false : undefined, facing === 'up' ? 'up' : facing === 'down' ? 'down' : null);
   }
 
   setSpawnVisible(id: string, visible: boolean): void {
@@ -299,8 +356,10 @@ export class Engine {
   }
 
   private frame(dt: number): void {
+    this.frameDt = dt;
     this.frameCb?.(dt);
     this.player?.update(dt);
+    this.stepSummon(dt);
     for (const n of this.npcs.values()) if (n.sprite instanceof CharacterSprite) n.sprite.update(dt);
     for (const s of this.spawns.values()) {
       // Quái đi lắc nhẹ quanh điểm của nó (không rời ô: vị trí luật vẫn là điểm cố định).
@@ -320,7 +379,7 @@ export class Engine {
       c.sprite.update(dt, false);
     }
     this.world?.update(dt, this.playerRoot.position);
-    this.updateCamera(Math.min(1, dt * 6));
+    this.updateCamera(1 - Math.exp(-dt * 9));
     this.updateLight(dt);
     if (this.post) this.post.render(dt);
     else this.renderer.render(this.scene, this.camera);

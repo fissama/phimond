@@ -150,8 +150,10 @@ export class GameWorld {
     this.portalLatch = this.portalAt(this.mover.cell)?.id ?? null;
     this.contactLatch.clear();
     currentMap.value = map;
+    this.engine.placePlayer(this.mover.pos);
     this.engine.setPlayer(this.mover.pos, false, this.mover.facing);
     this.engine.snapCamera();
+    if (map.theme === 'hall') this.engine.summonIn(); // vào Triệu Linh Điện: hiện ra giữa vòng triệu hồi
     this.refreshSpawns();
     // Giữ màn tải tối thiểu một chút để không nháy; ghi thời gian tải để đo (R08).
     const spent = performance.now() - t0;

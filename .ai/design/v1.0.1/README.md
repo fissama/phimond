@@ -72,3 +72,10 @@ Server sinh 2–3 quái giống nhau (40%/60%, `rules.encounter_weights`), nhậ
 
 ## Đợt 6 (2026-10-22): hoàn thiện v1.0.0 theo review khó tính
 Cân bằng trận (pet Lv1 auto thắng ≥90% Bìa Rừng), Chạy đi trước, combat đặt theo điểm chân (bóng sát chân, đội hình chéo), ×2, hiệu ứng đòn, âm thanh tổng hợp, một bộ khung UI, cài đặt gọn, chi tiết linh thú, dùng thuốc ngoài trận, thẻ starter, chuỗi 10 nhiệm vụ, thoại NPC xoay, cây mờ khi che nhân vật, vòng đỏ dưới quái, chat màn dọc. Kết quả và chấm lại: `REVIEW-v1.0.0-VONG-2.md`.
+
+## Đợt 7 — chuyển động, sảnh, danh sách vẽ lại
+
+- Hình người chơi đuổi theo vị trí logic (hàm mũ, ~40 ms), nhịp bước bám quãng đường, dáng chạy giữ 90 ms khi dừng giữa hai ô (không nháy dáng đứng). Người đi đường tăng/giảm tốc dần, dùng dải đi dọc khi có.
+- Vào Triệu Linh Điện: tâm vòng triệu hồi = ô xuất hiện; nhân vật hiện ra từ chân lên trong cột sáng. Mira ở chéo phải-dưới trụ vàng, hàng trên vòng triệu hồi (có test `TestSummoningHallLayout`).
+- 3 ô nhân vật/tài khoản, chọn Nam/Nữ và đặt tên sau khi tạo ô: đã có từ trước, e2e `smoke.spec.ts` phủ.
+- Danh sách asset cần vẽ lại: `ASSETS-REDRAW-v1.0.0.md`.

@@ -73,8 +73,16 @@ export class CharacterSprite {
   private flip = false;
   private vertical = false;
   private ghost: THREE.Mesh | null = null;
-  /** Tốc độ khung khi chạy/đi (người đi đường đi chậm dùng số nhỏ). */
+  /** Tốc độ khung khi chạy/đi (dùng khi không có quãng đường: người đứng tại chỗ). */
   runFps = 12;
+  /** Số khung chạy ứng với một ô đi được: bước chân khớp quãng đường, không trượt chân. */
+  framesPerCell = 4;
+  /** Độ nảy theo nhịp bước (đơn vị thế giới); 0 để tắt. */
+  bobAmp = 0.03;
+  private phase = 0;
+  private dist = 0;
+  private settle = 0;
+  private stopWant = false;
 
   static async create(id: string, opts: SpriteOpts = {}): Promise<CharacterSprite> {
     const s = new CharacterSprite();
@@ -124,22 +132,47 @@ export class CharacterSprite {
     if (faceLeft !== undefined) this.flip = faceLeft;
     const v = vertical === 'down' ? this.strips.runDown && 'runDown' : vertical === 'up' ? this.strips.runUp && 'runUp' : null;
     this.vertical = !!v;
-    this.mode = running ? (v || (this.strips.run ? 'run' : 'idle')) : 'idle';
+    const want = running ? (v || (this.strips.run ? 'run' : 'idle')) : 'idle';
+    if (want !== 'idle' || this.mode === 'idle') {
+      this.mode = want;
+      this.settle = 0;
+    } else this.stopWant = true; // đang chạy mà xin đứng: chờ một nhịp ngắn (giữa hai bước ô không nháy dáng đứng)
+    if (want !== 'idle') this.stopWant = false;
+  }
+
+  /** Quãng đường (ô) vừa đi kể từ lần cập nhật trước: nhịp bước bám theo quãng đường thật. */
+  travel(cells: number): void {
+    this.dist += cells;
   }
 
   update(dt: number): void {
     if (!this.mesh) return;
     this.t += dt;
+    if (this.stopWant) {
+      this.settle += dt;
+      if (this.settle > 0.09) {
+        this.mode = 'idle';
+        this.stopWant = false;
+        this.settle = 0;
+      }
+    }
     const strip = this.strips[this.mode] ?? this.strips.idle ?? this.strips.still;
     if (!strip) return;
+    const running = this.mode !== 'idle';
+    if (running) this.phase += this.dist * this.framesPerCell;
+    else this.phase = 0;
+    this.dist = 0;
+    // Nảy hai lần mỗi chu kỳ khung (mỗi bước chân một nhịp); đứng yên thì về mặt đất.
+    const cycle = strip.frames > 0 ? (this.phase / strip.frames) % 1 : 0;
+    this.root.position.y = running ? Math.abs(Math.sin(cycle * Math.PI * 2)) * this.bobAmp : 0;
     const mat = this.mesh.material as THREE.MeshBasicMaterial;
     if (mat.map !== strip.tex) {
       mat.map = strip.tex;
       mat.needsUpdate = true;
       if (this.mesh.customDepthMaterial) (this.mesh.customDepthMaterial as THREE.MeshDepthMaterial).map = strip.tex;
     }
-    const fps = this.mode === 'idle' ? 6 : this.runFps;
-    strip.tex.offset.x = (Math.floor(this.t * fps) % strip.frames) / strip.frames;
+    const frame = running ? Math.floor(this.phase) % strip.frames : Math.floor(this.t * 6) % strip.frames;
+    strip.tex.offset.x = frame / strip.frames;
     this.mesh.scale.x = this.flip && !this.vertical ? -1 : 1;
     if (this.ghost) {
       const gm = this.ghost.material as THREE.MeshBasicMaterial;
