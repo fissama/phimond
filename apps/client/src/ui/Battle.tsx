@@ -241,7 +241,7 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
     if (!u) return null;
     const pet = ch.pets.find((p) => p.id === u.id);
     return (
-      <div class="my-plate hud-card" data-testid="battle-player" key={u.id} style={{ top: `calc(${8 + idx * 82}px + var(--safe-t))` }}>
+      <div class={`my-plate hud-card ${allies.length > 1 ? 'compact' : ''}`} data-testid="battle-player" key={u.id} style={{ top: `calc(${8 + idx * (allies.length > 1 ? 70 : 82)}px + var(--safe-t))` }}>
         <div class="ring">
           <PetPortrait species={u.species_id} size={46} />
           {pet && <div class="badge">{pet.level}</div>}
@@ -253,7 +253,7 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
           </div>
           <FrameBar kind="hp" row={0} v={u.hp} max={u.max_hp} label="HP" />
           <FrameBar kind="mp" row={1} v={u.mp} max={u.max_mp} label="MP" />
-          {pet && <FrameBar kind="xp" row={2} v={pet.xp} max={pet.level * 25} label="EXP" />}
+          {pet && allies.length === 1 && <FrameBar kind="xp" row={2} v={pet.xp} max={pet.level * 25} label="EXP" />}
         </div>
       </div>
     );
@@ -267,10 +267,11 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
       if (side === 'enemy') return n === 1 ? { x: 50, y: 50 } : n === 2 ? [{ x: 30, y: 44 }, { x: 70, y: 52 }][i]! : [{ x: 22, y: 44 }, { x: 50, y: 53 }, { x: 78, y: 44 }][i]!;
       return n === 1 ? { x: 50, y: 80 } : [{ x: 25, y: 78 }, { x: 50, y: 84 }, { x: 75, y: 78 }][i]!;
     }
-    // So le chéo về phía pet: con sau cao và lùi trái, con trước thấp và gần giữa; khung tên không đè lên thân con khác.
-    const foe = n === 1 ? [{ x: 30, y: 72 }] : n === 2 ? [{ x: 20, y: 64 }, { x: 35, y: 77 }] : [{ x: 13, y: 60 }, { x: 27, y: 70 }, { x: 41, y: 80 }];
-    const ally = n === 1 ? [{ x: 72, y: 74 }] : [{ x: 68, y: 60 }, { x: 80, y: 71 }, { x: 70, y: 82 }];
-    return (side === 'enemy' ? foe : ally)[i] ?? { x: 50, y: 70 };
+    // Đội hình chữ V đối xứng hai phe ("> <"): A và C cùng cột phía ngoài, B ở giữa nhô vào trong về phía đối thủ.
+    // Phe mình lật gương (x → 100 − x). 1 đơn vị đứng ở tâm, 2 đơn vị là A và C.
+    const V = n === 1 ? [{ x: 26, y: 67 }] : n === 2 ? [{ x: 17, y: 54 }, { x: 17, y: 80 }] : [{ x: 15, y: 51 }, { x: 29, y: 67 }, { x: 15, y: 83 }];
+    const slot = V[i] ?? { x: 26, y: 67 };
+    return side === 'enemy' ? slot : { x: 100 - slot.x, y: slot.y };
   };
   const sceneH = Math.max(240, window.innerHeight - (portrait ? 170 : window.innerHeight < 500 ? 70 : 110));
   const fighter = (u: typeof me, side: 'player' | 'enemy', i: number, n: number) => {
@@ -281,8 +282,8 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
     const art = petArt(u.species_id) as (ReturnType<typeof petArt> & { footPad?: number; bodyH?: number; bodyW?: number }) | null;
     const cell = petAtlas()?.cell ?? 281;
     // Kích thước theo chiều cao cảnh × độ sâu (gần to, xa nhỏ); đông quân thì nhỏ bớt để không chen nhau.
-    const depth = portrait ? Math.min(1.05, 0.85 + (at.y - 44) / 90) : 0.8 + (at.y - 60) / 55;
-    const crowd = n === 1 ? 1 : n === 2 ? 0.86 : 0.76;
+    const depth = portrait ? Math.min(1.05, 0.85 + (at.y - 44) / 90) : 0.84 + (at.y - 51) / 100;
+    const crowd = portrait ? (n === 1 ? 1 : n === 2 ? 0.86 : 0.76) : n === 1 ? 1 : n === 2 ? 0.8 : 0.7;
     const size = Math.round(sceneH * (portrait ? 0.36 : 0.44) * depth * crowd);
     const k = size / cell;
     const foot = (art?.footPad ?? cell * 0.2) * k; // khoảng trống trong khung dưới chân
@@ -317,7 +318,17 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
               </span>
             ))}
         </div>
-        {side === 'enemy' && <div class="plate-anchor" style={{ bottom: bodyH + 10 }}>{enemyPlate(u)}</div>}
+        {side === 'enemy' &&
+          (portrait ? (
+            <div class="plate-anchor" style={{ bottom: bodyH + 10 }}>
+              {enemyPlate(u)}
+            </div>
+          ) : (
+            // Màn ngang: khung tên đặt cạnh thân, phía trong (hướng đối thủ), để A/C cùng cột không che nhau.
+            <div class="plate-anchor side" style={{ left: `calc(50% + ${Math.round(bodyW * 0.42)}px)`, bottom: Math.round(bodyH * 0.38) }}>
+              {enemyPlate(u)}
+            </div>
+          ))}
       </div>
     );
   };

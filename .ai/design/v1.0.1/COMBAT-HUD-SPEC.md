@@ -16,7 +16,7 @@ Cập nhật 2026-10-22. Chủ game quyết: **đánh quái hoang = 1 pet đấu
 | Bắt | Bắt 1 con: con đó rời sân (HP→0), vẫn tính XP; trận chỉ kết thúc `capture` khi không còn quái sống, `win` nếu hạ nốt bằng đánh. |
 | Thưởng | XP = tổng theo từng quái bị hạ/bắt (BattleXP × cấp quái). Vàng = BattleGold × số quái (**xem cờ 2**). |
 | Kết thúc | Thắng khi hết quái sống; thua khi pet mình hết HP. Mỗi quái sống ra đòn 1 lần/lượt nhắm pet mình. |
-| Bố cục | Đặt theo điểm chân trên mặt đất phối cảnh (bóng đúng chân). Ngang: quái chéo A (13%,60%) → B (27%,70%) → C (41%,80%), pet (72%,74%). Dọc (<700px): quái hàng trên, pet hàng dưới. 3v3: phe mình đã render nhiều ally theo slot (68%,60%) · (80%,71%) · (70%,82%), thẻ trạng thái xếp dọc góc trên trái. |
+| Bố cục | Màn ngang: đội hình chữ V đối xứng "> <". Quái: A (15%,51%) và C (15%,83%) cùng cột ngoài, B (29%,67%) ở giữa nhô vào trong; 1 quái đứng tâm (26%,67%), 2 quái là A và C. Phe mình lật gương (x → 100 − x). Đặt theo điểm chân (bóng đúng chân), gần camera to hơn. Khung tên quái đặt cạnh thân phía trong để A/C cùng cột không che nhau; mũi tên ◀ chỉ mục tiêu. 3v3: thẻ trạng thái phe mình rút gọn (HP, MP), xếp dọc góc trên trái. Màn dọc (<700px): quái hàng trên, pet hàng dưới, khung tên trên đầu. Ảnh: `combat-1v3/v-1v3.png`, `combat-1v3/v-3v3-preview.png` (3v3 giả lập ở client). |
 
 ## Cờ cần chủ game quyết
 1. **Xung đột master spec P02-R07**: ghi "3 quái với identity riêng" và chưa chốt thành phần encounter, trái với quyết định "2–3 quái giống nhau, P(3)>P(2)". Chưa sửa master spec. Đề xuất sửa: *"Encounter hoang gồm 2–3 quái cùng loài và cùng cấp (xác suất cấu hình, mặc định 40%/60%); identity khác nhau chỉ áp dụng cho boss/sự kiện. Thành phần encounter khi party >1 người quyết riêng."*

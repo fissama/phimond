@@ -364,3 +364,13 @@ button:disabled { opacity: 0.45; cursor: default; }
 .dialog { width: min(620px, 100%); }
 .set-row .seg .btn { padding: 0 10px; font-size: 13.5px; min-height: 32px; }
 .set-grid { gap: 6px; }
+
+/* Đội hình chữ V: khung tên quái nằm cạnh thân phía trong; mũi tên chọn mục tiêu chỉ vào quái. */
+.battle .plate-anchor.side { transform: none; }
+.battle .plate-anchor.side .foe-plate { width: 132px; padding: 3px 8px 4px; }
+.battle .plate-anchor.side .foe-plate .nm { font-size: 12px; }
+.battle .fighter.targetable.aimed .plate-anchor.side .foe-plate::before { content: '◀'; left: -18px; top: 50%; transform: translateY(-50%); animation: tpoke 0.7s ease-in-out infinite alternate; }
+@keyframes tpoke { to { transform: translate(-5px, -50%); } }
+.battle .my-plate.compact { padding: 3px 8px 3px 4px; }
+.battle .my-plate.compact { width: 222px; }
+.battle .my-plate.compact .ring { transform: scale(0.82); transform-origin: left center; margin-right: -8px; }
