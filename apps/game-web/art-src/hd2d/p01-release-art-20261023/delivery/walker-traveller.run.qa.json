@@ -1,0 +1,300 @@
+{
+  "name": "walker-traveller.run.png",
+  "size": [
+    1536,
+    192
+  ],
+  "frames": 8,
+  "cell": [
+    192,
+    192
+  ],
+  "pivot": [
+    96,
+    184
+  ],
+  "colors": 48,
+  "partial_alpha": 0,
+  "raw_sha256": "8c6def58d260f08121df987e1338dd2f0678d7c01d13f84d37b4632de17ee2ec",
+  "sha256": "aaa62947de2018cb2d93de1f108dc940b0b25cc09d1eddc380634de84ebe7253",
+  "source_boxes": [
+    [
+      237,
+      120,
+      1098,
+      1221
+    ],
+    [
+      1509,
+      120,
+      2351,
+      1219
+    ],
+    [
+      2737,
+      122,
+      3605,
+      1222
+    ],
+    [
+      3999,
+      120,
+      4858,
+      1213
+    ],
+    [
+      5257,
+      119,
+      6112,
+      1221
+    ],
+    [
+      6486,
+      121,
+      7367,
+      1218
+    ],
+    [
+      7763,
+      120,
+      8620,
+      1203
+    ],
+    [
+      9014,
+      118,
+      9897,
+      1214
+    ]
+  ],
+  "transforms": [
+    {
+      "translate": [
+        25,
+        16
+      ],
+      "uniform_scale": 0.15245009074410162,
+      "head_anchor_x": 96
+    },
+    {
+      "translate": [
+        28,
+        16
+      ],
+      "uniform_scale": 0.15245009074410162,
+      "head_anchor_x": 96
+    },
+    {
+      "translate": [
+        24,
+        16
+      ],
+      "uniform_scale": 0.15245009074410162,
+      "head_anchor_x": 96
+    },
+    {
+      "translate": [
+        25,
+        17
+      ],
+      "uniform_scale": 0.15245009074410162,
+      "head_anchor_x": 96
+    },
+    {
+      "translate": [
+        26,
+        16
+      ],
+      "uniform_scale": 0.15245009074410162,
+      "head_anchor_x": 96
+    },
+    {
+      "translate": [
+        22,
+        17
+      ],
+      "uniform_scale": 0.15245009074410162,
+      "head_anchor_x": 96
+    },
+    {
+      "translate": [
+        26,
+        19
+      ],
+      "uniform_scale": 0.15245009074410162,
+      "head_anchor_x": 96
+    },
+    {
+      "translate": [
+        25,
+        17
+      ],
+      "uniform_scale": 0.15245009074410162,
+      "head_anchor_x": 96
+    }
+  ],
+  "postprocess": "key magenta, crop equal horizontal cells, ONE shared uniform nearest-neighbor scale, translation-only anchor, shared48palette. No pose synthesis, warp, flip, or retouch.",
+  "approved": false,
+  "status": "forge_fail_not_release_approved",
+  "frame_bboxes": [
+    [
+      25,
+      16,
+      156,
+      184
+    ],
+    [
+      28,
+      16,
+      156,
+      184
+    ],
+    [
+      24,
+      16,
+      156,
+      184
+    ],
+    [
+      25,
+      17,
+      156,
+      184
+    ],
+    [
+      26,
+      16,
+      156,
+      184
+    ],
+    [
+      22,
+      17,
+      156,
+      184
+    ],
+    [
+      26,
+      19,
+      157,
+      184
+    ],
+    [
+      25,
+      17,
+      160,
+      184
+    ]
+  ],
+  "duplicate_pairs": [],
+  "warnings": [],
+  "body_heights": [
+    168,
+    168,
+    168,
+    167,
+    168,
+    167,
+    165,
+    167
+  ],
+  "target_height": 168,
+  "scale_reference": "existing production idle stature; player168, boy128, girl124, baker164, elder158",
+  "Claude_approved": false,
+  "forge_commit": "5324342fdfab72430f4e9604f3fe427009f8596d",
+  "forge_registration": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-traveller.run/aaa62947de20/registered/scale-frames.json",
+  "forge_qc": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-traveller.run/aaa62947de20/qc/sheet-qc.json",
+  "forge_unresolved_checks": [
+    {
+      "id": "leg_alternation",
+      "status": "fail",
+      "value": [
+        "near",
+        "near",
+        "near",
+        "near",
+        "near",
+        "near",
+        "near",
+        "near"
+      ],
+      "threshold": "lead differs between i and i+n/2",
+      "verdict": "duplicated half-cycle: the same leg leads in both halves",
+      "pairs": [
+        [
+          0,
+          4,
+          true
+        ],
+        [
+          1,
+          5,
+          true
+        ],
+        [
+          2,
+          6,
+          true
+        ],
+        [
+          3,
+          7,
+          true
+        ]
+      ],
+      "mode": "auto-luminance",
+      "near_leading": 8,
+      "unclear": 0,
+      "half_cycle": {
+        "pairs": [
+          {
+            "pair": [
+              0,
+              4
+            ],
+            "iou_best_shift": 0.9194
+          },
+          {
+            "pair": [
+              1,
+              5
+            ],
+            "iou_best_shift": 0.9195
+          },
+          {
+            "pair": [
+              2,
+              6
+            ],
+            "iou_best_shift": 0.8773
+          },
+          {
+            "pair": [
+              3,
+              7
+            ],
+            "iou_best_shift": 0.9156
+          }
+        ],
+        "adjacent_iou_median": 0.8982,
+        "half_cycle_iou_median": 0.9175
+      },
+      "fix": "regenerate frames 4-7 with NEAR and FAR swapped (attach frames 0-3 and the guide)"
+    },
+    {
+      "id": "seam",
+      "status": "warn",
+      "value": 1.65,
+      "threshold": 1.5,
+      "transitions": [
+        [
+          5,
+          6
+        ]
+      ],
+      "note": "largest frame-to-frame change over the median step; review these joins first"
+    }
+  ],
+  "registration_input_sha256": "aaa62947de2018cb2d93de1f108dc940b0b25cc09d1eddc380634de84ebe7253",
+  "registration_processing": "ASF scale_frames.py, scale1, nearest, integer translation only, root-lock torso-x, shared192canvas and96,184anchor. No pose synthesis, warping, per-frame scaling or interpolation."
+}

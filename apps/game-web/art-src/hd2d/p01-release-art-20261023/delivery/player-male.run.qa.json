@@ -1,0 +1,266 @@
+{
+  "name": "player-male.run.png",
+  "size": [
+    1536,
+    192
+  ],
+  "frames": 8,
+  "cell": [
+    192,
+    192
+  ],
+  "pivot": [
+    96,
+    184
+  ],
+  "colors": 48,
+  "partial_alpha": 0,
+  "raw_sha256": "e90d3047fdb6a57c0762e012ca18fc850576c22db2f4c83ac725006c9893a659",
+  "sha256": "96d67111eeeff0c41d49e33e823c1f04f1a5cae07a1b55b1322fffd34e11ea38",
+  "source_boxes": [
+    [
+      79,
+      24,
+      347,
+      404
+    ],
+    [
+      498,
+      24,
+      700,
+      404
+    ],
+    [
+      905,
+      24,
+      1106,
+      404
+    ],
+    [
+      1339,
+      16,
+      1569,
+      394
+    ],
+    [
+      1729,
+      16,
+      1986,
+      398
+    ],
+    [
+      2147,
+      16,
+      2370,
+      398
+    ],
+    [
+      2593,
+      11,
+      2806,
+      389
+    ],
+    [
+      2987,
+      11,
+      3245,
+      390
+    ]
+  ],
+  "transforms": [
+    {
+      "translate": [
+        24,
+        17
+      ],
+      "uniform_scale": 0.4397905759162304,
+      "head_anchor_x": 96
+    },
+    {
+      "translate": [
+        33,
+        17
+      ],
+      "uniform_scale": 0.4397905759162304,
+      "head_anchor_x": 96
+    },
+    {
+      "translate": [
+        34,
+        17
+      ],
+      "uniform_scale": 0.4397905759162304,
+      "head_anchor_x": 96
+    },
+    {
+      "translate": [
+        26,
+        18
+      ],
+      "uniform_scale": 0.4397905759162304,
+      "head_anchor_x": 96
+    },
+    {
+      "translate": [
+        23,
+        16
+      ],
+      "uniform_scale": 0.4397905759162304,
+      "head_anchor_x": 96
+    },
+    {
+      "translate": [
+        27,
+        16
+      ],
+      "uniform_scale": 0.4397905759162304,
+      "head_anchor_x": 96
+    },
+    {
+      "translate": [
+        28,
+        18
+      ],
+      "uniform_scale": 0.4397905759162304,
+      "head_anchor_x": 96
+    },
+    {
+      "translate": [
+        23,
+        17
+      ],
+      "uniform_scale": 0.4397905759162304,
+      "head_anchor_x": 96
+    }
+  ],
+  "postprocess": "key magenta, crop equal horizontal cells, ONE shared uniform nearest-neighbor scale, translation-only anchor, shared48palette. No pose synthesis, warp, flip, or retouch.",
+  "approved": false,
+  "status": "forge_needs-visual-review_not_release_approved",
+  "frame_bboxes": [
+    [
+      24,
+      17,
+      142,
+      184
+    ],
+    [
+      33,
+      17,
+      122,
+      184
+    ],
+    [
+      34,
+      17,
+      122,
+      184
+    ],
+    [
+      26,
+      18,
+      127,
+      184
+    ],
+    [
+      23,
+      16,
+      136,
+      184
+    ],
+    [
+      27,
+      16,
+      125,
+      184
+    ],
+    [
+      28,
+      18,
+      122,
+      184
+    ],
+    [
+      23,
+      17,
+      136,
+      184
+    ]
+  ],
+  "duplicate_pairs": [],
+  "warnings": [],
+  "body_heights": [
+    167,
+    167,
+    167,
+    166,
+    168,
+    168,
+    166,
+    167
+  ],
+  "isolated_alpha_pixels_beyond_3px_from_largest_component": [],
+  "isolated_pixel_check": "Diagnostic only: weapons, hair clusters and legitimate separate extremities may appear; no pixels deleted by component filter.",
+  "Claude_approved": false,
+  "forge_commit": "5324342fdfab72430f4e9604f3fe427009f8596d",
+  "forge_registration": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/player-male.run/96d67111eeef/registered/scale-frames.json",
+  "forge_qc": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/player-male.run/96d67111eeef/qc/sheet-qc.json",
+  "forge_unresolved_checks": [
+    {
+      "id": "leg_alternation",
+      "status": "needs-visual-review",
+      "value": [
+        "near",
+        "unclear",
+        "unclear",
+        "unclear",
+        "unclear",
+        "unclear",
+        "near",
+        "near"
+      ],
+      "threshold": "lead differs between i and i+n/2",
+      "verdict": "unknown: no pair of half-cycle frames shows a clear NEAR/FAR lead",
+      "pairs": [],
+      "mode": "auto-luminance",
+      "near_leading": 3,
+      "unclear": 5,
+      "half_cycle": {
+        "pairs": [
+          {
+            "pair": [
+              0,
+              4
+            ],
+            "iou_best_shift": 0.7019
+          },
+          {
+            "pair": [
+              1,
+              5
+            ],
+            "iou_best_shift": 0.8234
+          },
+          {
+            "pair": [
+              2,
+              6
+            ],
+            "iou_best_shift": 0.7244
+          },
+          {
+            "pair": [
+              3,
+              7
+            ],
+            "iou_best_shift": 0.6402
+          }
+        ],
+        "adjacent_iou_median": 0.6969,
+        "half_cycle_iou_median": 0.7131
+      },
+      "fix": "regenerate frames 4-7 with NEAR and FAR swapped (attach frames 0-3 and the guide)"
+    }
+  ],
+  "registration_input_sha256": "96d67111eeeff0c41d49e33e823c1f04f1a5cae07a1b55b1322fffd34e11ea38",
+  "registration_processing": "ASF scale_frames.py, scale1, nearest, integer translation only, root-lock torso-x, shared192canvas and96,184anchor. No pose synthesis, warping, per-frame scaling or interpolation."
+}

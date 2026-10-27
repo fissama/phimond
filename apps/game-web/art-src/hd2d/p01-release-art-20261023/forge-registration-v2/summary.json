@@ -1,0 +1,955 @@
+[
+  {
+    "name": "player-female.run-down",
+    "registration": "pass",
+    "qc": "pass",
+    "unresolved": [],
+    "input_sha256": "1732b61b960bae5e9e6a70493889e016d1d20fa49b3f1dba8f2f00c4c6a5544b",
+    "output_sha256": "1732b61b960bae5e9e6a70493889e016d1d20fa49b3f1dba8f2f00c4c6a5544b",
+    "report": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/player-female.run-down/1732b61b960b/qc/sheet-qc.json"
+  },
+  {
+    "name": "player-female.run-up",
+    "registration": "pass",
+    "qc": "warn",
+    "unresolved": [
+      {
+        "id": "seam",
+        "status": "warn",
+        "value": 2.41,
+        "threshold": 1.5,
+        "transitions": [
+          [
+            3,
+            4
+          ],
+          [
+            7,
+            0
+          ]
+        ],
+        "note": "largest frame-to-frame change over the median step; review these joins first"
+      }
+    ],
+    "input_sha256": "7e45ce2f4adc0fa8b5ab32e87f4f394b05654be527ad87a2e60b03ac07230094",
+    "output_sha256": "7e45ce2f4adc0fa8b5ab32e87f4f394b05654be527ad87a2e60b03ac07230094",
+    "report": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/player-female.run-up/7e45ce2f4adc/qc/sheet-qc.json"
+  },
+  {
+    "name": "player-female.run",
+    "registration": "pass",
+    "qc": "needs-visual-review",
+    "unresolved": [
+      {
+        "id": "leg_alternation",
+        "status": "needs-visual-review",
+        "value": [
+          "near",
+          "unclear",
+          "near",
+          "near",
+          "unclear",
+          "unclear",
+          "unclear",
+          "unclear"
+        ],
+        "threshold": "lead differs between i and i+n/2",
+        "verdict": "unknown: no pair of half-cycle frames shows a clear NEAR/FAR lead",
+        "pairs": [],
+        "mode": "auto-luminance",
+        "near_leading": 3,
+        "unclear": 5,
+        "half_cycle": {
+          "pairs": [
+            {
+              "pair": [
+                0,
+                4
+              ],
+              "iou_best_shift": 0.6854
+            },
+            {
+              "pair": [
+                1,
+                5
+              ],
+              "iou_best_shift": 0.7947
+            },
+            {
+              "pair": [
+                2,
+                6
+              ],
+              "iou_best_shift": 0.6772
+            },
+            {
+              "pair": [
+                3,
+                7
+              ],
+              "iou_best_shift": 0.8054
+            }
+          ],
+          "adjacent_iou_median": 0.7031,
+          "half_cycle_iou_median": 0.74
+        },
+        "fix": "regenerate frames 4-7 with NEAR and FAR swapped (attach frames 0-3 and the guide)"
+      }
+    ],
+    "input_sha256": "c26fff8333fa748d6456ecde6d891fd3130fd5a6b5d1dd95e1e5e43575d4aac5",
+    "output_sha256": "c26fff8333fa748d6456ecde6d891fd3130fd5a6b5d1dd95e1e5e43575d4aac5",
+    "report": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/player-female.run/c26fff8333fa/qc/sheet-qc.json"
+  },
+  {
+    "name": "player-male.run-down",
+    "registration": "pass",
+    "qc": "pass",
+    "unresolved": [],
+    "input_sha256": "db080b106698983c6ac2f9281eac45234a5693294bf100f01440ed8420ace099",
+    "output_sha256": "db080b106698983c6ac2f9281eac45234a5693294bf100f01440ed8420ace099",
+    "report": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/player-male.run-down/db080b106698/qc/sheet-qc.json"
+  },
+  {
+    "name": "player-male.run-up",
+    "registration": "pass",
+    "qc": "warn",
+    "unresolved": [
+      {
+        "id": "seam",
+        "status": "warn",
+        "value": 1.55,
+        "threshold": 1.5,
+        "transitions": [
+          [
+            1,
+            2
+          ]
+        ],
+        "note": "largest frame-to-frame change over the median step; review these joins first"
+      }
+    ],
+    "input_sha256": "0fd5c84a0aaee3ebed07de7c3534e18cc47aaa28f6315b4bf3410d0a6dc1a59a",
+    "output_sha256": "0fd5c84a0aaee3ebed07de7c3534e18cc47aaa28f6315b4bf3410d0a6dc1a59a",
+    "report": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/player-male.run-up/0fd5c84a0aae/qc/sheet-qc.json"
+  },
+  {
+    "name": "player-male.run",
+    "registration": "pass",
+    "qc": "needs-visual-review",
+    "unresolved": [
+      {
+        "id": "leg_alternation",
+        "status": "needs-visual-review",
+        "value": [
+          "near",
+          "unclear",
+          "unclear",
+          "unclear",
+          "unclear",
+          "unclear",
+          "near",
+          "near"
+        ],
+        "threshold": "lead differs between i and i+n/2",
+        "verdict": "unknown: no pair of half-cycle frames shows a clear NEAR/FAR lead",
+        "pairs": [],
+        "mode": "auto-luminance",
+        "near_leading": 3,
+        "unclear": 5,
+        "half_cycle": {
+          "pairs": [
+            {
+              "pair": [
+                0,
+                4
+              ],
+              "iou_best_shift": 0.7019
+            },
+            {
+              "pair": [
+                1,
+                5
+              ],
+              "iou_best_shift": 0.8234
+            },
+            {
+              "pair": [
+                2,
+                6
+              ],
+              "iou_best_shift": 0.7244
+            },
+            {
+              "pair": [
+                3,
+                7
+              ],
+              "iou_best_shift": 0.6402
+            }
+          ],
+          "adjacent_iou_median": 0.6969,
+          "half_cycle_iou_median": 0.7131
+        },
+        "fix": "regenerate frames 4-7 with NEAR and FAR swapped (attach frames 0-3 and the guide)"
+      }
+    ],
+    "input_sha256": "96d67111eeeff0c41d49e33e823c1f04f1a5cae07a1b55b1322fffd34e11ea38",
+    "output_sha256": "96d67111eeeff0c41d49e33e823c1f04f1a5cae07a1b55b1322fffd34e11ea38",
+    "report": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/player-male.run/96d67111eeef/qc/sheet-qc.json"
+  },
+  {
+    "name": "walker-baker.run-down",
+    "registration": "pass",
+    "qc": "warn",
+    "unresolved": [
+      {
+        "id": "near_duplicates",
+        "status": "warn",
+        "value": [
+          [
+            6,
+            7
+          ]
+        ],
+        "threshold": 0.95,
+        "note": "pairs with best-shift silhouette IoU at or above the threshold and similar colours"
+      }
+    ],
+    "input_sha256": "9f93d2fe0ef62b57beca934cef92798f7d712ac5d35d690ece9c477b9baaed36",
+    "output_sha256": "0fd9b7ee9c386bcad7ec7b7f809a60420173d17a1898fd16f3421b6416e644fa",
+    "report": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-baker.run-down/9f93d2fe0ef6/qc/sheet-qc.json"
+  },
+  {
+    "name": "walker-baker.run-up",
+    "registration": "pass",
+    "qc": "warn",
+    "unresolved": [
+      {
+        "id": "seam",
+        "status": "warn",
+        "value": 1.58,
+        "threshold": 1.5,
+        "transitions": [
+          [
+            2,
+            3
+          ]
+        ],
+        "note": "largest frame-to-frame change over the median step; review these joins first"
+      }
+    ],
+    "input_sha256": "30c4a2ffca5d9e96f6c0c5d37310bccbed67aae7f969363f926c8595cb75e159",
+    "output_sha256": "30c4a2ffca5d9e96f6c0c5d37310bccbed67aae7f969363f926c8595cb75e159",
+    "report": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-baker.run-up/30c4a2ffca5d/qc/sheet-qc.json"
+  },
+  {
+    "name": "walker-baker.run",
+    "registration": "pass",
+    "qc": "warn",
+    "unresolved": [
+      {
+        "id": "leg_alternation",
+        "status": "warn",
+        "value": [
+          "near",
+          "near",
+          "unclear",
+          "near",
+          "far",
+          "near",
+          "far",
+          "near"
+        ],
+        "threshold": "lead differs between i and i+n/2",
+        "verdict": "mixed: some half-cycle pairs repeat the lead",
+        "pairs": [
+          [
+            0,
+            4,
+            false
+          ],
+          [
+            1,
+            5,
+            true
+          ],
+          [
+            3,
+            7,
+            true
+          ]
+        ],
+        "mode": "auto-luminance",
+        "near_leading": 5,
+        "unclear": 1,
+        "half_cycle": {
+          "pairs": [
+            {
+              "pair": [
+                0,
+                4
+              ],
+              "iou_best_shift": 0.8342
+            },
+            {
+              "pair": [
+                1,
+                5
+              ],
+              "iou_best_shift": 0.8572
+            },
+            {
+              "pair": [
+                2,
+                6
+              ],
+              "iou_best_shift": 0.8336
+            },
+            {
+              "pair": [
+                3,
+                7
+              ],
+              "iou_best_shift": 0.8595
+            }
+          ],
+          "adjacent_iou_median": 0.7567,
+          "half_cycle_iou_median": 0.8457
+        },
+        "fix": "regenerate frames 4-7 with NEAR and FAR swapped (attach frames 0-3 and the guide)"
+      }
+    ],
+    "input_sha256": "7b625e0ca40f5af1aafdb6856e6a702cae08e263696d9f23695a46d28921edfa",
+    "output_sha256": "7b625e0ca40f5af1aafdb6856e6a702cae08e263696d9f23695a46d28921edfa",
+    "report": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-baker.run/7b625e0ca40f/qc/sheet-qc.json"
+  },
+  {
+    "name": "walker-boy.run-down",
+    "registration": "pass",
+    "qc": "pass",
+    "unresolved": [],
+    "input_sha256": "16673e97d4d1be7acc0f2ecace6f5721d81bc8121fbecb3954c255b3f011e376",
+    "output_sha256": "16673e97d4d1be7acc0f2ecace6f5721d81bc8121fbecb3954c255b3f011e376",
+    "report": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-boy.run-down/16673e97d4d1/qc/sheet-qc.json"
+  },
+  {
+    "name": "walker-boy.run-up",
+    "registration": "pass",
+    "qc": "warn",
+    "unresolved": [
+      {
+        "id": "near_duplicates",
+        "status": "warn",
+        "value": [
+          [
+            1,
+            7
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "threshold": 0.95,
+        "note": "pairs with best-shift silhouette IoU at or above the threshold and similar colours"
+      },
+      {
+        "id": "seam",
+        "status": "warn",
+        "value": 1.52,
+        "threshold": 1.5,
+        "transitions": [
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ]
+        ],
+        "note": "largest frame-to-frame change over the median step; review these joins first"
+      }
+    ],
+    "input_sha256": "489a0357623204c2338648744442b22c032cadac466bfb36aaf0f279ccf2f308",
+    "output_sha256": "489a0357623204c2338648744442b22c032cadac466bfb36aaf0f279ccf2f308",
+    "report": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-boy.run-up/489a03576232/qc/sheet-qc.json"
+  },
+  {
+    "name": "walker-boy.run",
+    "registration": "pass",
+    "qc": "warn",
+    "unresolved": [
+      {
+        "id": "seam",
+        "status": "warn",
+        "value": 1.51,
+        "threshold": 1.5,
+        "transitions": [
+          [
+            0,
+            1
+          ]
+        ],
+        "note": "largest frame-to-frame change over the median step; review these joins first"
+      }
+    ],
+    "input_sha256": "d6d50f47fdc417c003bd2ab5bf33c8911ddcb6bfcbf75796f49e18077eba9904",
+    "output_sha256": "d6d50f47fdc417c003bd2ab5bf33c8911ddcb6bfcbf75796f49e18077eba9904",
+    "report": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-boy.run/d6d50f47fdc4/qc/sheet-qc.json"
+  },
+  {
+    "name": "walker-elder.run-down",
+    "registration": "pass",
+    "qc": "warn",
+    "unresolved": [
+      {
+        "id": "seam",
+        "status": "warn",
+        "value": 1.78,
+        "threshold": 1.5,
+        "transitions": [
+          [
+            1,
+            2
+          ],
+          [
+            6,
+            7
+          ]
+        ],
+        "note": "largest frame-to-frame change over the median step; review these joins first"
+      }
+    ],
+    "input_sha256": "2a44237b700313e5188966d03542fbeace0012b91f50e067f7ab4f89b2d91326",
+    "output_sha256": "58334ff20d60e3a39054e68dacba8a33243a267ce17d087646e6a6301a633372",
+    "report": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-elder.run-down/2a44237b7003/qc/sheet-qc.json"
+  },
+  {
+    "name": "walker-elder.run-up",
+    "registration": "pass",
+    "qc": "pass",
+    "unresolved": [],
+    "input_sha256": "fb8fac352c3a86af51eae5ab7f842b1782bc475bc63e7b21fed5a4772e7ab1b5",
+    "output_sha256": "e212f8165d111bb5a393f58add424a77d5a7cb5b8cf0f7b23a10f4878be7c9ab",
+    "report": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-elder.run-up/fb8fac352c3a/qc/sheet-qc.json"
+  },
+  {
+    "name": "walker-elder.run",
+    "registration": "pass",
+    "qc": "fail",
+    "unresolved": [
+      {
+        "id": "leg_alternation",
+        "status": "fail",
+        "value": [
+          "near",
+          "near",
+          "near",
+          "near",
+          "near",
+          "near",
+          "near",
+          "near"
+        ],
+        "threshold": "lead differs between i and i+n/2",
+        "verdict": "duplicated half-cycle: the same leg leads in both halves",
+        "pairs": [
+          [
+            0,
+            4,
+            true
+          ],
+          [
+            1,
+            5,
+            true
+          ],
+          [
+            2,
+            6,
+            true
+          ],
+          [
+            3,
+            7,
+            true
+          ]
+        ],
+        "mode": "auto-luminance",
+        "near_leading": 8,
+        "unclear": 0,
+        "half_cycle": {
+          "pairs": [
+            {
+              "pair": [
+                0,
+                4
+              ],
+              "iou_best_shift": 0.8315
+            },
+            {
+              "pair": [
+                1,
+                5
+              ],
+              "iou_best_shift": 0.8424
+            },
+            {
+              "pair": [
+                2,
+                6
+              ],
+              "iou_best_shift": 0.65
+            },
+            {
+              "pair": [
+                3,
+                7
+              ],
+              "iou_best_shift": 0.8768
+            }
+          ],
+          "adjacent_iou_median": 0.79,
+          "half_cycle_iou_median": 0.837
+        },
+        "fix": "regenerate frames 4-7 with NEAR and FAR swapped (attach frames 0-3 and the guide)"
+      }
+    ],
+    "input_sha256": "60211d02fd9fae04c73f21a8d20ba6a1475cf7ff903c56cfc193d124d6c69d36",
+    "output_sha256": "60211d02fd9fae04c73f21a8d20ba6a1475cf7ff903c56cfc193d124d6c69d36",
+    "report": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-elder.run/60211d02fd9f/qc/sheet-qc.json"
+  },
+  {
+    "name": "walker-girl.run-down",
+    "registration": "pass",
+    "qc": "warn",
+    "unresolved": [
+      {
+        "id": "near_duplicates",
+        "status": "warn",
+        "value": [
+          [
+            2,
+            3
+          ]
+        ],
+        "threshold": 0.95,
+        "note": "pairs with best-shift silhouette IoU at or above the threshold and similar colours"
+      }
+    ],
+    "input_sha256": "6b9bfdbdc7faed6e69903365d50762669ec0e8de0ac947824aa757861fabe9be",
+    "output_sha256": "871f150cecbd6528f01f974ec157488c48fa6c7ae7a74e458195763b95579a6d",
+    "report": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-girl.run-down/6b9bfdbdc7fa/qc/sheet-qc.json"
+  },
+  {
+    "name": "walker-girl.run-up",
+    "registration": "pass",
+    "qc": "pass",
+    "unresolved": [],
+    "input_sha256": "1ea946488bb4de3d4e1a40fadfb00ad82d8c56fc0e67f8006d5faadaa1f77ada",
+    "output_sha256": "1ea946488bb4de3d4e1a40fadfb00ad82d8c56fc0e67f8006d5faadaa1f77ada",
+    "report": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-girl.run-up/1ea946488bb4/qc/sheet-qc.json"
+  },
+  {
+    "name": "walker-girl.run",
+    "registration": "pass",
+    "qc": "warn",
+    "unresolved": [
+      {
+        "id": "leg_alternation",
+        "status": "warn",
+        "value": [
+          "near",
+          "near",
+          "near",
+          "near",
+          "far",
+          "near",
+          "near",
+          "near"
+        ],
+        "threshold": "lead differs between i and i+n/2",
+        "verdict": "mixed: some half-cycle pairs repeat the lead",
+        "pairs": [
+          [
+            0,
+            4,
+            false
+          ],
+          [
+            1,
+            5,
+            true
+          ],
+          [
+            2,
+            6,
+            true
+          ],
+          [
+            3,
+            7,
+            true
+          ]
+        ],
+        "mode": "auto-luminance",
+        "near_leading": 7,
+        "unclear": 0,
+        "half_cycle": {
+          "pairs": [
+            {
+              "pair": [
+                0,
+                4
+              ],
+              "iou_best_shift": 0.768
+            },
+            {
+              "pair": [
+                1,
+                5
+              ],
+              "iou_best_shift": 0.8955
+            },
+            {
+              "pair": [
+                2,
+                6
+              ],
+              "iou_best_shift": 0.849
+            },
+            {
+              "pair": [
+                3,
+                7
+              ],
+              "iou_best_shift": 0.8002
+            }
+          ],
+          "adjacent_iou_median": 0.7291,
+          "half_cycle_iou_median": 0.8246
+        },
+        "fix": "regenerate frames 4-7 with NEAR and FAR swapped (attach frames 0-3 and the guide)"
+      }
+    ],
+    "input_sha256": "3599f8b748dcc374aee9133a12069dbb90131fa6a63e2b13b1f640360cb4a894",
+    "output_sha256": "3599f8b748dcc374aee9133a12069dbb90131fa6a63e2b13b1f640360cb4a894",
+    "report": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-girl.run/3599f8b748dc/qc/sheet-qc.json"
+  },
+  {
+    "name": "walker-guard.run-down",
+    "registration": "pass",
+    "qc": "pass",
+    "unresolved": [],
+    "input_sha256": "aa67537336ecd5b612e8320eb0f64bc6b02f3e1b30f796157df70d712a0343ba",
+    "output_sha256": "aa67537336ecd5b612e8320eb0f64bc6b02f3e1b30f796157df70d712a0343ba",
+    "report": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-guard.run-down/aa67537336ec/qc/sheet-qc.json"
+  },
+  {
+    "name": "walker-guard.run-up",
+    "registration": "pass",
+    "qc": "fail",
+    "unresolved": [
+      {
+        "id": "identity_head_ratio",
+        "status": "fail",
+        "value": {
+          "0": 1.0,
+          "1": 1.0,
+          "2": 1.0,
+          "3": 1.0,
+          "4": 1.06,
+          "5": 1.06,
+          "6": 1.02,
+          "7": 1.0
+        },
+        "threshold": [
+          0.95,
+          1.05
+        ],
+        "frames": [
+          4,
+          5
+        ],
+        "note": "head scale against the median frame (frame 0 template)"
+      },
+      {
+        "id": "seam",
+        "status": "warn",
+        "value": 1.55,
+        "threshold": 1.5,
+        "transitions": [
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "note": "largest frame-to-frame change over the median step; review these joins first"
+      }
+    ],
+    "input_sha256": "02aeed1ce3d8279d5cca3adbed983f48aa739579c3879aaa079ece264e37b02a",
+    "output_sha256": "5e2dd56b3e89afeb226e901eedeb2ba3eeb690379b561ca4c5a30b8fa5d07fc9",
+    "report": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-guard.run-up/02aeed1ce3d8/qc/sheet-qc.json"
+  },
+  {
+    "name": "walker-guard.run",
+    "registration": "pass",
+    "qc": "fail",
+    "unresolved": [
+      {
+        "id": "identity_head_ratio",
+        "status": "fail",
+        "value": {
+          "0": 1.02,
+          "1": 0.939,
+          "2": 0.939,
+          "3": 0.98,
+          "4": 1.02,
+          "5": 0.939,
+          "6": 1.02,
+          "7": 1.02
+        },
+        "threshold": [
+          0.95,
+          1.05
+        ],
+        "frames": [
+          1,
+          2,
+          5
+        ],
+        "note": "head scale against the median frame (frame 0 template)"
+      },
+      {
+        "id": "leg_alternation",
+        "status": "warn",
+        "value": [
+          "near",
+          "near",
+          "near",
+          "near",
+          "far",
+          "far",
+          "far",
+          "near"
+        ],
+        "threshold": "lead differs between i and i+n/2",
+        "verdict": "mixed: some half-cycle pairs repeat the lead",
+        "pairs": [
+          [
+            0,
+            4,
+            false
+          ],
+          [
+            1,
+            5,
+            false
+          ],
+          [
+            2,
+            6,
+            false
+          ],
+          [
+            3,
+            7,
+            true
+          ]
+        ],
+        "mode": "auto-luminance",
+        "near_leading": 5,
+        "unclear": 0,
+        "half_cycle": {
+          "pairs": [
+            {
+              "pair": [
+                0,
+                4
+              ],
+              "iou_best_shift": 0.7367
+            },
+            {
+              "pair": [
+                1,
+                5
+              ],
+              "iou_best_shift": 0.7242
+            },
+            {
+              "pair": [
+                2,
+                6
+              ],
+              "iou_best_shift": 0.7165
+            },
+            {
+              "pair": [
+                3,
+                7
+              ],
+              "iou_best_shift": 0.7891
+            }
+          ],
+          "adjacent_iou_median": 0.7333,
+          "half_cycle_iou_median": 0.7305
+        },
+        "fix": "regenerate frames 4-7 with NEAR and FAR swapped (attach frames 0-3 and the guide)"
+      }
+    ],
+    "input_sha256": "acc056a303458a92c34eae8152e9f01b66a37e5e81f58b134960cbdeb3200c97",
+    "output_sha256": "acc056a303458a92c34eae8152e9f01b66a37e5e81f58b134960cbdeb3200c97",
+    "report": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-guard.run/acc056a30345/qc/sheet-qc.json"
+  },
+  {
+    "name": "walker-traveller.run-down",
+    "registration": "pass",
+    "qc": "warn",
+    "unresolved": [
+      {
+        "id": "near_duplicates",
+        "status": "warn",
+        "value": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            6,
+            7
+          ]
+        ],
+        "threshold": 0.95,
+        "note": "pairs with best-shift silhouette IoU at or above the threshold and similar colours"
+      }
+    ],
+    "input_sha256": "7380360caccb527a05f195d64f89e4465f08b753cd9204d436e6196c3ec705d9",
+    "output_sha256": "daae9bb8c2d3109f18bb66ab0f470c7f603b0c30720c6b87954df3b5d8a1b1ed",
+    "report": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-traveller.run-down/7380360caccb/qc/sheet-qc.json"
+  },
+  {
+    "name": "walker-traveller.run-up",
+    "registration": "pass",
+    "qc": "pass",
+    "unresolved": [],
+    "input_sha256": "3e435d3b462658b191aa8fccc23cc5247a89532b6bac141bd88dd0c3d01cb75f",
+    "output_sha256": "07917bbc7f50ad0df2e5082f17b5ed497c78498a4a000b6bea4c6c204b7e9c3b",
+    "report": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-traveller.run-up/3e435d3b4626/qc/sheet-qc.json"
+  },
+  {
+    "name": "walker-traveller.run",
+    "registration": "pass",
+    "qc": "fail",
+    "unresolved": [
+      {
+        "id": "leg_alternation",
+        "status": "fail",
+        "value": [
+          "near",
+          "near",
+          "near",
+          "near",
+          "near",
+          "near",
+          "near",
+          "near"
+        ],
+        "threshold": "lead differs between i and i+n/2",
+        "verdict": "duplicated half-cycle: the same leg leads in both halves",
+        "pairs": [
+          [
+            0,
+            4,
+            true
+          ],
+          [
+            1,
+            5,
+            true
+          ],
+          [
+            2,
+            6,
+            true
+          ],
+          [
+            3,
+            7,
+            true
+          ]
+        ],
+        "mode": "auto-luminance",
+        "near_leading": 8,
+        "unclear": 0,
+        "half_cycle": {
+          "pairs": [
+            {
+              "pair": [
+                0,
+                4
+              ],
+              "iou_best_shift": 0.9194
+            },
+            {
+              "pair": [
+                1,
+                5
+              ],
+              "iou_best_shift": 0.9195
+            },
+            {
+              "pair": [
+                2,
+                6
+              ],
+              "iou_best_shift": 0.8773
+            },
+            {
+              "pair": [
+                3,
+                7
+              ],
+              "iou_best_shift": 0.9156
+            }
+          ],
+          "adjacent_iou_median": 0.8982,
+          "half_cycle_iou_median": 0.9175
+        },
+        "fix": "regenerate frames 4-7 with NEAR and FAR swapped (attach frames 0-3 and the guide)"
+      },
+      {
+        "id": "seam",
+        "status": "warn",
+        "value": 1.65,
+        "threshold": 1.5,
+        "transitions": [
+          [
+            5,
+            6
+          ]
+        ],
+        "note": "largest frame-to-frame change over the median step; review these joins first"
+      }
+    ],
+    "input_sha256": "aaa62947de2018cb2d93de1f108dc940b0b25cc09d1eddc380634de84ebe7253",
+    "output_sha256": "aaa62947de2018cb2d93de1f108dc940b0b25cc09d1eddc380634de84ebe7253",
+    "report": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-traveller.run/aaa62947de20/qc/sheet-qc.json"
+  }
+]

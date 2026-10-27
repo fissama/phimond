@@ -1,0 +1,10 @@
+{
+  "frame": 7,
+  "raw": "female-keypose-07.raw-v4.png",
+  "prompt": "Precise object edit for a 2D pixel-art game animation keyframe. Input1 is the SAME female character and EXACT shared rendering/camera/body scale; Input2 is the target limb geometry for this SINGLE new frame. Keep input1 head, face, hair identity, torso length, brown/ivory/rust/gold costume, darkstockings and brownboots EXACTLY. CHANGE ONLY articulated arm and leg pose and naturally lagging hair/coat folds. FAR leg supports justbehind pelvis, NEAR knee swings forwardRIGHT past farleg; foreground boot visibly raised and crossing IN FRONT. Neararm passesneutral. Orange guide means NEAR limb in foreground, blue guide means FAR limb behind; do not copy guidecolors. Farleg one shade darker but bothbootsbrown. Match target limb overlap precisely, foreground thigh is on guideorange side. Render ONE fullbody figure on1254squarecanvas same camera distance asinput1, headtop near40 and lowestbootnear1200, hip near(640,730), no scale change betweenframes; identical headsize and torsoheight, no zoom orbodyturn. All8frames will shareONEsource-to-game scale. Pure#FF00FF background; remove allguide lines, boxes, skeleton, borders and ticks. No ground/castshadow, text,numbers, additionalframes orobjects. Sharp actual pixelclusters at same scale asinput1, no antialias or blur, final192square~168person,48colorpalette. Do not simply copy input1 standing limbs; draw the exact NEW pose from input2.",
+  "refs": [
+    "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/sources/female-contact5-single-v4.png",
+    "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/sources/female-keypose-07-guide.png"
+  ],
+  "generated_path": "/Users/phileanh/.codex/generated_images/01a16274-30fd-7c01-a90a-62e6d2bbfc47/exec-71be43b8-b582-4122-a4be-01b8f3d47639.png"
+}

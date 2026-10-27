@@ -1,0 +1,21 @@
+[
+  {
+    "id": "walker-baker",
+    "dir": "side",
+    "name": "walker-baker.run.png",
+    "raw": "walker-baker.run.grid-packed-v2.png",
+    "refs": [
+      "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/sources/male-walk-guide-v6/guide.png",
+      "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/sources/walker-baker-head-torso-only-v3.png",
+      "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/sources/walker-baker-held-object-reference.png"
+    ],
+    "prompt": "Use case: sketch-to-render. Input1 is the AUTHORITATIVE8POSE walk skeleton, input2 is head/outfit identity ONLY. Draw square3x3sheet with exact8 poses row-major and9thcellblankmagenta. Follow NEAR/ORANGE leg geometry, FAR/BLUE leg geometry EXACTLY. Frame1 foreground leg reachesRIGHT, frame5foreground leg reachesLEFT/trails and crosses IN FRONT at crotch. Foreground arm goes backward in1, FORWARD across chest in5 unless occupied holding object. In frame5 the FORWARD leg is behind, darker; the trailingback leg is foreground, lighter. These are oppositelegcontacts. Do not repeat anatomical nearleg in front/right inboth1and5. Use only supplied head/torso reference and independently DRAW lowerbody per skeleton. Shade FAR leg and boot a very DARK COOL BROWN, foreground leg in warm light, preserve exact leg overlap. All8phase jointangles DIFFER; loading/passing/up transitions follow skeleton. Same torso length/headsize root and upper-left light; same footbaseline, subtle1pxbodybob. Pixelart48colors crisp dark1pxoutline final192cells, rich deliberatepixelclusters, pure#FF00FFbackground. No guides/skeleton/labels/text/shadows/trails drawn inoutput. Young villagewoman baker, greenkerchief, brownvest ivoryshirt, green skirt whiteapron, brownboots. Input3 is her wickerbasket of bread/produce: carry SAMEbasket at waist inALL8poses. Hands holdingbasket stable; arms do NOT swing freely because carryingbasket; legs stillfolloweachguidepose. Do not omitbasket. No fullstandingleg reference was supplied, do not draw8standingposes.\n\nRaw source: walker-baker.run.grid-raw-03.png; first8 actual cells row-major repacked losslessly, source grid [3, 3], gutter-only trim 8px; no pose edits. Final horizontal1536x192.",
+    "frames": 8,
+    "source_grid": [
+      3,
+      3
+    ],
+    "generated_path": "/Users/phileanh/.codex/generated_images/01a16274-30fd-7c01-a90a-62e6d2bbfc47/exec-74098ef8-e00d-4d20-bec5-7257ab757dc8.png",
+    "cell_inner_trim": 8
+  }
+]

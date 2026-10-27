@@ -1,0 +1,3 @@
+Pixel art contact SHADOW MASK only, Long low irregular horizontal canopy ground shadow composed of overlapping flattened foliage lobes, dark brown charcoal core and scattered ordered dither edge, extends slightly down-right from its upperleft origin. No depiction of actual leaves, trunk, or tree. Final dimensions384x160. ONE simple shape on perfectly uniform pure#FF00FF. Only4-6verydarkneutralbrowncolors, binary alpha, hard pixel dither transitions, no smooth antialias, no gradients into magenta, no represented object, no text, no grids, no checkerboard. All fourshadowmasks share upper-left light direction and depth. Shape needs2px safe padding.
+
+References:

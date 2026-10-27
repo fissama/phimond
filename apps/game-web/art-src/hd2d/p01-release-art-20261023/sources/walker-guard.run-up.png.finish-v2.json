@@ -1,0 +1,19 @@
+[
+  {
+    "id": "walker-guard",
+    "dir": "up",
+    "name": "walker-guard.run-up.png",
+    "raw": "walker-guard.run-up.grid-packed-v2.png",
+    "frames": 8,
+    "source_grid": [
+      3,
+      3
+    ],
+    "refs": [
+      "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/sources/walker-guard.run-up.grid-raw-02.png",
+      "/Users/phileanh/rust/phimond/apps/client/public/hd2d/walker-guard.png"
+    ],
+    "prompt": "Use case: precise-object-edit. Image1 EDIT TARGET is an eight pose walking sprite source, image2 IDENTITY AND HELD PROP reference only. Restore the missing long upright wooden spear with steel point, in anatomical RIGHT hand, at screen RIGHT in back view, tip above helmet in ALL EIGHT poses. Preserve exact eight distinct leg poses, face/hair/outfit, body scale, lighting, composition and direction from image1. Hands must actually grip object; occupied arms hold it instead of pumping. Direction AWAY from viewer, back view. Exactly 3x3 equal cells, eight full figures row-major, bottom-right cell EMPTY. Keep all bodies and props wholly inside own cell, generous margins, common root/baseline. Flat #FF00FF background, no grid/labels/shadows. Crisp pixel art matching references, dark outline, upper-left warm light, cool shadows, shared <=48 colors. NO extra figures, no mirroring, no new equipment. Do not replace animation with identical idle poses. Final delivery will be eight 192x192 frames with feet at96,184.\n\nRaw source: walker-guard.run-up.grid-props-v6.png; first8 actual cells row-major repacked losslessly, source grid [3, 3], gutter-only trim 0px; no pose edits. Final horizontal1536x192.",
+    "generated_path": "/Users/phileanh/.codex/generated_images/01a16274-30fd-7c01-a90a-62e6d2bbfc47/exec-4eb82b9a-e5bf-4574-8e59-642b2cd916b5.png"
+  }
+]

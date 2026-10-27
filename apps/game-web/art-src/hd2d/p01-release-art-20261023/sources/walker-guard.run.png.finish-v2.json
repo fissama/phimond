@@ -1,0 +1,25 @@
+[
+  {
+    "id": "walker-guard",
+    "dir": "side",
+    "name": "walker-guard.run.png",
+    "raw": "walker-guard.run.grid-packed-v2.png",
+    "refs": [
+      "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/sources/walker-guard.run.grid-raw-02.png",
+      "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/sources/walker-guard-approved-idle-6x.png"
+    ],
+    "prompt": "Precise edit of a 2D sprite animation sheet. Input1 is eight existing animated poses in3x3grid with ninthcellblank; input2 is approved production IDLE defining identity, proportions and held equipment. Restore the SAME long straight SPEAR from approved idle in EVERYframe, one hand gripping shaft at waist. Silver spearhead, golden collar, brown shaft and metal butt. Preserve the source idle's spear-to-human proportions: helmet is visibly below spear-tip, pole butt nearboots, not a tiny spear. Keep helmet, bluegoldtabard, silvershoulders, brownboots SAME actual colors. Make every body's scale in all8cells consistent with approved idle, so spear and helmetfit withpadding; don't crop weapon. Keep eight REAL different walk keyposes in SAME3x3layout, same facingRIGHT3/4camera. Retain limb articulation; frame1 and5mustoppositelegcontacts, NOT same nearleg forward twice. NEAR bright leg forwardRIGHT at1; FAR darker leg forwardRIGHT at5 with NEAR thigh trailingLEFT in front of farthigh atcrotch. Carrying equipment hand neednot freelyswing. Do not flip samefigure tofake legswap, don't duplicate halfcycle. Shared upper-leftwarm light, crisp pixelclusters matchingapprovedidle,48colors,1pxdarkcoloredoutline finalscale. Pure#FF00FF everywhere outside subjects includinginteriorgaps. No gridlines, borders, markers, floor, castshadows, text or additionalfigures. Each of8figures and wholeweapon mustfit itsowncell with8pxsafe margins at final192scale. Output square, exactly3rows3cols, lastcellEMPTY.\n\nRaw source: walker-guard.run.grid-raw-04.png; first8 actual cells row-major repacked losslessly, source grid [3, 3], gutter-only trim 0px; no pose edits. Final horizontal1536x192.",
+    "frames": 8,
+    "source_grid": [
+      3,
+      3
+    ],
+    "generated_path": "/Users/phileanh/.codex/generated_images/01a16274-30fd-7c01-a90a-62e6d2bbfc47/exec-470a7381-068f-4256-a349-2190e5da46fe.png",
+    "source_row_edges": [
+      0,
+      408,
+      816,
+      1254
+    ]
+  }
+]

@@ -1,0 +1,3413 @@
+{
+  "batch": "p01-release-art-20261023",
+  "approved": false,
+  "status": "review_candidates_not_release_certified",
+  "scope": "Artwork and metadata only; individual PNG + prompt + QA; no ZIP; no game source changes.",
+  "approval_policy": "Only Claude may approve new/revised versions; existing approvals transcribed from owner checklist.",
+  "assets": [
+    {
+      "id": "bar-frame-stat",
+      "file": "delivery/bar-frame-stat.png",
+      "category": "ui_sprite",
+      "px": [
+        342,
+        51
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        171.0,
+        25.5
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/bar-frame-stat.prompt.md",
+      "qa": "delivery/bar-frame-stat.qa.json",
+      "sha256": "5f4b865ea3d4d283931b7e4feee18901b57749cb7657ddb9661a745ee8b511f2",
+      "raw_sha256": null,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "existing_frame_reused_needs_Claude_review",
+      "forge_qc": null
+    },
+    {
+      "id": "bar-label-exp",
+      "file": "delivery/bar-label-exp.png",
+      "category": "ui_sprite",
+      "px": [
+        64,
+        32
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        32.0,
+        16.0
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/bar-label-exp.prompt.md",
+      "qa": "delivery/bar-label-exp.qa.json",
+      "sha256": "61c93a788b403954f56c0e6f8c55ff0ee173fd73e4696d4359bf7511511bfb01",
+      "raw_sha256": "cd827dba1a604f011098b927ddd66507a2bc667132bfacb15f745f1f8dbd5bd3",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "bar-label-hp",
+      "file": "delivery/bar-label-hp.png",
+      "category": "ui_sprite",
+      "px": [
+        48,
+        32
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        24.0,
+        16.0
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/bar-label-hp.prompt.md",
+      "qa": "delivery/bar-label-hp.qa.json",
+      "sha256": "46446d13b51a57adceee83529e33de872f8d9d44bce73fdf6a748e8ed28ca9fd",
+      "raw_sha256": "a0aeb4621e5893471ce165c2883439eabd6d85b4e4e40fb0c3664e51143e29f8",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "bar-label-mp",
+      "file": "delivery/bar-label-mp.png",
+      "category": "ui_sprite",
+      "px": [
+        48,
+        32
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        24.0,
+        16.0
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/bar-label-mp.prompt.md",
+      "qa": "delivery/bar-label-mp.qa.json",
+      "sha256": "37b5fdef515f52619639b85a290e0982d77316e695aa7d0be04b93e02a80263f",
+      "raw_sha256": "3412f676eb71823bb9596e4edf9c733495077b5e545df1647f8cac87017d78e7",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "battle-bg-city",
+      "file": "delivery/battle-bg-city.png",
+      "category": "backdrop",
+      "px": [
+        1920,
+        1080
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        960.0,
+        1080
+      ],
+      "world": [
+        30.0,
+        16.875
+      ],
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/battle-bg-city.prompt.md",
+      "qa": "delivery/battle-bg-city.qa.json",
+      "sha256": "feb51b9160a1b151ad974f2235de861c80b84c42c0abe3c96baa34a0b9845993",
+      "raw_sha256": "9a066aa1f07cbba1de2437d57dd6959b7c47a47c260ff25cde3fcd532e7dc8a5",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_and_runtime_review",
+      "forge_qc": null
+    },
+    {
+      "id": "battle-bg-deep_forest",
+      "file": "delivery/battle-bg-deep_forest.png",
+      "category": "backdrop",
+      "px": [
+        1920,
+        1080
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        960.0,
+        1080
+      ],
+      "world": [
+        30.0,
+        16.875
+      ],
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/battle-bg-deep_forest.prompt.md",
+      "qa": "delivery/battle-bg-deep_forest.qa.json",
+      "sha256": "061a8909befc538324bf46e51e24c7d8f52ed768b606eb8c28421cb3943b7996",
+      "raw_sha256": "6c0c85cf0926d8f118c9e5bd456a6af04551803df108b1a00b06ac9dbeb9702d",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_and_runtime_review",
+      "forge_qc": null
+    },
+    {
+      "id": "battle-bg-forest",
+      "file": "delivery/battle-bg-forest.png",
+      "category": "backdrop",
+      "px": [
+        1920,
+        1080
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        960.0,
+        1080
+      ],
+      "world": [
+        30.0,
+        16.875
+      ],
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/battle-bg-forest.prompt.md",
+      "qa": "delivery/battle-bg-forest.qa.json",
+      "sha256": "70439ad7c5bfc03ef62dc9b4aafbc65032f976caf3b3cc2e466758609f06104b",
+      "raw_sha256": "9c81ef6b7aecf04aceb00b3e404f550cb6472e769a2d716105531c279a3f4217",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_and_runtime_review",
+      "forge_qc": null
+    },
+    {
+      "id": "battle-bg-gate",
+      "file": "delivery/battle-bg-gate.png",
+      "category": "backdrop",
+      "px": [
+        1920,
+        1080
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        960.0,
+        1080
+      ],
+      "world": [
+        30.0,
+        16.875
+      ],
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/battle-bg-gate.prompt.md",
+      "qa": "delivery/battle-bg-gate.qa.json",
+      "sha256": "cf15a2935c2104fac9f813a78e3389638842d1e59bf5f2ce074739494d35bf92",
+      "raw_sha256": "4451724d48f87d4bc4151c7341b3d8e33055c0c7be3545b6a2f31211140ba537",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_and_runtime_review",
+      "forge_qc": null
+    },
+    {
+      "id": "battle-bg-hall",
+      "file": "delivery/battle-bg-hall.png",
+      "category": "backdrop",
+      "px": [
+        1920,
+        1080
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        960.0,
+        1080
+      ],
+      "world": [
+        30.0,
+        16.875
+      ],
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/battle-bg-hall.prompt.md",
+      "qa": "delivery/battle-bg-hall.qa.json",
+      "sha256": "27f7119f169c9b8da0a815a1f2df34644e9ab5a0eb32a6c62d4655b7b361ce2b",
+      "raw_sha256": "f600cd3869a6e5bb85de344846d6c8cc840f4426c4ff9237e7617a6a42a5a3e9",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_and_runtime_review",
+      "forge_qc": null
+    },
+    {
+      "id": "city-backwall-brick",
+      "file": "delivery/city-backwall-brick.png",
+      "category": "backdrop_mid",
+      "px": [
+        512,
+        384
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        256.0,
+        384
+      ],
+      "world": [
+        4.0,
+        3.0
+      ],
+      "tileable": "x",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/city-backwall-brick.prompt.md",
+      "qa": "delivery/city-backwall-brick.qa.json",
+      "sha256": "7fc75bf4e92412d8b6b55cbb9898f4b7690a85d4ab361d3f411d95530992301b",
+      "raw_sha256": "9b12e96368e7548749d48382697ee9e77aa17389e95223991f740b9c1986ba30",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_Claude_review",
+      "forge_qc": null
+    },
+    {
+      "id": "city-border-curve",
+      "file": "delivery/city-border-curve.png",
+      "category": "ground_patch",
+      "px": [
+        505,
+        463
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        252.5,
+        231.5
+      ],
+      "world": [
+        3.9453125,
+        3.6171875
+      ],
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/city-border-curve.prompt.md",
+      "qa": "delivery/city-border-curve.qa.json",
+      "sha256": "e10a27b994ad48a4ee58522b1abbfb6092fb865fac7b6131dc3a4d184b12cd5b",
+      "raw_sha256": "5cc0d2207028da8269d53f85cb362228d91f1c98b37c0fe7ffe76743e07eeb04",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_composition_review",
+      "forge_qc": null
+    },
+    {
+      "id": "city-brick-cobble-edge",
+      "file": "delivery/city-brick-cobble-edge.png",
+      "category": "ground_patch",
+      "px": [
+        502,
+        460
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        251.0,
+        230.0
+      ],
+      "world": [
+        3.921875,
+        3.59375
+      ],
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/city-brick-cobble-edge.prompt.md",
+      "qa": "delivery/city-brick-cobble-edge.qa.json",
+      "sha256": "ee54154d23afa58239353631a4a2e52384b44ecdb38d1844f8f1fd8b0d26dde5",
+      "raw_sha256": "5cc0d2207028da8269d53f85cb362228d91f1c98b37c0fe7ffe76743e07eeb04",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_composition_review",
+      "forge_qc": null
+    },
+    {
+      "id": "city-carpet-cap-round",
+      "file": "delivery/city-carpet-cap-round.png",
+      "category": "ground_patch",
+      "px": [
+        503,
+        434
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        251.5,
+        217.0
+      ],
+      "world": [
+        3.9296875,
+        3.390625
+      ],
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/city-carpet-cap-round.prompt.md",
+      "qa": "delivery/city-carpet-cap-round.qa.json",
+      "sha256": "6696c0ed42ef61aa033bc8cce273f201ef77de0ef1feb78b227fec222a2b616e",
+      "raw_sha256": "5cc0d2207028da8269d53f85cb362228d91f1c98b37c0fe7ffe76743e07eeb04",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_composition_review",
+      "forge_qc": null
+    },
+    {
+      "id": "city-carpet-cap-square",
+      "file": "delivery/city-carpet-cap-square.png",
+      "category": "ground_patch",
+      "px": [
+        528,
+        432
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        264.0,
+        216.0
+      ],
+      "world": [
+        4.125,
+        3.375
+      ],
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/city-carpet-cap-square.prompt.md",
+      "qa": "delivery/city-carpet-cap-square.qa.json",
+      "sha256": "611c5aebbd702feb2af02065fd426e98c17dede67adb257ad9c373558ca12f24",
+      "raw_sha256": "5cc0d2207028da8269d53f85cb362228d91f1c98b37c0fe7ffe76743e07eeb04",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_composition_review",
+      "forge_qc": null
+    },
+    {
+      "id": "city-facade-alley",
+      "file": "delivery/city-facade-alley.png",
+      "category": "prop",
+      "px": [
+        256,
+        384
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        128.0,
+        376
+      ],
+      "world": [
+        2.0,
+        3.0
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/city-facade-alley.prompt.md",
+      "qa": "delivery/city-facade-alley.qa.json",
+      "sha256": "6209700eb18b986c5e3e1e9a90f12c9026d13a0e607e9968ce90a0a96988337c",
+      "raw_sha256": "95f59b6ee1d0e858def960989ae30c42fbdd973c983a884c0e802f58f9654dbe",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "city-facade-column",
+      "file": "delivery/city-facade-column.png",
+      "category": "prop",
+      "px": [
+        128,
+        384
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        64.0,
+        376
+      ],
+      "world": [
+        1.0,
+        3.0
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/city-facade-column.prompt.md",
+      "qa": "delivery/city-facade-column.qa.json",
+      "sha256": "8aaa757bc8c4a6c5d69dba8f3730fa91f1c8e8548ae18bb1c82d2aa5f930227a",
+      "raw_sha256": "660ea3e5ff965613c13f09fe3b93e3afbc35efad25f91010be9e556efec1e51b",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "city-facade-gutter",
+      "file": "delivery/city-facade-gutter.png",
+      "category": "prop",
+      "px": [
+        96,
+        384
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        48.0,
+        376
+      ],
+      "world": [
+        0.75,
+        3.0
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/city-facade-gutter.prompt.md",
+      "qa": "delivery/city-facade-gutter.qa.json",
+      "sha256": "78c547fa1eb744d07d8be59f6c33dcbdb41e5f4bde0771d5962e038adb51018b",
+      "raw_sha256": "a2814627d08b3a54aeee5472cc97956a7046268cb851179d784f02672431f72a",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "city-plinth-round",
+      "file": "delivery/city-plinth-round.png",
+      "category": "ground_patch",
+      "px": [
+        506,
+        424
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        253.0,
+        212.0
+      ],
+      "world": [
+        3.953125,
+        3.3125
+      ],
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/city-plinth-round.prompt.md",
+      "qa": "delivery/city-plinth-round.qa.json",
+      "sha256": "952a87449d88a93564c97fd1d6c34e2c074882149f47733754bc6ba323a48e08",
+      "raw_sha256": "5cc0d2207028da8269d53f85cb362228d91f1c98b37c0fe7ffe76743e07eeb04",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_composition_review",
+      "forge_qc": null
+    },
+    {
+      "id": "city-roofline-gate",
+      "file": "delivery/city-roofline-gate.png",
+      "category": "backdrop_far",
+      "px": [
+        2048,
+        384
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        1024.0,
+        384
+      ],
+      "world": [
+        32.0,
+        6.0
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/city-roofline-gate.prompt.md",
+      "qa": "delivery/city-roofline-gate.qa.json",
+      "sha256": "e43fc8809a53230b6d08726980a51c2d32fd41f0db1895eddea9f1131e70cfd7",
+      "raw_sha256": "4bb8cbdbd179d5f47178aadf2a9df05b0c0d389e6a810b27b13ae94adfe8e04e",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_Claude_review",
+      "forge_qc": null
+    },
+    {
+      "id": "city-stone-step-edge",
+      "file": "delivery/city-stone-step-edge.png",
+      "category": "ground_patch",
+      "px": [
+        499,
+        455
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        249.5,
+        227.5
+      ],
+      "world": [
+        3.8984375,
+        3.5546875
+      ],
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/city-stone-step-edge.prompt.md",
+      "qa": "delivery/city-stone-step-edge.qa.json",
+      "sha256": "6d4e5d4dad65451a57fafa63a69c58ea30d68a8708bbf430148e24f5bd9a2874",
+      "raw_sha256": "5cc0d2207028da8269d53f85cb362228d91f1c98b37c0fe7ffe76743e07eeb04",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_composition_review",
+      "forge_qc": null
+    },
+    {
+      "id": "foe-ring",
+      "file": "delivery/foe-ring.png",
+      "category": "fx",
+      "px": [
+        768,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 4,
+      "pivot_px": [
+        96,
+        96
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/foe-ring.prompt.md",
+      "qa": "delivery/foe-ring.qa.json",
+      "sha256": "c6614f64fe13aeaf239100358ae4974c6d3169b2ec19eb676c21ab15ff57f950",
+      "raw_sha256": "cf5b45424a07ab1fef7fe5fd985dcd27d815958c64af996a731e2fcc8d1b7acf",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_temporal_review",
+      "forge_qc": null
+    },
+    {
+      "id": "forest-exit-arch",
+      "file": "delivery/forest-exit-arch.png",
+      "category": "prop",
+      "px": [
+        384,
+        384
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        192.0,
+        376
+      ],
+      "world": [
+        3.0,
+        3.0
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/forest-exit-arch.prompt.md",
+      "qa": "delivery/forest-exit-arch.qa.json",
+      "sha256": "778901d017f61b80c8e428f242f828f877d8c61a4711857194bf8a9974a38665",
+      "raw_sha256": "164393006860ff4a24b3d771334eabe5f53888001801757aac8b403321ad4bc1",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_Claude_review",
+      "forge_qc": null
+    },
+    {
+      "id": "forest-fg-low-bush-02",
+      "file": "delivery/forest-fg-low-bush-02.png",
+      "category": "prop",
+      "px": [
+        256,
+        192
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        128.0,
+        184
+      ],
+      "world": [
+        2.0,
+        1.5
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/forest-fg-low-bush-02.prompt.md",
+      "qa": "delivery/forest-fg-low-bush-02.qa.json",
+      "sha256": "bd54c8dc4af8c6a5546d8f554232ea266e6f6ffaa3604bca3faa5c302e15740a",
+      "raw_sha256": "b8849f54afc67369d2f7e6f59038b61f34b772c4c6e62cc92698f0193ae62ee2",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "forest-fg-low-bush-03",
+      "file": "delivery/forest-fg-low-bush-03.png",
+      "category": "prop",
+      "px": [
+        256,
+        192
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        128.0,
+        184
+      ],
+      "world": [
+        2.0,
+        1.5
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/forest-fg-low-bush-03.prompt.md",
+      "qa": "delivery/forest-fg-low-bush-03.qa.json",
+      "sha256": "bf981f23f0b1523f7fd89c9d0356160b6d7c21bdd5285d109027d12c31ea8c48",
+      "raw_sha256": "06df5404202c84faf5902b6602ad05b8a5e168abbe9119101652f59826aa95ce",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "forest-fg-low-bush",
+      "file": "delivery/forest-fg-low-bush.png",
+      "category": "prop",
+      "px": [
+        256,
+        192
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        128.0,
+        184
+      ],
+      "world": [
+        2.0,
+        1.5
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/forest-fg-low-bush.prompt.md",
+      "qa": "delivery/forest-fg-low-bush.qa.json",
+      "sha256": "a2312cffe8b3a28fcbc6cc85b10759098c349b22717a3ee80fb77f3bafb8584f",
+      "raw_sha256": "6ed131906e46727138873023f474778fb742248f7f9922493912a6a86ba88963",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "fx-beast",
+      "file": "delivery/fx-beast.png",
+      "category": "fx",
+      "px": [
+        1152,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 6,
+      "pivot_px": [
+        96,
+        96
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/fx-beast.prompt.md",
+      "qa": "delivery/fx-beast.qa.json",
+      "sha256": "8b672b511ba3e64e319a3916db74fd1fdc23ed1bf00b9c1e69b2c692650e11b5",
+      "raw_sha256": "6d013e606de15d7f1287c76d455810dde90099094afd20c134b70907f841a0d7",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "repaired_needs_Claude_review",
+      "forge_qc": null
+    },
+    {
+      "id": "fx-earth",
+      "file": "delivery/fx-earth.png",
+      "category": "fx",
+      "px": [
+        1152,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 6,
+      "pivot_px": [
+        96,
+        96
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/fx-earth.prompt.md",
+      "qa": "delivery/fx-earth.qa.json",
+      "sha256": "e50d8b51da49f34ff8ac5b47d0e4c89263d283e047774bd0310ba983b2299404",
+      "raw_sha256": null,
+      "art_source": "existing",
+      "route": "existing built-in image_gen art",
+      "mechanical_status": "palette_reduced_needs_Claude_review",
+      "forge_qc": null
+    },
+    {
+      "id": "fx-fire",
+      "file": "delivery/fx-fire.png",
+      "category": "fx",
+      "px": [
+        1152,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 6,
+      "pivot_px": [
+        96,
+        96
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/fx-fire.prompt.md",
+      "qa": "delivery/fx-fire.qa.json",
+      "sha256": "86c27bc4ba0f80247aa5e7e78f0566042799cf7f3a42de7e8ca13894076a1e7c",
+      "raw_sha256": null,
+      "art_source": "existing",
+      "route": "existing built-in image_gen art",
+      "mechanical_status": "palette_reduced_needs_Claude_review",
+      "forge_qc": null
+    },
+    {
+      "id": "fx-insect",
+      "file": "delivery/fx-insect.png",
+      "category": "fx",
+      "px": [
+        1152,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 6,
+      "pivot_px": [
+        96,
+        96
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/fx-insect.prompt.md",
+      "qa": "delivery/fx-insect.qa.json",
+      "sha256": "0c6b2a33648cc961e2cec4a2daae23af88a7dbdb59c58e76c4bf2f76cbdadeb1",
+      "raw_sha256": "511100ef527d06183c6b172121f3250ef211ebeaddfd168148fd21733d27e900",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "repaired_needs_Claude_review",
+      "forge_qc": null
+    },
+    {
+      "id": "fx-plant",
+      "file": "delivery/fx-plant.png",
+      "category": "fx",
+      "px": [
+        1152,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 6,
+      "pivot_px": [
+        96,
+        96
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/fx-plant.prompt.md",
+      "qa": "delivery/fx-plant.qa.json",
+      "sha256": "fd34f0395ced0809ac1f1e946302edce6318d72ede3877e9aa121d3a4f9af516",
+      "raw_sha256": "719654e7451d3ad054bfdafca58bb356c6d6a13944145f71289a590510382999",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "repaired_needs_Claude_review",
+      "forge_qc": null
+    },
+    {
+      "id": "fx-summon",
+      "file": "delivery/fx-summon.png",
+      "category": "fx",
+      "px": [
+        1152,
+        384
+      ],
+      "frame_px": [
+        192,
+        384
+      ],
+      "frames": 6,
+      "pivot_px": [
+        96,
+        368
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/fx-summon.prompt.md",
+      "qa": "delivery/fx-summon.qa.json",
+      "sha256": "36671b91c1c3dfd7e6f1f63f879171d66a53a64ebfb88ae065f63e609c5feee1",
+      "raw_sha256": "f926a21a125fd0301aba3f77f7805814f92990408c2e73d34588fac67dacee63",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_temporal_review",
+      "forge_qc": null
+    },
+    {
+      "id": "fx-water",
+      "file": "delivery/fx-water.png",
+      "category": "fx",
+      "px": [
+        1152,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 6,
+      "pivot_px": [
+        96,
+        96
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/fx-water.prompt.md",
+      "qa": "delivery/fx-water.qa.json",
+      "sha256": "db2278e84c2a80655f7df6cdd3977963cd9ae23804e07abda50d455d0fc9e840",
+      "raw_sha256": null,
+      "art_source": "existing",
+      "route": "existing built-in image_gen art",
+      "mechanical_status": "palette_reduced_needs_Claude_review",
+      "forge_qc": null
+    },
+    {
+      "id": "npc-bia_free.idle",
+      "file": "delivery/npc-bia_free.idle.png",
+      "category": "npc",
+      "px": [
+        768,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 4,
+      "pivot_px": [
+        96,
+        184
+      ],
+      "world": [
+        1.5,
+        1.5
+      ],
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Claude duyệt có điều kiện: nhịp thở rất nhẹ; sync idle là phần việc riêng của Claude.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/npc-bia_free.idle.prompt.md",
+      "qa": "delivery/npc-bia_free.idle.qa.json",
+      "sha256": "4b75ca20324ed88e458884646b05d79a7ed3e4e022bdf96459682f2c5f1869cd",
+      "raw_sha256": "3ea6454a5f7a745e43f009fa76009592db16fc2c87dedee9583dc920b7603f1a",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_and_temporal_review",
+      "forge_qc": null
+    },
+    {
+      "id": "npc-bia_skill.idle",
+      "file": "delivery/npc-bia_skill.idle.png",
+      "category": "npc",
+      "px": [
+        768,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 4,
+      "pivot_px": [
+        96,
+        184
+      ],
+      "world": [
+        1.5,
+        1.5
+      ],
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Claude duyệt có điều kiện: nhịp thở rất nhẹ; sync idle là phần việc riêng của Claude.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/npc-bia_skill.idle.prompt.md",
+      "qa": "delivery/npc-bia_skill.idle.qa.json",
+      "sha256": "2e0fd6e24b5f3be1b8768c1ef3d7f12c22c7e160ec7b20e9b8ee64b425d31d68",
+      "raw_sha256": "94311d4d597c7b533792b15500f79a01fe919d8c479a38ae4e99b5260f327fd0",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_and_temporal_review",
+      "forge_qc": null
+    },
+    {
+      "id": "npc-sq_exchange.idle",
+      "file": "delivery/npc-sq_exchange.idle.png",
+      "category": "npc",
+      "px": [
+        768,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 4,
+      "pivot_px": [
+        96,
+        184
+      ],
+      "world": [
+        1.5,
+        1.5
+      ],
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Claude duyệt có điều kiện: nhịp thở rất nhẹ; sync idle là phần việc riêng của Claude.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/npc-sq_exchange.idle.prompt.md",
+      "qa": "delivery/npc-sq_exchange.idle.qa.json",
+      "sha256": "2281ba80ed0b99a519a4c11a99ec052d5024b3546311093a45f46cc066bea63c",
+      "raw_sha256": "13d42dfb6d89faf695ab6c816bf657b6cb305993e34cfa4b7e674d178f447a1a",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_and_temporal_review",
+      "forge_qc": null
+    },
+    {
+      "id": "npc-sq_pillar.idle",
+      "file": "delivery/npc-sq_pillar.idle.png",
+      "category": "npc",
+      "px": [
+        768,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 4,
+      "pivot_px": [
+        96,
+        184
+      ],
+      "world": [
+        1.5,
+        1.5
+      ],
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Claude duyệt có điều kiện: nhịp thở rất nhẹ; sync idle là phần việc riêng của Claude.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/npc-sq_pillar.idle.prompt.md",
+      "qa": "delivery/npc-sq_pillar.idle.qa.json",
+      "sha256": "fc760ee494efdb4dbfd3cb62fcea97612f474ce72d616d36a3258b47847c782b",
+      "raw_sha256": "130b03301a0c799bddb349b438330613e418aca982f5ac2a0b451ee6733ab216",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_and_temporal_review",
+      "forge_qc": null
+    },
+    {
+      "id": "npc-sq_skill.idle",
+      "file": "delivery/npc-sq_skill.idle.png",
+      "category": "npc",
+      "px": [
+        768,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 4,
+      "pivot_px": [
+        96,
+        184
+      ],
+      "world": [
+        1.5,
+        1.5
+      ],
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Claude duyệt có điều kiện: nhịp thở rất nhẹ; sync idle là phần việc riêng của Claude.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/npc-sq_skill.idle.prompt.md",
+      "qa": "delivery/npc-sq_skill.idle.qa.json",
+      "sha256": "faa5ff23e11063e96a4e92f1a032d137c239cb276bac76360050e0f669da3845",
+      "raw_sha256": "192c169c99d66ecba544de3456f9e614b84e0e2e46be380faa3c5924e012ad7a",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_and_temporal_review",
+      "forge_qc": null
+    },
+    {
+      "id": "npc-sq_warehouse.idle",
+      "file": "delivery/npc-sq_warehouse.idle.png",
+      "category": "npc",
+      "px": [
+        768,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 4,
+      "pivot_px": [
+        96,
+        184
+      ],
+      "world": [
+        1.5,
+        1.5
+      ],
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Claude duyệt có điều kiện: nhịp thở rất nhẹ; sync idle là phần việc riêng của Claude.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/npc-sq_warehouse.idle.prompt.md",
+      "qa": "delivery/npc-sq_warehouse.idle.qa.json",
+      "sha256": "32dd23e5f531b201712c243eaa35f615bafce7ef02facfdd54c685b807f01d69",
+      "raw_sha256": "cf6a2565e6e259eb96f283c24d9f201aed0117e24b66bd43e038aa5221d79cac",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_and_temporal_review",
+      "forge_qc": null
+    },
+    {
+      "id": "npc-summoner_mira.idle",
+      "file": "delivery/npc-summoner_mira.idle.png",
+      "category": "npc",
+      "px": [
+        768,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 4,
+      "pivot_px": [
+        96,
+        184
+      ],
+      "world": [
+        1.5,
+        1.5
+      ],
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Claude duyệt có điều kiện: nhịp thở rất nhẹ; sync idle là phần việc riêng của Claude.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/npc-summoner_mira.idle.prompt.md",
+      "qa": "delivery/npc-summoner_mira.idle.qa.json",
+      "sha256": "f151ddb6f56e382e6b948adb9876aa429dfbcf0bb741c5591af9f7c313c26d12",
+      "raw_sha256": "0fc0dc1162a994f6de76c308220e35305f3d9beaad581e428773e72d3ff621b0",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_and_temporal_review",
+      "forge_qc": null
+    },
+    {
+      "id": "palace-gate-passage",
+      "file": "delivery/palace-gate-passage.png",
+      "category": "backdrop_mid",
+      "px": [
+        384,
+        420
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        192.0,
+        420
+      ],
+      "world": [
+        3.0,
+        3.28125
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/palace-gate-passage.prompt.md",
+      "qa": "delivery/palace-gate-passage.qa.json",
+      "sha256": "140ad09195ca8525cd1585670adc7186a069ff079d0bcc521c61dd9bf835c724",
+      "raw_sha256": "f9e56f0d505be1f5c43e0638a5b905a8d316bc1cbc7e8ac1c0c683a95ce028cf",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_Claude_review",
+      "forge_qc": null
+    },
+    {
+      "id": "palace-wall-fill",
+      "file": "delivery/palace-wall-fill.png",
+      "category": "prop",
+      "px": [
+        512,
+        320
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        256.0,
+        320
+      ],
+      "world": [
+        4.0,
+        2.5
+      ],
+      "tileable": "x",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/palace-wall-fill.prompt.md",
+      "qa": "delivery/palace-wall-fill.qa.json",
+      "sha256": "94119580dc31a925ca268464e74de1864d6b6700a94ed0420062a6db5f9a3fb5",
+      "raw_sha256": "dd223cf3a42f1959011cf8e4af3f4a64bc508d11d4e2ed9b9d6ba66090204f4c",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_Claude_review",
+      "forge_qc": null
+    },
+    {
+      "id": "path-transition-01",
+      "file": "delivery/path-transition-01.png",
+      "category": "ground_patch",
+      "px": [
+        434,
+        456
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        217.0,
+        228.0
+      ],
+      "world": [
+        3.390625,
+        3.5625
+      ],
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/path-transition-01.prompt.md",
+      "qa": "delivery/path-transition-01.qa.json",
+      "sha256": "a8a014457f888b77e3a9f887680e7ff7fa564031357a9831f89e1575f4d00f42",
+      "raw_sha256": "fc1c482f24a533326c2cd5d96d0e3c37529c3d14c23462d44265acc14244b263",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_composition_review",
+      "forge_qc": null
+    },
+    {
+      "id": "path-transition-02",
+      "file": "delivery/path-transition-02.png",
+      "category": "ground_patch",
+      "px": [
+        429,
+        456
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        214.5,
+        228.0
+      ],
+      "world": [
+        3.3515625,
+        3.5625
+      ],
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/path-transition-02.prompt.md",
+      "qa": "delivery/path-transition-02.qa.json",
+      "sha256": "0decdf964bd1462906c49daf5fd99b1141c18d2228d116523e3e481dfc28f852",
+      "raw_sha256": "fc1c482f24a533326c2cd5d96d0e3c37529c3d14c23462d44265acc14244b263",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_composition_review",
+      "forge_qc": null
+    },
+    {
+      "id": "path-transition-03",
+      "file": "delivery/path-transition-03.png",
+      "category": "ground_patch",
+      "px": [
+        435,
+        441
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        217.5,
+        220.5
+      ],
+      "world": [
+        3.3984375,
+        3.4453125
+      ],
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/path-transition-03.prompt.md",
+      "qa": "delivery/path-transition-03.qa.json",
+      "sha256": "fae4bc44870db96c139769487233dfdf39c7e89372fb6aefb5164a54388ff8c9",
+      "raw_sha256": "fc1c482f24a533326c2cd5d96d0e3c37529c3d14c23462d44265acc14244b263",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_composition_review",
+      "forge_qc": null
+    },
+    {
+      "id": "path-transition-04",
+      "file": "delivery/path-transition-04.png",
+      "category": "ground_patch",
+      "px": [
+        442,
+        442
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        221.0,
+        221.0
+      ],
+      "world": [
+        3.453125,
+        3.453125
+      ],
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/path-transition-04.prompt.md",
+      "qa": "delivery/path-transition-04.qa.json",
+      "sha256": "13f82c2605d605a0aea24d8a4501be6931dd7a4097e18c953e8aa96cfa816d38",
+      "raw_sha256": "fc1c482f24a533326c2cd5d96d0e3c37529c3d14c23462d44265acc14244b263",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_composition_review",
+      "forge_qc": null
+    },
+    {
+      "id": "path-transition-05",
+      "file": "delivery/path-transition-05.png",
+      "category": "ground_patch",
+      "px": [
+        475,
+        481
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        237.5,
+        240.5
+      ],
+      "world": [
+        3.7109375,
+        3.7578125
+      ],
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/path-transition-05.prompt.md",
+      "qa": "delivery/path-transition-05.qa.json",
+      "sha256": "d56d7521a98e014a0c70facec7dc22185f0ea9cf642f57ac6d184276edad9764",
+      "raw_sha256": "fc1c482f24a533326c2cd5d96d0e3c37529c3d14c23462d44265acc14244b263",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_composition_review",
+      "forge_qc": null
+    },
+    {
+      "id": "path-transition-06",
+      "file": "delivery/path-transition-06.png",
+      "category": "ground_patch",
+      "px": [
+        474,
+        468
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        237.0,
+        234.0
+      ],
+      "world": [
+        3.703125,
+        3.65625
+      ],
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/path-transition-06.prompt.md",
+      "qa": "delivery/path-transition-06.qa.json",
+      "sha256": "632b1033cd09b90dc24ef8e6bb9b447d3e87cd85f989dd488e5e4b660256dc19",
+      "raw_sha256": "fc1c482f24a533326c2cd5d96d0e3c37529c3d14c23462d44265acc14244b263",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_composition_review",
+      "forge_qc": null
+    },
+    {
+      "id": "path-transition-07",
+      "file": "delivery/path-transition-07.png",
+      "category": "ground_patch",
+      "px": [
+        440,
+        444
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        220.0,
+        222.0
+      ],
+      "world": [
+        3.4375,
+        3.46875
+      ],
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/path-transition-07.prompt.md",
+      "qa": "delivery/path-transition-07.qa.json",
+      "sha256": "7c1992d491c2dee49e5359087a87b261e0ad57f0ded68f5b85b6b0894d0b840c",
+      "raw_sha256": "ab85269d81959b7c7d1b27e482e2aed74b101b21572c765f7d36ffaee85b4dd7",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_composition_review",
+      "forge_qc": null
+    },
+    {
+      "id": "path-transition-08",
+      "file": "delivery/path-transition-08.png",
+      "category": "ground_patch",
+      "px": [
+        451,
+        440
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        225.5,
+        220.0
+      ],
+      "world": [
+        3.5234375,
+        3.4375
+      ],
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/path-transition-08.prompt.md",
+      "qa": "delivery/path-transition-08.qa.json",
+      "sha256": "154a330011e3853010c5bc6e9e6b0337f494ed00cb48d9cc78259a83d5bb8d89",
+      "raw_sha256": "ab85269d81959b7c7d1b27e482e2aed74b101b21572c765f7d36ffaee85b4dd7",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_composition_review",
+      "forge_qc": null
+    },
+    {
+      "id": "path-transition-09",
+      "file": "delivery/path-transition-09.png",
+      "category": "ground_patch",
+      "px": [
+        454,
+        439
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        227.0,
+        219.5
+      ],
+      "world": [
+        3.546875,
+        3.4296875
+      ],
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/path-transition-09.prompt.md",
+      "qa": "delivery/path-transition-09.qa.json",
+      "sha256": "ed96c76f0d37dcc564e3c27d1c675a002938039873ba0628d90ffb1438bbfd97",
+      "raw_sha256": "ab85269d81959b7c7d1b27e482e2aed74b101b21572c765f7d36ffaee85b4dd7",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_composition_review",
+      "forge_qc": null
+    },
+    {
+      "id": "path-transition-10",
+      "file": "delivery/path-transition-10.png",
+      "category": "ground_patch",
+      "px": [
+        439,
+        450
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        219.5,
+        225.0
+      ],
+      "world": [
+        3.4296875,
+        3.515625
+      ],
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/path-transition-10.prompt.md",
+      "qa": "delivery/path-transition-10.qa.json",
+      "sha256": "1a677656d701cbf9164c6c6f515eebc29a62d273a2a5ffdd453fc7a3f73f1120",
+      "raw_sha256": "ab85269d81959b7c7d1b27e482e2aed74b101b21572c765f7d36ffaee85b4dd7",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_composition_review",
+      "forge_qc": null
+    },
+    {
+      "id": "path-transition-11",
+      "file": "delivery/path-transition-11.png",
+      "category": "ground_patch",
+      "px": [
+        467,
+        450
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        233.5,
+        225.0
+      ],
+      "world": [
+        3.6484375,
+        3.515625
+      ],
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/path-transition-11.prompt.md",
+      "qa": "delivery/path-transition-11.qa.json",
+      "sha256": "84c8ddf3f9de0ed83aa0843b8e2c58c89d3dd0544a614329ac6d8db4caf99331",
+      "raw_sha256": "ab85269d81959b7c7d1b27e482e2aed74b101b21572c765f7d36ffaee85b4dd7",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_composition_review",
+      "forge_qc": null
+    },
+    {
+      "id": "path-transition-12",
+      "file": "delivery/path-transition-12.png",
+      "category": "ground_patch",
+      "px": [
+        454,
+        448
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        227.0,
+        224.0
+      ],
+      "world": [
+        3.546875,
+        3.5
+      ],
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/path-transition-12.prompt.md",
+      "qa": "delivery/path-transition-12.qa.json",
+      "sha256": "8031e3007fe74003f90ec43f0d11b6714c1865aaad98af5b8679a9720da2af2d",
+      "raw_sha256": "ab85269d81959b7c7d1b27e482e2aed74b101b21572c765f7d36ffaee85b4dd7",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_composition_review",
+      "forge_qc": null
+    },
+    {
+      "id": "player-female.run-down",
+      "file": "delivery/player-female.run-down.png",
+      "category": "player",
+      "px": [
+        1536,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 8,
+      "pivot_px": [
+        96,
+        184
+      ],
+      "world": [
+        1.5,
+        1.5
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/player-female.run-down.prompt.md",
+      "qa": "delivery/player-female.run-down.qa.json",
+      "sha256": "1732b61b960bae5e9e6a70493889e016d1d20fa49b3f1dba8f2f00c4c6a5544b",
+      "raw_sha256": "c9edb23750aefc4b3bb168c4124ea2534b796bf18daeb80ae728c8102dfd9695",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "forge_pass_not_release_approved",
+      "forge_qc": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/player-female.run-down/1732b61b960b/qc/sheet-qc.json"
+    },
+    {
+      "id": "player-female.run-up",
+      "file": "delivery/player-female.run-up.png",
+      "category": "player",
+      "px": [
+        1536,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 8,
+      "pivot_px": [
+        96,
+        184
+      ],
+      "world": [
+        1.5,
+        1.5
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/player-female.run-up.prompt.md",
+      "qa": "delivery/player-female.run-up.qa.json",
+      "sha256": "7e45ce2f4adc0fa8b5ab32e87f4f394b05654be527ad87a2e60b03ac07230094",
+      "raw_sha256": "2b14ab538c12b994d5753582cd1dc0afdf5b0a046931aba9013cceaaa0f96428",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "forge_warn_not_release_approved",
+      "forge_qc": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/player-female.run-up/7e45ce2f4adc/qc/sheet-qc.json"
+    },
+    {
+      "id": "player-female.run",
+      "file": "delivery/player-female.run.png",
+      "category": "player",
+      "px": [
+        1536,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 8,
+      "pivot_px": [
+        96,
+        184
+      ],
+      "world": [
+        1.5,
+        1.5
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/player-female.run.prompt.md",
+      "qa": "delivery/player-female.run.qa.json",
+      "sha256": "c26fff8333fa748d6456ecde6d891fd3130fd5a6b5d1dd95e1e5e43575d4aac5",
+      "raw_sha256": "8fd7234433785a6243223e058ec4a334eaa67e972d7da8a9e4a35172c179873e",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "forge_needs-visual-review_not_release_approved",
+      "forge_qc": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/player-female.run/c26fff8333fa/qc/sheet-qc.json"
+    },
+    {
+      "id": "player-male.run-down",
+      "file": "delivery/player-male.run-down.png",
+      "category": "player",
+      "px": [
+        1536,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 8,
+      "pivot_px": [
+        96,
+        184
+      ],
+      "world": [
+        1.5,
+        1.5
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/player-male.run-down.prompt.md",
+      "qa": "delivery/player-male.run-down.qa.json",
+      "sha256": "db080b106698983c6ac2f9281eac45234a5693294bf100f01440ed8420ace099",
+      "raw_sha256": "2778640477a4ef12344de97e9f5c0e44de6d19f058a5c57d58939013c065fd85",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "forge_pass_not_release_approved",
+      "forge_qc": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/player-male.run-down/db080b106698/qc/sheet-qc.json"
+    },
+    {
+      "id": "player-male.run-up",
+      "file": "delivery/player-male.run-up.png",
+      "category": "player",
+      "px": [
+        1536,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 8,
+      "pivot_px": [
+        96,
+        184
+      ],
+      "world": [
+        1.5,
+        1.5
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/player-male.run-up.prompt.md",
+      "qa": "delivery/player-male.run-up.qa.json",
+      "sha256": "0fd5c84a0aaee3ebed07de7c3534e18cc47aaa28f6315b4bf3410d0a6dc1a59a",
+      "raw_sha256": "a603c153cccb816c59fcc45afde982e96918ff04416080dcc6897964411d895c",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "forge_warn_not_release_approved",
+      "forge_qc": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/player-male.run-up/0fd5c84a0aae/qc/sheet-qc.json"
+    },
+    {
+      "id": "player-male.run",
+      "file": "delivery/player-male.run.png",
+      "category": "player",
+      "px": [
+        1536,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 8,
+      "pivot_px": [
+        96,
+        184
+      ],
+      "world": [
+        1.5,
+        1.5
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/player-male.run.prompt.md",
+      "qa": "delivery/player-male.run.qa.json",
+      "sha256": "96d67111eeeff0c41d49e33e823c1f04f1a5cae07a1b55b1322fffd34e11ea38",
+      "raw_sha256": "e90d3047fdb6a57c0762e012ca18fc850576c22db2f4c83ac725006c9893a659",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "forge_needs-visual-review_not_release_approved",
+      "forge_qc": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/player-male.run/96d67111eeef/qc/sheet-qc.json"
+    },
+    {
+      "id": "portrait-bia_free",
+      "file": "delivery/portrait-bia_free.png",
+      "category": "portrait",
+      "px": [
+        256,
+        256
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        128.0,
+        128.0
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/portrait-bia_free.prompt.md",
+      "qa": "delivery/portrait-bia_free.qa.json",
+      "sha256": "4750c985b30bd31844809fcb55d0c910c371aed9d167cbef08b167282394e5db",
+      "raw_sha256": "4472c3b88ee88423ec8d7623dd3fbed462ad1f1de124042d98681e1bdf899304",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "portrait-bia_shop",
+      "file": "delivery/portrait-bia_shop.png",
+      "category": "portrait",
+      "px": [
+        256,
+        256
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        128.0,
+        128.0
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/portrait-bia_shop.prompt.md",
+      "qa": "delivery/portrait-bia_shop.qa.json",
+      "sha256": "b059243c5aa329fcc30582982b777ae4c25514308ef08a8451046a7a5a00ccb1",
+      "raw_sha256": "fe3fe6c85f5bc7b94ef0c6250d6821b88c7f8e324c2d756e1141e860c72af26e",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "portrait-bia_skill",
+      "file": "delivery/portrait-bia_skill.png",
+      "category": "portrait",
+      "px": [
+        256,
+        256
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        128.0,
+        128.0
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/portrait-bia_skill.prompt.md",
+      "qa": "delivery/portrait-bia_skill.qa.json",
+      "sha256": "9001fa2ae9835cf227a4bd8f9edb4d1a788df3377270b339ef50d30e3a1f3e5a",
+      "raw_sha256": "058d565d66c750d90d430345cb80c571e32bd13b237bf63cd38203b5a9129da9",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "portrait-forest_guide",
+      "file": "delivery/portrait-forest_guide.png",
+      "category": "portrait",
+      "px": [
+        256,
+        256
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        128.0,
+        128.0
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/portrait-forest_guide.prompt.md",
+      "qa": "delivery/portrait-forest_guide.qa.json",
+      "sha256": "342bae4991f5a1511c80af7756205fa7961c055724083f932c26778acabb9516",
+      "raw_sha256": null,
+      "art_source": "existing",
+      "route": "approved original batch05 art reused unchanged after identity review",
+      "mechanical_status": "identity_visually_matched_existing",
+      "forge_qc": null
+    },
+    {
+      "id": "portrait-gate_captain",
+      "file": "delivery/portrait-gate_captain.png",
+      "category": "portrait",
+      "px": [
+        256,
+        256
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        128.0,
+        128.0
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/portrait-gate_captain.prompt.md",
+      "qa": "delivery/portrait-gate_captain.qa.json",
+      "sha256": "ff59717bce6b5eb68e935be27b8e4f95284cfee0ba3e1428799d1eea90a5f77b",
+      "raw_sha256": null,
+      "art_source": "existing",
+      "route": "approved original batch05 art reused unchanged after identity review",
+      "mechanical_status": "identity_visually_matched_existing",
+      "forge_qc": null
+    },
+    {
+      "id": "portrait-gate_guild",
+      "file": "delivery/portrait-gate_guild.png",
+      "category": "portrait",
+      "px": [
+        256,
+        256
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        128.0,
+        128.0
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/portrait-gate_guild.prompt.md",
+      "qa": "delivery/portrait-gate_guild.qa.json",
+      "sha256": "168e8b7e244687d67a3e9bc1a87778013a25306ef3f3517d002ba875b3fd5d4a",
+      "raw_sha256": "7de33de432b4285f51e4bb23b837bb27e5bd5cdac76829290c3285e49762e0bd",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "portrait-sau_free",
+      "file": "delivery/portrait-sau_free.png",
+      "category": "portrait",
+      "px": [
+        256,
+        256
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        128.0,
+        128.0
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/portrait-sau_free.prompt.md",
+      "qa": "delivery/portrait-sau_free.qa.json",
+      "sha256": "11f0c698ca0669b96659548a1f9571cb8cf11db2671380c5d62be7dcc25f0a50",
+      "raw_sha256": "d34728072affe24c9f210f77ee3965bf8bd8cef60e748782c61eed3768ac3ad2",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "portrait-sau_guard",
+      "file": "delivery/portrait-sau_guard.png",
+      "category": "portrait",
+      "px": [
+        256,
+        256
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        128.0,
+        128.0
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/portrait-sau_guard.prompt.md",
+      "qa": "delivery/portrait-sau_guard.qa.json",
+      "sha256": "8296676b0900b36b67cbea1ed207b60a3a4b6ec30c4360c46a5eaa2ce985629c",
+      "raw_sha256": null,
+      "art_source": "existing",
+      "route": "approved original batch05 art reused unchanged after identity review",
+      "mechanical_status": "identity_visually_matched_existing",
+      "forge_qc": null
+    },
+    {
+      "id": "portrait-sq_arena",
+      "file": "delivery/portrait-sq_arena.png",
+      "category": "portrait",
+      "px": [
+        256,
+        256
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        128.0,
+        128.0
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/portrait-sq_arena.prompt.md",
+      "qa": "delivery/portrait-sq_arena.qa.json",
+      "sha256": "f010f75036d44a25e08799ca53c21d30c3cc16297925c31e66623b60bcf3df3c",
+      "raw_sha256": "2106ad25a2b50554d23f2dafb55bb16b4402d3b85fe6068c38abc7e04e6d4b36",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "portrait-sq_board",
+      "file": "delivery/portrait-sq_board.png",
+      "category": "portrait",
+      "px": [
+        256,
+        256
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        128.0,
+        128.0
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/portrait-sq_board.prompt.md",
+      "qa": "delivery/portrait-sq_board.qa.json",
+      "sha256": "f4af8225bf865f4f1c952f430fab113ff9ed2957e7596579702d217ed71300b6",
+      "raw_sha256": "ee479ae38f21afd0dc96c21f4e644f0d45c4cbcf6d48570ce943e48fba4992f2",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "portrait-sq_exchange",
+      "file": "delivery/portrait-sq_exchange.png",
+      "category": "portrait",
+      "px": [
+        256,
+        256
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        128.0,
+        128.0
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/portrait-sq_exchange.prompt.md",
+      "qa": "delivery/portrait-sq_exchange.qa.json",
+      "sha256": "802f02051d74198cd22b590b0a70c94300106665175a5525613b4cc9112ebac7",
+      "raw_sha256": "3c7d7d139688a5a625d9a56807d15f97240677b3528106e26dd3079c4777d029",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "portrait-sq_free",
+      "file": "delivery/portrait-sq_free.png",
+      "category": "portrait",
+      "px": [
+        256,
+        256
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        128.0,
+        128.0
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/portrait-sq_free.prompt.md",
+      "qa": "delivery/portrait-sq_free.qa.json",
+      "sha256": "83512f5844e45a48e2f6626be00f41237179a34114942be81616a9e718cd806c",
+      "raw_sha256": "5d4b01ee52ab3f7feeb217a217d13da49b58d2205f23bb0b9663e3f3da4d38ef",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "portrait-sq_healer",
+      "file": "delivery/portrait-sq_healer.png",
+      "category": "portrait",
+      "px": [
+        256,
+        256
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        128.0,
+        128.0
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/portrait-sq_healer.prompt.md",
+      "qa": "delivery/portrait-sq_healer.qa.json",
+      "sha256": "47675c64dab9cb757e191e5c8fd90b807cd9309d789c22feb19c5daff802136f",
+      "raw_sha256": "4e22eef41a0eba5a73e79922f8a5b44b55f86d8a5127b4ef9c520891a5636de7",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "portrait-sq_mailbox",
+      "file": "delivery/portrait-sq_mailbox.png",
+      "category": "portrait",
+      "px": [
+        256,
+        256
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        128.0,
+        128.0
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/portrait-sq_mailbox.prompt.md",
+      "qa": "delivery/portrait-sq_mailbox.qa.json",
+      "sha256": "d7eac9e6274e1bf02018ad7d14d8fa2b7b4d793a18dffc0da89feaaa93d96fac",
+      "raw_sha256": "2ae5916810fab3927578769cd12512be679162728bf2ca4358081c171ae86d8f",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "portrait-sq_pillar",
+      "file": "delivery/portrait-sq_pillar.png",
+      "category": "portrait",
+      "px": [
+        256,
+        256
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        128.0,
+        128.0
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/portrait-sq_pillar.prompt.md",
+      "qa": "delivery/portrait-sq_pillar.qa.json",
+      "sha256": "4b4446c83319b62d78e489bfcedfc311ce304489a09ef81c479167d1ea4c7ed2",
+      "raw_sha256": "a05d2210f0e64d3376f0f36067f8aff2bff67e88045bf3935c82c328e2edec67",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "portrait-sq_skill",
+      "file": "delivery/portrait-sq_skill.png",
+      "category": "portrait",
+      "px": [
+        256,
+        256
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        128.0,
+        128.0
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/portrait-sq_skill.prompt.md",
+      "qa": "delivery/portrait-sq_skill.qa.json",
+      "sha256": "0479291d1c12aaf53454aa190996c4ee77304711a8c90ca088a5537f54fc5dc4",
+      "raw_sha256": "ba691d14b6a733e347774fb217f36f6f66469e6e450476ccf338a72175e673a9",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "portrait-sq_warehouse",
+      "file": "delivery/portrait-sq_warehouse.png",
+      "category": "portrait",
+      "px": [
+        256,
+        256
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        128.0,
+        128.0
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/portrait-sq_warehouse.prompt.md",
+      "qa": "delivery/portrait-sq_warehouse.qa.json",
+      "sha256": "b59cca8bdafd3534142ae4e132208a00e487e9fb2916e83efb352b48b98505f6",
+      "raw_sha256": "b5ce534ddecae9b173ace71af5f3e68e60c7d3d2fc662209ee8039372a977b56",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "portrait-summoner_mira",
+      "file": "delivery/portrait-summoner_mira.png",
+      "category": "portrait",
+      "px": [
+        256,
+        256
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        128.0,
+        128.0
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/portrait-summoner_mira.prompt.md",
+      "qa": "delivery/portrait-summoner_mira.qa.json",
+      "sha256": "dc2f6a2f06e02478062444f25ec449786231de2227d9c72864ed6e50dbeaa9d5",
+      "raw_sha256": "a85e3b0a9d89e6079778dd9a68a18f8bdf37439ead044f4772b542174136f90b",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "portrait-trainer_elin",
+      "file": "delivery/portrait-trainer_elin.png",
+      "category": "portrait",
+      "px": [
+        256,
+        256
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        128.0,
+        128.0
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/portrait-trainer_elin.prompt.md",
+      "qa": "delivery/portrait-trainer_elin.qa.json",
+      "sha256": "75d36e4a91d4a8a7f7fb228ec31624c93074fc345dabbb9d71917e90588bee74",
+      "raw_sha256": null,
+      "art_source": "existing",
+      "route": "approved original batch05 art reused unchanged after identity review",
+      "mechanical_status": "identity_visually_matched_existing",
+      "forge_qc": null
+    },
+    {
+      "id": "shadow-canopy",
+      "file": "delivery/shadow-canopy.png",
+      "category": "ground_patch",
+      "px": [
+        384,
+        160
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        192.0,
+        116.0
+      ],
+      "world": [
+        3.0,
+        1.25
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/shadow-canopy.prompt.md",
+      "qa": "delivery/shadow-canopy.qa.json",
+      "sha256": "684334ad747f2ce61a797fe4ed8b52b53eaa6724576a4205387334fc0a1f2b84",
+      "raw_sha256": "4790be06c62c84a54e898b9012864fccb912e0ec0253f41aa6a588ab12a68059",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "shadow-rect",
+      "file": "delivery/shadow-rect.png",
+      "category": "ground_patch",
+      "px": [
+        256,
+        128
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        128.0,
+        88.5
+      ],
+      "world": [
+        2.0,
+        1.0
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/shadow-rect.prompt.md",
+      "qa": "delivery/shadow-rect.qa.json",
+      "sha256": "afbce1f44ef15637494e396ff1f39823782b89573245c1a717c1f686da2358b9",
+      "raw_sha256": "63b16dc127b201a28a68a0d5af4605e347aa7928e3efdc52bdb8b24887c57366",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "shadow-round-large",
+      "file": "delivery/shadow-round-large.png",
+      "category": "ground_patch",
+      "px": [
+        192,
+        96
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        96.0,
+        70.5
+      ],
+      "world": [
+        1.5,
+        0.75
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/shadow-round-large.prompt.md",
+      "qa": "delivery/shadow-round-large.qa.json",
+      "sha256": "6a0e4853d963dbe21d13b2b1fc3dc4bf6ab1d45742fb1d039a3bebe590766e5e",
+      "raw_sha256": "c34f3ec7a1f16a0c571b0779ba95360543e2ae4c6dd0ff01888f756a1ca2f32d",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "shadow-round-small",
+      "file": "delivery/shadow-round-small.png",
+      "category": "ground_patch",
+      "px": [
+        96,
+        48
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        48.0,
+        32.5
+      ],
+      "world": [
+        0.75,
+        0.375
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/shadow-round-small.prompt.md",
+      "qa": "delivery/shadow-round-small.qa.json",
+      "sha256": "90d5da545e0373e8cc7129c032e9dc6a26cddb84b38e853f34d112bfad2670c7",
+      "raw_sha256": "9828a7f873a4cf2f0728cb75164359c744b8755d60b5a510c0b37b5d6aacfc6a",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "slot-female",
+      "file": "delivery/slot-female.png",
+      "category": "portrait",
+      "px": [
+        256,
+        256
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        128.0,
+        128.0
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/slot-female.prompt.md",
+      "qa": "delivery/slot-female.qa.json",
+      "sha256": "5f3a2a972bfd5afad10c8bdc15781ceff6f235e26984a9365c06c339988201df",
+      "raw_sha256": "0a5060ccca62f4ad03324c7a0f7c77fadf5b493609f8a2d63141d1c17411d7e3",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "slot-male",
+      "file": "delivery/slot-male.png",
+      "category": "portrait",
+      "px": [
+        256,
+        256
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        128.0,
+        128.0
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/slot-male.prompt.md",
+      "qa": "delivery/slot-male.qa.json",
+      "sha256": "73a9f9923c3d481fac978de5e75df403525607f659ead21b22c009c6bd7f41f1",
+      "raw_sha256": "c12eb1ea354332f28ac756b1d0659cd23dfca47db199107af66bb2ecd3a2e6de",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "starter-sa_hat",
+      "file": "delivery/starter-sa_hat.png",
+      "category": "portrait",
+      "px": [
+        512,
+        512
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        256.0,
+        256.0
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/starter-sa_hat.prompt.md",
+      "qa": "delivery/starter-sa_hat.qa.json",
+      "sha256": "ba3f0d58a2c8dc769b8db0980c3ce6b0f91261adf62404a04ada6f7086122944",
+      "raw_sha256": "079f759e467ce645dfc52fd3e26c982fc760a9f783f983f8a9b002fda7105798",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "starter-tien_chuong",
+      "file": "delivery/starter-tien_chuong.png",
+      "category": "portrait",
+      "px": [
+        512,
+        512
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        256.0,
+        256.0
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/starter-tien_chuong.prompt.md",
+      "qa": "delivery/starter-tien_chuong.qa.json",
+      "sha256": "37b82c483a496acd6c43d1ad8f0e204d0586e4a0b6487a74ceaf601e74ecc4e8",
+      "raw_sha256": "e531e18fa611f8619b3ab073b6d925a6bc10e81246ffaacab962063e0bfc343a",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "starter-xich_ung",
+      "file": "delivery/starter-xich_ung.png",
+      "category": "portrait",
+      "px": [
+        512,
+        512
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        256.0,
+        256.0
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/starter-xich_ung.prompt.md",
+      "qa": "delivery/starter-xich_ung.qa.json",
+      "sha256": "46698ae0e71c6bb30c25227fbdc4b32c840c0aedd2041c4df1e84a9f05e34d90",
+      "raw_sha256": "15b9fc2f3fa2a00adcdc3ce1a48bf45ad06db3faa6b234fc4e978f292ea74029",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "ui-bottombar",
+      "file": "delivery/ui-bottombar.png",
+      "category": "ui_sprite",
+      "px": [
+        1280,
+        192
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        640.0,
+        96.0
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/ui-bottombar.prompt.md",
+      "qa": "delivery/ui-bottombar.qa.json",
+      "sha256": "25edfc821f0ad3c470c6f80a56ae616ac870a3b33503e907706fc04e5e2eed07",
+      "raw_sha256": "c7546189a49df7aeae25c83d0117ac1c80ba856e04065f2e422b7e61188b2e43",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "ui-chat",
+      "file": "delivery/ui-chat.png",
+      "category": "ui_sprite",
+      "px": [
+        1024,
+        256
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        512.0,
+        128.0
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/ui-chat.prompt.md",
+      "qa": "delivery/ui-chat.qa.json",
+      "sha256": "d30b39c0bda33ea69dd7cb4b70ea10f6c9532e9be878abf7f0b738d1a76689e2",
+      "raw_sha256": "5381a7d17db5ae484816ae04b2fe52b65fc25bb301a9eaf7b51ddb5e60fbdd31",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "ui-menu",
+      "file": "delivery/ui-menu.png",
+      "category": "ui_sprite",
+      "px": [
+        640,
+        768
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        320.0,
+        384.0
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/ui-menu.prompt.md",
+      "qa": "delivery/ui-menu.qa.json",
+      "sha256": "68ac2d14a90d76d8217b90237e0ecb0ec5266172eabc485314560243b34af38e",
+      "raw_sha256": "000944e3f48bda619b81ffe19a8d2338b562376feb250bb136becb94ac05f7d1",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "ui-minimap",
+      "file": "delivery/ui-minimap.png",
+      "category": "ui_sprite",
+      "px": [
+        512,
+        320
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        256.0,
+        160.0
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/ui-minimap.prompt.md",
+      "qa": "delivery/ui-minimap.qa.json",
+      "sha256": "aa2117ed5287fdfdcc8734e44b5fec23e2759c87deae301a9f129a2477a524c0",
+      "raw_sha256": "fde155e92c041a0507e1161efc39a366a1c0d64914abab19df7be14451a80441",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "repaired_needs_Claude_review",
+      "forge_qc": null
+    },
+    {
+      "id": "ui-objective",
+      "file": "delivery/ui-objective.png",
+      "category": "ui_sprite",
+      "px": [
+        512,
+        256
+      ],
+      "frame_px": null,
+      "frames": 1,
+      "pivot_px": [
+        256.0,
+        128.0
+      ],
+      "world": null,
+      "tileable": "none",
+      "approved": true,
+      "approval_note": "Duyệt bởi Claude theo checklist do owner gửi 2026-10-23; Codex chỉ chép lại kết quả, không tự duyệt.",
+      "status": "approved_in_owner_checklist",
+      "prompt": "delivery/ui-objective.prompt.md",
+      "qa": "delivery/ui-objective.qa.json",
+      "sha256": "b2f68b962669dcdf73c6d699ac6a7278fbc6396b141be4fd708cf9a5b8264e97",
+      "raw_sha256": "84196ae6167af12c1bb2fc3a45cce995b0f7b4affde95ec49691f43c2f9f1c6b",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "needs_visual_review",
+      "forge_qc": null
+    },
+    {
+      "id": "walker-baker.run-down",
+      "file": "delivery/walker-baker.run-down.png",
+      "category": "npc",
+      "px": [
+        1536,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 8,
+      "pivot_px": [
+        96,
+        184
+      ],
+      "world": [
+        1.5,
+        1.5
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/walker-baker.run-down.prompt.md",
+      "qa": "delivery/walker-baker.run-down.qa.json",
+      "sha256": "0fd9b7ee9c386bcad7ec7b7f809a60420173d17a1898fd16f3421b6416e644fa",
+      "raw_sha256": "07749fe1bcb2707909adee776376d7f36ade7129bc5d8da5ef02e3fec1ae6456",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "forge_warn_not_release_approved",
+      "forge_qc": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-baker.run-down/9f93d2fe0ef6/qc/sheet-qc.json"
+    },
+    {
+      "id": "walker-baker.run-up",
+      "file": "delivery/walker-baker.run-up.png",
+      "category": "npc",
+      "px": [
+        1536,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 8,
+      "pivot_px": [
+        96,
+        184
+      ],
+      "world": [
+        1.5,
+        1.5
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/walker-baker.run-up.prompt.md",
+      "qa": "delivery/walker-baker.run-up.qa.json",
+      "sha256": "30c4a2ffca5d9e96f6c0c5d37310bccbed67aae7f969363f926c8595cb75e159",
+      "raw_sha256": "b1c0856503132d59ae5a6019fd028feb9dca8379d2ef31d6610ca2e7a0026ad4",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "forge_warn_not_release_approved",
+      "forge_qc": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-baker.run-up/30c4a2ffca5d/qc/sheet-qc.json"
+    },
+    {
+      "id": "walker-baker.run",
+      "file": "delivery/walker-baker.run.png",
+      "category": "npc",
+      "px": [
+        1536,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 8,
+      "pivot_px": [
+        96,
+        184
+      ],
+      "world": [
+        1.5,
+        1.5
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/walker-baker.run.prompt.md",
+      "qa": "delivery/walker-baker.run.qa.json",
+      "sha256": "7b625e0ca40f5af1aafdb6856e6a702cae08e263696d9f23695a46d28921edfa",
+      "raw_sha256": "9305913e826c0482b6d207463b49471517d4c2f8958f484a2354a2d5608adc9b",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "forge_warn_not_release_approved",
+      "forge_qc": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-baker.run/7b625e0ca40f/qc/sheet-qc.json"
+    },
+    {
+      "id": "walker-boy.run-down",
+      "file": "delivery/walker-boy.run-down.png",
+      "category": "npc",
+      "px": [
+        1536,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 8,
+      "pivot_px": [
+        96,
+        184
+      ],
+      "world": [
+        1.5,
+        1.5
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/walker-boy.run-down.prompt.md",
+      "qa": "delivery/walker-boy.run-down.qa.json",
+      "sha256": "16673e97d4d1be7acc0f2ecace6f5721d81bc8121fbecb3954c255b3f011e376",
+      "raw_sha256": "ec674ebd1e0c7cd4f57c9d9f039edd1bc0fb6af1d07b67dcaa483a21b4fa658c",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "forge_pass_not_release_approved",
+      "forge_qc": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-boy.run-down/16673e97d4d1/qc/sheet-qc.json"
+    },
+    {
+      "id": "walker-boy.run-up",
+      "file": "delivery/walker-boy.run-up.png",
+      "category": "npc",
+      "px": [
+        1536,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 8,
+      "pivot_px": [
+        96,
+        184
+      ],
+      "world": [
+        1.5,
+        1.5
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/walker-boy.run-up.prompt.md",
+      "qa": "delivery/walker-boy.run-up.qa.json",
+      "sha256": "489a0357623204c2338648744442b22c032cadac466bfb36aaf0f279ccf2f308",
+      "raw_sha256": "0dc21a14bb000c22d7526134dd81fc2a4ddfb1955f89ce4a2922f631daa0a618",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "forge_warn_not_release_approved",
+      "forge_qc": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-boy.run-up/489a03576232/qc/sheet-qc.json"
+    },
+    {
+      "id": "walker-boy.run",
+      "file": "delivery/walker-boy.run.png",
+      "category": "npc",
+      "px": [
+        1536,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 8,
+      "pivot_px": [
+        96,
+        184
+      ],
+      "world": [
+        1.5,
+        1.5
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/walker-boy.run.prompt.md",
+      "qa": "delivery/walker-boy.run.qa.json",
+      "sha256": "d6d50f47fdc417c003bd2ab5bf33c8911ddcb6bfcbf75796f49e18077eba9904",
+      "raw_sha256": "facc75672e980b2d27219a768af2ad4deb34d56409d6b32799350c172d6ef6e3",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "forge_warn_not_release_approved",
+      "forge_qc": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-boy.run/d6d50f47fdc4/qc/sheet-qc.json"
+    },
+    {
+      "id": "walker-elder.run-down",
+      "file": "delivery/walker-elder.run-down.png",
+      "category": "npc",
+      "px": [
+        1536,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 8,
+      "pivot_px": [
+        96,
+        184
+      ],
+      "world": [
+        1.5,
+        1.5
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/walker-elder.run-down.prompt.md",
+      "qa": "delivery/walker-elder.run-down.qa.json",
+      "sha256": "58334ff20d60e3a39054e68dacba8a33243a267ce17d087646e6a6301a633372",
+      "raw_sha256": "9336838cc06a187c43b452e927af29e8e8a3be58ed43880b4933da55fb841b9f",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "forge_warn_not_release_approved",
+      "forge_qc": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-elder.run-down/2a44237b7003/qc/sheet-qc.json"
+    },
+    {
+      "id": "walker-elder.run-up",
+      "file": "delivery/walker-elder.run-up.png",
+      "category": "npc",
+      "px": [
+        1536,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 8,
+      "pivot_px": [
+        96,
+        184
+      ],
+      "world": [
+        1.5,
+        1.5
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/walker-elder.run-up.prompt.md",
+      "qa": "delivery/walker-elder.run-up.qa.json",
+      "sha256": "e212f8165d111bb5a393f58add424a77d5a7cb5b8cf0f7b23a10f4878be7c9ab",
+      "raw_sha256": "4da23ab446afa8ed2f5c7d5ddff753ceeb5f9b37417afbdd0f5c235ca2cfd91c",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "forge_pass_not_release_approved",
+      "forge_qc": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-elder.run-up/fb8fac352c3a/qc/sheet-qc.json"
+    },
+    {
+      "id": "walker-elder.run",
+      "file": "delivery/walker-elder.run.png",
+      "category": "npc",
+      "px": [
+        1536,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 8,
+      "pivot_px": [
+        96,
+        184
+      ],
+      "world": [
+        1.5,
+        1.5
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/walker-elder.run.prompt.md",
+      "qa": "delivery/walker-elder.run.qa.json",
+      "sha256": "60211d02fd9fae04c73f21a8d20ba6a1475cf7ff903c56cfc193d124d6c69d36",
+      "raw_sha256": "019f62fa304e8379e1254cfc64f891b136189befd6b1857d31944014d4f5f30d",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "forge_fail_not_release_approved",
+      "forge_qc": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-elder.run/60211d02fd9f/qc/sheet-qc.json"
+    },
+    {
+      "id": "walker-girl.run-down",
+      "file": "delivery/walker-girl.run-down.png",
+      "category": "npc",
+      "px": [
+        1536,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 8,
+      "pivot_px": [
+        96,
+        184
+      ],
+      "world": [
+        1.5,
+        1.5
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/walker-girl.run-down.prompt.md",
+      "qa": "delivery/walker-girl.run-down.qa.json",
+      "sha256": "871f150cecbd6528f01f974ec157488c48fa6c7ae7a74e458195763b95579a6d",
+      "raw_sha256": "ae895a81f6df1d04e977f0aa0d456eeba11c374f57b141a19f6a4e53b0d9a901",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "forge_warn_not_release_approved",
+      "forge_qc": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-girl.run-down/6b9bfdbdc7fa/qc/sheet-qc.json"
+    },
+    {
+      "id": "walker-girl.run-up",
+      "file": "delivery/walker-girl.run-up.png",
+      "category": "npc",
+      "px": [
+        1536,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 8,
+      "pivot_px": [
+        96,
+        184
+      ],
+      "world": [
+        1.5,
+        1.5
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/walker-girl.run-up.prompt.md",
+      "qa": "delivery/walker-girl.run-up.qa.json",
+      "sha256": "1ea946488bb4de3d4e1a40fadfb00ad82d8c56fc0e67f8006d5faadaa1f77ada",
+      "raw_sha256": "71eb4b31600c41ff9d8642c0525fe5d73d60b20ef0f0c86ab4a3280d1c486e3c",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "forge_pass_not_release_approved",
+      "forge_qc": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-girl.run-up/1ea946488bb4/qc/sheet-qc.json"
+    },
+    {
+      "id": "walker-girl.run",
+      "file": "delivery/walker-girl.run.png",
+      "category": "npc",
+      "px": [
+        1536,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 8,
+      "pivot_px": [
+        96,
+        184
+      ],
+      "world": [
+        1.5,
+        1.5
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/walker-girl.run.prompt.md",
+      "qa": "delivery/walker-girl.run.qa.json",
+      "sha256": "3599f8b748dcc374aee9133a12069dbb90131fa6a63e2b13b1f640360cb4a894",
+      "raw_sha256": "1742b8daaa5449b34d0d5ff122edd488a5215414091691b28a2dbc6a9f3a4c27",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "forge_warn_not_release_approved",
+      "forge_qc": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-girl.run/3599f8b748dc/qc/sheet-qc.json"
+    },
+    {
+      "id": "walker-guard.run-down",
+      "file": "delivery/walker-guard.run-down.png",
+      "category": "npc",
+      "px": [
+        1536,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 8,
+      "pivot_px": [
+        96,
+        184
+      ],
+      "world": [
+        1.5,
+        1.5
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/walker-guard.run-down.prompt.md",
+      "qa": "delivery/walker-guard.run-down.qa.json",
+      "sha256": "aa67537336ecd5b612e8320eb0f64bc6b02f3e1b30f796157df70d712a0343ba",
+      "raw_sha256": "e565e1568ba4a0ee2b2ef15688171c2f7e29e9fce6c5f15f1056284dd31efc52",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "forge_pass_not_release_approved",
+      "forge_qc": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-guard.run-down/aa67537336ec/qc/sheet-qc.json"
+    },
+    {
+      "id": "walker-guard.run-up",
+      "file": "delivery/walker-guard.run-up.png",
+      "category": "npc",
+      "px": [
+        1536,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 8,
+      "pivot_px": [
+        96,
+        184
+      ],
+      "world": [
+        1.5,
+        1.5
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/walker-guard.run-up.prompt.md",
+      "qa": "delivery/walker-guard.run-up.qa.json",
+      "sha256": "5e2dd56b3e89afeb226e901eedeb2ba3eeb690379b561ca4c5a30b8fa5d07fc9",
+      "raw_sha256": "77ff591b790d1eea71567331af20d76de64452cc050590aad7e2edf0c347a84b",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "forge_fail_not_release_approved",
+      "forge_qc": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-guard.run-up/02aeed1ce3d8/qc/sheet-qc.json"
+    },
+    {
+      "id": "walker-guard.run",
+      "file": "delivery/walker-guard.run.png",
+      "category": "npc",
+      "px": [
+        1536,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 8,
+      "pivot_px": [
+        96,
+        184
+      ],
+      "world": [
+        1.5,
+        1.5
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/walker-guard.run.prompt.md",
+      "qa": "delivery/walker-guard.run.qa.json",
+      "sha256": "acc056a303458a92c34eae8152e9f01b66a37e5e81f58b134960cbdeb3200c97",
+      "raw_sha256": "677ca95600596d0c94a797a9b4173b2c77cdc79c0d203cc119af68d83e2f8427",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "forge_fail_not_release_approved",
+      "forge_qc": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-guard.run/acc056a30345/qc/sheet-qc.json"
+    },
+    {
+      "id": "walker-traveller.run-down",
+      "file": "delivery/walker-traveller.run-down.png",
+      "category": "npc",
+      "px": [
+        1536,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 8,
+      "pivot_px": [
+        96,
+        184
+      ],
+      "world": [
+        1.5,
+        1.5
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/walker-traveller.run-down.prompt.md",
+      "qa": "delivery/walker-traveller.run-down.qa.json",
+      "sha256": "daae9bb8c2d3109f18bb66ab0f470c7f603b0c30720c6b87954df3b5d8a1b1ed",
+      "raw_sha256": "74a134507edc45a9d9893197ed6edcbcdd52d6cfefcb5f978479cc3bf749c0ef",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "forge_warn_not_release_approved",
+      "forge_qc": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-traveller.run-down/7380360caccb/qc/sheet-qc.json"
+    },
+    {
+      "id": "walker-traveller.run-up",
+      "file": "delivery/walker-traveller.run-up.png",
+      "category": "npc",
+      "px": [
+        1536,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 8,
+      "pivot_px": [
+        96,
+        184
+      ],
+      "world": [
+        1.5,
+        1.5
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/walker-traveller.run-up.prompt.md",
+      "qa": "delivery/walker-traveller.run-up.qa.json",
+      "sha256": "07917bbc7f50ad0df2e5082f17b5ed497c78498a4a000b6bea4c6c204b7e9c3b",
+      "raw_sha256": "e3906d8a3b062e31e618800a42f17393535b7366330cd1e37408f9c47eb815b3",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "forge_pass_not_release_approved",
+      "forge_qc": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-traveller.run-up/3e435d3b4626/qc/sheet-qc.json"
+    },
+    {
+      "id": "walker-traveller.run",
+      "file": "delivery/walker-traveller.run.png",
+      "category": "npc",
+      "px": [
+        1536,
+        192
+      ],
+      "frame_px": [
+        192,
+        192
+      ],
+      "frames": 8,
+      "pivot_px": [
+        96,
+        184
+      ],
+      "world": [
+        1.5,
+        1.5
+      ],
+      "tileable": "none",
+      "approved": false,
+      "approval_note": "Chưa được Claude duyệt bản hiện tại.",
+      "status": "pending_Claude_review",
+      "prompt": "delivery/walker-traveller.run.prompt.md",
+      "qa": "delivery/walker-traveller.run.qa.json",
+      "sha256": "aaa62947de2018cb2d93de1f108dc940b0b25cc09d1eddc380634de84ebe7253",
+      "raw_sha256": "8c6def58d260f08121df987e1338dd2f0678d7c01d13f84d37b4632de17ee2ec",
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "mechanical_status": "forge_fail_not_release_approved",
+      "forge_qc": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-traveller.run/aaa62947de20/qc/sheet-qc.json"
+    }
+  ]
+}

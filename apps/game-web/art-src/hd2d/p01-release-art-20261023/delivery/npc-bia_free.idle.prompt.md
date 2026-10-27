@@ -1,0 +1,7 @@
+ONE horizontal strip of FOUR fullbody IDLE breathing animation frames for Phimond NPC bia_free, no second row. Final delivery768x192, four192x192 cells, body about168px, feet baseline local(96,184). Reference1 is EXACT identity, costume, face, hair and handheld accessory lock; preserve its facing angle, scale and mature body proportion. Reference2 only rendering/outline style. Frame1 relaxed EXHALE,2 gentle INHALE shoulder/chest subtly expands,3 inhale PEAK,4 gentle exhale nearing frame1. Feet/pelvis stationary in every frame, tiny1px delivery-scale shoulder change, hair/robe/accessory tips move only1-2px at delivery scale, no stretching of body. Keep all jewelry/props consistent and in same hand. FOUR independently drawn temporal phases, no waving/gesturing/walking or blinking all eyes shut. Flat pure #FF00FF background, binary alpha, at most48colors, fine1px colored-dark outline at finalscale, upper-left warm light, crisp pixel clusters without antialias/blur/shadows/ground/text/grid. Generous horizontal spacing and exactly one common baseline so no vertical row offset.
+
+References:
+- /Users/phileanh/rust/phimond/apps/client/public/hd2d/npc-bia_free.png SHA256 0a32e427cf659d5a7b7cd9f98cf0a5d8f67753e8eaea49d573b223c528f0081f
+- /Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-05-octopath/npc-trainer_elin/final.png SHA256 93eadafcccd1838cfaf466bb32e53f1feb7b59ffa468a2f8981cc02e2a2ad25a
+
+Raw SHA256: 3ea6454a5f7a745e43f009fa76009592db16fc2c87dedee9583dc920b7603f1a

@@ -1,0 +1,17 @@
+{
+  "id": "player-male",
+  "dir": "up",
+  "name": "player-male.run-up.png",
+  "raw": "player-male.run-up.grid-raw-02.png",
+  "refs": [
+    "/Users/phileanh/rust/phimond/apps/client/public/hd2d/player-male.png",
+    "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/sources/player-male-upperbody-reference.png"
+  ],
+  "prompt": "Create a SQUARE3x3 equal-cell animation source:8 FULL-BODY poses read row-major, ninthcell EMPTYmagenta. This is one8frame looping WALK action, not8idlevariants. Pure#FF00FF background throughout, no captions/grid/numbers/shadows/trails. Same identity/costume as supplied reference, no added objects. Crisp production pixel art, upperleftlight,48colorpalette, one shared body scale and head size, 1pxdarkoutline at192finalscale, no antialias. Each pose fullycontained in cell with generous margin; constant root and baseline; subtle2px bob max, full person168px in final192cell. Final packaging will be8cells in one horizontal1536x192strip. Each phase independently drawn, do not repeat/mirror halfcycle. Input1 is character identity only, rotate wholecharacter into UP away from viewer, true BACK view, back of head and coat visible, NO face/eyes at all. Feet point away, see heel of trailing boot. Never sidefacing. Feet and arms MUST change clearly: screenLEFT leg is A, screenRIGHT leg B. 1Afoot FORWARD/bodyweight onA, Bfoot trails and heel lifts;2Aknee loads bends while Bknee swings;3Bfoot passes A toward nextstep;4Bfoot reachesforward while Atoepushes;5Bfoot FORWARD/bodyweight onB, Afoot trails;6Bknee loads bends while Aknee swings;7Afoot passes B;8Afoot reachesforward beforecontact1. The forward boot y184, trailing boot roughlyy170 and visibly partlyoccluded; reverse these two feet inframe5. Foot separation and knee bends must read even at192px, not tiny identical idle changes. Hands swing opposite leading leg, arm on leadingleg side goes backward. Head/torso remain sameheight, no rotatingtorso between frames. Longcoat/skirt must open enough to show alternatingknees and bothboots. Frame1and5have OPPOSED stance, not duplicates. Do not use face/outfit reference idle stance for allframes. Reference2 is upperbody detail, identity only.",
+  "frames": 8,
+  "source_grid": [
+    3,
+    3
+  ],
+  "generated_path": "/Users/phileanh/.codex/generated_images/01a16274-30fd-7c01-a90a-62e6d2bbfc47/exec-d77dc0b7-62d1-46dd-8ed2-f4d4575452b3.png"
+}

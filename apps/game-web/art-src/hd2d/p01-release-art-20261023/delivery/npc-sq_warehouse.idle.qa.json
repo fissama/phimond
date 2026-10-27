@@ -1,0 +1,117 @@
+{
+  "name": "npc-sq_warehouse.idle.png",
+  "size": [
+    768,
+    192
+  ],
+  "frames": 4,
+  "cell": [
+    192,
+    192
+  ],
+  "pivot": [
+    96,
+    184
+  ],
+  "colors": 48,
+  "partial_alpha": 0,
+  "raw_sha256": "cf6a2565e6e259eb96f283c24d9f201aed0117e24b66bd43e038aa5221d79cac",
+  "sha256": "32dd23e5f531b201712c243eaa35f615bafce7ef02facfdd54c685b807f01d69",
+  "source_boxes": [
+    [
+      68,
+      109,
+      496,
+      662
+    ],
+    [
+      610,
+      105,
+      1038,
+      662
+    ],
+    [
+      1152,
+      99,
+      1581,
+      662
+    ],
+    [
+      1695,
+      109,
+      2123,
+      662
+    ]
+  ],
+  "transforms": [
+    {
+      "translate": [
+        26,
+        19
+      ],
+      "uniform_scale": 0.2984014209591474,
+      "head_anchor_x": 96
+    },
+    {
+      "translate": [
+        26,
+        18
+      ],
+      "uniform_scale": 0.2984014209591474,
+      "head_anchor_x": 96
+    },
+    {
+      "translate": [
+        25,
+        16
+      ],
+      "uniform_scale": 0.2984014209591474,
+      "head_anchor_x": 96
+    },
+    {
+      "translate": [
+        26,
+        19
+      ],
+      "uniform_scale": 0.2984014209591474,
+      "head_anchor_x": 96
+    }
+  ],
+  "postprocess": "key magenta, crop equal horizontal cells, ONE shared uniform nearest-neighbor scale, translation-only anchor, shared48palette. No pose synthesis, warp, flip, or retouch.",
+  "approved": false,
+  "status": "needs_visual_and_temporal_review",
+  "frame_bboxes": [
+    [
+      26,
+      19,
+      154,
+      184
+    ],
+    [
+      26,
+      18,
+      154,
+      184
+    ],
+    [
+      25,
+      16,
+      153,
+      184
+    ],
+    [
+      26,
+      19,
+      154,
+      184
+    ]
+  ],
+  "duplicate_pairs": [],
+  "warnings": [],
+  "body_heights": [
+    165,
+    166,
+    168,
+    165
+  ]
+}

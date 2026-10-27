@@ -1,0 +1,12 @@
+Precise edit of a 2D sprite animation sheet. Input1 is eight existing animated poses in3x3grid with ninthcellblank; input2 is approved production IDLE defining identity, proportions and held equipment. Restore the SAME long straight SPEAR from approved idle in EVERYframe, one hand gripping shaft at waist. Silver spearhead, golden collar, brown shaft and metal butt. Preserve the source idle's spear-to-human proportions: helmet is visibly below spear-tip, pole butt nearboots, not a tiny spear. Keep helmet, bluegoldtabard, silvershoulders, brownboots SAME actual colors. Make every body's scale in all8cells consistent with approved idle, so spear and helmetfit withpadding; don't crop weapon. Keep eight REAL different walk keyposes in SAME3x3layout, same facingRIGHT3/4camera. Retain limb articulation; frame1 and5mustoppositelegcontacts, NOT same nearleg forward twice. NEAR bright leg forwardRIGHT at1; FAR darker leg forwardRIGHT at5 with NEAR thigh trailingLEFT in front of farthigh atcrotch. Carrying equipment hand neednot freelyswing. Do not flip samefigure tofake legswap, don't duplicate halfcycle. Shared upper-leftwarm light, crisp pixelclusters matchingapprovedidle,48colors,1pxdarkcoloredoutline finalscale. Pure#FF00FF everywhere outside subjects includinginteriorgaps. No gridlines, borders, markers, floor, castshadows, text or additionalfigures. Each of8figures and wholeweapon mustfit itsowncell with8pxsafe margins at final192scale. Output square, exactly3rows3cols, lastcellEMPTY.
+
+Raw source: walker-guard.run.grid-raw-04.png; first8 actual cells row-major repacked losslessly, source grid [3, 3], gutter-only trim 0px; no pose edits. Final horizontal1536x192.
+
+References:
+- /Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/sources/walker-guard.run.grid-raw-02.png SHA256 5376567a07e96c2eabbb93a84e73240716351220a7153b9d870d1a7a0c08a3c8
+- /Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/sources/walker-guard-approved-idle-6x.png SHA256 0d14ab241addcdc4d29555037da0ed1f65bd347754b95e064000598cdfe5f1bf
+
+Raw SHA256: 677ca95600596d0c94a797a9b4173b2c77cdc79c0d203cc119af68d83e2f8427
+
+
+Postprocess: Agent Sprite Forge v0.4.0 scale_frames.py (commit5324342), scale1/nearest/integer translations, torso-x registration, fixed192x192 canvas with96,184 anchor. Numeric QC does not approve anatomy, equipment or motion; Claude review still required.

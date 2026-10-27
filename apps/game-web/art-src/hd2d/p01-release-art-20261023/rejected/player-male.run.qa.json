@@ -1,0 +1,204 @@
+{
+  "name": "player-male.run.png",
+  "size": [
+    1536,
+    192
+  ],
+  "frames": 8,
+  "cell": [
+    192,
+    192
+  ],
+  "pivot": [
+    96,
+    184
+  ],
+  "colors": 48,
+  "partial_alpha": 0,
+  "raw_sha256": "d997b0c253e0fda96491c7cb6ee835d7c1c9e5a21d87448f9df6912aa8221671",
+  "sha256": "e162a07621d905b771739fe7cf57759cf4bdc622fed7755b30630e99413acc76",
+  "source_boxes": [
+    [
+      18,
+      192,
+      243,
+      630
+    ],
+    [
+      243,
+      205,
+      486,
+      628
+    ],
+    [
+      486,
+      196,
+      728,
+      631
+    ],
+    [
+      728,
+      189,
+      971,
+      622
+    ],
+    [
+      971,
+      195,
+      1214,
+      631
+    ],
+    [
+      1214,
+      213,
+      1456,
+      628
+    ],
+    [
+      1456,
+      195,
+      1699,
+      631
+    ],
+    [
+      1699,
+      192,
+      1905,
+      628
+    ]
+  ],
+  "transforms": [
+    {
+      "translate": [
+        45,
+        16
+      ],
+      "uniform_scale": 0.3835616438356164,
+      "head_anchor_x": 100
+    },
+    {
+      "translate": [
+        44,
+        22
+      ],
+      "uniform_scale": 0.3835616438356164,
+      "head_anchor_x": 100
+    },
+    {
+      "translate": [
+        52,
+        17
+      ],
+      "uniform_scale": 0.3835616438356164,
+      "head_anchor_x": 100
+    },
+    {
+      "translate": [
+        49,
+        18
+      ],
+      "uniform_scale": 0.3835616438356164,
+      "head_anchor_x": 100
+    },
+    {
+      "translate": [
+        52,
+        17
+      ],
+      "uniform_scale": 0.3835616438356164,
+      "head_anchor_x": 100
+    },
+    {
+      "translate": [
+        46,
+        25
+      ],
+      "uniform_scale": 0.3835616438356164,
+      "head_anchor_x": 100
+    },
+    {
+      "translate": [
+        51,
+        17
+      ],
+      "uniform_scale": 0.3835616438356164,
+      "head_anchor_x": 100
+    },
+    {
+      "translate": [
+        54,
+        17
+      ],
+      "uniform_scale": 0.3835616438356164,
+      "head_anchor_x": 100
+    }
+  ],
+  "postprocess": "key magenta, crop equal horizontal cells, ONE shared uniform nearest-neighbor scale, translation-only anchor, shared48palette. No pose synthesis, warp, flip, or retouch.",
+  "approved": false,
+  "status": "rejected_gait",
+  "frame_bboxes": [
+    [
+      45,
+      16,
+      131,
+      184
+    ],
+    [
+      44,
+      22,
+      137,
+      184
+    ],
+    [
+      52,
+      17,
+      145,
+      184
+    ],
+    [
+      49,
+      18,
+      142,
+      184
+    ],
+    [
+      52,
+      17,
+      145,
+      184
+    ],
+    [
+      46,
+      25,
+      139,
+      184
+    ],
+    [
+      51,
+      17,
+      144,
+      184
+    ],
+    [
+      54,
+      17,
+      133,
+      184
+    ]
+  ],
+  "duplicate_pairs": [],
+  "warnings": [
+    "body_height_spread_gt6",
+    "visual: support leg does not alternate clearly across half-cycle; not release-ready"
+  ],
+  "body_heights": [
+    168,
+    162,
+    167,
+    166,
+    167,
+    159,
+    167,
+    167
+  ]
+}

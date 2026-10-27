@@ -1,0 +1,4 @@
+Production Phimond HD2D game cutout, crisp pixel art, fixed orthographic three-quarter RPG camera, upper-left light,1px dark outline at final scale,<=48colors, hard edges, pure #FF00FF background binary alpha, no blur, no floor plane or cast shadow outside requested object, no text/signatures. Single complete isolated asset with safe margin. Match reference cityfacade materials and pixel density. One tall slender ivory sandstone joining pilaster, square stone base and simple carved golden capital, warm city stone blocks and subtle chips. No wall or large roof behind; no magical ornament. Full-height isolated vertical connector to cover small facade seams. Final128x384. These are modular connectors subordinate to existing ornatefrontages.
+
+References:
+- /Users/phileanh/rust/phimond/.ai/design/gpt-redo/refs-v1.0.1-city/approved-city-kit.png SHA256 b240856cb2b9774f4fa401d9512856f2da17199305506828dd9758107552de8b

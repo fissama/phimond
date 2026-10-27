@@ -1,0 +1,117 @@
+{
+  "name": "npc-sq_pillar.idle.png",
+  "size": [
+    768,
+    192
+  ],
+  "frames": 4,
+  "cell": [
+    192,
+    192
+  ],
+  "pivot": [
+    96,
+    184
+  ],
+  "colors": 48,
+  "partial_alpha": 0,
+  "raw_sha256": "130b03301a0c799bddb349b438330613e418aca982f5ac2a0b451ee6733ab216",
+  "sha256": "fc760ee494efdb4dbfd3cb62fcea97612f474ce72d616d36a3258b47847c782b",
+  "source_boxes": [
+    [
+      112,
+      96,
+      464,
+      639
+    ],
+    [
+      653,
+      96,
+      1003,
+      639
+    ],
+    [
+      1180,
+      90,
+      1541,
+      639
+    ],
+    [
+      1723,
+      96,
+      2076,
+      639
+    ]
+  ],
+  "transforms": [
+    {
+      "translate": [
+        41,
+        18
+      ],
+      "uniform_scale": 0.30601092896174864,
+      "head_anchor_x": 96
+    },
+    {
+      "translate": [
+        41,
+        18
+      ],
+      "uniform_scale": 0.30601092896174864,
+      "head_anchor_x": 96
+    },
+    {
+      "translate": [
+        37,
+        16
+      ],
+      "uniform_scale": 0.30601092896174864,
+      "head_anchor_x": 96
+    },
+    {
+      "translate": [
+        40,
+        18
+      ],
+      "uniform_scale": 0.30601092896174864,
+      "head_anchor_x": 96
+    }
+  ],
+  "postprocess": "key magenta, crop equal horizontal cells, ONE shared uniform nearest-neighbor scale, translation-only anchor, shared48palette. No pose synthesis, warp, flip, or retouch.",
+  "approved": false,
+  "status": "needs_visual_and_temporal_review",
+  "frame_bboxes": [
+    [
+      41,
+      18,
+      149,
+      184
+    ],
+    [
+      41,
+      18,
+      148,
+      184
+    ],
+    [
+      37,
+      16,
+      147,
+      184
+    ],
+    [
+      40,
+      18,
+      148,
+      184
+    ]
+  ],
+  "duplicate_pairs": [],
+  "warnings": [],
+  "body_heights": [
+    166,
+    166,
+    168,
+    166
+  ]
+}

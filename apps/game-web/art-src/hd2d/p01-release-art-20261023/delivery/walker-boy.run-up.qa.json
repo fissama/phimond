@@ -1,0 +1,250 @@
+{
+  "name": "walker-boy.run-up.png",
+  "size": [
+    1536,
+    192
+  ],
+  "frames": 8,
+  "cell": [
+    192,
+    192
+  ],
+  "pivot": [
+    96,
+    184
+  ],
+  "colors": 48,
+  "partial_alpha": 0,
+  "raw_sha256": "0dc21a14bb000c22d7526134dd81fc2a4ddfb1955f89ce4a2922f631daa0a618",
+  "sha256": "489a0357623204c2338648744442b22c032cadac466bfb36aaf0f279ccf2f308",
+  "source_boxes": [
+    [
+      187,
+      26,
+      315,
+      330
+    ],
+    [
+      693,
+      26,
+      824,
+      330
+    ],
+    [
+      1206,
+      26,
+      1337,
+      330
+    ],
+    [
+      1728,
+      19,
+      1860,
+      324
+    ],
+    [
+      2246,
+      19,
+      2372,
+      324
+    ],
+    [
+      2742,
+      19,
+      2872,
+      324
+    ],
+    [
+      3268,
+      12,
+      3394,
+      317
+    ],
+    [
+      3766,
+      12,
+      3896,
+      317
+    ]
+  ],
+  "transforms": [
+    {
+      "translate": [
+        66,
+        56
+      ],
+      "uniform_scale": 0.419672131147541,
+      "head_anchor_x": 96
+    },
+    {
+      "translate": [
+        65,
+        56
+      ],
+      "uniform_scale": 0.419672131147541,
+      "head_anchor_x": 96
+    },
+    {
+      "translate": [
+        65,
+        56
+      ],
+      "uniform_scale": 0.419672131147541,
+      "head_anchor_x": 96
+    },
+    {
+      "translate": [
+        69,
+        56
+      ],
+      "uniform_scale": 0.419672131147541,
+      "head_anchor_x": 96
+    },
+    {
+      "translate": [
+        72,
+        56
+      ],
+      "uniform_scale": 0.419672131147541,
+      "head_anchor_x": 96
+    },
+    {
+      "translate": [
+        65,
+        56
+      ],
+      "uniform_scale": 0.419672131147541,
+      "head_anchor_x": 96
+    },
+    {
+      "translate": [
+        70,
+        56
+      ],
+      "uniform_scale": 0.419672131147541,
+      "head_anchor_x": 96
+    },
+    {
+      "translate": [
+        65,
+        56
+      ],
+      "uniform_scale": 0.419672131147541,
+      "head_anchor_x": 96
+    }
+  ],
+  "postprocess": "key magenta, crop equal horizontal cells, ONE shared uniform nearest-neighbor scale, translation-only anchor, shared48palette. No pose synthesis, warp, flip, or retouch.",
+  "approved": false,
+  "status": "forge_warn_not_release_approved",
+  "frame_bboxes": [
+    [
+      66,
+      56,
+      120,
+      184
+    ],
+    [
+      65,
+      56,
+      120,
+      184
+    ],
+    [
+      65,
+      56,
+      120,
+      184
+    ],
+    [
+      69,
+      56,
+      124,
+      184
+    ],
+    [
+      72,
+      56,
+      125,
+      184
+    ],
+    [
+      65,
+      56,
+      120,
+      184
+    ],
+    [
+      70,
+      56,
+      123,
+      184
+    ],
+    [
+      65,
+      56,
+      120,
+      184
+    ]
+  ],
+  "duplicate_pairs": [],
+  "warnings": [],
+  "body_heights": [
+    128,
+    128,
+    128,
+    128,
+    128,
+    128,
+    128,
+    128
+  ],
+  "target_height": 128,
+  "scale_reference": "existing production idle stature; player168, boy128, girl124, baker164, elder158",
+  "revision": 2,
+  "source_grid": [
+    3,
+    3
+  ],
+  "source_grid_raw": "walker-boy.run-up.grid-raw-02.png",
+  "Claude_approved": false,
+  "forge_commit": "5324342fdfab72430f4e9604f3fe427009f8596d",
+  "forge_registration": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-boy.run-up/489a03576232/registered/scale-frames.json",
+  "forge_qc": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-boy.run-up/489a03576232/qc/sheet-qc.json",
+  "forge_unresolved_checks": [
+    {
+      "id": "near_duplicates",
+      "status": "warn",
+      "value": [
+        [
+          1,
+          7
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "threshold": 0.95,
+      "note": "pairs with best-shift silhouette IoU at or above the threshold and similar colours"
+    },
+    {
+      "id": "seam",
+      "status": "warn",
+      "value": 1.52,
+      "threshold": 1.5,
+      "transitions": [
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "note": "largest frame-to-frame change over the median step; review these joins first"
+    }
+  ],
+  "registration_input_sha256": "489a0357623204c2338648744442b22c032cadac466bfb36aaf0f279ccf2f308",
+  "registration_processing": "ASF scale_frames.py, scale1, nearest, integer translation only, root-lock torso-x, shared192canvas and96,184anchor. No pose synthesis, warping, per-frame scaling or interpolation."
+}
