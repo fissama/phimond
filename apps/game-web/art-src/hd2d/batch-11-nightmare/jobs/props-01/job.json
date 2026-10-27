@@ -1,0 +1,163 @@
+{
+  "raw": "raw-01.png",
+  "state": "self_rejected_native_size",
+  "route": "built-in image_gen",
+  "prompt": "Create one production game prop sprite sheet, exactly 1536x1024 pixels, SIX objects in a genuine 3 columns by 2 rows grid on uniform pure #FF00FF background. Each 512x512 cell contains exactly ONE small object centered, NOT enlarged to fill the cell. Do not draw grid lines, labels, numbers, ground platforms, shadows, fog, other objects or characters. All objects fully isolated, 48+ pixels apart. Keep vast magenta negative space. Native scale: player is 168 pixels tall. TOP ROW: three independently designed dark gnarled exposed root tangles, each maximum 208 pixels wide and 144 pixels tall (larger object does NOT mean more detail). Left: low braided three-prong root with moss crevices; center: upright curled hollow-root loop with two feet; right: horizontal hooked root mass with one broken pale end. BOTTOM ROW: three independently designed obsidian amethyst crystal clusters, each maximum 176 pixels wide and 208 pixels tall. Left: three unequal spear-shaped crystals; center: low wide crown of five short angular shards; right: one hooked tall crystal with small side shard. Continuous connected silhouettes. Dark root material charcoal plum/brown, lavender stone crystals, sparse moss green #4E7A4A. Palette rooted in #3A2B52 #5B3F7A with sparing #B26BFF fracture highlights; avoid hot magenta in subject so chroma key remains clean. Crystal facets have solid highlights, NO glow/bloom or auras. Warm upper-left/front key light, cool shadows, same-hue dark outline, crisp clustered pixel art with 2-4 shade ramps, 33-48 colors PER object, no grain or smooth gradient. Match the supplied approved tree trunk and rock sprites in outline density and material modelling; pet sheets only anchor pixel cluster/outline finish and must NOT appear as subjects. Original map is CONTENT reference for haunted island roots/ruins ecology; do not copy its green background or screenshot. Camera: near frontal billboard props, slight top view of roots/stone, bottom-center contact anchor. This is NEW original art for the nightmare kit, not recolors/mirrors of reference sprites. Deliver only the six-object 3x2 magenta sprite sheet, no presentation frame.",
+  "refs": [
+    {
+      "path": ".ai/design/map-checklists/refs/nightmare_island_survivor_camp.jpg",
+      "sha256": "dda52af8c455c6627443afaf805b26d94a6088c10c43c22f1c90ca0b5ca363c6"
+    },
+    {
+      "path": "apps/game-web/art-src/hd2d/batch-01-octopath/tree-large-01-trunk/final.png",
+      "sha256": "0e3a2b7849b2d9324eceaac339cd841b6d7039afb893b6dc39880c61b6346a8e"
+    },
+    {
+      "path": "apps/game-web/art-src/hd2d/batch-01-octopath/rock-medium/final.png",
+      "sha256": "c951cb4786e9a86ce42fbf50ade43670763c906bd139175478d0e5f675014bfc"
+    },
+    {
+      "path": "apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "assets": [
+    {
+      "id": "nightmare-prop-01",
+      "name": "Dark braided roots",
+      "category": "prop",
+      "size": [
+        224,
+        160
+      ],
+      "desired_world_size": [
+        1.75,
+        1.25
+      ],
+      "height_relative_to_player": 0.9523809523809523,
+      "native_pixels": true,
+      "colors": 48,
+      "box": [
+        0,
+        0,
+        512,
+        512
+      ]
+    },
+    {
+      "id": "nightmare-prop-02",
+      "name": "Hollow curled roots",
+      "category": "prop",
+      "size": [
+        224,
+        160
+      ],
+      "desired_world_size": [
+        1.75,
+        1.25
+      ],
+      "height_relative_to_player": 0.9523809523809523,
+      "native_pixels": true,
+      "colors": 48,
+      "box": [
+        512,
+        0,
+        1024,
+        512
+      ]
+    },
+    {
+      "id": "nightmare-prop-03",
+      "name": "Hooked broken roots",
+      "category": "prop",
+      "size": [
+        224,
+        160
+      ],
+      "desired_world_size": [
+        1.75,
+        1.25
+      ],
+      "height_relative_to_player": 0.9523809523809523,
+      "native_pixels": true,
+      "colors": 48,
+      "box": [
+        1024,
+        0,
+        1536,
+        512
+      ]
+    },
+    {
+      "id": "nightmare-prop-07",
+      "name": "Spear shadow crystals",
+      "category": "prop",
+      "size": [
+        192,
+        224
+      ],
+      "desired_world_size": [
+        1.5,
+        1.75
+      ],
+      "height_relative_to_player": 1.3333333333333333,
+      "native_pixels": true,
+      "colors": 48,
+      "box": [
+        0,
+        512,
+        512,
+        1024
+      ]
+    },
+    {
+      "id": "nightmare-prop-08",
+      "name": "Crown shadow crystals",
+      "category": "prop",
+      "size": [
+        192,
+        224
+      ],
+      "desired_world_size": [
+        1.5,
+        1.75
+      ],
+      "height_relative_to_player": 1.3333333333333333,
+      "native_pixels": true,
+      "colors": 48,
+      "box": [
+        512,
+        512,
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "nightmare-prop-09",
+      "name": "Hook shadow crystal",
+      "category": "prop",
+      "size": [
+        192,
+        224
+      ],
+      "desired_world_size": [
+        1.5,
+        1.75
+      ],
+      "height_relative_to_player": 1.3333333333333333,
+      "native_pixels": true,
+      "colors": 48,
+      "box": [
+        1024,
+        512,
+        1536,
+        1024
+      ]
+    }
+  ],
+  "artifact_sha256": "8a84c78493695df8f8eae29c8b704f18fa1d12bbc05ca636669bc39d47b29682"
+}

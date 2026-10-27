@@ -1,0 +1,108 @@
+{
+  "raw": "raw-01.png",
+  "state": "exported_pending_visual_review",
+  "route": "built-in image_gen",
+  "refs": [
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-nightmare/jobs/maps-reference-session-20261025.png",
+      "sha256": "4253666b11bf585b21aa214ec8c4b534093ad3c20963e7b6dd1348eb190b64e2"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-nightmare/jobs/floors-sparse-10/approved-terrain-style.png",
+      "sha256": "dd55348d791bf4cbebdee03bb7c3d8b59f48a7716e834d82cd722949f64a7496"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/moss-patch-01/final.png",
+      "sha256": "90a3d3e1fc44cf5c1203890778f9be5ac42aa2b8994385a97ebe2cd0b0cde96b"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "prompt": "Create a sprite sheet1536x1024 on REAL TRANSPARENT alpha background,3columns2rows. Six separated SOFT CONTACT SHADOW decals in charcoal plum#211D2A, no objects, no text, no background, no checkerboard. Each shadow sits centered in its512x512cell with huge transparent margins, about250px wide x90px tall. Row1: small irregular compressed horizontal contact shadow; medium asymmetric soft ground oval; narrow bent-root shadow. Row2: wider torn tent-footprint contact shadow; broken wall contact shadow; round tree-root contact shadow. Keep VERY LOW opacity (center alpha about60/255, outer0), short fuzzy pixel-feathered perimeter fading to actual transparency, roughly flattened from24degree view. Different silhouettes, organic edges. Only single dark plum pigment with varying opacity; no glossy highlight, no outline or glow, no color gradient. These are separate lighting-neutral soft contact shadow overlays for HD2D game props, documented soft-alpha exception. Original map image1 gives mood only; approved grass/dirt and moss image2/3 supply game art context; pets4/5 give intended game scale. Do not draw any pictured plants, ground or pets.",
+  "assets": [
+    {
+      "id": "nightmare-shadow-01",
+      "name": "Small irregular contact shadow",
+      "category": "shadow",
+      "size": [
+        256,
+        128
+      ],
+      "box": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "native_alpha": true,
+      "colors": 1,
+      "allow_soft_alpha": true,
+      "exception": "Soft contact shadow alpha and monochrome pigment explicitly allowed by kit checklist and Master v2."
+    },
+    {
+      "id": "nightmare-shadow-02",
+      "name": "Broad asymmetric contact shadow",
+      "category": "shadow",
+      "size": [
+        256,
+        128
+      ],
+      "box": [
+        512,
+        0,
+        1024,
+        512
+      ],
+      "native_alpha": true,
+      "colors": 1,
+      "allow_soft_alpha": true,
+      "exception": "Soft contact shadow alpha and monochrome pigment explicitly allowed by kit checklist and Master v2."
+    },
+    {
+      "id": "nightmare-shadow-03",
+      "name": "Bent-root contact shadow",
+      "category": "shadow",
+      "size": [
+        256,
+        128
+      ],
+      "box": [
+        1024,
+        0,
+        1536,
+        512
+      ],
+      "native_alpha": true,
+      "colors": 1,
+      "allow_soft_alpha": true,
+      "exception": "Soft contact shadow alpha and monochrome pigment explicitly allowed by kit checklist and Master v2."
+    },
+    {
+      "id": "nightmare-shadow-04",
+      "name": "Tent contact shadow",
+      "category": "shadow",
+      "size": [
+        256,
+        128
+      ],
+      "box": [
+        0,
+        512,
+        512,
+        1024
+      ],
+      "native_alpha": true,
+      "colors": 1,
+      "allow_soft_alpha": true,
+      "exception": "Soft contact shadow alpha and monochrome pigment explicitly allowed by kit checklist and Master v2."
+    }
+  ],
+  "generated_file": "/Users/phileanh/.codex/generated_images/01a1764a-b803-7d80-b5f2-e2577ae1ad25/exec-b96b04c3-9260-48b2-932e-855428cb4c21.png",
+  "artifact_sha256": "f1b0af0d650b013d097128f695708f296de72dcc8c1cb43f6ba92ae5b1bc098f"
+}

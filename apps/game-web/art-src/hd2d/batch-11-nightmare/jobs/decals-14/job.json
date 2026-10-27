@@ -1,0 +1,146 @@
+{
+  "raw": "raw-01.png",
+  "state": "exported_pending_visual_review",
+  "route": "built-in image_gen",
+  "refs": [
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-nightmare/jobs/maps-reference-session-20261025.png",
+      "sha256": "4253666b11bf585b21aa214ec8c4b534093ad3c20963e7b6dd1348eb190b64e2"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-nightmare/jobs/floors-sparse-10/approved-terrain-style.png",
+      "sha256": "dd55348d791bf4cbebdee03bb7c3d8b59f48a7716e834d82cd722949f64a7496"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/moss-patch-01/final.png",
+      "sha256": "90a3d3e1fc44cf5c1203890778f9be5ac42aa2b8994385a97ebe2cd0b0cde96b"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "prompt": "Production HD2D pixel-art sheet1536x1024,3columns2rows, pure flat#FF00FF everywhere except SIX separate flat top-down ground DECALS. Each512x512cell holds one small scatter centered in its cell, maximum240x160 native pixels, wide empty margins. Do not enlarge to fill cells. Top-left broken dark terracotta relic shards; top-middle thin tangled dead root traces; top-right weathered grave slate splinters; bottom-left toxic olive lichen flecks; bottom-middle broken subdued lavender crystal splinters; bottom-right torn weathered brown cloth with fine charcoal ash. Each grouping irregular, porous silhouette, disconnected fragments deliberate, NO solid ground patch, no rectangle/ellipse base or vignette. Independently drawn distinct materials and shapes. Color palette: charcoal plum#3A2B52, muted purple#5B3F7A, olive#4E7A4A, warm walnut/terracotta and muted bone ivory, small lavender accents. Crisp HD2D pixel clusters,40-48colors each,2-4tones per material, dark same-hue outline, warm upper-left/front lighting. No baked cast shadows, haze, glow, bloom, smooth gradients, dither,text,letters,characters. Image1 original6nightmare maps CONTENT;2approved grass/dirt montage and3approved moss STYLE;4/5pets foroutline weight only. These are loose ground overlays for a game, NOT icons or scene pictures.",
+  "assets": [
+    {
+      "id": "nightmare-decal-05",
+      "name": "Scattered broken terracotta relic shards",
+      "category": "decal",
+      "box": [
+        3,
+        3,
+        509,
+        509
+      ],
+      "size": [
+        256,
+        192
+      ],
+      "colors": 48,
+      "key_threshold": 35,
+      "key_edge_threshold": 55,
+      "despill_radius": 1
+    },
+    {
+      "id": "nightmare-decal-06",
+      "name": "Thin tangled dead root traces",
+      "category": "decal",
+      "box": [
+        515,
+        3,
+        1021,
+        509
+      ],
+      "size": [
+        256,
+        192
+      ],
+      "colors": 48,
+      "key_threshold": 35,
+      "key_edge_threshold": 55,
+      "despill_radius": 1
+    },
+    {
+      "id": "nightmare-decal-07",
+      "name": "Scattered weathered grave slate splinters",
+      "category": "decal",
+      "box": [
+        1027,
+        3,
+        1533,
+        509
+      ],
+      "size": [
+        256,
+        192
+      ],
+      "colors": 48,
+      "key_threshold": 35,
+      "key_edge_threshold": 55,
+      "despill_radius": 1
+    },
+    {
+      "id": "nightmare-decal-08",
+      "name": "Irregular patches of toxic olive lichen",
+      "category": "decal",
+      "box": [
+        3,
+        515,
+        509,
+        1021
+      ],
+      "size": [
+        256,
+        192
+      ],
+      "colors": 48,
+      "key_threshold": 35,
+      "key_edge_threshold": 55,
+      "despill_radius": 1
+    },
+    {
+      "id": "nightmare-decal-09",
+      "name": "Broken lavender crystal splinters",
+      "category": "decal",
+      "box": [
+        515,
+        515,
+        1021,
+        1021
+      ],
+      "size": [
+        256,
+        192
+      ],
+      "colors": 48,
+      "key_threshold": 35,
+      "key_edge_threshold": 55,
+      "despill_radius": 1
+    },
+    {
+      "id": "nightmare-decal-10",
+      "name": "Torn weathered cloth and ash fragments",
+      "category": "decal",
+      "box": [
+        1027,
+        515,
+        1533,
+        1021
+      ],
+      "size": [
+        256,
+        192
+      ],
+      "colors": 48,
+      "key_threshold": 35,
+      "key_edge_threshold": 55,
+      "despill_radius": 1
+    }
+  ],
+  "generated_file": "/Users/phileanh/.codex/generated_images/01a1764a-b803-7d80-b5f2-e2577ae1ad25/exec-321408ad-b06f-4d2e-ab24-275172b814c3.png",
+  "artifact_sha256": "96376808380b1b4cd1d1879105c073e109ae24e1bb9a8934b2884552b2018812"
+}

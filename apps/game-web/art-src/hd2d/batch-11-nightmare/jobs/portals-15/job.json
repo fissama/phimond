@@ -1,0 +1,82 @@
+{
+  "raw": "raw-01.png",
+  "state": "rejected_oversize_redraw_without_resampling",
+  "route": "built-in image_gen",
+  "refs": [
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-nightmare/jobs/maps-reference-session-20261025.png",
+      "sha256": "4253666b11bf585b21aa214ec8c4b534093ad3c20963e7b6dd1348eb190b64e2"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/forest-portal-dormant/final.png",
+      "sha256": "55934f63667036937733b653177010865db6969905c57d324336c4199282467b"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/forest-portal-active/final.png",
+      "sha256": "f229e35b82a6849b59dfc884ff62f13398336c5092537a992e9d7ec40c0af9b4"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "assets": [
+    {
+      "id": "nightmare-portal-dormant",
+      "name": "Thorn-stone magic gate dormant",
+      "category": "prop",
+      "box": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "size": [
+        480,
+        480
+      ],
+      "desired_world_size": [
+        3.75,
+        3.75
+      ],
+      "height_relative_to_player": 2.8625954198473282,
+      "native_pixels": true,
+      "colors": 48,
+      "key_threshold": 35,
+      "key_edge_threshold": 55,
+      "despill_radius": 1
+    },
+    {
+      "id": "nightmare-portal-active",
+      "name": "Thorn-stone magic gate active",
+      "category": "prop",
+      "box": [
+        0,
+        512,
+        512,
+        1024
+      ],
+      "size": [
+        480,
+        480
+      ],
+      "desired_world_size": [
+        3.75,
+        3.75
+      ],
+      "height_relative_to_player": 2.8625954198473282,
+      "native_pixels": true,
+      "colors": 48,
+      "key_threshold": 35,
+      "key_edge_threshold": 55,
+      "despill_radius": 1
+    }
+  ],
+  "prompt": "Game-ready HD2D haunted portal sprite sheet1536x1024,3columns2rows,pure flat#FF00FF. Each512x512cell one entire SMALL portal, source silhouette maximum330pixelswide x370high, centered with70+pixel clear margin. FRONT-ON portal doorway, vertical bilateral frame, visible feet, NO isometric view. Top row THREE independent doorway designs: left twisted charcoal-plum thorn roots around weathered dark stone jambs, top-center jagged black volcanic stone arch with muted olive lichen, top-right dark ancient masonry arch gripped by thorn vines. Bottom row EXACT SAME respective three portals in ACTIVE state: COPY outside shape, branches, stone frame and contact feet pixel-for-pixel; change ONLY small inset violet crystals and inner edge accents to lavender#B26BFF. BOTH states doorway interior remains pure magenta, so empty opening can be keyed transparent. No energy outside silhouette, NO halo, NO bloom, NO glow gradients. Active adds crisp pixel accent only. Dormant inner crystals dull dusky purple. Rich brown/plum stone and wood, olive moss#4E7A4A,40-48colors perportal,2-4shadingtones per material,dark same-hue outlines,warm upper-left/front highlights,cool shadows. Match pixel cluster size, outline,carved details of approved forest portals images2/3 for STYLE, do notcopy green forest content. Original map montage image1 for ruined/deadwood CONTENT;petimages4/5 outline and shading anchors only. No cast ground shadows, ground slabs,text,letters,runes,characters,fog,dither,smooth gradients. Entire complete doorway silhouettes with all tips and roots, wide empty margins.",
+  "generated_file": "/Users/phileanh/.codex/generated_images/01a1764a-b803-7d80-b5f2-e2577ae1ad25/exec-ff562f78-7148-4dcc-a3b0-f0c6609f9a62.png",
+  "artifact_sha256": "1443b3d81a9f391b8a5110951bcb0f99a409ba670fe999bcb1c821e5425c04d7"
+}

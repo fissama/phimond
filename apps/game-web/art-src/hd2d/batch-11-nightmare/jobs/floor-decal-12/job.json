@@ -1,0 +1,144 @@
+{
+  "raw": "raw-01.png",
+  "state": "exported_pending_visual_review",
+  "route": "built-in image_gen",
+  "refs": [
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-nightmare/jobs/maps-reference-session-20261025.png",
+      "sha256": "4253666b11bf585b21aa214ec8c4b534093ad3c20963e7b6dd1348eb190b64e2"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-nightmare/jobs/floors-sparse-10/approved-terrain-style.png",
+      "sha256": "dd55348d791bf4cbebdee03bb7c3d8b59f48a7716e834d82cd722949f64a7496"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/moss-patch-01/final.png",
+      "sha256": "90a3d3e1fc44cf5c1203890778f9be5ac42aa2b8994385a97ebe2cd0b0cde96b"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "assets": [
+    {
+      "id": "nightmare-floor-extra-04",
+      "category": "floor",
+      "size": [
+        512,
+        512
+      ],
+      "box": [
+        36,
+        34,
+        484,
+        482
+      ],
+      "colors": 48,
+      "key_threshold": 35,
+      "key_edge_threshold": 55,
+      "despill_radius": 1,
+      "opaque": true,
+      "tileable": "xy"
+    },
+    {
+      "id": "nightmare-floor-extra-05",
+      "category": "floor",
+      "size": [
+        512,
+        512
+      ],
+      "box": [
+        548,
+        34,
+        996,
+        482
+      ],
+      "colors": 48,
+      "key_threshold": 35,
+      "key_edge_threshold": 55,
+      "despill_radius": 1,
+      "opaque": true,
+      "tileable": "xy"
+    },
+    {
+      "id": "nightmare-decal-01",
+      "category": "decal",
+      "size": [
+        256,
+        192
+      ],
+      "box": [
+        1024,
+        0,
+        1536,
+        512
+      ],
+      "colors": 48,
+      "key_threshold": 35,
+      "key_edge_threshold": 55,
+      "despill_radius": 1
+    },
+    {
+      "id": "nightmare-decal-02",
+      "category": "decal",
+      "size": [
+        256,
+        192
+      ],
+      "box": [
+        0,
+        512,
+        512,
+        1024
+      ],
+      "colors": 48,
+      "key_threshold": 35,
+      "key_edge_threshold": 55,
+      "despill_radius": 1
+    },
+    {
+      "id": "nightmare-decal-03",
+      "category": "decal",
+      "size": [
+        256,
+        192
+      ],
+      "box": [
+        512,
+        512,
+        1024,
+        1024
+      ],
+      "colors": 48,
+      "key_threshold": 35,
+      "key_edge_threshold": 55,
+      "despill_radius": 1
+    },
+    {
+      "id": "nightmare-decal-04",
+      "category": "decal",
+      "size": [
+        256,
+        192
+      ],
+      "box": [
+        1024,
+        512,
+        1536,
+        1024
+      ],
+      "colors": 48,
+      "key_threshold": 35,
+      "key_edge_threshold": 55,
+      "despill_radius": 1
+    }
+  ],
+  "prompt": "Production HD2D pixel-art game texture sheet1536x1024, 3columns x2rows, pure flat#FF00FF background, six separated cells512x512. TopLEFT and topMIDDLE: two flat square terrain textures448x448 with32px magenta gutters. TopLEFT is fossil-root earth: sparse tiny flat dark root imprints and few buried ivory fossil flakes in completely uniform plum soil #3A2B52. TopMIDDLE is buried brick dust: sparse small fragments of worn brown-plum masonry almost flush with purple soil, a little muted olive moss. Both terrain textures have flat continuous SAME purple soil background throughout interior and whole outer16pixelrim, no variation or gradient; asymmetrically distributed small details, about25percentcoverage. No central emblem, vignette, raised boulders or border frame, must tile quietly. The other FOUR cells contain TRANSPARENT-CUTOUT ground decals on magenta (NOT square patches): topRIGHT irregular scatter of tiny broken slate chips; bottomLEFT thin branching dry fissure fragments with tiny lavender accents; bottomMIDDLE irregular torn patch of olive moss and dead leaves; bottomRIGHT cracked ivory bone fragments and fine earth crumbs. Each decal flat topdown, irregular porous perimeter with gaps, no solid earth plate, maximum240x160pixels centered, wide empty magenta margin, no background soil rectangle or ellipse. Pixel clusters matched to approved terrain references,40-48colors perasset,2-4tones/material, dark same-hue outlines, restrained warm upper-left/front details. Kit palette charcoal plum#3A2B52/#5B3F7A, olive#4E7A4A, muted ivory/brown. No baked shadows,fog,glow,DOF,text,labels,grid,characters,dither,smoothgradients. First reference originalnightmare maps forcontent; second approved grass/dirt stylemontage; third approved moss/pebble source forpixel style; lasttwo pets forpixel weightonly. Six isolated actual game assets, no scene.\n",
+  "generated_file": "/Users/phileanh/.codex/generated_images/01a1764a-b803-7d80-b5f2-e2577ae1ad25/exec-e01f10fb-4be4-48a7-a3e2-0bc58a7b41e5.png",
+  "artifact_sha256": "b156187b922e050ffc8353704bf067d1a9636f7acafd43347b1d6adc61f9f23e"
+}

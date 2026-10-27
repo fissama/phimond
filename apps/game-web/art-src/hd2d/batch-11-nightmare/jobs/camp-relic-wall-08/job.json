@@ -1,0 +1,240 @@
+{
+  "raw": "raw-02.png",
+  "state": "exported_pending_visual_review",
+  "route": "built-in image_gen",
+  "prompt": "Draw one 1536x1024 game sprite sheet. SIX TINY objects in 3 columns and2 rows on PURE#FF00FF. CRITICAL: previous output was oversized, so each subject must now be only HALF its usual size. Do NOT fill cells. More than85% of each512x512 cell MUST be blank magenta. Centers x256/768/1280,y256/768. Top-left TINY connected weathered beast jawbone+clay relic+moss, body ONLY110x60px. Top-middle SMALL low plum stone ruined wall fragment+olive vines, body ONLY200x130px. Top-right SMALL torn olive canvas tent+crooked wooden poles, body ONLY210x150px. Bottom-left different tiny bones in cracked stone bowl110x60; bottom-middle different low ruined arch wall200x130; bottom-right different tiny torn plum tent210x150. Each object centered with at least140pixels of blank magenta above/below; actual pixel dimensions matter. Keep entire silhouettes, single connected forms, no loose fragments. Native player is168px tall; bones MUCH smaller, wall shorter, tent similar height. New independently drawn objects, not recolor/mirrors.\nCrisp HD2D Octopath pixel clusters, no antialias gradients/noise/dither.40-48 colors per object, 2-4 tones per material, same-hue dark outlines, warm upper-left/front highlights,cool recesses. Charcoal plum#3A2B52#5B3F7A stone,olive#4E7A4A moss,muted aged ivory bone,natural worn brown wood and olive cloth. Keep different materials distinct. No magenta subject pixels, shadows,platforms,fog,bloom,text,grid,labels,characters. Original map reference1 for haunted ruins content; approved wall/rock refs2/3 for STYLE, pets4/5 only outline and volume. Tent and relic are brief-directed new interpretations. Modest three-quarter front game billboard camera. Small actual sprites in a huge empty sheet, NOT large detailed illustrations.",
+  "refs": [
+    {
+      "path": "/Users/phileanh/rust/phimond/.ai/design/map-checklists/refs/nightmare_island_survivor_camp.jpg",
+      "sha256": "dda52af8c455c6627443afaf805b26d94a6088c10c43c22f1c90ca0b5ca363c6"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/palace-wall-section/final.png",
+      "sha256": "a5e85881e74e9262bc67e367e83dc4724bc02096ec1b60ecdcfb3e15daddcb38"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-medium/final.png",
+      "sha256": "c951cb4786e9a86ce42fbf50ade43670763c906bd139175478d0e5f675014bfc"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "assets": [
+    {
+      "id": "nightmare-prop-11",
+      "name": "Weathered bones nested in a cracked stone bowl",
+      "category": "prop",
+      "size": [
+        224,
+        160
+      ],
+      "desired_world_size": [
+        1.75,
+        1.25
+      ],
+      "height_relative_to_player": 0.9523809523809523,
+      "native_pixels": true,
+      "colors": 48,
+      "box": [
+        0,
+        512,
+        512,
+        1024
+      ],
+      "key_threshold": 35,
+      "key_edge_threshold": 55,
+      "despill_radius": 1,
+      "content_provenance": "New bone/relic interpretation from nightmare kit brief; not observed/recovered APK artwork. Bottom-left candidate selected because top-left is oversized and contains glyph-like pottery marks."
+    },
+    {
+      "id": "nightmare-prop-12",
+      "name": "Broken haunted masonry wall",
+      "category": "prop",
+      "size": [
+        384,
+        256
+      ],
+      "desired_world_size": [
+        3.0,
+        2.0
+      ],
+      "height_relative_to_player": 1.5238095238095237,
+      "native_pixels": true,
+      "colors": 48,
+      "box": [
+        512,
+        0,
+        1024,
+        512
+      ],
+      "key_threshold": 35,
+      "key_edge_threshold": 55,
+      "despill_radius": 1
+    },
+    {
+      "id": "nightmare-camp-tent",
+      "name": "Torn survivor camp tent",
+      "category": "prop",
+      "size": [
+        384,
+        288
+      ],
+      "desired_world_size": [
+        3.0,
+        2.25
+      ],
+      "height_relative_to_player": 1.7142857142857142,
+      "native_pixels": true,
+      "colors": 48,
+      "box": [
+        1024,
+        0,
+        1536,
+        512
+      ],
+      "key_threshold": 35,
+      "key_edge_threshold": 55,
+      "despill_radius": 1
+    }
+  ],
+  "coverage": {
+    "nightmare-prop-13": {
+      "tent": "nightmare-camp-tent",
+      "campfire_4_frames": "missing",
+      "asset_drawn": false
+    }
+  },
+  "artifact_sha256": "98b188772dc5b14f89a618ff117e742541ffed2c8994b98d29708abc90dc0762",
+  "generated_file": "/Users/phileanh/.codex/generated_images/01a171fb-247a-7763-8bb5-57a81c72d643/exec-33a3cbdd-ecf7-4232-a278-74491bf063a2.png",
+  "actual_size": [
+    1536,
+    1024
+  ],
+  "rejected_attempts": [
+    {
+      "raw": "raw-01.png",
+      "results": [
+        {
+          "id": "nightmare-prop-11",
+          "bbox": [
+            103,
+            263,
+            372,
+            397
+          ],
+          "body": [
+            269,
+            134
+          ],
+          "budget": [
+            208,
+            144
+          ],
+          "accepted": false,
+          "reason": "native body over predeclared pixel budget"
+        },
+        {
+          "id": "nightmare-prop-12",
+          "bbox": [
+            0,
+            156,
+            458,
+            418
+          ],
+          "body": [
+            458,
+            262
+          ],
+          "budget": [
+            368,
+            240
+          ],
+          "accepted": false,
+          "reason": "native body over predeclared pixel budget"
+        },
+        {
+          "id": "nightmare-camp-tent",
+          "bbox": [
+            29,
+            122,
+            448,
+            434
+          ],
+          "body": [
+            419,
+            312
+          ],
+          "budget": [
+            368,
+            272
+          ],
+          "accepted": false,
+          "reason": "native body over predeclared pixel budget"
+        }
+      ]
+    }
+  ],
+  "preflight": [
+    {
+      "id": "nightmare-prop-11",
+      "bbox": [
+        144,
+        228,
+        365,
+        346
+      ],
+      "body": [
+        221,
+        118
+      ],
+      "budget": [
+        208,
+        144
+      ],
+      "fits": false
+    },
+    {
+      "id": "nightmare-prop-12",
+      "bbox": [
+        94,
+        194,
+        417,
+        346
+      ],
+      "body": [
+        323,
+        152
+      ],
+      "budget": [
+        368,
+        240
+      ],
+      "fits": true
+    },
+    {
+      "id": "nightmare-camp-tent",
+      "bbox": [
+        125,
+        162,
+        393,
+        358
+      ],
+      "body": [
+        268,
+        196
+      ],
+      "budget": [
+        368,
+        272
+      ],
+      "fits": true
+    }
+  ],
+  "selection_note": "Bottom-left bones, top-middle wall and top-right tent. Top-left relic rejected:221px width above208px budget and glyph-like marks. Bottom relic source remeasured before export."
+}

@@ -1,0 +1,52 @@
+{
+  "raw": "raw-01.png",
+  "state": "planned_before_generation",
+  "route": "built-in image_gen",
+  "refs": [
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-nightmare/jobs/maps-reference-session-20261025.png",
+      "sha256": "4253666b11bf585b21aa214ec8c4b534093ad3c20963e7b6dd1348eb190b64e2"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-03-octopath/sea-islands-far/final.png",
+      "sha256": "46eca476b78ed1bcd370e7afb987e7a2315c85f6d62ecbd9a9e2d13d5868928c"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/forest-wall-far/final.png",
+      "sha256": "745ebb244eb1f19c5398ac02b90a958e76ad0b719a5218d736206c2cce7bcbb2"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "assets": [
+    {
+      "id": "nightmare-backdrop-mid",
+      "name": "Ruined deadwood middle distance",
+      "category": "backdrop_mid",
+      "size": [
+        1280,
+        384
+      ],
+      "box": [
+        0,
+        36,
+        2172,
+        688
+      ],
+      "tileable": "x",
+      "colors": 48,
+      "keep_source_box": true,
+      "stretch": true,
+      "key_threshold": 35,
+      "key_edge_threshold": 55,
+      "despill_radius": 1
+    }
+  ],
+  "prompt": "ONE SINGLE full-canvas WIDE3:1 HD2D pixelart game BACKDROP layer, NOT a sheet, no panels,border,text,labels,characters. MIDGROUND ruined dead woods: asymmetric thin bare trees, fragments of collapsed oldcitywalls, sparsely hanging olive moss, irregular lowunderstory. Trees modestheight inupperhalf, allbranch tips fullyvisible. Flat continuous low darkplumlandlineatbottom. No foreground playablefloor orsky. Crisp deliberate pixelclusters,40-48colors total,2-4tones/material,dark samehueoutline,warm restrainedupperleftdetails,coolcharcoalplum#3A2B52/#5B3F7Ashadows,olive#4E7A4A. No dither,no finegrain,no smoothgradients,no haze,fog,glow,bloom,castshadows. First andlast5percentwidth must have EXACT SAME flat heightprofileandcolors, no verticalfeature or branchcut byends: outer5percentonlyflat horizontalcolorbands. Interior details taper away beforeedges for seamlesshorizontalrepeat. Image1actualoriginalnightmaremapsCONTENT, approvedseaimage2andforestimage3STYLE, pets4/5outlineweightonly. Pureflat#FF00FF for alltransparentemptyspace ABOVE silhouettes; no magenta WITHIN stone/wood. Full-width lowerground reaches bothends, no outergutter. Use entirewideimagecanvas."
+}

@@ -1,0 +1,73 @@
+{
+  "raw": "raw-01.png",
+  "state": "rejected_wrong_strip_aspect",
+  "route": "built-in image_gen",
+  "refs": [
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-nightmare/jobs/maps-reference-session-20261025.png",
+      "sha256": "4253666b11bf585b21aa214ec8c4b534093ad3c20963e7b6dd1348eb190b64e2"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-03-octopath/sea-islands-far/final.png",
+      "sha256": "46eca476b78ed1bcd370e7afb987e7a2315c85f6d62ecbd9a9e2d13d5868928c"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/forest-wall-far/final.png",
+      "sha256": "745ebb244eb1f19c5398ac02b90a958e76ad0b719a5218d736206c2cce7bcbb2"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "assets": [
+    {
+      "id": "nightmare-backdrop-far",
+      "name": "Black islands in purple sea",
+      "category": "backdrop_far",
+      "size": [
+        1280,
+        384
+      ],
+      "box": [
+        128,
+        64,
+        1408,
+        448
+      ],
+      "opaque": true,
+      "tileable": "x",
+      "colors": 48
+    },
+    {
+      "id": "nightmare-backdrop-mid",
+      "name": "Ruined haunted deadwood horizon",
+      "category": "backdrop_mid",
+      "size": [
+        1280,
+        384
+      ],
+      "box": [
+        128,
+        576,
+        1408,
+        960
+      ],
+      "keep_source_box": true,
+      "stretch": true,
+      "tileable": "x",
+      "colors": 48,
+      "key_threshold": 35,
+      "key_edge_threshold": 55,
+      "despill_radius": 1
+    }
+  ],
+  "prompt": "HD2D pixel art BACKDROP SHEET1536x1024, TWO panoramic strips, each1280x384pixels, x128..1407, topstrip y64..447, bottomstrip y576..959. Pure#FF00FF gutters around strips. Both repeat seamlessly horizontally: atfirst andlast24pixels the same flat level land/sea profile and colors with NO trees/rocks/objects touching end24pixels. Top strip: distant BLACK rocky islands with squat ruined silhouettes in quiet PURPLE SEA, low flat horizon at2/3height, muted plum/grey cloudless night sky above, sparse separated low jagged island groups around x400 andx950, no moon. Subtle flat horizontal waterpixel ripples, NO glow,fog,reflections,gradient. OPAQUE rectangularsky+sea. Bottomstrip: midground haunted DEAD WOODS with broken ancient city masonry half-walls and thin asymmetrical bare branches, olive dead foliage and roots, layered darkplum/brown silhouettes, opaque lowergroundline atbottom, puremagenta sky space above branches for transparency. Lowtrunks nearbothends lead into FLATgroundfor24pixels atends, no choppedtrees. Eachlayer40-48colors,2-4tonespermaterial,dark samehueoutlines,crisp deliberate pixelclusters NO finegrain,dither,smoothgradients,castshadows,text,characters. Do notpaint a full playable scene, foreground floor or sky fog. Original map montage image1 content: burntdeadwood and oldwall shapes. Approved sea islandsimage2 and forestimage3 give PIXELSTYLE and layerseparation only, not colors. Pets4/5outline anchors only. Kit palettecharcoalplum#3A2B52/#5B3F7A, cooldeepslate shadows,olive#4E7A4A, restrainedwarmbrown highlights. No neon. Keep each stripexactly1280x384withwidegutter.",
+  "generated_file": "/Users/phileanh/.codex/generated_images/01a1764a-b803-7d80-b5f2-e2577ae1ad25/exec-9cb14f9f-3830-4560-ad8b-697299334cc4.png",
+  "artifact_sha256": "c9fbb2cdab73625b9665fe638722e9c90ea1d17167f9a1ab33c0628118398635",
+  "rejection": "Actual2172x724 with two ~2116x311 strips. Export1280x384 would distort; no final exported. Generate single full-canvas layer next."
+}

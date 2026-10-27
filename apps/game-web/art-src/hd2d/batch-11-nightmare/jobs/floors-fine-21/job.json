@@ -1,0 +1,149 @@
+{
+  "raw": "raw-01.png",
+  "state": "planned_before_generation",
+  "route": "built-in image_gen",
+  "refs": [
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-nightmare/jobs/maps-reference-session-20261025.png",
+      "sha256": "4253666b11bf585b21aa214ec8c4b534093ad3c20963e7b6dd1348eb190b64e2"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-nightmare/jobs/floors-09/raw-01.png",
+      "sha256": "67e32af8ec23ae10701b15a3ca07b77749f4b227bfd18b2e46fb95cf4d1b3c17"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-nightmare/jobs/floors-sparse-10/approved-terrain-style.png",
+      "sha256": "dd55348d791bf4cbebdee03bb7c3d8b59f48a7716e834d82cd722949f64a7496"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "assets": [
+    {
+      "id": "nightmare-floor-01",
+      "category": "floor",
+      "size": [
+        512,
+        512
+      ],
+      "box": [
+        36,
+        34,
+        484,
+        482
+      ],
+      "opaque": true,
+      "tileable": "xy",
+      "colors": 48,
+      "name": "Cracked violet clay"
+    },
+    {
+      "id": "nightmare-floor-02",
+      "category": "floor",
+      "size": [
+        512,
+        512
+      ],
+      "box": [
+        544,
+        34,
+        992,
+        482
+      ],
+      "opaque": true,
+      "tileable": "xy",
+      "colors": 48,
+      "name": "Charcoal shale"
+    },
+    {
+      "id": "nightmare-floor-03",
+      "category": "floor",
+      "size": [
+        512,
+        512
+      ],
+      "box": [
+        1051,
+        34,
+        1499,
+        482
+      ],
+      "opaque": true,
+      "tileable": "xy",
+      "colors": 48,
+      "name": "Buried ruin paving"
+    },
+    {
+      "id": "nightmare-floor-extra-01",
+      "category": "floor",
+      "size": [
+        512,
+        512
+      ],
+      "box": [
+        36,
+        538,
+        484,
+        986
+      ],
+      "opaque": true,
+      "tileable": "xy",
+      "colors": 48,
+      "name": "Toxic moss"
+    },
+    {
+      "id": "nightmare-floor-extra-02",
+      "category": "floor",
+      "size": [
+        512,
+        512
+      ],
+      "box": [
+        544,
+        538,
+        992,
+        986
+      ],
+      "opaque": true,
+      "tileable": "xy",
+      "colors": 48,
+      "name": "Dark gravel"
+    },
+    {
+      "id": "nightmare-floor-extra-03",
+      "category": "floor",
+      "size": [
+        512,
+        512
+      ],
+      "box": [
+        1051,
+        538,
+        1499,
+        986
+      ],
+      "opaque": true,
+      "tileable": "xy",
+      "colors": 48,
+      "name": "Dry purple dirt"
+    }
+  ],
+  "prompt": "Draw six completely FLAT ground texture swatches on a1536x1024 sheet,3columns2rows,onpure#FF00FF gutters. Each square448x448px centered in512x512cell with32pxmagenta gutters. REPAIR source2: there are conspicuous LARGE isolated raised-rock clumps and empty tile corridors; replace with MUCH SMALLER, flat granular texture distributed EVENLY over the entire square, around45%coverage. 40-60tiny patches per square, each patch3-16pixelswide, no big clumps, no shape morethan24pxwide. Flat singleplum#3A2B52 base across BOTH interiorandouter8pxrim. Outer8px flat only, no wide blank border. No gradient. TOPLEFT tiny flat purple hairline fissures with tiny restrained lavender pixels; TOPMIDDLE fine flat charcoal shale splinters, much darker and less saturated; TOPRIGHT flush worn tiny masonry pieces and mutedolive grit; BOTTOMLEFT small mutedolive moss/lichen speckles; BOTTOMMIDDLE fine crusheddark mineral grit with tinyivorychips; BOTTOMRIGHT very fine dry purple soil pores and thin dry hairlinefractures, distinct fromtopLEFT. Every material remains a WALKABLE flat surface, NOT raisedpebbles, platforms or bushes. Small clusteredpixelart like approvedgrass/dirtstyleimage3,40-48colors each,2-4tones/material. No dither/noise/gradient,text,shadows,fog,glow,characters,props. Actualnightmare mapsimage1 CONTENT; image2 only flawedmaterialidentities, notstyle; approvedstyleimage3, pets4/5outlinesonly. Avoid borders and repeating centralmotifs, evenlydistributed fine patches, no gridcorridors.",
+  "reference_montage_sources": [
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/grass-floor-01/final.png",
+      "sha256": "792b3a1c25fb3be8671af1a4e119ef7af3bbd5a89dd22e42e14206317697524c"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+      "sha256": "bd4ba8187917b9023a9f9c9bd7ddc8ad43cb269724cbe02c1137f299ea03dff3"
+    }
+  ],
+  "attempt_note": "Third image generation for these six floor identities; prior two raw sources preserved. Stop redrawing these after this attempt and report any remaining issue."
+}

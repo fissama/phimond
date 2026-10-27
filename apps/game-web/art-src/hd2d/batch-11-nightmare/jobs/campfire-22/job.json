@@ -1,0 +1,141 @@
+{
+  "raw": "raw-01.png",
+  "state": "planned_before_generation",
+  "route": "built-in image_gen",
+  "refs": [
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-nightmare/jobs/maps-reference-session-20261025.png",
+      "sha256": "4253666b11bf585b21aa214ec8c4b534093ad3c20963e7b6dd1348eb190b64e2"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/hall-torch/final.png",
+      "sha256": "50f8815ebe8b8d9c02a56871aa60a94618bfffeb90d69d90ec7c19b0f6432181"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/moss-patch-01/final.png",
+      "sha256": "90a3d3e1fc44cf5c1203890778f9be5ac42aa2b8994385a97ebe2cd0b0cde96b"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "assets": [
+    {
+      "id": "nightmare-campfire-frame-00",
+      "name": "campfire phase 0",
+      "category": "fx",
+      "box": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "size": [
+        192,
+        192
+      ],
+      "colors": 48,
+      "key_threshold": 35,
+      "key_edge_threshold": 55,
+      "despill_radius": 1,
+      "native_pixels": true,
+      "desired_world_size": [
+        1.5,
+        1.5
+      ],
+      "height_relative_to_player": 1.1450381679389312
+    },
+    {
+      "id": "nightmare-campfire-frame-01",
+      "name": "campfire phase 1",
+      "category": "fx",
+      "box": [
+        512,
+        0,
+        1024,
+        512
+      ],
+      "size": [
+        192,
+        192
+      ],
+      "colors": 48,
+      "key_threshold": 35,
+      "key_edge_threshold": 55,
+      "despill_radius": 1,
+      "native_pixels": true,
+      "desired_world_size": [
+        1.5,
+        1.5
+      ],
+      "height_relative_to_player": 1.1450381679389312
+    },
+    {
+      "id": "nightmare-campfire-frame-02",
+      "name": "campfire phase 2",
+      "category": "fx",
+      "box": [
+        1024,
+        0,
+        1536,
+        512
+      ],
+      "size": [
+        192,
+        192
+      ],
+      "colors": 48,
+      "key_threshold": 35,
+      "key_edge_threshold": 55,
+      "despill_radius": 1,
+      "native_pixels": true,
+      "desired_world_size": [
+        1.5,
+        1.5
+      ],
+      "height_relative_to_player": 1.1450381679389312
+    },
+    {
+      "id": "nightmare-campfire-frame-03",
+      "name": "campfire phase 3",
+      "category": "fx",
+      "box": [
+        0,
+        512,
+        512,
+        1024
+      ],
+      "size": [
+        192,
+        192
+      ],
+      "colors": 48,
+      "key_threshold": 35,
+      "key_edge_threshold": 55,
+      "despill_radius": 1,
+      "native_pixels": true,
+      "desired_world_size": [
+        1.5,
+        1.5
+      ],
+      "height_relative_to_player": 1.1450381679389312
+    }
+  ],
+  "prompt": "Production HD2Dpixelart sprite sheet1536x1024,3columns2rows,pureflat#FF00FF background. SIX isolated SMALL sprites of the SAME small survivor campfire in a low ring of charcoalplum stones and two crossed weathered logs. Each spriteONLY110pxwide x140pxhigh centered inside512squarecell, huge empty margin, DO NOT fillcell. Player168px tall; physical prop must stay smallerthanplayer. Toprowleft/middle/right are loop phases0,25,50percent; bottomLEFT phase75percent. Bottommiddleandright are two extra static detailstudies, not newphases. FirstFOUR sprites fixed registrationcenter x256/768/1280 andsame contactbaseline within eachcell. warm amber orange flames, no flying embers, no smoke; stone/log base EXACTLY same pixels inallfourframes. Allfour loop phases distinct flamebends:leftupright,rightbend,shortsplit,leftbend, cyclic return. No camera/scale changes. Crisp HD2Dpixelclusters40-48colors perframe,2-4tones/material,darksamehueoutlines,upperleftwarmkeylight,coolplumshadow. Image1originalnightmaremapscontent,image2approvedtorchspriteSTYLE,image3approvedmossstyle;pet4/5outlineweightonly. No outside glow,halo,bloom,smoothgradients,dither,groundshadow,text,characters,background or groundplatform.",
+  "animation_plan": {
+    "frames": 4,
+    "fps": 8,
+    "loop": true,
+    "primary_id": "nightmare-campfire",
+    "frame_px": [
+      192,
+      192
+    ],
+    "root": "shared bottom-center; translation only"
+  }
+}
