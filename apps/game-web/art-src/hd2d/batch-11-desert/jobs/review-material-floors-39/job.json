@@ -1,0 +1,64 @@
+{
+  "id": "review-material-floors-39",
+  "state": "exported_pending_visual_review",
+  "route": "built-in image_gen",
+  "raw": "raw-01.png",
+  "palette_source": "palette.json",
+  "prompt": "Phimond HD2D environmental FLOOR TEXTURES, FOUR square panels in2columns2rows, edge-to-edgefullsquareimage, no gutters/labels. TopLEFT weatheredPALE SANDSTONE flagstone pavement. TopRIGHT SAND-BURIED ADOBE BRICK pavement. BottomLEFT independentalternatesandstoneflagstone texture. BottomRIGHT independentalternateadobebrick texture. Each512squarefinal seamlessXY, everypanel outer8finalpx MUSTuniformflatbasecolor#D9B26B sand ochre, ALL detail8pxinset, but NO wide emptyrim/corridor/frame aroundtexture. Panelinside90%area textured withmanyirregularsmallmaterialshapes atquietuniformdensity toavoidcenterisland. EdgetransitionLOWCONTRAST soflat8pxbasewillnotreadborder.\nSANDSTONE: flatinterlockingunequal broad paleivory/tan/graystoneplates wornflushwithground, brokenpolygons withthin earthy joints andsandpackedbetween, broadmaterialfaces lightlymottledwithgray/mauve/olive mineralstreaks, smallreddishscars. About25-40variedsmallplates, manyhalfburiedcorners, lowcontrasttopfaces within1valuestepfromochrebase, NOdarkcartoonoutline. Recognizablystonepaving, NOT opencrackedclay withtinyfloatingpebbles.\nADOBEBRICK: manyunequal shortflat rectangularadobebricks irregularstaggeredruns underwindsweptsand, 3differentbrickorientations, quietrust/clay/creamtanfaces, shallowgraymauve wornjoints, missingcorners andslivers, no sharpcheckergrid. Sandcoversthirdofpaving, irregularsilhouettes. Recognizablemanmadebrickfloor, NOT scatteredcrackedearthchips.\nAllpanelsflatTOPDOWNterrain at128px/world, no raised3Drocks, castshadows, dunes, props, walls, S-shapedfurrows/letterlikepatterns, text, borders, framing, dither/noise, gradients. Broadintentionalcrisp2-4tonepixelclusters per material, 33-48subtleearthycolors perpanel. Original1forPhimonddesertpalettecontent, approvedfloor2/3actualpavementpixelSTYLE, petanchors4/5valuesteps. EXACTapproved00-09OctopathHD2Dhand. Variedindependentlydrawntextures, NEVERclone/recolor, no bigsignaturemotif, no symmetricpattern or repeatedstamps. Warmupperleftlocalchips coolmauvegrayrecesses. Keepcontrastquietanddistributed, avoiddarklargefracturesandsand-coloredrectangularframe.",
+  "refs": [
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+      "sha256": "30a678461a1a1f13aafa1a925382223dda2abcba586bb3b343e87a683a6c04ea"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/city-paving-01/final.png",
+      "sha256": "226e6c08233758f59be315327ec89e332aded4f5da96aec115277105f557cfa1"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/city-brick-path/final.png",
+      "sha256": "487f5560a60c901ac118fb8b7a4a4c23f71aed7858ee46799f2de0dc61fb9272"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "assets": [
+    {
+      "id": "desert-sandstone-floor",
+      "category": "floor",
+      "size": [
+        512,
+        512
+      ],
+      "tileable": "xy",
+      "opaque": true,
+      "box": [
+        0,
+        0,
+        625,
+        625
+      ]
+    },
+    {
+      "id": "desert-sunken-brick-floor",
+      "category": "floor",
+      "size": [
+        512,
+        512
+      ],
+      "tileable": "xy",
+      "opaque": true,
+      "box": [
+        629,
+        0,
+        1254,
+        625
+      ]
+    }
+  ]
+}

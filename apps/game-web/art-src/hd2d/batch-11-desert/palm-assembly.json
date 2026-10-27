@@ -1,0 +1,40 @@
+{
+  "pixels_per_world_unit": 128,
+  "player_height_world": 1.31,
+  "player_height_px": 168,
+  "parts": [
+    {
+      "id": "desert-palm-trunk",
+      "anchor_px": [
+        145,
+        175
+      ]
+    },
+    {
+      "id": "desert-palm-canopy",
+      "attach_to": "desert-palm-trunk",
+      "parent_anchor_px": [
+        145,
+        175
+      ],
+      "child_anchor_px": [
+        378,
+        340
+      ],
+      "translation_px": [
+        -233,
+        -165
+      ],
+      "sway": true,
+      "sway_pivot_px": [
+        378,
+        340
+      ]
+    }
+  ],
+  "qa_file": "qa-palm-assembly-native.png",
+  "resampling": "none; originalpixels1:1; QAassemblyonly, separatefinalfilesretained",
+  "approval": false,
+  "visual_review": "actual_native_assembly_viewed_2026-10-22",
+  "finding": "Canopy stem connects naturally to trunk collar, no seamgap. Sourcepixels unchanged, per-partanchorsprovided."
+}

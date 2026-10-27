@@ -1,0 +1,72 @@
+{
+  "id": "review-floor-repeat-52",
+  "route": "built-in image_gen",
+  "state": "exported_pending_visual_review",
+  "raw": "raw-57.png",
+  "palette_source": "palette.json",
+  "refs": [
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+      "sha256": "30a678461a1a1f13aafa1a925382223dda2abcba586bb3b343e87a683a6c04ea"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/grass-floor-01/final.png",
+      "sha256": "792b3a1c25fb3be8671af1a4e119ef7af3bbd5a89dd22e42e14206317697524c"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+      "sha256": "bd4ba8187917b9023a9f9c9bd7ddc8ad43cb269724cbe02c1137f299ea03dff3"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "assets": [
+    {
+      "id": "desert-sandstone-floor",
+      "category": "floor",
+      "size": [
+        512,
+        512
+      ],
+      "world": [
+        4,
+        4
+      ],
+      "opaque": true,
+      "tileable": "xy",
+      "box": [
+        0,
+        0,
+        627,
+        627
+      ]
+    },
+    {
+      "id": "desert-sunken-brick-floor",
+      "category": "floor",
+      "size": [
+        512,
+        512
+      ],
+      "world": [
+        4,
+        4
+      ],
+      "opaque": true,
+      "tileable": "xy",
+      "box": [
+        627,
+        0,
+        1254,
+        627
+      ]
+    }
+  ],
+  "prompt": "Produce1254x1254pixels, FOURsquaregroundTEXTURESina2columns2rowscontactsheet, no labels/gutters/frame/magenta. Fourindependent625squaretiles. TopLEFTsandstonepaving;topRIGHTsandburiedadobebrick;bottomLEFTanotherindependentsandstonecandidate;bottomRIGHTanotherindependentbrickcandidate. Entirecanvasopaque. SamepixelHANDandcoarseintentional2\u20134tonecluster sizesastwoapprovedbatch01FLOORreferences2and3. Matchtheirsimplicityexactly: nofinegrain/noisyconfetti/phototexture/noantialiasing/blur/gradients.\nCRITICALREPEATQUALITY: quietsandyfloorwithsmallirregularislandsofnearlyburiedmaterialdistributednonuniformly. SandynegativeSPACEformswindingdiagonalgapsTHROUGHtheINTERIORaswellasedges, NOsquarecentralisland, NOrectangularperimetercorridororborder, nobigcentralgroup, noevenrows. Lowcontraststone/brickonlyoneortwotonalstepsfromsand; tinydeepcrackaccentslimited. Textureabout40percentmaterial/60percentquietsand. Everyisland4\u201312smallblockyfacetsandbrokenclusteredges. LefttilesreadNATURALirregularflatsandstoneslabs;righttilesreadfewhalfburiedshortBRICKfragmentswithoccasionaloffsetrectangularfaces. DIFFERENTgeometrynotrecolorclones. ONLYoutermost10sourcepixelsflatidenticalwarmochresand#D9B26Bonall4sides, detailmaystartIMMEDIATELY11pxinward,sameaverageemptyspacewidthasthewindinginteriorgaps. DonotdrawaSECONDwideremptyborder. 33\u201348naturalmaterialcolorspertexture,warmochre/ivory/rust/minorgrayandoliveearth,in2\u20134stepspermaterial, subtleconnectedfacets, nosymbols/letters/Srunes/swirls. Lightupperleft,coolmauverecessesbarelyvisible.\nReference1originaldesertpalette/contentonly;2grassfloorand3dirtfloorareapproved00\u201309STYLE/PIXELCLUSTERsimplicityauthorities;4\u20135petoutlinevalueanchorsnotcontent. Final512x512world4x4at128px/world. FloortextureONLYno props/shadows/depth. Fourdifferenttexturecandidates2x2grid,no decorativeborder. Nomagenta. Mostlyquietflatgroundwithlowcontrastchunkyburiedfragments.\nIMPORTANTmaterialvariety: eachstoneclustercontainsnaturallyvariedwarmOCHRE, mutedMAUVE-GRAY, IVORYlimestone, faintOLIVEpatinaandRUSTmineralfleckfaces; brickhasrustterracotta,oliveweatheredpatches,greyoldmortar,ivorysandchips,ochreclayfacesandmauvecoolshadow. Eachof6materialfamilieshas6\u20138naturalsteps, total33\u201348visiblecolorspertexture. Currentearthy4huesaretoo few. Keepquietlowcontrastclustergeometry, nofinegrainednoise, nooversaturatedpatches. Tinyconnectedpatcheswithininidividualfacetsholdmaterialvariation."
+}

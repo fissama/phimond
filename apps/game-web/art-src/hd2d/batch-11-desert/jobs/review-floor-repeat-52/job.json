@@ -1,0 +1,94 @@
+{
+  "id": "review-floor-repeat-52",
+  "route": "built-in image_gen",
+  "state": "exported_pending_visual_review",
+  "raw": "raw-60.png",
+  "palette_source": "palette.json",
+  "refs": [
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+      "sha256": "30a678461a1a1f13aafa1a925382223dda2abcba586bb3b343e87a683a6c04ea"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/review-floor-repeat-52/reference-approved-floor-pair.png",
+      "sha256": "dd55348d791bf4cbebdee03bb7c3d8b59f48a7716e834d82cd722949f64a7496"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/palette-v2/raw-01.png",
+      "sha256": "e969a372bf7ebb893db8617288497c4d607129b41d9e8bf3d50fd816c05f3987"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "assets": [
+    {
+      "id": "desert-sandstone-floor",
+      "category": "floor",
+      "size": [
+        512,
+        512
+      ],
+      "world": [
+        4,
+        4
+      ],
+      "opaque": true,
+      "tileable": "xy",
+      "box": [
+        0,
+        0,
+        632,
+        632
+      ],
+      "palette_remap": {
+        "#C59553": "#D9B26B",
+        "#B88A44": "#D9B26B",
+        "#B2906C": "#D9B26B",
+        "#A47139": "#D9B26B",
+        "#886445": "#D9B26B"
+      }
+    },
+    {
+      "id": "desert-sunken-brick-floor",
+      "category": "floor",
+      "size": [
+        512,
+        512
+      ],
+      "world": [
+        4,
+        4
+      ],
+      "opaque": true,
+      "tileable": "xy",
+      "box": [
+        627,
+        0,
+        1254,
+        632
+      ],
+      "palette_remap": {
+        "#C59553": "#D9B26B",
+        "#B88A44": "#D9B26B"
+      }
+    }
+  ],
+  "prompt": "Draw FOURdifferentopaque512-stylegamegroundtexturesina2x2sheet1254x1254. Top-leftSANDSTONEPAVING,top-rightSUNKENADOBEBRICK,bottom-leftanotherstone,bottom-rightanotherbrick. No text/labels/gutters/borders. Originalmapreference1contentonly;reference2TWOAPPROVEDbatch01floorimagespixelHAND, reference3actualregionalPALETTEONLY(donotdrawswatchgrid);references4–5petvalueoutlineanchors. MatchapprovedOctopathHD2Dintentionalpixelfacets, warmupperleftlight,coolshadow, thinmaterialcontours,noblur/dither/noise.\nMediumdetail, deliberate1–3pxclusterswith8–16pxbroadplanes. MUSTuse33–48actualdifferentearthycolorsPERtexturefromall6materialfamiliesintheattachedpalette, eachfamily3–4primarytonalplanesplusselectiveedgefacetcolors: GOLDENOCHREsand;RUSTTERRACOTTAbrick/mineral;IVORYlimestone;COOLMAUVEGRAYshadowstone;OLIVEwornmineralpatina;DARKUMBERtinyburiedwoodfragments. 20percentstonefacesmustactuallyCOOLGRAY/MAUVE,notallgold. 15percentolivegraypatina; warmivory+rustrichmineralfacesinremainingstone. Fragmentsnaturallyscattered,manysmallvariedfacets,notconfettipixels. Palettenotlimitedtogolden3hues. Onbricktilesgraymortar,mauveshadow,olivewornpatches,ivorylimechips,umberoldwoodsplintersandraretinystonechipsaddmaterialfamiliesnaturally. Subduedearthy,nosaturationneon.\nRepeatingfloorquality: smallirregularlowcontrastmaterialISLANDSdistributednonuniformlythroughwhole512canvas. Mostlyflatwarmochresand, windingDIAGONALsandynegativeSPACETHROUGHtheinterioraswellasnearedges. No giantcentralcluster,norectangularcentralisland,noperimetercorridor,noevenrows,nosymbols/Srunes. Entireouter10sourcepixelsofEACHtileflatidentical#D9B26Bdetailcanstartat11px,onlythatTHINmargin,noextrawideblankapron. Interiornegative-spacegapsmustbeaswideastheedgemargin, sonooutlineofrepeatvisible. Seamlessoppositeedges, opaque. Final512x512world4x4at128px/world. 4distincttextures2x2,no recolors, no 3Dprops orcastshadows.",
+  "reference_montage_sources": [
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/grass-floor-01/final.png",
+      "sha256": "792b3a1c25fb3be8671af1a4e119ef7af3bbd5a89dd22e42e14206317697524c"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+      "sha256": "bd4ba8187917b9023a9f9c9bd7ddc8ad43cb269724cbe02c1137f299ea03dff3"
+    }
+  ],
+  "processing_note": "Natural source crop includes existing flat interpanel apron; no geometric edge copying/painting. Two sandtone aliases apply globally to ALL matching pixels, never spatial mask. Keep actual40minus2 material colors. Native prop restriction does not apply to floor density finish. Stone also globally aliasesB2906C,A47139,886445toD9B26B; allmatchingpixels, no edge mask or pixel repaint; resulting35colors."
+}

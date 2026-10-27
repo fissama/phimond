@@ -1,0 +1,1 @@
+Actual4x of all4 generated frames inspected. Separate small flame-only FX. Warm ivory/rust core and mauve smoke read clearly; no hardware resampled. Packed animation33unioncolors; individual subframes24/28/28/25 and retain local color warnings. Temporal playback still pending. Approved=false.

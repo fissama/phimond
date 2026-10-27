@@ -1,0 +1,70 @@
+{
+  "id": "native-banner-clean-49",
+  "route": "built-in image_gen",
+  "state": "planned_before_generation",
+  "raw": "raw-49.png",
+  "palette_source": "palette.json",
+  "prompt": "EDIT ONLY the existingnomadflag inreference3, exact1536x1024magenta canvas, exactnative320x352workingcanvas at608:928x336:688. KeepmainbannerpixelSIZE andposition; doNOTzoom or enlargesprite. RemoveTWOunwanteddisconnectedbrownstripfragmentsFLOATINGABOVEthecloth/crossbar (visibleinreference3), leavecleanmagenta there. MAINuprightwoodpole/bonecrossbar/rusttriangularwovencloth/connectedstonefootmuststaywhole, no clippedtips. No newgroundshadow/disc, no strayparticles, no danglinghairlinetails. Allvisiblebodyoneconnectedshape.\nOriginaldesertmap1contentpalette; reference2TWOapproved00-09environmentflagsmaterial/pixelSTYLE; reference3exactnativeSCALE/geometrytarget,notstyleauthority. Petanchors4/5value/outlineonly. ExactapprovedOctopathHD2Dhand: crispintentional2-4tonematerialclusters, thinwarmbrown samehuecuts, warmupperleftlightcoolmauvegrayrecesses, earthy33-48colors inrustcloth/ochrebone/umberwood/ivorygraystoneandtinyolivewornedge. GeometricwovenTRIANGLESonly, no letters/runes/text/logo, no pirateemblem fromstylereference. No smoothpaint/dither/noise/blur/bloom/fog/semialpha.\nBEFOREdrawing desiredworld2.5x2.75 (320x352 at128px/world), height2.099players (player168px/1.31world). Actualvisiblemainbodymustfitunder304x336px. Itisstandingbanner/tallprop, nothandheld. Sourcepixelscopied1:1, no downscalingpermitted. Preservehugeblankarea: onlyonenative-sizedbanner onthiscanvas, freshnativeeditnotlargerescaledposter.",
+  "refs": [
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+      "sha256": "30a678461a1a1f13aafa1a925382223dda2abcba586bb3b343e87a683a6c04ea"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-banner-clean-49/reference-approved-flag-pair.png",
+      "sha256": "986a906cfde745673fbaeeab666201121703741923af878c02ffd583717f2b99"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-banner-clean-49/reference-native-banner-guide.png",
+      "sha256": "d5c9f8ddb2a2bbfb9428fd47d8533aa6acb7e8df03f8dc4e0479edc13a5dde93"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "reference_montage_sources": [
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/banner-red/final.png",
+      "sha256": "65d84d922bd7619ddee04d49c365e2ac31bd9cdfb2f6535845bf752ebe2bfc7a"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-04-octopath/pirate-flag/final.png",
+      "sha256": "fafb87880d34253a37b863b17d05d40dbee4a9f6bb16ddd4ab2256d85e4eeea6"
+    }
+  ],
+  "native_reference_source": {
+    "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-banner-clean-49/reference-banner-before.png",
+    "sha256": "03bd372d20b160d4350ca110c4cb713333654c710be12b3884e46351a624de27",
+    "placement": [
+      608,
+      336
+    ]
+  },
+  "assets": [
+    {
+      "id": "desert-nomad-stake-banner",
+      "category": "prop",
+      "size": [
+        320,
+        352
+      ],
+      "native_pixels": true,
+      "desired_world_size": [
+        2.5,
+        2.75
+      ],
+      "height_relative_to_player": 2.099236641221374,
+      "box": [
+        608,
+        336,
+        928,
+        688
+      ]
+    }
+  ]
+}

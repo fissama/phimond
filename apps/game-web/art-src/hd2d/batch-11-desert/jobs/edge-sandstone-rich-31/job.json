@@ -1,0 +1,50 @@
+{
+  "id": "edge-sandstone-rich-31",
+  "state": "exported_pending_visual_review",
+  "route": "built-in image_gen",
+  "raw": "raw-04.png",
+  "palette_source": "palette.json",
+  "prompt": "ONE seamlessX Phimond sand-to-SANDSTONE TERRAIN EDGE DECAL,1536x512 flat#FF00FFbackground. Overheadgroundribbon,not3Drockprop. Originaldesert1content,approvedgrassdirtedge2+grassrootsedge3pixelstyle(notgrasscontent),petanchors4/5outlinesvaluesonly. CrispHD2D deliberatepixelclusters2–4tones/material, no blur/dither/noise/text/castshadow/bloom.\nOne thin long uneven ribbon of FLAT RUSTRED sandstoneflakes, ochresand, PALEIVORYmineralchips, distinct GRAY-MAUVESHALEgrit andsmall MUTEDOLIVELICHENpatches, tinyUMBERwoodflecks. IncludeALLsixearthymaterialfamilies tohave33–48 actualpalettecolors, not justgold/orange32colors. Readableflatfacets, someshortbrokenivoryveins embeddedflush,nohoneycombcracks/nolargeboulders. Naturalpixelfrayedupper/loweralphaedges, nohardrectanglebackingexceptshortplainendpointzones.\nExactrepeatengineering: whole strip crossesENTIREfilewidth atfixedlevelcenterliney256. LEFTMOST160pixels andRIGHTMOST160pixels EXACTsameprofile: y0–223flat#FF00FF,y224–287flat#D9B26B,y288–511flatmagenta. No detail/shading/gradientwithinbothendzones. No taper,tilt orfade. Central1216pixelshaveirregularmaterialblend around y190–330, gentlyjoiningpaleends. No empty presentationmargin left/right, ribbonreachesbothfileedges. Match endpointsalphaandcolorpixel-for-pixel. Groundbasebetweenchipsalwayssamepalesand, no darkerverticalendbars. One single long narrow strip,nopanels.",
+  "refs": [
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+      "sha256": "30a678461a1a1f13aafa1a925382223dda2abcba586bb3b343e87a683a6c04ea"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/edge-grass-dirt/final.png",
+      "sha256": "cea364b6f8306a6a2db0561b36b846d0e1252cf9b9c75f383a8f97a86a2c417d"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/edge-grass-roots/final.png",
+      "sha256": "7bf3e3700ef71963c08b435e2bc1a717799e46acef74ca018b27122d4541aab8"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "assets": [
+    {
+      "id": "desert-edge-sand-sandstone-01",
+      "size": [
+        512,
+        128
+      ],
+      "category": "decal",
+      "tileable": "x",
+      "stretch": true,
+      "keep_source_box": true,
+      "colors": 48,
+      "box": [
+        100,
+        180,
+        2072,
+        520
+      ]
+    }
+  ]
+}

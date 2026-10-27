@@ -42,9 +42,18 @@ for sp in job['assets']:
   if sp.get('crop_polygon'):
    selection=Image.new('L',keyed.size,0);ImageDraw.Draw(selection).polygon([tuple(p) for p in sp['crop_polygon']],fill=255)
    ka=np.asarray(keyed).copy();ka[:,:,3]=np.minimum(ka[:,:,3],np.asarray(selection));keyed=Image.fromarray(ka)
+  if sp.get('extraction_alpha_mask'):
+   stencil=Image.open(sp['extraction_alpha_mask'])
+   stencil=stencil.getchannel('A') if stencil.mode=='RGBA' else stencil.convert('L')
+   if stencil.size!=keyed.size:raise RuntimeError('CUTTING STENCIL SIZE MISMATCH '+sp['id'])
+   ka=np.asarray(keyed).copy();ka[:,:,3]=np.minimum(ka[:,:,3],np.asarray(stencil));keyed=Image.fromarray(ka)
   bbox=keyed.getbbox()
   if not bbox:raise RuntimeError('EMPTY '+sp['id'])
   keyed=keyed if sp.get('keep_source_box') else keyed.crop(bbox)
+ if sp.get('source_registration'):
+  reg=sp['source_registration'];dx,dy=reg['translate'];cw,ch=reg['canvas'];bounds=keyed.getbbox()
+  if bounds and (bounds[0]+dx<0 or bounds[1]+dy<0 or bounds[2]+dx>cw or bounds[3]+dy>ch):raise RuntimeError('REGISTRATION WOULD CLIP VISIBLE PIXELS '+sp['id'])
+  registered=Image.new('RGBA',(cw,ch));registered.alpha_composite(keyed,(dx,dy));keyed=registered
  keyed.save(d/'keyed-source.png');alpha=keyed.getchannel('A')
  # Nondithered palette reduction is the only color operation. No geometric cleanup/repaint.
  arr=np.asarray(keyed);visible=arr[:,:,3]>0;pixels=arr[:,:,:3][visible];budget=sp.get('colors',48)
@@ -92,7 +101,8 @@ for sp in job['assets']:
   if sp.get('master_size'):raise RuntimeError('NATIVE PROP CANNOT USE RESAMPLED MASTER '+sp['id'])
   desired=sp.get('desired_world_size')
   if not desired or any(abs(desired[i]*128-size[i])>1e-6 for i in range(2)):raise RuntimeError('NATIVE PROP WORLD SIZE NOT PREDECLARED '+sp['id'])
-  if pal.width>size[0]-16 or pal.height>size[1]-16:raise RuntimeError('NATIVE PROP EXCEEDS PIXEL BUDGET; REDRAW, DO NOT SHRINK '+sp['id'])
+  pb=pal.getbbox()
+  if not pb or pal.width>size[0] or pal.height>size[1] or pb[2]-pb[0]>size[0]-16 or pb[3]-pb[1]>size[1]-16:raise RuntimeError('NATIVE PROP EXCEEDS PIXEL BUDGET; REDRAW, DO NOT SHRINK '+sp['id'])
   master=Image.new('RGBA',tuple(size));master.alpha_composite(pal,((size[0]-pal.width)//2,(size[1]-pal.height)//2))
  elif sp.get('opaque') or sp.get('stretch'):master=pal.resize(tuple(size),Image.Resampling.NEAREST)
  else:master=fit(pal,size,sp.get('margin',16 if not sp.get('master_size') else 48))
@@ -108,8 +118,12 @@ for sp in job['assets']:
   shutil.copyfile(rp,target)
  prompt=f"# {sp['id']}\n\nRoute: built-in image_gen. Model not exposed.\n\n{job['prompt']}\n\nActual attachments (ordered):\n"
  prompt+='\n'.join(f"{i+1}. {r['path']} — SHA256 {r['sha256']}" for i,r in enumerate(job['refs']))
+ if job.get('reference_montage_sources'):prompt+='\n\nQA reference montage contains these actual approved images (unmodified pixels, padding only):\n'+json.dumps(job['reference_montage_sources'],ensure_ascii=False,indent=2)
+ if job.get('native_reference_source'):prompt+='\n\nNative guide source provenance:\n'+json.dumps(job['native_reference_source'],ensure_ascii=False,indent=2)
+ if job.get('native_reference_sources'):prompt+='\n\nNative guide source provenance (snapshots retained):\n'+json.dumps(job['native_reference_sources'],ensure_ascii=False,indent=2)
  scaling='native1:1 pixel copy and transparent padding; NO resampling' if sp.get('native_pixels') else 'nearest scaling'
- prompt+=f"\n\nRaw: {raw.name}; SHA256 {sha(raw)}; source box {sp['box']}; sheet extraction polygon {sp.get('crop_polygon')}. Final {sp['size']}. Non-dithered {sp.get('colors',48)}color finish, {scaling}. No content drawn with code.\n"
+ prompt+=f"\n\nRaw: {raw.name}; SHA256 {sha(raw)}; source box {sp['box']}; sheet extraction polygon {sp.get('crop_polygon')}; translation-only source registration {sp.get('source_registration')}. Final {sp['size']}. Non-dithered {sp.get('colors',48)}color finish, {scaling}. No content drawn with code.\n"
+ if sp.get('extraction_alpha_mask'):prompt+=f"\nCutting stencil only: {sp['extraction_alpha_mask']}; SHA256 {sha(sp['extraction_alpha_mask'])}. Alpha intersection removes outside source pixels; no missing pixels filled or painted.\n"
  (d/'prompt.md').write_text(prompt)
  if sp.get('native_pixels'):
   with (d/'prompt.md').open('a') as pf:pf.write('\nNative scale: '+json.dumps({'desired_world_size_before_drawing':sp['desired_world_size'],'height_relative_to_player':sp.get('height_relative_to_player'),'source_footprint_px':list(pal.size),'resampling':'NONE; source pixels copied1:1, transparent padding only'},ensure_ascii=False)+'\n')

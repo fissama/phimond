@@ -1,1 +1,5 @@
 Actual3x3 repeat and detail4x dark/checker inspected. Quiet shared base removes framed texture island; distinct geometry/material clusters. Mechanical seamX/Y0, outer8flat,33–48colors. Fixed recognizable motif repetition remains a weakness. Draft self-inspected, Claude approval=false. No code edge painting/copying; only crop and whole-image kit palette subset finish.
+
+2026-10-23: Latest final full4×left/right halves and3×3repeat actually viewed. SELF REJECT repeat quality: straight empty corridors form conspicuous grid despite numerical seam0. Must redraw, no spatial edge painting.
+
+2026-10-24: Current job57raw64 actually reviewed full4×two halves and3×3repeat. Native source originalmap CROP excludes source windstreak symbols, parenthash recorded in job. 48/47colors, seamXY0, outer8flat, no global palettealiases. Interior materialislands now sparse with wide sandgaps, no conspicuous perimeter-only corridor; recognizably periodic larger islands remain a weakness. Candidate for Claude, approved=false. Replaces rejected dense grid and S-streak attempts.

@@ -1,0 +1,152 @@
+{
+  "id": "magic-rune-40",
+  "prompt": "Phimond desert ancient MAGIC SEAL ENERGY ONLY, four consecutive animation keyframes,2columns2rows1024squarePURE#FF00FF with64pixelclear margins/gaps, fullyvisible. Groundplane shallowperspective openoval of brokenAMBER/IVORY mineralenergyarcsegments, 6tinyfaceted suspendedsandstone/ivory splinters withsmall warmgold internalenergyfacet. No stonebasepedestal/platform orphysicalprop, no letters/runes/glyphs/words, no squaredspirals, no completecircle. Ancient geometricpower depictedbybrokeninterrupted doublearcs withscattered 4pointsmallsparklesandfloatingmineralshards. Center mostlymagenta.\nFixedwideovalabout320x180everyframe samecamera/baseline. TopLEFT arcs faint andsplintersrestlow; topRIGHT rightbackarcsbrighten and3shardslift; bottomLEFT frontsweepingarcbright andsplintersfloatathighest; bottomRIGHT tracesdimwithshardsdescending/rejoiningfirst. Distinctphases not4unrelatedcircles. Pixelglintsoftenstonevalue, no blurryglowhalo orfog, no huge magicalexplosion. Thinumberandmauvedark facetsofivory/rust/grayslate mineralgrit enrich33-48earthycolors; goldenochre/ivory energy, no electricblue/neonpurple. Original1desertcontent, approvedcaptureseal2FXpixelclusters/earthcast3mineralglintvalue, pet4/5outlinevaluestepsonly. Matchapproved00-09OctopathHD2D2-4toneintentionalclusters,no dither/noise/softpaint/3D, alpha binary. FinalFXframe256x160(world2x1.25groundfootprint); standarddensityfinishallowedforenergyFX; NO new physicalprop.",
+  "refs": [
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+      "sha256": "30a678461a1a1f13aafa1a925382223dda2abcba586bb3b343e87a683a6c04ea"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-07-octopath/fx_capture_seal/final.png",
+      "sha256": "547dd9fabf60b0dc0b9fd114d9b0c18d9d80aec82f24e94590d45ab6a0732701"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-07-octopath/fx_earth_cast/final.png",
+      "sha256": "4c9032b9981f8cca951991d4d5e2a644e92f04ebc385c08ef711149d3955f586"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "state": "exported_pending_visual_review",
+  "route": "built-in image_gen",
+  "raw": "raw-01.png",
+  "palette_source": "palette.json",
+  "assets": [
+    {
+      "id": "desert-magic-rune-frame-00",
+      "category": "fx",
+      "size": [
+        256,
+        160
+      ],
+      "box": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "keep_source_box": true,
+      "margin": 8,
+      "source_registration": {
+        "translate": [
+          7,
+          -151
+        ],
+        "canvas": [
+          640,
+          400
+        ]
+      }
+    },
+    {
+      "id": "desert-magic-rune-frame-01",
+      "category": "fx",
+      "size": [
+        256,
+        160
+      ],
+      "box": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "keep_source_box": true,
+      "margin": 8,
+      "source_registration": {
+        "translate": [
+          7,
+          -151
+        ],
+        "canvas": [
+          640,
+          400
+        ]
+      }
+    },
+    {
+      "id": "desert-magic-rune-frame-02",
+      "category": "fx",
+      "size": [
+        256,
+        160
+      ],
+      "box": [
+        0,
+        627,
+        627,
+        1254
+      ],
+      "keep_source_box": true,
+      "margin": 8,
+      "source_registration": {
+        "translate": [
+          7,
+          -98
+        ],
+        "canvas": [
+          640,
+          400
+        ]
+      }
+    },
+    {
+      "id": "desert-magic-rune-frame-03",
+      "category": "fx",
+      "size": [
+        256,
+        160
+      ],
+      "box": [
+        627,
+        627,
+        1254,
+        1254
+      ],
+      "keep_source_box": true,
+      "margin": 8,
+      "source_registration": {
+        "translate": [
+          7,
+          -96
+        ],
+        "canvas": [
+          640,
+          400
+        ]
+      }
+    }
+  ],
+  "frame_plan": {
+    "id": "desert-magic-rune-anim",
+    "category": "fx",
+    "frame_size": [
+      256,
+      160
+    ],
+    "world_size_per_frame": [
+      2,
+      1.25
+    ],
+    "frames": 4,
+    "fps": 4,
+    "layout": "2x2source -> horizontalsheet"
+  },
+  "registration_note": "Sourcecells retain allgeneratedvisibleparticles; translated to commonfrontovalbaseline360 in640x400transparentcanvas. Same densityfactor for all4frames; no frame synthesis or geometry edits."
+}

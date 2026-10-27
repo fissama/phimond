@@ -1,0 +1,152 @@
+{
+  "id": "dust-devil-37",
+  "prompt": "Phimond desert DUST DEVIL four consecutive animation frames,2columns2rows on1024squarePURE#FF00FF. Fullyseparated with≥64pxmargins/gaps, no labels/text. Each same-size compact vertical rotatingcolumn of EARTHY SAND about200wide280high, narrowbottom atsamebaseline, smallmidbody and flaredtop curvingright. Fourkeyframessequential quarter-turns of layered raggedochre/rustsand ribbons, ivorymineralgrains andgraymauveshadededdies. Transparentholesbetweenthecurvedribbons. No face/creature, no solid cartoon tornado cone. Bottomtinycrooked ellipse of sandscuffs, 4-8small angulargrainclustersliftaroundcolumn. Natural irregularwindinggeometry, no letters/Ssymbolsilhouette, no giantcloud or fog. Frame1thinfrontsweep lowleftgrains; frame2rotation reveals broadrightcurl highsmallgrain; frame3narrowfrontbreak+upperleftsweep; frame4lowercurlreconnectstoframe1 withfallinggrain. Sameheightwidthcamera, no scalechange. Original1contentdesertpalette, approveddustFX2silhouetteandclusteredgrains, torch3tinywarmvaluefacets, pet4/5outlinevalue only. Exactapproved00-09OctopathHD2Dpixelhand,2-4tones/material, crispgroups, earthy33-48colors perframe withsand,ivory,rust,slate,mauve, tinyolivegrain. OPAQUE pixelclusters againstmagenta only, no semialpha, no blurredfog/glow/noise/dither/smoothgradient. FinalFXframe192x224(world1.5x1.75,1.34playerheight). DensityfinishallowedforairborneFX; nophysicalprop. Ensuretruefour-frame rotation, not4unrelatedtornadoes.",
+  "refs": [
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+      "sha256": "30a678461a1a1f13aafa1a925382223dda2abcba586bb3b343e87a683a6c04ea"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-07-octopath/fx_escape_dust/final.png",
+      "sha256": "cebf7e7551c0d2196c430295bb7a793f439c743fc7d3a1782b142e8d6c0e04aa"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/hall-torch/final.png",
+      "sha256": "50f8815ebe8b8d9c02a56871aa60a94618bfffeb90d69d90ec7c19b0f6432181"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "state": "exported_pending_visual_review",
+  "route": "built-in image_gen",
+  "raw": "raw-01.png",
+  "palette_source": "palette.json",
+  "assets": [
+    {
+      "id": "desert-dust-devil-frame-00",
+      "category": "fx",
+      "size": [
+        192,
+        224
+      ],
+      "box": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "keep_source_box": true,
+      "margin": 8,
+      "source_registration": {
+        "translate": [
+          -80,
+          6
+        ],
+        "canvas": [
+          640,
+          640
+        ]
+      }
+    },
+    {
+      "id": "desert-dust-devil-frame-01",
+      "category": "fx",
+      "size": [
+        192,
+        224
+      ],
+      "box": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "keep_source_box": true,
+      "margin": 8,
+      "source_registration": {
+        "translate": [
+          70,
+          5
+        ],
+        "canvas": [
+          640,
+          640
+        ]
+      }
+    },
+    {
+      "id": "desert-dust-devil-frame-02",
+      "category": "fx",
+      "size": [
+        192,
+        224
+      ],
+      "box": [
+        0,
+        627,
+        627,
+        1254
+      ],
+      "keep_source_box": true,
+      "margin": 8,
+      "source_registration": {
+        "translate": [
+          -67,
+          58
+        ],
+        "canvas": [
+          640,
+          640
+        ]
+      }
+    },
+    {
+      "id": "desert-dust-devil-frame-03",
+      "category": "fx",
+      "size": [
+        192,
+        224
+      ],
+      "box": [
+        627,
+        627,
+        1254,
+        1254
+      ],
+      "keep_source_box": true,
+      "margin": 8,
+      "source_registration": {
+        "translate": [
+          -10,
+          58
+        ],
+        "canvas": [
+          640,
+          640
+        ]
+      }
+    }
+  ],
+  "frame_plan": {
+    "id": "desert-dust-devil-anim",
+    "category": "fx",
+    "frame_size": [
+      192,
+      224
+    ],
+    "world_size_per_frame": [
+      1.5,
+      1.75
+    ],
+    "frames": 4,
+    "fps": 6,
+    "layout": "2x2source -> horizontalsheet"
+  },
+  "registration_note": "All source cells retain every generated visible particle. Translation only to common sourcebaseline600 in640square transparent canvas; same density factor across all frames. No frame synthesis, noise, particle removal or prop scaling. Horizontalanchor is medianx of opaque pixels in bottom19pixelrows, registering foot rather than moving topcurl/particles."
+}

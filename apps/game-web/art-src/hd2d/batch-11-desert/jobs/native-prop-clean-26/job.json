@@ -1,6 +1,6 @@
 {
   "id": "native-prop-clean-26",
-  "state": "planned_before_generation",
+  "state": "exported_pending_visual_review",
   "route": "built-in image_gen",
   "raw": "raw-32.png",
   "palette_source": "palette.json",
@@ -41,35 +41,13 @@
         2.25,
         4.5
       ],
-      "height_relative_to_player": 3.4351145038167936
-    },
-    {
-      "id": "desert-boulder-03",
-      "size": [
-        384,
-        320
-      ],
-      "category": "prop",
-      "native_pixels": true,
-      "desired_world_size": [
-        3,
-        2.5
-      ],
-      "height_relative_to_player": 1.9083969465648853
-    },
-    {
-      "id": "desert-sand-mound",
-      "size": [
-        576,
-        192
-      ],
-      "category": "prop",
-      "native_pixels": true,
-      "desired_world_size": [
-        4.5,
-        1.5
-      ],
-      "height_relative_to_player": 1.1450381679389312
+      "height_relative_to_player": 3.4351145038167936,
+      "box": [
+        600,
+        20,
+        910,
+        550
+      ]
     },
     {
       "id": "desert-ruins-pillar",
@@ -83,7 +61,15 @@
         2.25,
         3.5
       ],
-      "height_relative_to_player": 2.6717557251908395
+      "height_relative_to_player": 2.6717557251908395,
+      "box": [
+        1240,
+        540,
+        1536,
+        990
+      ]
     }
-  ]
+  ],
+  "not_selected": "Boulder/mound exceed nativecanvases; preserve raw, no shrink",
+  "selected_candidates": "Middlecactus variant andbottomrightpillar"
 }

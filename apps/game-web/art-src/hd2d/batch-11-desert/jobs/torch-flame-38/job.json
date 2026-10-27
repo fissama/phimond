@@ -1,0 +1,153 @@
+{
+  "id": "torch-flame-38",
+  "prompt": "Phimond modular TORCH/LANTERN FLAME ONLY, four consecutive handdrawn animation keyframes in2columns2rows1024squarePURE#FF00FF,64pxclearmargins/separation. No lamp/body/brazier/post/ground: this is separate flameFX Claude will attach to existing native-sized stove/lantern. Fourcompactupright flameabout150wide230high, samebasecenter eachframe; brightivorycore layeredgoldochreandrustembertongues, thincharcoalmauvesmokecurls andgrayashflecks toaddmaterialrichness. Frame1shortmainflameleansleft withsmallrighttongue; frame2mainflamestretchesupcentralandrightcurlsplits; frame3leftcurlreturnswithsmallspittingembers; frame4flamesettlewithtwolowtips reconnectsfirst. No face, no sphericalfireball, no glowhalo or spotlight, no bakedlightingdisc. Opaqueangularpixelclusters withmagenta gaps betweentonguesandsmokecurls, no softfog/semialpha. Originaldesert1palettecontext, approveddustFX2crispclusteredges andtorch3actualfirematerial/style, petanchors4/5valuestep only. Matchapproved00-09OctopathHD2D2-4tones permaterial with33-48subtleearthycolors perframe; brightwarmivory/gold/rust pluscoolgraymauvesmokeshade, no saturatedneon. No text/noise/dither/smoothpaint/3Drender. FinalFXframe96x128(world0.75x1,0.76playerheight). Densityfinish allowedforflameFX; noresamplingofphysicalprops. Smallreadableclustered flame, not largeswirlingcloud.",
+  "refs": [
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+      "sha256": "30a678461a1a1f13aafa1a925382223dda2abcba586bb3b343e87a683a6c04ea"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-07-octopath/fx_escape_dust/final.png",
+      "sha256": "cebf7e7551c0d2196c430295bb7a793f439c743fc7d3a1782b142e8d6c0e04aa"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/hall-torch/final.png",
+      "sha256": "50f8815ebe8b8d9c02a56871aa60a94618bfffeb90d69d90ec7c19b0f6432181"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "state": "exported_pending_visual_review",
+  "route": "built-in image_gen",
+  "raw": "raw-01.png",
+  "palette_source": "palette.json",
+  "assets": [
+    {
+      "id": "desert-torch-flame-frame-00",
+      "category": "fx",
+      "size": [
+        96,
+        128
+      ],
+      "box": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "keep_source_box": true,
+      "margin": 8,
+      "source_registration": {
+        "translate": [
+          -33,
+          30
+        ],
+        "canvas": [
+          640,
+          640
+        ]
+      }
+    },
+    {
+      "id": "desert-torch-flame-frame-01",
+      "category": "fx",
+      "size": [
+        96,
+        128
+      ],
+      "box": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "keep_source_box": true,
+      "margin": 8,
+      "source_registration": {
+        "translate": [
+          38,
+          30
+        ],
+        "canvas": [
+          640,
+          640
+        ]
+      }
+    },
+    {
+      "id": "desert-torch-flame-frame-02",
+      "category": "fx",
+      "size": [
+        96,
+        128
+      ],
+      "box": [
+        0,
+        627,
+        627,
+        1254
+      ],
+      "keep_source_box": true,
+      "margin": 8,
+      "source_registration": {
+        "translate": [
+          -33,
+          77
+        ],
+        "canvas": [
+          640,
+          640
+        ]
+      }
+    },
+    {
+      "id": "desert-torch-flame-frame-03",
+      "category": "fx",
+      "size": [
+        96,
+        128
+      ],
+      "box": [
+        627,
+        627,
+        1254,
+        1254
+      ],
+      "keep_source_box": true,
+      "margin": 8,
+      "source_registration": {
+        "translate": [
+          37,
+          77
+        ],
+        "canvas": [
+          640,
+          640
+        ]
+      }
+    }
+  ],
+  "frame_plan": {
+    "id": "desert-torch-lantern-anim",
+    "category": "fx",
+    "frame_size": [
+      96,
+      128
+    ],
+    "world_size_per_frame": [
+      0.75,
+      1
+    ],
+    "frames": 4,
+    "fps": 5,
+    "layout": "2x2source -> horizontalsheet",
+    "attachment": "Separate flame only; hardware stays native-sized and is supplied as independent prop."
+  },
+  "registration_note": "Individual generatedcells translated to same flamefoot anchor320,600 on640square sourcecanvas; alpha bounding verification prevents clipping; one shared density factor. Physical stove/lantern remains separate native prop."
+}

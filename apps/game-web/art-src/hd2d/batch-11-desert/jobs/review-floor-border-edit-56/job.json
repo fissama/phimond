@@ -1,0 +1,83 @@
+{
+  "id": "review-floor-border-edit-56",
+  "route": "built-in image_gen",
+  "state": "exported_pending_visual_review",
+  "raw": "raw-62.png",
+  "palette_source": "palette.json",
+  "refs": [
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+      "sha256": "30a678461a1a1f13aafa1a925382223dda2abcba586bb3b343e87a683a6c04ea"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/review-floor-repeat-52/reference-approved-floor-pair.png",
+      "sha256": "dd55348d791bf4cbebdee03bb7c3d8b59f48a7716e834d82cd722949f64a7496"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/review-floor-repeat-52/raw-60.png",
+      "sha256": "f5bef2a6acb69321d8858fe4df34712ce852055c82980035f28fd80cff29c383"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "assets": [
+    {
+      "id": "desert-sandstone-floor",
+      "category": "floor",
+      "size": [
+        512,
+        512
+      ],
+      "world": [
+        4,
+        4
+      ],
+      "opaque": true,
+      "tileable": "xy",
+      "box": [
+        14,
+        0,
+        623,
+        626
+      ]
+    },
+    {
+      "id": "desert-sunken-brick-floor",
+      "category": "floor",
+      "size": [
+        512,
+        512
+      ],
+      "world": [
+        4,
+        4
+      ],
+      "opaque": true,
+      "tileable": "xy",
+      "box": [
+        632,
+        2,
+        1243,
+        622
+      ]
+    }
+  ],
+  "prompt": "Preciseobjectedit: reference3istheEXACT1254x1254four-floor-textureEDITTARGET. Keepallinteriorstoneandbrickshapes/materialcolors/positionsEXACTLY. Fourtilesin2x2, splitatx627andy627. RepairONLYtheTHIN14pixelsoutermarginofEACHoftheFOURtiles: makeitsoliduniformochresand#D9B26B, removingtinypebbles/specklesfromthatthinmargin. NOblending/blur,nomorethan14pxmargin. Preserveallremainingmaterials:graymauvestones,ivorylimestone,rustbrick,olivepatina,darkumberwoodfragmentsandgoldenochresand. Thoseactualmaterialhuesgive33–48colorsandmustnotbeflattenedtoonegoldentone. DoNOTzoom/reframe/enlargetheborder/addframe/labels/grid. ThebordersarenaturalSAND, noswatch/magenta. Donotredesigninterior.\nReference1originalmapcontent;2TWOapprovedbatch01floorSTYLEauthorities;3editTARGETwithcorrectmaterialcolorsnotastyleauthority;4–5petoutlinevaluesonly. ApprovedOctopathHD2Dcrisppixelclusters, warmupperleftlight,coolrecess, nomagenta/text/symbols/dither/glow/noise. Final512x512world4x4at128px/world,opaque. Outer8exportpixelsneedflatmatchbutNOTwideblankborder. Maintainsame1254squareand2x2composition.",
+  "reference_montage_sources": [
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/grass-floor-01/final.png",
+      "sha256": "792b3a1c25fb3be8671af1a4e119ef7af3bbd5a89dd22e42e14206317697524c"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+      "sha256": "bd4ba8187917b9023a9f9c9bd7ddc8ad43cb269724cbe02c1137f299ea03dff3"
+    }
+  ],
+  "processing_note": "Imagegen edits border art; only natural sourcecrop/palette/densityfinish afterwards. Prior global5alias stone finish rejected visually for loss of broad materialplanes. Tighten existing flat apron only to11sourcepixels beyond all nonbase material. Retain ALL generated material pixels; no codepainting/remapping/edgepatch."
+}

@@ -1,0 +1,94 @@
+{
+  "id": "review-floor-sparse-edit-57",
+  "route": "built-in image_gen",
+  "state": "exported_pending_visual_review",
+  "raw": "raw-64.png",
+  "palette_source": "palette.json",
+  "refs": [
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/review-floor-sparse-edit-57/reference-original-ruin-material-crop.png",
+      "sha256": "205fc6e7e346541f36072f508b58d9fc0a192fd7e11eba918f724eca07ba69ab"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/review-floor-repeat-52/reference-approved-floor-pair.png",
+      "sha256": "dd55348d791bf4cbebdee03bb7c3d8b59f48a7716e834d82cd722949f64a7496"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/review-floor-border-edit-56/raw-62.png",
+      "sha256": "25ab8417977b97db81b29ec319acf5760815d0f7902f42223e98a9e2c5a7b576"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "assets": [
+    {
+      "id": "desert-sandstone-floor",
+      "category": "floor",
+      "size": [
+        512,
+        512
+      ],
+      "world": [
+        4,
+        4
+      ],
+      "opaque": true,
+      "tileable": "xy",
+      "box": [
+        0,
+        0,
+        627,
+        627
+      ]
+    },
+    {
+      "id": "desert-sunken-brick-floor",
+      "category": "floor",
+      "size": [
+        512,
+        512
+      ],
+      "world": [
+        4,
+        4
+      ],
+      "opaque": true,
+      "tileable": "xy",
+      "box": [
+        627,
+        0,
+        1254,
+        627
+      ]
+    }
+  ],
+  "prompt": "Preciseeditreference3, preserveEXACT1254x1254sheetofFOURsquarefloorcandidatesin2COLUMNS2ROWSsplitat627,627. Top-leftstone,top-rightbrick,bottom-leftstone,bottom-rightbrick. KEEPtheirpaletteandcrispapprovedOctopathHD2DpixelhandbutREMOVE60percentofmaterialclusters. Replace removedclusterswithCOMPLETELYFLATUNMARKEDochresand#D9B26B. Leave5–8smallisolatedgroups(2–4fragments/group)perquadrant,mixedCOOLGRAY/IVORY/OLIVE/RUST/UMBERmaterialhues,33–48naturalcolorsperquadrant. Uneven/asymmetricpositions. Sandcovers65percentEACHquadrant, itswideemptygapsoccurTHROUGHINTERIORaswellasthinborder. No centralfilledsquare, no rows. SandMUSTBEENTIRELYUNMARKED, zerowindstreaks/curves/lines/ripples/paths/letters/symbols/noise. ONLYmaterialislandsanduniformflatbase. TheemptyINTERIORgaps30–70pxwidearewiderthanthethinouter14pxmargin, so thetileperimeterdoesnotstandoutinrepeat.\nPreserveALLfourtileboundaries/sizes. Outer14pxofEACHquadrantsolidflat#D9B26B. Donotdrawvisibleframes,guttersoroutlinesbetweentiles. No shadows/glow/blur/dithering/confetti. Reference1actualoriginalruinmaterialCROP(itsparentoriginalhashrecorded),2twoapprovedbatch01floorsSTYLE,3four-floorEDITTARGETforgeometry/materialcolors,4–5petvalueanchorsonly. Final512x512world4x4at128px/world,opaque. KEEPcolorsbutreducematerialcoverage, dontaddanything.",
+  "reference_montage_sources": [
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/grass-floor-01/final.png",
+      "sha256": "792b3a1c25fb3be8671af1a4e119ef7af3bbd5a89dd22e42e14206317697524c"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+      "sha256": "bd4ba8187917b9023a9f9c9bd7ddc8ad43cb269724cbe02c1137f299ea03dff3"
+    }
+  ],
+  "processing_note": "Fresh imagegen edit removes excess interior material; no code content painting. Standard crop/palette/floor density finish only.",
+  "original_reference_crop": {
+    "parent_path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+    "parent_sha256": "30a678461a1a1f13aafa1a925382223dda2abcba586bb3b343e87a683a6c04ea",
+    "crop": [
+      800,
+      80,
+      1400,
+      290
+    ],
+    "reason": "Use original verified ruin/material colors, exclude repeating windstreak symbols present on source desert floor."
+  }
+}

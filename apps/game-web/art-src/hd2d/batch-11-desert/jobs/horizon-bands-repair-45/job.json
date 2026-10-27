@@ -1,0 +1,70 @@
+{
+  "id": "horizon-bands-repair-45",
+  "state": "exported_pending_visual_review",
+  "route": "built-in image_gen",
+  "raw": "raw-02.png",
+  "palette_source": "palette.json",
+  "prompt": "Phimond desert two DIFFERENT verydistant HORIZON SKY BANDS on1536x1024landscape sheet, TOPband y100:400,BOTTOMband y600:900, opaquehorizontalrectangularpanoramaeachrunsFULLWIDTH rightthroughbothimageedges. Magenta#FF00FFONLY inblankgap/outsidebands; INSIDEbands fullyOPAQUEpaleivorysky. Twoindependentlowhorizons, notsameimagerecolor. Original1desertcontentpalette mutedwarmochre/ivory/rust/coolmauvegray. Approvedsea-islands-far2andforest-wall-far3STYLE ONLY distancepixelclusteringandquietatmosphericvalues; no sea/treesfarmland. Pet4/5valuesonly.\nTOP: 70percentpaleivoryquietsky, lower30percentthinuneven farrollingdunehorizon withtinygraylimestonecrestinterruptions andquietpaleochre layeredridges. Lowbroadundulations, no largecentralmountain or flatfloor. Tinyuppercloudsliversbarelyvisible, no sun/disk. BOTTOM: DIFFERENTfarjaggedtablelandhorizon, thinmauvegrayflattoppedmesaswith3unequalgaps andtinywindwornneedlesbehindthinsandridge.60percentopaqueivorysky, lower40percenthorizon, baseonlythin8percentplainochre. No highforegroundcliffs, cacti/buildings/ruins/props, text/fog/DOF/bakedlights. These are QUIET sparebackgroundstrips forClaude behindmap, not standalonepostcardscenes. DoNOTfillbottomhalfwithflatground.\nTileablehorizontalnaturally: repeatmaterials/thicknessandquietskytonematch bothends, NOflatverticalbuffers or fade-out atleft/right, dunescontinuethroughends. Final512x128perband,64px/world distance density. Exactapproved00-09OctopathHD2D intentionalhardpixelclusters2-4tones/layer,33-48earthycolors overalleach viahills/sand/grayrockmineralridges/sky/cloudsmallvaluevariations. No dither/noise/blur/smoothgradients, no captions or frames. Lowcontrastskywith crispquietsteps, noposterizedrainbowstripes. Farhorizononly notwalkablefloor.\nREPAIR: previoushorizons mappedonly32colors, too fewmaterialfamilies. Add2-3VERY TINY farawayOLIVE CACTUS clusters alongbottomridge, fewchalkgrayexposedrockoutcrops, a singletinyweatheredbrownstump amongthemcroppednowhere. Theseoriginal-visible desertmotifs shouldoccupy <5percentbandarea andstay belowhorizon25percentheight. No largeforegroundobjects. EnsureVISIBLEvaluevariationwithinmutedolivecactus, graylimestone,ruststone,woodstump andmauvehillshades, each2-4tones; at least33ofkit48actualcolors acrossband. Keep70percentquietopaqueivorysky, thinlowlandscape(no flatbottomhalf), no big centralmountain. Maintainnaturalseamleft/rightwithoutbufferbars. Do notuse noisepixels justtoinflatecolorcount. Entirepanoramas independentgeometry: upperrollingdunes+scatteredcactus, lowerjaggedmesas+onewindwornstump+tinyolivecrests.",
+  "refs": [
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+      "sha256": "30a678461a1a1f13aafa1a925382223dda2abcba586bb3b343e87a683a6c04ea"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-03-octopath/sea-islands-far/final.png",
+      "sha256": "46eca476b78ed1bcd370e7afb987e7a2315c85f6d62ecbd9a9e2d13d5868928c"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/forest-wall-far/final.png",
+      "sha256": "745ebb244eb1f19c5398ac02b90a958e76ad0b719a5218d736206c2cce7bcbb2"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "assets": [
+    {
+      "id": "desert-horizon-gradient-01",
+      "category": "backdrop_far",
+      "size": [
+        512,
+        128
+      ],
+      "tileable": "x",
+      "opaque": true,
+      "box": [
+        425,
+        92,
+        1515,
+        337
+      ],
+      "stretch": true,
+      "keep_source_box": true
+    },
+    {
+      "id": "desert-horizon-gradient-02",
+      "category": "backdrop_far",
+      "size": [
+        512,
+        128
+      ],
+      "tileable": "x",
+      "opaque": true,
+      "box": [
+        513,
+        452,
+        1552,
+        697
+      ],
+      "stretch": true,
+      "keep_source_box": true
+    }
+  ],
+  "reference_selection_note": "farm-hills-far inspected but NOTattached: file appears to contain wrong old sheet crop with magenta/neighborpanels. Replaced before generation with valid forest-wall-far for distantquietpixelstyle.",
+  "crop_selection": "Opaque bands from generatedraw; naturalcolumnmatching+aspect/materialcoverage QA, no copiedendpoints or spatialedits. Cactus/woodmaterial drawn by image_gen supplies missingregionfamilies naturally."
+}

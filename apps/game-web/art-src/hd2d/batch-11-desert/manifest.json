@@ -123,7 +123,7 @@
     {
       "id": "desert-sandstone-floor",
       "category": "floor",
-      "kit": "review-floors-21",
+      "kit": "review-floor-sparse-edit-57",
       "file": "desert-sandstone-floor/final.png",
       "px": [
         512,
@@ -159,20 +159,20 @@
       "art_source": "host_image",
       "route": "built-in image_gen",
       "source_refs": [
-        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/grass-floor-01/final.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/review-floor-sparse-edit-57/reference-original-ruin-material-crop.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/review-floor-repeat-52/reference-approved-floor-pair.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/review-floor-border-edit-56/raw-62.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
       ],
-      "source_raw": "raw-28.png",
-      "raw_sha256": "8d70d5bd30dd3b26dc08aadd41fa49fa9cfde94d157df6fe03e231b772f7c5b8",
-      "sha256": "90eebe544c67c901b5c2fc6e903db2de7638e549789e0edeb274a4be42e76188",
+      "source_raw": "raw-64.png",
+      "raw_sha256": "24923b34a096b705fb52a5ea293f82fe6aaae8ad48e7362efc2d48517f846c97",
+      "sha256": "d9d683240a3ed49c396411b680d713c58a32536152d3dfdd2260a8d21694b55c",
       "source_box": [
         0,
-        629,
-        624,
-        1254
+        0,
+        627,
+        627
       ],
       "approved": false,
       "status": "needs_claude_visual_review",
@@ -361,7 +361,7 @@
     {
       "id": "desert-pottery-urn-broken",
       "category": "prop",
-      "kit": "native-micro-repair-15",
+      "kit": "native-conformance-46",
       "file": "desert-pottery-urn-broken/final.png",
       "px": [
         136,
@@ -382,11 +382,11 @@
       "pivot": "bottom-center",
       "pivot_px": [
         68,
-        113
+        95
       ],
       "pivot_uv": [
         0.5,
-        0.8308823529411765
+        0.6985294117647058
       ],
       "tileable": "none",
       "slice": null,
@@ -398,19 +398,19 @@
       "route": "built-in image_gen",
       "source_refs": [
         "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/wooden-crate/final.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-small/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-46/reference-approved-props-pair.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-46/reference-native-3x2-guide.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
       ],
-      "source_raw": "raw-22.png",
-      "raw_sha256": "eee9aaec7cd0d6bcb53dc2951e2fff34b9317ec6c84a2b28380ec6aa254cff52",
-      "sha256": "10c322198d1393d3b780ff2f47bee52586c42838730d2f219f2c191427766cd6",
+      "source_raw": "raw-47.png",
+      "raw_sha256": "c953cbe5e7f4cbbf0f284e3d367fb97d314e809345c32f65530b504104504d86",
+      "sha256": "5c25385f4195229cadd58fff33716b4b72d49a6706b83f6cd3e7997e9ed0d923",
       "source_box": [
-        1080,
-        490,
-        1240,
-        650
+        0,
+        512,
+        512,
+        1024
       ],
       "approved": false,
       "status": "needs_claude_visual_review",
@@ -422,8 +422,8 @@
           1.0625
         ],
         "source_footprint_px": [
-          77,
-          91
+          47,
+          55
         ],
         "resampled": false
       }
@@ -475,7 +475,7 @@
       ],
       "source_raw": "raw-01.png",
       "raw_sha256": "1c86d9d8b516598e32d645db5fd049073363a379f86f8f63dddd909998fc36cc",
-      "sha256": "1bfbfba6f2903b839d017becba52740f05758f3738fa3e39a8a6bf840fd14f36",
+      "sha256": "9d0c92c5b75544e5719259082d1d978fa01ddf5ffb9dfd7e69cc36038302e8b1",
       "source_box": [
         630,
         390,
@@ -486,7 +486,12 @@
       "status": "needs_claude_visual_review",
       "mechanical_status": "pass",
       "ui_scale": null,
-      "visual_review": "actual_final_repeat_when_applicable_and_4x_dark_checker_inspected_needs_claude"
+      "visual_review": "actual_final_repeat_when_applicable_and_4x_dark_checker_inspected_needs_claude",
+      "shared_mask_cut": {
+        "dormant_removed_px": 526,
+        "active_removed_px": 226,
+        "method": "Intersection cutting stencil, no pixel fills, painting, translation or resizing. Original images preserved."
+      }
     },
     {
       "id": "desert-cactus-01",
@@ -552,7 +557,7 @@
     {
       "id": "desert-monster-bones",
       "category": "prop",
-      "kit": "native-structures-row-10",
+      "kit": "native-conformance-48",
       "file": "desert-monster-bones/final.png",
       "px": [
         448,
@@ -573,11 +578,11 @@
       "pivot": "bottom-center",
       "pivot_px": [
         224,
-        205
+        197
       ],
       "pivot_uv": [
         0.5,
-        0.80078125
+        0.76953125
       ],
       "tileable": "none",
       "slice": null,
@@ -589,19 +594,19 @@
       "route": "built-in image_gen",
       "source_refs": [
         "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/wooden-crate/final.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-small/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-48/reference-approved-props-pair.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-48/reference-native-3x2-guide.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
       ],
-      "source_raw": "raw-17.png",
-      "raw_sha256": "ba385f5db668f9e2891c255578a288e77477c3e6941793b28050fd136bc9ea73",
-      "sha256": "afdd85b21c5a01eac227fa096a6d42055f08f4d2a97951e637ca8d0e20c6a77d",
+      "source_raw": "raw-48.png",
+      "raw_sha256": "04938b8a2f63ac89eb73c4c67f4de14cf35022a39a60cd27edc052ddb216e7e7",
+      "sha256": "f6d58b7150d32656f1ea9a0ef73d98064c49f27193570293f0648265147c1f0b",
       "source_box": [
-        1040,
-        400,
-        1370,
-        620
+        512,
+        512,
+        1024,
+        1024
       ],
       "approved": false,
       "status": "needs_claude_visual_review",
@@ -610,11 +615,11 @@
       "native_scale": {
         "desired_world_size_before_drawing": [
           3.5,
-          2
+          2.0
         ],
         "source_footprint_px": [
-          308,
-          154
+          295,
+          138
         ],
         "resampled": false
       }
@@ -862,32 +867,32 @@
     {
       "id": "desert-ruins-pillar",
       "category": "prop",
-      "kit": "props-clean-03",
+      "kit": "native-prop-clean-26",
       "file": "desert-ruins-pillar/final.png",
       "px": [
         288,
-        416
+        448
       ],
       "size_px": [
         288,
-        416
+        448
       ],
       "world": [
         2.25,
-        3.25
+        3.5
       ],
       "world_size": [
         2.25,
-        3.25
+        3.5
       ],
       "pivot": "bottom-center",
       "pivot_px": [
         144,
-        400
+        421
       ],
       "pivot_uv": [
         0.5,
-        0.9615384615384616
+        0.9397321428571429
       ],
       "tileable": "none",
       "slice": null,
@@ -899,30 +904,40 @@
       "route": "built-in image_gen",
       "source_refs": [
         "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/bush-01/final.png",
         "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/city-facade-townhouse/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/forest-portal-active/final.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
       ],
-      "source_raw": "raw-03.png",
-      "raw_sha256": "188d92d8745e8054a5a6f7f3a3e742ed2d643078ec3f48f7d2be77e0a537ce67",
-      "sha256": "b1e6c5b78fd0fe92a17df7b321ed5a369695109b2796dede4473ff6c72ec240d",
+      "source_raw": "raw-32.png",
+      "raw_sha256": "da8818f2bbf5b9986a1e9a069dbdfefbec236aab951746639455f1adb046d6fe",
+      "sha256": "f02b4cb088bd0eb64da6cc11076b21dc7f2705f48d336b4f46468b8f3a185720",
       "source_box": [
-        780,
-        830,
-        1090,
-        1245
+        1240,
+        540,
+        1536,
+        990
       ],
       "approved": false,
       "status": "needs_claude_visual_review",
-      "mechanical_status": "blocked",
+      "mechanical_status": "pass",
       "ui_scale": null,
-      "visual_review": "pending_actual_4x_inspection"
+      "native_scale": {
+        "desired_world_size_before_drawing": [
+          2.25,
+          3.5
+        ],
+        "source_footprint_px": [
+          240,
+          394
+        ],
+        "resampled": false
+      }
     },
     {
       "id": "desert-dunes-wall-far",
       "category": "backdrop_far",
-      "kit": "review-far-opaque-24",
+      "kit": "review-far-low-horizon-27",
       "file": "desert-dunes-wall-far/final.png",
       "px": [
         1280,
@@ -964,13 +979,13 @@
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
       ],
-      "source_raw": "raw-30.png",
-      "raw_sha256": "b48b9b2ed48edbd1ec312fb0dded4e2b1cd568beae822a6433a86587726d69ab",
-      "sha256": "31ddf83287d5d5f1d7d5ab73b64a8ebe04503901cba7ae88d57af590bc0772ab",
+      "source_raw": "raw-33.png",
+      "raw_sha256": "de715a390e25412bc820ca4684c7b5a1bdddb47784858c0155f7c3d354aa3803",
+      "sha256": "cb5f47e0450f551294528cfc3563408d6df109e50c823017c8638736f0600e40",
       "source_box": [
-        235,
         0,
-        1937,
+        0,
+        2172,
         724
       ],
       "approved": false,
@@ -1589,7 +1604,7 @@
     {
       "id": "desert-sunken-brick-floor",
       "category": "floor",
-      "kit": "review-floors-21",
+      "kit": "review-floor-sparse-edit-57",
       "file": "desert-sunken-brick-floor/final.png",
       "px": [
         512,
@@ -1625,20 +1640,20 @@
       "art_source": "host_image",
       "route": "built-in image_gen",
       "source_refs": [
-        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/grass-floor-01/final.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/review-floor-sparse-edit-57/reference-original-ruin-material-crop.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/review-floor-repeat-52/reference-approved-floor-pair.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/review-floor-border-edit-56/raw-62.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
       ],
-      "source_raw": "raw-28.png",
-      "raw_sha256": "8d70d5bd30dd3b26dc08aadd41fa49fa9cfde94d157df6fe03e231b772f7c5b8",
-      "sha256": "4feb1851cc3b7ce403a8588f28f508dad3caf1f22accc03c0ca801264203b363",
+      "source_raw": "raw-64.png",
+      "raw_sha256": "24923b34a096b705fb52a5ea293f82fe6aaae8ad48e7362efc2d48517f846c97",
+      "sha256": "13f451efc725757b4fbec0d1dd04cb91bf648cb202d1f9174fd335a48ddbb043",
       "source_box": [
-        629,
-        629,
+        627,
+        0,
         1254,
-        1254
+        627
       ],
       "approved": false,
       "status": "needs_claude_visual_review",
@@ -1827,32 +1842,32 @@
     {
       "id": "desert-ruins-pillar-fallen",
       "category": "prop",
-      "kit": "native-structures-row-10",
+      "kit": "native-conformance-48",
       "file": "desert-ruins-pillar-fallen/final.png",
       "px": [
-        576,
-        192
+        256,
+        160
       ],
       "size_px": [
-        576,
-        192
+        256,
+        160
       ],
       "world": [
-        4.5,
-        1.5
+        2.0,
+        1.25
       ],
       "world_size": [
-        4.5,
-        1.5
+        2.0,
+        1.25
       ],
       "pivot": "bottom-center",
       "pivot_px": [
-        288,
-        152
+        128,
+        131
       ],
       "pivot_uv": [
         0.5,
-        0.7916666666666666
+        0.81875
       ],
       "tileable": "none",
       "slice": null,
@@ -1864,19 +1879,19 @@
       "route": "built-in image_gen",
       "source_refs": [
         "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/wooden-crate/final.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-small/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-48/reference-approved-props-pair.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-48/reference-native-3x2-guide.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
       ],
-      "source_raw": "raw-17.png",
-      "raw_sha256": "ba385f5db668f9e2891c255578a288e77477c3e6941793b28050fd136bc9ea73",
-      "sha256": "e1f3529c4806ff89caa1431e97f792c36f91444081759463e29a6948d548deda",
+      "source_raw": "raw-48.png",
+      "raw_sha256": "04938b8a2f63ac89eb73c4c67f4de14cf35022a39a60cd27edc052ddb216e7e7",
+      "sha256": "f0f78c85fe40737878c91216334073585ddff7124ff9f6164442f5b6ff2b72f7",
       "source_box": [
-        500,
-        400,
-        750,
-        620
+        1024,
+        0,
+        1536,
+        512
       ],
       "approved": false,
       "status": "needs_claude_visual_review",
@@ -1884,12 +1899,12 @@
       "ui_scale": null,
       "native_scale": {
         "desired_world_size_before_drawing": [
-          4.5,
-          1.5
+          2,
+          1.25
         ],
         "source_footprint_px": [
-          223,
-          112
+          217,
+          103
         ],
         "resampled": false
       }
@@ -1897,7 +1912,7 @@
     {
       "id": "desert-stone-stairs",
       "category": "prop",
-      "kit": "native-structures-row-10",
+      "kit": "native-conformance-48",
       "file": "desert-stone-stairs/final.png",
       "px": [
         480,
@@ -1918,11 +1933,11 @@
       "pivot": "bottom-center",
       "pivot_px": [
         240,
-        197
+        193
       ],
       "pivot_uv": [
         0.5,
-        0.76953125
+        0.75390625
       ],
       "tileable": "none",
       "slice": null,
@@ -1934,19 +1949,19 @@
       "route": "built-in image_gen",
       "source_refs": [
         "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/wooden-crate/final.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-small/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-48/reference-approved-props-pair.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-48/reference-native-3x2-guide.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
       ],
-      "source_raw": "raw-17.png",
-      "raw_sha256": "ba385f5db668f9e2891c255578a288e77477c3e6941793b28050fd136bc9ea73",
-      "sha256": "73294bbfb30f2085a7a1413d947dcd48d21c15d6868eeb27cd97bb1f76e7ad15",
+      "source_raw": "raw-48.png",
+      "raw_sha256": "04938b8a2f63ac89eb73c4c67f4de14cf35022a39a60cd27edc052ddb216e7e7",
+      "sha256": "6bbb6d6048388d3bb5add62b788a7adcc1c02232176f0174e8f2076b2bee02cf",
       "source_box": [
-        250,
-        400,
-        500,
-        620
+        512,
+        0,
+        1024,
+        512
       ],
       "approved": false,
       "status": "needs_claude_visual_review",
@@ -1955,11 +1970,11 @@
       "native_scale": {
         "desired_world_size_before_drawing": [
           3.75,
-          2
+          2.0
         ],
         "source_footprint_px": [
-          225,
-          138
+          209,
+          130
         ],
         "resampled": false
       }
@@ -2027,7 +2042,7 @@
     {
       "id": "desert-dry-well",
       "category": "prop",
-      "kit": "native-structures-row-10",
+      "kit": "native-conformance-48",
       "file": "desert-dry-well/final.png",
       "px": [
         288,
@@ -2048,11 +2063,11 @@
       "pivot": "bottom-center",
       "pivot_px": [
         144,
-        189
+        178
       ],
       "pivot_uv": [
         0.5,
-        0.84375
+        0.7946428571428571
       ],
       "tileable": "none",
       "slice": null,
@@ -2064,19 +2079,19 @@
       "route": "built-in image_gen",
       "source_refs": [
         "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/wooden-crate/final.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-small/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-48/reference-approved-props-pair.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-48/reference-native-3x2-guide.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
       ],
-      "source_raw": "raw-17.png",
-      "raw_sha256": "ba385f5db668f9e2891c255578a288e77477c3e6941793b28050fd136bc9ea73",
-      "sha256": "b86a4db9b93e63b17a2778407fb7fd7d12ecb338bf80956be8201e6da94bb58c",
+      "source_raw": "raw-48.png",
+      "raw_sha256": "04938b8a2f63ac89eb73c4c67f4de14cf35022a39a60cd27edc052ddb216e7e7",
+      "sha256": "071cf0f94742b4bde07d55e6abd3eee82b4ae1ac859abb6770e6e414531282ba",
       "source_box": [
-        20,
-        400,
-        250,
-        620
+        0,
+        0,
+        512,
+        512
       ],
       "approved": false,
       "status": "needs_claude_visual_review",
@@ -2088,8 +2103,8 @@
           1.75
         ],
         "source_footprint_px": [
-          195,
-          155
+          163,
+          132
         ],
         "resampled": false
       }
@@ -2097,7 +2112,7 @@
     {
       "id": "desert-nomad-tent",
       "category": "prop",
-      "kit": "native-structures-row-10",
+      "kit": "native-conformance-48",
       "file": "desert-nomad-tent/final.png",
       "px": [
         480,
@@ -2118,11 +2133,11 @@
       "pivot": "bottom-center",
       "pivot_px": [
         240,
-        293
+        285
       ],
       "pivot_uv": [
         0.5,
-        0.7630208333333334
+        0.7421875
       ],
       "tileable": "none",
       "slice": null,
@@ -2134,19 +2149,19 @@
       "route": "built-in image_gen",
       "source_refs": [
         "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/wooden-crate/final.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-small/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-48/reference-approved-props-pair.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-48/reference-native-3x2-guide.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
       ],
-      "source_raw": "raw-17.png",
-      "raw_sha256": "ba385f5db668f9e2891c255578a288e77477c3e6941793b28050fd136bc9ea73",
-      "sha256": "a909497dbca727a60978de1d2c6480483c8abcbabc2a1e640d79b092db095b86",
+      "source_raw": "raw-48.png",
+      "raw_sha256": "04938b8a2f63ac89eb73c4c67f4de14cf35022a39a60cd27edc052ddb216e7e7",
+      "sha256": "cc6499d92894629300bed4bf09caa2800b7305158f1532cce0c80f5d037e1b15",
       "source_box": [
-        750,
-        380,
-        1040,
-        640
+        0,
+        512,
+        512,
+        1024
       ],
       "approved": false,
       "status": "needs_claude_visual_review",
@@ -2155,11 +2170,11 @@
       "native_scale": {
         "desired_world_size_before_drawing": [
           3.75,
-          3
+          3.0
         ],
         "source_footprint_px": [
-          273,
-          202
+          261,
+          187
         ],
         "resampled": false
       }
@@ -2167,7 +2182,7 @@
     {
       "id": "desert-camp-canvas-sack",
       "category": "prop",
-      "kit": "native-micro-row-14",
+      "kit": "native-sack-repair-50",
       "file": "desert-camp-canvas-sack/final.png",
       "px": [
         100,
@@ -2188,11 +2203,11 @@
       "pivot": "bottom-center",
       "pivot_px": [
         50,
-        51
+        48
       ],
       "pivot_uv": [
         0.5,
-        0.796875
+        0.75
       ],
       "tileable": "none",
       "slice": null,
@@ -2204,19 +2219,19 @@
       "route": "built-in image_gen",
       "source_refs": [
         "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/wooden-crate/final.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-small/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-46/reference-approved-props-pair.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-46/reference-native-3x2-guide.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
       ],
-      "source_raw": "raw-21.png",
-      "raw_sha256": "c8a0d4184cf810eebe0a859bb70085b3fcc2f2bb58ff9a1e22c7f9d52050d9dc",
-      "sha256": "a3367810c5d9a09fb30dbca949849674f733494879542ed17e2b00e098e5bce8",
+      "source_raw": "raw-52.png",
+      "raw_sha256": "4508e8bb548a7561aa7616e408010182e0935b2dd6b26fd1b8f234f739488692",
+      "sha256": "49a5e29cb14a058546489315b33ad12af879853fa7605bcb101ba416f42ccf8e",
       "source_box": [
-        130,
-        540,
-        270,
-        700
+        0,
+        0,
+        512,
+        512
       ],
       "approved": false,
       "status": "needs_claude_visual_review",
@@ -2228,8 +2243,8 @@
           0.5
         ],
         "source_footprint_px": [
-          77,
-          39
+          52,
+          32
         ],
         "resampled": false
       }
@@ -2307,7 +2322,7 @@
     {
       "id": "desert-camp-wood-crate",
       "category": "prop",
-      "kit": "native-crate-stove-center-18",
+      "kit": "native-conformance-46",
       "file": "desert-camp-wood-crate/final.png",
       "px": [
         160,
@@ -2328,11 +2343,11 @@
       "pivot": "bottom-center",
       "pivot_px": [
         80,
-        105
+        89
       ],
       "pivot_uv": [
         0.5,
-        0.8203125
+        0.6953125
       ],
       "tileable": "none",
       "slice": null,
@@ -2344,19 +2359,19 @@
       "route": "built-in image_gen",
       "source_refs": [
         "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/wooden-crate/final.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-small/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-46/reference-approved-props-pair.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-46/reference-native-3x2-guide.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
       ],
-      "source_raw": "raw-25.png",
-      "raw_sha256": "3c26258b8b5edffba1424ef47738f4aa6917739eb7e9e9e14b9e34139b1cc62b",
-      "sha256": "1d510f431d9b6816a67cc2cc5c10788f175ffa613cdbedee964a093215a2b09c",
+      "source_raw": "raw-47.png",
+      "raw_sha256": "c953cbe5e7f4cbbf0f284e3d367fb97d314e809345c32f65530b504104504d86",
+      "sha256": "2a37109cf89bdeb310a67bdf2ea6a25b285e095e882e21513dd5aa6624e7ce67",
       "source_box": [
-        305,
-        560,
-        420,
-        690
+        512,
+        0,
+        1024,
+        512
       ],
       "approved": false,
       "status": "needs_claude_visual_review",
@@ -2368,8 +2383,8 @@
           1.0
         ],
         "source_footprint_px": [
-          97,
-          82
+          60,
+          51
         ],
         "resampled": false
       }
@@ -2377,7 +2392,7 @@
     {
       "id": "desert-camp-charcoal-stove",
       "category": "prop",
-      "kit": "native-crate-stove-center-18",
+      "kit": "native-conformance-46",
       "file": "desert-camp-charcoal-stove/final.png",
       "px": [
         140,
@@ -2398,11 +2413,11 @@
       "pivot": "bottom-center",
       "pivot_px": [
         70,
-        92
+        81
       ],
       "pivot_uv": [
         0.5,
-        0.7666666666666667
+        0.675
       ],
       "tileable": "none",
       "slice": null,
@@ -2414,19 +2429,19 @@
       "route": "built-in image_gen",
       "source_refs": [
         "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/wooden-crate/final.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-small/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-46/reference-approved-props-pair.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-46/reference-native-3x2-guide.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
       ],
-      "source_raw": "raw-25.png",
-      "raw_sha256": "3c26258b8b5edffba1424ef47738f4aa6917739eb7e9e9e14b9e34139b1cc62b",
-      "sha256": "a66c90487381f410ee5594cbefc792ead32ab092ffd86ccd13a23ce66fb25841",
+      "source_raw": "raw-47.png",
+      "raw_sha256": "c953cbe5e7f4cbbf0f284e3d367fb97d314e809345c32f65530b504104504d86",
+      "sha256": "cf4d590692e89ee364b67df2a8cded8c12878cde2c814460ae70eab043387b9a",
       "source_box": [
-        420,
-        560,
-        520,
-        690
+        1024,
+        0,
+        1536,
+        512
       ],
       "approved": false,
       "status": "needs_claude_visual_review",
@@ -2438,8 +2453,8 @@
           0.9375
         ],
         "source_footprint_px": [
-          87,
-          64
+          56,
+          42
         ],
         "resampled": false
       }
@@ -2447,7 +2462,7 @@
     {
       "id": "desert-nomad-stake-banner",
       "category": "prop",
-      "kit": "camp-props-v2",
+      "kit": "native-banner-clean-49",
       "file": "desert-nomad-stake-banner/final.png",
       "px": [
         320,
@@ -2484,55 +2499,65 @@
       "route": "built-in image_gen",
       "source_refs": [
         "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/city-facade-townhouse/final.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/forest-portal-active/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-banner-clean-49/reference-approved-flag-pair.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-banner-clean-49/reference-native-banner-guide.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
       ],
-      "source_raw": "raw-01.png",
-      "raw_sha256": "a2c72e1af7e1b4e182f86364d6b178dab5581261bb9cd9c866012f0203c6a40d",
-      "sha256": "03bd372d20b160d4350ca110c4cb713333654c710be12b3884e46351a624de27",
+      "source_raw": "raw-50.png",
+      "raw_sha256": "c6d644b850c762285d1634c6fbc598102279b2df16c9be27b6e6f4c4ed95be7b",
+      "sha256": "dea05f2dd1c256b57cd80fa852a4a8ce749ad6107d90344c1cd73105307207a4",
       "source_box": [
-        700,
-        802,
-        1185,
-        1230
+        608,
+        336,
+        928,
+        688
       ],
       "approved": false,
       "status": "needs_claude_visual_review",
       "mechanical_status": "pass",
       "ui_scale": null,
-      "visual_review": "pending_actual_4x_inspection"
+      "native_scale": {
+        "desired_world_size_before_drawing": [
+          2.5,
+          2.75
+        ],
+        "source_footprint_px": [
+          288,
+          267
+        ],
+        "resampled": false
+      }
     },
     {
       "id": "desert-boulder-03",
       "category": "prop",
-      "kit": "nature-props-v2",
+      "kit": "native-boulder-cactus-29",
       "file": "desert-boulder-03/final.png",
       "px": [
-        384,
-        416
+        512,
+        448
       ],
       "size_px": [
-        384,
-        416
+        512,
+        448
       ],
       "world": [
-        3.0,
-        3.25
+        4.0,
+        3.5
       ],
       "world_size": [
-        3.0,
-        3.25
+        4.0,
+        3.5
       ],
       "pivot": "bottom-center",
       "pivot_px": [
-        192,
-        367
+        256,
+        436
       ],
       "pivot_uv": [
         0.5,
-        0.8822115384615384
+        0.9732142857142857
       ],
       "tileable": "none",
       "slice": null,
@@ -2544,55 +2569,65 @@
       "route": "built-in image_gen",
       "source_refs": [
         "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/bush-01/final.png",
         "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/city-facade-townhouse/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/forest-portal-active/final.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
       ],
-      "source_raw": "raw-04.png",
-      "raw_sha256": "17c46570e0907a5f3647c717894512ce33288a1619bb1ca194d8442b35408984",
-      "sha256": "9eeb5796de4da59192ff444e8811c620a92c377e7088f498586689483ff3c57a",
+      "source_raw": "raw-35.png",
+      "raw_sha256": "399d77cb614158d20a6e3c0a299b60ae772189b0ebedc3d1d163182fb6582c83",
+      "sha256": "fcdf4ecb54b293d8f6a51a2e5575ee9c1c06d104a4655f43486494aba5e5b6f7",
       "source_box": [
-        760,
         0,
-        1254,
-        440
+        0,
+        490,
+        480
       ],
       "approved": false,
       "status": "needs_claude_visual_review",
-      "mechanical_status": "blocked",
+      "mechanical_status": "pass",
       "ui_scale": null,
-      "visual_review": "pending_actual_4x_inspection"
+      "native_scale": {
+        "desired_world_size_before_drawing": [
+          4,
+          3.5
+        ],
+        "source_footprint_px": [
+          441,
+          424
+        ],
+        "resampled": false
+      }
     },
     {
       "id": "desert-sand-mound",
       "category": "prop",
-      "kit": "nature-props-v2",
+      "kit": "native-boulder-mound-28",
       "file": "desert-sand-mound/final.png",
       "px": [
         576,
-        288
+        224
       ],
       "size_px": [
         576,
-        288
+        224
       ],
       "world": [
         4.5,
-        2.25
+        1.75
       ],
       "world_size": [
         4.5,
-        2.25
+        1.75
       ],
       "pivot": "bottom-center",
       "pivot_px": [
         288,
-        248
+        173
       ],
       "pivot_uv": [
         0.5,
-        0.8611111111111112
+        0.7723214285714286
       ],
       "tileable": "none",
       "slice": null,
@@ -2604,55 +2639,65 @@
       "route": "built-in image_gen",
       "source_refs": [
         "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/bush-01/final.png",
         "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/city-facade-townhouse/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/forest-portal-active/final.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
       ],
-      "source_raw": "raw-04.png",
-      "raw_sha256": "17c46570e0907a5f3647c717894512ce33288a1619bb1ca194d8442b35408984",
-      "sha256": "6e0d95478b3459cef9d96e20d270edf47d75e45a473dd65cad021a590608b9bf",
+      "source_raw": "raw-34.png",
+      "raw_sha256": "1e7c180717b9d4af5871d4df007cbad1b44144441da60a43fada494beaefe54b",
+      "sha256": "1c09757cb2865c855e14ef23d71324fea51f1def864b344318cb3cf9972c1370",
       "source_box": [
-        0,
-        465,
-        755,
-        785
+        500,
+        680,
+        1050,
+        960
       ],
       "approved": false,
       "status": "needs_claude_visual_review",
-      "mechanical_status": "blocked",
+      "mechanical_status": "pass",
       "ui_scale": null,
-      "visual_review": "pending_actual_4x_inspection"
+      "native_scale": {
+        "desired_world_size_before_drawing": [
+          4.5,
+          1.75
+        ],
+        "source_footprint_px": [
+          519,
+          123
+        ],
+        "resampled": false
+      }
     },
     {
       "id": "desert-cactus-03",
       "category": "prop",
-      "kit": "nature-props-v2",
+      "kit": "native-cactus-clean-30",
       "file": "desert-cactus-03/final.png",
       "px": [
-        288,
-        320
+        320,
+        512
       ],
       "size_px": [
-        288,
-        320
+        320,
+        512
       ],
       "world": [
-        2.25,
-        2.5
+        2.5,
+        4.0
       ],
       "world_size": [
-        2.25,
-        2.5
+        2.5,
+        4.0
       ],
       "pivot": "bottom-center",
       "pivot_px": [
-        144,
-        281
+        160,
+        444
       ],
       "pivot_uv": [
         0.5,
-        0.878125
+        0.8671875
       ],
       "tileable": "none",
       "slice": null,
@@ -2664,25 +2709,35 @@
       "route": "built-in image_gen",
       "source_refs": [
         "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/bush-01/final.png",
         "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/city-facade-townhouse/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/forest-portal-active/final.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
       ],
-      "source_raw": "raw-04.png",
-      "raw_sha256": "17c46570e0907a5f3647c717894512ce33288a1619bb1ca194d8442b35408984",
-      "sha256": "5e9876a2f067d8837e8747f186110941fd04e9c0b0fbceaf27a73c5a6e209c94",
+      "source_raw": "raw-36.png",
+      "raw_sha256": "172f9eefe861f759e6da55cd4c57b11230700f01150ec76fefaaf8ad7693daad",
+      "sha256": "894936eae0f57edd0980278996f7addb6855332065575b3f3f1db1bd708b83d8",
       "source_box": [
-        785,
-        440,
-        1215,
-        810
+        70,
+        530,
+        460,
+        1000
       ],
       "approved": false,
       "status": "needs_claude_visual_review",
-      "mechanical_status": "blocked",
+      "mechanical_status": "pass",
       "ui_scale": null,
-      "visual_review": "pending_actual_4x_inspection"
+      "native_scale": {
+        "desired_world_size_before_drawing": [
+          2.5,
+          4
+        ],
+        "source_footprint_px": [
+          300,
+          376
+        ],
+        "resampled": false
+      }
     },
     {
       "id": "desert-tumbleweed-01",
@@ -2817,7 +2872,7 @@
     {
       "id": "desert-small-rock-01",
       "category": "prop",
-      "kit": "native-micro-row-12",
+      "kit": "native-conformance-47",
       "file": "desert-small-rock-01/final.png",
       "px": [
         128,
@@ -2838,11 +2893,11 @@
       "pivot": "bottom-center",
       "pivot_px": [
         64,
-        73
+        70
       ],
       "pivot_uv": [
         0.5,
-        0.7604166666666666
+        0.7291666666666666
       ],
       "tileable": "none",
       "slice": null,
@@ -2854,19 +2909,19 @@
       "route": "built-in image_gen",
       "source_refs": [
         "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/wooden-crate/final.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-small/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-47/reference-approved-props-pair.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-47/reference-native-3x2-guide.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
       ],
-      "source_raw": "raw-19.png",
-      "raw_sha256": "3cfd114966d13b83e1ffc42576515b3e39019c47b3395e1ea4433b071c6169d8",
-      "sha256": "6bcfbdb25580f5853552898023fd9b2cc9f0d56edb1cf7d6ed995f2de78b735c",
+      "source_raw": "raw-47.png",
+      "raw_sha256": "795cd3293ea4003abfe37343ba02972741814e8caa369048b0510aa762e01dbf",
+      "sha256": "7c6e4e18f390fa84205c40e784dd2d204f38ed10bd919ec0418a072d93da656f",
       "source_box": [
-        260,
-        560,
-        450,
-        700
+        0,
+        0,
+        512,
+        512
       ],
       "approved": false,
       "status": "needs_claude_visual_review",
@@ -2874,12 +2929,12 @@
       "ui_scale": null,
       "native_scale": {
         "desired_world_size_before_drawing": [
-          1,
+          1.0,
           0.75
         ],
         "source_footprint_px": [
-          89,
-          51
+          79,
+          45
         ],
         "resampled": false
       }
@@ -2887,7 +2942,7 @@
     {
       "id": "desert-small-rock-02",
       "category": "prop",
-      "kit": "native-micro-row-12",
+      "kit": "native-conformance-47",
       "file": "desert-small-rock-02/final.png",
       "px": [
         128,
@@ -2908,11 +2963,11 @@
       "pivot": "bottom-center",
       "pivot_px": [
         64,
-        72
+        69
       ],
       "pivot_uv": [
         0.5,
-        0.75
+        0.71875
       ],
       "tileable": "none",
       "slice": null,
@@ -2924,19 +2979,19 @@
       "route": "built-in image_gen",
       "source_refs": [
         "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/wooden-crate/final.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-small/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-47/reference-approved-props-pair.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-47/reference-native-3x2-guide.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
       ],
-      "source_raw": "raw-19.png",
-      "raw_sha256": "3cfd114966d13b83e1ffc42576515b3e39019c47b3395e1ea4433b071c6169d8",
-      "sha256": "e563b9bf4747d86f48db108fa5dc05a99816c8446ddb2c1f68ba7da59f94f83c",
+      "source_raw": "raw-47.png",
+      "raw_sha256": "795cd3293ea4003abfe37343ba02972741814e8caa369048b0510aa762e01dbf",
+      "sha256": "6ae8f094fa78b305c98bf9826f9a386c4ba8fd31ce5dc6f95a0995ab6a9d7461",
       "source_box": [
-        450,
-        560,
-        630,
-        700
+        512,
+        0,
+        1024,
+        512
       ],
       "approved": false,
       "status": "needs_claude_visual_review",
@@ -2944,12 +2999,12 @@
       "ui_scale": null,
       "native_scale": {
         "desired_world_size_before_drawing": [
-          1,
+          1.0,
           0.75
         ],
         "source_footprint_px": [
-          87,
-          48
+          78,
+          43
         ],
         "resampled": false
       }
@@ -2957,7 +3012,7 @@
     {
       "id": "desert-small-rock-03",
       "category": "prop",
-      "kit": "native-micro-row-12",
+      "kit": "native-conformance-47",
       "file": "desert-small-rock-03/final.png",
       "px": [
         128,
@@ -2978,11 +3033,11 @@
       "pivot": "bottom-center",
       "pivot_px": [
         64,
-        73
+        70
       ],
       "pivot_uv": [
         0.5,
-        0.7604166666666666
+        0.7291666666666666
       ],
       "tileable": "none",
       "slice": null,
@@ -2994,19 +3049,19 @@
       "route": "built-in image_gen",
       "source_refs": [
         "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/wooden-crate/final.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-small/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-47/reference-approved-props-pair.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-47/reference-native-3x2-guide.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
       ],
-      "source_raw": "raw-19.png",
-      "raw_sha256": "3cfd114966d13b83e1ffc42576515b3e39019c47b3395e1ea4433b071c6169d8",
-      "sha256": "4c68c402918a2c4ca8f479f725cd1a99eb624ead642318251b1693904dc37175",
+      "source_raw": "raw-47.png",
+      "raw_sha256": "795cd3293ea4003abfe37343ba02972741814e8caa369048b0510aa762e01dbf",
+      "sha256": "fb0ad09cf53dc5a5afbe0ae64ce0a4a21193dbc693a3f61229f74752ca5d74f0",
       "source_box": [
-        650,
-        560,
-        800,
-        700
+        1024,
+        0,
+        1536,
+        512
       ],
       "approved": false,
       "status": "needs_claude_visual_review",
@@ -3014,12 +3069,12 @@
       "ui_scale": null,
       "native_scale": {
         "desired_world_size_before_drawing": [
-          1,
+          1.0,
           0.75
         ],
         "source_footprint_px": [
-          89,
-          51
+          80,
+          45
         ],
         "resampled": false
       }
@@ -3027,7 +3082,7 @@
     {
       "id": "desert-small-cactus-01",
       "category": "prop",
-      "kit": "native-micro-row-12",
+      "kit": "native-cactus-spine-repair-53",
       "file": "desert-small-cactus-01/final.png",
       "px": [
         128,
@@ -3048,11 +3103,11 @@
       "pivot": "bottom-center",
       "pivot_px": [
         64,
-        100
+        103
       ],
       "pivot_uv": [
         0.5,
-        0.8928571428571429
+        0.9196428571428571
       ],
       "tileable": "none",
       "slice": null,
@@ -3064,19 +3119,19 @@
       "route": "built-in image_gen",
       "source_refs": [
         "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/wooden-crate/final.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-small/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-47/reference-approved-props-pair.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-47/reference-native-3x2-guide.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
       ],
-      "source_raw": "raw-19.png",
-      "raw_sha256": "3cfd114966d13b83e1ffc42576515b3e39019c47b3395e1ea4433b071c6169d8",
-      "sha256": "52e30ffdea0946221545300f2099ce2dc0eb0b03abae611987884e0724d75236",
+      "source_raw": "raw-59.png",
+      "raw_sha256": "78dcc17a1e22f8c658b19e32c16260ff0ccb5a8c11544a3e5eb42eb166b804b2",
+      "sha256": "7dcedf20bffbe3d0a25e98a22b431954e7b5d3b782dbde117225614434250dd1",
       "source_box": [
-        840,
-        550,
-        1000,
-        710
+        0,
+        512,
+        512,
+        1024
       ],
       "approved": false,
       "status": "needs_claude_visual_review",
@@ -3084,12 +3139,12 @@
       "ui_scale": null,
       "native_scale": {
         "desired_world_size_before_drawing": [
-          1,
+          1.0,
           0.875
         ],
         "source_footprint_px": [
-          67,
-          89
+          78,
+          94
         ],
         "resampled": false
       }
@@ -3097,7 +3152,7 @@
     {
       "id": "desert-small-cactus-02",
       "category": "prop",
-      "kit": "native-micro-row-12",
+      "kit": "native-conformance-47",
       "file": "desert-small-cactus-02/final.png",
       "px": [
         128,
@@ -3118,11 +3173,11 @@
       "pivot": "bottom-center",
       "pivot_px": [
         64,
-        91
+        86
       ],
       "pivot_uv": [
         0.5,
-        0.8125
+        0.7678571428571429
       ],
       "tileable": "none",
       "slice": null,
@@ -3134,19 +3189,19 @@
       "route": "built-in image_gen",
       "source_refs": [
         "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/wooden-crate/final.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-small/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-47/reference-approved-props-pair.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-47/reference-native-3x2-guide.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
       ],
-      "source_raw": "raw-19.png",
-      "raw_sha256": "3cfd114966d13b83e1ffc42576515b3e39019c47b3395e1ea4433b071c6169d8",
-      "sha256": "d083c1f45bc85d35ec9405d123309c8dbf587ed452590bd9ea2187cccfd3705c",
+      "source_raw": "raw-47.png",
+      "raw_sha256": "795cd3293ea4003abfe37343ba02972741814e8caa369048b0510aa762e01dbf",
+      "sha256": "5c5f5027b8a5e12fae268891cd275cb6c341e9b295777587dbb454573dcd3645",
       "source_box": [
-        1010,
-        550,
-        1180,
-        710
+        512,
+        512,
+        1024,
+        1024
       ],
       "approved": false,
       "status": "needs_claude_visual_review",
@@ -3154,12 +3209,12 @@
       "ui_scale": null,
       "native_scale": {
         "desired_world_size_before_drawing": [
-          1,
+          1.0,
           0.875
         ],
         "source_footprint_px": [
-          73,
-          70
+          65,
+          61
         ],
         "resampled": false
       }
@@ -3167,7 +3222,7 @@
     {
       "id": "desert-small-cactus-03",
       "category": "prop",
-      "kit": "native-micro-row-14",
+      "kit": "native-conformance-47",
       "file": "desert-small-cactus-03/final.png",
       "px": [
         128,
@@ -3188,11 +3243,11 @@
       "pivot": "bottom-center",
       "pivot_px": [
         64,
-        102
+        89
       ],
       "pivot_uv": [
         0.5,
-        0.9107142857142857
+        0.7946428571428571
       ],
       "tileable": "none",
       "slice": null,
@@ -3204,19 +3259,19 @@
       "route": "built-in image_gen",
       "source_refs": [
         "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/wooden-crate/final.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-small/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-47/reference-approved-props-pair.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-47/reference-native-3x2-guide.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
       ],
-      "source_raw": "raw-21.png",
-      "raw_sha256": "c8a0d4184cf810eebe0a859bb70085b3fcc2f2bb58ff9a1e22c7f9d52050d9dc",
-      "sha256": "099056094f583a28a573f822e201c670616d8c0bf5701b41befde32455a94245",
+      "source_raw": "raw-47.png",
+      "raw_sha256": "795cd3293ea4003abfe37343ba02972741814e8caa369048b0510aa762e01dbf",
+      "sha256": "c7d1f859d78c912cb66b7d26c2fe2ad8d9f186ec484871e0a66d7fca99001fe7",
       "source_box": [
-        820,
-        540,
-        970,
-        700
+        1024,
+        512,
+        1536,
+        1024
       ],
       "approved": false,
       "status": "needs_claude_visual_review",
@@ -3224,12 +3279,12 @@
       "ui_scale": null,
       "native_scale": {
         "desired_world_size_before_drawing": [
-          1,
+          1.0,
           0.875
         ],
         "source_footprint_px": [
-          73,
-          93
+          60,
+          67
         ],
         "resampled": false
       }
@@ -3597,7 +3652,7 @@
     {
       "id": "desert-edge-sand-sandstone-01",
       "category": "decal",
-      "kit": "edge-sandstone-gravel-03",
+      "kit": "edge-no-buffer-32",
       "file": "desert-edge-sand-sandstone-01/final.png",
       "px": [
         512,
@@ -3618,11 +3673,11 @@
       "pivot": "bottom-center",
       "pivot_px": [
         256,
-        111
+        124
       ],
       "pivot_uv": [
         0.5,
-        0.8671875
+        0.96875
       ],
       "tileable": "x",
       "slice": null,
@@ -3639,73 +3694,14 @@
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
       ],
-      "source_raw": "raw-03.png",
-      "raw_sha256": "49df6173fab95f1db976c3bcf5f9885e81ec037404bbb15f3aa778910bb2ee3c",
-      "sha256": "452896b58770e6691dab1cf5a88257cb33fdec8469a3675b6e0ea843cf77f5c3",
+      "source_raw": "raw-05.png",
+      "raw_sha256": "a365479d0856549220b018fbb42e030b7e7f8164c627142eba3b884cdca29e10",
+      "sha256": "752729b22fa30967f2a356f8e539bfbb989ab2f5d2e8e3629e27d9eda96d45a6",
       "source_box": [
-        145,
-        180,
-        1391,
-        360
-      ],
-      "approved": false,
-      "status": "needs_claude_visual_review",
-      "mechanical_status": "blocked",
-      "ui_scale": null
-    },
-    {
-      "id": "desert-edge-sand-sandstone-02",
-      "category": "decal",
-      "kit": "edges-v2",
-      "file": "desert-edge-sand-sandstone-02/final.png",
-      "px": [
-        512,
-        128
-      ],
-      "size_px": [
-        512,
-        128
-      ],
-      "world": [
-        4.0,
-        1.0
-      ],
-      "world_size": [
-        4.0,
-        1.0
-      ],
-      "pivot": "bottom-center",
-      "pivot_px": [
-        256,
-        118
-      ],
-      "pivot_uv": [
-        0.5,
-        0.921875
-      ],
-      "tileable": "x",
-      "slice": null,
-      "frames": 1,
-      "frame_px": null,
-      "fps": null,
-      "sway": false,
-      "art_source": "host_image",
-      "route": "built-in image_gen",
-      "source_refs": [
-        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/edge-grass-dirt/final.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/edge-grass-roots/final.png",
-        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
-        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
-      ],
-      "source_raw": "raw-01.png",
-      "raw_sha256": "a0c4da7366412d65cf2c79b9af2ee3e4ccce0f137074ef6e3847678694d1fad8",
-      "sha256": "235c838dc1c6eb97aecf998c1dbbceb60eaed472b469982ec06814a63212be1e",
-      "source_box": [
-        634,
-        208,
-        1254,
-        418
+        407,
+        70,
+        1755,
+        364
       ],
       "approved": false,
       "status": "needs_claude_visual_review",
@@ -3772,68 +3768,9 @@
       "ui_scale": null
     },
     {
-      "id": "desert-edge-sand-cracked-02",
-      "category": "decal",
-      "kit": "edges-v2",
-      "file": "desert-edge-sand-cracked-02/final.png",
-      "px": [
-        512,
-        128
-      ],
-      "size_px": [
-        512,
-        128
-      ],
-      "world": [
-        4.0,
-        1.0
-      ],
-      "world_size": [
-        4.0,
-        1.0
-      ],
-      "pivot": "bottom-center",
-      "pivot_px": [
-        256,
-        109
-      ],
-      "pivot_uv": [
-        0.5,
-        0.8515625
-      ],
-      "tileable": "x",
-      "slice": null,
-      "frames": 1,
-      "frame_px": null,
-      "fps": null,
-      "sway": false,
-      "art_source": "host_image",
-      "route": "built-in image_gen",
-      "source_refs": [
-        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/edge-grass-dirt/final.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/edge-grass-roots/final.png",
-        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
-        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
-      ],
-      "source_raw": "raw-01.png",
-      "raw_sha256": "a0c4da7366412d65cf2c79b9af2ee3e4ccce0f137074ef6e3847678694d1fad8",
-      "sha256": "6a0967fe0c8581019e394230c7c6ece20938ce4b55479242a643799eb8e37cd9",
-      "source_box": [
-        634,
-        530,
-        1254,
-        770
-      ],
-      "approved": false,
-      "status": "needs_claude_visual_review",
-      "mechanical_status": "blocked",
-      "ui_scale": null
-    },
-    {
       "id": "desert-edge-sand-gravel-01",
       "category": "decal",
-      "kit": "edge-sandstone-gravel-03",
+      "kit": "edge-no-buffer-32",
       "file": "desert-edge-sand-gravel-01/final.png",
       "px": [
         512,
@@ -3854,11 +3791,11 @@
       "pivot": "bottom-center",
       "pivot_px": [
         256,
-        102
+        121
       ],
       "pivot_uv": [
         0.5,
-        0.796875
+        0.9453125
       ],
       "tileable": "x",
       "slice": null,
@@ -3875,73 +3812,14 @@
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
       ],
-      "source_raw": "raw-03.png",
-      "raw_sha256": "49df6173fab95f1db976c3bcf5f9885e81ec037404bbb15f3aa778910bb2ee3c",
-      "sha256": "8cdbcd57d924cb67996859ae24e24f05bd577c0248a3af847376309ba641b4f3",
+      "source_raw": "raw-05.png",
+      "raw_sha256": "a365479d0856549220b018fbb42e030b7e7f8164c627142eba3b884cdca29e10",
+      "sha256": "9f09d2876aa0c4e875a75ec667491709a33279a5a690adfb4bfaf23650348f53",
       "source_box": [
-        145,
-        630,
-        1391,
-        820
-      ],
-      "approved": false,
-      "status": "needs_claude_visual_review",
-      "mechanical_status": "pass",
-      "ui_scale": null
-    },
-    {
-      "id": "desert-edge-sand-gravel-02",
-      "category": "decal",
-      "kit": "edges-v2",
-      "file": "desert-edge-sand-gravel-02/final.png",
-      "px": [
-        512,
-        128
-      ],
-      "size_px": [
-        512,
-        128
-      ],
-      "world": [
-        4.0,
-        1.0
-      ],
-      "world_size": [
-        4.0,
-        1.0
-      ],
-      "pivot": "bottom-center",
-      "pivot_px": [
-        256,
-        106
-      ],
-      "pivot_uv": [
-        0.5,
-        0.828125
-      ],
-      "tileable": "x",
-      "slice": null,
-      "frames": 1,
-      "frame_px": null,
-      "fps": null,
-      "sway": false,
-      "art_source": "host_image",
-      "route": "built-in image_gen",
-      "source_refs": [
-        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/edge-grass-dirt/final.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/edge-grass-roots/final.png",
-        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
-        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
-      ],
-      "source_raw": "raw-01.png",
-      "raw_sha256": "a0c4da7366412d65cf2c79b9af2ee3e4ccce0f137074ef6e3847678694d1fad8",
-      "sha256": "c0a6b525592819b80d5ce1b85ca2d0bc078536a882f90625ac4040795dacd7cf",
-      "source_box": [
-        634,
-        895,
-        1254,
-        1135
+        283,
+        464,
+        1972,
+        743
       ],
       "approved": false,
       "status": "needs_claude_visual_review",
@@ -4482,7 +4360,7 @@
     {
       "id": "desert-decal-ancient-rune-faded",
       "category": "decal",
-      "kit": "ground-decals-02-v2",
+      "kit": "cracks-seal-repair-36",
       "file": "desert-decal-ancient-rune-faded/final.png",
       "px": [
         384,
@@ -4503,11 +4381,11 @@
       "pivot": "bottom-center",
       "pivot_px": [
         192,
-        279
+        298
       ],
       "pivot_uv": [
         0.5,
-        0.871875
+        0.93125
       ],
       "tileable": "none",
       "slice": null,
@@ -4524,14 +4402,14 @@
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
       ],
-      "source_raw": "raw-01.png",
-      "raw_sha256": "7a2a24b8026fe2bcd5239cb462b7120e0c173e3d3dd04d2a4c58547aec85c565",
-      "sha256": "2c4ae4443ca68cefcdc4fe519c3eb772085f5030b43c547a28b02649b3c77e68",
+      "source_raw": "raw-36-selected.png",
+      "raw_sha256": "b5e6c786b87f3e869f31a1a73e07644b976db35f6cf4f00096ff7bb9fde85161",
+      "sha256": "5c779c34681634db3cae013c87958db62c9db691268375a03315e320379b85a9",
       "source_box": [
-        675,
-        430,
-        1254,
-        825
+        1040,
+        520,
+        1536,
+        960
       ],
       "approved": false,
       "status": "needs_claude_visual_review",
@@ -4718,7 +4596,7 @@
     {
       "id": "desert-tumbleweed-02",
       "category": "prop",
-      "kit": "native-micro-repair-15",
+      "kit": "native-tumbleweed-edit-55",
       "file": "desert-tumbleweed-02/final.png",
       "px": [
         128,
@@ -4739,11 +4617,11 @@
       "pivot": "bottom-center",
       "pivot_px": [
         64,
-        109
+        99
       ],
       "pivot_uv": [
         0.5,
-        0.8515625
+        0.7734375
       ],
       "tileable": "none",
       "slice": null,
@@ -4755,19 +4633,19 @@
       "route": "built-in image_gen",
       "source_refs": [
         "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/wooden-crate/final.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-small/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-47/reference-approved-props-pair.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-tumbleweed-edit-55/reference-native-six-guide.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
       ],
-      "source_raw": "raw-22.png",
-      "raw_sha256": "eee9aaec7cd0d6bcb53dc2951e2fff34b9317ec6c84a2b28380ec6aa254cff52",
-      "sha256": "daf7dc32de50a1a07e0347e04c4be20dcca3e387dedde5d435efcb26e5d1b82d",
+      "source_raw": "raw-61.png",
+      "raw_sha256": "c1d5e40414d325c6e06296c11a4b01cadf854934854fee5537a9b30baf61efbf",
+      "sha256": "8596e0e04ba95a703590e39002bfcd0e8b9d9dde61fe0a15c663ec89e3ceba2c",
       "source_box": [
-        510,
-        490,
-        670,
-        650
+        1024,
+        512,
+        1536,
+        1024
       ],
       "approved": false,
       "status": "needs_claude_visual_review",
@@ -4775,12 +4653,12 @@
       "ui_scale": null,
       "native_scale": {
         "desired_world_size_before_drawing": [
-          1,
-          1
+          1.0,
+          1.0
         ],
         "source_footprint_px": [
-          90,
-          91
+          111,
+          70
         ],
         "resampled": false
       }
@@ -4788,7 +4666,7 @@
     {
       "id": "desert-small-skull",
       "category": "prop",
-      "kit": "native-micro-repair-15",
+      "kit": "native-conformance-46",
       "file": "desert-small-skull/final.png",
       "px": [
         128,
@@ -4809,11 +4687,11 @@
       "pivot": "bottom-center",
       "pivot_px": [
         64,
-        91
+        78
       ],
       "pivot_uv": [
         0.5,
-        0.8125
+        0.6964285714285714
       ],
       "tileable": "none",
       "slice": null,
@@ -4825,19 +4703,19 @@
       "route": "built-in image_gen",
       "source_refs": [
         "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/wooden-crate/final.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-small/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-46/reference-approved-props-pair.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-46/reference-native-3x2-guide.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
       ],
-      "source_raw": "raw-22.png",
-      "raw_sha256": "eee9aaec7cd0d6bcb53dc2951e2fff34b9317ec6c84a2b28380ec6aa254cff52",
-      "sha256": "bd7abb798a10de58d5738be44dd3bb1b1dac9121ed78ab7ed64bbe92b1e4f576",
+      "source_raw": "raw-47.png",
+      "raw_sha256": "c953cbe5e7f4cbbf0f284e3d367fb97d314e809345c32f65530b504104504d86",
+      "sha256": "5829de2f289a514b75178f1a2fe5192aab7713aef6eeee99a0c233cb7ad1ccb9",
       "source_box": [
-        160,
-        490,
-        300,
-        650
+        512,
+        512,
+        1024,
+        1024
       ],
       "approved": false,
       "status": "needs_claude_visual_review",
@@ -4845,12 +4723,12 @@
       "ui_scale": null,
       "native_scale": {
         "desired_world_size_before_drawing": [
-          1,
+          1.0,
           0.875
         ],
         "source_footprint_px": [
-          80,
-          71
+          51,
+          44
         ],
         "resampled": false
       }
@@ -4858,7 +4736,7 @@
     {
       "id": "desert-small-ribs",
       "category": "prop",
-      "kit": "native-micro-repair-15",
+      "kit": "native-conformance-46",
       "file": "desert-small-ribs/final.png",
       "px": [
         144,
@@ -4879,11 +4757,11 @@
       "pivot": "bottom-center",
       "pivot_px": [
         72,
-        90
+        78
       ],
       "pivot_uv": [
         0.5,
-        0.8035714285714286
+        0.6964285714285714
       ],
       "tileable": "none",
       "slice": null,
@@ -4895,19 +4773,19 @@
       "route": "built-in image_gen",
       "source_refs": [
         "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/wooden-crate/final.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-small/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-46/reference-approved-props-pair.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-46/reference-native-3x2-guide.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
       ],
-      "source_raw": "raw-22.png",
-      "raw_sha256": "eee9aaec7cd0d6bcb53dc2951e2fff34b9317ec6c84a2b28380ec6aa254cff52",
-      "sha256": "3c52d6960d0e15161b9ecfde6003c2773a7b63760c8b4d7a83ea4bac808e1ca6",
+      "source_raw": "raw-47.png",
+      "raw_sha256": "c953cbe5e7f4cbbf0f284e3d367fb97d314e809345c32f65530b504104504d86",
+      "sha256": "43cbed7581727c920ebc742c80319a6adc1fcf1336d75b91555c060c02737744",
       "source_box": [
-        330,
-        490,
-        490,
-        650
+        1024,
+        512,
+        1536,
+        1024
       ],
       "approved": false,
       "status": "needs_claude_visual_review",
@@ -4919,8 +4797,8 @@
           0.875
         ],
         "source_footprint_px": [
-          92,
-          69
+          59,
+          44
         ],
         "resampled": false
       }
@@ -4928,32 +4806,32 @@
     {
       "id": "desert-cactus-tall",
       "category": "prop",
-      "kit": "native-landscape-props-19",
+      "kit": "native-prop-clean-26",
       "file": "desert-cactus-tall/final.png",
       "px": [
-        256,
+        288,
         576
       ],
       "size_px": [
-        256,
+        288,
         576
       ],
       "world": [
-        2.0,
+        2.25,
         4.5
       ],
       "world_size": [
-        2.0,
+        2.25,
         4.5
       ],
       "pivot": "bottom-center",
       "pivot_px": [
-        128,
-        522
+        144,
+        517
       ],
       "pivot_uv": [
         0.5,
-        0.90625
+        0.8975694444444444
       ],
       "tileable": "none",
       "slice": null,
@@ -4965,36 +4843,35 @@
       "route": "built-in image_gen",
       "source_refs": [
         "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-03-octopath/palm-01-trunk/final.png",
-        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-03-octopath/palm-01-canopy/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/city-facade-townhouse/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/forest-portal-active/final.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
         "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
       ],
-      "source_raw": "raw-26.png",
-      "raw_sha256": "6ce3ba85006df542a47d5466fe9fb0043cea52892bce749727aa6ce0a894674f",
-      "sha256": "82ea9a2d1331cbbdd099cb980fae258c8fe26ad8d407963378883810f17fde53",
+      "source_raw": "raw-32.png",
+      "raw_sha256": "da8818f2bbf5b9986a1e9a069dbdfefbec236aab951746639455f1adb046d6fe",
+      "sha256": "42bc85161987b0deaaaaf927beba726563ba9e361f3be8940dd4ab2c9a8997b7",
       "source_box": [
-        1150,
-        40,
-        1450,
-        580
+        600,
+        20,
+        910,
+        550
       ],
       "approved": false,
       "status": "needs_claude_visual_review",
-      "mechanical_status": "blocked",
+      "mechanical_status": "pass",
       "ui_scale": null,
       "native_scale": {
         "desired_world_size_before_drawing": [
-          2,
+          2.25,
           4.5
         ],
         "source_footprint_px": [
-          227,
-          468
+          235,
+          459
         ],
         "resampled": false
-      },
-      "content_provenance": "Owner-authorized regional interpretation; original six maps inspected, extra kit assembly pieces requested by layout/minimum list; not claimed as exact recovered APK."
+      }
     },
     {
       "id": "desert-arch-gate",
@@ -5350,6 +5227,1031 @@
       "content_provenance": "Owner-authorized regional interpretation, from original desert palette and approved batch03 palm material style.",
       "sway_pair": "desert-palm-trunk",
       "assembly_note": "Separate crown, position central stemstub over top of trunk; no runtime scene modified."
+    },
+    {
+      "id": "desert-edge-sand-sandstone-n",
+      "category": "decal",
+      "kit": "directional-decals-33",
+      "file": "desert-edge-sand-sandstone-n/final.png",
+      "px": [
+        512,
+        320
+      ],
+      "size_px": [
+        512,
+        320
+      ],
+      "world": [
+        4.0,
+        2.5
+      ],
+      "world_size": [
+        4.0,
+        2.5
+      ],
+      "pivot": "bottom-center",
+      "pivot_px": [
+        256,
+        304
+      ],
+      "pivot_uv": [
+        0.5,
+        0.95
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 1,
+      "frame_px": null,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/mud-patch/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/moss-patch-01/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-01.png",
+      "raw_sha256": "052dc0ba7ab16a0c2ae7215de9ab476550a0159e664f5ed6d59d8537c692270d",
+      "sha256": "6281a183509cfc4cdab9c23720ed1e4e1ca80860af08ce4316cc205deaf4d8ef",
+      "source_box": [
+        1024,
+        0,
+        1536,
+        512
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": null
+    },
+    {
+      "id": "desert-edge-sand-sandstone-s",
+      "category": "decal",
+      "kit": "directional-decals-33",
+      "file": "desert-edge-sand-sandstone-s/final.png",
+      "px": [
+        512,
+        320
+      ],
+      "size_px": [
+        512,
+        320
+      ],
+      "world": [
+        4.0,
+        2.5
+      ],
+      "world_size": [
+        4.0,
+        2.5
+      ],
+      "pivot": "bottom-center",
+      "pivot_px": [
+        256,
+        304
+      ],
+      "pivot_uv": [
+        0.5,
+        0.95
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 1,
+      "frame_px": null,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/mud-patch/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/moss-patch-01/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-01.png",
+      "raw_sha256": "052dc0ba7ab16a0c2ae7215de9ab476550a0159e664f5ed6d59d8537c692270d",
+      "sha256": "0f87fa018cbf9c4a2be7b01105f4dfe7e4008cf17d6c58f4fe6e6d52f2683f9f",
+      "source_box": [
+        0,
+        512,
+        540,
+        1024
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": null
+    },
+    {
+      "id": "desert-edge-sand-sandstone-w",
+      "category": "decal",
+      "kit": "directional-decals-33",
+      "file": "desert-edge-sand-sandstone-w/final.png",
+      "px": [
+        512,
+        320
+      ],
+      "size_px": [
+        512,
+        320
+      ],
+      "world": [
+        4.0,
+        2.5
+      ],
+      "world_size": [
+        4.0,
+        2.5
+      ],
+      "pivot": "bottom-center",
+      "pivot_px": [
+        256,
+        304
+      ],
+      "pivot_uv": [
+        0.5,
+        0.95
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 1,
+      "frame_px": null,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/mud-patch/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/moss-patch-01/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-01.png",
+      "raw_sha256": "052dc0ba7ab16a0c2ae7215de9ab476550a0159e664f5ed6d59d8537c692270d",
+      "sha256": "9dc6c067e9f6e9e99175d2daf2b5089431c4d5abe1085d009bcda29c380e3972",
+      "source_box": [
+        550,
+        512,
+        1024,
+        1024
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": null
+    },
+    {
+      "id": "desert-edge-sand-sandstone-e",
+      "category": "decal",
+      "kit": "directional-decals-33",
+      "file": "desert-edge-sand-sandstone-e/final.png",
+      "px": [
+        512,
+        320
+      ],
+      "size_px": [
+        512,
+        320
+      ],
+      "world": [
+        4.0,
+        2.5
+      ],
+      "world_size": [
+        4.0,
+        2.5
+      ],
+      "pivot": "bottom-center",
+      "pivot_px": [
+        256,
+        304
+      ],
+      "pivot_uv": [
+        0.5,
+        0.95
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 1,
+      "frame_px": null,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/mud-patch/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/moss-patch-01/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-01.png",
+      "raw_sha256": "052dc0ba7ab16a0c2ae7215de9ab476550a0159e664f5ed6d59d8537c692270d",
+      "sha256": "eda05fefad7a7113b26bd9b3116527763228fc5a29e1ebef99e947bc301de67e",
+      "source_box": [
+        1024,
+        512,
+        1536,
+        1024
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": null
+    },
+    {
+      "id": "desert-chasm-ravine-01",
+      "category": "prop",
+      "kit": "native-chasms-34",
+      "file": "desert-chasm-ravine-01/final.png",
+      "px": [
+        768,
+        384
+      ],
+      "size_px": [
+        768,
+        384
+      ],
+      "world": [
+        6.0,
+        3.0
+      ],
+      "world_size": [
+        6.0,
+        3.0
+      ],
+      "pivot": "bottom-center",
+      "pivot_px": [
+        384,
+        291
+      ],
+      "pivot_uv": [
+        0.5,
+        0.7578125
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 1,
+      "frame_px": null,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-03-octopath/coastal-cliff-mid/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-small/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-01.png",
+      "raw_sha256": "223333cd3d95b4b6be872d1e06a39ea37d979cfc10c6243355333c9a890f82f1",
+      "sha256": "adf60a5d88d77a7a7a586339075b2719dd90fd9559a842ae72ad089d02f18320",
+      "source_box": [
+        0,
+        100,
+        630,
+        450
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": null,
+      "native_scale": {
+        "desired_world_size_before_drawing": [
+          6,
+          3
+        ],
+        "source_footprint_px": [
+          588,
+          198
+        ],
+        "resampled": false
+      },
+      "content_provenance": "Owner-authorized environmental interpretation; ravine required by original inventory, not a uniquely visible landmark in repeated map screenshots."
+    },
+    {
+      "id": "desert-chasm-ravine-02",
+      "category": "prop",
+      "kit": "native-chasms-34",
+      "file": "desert-chasm-ravine-02/final.png",
+      "px": [
+        768,
+        384
+      ],
+      "size_px": [
+        768,
+        384
+      ],
+      "world": [
+        6.0,
+        3.0
+      ],
+      "world_size": [
+        6.0,
+        3.0
+      ],
+      "pivot": "bottom-center",
+      "pivot_px": [
+        384,
+        341
+      ],
+      "pivot_uv": [
+        0.5,
+        0.8880208333333334
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 1,
+      "frame_px": null,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-03-octopath/coastal-cliff-mid/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-small/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-01.png",
+      "raw_sha256": "223333cd3d95b4b6be872d1e06a39ea37d979cfc10c6243355333c9a890f82f1",
+      "sha256": "7cdaab95cf7bba4fa7da9bfec02469bf1b5e4a12494a08d1673b5ee0a824b863",
+      "source_box": [
+        500,
+        520,
+        974,
+        940
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": null,
+      "native_scale": {
+        "desired_world_size_before_drawing": [
+          6,
+          3
+        ],
+        "source_footprint_px": [
+          462,
+          298
+        ],
+        "resampled": false
+      },
+      "content_provenance": "Owner-authorized environmental interpretation; independent bent ravine geometry."
+    },
+    {
+      "id": "desert-spawn-marker",
+      "category": "fx",
+      "kit": "spawn-marker-35",
+      "file": "desert-spawn-marker/final.png",
+      "px": [
+        768,
+        128
+      ],
+      "size_px": [
+        768,
+        128
+      ],
+      "world": [
+        1.5,
+        1
+      ],
+      "world_size": [
+        1.5,
+        1
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        96,
+        128
+      ],
+      "pivot_uv": [
+        0.5,
+        1
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 4,
+      "frame_px": [
+        192,
+        128
+      ],
+      "fps": 5,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-04-octopath/nest-marker/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/forest-portal-active/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-01.png",
+      "raw_sha256": "1a304b7b91f9856af7726e7e12dbaac3405aa7eaecd03688fa2e836402302b21",
+      "sha256": "ee202cc53765dd22aa20a769e455a989e4b230deb1d23d44f7ab5cccb1e07952",
+      "source_box": [
+        3,
+        84,
+        636,
+        544
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": null,
+      "frame_files": [
+        "desert-spawn-marker-frame-00/final.png",
+        "desert-spawn-marker-frame-01/final.png",
+        "desert-spawn-marker-frame-02/final.png",
+        "desert-spawn-marker-frame-03/final.png"
+      ]
+    },
+    {
+      "id": "desert-edge-sand-cracked-patch-01",
+      "category": "decal",
+      "kit": "cracks-seal-repair-36",
+      "file": "desert-edge-sand-cracked-patch-01/final.png",
+      "px": [
+        384,
+        256
+      ],
+      "size_px": [
+        384,
+        256
+      ],
+      "world": [
+        3.0,
+        2.0
+      ],
+      "world_size": [
+        3.0,
+        2.0
+      ],
+      "pivot": "bottom-center",
+      "pivot_px": [
+        192,
+        234
+      ],
+      "pivot_uv": [
+        0.5,
+        0.9140625
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 1,
+      "frame_px": null,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/mud-patch/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/moss-patch-01/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-01.png",
+      "raw_sha256": "b5e6c786b87f3e869f31a1a73e07644b976db35f6cf4f00096ff7bb9fde85161",
+      "sha256": "f582c3fe7ad1094b482e7c66a7bd01aee6a385b86f2d2a7144c1cbdc8247cbd6",
+      "source_box": [
+        0,
+        70,
+        540,
+        490
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": null
+    },
+    {
+      "id": "desert-edge-sand-cracked-patch-02",
+      "category": "decal",
+      "kit": "cracks-seal-repair-36",
+      "file": "desert-edge-sand-cracked-patch-02/final.png",
+      "px": [
+        384,
+        256
+      ],
+      "size_px": [
+        384,
+        256
+      ],
+      "world": [
+        3.0,
+        2.0
+      ],
+      "world_size": [
+        3.0,
+        2.0
+      ],
+      "pivot": "bottom-center",
+      "pivot_px": [
+        192,
+        240
+      ],
+      "pivot_uv": [
+        0.5,
+        0.9375
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 1,
+      "frame_px": null,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/mud-patch/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/moss-patch-01/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-01.png",
+      "raw_sha256": "b5e6c786b87f3e869f31a1a73e07644b976db35f6cf4f00096ff7bb9fde85161",
+      "sha256": "c1df13743bdd79018eb93f1b23572befef44b8742979b9779c51f904eec00332",
+      "source_box": [
+        560,
+        70,
+        1020,
+        490
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": null
+    },
+    {
+      "id": "desert-dust-devil-anim",
+      "category": "fx",
+      "kit": "dust-devil-37",
+      "file": "desert-dust-devil-anim/final.png",
+      "px": [
+        768,
+        224
+      ],
+      "size_px": [
+        768,
+        224
+      ],
+      "world": [
+        1.5,
+        1.75
+      ],
+      "world_size": [
+        1.5,
+        1.75
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        96,
+        224
+      ],
+      "pivot_uv": [
+        0.5,
+        1
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 4,
+      "frame_px": [
+        192,
+        224
+      ],
+      "fps": 6,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-07-octopath/fx_escape_dust/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/hall-torch/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-01.png",
+      "raw_sha256": "265b2829f8c0fc028537d9af9309c1435c919084e3ea2e389e822afd40aa8ca4",
+      "sha256": "8e88dadd6ae034a442ffb4b0e883217225ef17d2558669e74524b424ba9bb69d",
+      "source_box": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": null,
+      "frame_files": [
+        "desert-dust-devil-frame-00/final.png",
+        "desert-dust-devil-frame-01/final.png",
+        "desert-dust-devil-frame-02/final.png",
+        "desert-dust-devil-frame-03/final.png"
+      ]
+    },
+    {
+      "id": "desert-torch-lantern-anim",
+      "category": "fx",
+      "kit": "torch-flame-38",
+      "file": "desert-torch-lantern-anim/final.png",
+      "px": [
+        384,
+        128
+      ],
+      "size_px": [
+        384,
+        128
+      ],
+      "world": [
+        0.75,
+        1
+      ],
+      "world_size": [
+        0.75,
+        1
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        48,
+        128
+      ],
+      "pivot_uv": [
+        0.5,
+        1
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 4,
+      "frame_px": [
+        96,
+        128
+      ],
+      "fps": 5,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-07-octopath/fx_escape_dust/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/hall-torch/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-01.png",
+      "raw_sha256": "5e4377a253f5c700625f12e2a9dc62386a3283723444987a15cdb744567e9d32",
+      "sha256": "96f5f6eefbe7a0c91fb0fd065297134e90f5eced5d17f2ce202a10b22fbf2707",
+      "source_box": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": null,
+      "frame_files": [
+        "desert-torch-flame-frame-00/final.png",
+        "desert-torch-flame-frame-01/final.png",
+        "desert-torch-flame-frame-02/final.png",
+        "desert-torch-flame-frame-03/final.png"
+      ]
+    },
+    {
+      "id": "desert-magic-rune-anim",
+      "category": "fx",
+      "kit": "magic-rune-40",
+      "file": "desert-magic-rune-anim/final.png",
+      "px": [
+        1024,
+        160
+      ],
+      "size_px": [
+        1024,
+        160
+      ],
+      "world": [
+        2,
+        1.25
+      ],
+      "world_size": [
+        2,
+        1.25
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        128,
+        160
+      ],
+      "pivot_uv": [
+        0.5,
+        1
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 4,
+      "frame_px": [
+        256,
+        160
+      ],
+      "fps": 4,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-07-octopath/fx_capture_seal/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-07-octopath/fx_earth_cast/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-01.png",
+      "raw_sha256": "e4e40b09d46d33d1f782e4bb713bcf3c1110e9d53fc74eb229cf097466c3070c",
+      "sha256": "9657a58421b65fa6d79cb833710d7f12a1f45281ff42f5fe8734fb3525f8e726",
+      "source_box": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": null,
+      "frame_files": [
+        "desert-magic-rune-frame-00/final.png",
+        "desert-magic-rune-frame-01/final.png",
+        "desert-magic-rune-frame-02/final.png",
+        "desert-magic-rune-frame-03/final.png"
+      ]
+    },
+    {
+      "id": "desert-oasis-sparkle-anim",
+      "category": "fx",
+      "kit": "oasis-sparkle-42",
+      "file": "desert-oasis-sparkle-anim/final.png",
+      "px": [
+        512,
+        96
+      ],
+      "size_px": [
+        512,
+        96
+      ],
+      "world": [
+        1,
+        0.75
+      ],
+      "world_size": [
+        1,
+        0.75
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        64,
+        96
+      ],
+      "pivot_uv": [
+        0.5,
+        1
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 4,
+      "frame_px": [
+        128,
+        96
+      ],
+      "fps": 5,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-07-octopath/fx_capture_seal/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-07-octopath/fx_earth_cast/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-01.png",
+      "raw_sha256": "a6f0972ed68888e1340b459a90c70d0f99785404e4393f22123c8303c712b553",
+      "sha256": "7bfaf33b45ee82ace08320f9a34a1a80dcef4c8dba59867c82cd18ab356ee8b4",
+      "source_box": [
+        0,
+        0,
+        724,
+        543
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": null,
+      "frame_files": [
+        "desert-oasis-sparkle-frame-00/final.png",
+        "desert-oasis-sparkle-frame-01/final.png",
+        "desert-oasis-sparkle-frame-02/final.png",
+        "desert-oasis-sparkle-frame-03/final.png"
+      ]
+    },
+    {
+      "id": "desert-portal-active",
+      "category": "prop",
+      "kit": "native-portal-active-43",
+      "file": "desert-portal-active/final.png",
+      "px": [
+        490,
+        416
+      ],
+      "size_px": [
+        490,
+        416
+      ],
+      "world": [
+        3.828125,
+        3.25
+      ],
+      "world_size": [
+        3.828125,
+        3.25
+      ],
+      "pivot": "bottom-center",
+      "pivot_px": [
+        245,
+        399
+      ],
+      "pivot_uv": [
+        0.5,
+        0.9591346153846154
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 1,
+      "frame_px": null,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-portal-active-43/reference-approved-portal-pair.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-portal-active-43/reference-native-portal-canvas.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-01.png",
+      "raw_sha256": "99efa1072dccc3652762c0996d500767207fb44f4da9e94117a87ce3574e3c8c",
+      "sha256": "f563da94e09f7b581a765ecb51fbb2f7f2d283869e686bde03e5cbdf0b70f602",
+      "source_box": [
+        523,
+        304,
+        1013,
+        720
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": null,
+      "native_scale": {
+        "desired_world_size_before_drawing": [
+          3.828125,
+          3.25
+        ],
+        "source_footprint_px": [
+          490,
+          416
+        ],
+        "resampled": false
+      },
+      "content_provenance": "Active state of existing redrawn desertportal. AI draws medallions; referencealpha is a cutting stencil only, no code-painted pixels."
+    },
+    {
+      "id": "desert-horizon-gradient-01",
+      "category": "backdrop_far",
+      "kit": "horizon-bands-repair-45",
+      "file": "desert-horizon-gradient-01/final.png",
+      "px": [
+        512,
+        128
+      ],
+      "size_px": [
+        512,
+        128
+      ],
+      "world": [
+        8.0,
+        2.0
+      ],
+      "world_size": [
+        8.0,
+        2.0
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        256,
+        64
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "x",
+      "slice": null,
+      "frames": 1,
+      "frame_px": null,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-03-octopath/sea-islands-far/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/forest-wall-far/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-02.png",
+      "raw_sha256": "81b0eaeb78e681246653615f76b3829258d32859ef136b72ca90c76aaadcc245",
+      "sha256": "50f92773a062e7cb8b1ba0b2ba12bdf7806225b1df6c14324fa0246d56eb2b34",
+      "source_box": [
+        425,
+        92,
+        1515,
+        337
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "blocked",
+      "ui_scale": null
+    },
+    {
+      "id": "desert-horizon-gradient-02",
+      "category": "backdrop_far",
+      "kit": "horizon-bands-repair-45",
+      "file": "desert-horizon-gradient-02/final.png",
+      "px": [
+        512,
+        128
+      ],
+      "size_px": [
+        512,
+        128
+      ],
+      "world": [
+        8.0,
+        2.0
+      ],
+      "world_size": [
+        8.0,
+        2.0
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        256,
+        64
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "x",
+      "slice": null,
+      "frames": 1,
+      "frame_px": null,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-03-octopath/sea-islands-far/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/forest-wall-far/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-02.png",
+      "raw_sha256": "81b0eaeb78e681246653615f76b3829258d32859ef136b72ca90c76aaadcc245",
+      "sha256": "626551667b14831b1bf2ad22602618dbf0e5c2e32aaaacc04d813feae98fe46d",
+      "source_box": [
+        513,
+        452,
+        1552,
+        697
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "blocked",
+      "ui_scale": null
     }
   ],
   "stage": "continuous-redraw",

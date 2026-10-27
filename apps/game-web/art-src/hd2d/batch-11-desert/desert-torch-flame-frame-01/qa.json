@@ -1,0 +1,20 @@
+{
+  "id": "desert-torch-flame-frame-01",
+  "size": [
+    96,
+    128
+  ],
+  "mode": "RGBA",
+  "colors": 28,
+  "partial_alpha_pixels": 0,
+  "key_residue_pixels": 0,
+  "margin": 25,
+  "raw_integrity": true,
+  "sha256": "45a3c64e1a3e6c78d21f4e37b07ec75d1fa8ba2fb4b471350fabaf3e74451103",
+  "visual_review": "actual_full4x_all_frames_inspected_2026-10-21",
+  "failures": [
+    "COLORS_BELOW33"
+  ],
+  "alpha_max": 255,
+  "visual_findings": "Separate small flame-only FX. Warm ivory/rust core and mauve smoke read clearly; no hardware resampled. Packed animation33unioncolors; individual subframes24/28/28/25 and retain local color warnings. Temporal playback still pending."
+}
