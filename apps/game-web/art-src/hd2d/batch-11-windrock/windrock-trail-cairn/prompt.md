@@ -1,0 +1,20 @@
+# windrock-trail-cairn
+
+Route: built-in image_gen. Model not exposed.
+
+EXTREMELY SPARSE1536x1024 #FF00FFsheet, six little Phimondmountain camp sprites, THREECOLUMNS TWOROWScenters(256,256),(768,256),(1280,256),(256,768),(768,768),(1280,768). Verylarge emptyspaces, 90percentmagenta. Actual SMALL DISTANTpixel footprints, drawONLYHALF usualsize: tent240x180;stairs260x120;cairn80x130;keg40x50;barrel40x55;firewood90x40. DO NOT enlarge to fillcells. Exact sameOctopathHD2D crispchunkypixels as approved GPTstyle images2/3, input1originalmountainCONTENTonly,4/5petoutline/volumeanchorsonly. Warmupperleft key andcoolrecesses, 2–4materialtones, subtlebrown/olive/slate/ivory48colorfamilies,33–48visiblecolorsperobject afterregionalpalette. Darkcoloredthincontours, selectivewear/facets; no smoothpaint, blur,dither/noise, groundshadow, floor, glow, air, labels orwriting. EachobjectONEconnectedcutout,no detachedstakes/logs/pebbles.
+TOPLEFT weathered wind-resistant camp TENT, warmgraycanvas/olivepatchedroof, woodframe+attachedropes+smallrustbrassbuckles, irregularsnowdustatbaseonly; fullsidesandstakesconnected. TOPMIDDLE 4shallowbluegray STONE STAIRS withchipped warmstonecorners, sparseolivebasegrass, completestepends no croppedwall. TOPRIGHT TRAIL CAIRN: threeasymmetricalgraystonesstackedunderwarmweathering, littleclothknot+lichen, NOT glyphorstele. BOTTOMLEFT MICROSCOPIC smallwater SUPPLYKEG LYING HORIZONTALLY onconnectedshortwoodcradle,grayironhoops,tanplugandoneoliveclothstrap; footprint40x50, smallenoughtocarry. BOTTOMMIDDLE MICROSCOPIC UPRIGHT wooden BARREL, differentroundbody/proportionsfromthehorizontalwaterkeg, warmwoodstaves,graysteelringsandoliveclothpatch,40x55pixels. BOTTOMRIGHT SMALL FIREWOOD BUNDLE threeunevenlogsboundwithtanrope anddarkolivecanvasstrap, allconnected,90x40pixels. Keg/barrel muchshorterthan168pxplayer, limiteddetailsatthatnativesize.
+FinalcanvasesPREDECLARED(world_size*128):tent480x384world3.75x3(height2.29players);stairs480x256world3.75x2(height1.53players);cairn192x224world1.5x1.75(height1.34players);keg128x128world1x1(height0.763players);barrel128x128world1x1(height0.763players);firewood192x112world1.5x0.875(height0.668players). ALLdrawingsmustfitwith8pxmarginafteronly1:1crop/key/palette/pad; no resampling/downsizingallowed. Thesearemaximumcanvasesnotatargettofill. Sixinactual3x2grid, tinyitemsandvastmagenta.
+
+Actual attachments (ordered):
+1. /Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_camp.png — SHA256 58d68f8dcd07e2674060f59ca7851dab25d80b8eac99153c410550c3c4712f33
+2. /Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/wooden-crate/final.png — SHA256 41eb988f9dcfeb2a6a00443fe2fd8fc804f21684302022e7fed8cc106577a83c
+3. /Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/barrel/final.png — SHA256 a48199166f5a03250e480c8df0e04cd67e01041d26770e33c0c4bc168cd31c2f
+4. /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png — SHA256 fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da
+5. /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png — SHA256 043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3
+
+Raw: raw-06.png; SHA256 8d3e61cf33c40edbb2df797c40164a8bc91d908475396ffad7fafaaf074ccc11; source box [1100, 0, 1536, 512]; sheet extraction polygon None; translation-only source registration None. Final [192, 224]. Non-dithered 48color finish, native1:1 pixel copy and transparent padding; NO resampling. No content drawn with code.
+
+Native scale: {"desired_world_size_before_drawing": [1.5, 1.75], "height_relative_to_player": 1.3358778625954197, "source_footprint_px": [148, 181], "resampling": "NONE; source pixels copied1:1, transparent padding only"}
+
+Finish details: {"visible_colors": 40, "palette_source": "palette.json", "palette_include": null, "palette_exclude": null, "palette_remap": null, "base_palette_filter": null, "native_alpha": false, "documented_exception": null, "job_palette_note": null}

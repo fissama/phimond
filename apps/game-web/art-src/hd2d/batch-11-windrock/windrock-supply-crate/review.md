@@ -1,6 +1,1 @@
-# Review: windrock-supply-crate
-
-- Kích thước: 167×187
-- Số màu: 28
-- Seam X: 0, Seam Y: 0
-- Kết luận: ĐẠT.
+Current native1:1 final full4x dark/checker actually viewed. Complete connectedcutout, nocutedge/pinkrim/groundshadow/floatingdebris seen. Small backpack muchshorterthan168pxplayer; pillars/stele actually tall. Warmtan highlights dominatepillar/stele morethandesiredbluegray, noteasweakness for ownerreview. 33–48colors, no ownmechanicalfailures. approved=false.

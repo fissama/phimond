@@ -1,6 +1,1 @@
-# Review: windrock-supply-keg
-
-- Kích thước: 145×187
-- Số màu: 26
-- Seam X: 0, Seam Y: 0
-- Kết luận: ĐẠT.
+Actually viewed full final4x on dark/checker 2026-10-25. Native1:1 complete source body, no scaling, below playerheight. Compared with approved crate/barrel style and pet outline/volume. Warm upperleft and cool iron accents; no magenta or cropped contour. Component count 1. Weakness: fine wood grain reads slightly soft after palette finishing. Owner approval pending.
