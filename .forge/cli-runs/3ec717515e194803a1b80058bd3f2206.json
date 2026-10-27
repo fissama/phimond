@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 2,
+  "provider": "openai",
+  "kind": "image",
+  "route": "codex-cli",
+  "requestedModel": "codex-image_gen",
+  "options": {
+    "tool": "image_gen"
+  },
+  "promptSha256": "45c53b8dc1033fc5998c3afc070c6ba039efe89e8767f2a8d3c8149f8f10ad2f",
+  "references": [
+    {
+      "sha256": "13ede2d2475fe1b9fb532f3e84a60592e44b90b127cfae2eac3e42278188d530",
+      "bytes": 168521
+    },
+    {
+      "sha256": "b0759f3111b274228356d66fb95cce948d0ef805e6c53b1e6e96bccfdbe6bcdf",
+      "bytes": 2540
+    },
+    {
+      "sha256": "90a3d3e1fc44cf5c1203890778f9be5ac42aa2b8994385a97ebe2cd0b0cde96b",
+      "bytes": 4478
+    },
+    {
+      "sha256": "aa4c1d4a820b5094441214c72487da9991de4612b48236d8eb1c66a27d670d0b",
+      "bytes": 144484
+    },
+    {
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da",
+      "bytes": 1839112
+    },
+    {
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3",
+      "bytes": 1491628
+    }
+  ],
+  "fingerprint": "9d16df9e008e97b469caa6e4f14e2dc275ba28a390e089d62a701adcc9d8a251",
+  "estimate": {
+    "usd": 0.0,
+    "currency": "USD",
+    "pricesVersion": "2026-10-06",
+    "items": [],
+    "basis": "subscription quota call: no per-call USD price; counted by call caps"
+  },
+  "consent": {
+    "provider": "openai",
+    "model": "codex-image_gen",
+    "calls": 1,
+    "estimateUsd": 0.0,
+    "route": "codex-cli",
+    "quota": true,
+    "account": "the user's own Codex sign-in (ChatGPT)",
+    "note": "uses the subscription quota of that sign-in, never API credit"
+  },
+  "artSource": "host_image",
+  "execution": "execute",
+  "status": "failed",
+  "outputDir": "../../apps/game-web/art-src/hd2d/batch-11-nightmare/jobs/decals-a/gen-codex2",
+  "receipt": {
+    "startedAt": "2026-10-27T02:21:54.622Z",
+    "submittedAt": "2026-10-27T02:21:54.626Z",
+    "completedAt": "2026-10-27T02:22:00.205Z",
+    "wallMs": 5583,
+    "providerMs": 5574,
+    "attempt": 3,
+    "purpose": "route_media image",
+    "toolVersion": "cli_media/0.4.0",
+    "outcomeCode": "RATE_LIMIT"
+  },
+  "ledger": {
+    "projectDir": "../..",
+    "reservationId": "5e9e145bef7d4def9d2545be0f706e74",
+    "status": "failed"
+  },
+  "cliRun": {
+    "tool": "codex",
+    "runId": "3ec717515e194803a1b80058bd3f2206",
+    "cwd": "<tmp>/forge-cli-3ec717515e19-f154a54d",
+    "startedAt": "2026-10-27T02:21:54.622Z",
+    "version": "0.158.0",
+    "versionText": "codex-cli 0.158.0",
+    "recipe": "codex-exec-imagegen/1",
+    "home": "CODEX_HOME",
+    "verifiedBefore": false,
+    "threadId": "01a17b2a-08f9-7720-be40-1446fd165c2f"
+  },
+  "error": {
+    "code": "RATE_LIMIT",
+    "message": "the Codex CLI reports a quota or rate limit"
+  },
+  "errorType": "CliMediaError"
+}

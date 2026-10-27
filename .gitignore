@@ -42,3 +42,11 @@ apps/**/artifacts/
 tools/.cache/
 apps/**/.tools/
 node_modules
+
+# Python caches
+__pycache__/
+*.pyc
+
+# Local tool caches
+.serena/
+apps/game-client/assets/pets/redraws/tmp*/
