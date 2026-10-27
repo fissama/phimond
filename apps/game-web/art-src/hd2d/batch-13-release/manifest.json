@@ -1,254 +1,256 @@
 {
- "assets": [
-  {
-   "id": "player-male",
-   "override": true,
-   "category": "player",
-   "approved": false,
-   "px": [
-    192,
-    192
-   ],
-   "pivot_px": [
-    96,
-    184
-   ],
-   "run_strip": "player-male/run.png",
-   "run_frames": 6,
-   "run_down_strip": "player-male/run-down.png",
-   "run_down_frames": 6
-  },
-  {
-   "id": "player-female",
-   "override": true,
-   "category": "player",
-   "approved": false,
-   "px": [
-    192,
-    192
-   ],
-   "pivot_px": [
-    96,
-    184
-   ],
-   "run_strip": "player-female/run.png",
-   "run_frames": 6
-  },
-  {
-   "id": "path-fringe-gn",
-   "file": "path-fringe-gn/final.png",
-   "category": "ground_patch",
-   "px": [
-    465,
-    477
-   ],
-   "pivot_px": [
-    232.5,
-    238.5
-   ],
-   "world": [
-    3.6328125,
-    3.7265625
-   ],
-   "approved": false
-  },
-  {
-   "id": "path-fringe-gs",
-   "file": "path-fringe-gs/final.png",
-   "category": "ground_patch",
-   "px": [
-    471,
-    467
-   ],
-   "pivot_px": [
-    235.5,
-    233.5
-   ],
-   "world": [
-    3.6796875,
-    3.6484375
-   ],
-   "approved": false
-  },
-  {
-   "id": "path-fringe-gw",
-   "file": "path-fringe-gw/final.png",
-   "category": "ground_patch",
-   "px": [
-    465,
-    464
-   ],
-   "pivot_px": [
-    232.5,
-    232.0
-   ],
-   "world": [
-    3.6328125,
-    3.625
-   ],
-   "approved": false
-  },
-  {
-   "id": "path-fringe-ge",
-   "file": "path-fringe-ge/final.png",
-   "category": "ground_patch",
-   "px": [
-    468,
-    466
-   ],
-   "pivot_px": [
-    234.0,
-    233.0
-   ],
-   "world": [
-    3.65625,
-    3.640625
-   ],
-   "approved": false
-  },
-  {
-   "id": "path-cap-n",
-   "file": "path-cap-n/final.png",
-   "category": "ground_patch",
-   "px": [
-    480,
-    481
-   ],
-   "pivot_px": [
-    240.0,
-    240.5
-   ],
-   "world": [
-    3.75,
-    3.7578125
-   ],
-   "approved": false
-  },
-  {
-   "id": "path-cap-s",
-   "file": "path-cap-s/final.png",
-   "category": "ground_patch",
-   "px": [
-    466,
-    469
-   ],
-   "pivot_px": [
-    233.0,
-    234.5
-   ],
-   "world": [
-    3.640625,
-    3.6640625
-   ],
-   "approved": false
-  },
-  {
-   "id": "forest-far-canopy",
-   "file": "forest-far-canopy/final.png",
-   "category": "prop",
-   "px": [
-    505,
-    344
-   ],
-   "pivot_px": [
-    252.5,
-    344
-   ],
-   "world": [
-    3.9453125,
-    2.6875
-   ],
-   "approved": false
-  },
-  {
-   "id": "forest-mid-trunks",
-   "file": "forest-mid-trunks/final.png",
-   "category": "prop",
-   "px": [
-    493,
-    464
-   ],
-   "pivot_px": [
-    246.5,
-    464
-   ],
-   "world": [
-    3.8515625,
-    3.625
-   ],
-   "approved": false
-  },
-  {
-   "id": "forest-fg-bank",
-   "file": "forest-fg-bank/final.png",
-   "category": "prop",
-   "px": [
-    493,
-    239
-   ],
-   "pivot_px": [
-    246.5,
-    239
-   ],
-   "world": [
-    3.8515625,
-    1.8671875
-   ],
-   "approved": false
-  },
-  {
-   "id": "forest-corner",
-   "file": "forest-corner/final.png",
-   "category": "prop",
-   "px": [
-    488,
-    425
-   ],
-   "pivot_px": [
-    244.0,
-    425
-   ],
-   "world": [
-    3.8125,
-    3.3203125
-   ],
-   "approved": false
-  },
-  {
-   "id": "forest-cam-bank",
-   "file": "forest-cam-bank/final.png",
-   "category": "prop",
-   "px": [
-    490,
-    274
-   ],
-   "pivot_px": [
-    245.0,
-    274
-   ],
-   "world": [
-    3.828125,
-    2.140625
-   ],
-   "approved": false
-  },
-  {
-   "id": "forest-portal-arch",
-   "file": "forest-portal-arch/final.png",
-   "category": "prop",
-   "px": [
-    490,
-    475
-   ],
-   "pivot_px": [
-    245.0,
-    475
-   ],
-   "world": [
-    3.828125,
-    3.7109375
-   ],
-   "approved": false
-  }
- ]
+  "assets": [
+    {
+      "id": "player-male",
+      "override": true,
+      "category": "player",
+      "approved": false,
+      "px": [
+        192,
+        192
+      ],
+      "pivot_px": [
+        96,
+        184
+      ],
+      "run_strip": "player-male/run.png",
+      "run_frames": 6,
+      "run_down_strip": "player-male/run-down.png",
+      "run_down_frames": 6,
+      "file": "player-male/final.png"
+    },
+    {
+      "id": "player-female",
+      "override": true,
+      "category": "player",
+      "approved": false,
+      "px": [
+        192,
+        192
+      ],
+      "pivot_px": [
+        96,
+        184
+      ],
+      "run_strip": "player-female/run.png",
+      "run_frames": 6,
+      "file": "player-female/final.png"
+    },
+    {
+      "id": "path-fringe-gn",
+      "file": "path-fringe-gn/final.png",
+      "category": "ground_patch",
+      "px": [
+        465,
+        477
+      ],
+      "pivot_px": [
+        232.5,
+        238.5
+      ],
+      "world": [
+        3.6328125,
+        3.7265625
+      ],
+      "approved": false
+    },
+    {
+      "id": "path-fringe-gs",
+      "file": "path-fringe-gs/final.png",
+      "category": "ground_patch",
+      "px": [
+        471,
+        467
+      ],
+      "pivot_px": [
+        235.5,
+        233.5
+      ],
+      "world": [
+        3.6796875,
+        3.6484375
+      ],
+      "approved": false
+    },
+    {
+      "id": "path-fringe-gw",
+      "file": "path-fringe-gw/final.png",
+      "category": "ground_patch",
+      "px": [
+        465,
+        464
+      ],
+      "pivot_px": [
+        232.5,
+        232.0
+      ],
+      "world": [
+        3.6328125,
+        3.625
+      ],
+      "approved": false
+    },
+    {
+      "id": "path-fringe-ge",
+      "file": "path-fringe-ge/final.png",
+      "category": "ground_patch",
+      "px": [
+        468,
+        466
+      ],
+      "pivot_px": [
+        234.0,
+        233.0
+      ],
+      "world": [
+        3.65625,
+        3.640625
+      ],
+      "approved": false
+    },
+    {
+      "id": "path-cap-n",
+      "file": "path-cap-n/final.png",
+      "category": "ground_patch",
+      "px": [
+        480,
+        481
+      ],
+      "pivot_px": [
+        240.0,
+        240.5
+      ],
+      "world": [
+        3.75,
+        3.7578125
+      ],
+      "approved": false
+    },
+    {
+      "id": "path-cap-s",
+      "file": "path-cap-s/final.png",
+      "category": "ground_patch",
+      "px": [
+        466,
+        469
+      ],
+      "pivot_px": [
+        233.0,
+        234.5
+      ],
+      "world": [
+        3.640625,
+        3.6640625
+      ],
+      "approved": false
+    },
+    {
+      "id": "forest-far-canopy",
+      "file": "forest-far-canopy/final.png",
+      "category": "prop",
+      "px": [
+        505,
+        344
+      ],
+      "pivot_px": [
+        252.5,
+        344
+      ],
+      "world": [
+        3.9453125,
+        2.6875
+      ],
+      "approved": false
+    },
+    {
+      "id": "forest-mid-trunks",
+      "file": "forest-mid-trunks/final.png",
+      "category": "prop",
+      "px": [
+        493,
+        464
+      ],
+      "pivot_px": [
+        246.5,
+        464
+      ],
+      "world": [
+        3.8515625,
+        3.625
+      ],
+      "approved": false
+    },
+    {
+      "id": "forest-fg-bank",
+      "file": "forest-fg-bank/final.png",
+      "category": "prop",
+      "px": [
+        493,
+        239
+      ],
+      "pivot_px": [
+        246.5,
+        239
+      ],
+      "world": [
+        3.8515625,
+        1.8671875
+      ],
+      "approved": false
+    },
+    {
+      "id": "forest-corner",
+      "file": "forest-corner/final.png",
+      "category": "prop",
+      "px": [
+        488,
+        425
+      ],
+      "pivot_px": [
+        244.0,
+        425
+      ],
+      "world": [
+        3.8125,
+        3.3203125
+      ],
+      "approved": false
+    },
+    {
+      "id": "forest-cam-bank",
+      "file": "forest-cam-bank/final.png",
+      "category": "prop",
+      "px": [
+        490,
+        274
+      ],
+      "pivot_px": [
+        245.0,
+        274
+      ],
+      "world": [
+        3.828125,
+        2.140625
+      ],
+      "approved": false
+    },
+    {
+      "id": "forest-portal-arch",
+      "file": "forest-portal-arch/final.png",
+      "category": "prop",
+      "px": [
+        490,
+        475
+      ],
+      "pivot_px": [
+        245.0,
+        475
+      ],
+      "world": [
+        3.828125,
+        3.7109375
+      ],
+      "approved": false
+    }
+  ]
 }
