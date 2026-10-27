@@ -5,18 +5,19 @@
     128
   ],
   "mode": "RGBA",
-  "colors": 32,
+  "colors": 37,
   "partial_alpha_pixels": 0,
   "key_residue_pixels": 0,
   "margin": 0,
   "raw_integrity": true,
-  "sha256": "452896b58770e6691dab1cf5a88257cb33fdec8469a3675b6e0ea843cf77f5c3",
-  "visual_review": "pending_actual_4x_inspection",
+  "sha256": "752729b22fa30967f2a356f8e539bfbb989ab2f5d2e8e3629e27d9eda96d45a6",
+  "visual_review": "actual_repeat3x_and_full4x_dark_inspected_2026-10-22",
   "failures": [
-    "COLORS_BELOW33"
+    "SEAM_X_NONZERO"
   ],
   "alpha_max": 255,
-  "seam_x_mean": 0.0,
-  "seam_x_max": 0,
-  "outer8_uniform": null
+  "seam_x_mean": 13.6640625,
+  "seam_x_max": 141,
+  "outer8_uniform": null,
+  "visual_findings": "Material flows across natural crop boundary, no plain buffer bars. Micro seam nonzero; mainclusters repeat periodically; numericmax0 custom check still flags."
 }

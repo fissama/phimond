@@ -10,12 +10,19 @@
   "key_residue_pixels": 0,
   "margin": 16,
   "raw_integrity": true,
-  "sha256": "1bfbfba6f2903b839d017becba52740f05758f3738fa3e39a8a6bf840fd14f36",
-  "visual_review": "actual_final_repeat_when_applicable_and_4x_dark_checker_inspected_needs_claude",
+  "sha256": "9d0c92c5b75544e5719259082d1d978fa01ddf5ffb9dfd7e69cc36038302e8b1",
+  "visual_review": "actual_full4x_both_halves_after_shared_cut_inspected_2026-10-22",
   "failures": [],
   "connected_components_8way": [
-    83592
+    83066
   ],
   "stray_components_below12": 0,
-  "approved": false
+  "approved": false,
+  "shared_mask_cut": {
+    "dormant_removed_px": 526,
+    "active_removed_px": 226,
+    "method": "Intersection cutting stencil, no pixel fills, painting, translation or resizing. Original images preserved."
+  },
+  "shared_pair_identical_mask": true,
+  "visual_findings": "Exactsamebinaryalpha mask andfrontgeometry; nativeactive medallions read brighter, opening remains transparent. No floats/cutoff/chromafringe seen. Warmmedallions slightlysimilarfacets."
 }

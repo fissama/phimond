@@ -20,3 +20,5 @@ Actual attachments (ordered):
 5. /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png — SHA256 043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3
 
 Raw: raw-01.png; SHA256 1c86d9d8b516598e32d645db5fd049073363a379f86f8f63dddd909998fc36cc; source box [630, 390, 1160, 830]. Final [490, 416]. Non-dithered 48color finish, nearest scaling. No content drawn with code.
+
+2026-10-22 sharedmaskCUTONLY: alpha intersection with native active generatedraw43.526perimeterpixels removed(0.63percent), originalfinal/prompt/QA preserved in_before-shared-mask-43. No pixel fill/paint/resampling. Cutting stencil /Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-portal-active-43/common-cutting-stencil.png SHA256 8c712a392d5f069d7ba28d327c297d15103d21fc156a59fcee1d677f1b5e929d

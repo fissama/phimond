@@ -2,21 +2,42 @@
 
 Route: built-in image_gen. Model not exposed.
 
-Phimond desert map assembly props, SIX isolated sprites in2columns x3rows,1536square, flat exact #FF00FF background. Reference1 ORIGINAL desert content palette/nomad region. Approved architecture2 and forest portal3 dictate pixel clusters/material finish, not design or leaves. Two pet anchors4–5 outline/value only, no creatures.
-Every prop complete, centered with≥48px clear margin and64px spacing, all pieces connected, no loose dust or floating rope fragments. Frontal billboard24degrees above, visible top/front, no ground planes/cast ground shadows. Smaller objects still richly rendered,33–48colors from worn cloth/wood/rope/stone/metal materials. Warm upper-left/front, cool muted shade, dark brown material outlines, not black.
-TOP LEFT desert-nomad-tent: medium low asymmetrical triangular nomad shelter, ochre canvas with one rolled rust-red flap, stout weathered wood frame, thick ties and ivory bone reinforcement. Small olive saddle blanket rolled attached at side. Clearly simpler and lower than a ceremonial pavilion, no hanging gourds. Doorway dark inside, no text or symbols.
-TOP RIGHT desert-camp-canvas-sack: squat bulging ochre canvas sack tied with thick umber rope, broad rolled mouth, small sewn rust patch, sage-green cloth panel, ivory bone toggle. No embossed text or logo, no contents scattered. About260square.
-MIDDLE LEFT desert-camp-canvas-pack: upright worn wood-framed travel backpack, rolled ivory cloth bedroll on top, olive weathered canvas main body, russet leather straps, two attached side pouches and thick wood walking peg attached to frame. Compact silhouette, no loose straps floating. About260x340.
-MIDDLE RIGHT desert-camp-wood-crate: low rectangular battered dark umber wooden supply crate with split plank faces, ochre corner bindings, small folded pale cloth tied over top and clay-red ceramic bottle tucked in one attached holder; no label. Three-quarter front with visible top, no diamond groundbase. About320x250.
-BOTTOM LEFT desert-camp-charcoal-stove: squat round portable brazier of dark gray-mauve metal over an ochre/rust ceramic foot, ivory ash and chunky cold charcoal inside, stout handles connected, copper-red rim and aged wood carrying sleeve attached. UNLIT no flame/glow/smoke. About300x250.
-BOTTOM RIGHT desert-nomad-stake-banner: stout crooked weathered wooden upright pole supported in a small connected stone foot, wide short muted rust/ochre woven cloth pennant suspended from horizontal bone crossbar; small olive cloth border and geometric woven triangles only, NO letters/runes. Cloth hangs without long flying hairline tails, full top/bottom visible. About280x380.
-Exact approved batch00–09 artist / Octopath inspired HD2D pixel art. Deliberate2–4tone material clusters,33–48colors, no smooth gradients, dithering noise, painterly brushwork, 3D render, bloom, haze or semitransparent edges. Sand #D9B26B/#B88A44, rust#A5522B, olive sage, muted bone, wood umber, gray-violet. No labels/grid/scene decoration.
+EDIT ONLY the existingnomadflag inreference3, exact1536x1024magenta canvas, exactnative320x352workingcanvas at608:928x336:688. KeepmainbannerpixelSIZE andposition; doNOTzoom or enlargesprite. RemoveTWOunwanteddisconnectedbrownstripfragmentsFLOATINGABOVEthecloth/crossbar (visibleinreference3), leavecleanmagenta there. MAINuprightwoodpole/bonecrossbar/rusttriangularwovencloth/connectedstonefootmuststaywhole, no clippedtips. No newgroundshadow/disc, no strayparticles, no danglinghairlinetails. Allvisiblebodyoneconnectedshape.
+Originaldesertmap1contentpalette; reference2TWOapproved00-09environmentflagsmaterial/pixelSTYLE; reference3exactnativeSCALE/geometrytarget,notstyleauthority. Petanchors4/5value/outlineonly. ExactapprovedOctopathHD2Dhand: crispintentional2-4tonematerialclusters, thinwarmbrown samehuecuts, warmupperleftlightcoolmauvegrayrecesses, earthy33-48colors inrustcloth/ochrebone/umberwood/ivorygraystoneandtinyolivewornedge. GeometricwovenTRIANGLESonly, no letters/runes/text/logo, no pirateemblem fromstylereference. No smoothpaint/dither/noise/blur/bloom/fog/semialpha.
+BEFOREdrawing desiredworld2.5x2.75 (320x352 at128px/world), height2.099players (player168px/1.31world). Actualvisiblemainbodymustfitunder290x320px. Itisstandingbanner/tallprop, nothandheld. Sourcepixelscopied1:1, no downscalingpermitted. Preservehugeblankarea: onlyonenative-sizedbanner onthiscanvas, freshnativeeditnotlargerescaledposter.
+CRITICALnativefootprint:mainbannerINCLUDINGallbonecrossbartipsmustbe290pxwideMAXIMUM, 280pxtallMAXIMUM. KeepasTINYicon, 1536x1024mostlyemptymagentacanvas, center768,512. Donotaddanydetailoutsidethatsmallbody.
 
 Actual attachments (ordered):
 1. /Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png — SHA256 30a678461a1a1f13aafa1a925382223dda2abcba586bb3b343e87a683a6c04ea
-2. /Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/city-facade-townhouse/final.png — SHA256 57c926e3ba82ed8af80f01f1234c27156002491ca5267881e7ba40bdd2efe060
-3. /Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/forest-portal-active/final.png — SHA256 f229e35b82a6849b59dfc884ff62f13398336c5092537a992e9d7ec40c0af9b4
+2. /Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-banner-clean-49/reference-approved-flag-pair.png — SHA256 986a906cfde745673fbaeeab666201121703741923af878c02ffd583717f2b99
+3. /Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-banner-clean-49/reference-native-banner-guide.png — SHA256 d5c9f8ddb2a2bbfb9428fd47d8533aa6acb7e8df03f8dc4e0479edc13a5dde93
 4. /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png — SHA256 fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da
 5. /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png — SHA256 043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3
 
-Raw: raw-01.png; SHA256 a2c72e1af7e1b4e182f86364d6b178dab5581261bb9cd9c866012f0203c6a40d; source box [700, 802, 1185, 1230]; sheet extraction polygon None. Final [320, 352]. Non-dithered 48color finish, nearest scaling. No content drawn with code.
+QA reference montage contains these actual approved images (unmodified pixels, padding only):
+[
+  {
+    "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/banner-red/final.png",
+    "sha256": "65d84d922bd7619ddee04d49c365e2ac31bd9cdfb2f6535845bf752ebe2bfc7a"
+  },
+  {
+    "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-04-octopath/pirate-flag/final.png",
+    "sha256": "fafb87880d34253a37b863b17d05d40dbee4a9f6bb16ddd4ab2256d85e4eeea6"
+  }
+]
+
+Native guide source provenance:
+{
+  "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-banner-clean-49/reference-banner-before.png",
+  "sha256": "03bd372d20b160d4350ca110c4cb713333654c710be12b3884e46351a624de27",
+  "placement": [
+    608,
+    336
+  ]
+}
+
+Raw: raw-50.png; SHA256 c6d644b850c762285d1634c6fbc598102279b2df16c9be27b6e6f4c4ed95be7b; source box [608, 336, 928, 688]; sheet extraction polygon None; translation-only source registration None. Final [320, 352]. Non-dithered 48color finish, native1:1 pixel copy and transparent padding; NO resampling. No content drawn with code.
+
+Native scale: {"desired_world_size_before_drawing": [2.5, 2.75], "height_relative_to_player": 2.099236641221374, "source_footprint_px": [288, 267], "resampling": "NONE; source pixels copied1:1, transparent padding only"}
+
+Finish details: {"visible_colors": 45, "palette_source": "palette.json", "palette_include": null, "palette_exclude": null, "palette_remap": null, "base_palette_filter": null, "native_alpha": false, "documented_exception": null, "job_palette_note": null}

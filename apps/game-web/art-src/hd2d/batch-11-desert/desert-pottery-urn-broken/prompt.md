@@ -2,24 +2,154 @@
 
 Route: built-in image_gen. Model not exposed.
 
-Completely empty1254square #FF00FF canvas except SIX MINUSCULE native8x8pixelgameicons on ONE horizontalrow y625 centers150,340,530,720,910,1100. Vastblankspace,99.9%magenta. Not enlarged illustrations, no zoom. Keep each icon microscopic actualpixels.
-1 tinycreatureskull shortattachedhornsanddarkeyecavities, ivoryboneruststains graymauvefissuresochrewear andtinysagemossroot. Nativeicon8x7pixels. Export128x112 world1x0.875; source≤112x96.
-2 tinycurvedpartialribcage of5attachedribs with ONE connectingbackbone, ivoryochrerustmauve withtinyoliveattachedroot; no loosebones. Nativeicon8x6pixels. Export144x112 world1.125x0.875; source≤128x96.
-3 TUMBLEWEED ONLY DEAD TWIGS: openwindswept sideleaningnestof8connectedbrittleumberbranches withivorytips rustdryseedandONEtinyolive DEADleaf. NO FLOWERS,BUDS,FRUIT,ANTLERS. Irregularopenloopdistinctfromroundball. Native8x7pixels. Export128square world1x1; source≤112square.
-4 flat LOWfoldedochreCANVAS DRAWSTRINGPOUCH lyingonits side, gatheredmouthpointingsideways left, thickattachedrope ivorytoggle rustsewnpatch sageclothfold. No buckle/toolcase/walletroll. Native8wide3high, export100x64 world0.78125x0.5; source≤84x48.
-5 tiny UNLIT PORTABLE MAUVEMETALCHARCOALSTOVE,shortcylindricalbodyvisibleopenshallowcopperrim ivorygrayashinside rustterracottafootandshortumberhandlewithsagewrap. NOdomedoven,chimney,flame. Native8x7pixels. Export128x112 world1x0.875.
-6 squatBROKEN OPEN POTTERY URN with LARGEJAGGEDMISSINGCHUNKfromupperrightmouth, deepmauveinterior exposed,no lid,corkorplugintheopening. Ochreclay rustfracture ivoryrim olivebandbonewearmarks. ONEconnected silhouette, NOdetachedshards. Native7x8pixels. Export136square world1.0625square.
-Allsingleconnected sprites, darkbrownoutlines warmupperleftlightcoolmauveshadows, earthy33–48 subtletones ofmultiplematerials, broadcrispclusters. No gradients/dither/noise/text/castshadow/ground/loosepixels. Originaldesert1content,approvedwoodcrate2androck3exactartiststyle,petanchors4/5valuesonly. Player168pxhigh,128px/world; intendedworldsizesrecordedBEFOREgeneration. Onlycrop/key/palette/pad1:1afterward, never shrink. Minuscule8pxicons spreadacrossvastemptycanvas.
+Create an extremely sparse1536x1024 magenta #FF00FF sprite sheet. Six MICROSCOPIC game sprites, THREE COLUMNS and TWO ROWS. Each mustlook likea TINY DISTANT THUMBNAIL surroundedby vast empty magenta. DO NOT ENLARGE TO FILL SPACE. Draw ONLY ONE THIRD the size you normallydraw smallsprites. Actualtiny pixel footprints requested: lyingcanvas sack40x22, woodencrate66x50, coldportablemetalbrazier56x46, brokenurn52x52, littleanimalskull48x40, littleanimalribs56x40. Exact centers(256,256),(768,256),(1280,256),(256,768),(768,768),(1280,768). No othercontent. Reference3showsgeometrylayoutonly; theNEW tiny sprites MUSTbe SMALLER thanreference3, notlarger. Sameobjectsidentity, reduceclutter/details tobigintentionalplanes. Sackwithropeclosureandonepatch; darkwoodcratewithonehandle; mauveironopenbowlbrazierwiththreeconnectedshortfeet, NOTclayoven; brokenochreurnwitholiveband; limestoneivorysmallskull; smallcurvedribcageallbonesconnected. Eachobjectoneconnectedcutout, no loosebits, shadows, floor, labels, guides or borders.
+Octopath inspired crisp HD2D pixel clusters matching attached approvedbatch00–09style: thinwarmbrowncontours, warmupperleftlightcoolmauverecesses, 33–48earthycolors, 2–4tonespermaterialwithselectivesmallfacets, noblur/smoothpainting/noise/dithering. Reference1originaldesertcontent;2approvedwoodcrate+rockmaterialSTYLEpair;3nativegeometrylayoutonly;4–5petoutlineanchors. Player168pxtall; allsixhandheldpropsmustmuchshorterthanplayer. PREDECLAREDfinalcanvases(world_size*128): sack100x64world0.78125x0.5(height0.382players);crate160x128world1.25x1(height0.763players);stove140x120world1.09375x0.9375(height0.716players);urn136x136world1.0625x1.0625(height0.811players);skull128x112world1x0.875(height0.668players);ribs144x112world1.125x0.875(height0.668players). ExportONLYcrop/key/palette/pad1:1, neverdownscale. AnyoversizeddrawingisUNUSABLE. KeepSIX genuinelyTINYsprites in3x2grid, 95percentemptyMAGENTA.
 
 Actual attachments (ordered):
 1. /Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png — SHA256 30a678461a1a1f13aafa1a925382223dda2abcba586bb3b343e87a683a6c04ea
-2. /Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/wooden-crate/final.png — SHA256 41eb988f9dcfeb2a6a00443fe2fd8fc804f21684302022e7fed8cc106577a83c
-3. /Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-small/final.png — SHA256 880eddcf56b10952735033d68d3f8b97c4e8412933a383fa08317ca2fca1445f
+2. /Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-46/reference-approved-props-pair.png — SHA256 0eb09e8cabc81189c135697a65793b5d45e31e1be45398f6fd7fc2d369de9ac6
+3. /Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-46/reference-native-3x2-guide.png — SHA256 45220cbaca381ce42e306b78f7c441a61eb04f1386eb4e1169d756d321ab6de1
 4. /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png — SHA256 fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da
 5. /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png — SHA256 043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3
 
-Raw: raw-22.png; SHA256 eee9aaec7cd0d6bcb53dc2951e2fff34b9317ec6c84a2b28380ec6aa254cff52; source box [1080, 490, 1240, 650]; sheet extraction polygon None. Final [136, 136]. Non-dithered 48color finish, native1:1 pixel copy and transparent padding; NO resampling. No content drawn with code.
+QA reference montage contains these actual approved images (unmodified pixels, padding only):
+[
+  {
+    "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/wooden-crate/final.png",
+    "sha256": "41eb988f9dcfeb2a6a00443fe2fd8fc804f21684302022e7fed8cc106577a83c"
+  },
+  {
+    "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-small/final.png",
+    "sha256": "880eddcf56b10952735033d68d3f8b97c4e8412933a383fa08317ca2fca1445f"
+  }
+]
 
-Native scale: {"desired_world_size_before_drawing": [1.0625, 1.0625], "height_relative_to_player": 0.8110687022900763, "source_footprint_px": [77, 91], "resampling": "NONE; source pixels copied1:1, transparent padding only"}
+Native guide source provenance (snapshots retained):
+[
+  {
+    "id": "desert-camp-canvas-sack",
+    "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-46/reference-sources/desert-camp-canvas-sack.png",
+    "sha256": "a3367810c5d9a09fb30dbca949849674f733494879542ed17e2b00e098e5bce8",
+    "source_size_px": [
+      100,
+      64
+    ],
+    "source_opaque_bbox": [
+      11,
+      12,
+      88,
+      51
+    ],
+    "guide_top_left": [
+      217,
+      236
+    ],
+    "original_path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/desert-camp-canvas-sack/final.png"
+  },
+  {
+    "id": "desert-camp-wood-crate",
+    "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-46/reference-sources/desert-camp-wood-crate.png",
+    "sha256": "1d510f431d9b6816a67cc2cc5c10788f175ffa613cdbedee964a093215a2b09c",
+    "source_size_px": [
+      160,
+      128
+    ],
+    "source_opaque_bbox": [
+      31,
+      23,
+      128,
+      105
+    ],
+    "guide_top_left": [
+      719,
+      215
+    ],
+    "original_path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/desert-camp-wood-crate/final.png"
+  },
+  {
+    "id": "desert-camp-charcoal-stove",
+    "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-46/reference-sources/desert-camp-charcoal-stove.png",
+    "sha256": "a66c90487381f410ee5594cbefc792ead32ab092ffd86ccd13a23ce66fb25841",
+    "source_size_px": [
+      140,
+      120
+    ],
+    "source_opaque_bbox": [
+      26,
+      28,
+      113,
+      92
+    ],
+    "guide_top_left": [
+      1236,
+      224
+    ],
+    "original_path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/desert-camp-charcoal-stove/final.png"
+  },
+  {
+    "id": "desert-pottery-urn-broken",
+    "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-46/reference-sources/desert-pottery-urn-broken.png",
+    "sha256": "10c322198d1393d3b780ff2f47bee52586c42838730d2f219f2c191427766cd6",
+    "source_size_px": [
+      136,
+      136
+    ],
+    "source_opaque_bbox": [
+      29,
+      22,
+      106,
+      113
+    ],
+    "guide_top_left": [
+      217,
+      722
+    ],
+    "original_path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/desert-pottery-urn-broken/final.png"
+  },
+  {
+    "id": "desert-small-skull",
+    "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-46/reference-sources/desert-small-skull.png",
+    "sha256": "bd7abb798a10de58d5738be44dd3bb1b1dac9121ed78ab7ed64bbe92b1e4f576",
+    "source_size_px": [
+      128,
+      112
+    ],
+    "source_opaque_bbox": [
+      24,
+      20,
+      104,
+      91
+    ],
+    "guide_top_left": [
+      728,
+      732
+    ],
+    "original_path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/desert-small-skull/final.png"
+  },
+  {
+    "id": "desert-small-ribs",
+    "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/jobs/native-conformance-46/reference-sources/desert-small-ribs.png",
+    "sha256": "3c52d6960d0e15161b9ecfde6003c2773a7b63760c8b4d7a83ea4bac808e1ca6",
+    "source_size_px": [
+      144,
+      112
+    ],
+    "source_opaque_bbox": [
+      26,
+      21,
+      118,
+      90
+    ],
+    "guide_top_left": [
+      1234,
+      733
+    ],
+    "original_path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-desert/desert-small-ribs/final.png"
+  }
+]
 
-Finish details: {"visible_colors": 37, "palette_source": "palette.json", "palette_include": null, "palette_exclude": null, "palette_remap": null, "base_palette_filter": null, "native_alpha": false, "documented_exception": null, "job_palette_note": null}
+Raw: raw-47.png; SHA256 c953cbe5e7f4cbbf0f284e3d367fb97d314e809345c32f65530b504104504d86; source box [0, 512, 512, 1024]; sheet extraction polygon None; translation-only source registration None. Final [136, 136]. Non-dithered 48color finish, native1:1 pixel copy and transparent padding; NO resampling. No content drawn with code.
+
+Native scale: {"desired_world_size_before_drawing": [1.0625, 1.0625], "height_relative_to_player": 0.8110687022900763, "source_footprint_px": [47, 55], "resampling": "NONE; source pixels copied1:1, transparent padding only"}
+
+Finish details: {"visible_colors": 33, "palette_source": "palette.json", "palette_include": null, "palette_exclude": null, "palette_remap": null, "base_palette_filter": null, "native_alpha": false, "documented_exception": null, "job_palette_note": null}

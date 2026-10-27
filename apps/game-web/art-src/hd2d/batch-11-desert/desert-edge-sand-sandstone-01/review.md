@@ -1,2 +1,1 @@
-DRAFT — actual final/4x inspection pending. No self pass or Claude approval.
-Mechanical failures: SEAM_X_NONZERO
+2026-10-22: Actualrepeat3x andfull4xdark inspected. Material flows across natural crop boundary, no plain buffer bars. Micro seam nonzero; mainclusters repeat periodically; numericmax0 custom check still flags. Candidateapproved=false; officialgate rerunpending. No waiver.

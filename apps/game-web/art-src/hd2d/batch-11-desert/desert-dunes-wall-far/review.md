@@ -1,1 +1,3 @@
-Actual final,4x dark/checker and repeatX inspected. Raw02 has quiet distant mesas/dunes with tiny ruined dome.36colors, alpha ends identical; one warm highlight excluded globally to merge close tones, seamX0. No spatial patch/edge copying. Density64px/world. Weak point: very broad plain lower fill. Self-inspected draft; Claude approval pending.
+# Opaque low horizon2026-10-21
+
+DRAFT approved=false. Actual repeat3×, detail4×dark/checker and all4full4×quarterpanels seen.45colors, fullyopaque, seamXmean/max0 without spatialedgepatching. Lowhills+tinyoriginalruin underfilledpaleivorysky; thinplainbaseabout17%height, notoldhalfflatground. Repeatdoesnotshowverticalflatbufferbars. Weakness: skyveryquiet, distantdomeandcloudpatternrepeats.

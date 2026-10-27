@@ -1,0 +1,18 @@
+# desert-edge-sand-sandstone-s
+
+Route: built-in image_gen. Model not exposed.
+
+Draw a Phimond HD2D desert ground-decal sheet, SIX separate irregular FLAT surface patches in3columns2rows on1536x1024 solid#FF00FF. All pieces whole with64pixelblankmargins and48pixelgaps; no piece touching image edge, no labels or text. Every piece about350wide220high at native source pixels, fine materialclusters not mini3Dprops. Final512x320(world4x2.5) each, keep source pixels1:1. Original1content sandy desertruins; approved mudpatch2 and moss3 for crisp organic surface cutouts, not green content; petanchors4/5 for outline/value. Match Octopath-inspired approved00-09 hand, dark warmbrown thin material cuts, warm upperleft illumination, cool mauveshade, earthy33-48colors inochresand/ruststone/ivorychips/grayslate/oliveflecks. Hard intentional2-4tone pixelclusters, no blur/noise/dither/glow. Transparent gaps magenta, uneven porous contour, NO rectangularpanel/ovaldisc.
+TopLEFT shallow cracked-clay patch with irregular long crescent fissures, narrow spare branches, rust recesses and tiny ivory/graysandchips. TopCENTER entirely different broad delta-shaped crackedpatch: 3unequal branchingfissures and little lifted thincrust flakes, largely open magenta spaces. TopRIGHT NORTH sandstone-edge cap: rough horizontal broken slab seam whose TOP side is dense rustsandstone shards, BOTTOM side fades irregularly intoochregrains. BottomLEFT SOUTH cap: dense angularivorysandstone flakes concentrated alongBOTTOM, wornflat splitstone isolated onleft, TOP side irregularochresand. BottomCENTER WEST sidecap: broken nearverticalboundary withdense ruststone onLEFT, fan of fineochregrain toRIGHT; two unequal brokenplates. BottomRIGHT EAST sidecap: entirelydifferentnearverticalboundary ivorylimestone andgraygrit dense onRIGHT, sparseochresand toLEFT, onecrookedlongstonechip andmanytinysplinters. These are six independent designs, not rotations/mirrors/recolors. No walls, boulders, shadows, letters, bakedfog or light. Do not fill magenta gaps with a solid sand rectangle.
+EXPORT DECISION after source inspection: Native1:1 size request was not followed by model. Only four directional DECALS selected, standard nearest-neighbor density finishing allowed for ground decals; source and rejected crack candidates preserved. No prop resampling.
+
+Actual attachments (ordered):
+1. /Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png — SHA256 30a678461a1a1f13aafa1a925382223dda2abcba586bb3b343e87a683a6c04ea
+2. /Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/mud-patch/final.png — SHA256 b0759f3111b274228356d66fb95cce948d0ef805e6c53b1e6e96bccfdbe6bcdf
+3. /Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/moss-patch-01/final.png — SHA256 90a3d3e1fc44cf5c1203890778f9be5ac42aa2b8994385a97ebe2cd0b0cde96b
+4. /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png — SHA256 fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da
+5. /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png — SHA256 043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3
+
+Raw: raw-01.png; SHA256 052dc0ba7ab16a0c2ae7215de9ab476550a0159e664f5ed6d59d8537c692270d; source box [0, 512, 540, 1024]; sheet extraction polygon None. Final [512, 320]. Non-dithered 48color finish, nearest scaling. No content drawn with code.
+
+Finish details: {"visible_colors": 43, "palette_source": "palette.json", "palette_include": null, "palette_exclude": null, "palette_remap": null, "base_palette_filter": null, "native_alpha": false, "documented_exception": null, "job_palette_note": null}
