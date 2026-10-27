@@ -1,0 +1,189 @@
+{
+  "raw": "raw-21.png",
+  "prompt": "Phimond Octopath HD2D independent LANDMARK cutouts for6Windrockmaps,1536x1024,3columns2rows on pure#FF00FF. Reference1 original map CONTENT: camp round wooden doorway in serrated rock hut. Reference2 approved GPT stone+wood STYLE,3/4 pet volume outlines only. Content record: only camp doorway directly observed; other five are owner-authorized creative interpretations of missing unique source landmarks, built from the original jagged slate geology. Do not copy a scene or draw a terrain rectangle.\nEach isolated complete prop footprint about300x240px or smaller, with broad empty spaces. Front3/4gameview, thin dark colored contours,warmupperleft/coolshadow,2-4tones per stone/wood/snow/lichen,33-48regionalcolors, deliberate chunky pixels,no noise/dither/blur,bloom,fog,castshadow,floor,letters or characters. Slatebluegray #7B8794/#566070/#4A525D, olivelichen #8A8F4E, ivorysnow #E8EEF4,brownwood, tinyagedbrass. Every object one connected silhouette.\nTOPLEFT camp doorway hut: small round upright brown planked door set into a squat thick slate rock shell, crooked jagged roof plates, two wooden braces, sparse snow. Unique home entrance, no sign/text. TOPMIDDLE bridge stone abutment: low broad split stone platform with two mortise sockets and ropebound wooden beam ends attached, broken edge facingright; NO complete bridge. TOPRIGHT howling canyon rock: narrow tall wind-eroded vertical slate fin with a large irregular hollow near upperthird that whistles, three torn rock prongs, little drylichen atbase. Hole magenta.\nBOTTOMLEFT mountain range ridge: long low jagged serrated skyline rock spine, five unequal leaning slabs, snow only shelteredledges. BOTTOMMIDDLE mountain path switchback ledge: wide low zigzag stone ledge with two ascending stepped lips, clear winding walkablesurface and fracturedface, not a rectangular diorama. BOTTOMRIGHT summit wind cairn: tall asymmetrical balancedstone stack on slanted triangular stonefoot, short frayed olive prayercloth attached close tostone, no text/symbols and no floating scraps. All6recognizablydifferent silhouettes.\nNative predeclared canvases BEFOREdrawing: hut480x448 world3.75x3.5; abutment512x320 world4x2.5; canyon384x480 world3x3.75; ridge640x448 world5x3.5; ledge640x256 world5x2; cairn384x448 world3x3.5. Player168px=1.31world. Actual source footprints target hut300x270, abutment330x180,canyon200x300,ridge380x240,ledge380x150,cairn180x280. Leave8px alpha margins within finals, never crop tips. Generated pixels copied1:1, no downsizing. Fit each within its512cell, large magenta gaps. True3x2sheet.\nAttachment order overrides earlier shorthand: images1\u20136 original camp,bridge,canyon,range,path,summit CONTENT only; images7\u20138 approved batch01rock and batch03shore-rock STYLE; images9\u201310 pet anchors OUTLINE/VOLUME only. Interpretive landmarks are planned new assets, not recovered originals. Render canvas exactly1536x1024; the switchback ledge especially must stay under380x180 source pixels.\nFINAL attachment order: image1 is six original maps vertically stacked in camp/bridge/canyon/range/path/summit order, original pixels unchanged. Images2\u20133 approved rock assets STYLE. Images4\u20135 pet anchors OUTLINE/VOLUME. These five attachments replace earlier numbered lists.",
+  "refs": [
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-windrock/jobs/native-map-landmarks-21/original-six-maps-reference.png",
+      "sha256": "d643e8d44de6a467a760051bd04c626a17a2a8794b3c1a01eceb66cbd357fda9"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-large/final.png",
+      "sha256": "81499f1c27baf3956588ed392d6be562129926f300aa9be9dca949c781a84ea2"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-03-octopath/shore-rock-large/final.png",
+      "sha256": "717fdf80d11ac1dadd07357cc44936ee2c4a532116b82adacb20eb9464f09106"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "palette_source": "palette.json",
+  "assets": [
+    {
+      "id": "windrock-camp-stone-door-hut",
+      "category": "prop",
+      "size": [
+        480,
+        448
+      ],
+      "native_pixels": true,
+      "desired_world_size": [
+        3.75,
+        3.5
+      ],
+      "height_relative_to_player": 2.6717557251908395,
+      "box": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "map_id": "windrock_mountain_camp",
+      "content_provenance": "observed round camp doorway"
+    },
+    {
+      "id": "windrock-bridge-stone-abutment",
+      "category": "prop",
+      "size": [
+        512,
+        320
+      ],
+      "native_pixels": true,
+      "desired_world_size": [
+        4.0,
+        2.5
+      ],
+      "height_relative_to_player": 1.9083969465648853,
+      "box": [
+        512,
+        0,
+        1024,
+        512
+      ],
+      "map_id": "windrock_mountain_stone_bridge",
+      "content_provenance": "named-map creative interpretation; not recovered APK content"
+    },
+    {
+      "id": "windrock-canyon-whistling-rock",
+      "category": "prop",
+      "size": [
+        384,
+        480
+      ],
+      "native_pixels": true,
+      "desired_world_size": [
+        3.0,
+        3.75
+      ],
+      "height_relative_to_player": 2.8625954198473282,
+      "box": [
+        1024,
+        0,
+        1536,
+        512
+      ],
+      "map_id": "windrock_mountain_howling_canyon",
+      "content_provenance": "named-map creative interpretation; not recovered APK content"
+    },
+    {
+      "id": "windrock-range-serrated-ridge",
+      "category": "prop",
+      "size": [
+        640,
+        448
+      ],
+      "native_pixels": true,
+      "desired_world_size": [
+        5.0,
+        3.5
+      ],
+      "height_relative_to_player": 2.6717557251908395,
+      "box": [
+        0,
+        512,
+        512,
+        1024
+      ],
+      "map_id": "windrock_mountain_mountain_range",
+      "content_provenance": "named-map creative interpretation; not recovered APK content"
+    },
+    {
+      "id": "windrock-path-switchback-ledge",
+      "category": "prop",
+      "size": [
+        640,
+        256
+      ],
+      "native_pixels": true,
+      "desired_world_size": [
+        5.0,
+        2.0
+      ],
+      "height_relative_to_player": 1.5267175572519083,
+      "box": [
+        512,
+        512,
+        1024,
+        1024
+      ],
+      "map_id": "windrock_mountain_mountain_path",
+      "content_provenance": "named-map creative interpretation; not recovered APK content"
+    },
+    {
+      "id": "windrock-summit-wind-cairn",
+      "category": "prop",
+      "size": [
+        384,
+        448
+      ],
+      "native_pixels": true,
+      "desired_world_size": [
+        3.0,
+        3.5
+      ],
+      "height_relative_to_player": 2.6717557251908395,
+      "box": [
+        1024,
+        512,
+        1536,
+        1024
+      ],
+      "map_id": "windrock_mountain_summit",
+      "content_provenance": "named-map creative interpretation; not recovered APK content"
+    }
+  ],
+  "state": "generated_partial_native_budget_rejections",
+  "map_content_provenance": "original-map-review.json; camp observed, five creative interpretations explicitly authorized by user",
+  "reference_montage_sources": [
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_camp.png",
+      "sha256": "58d68f8dcd07e2674060f59ca7851dab25d80b8eac99153c410550c3c4712f33"
+    },
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_stone_bridge.png",
+      "sha256": "7d19a701b5b391dce4d1507af012a7e625a16af2fb26536643203d52b26a06c6"
+    },
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_howling_canyon.png",
+      "sha256": "45f5f389fc9345395b4659dbeab2af73145c7f6ee9dc437f3fc4ac95858100c9"
+    },
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_mountain_range.png",
+      "sha256": "dee78d6971835b686fe39f9850c91a52db6a2c0142850c2a6cea29ff18843b94"
+    },
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_mountain_path.png",
+      "sha256": "771c203967b5cecc8537690cddc8364a6bb445e6e186d8ab92564cd2f4183e45"
+    },
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_summit.png",
+      "sha256": "3b09e732d1b501c0c9da5d4363524aad4d1c3b9d18fe5cf79413dfd55146bbe7"
+    }
+  ]
+}

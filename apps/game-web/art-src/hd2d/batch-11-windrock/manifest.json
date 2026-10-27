@@ -1,41 +1,18 @@
 {
   "batch": "batch-11-windrock",
-  "kit": "windrock",
-  "name_vi": "N\u00fai Phong Th\u1ea1ch",
-  "maps_supported": 6,
-  "total_assets": 74,
-  "mechanical_pass": 74,
   "approved": false,
+  "status": "in_progress_needs_claude_visual_review",
   "assets": [
     {
       "id": "windrock-rock-floor-01",
-      "category": "tile",
-      "kit": "windrock",
+      "category": "floor",
+      "kit": "floors-sparse-03",
       "file": "windrock-rock-floor-01/final.png",
       "px": [
         512,
         512
       ],
-      "world": [
-        4.0,
-        4.0
-      ],
-      "pivot": "center",
-      "tileable": "xy",
-      "frames": 1,
-      "fps": null,
-      "sha256": "0dfd62f576dc8dbf9c91af00ebdf6c18a4320047814068b1857724dac257a513",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 34,
-      "edge_to_center_luma_diff": 0.17
-    },
-    {
-      "id": "windrock-gravel-floor",
-      "category": "tile",
-      "kit": "windrock",
-      "file": "windrock-gravel-floor/final.png",
-      "px": [
+      "size_px": [
         512,
         512
       ],
@@ -43,91 +20,235 @@
         4.0,
         4.0
       ],
-      "pivot": "center",
-      "tileable": "xy",
-      "frames": 1,
-      "fps": null,
-      "sha256": "27e1326a769ebfd95e673dec3604ccc685ea703b64514558fec3d694da798323",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 34,
-      "edge_to_center_luma_diff": 1.41
-    },
-    {
-      "id": "windrock-grass-snow-floor",
-      "category": "tile",
-      "kit": "windrock",
-      "file": "windrock-grass-snow-floor/final.png",
-      "px": [
-        512,
-        512
-      ],
-      "world": [
+      "world_size": [
         4.0,
         4.0
       ],
       "pivot": "center",
+      "pivot_px": [
+        256,
+        256
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
       "tileable": "xy",
+      "slice": null,
       "frames": 1,
+      "frame_px": null,
       "fps": null,
-      "sha256": "f9c9fd0fc7f2b3871c26af295fc8335eaeee13f7bb0f3a14ec29258e4c185dcc",
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_camp.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/grass-floor-01/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-03.png",
+      "raw_sha256": "3cda1c2a917e7b6c0797e1b2b331fcefb193624c2cac774b0581d55aeaae1f6c",
+      "sha256": "3e404873a6e6ee175adb12f6f44b414b492b7c0cbf857013b1125f1b1f3d0fb9",
+      "source_box": [
+        10,
+        10,
+        499,
+        499
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
       "mechanical_status": "pass",
-      "failures": [],
-      "colors": 34,
-      "edge_to_center_luma_diff": 0.74
+      "ui_scale": null
     },
     {
       "id": "windrock-rock-floor-02",
-      "category": "tile",
-      "kit": "windrock",
+      "category": "floor",
+      "kit": "floors-sparse-03",
       "file": "windrock-rock-floor-02/final.png",
       "px": [
         512,
         512
       ],
+      "size_px": [
+        512,
+        512
+      ],
       "world": [
         4.0,
         4.0
       ],
+      "world_size": [
+        4.0,
+        4.0
+      ],
       "pivot": "center",
+      "pivot_px": [
+        256,
+        256
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
       "tileable": "xy",
+      "slice": null,
       "frames": 1,
+      "frame_px": null,
       "fps": null,
-      "sha256": "bdeb37e42bc3c71fd150d4c18a4fa5d9cfb425f2bdcf84eb787a39f8cf9c2200",
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_camp.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/grass-floor-01/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-03.png",
+      "raw_sha256": "3cda1c2a917e7b6c0797e1b2b331fcefb193624c2cac774b0581d55aeaae1f6c",
+      "sha256": "1fbc7a50d52de65a9cef88109457615aab0cbf88137704b9ad3fccfffec6a38a",
+      "source_box": [
+        521,
+        9,
+        1019,
+        504
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
       "mechanical_status": "pass",
-      "failures": [],
-      "colors": 34,
-      "edge_to_center_luma_diff": 0.66
+      "ui_scale": null
+    },
+    {
+      "id": "windrock-gravel-floor",
+      "category": "floor",
+      "kit": "floors-sparse-03",
+      "file": "windrock-gravel-floor/final.png",
+      "px": [
+        512,
+        512
+      ],
+      "size_px": [
+        512,
+        512
+      ],
+      "world": [
+        4.0,
+        4.0
+      ],
+      "world_size": [
+        4.0,
+        4.0
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        256,
+        256
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "xy",
+      "slice": null,
+      "frames": 1,
+      "frame_px": null,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_camp.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/grass-floor-01/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-03.png",
+      "raw_sha256": "3cda1c2a917e7b6c0797e1b2b331fcefb193624c2cac774b0581d55aeaae1f6c",
+      "sha256": "610a59d206f79db130128d0195d21df0ee15d9c2e7f8c079c29a897beb88dc06",
+      "source_box": [
+        1029,
+        5,
+        1532,
+        506
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": null
+    },
+    {
+      "id": "windrock-grass-snow-floor",
+      "category": "floor",
+      "kit": "floors-sparse-03",
+      "file": "windrock-grass-snow-floor/final.png",
+      "px": [
+        512,
+        512
+      ],
+      "size_px": [
+        512,
+        512
+      ],
+      "world": [
+        4.0,
+        4.0
+      ],
+      "world_size": [
+        4.0,
+        4.0
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        256,
+        256
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "xy",
+      "slice": null,
+      "frames": 1,
+      "frame_px": null,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_camp.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/grass-floor-01/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-03.png",
+      "raw_sha256": "3cda1c2a917e7b6c0797e1b2b331fcefb193624c2cac774b0581d55aeaae1f6c",
+      "sha256": "608f56bc6fdc7a6fff7b8dcaeafc8bf4a4c247696042347b7923d680339ad256",
+      "source_box": [
+        16,
+        527,
+        498,
+        1011
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": null
     },
     {
       "id": "windrock-snow-crust-floor",
-      "category": "tile",
-      "kit": "windrock",
+      "category": "floor",
+      "kit": "floors-sparse-03",
       "file": "windrock-snow-crust-floor/final.png",
       "px": [
         512,
         512
       ],
-      "world": [
-        4.0,
-        4.0
-      ],
-      "pivot": "center",
-      "tileable": "xy",
-      "frames": 1,
-      "fps": null,
-      "sha256": "67c7d3f38ee0919f9a3ababe79568b17679a91243a809f034fb67bbc0bac95d0",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 34,
-      "edge_to_center_luma_diff": 0.28
-    },
-    {
-      "id": "windrock-mountain-path-floor",
-      "category": "tile",
-      "kit": "windrock",
-      "file": "windrock-mountain-path-floor/final.png",
-      "px": [
+      "size_px": [
         512,
         512
       ],
@@ -135,344 +256,58 @@
         4.0,
         4.0
       ],
-      "pivot": "center",
-      "tileable": "xy",
-      "frames": 1,
-      "fps": null,
-      "sha256": "3feb6444e7ed3dcea77b986a89ae2609ffcf66e93ee785d1643a4ef175babf03",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 34,
-      "edge_to_center_luma_diff": 0.57
-    },
-    {
-      "id": "windrock-scree-floor",
-      "category": "tile",
-      "kit": "windrock",
-      "file": "windrock-scree-floor/final.png",
-      "px": [
-        512,
-        512
-      ],
-      "world": [
+      "world_size": [
         4.0,
         4.0
       ],
       "pivot": "center",
+      "pivot_px": [
+        256,
+        256
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
       "tileable": "xy",
+      "slice": null,
       "frames": 1,
+      "frame_px": null,
       "fps": null,
-      "sha256": "256b6848952ddb6b8f007f6bf7420d6cc424484fd6b6ca54993ebe197eb6b44f",
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_camp.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/grass-floor-01/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-03.png",
+      "raw_sha256": "3cda1c2a917e7b6c0797e1b2b331fcefb193624c2cac774b0581d55aeaae1f6c",
+      "sha256": "ef7d6cdc23884eeda6dc73d1bd459f3998a07eaad9102df9777c267e062519ce",
+      "source_box": [
+        528,
+        528,
+        1008,
+        1005
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
       "mechanical_status": "pass",
-      "failures": [],
-      "colors": 34,
-      "edge_to_center_luma_diff": 0.57
+      "ui_scale": null
     },
     {
       "id": "windrock-slate-floor",
-      "category": "tile",
-      "kit": "windrock",
+      "category": "floor",
+      "kit": "floors-sparse-03",
       "file": "windrock-slate-floor/final.png",
       "px": [
         512,
         512
       ],
-      "world": [
-        4.0,
-        4.0
-      ],
-      "pivot": "center",
-      "tileable": "xy",
-      "frames": 1,
-      "fps": null,
-      "sha256": "0b9ab7217cf2fd13cc11490af1b838e88fc7e209f93bc99a3122a34cd8e1b2e0",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 34,
-      "edge_to_center_luma_diff": 0.33
-    },
-    {
-      "id": "windrock-chasm-ravine-01",
-      "category": "decal",
-      "kit": "windrock",
-      "file": "windrock-chasm-ravine-01/final.png",
-      "px": [
-        544,
-        544
-      ],
-      "world": [
-        4.0,
-        4.0
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "31729305cbd7c642fcea55dd7212625856bacf41c800261c58d190b124e315f9",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 36,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-chasm-ravine-02",
-      "category": "decal",
-      "kit": "windrock",
-      "file": "windrock-chasm-ravine-02/final.png",
-      "px": [
-        544,
-        544
-      ],
-      "world": [
-        4.0,
-        4.0
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "5d89ca1f797b2636ab1d3f876f9d23368aad536795da7c9a8174d96d22ba3a18",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 36,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-decal-snow-drift-01",
-      "category": "decal",
-      "kit": "windrock",
-      "file": "windrock-decal-snow-drift-01/final.png",
-      "px": [
-        519,
-        237
-      ],
-      "world": [
-        3.8,
-        1.8
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "08dfae6225c8ce2b51b9ffe7574a586515361bfe13c7ba3363a44dade385431a",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 18,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-decal-snow-drift-02",
-      "category": "decal",
-      "kit": "windrock",
-      "file": "windrock-decal-snow-drift-02/final.png",
-      "px": [
-        514,
-        234
-      ],
-      "world": [
-        3.8,
-        1.8
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "2fc9539a00df3bff18a4b332a7b1045ecd91fff8eabfc0f5125fb57da8aec8ad",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 15,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-decal-scree-run-01",
-      "category": "decal",
-      "kit": "windrock",
-      "file": "windrock-decal-scree-run-01/final.png",
-      "px": [
-        468,
-        268
-      ],
-      "world": [
-        3.5,
-        2.0
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "24cfef8da2363f6a931c99580ddef0d93aab202adf1835cf3a0992919876e53f",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 21,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-decal-scree-run-02",
-      "category": "decal",
-      "kit": "windrock",
-      "file": "windrock-decal-scree-run-02/final.png",
-      "px": [
-        447,
-        266
-      ],
-      "world": [
-        3.5,
-        2.0
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "a9cc947a6f04b576c2b6f4867b8bd7a810ffb3b191a9aae21dc546cee15568cf",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 22,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-decal-rock-fissure-01",
-      "category": "decal",
-      "kit": "windrock",
-      "file": "windrock-decal-rock-fissure-01/final.png",
-      "px": [
-        274,
-        338
-      ],
-      "world": [
-        2.0,
-        2.5
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "1cc07ad878a295b84569070fce04566a72770cb32c7bcc74867747dd0327e494",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 33,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-decal-rock-fissure-02",
-      "category": "decal",
-      "kit": "windrock",
-      "file": "windrock-decal-rock-fissure-02/final.png",
-      "px": [
-        274,
-        338
-      ],
-      "world": [
-        2.0,
-        2.5
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "68e61bc6749b0cc8f07c473a9ebe8e0ccdb953e36b48ff00a6c6b789248047b3",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 33,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-decal-ice-patch-01",
-      "category": "decal",
-      "kit": "windrock",
-      "file": "windrock-decal-ice-patch-01/final.png",
-      "px": [
-        263,
-        249
-      ],
-      "world": [
-        1.8,
-        1.8
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "6a4fb8bae3298b421af5ce89ce0c2341badbb3cf0c2b2cff237f023546ec589d",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 19,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-decal-ice-patch-02",
-      "category": "decal",
-      "kit": "windrock",
-      "file": "windrock-decal-ice-patch-02/final.png",
-      "px": [
-        252,
-        247
-      ],
-      "world": [
-        1.8,
-        1.8
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "ebe84d5d597fa85d9914d570fa3579f6b2b2a210ed276986f459a51c676222c3",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 21,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-decal-snow-footprints",
-      "category": "decal",
-      "kit": "windrock",
-      "file": "windrock-decal-snow-footprints/final.png",
-      "px": [
-        264,
-        522
-      ],
-      "world": [
-        1.8,
-        3.8
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "080100743761584cb53d9a7d2d9dcec355f93712185466234ffaa10f545b365d",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 21,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-decal-alpine-moss-edge",
-      "category": "decal",
-      "kit": "windrock",
-      "file": "windrock-decal-alpine-moss-edge/final.png",
-      "px": [
-        273,
-        520
-      ],
-      "world": [
-        1.8,
-        3.8
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "ad5d311d47426dc4c60610d6253fb935386015d88ce1adb82a968113dff2226e",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 23,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-tile-edge-decal",
-      "category": "decal",
-      "kit": "windrock",
-      "file": "windrock-tile-edge-decal/final.png",
-      "px": [
+      "size_px": [
         512,
         512
       ],
@@ -480,1234 +315,1823 @@
         4.0,
         4.0
       ],
-      "pivot": "center",
-      "tileable": "x",
-      "frames": 1,
-      "fps": null,
-      "sha256": "b5c343ece1b1e05c557927b53a70869157fdd8bfe5ae0234d7d99ca22b27b3b0",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 36,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-bridge-anchor-post-left",
-      "category": "prop",
-      "kit": "windrock",
-      "file": "windrock-bridge-anchor-post-left/final.png",
-      "px": [
-        276,
-        303
-      ],
-      "world": [
-        1.9,
-        2.1
+      "world_size": [
+        4.0,
+        4.0
       ],
       "pivot": "center",
-      "tileable": "none",
+      "pivot_px": [
+        256,
+        256
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "xy",
+      "slice": null,
       "frames": 1,
+      "frame_px": null,
       "fps": null,
-      "sha256": "d2bfafdbb2a69c9b117ee31cfb7fd3e124967ba1f02d46d267ca7854adab50e1",
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_camp.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/grass-floor-01/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-03.png",
+      "raw_sha256": "3cda1c2a917e7b6c0797e1b2b331fcefb193624c2cac774b0581d55aeaae1f6c",
+      "sha256": "637e1f59dbeaf9c83f49c876126b8e9ac2af7dec914245937db7c651a0b85b56",
+      "source_box": [
+        1040,
+        523,
+        1522,
+        1012
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
       "mechanical_status": "pass",
-      "failures": [],
-      "colors": 17,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-bridge-anchor-post-right",
-      "category": "prop",
-      "kit": "windrock",
-      "file": "windrock-bridge-anchor-post-right/final.png",
-      "px": [
-        276,
-        303
-      ],
-      "world": [
-        1.9,
-        2.1
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "b53291e90eb12ed340c4fe27f2cd86286fdb01ba8dd926fc4ce72c7db2a8f18a",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 16,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-stone-stairs",
-      "category": "prop",
-      "kit": "windrock",
-      "file": "windrock-stone-stairs/final.png",
-      "px": [
-        376,
-        369
-      ],
-      "world": [
-        2.7,
-        2.6
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "061d6c4b9ec1562de13230049f57a7adc5420d3848d0cb1ffc35497889f2eaed",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 37,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-spire-pillar-tall-01",
-      "category": "prop",
-      "kit": "windrock",
-      "file": "windrock-spire-pillar-tall-01/final.png",
-      "px": [
-        197,
-        402
-      ],
-      "world": [
-        1.4,
-        3.0
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "8b0d20166eef98e4f17717e2a1d5c081603d0c8b00314602fc71bc41dd44b62a",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 19,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-spire-pillar-tall-02",
-      "category": "prop",
-      "kit": "windrock",
-      "file": "windrock-spire-pillar-tall-02/final.png",
-      "px": [
-        191,
-        403
-      ],
-      "world": [
-        1.4,
-        3.0
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "522005aacad87bfa105257ceadbfa82f42476a22b0b4b37741af5befdf650894",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 19,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-bridge-repeat",
-      "category": "prop",
-      "kit": "windrock",
-      "file": "windrock-bridge-repeat/final.png",
-      "px": [
-        511,
-        254
-      ],
-      "world": [
-        2.5,
-        0.9
-      ],
-      "pivot": "center",
-      "tileable": "x",
-      "frames": 1,
-      "fps": null,
-      "sha256": "d723e49322edc6981f6ac83c14bd691f40bc9d79b34005c6698ecaadc9c0925c",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 23,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-bridge-broken",
-      "category": "prop",
-      "kit": "windrock",
-      "file": "windrock-bridge-broken/final.png",
-      "px": [
-        387,
-        255
-      ],
-      "world": [
-        2.2,
-        0.9
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "de22aacc0dce70b79adac5058dd33e744070865ba03de44d088bac6dfd340a8f",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 23,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-pillar-01",
-      "category": "prop",
-      "kit": "windrock",
-      "file": "windrock-pillar-01/final.png",
-      "px": [
-        417,
-        492
-      ],
-      "world": [
-        1.8,
-        2.8
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "cc9fce8c08b0fc7995e1b34113d8d84a2a6fd85f153063a9ae1be9fefcdad722",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 25,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-cliff-01",
-      "category": "prop",
-      "kit": "windrock",
-      "file": "windrock-cliff-01/final.png",
-      "px": [
-        337,
-        486
-      ],
-      "world": [
-        3.0,
-        2.5
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "b94bbcbc28483557caf110a42b4bb3e7b130d4af733a8154e3d77ee47321f487",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 27,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-cliff-snow-ledge",
-      "category": "prop",
-      "kit": "windrock",
-      "file": "windrock-cliff-snow-ledge/final.png",
-      "px": [
-        337,
-        486
-      ],
-      "world": [
-        3.0,
-        2.5
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "6d8d611296a1a0df2a83192fe01e727bbe39cd1b9a1e1fa94d441a05fe6adf55",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 27,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-pine-large-01-canopy",
-      "category": "prop",
-      "kit": "windrock",
-      "file": "windrock-pine-large-01-canopy/final.png",
-      "px": [
-        287,
-        510
-      ],
-      "world": [
-        2.3,
-        3.8
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "e9785c3b097673637ac4b5569dc3a1dc5838cfc6531416ca4a550d1d6eb3ddf5",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 20,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-pine-large-01-trunk",
-      "category": "prop",
-      "kit": "windrock",
-      "file": "windrock-pine-large-01-trunk/final.png",
-      "px": [
-        187,
-        464
-      ],
-      "world": [
-        1.3,
-        3.4
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "99e6b3318635229147b7a25f94450b0e1f61f555810918e985947a850b1cb995",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 17,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-pine-large-02-canopy",
-      "category": "prop",
-      "kit": "windrock",
-      "file": "windrock-pine-large-02-canopy/final.png",
-      "px": [
-        323,
-        490
-      ],
-      "world": [
-        2.6,
-        3.6
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "0e6736b6ecec54e352230ef8d89ca7c6aab2e94f0b144ddb8d594e5ff2bfb9f6",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 17,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-pine-large-02-trunk",
-      "category": "prop",
-      "kit": "windrock",
-      "file": "windrock-pine-large-02-trunk/final.png",
-      "px": [
-        152,
-        414
-      ],
-      "world": [
-        1.1,
-        3.0
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "e6abb29b233d1f46572777540cacef9eb50eff9fe8ebdad63d5ae2ba8eca788c",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 17,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-pine-canopy",
-      "category": "prop",
-      "kit": "windrock",
-      "file": "windrock-pine-canopy/final.png",
-      "px": [
-        479,
-        522
-      ],
-      "world": [
-        2.2,
-        3.2
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "cdba426056d0b5892366c15f5388b39c3ca43e83c7f173802b7d1419f18399ff",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 25,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-pine-trunk",
-      "category": "prop",
-      "kit": "windrock",
-      "file": "windrock-pine-trunk/final.png",
-      "px": [
-        287,
-        502
-      ],
-      "world": [
-        1.2,
-        2.8
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "6591bf8b8b803744e8fc273f754702fe4010bed81df166bdac2d105ed5dd61a5",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 23,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-shrub-snow-01",
-      "category": "prop",
-      "kit": "windrock",
-      "file": "windrock-shrub-snow-01/final.png",
-      "px": [
-        140,
-        130
-      ],
-      "world": [
-        1.0,
-        0.8
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "d428f6a7c7054c8e101ea4eacd5980ed8ad51ea8abdf2a13b02e4c550032202b",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 22,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-shrub-snow-02",
-      "category": "prop",
-      "kit": "windrock",
-      "file": "windrock-shrub-snow-02/final.png",
-      "px": [
-        155,
-        128
-      ],
-      "world": [
-        1.0,
-        0.8
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "378f4f67613c11c54d40edad9263a19585c8d291a9f3b302380dd61991e756ef",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 17,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-shrub-snow-03",
-      "category": "prop",
-      "kit": "windrock",
-      "file": "windrock-shrub-snow-03/final.png",
-      "px": [
-        150,
-        129
-      ],
-      "world": [
-        1.0,
-        0.8
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "fd10403199026c624f359600bab630aec148e8bb1759f98f865c733739b835ab",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 18,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-shrub-snow-04",
-      "category": "prop",
-      "kit": "windrock",
-      "file": "windrock-shrub-snow-04/final.png",
-      "px": [
-        141,
-        136
-      ],
-      "world": [
-        1.0,
-        0.9
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "155b048715fc4850436f28f8de9fa8354761a469453f12cd704e8e14db2a1e7a",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 19,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-grass-snow-clump-01",
-      "category": "prop",
-      "kit": "windrock",
-      "file": "windrock-grass-snow-clump-01/final.png",
-      "px": [
-        140,
-        123
-      ],
-      "world": [
-        0.9,
-        0.8
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "d18a0d90f51ac1dd0401f1b3a00a8b96c63d33764e87374af3b52d7a87daefe4",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 18,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-grass-snow-clump-02",
-      "category": "prop",
-      "kit": "windrock",
-      "file": "windrock-grass-snow-clump-02/final.png",
-      "px": [
-        145,
-        124
-      ],
-      "world": [
-        0.9,
-        0.8
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "cc255897bd35bebab7f1a62bdb95e109f4bd33c62cd7cf539dfbf0feb7ce11f7",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 16,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-grass-snow-clump-03",
-      "category": "prop",
-      "kit": "windrock",
-      "file": "windrock-grass-snow-clump-03/final.png",
-      "px": [
-        146,
-        122
-      ],
-      "world": [
-        0.9,
-        0.8
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "f6ce4106f99a530df7d2de4806f1012591f4a1df00fc17e9c9291a08562e09d6",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 18,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-dead-wood-stump",
-      "category": "prop",
-      "kit": "windrock",
-      "file": "windrock-dead-wood-stump/final.png",
-      "px": [
-        155,
-        207
-      ],
-      "world": [
-        1.0,
-        1.4
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "fc4162e301148f210e32f8c5a85a121208a273e60b8b23749f6c78de1eab9e80",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 17,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-camp-tent",
-      "category": "prop",
-      "kit": "windrock",
-      "file": "windrock-camp-tent/final.png",
-      "px": [
-        447,
-        290
-      ],
-      "world": [
-        2.4,
-        1.8
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "7fac40259750da35d3d3e74d0acf9fd979b6321f43f2103a2ad2d7927cb41bd1",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 21,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-firewood-stack",
-      "category": "prop",
-      "kit": "windrock",
-      "file": "windrock-firewood-stack/final.png",
-      "px": [
-        151,
-        162
-      ],
-      "world": [
-        1.2,
-        1.1
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "02ba4e7dc11fcd54813bd3d4bd15c687cb61d17eeffb819cae8f5b092f2005be",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 21,
-      "edge_to_center_luma_diff": null
+      "ui_scale": null
     },
     {
       "id": "windrock-supply-crate",
       "category": "prop",
-      "kit": "windrock",
+      "kit": "native-props-02",
       "file": "windrock-supply-crate/final.png",
       "px": [
-        167,
-        187
+        144,
+        112
+      ],
+      "size_px": [
+        144,
+        112
       ],
       "world": [
-        1.1,
-        1.3
+        1.125,
+        0.875
       ],
-      "pivot": "center",
+      "world_size": [
+        1.125,
+        0.875
+      ],
+      "pivot": "bottom-center",
+      "pivot_px": [
+        72,
+        102
+      ],
+      "pivot_uv": [
+        0.5,
+        0.9107142857142857
+      ],
       "tileable": "none",
+      "slice": null,
       "frames": 1,
+      "frame_px": null,
       "fps": null,
-      "sha256": "83d09fdde9979b12050a81691a363120d1300f77f9978fe1d0be1c53d57ce210",
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_camp.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-windrock/jobs/native-props-02/reference-approved-pillar-crate.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-large/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-01.png",
+      "raw_sha256": "cf412257271f888b1fd47a6ba39aa3b5a3267d34d2c3ff20a50bb5b9afbe25d7",
+      "sha256": "a524f3bca42293692b99bb88a53bffb8b4706d68543ef9c4e93460e359709ea1",
+      "source_box": [
+        1024,
+        0,
+        1536,
+        512
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
       "mechanical_status": "pass",
-      "failures": [],
-      "colors": 28,
-      "edge_to_center_luma_diff": null
+      "ui_scale": null,
+      "native_scale": {
+        "desired_world_size_before_drawing": [
+          1.125,
+          0.875
+        ],
+        "source_footprint_px": [
+          128,
+          92
+        ],
+        "resampled": false
+      }
     },
     {
-      "id": "windrock-supply-keg",
+      "id": "windrock-pillar-01",
       "category": "prop",
-      "kit": "windrock",
-      "file": "windrock-supply-keg/final.png",
+      "kit": "native-props-small-04",
+      "file": "windrock-pillar-01/final.png",
       "px": [
-        145,
-        187
+        256,
+        448
+      ],
+      "size_px": [
+        256,
+        448
       ],
       "world": [
-        1.0,
-        1.3
+        2.0,
+        3.5
       ],
-      "pivot": "center",
+      "world_size": [
+        2.0,
+        3.5
+      ],
+      "pivot": "bottom-center",
+      "pivot_px": [
+        128,
+        340
+      ],
+      "pivot_uv": [
+        0.5,
+        0.7589285714285714
+      ],
       "tileable": "none",
+      "slice": null,
       "frames": 1,
+      "frame_px": null,
       "fps": null,
-      "sha256": "1a395a87598af809efec01e335824c7acef5cb35e71aa9a08e4aaf5b0d1720bd",
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_camp.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-windrock/jobs/native-props-02/reference-approved-pillar-crate.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-large/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-04.png",
+      "raw_sha256": "68de3355cf308d5d64720601e7123955ffea1bbf3c518baf1721e23dd9b38f4d",
+      "sha256": "3c6db17e4e93da985cb7e1c153e6ec61652ff23d93eb3c074001188a97c649ee",
+      "source_box": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
       "mechanical_status": "pass",
-      "failures": [],
-      "colors": 26,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-trail-cairn",
-      "category": "prop",
-      "kit": "windrock",
-      "file": "windrock-trail-cairn/final.png",
-      "px": [
-        168,
-        210
-      ],
-      "world": [
-        1.1,
-        1.7
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "90b524ad8da6097fb7167ec0e940d7d6682118a1607d5a04a9b486ee8bc33edf",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 18,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-prayer-flagpole",
-      "category": "prop",
-      "kit": "windrock",
-      "file": "windrock-prayer-flagpole/final.png",
-      "px": [
-        250,
-        466
-      ],
-      "world": [
-        1.8,
-        3.6
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "f4e661b10131ef371651166503ecc45699137f3feec0b8aef09f7a336ce53c9b",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 12,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-wooden-fence",
-      "category": "prop",
-      "kit": "windrock",
-      "file": "windrock-wooden-fence/final.png",
-      "px": [
-        346,
-        137
-      ],
-      "world": [
-        2.2,
-        1.2
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "2b0ce1bd6daabc2448c89895a17261348e9d76658a446cd16f56237d87cc692f",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 19,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-signpost-blank",
-      "category": "prop",
-      "kit": "windrock",
-      "file": "windrock-signpost-blank/final.png",
-      "px": [
-        167,
-        219
-      ],
-      "world": [
-        1.2,
-        1.6
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "31732fce4755bf96d0033f2a41b3a16cbaf729b26c7b40d445f724b6f0af4777",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 19,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-boulder-snow-01",
-      "category": "prop",
-      "kit": "windrock",
-      "file": "windrock-boulder-snow-01/final.png",
-      "px": [
-        187,
-        203
-      ],
-      "world": [
-        1.8,
-        1.5
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "22cbddceedfae479602993f4ab50c565fbe4cdf9cf5524afa34c05662fdd2663",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 33,
-      "edge_to_center_luma_diff": null
+      "ui_scale": null,
+      "native_scale": {
+        "desired_world_size_before_drawing": [
+          2.0,
+          3.5
+        ],
+        "source_footprint_px": [
+          112,
+          232
+        ],
+        "resampled": false
+      }
     },
     {
       "id": "windrock-boulder-snow-02",
       "category": "prop",
-      "kit": "windrock",
+      "kit": "native-props-small-04",
       "file": "windrock-boulder-snow-02/final.png",
       "px": [
-        187,
-        203
+        288,
+        224
+      ],
+      "size_px": [
+        288,
+        224
       ],
       "world": [
-        1.6,
-        1.4
+        2.25,
+        1.75
       ],
-      "pivot": "center",
+      "world_size": [
+        2.25,
+        1.75
+      ],
+      "pivot": "bottom-center",
+      "pivot_px": [
+        144,
+        153
+      ],
+      "pivot_uv": [
+        0.5,
+        0.6830357142857143
+      ],
       "tileable": "none",
+      "slice": null,
       "frames": 1,
+      "frame_px": null,
       "fps": null,
-      "sha256": "04bdc6792391f7bdf8cc5144fa435f3ff8662a11390ceb90870478532a7a51f4",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 33,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-pebbles-scatter",
-      "category": "prop",
-      "kit": "windrock",
-      "file": "windrock-pebbles-scatter/final.png",
-      "px": [
-        137,
-        164
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_camp.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-windrock/jobs/native-props-02/reference-approved-pillar-crate.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-large/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
       ],
-      "world": [
-        1.4,
-        1.0
+      "source_raw": "raw-04.png",
+      "raw_sha256": "68de3355cf308d5d64720601e7123955ffea1bbf3c518baf1721e23dd9b38f4d",
+      "sha256": "f2cddc6e402b8aae765faf2819e8f12660d7590512d93bfc65da7d04244c8b70",
+      "source_box": [
+        512,
+        0,
+        1024,
+        512
       ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "d7c9f4ed16cf4714aaa213fef00bbf2258a3c523387a842357162d27fa029478",
+      "approved": false,
+      "status": "needs_claude_visual_review",
       "mechanical_status": "pass",
-      "failures": [],
-      "colors": 27,
-      "edge_to_center_luma_diff": null
+      "ui_scale": null,
+      "native_scale": {
+        "desired_world_size_before_drawing": [
+          2.25,
+          1.75
+        ],
+        "source_footprint_px": [
+          145,
+          83
+        ],
+        "resampled": false
+      }
     },
     {
       "id": "windrock-backpack-gear",
       "category": "prop",
-      "kit": "windrock",
+      "kit": "native-props-small-04",
       "file": "windrock-backpack-gear/final.png",
       "px": [
-        153,
-        164
+        128,
+        128
+      ],
+      "size_px": [
+        128,
+        128
       ],
       "world": [
         1.0,
-        1.1
+        1.0
       ],
-      "pivot": "center",
+      "world_size": [
+        1.0,
+        1.0
+      ],
+      "pivot": "bottom-center",
+      "pivot_px": [
+        64,
+        95
+      ],
+      "pivot_uv": [
+        0.5,
+        0.7421875
+      ],
       "tileable": "none",
+      "slice": null,
       "frames": 1,
+      "frame_px": null,
       "fps": null,
-      "sha256": "e9d53a5284ed5f726f5894f7e88b299dea3825602cc5b40b597a3e1f672c1c64",
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_camp.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-windrock/jobs/native-props-02/reference-approved-pillar-crate.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-large/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-04.png",
+      "raw_sha256": "68de3355cf308d5d64720601e7123955ffea1bbf3c518baf1721e23dd9b38f4d",
+      "sha256": "e4076fa028f7e0476f6cd0717b13939cf20c38debbb1886f7bda5043f88f7bb3",
+      "source_box": [
+        1024,
+        0,
+        1536,
+        512
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
       "mechanical_status": "pass",
-      "failures": [],
-      "colors": 31,
-      "edge_to_center_luma_diff": null
+      "ui_scale": null,
+      "native_scale": {
+        "desired_world_size_before_drawing": [
+          1.0,
+          1.0
+        ],
+        "source_footprint_px": [
+          60,
+          63
+        ],
+        "resampled": false
+      }
     },
     {
-      "id": "windrock-wooden-barrel",
+      "id": "windrock-signpost-blank",
       "category": "prop",
-      "kit": "windrock",
-      "file": "windrock-wooden-barrel/final.png",
+      "kit": "native-props-small-04",
+      "file": "windrock-signpost-blank/final.png",
       "px": [
-        164,
-        153
+        256,
+        320
+      ],
+      "size_px": [
+        256,
+        320
       ],
       "world": [
-        1.0,
-        1.2
+        2.0,
+        2.5
       ],
-      "pivot": "center",
+      "world_size": [
+        2.0,
+        2.5
+      ],
+      "pivot": "bottom-center",
+      "pivot_px": [
+        128,
+        256
+      ],
+      "pivot_uv": [
+        0.5,
+        0.8
+      ],
       "tileable": "none",
+      "slice": null,
       "frames": 1,
+      "frame_px": null,
       "fps": null,
-      "sha256": "74b82a8546d4c8f81dbf0f0aa00706f1897e34b3bf851cbc4cb914ee696e30c8",
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_camp.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-windrock/jobs/native-props-02/reference-approved-pillar-crate.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-large/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-04.png",
+      "raw_sha256": "68de3355cf308d5d64720601e7123955ffea1bbf3c518baf1721e23dd9b38f4d",
+      "sha256": "d6cafe1abdb96ac230deebb727341f32cdc3b4042ad18778d6f2a10f5ef55b11",
+      "source_box": [
+        0,
+        512,
+        512,
+        1024
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
       "mechanical_status": "pass",
-      "failures": [],
-      "colors": 31,
-      "edge_to_center_luma_diff": null
+      "ui_scale": null,
+      "native_scale": {
+        "desired_world_size_before_drawing": [
+          2.0,
+          2.5
+        ],
+        "source_footprint_px": [
+          116,
+          192
+        ],
+        "resampled": false
+      }
+    },
+    {
+      "id": "windrock-wooden-fence",
+      "category": "prop",
+      "kit": "native-props-small-04",
+      "file": "windrock-wooden-fence/final.png",
+      "px": [
+        384,
+        224
+      ],
+      "size_px": [
+        384,
+        224
+      ],
+      "world": [
+        3.0,
+        1.75
+      ],
+      "world_size": [
+        3.0,
+        1.75
+      ],
+      "pivot": "bottom-center",
+      "pivot_px": [
+        192,
+        171
+      ],
+      "pivot_uv": [
+        0.5,
+        0.7633928571428571
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 1,
+      "frame_px": null,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_camp.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-windrock/jobs/native-props-02/reference-approved-pillar-crate.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-large/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-04.png",
+      "raw_sha256": "68de3355cf308d5d64720601e7123955ffea1bbf3c518baf1721e23dd9b38f4d",
+      "sha256": "453cf354d1001fcd0e58fcdf38a86f176896b9712c8c5d4b061eda06d670691f",
+      "source_box": [
+        512,
+        512,
+        1024,
+        1024
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": null,
+      "native_scale": {
+        "desired_world_size_before_drawing": [
+          3.0,
+          1.75
+        ],
+        "source_footprint_px": [
+          237,
+          119
+        ],
+        "resampled": false
+      }
     },
     {
       "id": "windrock-ancient-stele",
       "category": "prop",
-      "kit": "windrock",
+      "kit": "native-props-small-04",
       "file": "windrock-ancient-stele/final.png",
       "px": [
-        31,
-        44
+        288,
+        448
+      ],
+      "size_px": [
+        288,
+        448
       ],
       "world": [
-        1.5,
-        1.8
+        2.25,
+        3.5
       ],
-      "pivot": "center",
+      "world_size": [
+        2.25,
+        3.5
+      ],
+      "pivot": "bottom-center",
+      "pivot_px": [
+        144,
+        369
+      ],
+      "pivot_uv": [
+        0.5,
+        0.8236607142857143
+      ],
       "tileable": "none",
+      "slice": null,
       "frames": 1,
+      "frame_px": null,
       "fps": null,
-      "sha256": "b7b4e05004b7a95fdb7a3e2c25a2d5c87ca3b1477e7b478c82977eb5665c7d5b",
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_camp.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-windrock/jobs/native-props-02/reference-approved-pillar-crate.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-large/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-04.png",
+      "raw_sha256": "68de3355cf308d5d64720601e7123955ffea1bbf3c518baf1721e23dd9b38f4d",
+      "sha256": "579ce606a291810dd9085f795f6b58fd8c81caef67472678a96bb59b34f32fe9",
+      "source_box": [
+        1024,
+        512,
+        1536,
+        1024
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
       "mechanical_status": "pass",
-      "failures": [],
-      "colors": 34,
-      "edge_to_center_luma_diff": null
+      "ui_scale": null,
+      "native_scale": {
+        "desired_world_size_before_drawing": [
+          2.25,
+          3.5
+        ],
+        "source_footprint_px": [
+          192,
+          291
+        ],
+        "resampled": false
+      }
     },
     {
       "id": "windrock-peaks-wall-far",
-      "category": "backdrop",
-      "kit": "windrock",
+      "category": "backdrop_far",
+      "kit": "far-repeat-repair-18",
       "file": "windrock-peaks-wall-far/final.png",
       "px": [
-        1024,
+        1280,
+        384
+      ],
+      "size_px": [
+        1280,
         384
       ],
       "world": [
-        16.0,
+        20.0,
+        6.0
+      ],
+      "world_size": [
+        20.0,
         6.0
       ],
       "pivot": "center",
+      "pivot_px": [
+        640,
+        192
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
       "tileable": "x",
+      "slice": null,
       "frames": 1,
+      "frame_px": null,
       "fps": null,
-      "sha256": "b5021e9038a23f3911ad84fe6c3a1ab667041bb62b22dbc311dc05a3b886c58b",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 38,
-      "edge_to_center_luma_diff": null
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_camp.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-windrock/jobs/far-no-fog-edit-09/reference-approved-landscapes.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-windrock/jobs/far-no-fog-edit-09/raw-09.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-18.png",
+      "raw_sha256": "d801e4852195cb3dbeb628a6b4f1ca0f48973cbaa0b2ad5bc683ec9ede0e3f9a",
+      "sha256": "f840cab9fc172a5a8f1740971135a9b2c2f8d774b7b4b6afa85aa10301de8d78",
+      "source_box": [
+        0,
+        0,
+        1536,
+        558
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "blocked",
+      "ui_scale": null
     },
     {
       "id": "windrock-peaks-mid",
       "category": "backdrop",
-      "kit": "windrock",
+      "kit": "backdrops-far-mid-05",
       "file": "windrock-peaks-mid/final.png",
       "px": [
-        1024,
+        1280,
+        384
+      ],
+      "size_px": [
+        1280,
         384
       ],
       "world": [
-        16.0,
-        6.0
+        10.0,
+        3.0
+      ],
+      "world_size": [
+        10.0,
+        3.0
       ],
       "pivot": "center",
+      "pivot_px": [
+        640,
+        192
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
       "tileable": "x",
+      "slice": null,
       "frames": 1,
+      "frame_px": null,
       "fps": null,
-      "sha256": "53a7daabfa887bea5606ea81b8c87746d901fe3248b3334cc07085ae74a43ca7",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 36,
-      "edge_to_center_luma_diff": null
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_camp.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/forest-wall-far/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-03-octopath/sea-islands-far/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-05.png",
+      "raw_sha256": "1f091c2a1fef47aaf12b23d1408ae6c0469312aa5156a054408c77280db1bd26",
+      "sha256": "9b6e8c331fb5a04bff075a9d285d7dded65c3e407beb5d9222e653af0d29a2e5",
+      "source_box": [
+        0,
+        558,
+        1536,
+        1024
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "blocked",
+      "ui_scale": null
     },
     {
-      "id": "windrock-cliffs-near",
-      "category": "backdrop",
-      "kit": "windrock",
-      "file": "windrock-cliffs-near/final.png",
+      "id": "windrock-camp-tent",
+      "category": "prop",
+      "kit": "native-tent-clean-10",
+      "file": "windrock-camp-tent/final.png",
       "px": [
-        1024,
+        480,
+        384
+      ],
+      "size_px": [
+        480,
         384
       ],
       "world": [
-        16.0,
-        6.0
+        3.75,
+        3.0
       ],
-      "pivot": "center",
-      "tileable": "x",
+      "world_size": [
+        3.75,
+        3.0
+      ],
+      "pivot": "bottom-center",
+      "pivot_px": [
+        240,
+        327
+      ],
+      "pivot_uv": [
+        0.5,
+        0.8515625
+      ],
+      "tileable": "none",
+      "slice": null,
       "frames": 1,
+      "frame_px": null,
       "fps": null,
-      "sha256": "d1eb499bbd0919995161c97ee068d0f664f435e0631109abfd117556e597f9a5",
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_camp.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-windrock/jobs/native-tent-clean-10/reference-approved-wood.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-windrock/jobs/native-camp-06/raw-06.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-10.png",
+      "raw_sha256": "2d96904dd351a1b4a5e9f9b30930727b217b1425ef265e431772085b3e6b2337",
+      "sha256": "91d143f5a542262ef702789cd6070872a35a18e348571e0e0937611100aedce0",
+      "source_box": [
+        0,
+        0,
+        575,
+        512
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
       "mechanical_status": "pass",
-      "failures": [],
-      "colors": 37,
-      "edge_to_center_luma_diff": null
+      "ui_scale": null,
+      "native_scale": {
+        "desired_world_size_before_drawing": [
+          3.75,
+          3.0
+        ],
+        "source_footprint_px": [
+          393,
+          271
+        ],
+        "resampled": false
+      }
     },
     {
-      "id": "windrock-horizon-gradient",
-      "category": "backdrop",
-      "kit": "windrock",
-      "file": "windrock-horizon-gradient/final.png",
+      "id": "windrock-trail-cairn",
+      "category": "prop",
+      "kit": "native-camp-06",
+      "file": "windrock-trail-cairn/final.png",
       "px": [
-        1024,
+        192,
+        224
+      ],
+      "size_px": [
+        192,
+        224
+      ],
+      "world": [
+        1.5,
+        1.75
+      ],
+      "world_size": [
+        1.5,
+        1.75
+      ],
+      "pivot": "bottom-center",
+      "pivot_px": [
+        96,
+        202
+      ],
+      "pivot_uv": [
+        0.5,
+        0.9017857142857143
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 1,
+      "frame_px": null,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_camp.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/wooden-crate/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/barrel/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-06.png",
+      "raw_sha256": "8d3e61cf33c40edbb2df797c40164a8bc91d908475396ffad7fafaaf074ccc11",
+      "sha256": "65eb718fb2aa9f3ec0037c1241626596add11f2f7b94545881d3278b8c82dc20",
+      "source_box": [
+        1100,
+        0,
+        1536,
+        512
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": null,
+      "native_scale": {
+        "desired_world_size_before_drawing": [
+          1.5,
+          1.75
+        ],
+        "source_footprint_px": [
+          148,
+          181
+        ],
+        "resampled": false
+      }
+    },
+    {
+      "id": "windrock-firewood-stack",
+      "category": "prop",
+      "kit": "native-mixed-scale-19",
+      "file": "windrock-firewood-stack/final.png",
+      "px": [
+        192,
+        128
+      ],
+      "size_px": [
+        192,
         128
       ],
       "world": [
-        16.0,
-        2.0
+        1.5,
+        1.0
       ],
-      "pivot": "center",
-      "tileable": "x",
+      "world_size": [
+        1.5,
+        1.0
+      ],
+      "pivot": "bottom-center",
+      "pivot_px": [
+        96,
+        110
+      ],
+      "pivot_uv": [
+        0.5,
+        0.859375
+      ],
+      "tileable": "none",
+      "slice": null,
       "frames": 1,
+      "frame_px": null,
       "fps": null,
-      "sha256": "dbd9eaee52247b6a8a134220d6b3e97ae44f7e86491a9d06c54d4625c9bda680",
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_camp.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-windrock/jobs/native-mixed-scale-19/reference-approved-stone-wood.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-19.png",
+      "raw_sha256": "d2de5fe0efff5699373b97b11f88e30be28da3b07af29205165189262732f634",
+      "sha256": "d2aa1c8f39b5beaf5bfa76c49d7e1865ab687a6f3d99c491fd55b593a2f03344",
+      "source_box": [
+        1024,
+        740,
+        1536,
+        1024
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
       "mechanical_status": "pass",
-      "failures": [],
-      "colors": 102,
-      "edge_to_center_luma_diff": null
+      "ui_scale": null,
+      "native_scale": {
+        "desired_world_size_before_drawing": [
+          1.5,
+          1.0
+        ],
+        "source_footprint_px": [
+          171,
+          93
+        ],
+        "resampled": false
+      }
     },
     {
-      "id": "windrock-arch-gate",
+      "id": "windrock-stone-stairs",
       "category": "prop",
-      "kit": "windrock",
-      "file": "windrock-arch-gate/final.png",
+      "kit": "native-camp-06",
+      "file": "windrock-stone-stairs/final.png",
       "px": [
-        390,
-        448
+        480,
+        256
+      ],
+      "size_px": [
+        480,
+        256
       ],
       "world": [
-        3.8,
-        3.5
+        3.75,
+        2.0
       ],
-      "pivot": "center",
+      "world_size": [
+        3.75,
+        2.0
+      ],
+      "pivot": "bottom-center",
+      "pivot_px": [
+        240,
+        220
+      ],
+      "pivot_uv": [
+        0.5,
+        0.859375
+      ],
       "tileable": "none",
+      "slice": null,
       "frames": 1,
+      "frame_px": null,
       "fps": null,
-      "sha256": "0b03238a0e56ee9d802a452ca2ba294fea9a060a2d6f0dc762e6d7ed4075ff8f",
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_camp.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/wooden-crate/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/barrel/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-06.png",
+      "raw_sha256": "8d3e61cf33c40edbb2df797c40164a8bc91d908475396ffad7fafaaf074ccc11",
+      "sha256": "3241e992d61a00eaddebaac59dbd448583d9feebd058af48dc222a3701769ff4",
+      "source_box": [
+        600,
+        0,
+        1100,
+        512
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
       "mechanical_status": "pass",
-      "failures": [],
-      "colors": 42,
-      "edge_to_center_luma_diff": null
+      "ui_scale": null,
+      "native_scale": {
+        "desired_world_size_before_drawing": [
+          3.75,
+          2.0
+        ],
+        "source_footprint_px": [
+          368,
+          184
+        ],
+        "resampled": false
+      }
     },
     {
       "id": "windrock-portal-dormant",
       "category": "prop",
-      "kit": "windrock",
+      "kit": "native-portal-small-14",
       "file": "windrock-portal-dormant/final.png",
       "px": [
-        392,
-        452
+        480,
+        480
+      ],
+      "size_px": [
+        480,
+        480
       ],
       "world": [
-        3.0,
-        3.5
+        3.75,
+        3.75
       ],
-      "pivot": "center",
+      "world_size": [
+        3.75,
+        3.75
+      ],
+      "pivot": "bottom-center",
+      "pivot_px": [
+        240,
+        448
+      ],
+      "pivot_uv": [
+        0.5,
+        0.9333333333333333
+      ],
       "tileable": "none",
+      "slice": null,
       "frames": 1,
+      "frame_px": null,
       "fps": null,
-      "sha256": "a1ce104ac97d087f4769110ea0af06c84f72595683493e7d0ce861fc2d87e039",
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_camp.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/forest-portal-dormant/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/forest-portal-active/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-14.png",
+      "raw_sha256": "1d053bdcefefc88912d13b1fb15df5a8e9520f1c5a8077d77d8df17e63b95e11",
+      "sha256": "e0ee7d066cbc1169fb0000ff2558930f21b99792abbf01d8c98b520af72ce189",
+      "source_box": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
       "mechanical_status": "pass",
-      "failures": [],
-      "colors": 28,
-      "edge_to_center_luma_diff": null
+      "ui_scale": null,
+      "native_scale": {
+        "desired_world_size_before_drawing": [
+          3.75,
+          3.75
+        ],
+        "source_footprint_px": [
+          382,
+          416
+        ],
+        "resampled": false
+      }
     },
     {
       "id": "windrock-portal-active",
       "category": "prop",
-      "kit": "windrock",
+      "kit": "native-portal-small-14",
       "file": "windrock-portal-active/final.png",
       "px": [
-        392,
-        452
+        480,
+        480
+      ],
+      "size_px": [
+        480,
+        480
+      ],
+      "world": [
+        3.75,
+        3.75
+      ],
+      "world_size": [
+        3.75,
+        3.75
+      ],
+      "pivot": "bottom-center",
+      "pivot_px": [
+        240,
+        448
+      ],
+      "pivot_uv": [
+        0.5,
+        0.9333333333333333
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 1,
+      "frame_px": null,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_camp.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/forest-portal-dormant/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/forest-portal-active/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-14.png",
+      "raw_sha256": "1d053bdcefefc88912d13b1fb15df5a8e9520f1c5a8077d77d8df17e63b95e11",
+      "sha256": "da5e44e143630f2cb7399aa6d4aaf1cbc88b5e60ca8161b0be8a35503039d76d",
+      "source_box": [
+        0,
+        512,
+        512,
+        1024
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": null,
+      "native_scale": {
+        "desired_world_size_before_drawing": [
+          3.75,
+          3.75
+        ],
+        "source_footprint_px": [
+          382,
+          416
+        ],
+        "resampled": false
+      }
+    },
+    {
+      "id": "windrock-mountain-path-floor",
+      "category": "floor",
+      "kit": "floors-materials-17",
+      "file": "windrock-mountain-path-floor/final.png",
+      "px": [
+        512,
+        512
+      ],
+      "size_px": [
+        512,
+        512
+      ],
+      "world": [
+        4.0,
+        4.0
+      ],
+      "world_size": [
+        4.0,
+        4.0
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        256,
+        256
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "xy",
+      "slice": null,
+      "frames": 1,
+      "frame_px": null,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_camp.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/grass-floor-01/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-17.png",
+      "raw_sha256": "e12d797a4e355714b396ff0094be94da46694d266f1fc15692da83b467bff6ea",
+      "sha256": "4592d6a445007957924194f9271e4f8931a52de086671922b6d0bc075f06f270",
+      "source_box": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": null
+    },
+    {
+      "id": "windrock-scree-floor",
+      "category": "floor",
+      "kit": "floors-materials-17",
+      "file": "windrock-scree-floor/final.png",
+      "px": [
+        512,
+        512
+      ],
+      "size_px": [
+        512,
+        512
+      ],
+      "world": [
+        4.0,
+        4.0
+      ],
+      "world_size": [
+        4.0,
+        4.0
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        256,
+        256
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "xy",
+      "slice": null,
+      "frames": 1,
+      "frame_px": null,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_camp.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/grass-floor-01/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-17.png",
+      "raw_sha256": "e12d797a4e355714b396ff0094be94da46694d266f1fc15692da83b467bff6ea",
+      "sha256": "8d8d8e08e7a1dd9ca26d21b25b6f66aacf56a4c50c15bdc22fe9053c8f2ba9df",
+      "source_box": [
+        512,
+        0,
+        1024,
+        512
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": null
+    },
+    {
+      "id": "windrock-rock-floor-03",
+      "category": "floor",
+      "kit": "floors-materials-17",
+      "file": "windrock-rock-floor-03/final.png",
+      "px": [
+        512,
+        512
+      ],
+      "size_px": [
+        512,
+        512
+      ],
+      "world": [
+        4.0,
+        4.0
+      ],
+      "world_size": [
+        4.0,
+        4.0
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        256,
+        256
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "xy",
+      "slice": null,
+      "frames": 1,
+      "frame_px": null,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_camp.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/grass-floor-01/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-17.png",
+      "raw_sha256": "e12d797a4e355714b396ff0094be94da46694d266f1fc15692da83b467bff6ea",
+      "sha256": "5d83a3399a30f8da11360db70566f422887ab6f17ab856a2b59953af3e06c7fa",
+      "source_box": [
+        1024,
+        0,
+        1536,
+        512
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": null
+    },
+    {
+      "id": "windrock-supply-keg",
+      "category": "prop",
+      "kit": "native-mixed-scale-19",
+      "file": "windrock-supply-keg/final.png",
+      "px": [
+        160,
+        128
+      ],
+      "size_px": [
+        160,
+        128
+      ],
+      "world": [
+        1.25,
+        1.0
+      ],
+      "world_size": [
+        1.25,
+        1.0
+      ],
+      "pivot": "bottom-center",
+      "pivot_px": [
+        80,
+        118
+      ],
+      "pivot_uv": [
+        0.5,
+        0.921875
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 1,
+      "frame_px": null,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_camp.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-windrock/jobs/native-mixed-scale-19/reference-approved-stone-wood.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-19.png",
+      "raw_sha256": "d2de5fe0efff5699373b97b11f88e30be28da3b07af29205165189262732f634",
+      "sha256": "ac55e00a8144e1f8fc4f4fec56b2e536893b944aa356e624de233baf4cd43ea1",
+      "source_box": [
+        0,
+        740,
+        512,
+        1024
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": null,
+      "native_scale": {
+        "desired_world_size_before_drawing": [
+          1.25,
+          1.0
+        ],
+        "source_footprint_px": [
+          127,
+          108
+        ],
+        "resampled": false
+      }
+    },
+    {
+      "id": "windrock-camp-stone-door-hut",
+      "category": "prop",
+      "kit": "native-landmark-extract-22",
+      "file": "windrock-camp-stone-door-hut/final.png",
+      "px": [
+        480,
+        448
+      ],
+      "size_px": [
+        480,
+        448
+      ],
+      "world": [
+        3.75,
+        3.5
+      ],
+      "world_size": [
+        3.75,
+        3.5
+      ],
+      "pivot": "bottom-center",
+      "pivot_px": [
+        240,
+        410
+      ],
+      "pivot_uv": [
+        0.5,
+        0.9151785714285714
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 1,
+      "frame_px": null,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-windrock/jobs/native-map-landmarks-21/original-six-maps-reference.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-large/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-03-octopath/shore-rock-large/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-21.png",
+      "raw_sha256": "a0ec8886cfa0b9dea5f40e24e279f03f4c9f380f2769dd26962419a4a34a2556",
+      "sha256": "7bbab958629f04300d15dab8e92f6e084d67233b86eea77a0ca68e0127190cf1",
+      "source_box": [
+        0,
+        0,
+        510,
+        512
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": null,
+      "native_scale": {
+        "desired_world_size_before_drawing": [
+          3.75,
+          3.5
+        ],
+        "source_footprint_px": [
+          461,
+          373
+        ],
+        "resampled": false
+      },
+      "map_id": "windrock_mountain_camp",
+      "content_provenance": "observed round camp doorway"
+    },
+    {
+      "id": "windrock-canyon-whistling-rock",
+      "category": "prop",
+      "kit": "native-landmark-extract-22",
+      "file": "windrock-canyon-whistling-rock/final.png",
+      "px": [
+        384,
+        480
+      ],
+      "size_px": [
+        384,
+        480
+      ],
+      "world": [
+        3.0,
+        3.75
+      ],
+      "world_size": [
+        3.0,
+        3.75
+      ],
+      "pivot": "bottom-center",
+      "pivot_px": [
+        192,
+        468
+      ],
+      "pivot_uv": [
+        0.5,
+        0.975
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 1,
+      "frame_px": null,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-windrock/jobs/native-map-landmarks-21/original-six-maps-reference.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-large/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-03-octopath/shore-rock-large/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-21.png",
+      "raw_sha256": "a0ec8886cfa0b9dea5f40e24e279f03f4c9f380f2769dd26962419a4a34a2556",
+      "sha256": "8796d8b7ebb77187ae753451d128479ebcb631ab5c7f4ac0d47c2c90df0394c4",
+      "source_box": [
+        1145,
+        0,
+        1536,
+        512
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": null,
+      "native_scale": {
+        "desired_world_size_before_drawing": [
+          3.0,
+          3.75
+        ],
+        "source_footprint_px": [
+          335,
+          457
+        ],
+        "resampled": false
+      },
+      "map_id": "windrock_mountain_howling_canyon",
+      "content_provenance": "named-map creative interpretation; not recovered APK content"
+    },
+    {
+      "id": "windrock-range-serrated-ridge",
+      "category": "prop",
+      "kit": "native-landmark-extract-22",
+      "file": "windrock-range-serrated-ridge/final.png",
+      "px": [
+        640,
+        448
+      ],
+      "size_px": [
+        640,
+        448
+      ],
+      "world": [
+        5.0,
+        3.5
+      ],
+      "world_size": [
+        5.0,
+        3.5
+      ],
+      "pivot": "bottom-center",
+      "pivot_px": [
+        320,
+        341
+      ],
+      "pivot_uv": [
+        0.5,
+        0.7611607142857143
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 1,
+      "frame_px": null,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-windrock/jobs/native-map-landmarks-21/original-six-maps-reference.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-large/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-03-octopath/shore-rock-large/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-21.png",
+      "raw_sha256": "a0ec8886cfa0b9dea5f40e24e279f03f4c9f380f2769dd26962419a4a34a2556",
+      "sha256": "a8f40d97eb4776a0cd3d733bdf41f70ac1219e0655c94e49d1651531b40416b0",
+      "source_box": [
+        0,
+        620,
+        615,
+        960
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "ui_scale": null,
+      "native_scale": {
+        "desired_world_size_before_drawing": [
+          5.0,
+          3.5
+        ],
+        "source_footprint_px": [
+          589,
+          234
+        ],
+        "resampled": false
+      },
+      "map_id": "windrock_mountain_mountain_range",
+      "content_provenance": "named-map creative interpretation; not recovered APK content"
+    },
+    {
+      "id": "windrock-summit-wind-cairn",
+      "category": "prop",
+      "kit": "native-landmark-extract-22",
+      "file": "windrock-summit-wind-cairn/final.png",
+      "px": [
+        384,
+        448
+      ],
+      "size_px": [
+        384,
+        448
       ],
       "world": [
         3.0,
         3.5
       ],
-      "pivot": "center",
+      "world_size": [
+        3.0,
+        3.5
+      ],
+      "pivot": "bottom-center",
+      "pivot_px": [
+        192,
+        430
+      ],
+      "pivot_uv": [
+        0.5,
+        0.9598214285714286
+      ],
       "tileable": "none",
+      "slice": null,
       "frames": 1,
+      "frame_px": null,
       "fps": null,
-      "sha256": "eeb9faaaf41e927cb87a2e4fb82a645045bed0ec4ab4ba96c25410eec02116b3",
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-windrock/jobs/native-map-landmarks-21/original-six-maps-reference.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-large/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-03-octopath/shore-rock-large/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-21.png",
+      "raw_sha256": "a0ec8886cfa0b9dea5f40e24e279f03f4c9f380f2769dd26962419a4a34a2556",
+      "sha256": "0896c7041eebae61f277eb54f73b0c482d6dfb4504a0824273bdc981deeaf601",
+      "source_box": [
+        1165,
+        512,
+        1536,
+        990
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
       "mechanical_status": "pass",
-      "failures": [],
-      "colors": 31,
-      "edge_to_center_luma_diff": null
+      "ui_scale": null,
+      "native_scale": {
+        "desired_world_size_before_drawing": [
+          3.0,
+          3.5
+        ],
+        "source_footprint_px": [
+          338,
+          413
+        ],
+        "resampled": false
+      },
+      "map_id": "windrock_mountain_summit",
+      "content_provenance": "named-map creative interpretation; not recovered APK content"
     },
     {
-      "id": "windrock-campfire-anim",
+      "id": "windrock-bridge-stone-abutment",
       "category": "prop",
-      "kit": "windrock",
-      "file": "windrock-campfire-anim/final.png",
+      "kit": "native-cliffs-extract-24",
+      "file": "windrock-bridge-stone-abutment/final.png",
       "px": [
-        480,
-        140
+        512,
+        320
+      ],
+      "size_px": [
+        512,
+        320
       ],
       "world": [
         4.0,
-        1.0
+        2.5
       ],
-      "pivot": "center",
+      "world_size": [
+        4.0,
+        2.5
+      ],
+      "pivot": "bottom-center",
+      "pivot_px": [
+        256,
+        305
+      ],
+      "pivot_uv": [
+        0.5,
+        0.953125
+      ],
       "tileable": "none",
-      "frames": 4,
-      "fps": 5,
-      "sha256": "8b7edbbb591ec8ad09452ebcb5456e2ffb7ca961ecafa65934358e3549adf8d9",
+      "slice": null,
+      "frames": 1,
+      "frame_px": null,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-windrock/jobs/native-map-landmarks-21/original-six-maps-reference.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-large/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-03-octopath/shore-rock-large/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-23.png",
+      "raw_sha256": "f396d3667f1b6a28fac6d5e185f33c270d354ce02fc80123022fb901aa70bf8f",
+      "sha256": "d99b6950b84163d6c52e18e12328cf29e865d013f2fbe94b2664741a6fe22656",
+      "source_box": [
+        3,
+        3,
+        509,
+        509
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
       "mechanical_status": "pass",
-      "failures": [],
-      "colors": 23,
-      "edge_to_center_luma_diff": null
+      "ui_scale": null,
+      "native_scale": {
+        "desired_world_size_before_drawing": [
+          4.0,
+          2.5
+        ],
+        "source_footprint_px": [
+          474,
+          290
+        ],
+        "resampled": false
+      },
+      "map_id": "windrock_mountain_stone_bridge",
+      "content_provenance": "named-map interpretation; not recovered APK content"
     },
     {
-      "id": "windrock-spawn-marker",
-      "category": "marker",
-      "kit": "windrock",
-      "file": "windrock-spawn-marker/final.png",
+      "id": "windrock-path-switchback-ledge",
+      "category": "prop",
+      "kit": "native-cliffs-extract-24",
+      "file": "windrock-path-switchback-ledge/final.png",
       "px": [
         640,
-        140
+        256
+      ],
+      "size_px": [
+        640,
+        256
       ],
       "world": [
-        4.0,
-        1.0
+        5.0,
+        2.0
       ],
-      "pivot": "center",
+      "world_size": [
+        5.0,
+        2.0
+      ],
+      "pivot": "bottom-center",
+      "pivot_px": [
+        320,
+        222
+      ],
+      "pivot_uv": [
+        0.5,
+        0.8671875
+      ],
       "tileable": "none",
-      "frames": 4,
-      "fps": 4,
-      "sha256": "d428bedd0e286a869bf2e2d9ac449b25c540502e9c1801e985af7858912ba2c4",
+      "slice": null,
+      "frames": 1,
+      "frame_px": null,
+      "fps": null,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-windrock/jobs/native-map-landmarks-21/original-six-maps-reference.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-large/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-03-octopath/shore-rock-large/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-23.png",
+      "raw_sha256": "f396d3667f1b6a28fac6d5e185f33c270d354ce02fc80123022fb901aa70bf8f",
+      "sha256": "c294734050c6dfb86036ce041eb28561c1b07f47c52bdec03fa756356bccd010",
+      "source_box": [
+        515,
+        3,
+        1021,
+        509
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
       "mechanical_status": "pass",
-      "failures": [],
-      "colors": 24,
-      "edge_to_center_luma_diff": null
+      "ui_scale": null,
+      "native_scale": {
+        "desired_world_size_before_drawing": [
+          5.0,
+          2.0
+        ],
+        "source_footprint_px": [
+          481,
+          189
+        ],
+        "resampled": false
+      },
+      "map_id": "windrock_mountain_mountain_path",
+      "content_provenance": "named-map interpretation; not recovered APK content"
     },
     {
-      "id": "windrock-shadow-small-round",
-      "category": "shadow",
-      "kit": "windrock",
-      "file": "windrock-shadow-small-round/final.png",
+      "id": "windrock-spire-pillar-tall-01",
+      "category": "prop",
+      "kit": "native-cliffs-extract-24",
+      "file": "windrock-spire-pillar-tall-01/final.png",
       "px": [
-        140,
-        80
+        288,
+        512
+      ],
+      "size_px": [
+        288,
+        512
       ],
       "world": [
-        1.1,
-        0.6
+        2.25,
+        4.0
       ],
-      "pivot": "center",
+      "world_size": [
+        2.25,
+        4.0
+      ],
+      "pivot": "bottom-center",
+      "pivot_px": [
+        144,
+        488
+      ],
+      "pivot_uv": [
+        0.5,
+        0.953125
+      ],
       "tileable": "none",
+      "slice": null,
       "frames": 1,
+      "frame_px": null,
       "fps": null,
-      "sha256": "161a74b6f385df07ae9b2e55fa271c68d8b557fed0976b00fe3a6f7ebc032c5e",
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-windrock/jobs/native-map-landmarks-21/original-six-maps-reference.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-large/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-03-octopath/shore-rock-large/final.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "raw-23.png",
+      "raw_sha256": "f396d3667f1b6a28fac6d5e185f33c270d354ce02fc80123022fb901aa70bf8f",
+      "sha256": "b476e8ca5abe1422b09a83d6c535fc4bb5f01f53d6440e50b3802f12bd42fc4d",
+      "source_box": [
+        1027,
+        515,
+        1533,
+        1021
+      ],
+      "approved": false,
+      "status": "needs_claude_visual_review",
       "mechanical_status": "pass",
-      "failures": [],
-      "colors": 130,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-shadow-medium-oval",
-      "category": "shadow",
-      "kit": "windrock",
-      "file": "windrock-shadow-medium-oval/final.png",
-      "px": [
-        260,
-        140
-      ],
-      "world": [
-        2.0,
-        1.1
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "46ec80df15b1997d17006559c997cb6f8161a76734269beca792965550e63a5b",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 135,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-shadow-large-oval",
-      "category": "shadow",
-      "kit": "windrock",
-      "file": "windrock-shadow-large-oval/final.png",
-      "px": [
-        380,
-        180
-      ],
-      "world": [
-        3.0,
-        1.4
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "c473f2b1a24f017ec0e12196f4be223c139ac2e27d8303cc81a22e1d89946f06",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 136,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-shadow-pillar-long",
-      "category": "shadow",
-      "kit": "windrock",
-      "file": "windrock-shadow-pillar-long/final.png",
-      "px": [
-        200,
-        200
-      ],
-      "world": [
-        1.6,
-        1.6
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "cf92734dcb8ffb5c44dc952fa1fb8fdb2c064719b159f5216745e15e13c666e4",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 135,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-shadow-tree-canopy",
-      "category": "shadow",
-      "kit": "windrock",
-      "file": "windrock-shadow-tree-canopy/final.png",
-      "px": [
-        300,
-        150
-      ],
-      "world": [
-        2.4,
-        1.2
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "978d92fb6d06951f4b235323aa06acf255840a28d0ce5dce3c03b025b0969540",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 135,
-      "edge_to_center_luma_diff": null
-    },
-    {
-      "id": "windrock-shadow-stairs-spread",
-      "category": "shadow",
-      "kit": "windrock",
-      "file": "windrock-shadow-stairs-spread/final.png",
-      "px": [
-        380,
-        200
-      ],
-      "world": [
-        3.0,
-        1.6
-      ],
-      "pivot": "center",
-      "tileable": "none",
-      "frames": 1,
-      "fps": null,
-      "sha256": "e558bb1bea3b592d80ada4ad07d2f093814c3c23244fff03b68aea6fbba10a15",
-      "mechanical_status": "pass",
-      "failures": [],
-      "colors": 136,
-      "edge_to_center_luma_diff": null
+      "ui_scale": null,
+      "native_scale": {
+        "desired_world_size_before_drawing": [
+          2.25,
+          4.0
+        ],
+        "source_footprint_px": [
+          260,
+          465
+        ],
+        "resampled": false
+      }
     }
-  ]
+  ],
+  "stage": "continuous-redraw"
 }

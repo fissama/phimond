@@ -1,0 +1,150 @@
+{
+  "raw": "raw-01.png",
+  "prompt": "Use case: stylized-concept. Create Phimond windrock terrain: one exact 1536×1024 atlas, THREE COLUMNS by TWO ROWS, six DIFFERENT square top-down floor textures, each512×512. NO perspective props. Input1 is original game CONTENT only, dark craggy mountain floor. Inputs2/3 approved GPT forest floors define EXACT chunky Octopath HD2D pixel clusters, 2–4 shade groups per material, warm upper-left highlights cool slate recesses, no dither/noise/blur/smooth gradients. Inputs4/5 outline-volume anchors only. New six textures are six separately designed terrains, never recolors or same crack paths. Each has a perfectly UNIFORM flat 12pixel apron all four sides in its own stated background color; same color opposite sides, NO details within12px of each tile boundary. Sparse material islands and meandering interior quiet gaps must prevent the apron reading as a straight corridor on repeated3×3. No regular motifs or lettering, S-shaped strokes, symbols, shadows, isolated giant center hero rock, borders, labels, dividers. Fill all pixels opaque.\nTOPLEFT windrock-rock-floor-01: blue-gray layered mountain slate surface, broad chipped shallow connected plates mixed with small angular fragments and olive lichen, base #637183. TOPMIDDLE rock-floor-02: DIFFERENT radial frost fractures and scattered weathered pale quartz inclusions, quieter than01, base #7B8794. TOPRIGHT gravel-floor: warm gray-brown soil with irregular small slate gravel clusters and occasional ochre grit, base #826B4D. BOTTOMLEFT grass-snow-floor: dry olive alpine turf broken by irregular bare-earth pockets and sparse disconnected snow crust islets, base #8A8F4E. BOTTOMMIDDLE snow-crust-floor: actual pale snow field broken by bluish ice fractures and a few embedded dark pebbles, not copied grass texture or recolor, base #CCD9E3. BOTTOMRIGHT slate-floor: naturally thin slate scales with offset splits and small warm weathered seams, base #566070. No checkerboard, no repeated identical triangular shapes. Rich stone/earth/moss/snow color nuances, 33–48 colors each after nearest regional48palette finish. Study six real distinct texture designs at game camera scale, not six paintings of rock heaps. All512tile boundaries exact, no magenta gutters in opaque floor atlas.",
+  "refs": [
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_camp.png",
+      "sha256": "58d68f8dcd07e2674060f59ca7851dab25d80b8eac99153c410550c3c4712f33"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/grass-floor-01/final.png",
+      "sha256": "792b3a1c25fb3be8671af1a4e119ef7af3bbd5a89dd22e42e14206317697524c"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+      "sha256": "bd4ba8187917b9023a9f9c9bd7ddc8ad43cb269724cbe02c1137f299ea03dff3"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "palette_source": "palette.json",
+  "assets": [
+    {
+      "id": "windrock-rock-floor-01",
+      "category": "floor",
+      "size": [
+        512,
+        512
+      ],
+      "world": [
+        4,
+        4
+      ],
+      "opaque": true,
+      "tileable": "xy",
+      "box": [
+        0,
+        0,
+        512,
+        512
+      ]
+    },
+    {
+      "id": "windrock-rock-floor-02",
+      "category": "floor",
+      "size": [
+        512,
+        512
+      ],
+      "world": [
+        4,
+        4
+      ],
+      "opaque": true,
+      "tileable": "xy",
+      "box": [
+        512,
+        0,
+        1024,
+        512
+      ]
+    },
+    {
+      "id": "windrock-gravel-floor",
+      "category": "floor",
+      "size": [
+        512,
+        512
+      ],
+      "world": [
+        4,
+        4
+      ],
+      "opaque": true,
+      "tileable": "xy",
+      "box": [
+        1024,
+        0,
+        1536,
+        512
+      ]
+    },
+    {
+      "id": "windrock-grass-snow-floor",
+      "category": "floor",
+      "size": [
+        512,
+        512
+      ],
+      "world": [
+        4,
+        4
+      ],
+      "opaque": true,
+      "tileable": "xy",
+      "box": [
+        0,
+        512,
+        512,
+        1024
+      ]
+    },
+    {
+      "id": "windrock-snow-crust-floor",
+      "category": "floor",
+      "size": [
+        512,
+        512
+      ],
+      "world": [
+        4,
+        4
+      ],
+      "opaque": true,
+      "tileable": "xy",
+      "box": [
+        512,
+        512,
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "windrock-slate-floor",
+      "category": "floor",
+      "size": [
+        512,
+        512
+      ],
+      "world": [
+        4,
+        4
+      ],
+      "opaque": true,
+      "tileable": "xy",
+      "box": [
+        1024,
+        512,
+        1536,
+        1024
+      ]
+    }
+  ],
+  "state": "exported_pending_visual_review"
+}

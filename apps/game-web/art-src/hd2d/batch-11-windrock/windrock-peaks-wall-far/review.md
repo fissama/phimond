@@ -1,6 +1,1 @@
-# Review: windrock-peaks-wall-far
-
-- Kích thước: 1024×384
-- Số màu: 38
-- Seam X: 0, Seam Y: 0
-- Kết luận: ĐẠT.
+Actual final all four full4x quarters inspected on dark and checker, plus 3-repeat overview, 2026-10-25. Valley fog removed by built-in image_gen, actual terrain now visible.47 colors, opaque. Still NOT accepted for horizontal repeat: slopes break at join; local SEAM_X_NONZERO retained. Busy microfacets are also weaker than approved landscapes. Needs built-in redraw/edit, no edge painting. Owner approval pending.

@@ -1,0 +1,25 @@
+Use case: stylized-concept. Phimond windrock HD-2D Octopath Traveler palette/material proof ONLY, not final game props. Make exactly six separated small material studies on a flat #FF00FF background, 3 columns by 2 rows. NO text, numbers, labels, charts, shadows, characters, haze, gradients or glow. Input1 original game map: CONTENT only, slanted dark wind-eroded rocky identity; do not copy its coarse style. Inputs2 and3 are approved actual GPT rock assets: EXACT pixel-art style, chunky color clusters, warm upper-left key, cool object shade, dark material-colored outlines, weathered readable forms. Inputs4/5 pet anchors: outline/volume only, ignore creatures and colors. Six studies: top left blue-gray wind-polished fractured slate, top middle warm brown timber with hemp rope, top right olive dry alpine grass rooted against gray stone; bottom left patchy pale blue-white snow on slate, bottom middle iron/aged copper camp hardware, bottom right rust-red weathered rock fragment for original upper-map accent. Keep rocks blue-gray main #7B8794/#566070 shadows #4A525D; grass #8A8F4E, snow #E8EEF4. 2–4 shade groups per material, rich subtle chipped facets rather than noisy dithering. Study sheet 1536x1024, six isolated studies centered in equal 512px cells, generous magenta gaps. This is the palette proof preceding full assets.
+
+Actual attachments ordered:
+[
+  {
+    "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_camp.png",
+    "sha256": "58d68f8dcd07e2674060f59ca7851dab25d80b8eac99153c410550c3c4712f33"
+  },
+  {
+    "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-large/final.png",
+    "sha256": "81499f1c27baf3956588ed392d6be562129926f300aa9be9dca949c781a84ea2"
+  },
+  {
+    "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-03-octopath/shore-rock-large/final.png",
+    "sha256": "717fdf80d11ac1dadd07357cc44936ee2c4a532116b82adacb20eb9464f09106"
+  },
+  {
+    "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+    "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+  },
+  {
+    "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+    "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+  }
+]

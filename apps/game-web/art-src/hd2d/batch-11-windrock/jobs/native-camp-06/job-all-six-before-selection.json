@@ -1,0 +1,150 @@
+{
+  "raw": "raw-06.png",
+  "prompt": "EXTREMELY SPARSE1536x1024 #FF00FFsheet, six little Phimondmountain camp sprites, THREECOLUMNS TWOROWScenters(256,256),(768,256),(1280,256),(256,768),(768,768),(1280,768). Verylarge emptyspaces, 90percentmagenta. Actual SMALL DISTANTpixel footprints, drawONLYHALF usualsize: tent240x180;stairs260x120;cairn80x130;keg40x50;barrel40x55;firewood90x40. DO NOT enlarge to fillcells. Exact sameOctopathHD2D crispchunkypixels as approved GPTstyle images2/3, input1originalmountainCONTENTonly,4/5petoutline/volumeanchorsonly. Warmupperleft key andcoolrecesses, 2\u20134materialtones, subtlebrown/olive/slate/ivory48colorfamilies,33\u201348visiblecolorsperobject afterregionalpalette. Darkcoloredthincontours, selectivewear/facets; no smoothpaint, blur,dither/noise, groundshadow, floor, glow, air, labels orwriting. EachobjectONEconnectedcutout,no detachedstakes/logs/pebbles.\nTOPLEFT weathered wind-resistant camp TENT, warmgraycanvas/olivepatchedroof, woodframe+attachedropes+smallrustbrassbuckles, irregularsnowdustatbaseonly; fullsidesandstakesconnected. TOPMIDDLE 4shallowbluegray STONE STAIRS withchipped warmstonecorners, sparseolivebasegrass, completestepends no croppedwall. TOPRIGHT TRAIL CAIRN: threeasymmetricalgraystonesstackedunderwarmweathering, littleclothknot+lichen, NOT glyphorstele. BOTTOMLEFT MICROSCOPIC smallwater SUPPLYKEG LYING HORIZONTALLY onconnectedshortwoodcradle,grayironhoops,tanplugandoneoliveclothstrap; footprint40x50, smallenoughtocarry. BOTTOMMIDDLE MICROSCOPIC UPRIGHT wooden BARREL, differentroundbody/proportionsfromthehorizontalwaterkeg, warmwoodstaves,graysteelringsandoliveclothpatch,40x55pixels. BOTTOMRIGHT SMALL FIREWOOD BUNDLE threeunevenlogsboundwithtanrope anddarkolivecanvasstrap, allconnected,90x40pixels. Keg/barrel muchshorterthan168pxplayer, limiteddetailsatthatnativesize.\nFinalcanvasesPREDECLARED(world_size*128):tent480x384world3.75x3(height2.29players);stairs480x256world3.75x2(height1.53players);cairn192x224world1.5x1.75(height1.34players);keg128x128world1x1(height0.763players);barrel128x128world1x1(height0.763players);firewood192x112world1.5x0.875(height0.668players). ALLdrawingsmustfitwith8pxmarginafteronly1:1crop/key/palette/pad; no resampling/downsizingallowed. Thesearemaximumcanvasesnotatargettofill. Sixinactual3x2grid, tinyitemsandvastmagenta.",
+  "refs": [
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_camp.png",
+      "sha256": "58d68f8dcd07e2674060f59ca7851dab25d80b8eac99153c410550c3c4712f33"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/wooden-crate/final.png",
+      "sha256": "41eb988f9dcfeb2a6a00443fe2fd8fc804f21684302022e7fed8cc106577a83c"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/barrel/final.png",
+      "sha256": "a48199166f5a03250e480c8df0e04cd67e01041d26770e33c0c4bc168cd31c2f"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "palette_source": "palette.json",
+  "assets": [
+    {
+      "id": "windrock-camp-tent",
+      "category": "prop",
+      "size": [
+        480,
+        384
+      ],
+      "native_pixels": true,
+      "desired_world_size": [
+        3.75,
+        3.0
+      ],
+      "height_relative_to_player": 2.2900763358778624,
+      "box": [
+        0,
+        0,
+        512,
+        512
+      ]
+    },
+    {
+      "id": "windrock-stone-stairs",
+      "category": "prop",
+      "size": [
+        480,
+        256
+      ],
+      "native_pixels": true,
+      "desired_world_size": [
+        3.75,
+        2.0
+      ],
+      "height_relative_to_player": 1.5267175572519083,
+      "box": [
+        512,
+        0,
+        1024,
+        512
+      ]
+    },
+    {
+      "id": "windrock-trail-cairn",
+      "category": "prop",
+      "size": [
+        192,
+        224
+      ],
+      "native_pixels": true,
+      "desired_world_size": [
+        1.5,
+        1.75
+      ],
+      "height_relative_to_player": 1.3358778625954197,
+      "box": [
+        1024,
+        0,
+        1536,
+        512
+      ]
+    },
+    {
+      "id": "windrock-supply-keg",
+      "category": "prop",
+      "size": [
+        128,
+        128
+      ],
+      "native_pixels": true,
+      "desired_world_size": [
+        1.0,
+        1.0
+      ],
+      "height_relative_to_player": 0.7633587786259541,
+      "box": [
+        0,
+        512,
+        512,
+        1024
+      ]
+    },
+    {
+      "id": "windrock-wooden-barrel",
+      "category": "prop",
+      "size": [
+        128,
+        128
+      ],
+      "native_pixels": true,
+      "desired_world_size": [
+        1.0,
+        1.0
+      ],
+      "height_relative_to_player": 0.7633587786259541,
+      "box": [
+        512,
+        512,
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "windrock-firewood-stack",
+      "category": "prop",
+      "size": [
+        192,
+        112
+      ],
+      "native_pixels": true,
+      "desired_world_size": [
+        1.5,
+        0.875
+      ],
+      "height_relative_to_player": 0.6679389312977099,
+      "box": [
+        1024,
+        512,
+        1536,
+        1024
+      ]
+    }
+  ],
+  "state": "planned_before_generation"
+}

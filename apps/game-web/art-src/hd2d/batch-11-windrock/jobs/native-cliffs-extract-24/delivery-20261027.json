@@ -1,0 +1,156 @@
+{
+  "date": "2026-10-27",
+  "route": "built-in image_gen only",
+  "before_manifest_count": 25,
+  "after_manifest_count": 32,
+  "added_assets": [
+    "windrock-camp-stone-door-hut",
+    "windrock-canyon-whistling-rock",
+    "windrock-range-serrated-ridge",
+    "windrock-summit-wind-cairn",
+    "windrock-bridge-stone-abutment",
+    "windrock-path-switchback-ledge",
+    "windrock-spire-pillar-tall-01"
+  ],
+  "replaced_assets": [],
+  "new_asset_qa": [
+    {
+      "id": "windrock-camp-stone-door-hut",
+      "colors": 48,
+      "margin": 9,
+      "failures": [],
+      "raw_sha256": "a0ec8886cfa0b9dea5f40e24e279f03f4c9f380f2769dd26962419a4a34a2556",
+      "final_sha256": "7bbab958629f04300d15dab8e92f6e084d67233b86eea77a0ca68e0127190cf1",
+      "native_resampled": false
+    },
+    {
+      "id": "windrock-canyon-whistling-rock",
+      "colors": 48,
+      "margin": 11,
+      "failures": [],
+      "raw_sha256": "a0ec8886cfa0b9dea5f40e24e279f03f4c9f380f2769dd26962419a4a34a2556",
+      "final_sha256": "8796d8b7ebb77187ae753451d128479ebcb631ab5c7f4ac0d47c2c90df0394c4",
+      "native_resampled": false
+    },
+    {
+      "id": "windrock-range-serrated-ridge",
+      "colors": 48,
+      "margin": 25,
+      "failures": [],
+      "raw_sha256": "a0ec8886cfa0b9dea5f40e24e279f03f4c9f380f2769dd26962419a4a34a2556",
+      "final_sha256": "a8f40d97eb4776a0cd3d733bdf41f70ac1219e0655c94e49d1651531b40416b0",
+      "native_resampled": false
+    },
+    {
+      "id": "windrock-summit-wind-cairn",
+      "colors": 48,
+      "margin": 17,
+      "failures": [],
+      "raw_sha256": "a0ec8886cfa0b9dea5f40e24e279f03f4c9f380f2769dd26962419a4a34a2556",
+      "final_sha256": "0896c7041eebae61f277eb54f73b0c482d6dfb4504a0824273bdc981deeaf601",
+      "native_resampled": false
+    },
+    {
+      "id": "windrock-bridge-stone-abutment",
+      "colors": 48,
+      "margin": 15,
+      "failures": [],
+      "raw_sha256": "f396d3667f1b6a28fac6d5e185f33c270d354ce02fc80123022fb901aa70bf8f",
+      "final_sha256": "d99b6950b84163d6c52e18e12328cf29e865d013f2fbe94b2664741a6fe22656",
+      "native_resampled": false
+    },
+    {
+      "id": "windrock-path-switchback-ledge",
+      "colors": 48,
+      "margin": 33,
+      "failures": [],
+      "raw_sha256": "f396d3667f1b6a28fac6d5e185f33c270d354ce02fc80123022fb901aa70bf8f",
+      "final_sha256": "c294734050c6dfb86036ce041eb28561c1b07f47c52bdec03fa756356bccd010",
+      "native_resampled": false
+    },
+    {
+      "id": "windrock-spire-pillar-tall-01",
+      "colors": 47,
+      "margin": 14,
+      "failures": [],
+      "raw_sha256": "f396d3667f1b6a28fac6d5e185f33c270d354ce02fc80123022fb901aa70bf8f",
+      "final_sha256": "b476e8ca5abe1422b09a83d6c535fc4bb5f01f53d6440e50b3802f12bd42fc4d",
+      "native_resampled": false
+    }
+  ],
+  "missing_native_plan_assets": [
+    "windrock-spire-pillar-tall-02",
+    "windrock-cliff-01",
+    "windrock-cliff-snow-ledge",
+    "windrock-cliff-03",
+    "windrock-bridge-anchor-post-left",
+    "windrock-bridge-anchor-post-right",
+    "windrock-bridge-repeat",
+    "windrock-bridge-broken",
+    "windrock-pine-trunk",
+    "windrock-pine-canopy",
+    "windrock-pine-large-01-trunk",
+    "windrock-pine-large-01-canopy",
+    "windrock-pine-large-02-trunk",
+    "windrock-pine-large-02-canopy",
+    "windrock-shrub-snow-01",
+    "windrock-shrub-snow-02",
+    "windrock-shrub-snow-03",
+    "windrock-shrub-snow-04",
+    "windrock-grass-snow-clump-01",
+    "windrock-grass-snow-clump-02",
+    "windrock-grass-snow-clump-03",
+    "windrock-dead-wood-stump",
+    "windrock-boulder-snow-01",
+    "windrock-boulder-03",
+    "windrock-pebbles-scatter",
+    "windrock-wooden-barrel",
+    "windrock-arch-gate",
+    "windrock-prayer-flagpole",
+    "windrock-chasm-ravine-01",
+    "windrock-chasm-ravine-02"
+  ],
+  "remaining_sets": {
+    "edges": 5,
+    "ground_decals": 12,
+    "soft_shadows": 6,
+    "backdrop_layers": "near plus high-map red-sky variant",
+    "marker": "4-frame spawn marker",
+    "fx": "campfire plus gust/snow/scree sheets",
+    "note": "portal pair already exists as category prop; do not redraw solely for approval status"
+  },
+  "approval": false,
+  "scope": "batch-11-windrock only; no runtime, release, motion, gate, waiver or central checklist edits; no commits",
+  "gate_command": "sh tools/check_hd2d_art.sh batch-11-windrock",
+  "gate_note": "Argument does not narrow current gate implementation: default batch11 kits are scanned. No gate changes.",
+  "raw_sheet_rejections": [
+    {
+      "job": "native-map-landmarks-21",
+      "ids": [
+        "windrock-bridge-stone-abutment",
+        "windrock-path-switchback-ledge"
+      ],
+      "resolution": "redrawn in23, accepted in24"
+    },
+    {
+      "job": "native-cliffs-landmarks-23",
+      "ids": [
+        "windrock-cliff-01",
+        "windrock-cliff-snow-ledge",
+        "windrock-cliff-03"
+      ],
+      "resolution": "retained raw, excluded from manifest, source width exceeds predeclared native budget"
+    }
+  ],
+  "weakest_three": [
+    "windrock-path-switchback-ledge: reads as stepped shelf, weak switchback shape",
+    "windrock-canyon-whistling-rock: opening is fairly oval rather than strongly wind-cut",
+    "windrock-camp-stone-door-hut: dense stone texture and more snow than original source"
+  ],
+  "doctor_notes": [
+    "deps.scipy WARN: not installed, numpy fallback used",
+    "skills.present WARN: missing codeart2d; prohibited and unnecessary for this task",
+    "Other MISSING routes are optional API/Grok/codeart capabilities; host_image ready. No installation/API used."
+  ],
+  "gate_result": "Art gate: kit batch-11-desert, batch-11-nightmare, batch-11-tomb, batch-11-windrock; 209 asset; 0 l\u1ed7i, 0 c\u1ea3nh b\u00e1o"
+}

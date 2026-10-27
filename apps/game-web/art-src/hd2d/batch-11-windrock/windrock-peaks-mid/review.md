@@ -1,6 +1,1 @@
-# Review: windrock-peaks-mid
-
-- Kích thước: 1024×384
-- Số màu: 36
-- Seam X: 0, Seam Y: 0
-- Kết luận: ĐẠT.
+Actual full4x all4quarters dark/checker and3xrepeat overview viewed.48colors,binaryalpha,no pinkrim orfloating snow seen. Distinctslantedcliffsandsnowledges; noflatverticalbuffer/endbars. Seammean8.73698,max107: strictlocalMAXflagretained, doNOTclaimseam0. Horizontalrepeat silhouette not conspicuous atoverview, microfacets somewhatbusy. Owner/Claudevisualreviewpending.

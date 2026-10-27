@@ -1,6 +1,1 @@
-# Review: windrock-portal-dormant
-
-- Kích thước: 392×452
-- Số màu: 28
-- Seam X: 0, Seam Y: 0
-- Kết luận: ĐẠT.
+Actual full4x dark and checker inspected 2026-10-25. Compared with original serrated mountain rocks and approved forest portal pair. Native1:1, complete spires and feet, empty opening, no magenta rim or clipped edges. Both generated outlines cut to their shared alpha intersection, no fill/paint/resampling; original raw and pre-cut finals retained. Weakness: snow highlights are strong and stone grain busier than approved wood portal; active medallions stay within frame. Owner approval pending.

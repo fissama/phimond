@@ -1,0 +1,160 @@
+{
+  "raw": "raw-13.png",
+  "prompt": "Create a NEW sparse game asset sheet. Use references 1 for mountain content, 2 for approved batch 01/02 STYLE, 3/4 for pet outline/volume only. Do not recreate any previous sheet.\nCanvas exactly 1536 x 1024. SIX MINUSCULE pixel sprites in a 3-column, 2-row grid, centered x=256,768,1280 y=256,768. Each sprite is only about 60 pixels wide, like a small postage stamp surrounded by a vast solid #FF00FF field. At least 97% of canvas remains empty magenta. Camera extremely far away, simple readable tiny forms. Do not zoom in. No ground, shadows, loose pixels, text, guides or labels.\nTop left: tiny horizontal wooden water keg on two feet, 64x48 pixels. Top middle: tiny upright wooden barrel with olive cloth, 42x64. Top right: compact firewood bundle, gray iron clasp and olive wrap, 80x42.\nBottom left: squat snow-covered blue-gray rock with dry olive grass, 72x48. Bottom middle: narrow bent grass tuft rooted in connected pebbles, 60x72. Bottom right: wide low grass fan beside a snow rock, 82x45. Different silhouettes and blade arrangements, one connected cutout each.\nOctopath HD2D pixel art matching the approved reference: restrained dark material-colored contours, deliberate chunky pixels, warm upper-left accents and cool recesses. 2-4 tones per material. Brown wood, slate gray iron/stone, olive grass/cloth, ivory snow; 33-48 colors after the region palette. Fewer details appropriate to these tiny objects, not high-resolution mini paintings.\nNative finals were declared BEFORE drawing: keg128x128 world1x1; barrel128x128 world1x1; wood192x112 world1.5x0.875; grass160x128 world1.25x1, grass160x144 world1.25x1.125, grass176x128 world1.375x1. Player168px=1.31world. Each object must remain SMALLER than the player. Actual painted bodies must fit the TINY requested sizes above. We copy generated pixels 1:1; no shrinking. Draw tiny now. Six objects in 3x2, NOT a single horizontal row.",
+  "refs": [
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_camp.png",
+      "sha256": "58d68f8dcd07e2674060f59ca7851dab25d80b8eac99153c410550c3c4712f33"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-windrock/jobs/native-micro-08/reference-approved-materials.png",
+      "sha256": "7ae69939a95af89cd4a7ab90f0a23336b1b9fc4e2fe5df50b69f320defea111f"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "reference_montage_sources": [
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/wooden-crate/final.png",
+      "sha256": "41eb988f9dcfeb2a6a00443fe2fd8fc804f21684302022e7fed8cc106577a83c"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/barrel/final.png",
+      "sha256": "a48199166f5a03250e480c8df0e04cd67e01041d26770e33c0c4bc168cd31c2f"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/grass-01/final.png",
+      "sha256": "33d302f05c0d88d6edddcd3ac80af9924c7926572ba896e3cec9a2683ac73f60"
+    }
+  ],
+  "palette_source": "palette.json",
+  "assets": [
+    {
+      "id": "windrock-supply-keg",
+      "category": "prop",
+      "size": [
+        128,
+        128
+      ],
+      "native_pixels": true,
+      "desired_world_size": [
+        1.0,
+        1.0
+      ],
+      "height_relative_to_player": 0.7633587786259541,
+      "box": [
+        0,
+        0,
+        512,
+        512
+      ]
+    },
+    {
+      "id": "windrock-wooden-barrel",
+      "category": "prop",
+      "size": [
+        128,
+        128
+      ],
+      "native_pixels": true,
+      "desired_world_size": [
+        1.0,
+        1.0
+      ],
+      "height_relative_to_player": 0.7633587786259541,
+      "box": [
+        512,
+        0,
+        1024,
+        512
+      ]
+    },
+    {
+      "id": "windrock-firewood-stack",
+      "category": "prop",
+      "size": [
+        192,
+        112
+      ],
+      "native_pixels": true,
+      "desired_world_size": [
+        1.5,
+        0.875
+      ],
+      "height_relative_to_player": 0.6679389312977099,
+      "box": [
+        1024,
+        0,
+        1536,
+        512
+      ]
+    },
+    {
+      "id": "windrock-grass-snow-clump-01",
+      "category": "prop",
+      "size": [
+        160,
+        128
+      ],
+      "native_pixels": true,
+      "desired_world_size": [
+        1.25,
+        1.0
+      ],
+      "height_relative_to_player": 0.7633587786259541,
+      "box": [
+        0,
+        512,
+        512,
+        1024
+      ]
+    },
+    {
+      "id": "windrock-grass-snow-clump-02",
+      "category": "prop",
+      "size": [
+        160,
+        144
+      ],
+      "native_pixels": true,
+      "desired_world_size": [
+        1.25,
+        1.125
+      ],
+      "height_relative_to_player": 0.8587786259541984,
+      "box": [
+        512,
+        512,
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "windrock-grass-snow-clump-03",
+      "category": "prop",
+      "size": [
+        176,
+        128
+      ],
+      "native_pixels": true,
+      "desired_world_size": [
+        1.375,
+        1.0
+      ],
+      "height_relative_to_player": 0.7633587786259541,
+      "box": [
+        1024,
+        512,
+        1536,
+        1024
+      ]
+    }
+  ],
+  "state": "planned_before_generation"
+}

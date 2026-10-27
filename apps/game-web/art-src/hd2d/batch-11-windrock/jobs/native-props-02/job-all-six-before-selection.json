@@ -1,0 +1,160 @@
+{
+  "raw": "raw-01.png",
+  "prompt": "Use case: stylized-concept. Draw six isolated Phimond windrock game props in a1536x1024 flat #FF00FF sheet, THREECOLUMNS TWOROWS, centers(256,256),(768,256),(1280,256),(256,768),(768,768),(1280,768). VAST empty magenta around sprites, none touching cell borders. Input1 original CONTENT: wind-battered slanted mountain rock identity;2 approved GPT pillar+crate actual pixels STYLE;3 approved GPT moss rock STYLE;4/5 pet outline/volume anchors ONLY. EXACT same crisp clustered Octopath HD2D pixel art as approved styles, 2\u20134shade ramps per material, warm upper-left small facet highlights, cool object recesses, thin dark colored contours, NO black rim, gradient, blur, noise/dither, baked ground shadow, sky, floor, letters, glow or scenery. Each prop ONE connected complete cutout, even rope/twigs attached, no loose pebbles or free particles. Blue-gray stone #7B8794/#566070 shadows #4A525D with warm weathering, olive lichen #8A8F4E, hemp/brownwood and patchy snow #E8EEF4. Rich subtle33\u201348colors after kit48finish; large calm colorplanes, selective chips not noisy texture.\nTop left wind-eroded ancient mountain PILLAR, irregular slanted stacked slate, sparse olive lichen, NOT ornate classicalcolumn; actual footprint ~180x340. Top middle squat wide angular BOULDER with asymmetrical snow cap and exposed warm fracture planes, actual220x150. Top right MICROSCOPIC small darkbrown supply CRATE with olivecanvas strap and tinygrayironcorner brackets, actual75x55 only, not a giant chest. Bottom left MICROSCOPIC darkolive canvas BACKPACK, rolled tan blanket+thinrope+smallsteelbuckle, actual65x75 only; less detail at this small size. Bottom middle crooked wooden SIGNPOST, two empty weathered boards and tethered olivecloth, actual150x235; NO writing. Bottom right short wooden FENCE with two complete upright posts, two asymmetricalrails, attached ropeknots, actual280x140, full ends visible.\nPREDECLARED finalcanvases=world_size\u00d7128: pillar256\u00d7448world2\u00d73.5(height2.67players);boulder288\u00d7224world2.25\u00d71.75(height1.34players);crate144\u00d7112world1.125\u00d70.875(height0.668players);backpack128\u00d7128world1\u00d71(height0.763players);sign256\u00d7320world2\u00d72.5(height1.91players);fence384\u00d7224world3\u00d71.75(height1.34players). Player168pxtall; crate and backpack MUST visibly muchsmaller thanplayer, little distantthumbnail sprites. Do NOT enlarge to fill cells. Export ONLY native1:1crop/key/palette/pad, never shrink. Oversizeddrawing unusable. Every asset \u22658pxtransparent margin in final. Keep tiny backpack/crate about1/3 usual generatedsmallpropsize.",
+  "refs": [
+    {
+      "path": "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/windrock_mountain_camp.png",
+      "sha256": "58d68f8dcd07e2674060f59ca7851dab25d80b8eac99153c410550c3c4712f33"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-11-windrock/jobs/native-props-02/reference-approved-pillar-crate.png",
+      "sha256": "96eec133a367592f21af840aebc04022b1a8d08381d7f7e3da3ea541709fa7ef"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/rock-large/final.png",
+      "sha256": "81499f1c27baf3956588ed392d6be562129926f300aa9be9dca949c781a84ea2"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "sha256": "fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png",
+      "sha256": "043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3"
+    }
+  ],
+  "reference_montage_sources": [
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/city-carved-pillar/final.png",
+      "sha256": "a86272e9062c92fde05450db8da9b1379b7f0d792b7ed56946a8baeb2f3e88c8"
+    },
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/wooden-crate/final.png",
+      "sha256": "41eb988f9dcfeb2a6a00443fe2fd8fc804f21684302022e7fed8cc106577a83c"
+    }
+  ],
+  "palette_source": "palette.json",
+  "assets": [
+    {
+      "id": "windrock-pillar-01",
+      "category": "prop",
+      "size": [
+        256,
+        448
+      ],
+      "native_pixels": true,
+      "desired_world_size": [
+        2.0,
+        3.5
+      ],
+      "height_relative_to_player": 2.6717557251908395,
+      "box": [
+        0,
+        0,
+        512,
+        512
+      ]
+    },
+    {
+      "id": "windrock-boulder-snow-02",
+      "category": "prop",
+      "size": [
+        288,
+        224
+      ],
+      "native_pixels": true,
+      "desired_world_size": [
+        2.25,
+        1.75
+      ],
+      "height_relative_to_player": 1.3358778625954197,
+      "box": [
+        512,
+        0,
+        1024,
+        512
+      ]
+    },
+    {
+      "id": "windrock-supply-crate",
+      "category": "prop",
+      "size": [
+        144,
+        112
+      ],
+      "native_pixels": true,
+      "desired_world_size": [
+        1.125,
+        0.875
+      ],
+      "height_relative_to_player": 0.6679389312977099,
+      "box": [
+        1024,
+        0,
+        1536,
+        512
+      ]
+    },
+    {
+      "id": "windrock-backpack-gear",
+      "category": "prop",
+      "size": [
+        128,
+        128
+      ],
+      "native_pixels": true,
+      "desired_world_size": [
+        1.0,
+        1.0
+      ],
+      "height_relative_to_player": 0.7633587786259541,
+      "box": [
+        0,
+        512,
+        512,
+        1024
+      ]
+    },
+    {
+      "id": "windrock-signpost-blank",
+      "category": "prop",
+      "size": [
+        256,
+        320
+      ],
+      "native_pixels": true,
+      "desired_world_size": [
+        2.0,
+        2.5
+      ],
+      "height_relative_to_player": 1.9083969465648853,
+      "box": [
+        512,
+        512,
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "windrock-wooden-fence",
+      "category": "prop",
+      "size": [
+        384,
+        224
+      ],
+      "native_pixels": true,
+      "desired_world_size": [
+        3.0,
+        1.75
+      ],
+      "height_relative_to_player": 1.3358778625954197,
+      "box": [
+        1024,
+        512,
+        1536,
+        1024
+      ]
+    }
+  ],
+  "state": "planned_before_generation"
+}

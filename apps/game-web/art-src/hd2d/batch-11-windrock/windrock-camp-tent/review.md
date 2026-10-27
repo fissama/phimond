@@ -1,6 +1,1 @@
-# Review: windrock-camp-tent
-
-- Kích thước: 447×290
-- Số màu: 21
-- Seam X: 0, Seam Y: 0
-- Kết luận: ĐẠT.
+Self-inspected actual full final at 4x on dark and checker on 2026-10-25. Built-in image_gen removed the isolated snow pixel; full ropes, pegs and canvas remain intact. One connected component, 43 colors, binary alpha, native source 1:1 with padding. Compared against approved wood materials and pet volume anchors. Weakness: broad muted canvas planes and prominent snowy base. Owner approval pending; approved=false.
