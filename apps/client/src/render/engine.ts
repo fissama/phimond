@@ -21,8 +21,8 @@ interface Actor {
   label: HTMLDivElement | null;
 }
 
-const PITCH = 0.66; // rad, góc nhìn xuống
-const DIST = 20;
+const PITCH = 0.5; // rad, góc nhìn xuống
+const DIST = 19;
 const FOV = 24;
 /** Độ nhạy đuổi theo vị trí logic của hình người chơi (1/giây): ~40ms trễ, đủ mượt mà không thấy lệch. */
 const PLAYER_FOLLOW = 24;

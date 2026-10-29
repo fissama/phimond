@@ -30,19 +30,22 @@ const GRADE = {
     uniform sampler2D tDiffuse; uniform vec2 res; uniform float blur; uniform vec3 tint; uniform float sat; uniform float bright; uniform float vig; uniform float contrast; uniform vec3 shade; uniform vec3 hi;
     varying vec2 vUv;
     void main(){
-      // Tilt-shift: giữ nét dải giữa, mờ dần lên/xuống (lấy mẫu vòng 8 điểm).
-      float d = abs(vUv.y - 0.5);
-      float amt = smoothstep(0.2, 0.55, d) * blur;
+      // Tilt-shift kiểu Octopath: dải nét hẹp ở giữa, mờ nhanh lên/xuống (2 vòng, 16 điểm).
+      float d = abs(vUv.y - 0.46);
+      float amt = smoothstep(0.1, 0.5, d) * blur;
       vec3 c = texture2D(tDiffuse, vUv).rgb;
       if (amt > 0.001) {
-        float r = amt * 4.0 / res.y;
-        vec3 s = c;
-        for (int i = 0; i < 8; i++) {
-          float a = float(i) * 0.7853982;
-          vec2 o = vec2(cos(a) * r * res.y / res.x, sin(a) * r);
-          s += texture2D(tDiffuse, vUv + o).rgb;
+        float r = amt * 7.0 / res.y;
+        vec3 s = c; float wsum = 1.0;
+        for (int i = 0; i < 16; i++) {
+          float a = float(i) * 0.3926991;
+          float k = (i % 2 == 0) ? 1.0 : 0.55;
+          vec2 o = vec2(cos(a) * res.y / res.x, sin(a)) * r * k;
+          vec3 t = texture2D(tDiffuse, vUv + o).rgb;
+          float w = 1.0 + 1.5 * smoothstep(0.7, 1.0, dot(t, vec3(0.299, 0.587, 0.114))); // đốm sáng nở như bokeh
+          s += t * w; wsum += w;
         }
-        c = mix(c, s / 9.0, clamp(amt * 1.4, 0.0, 1.0));
+        c = mix(c, s / wsum, clamp(amt * 1.6, 0.0, 1.0));
       }
       float l = dot(c, vec3(0.299, 0.587, 0.114));
       c = mix(vec3(l), c, sat) * tint * bright;
@@ -50,6 +53,7 @@ const GRADE = {
       float lum = dot(c, vec3(0.299, 0.587, 0.114));
       c += shade * (1.0 - smoothstep(0.0, 0.55, lum)) + hi * smoothstep(0.5, 1.0, lum);
       c = (c - 0.5) * contrast + 0.5;
+      c = c * (1.0 + 0.12 * smoothstep(0.6, 1.0, dot(c, vec3(0.299, 0.587, 0.114)))); // đẩy vùng sáng cho bloom/phát sáng
       vec2 q = vUv - 0.5;
       c *= 1.0 - vig * smoothstep(0.25, 0.85, dot(q, q) * 2.2);
       gl_FragColor = vec4(c, 1.0);
@@ -74,8 +78,8 @@ export class Post {
 
   setQuality(q: Quality): void {
     this.quality = q;
-    this.bloom.enabled = q === 'high';
-    this.grade.uniforms.blur!.value = q === 'high' ? 1 : 0.6;
+    this.bloom.enabled = q !== 'low';
+    this.grade.uniforms.blur!.value = q === 'high' ? 1 : 0.85;
   }
 
   setSize(w: number, h: number, pixelRatio: number): void {
@@ -83,7 +87,8 @@ export class Post {
     this.composer.setSize(w, h);
     this.grade.uniforms.res!.value.set(w * pixelRatio, h * pixelRatio);
     // Bloom ở nửa độ phân giải cho nhẹ.
-    this.bloom.setSize(Math.max(64, Math.floor((w * pixelRatio) / 2)), Math.max(64, Math.floor((h * pixelRatio) / 2)));
+    const div = this.quality === 'high' ? 2 : 4;
+    this.bloom.setSize(Math.max(64, Math.floor((w * pixelRatio) / div)), Math.max(64, Math.floor((h * pixelRatio) / div)));
   }
 
   setLight(l: Light): void {
@@ -94,10 +99,10 @@ export class Post {
     u.contrast!.value = l.contrast;
     (u.shade!.value as THREE.Vector3).set(l.shade[0], l.shade[1], l.shade[2]);
     (u.hi!.value as THREE.Vector3).set(l.hi[0], l.hi[1], l.hi[2]);
-    u.vig!.value = 0.3 + l.night * 0.22;
+    u.vig!.value = 0.42 + l.night * 0.22;
     // Ban đêm bloom mạnh hơn để đèn lồng tỏa sáng.
-    this.bloom.strength = (this.quality === 'high' ? 0.3 : 0) + l.night * 0.35;
-    this.bloom.threshold = 0.82 - l.night * 0.2;
+    this.bloom.strength = (this.quality === 'high' ? 0.34 : 0.2) + l.night * 0.35;
+    this.bloom.threshold = 0.8 - l.night * 0.2;
   }
 
   render(dt: number): void {
