@@ -34,24 +34,22 @@ export function Hud({ world, ch }: { world: GameWorld; ch: Character }) {
     if (!low && !down) warned.current = false;
   }, [low, down, inBattle]);
   return (
-    <div class={`hud ${compact ? 'compact' : ''} ${inBattle ? 'in-battle' : ''}`}>
+    <div class={`hud ${compact ? 'compact' : ''} ${inBattle ? 'in-battle' : ''} ${pet ? '' : 'no-pet'}`}>
       <div class="hud-status" data-testid="hud-status-panel">
-        <div class={`pet-row hud-card ${low ? 'danger' : ''} ${down ? 'danger down' : ''}`}>
-          <div class="ring" role="button" aria-label="Linh thú" onClick={() => (overlay.value = { kind: 'menu', page: 'pets' })}>
-            {pet ? <PetPortrait species={pet.species_id} /> : <div class="portrait" />}
-            {pet && <div class="badge" title="Cấp linh thú">{pet.level}</div>}
+        {pet && (
+          <div class={`pet-row hud-card ${low ? 'danger' : ''} ${down ? 'danger down' : ''}`}>
+            <div class="ring" role="button" aria-label="Linh thú" onClick={() => (overlay.value = { kind: 'menu', page: 'pets' })}>
+              <PetPortrait species={pet.species_id} />
+              <div class="badge" title="Cấp linh thú">{pet.level}</div>
+            </div>
+            <div class="stack">
+              <div class="nm"><b>{viName(pet.name)}</b></div>
+              <FrameBar kind="hp" row={0} v={pet.hp} max={pet.max_hp} label="HP" />
+              <FrameBar kind="mp" row={1} v={pet.mp} max={pet.max_mp} label="MP" />
+              <FrameBar kind="xp" row={2} v={pet.xp} max={pet.level * XP_PER_LEVEL} label="EXP" />
+            </div>
           </div>
-          <div class="stack">
-            <div class="nm">{pet ? <b>{viName(pet.name)}</b> : <span class="muted">Chưa có linh thú</span>}</div>
-            {pet && (
-              <>
-                <FrameBar kind="hp" row={0} v={pet.hp} max={pet.max_hp} label="HP" />
-                <FrameBar kind="mp" row={1} v={pet.mp} max={pet.max_mp} label="MP" />
-                <FrameBar kind="xp" row={2} v={pet.xp} max={pet.level * XP_PER_LEVEL} label="EXP" />
-              </>
-            )}
-          </div>
-        </div>
+        )}
         <div class="me-row hud-card">
           <div class="lvl" title="Cấp nhân vật">
             Lv {ch.level}
