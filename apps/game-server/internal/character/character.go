@@ -75,6 +75,9 @@ type Character struct {
 	X           int                    `json:"x"`
 	Y           int                    `json:"y"`
 	ActivePetID string                 `json:"active_pet_id"`
+	// Party: đội hình tối đa 3 linh thú theo thứ tự (phần tử đầu là con chính = ActivePetID). Rỗng với tài khoản cũ:
+	// Snapshot dựng đội từ ActivePetID và thứ tự Pets (xem EffectiveParty).
+	Party       []string               `json:"party,omitempty"`
 	Revision    int                    `json:"revision"`
 	Pets        []*pet.Pet             `json:"pets"`
 	Inventory   map[string]int         `json:"inventory"`
@@ -121,6 +124,7 @@ type Intent struct {
 	PortalID  string `json:"portal_id"`
 	NPCID     string `json:"npc_id"`
 	PetID     string `json:"pet_id"`
+	PetIDs    []string `json:"pet_ids,omitempty"`
 	DonorID   string `json:"donor_id"`
 	SkillID   string `json:"skill_id"`
 	ParentA   string `json:"parent_a"`

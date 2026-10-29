@@ -82,6 +82,8 @@ export const Character = z
     x: z.number(),
     y: z.number().optional().default(0),
     active_pet_id: z.string().optional().default(''),
+    // v1.0.1: đội hình tối đa 3 linh thú, phần tử đầu là con chính (server luôn gửi; bản cũ thiếu thì rỗng).
+    party: list(z.string()),
     revision: z.number().int(),
     pets: list(Pet),
     inventory: rec(z.number()),

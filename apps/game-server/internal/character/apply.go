@@ -137,8 +137,16 @@ func (e *Engine) apply(c *Character, op string, d Intent) ([]Event, error) {
 		if err != nil {
 			return nil, err
 		}
-		c.ActivePetID = p.ID
+		if p.Retired {
+			return nil, fmt.Errorf("pet is retired")
+		}
+		c.setMainPet(p.ID)
 		return []Event{event("pet_activate", p.Name+" is following you")}, nil
+	case "pet.party_set":
+		if err := e.setParty(c, d.PetIDs); err != nil {
+			return nil, err
+		}
+		return []Event{event("pet_party", "Party updated")}, nil
 	case "pet.learn":
 		if err := e.near(c, "learn"); err != nil {
 			return nil, err

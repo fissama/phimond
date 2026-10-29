@@ -17,6 +17,8 @@ export interface IntentMap {
   'npc.interact': { npc_id: string };
   'pet.appraise': { pet_id: string };
   'pet.activate': { pet_id: string };
+  /** v1.0.1: đặt đội hình (1–3 linh thú); phần tử đầu thành con chính. */
+  'pet.party_set': { pet_ids: string[] };
   'pet.learn': { pet_id: string; skill_id: string };
   'pet.release': { pet_id: string };
   'pet.strengthen': { pet_id: string; donor_id: string };

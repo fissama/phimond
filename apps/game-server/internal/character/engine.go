@@ -99,6 +99,7 @@ func (e *Engine) Snapshot(c *Character) map[string]any {
 			hidden[id] = until
 		}
 	}
+	out["party"] = c.EffectiveParty()
 	out["spawn_hidden"] = hidden
 	out["server_time_ms"] = now
 	if out["visited"] == nil {
