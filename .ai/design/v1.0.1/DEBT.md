@@ -22,3 +22,15 @@ Các mục đánh giá gameplay thuộc Phase sau, giữ lại ở dạng nợ. 
 | D16 | Âm thanh | Âm thanh hiện tổng hợp bằng WebAudio (đánh, phép, thắng/thua, tiền, nút); chưa có nhạc nền theo map và bộ âm thanh vẽ riêng. | Khi có âm thanh |
 | D17 | NPC | Hội thoại dùng sprite NPC thu nhỏ làm chân dung; game gốc/Octopath dùng tranh bán thân. | Khi GPT có lượt (GPT-REMAINING 14) |
 | D18 | Cân bằng | Hệ số `wild_scale`/`pack_scale`/`damage_scale` chỉnh bằng mô phỏng auto (`balance_test.go`), chưa thử với người chơi thật và kỹ năng trạng thái. Pet khởi đầu biết sẵn đòn hệ (lệch learn_level 2). | Phase cân bằng |
+
+## Bổ sung 2026-10-29 (chủ dự án chốt: để các phase sau quyết định)
+
+| ID | Nguồn | Việc | Khi nào |
+|---|---|---|---|
+| D19 | G4 | Hội bang, Sàn giao dịch, Kho, Hòm thư, Đấu trường: giữ nguyên biển "chưa mở" ở v1.0.x. Thiết kế và chức năng thật do các phase sau quyết định (guild, giao dịch, kho/thư P19, đấu trường PvP). Không làm thêm ở bản này. | Các phase sở hữu từng hệ |
+| D20 | Combat | Trận 3v3 (3 pet ra trận cùng lúc) và quyền đổi pet giữa trận: P02/P07. Đội hình hiện chỉ để chọn **pet ra trận (vị trí đầu)** và 2 pet dự bị mang theo (`character.party`, intent `pet.party_set`, tối đa 3 con, pet retired không dùng được). Tên `party` trùng với "party người chơi" (tối đa 3 người) của P07: đổi tên khi làm P07, chưa đổi ở v1.0.x. | P02 / P07 |
+| D21 | Server | Snapshot chưa gửi `xp_next` (EXP cần để lên cấp) và cấp quái trong BattleUnit đủ cho mọi pha; client vẫn dùng công thức cứng cấp × 25 (D14). Phase sau quyết định hợp đồng dữ liệu. | Phase sau |
+| D22 | Huyết Chiến Đài | Chỉ có cảnh và lối vào ở v1.0.x. Logic (giờ mở cố định hằng ngày, vào qua nhiệm vụ phụ ở Quảng Trường) thuộc phase nhiệm vụ/sự kiện. | Phase nhiệm vụ |
+| D23 | P11 | Áp P11 cho pet đang chạy: mô hình chỉ số của server vẫn là mô hình cũ (strength/agility/... + chất lượng/tăng trưởng ngẫu nhiên). Danh mục P11 (160 loài, base + tăng trưởng + MP) đổi cả hệ và vai trò của 3 loài khởi đầu (ví dụ Tiên Chưởng thành hệ đất, vai tank), nên việc áp phải cùng P13 (kỹ năng) và cân bằng lại quái. Chờ quyết định phạm vi của chủ dự án (xem tin nhắn 2026-10-29). | P11 + P13 runtime |
+| D24 | Nhạc | Bộ phát nhạc nền đã có (`music.ts`); file nhạc do chủ dự án tải (CC0) hoặc tạo bằng MiniMax theo `AUDIO-MUSIC.md`. Chưa có bài cho Triệu Linh Điện và Hoàng Môn. | Khi có file |
+| D25 | Đo | Đo hiệu năng iPhone/Safari: chủ dự án tự đo sau khi hoàn thiện (thay D4 phần "ai đo"). Lớp tiền cảnh mờ (FgBlurPass) và bóng vẽ là phần mới cần đo. | Sau hoàn thiện |
