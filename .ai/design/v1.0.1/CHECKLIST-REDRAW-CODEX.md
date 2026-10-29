@@ -78,6 +78,19 @@ Nhận xét chi tiết: `REVIEW-TRIEU-LINH-DIEN-ART.md`. Nạp bằng `tools/p01
 | E16 | Thú trưng bày hoa/bọ cạp/kỳ lân (192) | [x] | [ ] | Chưa dùng: trùng thiết kế atlas P10; chờ owner quyết. |
 | E17 | `spill-overlay.png` | [x] | [✗] | RGB 231k màu, không alpha; xuất lại theo chuẩn. |
 
+## F. Lô hướng Octopath (prompt trong `GPT-PROMPTS-OCTOPATH.md`)
+
+Cột "Mục" khớp mã S01–S27 trong file prompt. Codex/GPT tích "Đã vẽ", Claude tích "Duyệt".
+
+| Mục | Asset | Đã vẽ | Duyệt |
+|---|---|---|---|
+| S01–S06 | Tiền cảnh: cành lá rừng, bụi lớn, mái hiên, cờ dây, đèn lồng, rèm | [ ] | [ ] |
+| S07–S11 | Hậu cảnh: thành phố rộng, mái nhà gần, rừng xa 3 lớp, lối xuyên cổng, tường thành | [ ] | [ ] |
+| S12–S19 | Địa hình độ cao: vách đá, bậc thang, vách đất, mép cỏ, bục, cầu gỗ, lan can | [ ] | [ ] |
+| S20–S22 | Sàn biến thể, vệt sáng kính màu, bóng tiếp xúc | [ ] | [ ] |
+| S23–S24 | Dải chạy người chơi và 6 người đi đường (24 dải) | [ ] | [ ] |
+| S25–S27 | Khung thanh, sửa fx/minimap, mảnh nối mặt tiền | [ ] | [ ] |
+
 ## Thứ tự đề nghị
 
 1. R01–R06 (gốc của chuyện "lướt"), rồi R07–R24.
