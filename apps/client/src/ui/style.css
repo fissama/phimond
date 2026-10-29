@@ -374,3 +374,24 @@ button:disabled { opacity: 0.45; cursor: default; }
 .battle .my-plate.compact { padding: 3px 8px 3px 4px; }
 .battle .my-plate.compact { width: 222px; }
 .battle .my-plate.compact .ring { transform: scale(0.82); transform-origin: left center; margin-right: -8px; }
+
+/* ---------- Chọn / tạo nhân vật (3 ô mỗi tài khoản) ---------- */
+.cs-root { position: absolute; inset: 0; display: grid; place-items: center; padding: 16px; overflow-y: auto; }
+.cs-box { width: min(560px, 100%); display: flex; flex-direction: column; gap: 12px; padding: 26px 30px 24px; box-sizing: border-box; }
+.cs-title { margin: 0; text-align: center; color: var(--gold); letter-spacing: 1px; font-size: 22px; }
+.cs-slots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.cs-slot, .cs-gender { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 10px 6px 12px; border: 2px solid rgba(217, 178, 98, 0.45); border-radius: 8px; background: rgba(8, 18, 40, 0.72); color: #fff6dc; font: inherit; cursor: pointer; min-width: 0; }
+.cs-slot:hover:not(:disabled), .cs-gender:hover, .cs-gender.on { border-color: var(--gold); background: rgba(30, 52, 96, 0.85); }
+.cs-slot:disabled { opacity: 0.6; cursor: default; }
+.cs-slot.empty { border-style: dashed; justify-content: center; min-height: 168px; }
+.cs-no { font-size: 12px; color: #c9b27c; }
+.cs-plus { font-size: 34px; line-height: 1; color: var(--gold); margin-top: 18px; }
+.cs-name { font-weight: 700; font-size: 15px; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cs-sub { font-size: 12px; color: #cfd8ea; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cs-err { margin: 0; color: #ff8a80; text-align: center; font-size: 13px; }
+.cs-genders { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.cs-gender { padding-top: 14px; }
+.cs-pv { width: 96px; height: 96px; background-size: 384px 96px; background-repeat: no-repeat; image-rendering: pixelated; animation: cspv 0.7s steps(4) infinite; filter: drop-shadow(0 6px 3px rgba(0, 0, 0, 0.5)); }
+.cs-pv.dim { filter: grayscale(0.7) brightness(0.7); animation-play-state: paused; }
+@keyframes cspv { to { background-position-x: -384px; } }
+@media (max-width: 520px) { .cs-slots { grid-template-columns: 1fr; } .cs-slot { flex-direction: row; flex-wrap: wrap; justify-content: flex-start; min-height: 0; } .cs-slot.empty { min-height: 64px; flex-direction: row; } .cs-plus { margin: 0 8px 0 0; font-size: 26px; } .cs-box { padding: 20px 16px; } }

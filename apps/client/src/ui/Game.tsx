@@ -23,7 +23,7 @@ export function Game() {
 
   useEffect(() => {
     const cat = session.catalog.value!;
-    const w = new GameWorld(new Engine(host.current!), new Content(cat), session, 'player-male');
+    const w = new GameWorld(new Engine(host.current!), new Content(cat), session, session.character.value?.gender === 'female' ? 'player-female' : 'player-male');
     setWorld(w);
     void w.start();
     // Móc gỡ lỗi/E2E: chỉ có ở bản dev hoặc khi mở với ?debug.

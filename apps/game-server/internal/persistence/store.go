@@ -152,7 +152,8 @@ func (s *Store) Authenticate(ctx context.Context, token string) (string, error) 
 	}
 	h := sha256.Sum256([]byte(token))
 	var id string
-	if e := s.DB.QueryRowContext(ctx, "SELECT account_id FROM sessions WHERE token_hash=? AND expires_at>UTC_TIMESTAMP(6)", h[:]).Scan(&id); e != nil {
+	// Phiên gắn với tài khoản; nếu đã chọn ô nhân vật thì trả về id nhân vật đó (mặc định: ô 0, id = id tài khoản).
+	if e := s.DB.QueryRowContext(ctx, "SELECT COALESCE(character_id, account_id) FROM sessions WHERE token_hash=? AND expires_at>UTC_TIMESTAMP(6)", h[:]).Scan(&id); e != nil {
 		if errors.Is(e, sql.ErrNoRows) {
 			return "", ErrSession
 		}
@@ -426,4 +427,94 @@ func petsChanged(a, b json.RawMessage) bool {
 		Pets any `json:"pets"`
 	}
 	return json.Unmarshal(a, &x) != nil || json.Unmarshal(b, &y) != nil || !reflect.DeepEqual(x.Pets, y.Pets)
+}
+
+// MaxSlots là số nhân vật tối đa mỗi tài khoản.
+const MaxSlots = 3
+
+// Slot là một ô nhân vật đã tồn tại (ô trống không có dòng).
+type Slot struct {
+	Slot  int
+	ID    string
+	State json.RawMessage
+}
+
+// Slots liệt kê các ô nhân vật của tài khoản sở hữu phiên.
+func (s *Store) Slots(ctx context.Context, token string) ([]Slot, error) {
+	if len(token) != 64 {
+		return nil, ErrSession
+	}
+	h := sha256.Sum256([]byte(token))
+	var acc string
+	if e := s.DB.QueryRowContext(ctx, "SELECT account_id FROM sessions WHERE token_hash=? AND expires_at>UTC_TIMESTAMP(6)", h[:]).Scan(&acc); e != nil {
+		if errors.Is(e, sql.ErrNoRows) {
+			return nil, ErrSession
+		}
+		return nil, e
+	}
+	rows, e := s.DB.QueryContext(ctx, "SELECT slot,id,state FROM characters WHERE account_id=? ORDER BY slot", acc)
+	if e != nil {
+		return nil, e
+	}
+	defer rows.Close()
+	var out []Slot
+	for rows.Next() {
+		var sl Slot
+		var raw []byte
+		if e = rows.Scan(&sl.Slot, &sl.ID, &raw); e != nil {
+			return nil, e
+		}
+		sl.State = append(json.RawMessage{}, raw...)
+		out = append(out, sl)
+	}
+	return out, rows.Err()
+}
+
+// OpenSlot chọn ô nhân vật cho phiên; ô trống được tạo bằng `initial` (ô 0 dùng id tài khoản để tương thích nhân vật cũ).
+func (s *Store) OpenSlot(ctx context.Context, token string, slot int, initial func(string) (json.RawMessage, error)) (string, error) {
+	if slot < 0 || slot >= MaxSlots || len(token) != 64 {
+		return "", ErrSession
+	}
+	h := sha256.Sum256([]byte(token))
+	tx, e := s.DB.BeginTx(ctx, nil)
+	if e != nil {
+		return "", e
+	}
+	defer tx.Rollback()
+	var acc string
+	if e = tx.QueryRowContext(ctx, "SELECT account_id FROM sessions WHERE token_hash=? AND expires_at>UTC_TIMESTAMP(6)", h[:]).Scan(&acc); e != nil {
+		if errors.Is(e, sql.ErrNoRows) {
+			return "", ErrSession
+		}
+		return "", e
+	}
+	var id string
+	e = tx.QueryRowContext(ctx, "SELECT id FROM characters WHERE account_id=? AND slot=? FOR UPDATE", acc, slot).Scan(&id)
+	if errors.Is(e, sql.ErrNoRows) {
+		id = acc
+		if slot != 0 {
+			if id, e = randomID(); e != nil {
+				return "", e
+			}
+		}
+		raw, e := initial(id)
+		if e != nil {
+			return "", e
+		}
+		if e = validateState(raw, id); e != nil {
+			return "", e
+		}
+		if _, e = tx.ExecContext(ctx, "INSERT INTO characters(id,account_id,slot,state) VALUES (?,?,?,?)", id, acc, slot, string(raw)); e != nil {
+			return "", e
+		}
+		if e = projectPets(ctx, tx, id, raw); e != nil {
+			return "", e
+		}
+	} else if e != nil {
+		return "", e
+	}
+	if _, e = tx.ExecContext(ctx, "UPDATE sessions SET character_id=? WHERE token_hash=?", id, h[:]); e != nil {
+		return "", e
+	}
+	return id, tx.Commit()
 }

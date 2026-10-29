@@ -25,6 +25,17 @@ export type SendResult =
   | { ok: true; revision: number; character: Character }
   | { ok: false; message: string; reason: 'rejected' | 'offline' | 'timeout' };
 
+/** Một ô nhân vật trên màn chọn nhân vật (server: GET /api/slots). */
+export interface SlotSummary {
+  slot: number;
+  empty: boolean;
+  name?: string;
+  gender?: 'male' | 'female';
+  level?: number;
+  map_id?: string;
+  pet?: string;
+}
+
 export const RESPONSE_TIMEOUT_MS = 15_000;
 export const CONNECT_TIMEOUT_MS = 10_000;
 
@@ -60,12 +71,15 @@ export class Session {
   private readonly _catalog = signal<Catalog | null>(null);
   private readonly _inFlight = signal(0);
   private readonly _lastError = signal('');
+  private readonly _slots = signal<SlotSummary[] | null>(null);
 
   readonly status: ReadonlySignal<ConnectionStatus> = this._status;
   readonly character: ReadonlySignal<Character | null> = this._character;
   readonly catalog: ReadonlySignal<Catalog | null> = this._catalog;
   readonly inFlight: ReadonlySignal<number> = this._inFlight;
   readonly lastError: ReadonlySignal<string> = this._lastError;
+  /** Danh sách ô nhân vật khi đã đăng nhập nhưng chưa vào ô nào; null khi chưa đăng nhập. */
+  readonly slots: ReadonlySignal<SlotSummary[] | null> = this._slots;
 
   constructor(private readonly wire: Wire) {}
 
@@ -78,8 +92,19 @@ export class Session {
     return () => this.batchListeners.delete(fn);
   }
 
-  /** Đăng nhập hoặc đăng ký, nạp catalog rồi mở WebSocket. */
+  /** Đăng nhập hoặc đăng ký, nạp catalog rồi mở WebSocket (vào nhân vật mặc định của phiên). */
   async login(username: string, password: string, register = false): Promise<void> {
+    await this.authenticate(username, password, register);
+    await this.connect();
+  }
+
+  /** Đăng nhập/đăng ký rồi dừng ở màn chọn nhân vật (3 ô); chưa mở WebSocket. */
+  async signIn(username: string, password: string, register = false): Promise<void> {
+    await this.authenticate(username, password, register);
+    await this.loadSlots();
+  }
+
+  private async authenticate(username: string, password: string, register: boolean): Promise<void> {
     const res = await this.wire
       .request('POST', register ? '/api/register' : '/api/login', { username, password })
       .catch(() => ({ status: 0, json: null }));
@@ -89,7 +114,34 @@ export class Session {
     const cat = await this.wire.request('GET', '/api/content');
     if (cat.status !== 200) throw new Error(errorText(cat.json, cat.status));
     this._catalog.value = Catalog.parse(cat.json);
+  }
+
+  async loadSlots(): Promise<void> {
+    const res = await this.wire.request('GET', '/api/slots', undefined, this.token).catch(() => ({ status: 0, json: null }));
+    const list = (res.json as { slots?: SlotSummary[] } | null)?.slots;
+    if (res.status !== 200 || !Array.isArray(list)) throw new Error(errorText(res.json, res.status));
+    this._slots.value = list;
+  }
+
+  /** Vào một ô nhân vật (ô trống thì tạo bản nháp để đặt tên/giới tính), rồi mở WebSocket. */
+  async enter(slot: number): Promise<void> {
+    const res = await this.wire.request('POST', '/api/slots/select', { slot }, this.token).catch(() => ({ status: 0, json: null }));
+    if (res.status !== 200) throw new Error(errorText(res.json, res.status));
+    this.revision = -1;
+    this.lastEventRevision = -1;
     await this.connect();
+    this._slots.value = null;
+  }
+
+  /** Rời nhân vật hiện tại về màn chọn nhân vật (giữ đăng nhập). */
+  async leave(): Promise<void> {
+    this.dropSocket();
+    this.failAll('Đổi nhân vật', 'offline');
+    this._status.value = 'idle';
+    this._character.value = null;
+    this.revision = -1;
+    this.lastEventRevision = -1;
+    await this.loadSlots();
   }
 
   /** Mở (hoặc mở lại) WebSocket và xác thực. Không phát lại sự kiện cũ. */
@@ -163,6 +215,7 @@ export class Session {
     this.failAll('Đã đăng xuất', 'offline');
     this._status.value = 'idle';
     this._character.value = null;
+    this._slots.value = null;
     this.revision = -1;
     this.lastEventRevision = -1;
     if (token) await this.wire.request('POST', '/api/logout', undefined, token).catch(() => undefined);

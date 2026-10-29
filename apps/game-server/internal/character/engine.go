@@ -2,6 +2,10 @@ package character
 
 import (
 	"encoding/json"
+	"fmt"
+	"strings"
+	"unicode"
+	"unicode/utf8"
 	"phimond/server/internal/content"
 	"phimond/server/internal/pet"
 	"time"
@@ -20,6 +24,44 @@ func (e *Engine) NewCharacter(id, name string, seed uint64) *Character {
 	m := e.Data.Maps[StartMap]
 	c := &Character{ID: id, Name: name, Level: 1, Gold: 100, MapID: StartMap, X: m.SpawnDefault.X, Y: m.SpawnDefault.Y, Inventory: map[string]int{"capture_seal": 10, "potion": 5, "ether": 3, "synthesis_soul": 2}, Quests: map[string]*QuestState{}, Recipes: []string{}, Pets: []*pet.Pet{}, RNG: RNG{seed}, Visited: []string{StartMap}}
 	return c
+}
+
+// NewDraft tạo ô nhân vật mới chưa đặt tên/giới tính; người chơi hoàn tất bằng intent character.create.
+func (e *Engine) NewDraft(id string, seed uint64) *Character {
+	c := e.NewCharacter(id, "", seed)
+	c.Draft = true
+	return c
+}
+
+// ValidName chuẩn hóa và kiểm tên nhân vật: 2–16 ký tự (chữ có dấu, số, khoảng trắng đơn, gạch nối/dưới).
+func ValidName(name string) (string, bool) {
+	name = strings.Join(strings.Fields(name), " ")
+	n := utf8.RuneCountInString(name)
+	if n < 2 || n > 16 {
+		return "", false
+	}
+	for _, r := range name {
+		if !(unicode.IsLetter(r) || unicode.IsDigit(r) || r == ' ' || r == '-' || r == '_') {
+			return "", false
+		}
+	}
+	return name, true
+}
+
+// createCharacter hoàn tất ô nhân vật mới: đặt tên và giới tính, đặt vào giữa vòng triệu hồi.
+func (e *Engine) createCharacter(c *Character, d Intent) ([]Event, error) {
+	if !c.Draft {
+		return nil, fmt.Errorf("Nhân vật đã được tạo")
+	}
+	name, ok := ValidName(d.Name)
+	if !ok {
+		return nil, fmt.Errorf("Tên 2–16 ký tự: chữ, số, khoảng trắng, gạch nối hoặc gạch dưới")
+	}
+	if d.Gender != "male" && d.Gender != "female" {
+		return nil, fmt.Errorf("Hãy chọn nam hoặc nữ")
+	}
+	c.Name, c.Gender, c.Draft = name, d.Gender, false
+	return []Event{event("character_created", name)}, nil
 }
 
 // GiveStarter thêm pet khởi đầu đã giám định và đặt làm pet chính (dùng cho bệ đá và test).

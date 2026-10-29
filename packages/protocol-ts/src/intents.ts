@@ -5,6 +5,8 @@ export type BattleChoice = 'attack' | 'skill' | 'capture' | 'defend' | 'item' | 
 export interface IntentMap {
   'auth.session': { token: string };
   'character.get': Record<string, never>;
+  /** Hoàn tất ô nhân vật mới: đặt tên (2–16 ký tự) và chọn nam/nữ. */
+  'character.create': { name: string; gender: 'male' | 'female' };
   'world.move': { direction: Direction };
   'world.portal': { portal_id: string };
   'world.encounter': { spawn_id?: string };

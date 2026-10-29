@@ -2,6 +2,7 @@ import { useEffect, useState } from 'preact/hooks';
 import { loadDictionary } from '../game/content.ts';
 import { loadManifests } from '../render/assets.ts';
 import { session } from '../state/app.ts';
+import { CreateCharacter, SlotSelect } from './CharacterSelect.tsx';
 import { Game } from './Game.tsx';
 import { Login } from './Login.tsx';
 import { installSkin, loadUiManifest, uiUrl } from './skin.ts';
@@ -19,5 +20,8 @@ export function App() {
         <img src={uiUrl('logo-badge')} alt="Phimond" style={{ width: 120, imageRendering: 'pixelated' }} />
       </div>
     );
-  return session.character.value ? <Game /> : <Login />;
+  const ch = session.character.value;
+  if (!ch) return session.slots.value ? <SlotSelect /> : <Login />;
+  // Ô mới chưa đặt tên/giới tính: tạo nhân vật trước khi vào thế giới.
+  return ch.draft ? <CreateCharacter /> : <Game key={ch.id} />;
 }

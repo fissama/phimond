@@ -30,6 +30,8 @@ type Storage interface {
 	Authenticate(context.Context, string) (string, error)
 	Logout(context.Context, string) error
 	Read(context.Context, string) (json.RawMessage, error)
+	Slots(context.Context, string) ([]persistence.Slot, error)
+	OpenSlot(context.Context, string, int, func(string) (json.RawMessage, error)) (string, error)
 	Mutate(context.Context, string, string, func(json.RawMessage) (json.RawMessage, []persistence.AuditEvent, error)) (json.RawMessage, error)
 }
 type window struct {
@@ -134,6 +136,8 @@ func (s *Server) Handler() http.Handler {
 		}
 		jsonResponse(w, 200, map[string]bool{"ok": true})
 	})
+	mux.HandleFunc("GET /api/slots", s.listSlots)
+	mux.HandleFunc("POST /api/slots/select", s.selectSlot)
 	mux.HandleFunc("GET /api/character", func(w http.ResponseWriter, r *http.Request) {
 		c, ok := s.character(w, r)
 		if !ok {
@@ -200,7 +204,8 @@ func (s *Server) credentials(w http.ResponseWriter, r *http.Request) {
 			if _, e := rand.Read(seed[:]); e != nil {
 				return nil, e
 			}
-			return json.Marshal(s.Game.NewCharacter(id, d.Username, binary.LittleEndian.Uint64(seed[:])))
+			// Ô 0 là bản nháp: người chơi đặt tên và chọn nam/nữ sau khi đăng ký.
+			return json.Marshal(s.Game.NewDraft(id, binary.LittleEndian.Uint64(seed[:])))
 		})
 	} else {
 		tok, id, err = s.Store.Login(r.Context(), d.Username, d.Password)
@@ -418,4 +423,76 @@ func Run(ctx context.Context, s *Server, addr string) error {
 		return nil
 	}
 	return e
+}
+
+// slotSummary là phần công khai của một ô nhân vật trên màn hình chọn nhân vật.
+type slotSummary struct {
+	Slot   int    `json:"slot"`
+	Empty  bool   `json:"empty"`
+	Name   string `json:"name,omitempty"`
+	Gender string `json:"gender,omitempty"`
+	Level  int    `json:"level,omitempty"`
+	MapID  string `json:"map_id,omitempty"`
+	Pet    string `json:"pet,omitempty"`
+}
+
+func (s *Server) listSlots(w http.ResponseWriter, r *http.Request) {
+	if _, ok := s.authenticate(w, r); !ok {
+		return
+	}
+	rows, e := s.Store.Slots(r.Context(), token(r))
+	if e != nil {
+		fail(w, 500, "could not load characters")
+		return
+	}
+	out := make([]slotSummary, persistence.MaxSlots)
+	for i := range out {
+		out[i] = slotSummary{Slot: i, Empty: true}
+	}
+	for _, row := range rows {
+		var c character.Character
+		if row.Slot < 0 || row.Slot >= len(out) || json.Unmarshal(row.State, &c) != nil || c.Draft {
+			continue
+		}
+		sm := slotSummary{Slot: row.Slot, Name: c.Name, Gender: c.Gender, Level: c.Level, MapID: c.MapID}
+		for _, p := range c.Pets {
+			if p.ID == c.ActivePetID {
+				sm.Pet = p.Name
+			}
+		}
+		out[row.Slot] = sm
+	}
+	jsonResponse(w, 200, map[string]any{"slots": out, "max": persistence.MaxSlots})
+}
+
+// selectSlot gắn phiên với một ô nhân vật (tạo bản nháp nếu ô trống). Client mở lại WebSocket sau đó.
+func (s *Server) selectSlot(w http.ResponseWriter, r *http.Request) {
+	oldID, ok := s.authenticate(w, r)
+	if !ok {
+		return
+	}
+	var d struct {
+		Slot int `json:"slot"`
+	}
+	if e := decode(r, w, &d); e != nil || d.Slot < 0 || d.Slot >= persistence.MaxSlots {
+		fail(w, 400, "invalid slot")
+		return
+	}
+	t := token(r)
+	_ = s.flushLive(r.Context(), oldID)
+	id, e := s.Store.OpenSlot(r.Context(), t, d.Slot, func(id string) (json.RawMessage, error) {
+		var seed [8]byte
+		if _, e := rand.Read(seed[:]); e != nil {
+			return nil, e
+		}
+		return json.Marshal(s.Game.NewDraft(id, binary.LittleEndian.Uint64(seed[:])))
+	})
+	if e != nil {
+		fail(w, 500, "could not open character")
+		return
+	}
+	s.sessionMu.Lock()
+	s.sessions[t] = sessionEntry{id: id, until: time.Now().Add(sessionValidationInterval)}
+	s.sessionMu.Unlock()
+	jsonResponse(w, 200, map[string]string{"character_id": id})
 }

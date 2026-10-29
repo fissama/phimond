@@ -71,6 +71,9 @@ export const Character = z
   .object({
     id: z.string(),
     name: z.string(),
+    gender: z.enum(['male', 'female']).optional(),
+    /** true: ô mới, chưa đặt tên/giới tính (chỉ nhận character.create). */
+    draft: z.boolean().optional(),
     level: z.number(),
     xp: z.number().optional().default(0),
     gold: z.number().optional().default(0),

@@ -214,3 +214,28 @@ func TestMultipleGenerationsPreserveLearnedSkillAndAncestors(t *testing.T) {
 		t.Fatal("appraisal failed")
 	}
 }
+
+func TestCreateCharacterNameAndGender(t *testing.T) {
+	e := engine(t)
+	c := e.NewDraft("d1", 1)
+	if _, err := e.Apply(c, "world.move", json.RawMessage(`{"direction":"up"}`)); err == nil {
+		t.Fatal("ô nháp không được đi")
+	}
+	for _, bad := range []string{`{"name":"a","gender":"male"}`, `{"name":"Ngọc Anh","gender":"x"}`, `{"name":"<b>hi</b>","gender":"female"}`, `{"name":"  ","gender":"male"}`, `{"name":"abcdefghijklmnopq","gender":"male"}`} {
+		if _, err := e.Apply(c, "character.create", json.RawMessage(bad)); err == nil {
+			t.Fatalf("phải từ chối %s", bad)
+		}
+	}
+	if _, err := e.Apply(c, "character.create", json.RawMessage(`{"name":"  Ngọc   Anh ","gender":"female"}`)); err != nil {
+		t.Fatal(err)
+	}
+	if c.Draft || c.Name != "Ngọc Anh" || c.Gender != "female" {
+		t.Fatalf("%+v", c)
+	}
+	if c.X != 9 || c.Y != 5 {
+		t.Fatalf("phải đứng giữa vòng triệu hồi (9,5): %d,%d", c.X, c.Y)
+	}
+	if _, err := e.Apply(c, "character.create", json.RawMessage(`{"name":"Khác","gender":"male"}`)); err == nil {
+		t.Fatal("không tạo lại được")
+	}
+}

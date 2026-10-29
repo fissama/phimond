@@ -12,7 +12,7 @@ export function Login() {
     setBusy(true);
     setErr('');
     try {
-      await session.login(user.trim(), pass, register);
+      await session.signIn(user.trim(), pass, register);
     } catch (e) {
       setErr(e instanceof Error ? e.message : String(e));
     } finally {

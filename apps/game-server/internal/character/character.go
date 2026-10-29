@@ -63,6 +63,10 @@ type Event struct {
 type Character struct {
 	ID          string                 `json:"id"`
 	Name        string                 `json:"name"`
+	// Gender: "male" | "female" (chọn khi tạo nhân vật; nhân vật cũ để trống = nam).
+	Gender string `json:"gender,omitempty"`
+	// Draft: ô nhân vật mới tạo, chưa đặt tên/giới tính (chỉ nhận intent character.create).
+	Draft       bool                   `json:"draft,omitempty"`
 	Level       int                    `json:"level"`
 	XP          int                    `json:"xp"`
 	Gold        int                    `json:"gold"`
@@ -132,6 +136,8 @@ type Intent struct {
 	TargetID  string `json:"target_id,omitempty"`
 	Pedestal  *int   `json:"pedestal,omitempty"`
 	MapID     string `json:"map_id,omitempty"`
+	Name      string `json:"name,omitempty"`
+	Gender    string `json:"gender,omitempty"`
 }
 
 // Engine is the orchestrator over the content catalog. Methods on *Engine

@@ -92,7 +92,7 @@ export function installSkin(): void {
     `.dmg{display:inline-flex;align-items:center;height:44px;}.dmg img{height:44px;image-rendering:pixelated;margin:0 -8px}`,
     `.dmg.heal img{filter:sepia(1) hue-rotate(70deg) saturate(3)}.dmg.hurt img{filter:sepia(1) hue-rotate(-30deg) saturate(4) brightness(1.1)}`,
     // Đăng nhập, tải
-    `.login-box{${nine('dialogue-panel', [222, 87, 222, 87], 0.22)}}`,
+    `.login-box,.cs-box{${nine('dialogue-panel', [222, 87, 222, 87], 0.22)}}`,
     `.input{${nine('text-input', [132, 34, 132, 34], 0.3)}color:#f4ecd6;font-size:16px;padding:0 6px;min-height:40px;}`,
     `.loadbar{${nine('loading-bar-frame', [48, 48, 48, 48], 0.25)}width:min(360px,70vw);height:28px;}`,
     `.icon{width:28px;height:28px;image-rendering:pixelated;flex:none;}`,

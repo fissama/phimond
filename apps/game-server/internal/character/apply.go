@@ -56,6 +56,12 @@ func (e *Engine) apply(c *Character, op string, d Intent) ([]Event, error) {
 	if op == "character.get" {
 		return []Event{}, nil
 	}
+	if op == "character.create" {
+		return e.createCharacter(c, d)
+	}
+	if c.Draft {
+		return nil, fmt.Errorf("Hãy tạo nhân vật trước")
+	}
 	e.normalizeLocation(c)
 	if op == "battle.action" {
 		return e.battleAction(c, d)

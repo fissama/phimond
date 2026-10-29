@@ -19,7 +19,9 @@ var usernamePattern = regexp.MustCompile(`^[A-Za-z0-9_]{3,24}$`)
 type Store struct {
 	mu       sync.Mutex
 	accounts map[string]*account // theo username
-	tokens   map[string]string   // token -> character id
+	tokens   map[string]string   // token -> character id đang chọn
+	owner    map[string]string   // token -> id tài khoản (= id nhân vật ô 0)
+	slots    map[string][]string // id tài khoản -> id nhân vật theo ô
 	chars    map[string]json.RawMessage
 	receipts map[string]map[string]bool
 }
@@ -28,7 +30,7 @@ type account struct{ id, password string }
 
 // New tạo kho rỗng.
 func New() *Store {
-	return &Store{accounts: map[string]*account{}, tokens: map[string]string{}, chars: map[string]json.RawMessage{}, receipts: map[string]map[string]bool{}}
+	return &Store{accounts: map[string]*account{}, tokens: map[string]string{}, owner: map[string]string{}, slots: map[string][]string{}, chars: map[string]json.RawMessage{}, receipts: map[string]map[string]bool{}}
 }
 
 func randHex(n int) string {
@@ -40,6 +42,7 @@ func randHex(n int) string {
 func (m *Store) session(id string) string {
 	t := randHex(32) // 64 ký tự hex, giống độ dài token thật
 	m.tokens[t] = id
+	m.owner[t] = id
 	return t
 }
 
@@ -58,6 +61,7 @@ func (m *Store) Register(_ context.Context, username, password string, initial f
 		return "", "", err
 	}
 	m.accounts[username] = &account{id: id, password: password}
+	m.slots[id] = []string{id}
 	m.chars[id] = append(json.RawMessage{}, raw...)
 	m.receipts[id] = map[string]bool{}
 	return m.session(id), id, nil
@@ -138,4 +142,47 @@ func (m *Store) Mutate(_ context.Context, id, requestID string, fn func(json.Raw
 	m.chars[id] = append(json.RawMessage{}, next...)
 	m.receipts[id][requestID] = true
 	return append(json.RawMessage{}, next...), nil
+}
+
+// Slots liệt kê các ô nhân vật của tài khoản (ô trống không có mục).
+func (m *Store) Slots(_ context.Context, token string) ([]persistence.Slot, error) {
+	m.mu.Lock()
+	defer m.mu.Unlock()
+	acc, ok := m.owner[token]
+	if !ok {
+		return nil, persistence.ErrSession
+	}
+	var out []persistence.Slot
+	for i, id := range m.slots[acc] {
+		if id != "" {
+			out = append(out, persistence.Slot{Slot: i, ID: id, State: append(json.RawMessage{}, m.chars[id]...)})
+		}
+	}
+	return out, nil
+}
+
+// OpenSlot chọn (và tạo nếu trống) một ô nhân vật cho phiên.
+func (m *Store) OpenSlot(_ context.Context, token string, slot int, initial func(string) (json.RawMessage, error)) (string, error) {
+	m.mu.Lock()
+	defer m.mu.Unlock()
+	acc, ok := m.owner[token]
+	if !ok || slot < 0 || slot >= persistence.MaxSlots {
+		return "", persistence.ErrSession
+	}
+	for len(m.slots[acc]) <= slot {
+		m.slots[acc] = append(m.slots[acc], "")
+	}
+	id := m.slots[acc][slot]
+	if id == "" {
+		id = randHex(8)
+		raw, err := initial(id)
+		if err != nil {
+			return "", err
+		}
+		m.slots[acc][slot] = id
+		m.chars[id] = append(json.RawMessage{}, raw...)
+		m.receipts[id] = map[string]bool{}
+	}
+	m.tokens[token] = id
+	return id, nil
 }

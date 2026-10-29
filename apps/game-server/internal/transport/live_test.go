@@ -39,6 +39,12 @@ func (m *memoryStore) Authenticate(context.Context, string) (string, error) {
 	return "hero", nil
 }
 func (m *memoryStore) Logout(context.Context, string) error { return nil }
+func (m *memoryStore) Slots(context.Context, string) ([]persistence.Slot, error) {
+	panic("unused")
+}
+func (m *memoryStore) OpenSlot(context.Context, string, int, func(string) (json.RawMessage, error)) (string, error) {
+	panic("unused")
+}
 func (m *memoryStore) Read(context.Context, string) (json.RawMessage, error) {
 	m.Lock()
 	defer m.Unlock()

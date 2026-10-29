@@ -53,6 +53,9 @@ function Menu({ page, world, ch }: { page: 'root' | 'pets' | 'bag' | 'quests' | 
         <button class="btn" onClick={() => go('bag')}>Túi đồ</button>
         <button class="btn" onClick={() => go('quests')}>Nhiệm vụ</button>
         <button class="btn" data-testid="menu-settings" onClick={() => go('settings')}>Cài đặt</button>
+        <button class="btn" data-testid="switch-char" onClick={() => { closeOverlay(); void session.leave(); }}>
+          Đổi nhân vật
+        </button>
         <button class="btn danger" data-testid="logout" onClick={() => void session.logout().then(() => location.reload())}>
           Đăng xuất
         </button>
