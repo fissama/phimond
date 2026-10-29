@@ -93,7 +93,8 @@ function PetRow({ p, children }: { p: Pet; children?: preact.ComponentChildren }
 
 function Pets({ world, ch }: { world: GameWorld; ch: Character }) {
   const pets = ch.pets.filter((p) => !p.retired);
-  const [sel, setSel] = useState<string | null>(null);
+  const o = overlay.value;
+  const [sel, setSel] = useState<string | null>(o.kind === 'menu' && o.pet ? o.pet : null);
   const p = pets.find((x) => x.id === sel);
   if (p) return <PetDetail world={world} ch={ch} p={p} onBack={() => setSel(null)} />;
   return (

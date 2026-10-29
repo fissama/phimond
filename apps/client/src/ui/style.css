@@ -416,3 +416,28 @@ button:disabled { opacity: 0.45; cursor: default; }
 .battle .plate-anchor.side.in-left { transform: none; }
 .battle .plate-anchor.side.in-left .foe-plate { width: 132px; padding: 3px 8px 4px; margin: 0; }
 .battle .fighter.player .plate-anchor.side .foe-plate::before { content: none; }
+
+/* ---------- v1.0.1: HUD linh thú gọn (hình + cấp + 2 vạch) và vạch dưới chân trong trận ---------- */
+.mini { height: 7px; background: #140c0e; border: 1px solid rgba(214, 178, 96, 0.85); border-radius: 2px; overflow: hidden; box-shadow: 0 0 0 1px #000; }
+.mini i { display: block; height: 100%; transition: width 0.3s; }
+.mini.hp i { background: linear-gradient(#ff9a8a, #d4332a); }
+.mini.mp i { background: linear-gradient(#9fd2ff, #2d6bd6); }
+.mini.low i { animation: lowhp 0.9s ease-in-out infinite; }
+.hud-status .pet-stack { display: grid; gap: 4px; justify-items: start; }
+.hud-status .pet-mini { display: flex; align-items: center; gap: 8px; padding: 3px 10px 3px 4px; cursor: pointer; color: inherit; font: inherit; text-align: left; }
+.hud-status .pet-mini.main { width: 160px; padding: 5px 12px 5px 5px; }
+.hud-status .pet-mini.sub { width: 118px; margin-left: 10px; }
+.hud-status .pet-mini .mbars { display: grid; gap: 5px; flex: 1; min-width: 0; }
+.hud-status .pet-mini.main .mini { height: 9px; }
+.hud-status .pet-mini.down { filter: grayscale(0.6); }
+.hud-status .pet-stack.danger .pet-mini.main { box-shadow: 0 0 0 2px rgba(255, 70, 60, 0.85), 0 0 14px rgba(255, 60, 50, 0.6); animation: danger 1s ease-in-out infinite alternate; }
+.hud-status .pet-mini .badge { right: -4px; bottom: -4px; }
+.hud.has-subs .hud-goal { top: calc(296px + var(--safe-t)); }
+.battle .plate-anchor.under { left: 50%; transform: translateX(-50%); pointer-events: none; }
+.battle .unit-bars { display: grid; gap: 2px; justify-items: stretch; }
+.battle .unit-bars .nm { display: flex; justify-content: center; gap: 6px; font-size: 12px; font-weight: 700; color: #fff; text-shadow: 0 1px 2px #000, 0 0 3px #000; white-space: nowrap; }
+.battle .unit-bars .nm em { font-style: normal; color: #ffe29a; }
+.battle .unit-bars .st { font-size: 10px; text-align: center; color: #bfeccd; text-shadow: 0 1px 2px #000; }
+.battle .unit-bars.mine .mini { border-color: rgba(120, 200, 255, 0.9); }
+.battle .fighter.targetable.aimed .unit-bars .nm b { color: #5eeaff; }
+.hud:not(.has-subs):not(.no-pet) .hud-goal { top: calc(150px + var(--safe-t)); }

@@ -40,7 +40,7 @@ export function toast(text: string, ms = 2200): void {
 /** Lớp phủ đang mở trên world. Mọi lớp phủ đều dừng di chuyển (P01-R03). */
 export type Overlay =
   | { kind: 'none' }
-  | { kind: 'menu'; page: 'root' | 'pets' | 'bag' | 'quests' | 'settings' }
+  | { kind: 'menu'; page: 'root' | 'pets' | 'bag' | 'quests' | 'settings'; pet?: string }
   | { kind: 'npc'; npcId: string; line: string }
   | { kind: 'pedestal'; index: number }
   | { kind: 'pillar' };

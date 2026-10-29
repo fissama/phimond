@@ -53,35 +53,26 @@ export function Hud({ world, ch }: { world: GameWorld; ch: Character }) {
             <span class="vh"> · Lv {ch.level}</span>
           </div>
         </div>
-        {/* Dưới: linh thú chính (to hơn), rồi tối đa 2 linh thú phụ ngang nhau khi mang 3 con. */}
+        {/* Dưới: tối đa 3 linh thú xếp dọc, con chính to hơn; chỉ hình + cấp + 2 vạch máu/mana. Bấm vào để xem chi tiết. */}
         {pet && (
-          <div class={`pet-row hud-card ${low ? 'danger' : ''} ${down ? 'danger down' : ''}`}>
-            <div class="ring" role="button" aria-label="Linh thú" onClick={() => (overlay.value = { kind: 'menu', page: 'pets' })}>
-              <PetPortrait species={pet.species_id} />
-              <div class="badge" title="Cấp linh thú">{pet.level}</div>
-            </div>
-            <div class="stack">
-              <div class="nm"><b>{viName(pet.name)}</b></div>
-              <FrameBar kind="hp" row={0} v={pet.hp} max={pet.max_hp} label="HP" />
-              <FrameBar kind="mp" row={1} v={pet.mp} max={pet.max_mp} label="MP" />
-              <FrameBar kind="xp" row={2} v={pet.xp} max={pet.level * XP_PER_LEVEL} label="EXP" />
-            </div>
-          </div>
-        )}
-        {subs.length > 0 && (
-          <div class="sub-pets" data-testid="hud-sub-pets">
-            {subs.map((p) => (
-              <div key={p.id} class={`sub-pet hud-card ${p.hp <= 0 ? 'down' : ''}`} data-testid="hud-sub-pet">
-                <div class="ring" role="button" aria-label={viName(p.name)} onClick={() => (overlay.value = { kind: 'menu', page: 'pets' })}>
-                  <PetPortrait species={p.species_id} size={34} />
-                  <div class="badge">{p.level}</div>
+          <div class={`pet-stack ${low ? 'danger' : ''} ${down ? 'down' : ''}`} data-testid="hud-pets">
+            {[pet, ...subs].map((p, i) => (
+              <button
+                key={p.id}
+                class={`pet-mini hud-card ${i === 0 ? 'main' : 'sub'} ${p.hp <= 0 ? 'down' : ''}`}
+                data-testid={i === 0 ? 'hud-pet-main' : 'hud-sub-pet'}
+                aria-label={`${viName(p.name)} cấp ${p.level}`}
+                onClick={() => (overlay.value = { kind: 'menu', page: 'pets', pet: p.id })}
+              >
+                <div class="ring">
+                  <PetPortrait species={p.species_id} size={i === 0 ? 52 : 38} />
+                  <div class="badge" title="Cấp linh thú">{p.level}</div>
                 </div>
-                <div class="stack">
-                  <div class="nm"><b>{viName(p.name)}</b></div>
-                  <FrameBar kind="hp" row={0} v={p.hp} max={p.max_hp} label="HP" slim />
-                  <FrameBar kind="mp" row={1} v={p.mp} max={p.max_mp} label="MP" slim />
+                <div class="mbars">
+                  <MiniBar kind="hp" v={p.hp} max={p.max_hp} label="HP" />
+                  <MiniBar kind="mp" v={p.mp} max={p.max_mp} label="MP" />
                 </div>
-              </div>
+              </button>
             ))}
           </div>
         )}
@@ -141,6 +132,16 @@ export function Hud({ world, ch }: { world: GameWorld; ch: Character }) {
           </div>
         ))}
       </div>
+    </div>
+  );
+}
+
+/** Vạch mảnh (đỏ = máu, xanh = mana), không chữ; số chính xác nằm ở tooltip và màn chi tiết. */
+export function MiniBar({ kind, v, max, label }: { kind: 'hp' | 'mp'; v: number; max: number; label: string }) {
+  const p = Math.max(0, Math.min(100, (v / Math.max(1, max)) * 100));
+  return (
+    <div class={`mini ${kind} ${kind === 'hp' && p < 25 && p > 0 ? 'low' : ''}`} title={`${label} ${Math.floor(v)}/${max}`} data-testid={`mini-${kind}`}>
+      <i style={{ width: `${p}%` }} />
     </div>
   );
 }

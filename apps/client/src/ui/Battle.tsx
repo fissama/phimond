@@ -5,7 +5,7 @@ import { eventText, viName } from '../game/content.ts';
 import { session } from '../state/app.ts';
 import { PetAnimated } from './PetArt.tsx';
 import { petArt, petAtlas } from '../render/assets.ts';
-import { FrameBar } from './Hud.tsx';
+import { MiniBar } from './Hud.tsx';
 import { battleResultOpen, pushLog } from '../state/ui.ts';
 import { damageGlyphs, iconFor, uiUrl } from './skin.ts';
 import { sfx } from './sound.ts';
@@ -215,19 +215,21 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
   const skills = (pet?.skills ?? []).filter((s) => s !== 'attack');
   const consumables = Object.entries(ch.inventory).filter(([id, n]) => n > 0 && /potion|ether/.test(id));
 
-  // Khung thông tin đơn vị: quái và linh thú mình dùng chung một kiểu (tên, cấp, HP, MP), đặt cạnh thân; không còn khung góc trái trên.
-  const unitPlate = (u: typeof foe, side: 'player' | 'enemy') => {
+  // Dưới chân mỗi con chỉ có 2 vạch (đỏ máu, xanh mana) cho gọn; tên + cấp chỉ hiện khi đang nhắm/di chuột vào mục tiêu.
+  const unitPlate = (u: typeof foe, side: 'player' | 'enemy', showName: boolean) => {
     if (!u) return null;
     const cur = side === 'player' ? ch.pets.find((p) => p.id === u.id) : undefined;
     const lv = side === 'player' ? cur?.level : lvOf(u);
     return (
-      <div class={`foe-plate ${side === 'player' ? 'mine' : ''}`} data-testid={side === 'player' ? 'battle-player' : 'battle-enemy'}>
-        <div class="nm">
-          <b>{labelOf(view.units, u.id)}</b>
-          {lv ? <em>Lv {lv}</em> : null}
-        </div>
-        <FrameBar kind="hp" row={0} v={u.hp} max={u.max_hp} label="HP" slim />
-        <FrameBar kind="mp" row={1} v={u.mp} max={u.max_mp} label="MP" slim />
+      <div class={`unit-bars ${side === 'player' ? 'mine' : ''}`} data-testid={side === 'player' ? 'battle-player' : 'battle-enemy'}>
+        {showName && (
+          <div class="nm">
+            <b>{labelOf(view.units, u.id)}</b>
+            {lv ? <em>Lv {lv}</em> : null}
+          </div>
+        )}
+        <MiniBar kind="hp" v={u.hp} max={u.max_hp} label="HP" />
+        <MiniBar kind="mp" v={u.mp} max={u.max_mp} label="MP" />
         {u.statuses.length > 0 && <div class="st">{u.statuses.map((s) => world.content.cat.statuses[s.id]?.name ?? s.id).join(' · ')}</div>}
       </div>
     );
@@ -292,16 +294,9 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
               </span>
             ))}
         </div>
-        {portrait ? (
-          <div class="plate-anchor" style={side === 'player' ? { top: '100%', marginTop: 2 } : { bottom: bodyH + 10 }}>
-            {unitPlate(u, side)}
-          </div>
-        ) : (
-          // Màn ngang: khung đặt cạnh thân, phía trong (hướng đối thủ), để A/C cùng cột không che nhau.
-          <div class={`plate-anchor side ${side === 'player' ? 'in-left' : ''}`} style={side === 'player' ? { right: `calc(50% + ${Math.round(bodyW * 0.5)}px)`, bottom: Math.round(bodyH * 0.55) } : { left: `calc(50% + ${Math.round(bodyW * 0.42)}px)`, bottom: Math.round(bodyH * 0.38) }}>
-            {unitPlate(u, side)}
-          </div>
-        )}
+        <div class="plate-anchor under" style={{ top: '100%', marginTop: 2, width: Math.max(60, Math.round(bodyW * 0.95)) }}>
+          {unitPlate(u, side, targetable)}
+        </div>
       </div>
     );
   };
