@@ -9,6 +9,7 @@ import { Battle } from './Battle.tsx';
 import { Hud } from './Hud.tsx';
 import { Overlays } from './Overlays.tsx';
 import { uiUrl } from './skin.ts';
+import { bindMusic } from './music.ts';
 
 const KEYS: Record<string, Direction> = {
   ArrowLeft: 'left', ArrowRight: 'right', ArrowUp: 'up', ArrowDown: 'down',
@@ -26,6 +27,7 @@ export function Game() {
     const w = new GameWorld(new Engine(host.current!), new Content(cat), session, session.character.value?.gender === 'female' ? 'player-female' : 'player-male');
     setWorld(w);
     void w.start();
+    const unbindMusic = bindMusic();
     // Móc gỡ lỗi/E2E: chỉ có ở bản dev hoặc khi mở với ?debug.
     if (import.meta.env.DEV || location.search.includes('debug')) (window as unknown as { __phimond?: unknown }).__phimond = { world: w, session };
 
@@ -69,6 +71,7 @@ export function Game() {
       window.removeEventListener('keydown', down);
       window.removeEventListener('keyup', up);
       window.removeEventListener('blur', blur);
+      unbindMusic();
       w.dispose();
     };
   }, []);

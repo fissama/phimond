@@ -9,6 +9,7 @@ import { MiniBar } from './Hud.tsx';
 import { battleResultOpen, pushLog } from '../state/ui.ts';
 import { damageGlyphs, iconFor, uiUrl } from './skin.ts';
 import { sfx } from './sound.ts';
+import { playJingle } from './music.ts';
 
 /** Tên hiển thị của đơn vị; quái cùng tên (encounter 2–3 quái giống nhau) có hậu tố A/B/C theo thứ tự đội hình. */
 /** Bảng hiệu ứng 6 khung 192×192 đã duyệt (public/battle/fx-*.png). Hệ khác (phong/quang/ám/vô) dùng hiệu ứng CSS cho tới khi có bảng. */
@@ -151,6 +152,7 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
                 if (done.result === 'loss') rewards.push('Gợi ý: hồi phục ở Kiểm Lâm Lio (Bìa Rừng) hoặc Y Sư Selka (Quảng Trường), dùng Thuốc Rễ Dại trong trận, hoặc luyện cấp ở Bìa Rừng trước khi vào Rừng Sâu.');
                 setFinished({ battle: done, lines: rewards });
                 sfx(done.result === 'loss' ? 'lose' : done.result === 'flee' ? 'flee' : 'win');
+                if (done.result === 'win' || done.result === 'capture') playJingle('victory');
                 const long = rewards.some((l) => /lên cấp|Lv|Bắt được|Học được/.test(l)) || done.result === 'capture';
                 if (done.result !== 'loss') closeTimer.current = window.setTimeout(close, long ? 3600 : done.result === 'win' ? 2400 : 1400);
               }

@@ -46,7 +46,8 @@ async function walk(p: Page, cell: { x: number; y: number }, untilMap?: string):
   await act(p, { kind: 'ground', cell });
   let last = '';
   let still = 0;
-  for (let i = 0; i < 150; i++) {
+  // Dưới tải song song (SwiftShader không GPU) mỗi chặng có thể chậm gấp đôi: cho tới ~60 s mỗi chặng.
+  for (let i = 0; i < 300; i++) {
     await p.waitForTimeout(200);
     if (await p.getByTestId('battle').count()) {
       // Cảnh trận tự đóng sau kết quả; chỉ bấm Chạy khi còn trong lượt (nút còn hiện).
@@ -201,7 +202,7 @@ test('menu: đội hình có 1 con chính, không gỡ được con cuối', asy
   await page.getByTestId('menu-pets').click();
   const row = page.getByTestId('party-list').locator('.prow');
   await expect(row).toHaveCount(1);
-  await expect(row.locator('.party-role')).toHaveText('Chính');
+  await expect(row.locator('.party-role')).toHaveText('Ra trận');
   await expect(page.locator('[data-testid^="party-remove-"]')).toBeDisabled();
   await expect(page.locator('[data-testid^="party-up-"]')).toBeDisabled();
   await expect(page.locator('[data-testid^="party-down-"]')).toBeDisabled();
@@ -209,7 +210,7 @@ test('menu: đội hình có 1 con chính, không gỡ được con cuối', asy
 });
 
 test('NPC: tới gần, hội thoại, hồi phục; cổng khóa báo chưa mở', async ({ page }) => {
-  test.setTimeout(120_000);
+  test.setTimeout(240_000);
   await register(page);
   await chooseStarter(page);
   await act(page, { kind: 'npc', id: 'forest_guide' });

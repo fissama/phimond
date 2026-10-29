@@ -117,10 +117,11 @@ function Pets({ world, ch }: { world: GameWorld; ch: Character }) {
       {party.length > 0 && (
         <>
           <h3 class="pd-h">Đội hình mang theo ({party.length}/{MAX_PARTY})</h3>
+          <p class="muted party-note" data-testid="party-note">Chỉ linh thú ở vị trí đầu ra trận. Các con còn lại là dự bị, mang theo nhưng không chiến đấu.</p>
           <div class="prows" data-testid="party-list">
             {party.map((x, i) => (
               <PartyRow key={x.id} p={x}>
-                <span class={`party-role ${i === 0 ? 'main' : ''}`}>{i === 0 ? 'Chính' : 'Phụ'}</span>
+                <span class={`party-role ${i === 0 ? 'main' : ''}`}>{i === 0 ? 'Ra trận' : 'Dự bị'}</span>
                 <button class="btn small ico" data-testid={`party-up-${x.id}`} disabled={i === 0} aria-label="Đẩy lên" onClick={() => move(i, -1)}>
                   ▲
                 </button>
@@ -346,10 +347,17 @@ function Settings() {
         {row('Thời gian', 'time-mode', ([['auto', 'Theo máy'], ['day', 'Ngày'], ['dusk', 'Hoàng hôn'], ['night', 'Đêm']] as const).map(([k, t]) => [k, t, s.time === k, () => updateSettings({ time: k }), `time-${k}`]))}
         <h3 class="set-h">Âm thanh</h3>
         <div class="set-row">
-          <span class="set-l">Âm lượng</span>
+          <span class="set-l">Hiệu ứng</span>
           <label class="slider" data-testid="sound">
             <input type="range" min="0" max="100" step="5" value={Math.round(s.sound * 100)} data-testid="sound-slider" onInput={(e) => updateSettings({ sound: Number((e.currentTarget as HTMLInputElement).value) / 100 })} />
             <b>{s.sound === 0 ? 'Tắt' : `${Math.round(s.sound * 100)}%`}</b>
+          </label>
+        </div>
+        <div class="set-row">
+          <span class="set-l">Nhạc nền</span>
+          <label class="slider" data-testid="music">
+            <input type="range" min="0" max="100" step="5" value={Math.round(s.music * 100)} data-testid="music-slider" onInput={(e) => updateSettings({ music: Number((e.currentTarget as HTMLInputElement).value) / 100 })} />
+            <b>{s.music === 0 ? 'Tắt' : `${Math.round(s.music * 100)}%`}</b>
           </label>
         </div>
         <h3 class="set-h">Giao diện</h3>
@@ -380,7 +388,7 @@ function NpcDialog({ npcId, line, world, ch, onTab }: { npcId: string; line: str
   if (tab === null) {
     return (
       <div class="npc-bottom" data-testid="npc-bottom">
-        <div class="nb-portrait">{img ? <img src={img} alt="" /> : <div class="nb-ph" />}</div>
+        <div class="nb-portrait"><div class="nb-sock">{img ? <img src={img} alt="" /> : <div class="nb-ph" />}</div></div>
         <div class="nb-main">
           <div class="nb-name" data-testid="npc-name">{n.name}</div>
           <Typed text={line} />
@@ -455,6 +463,7 @@ function Typed({ text }: { text: string }) {
     <p class="nb-line" data-testid="npc-line" onClick={() => setN(text.length)}>
       <span>{text.slice(0, n)}</span>
       <span class="rest">{text.slice(n)}</span>
+      {n >= text.length && <span class="more" aria-hidden="true">▼</span>}
     </p>
   );
 }

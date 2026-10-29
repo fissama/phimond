@@ -1,0 +1,25 @@
+{
+  "tracks": {
+    "hall": ["hall.ogg", "hall.mp3"],
+    "town": ["town.ogg", "town.mp3"],
+    "palace": ["palace.ogg", "palace.mp3"],
+    "forest": ["forest.ogg", "forest.mp3"],
+    "deep": ["deep.ogg", "deep.mp3"],
+    "battle": ["battle.ogg", "battle.mp3"]
+  },
+  "contexts": {
+    "summoning_hall_main_hall": ["hall", "palace", "town"],
+    "city_square": ["town"],
+    "city_palace_gate": ["palace", "town"],
+    "emerald_forest_main_woods": ["forest"],
+    "emerald_forest_deep_woods": ["deep", "forest"],
+    "battle": ["battle"]
+  },
+  "jingles": {
+    "victory": ["victory.ogg", "victory.mp3", "victory.wav"]
+  },
+  "gain": {
+    "battle": 0.85,
+    "deep": 0.9
+  }
+}
