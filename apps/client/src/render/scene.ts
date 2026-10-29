@@ -515,6 +515,35 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
     facadeSpans.push([fx_! + 0.5 - w / 2, fx_! + 0.5 + w / 2]);
   }
   if (theme === 'city') dressCity();
+  // Tiền cảnh sát camera: vật to ở mép dưới khung để bộ làm mờ chiều sâu (tilt-shift) biến thành lớp mờ trước nhân vật.
+  if (P.backdrop && (theme === 'forest' || theme === 'deep_forest')) {
+    const bushes = ['fg-forest-bush-a', 'fg-forest-bush-b', 'fg-forest-bush-c'].filter((id) => asset(id));
+    for (let x = 0.8, i = 0; bushes.length && x < W; i++) {
+      const id = bushes[Math.floor(hash(i, 31) * bushes.length)]!;
+      const w = (asset(id)?.world?.[0] ?? 3) * 0.9;
+      propJobs.push(
+        (async () => {
+          const m = await propSprite(id, { tint: T.tint, castShadow: false });
+          if (!m) return;
+          m.scale.multiplyScalar(0.9);
+          m.position.set(x, 0, H + 0.9 + hash(i, 5) * 0.4);
+          group.add(m);
+        })(),
+      );
+      x += w * (0.75 + hash(i, 7) * 0.35);
+    }
+  }
+  if (P.backdrop && theme === 'city' && asset('fg-city-awning-edge')) {
+    propJobs.push(
+      (async () => {
+        const m = await propSprite('fg-city-awning-edge', { tint: T.tint, castShadow: false });
+        if (!m) return;
+        m.scale.multiplyScalar(0.85);
+        m.position.set(2.6, 0, H + 1.1);
+        group.add(m);
+      })(),
+    );
+  }
 
   function dressCity(): void {
     const isGate = map.id === 'city_palace_gate';
