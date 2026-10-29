@@ -48,3 +48,9 @@ Nguồn: `.../summon-hall-redraw-20261028/completion-20261029/summon-hall-extra-
 | `floor-light-1..3` 256×256 | Ba vệt sáng nghiêng (vàng, hồng đỏ, xanh) với hoa văn ô kính, mép dither. Tự nó giống mảnh pha lê đặc; dựng cộng sáng ở độ mờ 0,5 thì đọc là ánh sáng rơi xuống sàn. | 6 vệt trước các ô kính hai hông (bên phải lật gương). |
 
 Còn nợ: bóng tiếp xúc (S22) và các mục S01–S27 khác trong `GPT-PROMPTS-OCTOPATH.md`.
+
+
+## Lô viền hai bên (GPT, 2026-10-29)
+- 3 ảnh nền magenta: lan can bên hông (2048×768), trụ đầu lan can (724×2172), ô cửa kính gắn tường (1122×1402). Đạt: cùng bảng màu/nét với lan can phía trước, vòm kính có khung đá dày; kích thước ngoài đúng quy cách nên `tools/p01/prep_hall_sides.py` cắt nền, thu về 512/128/256 px, ≤48 màu, alpha nhị phân.
+- Lắp: xoay 90° quanh trục đứng để chạy dọc chiều sâu (tường 3D thật), 2 đoạn lan can + 3 trụ + 2 ô kính mỗi bên, bên phải đối xứng; thay hàng cột ngắn và ô kính lơ lửng cũ. Chỉ thấy rõ khi nhân vật đứng sát mép (camera bám người chơi).
+- Còn lại: chưa có mảnh nối góc trước/sau và ngoại cảnh bên ngoài tường; nếu thấy trống khi màn rộng, thêm lô GPT sau.

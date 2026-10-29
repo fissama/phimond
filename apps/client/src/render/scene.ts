@@ -670,14 +670,21 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
     stand('hall-lintel', W / 2, 0.42, 2.92, 1942 / (W + 1));
     for (const x of [7.5, 11.5]) stand('hall-lantern', x, 0.9, 2.9, 233);
     for (const x of [3.5, 15.5]) stand('hall-banner', x, 0.85, 2.88, 150); // cờ treo từ xà, hai bên cặp đèn
-    // Hai bên: hàng cột ngắn và ô kính màu xen kẽ dọc tường (ô '#', chỉ để nhìn).
-    for (const z of [2.6, 4.6, 6.6, 8.6]) {
-      stand('hall-column', 0.9, z, 0, COL_PPU);
-      stand('hall-column', W - 0.9, z, 0, COL_PPU);
-    }
-    for (const z of [3.6, 5.6, 7.6]) {
-      stand('hall-stained-glass', 0.55, z, 0, 150);
-      stand('hall-stained-glass', W - 0.55, z, 0, 150);
+    // Hai bên: lan can đá + trụ đầu + ô kính gắn tường, xoay 90° quanh trục đứng để chạy dọc chiều sâu (bên phải đối xứng).
+    const side = (id: string, x: number, z: number, rotY: number, ppu: number) =>
+      propJobs.push(
+        (async () => {
+          const s = await propSprite(id, { tint: T.tint, castShadow: false, ppu, tilt: 0 });
+          if (!s) return;
+          s.position.set(x, 0, z);
+          s.rotation.y = rotY;
+          group.add(s);
+        })(),
+      );
+    for (const [x, rot] of [[0.35, Math.PI / 2], [W - 0.35, -Math.PI / 2]] as const) {
+      for (const z of [3.8, 7.8]) side('hall-side-balustrade', x, z, rot, 128);
+      for (const z of [1.8, 5.8, 9.8]) side('hall-side-pier', x, z, rot, 190);
+      for (const z of [3.8, 7.8]) side('hall-side-window', x + (x < 1 ? 0.15 : -0.15), z, rot, 120);
     }
     // Ngưỡng cửa phía trước: hai nửa chừa lối ra x = 8..11 (khớp cổng hall_exit rộng 3 ô).
     stand('hall-threshold-left', 8.04 / 2, H - 0.05);
