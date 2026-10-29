@@ -55,5 +55,5 @@ export function lightAt(mode: TimeMode, now: Date = new Date()): Light {
   };
 }
 
-/** Trong nhà (Triệu Linh Điện): ánh nến ấm cố định, không theo giờ. */
-export const INDOOR: Light = L([1.08, 0.96, 0.84], 1.1, 1, 1.14, [0.06, 0.02, 0.0], [0.26, 0.12, 0.0], 0.85, 0);
+/** Triệu Linh Điện: sân đá mở ban ngày, ánh sáng cố định không theo giờ. */
+export const INDOOR: Light = L([1.03, 1.0, 0.95], 1.1, 1, 1.05, [0.0, 0.02, 0.05], [0.07, 0.04, 0.0], 0.15, 0.9);

@@ -8,8 +8,9 @@ import type { Light } from './daylight.ts';
 import { makeAtmosphere, type Lamp } from './atmosphere.ts';
 
 /** Ánh sáng/không khí theo chủ đề map. */
-export const THEMES: Record<string, { indoor?: boolean; sky: number; fog: [number, number, number] | null; ambient: number; sun: number; sunColor: number; tint: number; ground: number }> = {
-  hall: { indoor: true, sky: 0x1a1410, fog: null, ambient: 0.75, sun: 0.9, sunColor: 0xffd9a8, tint: 0xfff0dc, ground: 0xffffff },
+export const THEMES: Record<string, { indoor?: boolean; sky: number; fog: [number, number, number] | null; ambient: number; sun: number; sunColor: number; tint: number; ground: number; camBias?: number }> = {
+  // Sảnh là sân đá mở nhìn ra thành phố (bản vẽ lại 2026-10-28): ánh sáng ban ngày cố định, không còn nội thất gỗ tối.
+  hall: { indoor: true, sky: 0x2f7be8, fog: null, ambient: 0.95, sun: 1.1, sunColor: 0xfff4de, tint: 0xffffff, ground: 0xffffff, camBias: -1.5 },
   forest: { sky: 0x9cc6e8, fog: [0xb9d8c4, 26, 60], ambient: 1.0, sun: 1.3, sunColor: 0xfff2d6, tint: 0xffffff, ground: 0xffffff },
   deep_forest: { sky: 0x4f6b58, fog: [0x5d7a66, 14, 44], ambient: 0.7, sun: 0.85, sunColor: 0xd6f0d0, tint: 0xc8dcc4, ground: 0xb5c9b0 },
   city: { sky: 0x8ec3ef, fog: [0xc4dcef, 30, 70], ambient: 1.0, sun: 1.25, sunColor: 0xfff4e2, tint: 0xffffff, ground: 0xffffff },
@@ -22,7 +23,8 @@ function floorFor(theme: string, ch: string, x: number, y: number): string {
   const grass = 'grass-floor-01'; // một loại cỏ để không lộ ô 4×4; đa dạng nhờ decal/cỏ/hoa
   switch (theme) {
     case 'hall':
-      return ch === '=' || /[1-3KCL]/.test(ch) ? 'hall-floor-wood' : 'hall-floor-stone';
+      void ch;
+      return 'hall-floor-marble';
     case 'city':
       if (ch === '+') return 'city-brick-path';
       if (ch === '#' || ch === 'H') return 'city-paving-03';
@@ -57,11 +59,11 @@ function propsFor(theme: string, ch: string): string[] {
     case 'F':
       return ['fountain-body'];
     case 'C':
-      return hall ? ['palace-marble-pillar'] : city ? ['city-carved-pillar'] : ['palace-column'];
+      return hall ? ['hall-column'] : city ? ['city-carved-pillar'] : ['palace-column'];
     case 'K':
-      return ['hall-bookshelf'];
+      return hall ? ['hall-lectern'] : ['hall-bookshelf'];
     case 'L':
-      return hall ? ['hall-torch'] : ['streetlamp-unlit'];
+      return hall ? ['hall-brazier'] : ['streetlamp-unlit'];
     case 'B':
       return ['bench'];
     case 'S':
@@ -81,11 +83,11 @@ function propsFor(theme: string, ch: string): string[] {
     case 'k':
       return ['handcart'];
     case '1':
-      return ['summon-pedestal-01-dormant'];
+      return ['summon-pedestal-01'];
     case '2':
-      return ['summon-pedestal-02-dormant'];
+      return ['summon-pedestal-02'];
     case '3':
-      return ['summon-pedestal-03-dormant'];
+      return ['summon-pedestal-03'];
     // Đơn 10.
     case 'P':
       return ['city-lion-fountain'];
@@ -262,12 +264,13 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
       const decor = DECOR.has(ch);
       if (decor && hash(x, y) > P.decor) continue;
       const pick = /[1-3]/.test(ch) ? { kind: 'pedestal', index: Number(ch) - 1 } : ch === 'O' ? { kind: 'pillar' } : undefined;
-      place(opts[Math.floor(hash(x, y) * opts.length)]!, x, y, { decor, jitter: decor || ch === 'b' || ch === 'r', ...(pick ? { pick } : {}) });
+      const pickId = theme === 'hall' && ch === 'K' && x > W / 2 ? 'hall-globe' : opts[Math.floor(hash(x, y) * opts.length)]!;
+      place(pickId, x, y, { decor, jitter: decor || ch === 'b' || ch === 'r', ...(pick ? { pick } : {}) });
       if (ch === 'L' && P.fx) {
         const lid = opts[0]!;
         const a = asset(lid);
         const h = a ? a.px[1] / 128 : 2;
-        lamps.push({ x: x + 0.5, y: h * (theme === 'hall' ? 0.5 : 0.92), z: y + 0.5, size: theme === 'hall' ? 1.7 : 3.2, color: theme === 'hall' ? 0xffa850 : 0xffc878 });
+        lamps.push({ x: x + 0.5, y: h * (theme === 'hall' ? 0.5 : 0.92), z: y + 0.5, size: theme === 'hall' ? 1.3 : 3.2, color: theme === 'hall' ? 0xffa850 : 0xffc878 });
       }
       if (ch === 'A') place(['market-produce', 'market-cloth', 'market-weapons'][Math.floor(hash(y, x) * 3)]!, x, y + 0.35);
       if (ch === 'F' && P.fx) propJobs.push(fx('fountain-water', x + 0.5, y + 0.3, 1.2));
@@ -297,19 +300,19 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
 
   // Viền ngoài map: nền kéo dài + cây (rừng) để camera không lộ khoảng trống ở mép.
   // Điện: nối sàn đá tối ra ngoài lan can để 1/3 dưới màn không còn là khoảng đen (đánh giá v1.0.0 P1).
-  const skirtFloor = theme === 'hall' ? 'hall-floor-stone' : theme === 'city' ? 'city-paving-03' : 'grass-floor-01';
+  const skirtFloor = theme === 'hall' ? 'hall-floor-marble' : theme === 'city' ? 'city-paving-03' : 'grass-floor-01';
   if (skirtFloor && asset(skirtFloor)) {
     propJobs.push(
       (async () => {
         const tex = await textures.get(hd2dUrl(skirtFloor), { repeat: true });
         const M = 24;
         // Phố: sàn lát chỉ chạy từ chân dãy nhà trở ra; phía sau nhà là tường hậu, không còn mặt sàn kéo xa nhìn xuyên qua cổng vòm.
-        const zN = theme === 'city' ? 1.0 : -M;
+        const zN = theme === 'city' ? 1.0 : theme === 'hall' ? -1.9 : -M; // sảnh: sân thượng sau hàng cột sâu ~2,5 ô rồi tới tường thành
         const depth = H + M - zN;
         const geo = new THREE.PlaneGeometry(W + 2 * M, depth);
         const uv = geo.getAttribute('uv') as THREE.BufferAttribute;
         for (let i = 0; i < uv.count; i++) uv.setXY(i, (uv.getX(i) * (W + 2 * M)) / 4, (uv.getY(i) * depth) / 4);
-        const shade = theme === 'hall' ? 0x3c3229 : theme === 'deep_forest' ? T.ground : theme === 'city' ? 0xc8c0b0 : 0xe4ebdc;
+        const shade = theme === 'hall' ? 0xd2c8b4 : theme === 'deep_forest' ? T.ground : theme === 'city' ? 0xc8c0b0 : 0xe4ebdc;
         const mat = P.shadows === 'none' ? new THREE.MeshBasicMaterial({ map: tex, color: shade }) : new THREE.MeshLambertMaterial({ map: tex, color: shade });
         const m = new THREE.Mesh(geo, mat);
         m.rotation.x = -Math.PI / 2;
@@ -485,7 +488,21 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
   }
 
   // Điểm nhấn sàn.
-  if (theme === 'hall') propJobs.push(decal('summon-floor-emblem', (map.spawn_default?.x ?? 9) + 0.5, (map.spawn_default?.y ?? 5) + 0.5, 1.2)); // tâm vòng = ô xuất hiện của nhân vật
+  if (theme === 'hall') {
+    // Tâm vòng = ô xuất hiện của nhân vật. Vòng triệu hồi (4 khung) nằm phẳng trên sàn, bụi linh khí bay lên phía trên.
+    const cx = (map.spawn_default?.x ?? 9) + 0.5;
+    const cz = (map.spawn_default?.y ?? 5) + 0.5;
+    propJobs.push(
+      (async () => {
+        const s = await propSprite('summon-circle-fx', { tilt: -Math.PI / 2, ppu: 62, castShadow: false });
+        if (!s) return;
+        s.position.set(cx, 0.015, cz);
+        animated.push(s);
+        group.add(s);
+      })(),
+    );
+    if (P.fx) propJobs.push(fx('summon-motes-fx', cx, cz + 0.2, 1.1));
+  }
   if (map.id === 'city_square') propJobs.push(decal('city-plaza-medallion', 20, 16, 1.4));
 
   // Mặt tiền nhà (H) theo map.facades "x,y" → asset; thành phố: lấp kín dãy nhà phía trên (không để khe trống).
@@ -585,29 +602,49 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
     }
   }
 
-  // Tường điện (hall): dải tường ở mép trên.
-  if (theme === 'hall')
-    for (let x = 1; x < W - 1; x += 3) place('hall-wall-stone', x, 0.35); // lùi sau hàng 1 để không che Mira (đánh giá G1)
-
-  // Viền chặn của điện: cột + cờ dọc hai bên, chậu cây dài và thùng ở phía trước. Người chơi nhìn là biết đây là tường/vật chắn,
-  // không phải khoảng trống đi tiếp được (các ô '#').
+  // Sảnh: sân đá mở ra thành phố. Từ xa tới gần: tường thành + thành phố, hàng cột + xà ngang, cột bên hông, ngưỡng cửa phía trước.
   if (theme === 'hall') {
-    for (const y of [2, 4, 6, 8]) {
-      place('palace-marble-pillar', 1, y);
-      place('palace-marble-pillar', W - 2, y);
+    propJobs.push(
+      (async () => {
+        const tex = await textures.get(hd2dUrl('hall-city-backdrop'));
+        const w = W + 18;
+        const h = (w * 405) / 1216;
+        const geo = new THREE.PlaneGeometry(w, h);
+        const mat = new THREE.MeshBasicMaterial({ map: tex, fog: false });
+        const m = new THREE.Mesh(geo, mat);
+        m.position.set(W / 2, h / 2 - 0.4, -2.0);
+        group.add(m);
+        disposables.push(geo, mat);
+      })(),
+    );
+    const stand = (id: string, x: number, z: number, y = 0, ppu?: number, flipX = false) =>
+      propJobs.push(
+        (async () => {
+          const s = await propSprite(id, { tint: T.tint, castShadow: real, ...(ppu ? { ppu } : {}) });
+          if (!s) return;
+          s.position.set(x, y, z);
+          if (flipX) s.scale.x *= -1;
+          if (s.userData.anim) animated.push(s);
+          group.add(s);
+        })(),
+      );
+    const COL_PPU = 175; // cột 224×560 px → 1,28×3,2 ô
+    for (const x of [1.5, 5.5, 9.5, 13.5, 17.5]) stand('hall-column', x, 0.5, 0, COL_PPU);
+    stand('hall-lintel', W / 2, 0.42, 2.92, 1942 / (W + 1));
+    for (const x of [7.5, 11.5]) stand('hall-lantern', x, 0.9, 2.9, 233);
+    for (const x of [3.5, 15.5]) stand('hall-banner', x, 0.85, 2.88, 150); // cờ treo từ xà, hai bên cặp đèn
+    // Hai bên: hàng cột ngắn và ô kính màu xen kẽ dọc tường (ô '#', chỉ để nhìn).
+    for (const z of [2.6, 4.6, 6.6, 8.6]) {
+      stand('hall-column', 0.9, z, 0, COL_PPU);
+      stand('hall-column', W - 0.9, z, 0, COL_PPU);
     }
-    for (const y of [3, 5, 7]) {
-      place(y === 5 ? 'banner-blue' : 'banner-red', 0.9, y);
-      place(y === 5 ? 'banner-blue' : 'banner-red', W - 1.9, y);
+    for (const z of [3.6, 5.6, 7.6]) {
+      stand('hall-stained-glass', 0.55, z, 0, 150);
+      stand('hall-stained-glass', W - 0.55, z, 0, 150);
     }
-    for (const x of [2.2, 5.7, 13.3, 16.8]) place('palace-long-planter', x, 10.3);
-    place('wooden-crate', 0.8, 9.9);
-    place('barrel', 1.9, 9.4);
-    place('barrel', W - 2.9, 9.4);
-    place('wooden-crate', W - 1.8, 9.9);
-    // Tiền sảnh ngoài lan can: hàng chậu cây và đèn đuốc thấp, chỉ trang trí (ngoài lưới đi được).
-    for (const x of [1.5, 4.5, 14.5, 17.5]) place('palace-long-planter', x, 12.6);
-    for (const x of [7.2, W - 7.2]) place('hall-torch', x, 12.2);
+    // Ngưỡng cửa phía trước: hai nửa chừa lối ra x = 8..11 (khớp cổng hall_exit rộng 3 ô).
+    stand('hall-threshold-left', 8.04 / 2, H - 0.05);
+    stand('hall-threshold-right', W - 8.04 / 2, H - 0.05);
   }
 
   // Nền xa (dải 64 px/đơn vị) sau mép trên map.

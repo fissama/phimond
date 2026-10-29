@@ -55,6 +55,8 @@ export class Engine {
   private post: Post | null = null;
   private lightClock = 0;
   private indoor = false;
+  /** Dịch tâm camera theo trục dọc (âm = nhìn lên phía sau): sảnh cần thấy hàng cột và thành phố phía trên. */
+  private camBias = 0;
   private raf = 0;
   private last = 0;
   private cap: FpsCap = 60;
@@ -135,6 +137,7 @@ export class Engine {
     this.world = await buildScene(map, this.quality);
     this.scene.add(this.world.group);
     this.indoor = T.indoor === true;
+    this.camBias = T.camBias ?? 0;
     this.updateLight(0, true);
 
     if (!this.player) {
@@ -396,7 +399,7 @@ export class Engine {
       const H = map.height || map.width;
       const halfW = DIST * Math.tan(THREE.MathUtils.degToRad(FOV / 2)) * this.camera.aspect;
       tx = W <= halfW * 2 ? W / 2 : THREE.MathUtils.clamp(tx, halfW - 0.5, W - halfW + 0.5);
-      tz = THREE.MathUtils.clamp(tz, 3, H - 1.5);
+      tz = THREE.MathUtils.clamp(tz, 3, H - 1.5) + this.camBias;
     }
     this.target.x += (tx - this.target.x) * k;
     this.target.z += (tz - this.target.z) * k;

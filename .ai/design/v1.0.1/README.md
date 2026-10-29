@@ -77,7 +77,7 @@ Cân bằng trận (pet Lv1 auto thắng ≥90% Bìa Rừng), Chạy đi trướ
 
 - Hình người chơi đuổi theo vị trí logic (hàm mũ, ~40 ms), nhịp bước bám quãng đường, dáng chạy giữ 90 ms khi dừng giữa hai ô (không nháy dáng đứng). Người đi đường tăng/giảm tốc dần, dùng dải đi dọc khi có.
 - Vào Triệu Linh Điện: tâm vòng triệu hồi = ô xuất hiện; nhân vật hiện ra từ chân lên trong cột sáng. Mira ở chéo phải-dưới trụ vàng, hàng trên vòng triệu hồi (có test `TestSummoningHallLayout`).
-- 3 ô nhân vật/tài khoản, chọn Nam/Nữ và đặt tên sau khi tạo ô: đã có từ trước, e2e `smoke.spec.ts` phủ.
+- 3 ô nhân vật/tài khoản, chọn Nam/Nữ và đặt tên sau khi tạo ô: e2e `smoke.spec.ts` phủ (code vào git ở Đợt 9).
 - Danh sách asset cần vẽ lại: `ASSETS-REDRAW-v1.0.0.md`.
 
 ## Đợt 8 — bố cục map theo bản phác APK/P12, hậu cảnh thành phố, checklist redraw
@@ -85,3 +85,8 @@ Cân bằng trận (pet Lv1 auto thắng ≥90% Bìa Rừng), Chạy đi trướ
 - Dựng lại 5 map theo phương án A: Quảng Trường đi sang Hoàng Môn bằng mép phải, sang Chợ bằng mép trái; trụ teleport dưới-phải; Hoàng Môn thứ tự cổng trái→phải là Quảng Trường, cung điện, Chợ; thảm đỏ chạy dọc trục cổng; Sảnh xếp 3 bệ thành cung; NPC Bìa Rừng/Rừng Sâu theo thứ tự bản phác. Test: `TestRelativeLayoutFollowsApkSketch`.
 - Hậu cảnh thành phố: sàn lát không còn kéo ra sau dãy nhà, thêm tường hậu sau mặt tiền, tường thành kéo giãn lấp khe Hoàng Môn. Rừng: hàng sát camera chỉ còn bụi/cây nhỏ.
 - Checklist cho codex có trạng thái: `CHECKLIST-REDRAW-CODEX.md`.
+
+## Đợt 9 — Triệu Linh Điện bản vẽ lại, đồng bộ 3 ô nhân vật
+
+- Sảnh dựng lại từ lô GPT 2026-10-28: sân đá mở nhìn ra thành phố (xem `REVIEW-TRIEU-LINH-DIEN-ART.md`).
+- Sửa sai: tính năng 3 ô nhân vật + chọn Nam/Nữ + đổi nhân vật (server `slots`, migration `002_character_slots.sql`, giao thức, `CharacterSelect.tsx`) đã ghi là "đã có từ trước" nhưng chưa từng vào git của Mac, trong khi `smoke.spec.ts` đã gọi tới. Nay đã commit riêng.

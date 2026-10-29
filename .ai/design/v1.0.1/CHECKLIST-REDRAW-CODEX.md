@@ -61,6 +61,23 @@ Lý do: cổng vòm Hoàng Môn, ngõ và khe giữa các mặt tiền nhìn xuy
 | R61 | Mảnh nối mặt tiền nhà (ngõ, ống máng, cột) | [x] | [ ] |
 | R62 | Khung thanh chỉ số có nhãn (HP/MP/EXP), tách nhãn khỏi thanh | [x] | [ ] |
 
+## E. Triệu Linh Điện (lô GPT 2026-10-28, đã nạp vào client)
+
+Nhận xét chi tiết: `REVIEW-TRIEU-LINH-DIEN-ART.md`. Nạp bằng `tools/p01/install_hall_art.py`.
+
+| ID | Asset | Đã vẽ | Duyệt | Ghi chú |
+|---|---|---|---|---|
+| E01 | Hậu cảnh thành phố 1216×405 | [x] | [x] | Mật độ điểm ảnh thấp hơn phần còn lại; nợ: bản rộng hơn/lớp gần. |
+| E02 | Sàn đá 512×512 | [x] | [x] | Nợ: 1 biến thể thứ hai để phá nhịp lặp. |
+| E03 | Cột đá, xà ngang | [x] | [x] | |
+| E04 | Ngưỡng cửa trái/phải | [x] | [x] | Khớp lối ra 3 ô. |
+| E05–E07 | Bệ thú 1/2/3 | [x] | [x] | Thay bệ cũ dormant/active. |
+| E08 | Vòng triệu hồi fx (4 khung) | [x] | [x] | Thay hoa văn sàn cũ. |
+| E09 | Bụi linh khí fx (4 khung) | [x] | [x] | |
+| E10–E15 | Giá sách, đèn treo, cờ, lư hương (2 khung khói), quả cầu, cửa kính màu | [x] | [x] | |
+| E16 | Thú trưng bày hoa/bọ cạp/kỳ lân (192) | [x] | [ ] | Chưa dùng: trùng thiết kế atlas P10; chờ owner quyết. |
+| E17 | `spill-overlay.png` | [x] | [✗] | RGB 231k màu, không alpha; xuất lại theo chuẩn. |
+
 ## Thứ tự đề nghị
 
 1. R01–R06 (gốc của chuyện "lướt"), rồi R07–R24.
