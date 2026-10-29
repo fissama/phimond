@@ -8,7 +8,7 @@ import { PRESETS, settings, settingsVolatile, updateSettings, type Quality } fro
 import { closeOverlay, overlay } from '../state/ui.ts';
 import { session } from '../state/app.ts';
 import { PetPortrait } from './PetArt.tsx';
-import { iconFor } from './skin.ts';
+import { iconFor, uiUrl } from './skin.ts';
 import { sfx } from './sound.ts';
 import { npcLabel, questHint, questViews, type QuestDef } from '../game/quests.ts';
 import { useSignal } from '@preact/signals';
@@ -77,7 +77,7 @@ function Back({ to = 'root' }: { to?: 'root' }) {
 function PetRow({ p, children }: { p: Pet; children?: preact.ComponentChildren }) {
   return (
     <div class="item">
-      <PetPortrait species={p.species_id} />
+      <PetPortrait species={p.species_id} bust />
       <div class="grow">
         <div>
           <b>{viName(p.name)}</b> · Lv {p.level} · {'★'.repeat(Math.max(1, p.star ?? 1))}
@@ -133,12 +133,15 @@ function PetDetail({ world, ch, p, onBack }: { world: GameWorld; ch: Character; 
       <h2>{viName(p.name)}</h2>
       <div class="pet-detail">
         <div class="pd-art">
-          <PetPortrait species={p.species_id} size={112} />
+          <PetPortrait species={p.species_id} size={112} bust />
           <div class="pd-tags">
             <span>Lv {p.level}</span>
             <span>{'★'.repeat(Math.max(1, p.star ?? 1))}</span>
             {sp?.element && <span>Hệ {ELEMENT_VI[sp.element] ?? sp.element}</span>}
             {sp?.race && <span>{RACE_VI[sp.race] ?? sp.race}</span>}
+            {p.gender && <span>{p.gender === 'male' ? '♂ Đực' : p.gender === 'female' ? '♀ Cái' : p.gender}</span>}
+            {(p.strengthening ?? 0) > 0 && <span>Cường hóa +{p.strengthening}</span>}
+            <span>{p.appraised ? 'Đã giám định' : 'Chưa giám định'}</span>
             {p.id === ch.active_pet_id && <span class="on">Đang theo</span>}
           </div>
         </div>
@@ -174,8 +177,10 @@ function PetDetail({ world, ch, p, onBack }: { world: GameWorld; ch: Character; 
           <h3 class="pd-h">Kháng hệ</h3>
           <div class="pd-res">
             {Object.entries(res).map(([k, v]) => (
-              <span key={k}>
-                {ELEMENT_VI[k] ?? k} {v}%
+              <span key={k} class={v > 0 ? 'pos' : v < 0 ? 'neg' : ''}>
+                <img class="el" src={uiUrl(`element_${k}`)} alt="" onError={(e) => ((e.currentTarget as HTMLImageElement).style.display = 'none')} />
+                <em>{ELEMENT_VI[k] ?? k}</em>
+                <b>{v}%</b>
               </span>
             ))}
           </div>
@@ -300,11 +305,20 @@ function Settings() {
     <>
       <h2>Cài đặt</h2>
       <div class="set-grid">
+        <h3 class="set-h">Đồ họa</h3>
         {row('Đồ họa', 'quality', (['low', 'medium', 'high'] as Quality[]).map((q) => [q, PRESETS[q].label, s.quality === q, () => updateSettings({ quality: q }), `quality-${q}`]))}
         <p class="muted set-note">{s.quality === 'low' ? 'Nhẹ nhất: tắt bóng, hậu kỳ và hiệu ứng phụ.' : s.quality === 'medium' ? 'Chỉnh màu theo giờ, làm mờ HD-2D, đèn và tia nắng.' : 'Thêm bloom và bóng đổ thật; tốn pin hơn.'}</p>
         {row('Khung hình', undefined, ([30, 60] as const).map((f) => [String(f), `${f} FPS`, s.fps === f, () => updateSettings({ fps: f }), `fps-${f}`]))}
-        {row('Âm thanh', 'sound', ([[0, 'Tắt'], [0.3, 'Nhỏ'], [0.6, 'Vừa'], [1, 'To']] as const).map(([v, t]) => [String(v), t, s.sound === v, () => updateSettings({ sound: v }), `sound-${v}`]))}
         {row('Thời gian', 'time-mode', ([['auto', 'Theo máy'], ['day', 'Ngày'], ['dusk', 'Hoàng hôn'], ['night', 'Đêm']] as const).map(([k, t]) => [k, t, s.time === k, () => updateSettings({ time: k }), `time-${k}`]))}
+        <h3 class="set-h">Âm thanh</h3>
+        <div class="set-row">
+          <span class="set-l">Âm lượng</span>
+          <label class="slider" data-testid="sound">
+            <input type="range" min="0" max="100" step="5" value={Math.round(s.sound * 100)} data-testid="sound-slider" onInput={(e) => updateSettings({ sound: Number((e.currentTarget as HTMLInputElement).value) / 100 })} />
+            <b>{s.sound === 0 ? 'Tắt' : `${Math.round(s.sound * 100)}%`}</b>
+          </label>
+        </div>
+        <h3 class="set-h">Giao diện</h3>
         {row('Phím điều hướng', undefined, [['on', 'Hiện', s.dpad, () => updateSettings({ dpad: true })], ['off', 'Ẩn', !s.dpad, () => updateSettings({ dpad: false })]])}
         {row('Giao diện', 'hud-density', [['full', 'Đầy đủ', s.hud === 'full', () => updateSettings({ hud: 'full' }), 'hud-full'], ['compact', 'Gọn', s.hud === 'compact', () => updateSettings({ hud: 'compact' }), 'hud-compact']])}
         {settingsVolatile.value && <p class="muted">Trình duyệt không cho lưu cài đặt; lựa chọn chỉ giữ tới khi tải lại trang.</p>}

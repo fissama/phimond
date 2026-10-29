@@ -213,7 +213,7 @@ export class GameWorld {
     if (!m || !map) return null;
     const c = m.cell;
     const npc = this.content.npcsOn(map.id).find((n) => chebyshev(n, c) <= 1);
-    if (npc) return { label: 'Nói chuyện', run: () => void this.talk(npc.id) };
+    if (npc) return { label: 'Nói', run: () => void this.talk(npc.id) };
     const ped = map.pedestals.find((p) => chebyshev(p, c) <= 1);
     if (ped) return { label: 'Chọn bệ', run: () => (overlay.value = { kind: 'pedestal', index: ped.index }) };
     if (map.pillar && chebyshev(map.pillar, c) <= 1) return { label: 'Dùng trụ', run: () => (overlay.value = { kind: 'pillar' }) };

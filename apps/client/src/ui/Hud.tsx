@@ -65,7 +65,7 @@ export function Hud({ world, ch }: { world: GameWorld; ch: Character }) {
                 onClick={() => (overlay.value = { kind: 'menu', page: 'pets', pet: p.id })}
               >
                 <div class="ring">
-                  <PetPortrait species={p.species_id} size={i === 0 ? 52 : 38} />
+                  <PetPortrait species={p.species_id} size={i === 0 ? 52 : 38} bust />
                   <div class="badge" title="Cấp linh thú">{p.level}</div>
                 </div>
                 <div class="mbars">
@@ -120,7 +120,7 @@ export function Hud({ world, ch }: { world: GameWorld; ch: Character }) {
           Trở về
         </button>
         <button class={`round a ${hint ? 'ready' : ''}`} data-testid="btn-select" onClick={() => world.primary()}>
-          <span class={`lbl ${(hint ?? 'Chọn').length > 6 ? 'long' : ''}`}>{hint ?? 'Chọn'}</span>
+          <span class={`lbl ${(hint ?? 'Chọn').length > 9 ? 'xlong' : (hint ?? 'Chọn').length > 5 ? 'long' : ''}`}>{hint ?? 'Chọn'}</span>
         </button>
       </div>
 
