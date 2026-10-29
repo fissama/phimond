@@ -10,6 +10,7 @@ import { session } from '../state/app.ts';
 import { PetPortrait } from './PetArt.tsx';
 import { iconFor, uiUrl } from './skin.ts';
 import { sfx } from './sound.ts';
+import { MAX_PARTY, partyOf } from '../game/party.ts';
 import { npcLabel, questHint, questViews, type QuestDef } from '../game/quests.ts';
 import { useSignal } from '@preact/signals';
 
@@ -24,11 +25,12 @@ export function Overlays({ world, ch }: { world: GameWorld; ch: Character }) {
   if (o.kind === 'none') return null;
   // Một bộ khung cho mọi bảng (đánh giá P1: trước đây 5 kiểu khung khác nhau). Bảng chỉ khác tiêu đề và biểu tượng.
   const skin = 'dialogue';
-  void npcTab;
+  // Hội thoại NPC mở bằng khung thấp ở đáy (cảnh vẫn nhìn thấy); chọn một dịch vụ thì mở bảng giữa như mọi bảng khác.
+  const bottom = o.kind === 'npc' && npcTab.value === null;
   return (
-    <div class="scrim" data-testid="overlay" onPointerDown={(e) => e.target === e.currentTarget && closeOverlay()}>
-      <div class={`dialog skin-${skin}`} role="dialog">
-        <button class="btn-close" aria-label="Đóng" data-testid="overlay-close" style={{ position: 'absolute', top: 2, right: 2, zIndex: 2 }} onClick={closeOverlay} />
+    <div class={`scrim ${bottom ? 'bottom' : ''}`} data-testid="overlay" onPointerDown={(e) => !bottom && e.target === e.currentTarget && closeOverlay()}>
+      <div class={`dialog skin-${skin} ${bottom ? 'bottom' : ''}`} role="dialog">
+        {!bottom && <button class="btn-close" aria-label="Đóng" data-testid="overlay-close" style={{ position: 'absolute', top: 2, right: 2, zIndex: 2 }} onClick={closeOverlay} />}
         {o.kind === 'menu' && <Menu page={o.page} world={world} ch={ch} />}
         {o.kind === 'npc' && <NpcDialog key={o.npcId} npcId={o.npcId} line={o.line} world={world} ch={ch} onTab={(t) => (npcTab.value = t)} />}
         {o.kind === 'pedestal' && <PedestalConfirm index={o.index} world={world} />}
@@ -74,49 +76,81 @@ function Back({ to = 'root' }: { to?: 'root' }) {
   );
 }
 
-function PetRow({ p, children }: { p: Pet; children?: preact.ComponentChildren }) {
+function PartyRow({ p, children }: { p: Pet; children?: preact.ComponentChildren }) {
   return (
-    <div class="item">
-      <PetPortrait species={p.species_id} bust />
-      <div class="grow">
-        <div>
-          <b>{viName(p.name)}</b> · Lv {p.level} · {'★'.repeat(Math.max(1, p.star ?? 1))}
-        </div>
-        <div class="muted">
-          HP {p.hp}/{p.max_hp} · MP {p.mp}/{p.max_mp}
-        </div>
+    <div class="prow item-flat">
+      <PetPortrait species={p.species_id} bust size={52} />
+      <div class="pinfo">
+        <b>{viName(p.name)}</b>
+        <span class="muted">
+          Lv {p.level} · {'★'.repeat(Math.max(1, p.star ?? 1))} · HP {p.hp}/{p.max_hp} · MP {p.mp}/{p.max_mp}
+        </span>
       </div>
-      {children}
+      <div class="pact">{children}</div>
     </div>
   );
 }
 
 function Pets({ world, ch }: { world: GameWorld; ch: Character }) {
   const pets = ch.pets.filter((p) => !p.retired);
+  const party = partyOf(ch);
+  const reserve = pets.filter((p) => !party.includes(p));
   const o = overlay.value;
   const [sel, setSel] = useState<string | null>(o.kind === 'menu' && o.pet ? o.pet : null);
   const p = pets.find((x) => x.id === sel);
   if (p) return <PetDetail world={world} ch={ch} p={p} onBack={() => setSel(null)} />;
+  const setParty = (list: Pet[]) => void world.intent('pet.party_set', { pet_ids: list.map((x) => x.id) });
+  const move = (i: number, d: -1 | 1) => {
+    const next = party.slice();
+    [next[i], next[i + d]] = [next[i + d]!, next[i]!];
+    setParty(next);
+  };
+  const detail = (x: Pet) => (
+    <button class="btn small" data-testid={`pet-detail-${x.id}`} onClick={() => setSel(x.id)}>
+      Chi tiết
+    </button>
+  );
   return (
     <>
       <h2>Linh thú ({pets.length})</h2>
       {pets.length === 0 && <p class="muted">Bạn chưa có linh thú. Hãy chọn một bệ đá ở Triệu Linh Điện.</p>}
-      <div class="list">
-        {pets.map((p) => (
-          <PetRow key={p.id} p={p}>
-            <button class="btn small" data-testid={`pet-detail-${p.id}`} onClick={() => setSel(p.id)}>
-              Chi tiết
-            </button>
-            {p.id === ch.active_pet_id ? (
-              <span class="muted">Đang theo</span>
-            ) : (
-              <button class="btn small" onClick={() => void world.intent('pet.activate', { pet_id: p.id })}>
-                Cho đi theo
-              </button>
-            )}
-          </PetRow>
-        ))}
-      </div>
+      {party.length > 0 && (
+        <>
+          <h3 class="pd-h">Đội hình mang theo ({party.length}/{MAX_PARTY})</h3>
+          <div class="prows" data-testid="party-list">
+            {party.map((x, i) => (
+              <PartyRow key={x.id} p={x}>
+                <span class={`party-role ${i === 0 ? 'main' : ''}`}>{i === 0 ? 'Chính' : 'Phụ'}</span>
+                <button class="btn small ico" data-testid={`party-up-${x.id}`} disabled={i === 0} aria-label="Đẩy lên" onClick={() => move(i, -1)}>
+                  ▲
+                </button>
+                <button class="btn small ico" data-testid={`party-down-${x.id}`} disabled={i === party.length - 1} aria-label="Đẩy xuống" onClick={() => move(i, 1)}>
+                  ▼
+                </button>
+                <button class="btn small" data-testid={`party-remove-${x.id}`} disabled={party.length <= 1} onClick={() => setParty(party.filter((y) => y !== x))}>
+                  Gỡ
+                </button>
+                {detail(x)}
+              </PartyRow>
+            ))}
+          </div>
+        </>
+      )}
+      {reserve.length > 0 && (
+        <>
+          <h3 class="pd-h">Linh thú ở nhà</h3>
+          <div class="prows">
+            {reserve.map((x) => (
+              <PartyRow key={x.id} p={x}>
+                <button class="btn small" data-testid={`party-add-${x.id}`} disabled={party.length >= MAX_PARTY} onClick={() => setParty([...party, x])}>
+                  Thêm vào đội
+                </button>
+                {detail(x)}
+              </PartyRow>
+            ))}
+          </div>
+        </>
+      )}
       <Back />
     </>
   );
@@ -142,7 +176,7 @@ function PetDetail({ world, ch, p, onBack }: { world: GameWorld; ch: Character; 
             {p.gender && <span>{p.gender === 'male' ? '♂ Đực' : p.gender === 'female' ? '♀ Cái' : p.gender}</span>}
             {(p.strengthening ?? 0) > 0 && <span>Cường hóa +{p.strengthening}</span>}
             <span>{p.appraised ? 'Đã giám định' : 'Chưa giám định'}</span>
-            {p.id === ch.active_pet_id && <span class="on">Đang theo</span>}
+            {p.id === ch.active_pet_id && <span class="on">Con chính</span>}
           </div>
         </div>
         <div class="pd-stats">
@@ -343,6 +377,28 @@ function NpcDialog({ npcId, line, world, ch, onTab }: { npcId: string; line: str
   const rules = (world.content.cat as unknown as { rules?: Rules }).rules ?? {};
   const roles = n.roles.filter((r) => r !== 'free' && r !== 'guide');
   const img = asset(`npc-${npcId}`) ? hd2dUrl(`npc-${npcId}`) : asset('city-mailbox') && npcId === 'sq_mailbox' ? hd2dUrl('city-mailbox') : null;
+  if (tab === null) {
+    return (
+      <div class="npc-bottom" data-testid="npc-bottom">
+        <div class="nb-portrait">{img ? <img src={img} alt="" /> : <div class="nb-ph" />}</div>
+        <div class="nb-main">
+          <div class="nb-name" data-testid="npc-name">{n.name}</div>
+          <Typed text={line} />
+        </div>
+        <div class="nb-choices">
+          {roles.map((r) => (
+            <button key={r} class="nb-choice" data-testid={`npc-role-${r}`} onClick={() => (r === 'teleport' ? (overlay.value = { kind: 'pillar' }) : setTab(r))}>
+              {ROLE_ICON[r] && iconFor(ROLE_ICON[r]) && <img class="icon" src={iconFor(ROLE_ICON[r])!} alt="" />}
+              {ROLE_LABEL[r] ?? r}
+            </button>
+          ))}
+          <button class="nb-choice bye" data-testid="npc-close" onClick={closeOverlay}>
+            Tạm biệt
+          </button>
+        </div>
+      </div>
+    );
+  }
   return (
     <>
       <div class="npc-head">
@@ -379,6 +435,27 @@ function NpcDialog({ npcId, line, world, ch, onTab }: { npcId: string; line: str
         </button>
       </div>
     </>
+  );
+}
+
+/** Chữ hiện dần; toàn bộ câu luôn nằm trong DOM (phần chưa hiện bị ẩn) để đọc/kiểm thử không phụ thuộc nhịp gõ. Bấm để hiện hết. */
+function Typed({ text }: { text: string }) {
+  const [n, setN] = useState(0);
+  useEffect(() => {
+    setN(0);
+    const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) {
+      setN(text.length);
+      return;
+    }
+    const t = window.setInterval(() => setN((v) => (v >= text.length ? v : v + 1)), 22);
+    return () => window.clearInterval(t);
+  }, [text]);
+  return (
+    <p class="nb-line" data-testid="npc-line" onClick={() => setN(text.length)}>
+      <span>{text.slice(0, n)}</span>
+      <span class="rest">{text.slice(n)}</span>
+    </p>
   );
 }
 

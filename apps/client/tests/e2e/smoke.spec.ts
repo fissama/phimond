@@ -192,6 +192,22 @@ test('menu: chi tiết linh thú và dùng thuốc ngoài trận', async ({ page
   await expect(page.getByTestId('use-potion')).toBeDisabled(); // máu đầy
 });
 
+test('menu: đội hình có 1 con chính, không gỡ được con cuối', async ({ page }) => {
+  await register(page);
+  await chooseStarter(page);
+  await expect(page.getByTestId('hud-pet-main')).toBeVisible();
+  await expect(page.getByTestId('hud-sub-pet')).toHaveCount(0);
+  await page.getByTestId('menu-open').click();
+  await page.getByTestId('menu-pets').click();
+  const row = page.getByTestId('party-list').locator('.prow');
+  await expect(row).toHaveCount(1);
+  await expect(row.locator('.party-role')).toHaveText('Chính');
+  await expect(page.locator('[data-testid^="party-remove-"]')).toBeDisabled();
+  await expect(page.locator('[data-testid^="party-up-"]')).toBeDisabled();
+  await expect(page.locator('[data-testid^="party-down-"]')).toBeDisabled();
+  await expect(page.locator('[data-testid^="party-add-"]')).toHaveCount(0);
+});
+
 test('NPC: tới gần, hội thoại, hồi phục; cổng khóa báo chưa mở', async ({ page }) => {
   test.setTimeout(120_000);
   await register(page);

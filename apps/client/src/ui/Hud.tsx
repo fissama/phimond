@@ -3,6 +3,7 @@ import type { Character } from '@phimond/protocol';
 import { currentMap, interactHint, type GameWorld } from '../game/world.ts';
 import { viName } from '../game/content.ts';
 import { currentGoal } from '../game/goal.ts';
+import { partyOf } from '../game/party.ts';
 import { settings } from '../state/settings.ts';
 import { battleResultOpen, closeOverlay, log, LOG_TABS, overlay, pushLog, toasts, type LogTab } from '../state/ui.ts';
 import type { Direction } from '../world/coords.ts';
@@ -14,9 +15,10 @@ const XP_PER_LEVEL = 25;
 
 /** Bố cục HUD gốc (P01-R09): Lv + pet trái trên, menu phải, D-pad trái dưới, Chọn/Trở về phải dưới, chat 6 tab giữa dưới. */
 export function Hud({ world, ch }: { world: GameWorld; ch: Character }) {
-  const pet = ch.pets.find((p) => p.id === ch.active_pet_id && !p.retired);
-  // Đội mang theo: linh thú chính + tối đa 2 con phụ (chưa có luật đội riêng nên lấy theo thứ tự trong túi linh thú).
-  const subs = ch.pets.filter((p) => !p.retired && p.id !== pet?.id).slice(0, pet ? 2 : 0);
+  // Đội hình do server giữ (con chính đứng đầu); tối đa 3 con: 1 chính + 2 phụ.
+  const party = partyOf(ch);
+  const pet = party[0];
+  const subs = party.slice(1);
   const map = currentMap.value;
   const status = session.status.value;
   // Trong trận, giao diện trận đấu lo hết: ẩn điều khiển thế giới để không đè lên nhau (đánh giá T5).

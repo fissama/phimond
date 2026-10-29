@@ -467,3 +467,40 @@ button:disabled { opacity: 0.45; cursor: default; }
 .slider { display: flex; align-items: center; gap: 10px; }
 .slider input[type='range'] { flex: 1; accent-color: #d9b25a; height: 28px; min-width: 0; }
 .slider b { min-width: 44px; text-align: right; color: #ffe29a; font-size: 14px; }
+
+/* Đội hình (v1.0.1) */
+.list.party .item { border-color: rgba(214, 178, 96, 0.5); }
+.party-role { font-size: 12px; padding: 1px 8px; border-radius: 9px; background: rgba(255, 255, 255, 0.08); color: #d5dcf0; align-self: center; }
+.party-role.main { background: rgba(94, 234, 255, 0.18); color: #c9f7ff; border: 1px solid #5eeaff; }
+.btn.small.ico { min-width: 40px; padding: 4px 0; }
+.dialog .item .btn.small { min-height: 40px; }
+.prows { display: grid; gap: 8px; }
+.prow { display: grid; grid-template-columns: 52px 1fr; gap: 4px 10px; align-items: center; padding: 8px 10px; border-radius: 8px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(214, 178, 96, 0.35); }
+.prows:first-of-type .prow:first-child { border-color: rgba(94, 234, 255, 0.55); }
+.prow .portrait { width: 52px; height: 52px; }
+.pinfo { display: grid; gap: 2px; min-width: 0; }
+.pinfo b { font-size: 15px; } .pinfo .muted { font-size: 12.5px; }
+.pact { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.pact .btn.small { min-height: 40px; min-width: 0 !important; padding: 2px 14px; }
+.pact .btn.small.ico { min-width: 44px !important; padding: 2px 0; }
+.pact { margin-top: 2px; }
+
+/* Hội thoại NPC kiểu Octopath: khung thấp ở đáy, cảnh vẫn nhìn thấy (sẽ thay nền bằng dialogue-frame.png khi GPT giao N08) */
+.scrim.bottom { background: linear-gradient(to top, rgba(4, 7, 14, 0.55), rgba(4, 7, 14, 0) 45%); place-items: end center; padding: 0 12px calc(var(--bar-h, 136px) + 8px); pointer-events: none; }
+.dialog.bottom { pointer-events: auto; width: min(960px, 100%); max-height: none; overflow: visible; padding: 14px 18px 14px 12px; border-radius: 10px;
+  background: rgba(8, 14, 28, 0.9) !important; background-image: none !important; border: 2px solid #8a6d2c !important; box-shadow: inset 0 0 0 1px #e3c06a, 0 8px 28px rgba(0, 0, 0, 0.55); border-image: none !important; }
+.npc-bottom { display: grid; grid-template-columns: 112px 1fr minmax(150px, 210px); gap: 14px; align-items: stretch; min-height: 112px; }
+.nb-portrait { display: grid; place-items: end center; }
+.nb-portrait img { width: 112px; height: 112px; object-fit: contain; image-rendering: pixelated; margin-top: -34px; filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.6)); }
+.nb-ph { width: 96px; height: 96px; border-radius: 50%; border: 2px solid rgba(214, 178, 96, 0.6); background: rgba(255, 255, 255, 0.05); }
+.nb-main { position: relative; padding-top: 14px; min-width: 0; }
+.nb-name { position: absolute; top: -30px; left: 0; padding: 3px 16px 3px 12px; background: #1a2a4c; border: 1px solid #e3c06a; border-radius: 6px 14px 0 0; color: #ffe29a; font-weight: 800; font-size: 15px; box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.4); }
+.nb-line { margin: 0; font-size: 15.5px; line-height: 1.5; color: #f1ecda; cursor: pointer; }
+.nb-line .rest { visibility: hidden; }
+.nb-choices { display: grid; gap: 6px; align-content: center; }
+.nb-choice { display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 4px 12px; font-size: 14.5px; text-align: left; color: #f1ecda; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(214, 178, 96, 0.5); border-radius: 6px; white-space: nowrap; }
+.nb-choice:hover, .nb-choice:focus-visible { background: rgba(214, 178, 96, 0.22); border-color: #e3c06a; }
+.nb-choice::before { content: '▸'; color: #e3c06a; }
+.nb-choice .icon { width: 22px; height: 22px; }
+.nb-choice.bye { color: #cfd8ea; }
+@media (max-width: 640px) { .npc-bottom { grid-template-columns: 76px 1fr; } .nb-portrait img { width: 76px; height: 76px; margin-top: -26px; } .nb-choices { grid-column: 1 / -1; grid-template-columns: 1fr 1fr; } .nb-line { font-size: 14.5px; } }
