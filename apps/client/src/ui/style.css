@@ -504,3 +504,13 @@ button:disabled { opacity: 0.45; cursor: default; }
 .nb-choice .icon { width: 22px; height: 22px; }
 .nb-choice.bye { color: #cfd8ea; }
 @media (max-width: 640px) { .npc-bottom { grid-template-columns: 76px 1fr; } .nb-portrait img { width: 76px; height: 76px; margin-top: -26px; } .nb-choices { grid-column: 1 / -1; grid-template-columns: 1fr 1fr; } .nb-line { font-size: 14.5px; } }
+
+/* Hiệu ứng đòn đánh dạng bảng khung (6 khung ngang) */
+.battle .fx.sheet { background-repeat: no-repeat; background-size: 600% 100%; image-rendering: pixelated; animation: fxsheet 0.64s steps(6, jump-none) forwards; z-index: 5; }
+@keyframes fxsheet { from { background-position-x: 0%; } to { background-position-x: 100%; } }
+@media (prefers-reduced-motion: reduce) { .battle .fx.sheet { animation: none; background-position-x: 40%; } }
+
+/* Khung minimap trang trí (GPT S27 `ui-minimap`, 9-slice; ruột rỗng) */
+.hud-minimap { top: calc(2px + var(--safe-t)); right: calc(4px + var(--safe-r)); padding: 4px 6px; border: 14px solid transparent; border-image: url('/ui/ui-minimap.png') 52 / 14px stretch; border-radius: 0; background-clip: padding-box; background: rgba(8, 12, 22, 0.78); box-shadow: none; filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.55)); }
+.hud-minimap canvas { border-radius: 2px; width: 176px; }
+@media (max-width: 520px) { .hud-minimap { padding: 2px 4px; border-width: 10px; border-image-width: 10px; } .hud-minimap canvas { width: 88px; } }

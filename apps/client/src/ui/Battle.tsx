@@ -11,6 +11,11 @@ import { damageGlyphs, iconFor, uiUrl } from './skin.ts';
 import { sfx } from './sound.ts';
 
 /** Tên hiển thị của đơn vị; quái cùng tên (encounter 2–3 quái giống nhau) có hậu tố A/B/C theo thứ tự đội hình. */
+/** Bảng hiệu ứng 6 khung 192×192 đã duyệt (public/battle/fx-*.png). Hệ khác (phong/quang/ám/vô) dùng hiệu ứng CSS cho tới khi có bảng. */
+const FX_SHEETS_ELEMENT = new Set(['fire', 'water', 'earth']);
+const FX_SHEETS_RACE = new Set(['beast', 'insect', 'plant']);
+const FX_SHEET_FILE: Record<string, string> = { fire: 'fx-fire', water: 'fx-water', earth: 'fx-earth', beast: 'fx-beast', insect: 'fx-insect', plant: 'fx-plant' };
+
 function labelOf(units: BattleT['units'], id?: string): string {
   const u = units.find((x) => x.id === id);
   if (!u) return '';
@@ -51,8 +56,9 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
   fastRef.current = fast;
   const actRef = useRef<(c: Choice) => Promise<void>>(async () => undefined);
   // Hiệu ứng đòn đánh trên mục tiêu (vệt chém / quả cầu phép), theo loại kỹ năng vừa dùng.
-  const [fx, setFx] = useState<{ id: number; unit: string; kind: string }[]>([]);
+  const [fx, setFx] = useState<{ id: number; unit: string; kind: string; sheet?: string }[]>([]);
   const lastKind = useRef('physical');
+  const lastElement = useRef('');
   const [sending, setSending] = useState(false);
   const [playing, setPlaying] = useState(false);
   const last = useRef<BattleT | null>(null);
@@ -88,14 +94,19 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
               return l[l.length - 1] === t ? l : [...l.slice(-40), t];
             });
             if (e.type === 'skill_cast') {
-              const sk = Object.values(world.content.cat.skills).find((x) => e.message?.endsWith(' used ' + (x as { name: string }).name)) as { kind?: string } | undefined;
+              const sk = Object.values(world.content.cat.skills).find((x) => e.message?.endsWith(' used ' + (x as { name: string }).name)) as { kind?: string; element?: string } | undefined;
               lastKind.current = sk?.kind ?? 'physical';
+              lastElement.current = sk?.element ?? '';
             }
             if (e.type === 'damage' && e.target_id) {
               const fid = Math.random();
               const kind = lastKind.current === 'magic' ? 'magic' : 'slash';
-              setFx((f) => [...f, { id: fid, unit: e.target_id!, kind }]);
-              setTimeout(() => setFx((f) => f.filter((x) => x.id !== fid)), 520);
+              // Có bảng hiệu ứng đã vẽ thì dùng: theo hệ của kỹ năng (lửa/nước/đất), nếu không thì theo tộc của bên ra đòn (thú/côn trùng/thực vật).
+              const actor = battle.units.find((u) => u.id === e.actor_id);
+              const race = actor ? (world.content.cat.species[actor.species_id] as unknown as { race?: string } | undefined)?.race : undefined;
+              const sheet = FX_SHEETS_ELEMENT.has(lastElement.current) ? lastElement.current : race && FX_SHEETS_RACE.has(race) ? race : undefined;
+              setFx((f) => [...f, { id: fid, unit: e.target_id!, kind: sheet ? 'sheet' : kind, sheet: sheet ? FX_SHEET_FILE[sheet] : undefined }]);
+              setTimeout(() => setFx((f) => f.filter((x) => x.id !== fid)), sheet ? 640 : 520);
               sfx(kind === 'magic' ? 'magic' : 'hit');
             }
             if (e.type === 'miss') sfx('miss');
@@ -282,7 +293,17 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
           {fx
             .filter((f) => f.unit === u.id)
             .map((f) => (
-              <span key={f.id} class={`fx ${f.kind}`} style={{ bottom: foot + bodyH * 0.25, width: bodyW * 1.1, height: bodyH * 0.8 }} aria-hidden="true" />
+              <span
+                key={f.id}
+                class={`fx ${f.kind}`}
+                style={{
+                  bottom: foot + bodyH * 0.25,
+                  width: f.sheet ? bodyH * 0.9 : bodyW * 1.1,
+                  height: f.sheet ? bodyH * 0.9 : bodyH * 0.8,
+                  ...(f.sheet ? { backgroundImage: `url(${import.meta.env.BASE_URL}battle/${f.sheet}.png)` } : {}),
+                }}
+                aria-hidden="true"
+              />
             ))}
           {floats
             .filter((f) => f.unit === u.id)
