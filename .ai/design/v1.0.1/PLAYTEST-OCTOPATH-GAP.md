@@ -25,3 +25,13 @@ Tilt-shift, bloom, camera thấp, lớp nhân sáng/tối, quầng chân, rừng
 **C. Chưa kiểm được / cần bạn quyết**
 - Âm thanh: nhạc nền từng khu, nhạc trận, SFX; Octopath dựa rất nhiều vào nhạc. Chưa biết trong repo đã có bao nhiêu.
 - Màn đăng nhập/chọn nhân vật, thời tiết, đêm: chưa xem lại ở bước này.
+
+
+## Đính chính sau khi đối chiếu repo (cùng ngày)
+Một số mục "thiếu" ở trên thực ra đã có, chỉ là chưa nạp hoặc chưa dùng:
+- Nền trận đã có (`battle-bg-*`, R40–R44); ảnh trận chụp được chính là nền này. Cái còn thiếu là bệ đất dưới chân và hiệu ứng, không phải nền.
+- Bộ khung giao diện đã có hơn 150 ảnh trong `public/ui` (panel, nút, ô chọn, thanh, biểu tượng menu). Menu/Cài đặt trông phẳng vì CSS không dùng hết bộ này, không phải thiếu asset.
+- Đom đóm, lá bay, bướm đã có; chim thì chưa.
+- `fx-fire/water/earth/beast/insect/plant/summon` đã vẽ nhưng nằm trong `p01-release-art-20261023/delivery`, chưa nạp vào client và chưa được trận dùng.
+- Lô `octopath-s01-s27-20261029/delivery` đã có 45 ảnh (tiền cảnh, hậu cảnh, địa hình độ cao, bóng, khung thanh, mảnh nối nhà), chưa duyệt hết và chưa nạp (trừ S07, S08, S20, S21). Còn thiếu 24 dải chạy (S23–S24).
+Việc kế tiếp xem `PLAN-OCTOPATH-V101.md`.
