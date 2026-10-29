@@ -6,6 +6,7 @@ import { animate, blobShadow, propSprite } from './sprites.ts';
 import { spawnAmbient, type Ambient } from './ambient.ts';
 import type { Light } from './daylight.ts';
 import { makeAtmosphere, type Lamp } from './atmosphere.ts';
+import { makeLightMask } from './lightmask.ts';
 
 /** Ánh sáng/không khí theo chủ đề map. */
 export const THEMES: Record<string, { indoor?: boolean; sky: number; fog: [number, number, number] | null; ambient: number; sun: number; sunColor: number; tint: number; ground: number; camBias?: number }> = {
@@ -742,16 +743,19 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
   if (theme === 'city') void spawnAmbient(map, group, P.shadows === 'blob', P.decor).then((a) => ambient.push(...a)).catch(() => {});
 
   const atmo = P.fx ? makeAtmosphere(group, { theme, W, H, lamps, shafts: theme === 'forest' || theme === 'deep_forest' || theme === 'city', motes: Math.round((theme === 'hall' ? 40 : 70) * P.decor) }) : null;
+  const lmask = P.fx ? makeLightMask(group, { theme, W, H, lamps, seed: W * 131 + H * 7 }) : null;
   let time = 0;
   return {
     group,
     pickables,
     setLight(l: Light) {
       atmo?.setLight(l);
+      lmask?.setLight(l);
     },
     update(dt: number, player?: THREE.Vector3 | null) {
       time += dt;
       atmo?.update(dt);
+      if (player) lmask?.update(player.x, player.z);
       for (const a of ambient) a.update(dt, player ?? null);
       if (player)
         for (const o of occluders) {
@@ -787,6 +791,7 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
       });
       disposables.forEach((d) => d.dispose());
       atmo?.dispose();
+      lmask?.dispose();
     },
   };
 }
