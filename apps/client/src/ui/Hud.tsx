@@ -15,6 +15,8 @@ const XP_PER_LEVEL = 25;
 /** Bố cục HUD gốc (P01-R09): Lv + pet trái trên, menu phải, D-pad trái dưới, Chọn/Trở về phải dưới, chat 6 tab giữa dưới. */
 export function Hud({ world, ch }: { world: GameWorld; ch: Character }) {
   const pet = ch.pets.find((p) => p.id === ch.active_pet_id && !p.retired);
+  // Đội mang theo: linh thú chính + tối đa 2 con phụ (chưa có luật đội riêng nên lấy theo thứ tự trong túi linh thú).
+  const subs = ch.pets.filter((p) => !p.retired && p.id !== pet?.id).slice(0, pet ? 2 : 0);
   const map = currentMap.value;
   const status = session.status.value;
   // Trong trận, giao diện trận đấu lo hết: ẩn điều khiển thế giới để không đè lên nhau (đánh giá T5).
@@ -34,22 +36,9 @@ export function Hud({ world, ch }: { world: GameWorld; ch: Character }) {
     if (!low && !down) warned.current = false;
   }, [low, down, inBattle]);
   return (
-    <div class={`hud ${compact ? 'compact' : ''} ${inBattle ? 'in-battle' : ''} ${pet ? '' : 'no-pet'}`}>
+    <div class={`hud ${compact ? 'compact' : ''} ${inBattle ? 'in-battle' : ''} ${pet ? '' : 'no-pet'} ${subs.length ? 'has-subs' : ''}`}>
       <div class="hud-status" data-testid="hud-status-panel">
-        {pet && (
-          <div class={`pet-row hud-card ${low ? 'danger' : ''} ${down ? 'danger down' : ''}`}>
-            <div class="ring" role="button" aria-label="Linh thú" onClick={() => (overlay.value = { kind: 'menu', page: 'pets' })}>
-              <PetPortrait species={pet.species_id} />
-              <div class="badge" title="Cấp linh thú">{pet.level}</div>
-            </div>
-            <div class="stack">
-              <div class="nm"><b>{viName(pet.name)}</b></div>
-              <FrameBar kind="hp" row={0} v={pet.hp} max={pet.max_hp} label="HP" />
-              <FrameBar kind="mp" row={1} v={pet.mp} max={pet.max_mp} label="MP" />
-              <FrameBar kind="xp" row={2} v={pet.xp} max={pet.level * XP_PER_LEVEL} label="EXP" />
-            </div>
-          </div>
-        )}
+        {/* Trên cùng: tấm người chơi nhỏ (chỉ cấp + tên + EXP, phụ để mở map). */}
         <div class="me-row hud-card">
           <div class="lvl" title="Cấp nhân vật">
             Lv {ch.level}
@@ -64,6 +53,38 @@ export function Hud({ world, ch }: { world: GameWorld; ch: Character }) {
             <span class="vh"> · Lv {ch.level}</span>
           </div>
         </div>
+        {/* Dưới: linh thú chính (to hơn), rồi tối đa 2 linh thú phụ ngang nhau khi mang 3 con. */}
+        {pet && (
+          <div class={`pet-row hud-card ${low ? 'danger' : ''} ${down ? 'danger down' : ''}`}>
+            <div class="ring" role="button" aria-label="Linh thú" onClick={() => (overlay.value = { kind: 'menu', page: 'pets' })}>
+              <PetPortrait species={pet.species_id} />
+              <div class="badge" title="Cấp linh thú">{pet.level}</div>
+            </div>
+            <div class="stack">
+              <div class="nm"><b>{viName(pet.name)}</b></div>
+              <FrameBar kind="hp" row={0} v={pet.hp} max={pet.max_hp} label="HP" />
+              <FrameBar kind="mp" row={1} v={pet.mp} max={pet.max_mp} label="MP" />
+              <FrameBar kind="xp" row={2} v={pet.xp} max={pet.level * XP_PER_LEVEL} label="EXP" />
+            </div>
+          </div>
+        )}
+        {subs.length > 0 && (
+          <div class="sub-pets" data-testid="hud-sub-pets">
+            {subs.map((p) => (
+              <div key={p.id} class={`sub-pet hud-card ${p.hp <= 0 ? 'down' : ''}`} data-testid="hud-sub-pet">
+                <div class="ring" role="button" aria-label={viName(p.name)} onClick={() => (overlay.value = { kind: 'menu', page: 'pets' })}>
+                  <PetPortrait species={p.species_id} size={34} />
+                  <div class="badge">{p.level}</div>
+                </div>
+                <div class="stack">
+                  <div class="nm"><b>{viName(p.name)}</b></div>
+                  <FrameBar kind="hp" row={0} v={p.hp} max={p.max_hp} label="HP" slim />
+                  <FrameBar kind="mp" row={1} v={p.mp} max={p.max_mp} label="MP" slim />
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       {map && (

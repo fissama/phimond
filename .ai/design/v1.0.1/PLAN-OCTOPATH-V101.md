@@ -6,6 +6,7 @@ Quy cách GPT: như `GPT-PROMPTS-OCTOPATH.md` (khối chung dán đầu mỗi pr
 
 ## Hiện trạng (đã đối chiếu repo)
 - **HUD đã sửa (code, bản này):** khi chưa có linh thú (Triệu Linh Điện trước khi chọn bệ) chỉ hiện tấm người chơi, không còn thẻ linh thú trống; ô mục tiêu dời lên cho khỏi hở.
+- **HUD ngoài map (code):** trên cùng tấm người chơi nhỏ (cấp, tên, EXP), dưới là linh thú chính to hơn, dưới nữa tối đa 2 linh thú phụ ngang nhau. **Trong trận:** bỏ khung góc trái trên; linh thú mình và quái dùng chung một kiểu khung tên + cấp + HP + MP cạnh thân. Linh thú phụ hiện lấy theo thứ tự trong túi linh thú (chưa có luật đội 3 con riêng).
 - Đã đủ: nền trận, bộ khung UI, nền/mái thành phố rộng, sàn B, vệt sáng kính, viền hai bên sảnh.
 - GPT đã giao 45 ảnh lô S01–S27 (chờ Claude duyệt và nạp). Còn thiếu: 24 dải chạy S23–S24 (người chơi + 6 người đi đường).
 - Đã vẽ nhưng chưa nạp: fx 6 hệ (lửa, nước, đất, thú, côn trùng, thực vật), fx triệu hồi, idle 7 NPC (R25–R31).

@@ -3,7 +3,7 @@ import type { Battle as BattleT, BattleEvent, Character } from '@phimond/protoco
 import type { GameWorld } from '../game/world.ts';
 import { eventText, viName } from '../game/content.ts';
 import { session } from '../state/app.ts';
-import { PetAnimated, PetPortrait } from './PetArt.tsx';
+import { PetAnimated } from './PetArt.tsx';
 import { petArt, petAtlas } from '../render/assets.ts';
 import { FrameBar } from './Hud.tsx';
 import { battleResultOpen, pushLog } from '../state/ui.ts';
@@ -215,46 +215,20 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
   const skills = (pet?.skills ?? []).filter((s) => s !== 'attack');
   const consumables = Object.entries(ch.inventory).filter(([id, n]) => n > 0 && /potion|ether/.test(id));
 
-  const enemyPlate = (u: typeof foe) =>
-    u && (
-      <div class="foe-plate" data-testid="battle-enemy">
+  // Khung thông tin đơn vị: quái và linh thú mình dùng chung một kiểu (tên, cấp, HP, MP), đặt cạnh thân; không còn khung góc trái trên.
+  const unitPlate = (u: typeof foe, side: 'player' | 'enemy') => {
+    if (!u) return null;
+    const cur = side === 'player' ? ch.pets.find((p) => p.id === u.id) : undefined;
+    const lv = side === 'player' ? cur?.level : lvOf(u);
+    return (
+      <div class={`foe-plate ${side === 'player' ? 'mine' : ''}`} data-testid={side === 'player' ? 'battle-player' : 'battle-enemy'}>
         <div class="nm">
           <b>{labelOf(view.units, u.id)}</b>
-          {lvOf(u) ? <em>Lv {lvOf(u)}</em> : null}
+          {lv ? <em>Lv {lv}</em> : null}
         </div>
-        <div class="fb">
-          <em class="hp">HP</em>
-          <div class="fbar hp r0" title={`HP ${u.hp}/${u.max_hp}`}>
-            <div class="track">
-              <i class="fill" style={{ clipPath: `inset(0 ${100 - (100 * u.hp) / Math.max(1, u.max_hp)}% 0 0)` }} />
-            </div>
-            <span>
-              {u.hp}/{u.max_hp}
-            </span>
-          </div>
-        </div>
+        <FrameBar kind="hp" row={0} v={u.hp} max={u.max_hp} label="HP" slim />
+        <FrameBar kind="mp" row={1} v={u.mp} max={u.max_mp} label="MP" slim />
         {u.statuses.length > 0 && <div class="st">{u.statuses.map((s) => world.content.cat.statuses[s.id]?.name ?? s.id).join(' · ')}</div>}
-      </div>
-    );
-
-  const myPlate = (u: typeof me, idx: number) => {
-    if (!u) return null;
-    const pet = ch.pets.find((p) => p.id === u.id);
-    return (
-      <div class={`my-plate hud-card ${allies.length > 1 ? 'compact' : ''}`} data-testid="battle-player" key={u.id} style={{ top: `calc(${8 + idx * (allies.length > 1 ? 70 : 82)}px + var(--safe-t))` }}>
-        <div class="ring">
-          <PetPortrait species={u.species_id} size={46} />
-          {pet && <div class="badge">{pet.level}</div>}
-        </div>
-        <div class="stack">
-          <div class="nm">
-            <b>{labelOf(view.units, u.id)}</b>
-            {u.statuses.length > 0 && <span class="st">{u.statuses.map((s) => world.content.cat.statuses[s.id]?.name ?? s.id).join(' · ')}</span>}
-          </div>
-          <FrameBar kind="hp" row={0} v={u.hp} max={u.max_hp} label="HP" />
-          <FrameBar kind="mp" row={1} v={u.mp} max={u.max_mp} label="MP" />
-          {pet && allies.length === 1 && <FrameBar kind="xp" row={2} v={pet.xp} max={pet.level * 25} label="EXP" />}
-        </div>
       </div>
     );
   };
@@ -318,17 +292,16 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
               </span>
             ))}
         </div>
-        {side === 'enemy' &&
-          (portrait ? (
-            <div class="plate-anchor" style={{ bottom: bodyH + 10 }}>
-              {enemyPlate(u)}
-            </div>
-          ) : (
-            // Màn ngang: khung tên đặt cạnh thân, phía trong (hướng đối thủ), để A/C cùng cột không che nhau.
-            <div class="plate-anchor side" style={{ left: `calc(50% + ${Math.round(bodyW * 0.42)}px)`, bottom: Math.round(bodyH * 0.38) }}>
-              {enemyPlate(u)}
-            </div>
-          ))}
+        {portrait ? (
+          <div class="plate-anchor" style={side === 'player' ? { top: '100%', marginTop: 2 } : { bottom: bodyH + 10 }}>
+            {unitPlate(u, side)}
+          </div>
+        ) : (
+          // Màn ngang: khung đặt cạnh thân, phía trong (hướng đối thủ), để A/C cùng cột không che nhau.
+          <div class={`plate-anchor side ${side === 'player' ? 'in-left' : ''}`} style={side === 'player' ? { right: `calc(50% + ${Math.round(bodyW * 0.5)}px)`, bottom: Math.round(bodyH * 0.55) } : { left: `calc(50% + ${Math.round(bodyW * 0.42)}px)`, bottom: Math.round(bodyH * 0.38) }}>
+            {unitPlate(u, side)}
+          </div>
+        )}
       </div>
     );
   };
@@ -368,7 +341,6 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
         <div class="turn" style={{ backgroundImage: `url(${uiUrl('battle_turn_banner')})` }}>
           <b>{finished ? 'Kết thúc' : `Lượt ${view.turn}`}</b>
         </div>
-        {allies.map((u, i) => myPlate(u, i))}
         <div class={`stage ${foes.length > 1 ? 'multi' : ''}`}>
           {foes.map((u, i) => fighter(u, 'enemy', i, foes.length))}
           {allies.map((u, i) => fighter(u, 'player', i, allies.length))}

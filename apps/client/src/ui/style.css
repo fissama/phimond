@@ -396,3 +396,23 @@ button:disabled { opacity: 0.45; cursor: default; }
 .cs-pv.dim { filter: grayscale(0.7) brightness(0.7); animation-play-state: paused; }
 @keyframes cspv { to { background-position-x: -384px; } }
 @media (max-width: 520px) { .cs-slots { grid-template-columns: 1fr; } .cs-slot { flex-direction: row; flex-wrap: wrap; justify-content: flex-start; min-height: 0; } .cs-slot.empty { min-height: 64px; flex-direction: row; } .cs-plus { margin: 0 8px 0 0; font-size: 26px; } .cs-box { padding: 20px 16px; } }
+
+/* ---------- HUD v1.0.1: người chơi nhỏ → linh thú chính to → 2 linh thú phụ ngang nhau ---------- */
+.hud-status .me-row { grid-template-columns: auto 1fr; grid-template-areas: 'lv who' 'bar bar'; width: 168px; padding: 2px 8px 3px; gap: 0 6px; }
+.hud-status .me-row .gold { display: none; }
+.hud-status .me-row .lvl { font-size: 11px; }
+.hud-status .me-row .who { font-size: 12px; }
+.hud-status .pet-row { padding: 7px 10px 7px 6px; gap: 4px; }
+.hud-status .pet-row .nm { font-size: 14px; }
+.hud-status .sub-pets { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+.hud-status .sub-pet { display: flex; align-items: center; gap: 1px; padding: 3px 5px 3px 2px; min-width: 0; }
+.hud-status .sub-pet .ring { transform: scale(0.72); transform-origin: left center; margin-right: -14px; flex: none; }
+.hud-status .sub-pet .nm { font-size: 11px; padding-left: 2px; }
+.hud-status .sub-pet .fb { grid-template-columns: 18px 1fr; }
+.hud-status .sub-pet.down { filter: grayscale(0.6); }
+.hud.has-subs .hud-goal { top: calc(244px + var(--safe-t)); }
+.battle .foe-plate.mine { border-color: rgba(120, 200, 255, 0.8); }
+.battle .foe-plate .fb { grid-template-columns: 18px 1fr; }
+.battle .plate-anchor.side.in-left { transform: none; }
+.battle .plate-anchor.side.in-left .foe-plate { width: 132px; padding: 3px 8px 4px; margin: 0; }
+.battle .fighter.player .plate-anchor.side .foe-plate::before { content: none; }
