@@ -36,9 +36,15 @@ Duyệt bằng mắt trên bảng tổng hợp và trong game thật (`apps/clie
 - `daylight.ts`: ánh sáng sảnh cố định ban ngày thay ánh nến.
 - Kiểm: `tsc` sạch, vitest 24/24, Playwright chromium 11/11 (có test 3 ô nhân vật).
 
-## Còn nợ (GPT/codex)
+## Lô bổ sung 2026-10-29 (đã nạp)
 
-1. Một biến thể sàn đá thứ hai (phá nhịp lặp).
-2. Hậu cảnh thành phố rộng hơn hoặc có lớp gần (mái nhà gần hơn) nếu muốn bù mật độ điểm ảnh.
-3. Thú trưng bày: quyết định dùng atlas hay bản mới (xem trên).
-4. `spill-overlay` xuất lại theo chuẩn.
+Nguồn: `.../summon-hall-redraw-20261028/completion-20261029/summon-hall-extra-assets.zip` (6 PNG). Kiểm máy đạt (kích thước, màu, alpha nhị phân, không ma-gen-ta). Duyệt bằng mắt trong game:
+
+| Asset | Nhận xét | Dùng |
+|---|---|---|
+| `stone-floor-b` 512×512 | Cùng gạch cát, bố cục khác hẳn bản A. GPT báo còn viền 2–8 px lấy từ bản A để hai mẫu nối nhau (nên chưa chứng minh "mọi viên gạch khác"); trong cảnh ghép A/B xen kẽ theo khối 4×4 ô không thấy đường nối, nhịp lặp đỡ hơn rõ. | Xen kẽ với A trên sàn sảnh. |
+| `city-backdrop-wide` 2432×486 | Cùng hệ với bản cũ, rộng gấp đôi, lâu đài giữa, tường thành đáy thẳng. Mật độ điểm ảnh gấp đôi bản cũ (66 px/ô). | Thay nền thành phố. |
+| `city-near-roofs` 2432×220 | Mái ngói cam và xanh, ống khói, tháp nhỏ; tối và ấm hơn nền xa nên đọc được là lớp gần. Dải lặp 1216 px hai lần. | Lớp thứ hai ngay trước nền, đáy chạm đỉnh tường thành. |
+| `floor-light-1..3` 256×256 | Ba vệt sáng nghiêng (vàng, hồng đỏ, xanh) với hoa văn ô kính, mép dither. Tự nó giống mảnh pha lê đặc; dựng cộng sáng ở độ mờ 0,5 thì đọc là ánh sáng rơi xuống sàn. | 6 vệt trước các ô kính hai hông (bên phải lật gương). |
+
+Còn nợ: bóng tiếp xúc (S22) và các mục S01–S27 khác trong `GPT-PROMPTS-OCTOPATH.md`.

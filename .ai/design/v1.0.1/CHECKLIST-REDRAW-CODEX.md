@@ -76,7 +76,11 @@ Nhận xét chi tiết: `REVIEW-TRIEU-LINH-DIEN-ART.md`. Nạp bằng `tools/p01
 | E09 | Bụi linh khí fx (4 khung) | [x] | [x] | |
 | E10–E15 | Giá sách, đèn treo, cờ, lư hương (2 khung khói), quả cầu, cửa kính màu | [x] | [x] | |
 | E16 | Thú trưng bày hoa/bọ cạp/kỳ lân (192) | [x] | [ ] | Chưa dùng: trùng thiết kế atlas P10; chờ owner quyết. |
-| E17 | `spill-overlay.png` | [x] | [✗] | RGB 231k màu, không alpha; xuất lại theo chuẩn. |
+| E17 | `spill-overlay.png` | [x] | [✗] | RGB 231k màu, không alpha; thay bằng E21 (floor-light). |
+| E18 | Sàn đá biến thể `stone-floor-b` (= S20) | [x] | [x] | Xen kẽ A/B theo khối 4×4 ô. |
+| E19 | Nền thành phố rộng (= S07) | [x] | [x] | Đã thay bản 1216 px. |
+| E20 | Mái nhà gần (= S08) | [x] | [x] | |
+| E21 | Vệt sáng kính màu 1–3 (= S21) | [x] | [x] | Dựng cộng sáng, độ mờ 0,5. |
 
 ## F. Lô hướng Octopath (prompt trong `GPT-PROMPTS-OCTOPATH.md`)
 
@@ -85,9 +89,9 @@ Cột "Mục" khớp mã S01–S27 trong file prompt. Codex/GPT tích "Đã vẽ
 | Mục | Asset | Đã vẽ | Duyệt |
 |---|---|---|---|
 | S01–S06 | Tiền cảnh: cành lá rừng, bụi lớn, mái hiên, cờ dây, đèn lồng, rèm | [ ] | [ ] |
-| S07–S11 | Hậu cảnh: thành phố rộng, mái nhà gần, rừng xa 3 lớp, lối xuyên cổng, tường thành | [ ] | [ ] |
+| S07–S11 | Hậu cảnh: thành phố rộng, mái nhà gần, rừng xa 3 lớp, lối xuyên cổng, tường thành | [x] S07, S08 | [x] S07, S08 |
 | S12–S19 | Địa hình độ cao: vách đá, bậc thang, vách đất, mép cỏ, bục, cầu gỗ, lan can | [ ] | [ ] |
-| S20–S22 | Sàn biến thể, vệt sáng kính màu, bóng tiếp xúc | [ ] | [ ] |
+| S20–S22 | Sàn biến thể, vệt sáng kính màu, bóng tiếp xúc | [x] S20, S21 (S22 chưa) | [x] S20, S21 |
 | S23–S24 | Dải chạy người chơi và 6 người đi đường (24 dải) | [ ] | [ ] |
 | S25–S27 | Khung thanh, sửa fx/minimap, mảnh nối mặt tiền | [ ] | [ ] |
 

@@ -3,7 +3,8 @@
 
 Chỉ thêm/ghi đè các id liệt kê dưới đây, không đụng mục khác của assets.json.
 Dùng:  python3 tools/p01/install_hall_art.py <thư-mục-chứa-ảnh-đã-chép>   (xem SRC bên dưới để biết tên file)
-Nguồn gốc ảnh: apps/game-web/art-src/hd2d/batch-02-octopath/summon-hall-redraw-20261028/.
+Nguồn gốc ảnh: apps/game-web/art-src/hd2d/batch-02-octopath/summon-hall-redraw-20261028/ (lô 10-28) và .../completion-20261029/summon-hall-extra-assets.zip
+(stone-floor-b, city-backdrop-wide, city-near-roofs, floor-light-1..3). Cột/nền/thành phố rộng nằm chung một thư mục khi chạy.
 """
 import json, shutil, sys
 from pathlib import Path
@@ -14,7 +15,12 @@ PUB = ROOT / "apps/client/public/hd2d"
 # id -> (file nguồn, category, pivot (None = giữa-đáy theo bbox alpha), world (None = px/128), frames, fps, tileable)
 SPEC = {
     "hall-floor-marble": ("stone-floor.png", "floor", "center", [4, 4], 1, None, "xy"),
-    "hall-city-backdrop": ("city-backdrop.png", "backdrop_far", "bottom", None, 1, None, "none"),
+    "hall-city-backdrop": ("city-backdrop-wide.png", "backdrop_far", "bottom", None, 1, None, "none"),
+    "hall-floor-marble-b": ("stone-floor-b.png", "floor", "center", [4, 4], 1, None, "xy"),
+    "hall-city-roofs": ("city-near-roofs.png", "prop", "bottom", None, 1, None, "none"),
+    "hall-floor-light-1": ("floor-light-1.png", "decal", "center", None, 1, None, "none"),
+    "hall-floor-light-2": ("floor-light-2.png", "decal", "center", None, 1, None, "none"),
+    "hall-floor-light-3": ("floor-light-3.png", "decal", "center", None, 1, None, "none"),
     "hall-column": ("column.png", "prop", "bbox-bottom", None, 1, None, "none"),
     "hall-lintel": ("lintel.png", "prop", "bottom", None, 1, None, "none"),
     "hall-threshold-left": ("threshold-left.png", "prop", "bbox-bottom", None, 1, None, "none"),

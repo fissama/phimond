@@ -18,13 +18,12 @@ export const THEMES: Record<string, { indoor?: boolean; sky: number; fog: [numbe
 
 /** Ký tự bố cục → nền (tile sàn). */
 function floorFor(theme: string, ch: string, x: number, y: number): string {
-  void x;
-  void y;
   const grass = 'grass-floor-01'; // một loại cỏ để không lộ ô 4×4; đa dạng nhờ decal/cỏ/hoa
   switch (theme) {
     case 'hall':
       void ch;
-      return 'hall-floor-marble';
+      // Hai mẫu sàn đá xen kẽ theo khối 4×4 ô (hai mẫu khớp biên với nhau) để phá nhịp lặp.
+      return (((x >> 2) + (y >> 2)) & 1) === 0 ? 'hall-floor-marble' : 'hall-floor-marble-b';
     case 'city':
       if (ch === '+') return 'city-brick-path';
       if (ch === '#' || ch === 'H') return 'city-paving-03';
@@ -608,7 +607,8 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
       (async () => {
         const tex = await textures.get(hd2dUrl('hall-city-backdrop'));
         const w = W + 18;
-        const h = (w * 405) / 1216;
+        const ap = asset('hall-city-backdrop')?.px ?? [2432, 486];
+        const h = (w * ap[1]) / ap[0];
         const geo = new THREE.PlaneGeometry(w, h);
         const mat = new THREE.MeshBasicMaterial({ map: tex, fog: false });
         const m = new THREE.Mesh(geo, mat);
@@ -617,6 +617,43 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
         disposables.push(geo, mat);
       })(),
     );
+    // Dải mái nhà gần: đứng ngay trước nền thành phố, đáy chạm đỉnh tường thành, cho cảnh có hai lớp xa.
+    propJobs.push(
+      (async () => {
+        const a = asset('hall-city-roofs');
+        if (!a) return;
+        const tex = await textures.get(hd2dUrl('hall-city-roofs'));
+        const w = W + 18;
+        const h = (w * a.px[1]) / a.px[0];
+        const geo = new THREE.PlaneGeometry(w, h);
+        const mat = new THREE.MeshBasicMaterial({ map: tex, alphaTest: 0.5, fog: false });
+        const m = new THREE.Mesh(geo, mat);
+        m.position.set(W / 2, h / 2 + 1.0, -1.95);
+        group.add(m);
+        disposables.push(geo, mat);
+      })(),
+    );
+    // Vệt sáng kính màu rơi xuống sàn từ các ô kính hai hông (cộng sáng, mờ vừa phải để đọc là ánh sáng chứ không phải miếng dán).
+    const lightPatch = (variant: number, x: number, z: number, mirror: boolean) =>
+      propJobs.push(
+        (async () => {
+          const id = `hall-floor-light-${variant}`;
+          if (!asset(id)) return;
+          const tex = await textures.get(hd2dUrl(id));
+          const geo = new THREE.PlaneGeometry(2.2, 2.2);
+          const mat = new THREE.MeshBasicMaterial({ map: tex, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: 0.5, fog: false });
+          const m = new THREE.Mesh(geo, mat);
+          m.rotation.x = -Math.PI / 2;
+          if (mirror) m.scale.x = -1;
+          m.position.set(x, 0.012, z);
+          group.add(m);
+          disposables.push(geo, mat);
+        })(),
+      );
+    [3.6, 5.6, 7.6].forEach((z, i) => {
+      lightPatch(i + 1, 2.6, z + 0.5, false);
+      lightPatch(((i + 1) % 3) + 1, W - 2.6, z + 0.5, true);
+    });
     const stand = (id: string, x: number, z: number, y = 0, ppu?: number, flipX = false) =>
       propJobs.push(
         (async () => {
