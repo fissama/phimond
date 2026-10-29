@@ -3,6 +3,7 @@ import type { MapDef, Npc, WildSpawn } from '@phimond/protocol';
 import { PRESETS, settings, type FpsCap, type Quality } from '../state/settings.ts';
 import { INDOOR, lightAt, type Light } from './daylight.ts';
 import { Post } from './post.ts';
+import { applySun, paintedShadow, sunFor } from './shadows.ts';
 import { asset, textures } from './assets.ts';
 import { buildScene, THEMES, type BuiltScene } from './scene.ts';
 import { blobShadow, CharacterSprite, foeRing, PetSprite, propSprite } from './sprites.ts';
@@ -43,7 +44,7 @@ export class Engine {
   private readonly playerRoot = new THREE.Group();
   private frameDt = 1 / 60;
   private summon: { t: number; beam: THREE.Mesh } | null = null;
-  private playerBlob: THREE.Mesh | null = null;
+  private playerBlob: THREE.Object3D | null = null;
   private readonly npcs = new Map<string, Actor & { sprite: CharacterSprite | THREE.Object3D }>();
   private readonly spawns = new Map<string, Actor & { sprite: PetSprite; base: Cell; t: number }>();
   /** Thần thú 5★ trưng bày trên bệ đá (chỉ là mô hình, không nhận được). */
@@ -136,6 +137,10 @@ export class Engine {
     const blob = PRESETS[this.quality].shadows === 'blob';
     this.world = await buildScene(map, this.quality);
     this.scene.add(this.world.group);
+    if (this.world.fgRoot) {
+      this.scene.add(this.camera);
+      this.camera.add(this.world.fgRoot);
+    }
     this.indoor = T.indoor === true;
     this.camBias = T.camBias ?? 0;
     this.updateLight(0, true);
@@ -146,7 +151,7 @@ export class Engine {
       this.playerRoot.add(this.player.root);
     }
     if (this.playerBlob) this.playerRoot.remove(this.playerBlob);
-    this.playerBlob = blob ? blobShadow(0.42) : null;
+    this.playerBlob = blob ? ((await paintedShadow('small', 0.95)) ?? blobShadow(0.42)) : null;
     if (this.playerBlob) this.playerRoot.add(this.playerBlob);
 
     await Promise.all(
@@ -166,7 +171,7 @@ export class Engine {
           root.add(sprite);
         }
         if (n.face === 'left' && sprite instanceof CharacterSprite) sprite.setMotion(false, true);
-        if (blob) root.add(blobShadow(0.42));
+        if (blob) root.add((await paintedShadow('small', 0.95)) ?? blobShadow(0.42));
         root.position.set(n.x + 0.5, 0, n.y + 0.5);
         root.traverse((o) => (o.userData = { ...o.userData, kind: 'npc', id: n.id }));
         this.scene.add(root);
@@ -195,7 +200,7 @@ export class Engine {
     const sprite = await PetSprite.create(s.species_id, { castShadow: real });
     const root = new THREE.Group();
     root.add(sprite.root);
-    if (blob) root.add(blobShadow(0.38));
+    if (blob) root.add((await paintedShadow('small', 0.9)) ?? blobShadow(0.38));
     // Vòng đỏ dưới chân: quái hoang đụng vào là vào trận, khác hẳn đồ trang trí (đánh giá v1.0.0).
     const ring = foeRing();
     ring.name = 'foe-ring';
@@ -209,6 +214,7 @@ export class Engine {
   unloadMap(): void {
     if (this.world) {
       this.scene.remove(this.world.group);
+      if (this.world.fgRoot) this.camera.remove(this.world.fgRoot);
       this.world.dispose();
       this.world = null;
     }
@@ -381,10 +387,13 @@ export class Engine {
       c.sprite.setRow('idle');
       c.sprite.update(dt, false);
     }
-    this.world?.update(dt, this.playerRoot.position);
+    this.world?.update(dt, this.playerRoot.position, this.camera);
     this.updateCamera(1 - Math.exp(-dt * 9));
     this.updateLight(dt);
-    if (this.post) this.post.render(dt);
+    if (this.post) {
+      this.post.hasFg = !!this.world?.hasFg;
+      this.post.render(dt);
+    }
     else this.renderer.render(this.scene, this.camera);
     this.updateLabels();
   }
@@ -468,6 +477,11 @@ export class Engine {
     this.post?.setLight(l);
     this.world?.setLight(l);
     this.light = l;
+    applySun(this.scene, l.hour, l.night);
+    // Bóng thật (mức Cao): đặt đèn mặt trời cùng phía với bóng vẽ để hai mức nhất quán.
+    const s = sunFor(l.hour, l.night);
+    const t = this.sun.target.position;
+    this.sun.position.set(t.x - s.dx * 14, 24 / Math.max(0.8, s.stretch * 0.6), t.z - s.dz * 14 + 6);
   }
   /** Ánh sáng hiện tại (cho debug/test). */
   light: Light = INDOOR;

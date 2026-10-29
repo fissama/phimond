@@ -15,10 +15,12 @@ export interface Light {
   hi: Vec3;
   night: number;
   day: number;
+  /** Giờ trong ngày (0–24) — hướng và độ dài bóng đổ theo nắng. */
+  hour: number;
 }
 
 // [giờ, Light] — nội suy tuyến tính, vòng 24 giờ.
-const L = (tint: Vec3, sat: number, bright: number, contrast: number, shade: Vec3, hi: Vec3, night: number, day: number): Light => ({ tint, sat, bright, contrast, shade, hi, night, day });
+const L = (tint: Vec3, sat: number, bright: number, contrast: number, shade: Vec3, hi: Vec3, night: number, day: number): Light => ({ tint, sat, bright, contrast, shade, hi, night, day, hour: 12 });
 const NIGHT = L([0.42, 0.56, 1.0], 0.95, 0.76, 1.12, [0.01, 0.03, 0.12], [0.05, 0.1, 0.2], 1, 0);
 const KEYS: [number, Light][] = [
   [0, NIGHT],
@@ -52,8 +54,9 @@ export function lightAt(mode: TimeMode, now: Date = new Date()): Light {
     hi: mixV(a.hi, b.hi, t),
     night: mix(a.night, b.night, t),
     day: mix(a.day, b.day, t),
+    hour: h,
   };
 }
 
 /** Triệu Linh Điện: sân đá mở ban ngày, ánh sáng cố định không theo giờ. */
-export const INDOOR: Light = L([1.03, 1.0, 0.95], 1.1, 1, 1.05, [0.0, 0.02, 0.05], [0.07, 0.04, 0.0], 0.15, 0.9);
+export const INDOOR: Light = { ...L([1.03, 1.0, 0.95], 1.1, 1, 1.05, [0.0, 0.02, 0.05], [0.07, 0.04, 0.0], 0.15, 0.9), hour: 15 };

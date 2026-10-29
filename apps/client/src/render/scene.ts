@@ -7,6 +7,8 @@ import { spawnAmbient, type Ambient } from './ambient.ts';
 import type { Light } from './daylight.ts';
 import { makeAtmosphere, type Lamp } from './atmosphere.ts';
 import { makeLightMask } from './lightmask.ts';
+import { paintedShadow, type ShadowKind } from './shadows.ts';
+import { buildForeground, type Foreground, type FgItem } from './foreground.ts';
 
 /** Ánh sáng/không khí theo chủ đề map. */
 export const THEMES: Record<string, { indoor?: boolean; sky: number; fog: [number, number, number] | null; ambient: number; sun: number; sunColor: number; tint: number; ground: number; camBias?: number }> = {
@@ -132,7 +134,11 @@ export interface BuiltScene {
   group: THREE.Group;
   /** Đối tượng bấm được (bệ đá, trụ) — userData {kind, id}. */
   pickables: THREE.Object3D[];
-  update(dt: number, player?: THREE.Vector3 | null): void;
+  /** Có vật ở lớp tiền cảnh (cần bước làm mờ trong hậu kỳ). */
+  readonly hasFg: boolean;
+  /** Gốc của tiền cảnh: engine gắn vào camera. */
+  fgRoot: THREE.Group | null;
+  update(dt: number, player?: THREE.Vector3 | null, cam?: THREE.PerspectiveCamera): void;
   /** Đèn lồng/tia nắng/bụi theo giờ trong ngày. */
   setLight(l: Light): void;
   dispose(): void;
@@ -220,7 +226,10 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
               animated.push(canopy);
             }
           }
-          if (P.shadows === 'blob') g.add(blobShadow(0.9));
+          if (P.shadows === 'blob') {
+            const sh = await paintedShadow('canopy', Math.min(3.2, (asset(id + '-canopy')?.px[0] ?? 256) / 128 * 0.95));
+            g.add(sh ?? blobShadow(0.9));
+          }
           g.position.set(x + 0.5, 0, y + 0.6);
           group.add(g);
           const cw = (asset(id + '-canopy')?.px[0] ?? 256) / 128;
@@ -248,7 +257,11 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
         const ah = (asset(id)?.px[1] ?? 0) / 128;
         if (ah >= 1.8 && !opts.decor) addOccluder(s, ((asset(id)?.px[0] ?? 128) / 128) * 0.45, ah);
         if (P.shadows === 'blob' && !opts.decor) {
-          const b = blobShadow(Math.min(1.1, (asset(id)?.px[0] ?? 128) / 256));
+          const aw = (asset(id)?.px[0] ?? 128) / 128;
+          const boxy = /market|awning|cart|bench|well|fountain|crate|barrel|sack|stall|booth|bookshelf/.test(id);
+          const kind: ShadowKind = boxy ? 'rect' : ah >= 1.4 ? 'large' : 'small';
+          const sh = await paintedShadow(kind, boxy ? Math.min(3.2, aw * 0.95) : Math.min(2.2, Math.max(0.8, aw * 0.8)));
+          const b = sh ?? blobShadow(Math.min(1.1, aw / 2));
           b.position.set(s.position.x, 0.02, s.position.z);
           group.add(b);
         }
@@ -515,35 +528,31 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
     facadeSpans.push([fx_! + 0.5 - w / 2, fx_! + 0.5 + w / 2]);
   }
   if (theme === 'city') dressCity();
-  // Tiền cảnh sát camera: vật to ở mép dưới khung để bộ làm mờ chiều sâu (tilt-shift) biến thành lớp mờ trước nhân vật.
-  if (P.backdrop && (theme === 'forest' || theme === 'deep_forest')) {
-    const bushes = ['fg-forest-bush-a', 'fg-forest-bush-b', 'fg-forest-bush-c'].filter((id) => asset(id));
-    for (let x = 0.8, i = 0; bushes.length && x < W; i++) {
-      const id = bushes[Math.floor(hash(i, 31) * bushes.length)]!;
-      const w = (asset(id)?.world?.[0] ?? 3) * 0.9;
-      propJobs.push(
-        (async () => {
-          const m = await propSprite(id, { tint: T.tint, castShadow: false });
-          if (!m) return;
-          m.scale.multiplyScalar(0.9);
-          m.position.set(x, 0, H + 0.9 + hash(i, 5) * 0.4);
-          group.add(m);
-        })(),
-      );
-      x += w * (0.75 + hash(i, 7) * 0.35);
+  // Tiền cảnh sát camera (neo theo màn hình, làm mờ trong hậu kỳ). Mức Thấp không có hậu kỳ nên bỏ.
+  let fg: Foreground | null = null;
+  const fgItems: FgItem[] = [];
+  if (P.post !== 'none') {
+    const has = (id: string) => !!asset(id);
+    const add = (it: FgItem) => has(it.id) && fgItems.push(it);
+    if (theme === 'forest' || theme === 'deep_forest') {
+      const deep = theme === 'deep_forest';
+      const tint = deep ? 0x8fa896 : 0xffffff;
+      const dark = deep ? 0x5d7766 : 0x7d9a6c; // cành gần camera tối hơn tán phía sau để tách lớp
+      add({ id: 'fg-forest-branch-a', ax: -0.8, ay: 0.74, h: 0.52, maxW: 0.46, tint: dark, rot: 0.04 });
+      add({ id: 'fg-forest-branch-b', ax: 0.82, ay: 0.82, h: 0.46, maxW: 0.42, tint: dark, rot: -0.03, par: 0.1 });
+      add({ id: 'fg-forest-bush-a', ax: -0.72, ay: -0.98, h: 0.3, maxW: 0.34, tint });
+      add({ id: 'fg-forest-bush-c', ax: 0.08, ay: -1.04, h: 0.24, maxW: 0.3, tint, flip: true, par: 0.12 });
+      add({ id: 'fg-forest-bush-b', ax: 0.82, ay: -0.99, h: 0.3, maxW: 0.34, tint, par: 0.06 });
+    } else if (theme === 'city') {
+      add({ id: 'fg-city-bunting', ax: -0.1, ay: 0.9, h: 0.17, maxW: 0.75, sway: 0.006, par: 0.05 });
+      add({ id: 'fg-city-lantern-pair', ax: -0.93, ay: 0.46, h: 0.5, maxW: 0.22, rot: -0.02 });
+      add({ id: 'fg-city-lantern-pair', ax: 0.93, ay: 0.46, h: 0.5, maxW: 0.22, flip: true, rot: 0.02 });
+    } else if (theme === 'hall') {
+      add({ id: 'fg-hall-curtain', ax: -1.03, ay: 0.55, h: 0.46, maxW: 0.14 });
+      add({ id: 'fg-hall-curtain', ax: 1.03, ay: 0.55, h: 0.46, maxW: 0.14, flip: true });
     }
   }
-  if (P.backdrop && theme === 'city' && asset('fg-city-awning-edge')) {
-    propJobs.push(
-      (async () => {
-        const m = await propSprite('fg-city-awning-edge', { tint: T.tint, castShadow: false });
-        if (!m) return;
-        m.scale.multiplyScalar(0.85);
-        m.position.set(2.6, 0, H + 1.1);
-        group.add(m);
-      })(),
-    );
-  }
+  if (fgItems.length) fg = await buildForeground(fgItems);
 
   function dressCity(): void {
     const isGate = map.id === 'city_palace_gate';
@@ -554,7 +563,7 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
     const houses = isGate
       ? ['palace-crenel-wall', 'palace-wall-section', 'palace-crenel-wall'].filter(has)
       : ['city-facade-inn', 'city-facade-warehouse', 'city-facade-bakery', 'city-facade-corner', 'city-facade-belltower', 'city-facade-townhouse', 'city-facade-artisan'].filter(has);
-    const connectors = isGate ? ['palace-tower'] : ['city-alley-arch', 'city-wall-flowerbox', 'city-pillar-drainpipe'].filter(has);
+    const connectors = isGate ? ['palace-tower'] : ['city-alley-arch', 'city-facade-alley', 'city-wall-flowerbox', 'city-facade-gutter', 'city-pillar-drainpipe', 'city-facade-column'].filter(has);
     const fillerHouses = houses.length ? houses : ['city-facade-townhouse', 'city-facade-artisan', 'city-facade-shop', 'city-facade-guild'];
     const fillerConn = connectors.length ? connectors : ['palace-tower'];
     const spans = facadeSpans.sort((p, q) => p[0] - q[0]);
@@ -616,6 +625,20 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
         if (!open && (prevOpen || nextOpen)) place(side === 0 ? 'banner-blue' : 'banner-red', side, y);
       }
     }
+    // Hoàng Môn: sân trong thấp thoáng sau vòm cổng (thay mảng tường xám); trụ dịch chuyển đặt trên bệ tròn.
+    if (isGate && has('palace-courtyard-passage')) {
+      propJobs.push(
+        (async () => {
+          const m = await propSprite('palace-courtyard-passage', { tint: T.tint, castShadow: false });
+          if (!m) return;
+          m.scale.multiplyScalar(0.52);
+          m.position.set(13.5, 0, 1.55);
+          group.add(m);
+        })(),
+      );
+    }
+    if (!isGate && has('stone-plinth-round'))
+      for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) if (layout[y]![x] === 'O') place('stone-plinth-round', x, y - 0.05, { decor: true });
     // 4) Thảm đỏ trên lối gạch ở Hoàng Môn.
     if (isGate) propJobs.push(decal('palace-carpet-strip', 13.5, 5.6, 2, Math.PI / 2)); // chạy dọc trục cổng cung điện, từ chân cổng xuống sân
     // 5) Dây cờ trên khu chợ, hàng rào sắt cạnh lối ra.
@@ -777,12 +800,15 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
   return {
     group,
     pickables,
+    fgRoot: fg?.root ?? null,
+    hasFg: !!fg,
     setLight(l: Light) {
       atmo?.setLight(l);
       lmask?.setLight(l);
     },
-    update(dt: number, player?: THREE.Vector3 | null) {
+    update(dt: number, player?: THREE.Vector3 | null, cam?: THREE.PerspectiveCamera) {
       time += dt;
+      if (fg && cam) fg.update(dt, cam, cam.position.x, W / 2);
       atmo?.update(dt);
       if (player) lmask?.update(player.x, player.z);
       for (const a of ambient) a.update(dt, player ?? null);
@@ -821,6 +847,7 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
       disposables.forEach((d) => d.dispose());
       atmo?.dispose();
       lmask?.dispose();
+      fg?.dispose();
     },
   };
 }

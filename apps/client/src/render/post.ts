@@ -4,6 +4,8 @@ import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
 import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
 import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass.js';
+import { Pass, FullScreenQuad } from 'three/examples/jsm/postprocessing/Pass.js';
+import { FG_LAYER } from './layers.ts';
 import type { Light } from './daylight.ts';
 import type { Quality } from '../state/settings.ts';
 
@@ -60,15 +62,117 @@ const GRADE = {
     }`,
 };
 
+
+/**
+ * Tiền cảnh mờ theo độ sâu: vật ở lớp FG_LAYER (cành lá, cờ, đèn, rèm sát camera) được vẽ riêng ra render target nửa độ phân
+ * giải, làm mờ Gauss hai chiều (cộng alpha nhân sẵn để mép không viền đen) rồi chồng lên cảnh trước khi phối màu/bloom.
+ * Độ mờ đo bằng điểm ảnh, tăng theo chiều cao màn hình. Cảnh không có vật nào ở lớp này thì bỏ qua bước vẽ.
+ */
+const BLUR_FRAG = `
+  uniform sampler2D tIn; uniform vec2 dir; uniform float premul;
+  varying vec2 vUv;
+  void main(){
+    vec4 acc = vec4(0.0); float ws = 0.0;
+    for (int i = -6; i <= 6; i++) {
+      float f = float(i);
+      float w = exp(-f * f / 18.0);
+      vec4 t = texture2D(tIn, vUv + dir * f);
+      if (premul > 0.5) t.rgb *= t.a;
+      acc += t * w; ws += w;
+    }
+    gl_FragColor = acc / ws;
+  }`;
+const COMP_FRAG = `
+  uniform sampler2D tBase; uniform sampler2D tFg;
+  varying vec2 vUv;
+  void main(){
+    vec4 b = texture2D(tBase, vUv);
+    vec4 f = texture2D(tFg, vUv);
+    gl_FragColor = vec4(f.rgb + b.rgb * (1.0 - f.a), 1.0);
+  }`;
+const VERT = 'varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }';
+
+class FgBlurPass extends Pass {
+  radius = 5;
+  private readonly rtA = new THREE.WebGLRenderTarget(64, 64, { type: THREE.HalfFloatType });
+  private readonly rtB = new THREE.WebGLRenderTarget(64, 64, { type: THREE.HalfFloatType });
+  private readonly blurMat = new THREE.ShaderMaterial({ uniforms: { tIn: { value: null }, dir: { value: new THREE.Vector2() }, premul: { value: 1 } }, vertexShader: VERT, fragmentShader: BLUR_FRAG, depthTest: false, depthWrite: false });
+  private readonly compMat = new THREE.ShaderMaterial({ uniforms: { tBase: { value: null }, tFg: { value: null } }, vertexShader: VERT, fragmentShader: COMP_FRAG, depthTest: false, depthWrite: false });
+  private readonly quad = new FullScreenQuad(this.blurMat);
+  private size = new THREE.Vector2(1, 1);
+  constructor(private readonly scene: THREE.Scene, private readonly camera: THREE.Camera) {
+    super();
+    this.rtA.depthBuffer = true;
+  }
+  override setSize(w: number, h: number): void {
+    this.size.set(w, h);
+    const hw = Math.max(32, Math.floor(w / 2));
+    const hh = Math.max(32, Math.floor(h / 2));
+    this.rtA.setSize(hw, hh);
+    this.rtB.setSize(hw, hh);
+  }
+  override render(renderer: THREE.WebGLRenderer, writeBuffer: THREE.WebGLRenderTarget, readBuffer: THREE.WebGLRenderTarget): void {
+    const cam = this.camera;
+    const prevMask = cam.layers.mask;
+    const prevBg = this.scene.background;
+    const prevFog = this.scene.fog;
+    const prevClear = renderer.getClearColor(new THREE.Color());
+    const prevAlpha = renderer.getClearAlpha();
+    cam.layers.set(FG_LAYER);
+    this.scene.background = null;
+    this.scene.fog = null;
+    renderer.setRenderTarget(this.rtA);
+    renderer.setClearColor(0x000000, 0);
+    renderer.clear();
+    renderer.render(this.scene, cam);
+    cam.layers.mask = prevMask;
+    this.scene.background = prevBg;
+    this.scene.fog = prevFog;
+    renderer.setClearColor(prevClear, prevAlpha);
+    // Gauss tách hai chiều (nửa độ phân giải).
+    const px = this.radius / this.rtA.width;
+    const py = this.radius / this.rtA.height / 6;
+    this.quad.material = this.blurMat;
+    this.blurMat.uniforms.tIn!.value = this.rtA.texture;
+    (this.blurMat.uniforms.dir!.value as THREE.Vector2).set(px / 6, 0);
+    this.blurMat.uniforms.premul!.value = 1;
+    renderer.setRenderTarget(this.rtB);
+    this.quad.render(renderer);
+    this.blurMat.uniforms.tIn!.value = this.rtB.texture;
+    (this.blurMat.uniforms.dir!.value as THREE.Vector2).set(0, this.radius / this.rtA.height / 6);
+    this.blurMat.uniforms.premul!.value = 0;
+    renderer.setRenderTarget(this.rtA);
+    this.quad.render(renderer);
+    void py;
+    this.quad.material = this.compMat;
+    this.compMat.uniforms.tBase!.value = readBuffer.texture;
+    this.compMat.uniforms.tFg!.value = this.rtA.texture;
+    renderer.setRenderTarget(this.renderToScreen ? null : writeBuffer);
+    this.quad.render(renderer);
+  }
+  override dispose(): void {
+    this.rtA.dispose();
+    this.rtB.dispose();
+    this.blurMat.dispose();
+    this.compMat.dispose();
+    this.quad.dispose();
+  }
+}
+
 export class Post {
   private readonly composer: EffectComposer;
   private readonly bloom: UnrealBloomPass;
   private readonly grade: ShaderPass;
+  private readonly fg: FgBlurPass;
+  /** Bật khi cảnh hiện tại có vật ở lớp tiền cảnh. */
+  hasFg = false;
   private quality: Quality = 'high';
 
   constructor(renderer: THREE.WebGLRenderer, scene: THREE.Scene, camera: THREE.Camera) {
     this.composer = new EffectComposer(renderer);
     this.composer.addPass(new RenderPass(scene, camera));
+    this.fg = new FgBlurPass(scene, camera);
+    this.composer.addPass(this.fg);
     this.bloom = new UnrealBloomPass(new THREE.Vector2(256, 256), 0.35, 0.6, 0.82);
     this.composer.addPass(this.bloom);
     this.grade = new ShaderPass(GRADE);
@@ -88,6 +192,8 @@ export class Post {
     this.grade.uniforms.res!.value.set(w * pixelRatio, h * pixelRatio);
     // Bloom ở nửa độ phân giải cho nhẹ.
     const div = this.quality === 'high' ? 2 : 4;
+    this.fg.setSize(w * pixelRatio, h * pixelRatio);
+    this.fg.radius = 6 * Math.max(1, (h * pixelRatio) / 720);
     this.bloom.setSize(Math.max(64, Math.floor((w * pixelRatio) / div)), Math.max(64, Math.floor((h * pixelRatio) / div)));
   }
 
@@ -106,10 +212,12 @@ export class Post {
   }
 
   render(dt: number): void {
+    this.fg.enabled = this.hasFg;
     this.composer.render(dt);
   }
 
   dispose(): void {
+    this.fg.dispose();
     this.composer.dispose();
   }
 }
