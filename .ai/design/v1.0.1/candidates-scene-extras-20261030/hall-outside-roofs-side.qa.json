@@ -1,0 +1,27 @@
+{
+  "schema": "phimond.art-qa.v1",
+  "asset": "hall-outside-roofs-side.png",
+  "status": "needs_redraw",
+  "approved": false,
+  "installed": false,
+  "size": [
+    512,
+    384
+  ],
+  "mode": "RGB",
+  "visible_rgb_colors": 48,
+  "alpha_values": null,
+  "sha256": "8fcbda0f3bf540159b17e94037c9c35ea97b0b32061acd19503e8f05063bbb32",
+  "mechanical_checks": {
+    "dimensions": "pass",
+    "opaque": "pass",
+    "palette_limit_48": "pass"
+  },
+  "visual_review": "Codex contact-sheet review 2026-10-30: the plate reads as a side glimpse of a walled city, with rooftops low and clear sky above.",
+  "not_proven": [
+    "color and contrast in the intended hall scene",
+    "shared/mirrored side use",
+    "owner approval"
+  ],
+  "decision": "Claude visual review 2026-10-30 (owner delegated): NOT approved. Fully saturated cyan-blue sky (#0a6cff-like) clashes with the muted hall/city palettes; opaque 4:3 plate duplicates hall-city-backdrop/hall-city-roofs (no proven gap); foreground walls read as a separate near layer. Redraw only if a scene capture shows a gap: desaturated dusk/overcast sky, 19:3.8 or tileable strip, no near wall."
+}

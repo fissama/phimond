@@ -1,0 +1,31 @@
+{
+  "schema": "phimond.art-qa.v1",
+  "asset": "fg-deep-vines.png",
+  "status": "approved",
+  "approved": true,
+  "installed": true,
+  "size": [
+    512,
+    384
+  ],
+  "mode": "RGBA",
+  "visible_rgba_colors": 36,
+  "alpha_values": [
+    0,
+    255
+  ],
+  "sha256": "2151b580d549d47fc75c295434c54e5fd8a8ff4acc71f90b7da41eacf67943a3",
+  "mechanical_checks": {
+    "dimensions": "pass",
+    "binary_alpha": "pass",
+    "palette_limit_48": "pass"
+  },
+  "visual_review": "Codex contact-sheet review 2026-10-30: hanging vines, leaves and small luminous mushrooms are distinct; no obvious detached glow or silhouette defect at preview scale.",
+  "not_proven": [
+    "placement and scale in Deep Forest",
+    "player occlusion and depth blur",
+    "owner approval"
+  ],
+  "installed_as": "apps/client/public/hd2d/fg-deep-vines.png",
+  "decision": "Claude visual review 2026-10-30 (owner delegated): approved. Palette/density matches deep-forest foreground; used as top-centre fg layer in deep_forest only (scene.ts), dark-tinted, sway 0.006. In-engine blur/occlusion still to be eyeballed in a playtest."
+}

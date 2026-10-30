@@ -1,0 +1,31 @@
+{
+  "schema": "phimond.art-qa.v1",
+  "asset": "hall-side-corner.png",
+  "status": "approved_not_placed",
+  "approved": true,
+  "installed": true,
+  "size": [
+    256,
+    400
+  ],
+  "mode": "RGBA",
+  "visible_rgba_colors": 38,
+  "alpha_values": [
+    0,
+    255
+  ],
+  "sha256": "f3b5603f39f16f3bbe4d20083aa7251585b7bc69a937e36e3fcfbe6c88546fd5",
+  "mechanical_checks": {
+    "dimensions": "pass",
+    "binary_alpha": "pass",
+    "palette_limit_48": "pass"
+  },
+  "visual_review": "Codex contact-sheet review 2026-10-30: the pier and two balustrade runs form a readable corner connector; no obvious detached parts at preview scale.",
+  "not_proven": [
+    "correct corner orientation",
+    "join length and alignment with hall assets",
+    "owner approval"
+  ],
+  "installed_as": "apps/client/public/hd2d/hall-side-corner.png",
+  "decision": "Claude visual review 2026-10-30 (owner delegated): art approved and registered in assets.json, but NOT placed: hall rails already end in hall-side-pier at z=9.8 and the corner is asymmetric (rails both ways) so needs a mirrored/oriented placement decision. Reserved for v1.1."
+}

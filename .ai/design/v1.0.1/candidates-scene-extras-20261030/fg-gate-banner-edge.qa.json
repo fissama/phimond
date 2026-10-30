@@ -1,0 +1,31 @@
+{
+  "schema": "phimond.art-qa.v1",
+  "asset": "fg-gate-banner-edge.png",
+  "status": "approved",
+  "approved": true,
+  "installed": true,
+  "size": [
+    384,
+    512
+  ],
+  "mode": "RGBA",
+  "visible_rgba_colors": 43,
+  "alpha_values": [
+    0,
+    255
+  ],
+  "sha256": "35c4d0a122eb9fbf8f3b63226472d28499c63b0ec47c9adceb22e0a7cdb15c00",
+  "mechanical_checks": {
+    "dimensions": "pass",
+    "binary_alpha": "pass",
+    "palette_limit_48": "pass"
+  },
+  "visual_review": "Codex contact-sheet review 2026-10-30: both banners and gold sun emblems read clearly, with a broad central sightline.",
+  "not_proven": [
+    "banner count and exact gate anchors",
+    "overlap at scene scale",
+    "owner approval"
+  ],
+  "installed_as": "apps/client/public/hd2d/fg-gate-banner-edge.png",
+  "decision": "Claude visual review 2026-10-30 (owner delegated): approved. Blue/gold standards with sun emblem match palace palette and keep the centre sightline open; used as fg layer on city_palace_gate only (ax 0, ay 0.6, h 0.6)."
+}
