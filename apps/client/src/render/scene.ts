@@ -515,6 +515,8 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
       })(),
     );
     if (P.fx) propJobs.push(fx('summon-motes-fx', cx, cz + 0.2, 1.1));
+    // Mỗi bệ có hạt linh khí bay lên quanh thần thú đứng trên đó.
+    if (P.fx) for (const p of map.pedestals ?? []) propJobs.push(fx('summon-motes-fx', p.x + 0.5, p.y + 0.75, 1.0));
   }
   if (map.id === 'city_square') propJobs.push(decal('city-plaza-medallion', 20, 16, 1.4));
 
@@ -690,7 +692,7 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
         disposables.push(geo, mat);
       })(),
     );
-    // Vệt sáng kính màu rơi xuống sàn từ các ô kính hai hông (cộng sáng, mờ vừa phải để đọc là ánh sáng chứ không phải miếng dán).
+    // Vệt nắng hoàng hôn ấm rơi xuống sàn từ các ô cửa vòm hai hông (cộng sáng, mờ vừa phải để đọc là ánh sáng chứ không phải miếng dán).
     const lightPatch = (variant: number, x: number, z: number, mirror: boolean) =>
       propJobs.push(
         (async () => {
@@ -698,7 +700,7 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
           if (!asset(id)) return;
           const tex = await textures.get(hd2dUrl(id));
           const geo = new THREE.PlaneGeometry(2.2, 2.2);
-          const mat = new THREE.MeshBasicMaterial({ map: tex, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: 0.5, fog: false });
+          const mat = new THREE.MeshBasicMaterial({ map: tex, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: 0.5, fog: false, color: 0xffc27a });
           const m = new THREE.Mesh(geo, mat);
           m.rotation.x = -Math.PI / 2;
           if (mirror) m.scale.x = -1;
@@ -741,7 +743,13 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
     for (const [x, rot] of [[0.35, Math.PI / 2], [W - 0.35, -Math.PI / 2]] as const) {
       for (const z of [3.8, 7.8]) side('hall-side-balustrade', x, z, rot, 128);
       for (const z of [1.8, 5.8, 9.8]) side('hall-side-pier', x, z, rot, 190);
-      for (const z of [3.8, 7.8]) side('hall-side-window', x + (x < 1 ? 0.15 : -0.15), z, rot, 120);
+      // Cửa sổ vòm mở: lớp nhìn ra mái nhà (lùi vào tường) → khung đá → vệt sáng hoàng hôn (nhô vào trong).
+      const inw = x < 1 ? 1 : -1;
+      for (const z of [3.8, 7.8]) {
+        side('hall-window-view-roofs', x + inw * 0.11, z, rot, 120);
+        side('hall-side-window-open', x + inw * 0.15, z, rot, 120);
+        side('hall-window-light', x + inw * 0.2, z, rot, 120);
+      }
     }
     // Ngưỡng cửa phía trước: hai nửa chừa lối ra x = 8..11 (khớp cổng hall_exit rộng 3 ô).
     stand('hall-threshold-left', 8.04 / 2, H - 0.05);
