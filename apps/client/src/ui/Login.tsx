@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'preact/hooks';
 import { session } from '../state/app.ts';
+import { LoginBackdrop } from './LoginBackdrop.tsx';
 import { uiUrl } from './skin.ts';
 
 type Mode = 'login' | 'register' | 'forgot' | 'reset';
@@ -63,6 +64,8 @@ export function Login() {
   const title = { login: '', register: 'Tạo tài khoản', forgot: 'Quên mật khẩu', reset: 'Đặt mật khẩu mới' }[mode];
 
   return (
+    <>
+    <LoginBackdrop />
     <form
       class="login-box"
       style={box}
@@ -137,10 +140,11 @@ export function Login() {
         <a href="/terms.html" target="_blank" rel="noopener">Điều khoản</a> · <a href="/privacy.html" target="_blank" rel="noopener">Quyền riêng tư</a>
       </p>
     </form>
+    </>
   );
 }
 
-const box = { position: 'absolute', inset: 0, margin: 'auto', width: 'min(400px, calc(100% - 32px))', height: 'fit-content', maxHeight: 'calc(100% - 16px)', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: 10 } as const;
+const box = { position: 'absolute', zIndex: 5, inset: 0, margin: 'auto', width: 'min(400px, calc(100% - 32px))', height: 'fit-content', maxHeight: 'calc(100% - 16px)', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: 10 } as const;
 const hint = { margin: 0, fontSize: 12, color: '#cdbd90' } as const;
 const check = { display: 'flex', gap: 8, alignItems: 'flex-start', fontSize: 13, color: '#e8dcc0', lineHeight: 1.35 } as const;
 const linkBtn = { background: 'none', border: 0, color: '#9fc7ff', textDecoration: 'underline', cursor: 'pointer', fontSize: 13, padding: 0, alignSelf: 'center' } as const;
