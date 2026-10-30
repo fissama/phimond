@@ -4,17 +4,22 @@ const bg = (id: string) => ({ backgroundImage: `url(${hd2dUrl(id)})` });
 /** Hạt sáng bay lên: vị trí/độ trễ cố định theo chỉ số để không nhảy khi render lại. */
 const MOTES = Array.from({ length: 14 }, (_, i) => ({ left: (i * 37 + 11) % 100, delay: -((i * 53) % 19), dur: 12 + ((i * 7) % 9), size: 2 + (i % 3) }));
 
-/** Linh thú 5 sao có ảnh trưng bày. `idle` = ảnh thứ hai của cùng thú để xen kẽ làm nhịp thở. */
-const POOL: { id: string; idle?: string }[] = [
-  { id: 'showcase-unicorn' },
-  { id: 'showcase-scorpion' },
-  { id: 'showcase-flower' },
-  { id: 'stage-species_0052', idle: 'stage-species_0052-idle' },
-  { id: 'stage-species_0107', idle: 'stage-species_0107-idle' },
-  { id: 'stage-species_0088', idle: 'stage-species_0088-idle' },
-  { id: 'stage-species_0150', idle: 'stage-species_0150-idle' },
-  { id: 'stage-species_0153', idle: 'stage-species_0153-idle' },
-  { id: 'stage-species_0155', idle: 'stage-species_0155-idle' },
+/**
+ * Linh thú 5 sao có ảnh trưng bày. `c` = cạnh ảnh (px), `h` = cao thật của thân, `b` = hàng pixel đáy thân (để chân chạm bệ và mọi con cao bằng nhau
+ * dù khung ảnh khác nhau). `idle` = ảnh thứ hai của cùng thú, xen kẽ làm nhịp thở.
+ */
+const EMBERS = Array.from({ length: 12 }, (_, i) => ({ side: i % 2 ? 'right' : 'left', dx: ((i * 13) % 17) - 8, delay: -((i * 0.83) % 5), dur: 3.2 + ((i * 7) % 5) * 0.5 }));
+
+const POOL: { id: string; idle?: string; c: number; h: number; b: number }[] = [
+  { id: 'showcase-unicorn', c: 192, h: 142, b: 167 },
+  { id: 'showcase-scorpion', c: 192, h: 149, b: 170 },
+  { id: 'showcase-flower', c: 192, h: 154, b: 174 },
+  { id: 'stage-species_0052', idle: 'stage-species_0052-idle', c: 256, h: 194, b: 234 },
+  { id: 'stage-species_0107', idle: 'stage-species_0107-idle', c: 256, h: 161, b: 221 },
+  { id: 'stage-species_0088', idle: 'stage-species_0088-idle', c: 256, h: 169, b: 226 },
+  { id: 'stage-species_0150', idle: 'stage-species_0150-idle', c: 256, h: 183, b: 232 },
+  { id: 'stage-species_0153', idle: 'stage-species_0153-idle', c: 256, h: 194, b: 233 },
+  { id: 'stage-species_0155', idle: 'stage-species_0155-idle', c: 256, h: 161, b: 223 },
 ];
 
 /** Sáu chỗ đứng: 4 hàng trước (to, trên bệ lớn) + 2 hàng sau (nhỏ, trên bệ nhỏ). `x` = tâm (% chiều rộng), `w` = cỡ tương đối. Giữa trống cho hộp đăng nhập. */
@@ -23,8 +28,8 @@ const SLOTS = [
   { x: 23, w: 0.82, back: false },
   { x: 77, w: 0.82, back: false },
   { x: 91.5, w: 0.82, back: false },
-  { x: 16, w: 0.5, back: true },
-  { x: 84, w: 0.5, back: true },
+  { x: 16, w: 0.72, back: true },
+  { x: 84, w: 0.72, back: true },
 ];
 
 /** Mỗi lần mở màn hình, chọn ngẫu nhiên 6 thú trong bể (xáo trộn Fisher–Yates). */
@@ -55,19 +60,31 @@ export function LoginBackdrop() {
       <img class="lb-bird b1" src={hd2dUrl('ambient-birds')} alt="" />
       <img class="lb-bird b2" src={hd2dUrl('ambient-birds')} alt="" />
       <div class="lb-terrace" style={bg('stage-floor')} />
+      <img class="lb-banner left" src={hd2dUrl('stage-prop-banner')} alt="" />
+      <img class="lb-banner right" src={hd2dUrl('stage-prop-banner')} alt="" />
       <img class="lb-prop left" src={hd2dUrl('stage-prop-brazier')} alt="" />
       <img class="lb-prop right" src={hd2dUrl('stage-prop-brazier')} alt="" />
+      <div class="lb-bloom left" />
+      <div class="lb-bloom right" />
+      {EMBERS.map((e, i) => (
+        <i key={i} class={`lb-ember ${e.side}`} style={{ '--ox': `${e.dx}px`, animationDelay: `${e.delay}s`, animationDuration: `${e.dur}s` }} />
+      ))}
       {MOTES.map((m, i) => (
         <i key={i} class="lb-mote" style={{ left: `${m.left}%`, width: m.size, height: m.size, animationDelay: `${m.delay}s`, animationDuration: `${m.dur}s` }} />
       ))}
       {[...beasts].sort((a, b) => Number(b.back) - Number(a.back)).map((b, i) => (
-        <div key={i} class={`lb-beast s${b.slot}${b.back ? ' back' : ''}`} style={{ '--x': `${b.x}%`, '--w': b.w, '--d': `${b.delay}s` }}>
+        <div key={i} class={`lb-beast s${b.slot}${b.back ? ' back' : ''}`} style={{ '--x': `${b.x}%`, '--w': b.w, '--d': `${b.delay}s`, '--k': b.c / b.h, '--pad': (b.c - b.b) / b.h }}>
           <img class="dais" src={hd2dUrl(b.back ? 'stage-dais-small' : 'stage-dais-large')} alt="" />
           <img class="pet a" src={hd2dUrl(b.id)} alt="" />
           {b.idle && <img class="pet b" src={hd2dUrl(b.idle)} alt="" />}
         </div>
       ))}
       <div class="lb-light" style={bg('stage-light')} />
+      <img class="lb-fg vines" src={hd2dUrl('fg-deep-vines')} alt="" />
+      <img class="lb-fg vines r" src={hd2dUrl('fg-deep-vines')} alt="" />
+      <div class="lb-fg bunting" style={bg('fg-city-bunting')} />
+      <div class="lb-tilt top" />
+      <div class="lb-tilt bottom" />
       <div class="lb-vignette" />
     </div>
   );
