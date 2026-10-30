@@ -45,12 +45,8 @@ var ErrCredentials = errors.New("invalid credentials")
 var ErrSession = errors.New("invalid or expired session")
 var usernamePattern = regexp.MustCompile(`^[A-Za-z0-9_]{3,24}$`)
 
-func validateCredentials(username, password string) error {
-	if !usernamePattern.MatchString(username) || len(password) < 10 || len(password) > 72 {
-		return errors.New("username must be 3-24 ASCII letters, digits or underscores; password must be 10-72 bytes")
-	}
-	return nil
-}
+// validateCredentials dùng cho đăng ký (chính sách đầy đủ); đăng nhập chỉ chặn đầu vào vô lý để tài khoản cũ (≥10 ký tự) vẫn vào được.
+func validateCredentials(username, password string) error { return ValidateRegistration(username, password) }
 func randomID() (string, error) {
 	b := make([]byte, 16)
 	_, e := rand.Read(b)
@@ -103,6 +99,9 @@ func (s *Store) Register(ctx context.Context, username, password string, initial
 	}
 	defer tx.Rollback()
 	if _, e = tx.ExecContext(ctx, "INSERT INTO accounts(id,username,password_hash) VALUES (?,?,?)", id, username, hash); e != nil {
+		if isDup(e) {
+			return "", "", ErrUsernameTaken
+		}
 		return "", "", errors.New("account registration failed")
 	}
 	if _, e = tx.ExecContext(ctx, "INSERT INTO characters(id,account_id,state) VALUES (?,?,?)", id, id, string(raw)); e != nil {
@@ -121,7 +120,7 @@ func (s *Store) Register(ctx context.Context, username, password string, initial
 	return token, id, nil
 }
 func (s *Store) Login(ctx context.Context, username, password string) (string, string, error) {
-	if validateCredentials(username, password) != nil {
+	if !usernamePattern.MatchString(username) || password == "" || len(password) > 72 {
 		return "", "", ErrCredentials
 	}
 	var id string

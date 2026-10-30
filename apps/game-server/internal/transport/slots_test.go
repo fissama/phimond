@@ -32,7 +32,7 @@ func TestCharacterSlotsAreIndependent(t *testing.T) {
 	}
 	s := New(devstore.New(), character.NewEngine(c))
 	h := s.Handler()
-	code, reg := slotCall(t, h, "POST", "/api/register", "", `{"username":"slotuser","password":"matkhau-12345"}`)
+	code, reg := slotCall(t, h, "POST", "/api/register", "", `{"username":"slotuser","password":"matkhau-12345","terms":true}`)
 	if code != 200 {
 		t.Fatalf("register %d", code)
 	}

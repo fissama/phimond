@@ -39,22 +39,24 @@ type window struct {
 	Count int
 }
 type Server struct {
-	metrics     *runtimeMetrics
-	liveMu      sync.Mutex
-	live        map[string]*liveCharacter
-	sessionMu   sync.Mutex
-	sessions    map[string]sessionEntry
-	stopping    atomic.Bool
-	Store       Storage
-	Game        *character.Engine
-	mu          sync.Mutex
-	limits      map[string]window
-	connections map[string]int
-	cors        map[string]bool
+	metrics        *runtimeMetrics
+	liveMu         sync.Mutex
+	live           map[string]*liveCharacter
+	sessionMu      sync.Mutex
+	sessions       map[string]sessionEntry
+	stopping       atomic.Bool
+	Store          Storage
+	Game           *character.Engine
+	mu             sync.Mutex
+	limits         map[string]window
+	connections    map[string]int
+	cors           map[string]bool
+	mailer         Mailer
+	trustedProxies []*net.IPNet
 }
 
 func New(s Storage, e *character.Engine) *Server {
-	return &Server{metrics: newRuntimeMetrics(os.Getenv("GAME_METRICS") == "1"), Store: s, Game: e, limits: map[string]window{}, connections: map[string]int{}, live: map[string]*liveCharacter{}, sessions: map[string]sessionEntry{}, cors: parseCORSOrigins(os.Getenv("GAME_CORS_ORIGINS"))}
+	return &Server{metrics: newRuntimeMetrics(os.Getenv("GAME_METRICS") == "1"), Store: s, Game: e, limits: map[string]window{}, connections: map[string]int{}, live: map[string]*liveCharacter{}, sessions: map[string]sessionEntry{}, cors: parseCORSOrigins(os.Getenv("GAME_CORS_ORIGINS")), mailer: mailerFromEnv(), trustedProxies: parseTrustedProxies(os.Getenv("GAME_TRUSTED_PROXIES"))}
 }
 func jsonResponse(w http.ResponseWriter, status int, data any) {
 	w.Header().Set("Content-Type", "application/json")
@@ -125,6 +127,7 @@ func (s *Server) Handler() http.Handler {
 	for _, path := range []string{"/api/register", "/api/login"} {
 		mux.HandleFunc("POST "+path, s.credentials)
 	}
+	s.registerAccountRoutes(mux)
 	mux.HandleFunc("POST /api/logout", func(w http.ResponseWriter, r *http.Request) {
 		id, ok := s.authenticate(w, r)
 		if !ok {
@@ -170,7 +173,7 @@ func (s *Server) Handler() http.Handler {
 		if s.applyCORS(w, r) {
 			return
 		}
-		ip, _, _ := net.SplitHostPort(r.RemoteAddr)
+		ip := s.clientIP(r)
 		if !s.allow("http:"+ip, 600) {
 			fail(w, 429, "too many requests")
 			return
@@ -182,23 +185,33 @@ func (s *Server) credentials(w http.ResponseWriter, r *http.Request) {
 	var d struct {
 		Username string `json:"username"`
 		Password string `json:"password"`
+		Email    string `json:"email"`
+		Terms    bool   `json:"terms"`
 	}
 	if e := decode(r, w, &d); e != nil {
-		fail(w, 400, "invalid credentials request")
+		failCode(w, 400, "bad_request", "Yêu cầu không hợp lệ.")
 		return
 	}
-	ip, _, _ := net.SplitHostPort(r.RemoteAddr)
-	if !s.allow("auth:"+ip, 20) {
-		fail(w, 429, "too many login attempts; retry in a minute")
+	if !s.allow("auth:"+s.clientIP(r), 20) {
+		failCode(w, 429, "rate_limited", "Bạn thử quá nhiều lần, vui lòng đợi một phút rồi thử lại.")
 		return
 	}
 	if s.Store == nil {
-		fail(w, 503, "database unavailable")
+		failCode(w, 503, "unavailable", "Cơ sở dữ liệu tạm thời không khả dụng.")
 		return
 	}
 	var tok, id string
 	var err error
 	if r.URL.Path == "/api/register" {
+		if !d.Terms {
+			failCode(w, 400, "terms_required", "Bạn cần đồng ý Điều khoản sử dụng và Chính sách quyền riêng tư để tạo tài khoản.")
+			return
+		}
+		email, ee := persistence.NormalizeEmail(d.Email)
+		if ee != nil {
+			credentialError(w, ee)
+			return
+		}
 		tok, id, err = s.Store.Register(r.Context(), d.Username, d.Password, func(id string) (json.RawMessage, error) {
 			var seed [8]byte
 			if _, e := rand.Read(seed[:]); e != nil {
@@ -207,11 +220,19 @@ func (s *Server) credentials(w http.ResponseWriter, r *http.Request) {
 			// Ô 0 là bản nháp: người chơi đặt tên và chọn nam/nữ sau khi đăng ký.
 			return json.Marshal(s.Game.NewDraft(id, binary.LittleEndian.Uint64(seed[:])))
 		})
+		if err == nil && email != "" {
+			// Email là tuỳ chọn: lỗi (đã dùng, kho không hỗ trợ) không làm hỏng việc đăng ký.
+			if a, ok := s.Store.(AccountStorage); ok {
+				if e := a.SetEmail(r.Context(), tok, email); e != nil {
+					log.Printf("register: bỏ qua email: %v", e)
+				}
+			}
+		}
 	} else {
 		tok, id, err = s.Store.Login(r.Context(), d.Username, d.Password)
 	}
 	if err != nil {
-		fail(w, 400, "Unable to sign in/register. Use a unique 3–24 character username and a 10–72 byte password.")
+		credentialError(w, err)
 		return
 	}
 	jsonResponse(w, 200, map[string]string{"token": tok, "character_id": id})

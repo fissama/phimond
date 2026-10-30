@@ -24,13 +24,14 @@ type Store struct {
 	slots    map[string][]string // id tài khoản -> id nhân vật theo ô
 	chars    map[string]json.RawMessage
 	receipts map[string]map[string]bool
+	resets   map[string]string // mã đặt lại -> username
 }
 
-type account struct{ id, password string }
+type account struct{ id, username, password, email string }
 
 // New tạo kho rỗng.
 func New() *Store {
-	return &Store{accounts: map[string]*account{}, tokens: map[string]string{}, owner: map[string]string{}, slots: map[string][]string{}, chars: map[string]json.RawMessage{}, receipts: map[string]map[string]bool{}}
+	return &Store{accounts: map[string]*account{}, tokens: map[string]string{}, owner: map[string]string{}, slots: map[string][]string{}, chars: map[string]json.RawMessage{}, receipts: map[string]map[string]bool{}, resets: map[string]string{}}
 }
 
 func randHex(n int) string {
@@ -49,18 +50,18 @@ func (m *Store) session(id string) string {
 func (m *Store) Register(_ context.Context, username, password string, initial func(string) (json.RawMessage, error)) (string, string, error) {
 	m.mu.Lock()
 	defer m.mu.Unlock()
-	if !usernamePattern.MatchString(username) || len(password) < 10 || len(password) > 72 {
-		return "", "", errors.New("username 3-24 ký tự [A-Za-z0-9_], mật khẩu 10-72 byte")
+	if err := persistence.ValidateRegistration(username, password); err != nil {
+		return "", "", err
 	}
 	if _, ok := m.accounts[username]; ok {
-		return "", "", errors.New("username đã tồn tại")
+		return "", "", persistence.ErrUsernameTaken
 	}
 	id := randHex(8)
 	raw, err := initial(id)
 	if err != nil {
 		return "", "", err
 	}
-	m.accounts[username] = &account{id: id, password: password}
+	m.accounts[username] = &account{id: id, username: username, password: password}
 	m.slots[id] = []string{id}
 	m.chars[id] = append(json.RawMessage{}, raw...)
 	m.receipts[id] = map[string]bool{}
@@ -71,7 +72,7 @@ func (m *Store) Login(_ context.Context, username, password string) (string, str
 	m.mu.Lock()
 	defer m.mu.Unlock()
 	a, ok := m.accounts[username]
-	if !usernamePattern.MatchString(username) || !ok || a.password != password {
+	if !usernamePattern.MatchString(username) || !ok || a.password != password || password == "" {
 		return "", "", persistence.ErrCredentials
 	}
 	return m.session(a.id), a.id, nil
@@ -185,4 +186,122 @@ func (m *Store) OpenSlot(_ context.Context, token string, slot int, initial func
 	}
 	m.tokens[token] = id
 	return id, nil
+}
+
+func (m *Store) byToken(token string) (*account, bool) {
+	id, ok := m.owner[token]
+	if !ok {
+		return nil, false
+	}
+	for _, a := range m.accounts {
+		if a.id == id {
+			return a, true
+		}
+	}
+	return nil, false
+}
+
+// AccountInfo trả tên đăng nhập và email của phiên.
+func (m *Store) AccountInfo(_ context.Context, token string) (persistence.AccountInfo, error) {
+	m.mu.Lock()
+	defer m.mu.Unlock()
+	a, ok := m.byToken(token)
+	if !ok {
+		return persistence.AccountInfo{}, persistence.ErrSession
+	}
+	return persistence.AccountInfo{Username: a.username, Email: a.email}, nil
+}
+
+// SetEmail đặt/xoá email (rỗng = xoá).
+func (m *Store) SetEmail(_ context.Context, token, email string) error {
+	email, err := persistence.NormalizeEmail(email)
+	if err != nil {
+		return err
+	}
+	m.mu.Lock()
+	defer m.mu.Unlock()
+	a, ok := m.byToken(token)
+	if !ok {
+		return persistence.ErrSession
+	}
+	if email != "" {
+		for _, o := range m.accounts {
+			if o != a && o.email == email {
+				return persistence.ErrEmailTaken
+			}
+		}
+	}
+	a.email = email
+	return nil
+}
+
+// CreatePasswordReset tạo mã đặt lại cho email.
+func (m *Store) CreatePasswordReset(_ context.Context, email string) (string, string, bool, error) {
+	email, err := persistence.NormalizeEmail(email)
+	if err != nil || email == "" {
+		return "", "", false, nil
+	}
+	m.mu.Lock()
+	defer m.mu.Unlock()
+	for _, a := range m.accounts {
+		if a.email == email {
+			t := randHex(32)
+			m.resets[t] = a.username
+			return t, a.username, true, nil
+		}
+	}
+	return "", "", false, nil
+}
+
+// ResetPassword đổi mật khẩu bằng mã một lần và thu hồi mọi phiên.
+func (m *Store) ResetPassword(_ context.Context, token, newPassword string) error {
+	m.mu.Lock()
+	defer m.mu.Unlock()
+	u, ok := m.resets[token]
+	if !ok {
+		return persistence.ErrResetToken
+	}
+	if err := persistence.ValidatePassword(u, newPassword); err != nil {
+		return err
+	}
+	a := m.accounts[u]
+	a.password = newPassword
+	delete(m.resets, token)
+	for t, id := range m.owner {
+		if id == a.id {
+			delete(m.owner, t)
+			delete(m.tokens, t)
+		}
+	}
+	return nil
+}
+
+// DeleteAccount xoá tài khoản của phiên (cần mật khẩu); trả id các nhân vật đã xoá.
+func (m *Store) DeleteAccount(_ context.Context, token, password string) ([]string, error) {
+	m.mu.Lock()
+	defer m.mu.Unlock()
+	a, ok := m.byToken(token)
+	if !ok {
+		return nil, persistence.ErrSession
+	}
+	if a.password != password {
+		return nil, persistence.ErrCredentials
+	}
+	var ids []string
+	for _, id := range m.slots[a.id] {
+		if id != "" {
+			ids = append(ids, id)
+			delete(m.chars, id)
+			delete(m.receipts, id)
+		}
+	}
+	delete(m.slots, a.id)
+	for t, id := range m.owner {
+		if id == a.id {
+			delete(m.owner, t)
+			delete(m.tokens, t)
+		}
+	}
+	delete(m.accounts, a.username)
+	return ids, nil
 }
