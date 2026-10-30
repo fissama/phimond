@@ -157,9 +157,9 @@ def summoning_hall():
              "arrive": {"x": 3, "y": 6, "face": "right"}, "requires": "has_pet"},
         ],
         "pedestals": [
-            {"index": 0, "x": 5, "y": 3, "starter": "tien_chuong", "species": "tien_chuong", "display": "showcase_flower"},
-            {"index": 1, "x": 9, "y": 2, "starter": "sa_hat", "species": "sa_hat", "display": "showcase_scorpion"},
-            {"index": 2, "x": 13, "y": 3, "starter": "xich_ung", "species": "xich_ung", "display": "showcase_unicorn"},
+            {"index": 0, "x": 5, "y": 3, "starter": "species_0021", "species": "species_0021", "display": "species_0144"},
+            {"index": 1, "x": 9, "y": 2, "starter": "species_0109", "species": "species_0109", "display": "species_0151"},
+            {"index": 2, "x": 13, "y": 3, "starter": "species_0071", "species": "species_0071", "display": "species_0149"},
         ],
         "npcs": [{"id": "summoner_mira", "x": 14, "y": 4, "face": "down"}],
         "spawn_zones": [],
@@ -204,7 +204,7 @@ def forest_main():
             {"id": "bia_shop", "x": 15, "y": 3, "face": "down"},
         ],
         "spawn_zones": [
-            {"id": "z1", "rect": [19, 3, 12, 7], "species": ["snail", "flower_fairy", "mushroom", "spider"],
+            {"id": "z1", "rect": [19, 3, 12, 7], "species": ["species_0111", "species_0022", "species_0023", "species_0112"],
              "max_alive": 4, "respawn_s": 25},
         ],
         "backdrop": "forest-wall-far",
@@ -248,9 +248,9 @@ def forest_deep():
             {"id": "sau_free", "x": 4, "y": 9, "face": "up"},
         ],
         "spawn_zones": [
-            {"id": "z1", "rect": [8, 3, 9, 7], "species": ["mushroom", "spider", "wolf"], "max_alive": 3, "respawn_s": 30},
-            {"id": "z2", "rect": [19, 3, 8, 7], "species": ["wolf", "spider", "flower_fairy"], "max_alive": 3, "respawn_s": 30},
-            {"id": "z3", "rect": [28, 3, 7, 7], "species": ["snail", "mushroom"], "max_alive": 2, "respawn_s": 30},
+            {"id": "z1", "rect": [8, 3, 9, 7], "species": ["species_0023", "species_0112", "species_0074"], "max_alive": 3, "respawn_s": 30},
+            {"id": "z2", "rect": [19, 3, 8, 7], "species": ["species_0074", "species_0112", "species_0022"], "max_alive": 3, "respawn_s": 30},
+            {"id": "z3", "rect": [28, 3, 7, 7], "species": ["species_0111", "species_0023"], "max_alive": 2, "respawn_s": 30},
         ],
         "backdrop": "forest-wall-far",
     }
