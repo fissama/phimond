@@ -31,6 +31,18 @@ Các mục đánh giá gameplay thuộc Phase sau, giữ lại ở dạng nợ. 
 | D20 | Combat | Trận 3v3 (3 pet ra trận cùng lúc) và quyền đổi pet giữa trận: P02/P07. Đội hình hiện chỉ để chọn **pet ra trận (vị trí đầu)** và 2 pet dự bị mang theo (`character.party`, intent `pet.party_set`, tối đa 3 con, pet retired không dùng được). Tên `party` trùng với "party người chơi" (tối đa 3 người) của P07: đổi tên khi làm P07, chưa đổi ở v1.0.x. | P02 / P07 |
 | D21 | Server | Snapshot chưa gửi `xp_next` (EXP cần để lên cấp) và cấp quái trong BattleUnit đủ cho mọi pha; client vẫn dùng công thức cứng cấp × 25 (D14). Phase sau quyết định hợp đồng dữ liệu. | Phase sau |
 | D22 | Huyết Chiến Đài | Chỉ có cảnh và lối vào ở v1.0.x. Logic (giờ mở cố định hằng ngày, vào qua nhiệm vụ phụ ở Quảng Trường) thuộc phase nhiệm vụ/sự kiện. | Phase nhiệm vụ |
-| D23 | P11 | Áp P11 cho pet đang chạy: mô hình chỉ số của server vẫn là mô hình cũ (strength/agility/... + chất lượng/tăng trưởng ngẫu nhiên). Danh mục P11 (160 loài, base + tăng trưởng + MP) đổi cả hệ và vai trò của 3 loài khởi đầu (ví dụ Tiên Chưởng thành hệ đất, vai tank), nên việc áp phải cùng P13 (kỹ năng) và cân bằng lại quái. Chờ quyết định phạm vi của chủ dự án (xem tin nhắn 2026-10-29). | P11 + P13 runtime |
+| D23 | P11 | (ĐÃ ÁP 2026-10-30, xem `PLAN-P11-P13-RUNTIME.md`; giữ dòng để truy vết) Áp P11 cho pet đang chạy: mô hình chỉ số của server vẫn là mô hình cũ (strength/agility/... + chất lượng/tăng trưởng ngẫu nhiên). Danh mục P11 (160 loài, base + tăng trưởng + MP) đổi cả hệ và vai trò của 3 loài khởi đầu (ví dụ Tiên Chưởng thành hệ đất, vai tank), nên việc áp phải cùng P13 (kỹ năng) và cân bằng lại quái. Chờ quyết định phạm vi của chủ dự án (xem tin nhắn 2026-10-29). | P11 + P13 runtime |
 | D24 | Nhạc | Bộ phát nhạc nền đã có (`music.ts`); file nhạc do chủ dự án tải (CC0) hoặc tạo bằng MiniMax theo `AUDIO-MUSIC.md`. Chưa có bài cho Triệu Linh Điện và Hoàng Môn. | Khi có file |
 | D25 | Đo | Đo hiệu năng iPhone/Safari: chủ dự án tự đo sau khi hoàn thiện (thay D4 phần "ai đo"). Lớp tiền cảnh mờ (FgBlurPass) và bóng vẽ là phần mới cần đo. | Sau hoàn thiện |
+
+## Bổ sung 2026-10-30 (áp P10/P11/P13 vào v1.0.0)
+
+| ID | Nguồn | Việc | Khi nào |
+|---|---|---|---|
+| D26 | P15 | `wild_scale` (0,6) và `pack_scale` (1/0,55/0,4) là lớp điều chỉnh **tạm**. Sau P11, trận dài hơn: Xích Ưng ~8 lượt, hai pet còn lại 11–25 lượt ở Bìa Rừng bằng "Tự động" (thắng ≥ 90%). Đường cong quái (cấp, chỉ số, kỹ năng AI) cần P15. `balance_test.go` nới trần lượt tới 25. | P15 |
+| D27 | P13 | Hiện chỉ có chiến đấu 1 pet vs 1–3 quái. Các kỹ năng nhắm đồng đội (hồi/khiên/buff đồng đội, hồi sinh, Suy tưởng) tự rơi về bản thân hoặc không dùng được; mục tiêu đồng đội và hồi sinh chờ 3v3. | P02 / P07 |
+| D28 | P11/P16 | Trứng và nở trứng chưa có: pet mới chỉ đến từ bắt, khởi đầu và tổng hợp (con sinh ra Lv1, toàn bộ bậc rút mới). Egg/hatch chờ P16. | P16 |
+| D29 | P13 | Pet khởi đầu không có kỹ năng nào; người chơi phải tới thầy ở Bìa Rừng mới có đòn hệ. Nếu playtest thấy gắt, cân nhắc nhiệm vụ đầu tặng sẵn một kỹ năng. Chưa có nhiệm vụ hướng dẫn việc này. | Phase nội dung |
+| D30 | P13 | Nhịp độc/cháy làm tròn theo đơn vị 1/1000 của tấn công nguồn lúc áp; chưa khớp từng chữ số với bảng P13 cho các trường hợp biên. Cần đối chiếu khi có bảng kiểm. | P13 QA |
+| D31 | Migration | Save cũ: kỹ năng cũ bị bỏ (không đối ứng 1-1 sang 97 kỹ năng mới), bậc về B, tín dụng dòng dõi 0. Chấp nhận vì chưa có người chơi thật. Phải dừng migration hoặc giữ bảng ánh xạ kỹ năng nếu sau này có dữ liệu thật. | Trước khi public |
+| D32 | Client | `viName` và `i18n/vi.json` còn mục cho tên tiếng Anh cũ; tên loài mới đã là tiếng Việt từ catalog. Chưa xóa mục cũ. | Dọn dẹp |

@@ -523,3 +523,11 @@ button:disabled { opacity: 0.45; cursor: default; }
 .hud-minimap canvas { border-radius: 2px; width: 176px; }
 @media (max-width: 520px) { .hud-minimap { padding: 2px 4px; border-width: 10px; border-image-width: 10px; } .hud-minimap canvas { width: 88px; } }
 .party-note { margin: 0 0 8px; font-size: 13px; line-height: 1.4; }
+
+/* P11: bậc tăng trưởng từng chỉ số (hiện sau khi giám định) */
+.pd-stats .grade { font-weight: 700; margin-left: 4px; opacity: .9; }
+.pd-stats .g-D, .pd-stats .g-C { color: #b9855d; }
+.pd-stats .g-A { color: #6fbf73; }
+.pd-stats .g-S { color: #4aa3e0; }
+.pd-stats .g-SS { color: #b46be0; }
+.pd-stats .g-Perfect { color: #f0b429; text-shadow: 0 0 6px rgba(240, 180, 41, .5); }

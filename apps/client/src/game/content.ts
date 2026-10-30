@@ -76,17 +76,17 @@ export const MAP_NAMES: Record<string, string> = {
 };
 
 export const STARTERS: Record<string, { name: string; blurb: string }> = {
-  tien_chuong: { name: 'Tiên Chưởng', blurb: 'Hệ Quang, thiên về phép: đòn Quang Ba mạnh, sau này học được hồi máu.' },
-  sa_hat: { name: 'Sa Hạt', blurb: 'Hệ Thổ, thiên về đánh: chắc chắn, dễ chơi nhất cho người mới.' },
-  xich_ung: { name: 'Xích Ưng', blurb: 'Hệ Vô, nhanh nhẹn và trâu bò: thường ra đòn trước.' },
+  species_0021: { name: 'Tiên Chưởng', blurb: 'Hệ Thổ, thiên về phòng thủ: máu dày, giáp chắc nhưng đánh yếu; hợp học Giáp hộ thân, Hộ thuẫn.' },
+  species_0109: { name: 'Sa Hạt', blurb: 'Hệ Thổ, thiên về phép: sát thương phép cao, máu mỏng; học Linh kích Địa để bắt đầu.' },
+  species_0071: { name: 'Xích Ưng', blurb: 'Hệ Hỏa, thiên về vật lý: đánh mạnh và nhanh, dễ chơi nhất cho người mới; học Cường kích để bắt đầu.' },
 };
 
 export const ELEMENT_VI: Record<string, string> = { earth: 'Thổ', water: 'Thủy', wind: 'Phong', fire: 'Hỏa', neutral: 'Vô', light: 'Quang', dark: 'Ám' };
 export const RACE_VI: Record<string, string> = { plant: 'Thực vật', insect: 'Côn trùng', beast: 'Thú', undead: 'Bất tử', dragon: 'Rồng', fish: 'Thủy tộc', bird: 'Phi cầm', demon: 'Ma' };
 export const ITEM_DESC: Record<string, string> = {
   capture_seal: 'Dùng trong trận để bắt linh thú hoang. Quái càng yếu máu càng dễ bắt.',
-  potion: 'Hồi 35 HP cho linh thú. Dùng được trong và ngoài trận.',
-  ether: 'Hồi 20 MP cho linh thú. Dùng được trong và ngoài trận.',
+  potion: 'Hồi 120 HP cho linh thú. Dùng được trong và ngoài trận.',
+  ether: 'Hồi 30 MP cho linh thú. Dùng được trong và ngoài trận.',
   synthesis_soul: 'Nguyên liệu tổng hợp thế hệ mới ở Điền Trang (mở ở bản sau).',
   blessing_leaf: 'Nguyên liệu cường hóa linh thú (mở ở bản sau).',
 };
@@ -117,8 +117,26 @@ export function eventText(e: BattleEvent, unitName: (id?: string) => string = ()
       return `Gặp ${viName(e.message.replace(/^Encountered /, ''))}!`;
     case 'skill_cast':
       return `${a} dùng ${viName(e.message.split(' used ')[1] ?? '')}`;
-    case 'damage':
-      return `${t} mất ${e.amount ?? 0} HP`;
+    case 'damage': {
+      const d = e.detail ?? '';
+      const tag = [d.includes('crit') ? 'Bạo kích!' : '', d.includes('super') ? 'Khắc hệ!' : d.includes('weak') ? 'Bị kháng hệ' : ''].filter(Boolean).join(' ');
+      const src = d === 'poison' ? ' (Độc)' : d === 'burn' ? ' (Bỏng)' : '';
+      return `${t} mất ${e.amount ?? 0} HP${src}${tag ? ` · ${tag}` : ''}`;
+    }
+    case 'shield_absorb':
+      return `Khiên của ${t} hấp thụ ${e.amount ?? 0} sát thương`;
+    case 'status_blocked':
+      return `${t} không thể nhiễm hiệu ứng này`;
+    case 'counter':
+      return `${a} phản kích!`;
+    case 'unit_down':
+      return `${t} gục ngã`;
+    case 'action_fallback':
+      return `${a} đổi hành động`;
+    case 'mp_burn':
+      return `${t} bị rút ${e.amount ?? 0} MP`;
+    case 'pet_upgrade':
+      return `Nâng bậc kỹ năng: ${viName(e.message)}`;
     case 'heal':
       return `${t} hồi ${e.amount ?? 0} HP`;
     case 'miss':
@@ -135,8 +153,6 @@ export function eventText(e: BattleEvent, unitName: (id?: string) => string = ()
       return 'Hiệu ứng chí mạng phát tác';
     case 'buff_applied':
       return `${t || 'Linh thú'} được cường hóa`;
-    case 'defend':
-      return `${viName(e.message.replace(/ braces for impact$/, ''))} phòng thủ`;
     case 'action_blocked':
       return 'Không thể hành động lượt này';
     case 'item_spend':

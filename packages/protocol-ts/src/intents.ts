@@ -1,6 +1,6 @@
 // Danh sách intent hợp lệ và dữ liệu đi kèm. Số phải là JSON integer.
 export type Direction = 'left' | 'right' | 'up' | 'down';
-export type BattleChoice = 'attack' | 'skill' | 'capture' | 'defend' | 'item' | 'auto' | 'flee';
+export type BattleChoice = 'attack' | 'skill' | 'capture' | 'item' | 'auto' | 'flee';
 
 export interface IntentMap {
   'auth.session': { token: string };
@@ -19,7 +19,9 @@ export interface IntentMap {
   'pet.activate': { pet_id: string };
   /** v1.0.1: đặt đội hình (1–3 linh thú); phần tử đầu thành con chính. */
   'pet.party_set': { pet_ids: string[] };
-  'pet.learn': { pet_id: string; skill_id: string };
+  'pet.learn': { pet_id: string; skill_id: string; /** Bắt buộc khi pet đã đủ 6 kỹ năng: kỹ năng bị thay. */ replace_id?: string };
+  /** P13: nâng bậc kỹ năng sát thương/hồi phục (bậc 2, rồi 3) tại NPC dạy kỹ năng. */
+  'pet.skill_upgrade': { pet_id: string; skill_id: string };
   'pet.release': { pet_id: string };
   'pet.strengthen': { pet_id: string; donor_id: string };
   'pet.heal': Record<string, never>;

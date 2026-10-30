@@ -14,6 +14,8 @@ export const BattleEvent = z
     target_id: z.string().optional().default(''),
     amount: z.number().optional().default(0),
     message: z.string().optional().default(''),
+    /** Nhãn phụ P13: crit, super, weak, poison, burn, grace, resisted… (chỉ để hiển thị). */
+    detail: z.string().optional().default(''),
   })
   .passthrough();
 export type BattleEvent = z.infer<typeof BattleEvent>;
@@ -30,6 +32,11 @@ export const BattleUnit = z
     mp: z.number().optional().default(0),
     max_mp: z.number().optional().default(0),
     statuses: list(z.object({ id: z.string(), remaining: z.number() }).passthrough()),
+    /** Buff/debuff chỉ số phần trăm: amount_bp > 0 là tăng (điểm cơ bản). */
+    buffs: list(z.object({ id: z.string(), stat: z.string(), amount_bp: z.number(), remaining: z.number() }).passthrough()),
+    shield: z.object({ amount: z.number() }).passthrough().nullable().optional().default(null),
+    /** Kỹ năng → vòng đầu tiên dùng lại được. */
+    cooldowns: rec(z.number()),
   })
   .passthrough();
 export type BattleUnit = z.infer<typeof BattleUnit>;
@@ -58,6 +65,18 @@ export const Pet = z
     strengthening: z.number().optional().default(0),
     retired: z.boolean().optional().default(false),
     skills: list(z.string()),
+    /** Bậc kỹ năng (chỉ ghi khi > 1). */
+    skill_ranks: rec(z.number()),
+    learned: list(z.string()),
+    inherited_pool: list(z.string()),
+    /** Bậc tăng trưởng từng chỉ số (D…Perfect); server chỉ gửi sau khi giám định. */
+    grades: rec(z.string()).optional(),
+    bonus_milli: rec(z.number()).optional(),
+    attack: z.number().optional().default(0),
+    magic: z.number().optional().default(0),
+    defense: z.number().optional().default(0),
+    speed: z.number().optional().default(0),
+    status_resistance: z.number().optional().default(0),
     parents: list(z.string()),
     hp: z.number().optional().default(0),
     mp: z.number().optional().default(0),

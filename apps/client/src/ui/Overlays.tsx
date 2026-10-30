@@ -8,7 +8,7 @@ import { PRESETS, settings, settingsVolatile, updateSettings, type Quality } fro
 import { closeOverlay, overlay } from '../state/ui.ts';
 import { session } from '../state/app.ts';
 import { PetPortrait } from './PetArt.tsx';
-import { iconFor, uiUrl } from './skin.ts';
+import { iconFor } from './skin.ts';
 import { sfx } from './sound.ts';
 import { MAX_PARTY, partyOf } from '../game/party.ts';
 import { npcLabel, questHint, questViews, type QuestDef } from '../game/quests.ts';
@@ -161,8 +161,9 @@ function Pets({ world, ch }: { world: GameWorld; ch: Character }) {
 function PetDetail({ world, ch, p, onBack }: { world: GameWorld; ch: Character; p: Pet; onBack: () => void }) {
   const sp = world.content.cat.species[p.species_id] as unknown as { element?: string; race?: string; archetype?: string } | undefined;
   const x = p as unknown as Record<string, number | Record<string, number> | undefined>;
-  const stat = (k: string) => (typeof x[k] === 'number' ? Math.round((x[k] as number) * (k === 'critical' ? 100 : 1)) : '—');
-  const res = (x.resistances as Record<string, number> | undefined) ?? undefined;
+  const stat = (k: string) => (typeof x[k] === 'number' ? Math.round(x[k] as number) : '—');
+  const grades = p.grades as Record<string, string> | undefined;
+  const grade = (k: string) => (p.appraised && grades?.[k] ? <small class={`grade g-${grades[k]}`}> {grades[k]}</small> : null);
   return (
     <>
       <h2>{viName(p.name)}</h2>
@@ -181,47 +182,33 @@ function PetDetail({ world, ch, p, onBack }: { world: GameWorld; ch: Character; 
           </div>
         </div>
         <div class="pd-stats">
-          <div><em>HP</em><b>{p.hp}/{p.max_hp}</b></div>
+          <div><em>HP</em><b>{p.hp}/{p.max_hp}{grade('hp')}</b></div>
           <div><em>MP</em><b>{p.mp}/{p.max_mp}</b></div>
-          <div><em>Tấn công</em><b>{stat('attack')}</b></div>
-          <div><em>Phép</em><b>{stat('magic')}</b></div>
-          <div><em>Phòng thủ</em><b>{stat('defense')}</b></div>
-          <div><em>Tốc độ</em><b>{stat('speed')}</b></div>
-          <div><em>Chí mạng</em><b>{stat('critical')}%</b></div>
-          <div><em>EXP</em><b>{p.xp ?? 0}/{p.level * 25}</b></div>
+          <div><em>Tấn công</em><b>{stat('attack')}{grade('atk')}</b></div>
+          <div><em>Phép</em><b>{stat('magic')}{grade('mag')}</b></div>
+          <div><em>Phòng thủ</em><b>{stat('defense')}{grade('def')}</b></div>
+          <div><em>Tốc độ</em><b>{stat('speed')}{grade('spd')}</b></div>
+          <div><em>Kháng trạng thái</em><b>{stat('status_resistance')}{grade('status_resistance')}</b></div>
+          <div><em>EXP</em><b>{p.level >= levelCapOf(world, p) ? 'Tối đa' : `${p.xp ?? 0}/${p.level * 25}`}</b></div>
         </div>
       </div>
       <h3 class="pd-h">Kỹ năng</h3>
       <div class="pd-skills">
+        {p.skills.length === 0 && <p class="muted">Chưa học kỹ năng nào (đòn thường luôn dùng được). Học ở NPC dạy kỹ năng.</p>}
         {p.skills.map((id) => {
-          const sk = world.content.cat.skills[id] as unknown as { name: string; mp_cost?: number; power?: number; kind?: string; element?: string } | undefined;
+          const sk = world.content.cat.skills[id] as unknown as SkillDef | undefined;
+          const rank = p.skill_ranks?.[id] ?? 1;
           return (
             <div key={id} class="pd-skill">
-              <b>{sk?.name ?? id}</b>
-              <span class="muted">
-                {sk?.kind === 'magic' ? 'Phép' : sk?.kind === 'physical' ? 'Vật lý' : sk?.kind === 'heal' ? 'Hồi máu' : 'Hiệu ứng'}
-                {sk?.element ? ` · ${ELEMENT_VI[sk.element] ?? sk.element}` : ''}
-                {sk?.power ? ` · Uy lực ${sk.power}` : ''} · {sk?.mp_cost ?? 0} MP
-              </span>
+              <b>
+                {sk?.name ?? id} {rank > 1 ? '★'.repeat(rank - 1) : ''}
+              </b>
+              <span class="muted">{skillLine(sk)}</span>
             </div>
           );
         })}
       </div>
-      {res && (
-        <>
-          <h3 class="pd-h">Kháng hệ</h3>
-          <div class="pd-res">
-            {Object.entries(res).map(([k, v]) => (
-              <span key={k} class={v > 0 ? 'pos' : v < 0 ? 'neg' : ''}>
-                <img class="el" src={uiUrl(`element_${k}`)} alt="" onError={(e) => ((e.currentTarget as HTMLImageElement).style.display = 'none')} />
-                <em>{ELEMENT_VI[k] ?? k}</em>
-                <b>{v}%</b>
-              </span>
-            ))}
-          </div>
-        </>
-      )}
-      {!p.appraised && <p class="muted">Chưa giám định: tiềm năng và kháng còn ẩn.</p>}
+      {!p.appraised && <p class="muted">Chưa giám định: bậc tăng trưởng (D → Perfect) của từng chỉ số còn ẩn.</p>}
       <div class="row">
         <button class="btn" data-testid="pet-detail-back" onClick={onBack}>
           Danh sách linh thú
@@ -435,7 +422,7 @@ function NpcDialog({ npcId, line, world, ch, onTab }: { npcId: string; line: str
         </div>
       )}
       {tab === 'shop' && <Shop world={world} ch={ch} />}
-      {tab === 'learn' && <Learn world={world} ch={ch} cost={rules.learn_cost ?? 0} />}
+      {tab === 'learn' && <Learn world={world} ch={ch} />}
       {tab === 'quest' && <QuestDesk world={world} ch={ch} npcId={npcId} />}
       <div class="row">
         <button class="btn" data-testid="npc-close" onClick={closeOverlay}>
@@ -495,35 +482,104 @@ function Shop({ world, ch }: { world: GameWorld; ch: Character }) {
   );
 }
 
-function Learn({ world, ch, cost }: { world: GameWorld; ch: Character; cost: number }) {
+/** Cấp tối đa theo Sao (P11: 60/70/80/90/100). */
+const levelCapOf = (world: GameWorld, p: Pet) => [60, 70, 80, 90, 100][Math.max(1, Math.min(5, (world.content.cat.species[p.species_id] as unknown as { star?: number } | undefined)?.star ?? p.star ?? 1)) - 1]!;
+type SkillDef = { name: string; kind?: string; element?: string; mp?: number; cooldown?: number; learn_level?: number; power_pm?: number; description?: string; rank_policy?: string };
+/** Kỹ năng dùng chung mọi loài học được (đồng bộ server: skills_learn.go). */
+const COMMON_SKILLS = ['strike', 'heal', 'guard'];
+const KIND_VI: Record<string, string> = { physical: 'Vật lý', magic: 'Phép', heal: 'Hồi máu', shield: 'Khiên', buff: 'Cường hóa', control: 'Khống chế', debuff: 'Suy yếu', cleanse: 'Giải trừ', dispel: 'Xua tan', resource: 'Hồi MP', revive: 'Hồi sinh' };
+/** Giá học bậc 1 = 20 + 10 × cấp học; học lại kỹ năng cũ của chính pet còn 20% (làm tròn lên). */
+const learnPrice = (s: SkillDef | undefined, relearn: boolean) => {
+  const base = 20 + 10 * (s?.learn_level ?? 1);
+  return relearn ? Math.ceil((base * 20) / 100) : base;
+};
+/** Nâng bậc: bậc 2 cần Lv ≥ max(20, cấp học+15), giá 3×; bậc 3 cần Lv ≥ max(40, cấp học+30), giá 6×. */
+const upgradeInfo = (s: SkillDef | undefined, rank: number) => {
+  const lv = s?.learn_level ?? 1;
+  const base = 20 + 10 * lv;
+  return rank === 1 ? { gate: Math.max(20, lv + 15), price: base * 3 } : { gate: Math.max(40, lv + 30), price: base * 6 };
+};
+const skillLine = (s: SkillDef | undefined) =>
+  `${KIND_VI[s?.kind ?? ''] ?? 'Hiệu ứng'}${s?.element && s.element !== 'neutral' ? ` · ${ELEMENT_VI[s.element] ?? s.element}` : ''}${s?.power_pm ? ` · Uy lực ${(s.power_pm / 1000).toFixed(2)}` : ''} · ${s?.mp ?? 0} MP${s?.cooldown ? ` · hồi ${s.cooldown} lượt` : ''}`;
+
+function Learn({ world, ch }: { world: GameWorld; ch: Character }) {
+  const [replacing, setReplacing] = useState<string | null>(null);
   const pet = ch.pets.find((p) => p.id === ch.active_pet_id);
   if (!pet) return <p class="muted">Bạn chưa có linh thú.</p>;
   const sp = world.content.cat.species[pet.species_id] as unknown as { skills?: string[] };
-  const skills = (sp?.skills ?? []).filter((s) => !pet.skills.includes(s));
+  const defs = world.content.cat.skills as unknown as Record<string, SkillDef>;
+  const slots = 6;
+  const full = pet.skills.length >= slots;
+  const pool = [...new Set([...(sp?.skills ?? []), ...(pet.inherited_pool ?? []), ...COMMON_SKILLS])].filter((id) => defs[id] && !pet.skills.includes(id));
+  const learn = (id: string, replace?: string) => {
+    setReplacing(null);
+    void world.intent('pet.learn', replace ? { pet_id: pet.id, skill_id: id, replace_id: replace } : { pet_id: pet.id, skill_id: id });
+  };
   return (
-    <div class="list">
+    <div class="list" data-testid="learn-panel">
       <div class="muted">
-        Dạy cho {viName(pet.name)} (Lv {pet.level}) · {cost} vàng mỗi kỹ năng
+        Dạy cho {viName(pet.name)} (Lv {pet.level}) · đã học {pet.skills.length}/{slots} kỹ năng · đòn thường không chiếm ô
       </div>
-      {skills.length === 0 && <p class="muted">Linh thú đã học hết kỹ năng của loài.</p>}
-      {skills.map((id) => {
-        const s = world.content.cat.skills[id] as unknown as { name: string; learn_level?: number; mp_cost?: number };
+      {pet.skills.length > 0 && <h3 class="pd-h">Đã học</h3>}
+      {pet.skills.map((id) => {
+        const s = defs[id];
+        const rank = pet.skill_ranks?.[id] ?? 1;
+        const up = s?.rank_policy === 'damage_heal_3_ranks' && rank < 3 ? upgradeInfo(s, rank) : null;
+        return (
+          <div class="item" key={id} data-testid={`learned-${id}`}>
+            {iconFor(`skill_${id}`) && <img class="icon" src={iconFor(`skill_${id}`)!} alt="" />}
+            <div class="grow">
+              {s?.name ?? id} {rank > 1 ? '★'.repeat(rank - 1) : ''}
+              <div class="muted">{skillLine(s)}</div>
+            </div>
+            {up && (
+              <button class="btn small" data-testid={`upgrade-${id}`} disabled={pet.level < up.gate || ch.gold < up.price} title={pet.level < up.gate ? `Cần Lv ${up.gate}` : ''} onClick={() => void world.intent('pet.skill_upgrade', { pet_id: pet.id, skill_id: id })}>
+                Nâng bậc {rank + 1} · {up.price} vàng{pet.level < up.gate ? ` (Lv ${up.gate})` : ''}
+              </button>
+            )}
+          </div>
+        );
+      })}
+      <h3 class="pd-h">Có thể học</h3>
+      {pool.length === 0 && <p class="muted">Linh thú đã học hết kỹ năng được phép.</p>}
+      {pool.map((id) => {
+        const s = defs[id];
         const lv = s?.learn_level ?? 1;
+        const relearn = (pet.learned ?? []).includes(id);
+        const price = learnPrice(s, relearn);
         return (
           <div class="item" key={id}>
             {iconFor(`skill_${id}`) && <img class="icon" src={iconFor(`skill_${id}`)!} alt="" />}
             <div class="grow">
               {s?.name ?? id}
               <div class="muted">
-                Cần Lv {lv} · {s?.mp_cost ?? 0} MP
+                Cần Lv {lv} · {skillLine(s)}
               </div>
+              {s?.description && <div class="muted">{s.description}</div>}
             </div>
-            <button class="btn small" disabled={pet.level < lv || ch.gold < cost} onClick={() => void world.intent('pet.learn', { pet_id: pet.id, skill_id: id })}>
-              Học
+            <button class="btn small" data-testid={`learn-${id}`} disabled={pet.level < lv || ch.gold < price} onClick={() => (full ? setReplacing(id) : learn(id))}>
+              {full ? 'Thay thế…' : 'Học'} · {price} vàng{relearn ? ' (học lại)' : ''}
             </button>
           </div>
         );
       })}
+      {replacing && (
+        <div class="item" data-testid="learn-replace">
+          <div class="grow">
+            <b>Đã đủ {slots} kỹ năng.</b> Chọn kỹ năng bị quên để học {defs[replacing]?.name ?? replacing} (kỹ năng quên đi mất cả bậc nâng):
+            <div class="row">
+              {pet.skills.map((id) => (
+                <button key={id} class="btn small" onClick={() => learn(replacing, id)}>
+                  {defs[id]?.name ?? id}
+                </button>
+              ))}
+              <button class="btn small" onClick={() => setReplacing(null)}>
+                Hủy
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -569,13 +625,13 @@ function PedestalConfirm({ index, world }: { index: number; world: GameWorld }) 
   const st = STARTERS[ped.starter] ?? { name: ped.starter, blurb: '' };
   const sp = world.content.cat.species[ped.starter] as unknown as { element?: string; race?: string; base?: Record<string, number>; skills?: string[] } | undefined;
   const b = sp?.base ?? {};
+  // Thang thanh: HP/10 cho cùng thang với các chỉ số khác; tối đa ~50.
   const bar = (label: string, v = 0) => (
     <div class="st-bar">
       <em>{label}</em>
-      <i style={{ width: `${Math.min(100, v * 8)}%` }} />
+      <i style={{ width: `${Math.min(100, v * 2)}%` }} />
     </div>
   );
-  const strike = (sp?.skills ?? []).find((id) => id !== 'attack' && /strike$/.test(id));
   return (
     <>
       <h2>Bệ triệu hồi: {st.name}</h2>
@@ -585,16 +641,16 @@ function PedestalConfirm({ index, world }: { index: number; world: GameWorld }) 
           <div class="pd-tags">
             {sp?.element && <span>Hệ {ELEMENT_VI[sp.element] ?? sp.element}</span>}
             {sp?.race && <span>{RACE_VI[sp.race] ?? sp.race}</span>}
-            {strike && <span>Biết sẵn: {world.content.skillName(strike)}</span>}
           </div>
           <p style={{ margin: '6px 0' }}>{st.blurb}</p>
           <div class="st-bars">
-            {bar('Sức mạnh', b.strength)}
-            {bar('Phép', b.intelligence)}
-            {bar('Thể lực', b.stamina)}
-            {bar('Tốc độ', b.agility)}
+            {bar('Máu', (b.hp ?? 0) / 10)}
+            {bar('Tấn công', b.atk)}
+            {bar('Phép', b.mag)}
+            {bar('Phòng thủ', b.def)}
+            {bar('Tốc độ', b.spd)}
           </div>
-          <div class="muted">Linh thú sẽ theo bạn suốt hành trình. Sau khi chọn, bạn được đưa thẳng tới Bìa Rừng Lục Bảo.</div>
+          <div class="muted">Linh thú mới chưa biết kỹ năng nào: học đòn đầu tiên ở thầy dạy trong Bìa Rừng Lục Bảo (30 vàng). Sau khi chọn, bạn được đưa thẳng tới đó.</div>
         </div>
       </div>
       <div class="row">

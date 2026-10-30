@@ -186,7 +186,8 @@ test('menu: chi tiết linh thú và dùng thuốc ngoài trận', async ({ page
   await page.getByTestId('menu-pets').click();
   await page.locator('[data-testid^="pet-detail-"]').first().click();
   await expect(page.getByText('Kỹ năng', { exact: true })).toBeVisible();
-  await expect(page.locator('.pd-skill')).toHaveCount(2); // Đòn Đánh + đòn hệ biết sẵn
+  await expect(page.locator('.pd-skill')).toHaveCount(0); // P13: pet mới 0/6 kỹ năng, học ở thầy trong Bìa Rừng
+  await expect(page.getByText('Chưa học kỹ năng nào')).toBeVisible();
   await page.getByTestId('overlay-close').click();
   await page.getByTestId('menu-open').click();
   await page.getByTestId('menu-bag').click();
@@ -222,6 +223,28 @@ test('NPC: tới gần, hội thoại, hồi phục; cổng khóa báo chưa m�
   await walk(page, { x: 37, y: 5 }, 'city_palace_gate');
   await walk(page, { x: 25, y: 6 }); // cổng sang Chợ (mép phải Hoàng Môn)
   await expect(page.getByTestId('toasts')).toContainText('chưa mở', { timeout: 10_000 });
+});
+
+test('học kỹ năng đầu tiên ở thầy Bìa Rừng, rồi dùng được trong trận', async ({ page }) => {
+  test.setTimeout(180_000);
+  await register(page);
+  await chooseStarter(page, 2); // Xích Ưng: vật lý, học Cường kích
+  await act(page, { kind: 'npc', id: 'bia_skill' });
+  await expect(page.getByTestId('npc-name')).toBeVisible({ timeout: 15_000 });
+  await page.getByTestId('npc-role-learn').click();
+  await expect(page.getByTestId('learn-panel')).toContainText('đã học 0/6');
+  await page.getByTestId('learn-strike').click();
+  await expect(page.getByTestId('learned-strike')).toBeVisible({ timeout: 10_000 });
+  await expect(page.getByTestId('learn-panel')).toContainText('đã học 1/6');
+  await page.getByTestId('npc-close').click();
+  const spawn = await page.evaluate(() => {
+    const w = (window as unknown as { __phimond: { world: { content: { map(id: string): { wild_spawns: { id: string }[] } } } } }).__phimond.world;
+    return w.content.map('emerald_forest_main_woods').wild_spawns[0]!.id;
+  });
+  await act(page, { kind: 'spawn', id: spawn });
+  await expect(page.getByTestId('battle')).toBeVisible({ timeout: 30_000 });
+  await page.getByTestId('act-skill').click();
+  await expect(page.getByTestId('skill-strike')).toBeVisible();
 });
 
 test('cài đặt đồ họa lưu qua tải lại trang', async ({ page }) => {

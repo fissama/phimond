@@ -54,7 +54,8 @@ export function petAtlas(): PetAtlas | null {
 /** Atlas hiển thị cho một loài server (14 loài cũ → atlas P10, nợ N02). */
 export function petArt(speciesId: string) {
   if (!pets) return null;
-  const sid = pets.legacy[speciesId]?.species ?? Object.keys(pets.species)[0];
+  // Id chuẩn P10 (species_NNNN) tra thẳng; id loài cũ (save trước P11) qua bảng legacy.
+  const sid = pets.species[speciesId] ? speciesId : (pets.legacy[speciesId]?.species ?? Object.keys(pets.species)[0]);
   return sid ? { id: sid, ...pets.species[sid]! } : null;
 }
 

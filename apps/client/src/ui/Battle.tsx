@@ -25,7 +25,8 @@ function labelOf(units: BattleT['units'], id?: string): string {
   return same.length > 1 ? `${base} ${String.fromCharCode(65 + same.indexOf(u))}` : base;
 }
 
-type Choice = 'attack' | 'skill' | 'capture' | 'defend' | 'item' | 'auto' | 'flee';
+type Choice = 'attack' | 'skill' | 'capture' | 'item' | 'auto' | 'flee';
+const STAT_VI: Record<string, string> = { atk: 'ATK', mag: 'MAG', def: 'DEF', spd: 'SPD', status_resistance: 'KTT' };
 const BANNER: Record<string, string> = { win: 'battle_win_banner', loss: 'battle_loss_banner', capture: 'battle_capture_banner' };
 const RESULT: Record<string, string> = { win: 'Chiến thắng!', loss: 'Thất bại', capture: 'Bắt thành công!', flee: 'Đã chạy thoát', draw: 'Hòa' };
 
@@ -243,7 +244,15 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
         )}
         <MiniBar kind="hp" v={u.hp} max={u.max_hp} label="HP" />
         <MiniBar kind="mp" v={u.mp} max={u.max_mp} label="MP" />
-        {u.statuses.length > 0 && <div class="st">{u.statuses.map((s) => world.content.cat.statuses[s.id]?.name ?? s.id).join(' · ')}</div>}
+        {(u.statuses.length > 0 || u.buffs.length > 0 || (u.shield?.amount ?? 0) > 0) && (
+          <div class="st">
+            {[
+              ...u.statuses.map((s) => world.content.cat.statuses[s.id]?.name ?? s.id),
+              ...u.buffs.map((b) => `${STAT_VI[b.stat] ?? b.stat} ${b.amount_bp > 0 ? '+' : ''}${Math.round(b.amount_bp / 100)}%`),
+              ...((u.shield?.amount ?? 0) > 0 ? [`Khiên ${u.shield!.amount}`] : []),
+            ].join(' · ')}
+          </div>
+        )}
       </div>
     );
   };
@@ -402,10 +411,18 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
               <div class="cmdsub">
                 {menu === 'skill' &&
                   skills.map((id) => {
-                    const sk = world.content.cat.skills[id] as unknown as { name: string; mp_cost?: number; target?: string };
+                    const sk = world.content.cat.skills[id] as unknown as { name: string; mp?: number; target?: string; cooldown?: number; rank_policy?: string; description?: string };
+                    const rank = pet?.skill_ranks?.[id] ?? 1;
+                    // Chi phí MP theo bậc (đồng bộ rankMP phía server): bậc 2 ×1.2, bậc 3 ×1.4 làm tròn lên.
+                    const base = sk?.mp ?? 0;
+                    const mp = sk?.rank_policy === 'damage_heal_3_ranks' && rank > 1 ? Math.ceil(base * (rank === 2 ? 1.2 : 1.4)) : base;
+                    const cd = Math.max(0, (me?.cooldowns?.[id] ?? 0) - (live?.turn ?? 0));
+                    const low = (me?.mp ?? 0) < mp;
+                    const aimed1 = sk?.target === 'enemy_one';
                     return (
-                      <button key={id} class="btn" disabled={busy || (me?.mp ?? 0) < (sk?.mp_cost ?? 0)} onClick={() => (sk?.target === 'self' ? void act('skill', { skill_id: id }) : begin('skill', { skill_id: id }))}>
-                        {sk?.name ?? id} · {sk?.mp_cost ?? 0} MP
+                      <button key={id} class="btn" data-testid={`skill-${id}`} title={sk?.description ?? ''} disabled={busy || low || cd > 0} onClick={() => (aimed1 ? begin('skill', { skill_id: id }) : void act('skill', { skill_id: id }))}>
+                        {sk?.name ?? id}
+                        {rank > 1 ? ` ${'★'.repeat(rank - 1)}` : ''} · {mp} MP{cd > 0 ? ` · chờ ${cd}` : ''}
                       </button>
                     );
                   })}
@@ -417,7 +434,6 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
                   ))}
                 {menu === null && more && (
                   <>
-                    {round('defend', 'Phòng thủ', 'icon_defend', busy, '', () => (setMore(false), void act('defend')))}
                     {round('item', 'Vật phẩm', 'icon_inventory', busy || consumables.length === 0, 'Trống', () => (setMore(false), setMenu('item')))}
                   </>
                 )}
