@@ -118,3 +118,27 @@ func (e *Engine) upgradeSkill(c *Character, d Intent) ([]Event, error) {
 	p.SkillRanks[s.ID] = rank + 1
 	return []Event{event("pet_upgrade", fmt.Sprintf("%s: %s rank %d", p.Name, s.Name, rank+1)), event("currency_spend", fmt.Sprintf("Skill upgrade paid: %d gold", price))}, nil
 }
+
+// giftStarterAttack tặng pet đang theo một đòn tấn công cấp 1 (đầu tiên trong pool gốc loại vật lý/phép, không thì Cường kích)
+// khi nhận nhiệm vụ đầu; bỏ qua nếu hết ô hoặc đã có. Miễn phí, tính là đã học (học lại sau này được giảm giá).
+func (e *Engine) giftStarterAttack(c *Character) []Event {
+	p, err := findPet(c, c.ActivePetID)
+	if err != nil || len(p.Skills) >= e.Data.Rules.SkillSlots {
+		return nil
+	}
+	pick := "strike"
+	for _, id := range e.Data.Species[p.SpeciesID].Skills {
+		if s, ok := e.Data.Skills[id]; ok && s.LearnLevel <= 1 && (s.Kind == "physical" || s.Kind == "magic") {
+			pick = id
+			break
+		}
+	}
+	if has(p.Skills, pick) {
+		return nil
+	}
+	p.Skills = append(p.Skills, pick)
+	if !has(p.Learned, pick) {
+		p.Learned = append(p.Learned, pick)
+	}
+	return []Event{event("pet_learn", p.Name+" learned "+e.Data.Skills[pick].Name)}
+}

@@ -254,6 +254,8 @@ type Quest struct {
 	XP          int            `json:"xp"`
 	Items       map[string]int `json:"items"`
 	Recipe      string         `json:"recipe"`
+	// GiftSkill: "starter_attack" = khi nhận nhiệm vụ, pet đang theo được tặng một đòn tấn công cấp 1 của loài (hoặc Cường kích).
+	GiftSkill string `json:"gift_skill,omitempty"`
 	// Requires: nhiệm vụ phải hoàn thành (đã nhận thưởng) trước khi nhận nhiệm vụ này (chuỗi Đợt A).
 	Requires string `json:"requires,omitempty"`
 	// Giver: NPC giao nhiệm vụ; nhận phải đứng gần NPC này (báo cáo ở NPC nhiệm vụ nào cũng được).

@@ -22,7 +22,7 @@ Chủ dự án chốt: các phase đã chốt (P10 danh mục loài, P11 chỉ s
 - Protocol: `skill_ranks`, `learned`, `inherited_pool`, `grades`, `status_resistance`…; đơn vị trận có `buffs`, `shield`, `cooldowns`; sự kiện có `detail`; bỏ `defend`.
 - Trận đấu: danh sách kỹ năng có MP theo bậc, thời gian chờ, mô tả; trạng thái/buff/khiên hiển thị dưới thanh máu; nhật ký có bạo kích/khắc hệ/khiên hấp thụ/phản kích.
 - Học kỹ năng ở NPC: danh sách đã học (nâng bậc), có thể học (giá, học lại, thay khi đủ 6 ô). Chi tiết linh thú: sáu chỉ số, bậc (sau giám định), kỹ năng kèm bậc. Bệ chọn pet đầu: thanh chỉ số mới.
-- Ba pet khởi đầu: Tiên Chưởng (`species_0021`, Thổ, phòng thủ), Sa Hạt (`species_0109`, Thổ, phép), Xích Ưng (`species_0071`, Hỏa, vật lý). Chúng **không còn biết sẵn kỹ năng nào** (P13: pet mới 0/6); học đòn đầu ở thầy Bìa Rừng (30 vàng, người chơi mới có 100 vàng).
+- Ba pet khởi đầu: Tiên Chưởng (`species_0021`, Thổ, phòng thủ), Sa Hạt (`species_0109`, Thổ, phép), Xích Ưng (`species_0071`, Hỏa, vật lý). Chúng **không còn biết sẵn kỹ năng nào** (P13: pet mới 0/6); nhiệm vụ đầu (nhận ở Lio) tặng một đòn tấn công cấp 1; các kỹ năng khác học ở thầy Bìa Rừng (30 vàng cho cấp 1, người chơi mới có 100 vàng).
 
 **Kiểm tra**: Go test (character, content, transport, persistence, world) xanh; vitest 27; Playwright chromium smoke 13 bài (thêm bài học kỹ năng thật).
 

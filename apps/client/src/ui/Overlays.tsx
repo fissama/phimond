@@ -650,7 +650,7 @@ function PedestalConfirm({ index, world }: { index: number; world: GameWorld }) 
             {bar('Phòng thủ', b.def)}
             {bar('Tốc độ', b.spd)}
           </div>
-          <div class="muted">Linh thú mới chưa biết kỹ năng nào: học đòn đầu tiên ở thầy dạy trong Bìa Rừng Lục Bảo (30 vàng). Sau khi chọn, bạn được đưa thẳng tới đó.</div>
+          <div class="muted">Linh thú mới chưa biết kỹ năng nào: nhận nhiệm vụ đầu ở Kiểm Lâm Lio trong Bìa Rừng Lục Bảo, ông sẽ tặng một đòn đầu tiên. Sau khi chọn, bạn được đưa thẳng tới đó.</div>
         </div>
       </div>
       <div class="row">

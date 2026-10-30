@@ -273,7 +273,11 @@ func (e *Engine) apply(c *Character, op string, d Intent) ([]Event, error) {
 		if q.Kind == "reach_map" && q.Target == c.MapID {
 			c.Quests[q.ID].Progress = 1
 		}
-		return []Event{event("quest_accept", q.Name)}, nil
+		ev := []Event{event("quest_accept", q.Name)}
+		if q.GiftSkill == "starter_attack" {
+			ev = append(ev, e.giftStarterAttack(c)...)
+		}
+		return ev, nil
 	case "quest.claim":
 		if err := e.near(c, "quest"); err != nil {
 			return nil, err

@@ -104,3 +104,19 @@ func TestMigrateLegacySaveIsIdempotent(t *testing.T) {
 		t.Fatal("migrate không idempotent")
 	}
 }
+
+func TestFirstQuestGiftsStarterAttack(t *testing.T) {
+	e := engine(t)
+	for sp, want := range map[string]string{"species_0071": "strike", "species_0109": "bolt_earth", "species_0021": "strike"} {
+		c := e.NewCharacter("g", "G", 3)
+		e.GiveStarter(c, sp, 1)
+		m := e.Data.Maps["emerald_forest_main_woods"]
+		c.MapID, c.X, c.Y = m.ID, m.SpawnDefault.X, m.SpawnDefault.Y
+		lio := e.Data.NPCs["forest_guide"]
+		c.X, c.Y = lio.X+1, lio.Y
+		command(t, e, c, "quest.accept", map[string]any{"quest_id": "first_battle"})
+		if got := c.Pets[0].Skills; len(got) != 1 || got[0] != want || !has(c.Pets[0].Learned, want) {
+			t.Fatalf("%s: tặng %v, cần %s", sp, got, want)
+		}
+	}
+}
