@@ -27,6 +27,8 @@ const PITCH = 0.5; // rad, góc nhìn xuống
 const DIST = 19;
 const FOV = 24;
 /** Độ nhạy đuổi theo vị trí logic của hình người chơi (1/giây): ~40ms trễ, đủ mượt mà không thấy lệch. */
+/** Ảnh trưng bày trên ba bệ ở Triệu Linh Điện, theo `display` của bệ. */
+const SHOWCASE_ART: Record<string, string> = { species_0144: 'showcase-flower', species_0149: 'showcase-scorpion', species_0151: 'showcase-unicorn' };
 const PLAYER_FOLLOW = 24;
 
 /**
@@ -50,7 +52,7 @@ export class Engine {
   private readonly npcs = new Map<string, Actor & { sprite: CharacterSprite | THREE.Object3D }>();
   private readonly spawns = new Map<string, Actor & { sprite: PetSprite; base: Cell; t: number }>();
   /** Thần thú 5★ trưng bày trên bệ đá (chỉ là mô hình, không nhận được). */
-  private readonly showcases: { root: THREE.Group; sprite: PetSprite; t: number; baseY: number }[] = [];
+  private readonly showcases: { root: THREE.Group; sprite: { setRow(n: 'idle' | 'move' | 'attack' | 'cast' | 'down'): void; update(dt: number, flip?: boolean): void }; t: number; baseY: number }[] = [];
   private readonly labels: HTMLDivElement;
   private readonly target = new THREE.Vector3();
   private readonly ray = new THREE.Raycaster();
@@ -187,7 +189,10 @@ export class Engine {
       map.pedestals.map(async (p) => {
         const display = (p as { display?: string }).display;
         if (!display) return;
-        const sprite = await PetSprite.create(display, { castShadow: real, scale: 0.95 });
+        // Ảnh trưng bày riêng (GPT 2026-10-28, đã duyệt): hoa, kỳ lân, bọ cạp. Thiếu thì dùng atlas linh thú.
+        const solid = SHOWCASE_ART[display];
+        const mesh = solid && asset(solid) ? await propSprite(solid, { castShadow: real, ppu: 112, tilt: -0.3 }) : null;
+        const sprite = mesh ? { root: mesh, setRow: () => undefined, update: () => undefined } : await PetSprite.create(display, { castShadow: real, scale: 0.95 });
         const root = new THREE.Group();
         root.add(sprite.root);
         const baseY = 0.62;
