@@ -3,6 +3,24 @@ import { session } from '../state/app.ts';
 import { LoginBackdrop } from './LoginBackdrop.tsx';
 import { uiUrl } from './skin.ts';
 
+/** Biểu tượng pixel 1 màu (currentColor): mỗi dòng là một hàng, `#` = ô đặc, `x` = ô gạch chéo (vẽ đè, màu sáng). */
+const ICONS = {
+  user: ['...####...', '..######..', '..######..', '...####...', '..........', '.########.', '##########', '##########'],
+  lock: ['..######..', '.##....##.', '.##....##.', '##########', '##########', '####..####', '####..####', '####..####', '##########'],
+  mail: ['############', '##........##', '###......###', '#.##....##.#', '#..##..##..#', '#...####...#', '#..........#', '############'],
+  eye: ['....######....', '..##......##..', '.#...####...#.', '#...######...#', '#...######...#', '.#...####...#.', '..##......##..', '....######....'],
+  eyeOff: ['..........xx..', '....#####xx...', '..##....xx##..', '.#...##xx...#.', '#...##xx##...#', '#...#xx###...#', '.#..xx###...#.', '..#xx.....##..', '..xx######....', '.xx...........'],
+} as const;
+function Pix({ name, size = 16 }: { name: keyof typeof ICONS; size?: number }) {
+  const rows = ICONS[name];
+  const w = rows[0]!.length;
+  return (
+    <svg class="pix" width={size} height={(size * rows.length) / w} viewBox={`0 0 ${w} ${rows.length}`} shape-rendering="crispEdges" aria-hidden="true">
+      {rows.flatMap((r, y) => [...r].map((c, x) => (c === '#' ? <rect key={`${x}-${y}`} x={x} y={y} width="1" height="1" fill="currentColor" /> : c === 'x' ? <rect key={`${x}-${y}`} x={x} y={y} width="1" height="1" fill="#fff4d0" /> : null)))}
+    </svg>
+  );
+}
+
 type Mode = 'login' | 'register' | 'forgot' | 'reset';
 
 /** Mã đặt lại mật khẩu nằm ở phần # của liên kết trong thư (không gửi lên máy chủ khi tải trang, không vào log truy cập). */
@@ -76,13 +94,18 @@ export function Login() {
     >
       <img src={uiUrl('logo-horizontal')} alt="PHIMOND" style={{ width: '100%', maxWidth: 300, alignSelf: 'center', imageRendering: 'pixelated', margin: '-4px 0 6px' }} />
       {title && <h2 style={{ margin: 0, fontSize: 18, textAlign: 'center' }}>{title}</h2>}
-      {needUser && <input data-testid="username" class="input" placeholder="Tài khoản" autoComplete="username" autoCapitalize="none" value={user} onInput={(e) => setUser(e.currentTarget.value)} />}
+      {needUser && (
+        <div class="fld">
+          <Pix name="user" />
+          <input data-testid="username" class="input" placeholder="Tài khoản" autoComplete="username" autoCapitalize="none" value={user} onInput={(e) => setUser(e.currentTarget.value)} />
+        </div>
+      )}
       {needPass && (
-        <div style={{ position: 'relative' }}>
+        <div class="fld">
+          <Pix name="lock" />
           <input
             data-testid="password"
             class="input"
-            style={{ width: '100%', boxSizing: 'border-box', paddingRight: 64 }}
             placeholder={mode === 'reset' ? 'Mật khẩu mới' : 'Mật khẩu'}
             type={show ? 'text' : 'password'}
             autoComplete={mode === 'login' ? 'current-password' : 'new-password'}
@@ -92,15 +115,18 @@ export function Login() {
             onKeyDown={(e) => setCaps(e.getModifierState('CapsLock'))}
             onBlur={() => setCaps(false)}
           />
-          <button type="button" data-testid="toggle-password" class="btn small" style={{ position: 'absolute', right: 4, top: 4, minHeight: 28, padding: '0 8px' }} aria-pressed={show} onClick={() => setShow(!show)}>
-            {show ? 'Ẩn' : 'Hiện'}
+          <button type="button" data-testid="toggle-password" class="eye" aria-label={show ? 'Ẩn mật khẩu' : 'Hiện mật khẩu'} title={show ? 'Ẩn mật khẩu' : 'Hiện mật khẩu'} aria-pressed={show} onClick={() => setShow(!show)}>
+            <Pix name={show ? 'eye' : 'eyeOff'} size={20} />
           </button>
         </div>
       )}
       {caps && needPass && <p data-testid="caps-hint" style={hint}>Caps Lock đang bật.</p>}
       {(mode === 'register' || mode === 'reset') && <p style={hint}>Mật khẩu từ 8 ký tự, không dùng mật khẩu quá phổ biến (như 12345678) hoặc trùng tên tài khoản.</p>}
       {(mode === 'register' || mode === 'forgot') && (
-        <input data-testid="email" class="input" type="email" placeholder={mode === 'register' ? 'Email (tuỳ chọn, để lấy lại mật khẩu)' : 'Email đã gắn với tài khoản'} autoComplete="email" value={email} onInput={(e) => setEmail(e.currentTarget.value)} />
+        <div class="fld">
+          <Pix name="mail" />
+          <input data-testid="email" class="input" type="email" placeholder={mode === 'register' ? 'Email (tuỳ chọn, để lấy lại mật khẩu)' : 'Email đã gắn với tài khoản'} autoComplete="email" value={email} onInput={(e) => setEmail(e.currentTarget.value)} />
+        </div>
       )}
       {mode === 'register' && (
         <label style={check}>
