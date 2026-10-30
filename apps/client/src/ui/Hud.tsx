@@ -9,6 +9,7 @@ import { battleResultOpen, closeOverlay, log, LOG_TABS, overlay, pushLog, toasts
 import type { Direction } from '../world/coords.ts';
 import { session } from '../state/app.ts';
 import { PetPortrait } from './PetArt.tsx';
+import { uiUrl } from './skin.ts';
 
 /** Cùng công thức server: lên cấp khi XP ≥ cấp × 25 (data/balance/rules.json → xp_per_level). */
 const XP_PER_LEVEL = 25;
@@ -166,6 +167,18 @@ export function FrameBar({ kind, row, v, max, label, slim }: { kind: 'hp' | 'mp'
   );
 }
 
+let markerImg: HTMLImageElement | null = null;
+/** Ký hiệu minimap (GPT batch-15): 3 ô 24×24 = người chơi, NPC, dịch chuyển. Nạp một lần; chưa nạp thì dùng chấm màu. */
+function markers(): HTMLImageElement | null {
+  if (markerImg) return markerImg.complete && markerImg.naturalWidth ? markerImg : null;
+  if (typeof Image === 'undefined') return null;
+  markerImg = new Image();
+  markerImg.src = uiUrl('minimap-markers');
+  return null;
+}
+
+void markers(); // nạp sớm
+
 /** Bản đồ nhỏ: ô đi được, cổng, NPC và vị trí người chơi (vẽ từ lưới đi được, không cần ảnh). */
 function Minimap({ world, ch }: { world: GameWorld; ch: Character }) {
   const ref = useRef<HTMLCanvasElement>(null);
@@ -197,7 +210,15 @@ function Minimap({ world, ch }: { world: GameWorld; ch: Character }) {
     // Quái đang hiện trên đồng (chấm đỏ) để người chơi chủ động tránh hoặc tìm đánh.
     const hidden = ch.spawn_hidden ?? {};
     for (const w of map.wild_spawns ?? []) if (!(hidden as Record<string, number>)[w.id]) dot(w.x, w.y, '#ff6b5a', Math.max(3, k));
-    dot(ch.x, ch.y, '#ffffff', Math.max(4, k + 1));
+    const mk = markers();
+    if (mk) {
+      g.imageSmoothingEnabled = false;
+      const sz = Math.max(12, Math.round(k * 2.2));
+      const put = (i: number, x: number, y: number) => g.drawImage(mk, i * 24, 0, 24, 24, Math.round((x + 0.5) * k - sz / 2), Math.round((y + 0.5) * k - sz / 2), sz, sz);
+      for (const p of map.portals) if (p.rect && !p.locked) put(2, p.rect[0] + (p.rect[2] - 1) / 2, p.rect[1] + (p.rect[3] - 1) / 2);
+      for (const n of world.content.npcsOn(map.id)) put(1, n.x, n.y);
+      put(0, ch.x, ch.y);
+    } else dot(ch.x, ch.y, '#ffffff', Math.max(4, k + 1));
   }, [map.id, ch.x, ch.y, grid, JSON.stringify(ch.spawn_hidden ?? {})]);
   return (
     <div class="hud-minimap" data-testid="hud-minimap" aria-label="Bản đồ nhỏ">

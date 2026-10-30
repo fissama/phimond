@@ -24,6 +24,8 @@ export interface FgItem {
   /** Hệ số thị sai theo vị trí camera (đơn vị/đơn vị), nhỏ để vật không trôi khỏi mép. */
   par?: number;
   opacity?: number;
+  /** Trôi ngang chậm qua lại: biên độ theo nửa bề rộng khung nhìn, chu kỳ (giây). */
+  drift?: [number, number];
 }
 
 const DEPTH = 9;
@@ -76,7 +78,7 @@ export async function buildForeground(items: FgItem[]): Promise<Foreground> {
         mesh.scale.set(item.flip ? -w : w, h, 1);
         const shift = -(camX - mapMid) * (item.par ?? 0.08);
         // Neo theo mép: ax = ±1 là mép màn; để vật không lòi khỏi khung, vị trí tâm tính từ mép tương ứng.
-        const cx = item.ax * (viewW / 2) + shift;
+        const cx = item.ax * (viewW / 2) + shift + (item.drift ? Math.sin((t / item.drift[1] + p.phase) * Math.PI * 2) * item.drift[0] * (viewW / 2) : 0);
         const cy = item.ay * (viewH / 2);
         mesh.position.set(cx, cy, -DEPTH);
         mesh.rotation.z = (item.rot ?? 0) + Math.sin(t * 0.7 + p.phase) * (item.sway ?? 0.012);

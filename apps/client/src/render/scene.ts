@@ -540,11 +540,13 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
       const dark = deep ? 0x5d7766 : 0x7d9a6c; // cành gần camera tối hơn tán phía sau để tách lớp
       add({ id: 'fg-forest-branch-a', ax: -0.8, ay: 0.74, h: 0.52, maxW: 0.46, tint: dark, rot: 0.04 });
       add({ id: 'fg-forest-branch-b', ax: 0.82, ay: 0.82, h: 0.46, maxW: 0.42, tint: dark, rot: -0.03, par: 0.1 });
+      if (!deep) add({ id: 'fg-ambient-birds', ax: 0.1, ay: 0.82, h: 0.13, maxW: 0.28, opacity: 0.92, drift: [0.5, 70], par: 0.02 });
       if (deep) add({ id: 'fg-deep-vines', ax: 0, ay: 0.8, h: 0.42, maxW: 0.5, tint: dark, par: 0.04, sway: 0.006 });
       add({ id: 'fg-forest-bush-a', ax: -0.72, ay: -0.98, h: 0.3, maxW: 0.34, tint });
       add({ id: 'fg-forest-bush-c', ax: 0.08, ay: -1.04, h: 0.24, maxW: 0.3, tint, flip: true, par: 0.12 });
       add({ id: 'fg-forest-bush-b', ax: 0.82, ay: -0.99, h: 0.3, maxW: 0.34, tint, par: 0.06 });
     } else if (theme === 'city') {
+      add({ id: 'fg-ambient-birds', ax: -0.2, ay: 0.86, h: 0.12, maxW: 0.26, opacity: 0.92, drift: [0.55, 90], par: 0.02 });
       add({ id: 'fg-city-bunting', ax: -0.1, ay: 0.9, h: 0.17, maxW: 0.75, sway: 0.006, par: 0.05 });
       if (map.id === 'city_palace_gate') add({ id: 'fg-gate-banner-edge', ax: 0, ay: 0.6, h: 0.6, maxW: 0.4, par: 0.03, sway: 0.008 });
       add({ id: 'fg-city-lantern-pair', ax: -0.93, ay: 0.46, h: 0.5, maxW: 0.22, rot: -0.02 });

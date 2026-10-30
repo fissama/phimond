@@ -5,6 +5,7 @@ import { INDOOR, lightAt, type Light } from './daylight.ts';
 import { Post } from './post.ts';
 import { applySun, paintedShadow, sunFor } from './shadows.ts';
 import { asset, textures } from './assets.ts';
+import { Footsteps } from './footsteps.ts';
 import { buildScene, THEMES, type BuiltScene } from './scene.ts';
 import { blobShadow, CharacterSprite, foeRing, PetSprite, propSprite } from './sprites.ts';
 import type { Cell, Direction } from '../world/coords.ts';
@@ -42,6 +43,7 @@ export class Engine {
   private map: MapDef | null = null;
   private player: CharacterSprite | null = null;
   private readonly playerRoot = new THREE.Group();
+  private steps: Footsteps | null = null;
   private frameDt = 1 / 60;
   private summon: { t: number; beam: THREE.Mesh } | null = null;
   private playerBlob: THREE.Object3D | null = null;
@@ -141,6 +143,7 @@ export class Engine {
       this.scene.add(this.camera);
       this.camera.add(this.world.fgRoot);
     }
+    if (PRESETS[this.quality].fx) this.steps = await Footsteps.create(this.scene, map.theme).catch(() => null);
     this.indoor = T.indoor === true;
     this.camBias = T.camBias ?? 0;
     this.updateLight(0, true);
@@ -212,6 +215,8 @@ export class Engine {
   }
 
   unloadMap(): void {
+    this.steps?.dispose();
+    this.steps = null;
     if (this.world) {
       this.scene.remove(this.world.group);
       if (this.world.fgRoot) this.camera.remove(this.world.fgRoot);
@@ -297,6 +302,7 @@ export class Engine {
     const nz = near ? follow(p.z, tz, this.frameDt, PLAYER_FOLLOW) : tz;
     const d = near ? Math.hypot(nx - p.x, nz - p.z) : 0;
     this.player?.travel(d);
+    this.steps?.travel(d, nx, nz, facing === 'left');
     p.set(nx, 0, nz);
     // Còn đang trượt về đích thì vẫn là đang đi (không hiện dáng đứng khi chân còn di chuyển).
     const running = moving || Math.hypot(tx - nx, tz - nz) > 0.04;
@@ -387,6 +393,7 @@ export class Engine {
       c.sprite.setRow('idle');
       c.sprite.update(dt, false);
     }
+    this.steps?.update(dt);
     this.world?.update(dt, this.playerRoot.position, this.camera);
     this.updateCamera(1 - Math.exp(-dt * 9));
     this.updateLight(dt);
