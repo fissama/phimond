@@ -237,7 +237,7 @@ function Bag({ world, ch }: { world: GameWorld; ch: Character }) {
           const u = usable(id);
           return (
             <div class="item" key={id}>
-              {iconFor(id) && <img class="icon" src={iconFor(id)!} alt="" />}
+              <span class="slot">{iconFor(id) && <img class="icon" src={iconFor(id)!} alt="" />}</span>
               <div class="grow">
                 <b>{world.content.itemName(id)}</b> <span class="muted">×{n}</span>
                 <div class="muted">{ITEM_DESC[id] ?? ''}</div>

@@ -63,6 +63,7 @@ export function installSkin(): void {
     `.uibar{position:relative;height:13px;width:132px;${sprite('bar-track')}}`,
     `.uibar>i{position:absolute;left:0;top:0;bottom:0;background-size:132px 100%;background-repeat:no-repeat;image-rendering:pixelated;transition:width .3s;}`,
     `.uibar.hp>i{background-image:url(${uiUrl('hp-fill')})}.uibar.mp>i{background-image:url(${uiUrl('mp-fill')})}.uibar.xp>i{background-image:url(${uiUrl('xp-fill')})}`,
+    `.dialog .item .slot{${sprite('slot-normal')}flex:none;width:46px;height:46px;display:grid;place-items:center;}.dialog .item .slot .icon{width:28px;height:28px;image-rendering:pixelated;}`,
     `.coin{${sprite('currency-gold')}display:inline-block;width:16px;height:16px;vertical-align:-3px;margin-right:3px;}`,
     `.hud-menu .rbtn{${sprite('button-round')}width:58px;height:58px;display:grid;place-items:center;position:relative;}`,
     `.hud-menu .rbtn.main{${sprite('button-round')}}.hud-menu .rbtn.main::before{content:'\\2630';font-size:24px;color:#f6e3a8;text-shadow:0 1px 2px #000;margin-top:-6px}.hud-menu .rbtn.pet{${sprite('button-pet')}}.hud-menu .rbtn.bag{${sprite('menu-inventory')}}.hud-menu .rbtn.quest{${sprite('menu-quest')}}.hud-menu .rbtn.settings{${sprite('menu-settings')}}`,
