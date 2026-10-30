@@ -64,17 +64,11 @@ func (e *Engine) createCharacter(c *Character, d Intent) ([]Event, error) {
 	return []Event{event("character_created", name)}, nil
 }
 
-// GiveStarter thêm pet khởi đầu đã giám định và đặt làm pet chính (dùng cho bệ đá và test).
+// GiveStarter thêm pet khởi đầu đã giám định và đặt làm pet chính (dùng cho bệ đá và test). Theo P13, linh thú mới
+// chưa biết kỹ năng nào: chỉ có đòn thường, phải học kỹ năng ở người dạy bằng vàng.
 func (e *Engine) GiveStarter(c *Character, species string, level int) *pet.Pet {
 	p := e.NewPet(c, species, level)
 	p.Appraised = true
-	// Linh thú khởi đầu biết sẵn đòn hệ đầu tiên của loài để trận đầu có kỹ năng dùng được.
-	for _, id := range e.Data.Species[species].Skills {
-		if s, ok := e.Data.Skills[id]; ok && id != "attack" && s.Target == "enemy" && (s.Kind == "physical" || s.Kind == "magic") {
-			p.Skills = append(p.Skills, id)
-			break
-		}
-	}
 	c.Pets = append(c.Pets, p)
 	c.ActivePetID = p.ID
 	return p
@@ -108,7 +102,7 @@ func (e *Engine) Snapshot(c *Character) map[string]any {
 	for _, p := range out["pets"].([]any) {
 		m := p.(map[string]any)
 		if !m["appraised"].(bool) {
-			for _, k := range []string{"quality", "growth", "resistances", "status_resistances"} {
+			for _, k := range []string{"grades", "credit", "bonus_milli"} {
 				delete(m, k)
 			}
 		}
@@ -139,10 +133,9 @@ func (e *Engine) Lineage(c *Character, id string) *LineageNode {
 			if p.ID == id {
 				copy := *p
 				if !p.Appraised {
-					copy.Quality = nil
-					copy.Growth = nil
-					copy.Resistances = nil
-					copy.StatusResistances = nil
+					copy.Grades = nil
+					copy.Credit = nil
+					copy.Bonus = nil
 				}
 				n := &LineageNode{Pet: &copy, Parents: []*LineageNode{}}
 				for _, pid := range p.Parents {

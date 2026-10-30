@@ -43,7 +43,7 @@ func TestNewPlayerStartsInHallAndChoosesStarter(t *testing.T) {
 	// Đứng chéo kề bệ 1 (9,2): bệ giữa lùi sau hai bệ bên (cung 3 bệ).
 	c.X, c.Y = 10, 3
 	ev := command(t, e, c, "starter.choose", map[string]any{"pedestal": 1})
-	if len(c.Pets) != 1 || c.Pets[0].SpeciesID != "sa_hat" || c.ActivePetID != c.Pets[0].ID || !c.Pets[0].Appraised {
+	if len(c.Pets) != 1 || c.Pets[0].SpeciesID != "species_0109" || c.ActivePetID != c.Pets[0].ID || !c.Pets[0].Appraised {
 		t.Fatal("không nhận đúng pet khởi đầu")
 	}
 	if c.MapID != "emerald_forest_main_woods" || c.X != 3 || c.Y != 6 || !has(c.Visited, c.MapID) {
@@ -159,9 +159,9 @@ func TestLossRespawnsAndHeals(t *testing.T) {
 	c.X, c.Y = s.X, s.Y
 	command(t, e, c, "world.encounter", map[string]any{"spawn_id": s.ID})
 	c.Battle.Units[0].HP = 1
-	c.Battle.Units[1].Pet.Speed = 999
+	forceStat(e, c.Battle.Units[1], "spd", 999)
 	for i := 0; c.Battle != nil && i < 50; i++ {
-		command(t, e, c, "battle.action", map[string]any{"battle_id": c.Battle.ID, "turn": c.Battle.Turn, "choice": "defend"})
+		command(t, e, c, "battle.action", map[string]any{"battle_id": c.Battle.ID, "turn": c.Battle.Turn, "choice": "attack"})
 	}
 	main := e.Data.Maps["emerald_forest_main_woods"]
 	if c.MapID != main.ID || c.X != main.SpawnDefault.X || c.Y != main.SpawnDefault.Y {

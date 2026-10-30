@@ -127,7 +127,7 @@ func liveFixture(t *testing.T) (*Server, *memoryStore) {
 	e := character.NewEngine(catalog)
 	// Nhân vật đã chọn pet khởi đầu, đứng ở Quảng Trường (16,6) — vùng lát đá trống quanh đó.
 	c := e.NewCharacter("hero", "Hero", 5)
-	e.GiveStarter(c, "snail", 3)
+	e.GiveStarter(c, "species_0071", 3)
 	c.MapID, c.X, c.Y = "city_square", 16, 6
 	raw, _ := json.Marshal(c)
 	db := &memoryStore{raw: raw, receipts: map[string]bool{}}

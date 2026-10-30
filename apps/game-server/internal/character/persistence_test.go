@@ -30,10 +30,12 @@ func TestMySQLBreedingSurvivesReconnect(t *testing.T) {
 	_, id, err := s.Register(ctx, name, "integration-password", func(id string) (json.RawMessage, error) {
 		c := veteran(e, id, name, 99)
 		a := c.Pets[0]
+		a.SpeciesID = "species_0111"
+		e.Recalculate(a)
 		a.Level = 30
 		a.Gender = "female"
-		a.Skills = []string{"attack", "earth_strike"}
-		b := e.NewPet(c, "flower_fairy", 30)
+		a.Skills = []string{"strike"}
+		b := e.NewPet(c, "species_0022", 30)
 		b.Gender = "male"
 		c.Pets = append(c.Pets, b)
 		atService(e, c)

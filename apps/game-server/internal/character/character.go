@@ -9,10 +9,6 @@ import (
 	"time"
 )
 
-// StatKeys is the canonical stat order used for pet quality and growth
-// rolls. Moved verbatim from internal/game/model.go.
-var StatKeys = []string{"strength", "agility", "stamina", "intelligence", "spirit", "defense", "critical"}
-
 // RNG is the per-character, deterministic PRNG used for combat rolls,
 // breeding, capture and appraisal. Moved verbatim from internal/game/model.go.
 type RNG struct {
@@ -54,6 +50,8 @@ type Event struct {
 	TargetID string `json:"target_id,omitempty"`
 	Amount   int    `json:"amount,omitempty"`
 	Message  string `json:"message"`
+	// Detail: nhãn phụ cho client (crit, super, weak, poison, burn, grace, resisted, absorbed…); không ảnh hưởng luật.
+	Detail string `json:"detail,omitempty"`
 }
 
 // Character is the top-level aggregate that the transport persists and the
@@ -114,6 +112,8 @@ type Battle struct {
 	Commands []Intent       `json:"commands"`
 	Events   []Event        `json:"events"`
 	Sequence int            `json:"sequence"`
+	// StatusSeq: bộ đếm thứ tự áp trạng thái (hòa khi gỡ theo "cũ hơn").
+	StatusSeq int `json:"status_seq,omitempty"`
 }
 
 // Intent is the request payload parsed from a single WebSocket envelope.
@@ -138,6 +138,7 @@ type Intent struct {
 	Turn      int    `json:"turn"`
 	Choice    string `json:"choice"`
 	TargetID  string `json:"target_id,omitempty"`
+	ReplaceID string `json:"replace_id,omitempty"`
 	Pedestal  *int   `json:"pedestal,omitempty"`
 	MapID     string `json:"map_id,omitempty"`
 	Name      string `json:"name,omitempty"`

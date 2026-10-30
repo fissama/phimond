@@ -92,9 +92,9 @@ func TestStatePresentationContract(t *testing.T) {
 // Test accounts learn extra skills and start hurt; catalog formulas stay intact.
 func TestPublicBattleFeedbackFixtures(t *testing.T) {
 	for _, scenario := range []struct{ name, choice, skill, want string }{
-		{"damage", "attack", "", "damage"}, {"heal", "skill", "mend", "heal"},
+		{"damage", "attack", "", "damage"}, {"heal", "skill", "heal", "heal"},
 		{"status", "skill", "petrify", "status_applied"}, {"miss", "attack", "", "miss"},
-		{"win", "attack", "", "battle_win"}, {"loss", "defend", "", "battle_loss"},
+		{"win", "attack", "", "battle_win"}, {"loss", "attack", "", "battle_loss"},
 		{"capture", "capture", "", "pet_capture"}, {"flee", "flee", "", "battle_flee"},
 	} {
 		t.Run(scenario.name, func(t *testing.T) {
@@ -109,7 +109,7 @@ func TestPublicBattleFeedbackFixtures(t *testing.T) {
 				b := c.Battle
 				b.RNG = character.RNG{State: seed * 0x9e3779b97f4a7c15}
 				p := b.Units[0]
-				p.Pet.Skills = append(p.Pet.Skills, "mend", "petrify")
+				p.Pet.Skills = append(p.Pet.Skills, "heal", "petrify")
 				p.MP = 100
 				if scenario.name == "heal" {
 					p.HP = p.MaxHP / 2
@@ -118,6 +118,7 @@ func TestPublicBattleFeedbackFixtures(t *testing.T) {
 					b.Units[1].HP = 1
 				}
 				if scenario.name == "loss" {
+					b.Units[1].AISkills = nil // địch chỉ đánh thường (loài ngẫu nhiên có thể chỉ có kỹ năng hỗ trợ)
 					p.HP = 1
 				}
 				raw, _ := json.Marshal(c)

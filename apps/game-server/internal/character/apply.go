@@ -148,26 +148,9 @@ func (e *Engine) apply(c *Character, op string, d Intent) ([]Event, error) {
 		}
 		return []Event{event("pet_party", "Party updated")}, nil
 	case "pet.learn":
-		if err := e.near(c, "learn"); err != nil {
-			return nil, err
-		}
-		p, err := findPet(c, d.PetID)
-		if err != nil {
-			return nil, err
-		}
-		skill, ok := e.Data.Skills[d.SkillID]
-		if !ok || !has(e.Data.Species[p.SpeciesID].Skills, d.SkillID) || has(p.Skills, d.SkillID) {
-			return nil, fmt.Errorf("skill unavailable or already learned")
-		}
-		if p.Level < skill.LearnLevel {
-			return nil, fmt.Errorf("pet needs level %d", skill.LearnLevel)
-		}
-		if c.Gold < e.Data.Rules.LearnCost {
-			return nil, fmt.Errorf("insufficient gold")
-		}
-		c.Gold -= e.Data.Rules.LearnCost
-		p.Skills = append(p.Skills, d.SkillID)
-		return []Event{event("pet_learn", p.Name+" learned "+skill.Name), event("currency_spend", "Skill tuition paid")}, nil
+		return e.learnSkill(c, d)
+	case "pet.skill_upgrade":
+		return e.upgradeSkill(c, d)
 	case "pet.release":
 		p, err := findPet(c, d.PetID)
 		if err != nil {

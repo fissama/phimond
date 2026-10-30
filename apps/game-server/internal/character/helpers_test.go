@@ -6,7 +6,7 @@ import "phimond/server/internal/content"
 // mới trước P01, để các test luật chiến đấu/nuôi pet không phụ thuộc luồng chọn bệ đá.
 func veteran(e *Engine, id, name string, seed uint64) *Character {
 	c := e.NewCharacter(id, name, seed)
-	e.GiveStarter(c, "snail", 3)
+	e.GiveStarter(c, "species_0071", 3)
 	m := e.Data.Maps["emerald_forest_main_woods"]
 	c.MapID, c.X, c.Y = m.ID, m.SpawnDefault.X, m.SpawnDefault.Y
 	return c

@@ -112,7 +112,8 @@ func (s *Server) loadLive(ctx context.Context, id string, e *liveCharacter) erro
 	// Nhân vật ở map/ô không còn hợp lệ (dữ liệu trước P01) được đưa về chỗ hợp lệ ngay khi nạp,
 	// để snapshot đầu tiên client nhận đã dùng được. Lưu bền ở lần ghi kế tiếp.
 	var c character.Character
-	if json.Unmarshal(raw, &c) == nil && s.Game.NormalizeLocation(&c) {
+	if json.Unmarshal(raw, &c) == nil && (s.Game.MigrateLegacy(&c) || s.Game.NormalizeLocation(&c)) {
+		s.Game.NormalizeLocation(&c)
 		if fixed, err := json.Marshal(&c); err == nil {
 			raw = fixed
 		}

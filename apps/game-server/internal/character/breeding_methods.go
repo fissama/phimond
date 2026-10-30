@@ -6,42 +6,27 @@ import (
 	"phimond/server/internal/pet"
 )
 
-// Inherit applies the (reconstructed) breeding formula to the two parent
-// pets, producing a fresh child of the requested species with the supplied
-// blessing. Inherits only instance skills the parents actually learned,
-// never species skill pools. Moved verbatim from internal/game/breeding.go.
+// Inherit tạo con theo P11 (tín dụng dòng dõi Q, thưởng kế thừa) và P13 (chỉ truyền id kỹ năng hiện tại của bố mẹ,
+// lọc theo danh sách Race của từng kỹ năng, không ngẫu nhiên). Con mới sinh chưa biết kỹ năng nào; bậc tăng trưởng
+// rút mới theo bảng xác suất, không sao chép từ bố mẹ.
 func (e *Engine) Inherit(c *Character, a, b *pet.Pet, species string, blessing int) *pet.Pet {
-	child := e.NewPet(c, species, 1)
-	r := e.Data.Rules
+	child := e.newPet(c, species, 1, rollGrades(&c.RNG))
 	child.Generation = max(a.Generation, b.Generation) + 1
 	child.Parents = []string{a.ID, b.ID}
 	child.Refinement = a.Refinement + min(5, max(1, (a.Level+b.Level-40)/20))
 	child.Blessing = blessing
-	for _, key := range StatKeys {
-		v := (a.Quality[key]+b.Quality[key])/2 + r.GenerationBonus + (a.Strengthening+b.Strengthening)*5 + blessing*10 + c.RNG.Int(r.MutationRange*2+1) - r.MutationRange
-		child.Quality[key] = min(r.QualityCap, max(r.QualityMin, v))
-		child.Growth[key] = min(160, (a.Growth[key]+b.Growth[key])/2+2+c.RNG.Int(5)-2)
-	}
-	for _, key := range sortedKeys(child.Resistances) {
-		child.Resistances[key] = min(70, (a.Resistances[key]+b.Resistances[key])/2+c.RNG.Int(4))
-	}
-	for _, key := range sortedKeys(child.StatusResistances) {
-		child.StatusResistances[key] = min(70, (a.StatusResistances[key]+b.StatusResistances[key])/2+c.RNG.Int(4))
-	}
-	inherited := map[string]bool{"attack": true}
+	e.applyLineage(child, a, b)
+	race := e.Data.Species[species].Race
+	pool := map[string]bool{}
 	for _, p := range []*pet.Pet{a, b} {
-		for _, skill := range p.Skills {
-			if e.Data.Skills[skill].Inheritable {
-				inherited[skill] = true
+		for _, id := range append(append([]string{}, p.Skills...), p.InheritedPool...) {
+			s, ok := e.Data.Skills[id]
+			if ok && s.ExclusiveSpecies == "" && has(s.Inheritance, race) {
+				pool[id] = true
 			}
 		}
 	}
-	child.Skills = []string{"attack"}
-	for _, skill := range sortedKeys(inherited) {
-		if skill != "attack" && c.RNG.Float() < r.SkillInheritance {
-			child.Skills = append(child.Skills, skill)
-		}
-	}
+	child.InheritedPool = sortedKeys(pool)
 	e.Recalculate(child)
 	child.HP = child.MaxHP
 	child.MP = child.MaxMP

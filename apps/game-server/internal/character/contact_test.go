@@ -2,7 +2,6 @@ package character
 
 import (
 	"encoding/json"
-	"reflect"
 	"testing"
 )
 
@@ -26,14 +25,12 @@ func TestContactEncounterRejectsRemoteAndForeignSpawn(t *testing.T) {
 	for _, id := range []string{"emerald_forest_main_woods:z1:0", foreign, "emerald_forest_main_woods:z1:99"} {
 		e := engine(t)
 		c := veteran(e, "remote", "Remote", 31) // đứng ở spawn_default, xa vùng quái
-		raw, _ := json.Marshal(c)
-		var before Character
-		json.Unmarshal(raw, &before)
+		before, _ := json.Marshal(c)
 		data, _ := json.Marshal(map[string]any{"spawn_id": id})
 		if _, err := e.Apply(c, "world.encounter", data); err == nil {
 			t.Fatal("remote/invalid contact accepted", id)
 		}
-		if !reflect.DeepEqual(c, &before) {
+		if after, _ := json.Marshal(c); string(after) != string(before) {
 			t.Fatal("rejected contact mutated state")
 		}
 	}

@@ -11,8 +11,8 @@ func threePets(t *testing.T) (*Engine, *Character, [3]string) {
 	e := engine(t)
 	c := veteran(e, "party", "Party", 7)
 	a := c.Pets[0]
-	b := e.NewPet(c, "snail", 2)
-	d := e.NewPet(c, "snail", 2)
+	b := e.NewPet(c, "species_0111", 2)
+	d := e.NewPet(c, "species_0111", 2)
 	c.Pets = append(c.Pets, b, d)
 	c.ActivePetID = a.ID
 	return e, c, [3]string{a.ID, b.ID, d.ID}

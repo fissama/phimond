@@ -51,7 +51,7 @@ func TestMultiFoeBattleNeedsAllDefeatedAndSumsRewards(t *testing.T) {
 	if _, err := e.Apply(c, "battle.action", mustJSON(map[string]any{"battle_id": c.Battle.ID, "turn": 1, "choice": "attack", "target_id": foes[0].ID})); err == nil {
 		t.Fatal("dead target must be rejected")
 	}
-	c.Battle.Units[0].Pet.Attack = 9999
+	forceStat(e, c.Battle.Units[0], "atk", 99999)
 	command(t, e, c, "battle.action", map[string]any{"battle_id": c.Battle.ID, "turn": 1, "choice": "attack", "target_id": foes[2].ID})
 	if c.Battle != nil || c.History[len(c.History)-1].Result != "win" {
 		t.Fatal("killing the last foe must win")

@@ -9,18 +9,21 @@ func TestCatalogLinksAndConfidence(t *testing.T) {
 	if e != nil {
 		t.Fatal(e)
 	}
-	if len(c.Species) < 10 || len(c.Skills) < 20 || len(c.Statuses) != 7 || len(c.Races) != 8 {
-		t.Fatal("vertical slice catalog incomplete")
+	if len(c.Species) != 160 || len(c.Skills) != 97 || len(c.Statuses) != 14 || len(c.Races) != 8 {
+		t.Fatalf("catalog P10/P11/P13 incomplete: %d species, %d skills, %d statuses, %d races", len(c.Species), len(c.Skills), len(c.Statuses), len(c.Races))
 	}
-	s := c.Species["snail"]
+	if c.Rules.SkillSlots != 6 || len(c.Rules.LevelCaps) != 5 {
+		t.Fatal("rules must carry skill_slots=6 and level caps by star")
+	}
+	s := c.Species["species_0071"]
 	s.Skills = []string{"nonexistent"}
-	c.Species["snail"] = s
+	c.Species["species_0071"] = s
 	if c.Validate() == nil {
 		t.Fatal("dangling skill accepted")
 	}
 }
 func TestRejectBadEffectAndRecipeDefinitions(t *testing.T) {
-	for _, change := range []func(*Catalog){func(c *Catalog) { s := c.Skills["attack"]; s.Kind = "unknown_effect"; c.Skills["attack"] = s }, func(c *Catalog) { s := c.Skills["cleanse_doom"]; s.Cleanse = "missing"; c.Skills[s.ID] = s }, func(c *Catalog) { q := c.Quests["first_capture"]; q.Items["missing"] = 1; c.Quests[q.ID] = q }, func(c *Catalog) { c.Rules.SkillInheritance = 2 }} {
+	for _, change := range []func(*Catalog){func(c *Catalog) { s := c.Skills["strike"]; s.Kind = "unknown_effect"; c.Skills["strike"] = s }, func(c *Catalog) { s := c.Skills["strike"]; s.Effect.Status = "missing"; c.Skills[s.ID] = s }, func(c *Catalog) { s := c.Skills["strike"]; s.Effect.Cleanse = "missing"; c.Skills[s.ID] = s }, func(c *Catalog) { s := c.Skills["strike"]; s.ExclusiveSpecies = "missing"; c.Skills[s.ID] = s }, func(c *Catalog) { q := c.Quests["first_capture"]; q.Items["missing"] = 1; c.Quests[q.ID] = q }, func(c *Catalog) { s := c.Species["species_0071"]; s.Base["hp"] = 0; c.Species[s.ID] = s }} {
 		c, e := Load("../../../../data")
 		if e != nil {
 			t.Fatal(e)

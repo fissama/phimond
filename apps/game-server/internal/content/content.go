@@ -15,47 +15,77 @@ type Evidence struct {
 	Confidence string `json:"confidence"`
 	Source     string `json:"source"`
 }
+
+// Species là một loài trong danh mục P11/P13 (160 loài; số liệu sinh từ tools/p01/apply_p11_p13.py).
+// Base/GrowthMilli có đủ 6 chỉ số (hp, atk, mag, def, spd, status_resistance); MP tách riêng (P11 F04).
 type Species struct {
-	ID          string         `json:"id"`
-	Name        string         `json:"name"`
-	Race        string         `json:"race"`
-	Element     string         `json:"element"`
-	Star        int            `json:"star"`
-	Archetype   string         `json:"archetype"`
-	Base        map[string]int `json:"base"`
-	Skills      []string       `json:"skills"`
-	CaptureRate float64        `json:"capture_rate"`
-	Catchable   bool           `json:"catchable"`
+	ID            string         `json:"id"`
+	Name          string         `json:"name"`
+	Race          string         `json:"race"`
+	Element       string         `json:"element"`
+	Star          int            `json:"star"`
+	Class         string         `json:"class"` // normal | special
+	Roles         []string       `json:"roles"`
+	PrimaryRole   string         `json:"primary_role"`
+	SecondaryRole string         `json:"secondary_role,omitempty"`
+	Base          map[string]int `json:"base"`
+	GrowthMilli   map[string]int `json:"growth_milli"`
+	MPBase        int            `json:"mp_base"`
+	MPGrowthMilli int            `json:"mp_growth_milli"`
+	// Skills là Native Pool (P13): kỹ năng loài này được học; không tự cấp.
+	Skills      []string `json:"skills"`
+	CaptureRate float64  `json:"capture_rate"`
+	Catchable   bool     `json:"catchable"`
+	Description string   `json:"description,omitempty"`
 	Evidence
 }
+
+// Effect là phần hiệu ứng của kỹ năng P13 (xác suất theo phần nghìn, tỉ lệ theo điểm cơ bản, công suất theo phần nghìn).
+type Effect struct {
+	Status        string `json:"status,omitempty"`
+	ChancePM      int    `json:"chance_pm,omitempty"`
+	Stat          string `json:"stat,omitempty"`
+	AmountBP      int    `json:"amount_bp,omitempty"`
+	PenetrationPM int    `json:"penetration_pm,omitempty"`
+	Hits          int    `json:"hits,omitempty"`
+	SelfBuff      string `json:"self_buff,omitempty"`
+	Cleanse       string `json:"cleanse,omitempty"`
+	CleanseOne    bool   `json:"cleanse_one,omitempty"`
+	TickPowerPM   int    `json:"tick_power_pm,omitempty"`
+	ShieldMAGPM   int    `json:"shield_mag_pm,omitempty"`
+	ShieldHPPM    int    `json:"shield_hp_pm,omitempty"`
+	HealMAGPM     int    `json:"heal_mag_pm,omitempty"`
+	HealFlat      int    `json:"heal_flat,omitempty"`
+}
+
+// Skill là kỹ năng P13 v7.1. Hành vi chi tiết theo id nằm ở internal/character/combat.go.
 type Skill struct {
-	ID          string  `json:"id"`
-	Name        string  `json:"name"`
-	Element     string  `json:"element"`
-	Kind        string  `json:"kind"`
-	Target      string  `json:"target"`
-	Power       int     `json:"power"`
-	MPCost      int     `json:"mp_cost"`
-	Hit         float64 `json:"hit"`
-	Status      string  `json:"status"`
-	Duration    int     `json:"duration"`
-	Cleanse     string  `json:"cleanse"`
-	Stat        string  `json:"stat"`
-	Modifier    float64 `json:"modifier"`
-	LearnLevel  int     `json:"learn_level"`
-	Inheritable bool    `json:"inheritable"`
+	ID               string   `json:"id"`
+	Name             string   `json:"name"`
+	Element          string   `json:"element"`
+	Kind             string   `json:"kind"` // physical|magic|control|debuff|buff|heal|shield|cleanse|dispel|resource|revive
+	Target           string   `json:"target"`
+	MPCost           int      `json:"mp"`
+	Cooldown         int      `json:"cooldown"`
+	LearnLevel       int      `json:"learn_level"`
+	Description      string   `json:"description"`
+	Functions        []string `json:"functions"`
+	Inheritance      []string `json:"inheritance"`
+	PowerPM          int      `json:"power_pm"`
+	Effect           Effect   `json:"effect"`
+	RankPolicy       string   `json:"rank_policy"`
+	Channel          string   `json:"channel"` // physical | magic | utility
+	Shape            string   `json:"shape"`
+	DamageMode       string   `json:"damage_mode"`
+	ExclusiveSpecies string   `json:"exclusive_species,omitempty"`
 	Evidence
 }
+
+// Status mô tả loại trạng thái để hiển thị; hành vi theo P13 §5 nằm trong code.
 type Status struct {
-	ID                string   `json:"id"`
-	Name              string   `json:"name"`
-	Blocks            []string `json:"blocks"`
-	WakeOnDamage      bool     `json:"wake_on_damage"`
-	WakeMultiplier    float64  `json:"wake_multiplier"`
-	FatalOnExpiry     bool     `json:"fatal_on_expiry"`
-	RandomTarget      bool     `json:"random_target"`
-	HitMultiplier     float64  `json:"hit_multiplier"`
-	DefenseMultiplier float64  `json:"defense_multiplier"`
+	ID   string `json:"id"`
+	Name string `json:"name"`
+	Kind string `json:"kind"` // control | restraint | debuff | dot | buff | grace
 	Evidence
 }
 type Race struct {
@@ -231,40 +261,40 @@ type Quest struct {
 	Evidence
 }
 type Rules struct {
-	ID                 string  `json:"id"`
-	QualityMin         int     `json:"quality_min"`
-	QualityMax         int     `json:"quality_max"`
-	QualityCap         int     `json:"quality_cap"`
-	GenerationBonus    int     `json:"generation_bonus"`
-	MutationRange      int     `json:"mutation_range"`
-	SkillInheritance   float64 `json:"skill_inheritance"`
-	AppraisalCost      int     `json:"appraisal_cost"`
-	LearnCost          int     `json:"learn_cost"`
-	HealCost           int     `json:"heal_cost"`
-	HPBase             int     `json:"hp_base"`
-	HPScale            float64 `json:"hp_scale"`
-	MPBase             int     `json:"mp_base"`
-	MPScale            float64 `json:"mp_scale"`
-	DamageScale        float64 `json:"damage_scale"`
-	CritMultiplier     float64 `json:"crit_multiplier"`
+	ID            string `json:"id"`
+	AppraisalCost int    `json:"appraisal_cost"`
+	HealCost      int    `json:"heal_cost"`
+	// SkillSlots: số kỹ năng hiện tại tối đa (P13-D02 = 6). Đòn thường không chiếm ô.
+	SkillSlots         int     `json:"skill_slots"`
 	CaptureHPScale     float64 `json:"capture_hp_scale"`
 	CaptureStatusBonus float64 `json:"capture_status_bonus"`
 	CaptureCap         float64 `json:"capture_cap"`
 	XPPerLevel         int     `json:"xp_per_level"`
 	BattleXP           int     `json:"battle_xp"`
 	BattleGold         int     `json:"battle_gold"`
-	MaxLevel           int     `json:"max_level"`
-	BattleTurnCap      int     `json:"battle_turn_cap"`
+	// LevelCaps[star-1]: cấp tối đa theo Sao (P11: 60/70/80/90/100, chưa tính Plus).
+	LevelCaps     []int `json:"level_caps"`
+	BattleTurnCap int   `json:"battle_turn_cap"`
 	// EncounterWeights[i] = trọng số encounter hoang có i+1 quái cùng loài (rỗng = luôn 1 quái, tương thích dữ liệu cũ).
 	EncounterWeights []int `json:"encounter_weights"`
 	// PackScale[i] = hệ số HP và sát thương của mỗi quái khi encounter có i+1 quái (rỗng/thiếu = 1).
+	// Lớp điều chỉnh encounter áp sau chỉ số nội tại (P11 §7); nợ cân bằng cho P15.
 	PackScale []float64 `json:"pack_scale"`
-	// WildScale nhân HP và sát thương mọi quái hoang (0 = 1); pet người chơi được nuôi nên mạnh hơn quái cùng cấp.
+	// WildScale nhân HP và sát thương mọi quái hoang (0 = 1).
 	WildScale           float64  `json:"wild_scale"`
 	Elements            []string `json:"elements"`
 	MovementAllowedKeys []string `json:"movement_allowed_keys"`
 	Evidence
 }
+
+// LevelCap trả cấp tối đa của một loài theo Sao.
+func (r Rules) LevelCap(star int) int {
+	if star >= 1 && star <= len(r.LevelCaps) {
+		return r.LevelCaps[star-1]
+	}
+	return 60
+}
+
 type Catalog struct {
 	Species  map[string]Species `json:"species"`
 	Skills   map[string]Skill   `json:"skills"`
@@ -276,6 +306,8 @@ type Catalog struct {
 	Recipes  map[string]Recipe  `json:"recipes"`
 	Quests   map[string]Quest   `json:"quests"`
 	Rules    Rules              `json:"rules"`
+	// LegacySpecies ánh xạ id loài trước P11 sang id chuẩn (tùy chọn, chỉ để chuyển save cũ).
+	LegacySpecies map[string]string `json:"-"`
 }
 
 func read(root fs.FS, name string, out any) error {
@@ -301,6 +333,11 @@ func LoadFS(root fs.FS) (*Catalog, error) {
 	}{{"pets/species.json", &c.Species}, {"skills/skills.json", &c.Skills}, {"skills/statuses.json", &c.Statuses}, {"pets/races.json", &c.Races}, {"npcs/npcs.json", &c.NPCs}, {"items/items.json", &c.Items}, {"recipes/recipes.json", &c.Recipes}, {"quests/quests.json", &c.Quests}, {"balance/rules.json", &c.Rules}} {
 		if e := read(root, v.p, v.v); e != nil {
 			return nil, e
+		}
+	}
+	if b, err := fs.ReadFile(root, "pets/legacy_species.json"); err == nil {
+		if err := json.Unmarshal(b, &c.LegacySpecies); err != nil {
+			return nil, fmt.Errorf("pets/legacy_species.json: %w", err)
 		}
 	}
 	if err := c.loadMaps(root); err != nil {
@@ -366,7 +403,7 @@ func (c *Catalog) loadMaps(root fs.FS) error {
 }
 
 func (c *Catalog) Validate() error {
-	if len(c.Species) == 0 || len(c.Maps) == 0 || c.Rules.QualityMin <= 0 || c.Rules.QualityMax < c.Rules.QualityMin || c.Rules.MutationRange < 0 || c.Rules.XPPerLevel <= 0 || c.Rules.BattleTurnCap < 1 || len(c.Rules.Elements) == 0 || len(c.Rules.MovementAllowedKeys) == 0 {
+	if len(c.Species) == 0 || len(c.Maps) == 0 || c.Rules.SkillSlots < 1 || len(c.Rules.LevelCaps) != 5 || c.Rules.XPPerLevel <= 0 || c.Rules.BattleTurnCap < 1 || len(c.Rules.Elements) == 0 || len(c.Rules.MovementAllowedKeys) == 0 {
 		return fmt.Errorf("invalid catalog/rules")
 	}
 	elementSeen := map[string]bool{}
@@ -386,6 +423,9 @@ func (c *Catalog) Validate() error {
 		if !elementSeen[s.Element] {
 			return fmt.Errorf("species %s uses unknown element %s", id, s.Element)
 		}
+		if s.Class != "normal" && s.Class != "special" {
+			return fmt.Errorf("species %s has invalid class %q", id, s.Class)
+		}
 		for _, k := range s.Skills {
 			if _, ok := c.Skills[k]; !ok {
 				return fmt.Errorf("unknown skill %s", k)
@@ -393,12 +433,22 @@ func (c *Catalog) Validate() error {
 		}
 	}
 	for id, s := range c.Skills {
-		if id != s.ID || s.MPCost < 0 || s.Hit < 0 || s.Hit > 1 || s.LearnLevel < 1 {
+		if id != s.ID || s.MPCost < 0 || s.Cooldown < 0 || s.PowerPM < 0 || s.LearnLevel < 1 {
 			return fmt.Errorf("invalid skill %s", id)
 		}
-		if s.Status != "" {
-			if _, ok := c.Statuses[s.Status]; !ok {
-				return fmt.Errorf("unknown status %s", s.Status)
+		if st := s.Effect.Status; st != "" {
+			if _, ok := c.Statuses[st]; !ok {
+				return fmt.Errorf("skill %s uses unknown status %s", id, st)
+			}
+		}
+		if cl := s.Effect.Cleanse; cl != "" {
+			if _, ok := c.Statuses[cl]; !ok {
+				return fmt.Errorf("skill %s cleanses unknown status %s", id, cl)
+			}
+		}
+		if s.ExclusiveSpecies != "" {
+			if _, ok := c.Species[s.ExclusiveSpecies]; !ok {
+				return fmt.Errorf("skill %s exclusive to unknown species %s", id, s.ExclusiveSpecies)
 			}
 		}
 	}
@@ -435,27 +485,23 @@ func contains(values []string, value string) bool {
 }
 func (c *Catalog) validateEffects() error {
 	r := c.Rules
-	if r.SkillInheritance < 0 || r.SkillInheritance > 1 || r.CaptureCap <= 0 || r.CaptureCap > 1 || r.QualityCap < r.QualityMax || r.HPBase < 1 || r.MPBase < 0 || r.HPScale <= 0 || r.MPScale <= 0 || r.DamageScale <= 0 || r.MaxLevel < 1 {
+	if r.CaptureCap <= 0 || r.CaptureCap > 1 {
 		return fmt.Errorf("invalid balance ranges")
 	}
+	for i := 1; i < len(r.LevelCaps); i++ {
+		if r.LevelCaps[i] < r.LevelCaps[i-1] {
+			return fmt.Errorf("level_caps must not decrease")
+		}
+	}
+	kinds := []string{"physical", "magic", "control", "debuff", "buff", "heal", "shield", "cleanse", "dispel", "resource", "revive"}
+	targets := []string{"enemy_one", "enemy_all", "self", "ally_one", "ally_all", "ally_other", "ally_fainted"}
 	for id, s := range c.Skills {
-		if !contains([]string{"physical", "magic", "status", "heal", "cleanse", "buff"}, s.Kind) || !contains([]string{"self", "enemy"}, s.Target) || s.Confidence == "" {
+		if !contains(kinds, s.Kind) || !contains(targets, s.Target) || !contains([]string{"physical", "magic", "utility"}, s.Channel) || s.Confidence == "" {
 			return fmt.Errorf("invalid skill effect %s", id)
-		}
-		if s.Kind == "status" && (s.Status == "" || s.Duration < 1) {
-			return fmt.Errorf("invalid status skill %s", id)
-		}
-		if s.Kind == "cleanse" {
-			if _, ok := c.Statuses[s.Cleanse]; !ok {
-				return fmt.Errorf("unknown cleanse %s", id)
-			}
-		}
-		if s.Kind == "buff" && (!contains([]string{"max_hp", "max_mp", "attack", "magic", "speed", "critical", "defense"}, s.Stat) || s.Modifier <= 0 || s.Duration < 1) {
-			return fmt.Errorf("invalid buff %s", id)
 		}
 	}
 	for id, s := range c.Statuses {
-		if id != s.ID || s.HitMultiplier < 0 || s.HitMultiplier > 1 || s.DefenseMultiplier <= 0 || s.WakeMultiplier <= 0 {
+		if id != s.ID || s.Name == "" {
 			return fmt.Errorf("invalid status %s", id)
 		}
 	}
@@ -490,10 +536,13 @@ func (c *Catalog) validateEffects() error {
 		}
 	}
 	for id, sp := range c.Species {
-		for _, k := range []string{"strength", "agility", "stamina", "intelligence", "spirit", "defense", "critical"} {
-			if sp.Base[k] < 1 {
+		for _, k := range []string{"hp", "atk", "mag", "def", "spd", "status_resistance"} {
+			if sp.Base[k] < 1 || sp.GrowthMilli[k] < 1 {
 				return fmt.Errorf("invalid species stat %s/%s", id, k)
 			}
+		}
+		if sp.MPBase < 1 || sp.MPGrowthMilli < 0 {
+			return fmt.Errorf("invalid species mp %s", id)
 		}
 		if sp.CaptureRate < 0 || sp.CaptureRate > 1 {
 			return fmt.Errorf("invalid capture rate %s", id)

@@ -2,6 +2,7 @@ package character
 
 import (
 	"encoding/json"
+	"math/big"
 	"phimond/server/internal/content"
 	"reflect"
 	"testing"
@@ -25,64 +26,192 @@ func command(t *testing.T, e *Engine, c *Character, op string, d map[string]any)
 	}
 	return ev
 }
-func TestIndividualVarianceAndAppraisal(t *testing.T) {
+func TestGradesDifferAndAreHiddenUntilAppraised(t *testing.T) {
 	e := engine(t)
 	c := veteran(e, "trainer", "Trainer", 123)
 	p := c.Pets[0]
-	q := e.NewPet(c, "snail", 1)
-	if reflect.DeepEqual(p.Quality, q.Quality) {
-		t.Fatal("identical wild potential")
+	differ := false
+	for i := 0; i < 20 && !differ; i++ {
+		q := e.NewPet(c, "species_0111", 1)
+		differ = !reflect.DeepEqual(p.Grades, q.Grades)
+	}
+	if !differ {
+		t.Fatal("identical hidden potential")
 	}
 	p.Appraised = false
 	b, _ := json.Marshal(e.Snapshot(c))
-	if string(b) == "" {
-		t.Fatal("empty")
-	}
 	var v map[string]any
 	json.Unmarshal(b, &v)
-	pets := v["pets"].([]any)
-	if _, ok := pets[0].(map[string]any)["quality"]; ok {
-		t.Fatal("hidden quality exposed")
+	pet0 := v["pets"].([]any)[0].(map[string]any)
+	for _, k := range []string{"grades", "credit", "bonus_milli"} {
+		if _, ok := pet0[k]; ok {
+			t.Fatalf("hidden %s exposed before appraisal", k)
+		}
+	}
+	p.Appraised = true
+	b, _ = json.Marshal(e.Snapshot(c))
+	json.Unmarshal(b, &v)
+	if _, ok := v["pets"].([]any)[0].(map[string]any)["grades"]; !ok {
+		t.Fatal("grades must show after appraisal")
 	}
 }
-func TestLearnedSkillsOnlyInheritedAndParentsArchived(t *testing.T) {
+
+// P11 §1: grown = base + floor(growth × hệ_số_bậc × (cấp−1)); không hồi HP khi lên cấp.
+func TestStatFormulaAndGrades(t *testing.T) {
+	e := engine(t)
+	c := veteran(e, "t", "T", 5)
+	p := e.newPet(c, "species_0021", 60, uniformGrades("B"))
+	if p.MaxHP != 415+490 || p.Speed != 36+54 {
+		t.Fatalf("Lv60 hạng B: hp=%d spd=%d", p.MaxHP, p.Speed)
+	}
+	perfect := e.newPet(c, "species_0021", 60, uniformGrades("Perfect"))
+	if want := 415 + 8310*1100*59/1_000_000; perfect.MaxHP != want {
+		t.Fatalf("Perfect hp=%d want %d", perfect.MaxHP, want)
+	}
+	d := e.newPet(c, "species_0021", 60, uniformGrades("D"))
+	if d.MaxHP >= p.MaxHP || perfect.MaxHP <= p.MaxHP {
+		t.Fatal("bậc phải sắp xếp D < B < Perfect")
+	}
+	// Lên cấp không hồi máu.
+	q := e.newPet(c, "species_0071", 10, uniformGrades("B"))
+	q.HP = 5
+	e.petXP(q, q.Level*e.Data.Rules.XPPerLevel)
+	if q.Level != 11 || q.HP != 5 {
+		t.Fatalf("level=%d hp=%d (không hồi khi lên cấp)", q.Level, q.HP)
+	}
+	// Trần cấp theo Sao.
+	r := e.newPet(c, "species_0071", 999, uniformGrades("B"))
+	if r.Level != e.Data.Rules.LevelCap(e.Data.Species["species_0071"].Star) {
+		t.Fatalf("level cap: %d", r.Level)
+	}
+}
+
+func TestGradeDistribution(t *testing.T) {
+	r := RNG{99}
+	n := map[string]int{}
+	const total = 200000
+	for i := 0; i < total/6; i++ {
+		for _, g := range rollGrades(&r) {
+			n[g]++
+		}
+	}
+	got := 0
+	for _, v := range n {
+		got += v
+	}
+	want := map[string]float64{"D": .03, "C": .12, "B": .40, "A": .28, "S": .12, "SS": .04, "Perfect": .01}
+	for g, p := range want {
+		f := float64(n[g]) / float64(got)
+		if f < p-.01 || f > p+.01 {
+			t.Errorf("%s: %.4f, cần %.2f", g, f, p)
+		}
+	}
+}
+
+// bonusMilli: z lớn nhất với z/1000 + (z/1000)²/(2R) ≤ Q; so với duyệt chính xác bằng số hữu tỉ.
+func TestBonusMilliExact(t *testing.T) {
+	check := func(q *big.Rat, r int64) {
+		z := bonusMilli(q, r)
+		f := func(z int) *big.Rat {
+			x := big.NewRat(int64(z), 1000)
+			sq := new(big.Rat).Mul(x, x)
+			sq.Quo(sq, big.NewRat(2*r, 1))
+			return x.Add(x, sq)
+		}
+		if f(z).Cmp(q) > 0 || f(z+1).Cmp(q) <= 0 {
+			t.Fatalf("Q=%v R=%d: z=%d không phải cực đại", q, r, z)
+		}
+	}
+	for _, r := range []int64{50, 100, 500} {
+		for _, q := range []*big.Rat{big.NewRat(0, 1), big.NewRat(1, 3), big.NewRat(7, 2), big.NewRat(123456789, 1000), big.NewRat(1, 1000), big.NewRat(2, 1)} {
+			check(q, r)
+		}
+	}
+	if bonusMilli(big.NewRat(0, 1), 50) != 0 {
+		t.Fatal("Q=0 → 0")
+	}
+}
+
+func TestLineageBreedingArchivesParentsAndGrantsNoSkills(t *testing.T) {
 	e := engine(t)
 	c := veteran(e, "t", "T", 44)
-	a := c.Pets[0]
-	a.Level = 30
-	a.Gender = "female"
-	a.Skills = []string{"attack", "earth_strike"}
-	b := e.NewPet(c, "flower_fairy", 30)
-	b.Gender = "male"
-	b.Skills = []string{"attack"}
-	c.Pets = append(c.Pets, b)
-	c.Level = 30
 	atService(e, c)
+	a := e.newPet(c, "species_0111", 30, uniformGrades("S"))
+	a.Gender = "female"
+	a.Skills = []string{"strike"}
+	b := e.newPet(c, "species_0022", 30, uniformGrades("S"))
+	b.Gender = "male"
+	b.Skills = []string{"heal"}
+	c.Pets = append(c.Pets, a, b)
+	c.Level = 30
 	c.Recipes = []string{"snail_refinement"}
 	c.Inventory["synthesis_soul"] = 3
 	c.Gold = 1000
-	c.ActivePetID = ""
 	command(t, e, c, "breeding.synthesize", map[string]any{"parent_a": a.ID, "parent_b": b.ID, "recipe_id": "snail_refinement"})
 	ch := c.Pets[len(c.Pets)-1]
-	if ch.Generation != 2 || len(ch.Parents) != 2 {
+	if ch.Generation != 2 || len(ch.Parents) != 2 || ch.Level != 1 {
 		t.Fatal("lineage missing")
 	}
-	for _, s := range ch.Skills {
-		if s != "attack" && s != "earth_strike" {
-			t.Fatalf("unlearned skill inherited: %s", s)
-		}
+	if len(ch.Skills) != 0 {
+		t.Fatalf("con mới sinh chưa biết kỹ năng nào: %v", ch.Skills)
 	}
-	if !c.Pets[0].Retired || !c.Pets[1].Retired {
-		t.Fatal("consumed parents not archived")
+	if ch.Bonus["hp"] <= 0 || ch.Bonus["atk"] <= 0 {
+		t.Fatalf("bố mẹ cấp 30 phải cho thưởng kế thừa: %v", ch.Bonus)
+	}
+	for _, id := range []string{a.ID, b.ID} {
+		retired := false
+		for _, p := range c.Pets {
+			retired = retired || (p.ID == id && p.Retired)
+		}
+		if !retired {
+			t.Fatal("consumed parents not archived")
+		}
 	}
 	if len(e.Lineage(c, ch.ID).Parents) != 2 {
 		t.Fatal("ancestors missing")
 	}
 }
+
+// Cấp bố mẹ ≤ 20 không có tín dụng mới (P11 F02): thưởng bằng 0.
+func TestLowLevelParentsGiveNoBonus(t *testing.T) {
+	e := engine(t)
+	c := veteran(e, "t", "T", 3)
+	a := e.newPet(c, "species_0111", 20, uniformGrades("B"))
+	b := e.newPet(c, "species_0022", 20, uniformGrades("B"))
+	ch := e.Inherit(c, a, b, "species_0111", 0)
+	for k, v := range ch.Bonus {
+		if v != 0 {
+			t.Fatalf("%s=%d", k, v)
+		}
+	}
+}
+
+func TestInheritedSkillPoolFilteredByRace(t *testing.T) {
+	e := engine(t)
+	c := veteran(e, "t", "T", 3)
+	a := e.newPet(c, "species_0111", 30, uniformGrades("B"))
+	b := e.newPet(c, "species_0022", 30, uniformGrades("B"))
+	a.Skills = []string{"strike", "heal"}
+	ch := e.Inherit(c, a, b, "species_0111", 0)
+	race := e.Data.Species["species_0111"].Race
+	for _, id := range ch.InheritedPool {
+		s := e.Data.Skills[id]
+		if !has(s.Inheritance, race) || s.ExclusiveSpecies != "" {
+			t.Fatalf("kỹ năng %s không được kế thừa cho race %s", id, race)
+		}
+	}
+	for _, id := range a.Skills {
+		s := e.Data.Skills[id]
+		if has(s.Inheritance, race) && !has(ch.InheritedPool, id) {
+			t.Fatalf("thiếu %s trong pool kế thừa", id)
+		}
+	}
+}
+
 func TestCaptureProbabilityDistribution(t *testing.T) {
 	e := engine(t)
 	c := veteran(e, "t", "T", 7)
-	p := e.NewPet(c, "snail", 1)
+	p := e.NewPet(c, "species_0111", 1)
 	low := e.CaptureChance(p, 1, p.MaxHP, 1)
 	high := e.CaptureChance(p, p.MaxHP, p.MaxHP, 1)
 	if low <= high {
@@ -143,78 +272,6 @@ func TestRejectUnknownAndUnauthorizedIntents(t *testing.T) {
 		}
 	}
 }
-func TestSynthesisDistribution(t *testing.T) {
-	e := engine(t)
-	c := veteran(e, "t", "T", 42)
-	a := e.NewPet(c, "snail", 30)
-	b := e.NewPet(c, "flower_fairy", 30)
-	a.Quality["strength"] = 1000
-	b.Quality["strength"] = 1000
-	total := 0
-	inherited := 0
-	a.Skills = []string{"attack", "earth_strike"}
-	min, max := 10000, 0
-	for i := 0; i < 100000; i++ {
-		p := e.Inherit(c, a, b, "snail", 0)
-		v := p.Quality["strength"]
-		if has(p.Skills, "earth_strike") {
-			inherited++
-		}
-		total += v
-		if v < min {
-			min = v
-		}
-		if v > max {
-			max = v
-		}
-	}
-	if inherited < 94000 || inherited > 96000 {
-		t.Fatalf("skill inheritance distribution %d", inherited)
-	}
-	mean := float64(total) / 100000
-	if mean < 1010 || mean > 1030 || max == min {
-		t.Fatalf("bad inheritance distribution mean=%f range=%d-%d", mean, min, max)
-	}
-}
-
-func TestMultipleGenerationsPreserveLearnedSkillAndAncestors(t *testing.T) {
-	e := engine(t)
-	e.Data.Rules.SkillInheritance = 1
-	c := veteran(e, "family", "Family", 55)
-	atService(e, c)
-	c.Level = 30
-	c.Gold = 1000
-	c.Inventory["synthesis_soul"] = 5
-	c.Recipes = []string{"snail_refinement"}
-	first := c.Pets[0]
-	first.Level = 30
-	first.Gender = "female"
-	first.Skills = []string{"attack", "earth_strike"}
-	mate := e.NewPet(c, "flower_fairy", 30)
-	mate.Gender = "male"
-	c.Pets = append(c.Pets, mate)
-	command(t, e, c, "breeding.synthesize", map[string]any{"parent_a": first.ID, "parent_b": mate.ID, "recipe_id": "snail_refinement"})
-	second := c.Pets[2]
-	second.Level = 30
-	second.Gender = "female"
-	mate2 := e.NewPet(c, "flower_fairy", 30)
-	mate2.Gender = "male"
-	c.Pets = append(c.Pets, mate2)
-	command(t, e, c, "breeding.synthesize", map[string]any{"parent_a": second.ID, "parent_b": mate2.ID, "recipe_id": "snail_refinement"})
-	child := c.Pets[4]
-	tree := e.Lineage(c, child.ID)
-	if child.Generation != 3 || len(tree.Parents) != 2 || len(tree.Parents[0].Parents) != 2 || !has(child.Skills, "earth_strike") {
-		t.Fatal("multi-generation history or skill was lost")
-	}
-	if child.Star != 1 || child.Refinement != 2 {
-		t.Fatal("star and refinement conflated")
-	}
-	command(t, e, c, "pet.appraise", map[string]any{"pet_id": child.ID})
-	if !c.Pets[4].Appraised {
-		t.Fatal("appraisal failed")
-	}
-}
-
 func TestCreateCharacterNameAndGender(t *testing.T) {
 	e := engine(t)
 	c := e.NewDraft("d1", 1)

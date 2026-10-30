@@ -43,7 +43,7 @@ func (e *Engine) progress(c *Character, kind, target string) {
 // catalog rules. Moved verbatim from internal/game/service.go.
 func (e *Engine) trainerXP(c *Character, xp int) {
 	c.XP += xp
-	for c.Level < e.Data.Rules.MaxLevel && c.XP >= c.Level*e.Data.Rules.XPPerLevel {
+	for c.Level < e.Data.Rules.LevelCap(5) && c.XP >= c.Level*e.Data.Rules.XPPerLevel {
 		c.XP -= c.Level * e.Data.Rules.XPPerLevel
 		c.Level++
 	}
