@@ -531,3 +531,48 @@ button:disabled { opacity: 0.45; cursor: default; }
 .pd-stats .g-S { color: #4aa3e0; }
 .pd-stats .g-SS { color: #b46be0; }
 .pd-stats .g-Perfect { color: #f0b429; text-shadow: 0 0 6px rgba(240, 180, 41, .5); }
+
+/* ---------- HUD v1.0.2: thẻ người chơi và linh thú dùng khung GPT batch-15 (hud-player-plate, hud-pet-main, hud-pet-sub) ----------
+   Khung là ảnh phủ lên trên (::after); ruột (chân dung, tên, vạch) đặt tuyệt đối theo đúng toạ độ lỗ trong suốt của ảnh.
+   Tỉ lệ: người chơi 0,7×; linh thú chính 0,6×; linh thú phụ 0,7×. */
+.hud-status .me-row.hud-card, .hud-status .pet-mini.hud-card { background: none; border: 0; box-shadow: none; border-radius: 0; padding: 0; position: relative; display: block; image-rendering: pixelated; }
+.hud-status .me-row.hud-card::after, .hud-status .pet-mini.hud-card::after { content: ''; position: absolute; inset: 0; background-repeat: no-repeat; background-size: 100% 100%; image-rendering: pixelated; pointer-events: none; }
+.hud-status .me-row.hud-card { width: 224px; height: 62px; }
+.hud-status .me-row.hud-card::after { background-image: url('/ui/hud-player-plate.png'); }
+.hud-status .me-row .lvl { position: absolute; left: 14px; top: 17px; width: 29px; height: 29px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: radial-gradient(#16303c, #0a141c); line-height: 1; font-size: 11px; font-weight: 800; color: #ffe29a; text-shadow: 0 1px 1px #000; }
+.hud-status .me-row .lvl small { font-size: 7px; font-weight: 700; color: #d9b968; }
+.hud-status .me-row .who { position: absolute; left: 63px; top: 17px; width: 118px; height: 15px; padding: 0 5px; box-sizing: border-box; line-height: 15px; font-size: 11px; background: #0c1a24; }
+.hud-status .me-row .xpbar { position: absolute; z-index: 1; left: 64px; top: 42px; width: 98px; height: 4px; background: #0a141c; overflow: hidden; }
+.hud-status .me-row .xpbar i { display: block; height: 100%; background: var(--fill-xp) 0 0/98px 100% no-repeat; image-rendering: pixelated; transition: width 0.3s; }
+.hud-status .me-row .gold { display: none; }
+.hud-status .pet-stack { gap: 0; justify-items: start; }
+.hud-status .pet-mini.hud-card.main { width: 216px; height: 77px; margin: 0; }
+.hud-status .pet-mini.hud-card.main::after { background-image: url('/ui/hud-pet-main.png'); }
+.hud-status .pet-mini.hud-card.sub { width: 185px; height: 67px; margin: -2px 0 0 8px; }
+.hud-status .pet-mini.hud-card.sub::after { background-image: url('/ui/hud-pet-sub.png'); }
+.hud-status .pet-mini.hud-card .ring { position: absolute; background: radial-gradient(#16303c, #0a141c); border-radius: 50%; overflow: hidden; width: auto; height: auto; }
+.hud-status .pet-mini.hud-card.main .ring { left: 14px; top: 13px; width: 51px; height: 51px; }
+.hud-status .pet-mini.hud-card.sub .ring { left: 14px; top: 13px; width: 39px; height: 39px; }
+.hud-status .pet-mini.hud-card .ring .portrait { border: 0; border-radius: 0; background-color: transparent; }
+.hud-status .pet-mini.hud-card .badge { position: absolute; left: auto; bottom: auto; right: auto; width: auto; height: auto; background: none; font-size: 10px; font-weight: 800; color: #ffe29a; text-shadow: 0 1px 1px #000; display: block; z-index: 1; }
+.hud-status .pet-mini.hud-card .badge::before { content: 'Lv '; font-size: 8px; color: #d9b968; }
+.hud-status .pet-mini.hud-card .badge { white-space: nowrap; }
+.hud-status .pet-mini.hud-card.main .badge { left: 72px; top: -6px; }
+.hud-status .pet-mini.hud-card.sub .badge { left: 60px; top: -7px; }
+.hud-status .pet-mini.hud-card::before { content: ''; position: absolute; border-radius: 50%; background: radial-gradient(#4a3512, #1e1608); }
+.hud-status .pet-mini.hud-card.main::before { left: 55px; top: 54px; width: 12px; height: 12px; }
+.hud-status .pet-mini.hud-card.sub::before { left: 46px; top: 44px; width: 10px; height: 10px; }
+.hud-status .pet-mini.hud-card .ring { overflow: visible; }
+.hud-status .pet-mini.hud-card .ring .portrait { border-radius: 50%; }
+.hud-status .pet-mini.hud-card .mbars { position: absolute; inset: 0; display: block; }
+.hud-status .pet-mini.hud-card .mini { position: absolute; border: 0; box-shadow: none; border-radius: 0; background: #0a141c; }
+.hud-status .pet-mini.hud-card.main .mini.hp { left: 86px; top: 26px; width: 114px; height: 5px; }
+.hud-status .pet-mini.hud-card.main .mini.mp { left: 86px; top: 38px; width: 114px; height: 4px; }
+.hud-status .pet-mini.hud-card.sub .mini.hp { left: 74px; top: 22px; width: 94px; height: 4px; }
+.hud-status .pet-mini.hud-card.sub .mini.mp { left: 74px; top: 34px; width: 94px; height: 3px; }
+.hud-status .pet-mini.hud-card.main .mini { height: auto; }
+.hud-status .pet-stack.danger .pet-mini.main.hud-card { box-shadow: none; animation: none; filter: drop-shadow(0 0 6px rgba(255, 70, 60, 0.9)); }
+.hud-status .pet-mini.hud-card.down { filter: grayscale(0.6); }
+.hud.has-subs .hud-goal { top: calc(300px + var(--safe-t)); }
+.hud:not(.has-subs):not(.no-pet) .hud-goal { top: calc(156px + var(--safe-t)); }
+@media (max-width: 520px) { .hud-status { transform: scale(0.82); transform-origin: top left; } }

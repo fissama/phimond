@@ -44,12 +44,15 @@ export function Hud({ world, ch }: { world: GameWorld; ch: Character }) {
         {/* Trên cùng: tấm người chơi nhỏ (chỉ cấp + tên + EXP, phụ để mở map). */}
         <div class="me-row hud-card">
           <div class="lvl" title="Cấp nhân vật">
-            Lv {ch.level}
+            <small>Lv</small>
+            {ch.level}
           </div>
           <div class="who" data-testid="hud-name">
             {ch.name}
           </div>
-          <FrameBar kind="xp" row={2} v={ch.xp} max={ch.level * XP_PER_LEVEL} label="EXP" slim />
+          <div class="xpbar" data-testid="fbar-xp" title={`EXP ${Math.floor(ch.xp)}/${ch.level * XP_PER_LEVEL}`}>
+            <i style={{ width: `${Math.max(0, Math.min(100, (ch.xp / Math.max(1, ch.level * XP_PER_LEVEL)) * 100))}%` }} />
+          </div>
           <div class="gold" data-testid="hud-gold">
             <i class="coin" />
             {ch.gold}
@@ -68,7 +71,7 @@ export function Hud({ world, ch }: { world: GameWorld; ch: Character }) {
                 onClick={() => (overlay.value = { kind: 'menu', page: 'pets', pet: p.id })}
               >
                 <div class="ring">
-                  <PetPortrait species={p.species_id} size={i === 0 ? 52 : 38} bust />
+                  <PetPortrait species={p.species_id} size={i === 0 ? 51 : 39} bust />
                   <div class="badge" title="Cấp linh thú">{p.level}</div>
                 </div>
                 <div class="mbars">
