@@ -309,6 +309,73 @@ function QuestReward({ world, q }: { world: GameWorld; q: QuestDef }) {
   );
 }
 
+/** Tài khoản: email khôi phục (tuỳ chọn) và xoá tài khoản vĩnh viễn. */
+function AccountSection() {
+  const [acc, setAcc] = useState<{ username: string; has_email: boolean; email: string } | null>(null);
+  const [email, setEmail] = useState('');
+  const [msg, setMsg] = useState('');
+  const [err, setErr] = useState('');
+  const [del, setDel] = useState(false);
+  const [pw, setPw] = useState('');
+  const [busy, setBusy] = useState(false);
+  const load = () => session.accountInfo().then(setAcc).catch(() => setAcc(null));
+  useEffect(() => {
+    void load();
+  }, []);
+  if (!acc) return null;
+  const run = async (fn: () => Promise<void>) => {
+    setBusy(true);
+    setErr('');
+    setMsg('');
+    try {
+      await fn();
+    } catch (e) {
+      setErr(e instanceof Error ? e.message : String(e));
+    } finally {
+      setBusy(false);
+    }
+  };
+  return (
+    <>
+      <h3 class="set-h">Tài khoản</h3>
+      <p class="muted set-note" data-testid="account-name">Tài khoản: <b>{acc.username}</b> · Email khôi phục: {acc.has_email ? acc.email : 'chưa có'}</p>
+      <div class="set-row">
+        <input class="input" data-testid="account-email" type="email" placeholder={acc.has_email ? 'Đổi email (để trống để gỡ)' : 'Thêm email để lấy lại mật khẩu'} value={email} onInput={(e) => setEmail(e.currentTarget.value)} />
+        <button
+          class="btn small"
+          data-testid="account-email-save"
+          disabled={busy || (!email.trim() && !acc.has_email)}
+          onClick={() =>
+            void run(async () => {
+              await session.setEmail(email.trim());
+              setEmail('');
+              setMsg(email.trim() ? 'Đã lưu email.' : 'Đã gỡ email.');
+              await load();
+            })
+          }
+        >
+          Lưu
+        </button>
+      </div>
+      {!del ? (
+        <button class="btn danger" data-testid="account-delete-open" onClick={() => setDel(true)}>Xoá tài khoản…</button>
+      ) : (
+        <div class="set-row" style={{ flexDirection: 'column', alignItems: 'stretch', gap: 6 }}>
+          <p class="muted set-note">Xoá vĩnh viễn tài khoản, cả 3 nhân vật, linh thú và vật phẩm. Không khôi phục được. Nhập mật khẩu để xác nhận.</p>
+          <input class="input" data-testid="account-delete-password" type="password" autoComplete="current-password" placeholder="Mật khẩu" value={pw} onInput={(e) => setPw(e.currentTarget.value)} />
+          <div style={{ display: 'flex', gap: 8 }}>
+            <button class="btn danger" data-testid="account-delete-confirm" disabled={busy || !pw} onClick={() => void run(async () => { await session.deleteAccount(pw); location.reload(); })}>Xoá vĩnh viễn</button>
+            <button class="btn" disabled={busy} onClick={() => { setDel(false); setPw(''); }}>Huỷ</button>
+          </div>
+        </div>
+      )}
+      {msg && <p class="muted set-note" data-testid="account-msg" style={{ color: '#a8e6a1' }}>{msg}</p>}
+      {err && <p class="muted set-note" data-testid="account-error" style={{ color: '#ff8a80' }}>{err}</p>}
+      <p class="muted set-note"><a href="/terms.html" target="_blank" rel="noopener">Điều khoản</a> · <a href="/privacy.html" target="_blank" rel="noopener">Quyền riêng tư</a></p>
+    </>
+  );
+}
+
 function Settings() {
   const s = settings.value;
   const row = (label: string, testid: string | undefined, opts: [string, string, boolean, () => void, string?][]) => (
@@ -351,6 +418,7 @@ function Settings() {
         {row('Phím điều hướng', undefined, [['on', 'Hiện', s.dpad, () => updateSettings({ dpad: true })], ['off', 'Ẩn', !s.dpad, () => updateSettings({ dpad: false })]])}
         {row('Giao diện', 'hud-density', [['full', 'Đầy đủ', s.hud === 'full', () => updateSettings({ hud: 'full' }), 'hud-full'], ['compact', 'Gọn', s.hud === 'compact', () => updateSettings({ hud: 'compact' }), 'hud-compact']])}
         {settingsVolatile.value && <p class="muted">Trình duyệt không cho lưu cài đặt; lựa chọn chỉ giữ tới khi tải lại trang.</p>}
+        <AccountSection />
       </div>
       <Back />
     </>

@@ -12,7 +12,11 @@ installSkin();
 export function App() {
   const [ready, setReady] = useState(false);
   useEffect(() => {
-    void Promise.all([loadDictionary(), loadManifests(), loadUiManifest()]).finally(() => setReady(true));
+    // Tải dữ liệu giao diện, rồi thử khôi phục phiên đã lưu (tải lại trang không phải đăng nhập lại).
+    void Promise.all([loadDictionary(), loadManifests(), loadUiManifest()])
+      .then(() => session.resume())
+      .catch(() => false)
+      .finally(() => setReady(true));
   }, []);
   if (!ready)
     return (

@@ -576,3 +576,6 @@ button:disabled { opacity: 0.45; cursor: default; }
 .hud.has-subs .hud-goal { top: calc(300px + var(--safe-t)); }
 .hud:not(.has-subs):not(.no-pet) .hud-goal { top: calc(156px + var(--safe-t)); }
 @media (max-width: 520px) { .hud-status { transform: scale(0.82); transform-origin: top left; } }
+
+.login-box a { color: #ffe29a; }
+.login-box a:hover { color: #fff3cf; }

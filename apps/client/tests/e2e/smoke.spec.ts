@@ -21,6 +21,8 @@ async function register(p: Page): Promise<void> {
   await p.getByTestId('username').fill(`e2e${Date.now().toString(36)}${Math.floor(Math.random() * 1e4)}`);
   await p.getByTestId('password').fill('matkhau-e2e-12345');
   await p.getByTestId('register').click();
+  await p.getByTestId('terms').check();
+  await p.getByTestId('register-submit').click();
   await createCharacter(p, 'Tester', 'male');
 }
 
@@ -299,6 +301,8 @@ test('3 ô nhân vật độc lập: chọn nam/nữ, đặt tên, giữa vòng 
   await page.getByTestId('username').fill(`sl${Date.now().toString(36)}${Math.floor(Math.random() * 1e4)}`);
   await page.getByTestId('password').fill('matkhau-e2e-12345');
   await page.getByTestId('register').click();
+  await page.getByTestId('terms').check();
+  await page.getByTestId('register-submit').click();
   // Tên không hợp lệ bị server từ chối, vẫn ở bước tạo.
   await page.getByTestId('slot-1').click();
   await page.getByTestId('gender-female').click();
@@ -325,4 +329,36 @@ test('3 ô nhân vật độc lập: chọn nam/nữ, đặt tên, giữa vòng 
   await page.getByTestId('slot-1').click();
   await expect(page.getByTestId('hud-status')).toHaveText('Trực tuyến', { timeout: 20_000 });
   await expect(page.getByTestId('hud-name')).toContainText('Ngọc Anh');
+});
+
+test('đăng ký: mật khẩu yếu và thiếu điều khoản bị báo rõ; hiện/ẩn mật khẩu', async ({ page }) => {
+  await page.goto('/');
+  await page.getByTestId('register').click();
+  await page.getByTestId('username').fill(`pw${Date.now().toString(36)}`);
+  await page.getByTestId('password').fill('12345678');
+  await expect(page.getByTestId('register-submit')).toBeDisabled(); // chưa đồng ý điều khoản
+  await page.getByTestId('terms').check();
+  await page.getByTestId('register-submit').click();
+  await expect(page.getByTestId('login-error')).toContainText('quá dễ đoán');
+  await expect(page.getByTestId('password')).toHaveAttribute('type', 'password');
+  await page.getByTestId('toggle-password').click();
+  await expect(page.getByTestId('password')).toHaveAttribute('type', 'text');
+});
+
+test('tải lại trang vẫn giữ phiên và vào lại đúng nhân vật; xoá tài khoản xong về màn đăng nhập', async ({ page }) => {
+  await register(page);
+  await page.reload();
+  await expect(page.getByTestId('hud-name')).toContainText('Tester', { timeout: 20_000 });
+  await page.getByTestId('menu-open').click();
+  await page.getByTestId('menu-settings').click();
+  await expect(page.getByTestId('account-name')).toBeVisible();
+  await page.getByTestId('account-delete-open').click();
+  await page.getByTestId('account-delete-password').fill('sai-mat-khau-999');
+  await page.getByTestId('account-delete-confirm').click();
+  await expect(page.getByTestId('account-error')).toContainText('Sai tên đăng nhập hoặc mật khẩu');
+  await page.getByTestId('account-delete-password').fill('matkhau-e2e-12345');
+  await page.getByTestId('account-delete-confirm').click();
+  await expect(page.getByTestId('username')).toBeVisible({ timeout: 20_000 });
+  await page.reload();
+  await expect(page.getByTestId('username')).toBeVisible(); // không còn phiên để khôi phục
 });

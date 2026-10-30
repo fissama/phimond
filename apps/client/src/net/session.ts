@@ -99,14 +99,74 @@ export class Session {
   }
 
   /** Đăng nhập/đăng ký rồi dừng ở màn chọn nhân vật (3 ô); chưa mở WebSocket. */
-  async signIn(username: string, password: string, register = false): Promise<void> {
-    await this.authenticate(username, password, register);
+  async signIn(username: string, password: string, register = false, extra: SignUpExtra = {}): Promise<void> {
+    await this.authenticate(username, password, register, extra);
+    saveStored({ token: this.token }, extra.remember !== false);
     await this.loadSlots();
   }
 
-  private async authenticate(username: string, password: string, register: boolean): Promise<void> {
+  /** Khôi phục phiên đã lưu sau khi tải lại trang: vào lại nhân vật đang chơi, hoặc màn chọn nhân vật. false nếu không có/đã hết hạn. */
+  async resume(): Promise<boolean> {
+    const st = loadStored();
+    if (!st) return false;
+    this.token = st.token;
+    try {
+      const cat = await this.wire.request('GET', '/api/content');
+      if (cat.status !== 200) throw new Error('content');
+      this._catalog.value = Catalog.parse(cat.json);
+      await this.loadSlots();
+      if (typeof st.slot === 'number') await this.enter(st.slot);
+      return true;
+    } catch {
+      // Mất mạng thì giữ token để lần sau thử lại; chỉ xoá khi máy chủ nói phiên đã hết hạn.
+      const probe = await this.wire.request('GET', '/api/slots', undefined, this.token).catch(() => ({ status: 0, json: null }));
+      if (probe.status === 401) clearStored();
+      this.token = '';
+      this._slots.value = null;
+      this._character.value = null;
+      return false;
+    }
+  }
+
+  /** Yêu cầu thư đặt lại mật khẩu (luôn báo thành công để không lộ email nào có tài khoản). */
+  async requestPasswordReset(email: string): Promise<void> {
+    const res = await this.wire.request('POST', '/api/password/forgot', { email }).catch(() => ({ status: 0, json: null }));
+    if (res.status !== 200) throw new Error(errorText(res.json, res.status));
+  }
+
+  async resetPassword(resetToken: string, password: string): Promise<void> {
+    const res = await this.wire.request('POST', '/api/password/reset', { token: resetToken, password }).catch(() => ({ status: 0, json: null }));
+    if (res.status !== 200) throw new Error(errorText(res.json, res.status));
+  }
+
+  async accountInfo(): Promise<{ username: string; has_email: boolean; email: string }> {
+    const res = await this.wire.request('GET', '/api/account', undefined, this.token).catch(() => ({ status: 0, json: null }));
+    if (res.status !== 200) throw new Error(errorText(res.json, res.status));
+    return res.json as { username: string; has_email: boolean; email: string };
+  }
+
+  async setEmail(email: string): Promise<void> {
+    const res = await this.wire.request('POST', '/api/account/email', { email }, this.token).catch(() => ({ status: 0, json: null }));
+    if (res.status !== 200) throw new Error(errorText(res.json, res.status));
+  }
+
+  /** Xoá vĩnh viễn tài khoản (cần mật khẩu), rồi về màn đăng nhập. */
+  async deleteAccount(password: string): Promise<void> {
+    const res = await this.wire.request('POST', '/api/account/delete', { password }, this.token).catch(() => ({ status: 0, json: null }));
+    if (res.status !== 200) throw new Error(errorText(res.json, res.status));
+    clearStored();
+    this.token = '';
+    this.dropSocket();
+    this.failAll('Tài khoản đã xoá', 'offline');
+    this._status.value = 'idle';
+    this._character.value = null;
+    this._slots.value = null;
+  }
+
+  private async authenticate(username: string, password: string, register: boolean, extra: SignUpExtra = {}): Promise<void> {
+    const body = register ? { username, password, email: extra.email ?? '', terms: extra.terms === true } : { username, password };
     const res = await this.wire
-      .request('POST', register ? '/api/register' : '/api/login', { username, password })
+      .request('POST', register ? '/api/register' : '/api/login', body)
       .catch(() => ({ status: 0, json: null }));
     if (res.status !== 200) throw new Error(errorText(res.json, res.status));
     const auth = AuthResponse.parse(res.json);
@@ -130,11 +190,13 @@ export class Session {
     this.revision = -1;
     this.lastEventRevision = -1;
     await this.connect();
+    patchStored({ slot });
     this._slots.value = null;
   }
 
   /** Rời nhân vật hiện tại về màn chọn nhân vật (giữ đăng nhập). */
   async leave(): Promise<void> {
+    patchStored({ slot: undefined });
     this.dropSocket();
     this.failAll('Đổi nhân vật', 'offline');
     this._status.value = 'idle';
@@ -218,6 +280,7 @@ export class Session {
     this._slots.value = null;
     this.revision = -1;
     this.lastEventRevision = -1;
+    clearStored();
     if (token) await this.wire.request('POST', '/api/logout', undefined, token).catch(() => undefined);
   }
 
@@ -298,6 +361,57 @@ function parse(raw: string): ServerMessage | null {
     return r.success ? r.data : null;
   } catch {
     return null;
+  }
+}
+
+export interface SignUpExtra {
+  email?: string;
+  terms?: boolean;
+  /** Ghi nhớ trên thiết bị này (localStorage); false = chỉ trong tab (sessionStorage). Mặc định true. */
+  remember?: boolean;
+}
+
+const STORE_KEY = 'phimond.session.v1';
+interface Stored {
+  token: string;
+  slot?: number | undefined;
+}
+function loadStored(): Stored | null {
+  for (const st of [() => localStorage, () => sessionStorage]) {
+    try {
+      const v = JSON.parse(st().getItem(STORE_KEY) ?? 'null') as Stored | null;
+      if (v && typeof v.token === 'string' && v.token.length === 64) return v;
+    } catch {
+      /* bộ nhớ bị chặn: bỏ qua */
+    }
+  }
+  return null;
+}
+function saveStored(v: Stored, remember: boolean): void {
+  clearStored();
+  try {
+    (remember ? localStorage : sessionStorage).setItem(STORE_KEY, JSON.stringify(v));
+  } catch {
+    /* private mode: phiên chỉ sống tới khi tải lại */
+  }
+}
+function patchStored(patch: Partial<Stored>): void {
+  for (const st of [() => localStorage, () => sessionStorage]) {
+    try {
+      const cur = JSON.parse(st().getItem(STORE_KEY) ?? 'null') as Stored | null;
+      if (cur) st().setItem(STORE_KEY, JSON.stringify({ ...cur, ...patch }));
+    } catch {
+      /* bỏ qua */
+    }
+  }
+}
+function clearStored(): void {
+  for (const st of [() => localStorage, () => sessionStorage]) {
+    try {
+      st().removeItem(STORE_KEY);
+    } catch {
+      /* bỏ qua */
+    }
   }
 }
 
