@@ -2,6 +2,7 @@ import { useState } from 'preact/hooks';
 import { hd2dUrl } from '../render/assets.ts';
 import { session } from '../state/app.ts';
 import type { SlotSummary } from '../net/session.ts';
+import { LoginBackdrop } from './LoginBackdrop.tsx';
 
 type Gender = 'male' | 'female';
 const GENDER_VI: Record<Gender, string> = { male: 'Nam', female: 'Nữ' };
@@ -27,6 +28,8 @@ export function SlotSelect() {
     }
   };
   return (
+    <>
+    <LoginBackdrop />
     <div class="cs-root" data-testid="slot-select">
       <div class="cs-box">
         <h2 class="cs-title">Chọn nhân vật</h2>
@@ -39,6 +42,7 @@ export function SlotSelect() {
         <button class="btn" data-testid="slot-logout" onClick={() => void session.logout()}>Đăng xuất</button>
       </div>
     </div>
+    </>
   );
 }
 
@@ -82,6 +86,8 @@ export function CreateCharacter() {
     }
   };
   return (
+    <>
+    <LoginBackdrop />
     <div class="cs-root" data-testid="create-character">
       <form
         class="cs-box"
@@ -114,5 +120,6 @@ export function CreateCharacter() {
         </div>
       </form>
     </div>
+    </>
   );
 }

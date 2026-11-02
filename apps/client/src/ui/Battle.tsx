@@ -89,6 +89,8 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
         const unitName = (id?: string) => labelOf(battle.units, id);
         const evs = b.events as BattleEvent[];
         setPlaying(true);
+        // Gói cuối: server đã xoá `battle` nhưng cảnh phải ở yên tới hết lượt phát; đặt `finished` ngay để không tắt rồi bật lại.
+        if (!b.character.battle && b.presentation?.completed_battle) setFinished({ battle: b.presentation.completed_battle as BattleT, lines: [] });
         evs.forEach((e, i) =>
           setTimeout(() => {
             setLines((l) => {
@@ -150,12 +152,11 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
                 }
                 startLv.current = null;
                 // Thua: giữ bảng tới khi chạm, kèm gợi ý; thắng/bắt/lên cấp: tự đóng sau một nhịp.
-                if (done.result === 'loss') rewards.push('Gợi ý: hồi phục ở Kiểm Lâm Lio (Bìa Rừng) hoặc Y Sư Selka (Quảng Trường), dùng Thuốc Rễ Dại trong trận, hoặc luyện cấp ở Bìa Rừng trước khi vào Rừng Sâu.');
-                setFinished({ battle: done, lines: rewards });
+                if (done.result === 'loss') pushLog('Gợi ý: hồi phục ở Kiểm Lâm Lio (Bìa Rừng) hoặc Y Sư Selka (Quảng Trường), dùng Thuốc Rễ Dại trong trận, hoặc luyện cấp ở Bìa Rừng trước khi vào Rừng Sâu.', 'system');
+                setFinished({ battle: done, lines: [] });
                 sfx(done.result === 'loss' ? 'lose' : done.result === 'flee' ? 'flee' : 'win');
                 if (done.result === 'win' || done.result === 'capture') playJingle('victory');
-                const long = rewards.some((l) => /lên cấp|Lv|Bắt được|Học được/.test(l)) || done.result === 'capture';
-                if (done.result !== 'loss') closeTimer.current = window.setTimeout(close, long ? 3600 : done.result === 'win' ? 2400 : 1400);
+                if (done.result !== 'loss') closeTimer.current = window.setTimeout(close, done.result === 'win' || done.result === 'capture' ? 1800 : 1200);
               }
             }
           }, i * (fastRef.current ? 150 : 300)),
@@ -372,23 +373,16 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
           {foes.map((u, i) => fighter(u, 'enemy', i, foes.length))}
           {allies.map((u, i) => fighter(u, 'player', i, allies.length))}
         </div>
-        {finished && !live && (
+        {finished && !live && !playing && (
           <div class="result" onClick={close}>
             <div class="rwd" data-testid="battle-result">
               {BANNER[finished.battle.result] ? (
-                <div class="banner" style={{ backgroundImage: `url(${uiUrl(BANNER[finished.battle.result]!)})`, backgroundSize: '100% 100%' }}>
+                <div class={`banner ${finished.battle.result}`} style={{ backgroundImage: `url(${uiUrl(BANNER[finished.battle.result]!)})`, backgroundSize: '100% 100%' }}>
                   <b>{RESULT[finished.battle.result]}</b>
                 </div>
               ) : (
                 <div class="banner plain">
                   <b>{RESULT[finished.battle.result] ?? 'Trận đấu kết thúc'}</b>
-                </div>
-              )}
-              {finished.lines.length > 0 && (
-                <div class="lines">
-                  {finished.lines.map((l, i) => (
-                    <div key={i}>{l}</div>
-                  ))}
                 </div>
               )}
               <small>Chạm để tiếp tục</small>

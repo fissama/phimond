@@ -189,7 +189,10 @@ export async function spawnAmbient(map: MapDef, group: THREE.Group, blob: boolea
   for (let i = 0; i < count; i++) {
     const id = names[i]!;
     const sprite = await CharacterSprite.create(id);
-    sprite.framesPerCell = 3.2; // dải 2 khung: một chu kỳ ≈ 0.6 ô
+    // Nhịp bước bám quãng đường: một chu kỳ hết dải = ~0.62 ô với dải 2 khung, ~1.1 ô với dải dài (6–8 khung); trước đây cố định 3,2 khung/ô
+    // nên dải 8 khung của ông già/lữ khách chậm gấp ~2,5 lần bước chân (trông như lướt).
+    const rf = asset(id)?.run_frames ?? 2;
+    sprite.framesPerCell = rf <= 2 ? 3.2 : rf / 1.1;
     sprite.bobAmp = 0.035;
     const root = new THREE.Group();
     root.add(sprite.root);

@@ -663,3 +663,10 @@ button:disabled { opacity: 0.45; cursor: default; }
 /* Khung đăng nhập: login-frame (9-slice) + kính tối phủ bên trong (chừa lề trong suốt của ảnh). */
 form.login-box { background: linear-gradient(rgba(6, 18, 44, 0.88), rgba(10, 30, 66, 0.82)) center / calc(100% - 20px) calc(100% - 20px) no-repeat border-box !important; padding: 6px 4px; box-shadow: none; filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.5)); }
 @media (prefers-reduced-motion: reduce) { .lb-beast .pet { animation: none !important; } .lb-far, .lb-near, .lb-cloud { animation: none !important; } }
+
+/* Màn chọn/tạo nhân vật dùng chung nền động với đăng nhập: khung đặt trên nền, kính tối như khung đăng nhập. */
+.cs-root { z-index: 2; }
+.cs-box { background: linear-gradient(rgba(6, 18, 44, 0.86), rgba(10, 30, 66, 0.8)); border: 2px solid rgba(217, 178, 98, 0.7); border-radius: 10px; box-shadow: 0 8px 28px rgba(0, 0, 0, 0.55); }
+
+/* Biển "Thất bại" nền tối: chữ sáng cho đọc được (chữ nâu đậm chỉ hợp biển vàng thắng/chạy). */
+.battle .rwd .banner.loss b { color: #f1ecff; text-shadow: 0 1px 2px #000, 0 0 6px rgba(120, 90, 200, 0.7); }
