@@ -28,7 +28,7 @@ const DIST = 19;
 const FOV = 24;
 /** Độ nhạy đuổi theo vị trí logic của hình người chơi (1/giây): ~40ms trễ, đủ mượt mà không thấy lệch. */
 /** Ảnh trưng bày trên ba bệ ở Triệu Linh Điện, theo `display` của bệ. */
-const SHOWCASE_ART: Record<string, string> = { species_0144: 'showcase-flower', species_0149: 'showcase-scorpion', species_0151: 'showcase-unicorn' };
+const SHOWCASE_ART: Record<string, string> = { species_0144: 'showcase-flower', species_0149: 'showcase-unicorn', species_0151: 'showcase-scorpion' };
 const PLAYER_FOLLOW = 24;
 
 /**
