@@ -1,0 +1,21 @@
+# Ngữ cảnh build server: chỉ cần apps/game-server, data, migrations.
+**/node_modules
+**/dist
+.git
+.ai
+Claude outputs
+_to_delete
+prototypes
+client
+server
+shared
+scripts
+tools
+docs
+infra
+packages
+apps/client
+apps/game-web
+apps/game-client
+apps/web
+**/*_test.go.tmp
