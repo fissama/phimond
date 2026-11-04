@@ -1,0 +1,28 @@
+# KHÔNG nằm trong đường dẫn ArgoCD (thư mục con jobs/ không được đồng bộ).
+# Chạy tay MỘT LẦN cho mỗi lần có migration mới, SAU KHI đã dump database:
+#   kubectl apply -f jobs/migrate-job.yaml && kubectl -n phimond logs -f job/phimond-migrate
+# Xóa job cũ trước khi chạy lại: kubectl -n phimond delete job phimond-migrate
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: phimond-migrate
+  namespace: phimond
+spec:
+  backoffLimit: 0
+  ttlSecondsAfterFinished: 604800
+  template:
+    spec:
+      restartPolicy: Never
+      imagePullSecrets:
+        - name: harbor-pull
+      containers:
+        - name: migrate
+          image: harbor.philand.io.vn/philand/phimond-server:v1.0.0
+          args: ["-migrate", "-migrations", "/migrations"]
+          envFrom:
+            - secretRef:
+                name: phimond-env
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            capabilities: { drop: ["ALL"] }

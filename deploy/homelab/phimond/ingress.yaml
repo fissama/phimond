@@ -1,0 +1,24 @@
+# Một host, cùng origin: / -> web (nginx); /api và /ws -> server Go.
+# Traefik chọn đường dẫn dài nhất nên /api, /ws thắng /.
+# TLS kết thúc ở Cloudflare (tunnel -> Traefik HTTP), giống các app philand hiện có.
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: phimond
+  namespace: phimond
+  annotations:
+    kubernetes.io/ingress.class: traefik
+spec:
+  rules:
+    - host: play.philand.io.vn
+      http:
+        paths:
+          - path: /api
+            pathType: Prefix
+            backend: { service: { name: phimond-server, port: { number: 8090 } } }
+          - path: /ws
+            pathType: Prefix
+            backend: { service: { name: phimond-server, port: { number: 8090 } } }
+          - path: /
+            pathType: Prefix
+            backend: { service: { name: phimond-web, port: { number: 80 } } }
