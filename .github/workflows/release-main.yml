@@ -31,7 +31,17 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      # Repo có art nguồn rất nặng (.git ~5,8 GB): chỉ lấy các thư mục cần cho build/test.
       - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: |
+            apps/game-server
+            apps/client
+            packages
+            data
+            migrations
+            deploy
       - uses: actions/setup-go@v5
         with:
           go-version-file: apps/game-server/go.mod
@@ -58,6 +68,14 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          filter: blob:none
+          sparse-checkout: |
+            apps/game-server
+            apps/client
+            packages
+            data
+            migrations
+            deploy
 
       - name: Validate commit message
         run: |

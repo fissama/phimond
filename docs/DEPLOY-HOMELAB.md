@@ -68,8 +68,9 @@ Có migration mới: dump, xóa job cũ (`kubectl -n phimond delete job phimond-
 ## Rủi ro đã biết
 1. **WebSocket và Cloudflare**: Cloudflare ngắt kết nối WebSocket im lặng sau khoảng 100 giây. Server và client hiện **không có ping/heartbeat**
    (chưa xác minh game có gửi dữ liệu định kỳ khi đứng yên). Nếu bị rớt, cần thêm ping 30 giây ở server hoặc client (thay đổi mã, cần phát hành riêng).
-2. **Kích thước repo**: `apps/game-web/art-src` (~5,6 GB) và `.ai` (~500 MB) nằm trong working tree. Nếu đã được git theo dõi, checkout trên CI chậm;
-   cân nhắc loại khỏi git hoặc dùng sparse-checkout.
+2. **Kích thước repo**: `.git` ~5,8 GB và ~15.600 file `apps/game-web/art-src` đang được git theo dõi. Workflow dùng `sparse-checkout` + `filter: blob:none`
+   (chỉ lấy `apps/game-server`, `apps/client`, `packages`, `data`, `migrations`, `deploy`) để CI không tải art nguồn. Clone mới trên máy khác vẫn rất nặng;
+   về lâu dài nên đưa `art-src` ra khỏi repo (Git LFS hoặc repo riêng). Nếu thêm thư mục mới mà Dockerfile cần, phải thêm vào `sparse-checkout`.
 3. **Image chưa được build thử cục bộ** (không có Docker trong môi trường phát triển). Lần chạy CI đầu là lần build thật đầu tiên.
 4. **Dockerfile.dockerignore** riêng cho web và server; `.dockerignore` gốc của Godot cũ không bị thay đổi.
 5. Server Go chưa từng build/test đầy đủ ngoài máy chủ có mạng (module `golang.org/x/crypto`, `filippo.io/edwards25519`); `go test ./...` trong CI là cổng kiểm tra đầu tiên.
