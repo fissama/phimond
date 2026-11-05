@@ -167,6 +167,10 @@ jobs:
           bump phimond-server deploy/phimond/jobs/migrate-job.yaml
           bump phimond-web deploy/phimond/web-deployment.yaml
           git add deploy/phimond
+          if git diff --cached --quiet; then
+            echo "Manifest da dung tag ${VERSION} - khong co thay doi de commit"
+            exit 0
+          fi
           git commit -m "chore(deploy): update phimond to ${VERSION}"
           for i in 1 2 3 4 5; do
             if git push origin HEAD:main; then exit 0; fi
