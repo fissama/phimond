@@ -25,7 +25,8 @@ permissions:
   contents: write
 
 env:
-  REGISTRY_PROJECT: philand
+  REGISTRY_PROJECT: phimond
+  INFRA_REPO: fissama/phimond-infra
 
 jobs:
   test:
@@ -134,13 +135,20 @@ jobs:
           git tag "$VERSION"
           git push origin "$VERSION"
 
-      - name: Bump image tags in philandz/infra
+      - name: Bump image tags in infra repo
         env:
           VERSION: ${{ steps.ver.outputs.version }}
-          GH_REPO_PAT: ${{ secrets.GH_REPO_PAT }}
           HARBOR_HOST: ${{ secrets.HARBOR_HOST }}
+          INFRA_DEPLOY_KEY: ${{ secrets.INFRA_DEPLOY_KEY }}
+          INFRA_KNOWN_HOSTS: ${{ secrets.INFRA_KNOWN_HOSTS }}
         run: |
-          git clone "https://x-access-token:${GH_REPO_PAT}@github.com/philandz/infra.git" infra
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$INFRA_DEPLOY_KEY" > ~/.ssh/id_deploy
+          chmod 600 ~/.ssh/id_deploy
+          printf '%s\n' "$INFRA_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+          export GIT_SSH_COMMAND="ssh -i ~/.ssh/id_deploy -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes"
+          git clone "git@github.com:${INFRA_REPO}.git" infra
           cd infra
           git config user.name "phimond-release-bot"
           git config user.email "phimond-release-bot@users.noreply.github.com"
