@@ -117,3 +117,27 @@ Có migration mới: dump, xóa job cũ (`kubectl -n phimond delete job phimond-
 6. Server Go chưa từng build/test đầy đủ ngoài máy chủ có mạng (module `golang.org/x/crypto`, `filippo.io/edwards25519`); `go test ./...` trong CI là cổng kiểm tra đầu tiên.
 7. **Đây là hệ thống độc lập**: mọi thay đổi trong `phimond-infra` chỉ ảnh hưởng namespace `phimond`. Không được đụng service của philandz
    (`philandz`, `philand`, `philand-sandbox` namespace) hay repo `philandz/infra`.
+8. **Cloudflare Tunnel `philand-01` là remote-managed**: Cloudflare đẩy config từ dashboard (`version=N`) và **ghi đè** file local
+   `/etc/cloudflared/config.yml`. File local chỉ là **mirror** — sửa file + `systemctl restart` **không có tác dụng**
+   (cloudflared vẫn nạp config cũ từ xa). Muốn thêm hostname phải sửa ở dashboard
+   (Zero Trust → Networks → Tunnels → philand-01 → Public Hostname) hoặc qua API:
+   ```
+   PUT https://api.cloudflare.com/client/v4/accounts/<accountID>/cfd_tunnel/<tunnelID>/configurations
+   Authorization: Bearer <apiToken lấy từ /root/.cloudflared/cert.pem>
+   body: {"config":{"ingress":[...]},"source":"cloudflare"}
+   ```
+   Bắt buộc: rule cuối cùng phải là catch-all (`http_status:404`, không có `hostname`).
+   DNS vẫn tạo bằng `cloudflared tunnel route dns philand-01 <host>`.
+9. **Traefik v3 không còn đọc annotation `kubernetes.io/ingress.class`**: Ingress phải có `spec.ingressClassName: traefik`
+   (giống `philandz/infra`'s `deploy/gateway/ingress.yaml`). Thiếu nó → Ingress không được Traefik nhận → **mọi request trả 404**
+   dù pod đã Running.
+10. **Migration SQL không được chứa `;` trong comment**: `bootstrap.go` tách câu lệnh bằng `strings.Split(file, ";")`,
+    nên một `;` trong comment sẽ cắt sai giữa comment và câu lệnh → MySQL báo `Error 1064`.
+    `migrations/003_account_recovery.sql` dòng 1 đã dính lỗi này; lần phát hành đầu phải vá tay trong DB
+    (chạy 3 câu DDL còn lại + `INSERT` vào `schema_migrations` với checksum sha256 đúng của file trong image).
+    **Trước khi viết migration mới: không dùng `;` trong comment, và chạy thử `-migrate` trên DB thật.**
+11. **ArgoCD hiển thị `Progressing` + `resources: null`** cho mọi app trên cluster này (kể cả `web`, `gateway` đang chạy tốt).
+    Đây là hành vi có sẵn của ArgoCD v3.2.5 trên k8s 1.34, **không phải** lỗi của Phimond — kiểm tra `kubectl get pods` thay vì tin
+    trạng thái health của ArgoCD.
+12. **Thêm hostname mới phải làm cả 4 nơi**: (1) Ingress có `ingressClassName`, (2) remote config của tunnel (dashboard/API),
+    (3) DNS (`cloudflared tunnel route dns`), (4) bản mirror `philandz/scripts/cloudflared_config.yml` trong repo `philandz`.
