@@ -73,3 +73,10 @@ Chi tiết ở [`hd2d-art-approval-20261021.md`](../../../design/hd2d-art-approv
 
 1. **Người chơi mới ở Triệu Linh Điện:** phương án (a) — bấm 1 trong 3 bệ đá → xác nhận → nhận pet → dịch chuyển một chiều tới Bìa Rừng. Server vẫn chạy 14 loài cũ, nên 3 pet khởi đầu Tiên Chưởng / Sa Hạt / Xích Ưng tạm gắn với 3 loài cũ gần nhất cho tới N02. Trải nghiệm đầy đủ (hội thoại Mira, giới thiệu) thuộc P04 (N03).
 2. **Client mới:** thư mục `apps/client`.
+
+## 8. Owner đã chốt (2026-11-05) — đóng P01 ở v1.1.0
+
+1. v1.0.0 (Đợt A, 5 map) đã golive tại `play.philand.io.vn`. **P01 đóng ở v1.1.0** (Đợt B1: thành/nông trại/đấu trường). Đợt B2 (Bãi biển, trước là 1.2.0) chuyển thành **bản cập nhật nội dung sau**, không chặn đóng P01.
+2. Giữa 1.0.0 và 1.1.0 chỉ ra bản `1.0.z` ổn định hoá: kiểm thử WS idle ≥ 3 phút (thêm ping nếu rớt), đo trên thiết bị thật (iPhone/Safari), sửa bộ tách câu lệnh migration trong `bootstrap.go` (KHÔNG sửa file migration 003 vì checksum đã nằm trong DB prod), sao lưu MySQL và theo dõi log, nợ UI nhỏ (D-pad che chat, icon thẻ khởi đầu, nút đăng nhập mobile).
+3. Có người chơi thật: mọi thay đổi `characters.state` từ nay phải có migration/tương thích ngược (D31 không còn chấp nhận được).
+4. P19 (vật phẩm, thư) bắt đầu song song; xem [`../P19-items/P19-scope.md`](../P19-items/P19-scope.md).
