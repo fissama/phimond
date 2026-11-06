@@ -89,10 +89,35 @@ func TestPortalNeedsRectAndRedirectsAfterFirstVisit(t *testing.T) {
 func TestLockedPortalExplainsNotOpen(t *testing.T) {
 	e := engine(t)
 	c := veteran(e, "l", "L", 1)
-	c.MapID, c.X, c.Y = "city_square", 1, 5 // kề cổng sang Thương Phố (0, 4..6, mép trái theo bản phác APK)
-	mustFail(t, e, c, "world.portal", map[string]any{"portal_id": "square_to_market"}, "chưa mở")
+	c.MapID, c.X, c.Y = "city_palace_gate", 13, 3 // kề cổng Vương Cung (13, 2), vẫn khóa ở v1.1.0 khi chưa dựng map
+	mustFail(t, e, c, "world.portal", map[string]any{"portal_id": "gate_to_palace"}, "chưa mở")
 	c.X, c.Y = 10, 8
-	mustFail(t, e, c, "world.portal", map[string]any{"portal_id": "square_to_market"}, "Không có cổng")
+	mustFail(t, e, c, "world.portal", map[string]any{"portal_id": "gate_to_palace"}, "Không có cổng")
+}
+
+func TestMarketPortalsConnectSquareAndGate(t *testing.T) {
+	e := engine(t)
+	c := veteran(e, "m", "M", 1)
+	c.MapID, c.X, c.Y = "city_square", 0, 5 // đứng trong cổng (mép trái)
+	command(t, e, c, "world.portal", map[string]any{"portal_id": "square_to_market"})
+	if c.MapID != "city_market" || c.X != 27 || c.Y != 6 {
+		t.Fatalf("Quảng Trường → Thương Phố sai, đang ở %s (%d,%d)", c.MapID, c.X, c.Y)
+	}
+	c.X, c.Y = 29, 6
+	command(t, e, c, "world.portal", map[string]any{"portal_id": "market_to_square"})
+	if c.MapID != "city_square" || c.X != 2 || c.Y != 5 {
+		t.Fatalf("Thương Phố → Quảng Trường sai, đang ở %s (%d,%d)", c.MapID, c.X, c.Y)
+	}
+	c.MapID, c.X, c.Y = "city_palace_gate", 25, 6
+	command(t, e, c, "world.portal", map[string]any{"portal_id": "gate_to_market"})
+	if c.MapID != "city_market" || c.X != 2 || c.Y != 6 {
+		t.Fatalf("Hoàng Môn → Thương Phố sai, đang ở %s (%d,%d)", c.MapID, c.X, c.Y)
+	}
+	c.X, c.Y = 0, 6
+	command(t, e, c, "world.portal", map[string]any{"portal_id": "market_to_gate"})
+	if c.MapID != "city_palace_gate" || c.X != 23 || c.Y != 6 {
+		t.Fatalf("Thương Phố → Hoàng Môn sai, đang ở %s (%d,%d)", c.MapID, c.X, c.Y)
+	}
 }
 
 func TestNPCRangeUsesBothAxes(t *testing.T) {

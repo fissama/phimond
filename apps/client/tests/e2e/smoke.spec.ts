@@ -212,7 +212,7 @@ test('menu: đội hình có 1 con chính, không gỡ được con cuối', asy
   await expect(page.locator('[data-testid^="party-add-"]')).toHaveCount(0);
 });
 
-test('NPC: tới gần, hội thoại, hồi phục; cổng khóa báo chưa mở', async ({ page }) => {
+test('NPC: tới gần, hội thoại, hồi phục; Thương Phố mở, cổng Vương Cung báo chưa mở', async ({ page }) => {
   test.setTimeout(240_000);
   await register(page);
   await chooseStarter(page);
@@ -223,7 +223,9 @@ test('NPC: tới gần, hội thoại, hồi phục; cổng khóa báo chưa m�
   await page.getByTestId('npc-close').click();
   await walk(page, { x: 33, y: 6 }, 'emerald_forest_deep_woods');
   await walk(page, { x: 37, y: 5 }, 'city_palace_gate');
-  await walk(page, { x: 25, y: 6 }); // cổng sang Chợ (mép phải Hoàng Môn)
+  await walk(page, { x: 25, y: 6 }, 'city_market'); // cổng sang Thương Phố (mép phải Hoàng Môn)
+  await walk(page, { x: 0, y: 6 }, 'city_palace_gate'); // về lại Hoàng Môn qua cổng trái chợ
+  await walk(page, { x: 13, y: 2 }); // cổng Vương Cung vẫn khóa
   await expect(page.getByTestId('toasts')).toContainText('chưa mở', { timeout: 10_000 });
 });
 
