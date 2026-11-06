@@ -86,13 +86,36 @@ func TestPortalNeedsRectAndRedirectsAfterFirstVisit(t *testing.T) {
 	}
 }
 
-func TestLockedPortalExplainsNotOpen(t *testing.T) {
+func TestPortalNeedsStandingInside(t *testing.T) {
 	e := engine(t)
 	c := veteran(e, "l", "L", 1)
-	c.MapID, c.X, c.Y = "city_palace_gate", 13, 3 // kề cổng Vương Cung (13, 2), vẫn khóa ở v1.1.0 khi chưa dựng map
-	mustFail(t, e, c, "world.portal", map[string]any{"portal_id": "gate_to_palace"}, "chưa mở")
-	c.X, c.Y = 10, 8
+	c.MapID, c.X, c.Y = "city_palace_gate", 10, 8 // xa cổng Vương Cung
 	mustFail(t, e, c, "world.portal", map[string]any{"portal_id": "gate_to_palace"}, "Không có cổng")
+}
+
+func TestPalaceAndHallPortals(t *testing.T) {
+	e := engine(t)
+	c := veteran(e, "p", "P", 1)
+	c.MapID, c.X, c.Y = "city_palace_gate", 13, 2
+	command(t, e, c, "world.portal", map[string]any{"portal_id": "gate_to_palace"})
+	if c.MapID != "city_royal_palace" || c.X != 13 || c.Y != 8 {
+		t.Fatalf("Hoàng Môn → Vương Cung sai, đang ở %s (%d,%d)", c.MapID, c.X, c.Y)
+	}
+	c.X, c.Y = 13, 2
+	command(t, e, c, "world.portal", map[string]any{"portal_id": "palace_to_hall"})
+	if c.MapID != "city_activity_hall" || c.X != 9 || c.Y != 6 {
+		t.Fatalf("Vương Cung → Hội Sảnh sai, đang ở %s (%d,%d)", c.MapID, c.X, c.Y)
+	}
+	c.X, c.Y = 9, 9
+	command(t, e, c, "world.portal", map[string]any{"portal_id": "hall_to_palace"})
+	if c.MapID != "city_royal_palace" || c.X != 13 || c.Y != 5 {
+		t.Fatalf("Hội Sảnh → Vương Cung sai, đang ở %s (%d,%d)", c.MapID, c.X, c.Y)
+	}
+	c.X, c.Y = 13, 11
+	command(t, e, c, "world.portal", map[string]any{"portal_id": "palace_to_gate"})
+	if c.MapID != "city_palace_gate" || c.X != 13 || c.Y != 5 {
+		t.Fatalf("Vương Cung → Hoàng Môn sai, đang ở %s (%d,%d)", c.MapID, c.X, c.Y)
+	}
 }
 
 func TestMarketPortalsConnectSquareAndGate(t *testing.T) {
@@ -144,11 +167,50 @@ func TestPillarTravel(t *testing.T) {
 	c.MapID, c.X, c.Y = "city_square", 16, 6
 	mustFail(t, e, c, "pillar.travel", map[string]any{"map_id": "emerald_forest_main_woods"}, "gần trụ")
 	c.X, c.Y = 24, 8 // kề trụ (25,8) dưới-phải Quảng Trường (P12 U1)
-	mustFail(t, e, c, "pillar.travel", map[string]any{"map_id": "city_farm"}, "chưa mở")
+	mustFail(t, e, c, "pillar.travel", map[string]any{"map_id": "treasure_beach_east_shore"}, "chưa mở")
 	mustFail(t, e, c, "pillar.travel", map[string]any{"map_id": "nowhere"}, "Không có điểm đến")
 	command(t, e, c, "pillar.travel", map[string]any{"map_id": "emerald_forest_main_woods"})
 	if c.MapID != "emerald_forest_main_woods" || c.X != 3 || c.Y != 6 {
 		t.Fatal("trụ phải đưa về Bìa Rừng")
+	}
+	c.MapID, c.X, c.Y = "city_square", 24, 8
+	command(t, e, c, "pillar.travel", map[string]any{"map_id": "city_farm"})
+	if c.MapID != "city_farm" || c.X != 3 || c.Y != 6 {
+		t.Fatalf("trụ phải đưa tới Điền Trang, đang ở %s (%d,%d)", c.MapID, c.X, c.Y)
+	}
+}
+
+func TestFarmPetRoomAndArenaPortals(t *testing.T) {
+	e := engine(t)
+	c := veteran(e, "f", "F", 1)
+	c.MapID, c.X, c.Y = "city_farm", 0, 6
+	command(t, e, c, "world.portal", map[string]any{"portal_id": "farm_to_square"})
+	if c.MapID != "city_square" || c.X != 23 || c.Y != 6 {
+		t.Fatalf("Điền Trang → Quảng Trường sai, đang ở %s (%d,%d)", c.MapID, c.X, c.Y)
+	}
+	c.MapID, c.X, c.Y = "city_farm", 33, 6
+	command(t, e, c, "world.portal", map[string]any{"portal_id": "farm_to_pet_room"})
+	if c.MapID != "city_pet_room" || c.X != 3 || c.Y != 6 {
+		t.Fatalf("Điền Trang → Phòng thú cưng sai, đang ở %s (%d,%d)", c.MapID, c.X, c.Y)
+	}
+	c.X, c.Y = 0, 6
+	command(t, e, c, "world.portal", map[string]any{"portal_id": "pet_room_to_farm"})
+	if c.MapID != "city_farm" || c.X != 31 || c.Y != 6 {
+		t.Fatalf("Phòng thú cưng → Điền Trang sai, đang ở %s (%d,%d)", c.MapID, c.X, c.Y)
+	}
+	// Huyết Chiến Đài cần cấp 10 (min_level của map).
+	c.MapID, c.X, c.Y = "city_square", 4, 2
+	c.Level = 3
+	mustFail(t, e, c, "world.portal", map[string]any{"portal_id": "square_to_arena"}, "Cần cấp 10")
+	c.Level = 10
+	command(t, e, c, "world.portal", map[string]any{"portal_id": "square_to_arena"})
+	if c.MapID != "city_deathmatch_arena" || c.X != 6 || c.Y != 6 {
+		t.Fatalf("Quảng Trường → Huyết Chiến Đài sai, đang ở %s (%d,%d)", c.MapID, c.X, c.Y)
+	}
+	c.X, c.Y = 0, 6
+	command(t, e, c, "world.portal", map[string]any{"portal_id": "arena_to_square"})
+	if c.MapID != "city_square" || c.X != 6 || c.Y != 5 {
+		t.Fatalf("Huyết Chiến Đài → Quảng Trường sai, đang ở %s (%d,%d)", c.MapID, c.X, c.Y)
 	}
 }
 

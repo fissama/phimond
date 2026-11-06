@@ -212,7 +212,7 @@ test('menu: đội hình có 1 con chính, không gỡ được con cuối', asy
   await expect(page.locator('[data-testid^="party-add-"]')).toHaveCount(0);
 });
 
-test('NPC: tới gần, hội thoại, hồi phục; Thương Phố mở, cổng Vương Cung báo chưa mở', async ({ page }) => {
+test('NPC: tới gần, hội thoại, hồi phục; Thương Phố, Vương Cung, Hội Sảnh đi được', async ({ page }) => {
   test.setTimeout(240_000);
   await register(page);
   await chooseStarter(page);
@@ -225,8 +225,9 @@ test('NPC: tới gần, hội thoại, hồi phục; Thương Phố mở, cổng
   await walk(page, { x: 37, y: 5 }, 'city_palace_gate');
   await walk(page, { x: 25, y: 6 }, 'city_market'); // cổng sang Thương Phố (mép phải Hoàng Môn)
   await walk(page, { x: 0, y: 6 }, 'city_palace_gate'); // về lại Hoàng Môn qua cổng trái chợ
-  await walk(page, { x: 13, y: 2 }); // cổng Vương Cung vẫn khóa
-  await expect(page.getByTestId('toasts')).toContainText('chưa mở', { timeout: 10_000 });
+  await walk(page, { x: 13, y: 2 }, 'city_royal_palace'); // cổng Vương Cung
+  await walk(page, { x: 13, y: 2 }, 'city_activity_hall'); // cửa trên thảm đỏ vào Vạn Sự Hội Sảnh
+  await walk(page, { x: 9, y: 9 }, 'city_royal_palace'); // lối ra dưới sảnh
 });
 
 test('học kỹ năng đầu tiên ở thầy Bìa Rừng, rồi dùng được trong trận', async ({ page }) => {
