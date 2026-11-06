@@ -1,0 +1,59 @@
+{
+ "id": "city_activity_hall",
+ "name": "Vạn Sự Hội Sảnh",
+ "kind": "safe_hub",
+ "theme": "hall",
+ "level": null,
+ "width": 20,
+ "height": 11,
+ "spawn_default": {
+  "x": 9,
+  "y": 6,
+  "face": "up"
+ },
+ "respawn_to": "city_square",
+ "portals": [
+  {
+   "id": "hall_to_palace",
+   "rect": [
+    8,
+    9,
+    3,
+    2
+   ],
+   "to": "city_royal_palace",
+   "arrive": {
+    "x": 13,
+    "y": 5,
+    "face": "down"
+   }
+  }
+ ],
+ "npcs": [
+  {
+   "id": "act_events",
+   "x": 10,
+   "y": 3,
+   "face": "down"
+  }
+ ],
+ "spawn_zones": [],
+ "wild_spawns": [],
+ "walk": "20#/3#2.1#8.1#2.3#/2#2.1#10.1#2.2#/2#8.1#7.2#/2#16.2#/2#1.1#12.1#1.2#/2#16.2#/2#16.2#/2#16.2#/8#3.9#/8#3.9#",
+ "layout": [
+  "####################",
+  "##K==C========C==K##",
+  "##==Q==========Q==##",
+  "##================##",
+  "##================##",
+  "##=L============L=##",
+  "##================##",
+  "##================##",
+  "##================##",
+  "########===#########",
+  "########===#########"
+ ],
+ "backdrop": null,
+ "confidence": "designed",
+ "source": "P01 v1.0.0 Đợt A — tools/p01/build_maps.py (bố cục HD-2D mới, không khôi phục bản gốc)"
+}

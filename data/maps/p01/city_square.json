@@ -42,6 +42,21 @@
     "y": 6,
     "face": "left"
    }
+  },
+  {
+   "id": "square_to_arena",
+   "rect": [
+    4,
+    2,
+    1,
+    1
+   ],
+   "to": "city_deathmatch_arena",
+   "arrive": {
+    "x": 6,
+    "y": 6,
+    "face": "right"
+   }
   }
  ],
  "pillar": {
@@ -59,7 +74,11 @@
    },
    {
     "map": "city_farm",
-    "locked": true
+    "arrive": {
+     "x": 3,
+     "y": 6,
+     "face": "right"
+    }
    },
    {
     "map": "treasure_beach_east_shore",

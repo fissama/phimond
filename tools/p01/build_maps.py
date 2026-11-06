@@ -28,7 +28,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "data/maps/p01"
 
-WALK = set(".,:=_+fgm")
+WALK = set(".,:=_+fgmRN")  # R/N: luống đất Điền Trang (đi được)
 
 
 # ---------------------------------------------------------------- lưới tiện ích
@@ -298,7 +298,8 @@ def palace_gate():
              "arrive": {"x": 29, "y": 6, "face": "left"}},
             {"id": "gate_to_market", "rect": [25, 5, 1, 3], "to": "city_market",
              "arrive": {"x": 2, "y": 6, "face": "right"}},
-            {"id": "gate_to_palace", "rect": [13, 2, 1, 1], "to": "city_royal_palace", "locked": True},
+            {"id": "gate_to_palace", "rect": [13, 2, 1, 1], "to": "city_royal_palace",
+             "arrive": {"x": 13, "y": 8, "face": "up"}},
         ],
         "npcs": [
             {"id": "gate_captain", "x": 11, "y": 4, "face": "down"},
@@ -355,10 +356,12 @@ def city_square():
              "arrive": {"x": 2, "y": 6, "face": "right"}},
             {"id": "square_to_market", "rect": [0, 4, 1, 3], "to": "city_market",
              "arrive": {"x": 27, "y": 6, "face": "left"}},
+            {"id": "square_to_arena", "rect": [4, 2, 1, 1], "to": "city_deathmatch_arena",
+             "arrive": {"x": 6, "y": 6, "face": "right"}},
         ],
         "pillar": {"x": 25, "y": 8, "npc": "sq_pillar", "dest": [
             {"map": "emerald_forest_main_woods", "arrive": {"x": 3, "y": 6, "face": "right"}},
-            {"map": "city_farm", "locked": True},
+            {"map": "city_farm", "arrive": {"x": 3, "y": 6, "face": "right"}},
             {"map": "treasure_beach_east_shore", "locked": True},
         ]},
         "npcs": [
@@ -423,7 +426,200 @@ def city_market():
     }
 
 
-MAPS = [summoning_hall, forest_main, forest_deep, palace_gate, city_square, city_market]
+def city_royal_palace():
+    """Vương Cung (v1.1.0 Đợt B1): sân thảm đỏ; cổng dưới về Hoàng Môn, cửa trên vào Vạn Sự Hội Sảnh."""
+    W, H = 26, 13
+    rows = ["#" * W] + ["#" + ":" * (W - 2) + "#" for _ in range(H - 2)] + ["#" * W]
+    def put(x, y, ch):
+        rows[y] = rows[y][:x] + ch + rows[y][x + 1:]
+    for x in (4, 13, 21):
+        put(x, 1, "H")
+    for y in range(2, 11):  # thảm đỏ dọc trục giữa, từ cửa Hội Sảnh xuống cổng Hoàng Môn
+        for x in (12, 13, 14):
+            put(x, y, "+")
+    for x, y, ch in [(3, 2, "C"), (22, 2, "C"), (7, 2, "Z"), (19, 2, "Z"), (10, 4, "S"), (16, 4, "S"),
+                     (2, 4, "L"), (23, 4, "L"), (6, 8, "Y"), (19, 8, "Y"), (4, 10, "B"), (21, 10, "B"),
+                     (8, 10, "b"), (17, 10, "b")]:
+        put(x, y, ch)
+    g = from_rows(rows)
+    return {
+        "id": "city_royal_palace",
+        "name": "Vương Cung",
+        "kind": "safe_hub",
+        "theme": "city",
+        "level": None,
+        "grid": g,
+        "spawn_default": {"x": 13, "y": 8, "face": "up"},
+        "respawn_to": "city_square",
+        "facades": {"4,1": "city-facade-guild", "13,1": "palace-gate", "21,1": "city-facade-guild"},
+        "portals": [
+            {"id": "palace_to_gate", "rect": [12, 11, 3, 1], "to": "city_palace_gate",
+             "arrive": {"x": 13, "y": 5, "face": "down"}},
+            {"id": "palace_to_hall", "rect": [13, 2, 1, 1], "to": "city_activity_hall",
+             "arrive": {"x": 9, "y": 6, "face": "up"}},
+        ],
+        "npcs": [
+            {"id": "pal_healer", "x": 9, "y": 6, "face": "right"},
+        ],
+        "spawn_zones": [],
+        "backdrop": "city-skyline-far",
+    }
+
+
+def city_activity_hall():
+    """Vạn Sự Hội Sảnh (v1.1.0 Đợt B1): sảnh đá có bảng nhiệm vụ; lối ra phía dưới về Vương Cung."""
+    W, H = 20, 11
+    rows = ["#" * W] + ["##" + "=" * (W - 4) + "##" for _ in range(H - 3)] + ["#" * W, "#" * W]
+    rows[0] = "#" * W
+    def put(x, y, ch):
+        rows[y] = rows[y][:x] + ch + rows[y][x + 1:]
+    for y in (9, 10):  # hành lang ra
+        for x in (8, 9, 10):
+            put(x, y, "=")
+    for x, y, ch in [(2, 1, "K"), (17, 1, "K"), (5, 1, "C"), (14, 1, "C"), (3, 5, "L"), (16, 5, "L"),
+                     (4, 2, "Q"), (15, 2, "Q")]:
+        put(x, y, ch)
+    g = from_rows(rows)
+    return {
+        "id": "city_activity_hall",
+        "name": "Vạn Sự Hội Sảnh",
+        "kind": "safe_hub",
+        "theme": "hall",
+        "level": None,
+        "grid": g,
+        "spawn_default": {"x": 9, "y": 6, "face": "up"},
+        "respawn_to": "city_square",
+        "portals": [
+            {"id": "hall_to_palace", "rect": [8, 9, 3, 2], "to": "city_royal_palace",
+             "arrive": {"x": 13, "y": 5, "face": "down"}},
+        ],
+        "npcs": [{"id": "act_events", "x": 10, "y": 3, "face": "down"}],
+        "spawn_zones": [],
+        "backdrop": None,
+    }
+
+
+def city_farm():
+    """Điền Trang Lục Dã (v1.1.0 Đợt B1): ruộng, chuồng, cối xay; cổng trái về Quảng Trường, cổng phải sang Phòng thú cưng."""
+    W, H = 34, 14
+    rows = ["#" * W] + ["#" + "." * (W - 2) + "#" for _ in range(H - 2)] + ["#" * W]
+    def put(x, y, ch):
+        rows[y] = rows[y][:x] + ch + rows[y][x + 1:]
+    for x in range(1, W - 1):  # đường đất ngang
+        for y in (6, 7):
+            put(x, y, ",")
+    for y in range(3, 6):  # lối đất lên chuồng
+        put(24, y, ",")
+        put(9, y, ",")
+    for y in range(9, 13):  # hai thửa ruộng
+        for x in range(10, 16):
+            put(x, y, "R")
+        for x in range(17, 23):
+            put(x, y, "N")
+    for y in (6, 7):  # cổng mở hai mép
+        put(0, y, ",")
+        put(W - 1, y, ",")
+    for x in (22, 23, 25, 26):  # kho thóc (5 ô rộng) ở hàng 2
+        put(x, 2, "#")
+    for x in (7, 8, 10, 11):  # chuồng ngựa
+        put(x, 2, "#")
+    for x, y in ((30, 3), (32, 3)):  # cối xay
+        put(x, y, "#")
+    for x, y, ch in [(24, 2, "M"), (9, 2, "U"), (31, 3, "E"), (27, 4, "D"), (28, 4, "D"), (4, 3, "z"), (4, 11, "z"),
+                     (12, 4, "q"), (16, 10, "a"), (9, 8, "p"), (23, 8, "p"), (2, 9, "f"), (3, 10, "f"), (29, 10, "f"),
+                     (30, 9, "f"), (26, 11, "y")]:
+        put(x, y, ch)
+    g = from_rows(rows)
+    return {
+        "id": "city_farm",
+        "name": "Điền Trang Lục Dã",
+        "kind": "safe_hub",
+        "theme": "forest",
+        "level": None,
+        "grid": g,
+        "spawn_default": {"x": 4, "y": 7, "face": "right"},
+        "respawn_to": "city_square",
+        "portals": [
+            {"id": "farm_to_square", "rect": [0, 6, 1, 2], "to": "city_square",
+             "arrive": {"x": 23, "y": 6, "face": "left"}},
+            {"id": "farm_to_pet_room", "rect": [33, 6, 1, 2], "to": "city_pet_room",
+             "arrive": {"x": 3, "y": 6, "face": "right"}},
+        ],
+        "npcs": [{"id": "ranch_keeper", "x": 6, "y": 5, "face": "down"}],
+        "spawn_zones": [],
+        "backdrop": "farm-hills-far",
+    }
+
+
+def city_pet_room():
+    """Phòng thú cưng (v1.1.0 Đợt B1): gian gỗ có ổ nằm, chén ăn; cửa trái ra Điền Trang."""
+    W, H = 20, 11
+    rows = ["#" * W, "#" * W] + ["#" + "=" * (W - 2) + "#" for _ in range(H - 3)] + ["#" * W]
+    def put(x, y, ch):
+        rows[y] = rows[y][:x] + ch + rows[y][x + 1:]
+    for y in (5, 6, 7):
+        put(0, y, "=")
+    for x, y, ch in [(2, 2, "K"), (17, 2, "K"), (5, 3, "u"), (6, 3, "o"), (5, 8, "v"), (6, 8, "o"), (15, 8, "h"),
+                     (14, 8, "o"), (17, 6, "x"), (17, 7, "x"), (11, 3, "x")]:
+        put(x, y, ch)
+    g = from_rows(rows)
+    return {
+        "id": "city_pet_room",
+        "name": "Phòng thú cưng",
+        "kind": "safe_hub",
+        "theme": "room",
+        "level": None,
+        "grid": g,
+        "spawn_default": {"x": 9, "y": 6, "face": "down"},
+        "respawn_to": "city_square",
+        "facades": {"4,1": "hall-wall-timber", "11,1": "hall-wall-timber", "18,1": "hall-wall-timber"},
+        "portals": [
+            {"id": "pet_room_to_farm", "rect": [0, 5, 1, 3], "to": "city_farm",
+             "arrive": {"x": 31, "y": 6, "face": "left"}},
+        ],
+        "npcs": [
+            {"id": "pet_master", "x": 9, "y": 3, "face": "down"},
+            {"id": "pet_shop", "x": 13, "y": 4, "face": "down"},
+        ],
+        "spawn_zones": [],
+        "backdrop": None,
+    }
+
+
+def city_deathmatch_arena():
+    """Huyết Chiến Đài (v1.1.0 Đợt B1): chỉ cảnh + lối ra; vào bằng NPC ở Quảng Trường (nợ N01)."""
+    W, H = 30, 13
+    rows = ["#" * W, "#" * W] + ["#" + ":" * (W - 2) + "#" for _ in range(H - 3)] + ["#" * W]
+    def put(x, y, ch):
+        rows[y] = rows[y][:x] + ch + rows[y][x + 1:]
+    for y in (5, 6, 7):
+        put(0, y, ":")
+    for x, y, ch in [(3, 2, "l"), (26, 2, "l"), (3, 10, "l"), (26, 10, "l"), (8, 2, "i"), (21, 2, "e"),
+                     (15, 2, "d"), (2, 4, "c"), (27, 4, "c"), (2, 9, "c"), (27, 9, "c")]:
+        put(x, y, ch)
+    g = from_rows(rows)
+    return {
+        "id": "city_deathmatch_arena",
+        "name": "Huyết Chiến Đài",
+        "kind": "safe_hub",
+        "theme": "arena",
+        "level": None,
+        "min_level": 10,
+        "grid": g,
+        "spawn_default": {"x": 6, "y": 6, "face": "right"},
+        "respawn_to": "city_square",
+        "facades": {f"{x},1": "arena-grandstand" for x in (2, 6, 10, 14, 18, 22, 26, 29)},
+        "portals": [
+            {"id": "arena_to_square", "rect": [0, 5, 1, 3], "to": "city_square",
+             "arrive": {"x": 6, "y": 5, "face": "down"}},
+        ],
+        "npcs": [{"id": "arena_master", "x": 10, "y": 3, "face": "down"}],
+        "spawn_zones": [],
+        "backdrop": "arena-stands-far",
+    }
+
+
+MAPS = [summoning_hall, forest_main, forest_deep, palace_gate, city_square, city_market, city_royal_palace, city_activity_hall, city_farm, city_pet_room, city_deathmatch_arena]
 
 
 # ---------------------------------------------------------------- xuất + kiểm
@@ -550,7 +746,7 @@ def export(m):
         "confidence": "designed",
         "source": "P01 v1.0.0 Đợt A — tools/p01/build_maps.py (bố cục HD-2D mới, không khôi phục bản gốc)",
     })
-    order = ["id", "name", "kind", "theme", "level", "width", "height", "spawn_default", "respawn_to", "portals", "pillar",
+    order = ["id", "name", "kind", "theme", "level", "min_level", "width", "height", "spawn_default", "respawn_to", "portals", "pillar",
              "pedestals", "npcs", "spawn_zones", "wild_spawns", "walk", "layout", "facades", "backdrop", "confidence", "source"]
     return {k: out[k] for k in order if k in out}
 
