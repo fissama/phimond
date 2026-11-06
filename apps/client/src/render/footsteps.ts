@@ -25,7 +25,7 @@ export class Footsteps {
   private constructor(private readonly root: THREE.Group) {}
 
   static async create(parent: THREE.Object3D, theme: string): Promise<Footsteps | null> {
-    if (theme === 'hall') return null;
+    if (theme === 'hall' || theme === 'room') return null;
     const kind = theme === 'forest' || theme === 'deep_forest' ? 'grass' : 'dust';
     const base = await textures.get(hd2dUrl(`fx-footstep-${kind}`));
     const root = new THREE.Group();

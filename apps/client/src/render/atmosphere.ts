@@ -67,7 +67,7 @@ export function makeAtmosphere(
   const glows: { s: THREE.Sprite; base: number; seed: number }[] = [];
   const disposables: { dispose(): void }[] = [];
   const add = (obj: THREE.Object3D) => group.add(obj);
-  const indoor = o.theme === 'hall';
+  const indoor = o.theme === 'hall' || o.theme === 'room';
 
   for (const [i, l] of o.lamps.entries()) {
     const mat = new THREE.SpriteMaterial({ map: glowTexture(), color: l.color ?? 0xffb060, transparent: true, depthWrite: false, depthTest: false, blending: THREE.AdditiveBlending, opacity: 0 });

@@ -28,6 +28,8 @@ const rng = (seed: number): Rand => {
 const WALKERS: Record<string, string[]> = {
   city_square: ['walker-baker', 'walker-elder', 'walker-boy', 'walker-girl', 'walker-traveller'],
   city_palace_gate: ['walker-guard', 'walker-traveller'],
+  city_market: ['walker-baker', 'walker-traveller', 'walker-girl', 'walker-boy'],
+  city_royal_palace: ['walker-guard', 'walker-elder'],
 };
 
 /** Ô đi được ở vùng giữa (tránh hàng sát mặt tiền và mép dưới). */
@@ -185,7 +187,7 @@ export async function spawnAmbient(map: MapDef, group: THREE.Group, blob: boolea
 
   // Người đi đường.
   const names = (WALKERS[map.id] ?? []).filter((id) => asset(id));
-  const count = Math.max(1, Math.round(names.length * Math.min(1, density + 0.2)));
+  const count = names.length === 0 ? 0 : Math.max(1, Math.round(names.length * Math.min(1, density + 0.2)));
   for (let i = 0; i < count; i++) {
     const id = names[i]!;
     const sprite = await CharacterSprite.create(id);

@@ -14,6 +14,9 @@ import { buildForeground, type Foreground, type FgItem } from './foreground.ts';
 export const THEMES: Record<string, { indoor?: boolean; sky: number; fog: [number, number, number] | null; ambient: number; sun: number; sunColor: number; tint: number; ground: number; camBias?: number }> = {
   // Sảnh là sân đá mở nhìn ra thành phố (bản vẽ lại 2026-10-28): ánh sáng ban ngày cố định, không còn nội thất gỗ tối.
   hall: { indoor: true, sky: 0x2f7be8, fog: null, ambient: 0.95, sun: 1.1, sunColor: 0xfff4de, tint: 0xffffff, ground: 0xffffff, camBias: -1.5 },
+  // Phòng trong nhà (Phòng thú cưng) và đấu trường (Huyết Chiến Đài) — v1.1.0.
+  room: { indoor: true, sky: 0x2a2018, fog: null, ambient: 0.95, sun: 0.9, sunColor: 0xffe6c0, tint: 0xffffff, ground: 0xffffff },
+  arena: { sky: 0x8ec3ef, fog: [0xc4dcef, 30, 70], ambient: 1.0, sun: 1.25, sunColor: 0xfff4e2, tint: 0xffffff, ground: 0xffffff },
   forest: { sky: 0x9cc6e8, fog: [0xb9d8c4, 26, 60], ambient: 1.0, sun: 1.3, sunColor: 0xfff2d6, tint: 0xffffff, ground: 0xffffff },
   deep_forest: { sky: 0x4f6b58, fog: [0x5d7a66, 14, 44], ambient: 0.7, sun: 0.85, sunColor: 0xd6f0d0, tint: 0xc8dcc4, ground: 0xb5c9b0 },
   city: { sky: 0x8ec3ef, fog: [0xc4dcef, 30, 70], ambient: 1.0, sun: 1.25, sunColor: 0xfff4e2, tint: 0xffffff, ground: 0xffffff },
@@ -22,7 +25,13 @@ export const THEMES: Record<string, { indoor?: boolean; sky: number; fog: [numbe
 /** Ký tự bố cục → nền (tile sàn). */
 function floorFor(theme: string, ch: string, x: number, y: number): string {
   const grass = 'grass-floor-01'; // một loại cỏ để không lộ ô 4×4; đa dạng nhờ decal/cỏ/hoa
+  if (ch === 'R') return 'farm-tilled-01'; // luống đất Điền Trang (đi được)
+  if (ch === 'N') return 'farm-tilled-02';
   switch (theme) {
+    case 'room':
+      return 'hall-floor-wood';
+    case 'arena':
+      return 'arena-floor';
     case 'hall':
       void ch;
       // Hai mẫu sàn đá xen kẽ theo khối 4×4 ô (hai mẫu khớp biên với nhau) để phá nhịp lặp.
@@ -107,6 +116,43 @@ function propsFor(theme: string, ch: string): string[] {
       return ['palace-lion-l'];
     case 'Z':
       return ['palace-flagpole'];
+    // v1.1.0: Điền Trang, đấu trường, phòng thú cưng.
+    case 'M':
+      return ['farm-barn'];
+    case 'U':
+      return ['farm-stable'];
+    case 'E':
+      return ['farm-windmill-body'];
+    case 'D':
+      return ['farm-hay-bale'];
+    case 'a':
+      return ['farm-scarecrow'];
+    case 'z':
+      return ['farm-fruit-tree'];
+    case 'p':
+      return ['farm-fence-post'];
+    case 'q':
+      return ['farm-trough'];
+    case 'y':
+      return ['farm-hay-shed'];
+    case 'l':
+      return ['arena-column'];
+    case 'e':
+      return ['arena-flag-teal'];
+    case 'i':
+      return ['arena-flag-red'];
+    case 'c':
+      return ['arena-weapon-rack'];
+    case 'd':
+      return ['arena-standings-board'];
+    case 'u':
+      return ['pet-nest-straw'];
+    case 'v':
+      return ['pet-nest-blanket'];
+    case 'h':
+      return ['pet-nest-shelter'];
+    case 'o':
+      return ['pet-feed-bowl-food', 'pet-feed-bowl-water'];
     default:
       return [];
   }
@@ -313,14 +359,14 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
 
   // Viền ngoài map: nền kéo dài + cây (rừng) để camera không lộ khoảng trống ở mép.
   // Điện: nối sàn đá tối ra ngoài lan can để 1/3 dưới màn không còn là khoảng đen (đánh giá v1.0.0 P1).
-  const skirtFloor = theme === 'hall' ? 'hall-floor-marble' : theme === 'city' ? 'city-paving-03' : 'grass-floor-01';
+  const skirtFloor = theme === 'hall' ? 'hall-floor-marble' : theme === 'city' ? 'city-paving-03' : theme === 'room' ? 'hall-floor-wood' : theme === 'arena' ? 'arena-floor' : 'grass-floor-01';
   if (skirtFloor && asset(skirtFloor)) {
     propJobs.push(
       (async () => {
         const tex = await textures.get(hd2dUrl(skirtFloor), { repeat: true });
         const M = 24;
         // Phố: sàn lát chỉ chạy từ chân dãy nhà trở ra; phía sau nhà là tường hậu, không còn mặt sàn kéo xa nhìn xuyên qua cổng vòm.
-        const zN = theme === 'city' ? 1.0 : theme === 'hall' ? -1.9 : -M; // sảnh: sân thượng sau hàng cột sâu ~2,5 ô rồi tới tường thành
+        const zN = theme === 'city' || theme === 'room' ? 1.0 : theme === 'hall' ? -1.9 : -M; // sảnh: sân thượng sau hàng cột sâu ~2,5 ô rồi tới tường thành
         const depth = H + M - zN;
         const geo = new THREE.PlaneGeometry(W + 2 * M, depth);
         const uv = geo.getAttribute('uv') as THREE.BufferAttribute;
@@ -355,7 +401,7 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
     const c = document.createElement('canvas');
     c.width = c.height = 128;
     const g = c.getContext('2d')!;
-    const base: [number, number, number] = map.id === 'city_palace_gate' ? [112, 104, 96] : [118, 98, 80];
+    const base: [number, number, number] = map.id === 'city_palace_gate' || map.id === 'city_royal_palace' ? [112, 104, 96] : [118, 98, 80];
     g.fillStyle = `rgb(${base[0]},${base[1]},${base[2]})`;
     g.fillRect(0, 0, 128, 128);
     for (let row = 0; row < 8; row++) {
@@ -501,7 +547,7 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
   }
 
   // Điểm nhấn sàn.
-  if (theme === 'hall') {
+  if (theme === 'hall' && map.id === 'summoning_hall_main_hall') {
     // Tâm vòng = ô xuất hiện của nhân vật. Vòng triệu hồi (4 khung) nằm phẳng trên sàn, bụi linh khí bay lên phía trên.
     const cx = (map.spawn_default?.x ?? 9) + 0.5;
     const cz = (map.spawn_default?.y ?? 5) + 0.5;
@@ -519,6 +565,8 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
     if (P.fx) for (const p of map.pedestals ?? []) propJobs.push(fx('summon-motes-fx', p.x + 0.5, p.y + 0.75, 1.0));
   }
   if (map.id === 'city_square') propJobs.push(decal('city-plaza-medallion', 20, 16, 1.4));
+  if (map.id === 'city_royal_palace') propJobs.push(decal('royal-carpet-runner', 13.5, 6.5, 1.5));
+  if (map.id === 'city_deathmatch_arena') propJobs.push(decal('arena-center-medallion', W / 2, H / 2 + 0.2, 1));
 
   // Mặt tiền nhà (H) theo map.facades "x,y" → asset; thành phố: lấp kín dãy nhà phía trên (không để khe trống).
   const facadeSpans: [number, number][] = [];
@@ -550,7 +598,7 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
     } else if (theme === 'city') {
       add({ id: 'fg-ambient-birds', ax: -0.2, ay: 0.86, h: 0.12, maxW: 0.26, opacity: 0.92, drift: [0.55, 90], par: 0.02 });
       add({ id: 'fg-city-bunting', ax: -0.1, ay: 0.9, h: 0.17, maxW: 0.75, sway: 0.006, par: 0.05 });
-      if (map.id === 'city_palace_gate') add({ id: 'fg-gate-banner-edge', ax: 0, ay: 0.6, h: 0.6, maxW: 0.4, par: 0.03, sway: 0.008 });
+      if (map.id === 'city_palace_gate' || map.id === 'city_royal_palace') add({ id: 'fg-gate-banner-edge', ax: 0, ay: 0.6, h: 0.6, maxW: 0.4, par: 0.03, sway: 0.008 });
       add({ id: 'fg-city-lantern-pair', ax: -0.93, ay: 0.46, h: 0.5, maxW: 0.22, rot: -0.02 });
       add({ id: 'fg-city-lantern-pair', ax: 0.93, ay: 0.46, h: 0.5, maxW: 0.22, flip: true, rot: 0.02 });
     } else if (theme === 'hall') {
@@ -561,7 +609,7 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
   if (fgItems.length) fg = await buildForeground(fgItems);
 
   function dressCity(): void {
-    const isGate = map.id === 'city_palace_gate';
+    const isGate = map.id === 'city_palace_gate' || map.id === 'city_royal_palace';
     const has = (id: string) => !!asset(id);
     const wOf = (id: string, d = 4) => asset(id)?.world?.[0] ?? d;
     // 1) Dãy nhà liền: lấp khoảng giữa các mặt tiền đã đặt. Đơn 10: thêm 6 kiểu nhà + mảnh nối (ngõ vòm,
