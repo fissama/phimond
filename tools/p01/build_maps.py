@@ -511,11 +511,20 @@ def city_farm():
     for y in range(3, 6):  # lối đất lên chuồng
         put(24, y, ",")
         put(9, y, ",")
-    for y in range(9, 13):  # hai thửa ruộng
-        for x in range(10, 16):
-            put(x, y, "R")
-        for x in range(17, 23):
-            put(x, y, "N")
+    # Ruộng (decal): trái x10-15, phải x18-23, y9-10 (rìa rừng che từ y12); lối đất x16-17 giữa hai bên (chặn bằng 'x' vô hình)
+    for y in range(9, 11):
+        for x in list(range(10, 16)) + list(range(18, 24)):
+            put(x, y, "x")
+    for y in range(8, 13):
+        for x in (16, 17):
+            put(x, y, ",")
+    for x in list(range(10, 16)) + list(range(18, 24)):  # hàng rào phía trên ruộng (chừa lối x16-17)
+        put(x, 8, "j")
+    for y in range(9, 11):
+        put(9, y, "k")
+        put(24, y, "k")
+    put(9, 8, "n")
+    put(24, 8, "n")
     for y in (6, 7):  # cổng mở hai mép
         put(0, y, ",")
         put(W - 1, y, ",")
@@ -526,8 +535,8 @@ def city_farm():
     for x, y in ((30, 3), (32, 3)):  # cối xay
         put(x, y, "#")
     for x, y, ch in [(24, 2, "M"), (9, 2, "U"), (31, 3, "E"), (27, 4, "D"), (28, 4, "D"), (4, 3, "z"), (4, 11, "z"),
-                     (12, 4, "q"), (16, 10, "a"), (9, 8, "p"), (23, 8, "p"), (2, 9, "f"), (3, 10, "f"), (29, 10, "f"),
-                     (30, 9, "f"), (26, 11, "y")]:
+                     (12, 4, "q"), (16, 11, "G"), (19, 4, "Q"), (21, 5, "W"), (5, 9, "V"), (29, 9, "V"), (2, 9, "f"),
+                     (3, 10, "f"), (29, 11, "f"), (30, 10, "f"), (26, 11, "y")]:
         put(x, y, ch)
     g = from_rows(rows)
     return {
@@ -559,8 +568,8 @@ def city_pet_room():
         rows[y] = rows[y][:x] + ch + rows[y][x + 1:]
     for y in (5, 6, 7):
         put(0, y, "=")
-    for x, y, ch in [(2, 2, "K"), (17, 2, "K"), (5, 3, "u"), (6, 3, "o"), (5, 8, "v"), (6, 8, "o"), (15, 8, "h"),
-                     (14, 8, "o"), (17, 6, "x"), (17, 7, "x"), (11, 3, "x")]:
+    for x, y, ch in [(2, 2, "K"), (17, 2, "Y"), (4, 2, "P"), (14, 2, "I"), (5, 3, "u"), (6, 3, "o"), (5, 8, "v"), (6, 8, "o"),
+                     (15, 8, "h"), (14, 8, "o"), (13, 9, "J"), (10, 9, "X"), (2, 9, "I"), (4, 9, "P"), (17, 6, "x"), (17, 7, "x"), (11, 3, "x")]:
         put(x, y, ch)
     g = from_rows(rows)
     return {
@@ -594,8 +603,10 @@ def city_deathmatch_arena():
         rows[y] = rows[y][:x] + ch + rows[y][x + 1:]
     for y in (5, 6, 7):
         put(0, y, ":")
-    for x, y, ch in [(3, 2, "l"), (26, 2, "l"), (3, 10, "l"), (26, 10, "l"), (8, 2, "i"), (21, 2, "e"),
-                     (15, 2, "d"), (2, 4, "c"), (27, 4, "c"), (2, 9, "c"), (27, 9, "c")]:
+    for x, y, ch in [(3, 2, "l"), (26, 2, "l"), (3, 10, "l"), (26, 10, "l"), (8, 2, "i"), (18, 2, "e"),
+                     (15, 2, "d"), (2, 4, "c"), (27, 4, "c"), (2, 9, "c"), (27, 9, "c"),
+                     (13, 2, "w"), (12, 2, "x"), (14, 2, "x"), (21, 2, "J"), (20, 2, "x"), (22, 2, "x"),
+                     (6, 4, "k"), (23, 4, "k"), (6, 9, "k"), (23, 9, "k")] + [(x, 2, "j") for x in (5, 6, 7, 9, 10, 11, 16, 17, 24, 25)]:
         put(x, y, ch)
     g = from_rows(rows)
     return {

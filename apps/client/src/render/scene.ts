@@ -23,15 +23,16 @@ export const THEMES: Record<string, { indoor?: boolean; sky: number; fog: [numbe
 };
 
 /** Ký tự bố cục → nền (tile sàn). */
-function floorFor(theme: string, ch: string, x: number, y: number): string {
+function floorFor(theme: string, ch: string, x: number, y: number, mapId = ''): string {
   const grass = 'grass-floor-01'; // một loại cỏ để không lộ ô 4×4; đa dạng nhờ decal/cỏ/hoa
-  if (ch === 'R') return 'farm-tilled-01'; // luống đất Điền Trang (đi được)
+  if (ch === 'R') return 'farm-tilled-01'; // luống đất cũ (không còn dùng ở Điền Trang)
   if (ch === 'N') return 'farm-tilled-02';
+  if (mapId === 'city_royal_palace') return 'palace-floor-marble';
   switch (theme) {
     case 'room':
-      return 'hall-floor-wood';
+      return 'pet-floor-wood-fine';
     case 'arena':
-      return 'arena-floor';
+      return 'arena-sand-floor';
     case 'hall':
       void ch;
       // Hai mẫu sàn đá xen kẽ theo khối 4×4 ô (hai mẫu khớp biên với nhau) để phá nhịp lặp.
@@ -46,8 +47,29 @@ function floorFor(theme: string, ch: string, x: number, y: number): string {
   }
 }
 
+/** Đợt B1 bổ sung: ký tự → asset riêng của từng map (ưu tiên hơn bảng chung). [] = vật cản vô hình. */
+const MAP_PROPS: Record<string, Record<string, string[]>> = {
+  city_farm: { x: [], j: ['farm-fence-h'], k: ['farm-fence-v'], n: ['farm-fence-corner'], G: ['farm-scarecrow-02'], V: ['farm-haystack'], W: ['farm-wheelbarrow'], Q: ['farm-well'] },
+  city_pet_room: { P: ['pet-cage-small'], I: ['pet-cage-large'], J: ['pet-perch-stand'], X: ['pet-scratch-post'], Y: ['pet-shelf-alt'], x: ['barrel', 'wooden-crate'] },
+  city_deathmatch_arena: { l: ['arena-column-short'], w: ['arena-gate'], J: ['arena-judge-podium'], k: ['arena-brazier'], j: ['arena-barrier-h'], n: ['arena-barrier-corner'], x: [] },
+  city_royal_palace: { Y: ['palace-guard-statue-gold'], B: ['flowerpot-red', 'flowerpot-violet'], x: [] },
+};
+/** Vật không chặn đường, tọa độ tâm (ô) — [asset, cx, cz]. */
+const MAP_EXTRAS: Record<string, [string, number, number][]> = {
+  city_pet_room: [['pet-toy-pile', 7.6, 5.7], ['pet-toy-pile', 12.6, 7.4], ['pet-sleeping-01', 5.55, 3.55], ['pet-sleeping-02', 5.5, 8.5]],
+  city_royal_palace: [['palace-window-blue', 9, 2.2], ['palace-window-red', 17, 2.2], ['palace-banner-blue-long', 11, 2.1], ['palace-banner-red-long', 15, 2.1]],
+  city_farm: [['farm-gate', 17, 8.4]],
+};
+/** Thảm/ruộng/huy hiệu: decal [asset, cx, cz, scale]. */
+const MAP_DECALS: Record<string, [string, number, number, number][]> = {
+  city_pet_room: [['pet-rug-round', 9.5, 6.3, 1], ['pet-rug-long', 3.6, 6.5, 1]],
+  city_farm: [['farm-field-wheat', 11.5, 10, 1], ['farm-field-cabbage', 14.5, 10, 1], ['farm-field-carrot', 19.5, 10, 1], ['farm-field-wheat', 22.5, 10, 1]],
+};
+
 /** Ký tự bố cục → danh sách asset có thể dùng (chọn ổn định theo vị trí). */
-function propsFor(theme: string, ch: string): string[] {
+function propsFor(theme: string, ch: string, mapId = ''): string[] {
+  const over = MAP_PROPS[mapId]?.[ch];
+  if (over) return over;
   const city = theme === 'city';
   const hall = theme === 'hall';
   switch (ch) {
@@ -209,7 +231,7 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
   const byFloor = new Map<string, number[]>();
   for (let y = 0; y < H; y++)
     for (let x = 0; x < W; x++) {
-      const id = floorFor(theme, layout[y]![x] ?? '.', x, y);
+      const id = floorFor(theme, layout[y]![x] ?? '.', x, y, map.id);
       if (!byFloor.has(id)) byFloor.set(id, []);
       byFloor.get(id)!.push(x, y);
     }
@@ -230,7 +252,7 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
     geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
     geo.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2));
     geo.computeVertexNormals();
-    const darken = theme === 'hall' && id === 'hall-floor-stone' ? 0x4a4038 : T.ground;
+    const darken = theme === 'hall' && id === 'hall-floor-stone' ? 0x4a4038 : id === 'palace-floor-marble' ? 0xc4c8d2 : T.ground;
     const mat = P.shadows === 'none'
       ? new THREE.MeshBasicMaterial({ map: tex, color: tex ? darken : 0x6a8a58 })
       : new THREE.MeshLambertMaterial({ map: tex, color: tex ? darken : 0x6a8a58 });
@@ -318,7 +340,7 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
   for (let y = 0; y < H; y++)
     for (let x = 0; x < W; x++) {
       const ch = layout[y]![x] ?? '.';
-      const opts = propsFor(theme, ch);
+      const opts = propsFor(theme, ch, map.id);
       if (opts.length === 0) continue;
       const decor = DECOR.has(ch);
       if (decor && hash(x, y) > P.decor) continue;
@@ -359,7 +381,7 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
 
   // Viền ngoài map: nền kéo dài + cây (rừng) để camera không lộ khoảng trống ở mép.
   // Điện: nối sàn đá tối ra ngoài lan can để 1/3 dưới màn không còn là khoảng đen (đánh giá v1.0.0 P1).
-  const skirtFloor = theme === 'hall' ? 'hall-floor-marble' : theme === 'city' ? 'city-paving-03' : theme === 'room' ? 'hall-floor-wood' : theme === 'arena' ? 'arena-floor' : 'grass-floor-01';
+  const skirtFloor = theme === 'hall' ? 'hall-floor-marble' : map.id === 'city_royal_palace' ? 'palace-floor-marble' : theme === 'city' ? 'city-paving-03' : theme === 'room' ? 'pet-floor-wood-fine' : theme === 'arena' ? 'arena-sand-floor' : 'grass-floor-01';
   if (skirtFloor && asset(skirtFloor)) {
     propJobs.push(
       (async () => {
@@ -566,7 +588,9 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
   }
   if (map.id === 'city_square') propJobs.push(decal('city-plaza-medallion', 20, 16, 1.4));
   if (map.id === 'city_royal_palace') propJobs.push(decal('royal-carpet-runner', 13.5, 6.5, 1.5));
-  if (map.id === 'city_deathmatch_arena') propJobs.push(decal('arena-center-medallion', W / 2, H / 2 + 0.2, 1));
+  if (map.id === 'city_deathmatch_arena') propJobs.push(decal(asset('arena-center-medallion-large') ? 'arena-center-medallion-large' : 'arena-center-medallion', W / 2, H / 2 + 0.2, 1));
+  for (const [id, cx, cz, sc] of MAP_DECALS[map.id] ?? []) propJobs.push(decal(id, cx, cz, sc));
+  for (const [id, cx, cz] of MAP_EXTRAS[map.id] ?? []) place(id, cx - 0.5, cz - 0.55, { decor: true });
 
   // Mặt tiền nhà (H) theo map.facades "x,y" → asset; thành phố: lấp kín dãy nhà phía trên (không để khe trống).
   const facadeSpans: [number, number][] = [];
