@@ -247,7 +247,7 @@
     "roles": [
       "arena_info"
     ],
-    "dialogue": "Huyết Chiến Đài sắp mở. Hãy rèn luyện linh thú cho tới ngày đó.",
+    "dialogue": "Cổng Huyết Chiến Đài ở ngay phía trên ta. Cấp 10 trở lên mới vào được; các trận đấu sắp mở.",
     "confidence": "designed",
     "source": "P01 v1.0.0 Đợt A — roster P12-S4 (vị trí trong data/maps/p01)",
     "lines": [
@@ -351,6 +351,108 @@
     "lines": [
       "Ta đi khắp các vùng, hàng lạ nhiều lắm. Chờ chuyến sau.",
       "Thương Phố này là nơi dễ bán nhất, ai cũng có gì đó cần mua."
+    ]
+  },
+  "pal_healer": {
+    "id": "pal_healer",
+    "name": "Ngự Y Hoàng Cung Mina",
+    "map_id": "",
+    "x": 0,
+    "y": 0,
+    "roles": [
+      "heal"
+    ],
+    "dialogue": "Linh thú của bạn cần nghỉ ngơi. Để Ngự Y chăm sóc cho cả đội.",
+    "confidence": "designed",
+    "source": "P01 v1.1.0 Đợt B1 — roster P12-S4 (vị trí trong data/maps/p01)",
+    "lines": [
+      "Trong cung ai cũng cần nghỉ ngơi, linh thú cũng vậy.",
+      "Đi xa nhớ mang thuốc theo. Ta không thể đi cùng bạn ngoài kia."
+    ]
+  },
+  "act_events": {
+    "id": "act_events",
+    "name": "Sứ Quản Hoạt Động Thalia",
+    "map_id": "",
+    "x": 0,
+    "y": 0,
+    "roles": [
+      "free"
+    ],
+    "dialogue": "Các hoạt động chưa mở. Khi nào có sự kiện, Hội Sảnh sẽ dán bảng báo.",
+    "confidence": "designed",
+    "source": "P01 v1.1.0 Đợt B1 — roster P12-S4 (vị trí trong data/maps/p01)",
+    "lines": [
+      "Sói–Cừu, đấu trường, chiến bang… mọi thứ đang được chuẩn bị.",
+      "Bảng nhiệm vụ hai bên sảnh sẽ sớm có việc cho bạn."
+    ]
+  },
+  "ranch_keeper": {
+    "id": "ranch_keeper",
+    "name": "Quản Trang Oren",
+    "map_id": "",
+    "x": 0,
+    "y": 0,
+    "roles": [
+      "free"
+    ],
+    "dialogue": "Kho gửi linh thú ở điền trang chưa mở. Cứ ngắm đồng ruộng cho thoải mái nhé.",
+    "confidence": "designed",
+    "source": "P01 v1.1.0 Đợt B1 — roster P12-S4 (vị trí trong data/maps/p01)",
+    "lines": [
+      "Điền Trang Lục Dã là nơi linh thú được nghỉ ngơi. Việc gửi và rút sẽ có sau.",
+      "Cối xay gió quay cả ngày, nghe cũng vui tai."
+    ]
+  },
+  "pet_master": {
+    "id": "pet_master",
+    "name": "Lão Sư Thuần Linh Haru",
+    "map_id": "",
+    "x": 0,
+    "y": 0,
+    "roles": [
+      "free"
+    ],
+    "dialogue": "Giám định linh thú ta sẽ mở sau. Hãy nuôi cho khỏe đã.",
+    "confidence": "designed",
+    "source": "P01 v1.1.0 Đợt B1 — roster P12-S4 (vị trí trong data/maps/p01)",
+    "lines": [
+      "Mỗi linh thú có một tiềm năng riêng, đến lúc ta sẽ cho bạn thấy.",
+      "Chăm ổ, chăm chén ăn, đó là cách bắt đầu."
+    ]
+  },
+  "pet_shop": {
+    "id": "pet_shop",
+    "name": "Chủ Tiệm Linh Thú Pomi",
+    "map_id": "",
+    "x": 0,
+    "y": 0,
+    "roles": [
+      "shop"
+    ],
+    "dialogue": "Thuốc và phong ấn cho các bạn nhỏ đây! Chọn gì cũng được nhé.",
+    "confidence": "designed",
+    "source": "P01 v1.1.0 Đợt B1 — roster P12-S4 (vị trí trong data/maps/p01)",
+    "lines": [
+      "Tiệm Pomi có đủ đồ cho người mới nuôi linh thú.",
+      "Đồ ăn đặc biệt cho linh thú sẽ về sau, chờ chút nhé."
+    ]
+  },
+  "arena_master": {
+    "id": "arena_master",
+    "name": "Đài Chủ Vale",
+    "map_id": "",
+    "x": 0,
+    "y": 0,
+    "roles": [
+      "heal"
+    ],
+    "dialogue": "Đấu trường chưa mở cửa. Nhưng nếu đội bạn cần hồi sức, ta lo được.",
+    "confidence": "designed",
+    "source": "P01 v1.1.0 Đợt B1 — roster P12-S4 (vị trí trong data/maps/p01)",
+    "lines": [
+      "Huyết Chiến Đài sẽ mở khi lịch thi đấu được định.",
+      "Cứ rèn luyện đi, đài này sẽ cần người giỏi."
     ]
   }
 }
