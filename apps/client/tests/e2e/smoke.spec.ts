@@ -90,10 +90,11 @@ test('đi trọn tuyến Đợt A và dùng trụ đá quay về', async ({ page
   await walk(page, { x: 0, y: 6 }, 'city_square'); // bản phác APK: Quảng Trường là mép trái của Hoàng Môn
   await walk(page, { x: 31, y: 5 }, 'city_palace_gate'); // Hoàng Môn là mép phải của Quảng Trường
   await walk(page, { x: 0, y: 6 }, 'city_square');
-  // Trụ đá: đi tới, mở bảng, đích khóa không bấm được, về Bìa Rừng. (Lệnh gửi lúc đang tải map bị bỏ → chờ tải xong.)
+  // Trụ đá: đi tới, mở bảng, đích khóa (bãi biển) không bấm được, Điền Trang đã mở, về Bìa Rừng. (Lệnh gửi lúc đang tải map bị bỏ → chờ tải xong.)
   await expect(page.getByTestId('loading')).toHaveCount(0, { timeout: 20_000 });
   await act(page, { kind: 'pillar' });
-  await expect(page.getByTestId('travel-city_farm')).toBeDisabled({ timeout: 20_000 });
+  await expect(page.getByTestId('travel-treasure_beach_east_shore')).toBeDisabled({ timeout: 20_000 });
+  await expect(page.getByTestId('travel-city_farm')).toBeEnabled();
   await page.getByTestId('travel-emerald_forest_main_woods').click();
   await expect.poll(async () => (await pos(page)).map, { timeout: 15_000 }).toBe('emerald_forest_main_woods');
 });
