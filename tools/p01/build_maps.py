@@ -296,7 +296,8 @@ def palace_gate():
         "portals": [
             {"id": "gate_to_square", "rect": [0, 5, 1, 3], "to": "city_square",
              "arrive": {"x": 29, "y": 6, "face": "left"}},
-            {"id": "gate_to_market", "rect": [25, 5, 1, 3], "to": "city_market", "locked": True},
+            {"id": "gate_to_market", "rect": [25, 5, 1, 3], "to": "city_market",
+             "arrive": {"x": 2, "y": 6, "face": "right"}},
             {"id": "gate_to_palace", "rect": [13, 2, 1, 1], "to": "city_royal_palace", "locked": True},
         ],
         "npcs": [
@@ -352,7 +353,8 @@ def city_square():
         "portals": [
             {"id": "square_to_gate", "rect": [31, 4, 1, 3], "to": "city_palace_gate",
              "arrive": {"x": 2, "y": 6, "face": "right"}},
-            {"id": "square_to_market", "rect": [0, 4, 1, 3], "to": "city_market", "locked": True},
+            {"id": "square_to_market", "rect": [0, 4, 1, 3], "to": "city_market",
+             "arrive": {"x": 27, "y": 6, "face": "left"}},
         ],
         "pillar": {"x": 25, "y": 8, "npc": "sq_pillar", "dest": [
             {"map": "emerald_forest_main_woods", "arrive": {"x": 3, "y": 6, "face": "right"}},
@@ -376,7 +378,52 @@ def city_square():
     }
 
 
-MAPS = [summoning_hall, forest_main, forest_deep, palace_gate, city_square]
+def city_market():
+    """Thương Phố (v1.1.0 Đợt B1): dải chợ ngang, cổng trái về Hoàng Môn, cổng phải về Quảng Trường."""
+    W, H = 30, 12
+    rows = ["#" * W] + ["#" + ":" * (W - 2) + "#" for _ in range(H - 2)] + ["#" * W]
+    def put(x, y, ch):
+        rows[y] = rows[y][:x] + ch + rows[y][x + 1:]
+    for x in (4, 10, 16, 22, 27):
+        put(x, 1, "H")
+    for y in (5, 6, 7):  # hai mép mở: trái → Hoàng Môn, phải → Quảng Trường
+        put(0, y, ":")
+        put(W - 1, y, ":")
+    # Sạp mái hiên dọc hàng trên, xe bán hàng + bao tải + thùng dọc hàng dưới, đèn và cờ.
+    for x, y, ch in [(7, 3, "A"), (12, 3, "A"), (17, 3, "A"), (22, 3, "A"),
+                     (2, 2, "L"), (27, 2, "L"), (9, 2, "n"), (20, 2, "n"),
+                     (8, 10, "V"), (9, 10, "X"), (21, 10, "V"), (22, 10, "X"),
+                     (3, 9, "x"), (26, 9, "x"), (14, 10, "k"), (5, 9, "b"), (24, 9, "b"),
+                     (13, 9, "b"), (16, 9, "b")]:
+        put(x, y, ch)
+    g = from_rows(rows)
+    return {
+        "id": "city_market",
+        "name": "Thương Phố",
+        "kind": "safe_hub",
+        "theme": "city",
+        "level": None,
+        "grid": g,
+        "spawn_default": {"x": 14, "y": 6, "face": "down"},
+        "respawn_to": "city_square",
+        "facades": {"4,1": "city-facade-shop", "10,1": "city-facade-bakery", "16,1": "city-facade-exchange",
+                    "22,1": "city-facade-warehouse", "27,1": "city-facade-inn"},
+        "portals": [
+            {"id": "market_to_gate", "rect": [0, 5, 1, 3], "to": "city_palace_gate",
+             "arrive": {"x": 23, "y": 6, "face": "left"}},
+            {"id": "market_to_square", "rect": [29, 5, 1, 3], "to": "city_square",
+             "arrive": {"x": 2, "y": 5, "face": "right"}},
+        ],
+        "npcs": [
+            {"id": "mk_general", "x": 8, "y": 4, "face": "down"},
+            {"id": "mk_trader", "x": 21, "y": 8, "face": "up"},
+        ],
+        "spawn_zones": [],
+        "backdrop": "city-skyline-far",
+    }
+
+
+MAPS = [summoning_hall, forest_main, forest_deep, palace_gate, city_square, city_market]
 
 
 # ---------------------------------------------------------------- xuất + kiểm
