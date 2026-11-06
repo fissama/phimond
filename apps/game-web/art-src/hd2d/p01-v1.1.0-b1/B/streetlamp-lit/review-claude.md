@@ -1,0 +1,1 @@
+Claude 2026-11-06: GPT redraws failed mask/size; final.png = streetlamp-unlit.png with the six glass colors remapped to a brighter warm ramp (canvas 88x266, same alpha/pivot, 38 colors). Old final kept as final-rejected-size.png.
