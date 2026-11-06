@@ -1,6 +1,6 @@
 # P01 — Kế hoạch v1.1.0 (Đợt B1: Thành) — 2026-11-06
 
-Trạng thái: **kế hoạch, chưa code.** Bối cảnh: [`P01-scope.md`](P01-scope.md) §8 (đóng P01 ở v1.1.0).
+Trạng thái: **ĐÃ DỰNG xong 6/6 map (2026-11-06), chờ review thiết bị thật + chạy test Go/CI.** Bối cảnh: [`P01-scope.md`](P01-scope.md) §8 (đóng P01 ở v1.1.0).
 
 ## 1. Phát hiện chính: không cần cơ chế "map riêng theo người chơi"
 
@@ -61,3 +61,14 @@ Mỗi map cần: hàm dựng trong `tools/p01/build_maps.py` (sinh JSON ở `dat
 1. Đồng ý bỏ cơ chế instance (mục 1)?
 2. Bảng chức năng NPC mục 4 có ổn không?
 3. Kích thước map B1 theo gốc APK rồi phóng ~20–30% như Đợt A, hay làm gọn hơn?
+
+
+## 7. Kết quả dựng (2026-11-06)
+
+- 6 map: `city_market` 30×12, `city_royal_palace` 26×13, `city_activity_hall` 20×11 (theme hall), `city_farm` 34×14 (theme forest + nền `farm-hills-far`), `city_pet_room` 20×11 (theme mới `room`), `city_deathmatch_arena` 30×13 (theme mới `arena`, `min_level` 10).
+- Cổng mở: Hoàng Môn ↔ Thương Phố ↔ Quảng Trường, Hoàng Môn ↔ Vương Cung ↔ Hội Sảnh, trụ Quảng Trường → Điền Trang ↔ Phòng thú cưng, cổng `square_to_arena` (ô trên NPC `sq_arena`, cần cấp 10). Chưa có cổng từ Điền Trang tới trụ Hải Tặc Hào (tàu chưa có).
+- NPC: 8 NPC mới. Chức năng: shop (`mk_general`, `pet_shop`), hồi máu (`pal_healer`, `arena_master`), còn lại hội thoại "chưa mở" (`mk_trader`, `ranch_keeper`, `pet_master`, `act_events`).
+- Lỗi phát hiện khi chụp ảnh: map thành không có danh sách người đi đường làm hiện ô xanh (sprite thiếu). Đã sửa ở `ambient.ts`.
+- Kiểm tra: `build_maps.py --check`, `tsc`, unit client, e2e chromium (xem log), ảnh chụp từng map. **Chưa chạy được test Go** (không có toolchain Go ở môi trường làm việc): cần `go test ./...` ở máy có Go hoặc CI.
+- Còn lại cho P01 exit review: chơi thử trên iPhone/Safari, kiểm tay 6 map, ảnh cối xay quay (rotor) và nền xa Điền Trang chưa dùng (rừng viền che nền).
+- Phiên bản: CI tự tăng minor khi có commit `feat(...)` kể từ tag `v1.0.0`, nên push các commit này lên main sẽ ra **v1.1.0**.
