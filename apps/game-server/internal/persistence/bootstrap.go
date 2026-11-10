@@ -219,11 +219,8 @@ func Bootstrap(ctx context.Context, c Config, dir string) error {
 		if !errors.Is(e, sql.ErrNoRows) {
 			return e
 		}
-		// Migrations are checked-in simple DDL, no routines or semicolons in strings.
-		for _, statement := range strings.Split(string(b), ";") {
-			if strings.TrimSpace(statement) == "" {
-				continue
-			}
+		// Migrations are checked-in simple DDL (no routines); comments and quoted text may contain semicolons.
+		for _, statement := range splitSQL(string(b)) {
 			if _, e = conn.ExecContext(ctx, statement); e != nil {
 				return fmt.Errorf("migration %s failed: %w", version, e)
 			}
@@ -233,4 +230,62 @@ func Bootstrap(ctx context.Context, c Config, dir string) error {
 		}
 	}
 	return nil
+}
+
+// splitSQL tách file migration thành từng câu lệnh theo dấu ';', bỏ chú thích (--, #, /* */)
+// và không tách ở dấu ';' nằm trong chuỗi '...', "..." hay tên `...`.
+func splitSQL(src string) []string {
+	var out []string
+	var cur strings.Builder
+	flush := func() {
+		if st := strings.TrimSpace(cur.String()); st != "" {
+			out = append(out, st)
+		}
+		cur.Reset()
+	}
+	for i := 0; i < len(src); i++ {
+		c := src[i]
+		switch {
+		case c == '\'' || c == '"' || c == '`':
+			j := i + 1
+			for j < len(src) {
+				if src[j] == '\\' && c != '`' && j+1 < len(src) {
+					j += 2
+					continue
+				}
+				if src[j] == c {
+					if j+1 < len(src) && src[j+1] == c { // dấu nháy kép liền nhau = ký tự nháy
+						j += 2
+						continue
+					}
+					break
+				}
+				j++
+			}
+			if j >= len(src) {
+				j = len(src) - 1
+			}
+			cur.WriteString(src[i : j+1])
+			i = j
+		case c == '#' || (c == '-' && i+2 < len(src) && src[i+1] == '-' && (src[i+2] == ' ' || src[i+2] == '\t' || src[i+2] == '\n')) || (c == '-' && i+2 == len(src) && src[i+1] == '-'):
+			for i < len(src) && src[i] != '\n' {
+				i++
+			}
+			cur.WriteByte('\n')
+		case c == '/' && i+1 < len(src) && src[i+1] == '*':
+			end := strings.Index(src[i+2:], "*/")
+			if end < 0 {
+				i = len(src)
+			} else {
+				i += end + 3
+			}
+			cur.WriteByte(' ')
+		case c == ';':
+			flush()
+		default:
+			cur.WriteByte(c)
+		}
+	}
+	flush()
+	return out
 }
