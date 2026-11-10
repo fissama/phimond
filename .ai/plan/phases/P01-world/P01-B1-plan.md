@@ -72,3 +72,12 @@ Mỗi map cần: hàm dựng trong `tools/p01/build_maps.py` (sinh JSON ở `dat
 - Kiểm tra: `build_maps.py --check`, `tsc`, unit client, e2e chromium (xem log), ảnh chụp từng map. **Chưa chạy được test Go** (không có toolchain Go ở môi trường làm việc): cần `go test ./...` ở máy có Go hoặc CI.
 - Còn lại cho P01 exit review: chơi thử trên iPhone/Safari, kiểm tay 6 map, ảnh cối xay quay (rotor) và nền xa Điền Trang chưa dùng (rừng viền che nền).
 - Phiên bản: CI tự tăng minor khi có commit `feat(...)` kể từ tag `v1.0.0`, nên push các commit này lên main sẽ ra **v1.1.0**.
+
+## 8. Hoàn thiện trước phát hành (2026-11-10)
+
+- **Art bổ sung (đơn GPT 12):** 39 asset đã nghiệm thu và cài; 4 map dựng lại bố cục (Điền Trang có ruộng/hàng rào/cổng/giếng; Phòng thú cưng có sàn ván nhỏ/thảm/lồng/thú ngủ; Huyết Chiến Đài sàn cát/cổng sắt/đài trọng tài/lồng lửa; Vương Cung sàn cẩm thạch/cửa sổ kính/cờ/tượng vàng). Chưa dùng: `palace-throne-dais`, `farm-soil-edge-01/02`.
+- **Sửa hình:** bỏ vũng nước/nắp cống/vết nứt lạc chỗ ở Thương Phố và Vương Cung; dời dây cờ và Nhà Buôn Lữ Hành ở Thương Phố; dời cột đấu trường khỏi giá vũ khí; viền sàn ngoài map của đấu trường/phòng không còn ám xanh.
+- **Máy chủ:** ping WebSocket 25 giây/lần (ingress không cắt kết nối khi đứng yên; quy tắc AFK 10 phút không gửi lệnh vẫn giữ). Bộ tách migration bỏ qua chú thích/chuỗi có `;` — DB mới tinh chạy được migration 003 (DB production đã áp dụng 003, không bị ảnh hưởng vì checksum file không đổi).
+- **Kiểm tra đã chạy:** `go test ./... -race` (chạy bằng Go 1.24 cục bộ; CI dùng Go 1.25), `go vet`, `build_maps.py --check` (11 map), `tsc`, 27 unit test client, `vite build`, e2e chromium: 14/15 qua ở lượt chạy đủ bộ, test còn lại (cửa hàng Thương Phố + Ngự Y) sửa bước chờ tải rồi chạy riêng qua.
+- **Chưa kiểm được ở môi trường làm việc:** Safari/iPhone thật; MySQL thật (test `fault_mysql` tự bỏ qua khi không có DB); kết nối qua ingress thật ≥3 phút (ping đã có test đơn vị).
+- **Nợ ghi nhận:** rìa rừng Điền Trang che hàng dưới nên ruộng chỉ 1 hàng; nhà rơm ở Điền Trang mờ đi khi nhân vật đứng gần (cơ chế che khuất chung); NPC chưa có hoạt ảnh đứng yên; chức năng guild/kho/thư/giám định "chưa mở"; Huyết Chiến Đài chỉ có cảnh (N01).
