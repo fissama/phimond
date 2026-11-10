@@ -55,6 +55,9 @@ type Server struct {
 	trustedProxies []*net.IPNet
 }
 
+// pingInterval: chu kỳ ping WebSocket (ngắn hơn timeout idle 60 giây thường gặp ở ingress).
+var pingInterval = 25 * time.Second
+
 func New(s Storage, e *character.Engine) *Server {
 	return &Server{metrics: newRuntimeMetrics(os.Getenv("GAME_METRICS") == "1"), Store: s, Game: e, limits: map[string]window{}, connections: map[string]int{}, live: map[string]*liveCharacter{}, sessions: map[string]sessionEntry{}, cors: parseCORSOrigins(os.Getenv("GAME_CORS_ORIGINS")), mailer: mailerFromEnv(), trustedProxies: parseTrustedProxies(os.Getenv("GAME_TRUSTED_PROXIES"))}
 }
@@ -367,6 +370,25 @@ func (s *Server) ws(w http.ResponseWriter, r *http.Request) {
 	if err != nil || !state(m, initial, false) {
 		return
 	}
+	// Giữ kết nối: ping định kỳ để proxy/ingress không cắt WebSocket khi người chơi đứng yên.
+	go func() {
+		ticker := time.NewTicker(pingInterval)
+		defer ticker.Stop()
+		for {
+			select {
+			case <-ctx.Done():
+				return
+			case <-ticker.C:
+				pingCtx, c := context.WithTimeout(ctx, 10*time.Second)
+				e := conn.Ping(pingCtx)
+				c()
+				if e != nil {
+					_ = conn.CloseNow()
+					return
+				}
+			}
+		}
+	}()
 	for {
 		readCtx, cancel := context.WithTimeout(ctx, 10*time.Minute)
 		_, raw, err = conn.Read(readCtx)
