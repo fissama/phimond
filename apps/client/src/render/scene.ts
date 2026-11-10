@@ -393,7 +393,7 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
         const geo = new THREE.PlaneGeometry(W + 2 * M, depth);
         const uv = geo.getAttribute('uv') as THREE.BufferAttribute;
         for (let i = 0; i < uv.count; i++) uv.setXY(i, (uv.getX(i) * (W + 2 * M)) / 4, (uv.getY(i) * depth) / 4);
-        const shade = theme === 'hall' ? 0xd2c8b4 : theme === 'deep_forest' ? T.ground : theme === 'city' ? 0xc8c0b0 : 0xe4ebdc;
+        const shade = theme === 'hall' ? 0xd2c8b4 : theme === 'deep_forest' ? T.ground : theme === 'city' ? 0xc8c0b0 : theme === 'arena' || theme === 'room' ? 0xe6e0d6 : 0xe4ebdc; // đấu trường/phòng: trung tính, không ám xanh cỏ
         const mat = P.shadows === 'none' ? new THREE.MeshBasicMaterial({ map: tex, color: shade }) : new THREE.MeshLambertMaterial({ map: tex, color: shade });
         const m = new THREE.Mesh(geo, mat);
         m.rotation.x = -Math.PI / 2;
@@ -720,7 +720,7 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
     // 4) Thảm đỏ trên lối gạch ở Hoàng Môn.
     if (isGate) propJobs.push(decal('palace-carpet-strip', 13.5, 5.6, 2, Math.PI / 2)); // chạy dọc trục cổng cung điện, từ chân cổng xuống sân
     // 5) Dây cờ trên khu chợ, hàng rào sắt cạnh lối ra.
-    if (!isGate && has('city-bunting')) place('city-bunting', 19.5, 8.75, { decor: true });
+    if (!isGate && has('city-bunting')) place('city-bunting', map.id === 'city_market' ? 11 : 19.5, 8.75, { decor: true }); // Thương Phố: tránh đè lên Nhà Buôn Lữ Hành
     // 6) Decal mặt đất rải thưa trên đá lát (không phủ lối gạch).
     const decals = ['decal-cracks', 'decal-drain', 'decal-puddle', 'decal-petals', 'decal-hopscotch', 'decal-ruts'].filter(has);
     if (decals.length) {
@@ -728,7 +728,9 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
         ? [['decal-cracks', 4.5, 6.5], ['decal-drain', 21.5, 4.5], ['decal-petals', 3.5, 8.6], ['decal-puddle', 20.5, 7.4]]
         : [['decal-hopscotch', 22.5, 6.2], ['decal-drain', 10.5, 4.5], ['decal-puddle', 6.5, 6.6], ['decal-ruts', 27.0, 9.2],
            ['decal-cracks', 15.0, 8.4], ['decal-petals', 12.5, 3.6], ['decal-cracks', 25.5, 4.4], ['decal-petals', 29.3, 8.4]];
-      for (const [id, x, z] of fixed) if (has(id) && hash(x * 7, z * 3) < 0.35 + P.decor) propJobs.push(decal(id, x, z, 1));
+      // Thương Phố/Vương Cung: toạ độ decal vốn đặt cho Quảng Trường/Hoàng Môn — vũng nước, nắp cống, vết nứt rơi vào quầy hàng và sàn cẩm thạch; chỉ giữ cánh hoa.
+      const petalsOnly = map.id === 'city_market' || map.id === 'city_royal_palace';
+      for (const [id, x, z] of fixed) if (has(id) && (!petalsOnly || id === 'decal-petals') && hash(x * 7, z * 3) < 0.35 + P.decor) propJobs.push(decal(id, x, z, 1));
     }
   }
 

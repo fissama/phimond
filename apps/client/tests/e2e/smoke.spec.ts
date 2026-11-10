@@ -213,7 +213,7 @@ test('menu: đội hình có 1 con chính, không gỡ được con cuối', asy
   await expect(page.locator('[data-testid^="party-add-"]')).toHaveCount(0);
 });
 
-test('NPC: tới gần, hội thoại, hồi phục; Thương Phố, Vương Cung, Hội Sảnh đi được', async ({ page }) => {
+test('NPC: tới gần, hội thoại, hồi phục; Thương Phố (cửa hàng), Vương Cung (hồi phục), Hội Sảnh đi được', async ({ page }) => {
   test.setTimeout(240_000);
   await register(page);
   await chooseStarter(page);
@@ -225,8 +225,22 @@ test('NPC: tới gần, hội thoại, hồi phục; Thương Phố, Vương Cun
   await walk(page, { x: 33, y: 6 }, 'emerald_forest_deep_woods');
   await walk(page, { x: 37, y: 5 }, 'city_palace_gate');
   await walk(page, { x: 25, y: 6 }, 'city_market'); // cổng sang Thương Phố (mép phải Hoàng Môn)
+  // Cửa hàng mới của Thương Phố mở được và có hàng để mua.
+  await expect(page.getByTestId('loading')).toHaveCount(0, { timeout: 20_000 });
+  await act(page, { kind: 'npc', id: 'mk_general' });
+  await expect(page.getByTestId('npc-name')).toHaveText('Chủ Tạp Hóa Bao', { timeout: 20_000 });
+  await page.getByTestId('npc-role-shop').click();
+  await expect(page.locator('[data-testid^="buy-"]').first()).toBeVisible();
+  await page.getByTestId('npc-close').click();
   await walk(page, { x: 0, y: 6 }, 'city_palace_gate'); // về lại Hoàng Môn qua cổng trái chợ
   await walk(page, { x: 13, y: 2 }, 'city_royal_palace'); // cổng Vương Cung
+  // Ngự Y ở Vương Cung hồi phục được.
+  await expect(page.getByTestId('loading')).toHaveCount(0, { timeout: 20_000 });
+  await act(page, { kind: 'npc', id: 'pal_healer' });
+  await expect(page.getByTestId('npc-name')).toHaveText('Ngự Y Hoàng Cung Mina', { timeout: 20_000 });
+  await page.getByTestId('npc-role-heal').click();
+  await page.getByTestId('do-heal').click();
+  await page.getByTestId('npc-close').click();
   await walk(page, { x: 13, y: 2 }, 'city_activity_hall'); // cửa trên thảm đỏ vào Vạn Sự Hội Sảnh
   await walk(page, { x: 9, y: 9 }, 'city_royal_palace'); // lối ra dưới sảnh
 });

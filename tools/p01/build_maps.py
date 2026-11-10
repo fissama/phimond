@@ -419,7 +419,7 @@ def city_market():
         ],
         "npcs": [
             {"id": "mk_general", "x": 8, "y": 4, "face": "down"},
-            {"id": "mk_trader", "x": 21, "y": 8, "face": "up"},
+            {"id": "mk_trader", "x": 18, "y": 8, "face": "down"},
         ],
         "spawn_zones": [],
         "backdrop": "city-skyline-far",
@@ -603,7 +603,7 @@ def city_deathmatch_arena():
         rows[y] = rows[y][:x] + ch + rows[y][x + 1:]
     for y in (5, 6, 7):
         put(0, y, ":")
-    for x, y, ch in [(3, 2, "l"), (26, 2, "l"), (3, 10, "l"), (26, 10, "l"), (8, 2, "i"), (18, 2, "e"),
+    for x, y, ch in [(3, 2, "l"), (26, 2, "l"), (5, 11, "l"), (24, 11, "l"), (8, 2, "i"), (18, 2, "e"),
                      (15, 2, "d"), (2, 4, "c"), (27, 4, "c"), (2, 9, "c"), (27, 9, "c"),
                      (13, 2, "w"), (12, 2, "x"), (14, 2, "x"), (21, 2, "J"), (20, 2, "x"), (22, 2, "x"),
                      (6, 4, "k"), (23, 4, "k"), (6, 9, "k"), (23, 9, "k")] + [(x, 2, "j") for x in (5, 6, 7, 9, 10, 11, 16, 17, 24, 25)]:
