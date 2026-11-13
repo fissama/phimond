@@ -60,14 +60,26 @@ Chi tiết ở [`hd2d-art-approval-20261021.md`](../../../design/hd2d-art-approv
 
 ## 6. Sổ nợ (làm sau, có chủ)
 
+*Cập nhật 2026-11-13 khi đóng P01: thêm N07–N16 (xem [`P01-closure.md`](P01-closure.md)).*
+
 | ID | Nợ | Làm khi |
 |---|---|---|
 | N01 | Huyết Chiến Đài: chỉ có cảnh + lối vào tạm (NPC Quảng Trường dịch chuyển vào); chưa có lịch sự kiện hằng ngày, điều kiện, phần thưởng | Phase nhiệm vụ/arena |
 | N02 | Quái dùng 14 loài cũ; làm lại danh tính quái theo map | Sau P15, một bản `.z` |
 | N03 | Chọn pet ở Triệu Linh Điện: bản tối giản trong 1.0.0 (§7 câu 1), trải nghiệm đầy đủ thuộc P04 | P04 |
 | N04 | NPC chưa có chức năng server (đổi vật phẩm, kho, hòm thư, hội) chỉ báo "chưa mở" | P19 / phase social |
-| N05 | Art vẽ lại ngoài Đợt A (tile thành/nông trại/đấu trường/biển, nền xa, NPC trùng còn lại) | Trước 1.1.0 / 1.2.0 |
+| N05 | Art vẽ lại ngoài Đợt A (tile thành/nông trại/đấu trường/biển, nền xa, NPC trùng còn lại) | Trước 1.1.0 / 1.2.0 — **B1 xong ở 1.1.0**; còn Bãi biển (N16) |
 | N06 | Rừng Sâu dùng chung kit Bìa Rừng (tối hơn bằng ánh sáng); bộ "rừng sâu" riêng | 1.0.z |
+| N07 | **R10:** chưa chứng minh Low nhẹ hơn High bằng đo (mục tiêu đề xuất: texture giảm ≥40%, thời gian GPU/khung giảm ≥30% cùng cảnh; chốt số sau lần đo đầu) | P05-R07/R08, trước P06 |
+| N08 | **R08:** chưa có chế độ `?bench=`, chưa đo frame time p95/p99 (60 và 30 FPS), tải lần đầu, đổi map (≤1,5 s), bộ nhớ (JS heap / texture / không đo được), phiên 20 phút, rò tài nguyên khi lặp portal/đổi preset; chưa có budget theo thiết bị | P05, gate P09; làm trước khi cảnh đông ở P06 |
+| N09 | Chưa chạy thật trên iPhone 17 Pro Max Safari, macOS Safari, macOS Chrome cho `apps/client`; chưa lập bảng thiết bị đạt/chưa đạt; Android | P05 |
+| N10 | Chưa có test plan QA thủ công có kết quả (`qa/`), chưa có review R06 cuối có số đo (thao tác hụt, kẹt, encounter ngoài ý muốn, thời gian đi trọn tuyến) | P05-R05/R06 |
+| N11 | E2E: chưa chạy WebKit + iPhone giả lập (đã cấu hình); chưa có e2e reconnect giữa trận; chưa có test throttle RTT 50/150/300 ms; chưa so ảnh 5 cảnh × 3 preset | P05 |
+| N12 | Tải server: profile `p01-route` 10 CCU (+50 CCU để đo), "không tệ hơn P00" | P06 |
+| N13 | Hạ tầng thật: test `fault_mysql` với MySQL thật; WS idle ≥ 3 phút qua ingress prod; sao lưu MySQL và theo dõi log; nợ UI nhỏ (D-pad che chat, icon thẻ khởi đầu, nút đăng nhập mobile) | Bản 1.1.z / P09 |
+| N14 | Dọn client cũ: `apps/game-web` và `apps/game-client` chưa xóa. `apps/game-web/art-src` là nguồn art (hơn 800 file, GPT/Codex còn ghi vào) và ≥ 14 script trong `tools/` tham chiếu; `apps/game-client/assets/pets/apk84` là asset APK gốc. Cần chuyển nguồn art/asset sang chỗ riêng, đặt tag lưu trữ `archive/game-web-final`, `archive/game-client-final`, cập nhật `AGENTS.md` (thay smoke Godot), rồi mới xóa | Sau khi owner ký, một việc riêng |
+| N15 | Art B1 còn nợ: Điền Trang 1 hàng ruộng (rìa rừng che), nhà rơm mờ khi đứng gần, sàn Vương Cung nhạt, `palace-throne-dais` và `farm-soil-edge-01/02` chưa dùng, glow ở Hội Sảnh, NPC chưa có idle | Bản 1.1.z |
+| N16 | Đợt B2 — Bãi biển (Bến Ngư Châu, Bờ Đông Ngọc Bích, Bờ Tây Hoàng Sa, Vực Hải Lam, Đảo Phú Quý), trụ Quảng Trường thêm Bờ Đông | Cập nhật nội dung sau (owner chốt 2026-11-05) |
 
 ## 7. Owner đã chốt (2026-10-21)
 

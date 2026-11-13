@@ -694,6 +694,7 @@ Một sprint xong phải có: task review gameplay/game design thuộc scope đ�
 | D25 | Art direction — **chốt 2026-10-09** | HD-2D: cảnh 3D thật, sprite giữ nhận diện, chiều sâu/blur chọn lọc; X/Y phẳng và portal, gameplay gốc theo luật đã duyệt. Không redraw roster mặc định | P12 cảnh; P01 render/web; P02 combat; P05 polish |
 | D26 | HUD/menu/cấu hình — **chốt 2026-10-09** | HUD/nút/log luôn hiện khi chơi; khung menu trước settings. Low/Medium/High và 30/60 FPS riêng, lưu lựa chọn, giảm tài nguyên thực; Auto là tùy chọn chưa chốt | P01-R09 trước P01-R10; P05-R07/R08 nghiệm thu |
 | D27 | Khả năng mobile web HD-2D — **chưa chứng nhận** | Không cam kết RAM/FPS mọi máy; DOF web cần kiểm chứng riêng, asset loading có budget; Taipei Rush chỉ là tham chiếu khả thi | P01 trước art diện rộng; P06/P07 cảnh đông; P09 gate release |
+| D28 | P01 đóng có nợ — **owner chốt 2026-11-13** | Phần đo hiệu năng và kiểm thử thiết bị thật của P01 (R10 chứng minh Low nhẹ hơn, R08 benchmark và budget, iPhone/Safari thật, QA thủ công, e2e WebKit/reconnect, tải 10 CCU) chuyển thành nợ N07–N13 trong [P01-scope §6](phases/P01-world/P01-scope.md), không chặn đóng P01. D27 vẫn **chưa chứng nhận**: không cam kết RAM/FPS mọi máy | P05-R07/R08 nghiệm thu; P06 trước cảnh đông; P09 gate release |
 
 Ghi chú lịch sử: không cần chốt mọi quyết định để bắt đầu P00; P00 đã đóng theo hồ sơ phase. Quyết định mới 2026-10-09 thuộc các phase nêu trên, không mở lại P00. Phase không được tự ý lấp một quyết định chưa chốt bằng UI thành công giả hoặc cơ chế phá save.
 

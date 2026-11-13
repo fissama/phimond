@@ -1,6 +1,6 @@
 # Phimond — Tiến độ dự án
 
-**Cập nhật:** 2026-10-21 (P10redrawart).
+**Cập nhật:** 2026-11-13 (P01 đóng có nợ).
 **Nguồn phạm vi/phụ thuộc:** [Master spec §5](PHIMOND_MASTER_SPEC.md#5-roadmap-và-phụ-thuộc).
 **Điểm vào công việc:** [ACTIVE.md](../ACTIVE.md).
 
@@ -23,7 +23,7 @@ số file hoặc số atlas. ID phase giữ nguyên, thứ tự theo master plan
 |---|---|
 | P11 stats | Scaffold NOT STARTED theo README; công thức, stat/role/Element assignment và O03/O04/O05/O08 |
 | P12 world | **ĐÓNG 2026-10-17** (owner exit review). Stage 2 đóng 2026-10-14; Stage 3 đóng 2026-10-16 (Three.js, ADR-0001; iPhone high ~60 FPS); Stage 4 và 5 đóng 2026-10-17 (validate.py 17/17, 12 mục hoãn có chủ, R05 tạm duyệt, R06 chỉ đo iPhone high). Chi tiết: `phases/P12-world/P12-closure-checklist.md` |
-| P01 world slice | **v1.0.0 đã golive (2026-11-05); đóng ở v1.1.0, Bãi biển thành cập nhật sau**; trước đó (2026-10-21): scope và version ở `phases/P01-world/P01-scope.md` — 1.0.0 = Đợt A (5 map), 1.1.0 thành, 1.2.0 biển; client viết lại từ đầu, `apps/game-web` chỉ là bản thử. Art batch 01–10 duyệt 650/712 |
+| P01 world slice | **ĐÓNG CÓ NỢ 2026-11-13** (owner chốt). v1.0.0 golive 2026-11-05, v1.1.0 (Đợt B1, 11 map) tag 2026-11-10; đo hiệu năng và test thiết bị thật chuyển thành nợ N07–N13; Bãi biển là cập nhật nội dung sau. Chi tiết: `phases/P01-world/P01-closure.md` |
 | P19 items | Chưa có closure; item foundation, mailbox, EXP share |
 | P02 PvE | Chưa có closure; battle 1v3 và render animation/effect thật |
 | P14 equipment | Chưa có closure; trang bị và ngân sách sức mạnh |
