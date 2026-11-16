@@ -15,6 +15,21 @@ on:
       - 'apps/web/**'
       - 'apps/game-web/**'
       - 'apps/game-client/**'
+      - 'art/**'
+      - 'tools/**'
+      - 'infra/**'
+      - 'client/**'
+      - 'server/**'
+      - 'shared/**'
+      - 'prototypes/**'
+      - '.forge/**'
+      - '.gitignore'
+      - 'deploy/web/Dockerfile.dockerignore'
+      - 'docker-compose.yml'
+      - 'package.json'
+      - 'package-lock.json'
+      - '*.mjs'
+      - 'node_modules/**'
   workflow_dispatch: {}
 
 concurrency:
