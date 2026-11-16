@@ -1,0 +1,1 @@
+FAILED_AFTER_3_TRIES: no attempt meets the shadow specification. Attempts 1/3 are blurry gradient masses; attempt 2 is crisp but has a bright outline fringe. Recommend a dedicated silhouette mask workflow.

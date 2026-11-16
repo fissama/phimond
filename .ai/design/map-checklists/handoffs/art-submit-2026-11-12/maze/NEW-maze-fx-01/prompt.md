@@ -1,0 +1,1 @@
+ImageGen prompt: four-frame horizontal transparent sprite sheet of rising cyan rune crystal shards with dusty violet-gray rock fragments, four different rise/pulse poses, hard pixel clusters, no bloom/shadow/text/magenta, 192x128 frames and 8px margins.

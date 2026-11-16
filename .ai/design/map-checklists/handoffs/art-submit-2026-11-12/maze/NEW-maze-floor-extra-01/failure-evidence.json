@@ -1,0 +1,72 @@
+{
+  "task_id": "NEW-maze-floor-extra-01",
+  "status": "FAILED_AFTER_3_TRIES",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01.png",
+      "colors": 48,
+      "wrap_x": 4.404,
+      "wrap_y": 4.858,
+      "autocorr_max_lag_ge8": 0.5638,
+      "outer8_unique": [
+        46,
+        47,
+        48,
+        43
+      ],
+      "failure": "Both seam ratios fail and the outer 8px is mottled."
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "colors": 48,
+      "wrap_x": 4.213,
+      "wrap_y": 3.459,
+      "autocorr_max_lag_ge8": 0.3235,
+      "outer8_unique": [
+        13,
+        17,
+        48,
+        48
+      ],
+      "failure": "Both seam ratios, autocorrelation and flat outer band fail."
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "colors": 48,
+      "wrap_x": 1.294,
+      "wrap_y": 4.337,
+      "autocorr_max_lag_ge8": 0.5584,
+      "outer8_unique": [
+        4,
+        4,
+        5,
+        3
+      ],
+      "failure": "Vertical seam ratio and autocorrelation fail; repeated horizontal slab courses are too regular."
+    }
+  ],
+  "processing": "Each raw square resized nearest to 512x512 and median-cut quantized to 48 RGB colors; no manual pixel painting.",
+  "acceptance": {
+    "size": [
+      512,
+      512
+    ],
+    "colors": [
+      33,
+      48
+    ],
+    "wrap_x_max": 2.0,
+    "wrap_y_max": 2.0,
+    "autocorrelation_max": 0.25,
+    "outer8_flat": true
+  },
+  "final_candidate": null,
+  "art_gate": "NOT_RUN: no canonical final emitted",
+  "raws_preserved": true
+}

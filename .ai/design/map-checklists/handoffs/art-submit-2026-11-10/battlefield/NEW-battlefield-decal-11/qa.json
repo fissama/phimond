@@ -1,0 +1,51 @@
+{
+  "task_id": "NEW-battlefield-decal-11",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "map_decision": "Broken cream plaza limestone and muted taupe retained; no blood/bones/dirt substituted.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01-alpha-key.png",
+      "alpha_key_threshold": 200,
+      "colors": 47,
+      "alpha_margin_px": 31,
+      "binary_alpha": true,
+      "failure": null
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02-alpha-key.png",
+      "alpha_key_threshold": 200,
+      "colors": 47,
+      "alpha_margin_px": 31,
+      "binary_alpha": true,
+      "failure": null
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03-alpha-key.png",
+      "alpha_key_threshold": 200,
+      "colors": 47,
+      "alpha_margin_px": 31,
+      "binary_alpha": true,
+      "failure": null
+    }
+  ],
+  "processing": "Crop to alpha>=200 content bbox, 24% transparent padding, nearest resize 320x320, median-cut quantize max 48 colors, binary alpha key.",
+  "selected_candidate": "candidate-attempt-01-alpha-key.png",
+  "sha256": "954a504557c7c9933b1681cfed6ce18d67ce3ce78548ee2219bf008191b57662",
+  "acceptance_result": {
+    "size_px": [
+      320,
+      320
+    ],
+    "colors": 47,
+    "alpha_binary": true,
+    "alpha_margin_px": 31,
+    "visual": "irregular nonrectangular chipped-stone cluster; no visible glow in 3x1 preview"
+  },
+  "art_gate": "NOT_RUN: handoff candidate not in canonical manifest; forbidden to register before Claude review."
+}

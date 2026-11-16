@@ -1,0 +1,1 @@
+Source map contains repeated sharp ivory claw bundles wrapped in brown bindings against gray-violet masonry. Chose that map-specific prop rather than an invented floor object. Final candidate visually clean, 43 colors, binary alpha, 8px+ margins.

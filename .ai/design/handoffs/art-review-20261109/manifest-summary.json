@@ -1,0 +1,805 @@
+{
+  "captured_utc": "2026-11-09T06:34:11.899466+00:00",
+  "warning": "Snapshot of manifest claims, not new visual approvals; records may overlap across predecessor/redo/auxiliary packs.",
+  "packs": [
+    {
+      "manifest": "art/src/hd2d/batch-00/manifest.json",
+      "classification": "baseline_or_style_refs",
+      "record_kind": "primary",
+      "records": 28,
+      "approved_manifest": 0,
+      "files_missing": 0,
+      "hash_mismatches": 0,
+      "root_status": "needs_owner_review_and_blocker_resolution",
+      "root_approved": false,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/batch-01-octopath/aux-manifest.json",
+      "classification": "baseline_or_style_refs",
+      "record_kind": "auxiliary",
+      "records": 14,
+      "approved_manifest": 0,
+      "files_missing": 0,
+      "hash_mismatches": 10,
+      "root_status": null,
+      "root_approved": null,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/batch-01-octopath/manifest.json",
+      "classification": "baseline_or_style_refs",
+      "record_kind": "primary",
+      "records": 62,
+      "approved_manifest": 61,
+      "files_missing": 0,
+      "hash_mismatches": 5,
+      "root_status": "approved_with_redo",
+      "root_approved": false,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/batch-02-octopath/aux-manifest.json",
+      "classification": "baseline_or_style_refs",
+      "record_kind": "auxiliary",
+      "records": 14,
+      "approved_manifest": 0,
+      "files_missing": 0,
+      "hash_mismatches": 0,
+      "root_status": null,
+      "root_approved": null,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/batch-02-octopath/manifest.json",
+      "classification": "baseline_or_style_refs",
+      "record_kind": "primary",
+      "records": 102,
+      "approved_manifest": 89,
+      "files_missing": 0,
+      "hash_mismatches": 0,
+      "root_status": "approved_with_redo",
+      "root_approved": false,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/batch-03-octopath/aux-manifest.json",
+      "classification": "baseline_or_style_refs",
+      "record_kind": "auxiliary",
+      "records": 8,
+      "approved_manifest": 0,
+      "files_missing": 0,
+      "hash_mismatches": 0,
+      "root_status": null,
+      "root_approved": null,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/batch-03-octopath/manifest.json",
+      "classification": "baseline_or_style_refs",
+      "record_kind": "primary",
+      "records": 40,
+      "approved_manifest": 36,
+      "files_missing": 0,
+      "hash_mismatches": 4,
+      "root_status": "approved_with_redo",
+      "root_approved": false,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/batch-04-octopath/manifest.json",
+      "classification": "baseline_or_style_refs",
+      "record_kind": "primary",
+      "records": 21,
+      "approved_manifest": 21,
+      "files_missing": 0,
+      "hash_mismatches": 0,
+      "root_status": "approved",
+      "root_approved": true,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/batch-05-octopath/manifest.json",
+      "classification": "baseline_or_style_refs",
+      "record_kind": "primary",
+      "records": 130,
+      "approved_manifest": 49,
+      "files_missing": 0,
+      "hash_mismatches": 0,
+      "root_status": "approved_with_redo",
+      "root_approved": false,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/batch-06-octopath/manifest.json",
+      "classification": "baseline_or_style_refs",
+      "record_kind": "primary",
+      "records": 66,
+      "approved_manifest": 66,
+      "files_missing": 0,
+      "hash_mismatches": 0,
+      "root_status": "approved",
+      "root_approved": true,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/batch-07-octopath/manifest.json",
+      "classification": "baseline_or_style_refs",
+      "record_kind": "primary",
+      "records": 71,
+      "approved_manifest": 71,
+      "files_missing": 0,
+      "hash_mismatches": 0,
+      "root_status": "approved",
+      "root_approved": true,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/batch-08-octopath/manifest.json",
+      "classification": "baseline_or_style_refs",
+      "record_kind": "primary",
+      "records": 83,
+      "approved_manifest": 83,
+      "files_missing": 0,
+      "hash_mismatches": 0,
+      "root_status": "approved",
+      "root_approved": true,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/batch-09-octopath/manifest.json",
+      "classification": "baseline_or_style_refs",
+      "record_kind": "primary",
+      "records": 122,
+      "approved_manifest": 118,
+      "files_missing": 0,
+      "hash_mismatches": 0,
+      "root_status": "approved_with_redo",
+      "root_approved": false,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/batch-10-octopath/aux-manifest.json",
+      "classification": "supplemental_review_set",
+      "record_kind": "auxiliary",
+      "records": 13,
+      "approved_manifest": 0,
+      "files_missing": 0,
+      "hash_mismatches": 0,
+      "root_status": null,
+      "root_approved": null,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/batch-10-octopath/manifest.json",
+      "classification": "supplemental_review_set",
+      "record_kind": "primary",
+      "records": 15,
+      "approved_manifest": 14,
+      "files_missing": 0,
+      "hash_mismatches": 0,
+      "root_status": "approved_with_redo",
+      "root_approved": false,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/batch-11-ancient/manifest.json",
+      "classification": "map_candidates",
+      "record_kind": "primary",
+      "records": 55,
+      "approved_manifest": 0,
+      "files_missing": 0,
+      "hash_mismatches": 3,
+      "root_status": null,
+      "root_approved": false,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/batch-11-astral/manifest.json",
+      "classification": "map_candidates",
+      "record_kind": "primary",
+      "records": 59,
+      "approved_manifest": 0,
+      "files_missing": 0,
+      "hash_mismatches": 0,
+      "root_status": "in_progress_needs_claude_visual_review",
+      "root_approved": false,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/batch-11-crossroads/manifest.json",
+      "classification": "map_candidates",
+      "record_kind": "primary",
+      "records": 62,
+      "approved_manifest": 0,
+      "files_missing": 0,
+      "hash_mismatches": 4,
+      "root_status": "in_progress_needs_claude_visual_review",
+      "root_approved": false,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/batch-11-desert/aux-manifest.json",
+      "classification": "map_candidates",
+      "record_kind": "auxiliary",
+      "records": 20,
+      "approved_manifest": 0,
+      "files_missing": 0,
+      "hash_mismatches": 0,
+      "root_status": null,
+      "root_approved": false,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/batch-11-desert/manifest.json",
+      "classification": "map_candidates",
+      "record_kind": "primary",
+      "records": 98,
+      "approved_manifest": 0,
+      "files_missing": 0,
+      "hash_mismatches": 0,
+      "root_status": "in_progress_needs_claude_visual_review",
+      "root_approved": false,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/batch-11-ghost_castle/manifest.json",
+      "classification": "map_candidates",
+      "record_kind": "primary",
+      "records": 50,
+      "approved_manifest": 0,
+      "files_missing": 0,
+      "hash_mismatches": 0,
+      "root_status": "in_progress_needs_claude_visual_review",
+      "root_approved": false,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/batch-11-nightmare/aux-manifest.json",
+      "classification": "map_candidates",
+      "record_kind": "auxiliary",
+      "records": 6,
+      "approved_manifest": 0,
+      "files_missing": 0,
+      "hash_mismatches": 0,
+      "root_status": null,
+      "root_approved": false,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/batch-11-nightmare/manifest.json",
+      "classification": "map_candidates",
+      "record_kind": "primary",
+      "records": 67,
+      "approved_manifest": 0,
+      "files_missing": 0,
+      "hash_mismatches": 0,
+      "root_status": "in_progress_needs_claude_visual_review",
+      "root_approved": false,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/batch-11-tomb/manifest.json",
+      "classification": "map_candidates",
+      "record_kind": "primary",
+      "records": 76,
+      "approved_manifest": 0,
+      "files_missing": 0,
+      "hash_mismatches": 0,
+      "root_status": null,
+      "root_approved": false,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/batch-11-windrock/manifest.json",
+      "classification": "map_candidates",
+      "record_kind": "primary",
+      "records": 82,
+      "approved_manifest": 0,
+      "files_missing": 0,
+      "hash_mismatches": 0,
+      "root_status": "in_progress_needs_claude_visual_review",
+      "root_approved": false,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/batch-11-world_tree/manifest.json",
+      "classification": "map_candidates",
+      "record_kind": "primary",
+      "records": 51,
+      "approved_manifest": 0,
+      "files_missing": 0,
+      "hash_mismatches": 1,
+      "root_status": "in_progress_needs_claude_visual_review",
+      "root_approved": false,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/batch-12-city/manifest.json",
+      "classification": "supplemental_review_set",
+      "record_kind": "primary",
+      "records": 41,
+      "approved_manifest": 0,
+      "files_missing": 0,
+      "hash_mismatches": 0,
+      "root_status": null,
+      "root_approved": null,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/batch-13-release/manifest.json",
+      "classification": "supplemental_review_set",
+      "record_kind": "primary",
+      "records": 14,
+      "approved_manifest": 0,
+      "files_missing": 0,
+      "hash_mismatches": 0,
+      "root_status": null,
+      "root_approved": null,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/garden-a/manifest.json",
+      "classification": "Garden_reviewed_supplement",
+      "record_kind": "primary",
+      "records": 30,
+      "approved_manifest": 25,
+      "files_missing": 0,
+      "hash_mismatches": 0,
+      "root_status": "partially_approved_claude_20261109",
+      "root_approved": false,
+      "review_summary": "25/30 approved; 5 pending redraw (Don 13c): gd-trunk-seg-01/02, gd-seal-strip, gd-seal-strip-lit, gd-pillar-vein-01. Xem REVIEW-CLAUDE-20261109.md.",
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/octopath-s01-s27-20261029/manifest.json",
+      "classification": "supplemental_review_set",
+      "record_kind": "generated_schema",
+      "records": 45,
+      "approved_manifest": 0,
+      "files_missing": 0,
+      "hash_mismatches": 0,
+      "root_status": "in-progress",
+      "root_approved": null,
+      "review_summary": null,
+      "pending_schema": [
+        {
+          "name": "player-male.run.png",
+          "size": [
+            1536,
+            192
+          ],
+          "status": "redraw_required",
+          "reason": "R01–R06 are [✗] in the current checklist; the 2026-10-29 redraw contract requires opposite contact legs and clean, even-height frames. Current male side-run candidate fails leg_alternation and identity_head_ratio."
+        },
+        {
+          "name": "player-female.run.png",
+          "size": [
+            1536,
+            192
+          ],
+          "status": "redraw_required",
+          "reason": "R01–R06 are [✗] in the current checklist; the 2026-10-29 redraw contract requires opposite contact legs and clean, even-height frames. Current male side-run candidate fails leg_alternation and identity_head_ratio."
+        },
+        {
+          "name": "player-male.run-down.png",
+          "size": [
+            1536,
+            192
+          ],
+          "status": "redraw_required",
+          "reason": "R01–R06 are [✗] in the current checklist; the 2026-10-29 redraw contract requires opposite contact legs and clean, even-height frames. Current male side-run candidate fails leg_alternation and identity_head_ratio."
+        },
+        {
+          "name": "player-female.run-down.png",
+          "size": [
+            1536,
+            192
+          ],
+          "status": "redraw_required",
+          "reason": "R01–R06 are [✗] in the current checklist; the 2026-10-29 redraw contract requires opposite contact legs and clean, even-height frames. Current male side-run candidate fails leg_alternation and identity_head_ratio."
+        },
+        {
+          "name": "player-male.run-up.png",
+          "size": [
+            1536,
+            192
+          ],
+          "status": "redraw_required",
+          "reason": "R01–R06 are [✗] in the current checklist; the 2026-10-29 redraw contract requires opposite contact legs and clean, even-height frames. Current male side-run candidate fails leg_alternation and identity_head_ratio."
+        },
+        {
+          "name": "player-female.run-up.png",
+          "size": [
+            1536,
+            192
+          ],
+          "status": "redraw_required",
+          "reason": "R01–R06 are [✗] in the current checklist; the 2026-10-29 redraw contract requires opposite contact legs and clean, even-height frames. Current male side-run candidate fails leg_alternation and identity_head_ratio."
+        },
+        {
+          "name": "walker-baker.run.png",
+          "size": [
+            1536,
+            192
+          ],
+          "status": "repair_required",
+          "previous_2026_10_24_qa": "warn",
+          "reason": "leg_alternation: mixed lead across half-cycle pairs; repair and re-run QA, then review frame 1/5, props and height under the new prompt.",
+          "source": "../p01-release-art-20261023/delivery/walker-baker.run.png"
+        },
+        {
+          "name": "walker-baker.run-down.png",
+          "size": [
+            1536,
+            192
+          ],
+          "status": "repair_required",
+          "previous_2026_10_24_qa": "warn",
+          "reason": "near_duplicates; repair and re-run QA, then review frame 1/5, props and height under the new prompt.",
+          "source": "../p01-release-art-20261023/delivery/walker-baker.run-down.png"
+        },
+        {
+          "name": "walker-baker.run-up.png",
+          "size": [
+            1536,
+            192
+          ],
+          "status": "repair_required",
+          "previous_2026_10_24_qa": "warn",
+          "reason": "seam; repair and re-run QA, then review frame 1/5, props and height under the new prompt.",
+          "source": "../p01-release-art-20261023/delivery/walker-baker.run-up.png"
+        },
+        {
+          "name": "walker-elder.run.png",
+          "size": [
+            1536,
+            192
+          ],
+          "status": "redraw_required",
+          "previous_2026_10_24_qa": "fail",
+          "reason": "leg_alternation: duplicated half-cycle; repair and re-run QA, then review frame 1/5, props and height under the new prompt.",
+          "source": "../p01-release-art-20261023/delivery/walker-elder.run.png"
+        },
+        {
+          "name": "walker-elder.run-down.png",
+          "size": [
+            1536,
+            192
+          ],
+          "status": "repair_required",
+          "previous_2026_10_24_qa": "warn",
+          "reason": "seam; repair and re-run QA, then review frame 1/5, props and height under the new prompt.",
+          "source": "../p01-release-art-20261023/delivery/walker-elder.run-down.png"
+        },
+        {
+          "name": "walker-elder.run-up.png",
+          "size": [
+            1536,
+            192
+          ],
+          "status": "visual_review_candidate",
+          "previous_2026_10_24_qa": "pass",
+          "reason": "automated QA pass; still needs visual review against the new S24 contract; all NPCs still need visual review of frame 1/5 and uniform height under the new prompt, and S24 requires an approved player-male.run reference.",
+          "source": "../p01-release-art-20261023/delivery/walker-elder.run-up.png"
+        },
+        {
+          "name": "walker-boy.run.png",
+          "size": [
+            1536,
+            192
+          ],
+          "status": "repair_required",
+          "previous_2026_10_24_qa": "warn",
+          "reason": "seam; repair and re-run QA, then review frame 1/5, props and height under the new prompt.",
+          "source": "../p01-release-art-20261023/delivery/walker-boy.run.png"
+        },
+        {
+          "name": "walker-boy.run-down.png",
+          "size": [
+            1536,
+            192
+          ],
+          "status": "visual_review_candidate",
+          "previous_2026_10_24_qa": "pass",
+          "reason": "automated QA pass; still needs visual review against the new S24 contract; all NPCs still need visual review of frame 1/5 and uniform height under the new prompt, and S24 requires an approved player-male.run reference.",
+          "source": "../p01-release-art-20261023/delivery/walker-boy.run-down.png"
+        },
+        {
+          "name": "walker-boy.run-up.png",
+          "size": [
+            1536,
+            192
+          ],
+          "status": "repair_required",
+          "previous_2026_10_24_qa": "warn",
+          "reason": "near_duplicates; seam; repair and re-run QA, then review frame 1/5, props and height under the new prompt.",
+          "source": "../p01-release-art-20261023/delivery/walker-boy.run-up.png"
+        },
+        {
+          "name": "walker-girl.run.png",
+          "size": [
+            1536,
+            192
+          ],
+          "status": "repair_required",
+          "previous_2026_10_24_qa": "warn",
+          "reason": "leg_alternation: mixed lead across half-cycle pairs; repair and re-run QA, then review frame 1/5, props and height under the new prompt.",
+          "source": "../p01-release-art-20261023/delivery/walker-girl.run.png"
+        },
+        {
+          "name": "walker-girl.run-down.png",
+          "size": [
+            1536,
+            192
+          ],
+          "status": "repair_required",
+          "previous_2026_10_24_qa": "warn",
+          "reason": "near_duplicates; repair and re-run QA, then review frame 1/5, props and height under the new prompt.",
+          "source": "../p01-release-art-20261023/delivery/walker-girl.run-down.png"
+        },
+        {
+          "name": "walker-girl.run-up.png",
+          "size": [
+            1536,
+            192
+          ],
+          "status": "visual_review_candidate",
+          "previous_2026_10_24_qa": "pass",
+          "reason": "automated QA pass; still needs visual review against the new S24 contract; all NPCs still need visual review of frame 1/5 and uniform height under the new prompt, and S24 requires an approved player-male.run reference.",
+          "source": "../p01-release-art-20261023/delivery/walker-girl.run-up.png"
+        },
+        {
+          "name": "walker-guard.run.png",
+          "size": [
+            1536,
+            192
+          ],
+          "status": "redraw_required",
+          "previous_2026_10_24_qa": "fail",
+          "reason": "identity_head_ratio; leg_alternation warning; repair and re-run QA, then review frame 1/5, props and height under the new prompt.",
+          "source": "../p01-release-art-20261023/delivery/walker-guard.run.png"
+        },
+        {
+          "name": "walker-guard.run-down.png",
+          "size": [
+            1536,
+            192
+          ],
+          "status": "visual_review_candidate",
+          "previous_2026_10_24_qa": "pass",
+          "reason": "automated QA pass; still needs visual review against the new S24 contract; all NPCs still need visual review of frame 1/5 and uniform height under the new prompt, and S24 requires an approved player-male.run reference.",
+          "source": "../p01-release-art-20261023/delivery/walker-guard.run-down.png"
+        },
+        {
+          "name": "walker-guard.run-up.png",
+          "size": [
+            1536,
+            192
+          ],
+          "status": "redraw_required",
+          "previous_2026_10_24_qa": "fail",
+          "reason": "identity_head_ratio; seam warning; repair and re-run QA, then review frame 1/5, props and height under the new prompt.",
+          "source": "../p01-release-art-20261023/delivery/walker-guard.run-up.png"
+        },
+        {
+          "name": "walker-traveller.run.png",
+          "size": [
+            1536,
+            192
+          ],
+          "status": "redraw_required",
+          "previous_2026_10_24_qa": "fail",
+          "reason": "leg_alternation: duplicated half-cycle; seam warning; repair and re-run QA, then review frame 1/5, props and height under the new prompt.",
+          "source": "../p01-release-art-20261023/delivery/walker-traveller.run.png"
+        },
+        {
+          "name": "walker-traveller.run-down.png",
+          "size": [
+            1536,
+            192
+          ],
+          "status": "repair_required",
+          "previous_2026_10_24_qa": "warn",
+          "reason": "near_duplicates; repair and re-run QA, then review frame 1/5, props and height under the new prompt.",
+          "source": "../p01-release-art-20261023/delivery/walker-traveller.run-down.png"
+        },
+        {
+          "name": "walker-traveller.run-up.png",
+          "size": [
+            1536,
+            192
+          ],
+          "status": "visual_review_candidate",
+          "previous_2026_10_24_qa": "pass",
+          "reason": "automated QA pass; still needs visual review against the new S24 contract; all NPCs still need visual review of frame 1/5 and uniform height under the new prompt, and S24 requires an approved player-male.run reference.",
+          "source": "../p01-release-art-20261023/delivery/walker-traveller.run-up.png"
+        }
+      ],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/p01-release-art-20261023/manifest.json",
+      "classification": "supplemental_review_set",
+      "record_kind": "primary",
+      "records": 110,
+      "approved_manifest": 54,
+      "files_missing": 0,
+      "hash_mismatches": 0,
+      "root_status": "review_candidates_not_release_certified",
+      "root_approved": false,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/p01-v1.1.0-b1/A/manifest.json",
+      "classification": "P01_predecessor_candidates",
+      "record_kind": "primary",
+      "records": 4,
+      "approved_manifest": 0,
+      "files_missing": 0,
+      "hash_mismatches": 1,
+      "root_status": null,
+      "root_approved": null,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/p01-v1.1.0-b1/B/manifest.json",
+      "classification": "P01_predecessor_candidates",
+      "record_kind": "primary",
+      "records": 4,
+      "approved_manifest": 0,
+      "files_missing": 0,
+      "hash_mismatches": 1,
+      "root_status": null,
+      "root_approved": null,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/p01-v1.1.0-b1/C/manifest.json",
+      "classification": "P01_predecessor_candidates",
+      "record_kind": "primary",
+      "records": 8,
+      "approved_manifest": 0,
+      "files_missing": 0,
+      "hash_mismatches": 0,
+      "root_status": null,
+      "root_approved": null,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/p01-v1.1.0-b1/D/manifest.json",
+      "classification": "P01_predecessor_candidates",
+      "record_kind": "primary",
+      "records": 2,
+      "approved_manifest": 0,
+      "files_missing": 0,
+      "hash_mismatches": 1,
+      "root_status": "needs_claude_review",
+      "root_approved": false,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 2
+    },
+    {
+      "manifest": "art/src/hd2d/p01-v1.1.0-b1/redo/A/manifest.json",
+      "classification": "P01_redraw_candidates",
+      "record_kind": "primary",
+      "records": 13,
+      "approved_manifest": 0,
+      "files_missing": 0,
+      "hash_mismatches": 0,
+      "root_status": "needs_claude_review",
+      "root_approved": false,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/p01-v1.1.0-b1/redo/B/manifest.json",
+      "classification": "P01_redraw_candidates",
+      "record_kind": "primary",
+      "records": 11,
+      "approved_manifest": 0,
+      "files_missing": 0,
+      "hash_mismatches": 0,
+      "root_status": "needs_claude_review",
+      "root_approved": false,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/p01-v1.1.0-b1/redo/C/manifest.json",
+      "classification": "P01_redraw_candidates",
+      "record_kind": "primary",
+      "records": 8,
+      "approved_manifest": 0,
+      "files_missing": 0,
+      "hash_mismatches": 0,
+      "root_status": "needs_claude_review",
+      "root_approved": false,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    },
+    {
+      "manifest": "art/src/hd2d/p01-v1.1.0-b1/redo/D/manifest.json",
+      "classification": "P01_redraw_candidates",
+      "record_kind": "primary",
+      "records": 7,
+      "approved_manifest": 0,
+      "files_missing": 0,
+      "hash_mismatches": 0,
+      "root_status": "needs_claude_review",
+      "root_approved": false,
+      "review_summary": null,
+      "pending_schema": [],
+      "file_paths_inferred": 0
+    }
+  ]
+}

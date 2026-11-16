@@ -1,0 +1,28 @@
+{
+  "task_id": "NEW-maze-fx-03",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate.png",
+      "colors_total": 42,
+      "alpha": "binary",
+      "frame_margin_x_px": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "frame_margin_y_px": [
+        18,
+        13,
+        17,
+        16
+      ],
+      "result": "selected"
+    }
+  ],
+  "processing": "Crop to frame regions, nearest resize, threshold alpha to binary, remove narrow red/magenta edge pixels, quantize to 48 colors, fit each effect within frame margins.",
+  "art_gate": "NOT_RUN: candidate outside canonical manifest; --all deferred."
+}

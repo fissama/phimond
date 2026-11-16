@@ -1,0 +1,1 @@
+Generated moss/bark floor textures are visually distinct from wood planks, but all three fail flat perimeter requirement: 8px border contains multiple colors (4–8). No candidate. Raw images and normalized previews kept.

@@ -1,0 +1,1 @@
+Isolated irregular loose scatter decal of pink-beige chips, dusty violet-gray stone and bone fragments for top-down bone maze; transparent, centered, crisp pixel-art, no rectangle, no floor, no haze/glow/shadow/text/frame/fringe/magenta.

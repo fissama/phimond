@@ -1,0 +1,1 @@
+The roofed pen and bedding are readable at 1×. Attempt 2 cleaned alpha fringe by threshold/erosion. Candidate 256×256, 48 colors, binary alpha, 10px margin, inspected at 4× light/dark. READY_FOR_CLAUDE_REVIEW only.

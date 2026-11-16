@@ -1,0 +1,1 @@
+FAILED_AFTER_3_TRIES. Attempt 3 is retained as the best forest-leaf particle cluster and has binary alpha, clean stepped edges, centered cells and at least 8 px per-frame margins. It has only 17 opaque colors, below the 33-color minimum. Attempt 1 has a baked checkerboard; attempt 2 is too flat/repetitive and background is banded. No candidate meets all measurable criteria.

@@ -1,0 +1,39 @@
+{
+  "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-09/tomb/REDRAW-tomb-graveyard-dirt/candidate-02.png",
+  "candidate_sha256": "874168e140d9fdfe904b584a0b8d7a748d3f00e0525bd60fc7e0b07a6c466f1d",
+  "size": [
+    512,
+    512
+  ],
+  "colors": 40,
+  "alpha_mode": "RGB opaque",
+  "attempts": {
+    "1": {
+      "wrap_x": 14.2973,
+      "wrap_y": 16.3939,
+      "autocorr": 0.0296
+    },
+    "2": {
+      "wrap_x": 26.4903,
+      "wrap_y": 22.4891,
+      "autocorr": 0.0268
+    },
+    "3": {
+      "wrap_x": 8.853,
+      "wrap_y": 14.5627,
+      "autocorr": 0.0734
+    },
+    "3-crop": {
+      "wrap_x": 1.7519,
+      "wrap_y": 1.2544,
+      "autocorr": 0.1263,
+      "crop_offset_on_640": [
+        60,
+        24
+      ]
+    }
+  },
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "art_gate": "NOT_RUN: handoff-only; cannot register before Claude acceptance",
+  "metrics_note": "Three raw attempts failed seam; selecting a 512 crop from a 640px nearest-resized third raw improved wrap metrics to within limits; see repeat 3x3."
+}

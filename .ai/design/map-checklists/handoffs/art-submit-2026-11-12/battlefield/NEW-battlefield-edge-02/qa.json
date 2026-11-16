@@ -1,0 +1,52 @@
+{
+  "task_id": "NEW-battlefield-edge-02",
+  "status": "FAILED_AFTER_3_TRIES",
+  "map_decision": "Pale cream plaza limestone palette from source map. Variant intended as layered polygonal marble shelf, distinct from edge-01 rubble.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01.png",
+      "colors": 45,
+      "end_seam_mean": 7.6562,
+      "alpha_binary": true,
+      "visible_magenta": false,
+      "failure": "visual: repeated edge/plate cadence or chromatic alpha fringe visible; not acceptable as unique irregular seamless edge"
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "colors": 45,
+      "end_seam_mean": 7.6354,
+      "alpha_binary": true,
+      "visible_magenta": false,
+      "failure": "visual: repeated edge/plate cadence or chromatic alpha fringe visible; not acceptable as unique irregular seamless edge"
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "colors": 45,
+      "end_seam_mean": 5.4219,
+      "alpha_binary": true,
+      "visible_magenta": false,
+      "failure": "visual: repeated edge/plate cadence or chromatic alpha fringe visible; not acceptable as unique irregular seamless edge"
+    }
+  ],
+  "processing": "Center crop to 4:1 aspect, nearest resize 512x128, median-cut quantize to 48 colors, binary alpha threshold.",
+  "acceptance": {
+    "size": [
+      512,
+      128
+    ],
+    "colors": [
+      33,
+      48
+    ],
+    "alpha": "binary",
+    "left_right_seam_mean_lt": 14
+  },
+  "final_candidate": null,
+  "art_gate": "NOT_RUN: canonical manifest unchanged; final --all deferred."
+}

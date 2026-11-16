@@ -1,0 +1,1 @@
+Built-in image_gen, 3 attempts. All were visually inspected. Attempt 1 had visible red/pink fringe pixels on object edges, which the permitted crop/resize/quantize/alpha processing cannot remove without repainting. Attempts 2 and 3 have opaque background gradients and ground haze, not usable as a transparent cutout. No candidate selected; all raw attempts retained.

@@ -1,0 +1,1 @@
+Map reference shows an ornate squat tan/mauve stone console/altar with square dark inset at the right of the scene. Selected this as the landmark; no environment background included. Threshold alpha >=128, erode 1px, despill red/magenta edge contamination, fit to 384x384, quantize 48 colors. Candidate only.

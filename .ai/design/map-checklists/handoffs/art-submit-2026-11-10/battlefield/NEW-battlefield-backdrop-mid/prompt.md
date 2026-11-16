@@ -1,0 +1,1 @@
+ImageGen attempt 2: opaque 3:1 mid-distance tile; low continuous irregular cream city wall, uneven crenellated top, varied low roof clusters and small blue-gray arched gates, muted terracotta roofs, no tall towers or regular motifs; hazy blue mountain and sky band; crisp pixel clusters; no foreground/plaza/columns/fountain/statues/text/glow/magenta.

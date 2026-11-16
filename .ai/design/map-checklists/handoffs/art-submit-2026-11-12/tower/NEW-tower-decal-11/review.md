@@ -1,0 +1,1 @@
+FAILED_AFTER_3_TRIES: all three attempts have broad opaque gradients/haze behind the decal. No valid transparent cutout. Recommend generation method with reliable alpha or user-supplied extraction mask.

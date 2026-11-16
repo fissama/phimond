@@ -1,0 +1,1 @@
+Built-in image_gen, 3 attempts. Attempts 2–3 visibly had diffuse glow/haze and were rejected. Attempt 1 shows an irregular olive-green lichen/moss scatter in the kit palette. Processing only: alpha threshold >=128, crop to subject, aspect-preserving resize, center on 384×384, 48-color quantization, then binary alpha threshold. No inpainting or painted edits.

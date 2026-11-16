@@ -1,0 +1,1 @@
+Route: built-in image_gen, one attempt. Prompt translated the CSV feather into a hanging vine/foliage prop because the tower map screenshots show forest foliage by the bridge and no giant feather. Map references determine subject and palette; no map pixels copied. Post-processing limited to alpha thresholding, crop, nearest resize, and 48-color quantization.

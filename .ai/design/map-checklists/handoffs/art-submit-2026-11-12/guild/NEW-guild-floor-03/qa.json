@@ -1,0 +1,82 @@
+{
+  "task_id": "NEW-guild-floor-03",
+  "status": "FAILED_AFTER_3_TRIES",
+  "decision": "CSV specifies guild rug, but source screenshots show outdoor brown-beige cracked stone paving. Followed source maps, no rug substituted.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.jpg",
+      "candidate": "candidate-attempt-01.png",
+      "sha256": "3c111a8763349dbadb2ad21d1b461aec92ad6bbd50dacf44597b7eff496b12fd",
+      "colors": 48,
+      "seam_x": 9.0143,
+      "seam_y": 27.623,
+      "autocorr_x": 0.3955,
+      "autocorr_x_lag": 8,
+      "autocorr_y": 0.2416,
+      "autocorr_y_lag": 8,
+      "flat_8px_perimeter": false,
+      "failure": "seam wrap 27.623>2; autocorr 0.396>.25; outer 8px band not flat"
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.jpg",
+      "candidate": "candidate-attempt-02.png",
+      "sha256": "c61db182f46f188e6a2a45cb619d6ef51e123b1f9ab6f65509cd5450abf9d40c",
+      "colors": 48,
+      "seam_x": 7.2129,
+      "seam_y": 17.8516,
+      "autocorr_x": 0.3947,
+      "autocorr_x_lag": 8,
+      "autocorr_y": 0.3456,
+      "autocorr_y_lag": 8,
+      "flat_8px_perimeter": false,
+      "failure": "seam wrap 17.852>2; autocorr 0.395>.25; outer 8px band not flat"
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.jpg",
+      "candidate": "candidate-attempt-03.png",
+      "sha256": "dbe7694f65a42f123e912c907e600d1cab1505351018d42a8c1f9844f1cbc8bf",
+      "colors": 48,
+      "seam_x": 3.3477,
+      "seam_y": 14.849,
+      "autocorr_x": 0.4011,
+      "autocorr_x_lag": 8,
+      "autocorr_y": 0.3018,
+      "autocorr_y_lag": 8,
+      "flat_8px_perimeter": false,
+      "failure": "seam wrap 14.849>2; autocorr 0.401>.25; outer 8px band not flat"
+    }
+  ],
+  "processing": "Nearest resize 512x512; median-cut quantize 48 colors; no dithering; 3x3 tiled visual previews.",
+  "acceptance": {
+    "colors": [
+      33,
+      48
+    ],
+    "seam_wrap_max": 2.0,
+    "autocorr_max": 0.25,
+    "outer_flat_margin_px": 8
+  },
+  "final_candidate": null,
+  "art_gate": "NOT_RUN: candidate not registered and manifest untouched.",
+  "tileable_postprocess": {
+    "method": "half-tile offset x/y, 24px local crossfade, quantize 48, flat8 perimeter",
+    "candidate": "candidate-tileable-postprocess.png",
+    "metrics": {
+      "selected_raw": "raw-03.jpg",
+      "source_attempt": 3,
+      "size": [
+        512,
+        512
+      ],
+      "colors": 48,
+      "wrap_x": 0.0,
+      "wrap_y": 0.0,
+      "autocorr_max_lag_8_255": 0.3952094614505768,
+      "flat8_unique_colors": 1
+    },
+    "decision": "FAILED: 3x3 and 4x4 visual inspection shows strong rectangular tile/grid cadence and repeated stone motif; no promotion."
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "task_id": "NEW-minigame-floor-01",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "../redo-v1/raw.png",
+      "candidate": "../redo-v1/candidate.png",
+      "colors": 48,
+      "wrap_x": 0.0,
+      "wrap_y": 0.0,
+      "autocorr": 0.41234,
+      "lag": 8,
+      "flat8": true,
+      "visual": "large slabs and tile boundary grid visible"
+    },
+    {
+      "attempt": 2,
+      "raw": "../redo-v2/raw.png",
+      "candidate": "../redo-v2/candidate.png",
+      "colors": 48,
+      "wrap_x": 0.0,
+      "wrap_y": 0.0,
+      "autocorr": 0.1389,
+      "lag": 8,
+      "flat8": true,
+      "visual": "finer cobbles but repeated motif and border grid visible"
+    },
+    {
+      "attempt": 3,
+      "raw": "../redo-v3/raw.png",
+      "candidate": "../redo-v3/candidate.png",
+      "colors": 48,
+      "wrap_x": 0.0,
+      "wrap_y": 0.0,
+      "autocorr": 0.38251,
+      "lag": 8,
+      "flat8": true,
+      "visual": "distinct slab texture but strong autocorr and repeated tile grid"
+    }
+  ],
+  "source_decision": "Stone paving in source maps overrides planned grass.",
+  "status": "FAILED_AFTER_3_TRIES",
+  "note": "Three attempts exhausted; no candidate selected. Keep candidate 2 as best numeric autocorr for future human evaluation but it still visibly repeats."
+}

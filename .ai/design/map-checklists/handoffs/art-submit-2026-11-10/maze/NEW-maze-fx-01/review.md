@@ -1,0 +1,1 @@
+Attempt 1 had a soft cyan diffuse halo and was rejected. Attempt 2 is selected: four rising cyan crystal states with matching violet stone base, crisp clusters, no bloom outside asset. Binary alpha, 43 colors total, per-frame margin ≥8px. Small residual generated facet shading is in-object.

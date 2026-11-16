@@ -1,0 +1,26 @@
+{
+  "task_id": "NEW-maze-marker-arrival",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate.png",
+      "size_px": [
+        768,
+        128
+      ],
+      "colors_total": 41,
+      "alpha": "binary",
+      "per_frame_alpha_margin_px": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "result": "selected"
+    }
+  ],
+  "processing": "Raw cropped to four equal frame regions, resized/cropped into 192x128 cells, red/magenta fringe alpha-keyed, alpha threshold 128, RGB median-cut quantized to 48 max.",
+  "art_gate": "NOT_RUN: not registered in canonical manifest; --all deferred."
+}

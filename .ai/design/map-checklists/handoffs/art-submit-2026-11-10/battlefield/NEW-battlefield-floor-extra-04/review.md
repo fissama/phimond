@@ -1,0 +1,1 @@
+All three candidates fail production acceptance. See qa.json for measured seam, autocorrelation, palette count, and flat perimeter. No final candidate submitted; this remains FAILED_AFTER_3_TRIES awaiting art review/rework. Palette and object type follow battlefield map reference, overriding earlier burnt-ground language.

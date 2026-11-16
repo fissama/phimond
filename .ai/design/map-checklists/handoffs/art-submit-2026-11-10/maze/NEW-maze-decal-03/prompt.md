@@ -1,0 +1,1 @@
+Irregular isolated pink-beige maze stone fragments with dusty violet cracks, transparent cutout, centered, no bone, no rectangle/floor/background; crisp stepped pixel art; no glow, haze, cast shadow, text, fringe, magenta.

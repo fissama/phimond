@@ -1,0 +1,49 @@
+{
+  "task_id": "NEW-maze-decal-05",
+  "status": "FAILED_AFTER_3_TRIES",
+  "map_decision": "Used source-map bone/stone identity in muted violet and pink-beige.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01.png",
+      "colors": 47,
+      "binary_alpha": true,
+      "failure": "Raw contains a conspicuous soft halo around the fragments; alpha threshold cannot eliminate all diffuse contamination."
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "colors": 47,
+      "binary_alpha": true,
+      "failure": "Raw contains a conspicuous soft halo around the fragments; alpha threshold cannot eliminate all diffuse contamination."
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "colors": 47,
+      "binary_alpha": true,
+      "failure": "Raw contains a conspicuous soft halo around the fragments; alpha threshold cannot eliminate all diffuse contamination."
+    }
+  ],
+  "processing": "Thresholded alpha\u2265220, cropped object bounds, nearest-resized/padded to 320\u00b2, quantized to 48 colors, binary alpha restored.",
+  "acceptance": {
+    "size_range": [
+      256,
+      384
+    ],
+    "colors": [
+      33,
+      48
+    ],
+    "binary_alpha": true,
+    "alpha_margin_min": 8,
+    "irregular_shape": true,
+    "no_glow": true
+  },
+  "final_candidate": null,
+  "art_gate": "NOT_RUN: handoff-only; canonical manifest untouched.",
+  "raws_preserved": true
+}

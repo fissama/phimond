@@ -1,0 +1,31 @@
+{
+  "task_id": "NEW-battlefield-shadow-01",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "map_decision": "Muted plaza taupe selected for a standalone procedural shadow mask. This is the shadow asset itself; it is not baked onto another object.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-alpha-key.png",
+      "processing": "Alpha key values <8 to zero; crop to remaining alpha bbox; preserve soft alpha with LANCZOS resize to fit 240x80, center on 256x96 canvas; collapse RGB to one warm muted taupe sampled from this raw shadow body.",
+      "colors": 1,
+      "alpha_margin_px": 8,
+      "alpha_binary": false,
+      "failure": null
+    }
+  ],
+  "selected_candidate": "candidate-alpha-key.png",
+  "sha256": "96f8722a932bdfa4d16dc79249087edb289f3d7b44714ebb2652e0e811d0e7ac",
+  "acceptance_result": {
+    "size_px": [
+      256,
+      96
+    ],
+    "colors": 1,
+    "soft_alpha_values": 194,
+    "alpha_margin_px": 8,
+    "visible_magenta": false,
+    "visual": "soft standalone oval fades to transparent; cream placement preview checked"
+  },
+  "art_gate": "NOT_RUN: handoff candidate is not registered in canonical manifest; manifest edits forbidden."
+}

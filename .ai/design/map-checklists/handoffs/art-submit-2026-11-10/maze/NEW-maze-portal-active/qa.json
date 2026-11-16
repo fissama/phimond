@@ -1,0 +1,19 @@
+{
+  "task_id": "NEW-maze-portal-active",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate.png",
+      "color_count": 48,
+      "alpha": "binary",
+      "alpha_margin_px": 14,
+      "mask_diff_vs_dormant": 0,
+      "result": "selected"
+    }
+  ],
+  "processing": "ImageGen edit of dormant reference changed only inner gate to active cyan; centered to the dormant candidate bounds, RGB quantized to 48 colors, dormant binary alpha mask applied to preserve exact paired silhouette.",
+  "final_candidate": "candidate.png",
+  "art_gate": "NOT_RUN: handoff candidate is outside canonical batch manifest; --all deferred."
+}

@@ -1,0 +1,1 @@
+ImageGen prompt: pale cream limestone plaza floor tile, irregular paving stones, muted taupe grout and sparse muted gray-violet flecks; crisp stepped HD-2D pixel clusters; no regular grid/repeated slab cadence; true seamless boundaries, no objects/shadow/glow/text/magenta. Raw output then center-cropped, nearest resized and quantized locally.

@@ -1,0 +1,64 @@
+{
+  "task_id": "NEW-dungeon-floor-03",
+  "status": "FAILED_AFTER_3_TRIES",
+  "map_decision": "Source map shows pale yellow-green scale paving; plan phrase \u201cprison straw\u201d was not used as floor material. Variant uses subtle pitted stone and sparse embedded straw-colored flecks only.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01.png",
+      "colors": 48,
+      "seam_wrap_mean": 16.675781726837158,
+      "seam_x": 10.422526359558105,
+      "seam_y": 22.92903709411621,
+      "autocorr_max_lag_ge8": 0.21463061164182673,
+      "cross_correlation_floor_variants": [
+        -0.007212154359810681,
+        -0.004888770969081289
+      ],
+      "flat_8px_perimeter": false,
+      "failure": "seam 16.676>2; autocorr 0.215>0.25; flat=False"
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "colors": 48,
+      "seam_wrap_mean": 9.555989742279053,
+      "seam_x": 8.625,
+      "seam_y": 10.486979484558105,
+      "autocorr_max_lag_ge8": 0.29828096647524616,
+      "flat_8px_perimeter": false,
+      "failure": "seam 9.556>2; autocorr 0.298>0.25; flat=False"
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "processing": "Nearest resize to 512x512; median-cut quantize to 48 colors; opaque RGB.",
+      "colors": 48,
+      "seam_wrap_mean": 15.670572757720947,
+      "seam_x": 11.854166984558105,
+      "seam_y": 19.48697853088379,
+      "autocorr_max_lag_ge8": 0.07413713160105785,
+      "cross_correlation_floor_variants": [
+        -0.003349805997703639,
+        -0.0024280967077646614
+      ],
+      "flat_8px_perimeter": false,
+      "failure": "seam 15.671>2; autocorr 0.074>0.25; flat perimeter=False"
+    }
+  ],
+  "acceptance": {
+    "colors": [
+      33,
+      48
+    ],
+    "seam_wrap_max": 2.0,
+    "autocorr_max": 0.25,
+    "cross_correlation_max": 0.9,
+    "flat_outer_margin_px": 8
+  },
+  "final_candidate": null,
+  "art_gate": "NOT_RUN: handoff candidate is not registered in canonical manifest; manifest edits forbidden."
+}

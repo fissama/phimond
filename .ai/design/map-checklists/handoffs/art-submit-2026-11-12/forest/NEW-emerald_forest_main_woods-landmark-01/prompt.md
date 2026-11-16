@@ -1,0 +1,1 @@
+Route: built-in image_gen, one attempt. Image 1 controls subject and palette; approved batch-01 bush sprites guide pixel-art finish only. Requested isolated fallen trunk/stump with broad leaves and pink flowers, crisp HD-2D pixels, transparent background, no glow/text/magenta/fringe.

@@ -1,0 +1,1 @@
+Claude review pending; not self-approved. This variant is a long tapered diagonal procedural mask, visually distinct from shadow-02. Map evidence is pale cream paving; taupe palette used. Soft alpha is intentional per category specification.

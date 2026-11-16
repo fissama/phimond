@@ -1,0 +1,1 @@
+Runway ImageGen, referencing dungeon_floor_01.jpg: standalone mounted orange deer head with modest branching antlers, tan muzzle, dark eyes, simple pale backing plaque; transparent cutout via pure-green key; no door/chains/wall/floor/text/glow/magenta.

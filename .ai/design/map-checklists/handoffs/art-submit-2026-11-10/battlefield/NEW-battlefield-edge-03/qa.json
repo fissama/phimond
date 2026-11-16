@@ -1,0 +1,52 @@
+{
+  "task_id": "NEW-battlefield-edge-03",
+  "status": "FAILED_AFTER_3_TRIES",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01.png",
+      "colors": 45,
+      "end_seam_mean": 7.2708,
+      "alpha_binary": true,
+      "visible_chromatic_fringe": false,
+      "failure": "visual silhouette still has predictable rubble rhythm"
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "colors": 43,
+      "end_seam_mean": 8.0365,
+      "alpha_binary": true,
+      "visible_chromatic_fringe": false,
+      "failure": "visual cadence repeats and red/yellow fringe visible"
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "colors": 40,
+      "end_seam_mean": 17.401,
+      "alpha_binary": true,
+      "visible_chromatic_fringe": false,
+      "failure": "end seam >=14; soft translucent fringe/blur and texture noise; not crisp pixel-art and alpha edge not clean"
+    }
+  ],
+  "map_decision": "Cream limestone edge follows the map palette; unique fractured-strata interpretation, no new object type.",
+  "processing": "Center crop to 4:1 aspect, nearest resize 512x128, median-cut quantize to 48 colors, threshold alpha to binary.",
+  "acceptance": {
+    "size": [
+      512,
+      128
+    ],
+    "colors": [
+      33,
+      48
+    ],
+    "left_right_seam_mean_lt": 14,
+    "alpha": "binary"
+  },
+  "final_candidate": null,
+  "art_gate": "NOT_RUN: canonical manifest unchanged; final --all deferred."
+}

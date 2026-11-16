@@ -1,0 +1,1 @@
+Three generated attempts inspected via 3×1 previews. Attempt 3 has endpoint seam mean 8.90 but the architectural masses repeat conspicuously; autocorrelation remains 0.544. Attempts 1–2 also exceed autocorrelation threshold and attempt 2 seam is 39.75. None meets both criteria. No final candidate submitted.

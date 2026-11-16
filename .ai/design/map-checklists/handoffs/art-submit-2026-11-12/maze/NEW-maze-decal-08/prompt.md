@@ -1,0 +1,1 @@
+Isolated curled ivory bone fragment with loose pink-beige and dusty violet stone chips for a top-down maze decal; transparent cutout, crisp pixel clusters; no haze/glow/shadow/text/frame/fringe/magenta. Alpha threshold≥250 used to clean soft edge pixels.

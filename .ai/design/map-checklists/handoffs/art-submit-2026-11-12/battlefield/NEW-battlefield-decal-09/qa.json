@@ -1,0 +1,52 @@
+{
+  "task_id": "NEW-battlefield-decal-09",
+  "status": "FAILED_AFTER_3_TRIES",
+  "map_decision": "Cream limestone chips and muted taupe retained to match source plaza.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01.png",
+      "colors": 22,
+      "alpha_margin_px": 0,
+      "raw_alpha_varied": true,
+      "red_fringe": false,
+      "failure": "colors 22<33; margin 0<8; source alpha nonbinary/soft; baked soft halo visible"
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "colors": 27,
+      "alpha_margin_px": 0,
+      "raw_alpha_varied": true,
+      "red_fringe": false,
+      "failure": "colors 27<33; margin 0<8; source alpha nonbinary/soft; baked soft halo visible"
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "colors": 24,
+      "alpha_margin_px": 0,
+      "raw_alpha_varied": true,
+      "red_fringe": false,
+      "failure": "colors 24<33; margin 0<8; source alpha nonbinary/soft"
+    }
+  ],
+  "processing": "Center crop, nearest resize 320x320, median-cut quantize to 48 colors, binary alpha threshold.",
+  "acceptance": {
+    "size_px": [
+      256,
+      384
+    ],
+    "colors": [
+      33,
+      48
+    ],
+    "binary_alpha": true,
+    "alpha_margin_min": 8
+  },
+  "final_candidate": null,
+  "art_gate": "NOT_RUN: canonical manifest unchanged; final --all deferred."
+}

@@ -1,0 +1,31 @@
+{
+  "task_id": "NEW-battlefield-portal-dormant",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate.png",
+      "processing": "Binary alpha threshold 128; crop visible silhouette; nearest-resize preserving aspect to fit 360px; bottom-center on 384x384 with 12px bottom margin; median-cut visible RGB to 48 colors; no geometric edits.",
+      "colors": 48,
+      "alpha_margin_px": 12,
+      "binary_alpha": true,
+      "visible_magenta_pixels": 0,
+      "failure": null
+    }
+  ],
+  "selected_candidate": "candidate.png",
+  "sha256": "4a9d27e46f19884747fb5bd130eeef9616c0153f0108c2545b59d6806deb6317",
+  "acceptance_result": {
+    "size_px": [
+      384,
+      384
+    ],
+    "colors": 48,
+    "alpha_margin_px": 12,
+    "binary_alpha": true,
+    "visible_magenta_pixels": 0,
+    "mask_pair": "dormant mask saved for active counterpart; active must preserve identical alpha mask"
+  },
+  "art_gate": "NOT_RUN: handoff candidate is not registered in canonical manifest; manifest edits forbidden."
+}

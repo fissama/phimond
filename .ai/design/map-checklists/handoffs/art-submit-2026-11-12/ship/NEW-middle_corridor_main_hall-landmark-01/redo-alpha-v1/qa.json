@@ -1,0 +1,34 @@
+{
+  "task_id": "NEW-middle_corridor_main_hall-landmark-01",
+  "source": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/ship/NEW-middle_corridor_main_hall-landmark-01/candidate.png",
+  "source_sha256": "390ba61aadd48c9d2992778431d1c00725c9198b14cdaaa8ea1301f328f6bdf0",
+  "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/ship/NEW-middle_corridor_main_hall-landmark-01/redo-alpha-v1/candidate.png",
+  "candidate_sha256": "1c3e2395665684baf239714e7766135b694be2aac8e237df1a8d6a91b9d935a9",
+  "size": [
+    384,
+    384
+  ],
+  "alpha_values": [
+    0,
+    255
+  ],
+  "color_count_opaque": 48,
+  "alpha_bbox_margins_ltrb": [
+    124,
+    105,
+    94,
+    109
+  ],
+  "steps": [
+    "alpha threshold >=128",
+    "1px binary erosion",
+    "nearest-interior despill on 1px boundary",
+    "quantize opaque RGB to <=48 colors",
+    "preserve canvas and bottom alignment"
+  ],
+  "visual_previews": [
+    "preview-4x-light.png",
+    "preview-4x-dark.png"
+  ],
+  "note": "handoff candidate only; canonical and manifest untouched"
+}

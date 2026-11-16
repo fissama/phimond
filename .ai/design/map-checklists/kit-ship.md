@@ -1,9 +1,11 @@
 # Kit `ship` — Tàu cướp biển
 
+> **Nghiệm thu Claude 2026-11-09** (mức V1, chưa 4×): THIẾU_CHƯA_CÓ 1. Map: {'CHƯA ĐỦ': 1}. Trạng thái hiện hành ở [ASSET-VERDICTS-20261109.csv](ASSET-VERDICTS-20261109.csv) / [MAP-COVERAGE-20261109.csv](MAP-COVERAGE-20261109.csv); tick ✅/❌ bên dưới là LỊCH SỬ, không phải approval.
+
 > **Quy tắc bắt buộc cho Codex** (xem README.md): dùng https://github.com/0x0funky/agent-sprite-forge (generate2dmap / generate2dsprite) với route image_gen tích hợp; cấm codeart2d, API trả phí, vẽ bằng code, lật gương; không commit; không sửa tools/hd2d_audit/*, gate_waivers.json, check.sh; mỗi asset phải tự nhìn ảnh trước khi ghi "vẽ xong"; chỉ Claude/owner đánh dấu "duyệt".
 
 - Style/palette: Gỗ boong tàu, buồm, đèn bão, cờ hải tặc
-- Thư mục asset: `apps/game-web/art-src/hd2d/batch-04-octopath/`
+- Thư mục asset: `art/src/hd2d/batch-04-octopath/`
 - Số map: 1
 
 ## 1. Trạng thái asset hiện có
@@ -26,27 +28,27 @@ Tổng 21 · duyệt 21 · nháp 0 · khác 0
 
 | Vẽ | Duyệt | id | loại | kích thước (world) | prompt/nguồn |
 |---|---|---|---|---|---|
-| ✅ | ✅ duyệt | `ship-hull-backdrop` | backdrop_mid | [8.0, 3.0] | [prompt.md](../../../apps/game-web/art-src/hd2d/batch-04-octopath/ship-hull-backdrop/prompt.md) |
-| ✅ | ✅ duyệt | `target-ring` | decal | [0.703125, 0.484375] | [prompt.md](../../../apps/game-web/art-src/hd2d/batch-04-octopath/target-ring/prompt.md) |
-| ✅ | ✅ duyệt | `touch-ring` | decal | [0.78125, 0.484375] | [prompt.md](../../../apps/game-web/art-src/hd2d/batch-04-octopath/touch-ring/prompt.md) |
-| ✅ | ✅ duyệt | `ship-deck-tile` | floor | [4.0, 4.0] | [prompt.md](../../../apps/game-web/art-src/hd2d/batch-04-octopath/ship-deck-tile/prompt.md) |
-| ✅ | ✅ duyệt | `exit-arrow-down` | fx | [0.671875, 0.625] | [prompt.md](../../../apps/game-web/art-src/hd2d/batch-04-octopath/exit-arrow-down/prompt.md) |
-| ✅ | ✅ duyệt | `exit-arrow-left` | fx | [0.734375, 0.625] | [prompt.md](../../../apps/game-web/art-src/hd2d/batch-04-octopath/exit-arrow-left/prompt.md) |
-| ✅ | ✅ duyệt | `exit-arrow-right` | fx | [0.7421875, 0.625] | [prompt.md](../../../apps/game-web/art-src/hd2d/batch-04-octopath/exit-arrow-right/prompt.md) |
-| ✅ | ✅ duyệt | `exit-arrow-up` | fx | [0.6796875, 0.625] | [prompt.md](../../../apps/game-web/art-src/hd2d/batch-04-octopath/exit-arrow-up/prompt.md) |
-| ✅ | ✅ duyệt | `quest-complete` | icon | [0.9921875, 0.671875] | [prompt.md](../../../apps/game-web/art-src/hd2d/batch-04-octopath/quest-complete/prompt.md) |
-| ✅ | ✅ duyệt | `quest-new` | icon | [0.84375, 0.671875] | [prompt.md](../../../apps/game-web/art-src/hd2d/batch-04-octopath/quest-new/prompt.md) |
-| ✅ | ✅ duyệt | `talk-mark` | icon | [0.4609375, 0.3125] | [prompt.md](../../../apps/game-web/art-src/hd2d/batch-04-octopath/talk-mark/prompt.md) |
-| ✅ | ✅ duyệt | `storm-lantern` | light | [0.6640625, 1.125] | [prompt.md](../../../apps/game-web/art-src/hd2d/batch-04-octopath/storm-lantern/prompt.md) |
-| ✅ | ✅ duyệt | `nest-marker` | marker | [0.765625, 0.625] | [prompt.md](../../../apps/game-web/art-src/hd2d/batch-04-octopath/nest-marker/prompt.md) |
-| ✅ | ✅ duyệt | `teleport-pillar-high` | portal | [2.3125, 1.609375] | [prompt.md](../../../apps/game-web/art-src/hd2d/batch-04-octopath/teleport-pillar-high/prompt.md) |
-| ✅ | ✅ duyệt | `cannon` | prop | [1.265625, 1.296875] | [prompt.md](../../../apps/game-web/art-src/hd2d/batch-04-octopath/cannon/prompt.md) |
-| ✅ | ✅ duyệt | `helm-wheel` | prop | [1.4296875, 1.609375] | [prompt.md](../../../apps/game-web/art-src/hd2d/batch-04-octopath/helm-wheel/prompt.md) |
-| ✅ | ✅ duyệt | `mast-trunk` | prop | [2.046875, 2.9375] | [prompt.md](../../../apps/game-web/art-src/hd2d/batch-04-octopath/mast-trunk/prompt.md) |
-| ✅ | ✅ duyệt | `rope-coil` | prop | [0.671875, 0.6875] | [prompt.md](../../../apps/game-web/art-src/hd2d/batch-04-octopath/rope-coil/prompt.md) |
-| ✅ | ✅ duyệt | `rum-barrel` | prop | [1.234375, 1.15625] | [prompt.md](../../../apps/game-web/art-src/hd2d/batch-04-octopath/rum-barrel/prompt.md) |
-| ✅ | ✅ duyệt | `pirate-flag` | prop_sway | [1.3828125, 1.453125] | [prompt.md](../../../apps/game-web/art-src/hd2d/batch-04-octopath/pirate-flag/prompt.md) |
-| ✅ | ✅ duyệt | `sail-cloth` | prop_sway | [2.1796875, 2.0] | [prompt.md](../../../apps/game-web/art-src/hd2d/batch-04-octopath/sail-cloth/prompt.md) |
+| ✅ | ✅ duyệt | `ship-hull-backdrop` | backdrop_mid | [8.0, 3.0] | [prompt.md](../../../art/src/hd2d/batch-04-octopath/ship-hull-backdrop/prompt.md) |
+| ✅ | ✅ duyệt | `target-ring` | decal | [0.703125, 0.484375] | [prompt.md](../../../art/src/hd2d/batch-04-octopath/target-ring/prompt.md) |
+| ✅ | ✅ duyệt | `touch-ring` | decal | [0.78125, 0.484375] | [prompt.md](../../../art/src/hd2d/batch-04-octopath/touch-ring/prompt.md) |
+| ✅ | ✅ duyệt | `ship-deck-tile` | floor | [4.0, 4.0] | [prompt.md](../../../art/src/hd2d/batch-04-octopath/ship-deck-tile/prompt.md) |
+| ✅ | ✅ duyệt | `exit-arrow-down` | fx | [0.671875, 0.625] | [prompt.md](../../../art/src/hd2d/batch-04-octopath/exit-arrow-down/prompt.md) |
+| ✅ | ✅ duyệt | `exit-arrow-left` | fx | [0.734375, 0.625] | [prompt.md](../../../art/src/hd2d/batch-04-octopath/exit-arrow-left/prompt.md) |
+| ✅ | ✅ duyệt | `exit-arrow-right` | fx | [0.7421875, 0.625] | [prompt.md](../../../art/src/hd2d/batch-04-octopath/exit-arrow-right/prompt.md) |
+| ✅ | ✅ duyệt | `exit-arrow-up` | fx | [0.6796875, 0.625] | [prompt.md](../../../art/src/hd2d/batch-04-octopath/exit-arrow-up/prompt.md) |
+| ✅ | ✅ duyệt | `quest-complete` | icon | [0.9921875, 0.671875] | [prompt.md](../../../art/src/hd2d/batch-04-octopath/quest-complete/prompt.md) |
+| ✅ | ✅ duyệt | `quest-new` | icon | [0.84375, 0.671875] | [prompt.md](../../../art/src/hd2d/batch-04-octopath/quest-new/prompt.md) |
+| ✅ | ✅ duyệt | `talk-mark` | icon | [0.4609375, 0.3125] | [prompt.md](../../../art/src/hd2d/batch-04-octopath/talk-mark/prompt.md) |
+| ✅ | ✅ duyệt | `storm-lantern` | light | [0.6640625, 1.125] | [prompt.md](../../../art/src/hd2d/batch-04-octopath/storm-lantern/prompt.md) |
+| ✅ | ✅ duyệt | `nest-marker` | marker | [0.765625, 0.625] | [prompt.md](../../../art/src/hd2d/batch-04-octopath/nest-marker/prompt.md) |
+| ✅ | ✅ duyệt | `teleport-pillar-high` | portal | [2.3125, 1.609375] | [prompt.md](../../../art/src/hd2d/batch-04-octopath/teleport-pillar-high/prompt.md) |
+| ✅ | ✅ duyệt | `cannon` | prop | [1.265625, 1.296875] | [prompt.md](../../../art/src/hd2d/batch-04-octopath/cannon/prompt.md) |
+| ✅ | ✅ duyệt | `helm-wheel` | prop | [1.4296875, 1.609375] | [prompt.md](../../../art/src/hd2d/batch-04-octopath/helm-wheel/prompt.md) |
+| ✅ | ✅ duyệt | `mast-trunk` | prop | [2.046875, 2.9375] | [prompt.md](../../../art/src/hd2d/batch-04-octopath/mast-trunk/prompt.md) |
+| ✅ | ✅ duyệt | `rope-coil` | prop | [0.671875, 0.6875] | [prompt.md](../../../art/src/hd2d/batch-04-octopath/rope-coil/prompt.md) |
+| ✅ | ✅ duyệt | `rum-barrel` | prop | [1.234375, 1.15625] | [prompt.md](../../../art/src/hd2d/batch-04-octopath/rum-barrel/prompt.md) |
+| ✅ | ✅ duyệt | `pirate-flag` | prop_sway | [1.3828125, 1.453125] | [prompt.md](../../../art/src/hd2d/batch-04-octopath/pirate-flag/prompt.md) |
+| ✅ | ✅ duyệt | `sail-cloth` | prop_sway | [2.1796875, 2.0] | [prompt.md](../../../art/src/hd2d/batch-04-octopath/sail-cloth/prompt.md) |
 
 ## 2. Prompt sheet chung cho kit
 
@@ -55,7 +57,7 @@ Tổng 21 · duyệt 21 · nháp 0 · khác 0
 Dùng agent-sprite-forge ($generate2dmap cho tile/prop, $generate2dsprite cho prop/decal/FX/marker). Route ảnh: image_gen tích hợp của Codex (kiểm `route_media.py resolve --kind image`). KHÔNG codeart2d, KHÔNG API, KHÔNG vẽ bằng code.
 Kit: Tàu cướp biển (ship). Style: Gỗ boong tàu, buồm, đèn bão, cờ hải tặc. Style anchor: batch-01-octopath/contact-sheet.png + 2 sprites.png linh thú.
 Mỗi lần gọi: 1 sheet ~6 vật trên nền #FF00FF, bố trí 2×3/3×2, cách nhau ≥48 px, không chạm mép. Giữ raw-01.png byte-identical. Cắt/khử nền/pixel finish bằng script forge. 33–48 màu, alpha nhị phân, lề ≥8 px, 128 px = 1 đơn vị (far 64), người = 1.31 đơn vị (cỡ tối đa vật nhỏ: tools/hd2d_audit/size_check.py).
-Mỗi asset: thư mục raw-01/final/prompt.md/review.md/qa.json trong apps/game-web/art-src/hd2d/batch-11-ship/<id>/. Tự nhìn 4× nền tối/caro. Xong: `python3 tools/hd2d_audit/art_gate.py batch-11-ship` = 0 lỗi, contact-sheet mới hơn manifest.
+Mỗi asset: thư mục raw-01/final/prompt.md/review.md/qa.json trong art/src/hd2d/batch-11-ship/<id>/. Tự nhìn 4× nền tối/caro. Xong: `python3 tools/hd2d_audit/art_gate.py batch-11-ship` = 0 lỗi, contact-sheet mới hơn manifest.
 ```
 
 ## 3. Từng map

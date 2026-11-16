@@ -1,0 +1,1 @@
+ImageGen prompt: standalone front-facing dormant skull portal for immortal bone maze; dusty violet-gray stone arch, cream skull and rib supports, muted brown cord, dark teal inactive gate; crisp HD-2D pixel clusters; transparent background, centered with margins; no glow, magenta, text, shadow. Raw attempts preserved; attempt 3 processed to binary alpha/48-color candidate.

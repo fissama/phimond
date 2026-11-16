@@ -1,0 +1,73 @@
+{
+  "task_id": "NEW-maze-floor-extra-05",
+  "status": "FAILED_AFTER_3_TRIES",
+  "map_decision": "Source map supports pink-beige maze stone; no added unsupported motifs.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01.png",
+      "colors": 48,
+      "wrap_x": 2.003,
+      "wrap_y": 2.105,
+      "autocorr_max_lag_ge8": 0.4893,
+      "outer8_unique": [
+        47,
+        48,
+        47,
+        48
+      ],
+      "failure": "Autocorrelation >0.25 and perimeter is not flat; wrap ratios recorded."
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "colors": 48,
+      "wrap_x": 1.419,
+      "wrap_y": 2.206,
+      "autocorr_max_lag_ge8": 0.4546,
+      "outer8_unique": [
+        46,
+        48,
+        48,
+        48
+      ],
+      "failure": "Autocorrelation >0.25 and perimeter is not flat; wrap ratios recorded."
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "colors": 48,
+      "wrap_x": 0.98,
+      "wrap_y": 2.016,
+      "autocorr_max_lag_ge8": 0.4102,
+      "outer8_unique": [
+        48,
+        48,
+        48,
+        48
+      ],
+      "failure": "Autocorrelation >0.25 and perimeter is not flat; wrap ratios recorded."
+    }
+  ],
+  "processing": "Generated raw square resized nearest to 512x512, median-cut quantized to 48 RGB colors; no manual pixel painting. Wrap metric is mean RGB edge difference divided by mean adjacent-pixel RGB difference; autocorrelation is max grayscale correlation over shifts 8..256 in 8px increments.",
+  "acceptance": {
+    "size": [
+      512,
+      512
+    ],
+    "colors": [
+      33,
+      48
+    ],
+    "wrap_x_max": 2.0,
+    "wrap_y_max": 2.0,
+    "autocorrelation_max": 0.25,
+    "outer8_flat": true
+  },
+  "final_candidate": null,
+  "art_gate": "NOT_RUN: handoff only; canonical manifest excluded.",
+  "raws_preserved": true
+}

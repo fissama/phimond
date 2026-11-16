@@ -1,0 +1,1 @@
+Wide far environment plate: distant dusty violet/blue-gray bone-maze arches and masonry, pale cyan openings, pink-beige rubble lower band; full-bleed, 3:1 raw, seamless horizontal, no repeated motifs, no foliage, text, glow, cast shadow or magenta. Cropped/resized to 1280×384, quantized 48 colors.

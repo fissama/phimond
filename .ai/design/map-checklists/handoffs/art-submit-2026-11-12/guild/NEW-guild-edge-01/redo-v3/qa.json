@@ -1,0 +1,68 @@
+{
+  "task_id": "NEW-guild-edge-01",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/guild/NEW-guild-edge-01/redo-v3/raw-01.png",
+      "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/guild/NEW-guild-edge-01/redo-v3/candidate-attempt-01.png",
+      "raw_alpha_levels": 256,
+      "postprocess": "alpha erode 1px, threshold >=128 binary, local red/green edge despill, nearest resize/crop 512x128, roll+24px endpoint blend, quantize 48; no mirror",
+      "size": [
+        512,
+        128
+      ],
+      "colors_opaque": 45,
+      "alpha_values": [
+        0,
+        255
+      ],
+      "seam_rgb_mean": 4.112,
+      "autocorr_max_lag_60_460": 0.8706,
+      "autocorr_lag": 405,
+      "numeric_pass": false
+    },
+    {
+      "attempt": 2,
+      "raw": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/guild/NEW-guild-edge-01/redo-v3/raw-02.png",
+      "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/guild/NEW-guild-edge-01/redo-v3/candidate-attempt-02.png",
+      "raw_alpha_levels": 256,
+      "postprocess": "alpha erode 1px, threshold >=128 binary, local red/green edge despill, nearest resize/crop 512x128, roll+24px endpoint blend, quantize 48; no mirror",
+      "size": [
+        512,
+        128
+      ],
+      "colors_opaque": 46,
+      "alpha_values": [
+        0,
+        255
+      ],
+      "seam_rgb_mean": 1.2422,
+      "autocorr_max_lag_60_460": 0.78203,
+      "autocorr_lag": 456,
+      "numeric_pass": false
+    },
+    {
+      "attempt": 3,
+      "raw": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/guild/NEW-guild-edge-01/redo-v3/raw-03.png",
+      "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/guild/NEW-guild-edge-01/redo-v3/candidate-attempt-03.png",
+      "raw_alpha_levels": 256,
+      "postprocess": "alpha erode 1px, threshold >=128 binary, local red/green edge despill, nearest resize/crop 512x128, roll+24px endpoint blend, quantize 48; no mirror",
+      "size": [
+        512,
+        128
+      ],
+      "colors_opaque": 44,
+      "alpha_values": [
+        0,
+        255
+      ],
+      "seam_rgb_mean": 2.6562,
+      "autocorr_max_lag_60_460": 0.80722,
+      "autocorr_lag": 173,
+      "numeric_pass": false
+    }
+  ],
+  "best_attempt": 2,
+  "decision": "FAILED_AFTER_3_TRIES pending visual; review 3x1/4x and motif cadence",
+  "canonical_untouched": true
+}

@@ -1,0 +1,59 @@
+{
+  "task_id": "NEW-dungeon-floor-02",
+  "status": "FAILED_AFTER_3_TRIES",
+  "map_decision": "Source map has pale yellow-green scale paving with no visible water channel; dry hairlines only, no wet channel substitute.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01.png",
+      "colors": 48,
+      "seam_wrap_mean": 12.208658695220947,
+      "seam_x": 11.747395515441895,
+      "seam_y": 12.669921875,
+      "autocorr_max_lag_ge8": 0.289739677087123,
+      "cross_correlation_floor01": -0.02141961127273498,
+      "flat_8px_perimeter": false,
+      "failure": "seam 12.209>2; autocorr 0.290>0.25"
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "colors": 48,
+      "seam_wrap_mean": 10.390299320220947,
+      "seam_x": 9.438801765441895,
+      "seam_y": 11.341796875,
+      "autocorr_max_lag_ge8": 0.13287009833961094,
+      "cross_correlation_floor01": 0.01322197042579568,
+      "flat_8px_perimeter": false,
+      "failure": "seam 10.390>2; autocorr 0.133>0.25; flat=False"
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "processing": "Nearest resize to 512x512; median-cut quantize to 48 colors; opaque RGB.",
+      "colors": 48,
+      "seam_wrap_mean": 17.543294429779053,
+      "seam_x": 13.279948234558105,
+      "seam_y": 21.806640625,
+      "autocorr_max_lag_ge8": 0.1454907451586871,
+      "cross_correlation_floor01": 0.0073026786103680226,
+      "flat_8px_perimeter": false,
+      "failure": "seam 17.543>2; autocorr 0.145>0.25; flat perimeter=False"
+    }
+  ],
+  "acceptance": {
+    "colors": [
+      33,
+      48
+    ],
+    "seam_wrap_max": 2.0,
+    "autocorr_max": 0.25,
+    "cross_correlation_max": 0.9,
+    "flat_outer_margin_px": 8
+  },
+  "final_candidate": null,
+  "art_gate": "NOT_RUN: handoff candidate is not registered in canonical manifest; manifest edits forbidden."
+}

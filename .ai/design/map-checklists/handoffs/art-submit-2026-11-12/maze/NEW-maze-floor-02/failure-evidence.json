@@ -1,0 +1,75 @@
+{
+  "task_id": "NEW-maze-floor-02",
+  "status": "FAILED_AFTER_3_TRIES",
+  "map_decision": "CSV says grass; all three source maps show pink-beige stone tile and no grass, so outputs use a different stone tile variant.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01.png",
+      "colors": 48,
+      "wrap_x": 3.496,
+      "wrap_y": 5.222,
+      "autocorr_max_lag_ge8": 0.2554,
+      "outer8_unique": [
+        45,
+        44,
+        48,
+        47
+      ],
+      "cross_corr_with_previous_task_attempt02": 0.995,
+      "failure": "Near-identical stone layout to maze-floor-01 attempt 2 (phase correlation 0.995); both wrap ratios fail; outer 8px not flat."
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "colors": 48,
+      "wrap_x": 1.64,
+      "wrap_y": 2.854,
+      "autocorr_max_lag_ge8": 0.0281,
+      "outer8_unique": [
+        12,
+        13,
+        14,
+        14
+      ],
+      "failure": "Autocorrelation passes, but wrap_y exceeds 2.0 and outer 8px border is not flat; 3x3 shows an inset frame."
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "colors": 48,
+      "wrap_x": 2.534,
+      "wrap_y": 2.851,
+      "autocorr_max_lag_ge8": 0.1214,
+      "outer8_unique": [
+        20,
+        14,
+        24,
+        20
+      ],
+      "failure": "Both wrap ratios exceed 2.0 and outer 8px is not flat; 3x3 preview shows obvious repeated fine-mosaic field and frame."
+    }
+  ],
+  "processing": "Each raw square resized nearest to 512x512 and median-cut quantized to 48 RGB colors; no manual pixel painting.",
+  "acceptance": {
+    "target_size": [
+      512,
+      512
+    ],
+    "color_range": [
+      33,
+      48
+    ],
+    "wrap_x_max": 2.0,
+    "wrap_y_max": 2.0,
+    "autocorrelation_max": 0.25,
+    "outer8_flat": true
+  },
+  "final_candidate": null,
+  "cross_correlation_vs_floor01_final": "N/A; floor-01 has no accepted final candidate.",
+  "art_gate": "NOT_RUN: handoff candidates excluded from canonical asset scan; no canonical path/manifest was changed.",
+  "raws_preserved": true
+}

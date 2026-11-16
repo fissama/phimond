@@ -1,0 +1,1 @@
+All 3 candidates were quantized and viewed as 3x3. Seam/autocorrelation values: 0.4873/0.8118; 0.4466/0.6585; 6.9329/0.3677. All fail seam <2.0 and/or autocorrelation ≤0.25. Tile motifs repeat visibly. No final submitted; floor-01 cross-texture check remains unavailable.

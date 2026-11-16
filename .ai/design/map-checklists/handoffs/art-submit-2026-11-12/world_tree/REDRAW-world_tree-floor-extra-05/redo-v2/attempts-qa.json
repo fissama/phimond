@@ -1,0 +1,40 @@
+{
+  "task_id": "REDRAW-world_tree-floor-extra-05",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw.png",
+      "candidate": "candidate.png",
+      "colors": 48,
+      "wrap_x": 0.0,
+      "wrap_y": 0.0,
+      "autocorr_max_lag_8_255": 0.51737,
+      "flat8": true,
+      "visual": "visible flat-perimeter grid on 3x3"
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-attempt-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "colors": 48,
+      "wrap_x": 0.0,
+      "wrap_y": 0.0,
+      "autocorr_max_lag_8_255": 0.3084,
+      "flat8": true,
+      "visual": "visible tile cadence and perimeter grid on 3x3"
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-attempt-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "colors": 48,
+      "wrap_x": 0.0,
+      "wrap_y": 0.0,
+      "autocorr_max_lag_8_255": 0.181,
+      "flat8": true,
+      "visual": "fine texture; still obvious repeated tile edges/grid on 3x3; reject visually"
+    }
+  ],
+  "status": "FAILED_AFTER_3_TRIES",
+  "note": "All three raw attempts exhausted. Attempt 3 passes numeric autocorrelation but visual 3x3 remains grid-like from the flat 8px perimeter and repeated tile cadence. Keep failed; no canonical or manifest edits."
+}

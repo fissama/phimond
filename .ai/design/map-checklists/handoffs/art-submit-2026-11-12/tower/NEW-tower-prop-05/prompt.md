@@ -1,0 +1,1 @@
+Route: built-in image_gen, one attempt. Three tower map screenshots provide content/palette; two approved bush images are pixel-style anchors only. Prompt requested a single standalone pale timber bridge plank, crisp pixel art, transparent background, no portal/glow/text/magenta/fringe.

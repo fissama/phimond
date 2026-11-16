@@ -1,0 +1,1 @@
+Map refs show wood, green moss and leaf litter; no bones. First and third attempts visibly contain diffuse glow/haze and are rejected. Attempt 2 has object-like scattered leaves/chips but red/colored contour fringe and very high detail density; no candidate selected. All three raws retained.

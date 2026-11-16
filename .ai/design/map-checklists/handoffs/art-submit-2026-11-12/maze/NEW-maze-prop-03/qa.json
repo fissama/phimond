@@ -1,0 +1,42 @@
+{
+  "task_id": "NEW-maze-prop-03",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "raw_file": "raw-01.png",
+  "raw_size": [
+    1774,
+    887
+  ],
+  "processing": "alpha >127 threshold; removed 14 isolated magenta artifact pixels via alpha key; crop opaque bbox; nearest-neighbor resize to 640px width; median-cut quantized to <=48 RGB colors; 12px transparent padding",
+  "candidate_file": "candidate.png",
+  "candidate_size": [
+    664,
+    440
+  ],
+  "color_count": 46,
+  "binary_alpha": true,
+  "alpha_bbox": [
+    12,
+    12,
+    652,
+    428
+  ],
+  "alpha_margins": [
+    12,
+    12,
+    12,
+    12
+  ],
+  "seam": "N/A prop",
+  "autocorrelation": "N/A prop",
+  "magenta_pixels_removed": 14,
+  "baked_glow_shadow": "none by visual check",
+  "art_gate": "NOT_RUN: handoff candidate excluded from canonical scope; no manifest changed",
+  "sha256": "6e3e737d9dc732d474c9c18d6e5c9dd3e4d376fdb90cbc48e0c0b6de1b12cb14",
+  "raw_sha256": "fe8e8eaaea859e038a36f594af9fc3f550ccbba1fde7b8c414833a937fb72c03",
+  "reference_crop": "map-crop.jpg",
+  "reference_sha256": {
+    ".ai/design/map-checklists/refs/immortal_maze_main_maze.jpg": "bd1b34f71f391a60c756b991d3ba36e7546e33ba0400372bc9f1000fc1998d75",
+    ".ai/design/map-checklists/refs/immortal_maze_floor.jpg": "50b3887e86e277edfd5586c0ea49b5281a56e2298acb6262d59a90c7b4460acc",
+    "art/src/hd2d/batch-01-octopath/bush-01/final.png": "15573d1325946dd41c0faa0ef7ea8bc4c7f7a7910ea85a93de16766a4f4f1830"
+  }
+}

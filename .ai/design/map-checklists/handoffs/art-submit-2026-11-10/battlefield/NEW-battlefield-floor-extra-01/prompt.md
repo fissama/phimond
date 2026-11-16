@@ -1,0 +1,1 @@
+ImageGen prompt: extra tile variant of the pale cream battlefield plaza, irregular small/medium limestone paving with thin taupe joints; no burnt ground or grass. 512 seamless, flat 8px band, 33–48 colors, HD-2D pixel clusters.

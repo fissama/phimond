@@ -1,0 +1,1 @@
+Source-map decision: the dungeon ref shows beige/olive brick wall, gold-olive base trim and pale scale-patterned floor. Candidate depicts a broken wall-footing/floor transition; it does not add the unsupported chains, water, bones, or jail door. Review whether this is an appropriate edge material.

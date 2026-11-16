@@ -1,0 +1,56 @@
+{
+  "task_id": "NEW-battlefield-fx-02",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": false,
+      "colors_opaque": 27,
+      "alpha_binary": true,
+      "per_frame_margin_px": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "failure": "Only 27 opaque colors; motes too faint after bright contamination was keyed."
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": true,
+      "processing": "Split four cells; key saturated red/yellow contamination; binary alpha threshold 128; crop and nearest-fit each into 192x128; quantize shared RGB palette to 48.",
+      "colors_opaque": 40,
+      "alpha_binary": true,
+      "per_frame_margin_px": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "visible_magenta_pixels": 0,
+      "failure": null
+    }
+  ],
+  "selected_candidate": "candidate.png",
+  "sha256": "9a9b5e25940358048f5a1245bef1244b0a0eae20fd23beceaa123c45a1f26132",
+  "acceptance_result": {
+    "size_px": [
+      768,
+      128
+    ],
+    "frames": 4,
+    "colors_opaque": 40,
+    "alpha_binary": true,
+    "per_frame_margin_px": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "visible_magenta_pixels": 0,
+    "visual": "distinct airborne stone chips and dust swirls, high saturation artifacts keyed out"
+  },
+  "art_gate": "NOT_RUN: handoff candidate is not registered in canonical manifest; manifest edits forbidden."
+}

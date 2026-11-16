@@ -1,28 +1,33 @@
 # Kit `windrock` — Núi Phong Thạch
 
+> **Nghiệm thu Claude 2026-11-09** (mức V1, chưa 4×): VẼ_LẠI 12, DUYỆT 70. Map: {'CHƯA ĐỦ': 6}. Trạng thái hiện hành ở [ASSET-VERDICTS-20261109.csv](ASSET-VERDICTS-20261109.csv) / [MAP-COVERAGE-20261109.csv](MAP-COVERAGE-20261109.csv); tick ✅/❌ bên dưới là LỊCH SỬ, không phải approval.
+> VẼ_LẠI (12): `windrock-rock-floor-01`, `windrock-rock-floor-02`, `windrock-gravel-floor`, `windrock-grass-snow-floor`, `windrock-snow-crust-floor`, `windrock-slate-floor`, `windrock-mountain-path-floor`, `windrock-scree-floor`, `windrock-rock-floor-03`, `windrock-edge-01`, `windrock-edge-02`, `windrock-edge-03`
+
 > **Quy tắc bắt buộc cho Codex** (xem README.md): dùng https://github.com/0x0funky/agent-sprite-forge (generate2dmap / generate2dsprite) với route image_gen tích hợp; cấm codeart2d, API trả phí, vẽ bằng code, lật gương; không commit; không sửa tools/hd2d_audit/*, gate_waivers.json, check.sh; mỗi asset phải tự nhìn ảnh trước khi ghi "vẽ xong"; chỉ Claude/owner đánh dấu "duyệt".
 
 - Style/palette: Đá xám lam, cỏ núi khô, tuyết lốm đốm trên cao, gió mạnh (cờ/cỏ nghiêng). Bảng màu đá #7B8794/#566070, cỏ khô #8A8F4E, tuyết #E8EEF4.
-- Thư mục asset: `apps/game-web/art-src/hd2d/batch-11-windrock/`
+- Thư mục asset: `art/src/hd2d/batch-11-windrock/`
 - Số map: 6
 
 ## 1. Trạng thái asset hiện có
 
-Tổng 74 · duyệt 0 · nháp 0 · khác 74
+Theo manifest GPT cập nhật 30/10: tổng 82 · duyệt 0 · floor 9 · edge 3 · prop 36 · backdrop 3 · decal 16 · shadow 6 · marker 1 · FX 6 · portal 2. Asset mới đã xem final 4×; draft chờ Claude/owner review. Các landmark theo từng map vẫn cần được đối chiếu ảnh gốc ở mục 3. Danh sách 74 mục bên dưới là inventory Gemini cũ, không phản ánh manifest hiện tại; cần đối chiếu từng ID trước khi dùng làm checklist vẽ.
 
 | Loại | Có | Cần tối thiểu | Ghi chú |
 |---|---|---|---|
-| floor | 8 | 8 | ✅ · tile sàn 512×512 seamless, mỗi biến thể là texture khác |
-| edge | 0 | 3 | ⬜ thiếu 3 · dải chuyển tiếp 512×128 liền hai đầu |
-| prop | 40 | 36 | ✅ · prop đứng, ≥2–3 biến thể thật/chủng loại |
-| decal | 13 | 12 | ✅ · decal tiếp đất bất quy tắc, mép mềm |
-| shadow | 6 | 4 | ✅ · bóng procedural alpha mềm (ngoại lệ) |
-| backdrop | 4 | 3 | ✅ · far/mid/near, lặp ngang liền |
-| portal | 2 | 2 | ✅ · cặp dormant/active cùng mask |
-| marker | 1 | 1 | ✅ · điểm xuất hiện 4 khung |
-| fx | 0 | 3 | ⬜ thiếu 3 · hạt/tia sáng sprite sheet |
+| floor | 9 | 8 | ✅ · có 9 tile sàn 512×512; kiểm repeat trực quan trước khi dùng |
+| edge | 3 | 3 | 🟨 đủ 3 draft `windrock-edge-01..03`, 512×128, alpha nhị phân, palette ≤64 và seam qua gate; chưa được Claude/owner duyệt. Prompt, raw, repeat 3×3 và QA ở `jobs/edges-redraw-20261030/` và các thư mục asset |
+| prop | 36 | 36 | 🟨 15 prop mới đã xem 4×; đủ mức tối thiểu, chờ Claude/owner review |
+| decal | 16 | 12 | 🟨 16 draft đã xem 4×; đạt mức tối thiểu; 6 decal mới gồm 2 seam rêu/đá, 2 vệt chân tuyết, snow chips và stone fragments; chờ Claude/owner review |
+| shadow | 6 | 4 | 🟨 Có 6 contact shadow draft, soft alpha theo ngoại lệ shadow; chờ Claude/owner review |
+| backdrop | 3 | 3 | 🟨 Far/mid/near hiện có; near mới là one-shot, không tileable, chờ Claude/owner review |
+| portal | 2 | 2 | 🟨 active/dormant cùng silhouette, đã xem 4×; chờ Claude/owner review |
+| marker | 1 | 1 | 🟨 `windrock-spawn-marker-01` đã xem 4×; chờ Claude/owner review |
+| fx | 6 | 3 | 🟨 6 draft đã xem 4×; có gust/flecks/glint/snow/sparks/dust; nhiều motif còn mềm hoặc lệch sắc ấm, chờ Claude/owner review |
 
-### Danh sách asset
+### Inventory Gemini cũ (74 dòng, không dùng để theo dõi manifest GPT)
+
+Các dấu `Vẽ`/`Duyệt` dưới đây phản ánh batch Gemini cũ; giữ lại để tra nguồn, không tính vào trạng thái hiện tại. Chỉ manifest `batch-11-windrock/manifest.json` và bảng tổng hợp phía trên phản ánh 79 asset GPT.
 
 | Vẽ | Duyệt | id | loại | kích thước (world) | prompt/nguồn |
 |---|---|---|---|---|---|
@@ -108,7 +113,7 @@ Tổng 74 · duyệt 0 · nháp 0 · khác 74
 Dùng agent-sprite-forge ($generate2dmap cho tile/prop, $generate2dsprite cho prop/decal/FX/marker). Route ảnh: image_gen tích hợp của Codex (kiểm `route_media.py resolve --kind image`). KHÔNG codeart2d, KHÔNG API, KHÔNG vẽ bằng code.
 Kit: Núi Phong Thạch (windrock). Style: Đá xám lam, cỏ núi khô, tuyết lốm đốm trên cao, gió mạnh (cờ/cỏ nghiêng). Bảng màu đá #7B8794/#566070, cỏ khô #8A8F4E, tuyết #E8EEF4.. Style anchor: batch-01-octopath/contact-sheet.png + 2 sprites.png linh thú.
 Mỗi lần gọi: 1 sheet ~6 vật trên nền #FF00FF, bố trí 2×3/3×2, cách nhau ≥48 px, không chạm mép. Giữ raw-01.png byte-identical. Cắt/khử nền/pixel finish bằng script forge. 33–48 màu, alpha nhị phân, lề ≥8 px, 128 px = 1 đơn vị (far 64), người = 1.31 đơn vị (cỡ tối đa vật nhỏ: tools/hd2d_audit/size_check.py).
-Mỗi asset: thư mục raw-01/final/prompt.md/review.md/qa.json trong apps/game-web/art-src/hd2d/batch-11-windrock/<id>/. Tự nhìn 4× nền tối/caro. Xong: `python3 tools/hd2d_audit/art_gate.py batch-11-windrock` = 0 lỗi, contact-sheet mới hơn manifest.
+Mỗi asset: thư mục raw-01/final/prompt.md/review.md/qa.json trong art/src/hd2d/batch-11-windrock/<id>/. Tự nhìn 4× nền tối/caro. Xong: `python3 tools/hd2d_audit/art_gate.py batch-11-windrock` = 0 lỗi, contact-sheet mới hơn manifest.
 ```
 
 ## 3. Từng map
@@ -133,8 +138,8 @@ Asset chính: dùng bảng kit (mục 1). Landmark riêng của map (Codex xem �
 
 | Vẽ | Duyệt | id | loại | mô tả | prompt |
 |---|---|---|---|---|---|
-| ⬜ | ⬜ | `windrock_mountain_camp-landmark-01` | landmark | (vật nhận diện #1 trong ảnh gốc) | — |
-| ⬜ | ⬜ | `windrock_mountain_camp-landmark-02` | landmark | (vật nhận diện #2, nếu có) | — |
+| ✅ | ⬜ | `windrock_mountain_camp-landmark-01` | prop hiện có | Nhà cửa đá ở trại (`windrock-camp-stone-door-hut`, asset dùng chung, đã vẽ) | `windrock-camp-stone-door-hut/prompt.md` |
+| — | — | `windrock_mountain_camp-landmark-02` | không phát sinh | Không có landmark thứ hai tách biệt cần thêm; các vật trại còn lại là prop dùng chung | Đã đối chiếu ảnh gốc và brief |
 
 Prompt cho Codex:
 
@@ -162,8 +167,8 @@ Asset chính: dùng bảng kit (mục 1). Landmark riêng của map (Codex xem �
 
 | Vẽ | Duyệt | id | loại | mô tả | prompt |
 |---|---|---|---|---|---|
-| ⬜ | ⬜ | `windrock_mountain_stone_bridge-landmark-01` | landmark | (vật nhận diện #1 trong ảnh gốc) | — |
-| ⬜ | ⬜ | `windrock_mountain_stone_bridge-landmark-02` | landmark | (vật nhận diện #2, nếu có) | — |
+| ✅ | ⬜ | `windrock_mountain_stone_bridge-landmark-01` | prop hiện có | Mố cầu đá (`windrock-bridge-stone-abutment`, đã vẽ) | `windrock-bridge-stone-abutment/prompt.md` |
+| — | — | `windrock_mountain_stone_bridge-landmark-02` | không phát sinh | Không thấy landmark thứ hai tách biệt trong ảnh/brief gốc | Đã đối chiếu ảnh gốc và brief |
 
 Prompt cho Codex:
 
@@ -187,8 +192,8 @@ Asset chính: dùng bảng kit (mục 1). Landmark riêng của map (Codex xem �
 
 | Vẽ | Duyệt | id | loại | mô tả | prompt |
 |---|---|---|---|---|---|
-| ⬜ | ⬜ | `windrock_mountain_howling_canyon-landmark-01` | landmark | (vật nhận diện #1 trong ảnh gốc) | — |
-| ⬜ | ⬜ | `windrock_mountain_howling_canyon-landmark-02` | landmark | (vật nhận diện #2, nếu có) | — |
+| ✅ | ⬜ | `windrock_mountain_howling_canyon-landmark-01` | prop hiện có | Đá huýt gió trong hẻm (`windrock-canyon-whistling-rock`, đã vẽ) | `windrock-canyon-whistling-rock/prompt.md` |
+| — | — | `windrock_mountain_howling_canyon-landmark-02` | không phát sinh | Không thấy landmark thứ hai tách biệt trong ảnh/brief gốc | Đã đối chiếu ảnh gốc và brief |
 
 Prompt cho Codex:
 
@@ -215,8 +220,8 @@ Asset chính: dùng bảng kit (mục 1). Landmark riêng của map (Codex xem �
 
 | Vẽ | Duyệt | id | loại | mô tả | prompt |
 |---|---|---|---|---|---|
-| ⬜ | ⬜ | `windrock_mountain_mountain_range-landmark-01` | landmark | (vật nhận diện #1 trong ảnh gốc) | — |
-| ⬜ | ⬜ | `windrock_mountain_mountain_range-landmark-02` | landmark | (vật nhận diện #2, nếu có) | — |
+| ✅ | ⬜ | `windrock_mountain_mountain_range-landmark-01` | prop hiện có | Sống núi răng cưa (`windrock-range-serrated-ridge`, đã vẽ) | `windrock-range-serrated-ridge/prompt.md` |
+| — | — | `windrock_mountain_mountain_range-landmark-02` | không phát sinh | Không thấy landmark thứ hai tách biệt trong ảnh/brief gốc | Đã đối chiếu ảnh gốc và brief |
 
 Prompt cho Codex:
 
@@ -243,8 +248,8 @@ Asset chính: dùng bảng kit (mục 1). Landmark riêng của map (Codex xem �
 
 | Vẽ | Duyệt | id | loại | mô tả | prompt |
 |---|---|---|---|---|---|
-| ⬜ | ⬜ | `windrock_mountain_mountain_path-landmark-01` | landmark | (vật nhận diện #1 trong ảnh gốc) | — |
-| ⬜ | ⬜ | `windrock_mountain_mountain_path-landmark-02` | landmark | (vật nhận diện #2, nếu có) | — |
+| ✅ | ⬜ | `windrock_mountain_mountain_path-landmark-01` | prop hiện có | Gờ đường núi uốn khúc (`windrock-path-switchback-ledge`, đã vẽ) | `windrock-path-switchback-ledge/prompt.md` |
+| — | — | `windrock_mountain_mountain_path-landmark-02` | không phát sinh | Không thấy landmark thứ hai tách biệt trong ảnh/brief gốc | Đã đối chiếu ảnh gốc và brief |
 
 Prompt cho Codex:
 
@@ -270,8 +275,8 @@ Asset chính: dùng bảng kit (mục 1). Landmark riêng của map (Codex xem �
 
 | Vẽ | Duyệt | id | loại | mô tả | prompt |
 |---|---|---|---|---|---|
-| ⬜ | ⬜ | `windrock_mountain_summit-landmark-01` | landmark | (vật nhận diện #1 trong ảnh gốc) | — |
-| ⬜ | ⬜ | `windrock_mountain_summit-landmark-02` | landmark | (vật nhận diện #2, nếu có) | — |
+| ✅ | ⬜ | `windrock_mountain_summit-landmark-01` | prop hiện có | Cairn gió trên đỉnh (`windrock-summit-wind-cairn`, đã vẽ) | `windrock-summit-wind-cairn/prompt.md` |
+| — | — | `windrock_mountain_summit-landmark-02` | không phát sinh | Không thấy landmark thứ hai tách biệt trong ảnh/brief gốc | Đã đối chiếu ảnh gốc và brief |
 
 Prompt cho Codex:
 

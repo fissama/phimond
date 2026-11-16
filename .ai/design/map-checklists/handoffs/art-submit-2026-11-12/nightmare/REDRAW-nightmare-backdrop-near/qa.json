@@ -1,0 +1,21 @@
+{
+  "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-09/nightmare/REDRAW-nightmare-backdrop-near/candidate-03.png",
+  "candidate_sha256": "f9e47601818fa57cd3625ef5f8392928fae3c170f14306350cf69648b76e618b",
+  "size": [
+    1280,
+    384
+  ],
+  "colors": 40,
+  "alpha_mode": "RGB opaque",
+  "seam_rgb_delta_mean": 6.436631944444445,
+  "autocorr_highpass_24_256": 0.013214857874791187,
+  "status": "FAILED_AFTER_3_TRIES",
+  "attempts": {
+    "1": "Rejected: white sky is outside nightmare palette.",
+    "2": "40 colors, initial processing seam 9.25 after crop, but repeat preview shows multiple similar arches/towers; rejected for repeated motif.",
+    "3": "40 colors; seam 6.437; autocorrelation 0.0132; crop removes some flat sky but clips top of obelisk/tree, so rejected."
+  },
+  "best_attempt": null,
+  "art_gate": "NOT_RUN: handoff-only; cannot register before Claude acceptance",
+  "transform": "Attempt 3 raw 2172x724; crop x=522,y=324,1333x400 then resize 1280x384; retained only as failed evidence."
+}

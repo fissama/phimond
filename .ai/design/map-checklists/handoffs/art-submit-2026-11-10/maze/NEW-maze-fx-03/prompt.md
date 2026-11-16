@@ -1,0 +1,1 @@
+ImageGen prompt: four-frame rune impact burst for bone maze; cyan rune core breaks into ivory bone chips and dusty violet stone fragments, four dissipating phases, transparent cells, hard pixel clusters, no glow/bloom/shadow/magenta/text.

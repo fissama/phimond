@@ -1,0 +1,1 @@
+Three attempts were not usable. All render the pillar with overly soft/hazy shading. Attempt 3 keeps a broad purple halo after binary alpha threshold and yields 28 RGB colors, below the 33 minimum. No candidate submitted.

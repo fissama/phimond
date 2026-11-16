@@ -1,0 +1,30 @@
+{
+  "raw_file": "raw-01-runway.png",
+  "raw_size": [
+    1024,
+    1024
+  ],
+  "processing": "magenta color-key; crop; median-cut palette capped at 48 colors before nearest-neighbor resize; no pixel painting",
+  "final_size": [
+    384,
+    384
+  ],
+  "color_count_rgb_opaque": 39,
+  "binary_alpha": true,
+  "alpha_bbox": [
+    12,
+    15,
+    372,
+    369
+  ],
+  "alpha_margins": [
+    12,
+    15,
+    12,
+    15
+  ],
+  "seam": "N/A portal",
+  "autocorrelation": "N/A portal",
+  "mask_pair": "exact alpha-mask match after sharing dormant key mask; source edit visually preserves the outer silhouette",
+  "sha256": "d3c943e7031c984818da691bcc04f4d707070ae1e96c80ab68c173982edfc37f"
+}

@@ -1,0 +1,1 @@
+Three raw candidates converted to 1280x384 and inspected in 3x1 preview. Attempts 1–3 measure endpoint seams 16.7396, 15.6693, 15.1337 (>14) and autocorrelation 0.5391, 0.4266, 0.6026 (>0.25). All visibly preserve repeated bone and arch cadence. No submission candidate.

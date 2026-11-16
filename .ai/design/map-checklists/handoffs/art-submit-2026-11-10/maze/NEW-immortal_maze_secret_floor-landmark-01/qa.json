@@ -1,0 +1,28 @@
+{
+  "task_id": "NEW-immortal_maze_secret_floor-landmark-01",
+  "status": "FAILED_AFTER_3_TRIES",
+  "map_decision": "Chose a tall ribbed gray-violet column with bone bands and a cyan inset, visible in source screenshot. No foliage or invented map elements.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "result": "rejected: generated painterly blurred surface and no clear standalone pixel silhouette"
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "result": "rejected: large soft purple glow halo"
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "colors": 28,
+      "alpha": "binary after threshold",
+      "result": "failed: residual large halo/soft edge visible; colors below 33"
+    }
+  ],
+  "processing": "Fringe alpha key, alpha threshold 128, crop, nearest resize to 368px within 384 square, quantize to 48 colors.",
+  "final_candidate": null,
+  "art_gate": "NOT_RUN: handoff only; candidate outside canonical manifest; --all deferred."
+}

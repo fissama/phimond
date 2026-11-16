@@ -1,0 +1,1 @@
+Distinct square seamless floor variant, top-down rose-beige irregular paving for source bone maze; hard-edged HD-2D pixels, muted mauve shadows and warm joints, no repeated grid/cross/frame/props/glow/text/magenta. Raw resized nearest and quantized to 48 colors.

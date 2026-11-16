@@ -1,0 +1,1 @@
+ImageGen prompt: four-frame transparent sheet of 3-4 floating rune stones orbiting an empty center; muted lavender-gray stones, small cyan glyphs, rotating positions, crisp pixel clusters, no orb/glow/shadow/magenta/text.

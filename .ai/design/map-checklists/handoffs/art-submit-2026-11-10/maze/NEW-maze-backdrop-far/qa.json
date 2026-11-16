@@ -1,0 +1,51 @@
+{
+  "task_id": "NEW-maze-backdrop-far",
+  "status": "FAILED_AFTER_3_TRIES",
+  "map_decision": "Followed source map: dusty violet-gray architecture, pink-beige lower rubble, cyan openings; omitted unsupported foliage.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01.png",
+      "colors": 48,
+      "seam_mean_rgb": 23.42,
+      "autocorr_max_lag_ge8": 0.5506,
+      "failure": "Seam mean exceeds 14; autocorrelation exceeds 0.25 and arches repeat."
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "colors": 48,
+      "seam_mean_rgb": 17.43,
+      "autocorr_max_lag_ge8": 0.5054,
+      "failure": "Seam mean exceeds 14; autocorrelation exceeds 0.25 and arches repeat."
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "colors": 48,
+      "seam_mean_rgb": 12.28,
+      "autocorr_max_lag_ge8": 0.8198,
+      "failure": "Seam passes mean<14, but autocorrelation exceeds 0.25 and arch structures repeat visibly in 3\u00d71."
+    }
+  ],
+  "processing": "Each 3:1 raw vertically cropped to 1280:384, nearest resized, median-cut quantized to 48 colors.",
+  "acceptance": {
+    "size": [
+      1280,
+      384
+    ],
+    "colors": [
+      33,
+      48
+    ],
+    "horizontal_seam_mean_max": 14,
+    "autocorrelation_max": 0.25,
+    "tile_preview": "3x1"
+  },
+  "final_candidate": null,
+  "art_gate": "NOT_RUN: handoff only; canonical manifest excluded.",
+  "raws_preserved": true
+}

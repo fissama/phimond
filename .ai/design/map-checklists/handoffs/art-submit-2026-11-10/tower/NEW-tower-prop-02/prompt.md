@@ -1,0 +1,1 @@
+Route: built-in image_gen, 3 attempts. Inputs: 3 tower map refs for subject/palette; batch-01 bush assets as style anchors. Final prompt requested complete tree trunk with roots and bare branch forks, olive-brown bark, true transparency, no aura/glow/text/magenta. Selected attempt 3.

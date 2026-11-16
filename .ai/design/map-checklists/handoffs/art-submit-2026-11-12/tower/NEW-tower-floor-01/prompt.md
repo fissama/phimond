@@ -1,0 +1,1 @@
+All 3 attempts were separate built-in image_gen generations. Inputs: tower main/deep/secret map screenshots; approved dirt-floor-01 and dirt-floor-02 style anchors. Requested a seamless pale golden sand path tile, flat 8px outer border, crisp clusters, no frame/hex/runes/text/glow.

@@ -1,0 +1,1 @@
+ImageGen: thin broken zigzag scatter of small/medium pale cream plaza stone chips with taupe, restrained gold and muted gray-violet details; transparent background, crisp pixel clusters, no baked effects.

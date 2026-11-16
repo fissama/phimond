@@ -1,0 +1,57 @@
+{
+  "raw_file": "raw-03.png",
+  "raw_size": [
+    1408,
+    768
+  ],
+  "selected_attempt": 3,
+  "processing": "per-frame crop; magenta threshold key; nearest-neighbor resize; median-cut quantization; binary alpha",
+  "final_size": [
+    768,
+    128
+  ],
+  "frames": 4,
+  "color_count_rgb_opaque": 17,
+  "binary_alpha": true,
+  "alpha_bbox": [
+    37,
+    8,
+    727,
+    120
+  ],
+  "alpha_margins_per_frame": [
+    [
+      37,
+      8,
+      38,
+      8
+    ],
+    [
+      41,
+      8,
+      41,
+      8
+    ],
+    [
+      37,
+      8,
+      38,
+      8
+    ],
+    [
+      41,
+      8,
+      41,
+      8
+    ]
+  ],
+  "seam": "N/A FX",
+  "autocorrelation": "N/A FX",
+  "art_gate": "NOT_RUN: handoff candidate excluded from canonical art_gate scope",
+  "sha256": "c9d874d3c5f29ed4036238dccfe1373134655177bcc23c0235480abd0489d94a",
+  "attempts": {
+    "1": "rejected: baked checkerboard field and rectangular magenta plates",
+    "2": "rejected: near-identical frames with too few opaque colors and magenta background banding",
+    "3": "best composition, but 17 opaque colors (<33 minimum) after crop/resize/key"
+  }
+}

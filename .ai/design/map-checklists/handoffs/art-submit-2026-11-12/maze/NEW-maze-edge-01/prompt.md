@@ -1,0 +1,1 @@
+Narrow horizontal bone-stone maze transition ridge with irregular jagged top, muted dusty-violet bone and blue-gray rock bound by restrained brown joints above pink-beige paving; transparent; seamless left/right without mirror; crisp pixels; no glow, shadow, text, frame, fringe, magenta.

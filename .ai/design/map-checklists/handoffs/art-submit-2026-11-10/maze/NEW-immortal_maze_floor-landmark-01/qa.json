@@ -1,0 +1,28 @@
+{
+  "task_id": "NEW-immortal_maze_floor-landmark-01",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "map_decision": "Selected the unmistakable wall-mounted bundle of ivory claw/spikes tied with brown straps, visible repeatedly in the map reference; rendered as a standalone cluster.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "result": "rejected: large white haze/background and glow"
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "result": "rejected: visible magenta/red edge fringe"
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "colors": 43,
+      "alpha": "binary",
+      "alpha_margin_px": 8,
+      "result": "selected: clean stepped bundle, no surrounding glow"
+    }
+  ],
+  "processing": "Alpha fringe key, threshold 128, crop, nearest resize to 368px within 384 square, median-cut 48 colors.",
+  "art_gate": "NOT_RUN: candidate outside canonical manifest; --all deferred."
+}

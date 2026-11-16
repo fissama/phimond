@@ -1,0 +1,1 @@
+ImageGen: isolated front-facing dormant stone gateway, pale cream limestone + muted violet-gray shafts + restrained gold bands, dark desaturated blue-violet inactive aperture, crisp pixel art, transparent background, no cast shadow/glow/text/magenta.

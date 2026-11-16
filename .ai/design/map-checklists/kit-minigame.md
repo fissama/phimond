@@ -1,10 +1,28 @@
 # Kit `minigame` — Sói – Cừu
 
+> **Nghiệm thu Claude 2026-11-09** (mức V1, chưa 4×): THIẾU_CHƯA_CÓ 58. Map: {'CHƯA CÓ ART': 6}. Trạng thái hiện hành ở [ASSET-VERDICTS-20261109.csv](ASSET-VERDICTS-20261109.csv) / [MAP-COVERAGE-20261109.csv](MAP-COVERAGE-20261109.csv); tick ✅/❌ bên dưới là LỊCH SỬ, không phải approval.
+> **Cảnh báo brief:** dùng chung tường/sàn với guild; 4/6 map sân trống — thực hiện `BRIEF-minigame` trong [ROADMAP-ART-92MAPS-20261109.md](ROADMAP-ART-92MAPS-20261109.md) trước khi vẽ.
+
 > **Quy tắc bắt buộc cho Codex** (xem README.md): dùng https://github.com/0x0funky/agent-sprite-forge (generate2dmap / generate2dsprite) với route image_gen tích hợp; cấm codeart2d, API trả phí, vẽ bằng code, lật gương; không commit; không sửa tools/hd2d_audit/*, gate_waivers.json, check.sh; mỗi asset phải tự nhìn ảnh trước khi ghi "vẽ xong"; chỉ Claude/owner đánh dấu "duyệt".
 
 - Style/palette: Hai bên: sân cỏ xanh (cừu) và sân đá u ám (sói); bãi giữa cỏ xanh trung tính; sảnh chờ trong nhà.
-- Thư mục asset: `apps/game-web/art-src/hd2d/batch-11-minigame/`
+- Thư mục asset: `art/src/hd2d/batch-11-minigame/`
 - Số map: 6
+
+## BRIEF-minigame evidence (2026-11-11)
+
+Reviewed all six `wolf_sheep_*` source screenshots; contextual crops are under `.ai/design/map-checklists/handoffs/art-submit-2026-11-10/minigame/brief-evidence/`.
+
+| Map | Visible scene | Evidence |
+|---|---|---|
+| `waiting_hall` | Empty beige crenellated wall, blue sky/clouds and cracked brown-beige paving | crop `wolf_sheep_waiting_hall-crop.jpg` |
+| `sheep_house` | Same shared wall/floor/sky plus timber house with steep brown roof, straw-colored eaves and green side canopy | crop `wolf_sheep_sheep_house-crop.jpg` |
+| `sheep_pen` | Empty walled court and paving; no sheep pen fence or animals visible | crop `wolf_sheep_sheep_pen-crop.jpg` |
+| `middle_field` | Empty walled court and paving; no grass field, flowers or props visible | crop `wolf_sheep_middle_field-crop.jpg` |
+| `wolf_pen` | Empty walled court and paving; no wolf cave, stone pen or animals visible | crop `wolf_sheep_wolf_pen-crop.jpg` |
+| `wolf_house` | Same shared wall/floor/sky plus timber house with steep brown roof, straw eaves and green canopy on the opposite side | crop `wolf_sheep_wolf_house-crop.jpg` |
+
+**Scope decisions:** the beige stone wall/towers, blue sky and cracked paving are shared with guild. Only the two house maps show a distinct building; the other four are open courts. House orientation differs between references, but generate each as a separately composed asset; do not mirror one to create the other. Old-plan items such as grass/field tiles, hay, animal troughs, bone piles, caves, wolf stone fences, flags, flowers or starting podium are not visible in these six screenshots. Keep their CSV rows for audit; if no additional source evidence exists, mark those rows BLOCKED rather than inventing/replacing content. No checklist “Vẽ” or “Duyệt” marks changed.
 
 ## 1. Danh sách asset cần vẽ (kit chưa có asset)
 
@@ -72,7 +90,7 @@ Nguồn: Phần C `hd2d-maps-75-gemini-prompt.md`. Yêu cầu gốc: tile cỏ x
 Dùng agent-sprite-forge ($generate2dmap cho tile/prop, $generate2dsprite cho prop/decal/FX/marker). Route ảnh: image_gen tích hợp của Codex (kiểm `route_media.py resolve --kind image`). KHÔNG codeart2d, KHÔNG API, KHÔNG vẽ bằng code.
 Kit: Sói – Cừu (minigame). Style: Hai bên: sân cỏ xanh (cừu) và sân đá u ám (sói); bãi giữa cỏ xanh trung tính; sảnh chờ trong nhà.. Style anchor: batch-01-octopath/contact-sheet.png + 2 sprites.png linh thú.
 Mỗi lần gọi: 1 sheet ~6 vật trên nền #FF00FF, bố trí 2×3/3×2, cách nhau ≥48 px, không chạm mép. Giữ raw-01.png byte-identical. Cắt/khử nền/pixel finish bằng script forge. 33–48 màu, alpha nhị phân, lề ≥8 px, 128 px = 1 đơn vị (far 64), người = 1.31 đơn vị (cỡ tối đa vật nhỏ: tools/hd2d_audit/size_check.py).
-Mỗi asset: thư mục raw-01/final/prompt.md/review.md/qa.json trong apps/game-web/art-src/hd2d/batch-11-minigame/<id>/. Tự nhìn 4× nền tối/caro. Xong: `python3 tools/hd2d_audit/art_gate.py batch-11-minigame` = 0 lỗi, contact-sheet mới hơn manifest.
+Mỗi asset: thư mục raw-01/final/prompt.md/review.md/qa.json trong art/src/hd2d/batch-11-minigame/<id>/. Tự nhìn 4× nền tối/caro. Xong: `python3 tools/hd2d_audit/art_gate.py batch-11-minigame` = 0 lỗi, contact-sheet mới hơn manifest.
 ```
 
 ## 3. Từng map

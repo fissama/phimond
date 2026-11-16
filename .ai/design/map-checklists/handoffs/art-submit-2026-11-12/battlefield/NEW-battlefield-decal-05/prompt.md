@@ -1,0 +1,1 @@
+ImageGen: isolated irregular small and medium cream plaza limestone chips; organic asymmetrical cluster, muted taupe and gray-violet details, crisp matte pixel clusters, transparent, no glow/shadow/text/magenta.

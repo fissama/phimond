@@ -1,0 +1,34 @@
+{
+  "task_id": "NEW-maze-decal-07",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "map_decision": "Used map-backed muted violet-gray stone, pink-beige fragments and tiny ivory bone chips; no unsupported plant motifs.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate.png",
+      "colors": 47,
+      "binary_alpha": true,
+      "alpha_margin": 16,
+      "failure": null
+    }
+  ],
+  "processing": "Threshold alpha\u2265250 to discard diffuse halo, crop object bounds, nearest-resize/pad to 320\u00b2, median-cut quantize to 48 colors, restore binary alpha.",
+  "acceptance": {
+    "size": [
+      320,
+      320
+    ],
+    "colors": [
+      33,
+      48
+    ],
+    "binary_alpha": true,
+    "alpha_margin_min": 8,
+    "irregular_shape": true,
+    "no_glow_after_threshold": true
+  },
+  "final_candidate": "candidate.png",
+  "art_gate": "NOT_RUN: handoff candidates excluded from canonical manifest until Claude acceptance.",
+  "raws_preserved": true
+}

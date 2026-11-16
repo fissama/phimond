@@ -1,0 +1,1 @@
+Built-in image_gen, 3 attempts. First and third showed glow/haze and were rejected. Attempt 2 produced wood splinters/cracks; post-process used binary alpha threshold, crop, nearest resize and 48-color quantization only.

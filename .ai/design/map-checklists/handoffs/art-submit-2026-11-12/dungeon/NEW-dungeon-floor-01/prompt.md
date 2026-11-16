@@ -1,0 +1,1 @@
+Attempt 1: pale yellow-green/olive limestone slabs with irregular scale-like pattern; opaque, top-down seamless. Attempt 2: smaller interlocking scales, continued edges. Attempt 3: fine periodic scale stone surface, aligned opposite borders. Source map overrides plan “wet stone” where type/palette conflict.

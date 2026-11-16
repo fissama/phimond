@@ -1,0 +1,39 @@
+{
+  "task_id": "NEW-battlefield-backdrop-mid",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": false,
+      "colors": 48,
+      "seam_mean_rgb": 3.46,
+      "max_autocorrelation_horizontal_gradient_lag_8_255": 0.0244,
+      "failure": "3x1 showed regularly spaced similar crenellated towers and roof motifs."
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": true,
+      "processing": "Resize/crop to 1280x384; median-cut quantize to 48 colors without dithering.",
+      "colors": 48,
+      "seam_mean_rgb": 3.508680582046509,
+      "max_autocorrelation_horizontal_gradient_lag_8_255": 0.026486912445909137,
+      "autocorrelation_lag": 8,
+      "failure": null
+    }
+  ],
+  "selected_candidate": "candidate.png",
+  "sha256": "55a998c12597c91d19a98b90e51f99be18305618df699cd206a7f8a05f914fd8",
+  "acceptance_result": {
+    "size_px": [
+      1280,
+      384
+    ],
+    "colors": 48,
+    "seam_mean_rgb": 3.508680582046509,
+    "autocorrelation_horizontal_gradient_max": 0.026486912445909137,
+    "visual": "low continuous irregular city wall; 3x1 and 4x1 previews supplied"
+  },
+  "art_gate": "NOT_RUN: handoff candidate is not registered in canonical manifest; manifest edits forbidden."
+}

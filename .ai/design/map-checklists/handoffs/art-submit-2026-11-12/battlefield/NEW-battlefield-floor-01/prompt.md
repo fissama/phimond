@@ -1,0 +1,1 @@
+ImageGen prompt: top-down seamless pale cream arena plaza tile matched to guild_battlefield_main_field.jpg; subtle irregular stone slabs, no grass/burnt ground/objects, crisp pixel clusters, 8px flat perimeter, 33–48 colors.

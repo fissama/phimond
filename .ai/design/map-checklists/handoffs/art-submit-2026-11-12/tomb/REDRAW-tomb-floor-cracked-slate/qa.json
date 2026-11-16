@@ -1,0 +1,32 @@
+{
+  "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-09/tomb/REDRAW-tomb-floor-cracked-slate/candidate-03.png",
+  "candidate_sha256": "0b79b23fd5c576da653378fbcf6a9b8be0d9996ca4b79d43bc9a6370f3963ec3",
+  "size": [
+    512,
+    512
+  ],
+  "colors": 40,
+  "alpha_mode": "RGB opaque",
+  "attempts": {
+    "1": "Generated stone plates had obvious repetition in 3x3 despite acceptable metrics; rejected visually.",
+    "2": {
+      "wrap_x": 1.8615,
+      "wrap_y": 1.6138,
+      "autocorr": 0.1824,
+      "note": "Large plate rhythm still too obvious in visual 3x3; rejected visually."
+    },
+    "3": {
+      "wrap_x": 1.604,
+      "wrap_y": 1.3642,
+      "autocorr": 0.0541,
+      "crop_offset_on_640": [
+        84,
+        88
+      ],
+      "note": "Irregular dense chipped slate, 3x3 review: no seam line or repeated exact motifs detected; subtle natural plate rhythm."
+    }
+  },
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "art_gate": "NOT_RUN: handoff-only; cannot register before Claude acceptance",
+  "metrics_note": "All sizes 512\u00b2 opaque, 40 colors. 3x3 proof repeat-3x3-03.png."
+}

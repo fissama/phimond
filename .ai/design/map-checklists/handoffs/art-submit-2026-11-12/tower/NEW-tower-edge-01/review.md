@@ -1,0 +1,1 @@
+Three attempts generated a green-gold canopy over a branch/root. The repeated leaf clump rhythm is visibly regular, and alpha fringe/seam do not meet edge requirements; no candidate selected. Raw and normalized attempts retained.

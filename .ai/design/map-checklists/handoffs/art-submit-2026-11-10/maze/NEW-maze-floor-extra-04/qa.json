@@ -1,0 +1,73 @@
+{
+  "task_id": "NEW-maze-floor-extra-04",
+  "status": "FAILED_AFTER_3_TRIES",
+  "map_decision": "Followed source map pink-beige stone palette; no unrelated motifs added.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01.png",
+      "colors": 48,
+      "wrap_x": 2.141,
+      "wrap_y": 5.591,
+      "autocorr_max_lag_ge8": 0.5663,
+      "outer8_unique": [
+        48,
+        48,
+        46,
+        48
+      ],
+      "failure": "Does not satisfy autocorrelation \u22640.25 and flat outer 8px; wrap criteria shown in measurements."
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "colors": 48,
+      "wrap_x": 1.755,
+      "wrap_y": 1.22,
+      "autocorr_max_lag_ge8": 0.5452,
+      "outer8_unique": [
+        48,
+        48,
+        48,
+        47
+      ],
+      "failure": "Does not satisfy autocorrelation \u22640.25 and flat outer 8px; wrap criteria shown in measurements."
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "colors": 48,
+      "wrap_x": 1.121,
+      "wrap_y": 4.011,
+      "autocorr_max_lag_ge8": 0.448,
+      "outer8_unique": [
+        48,
+        48,
+        48,
+        48
+      ],
+      "failure": "Does not satisfy autocorrelation \u22640.25 and flat outer 8px; wrap criteria shown in measurements."
+    }
+  ],
+  "processing": "Generated raw square resized nearest to 512x512, median-cut quantized to 48 RGB colors; no manual pixel painting. Wrap metric is mean RGB edge difference divided by mean adjacent-pixel RGB difference; autocorrelation is max grayscale correlation over shifts 8..256 in 8px increments.",
+  "acceptance": {
+    "size": [
+      512,
+      512
+    ],
+    "colors": [
+      33,
+      48
+    ],
+    "wrap_x_max": 2.0,
+    "wrap_y_max": 2.0,
+    "autocorrelation_max": 0.25,
+    "outer8_flat": true
+  },
+  "final_candidate": null,
+  "art_gate": "NOT_RUN: handoff only; canonical manifest excluded.",
+  "raws_preserved": true
+}

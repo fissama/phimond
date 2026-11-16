@@ -1,0 +1,1 @@
+Loose bone splinter and dusty violet stone chips for top-down maze decal; transparent, irregular cluster, no haze/glow/shadow/background/text/frame/fringe/magenta; alpha threshold≥250 removes soft exterior.

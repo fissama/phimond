@@ -1,0 +1,36 @@
+{
+  "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-09/tomb/REDRAW-tomb-floor-ashen-dust/candidate-03.png",
+  "candidate_sha256": "cc898085bbebede6da698421ee1e7d48f9fce3f1566fde4e07f821c27ba32613",
+  "size": [
+    512,
+    512
+  ],
+  "colors": 40,
+  "alpha_mode": "RGB opaque",
+  "attempts": {
+    "1": {
+      "wrap_x": 2.197,
+      "wrap_y": 1.6533,
+      "autocorr": 0.0993
+    },
+    "2": {
+      "wrap_x": 1.4939,
+      "wrap_y": 1.3259,
+      "autocorr": 0.091,
+      "visual": "Noticeable dark clumps in 3x3; iteration continued."
+    },
+    "3": {
+      "wrap_x": 1.4129,
+      "wrap_y": 1.174,
+      "autocorr": 0.0737,
+      "crop_offset_on_640": [
+        112,
+        56
+      ],
+      "visual": "Muted fine ash/dirt texture, no major distinct repeated feature; see repeat-3x3-03.png"
+    }
+  },
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "art_gate": "NOT_RUN: handoff-only; cannot register before Claude acceptance",
+  "metrics_note": "512x512 opaque tile, 40 colors; 3x3 view reviewed."
+}

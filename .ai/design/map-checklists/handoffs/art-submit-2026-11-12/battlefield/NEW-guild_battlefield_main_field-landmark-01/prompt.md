@@ -1,0 +1,1 @@
+ImageGen using map screenshot as reference: standalone winged angel statue in gray stone on pale plinth with subdued gold trim, front-facing, transparent background, HD-2D pixel clusters; no fountain/columns/other statues/glow/shadow/text/magenta.

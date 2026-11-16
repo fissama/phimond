@@ -1,0 +1,1 @@
+FAILED_AFTER_3_TRIES: three generated results are soft blurry/foggy shadows lacking the clear shadow silhouette and pixel style required for the kit. Recommend alternate mask-capable image generation route or explicit silhouette reference.

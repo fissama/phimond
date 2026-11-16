@@ -1,0 +1,40 @@
+{
+  "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-09/windrock/REDRAW-windrock-edge-03/candidate-02.png",
+  "candidate_sha256": "bebddac3235f1186a2b9b19bdd1f04f624fa264faea74eb38e64dae4b1a55991",
+  "size": [
+    512,
+    128
+  ],
+  "colors": 37,
+  "alpha_mode": "binary",
+  "alpha_bbox": [
+    0,
+    99,
+    512,
+    128
+  ],
+  "edge_mae_rgba": 1.7363,
+  "crop": {
+    "x": 90,
+    "y": 0,
+    "raw_window": [
+      2048,
+      512
+    ],
+    "resize": "nearest 512x128"
+  },
+  "attempts": {
+    "1": {
+      "edge_seam_ratio": 1.5962,
+      "note": "Failed visual/exact seam check."
+    },
+    "2": {
+      "edge_seam_ratio": 0.9344,
+      "edge_mae_rgba": 1.7363,
+      "note": "Selected; 3×1 visual check shows no discontinuity at tile boundaries; no repeated cluster is obvious within one tile."
+    }
+  },
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "art_gate": "NOT_RUN: handoff-only; cannot register before Claude acceptance",
+  "notes": "Style anchor and source map used as references. Actual visible alpha palette has 37 colors, transparent RGB padding excluded."
+}

@@ -1,0 +1,1 @@
+ImageGen: single isolated long narrow asymmetrical shadow mask, diagonal flow, tapered end and two shallow lobes, one muted warm taupe RGB, soft stepped alpha, centered pivot, transparent background, pixel-cluster edge, no object/ground/text/glow/magenta.

@@ -1,0 +1,1 @@
+Selected irregular scattered moss tufts and leaves, matching visible forest materials. It is sparse at game scale by design as a small decal. Attempt 1 had diffuse glow and was rejected. QA: 384×384, 48 colors, binary alpha, 12px minimum margin. Candidate only, pending Claude visual review; not registered.

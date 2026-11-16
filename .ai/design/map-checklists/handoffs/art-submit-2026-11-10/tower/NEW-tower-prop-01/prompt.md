@@ -1,0 +1,1 @@
+Route: built-in image_gen, one attempt. Map screenshots determine canopy subject/palette; two approved batch-01 bush assets guide pixel clusters only. Request: isolated broadleaf crown with irregular lobes, brown branch tips, warm olive/lime leaves, crisp HD-2D pixels, transparent background, no text/glow/magenta/fringe.

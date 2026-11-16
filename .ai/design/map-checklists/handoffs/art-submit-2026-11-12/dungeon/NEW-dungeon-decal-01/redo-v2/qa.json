@@ -1,0 +1,23 @@
+{
+  "task_id": "NEW-dungeon-decal-01",
+  "size": [
+    384,
+    384
+  ],
+  "colors": 48,
+  "alpha_values": [
+    0,
+    255
+  ],
+  "bbox": [
+    32,
+    81,
+    352,
+    303
+  ],
+  "margin_px": 32,
+  "alpha_process": "threshold >=128; 1px erosion; binary output",
+  "despill": "replace transparent-edge contamination using nearest surviving foreground RGB",
+  "preview": "4x nearest",
+  "note": "stone crack with irregular chipped scale-floor fragments; handoff-only"
+}

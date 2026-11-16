@@ -1,0 +1,1 @@
+FAILED_AFTER_3_TRIES. Attempt 2 is retained as the best one-row amber pollen/leaf swirl. It is centered with binary alpha and per-frame margins ≥8px, but has only 22 opaque RGB colors, below the minimum 33. Attempt 1 contains panel dividers; attempt 3 is a two-row 8-cell layout, not the requested four-frame strip.

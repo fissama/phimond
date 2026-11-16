@@ -1,0 +1,31 @@
+{
+  "task_id": "NEW-battlefield-shadow-04",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "map_decision": "Map reference shows pale cream paving; selected one muted taupe procedural mask.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-alpha-key.png",
+      "processing": "ImageGen RGBA raw; excluded light halo by luminance threshold and converted central tonal falloff into alpha; collapsed RGB to muted taupe; centered in 256x96 canvas.",
+      "colors": 1,
+      "alpha_margin_px": 8,
+      "alpha_binary": false,
+      "failure": null
+    }
+  ],
+  "selected_candidate": "candidate-alpha-key.png",
+  "sha256": "dce460b0dcb3a1b6a03f59f923adb6b5f754c22e0cd5bb7e15c9bd13a504bd18",
+  "acceptance_result": {
+    "size_px": [
+      256,
+      96
+    ],
+    "colors": 1,
+    "soft_alpha_values": 111,
+    "alpha_margin_px": 8,
+    "visible_magenta": false,
+    "visual": "compact kidney-like soft procedural shadow; cream preview supplied; generated bright halo excluded in pipeline"
+  },
+  "art_gate": "NOT_RUN: handoff candidate is not registered in canonical manifest; manifest edits forbidden."
+}

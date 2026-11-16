@@ -1,0 +1,37 @@
+{
+  "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-09/windrock/REDRAW-windrock-rock-floor-01/candidate-03.png",
+  "candidate_sha256": "270712c8e530d60358623bc6a9e44d601d86553a7e3e541f63bc6737c1e6399a",
+  "size": [
+    512,
+    512
+  ],
+  "colors": 40,
+  "alpha_mode": "RGB opaque",
+  "attempts": {
+    "1": {
+      "wrap_x": 1.4411,
+      "wrap_y": 1.1977,
+      "autocorr": 0.0267,
+      "visual": "Rejected; visible spotted/cobble rhythm."
+    },
+    "2": {
+      "wrap_x": 1.882,
+      "wrap_y": 1.4261,
+      "autocorr": 0.1758,
+      "visual": "Rejected; polygon plates repeated with visible grid rhythm."
+    },
+    "3": {
+      "wrap_x": 1.9598,
+      "wrap_y": 1.1855,
+      "autocorr": 0.1663,
+      "crop_offset_on_640": [
+        48,
+        81
+      ],
+      "visual": "Subdued dark earth, low contrast scattered scuffs; no obvious 2x2 grid. Palette follows map."
+    }
+  },
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "art_gate": "NOT_RUN: handoff-only; cannot register before Claude acceptance",
+  "palette_decision": "Followed map reference dark brown/charcoal floor over prompt palette blue-gray/khaki/snow due explicit source-of-truth rule."
+}

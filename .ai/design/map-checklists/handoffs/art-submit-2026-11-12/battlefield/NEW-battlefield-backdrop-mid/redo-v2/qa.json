@@ -1,0 +1,23 @@
+{
+  "task_id": "NEW-battlefield-backdrop-mid",
+  "input": "existing READY handoff candidate preserved as raw-input.png",
+  "size": [
+    1280,
+    384
+  ],
+  "colors": 33,
+  "alpha_values": [
+    255
+  ],
+  "horizontal_edge_mean_abs_seam": 3.3289930555555554,
+  "sky_palette": "same subdued blue hue and capped saturation transform across all three layers; 48 colors per layer",
+  "keying": "source fully opaque; alpha binary remains 255; no key removal needed",
+  "threshold_128": "source alpha is fully opaque; binary output alpha=[255]",
+  "erode_1px": "not needed; opaque backdrop has no cutout edge",
+  "despill": "not needed; source has opaque sky and no keyed fringe",
+  "previews": [
+    "preview-4x.png",
+    "preview-3x1.png"
+  ],
+  "note": "handoff candidate only; canonical/manifest unchanged"
+}

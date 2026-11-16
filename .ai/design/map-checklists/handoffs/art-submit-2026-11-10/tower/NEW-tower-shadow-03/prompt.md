@@ -1,0 +1,1 @@
+Built-in image_gen, 3 attempts. Attempts 1 and 3 produce a diffuse smoky shadow with broad soft color variation. Attempt 2 has a readable angular silhouette but an unwanted bright green border/fringe and oversized horizontal shape. No candidate selected; allowed processing cannot remove the generated fringe or turn haze into a clean mask.

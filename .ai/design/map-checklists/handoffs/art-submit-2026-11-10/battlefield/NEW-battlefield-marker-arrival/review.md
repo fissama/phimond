@@ -1,0 +1,1 @@
+Claude review pending; not self-approved. Map reference palette uses cream stone, muted violet-gray and gold; marker is a floor-arrival ring. Four generated frames remain centered at the same pivot with restrained cyan facets shifting around the ring; no exterior glow. Raw red edge fringe was removed with color-key processing. Check frame alignment and animation cadence.

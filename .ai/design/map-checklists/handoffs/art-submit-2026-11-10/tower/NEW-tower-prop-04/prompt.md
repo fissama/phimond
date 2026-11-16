@@ -1,0 +1,1 @@
+Route: built-in image_gen, one attempt. Map screenshots set foliage identity/palette; approved bush images guide style. Requested an irregular low shrub mound with rounded layered olive leaves, distinct from tree canopy and sprout, transparent background, no glow/text/magenta/fringe.

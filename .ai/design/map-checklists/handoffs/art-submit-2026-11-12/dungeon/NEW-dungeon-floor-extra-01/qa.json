@@ -1,0 +1,88 @@
+{
+  "task_id": "NEW-dungeon-floor-extra-01",
+  "status": "FAILED_AFTER_3_TRIES",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01.png",
+      "processing": "nearest resize 512x512; median-cut quantize to 48 colors; opaque RGB",
+      "colors": 48,
+      "seam_x": 0.8463541666666666,
+      "seam_y": 1.6145833333333333,
+      "seam_wrap_mean": 1.23046875,
+      "autocorr_max_lag_8_255": 0.6104816182475419,
+      "autocorr_axis": "x",
+      "autocorr_lag": 8,
+      "flat_8px_perimeter": false,
+      "flat_perimeter_unique_colors": 11,
+      "sha256": "67060132f5b38a0759cefdc67d0793162bb2fc4a62ef731857ddcacd8d886b34"
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "processing": "nearest resize 512x512; median-cut quantize to 48 colors; opaque RGB",
+      "colors": 48,
+      "seam_x": 0.8717447916666666,
+      "seam_y": 0.8138020833333334,
+      "seam_wrap_mean": 0.8427734375,
+      "autocorr_max_lag_8_255": 0.49668170132795914,
+      "autocorr_axis": "x",
+      "autocorr_lag": 8,
+      "flat_8px_perimeter": false,
+      "flat_perimeter_unique_colors": 8,
+      "sha256": "79ef42d448c6eda32b65417aac1377141db49a3784ce575f535f39bbb76e0822"
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "processing": "nearest resize 512x512; median-cut quantize to 48 colors; opaque RGB",
+      "colors": 48,
+      "seam_x": 0.9557291865348816,
+      "seam_y": 0.8665364384651184,
+      "seam_wrap_mean": 0.9111328125,
+      "autocorr_max_lag_8_255": 0.3342495858669281,
+      "autocorr_axis": "x",
+      "autocorr_lag": 8,
+      "flat_8px_perimeter": false,
+      "flat_perimeter_unique_colors": 5,
+      "sha256": "12551dfc7fe7c0bb4cf6b827eb5fac87a5dfd76ef868a1ed52fa65a982631c26",
+      "visual_review": "3x3 preview shows exact motif repetition at each tile; fail"
+    }
+  ],
+  "acceptance": {
+    "target_size": [
+      512,
+      512
+    ],
+    "colors": [
+      33,
+      48
+    ],
+    "seam_wrap_max": 2.0,
+    "autocorrelation_max": 0.25,
+    "flat_outer_margin_px": 8
+  },
+  "final_candidate": null,
+  "art_gate": "NOT_RUN: handoff-only; canonical scan deferred",
+  "best_attempt": "03 combined seam best; fails autocorr and flat perimeter",
+  "tileable_postprocess": {
+    "method": "offset 256 px x/y, crossfade 24px using local samples from both sides, quantize 48, flatten 8px perimeter",
+    "raw": "raw-03.png",
+    "candidate": "candidate-tileable-postprocess.png",
+    "metrics": {
+      "size": [
+        512,
+        512
+      ],
+      "colors": 48,
+      "wrap_x": 0.0,
+      "wrap_y": 0.0,
+      "autocorr_max_lag_8_255": 0.33891984820365906,
+      "flat8_unique_colors": 1
+    },
+    "visual_review": "FAILED: 3x3 and 4x4 show obvious vertical/horizontal blend streaks at the internal seam plus repeated motif cadence; do not promote."
+  }
+}

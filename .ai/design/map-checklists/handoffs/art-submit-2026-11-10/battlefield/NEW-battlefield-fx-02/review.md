@@ -1,0 +1,1 @@
+Claude review pending; not self-approved. Attempt 1 was too pale and had only 27 colors. Attempt 2 uses more legible limestone chips, lavender-gray fragments, muted gold, with saturated red/yellow fringe keyed out. Review cadence and whether this reads as airborne battlefield dust rather than a ground impact.

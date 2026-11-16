@@ -1,0 +1,20 @@
+{
+  "task_id": "NEW-dungeon-decal-03",
+  "raw": "raw-01.png",
+  "candidate": "candidate-01.png",
+  "processing": "alpha>=128; 1px erosion; nearest-interior despill; crop; scale-to-fit <=288px; opaque-only quantization; binary alpha",
+  "size": [
+    320,
+    320
+  ],
+  "colors": 41,
+  "alpha": [
+    0,
+    255
+  ],
+  "margin": 16,
+  "previews": [
+    "preview-4x-light.png",
+    "preview-4x-dark.png"
+  ]
+}

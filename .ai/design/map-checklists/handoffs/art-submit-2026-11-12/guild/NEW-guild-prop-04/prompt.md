@@ -1,0 +1,1 @@
+NEW-guild-prop-04 (order 320). Source banners appear dark violet/indigo; rendered a separate indigo banner with restrained pale-gold edging and a simple diamond mark. Green keyed to binary alpha; 12px margin and ≤48 color quantization.

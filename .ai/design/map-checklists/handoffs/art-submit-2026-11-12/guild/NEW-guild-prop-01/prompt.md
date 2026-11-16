@@ -1,0 +1,1 @@
+NEW-guild-prop-01 (order 317): generated a beige crenellated wall with integrated square tower using guild_fortress screenshot for source type/palette. Attempt 1 discarded for cast shadow on green. Attempt 2 used; pure green keyed to binary alpha, bbox cropped with 12px transparent padding, opaque pixels quantized to 48 colors.

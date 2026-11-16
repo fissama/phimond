@@ -1,0 +1,1 @@
+Irregular fractured pink-beige stone fragments with dusty violet pebbles and tiny ivory bone slivers; transparent cutout, top-down maze decal, crisp pixels, no halo/glow/shadow/text/frame/fringe/magenta. Alpha threshold≥250 removes soft exterior lighting.

@@ -1,0 +1,39 @@
+{
+  "task_id": "NEW-guild-backdrop-far",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-01.png",
+      "seam_rgb_mean": 3.72917,
+      "autocorr": 0.67283,
+      "autocorr_lag": 460,
+      "color_count": 48,
+      "failure": "autocorrelation 0.673 at lag 460 >0.25; large blank blue band after crop"
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-02.png",
+      "seam_rgb_mean": 24.07031,
+      "autocorr": 0.58725,
+      "autocorr_lag": 62,
+      "color_count": 48,
+      "failure": "edge seam 24.07 >=14; autocorrelation 0.587 at lag 62 >0.25; multiple landmark types combined into one backdrop layer; repeated composition in 3x1"
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-03.png",
+      "seam_rgb_mean": 21.01302,
+      "autocorr": 0.71726,
+      "autocorr_lag": 203,
+      "color_count": 48,
+      "failure": "edge seam 21.01 >=14; autocorrelation 0.717 at lag 203 >0.25; uniform crenellation/wall cadence visible in 3x1"
+    }
+  ],
+  "status": "FAILED_AFTER_3_TRIES",
+  "art_gate": "NOT_RUN: candidate-only handoff; canonical/manifest unchanged",
+  "visual_review": "3x1 previews visually checked; no candidate meets seam/autocorrelation/irregularity requirements",
+  "note": "Generated three new raws with built-in ImageGen; no Runway used."
+}

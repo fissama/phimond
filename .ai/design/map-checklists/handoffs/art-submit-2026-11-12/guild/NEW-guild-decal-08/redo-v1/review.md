@@ -1,0 +1,2 @@
+Task NEW-guild-decal-08 — READY_FOR_CLAUDE_REVIEW (not approved).
+Checker keyed; 1px erosion; binary alpha; 40 visible colors; 384x384, 12px margin. 4x light/dark checked. Irregular paired paving clusters with narrow crooked mortar fracture and small side chips; different silhouette from prior guild decal candidates. No checker fringe, lettering, magenta, or glow apparent. Canonical/manifests unchanged.

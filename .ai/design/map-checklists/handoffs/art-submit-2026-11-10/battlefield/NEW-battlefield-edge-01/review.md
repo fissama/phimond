@@ -1,0 +1,1 @@
+All three attempts rejected: first includes major unrelated arena props and colored fringe; others show repetitive stone cadence and colored edge fringe. No candidate submitted. See QA and 3x1 previews.

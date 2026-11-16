@@ -1,0 +1,1 @@
+Built-in image_gen, three attempts. Attempts 1 and 2 had diffuse glow/haze. Attempt 3 showed crisp scattered leaves/splinters; post-process used alpha threshold, crop, nearest resize and 48-color quantization.

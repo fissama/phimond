@@ -1,0 +1,1 @@
+Route: built-in image_gen, one attempt. Map references determine nest type/material; two approved bush images style only. Prompt requested a woven straw nest on a thin twig post, crisp pixel art, transparent background, no statue/feather/glow/text/magenta/fringe.

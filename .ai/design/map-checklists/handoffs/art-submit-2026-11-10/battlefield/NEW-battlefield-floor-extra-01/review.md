@@ -1,0 +1,1 @@
+All candidates retain visible slab rhythm in the 3x3 preview and fail seam wrap <2.0: 4.2057, 7.0286, 3.7692. Attempt 1/3 also exceed autocorrelation ≤0.25. Outer border is not flat uniform 8px. No final submitted. Base floor is not accepted yet, so cross-variant texture distinctness cannot be confirmed.

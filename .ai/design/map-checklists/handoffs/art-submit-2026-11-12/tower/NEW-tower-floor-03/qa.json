@@ -1,0 +1,61 @@
+{
+  "status": "failed_after_three_attempts",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "exec-ece7e3f6-792f-4637-b3f5-852ee818f77e.png",
+      "colors_before_quantize": 10610,
+      "wrap_x": 1.331,
+      "wrap_y": 0.356,
+      "max_autocorr": 0.823,
+      "autocorr_axis_lag": [
+        0,
+        8
+      ],
+      "outer8_unique": [
+        69,
+        61,
+        76,
+        66
+      ]
+    },
+    {
+      "attempt": 2,
+      "raw": "exec-8ff15dbe-d6cb-4aa4-be27-f5e1e25807c7.png",
+      "colors_before_quantize": 5279,
+      "wrap_x": 2.335,
+      "wrap_y": 1.328,
+      "max_autocorr": 0.839,
+      "autocorr_axis_lag": [
+        0,
+        8
+      ],
+      "outer8_unique": [
+        1231,
+        968,
+        1144,
+        1136
+      ]
+    },
+    {
+      "attempt": 3,
+      "raw": "exec-16a69fb9-3ce7-4bb5-b4cb-7e4c2b692512.png",
+      "colors_before_quantize": 10858,
+      "wrap_x": 2.747,
+      "wrap_y": 4.183,
+      "max_autocorr": 0.844,
+      "autocorr_axis_lag": [
+        0,
+        8
+      ],
+      "outer8_unique": [
+        2122,
+        1776,
+        1696,
+        1621
+      ]
+    }
+  ],
+  "reason": "first two content-mismatch sand; third depicts wood but seams, cadence and flat border fail",
+  "raws_preserved": true
+}

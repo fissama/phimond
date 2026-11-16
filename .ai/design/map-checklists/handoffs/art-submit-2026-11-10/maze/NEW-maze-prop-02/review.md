@@ -1,0 +1,1 @@
+Blocked without generation: the three map references show stone/bone architecture and pink-beige floor; no vines or green vegetation are visible. The user requires map references to govern type and forbids replacement with a different asset. Do not draw a substitute under this ID unless evidence/scope changes.

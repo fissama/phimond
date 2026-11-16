@@ -1,0 +1,67 @@
+{
+  "task_id": "NEW-maze-prop-04",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "raw_file": "raw-01.png",
+  "raw_size": [
+    2172,
+    724
+  ],
+  "processing": "four equal horizontal cells; magenta fringe pixels removed by alpha key; alpha thresholded to binary; cropped each cell bbox; nearest resize preserving aspect ratio and bottom pivot; shared median-cut palette <=48; saved as 4-frame horizontal sheet",
+  "candidate_file": "candidate.png",
+  "candidate_size": [
+    768,
+    192
+  ],
+  "frame_size": [
+    192,
+    192
+  ],
+  "frames": 4,
+  "frame_order": [
+    "retracted",
+    "rising",
+    "raised",
+    "retracting"
+  ],
+  "color_count": 47,
+  "binary_alpha": true,
+  "frame_alpha_margins": [
+    [
+      18,
+      89,
+      18,
+      18
+    ],
+    [
+      18,
+      22,
+      18,
+      18
+    ],
+    [
+      32,
+      18,
+      32,
+      18
+    ],
+    [
+      18,
+      18,
+      19,
+      18
+    ]
+  ],
+  "magenta_pixels_removed": 43,
+  "seam": "N/A sprite sheet",
+  "autocorrelation": "N/A sprite sheet",
+  "art_gate": "NOT_RUN: handoff candidate excluded from canonical scope; manifest unchanged",
+  "sha256": "87c62260f57d1db0d90c97602a37f21e29abe593d3dcb6a89dff6093d1502ffa",
+  "raw_sha256": "ae5d5d8dcf8c44069285e14da8f428d72cd4adbf37ff5aa45581a0c2576c1078",
+  "reference_crop": "map-crop.jpg",
+  "reference_sha256": {
+    ".ai/design/map-checklists/refs/immortal_maze_main_maze.jpg": "bd1b34f71f391a60c756b991d3ba36e7546e33ba0400372bc9f1000fc1998d75",
+    ".ai/design/map-checklists/refs/immortal_maze_floor.jpg": "50b3887e86e277edfd5586c0ea49b5281a56e2298acb6262d59a90c7b4460acc",
+    "art/src/hd2d/batch-01-octopath/bush-01/final.png": "15573d1325946dd41c0faa0ef7ea8bc4c7f7a7910ea85a93de16766a4f4f1830",
+    "art/src/hd2d/batch-01-octopath/bush-02/final.png": "f0fe2fc098b93051f64172dfa390e60a2c4984478e9da43d4eb2b8407ff9aa93"
+  }
+}

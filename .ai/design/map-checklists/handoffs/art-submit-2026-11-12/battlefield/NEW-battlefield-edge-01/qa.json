@@ -1,0 +1,52 @@
+{
+  "task_id": "NEW-battlefield-edge-01",
+  "status": "FAILED_AFTER_3_TRIES",
+  "map_decision": "Reference plaza palette retained; asset interpreted as an irregular limestone transition strip, no arena props intended.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01.png",
+      "colors": 45,
+      "end_seam_mean": 16.6745,
+      "alpha_binary": true,
+      "visible_magenta": false,
+      "failure": "end seam 16.674 >=14; wrong object content: contains arena props/statues/columns and visible red/yellow fringe"
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "colors": 45,
+      "end_seam_mean": 15.5807,
+      "alpha_binary": true,
+      "visible_magenta": false,
+      "failure": "end seam 15.581 >=14; repetitive slab cadence, visible red/yellow edge fringe"
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "colors": 45,
+      "end_seam_mean": 1.8073,
+      "alpha_binary": true,
+      "visible_magenta": false,
+      "failure": "too regular repeated stone cadence, visible chromatic fringe; endpoint continuity needs visual rejection"
+    }
+  ],
+  "processing": "Center crop to 4:1 aspect, nearest resize 512x128, median-cut RGB quantization to 48 colors, binary alpha threshold.",
+  "acceptance": {
+    "size": [
+      512,
+      128
+    ],
+    "colors": [
+      33,
+      48
+    ],
+    "alpha": "binary",
+    "left_right_seam_mean_lt": 14
+  },
+  "final_candidate": null,
+  "art_gate": "NOT_RUN: canonical manifest unchanged; final --all deferred."
+}

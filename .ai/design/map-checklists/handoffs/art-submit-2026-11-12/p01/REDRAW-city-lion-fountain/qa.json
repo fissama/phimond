@@ -1,0 +1,43 @@
+{
+  "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-09/p01/REDRAW-city-lion-fountain/candidate-02.png",
+  "candidate_sha256": "1f4f3f4fed695b09296a1a7a6e7350b5f13dbbe89cf963b0bb76cb525fa4149c",
+  "size": [
+    195,
+    230
+  ],
+  "colors": 37,
+  "alpha_mode": "binary",
+  "alpha_bbox": [
+    8,
+    9,
+    187,
+    221
+  ],
+  "alpha_margin_px": [
+    8,
+    9,
+    8,
+    9
+  ],
+  "pivot": [
+    0.5,
+    0.965
+  ],
+  "world_size": [
+    1.5234375,
+    1.796875
+  ],
+  "attempts": {
+    "1": {
+      "status": "rejected",
+      "note": "Visible red-toned edge fringe and less clean contours after cutout."
+    },
+    "2": {
+      "status": "selected",
+      "note": "High-alpha crop removes soft fringe; 4x inspection clear; no text/glow/shadow/magenta."
+    }
+  },
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "palette_decision": "Map reference depicts winged angel fountain, not lion; follow reference image.",
+  "art_gate": "NOT_RUN: handoff-only; no manifest registration before Claude acceptance"
+}

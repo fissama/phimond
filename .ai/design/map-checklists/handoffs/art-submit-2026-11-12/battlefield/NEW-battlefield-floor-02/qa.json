@@ -1,0 +1,51 @@
+{
+  "task_id": "NEW-battlefield-floor-02",
+  "status": "FAILED_AFTER_3_TRIES",
+  "map_decision": "Kept pale cream plaza stone per reference; rejected \u201cburnt soil\u201d plan.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01.png",
+      "colors": 48,
+      "seam_wrap_mean": 0.4873,
+      "autocorr_max_lag_ge8": 0.8118,
+      "failure": "Seam exceeds 2.0 or autocorrelation exceeds 0.25; visible repeated irregular slab pattern in 3x3."
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "colors": 48,
+      "seam_wrap_mean": 0.4466,
+      "autocorr_max_lag_ge8": 0.6585,
+      "failure": "Seam exceeds 2.0 or autocorrelation exceeds 0.25; visible repeated irregular slab pattern in 3x3."
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "colors": 48,
+      "seam_wrap_mean": 6.9329,
+      "autocorr_max_lag_ge8": 0.3677,
+      "failure": "Seam exceeds 2.0 or autocorrelation exceeds 0.25; visible repeated irregular slab pattern in 3x3."
+    }
+  ],
+  "processing": "Nearest resize to 512x512, median-cut quantize to 48, generate 3x3 preview.",
+  "acceptance": {
+    "size": [
+      512,
+      512
+    ],
+    "seam_wrap_max": 2.0,
+    "autocorr_max": 0.25,
+    "colors": [
+      33,
+      48
+    ],
+    "outer_flat_margin_px": 8
+  },
+  "final_candidate": null,
+  "cross_texture_check": "Not measurable against floor-01 because floor-01 has no final candidate.",
+  "art_gate": "NOT_RUN: handoff only; canonical manifest unchanged."
+}

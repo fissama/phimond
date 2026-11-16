@@ -1,0 +1,1 @@
+Moderately broad soft oval contact shadow only, dusty violet-gray, transparent, soft alpha fade, no object/glow/highlight/text/frame/magenta. Preserve soft alpha and collapse RGB to a single kit color.

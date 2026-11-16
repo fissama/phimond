@@ -1,0 +1,34 @@
+{
+  "task_id": "NEW-tower-prop-03",
+  "source": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/tower/NEW-tower-prop-03/candidate.png",
+  "source_sha256": "0800344ddc2ba338c20f0ecb4254370ffa476a662cd92f23228002499995dd19",
+  "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/tower/NEW-tower-prop-03/redo-alpha-v1/candidate.png",
+  "candidate_sha256": "b2f5133d86c8dac0e02321595b38b406ba0cf2be5ed1cf5ca9cb6ae42b82971e",
+  "size": [
+    384,
+    384
+  ],
+  "alpha_values": [
+    0,
+    255
+  ],
+  "color_count_opaque": 46,
+  "alpha_bbox_margins_ltrb": [
+    77,
+    62,
+    77,
+    73
+  ],
+  "steps": [
+    "alpha threshold >=128",
+    "1px binary erosion",
+    "nearest-interior despill on 1px boundary",
+    "quantize opaque RGB to <=48 colors",
+    "preserve canvas and bottom alignment"
+  ],
+  "visual_previews": [
+    "preview-4x-light.png",
+    "preview-4x-dark.png"
+  ],
+  "note": "handoff candidate only; canonical and manifest untouched"
+}

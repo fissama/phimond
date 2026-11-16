@@ -1,0 +1,42 @@
+{
+  "task_id": "NEW-battlefield-fx-01",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate.png",
+      "processing": "Split 4 horizontal cells; removed neon-green contamination by RGB color key; binary alpha threshold 128; per-frame crop/nearest resize into 192x128 cells; shared 48-color palette.",
+      "colors_opaque": 33,
+      "alpha_binary": true,
+      "per_frame_alpha_margin_px": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "visible_magenta_pixels": 0,
+      "failure": null
+    }
+  ],
+  "selected_candidate": "candidate.png",
+  "sha256": "9ceacca55285ffbd6077ec1f7b7e50b0c1647a560086648f8206b7e791a0c43e",
+  "acceptance_result": {
+    "size_px": [
+      768,
+      128
+    ],
+    "frames": 4,
+    "colors_opaque": 33,
+    "binary_alpha": true,
+    "per_frame_margin_px": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "visible_magenta_pixels": 0,
+    "visual": "cyan/gold arrival motes; 4-frame preview saved; green fringe keyed"
+  },
+  "art_gate": "NOT_RUN: handoff candidate is not registered in canonical manifest; manifest edits forbidden."
+}

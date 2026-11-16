@@ -1,6 +1,6 @@
 # Checklist redraw cho codex (v1.0.0 → v1.0.1)
 
-Cập nhật: 2026-10-23, sau khi duyệt lô `apps/game-web/art-src/hd2d/p01-release-art-20261023/` và rà tiền cảnh/hậu cảnh 5 map.
+Cập nhật: 2026-10-23, sau khi duyệt lô `art/src/hd2d/p01-release-art-20261023/` và rà tiền cảnh/hậu cảnh 5 map.
 Quy cách ảnh, prompt mẫu, cách nạp: xem `ASSETS-REDRAW-v1.0.0.md` (mục "Quy ước chung").
 
 ## Cách dùng
@@ -41,11 +41,11 @@ Lý do: cổng vòm Hoàng Môn, ngõ và khe giữa các mặt tiền nhìn xuy
 | ID | Asset | Đã vẽ | Duyệt | Ghi chú |
 |---|---|---|---|---|
 | R40–R44 | `battle-bg-{forest,deep_forest,gate,city,hall}.png` | [x] | [x] | Đã nằm trong `apps/client/public/battle/` (chưa commit). Chụp thử trận rừng đẹp. |
-| R45 | Chân dung NPC 19 ảnh `portrait-*.png` | [x] | [x]* | *13 ảnh đã xem trên bảng tổng hợp đều đạt. 6 ảnh chưa xem được: `bia_free`, `gate_guild`, `sq_exchange`, `sq_mailbox`, `sq_skill`, `sq_warehouse` (không có trong bảng tổng hợp của codex), cần xem. Codex 23/10: Đã bổ sung bảng đủ19 và bảng riêng6ảnh thiếu, từng ảnh có review4x. |
+| R45 | Chân dung NPC 19 ảnh `portrait-*.png` | [x] | [ ] | 13 ảnh đã xem trên bảng tổng hợp; 6 ảnh còn lại (bia_free, gate_guild, sq_exchange, sq_mailbox, sq_skill, sq_warehouse) được Codex xem riêng 30/10 và không thấy lỗi hình ảnh rõ ràng. `sq_mailbox` cố ý là chân dung vật thể theo prompt. QA phát hiện viền hồng sát alpha ở `portrait-bia_shop` và `portrait-sq_board`; hai ứng viên sửa nằm ở `batch-16-portrait-edge-repair/delivery/`. Bia shop qua key-ring QA; square-board còn `key_ring_spill=0.044393` (ngưỡng 0.01), cần review màu tóc tím trên nền sáng/tối. Cả hai chưa duyệt/chưa cài. Chờ Claude/owner duyệt; xem `delivery/portrait-review-codex-20261030.md` và hồ sơ candidate mới. |
 | R46–R47 | `slot-male.png`, `slot-female.png` | [x] | [x] | Dùng cho màn Chọn nhân vật. |
-| R48–R50 | `starter-{tien_chuong,sa_hat,xich_ung}.png` | [x] | [x] | |
-| R51 | `fx-summon.png` (6 khung 192×384) | [x] | [x] | Thay hiệu ứng tạm bằng code khi vào sảnh. |
-| R52 | `foe-ring.png` (4 khung) | [x] | [x] | |
+| R48–R50 | `starter-{tien_chuong,sa_hat,xich_ung}.png` | [x] | [ ] | Codex xem lại ba ảnh hiện tại ngày 30/10, bố cục/nhận dạng nhất quán; QA JSON vẫn ghi `needs_visual_review` / `approved:false`, nên chờ Claude/owner xác nhận phiên bản đang giao. |
+| R51 | `fx-summon.png` (6 khung 192×384) | [x] | [!] | Claude approval được manifest/DELIVERY-BOOK ghi nhận 23/10, nhưng QA JSON vẫn `approved:false/status:needs_visual_temporal_review`; chưa gọi là duyệt release. Codex xem contact sheet 6 frame ngày 30/10: nhịp thấp→đỉnh→thu về rõ, vòng rune và chân sáng giữ cùng trục; còn cần owner/game-size playback xác nhận pivot/timing. |
+| R52 | `foe-ring.png` (4 khung) | [x] | [!] | Claude approval được manifest/DELIVERY-BOOK ghi nhận 23/10, nhưng QA JSON vẫn `approved:false/status:needs_visual_temporal_review`; chưa gọi là duyệt release. Codex xem contact sheet 4 frame ngày 30/10: vòng giữ tâm, sáng lên ở frame 2–3 rồi khép về frame 4; còn cần owner/game-size playback xác nhận pivot/timing. |
 | R53 | `fx-fire`, `fx-water`, `fx-earth` | [x] | [x] | Codex 23/10: Bản giao mới giảm toàn dải về48màu (bản cũ >15000màu); giữ alpha/hình học, cần duyệt lại phần màu. |
 | R54 | `fx-beast`, `fx-insect`, `fx-plant` | [x] | [!] | Một vài khung chỉ có mảnh vụn rời (khung 3–5), xem lại bằng ảnh động. Vẫn dùng được nếu bỏ khung rác. Codex 23/10: Đã cắt lại theo ranh giới6pha thực, không bỏ khung; có GIF và ảnh từng khung để duyệt lại. |
 | R55 | `ui-bottombar`, `ui-chat`, `ui-menu`, `ui-objective` | [x] | [x] | |
@@ -86,14 +86,14 @@ Nhận xét chi tiết: `REVIEW-TRIEU-LINH-DIEN-ART.md`. Nạp bằng `tools/p01
 
 Cột "Mục" khớp mã S01–S27 trong file prompt. Codex/GPT tích "Đã vẽ", Claude tích "Duyệt".
 
-| Mục | Asset | Đã vẽ | Duyệt |
-|---|---|---|---|
-| S01–S06 | Tiền cảnh: cành lá rừng, bụi lớn, mái hiên, cờ dây, đèn lồng, rèm | [ ] | [ ] |
-| S07–S11 | Hậu cảnh: thành phố rộng, mái nhà gần, rừng xa 3 lớp, lối xuyên cổng, tường thành | [x] S07, S08 | [x] S07, S08 |
-| S12–S19 | Địa hình độ cao: vách đá, bậc thang, vách đất, mép cỏ, bục, cầu gỗ, lan can | [ ] | [ ] |
-| S20–S22 | Sàn biến thể, vệt sáng kính màu, bóng tiếp xúc | [x] S20, S21 (S22 chưa) | [x] S20, S21 |
-| S23–S24 | Dải chạy người chơi và 6 người đi đường (24 dải) | [ ] | [ ] |
-| S25–S27 | Khung thanh, sửa fx/minimap, mảnh nối mặt tiền | [ ] | [ ] |
+| Mục | Asset | Đã vẽ | Duyệt | Ghi chú |
+|---|---|---|---|---|
+| S01–S06 | Tiền cảnh: cành lá rừng, bụi lớn, mái hiên, cờ dây, đèn lồng, rèm | [x] | S04 | Đã có PNG, prompt và QA trong lô giao Octopath. `fg-city-bunting.png` (S04) đã được Claude duyệt/cài theo README redraw-v2; các mục còn lại chờ duyệt mắt. |
+| S07–S11 | Hậu cảnh: thành phố rộng, mái nhà gần, rừng xa 3 lớp, lối xuyên cổng, tường thành | [x] | S07 | `city-backdrop-wide.png` (S07) đã được Claude duyệt/cài; chấp nhận caveat co giãn không đều cho nền xa. Các mục còn lại chờ Claude xem; E19/E20 là ảnh cũ riêng, không tự thay approval cho asset khác hash. |
+| S12–S19 | Địa hình độ cao: vách đá, bậc thang, vách đất, mép cỏ, bục, cầu gỗ, lan can | [x] | [ ] | Đã có PNG, prompt và QA trong lô giao Octopath. Chờ duyệt mắt. |
+| S20–S22 | Sàn biến thể, vệt sáng kính màu, bóng tiếp xúc | [x] | [x] S20, S21 | S22 đã đóng gói đúng kích thước và tint xanh tím; chờ duyệt mắt. |
+| S23–S24 | Dải chạy người chơi và 6 người đi đường (24 dải) | [ ] | [ ] | Chưa hoàn tất. P01 `player-male.run.png` là candidate anchor: review Codex 30/10 xác nhận frame 1/5 đổi chân đối nhau; QA còn `leg_alternation: needs-visual-review`, chờ Claude/game-size review. Audit 30/10: 22/24 dải cũ có thể trình Claude xem, `walker-elder.run` và `walker-traveller.run` cần vẽ lại vì lặp chân frame 1/5. Elder attempt 08 bị loại (`batch-16-run-redraw/elder-side/`): 2172×724 RGB, checkerboard, frame 1/5 cùng chân dẫn; attempt 09 bật alpha thật nhưng vẫn 2172×724, 256 mức alpha, 166654 màu và chân 1/5 lặp; edit attempt 10 không đảo được chân. Traveller attempt 01 cũng trả checkerboard đặc và cùng chân 1/5. Chưa dải nào được Claude duyệt trong lượt này. Xem `delivery/run-review-codex-20261030.md`. |
+| S25–S27 | Khung thanh, sửa fx/minimap, mảnh nối mặt tiền | [x] | [ ] | Đã có PNG, prompt và QA đúng kích thước/≤48 màu/alpha nhị phân; chờ duyệt mắt. |
 
 ## Thứ tự đề nghị
 
@@ -104,7 +104,7 @@ Cột "Mục" khớp mã S01–S27 trong file prompt. Codex/GPT tích "Đã vẽ
 
 ## Bản giao Codex 2026-10-23
 
-- Mỗi PNG có `.prompt.md`, `.qa.json` trong `apps/game-web/art-src/hd2d/p01-release-art-20261023/delivery/`. Sổ xem từng ảnh: `DELIVERY-BOOK.md` ở thư mục cha.
+- Mỗi PNG có `.prompt.md`, `.qa.json` trong `art/src/hd2d/p01-release-art-20261023/delivery/`. Sổ xem từng ảnh: `DELIVERY-BOOK.md` ở thư mục cha.
 - Cột **Duyệt** giữ kết quả gần nhất do Claude cung cấp; Codex không tự duyệt bản sửa. P0 vẫn chưa được chứng nhận release, dù đã có đủ file.
 - R60: `shadow-round-small`, `shadow-round-large`, `shadow-rect`, `shadow-canopy` (4PNG, palette bóng trung tính chung).
 - R61: `city-facade-alley`, `city-facade-gutter`, `city-facade-column` (3PNG).
@@ -118,4 +118,4 @@ Cột "Mục" khớp mã S01–S27 trong file prompt. Codex/GPT tích "Đã vẽ
 - Đã sửa 7 dải mất đạo cụ: baker xuống; elder xuống/lên; girl xuống; guard lên; traveller xuống/lên. Từng file có prompt, QA và preview riêng.
 - Đã xuất bản keypose mới cho elder/traveller ngang, nhưng chưa đạt toàn bộ QA chuyển động.
 - Kết quả 24 dải: pass 7, warn 11, needs-visual-review 2, fail 4. Không tự đổi cột Duyệt, không nạp bản mới chưa duyệt.
-- Hồ sơ chi tiết: `apps/game-web/art-src/hd2d/p01-release-art-20261023/REVIEW-QUEUE.md`.
+- Hồ sơ chi tiết: `art/src/hd2d/p01-release-art-20261023/REVIEW-QUEUE.md`.

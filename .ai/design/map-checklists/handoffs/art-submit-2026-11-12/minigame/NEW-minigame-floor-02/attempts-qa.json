@@ -1,0 +1,38 @@
+{
+  "task_id": "NEW-minigame-floor-02",
+  "attempts": [
+    {
+      "attempt": 1,
+      "candidate": "redo-v1/candidate.png",
+      "colors": 48,
+      "wrap_x": 0,
+      "wrap_y": 0,
+      "autocorr": 0.6207,
+      "lag": 8,
+      "visual": "long slabs and prominent repeating boundary grid"
+    },
+    {
+      "attempt": 2,
+      "candidate": "redo-v2/candidate.png",
+      "colors": 48,
+      "wrap_x": 0,
+      "wrap_y": 0,
+      "autocorr": 0.23134,
+      "lag": 8,
+      "visual": "finer stones but recurring clusters and perimeter grid"
+    },
+    {
+      "attempt": 3,
+      "candidate": "redo-v3/candidate.png",
+      "colors": 48,
+      "wrap_x": 0,
+      "wrap_y": 0,
+      "autocorr": 0.3066,
+      "lag": 8,
+      "visual": "mosaic varied but broad recurring stone clumps and grid"
+    }
+  ],
+  "source_decision": "Stone paving in map screenshots overrides planned dry grass.",
+  "status": "FAILED_AFTER_3_TRIES",
+  "note": "No candidate chosen; 3 raw attempts exhausted. Attempt2 best numeric but visual repeat/grid remains."
+}

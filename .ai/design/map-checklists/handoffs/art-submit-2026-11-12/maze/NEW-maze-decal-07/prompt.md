@@ -1,0 +1,1 @@
+Loose irregular scatter decal for top-down dusty-pink bone maze: violet-gray pebble chips, muted pink-beige fragments, two tiny ivory bone flakes; isolated cutout, no aura, no shadow, no text, no frame, no magenta. Alpha threshold≥250 removes diffuse exterior glow.

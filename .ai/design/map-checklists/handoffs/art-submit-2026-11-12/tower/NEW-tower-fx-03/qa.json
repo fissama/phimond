@@ -1,0 +1,57 @@
+{
+  "raw_file": "raw-02.png",
+  "raw_size": [
+    1408,
+    768
+  ],
+  "selected_attempt": 2,
+  "processing": "crop four generated pollen clusters; magenta color key; median-cut palette; nearest-neighbor resize; binary alpha",
+  "final_size": [
+    768,
+    192
+  ],
+  "frames": 4,
+  "color_count_rgb_opaque": 22,
+  "binary_alpha": true,
+  "alpha_bbox": [
+    8,
+    8,
+    758,
+    184
+  ],
+  "alpha_margins_per_frame": [
+    [
+      8,
+      8,
+      8,
+      8
+    ],
+    [
+      8,
+      8,
+      8,
+      8
+    ],
+    [
+      8,
+      8,
+      8,
+      8
+    ],
+    [
+      8,
+      8,
+      8,
+      8
+    ]
+  ],
+  "seam": "N/A FX",
+  "autocorrelation": "N/A FX",
+  "art_gate": "NOT_RUN: handoff candidate excluded from canonical art_gate scope",
+  "sha256": "6ed1f7885724442cb06ed0e52c57e00692bc3acf4a4f67eca89d05150997cb99",
+  "attempts": {
+    "1": "rejected: black panel dividers and 2 rows",
+    "2": "best one-row candidate, fixed center; 22 colors (<33 minimum)",
+    "3": "rejected: generator returned a 2-row 8-cell atlas rather than a four-frame row"
+  }
+}

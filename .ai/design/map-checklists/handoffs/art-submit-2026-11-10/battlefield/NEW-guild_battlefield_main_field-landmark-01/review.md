@@ -1,0 +1,1 @@
+Claude review pending; not self-approved. Source-map decision: depict the winged gray angel statue visible near the plaza center; exclude fountain and bronze beast. This follows the reference type and palette, not the old plan. Reference crop included. Candidate is a standalone stone statue on a pale plinth, restrained muted-gold trim, no baked shadow or glow.

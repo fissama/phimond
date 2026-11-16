@@ -1,9 +1,28 @@
 # Kit `arena2` — Đấu Trường Hỗn Mang / Tổ Đội
 
+> **Nghiệm thu Claude 2026-11-09** (mức V1, chưa 4×): THIẾU_CHƯA_CÓ 44. Map: {'CHƯA CÓ ART': 2}. Trạng thái hiện hành ở [ASSET-VERDICTS-20261109.csv](ASSET-VERDICTS-20261109.csv) / [MAP-COVERAGE-20261109.csv](MAP-COVERAGE-20261109.csv); tick ✅/❌ bên dưới là LỊCH SỬ, không phải approval.
+> **Cảnh báo brief:** cùng ảnh với battlefield; chỉ vẽ phần khác biệt — thực hiện `BRIEF-arena2` trong [ROADMAP-ART-92MAPS-20261109.md](ROADMAP-ART-92MAPS-20261109.md) trước khi vẽ.
+
+## Brief đối chiếu ảnh gốc (Codex, 2026-11-10; chờ Claude/owner duyệt)
+
+Hai ảnh `chaos_arena_main_field.jpg` và `team_arena_main_field.jpg` giống hệt pixel (1400×471); không có khác biệt màu/đạo cụ nào để biện minh cho hai biến thể hỗn mang đỏ cam và tổ đội xanh lam. Ảnh chỉ cho thấy cùng một đấu trường đá sáng, cột tím viền vàng, skyline xanh lam với mái tháp nâu cam, tượng đá nhỏ, đài phun trung tâm và các tượng quái trên bệ tím-vàng. Không thêm cờ màu đội, cổng riêng, giá vũ khí hay bảng điểm khi chúng không xuất hiện trong nguồn.
+
+| ID đề xuất / nhóm hiển thị | Map dùng | Bằng chứng crop |
+|---|---|---|
+| `arena2-backdrop-far` — skyline thành lũy xanh lam, mái tháp nâu cam, khung cột tím viền vàng | cả hai map (ảnh giống hệt) | [01-colonnade-and-skyline](evidence/arena2-brief/01-colonnade-and-skyline.jpg) |
+| `arena2-floor-01` — mặt sân đá trắng ngà chuyển sang ghi-be ấm; không thấy cát | cả hai map | [02-pale-stone-field](evidence/arena2-brief/02-pale-stone-field.jpg) |
+| `chaos_arena_main_field-landmark-01` / `team_arena_main_field-landmark-01` — đài phun tròn viền gạch tím, nước lam ngọc và tượng trung tâm | từng map | [03-central-fountain-statue](evidence/arena2-brief/03-central-fountain-statue.jpg) |
+| `arena2-prop-01` — tượng đá có cánh nhỏ trên đế thấp | cả hai map | [04-winged-statuettes](evidence/arena2-brief/04-winged-statuettes.jpg) |
+| `chaos_arena_main_field-landmark-02` / `team_arena_main_field-landmark-02` — tượng quái/griffin trên bệ trưng bày tím, viền vàng | từng map | [05-winged-trophy-plinths](evidence/arena2-brief/05-winged-trophy-plinths.jpg), [06-monster-trophy-plinth](evidence/arena2-brief/06-monster-trophy-plinth.jpg), [07-right-trophy-plinth](evidence/arena2-brief/07-right-trophy-plinth.jpg) |
+
+**Đối chiếu plan — đề xuất loại khỏi danh sách kit đang thấy:** ~~`arena2-floor-02` (vòng ranh giới đội), `arena2-floor-03` (module khán đài trên sàn), `arena2-prop-02` (cổng vào), `arena2-prop-03` (bục hồi sinh), `arena2-prop-04` (giá vũ khí), `arena2-prop-05` (bảng điểm), toàn bộ `arena2-floor-extra-*`, `arena2-edge-*`, `arena2-decal-*`, `arena2-shadow-*`, `arena2-backdrop-mid/near`, `arena2-portal-*`, `arena2-marker-arrival` và `arena2-fx-*`.~~ Ảnh không cung cấp bằng chứng cho các mục này. Đây là đề xuất phạm vi dựa trên ảnh chụp; không phải quyết định nghiệm thu hay xóa task CSV. Chúng không được vẽ thành ứng viên cho kit này nếu chưa có nguồn tham chiếu xác nhận.
+
+**Chỉ dẫn bảng màu:** bỏ chỉ dẫn plan cũ về nền cát và phân màu đỏ/xanh theo đội; theo ảnh gốc dùng đá trắng ngà/ghi-be, cột tím với chi tiết vàng, nền skyline lam-xanh, mái tháp nâu cam, nước lam ngọc, bệ tượng tím-vàng. Không có asset phân màu riêng giữa hai map.
+
 > **Quy tắc bắt buộc cho Codex** (xem README.md): dùng https://github.com/0x0funky/agent-sprite-forge (generate2dmap / generate2dsprite) với route image_gen tích hợp; cấm codeart2d, API trả phí, vẽ bằng code, lật gương; không commit; không sửa tools/hd2d_audit/*, gate_waivers.json, check.sh; mỗi asset phải tự nhìn ảnh trước khi ghi "vẽ xong"; chỉ Claude/owner đánh dấu "duyệt".
 
 - Style/palette: Dùng lại kit Huyết Chiến Đài (batch-02) cho cột/cờ/giá vũ khí; thêm nền cát/đất đấu trường và khán đài khác màu cho mỗi đấu trường (hỗn mang: đỏ cam; tổ đội: xanh lam).
-- Thư mục asset: `apps/game-web/art-src/hd2d/batch-11-arena2/`
+- Thư mục asset: `art/src/hd2d/batch-11-arena2/`
 - Số map: 2
 
 ## 1. Danh sách asset cần vẽ (kit chưa có asset)
@@ -62,7 +81,7 @@ Nguồn: Phần C `hd2d-maps-75-gemini-prompt.md`. Yêu cầu gốc: tile sân �
 Dùng agent-sprite-forge ($generate2dmap cho tile/prop, $generate2dsprite cho prop/decal/FX/marker). Route ảnh: image_gen tích hợp của Codex (kiểm `route_media.py resolve --kind image`). KHÔNG codeart2d, KHÔNG API, KHÔNG vẽ bằng code.
 Kit: Đấu Trường Hỗn Mang / Tổ Đội (arena2). Style: Dùng lại kit Huyết Chiến Đài (batch-02) cho cột/cờ/giá vũ khí; thêm nền cát/đất đấu trường và khán đài khác màu cho mỗi đấu trường (hỗn mang: đỏ cam; tổ đội: xanh lam).. Style anchor: batch-01-octopath/contact-sheet.png + 2 sprites.png linh thú.
 Mỗi lần gọi: 1 sheet ~6 vật trên nền #FF00FF, bố trí 2×3/3×2, cách nhau ≥48 px, không chạm mép. Giữ raw-01.png byte-identical. Cắt/khử nền/pixel finish bằng script forge. 33–48 màu, alpha nhị phân, lề ≥8 px, 128 px = 1 đơn vị (far 64), người = 1.31 đơn vị (cỡ tối đa vật nhỏ: tools/hd2d_audit/size_check.py).
-Mỗi asset: thư mục raw-01/final/prompt.md/review.md/qa.json trong apps/game-web/art-src/hd2d/batch-11-arena2/<id>/. Tự nhìn 4× nền tối/caro. Xong: `python3 tools/hd2d_audit/art_gate.py batch-11-arena2` = 0 lỗi, contact-sheet mới hơn manifest.
+Mỗi asset: thư mục raw-01/final/prompt.md/review.md/qa.json trong art/src/hd2d/batch-11-arena2/<id>/. Tự nhìn 4× nền tối/caro. Xong: `python3 tools/hd2d_audit/art_gate.py batch-11-arena2` = 0 lỗi, contact-sheet mới hơn manifest.
 ```
 
 ## 3. Từng map

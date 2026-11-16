@@ -1,0 +1,1 @@
+Built-in image_gen, 3 attempts; all generated a full opaque atmospheric gradient/haze background despite explicit transparent-cutout instruction. None can be converted to transparency using permitted alpha processing without destroying object pixels. No candidate selected.

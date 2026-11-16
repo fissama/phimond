@@ -1,0 +1,1 @@
+Route: built-in image_gen, one attempt. Image 1 controls subject and palette; approved batch-01 bush sprites guide style only. Requested isolated upright ancient tree, broad roots, compact crown and blossoms/fruit, crisp HD-2D pixels, transparent background, no glow/text/magenta/fringe.

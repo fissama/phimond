@@ -1,0 +1,23 @@
+{
+  "task_id": "NEW-guild-prop-14",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "raw": "redo-v1/raw-01.png",
+  "candidate": "redo-v1/candidate.png",
+  "processing": "threshold alpha >=128; 1px erosion; crop; nearest resize into transparent 256x256; quantize 48; binary alpha",
+  "size": [
+    256,
+    256
+  ],
+  "colors": 48,
+  "alpha_values": [
+    0,
+    255
+  ],
+  "alpha_margin_px": 10,
+  "sha256": "294908e119ae9537e514ef8b8f1a8e218b62589c77b780bc980ca2cc59fd059e",
+  "visual_check": {
+    "4x_light": "Counter and merchandise legible; no visible glow after alpha processing.",
+    "4x_dark": "No exterior shadow/halo or fringe."
+  },
+  "art_gate": "NOT_RUN: handoff-only."
+}

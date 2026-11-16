@@ -1,0 +1,1 @@
+Map reference shows open golden desert, distant eroded rock ridge, a gray wind-carved spire, cactus, and small fossil detail. This new variant is intentionally a half-buried sealed sandstone slab so the desert landmark set is not four bone/fossil shapes. Candidate is handoff-only; do not treat as approved.

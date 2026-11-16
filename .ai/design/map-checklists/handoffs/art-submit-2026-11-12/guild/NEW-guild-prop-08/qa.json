@@ -1,0 +1,24 @@
+{
+  "task_id": "NEW-guild-prop-08",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "raw": "redo-v1/raw-01.png",
+  "processing": "Alpha threshold >=128; 1px binary erosion; crop visible subject; nearest resize to 256x256 with transparent padding; median-cut quantize 48 colors, no dithering; transparent RGB cleared.",
+  "candidate": "redo-v1/candidate.png",
+  "size": [
+    256,
+    256
+  ],
+  "colors": 48,
+  "alpha_values": [
+    0,
+    255
+  ],
+  "alpha_margin_px": 10,
+  "sha256": "1647dc5053fce2788dcc43d9a76c2c6ef5d3387abe1cbada988d329e019c79d0",
+  "visual_check": {
+    "1x": "Subject legible at game scale.",
+    "4x_light": "Hard cutout; no light fringe or visible glow.",
+    "4x_dark": "No halo/cast shadow outside silhouette."
+  },
+  "art_gate": "NOT_RUN: noncanonical handoff only; manifest registration prohibited before Claude review."
+}

@@ -1,0 +1,1 @@
+Built-in image_gen, 3 attempts. Attempts 1–2 produced smooth atmospheric blurry cloud/fog shapes. Attempt 3 produced a leaf-like silhouette but remained soft smoky gradient texture rather than a clean pixel-art shadow mask. No candidate selected; processing cannot turn the generated content into a crisp shadow without repainting.

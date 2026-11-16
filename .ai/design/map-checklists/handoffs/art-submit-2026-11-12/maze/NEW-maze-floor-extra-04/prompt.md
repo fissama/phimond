@@ -1,0 +1,1 @@
+Square seamless top-down maze stone floor tile; rose beige irregular polygon slabs, muted violet gray facets, brown joints and chips; HD-2D hard-pixel style; full bleed, no frame/cross/repeats/props/text/glow/magenta. Resized nearest and quantized locally to 48 colors.

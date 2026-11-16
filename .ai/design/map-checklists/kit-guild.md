@@ -1,10 +1,28 @@
 # Kit `guild` — Bang Hội
 
+> **Nghiệm thu Claude 2026-11-09** (mức V1, chưa 4×): THIẾU_CHƯA_CÓ 59. Map: {'CHƯA CÓ ART': 6}. Trạng thái hiện hành ở [ASSET-VERDICTS-20261109.csv](ASSET-VERDICTS-20261109.csv) / [MAP-COVERAGE-20261109.csv](MAP-COVERAGE-20261109.csv); tick ✅/❌ bên dưới là LỊCH SỬ, không phải approval.
+> **Cảnh báo brief:** 6 công trình riêng; dùng chung tường/sàn với minigame — thực hiện `BRIEF-guild` trong [ROADMAP-ART-92MAPS-20261109.md](ROADMAP-ART-92MAPS-20261109.md) trước khi vẽ.
+
 > **Quy tắc bắt buộc cho Codex** (xem README.md): dùng https://github.com/0x0funky/agent-sprite-forge (generate2dmap / generate2dsprite) với route image_gen tích hợp; cấm codeart2d, API trả phí, vẽ bằng code, lật gương; không commit; không sửa tools/hd2d_audit/*, gate_waivers.json, check.sh; mỗi asset phải tự nhìn ảnh trước khi ghi "vẽ xong"; chỉ Claude/owner đánh dấu "duyệt".
 
 - Style/palette: Đá granit kiên cố, cờ quân kỳ bang hội xanh/vàng (cờ tự thiết kế, không dùng logo gốc); trong nhà gỗ + đá ấm.
-- Thư mục asset: `apps/game-web/art-src/hd2d/batch-11-guild/`
+- Thư mục asset: `art/src/hd2d/batch-11-guild/`
 - Số map: 6
+
+## BRIEF-guild evidence (2026-11-11)
+
+Reviewed the six source-map screenshots and saved contextual building crops under `.ai/design/map-checklists/handoffs/art-submit-2026-11-10/guild/brief-evidence/`.
+
+| Map | Visible identifying structure | Palette/content evidence |
+|---|---|---|
+| `guild_fortress` | Central pale stone castle with multiple red roofs/turrets; crenellated beige perimeter wall and towers | Bright blue sky/clouds; dark brown-to-beige irregular stone paving |
+| `guild_treasury` | White-beige temple facade with tall columns, teal roof accents and a gold medallion | Shared crenellated wall, blue sky and cracked beige/brown paving |
+| `guild_warehouse` | Timber-and-stone warehouse, open shelves/racks on left, teal roof on right | Shared wall, sky and paving |
+| `guild_barracks` | Small pale barracks house with teal roof; tall pale chimney/tank structure alongside | Shared wall, sky and paving |
+| `guild_shop` | Narrow timber cabin with teal gable roof and light stone footings | Shared wall, sky and paving |
+| `guild_pet_stable` | Wall obscures most of the building; a small teal-roofed structure and base are only partly visible | Shared wall, sky and paving; avoid inventing unseen stable interior details |
+
+**Scope decisions from the screenshots:** beige crenellated wall/towers, blue sky/clouds and brown-beige paving are shared with the minigame kit and should be tracked as shared materials, not redrawn as distinct guild variants. The screenshot directly supports the six buildings above and warehouse shelves. Planned interior-only details (for example treasure piles, beds, weapon racks, sacks/barrels or fodder) are not visible in these reference crops; retain their CSV rows for audit, but flag the individual task as unsupported by visible source evidence rather than inventing them if no closer reference exists. The screenshots do not show a standalone guild arrival portal or magic effect. No checklist “Vẽ” or “Duyệt” boxes were changed.
 
 ## 1. Danh sách asset cần vẽ (kit chưa có asset)
 
@@ -73,7 +91,7 @@ Nguồn: Phần C `hd2d-maps-75-gemini-prompt.md`. Yêu cầu gốc: tile sàn �
 Dùng agent-sprite-forge ($generate2dmap cho tile/prop, $generate2dsprite cho prop/decal/FX/marker). Route ảnh: image_gen tích hợp của Codex (kiểm `route_media.py resolve --kind image`). KHÔNG codeart2d, KHÔNG API, KHÔNG vẽ bằng code.
 Kit: Bang Hội (guild). Style: Đá granit kiên cố, cờ quân kỳ bang hội xanh/vàng (cờ tự thiết kế, không dùng logo gốc); trong nhà gỗ + đá ấm.. Style anchor: batch-01-octopath/contact-sheet.png + 2 sprites.png linh thú.
 Mỗi lần gọi: 1 sheet ~6 vật trên nền #FF00FF, bố trí 2×3/3×2, cách nhau ≥48 px, không chạm mép. Giữ raw-01.png byte-identical. Cắt/khử nền/pixel finish bằng script forge. 33–48 màu, alpha nhị phân, lề ≥8 px, 128 px = 1 đơn vị (far 64), người = 1.31 đơn vị (cỡ tối đa vật nhỏ: tools/hd2d_audit/size_check.py).
-Mỗi asset: thư mục raw-01/final/prompt.md/review.md/qa.json trong apps/game-web/art-src/hd2d/batch-11-guild/<id>/. Tự nhìn 4× nền tối/caro. Xong: `python3 tools/hd2d_audit/art_gate.py batch-11-guild` = 0 lỗi, contact-sheet mới hơn manifest.
+Mỗi asset: thư mục raw-01/final/prompt.md/review.md/qa.json trong art/src/hd2d/batch-11-guild/<id>/. Tự nhìn 4× nền tối/caro. Xong: `python3 tools/hd2d_audit/art_gate.py batch-11-guild` = 0 lỗi, contact-sheet mới hơn manifest.
 ```
 
 ## 3. Từng map

@@ -1,9 +1,12 @@
 # Kit `astral` — Tinh Giới
 
+> **Nghiệm thu Claude 2026-11-09** (mức V1, chưa 4×): DUYỆT 56, VẼ_LẠI 3. Map: {'CHƯA ĐỦ': 7}. Trạng thái hiện hành ở [ASSET-VERDICTS-20261109.csv](ASSET-VERDICTS-20261109.csv) / [MAP-COVERAGE-20261109.csv](MAP-COVERAGE-20261109.csv); tick ✅/❌ bên dưới là LỊCH SỬ, không phải approval.
+> VẼ_LẠI (3): `astral-floor-extra-03`, `astral-floor-extra-05`, `astral-edge-03`
+
 > **Quy tắc bắt buộc cho Codex** (xem README.md): dùng https://github.com/0x0funky/agent-sprite-forge (generate2dmap / generate2dsprite) với route image_gen tích hợp; cấm codeart2d, API trả phí, vẽ bằng code, lật gương; không commit; không sửa tools/hd2d_audit/*, gate_waivers.json, check.sh; mỗi asset phải tự nhìn ảnh trước khi ghi "vẽ xong"; chỉ Claude/owner đánh dấu "duyệt".
 
 - Style/palette: Cảnh ma mị: rừng mây tím, hoàng hôn, hồ vân ảnh, cổ thụ; Khe nứt thời không phát sáng. Bảng màu: tím #5B4A9B, hồng hoàng hôn #E08AA0, vàng #F2C879.
-- Thư mục asset: `apps/game-web/art-src/hd2d/batch-11-astral/`
+- Thư mục asset: `art/src/hd2d/batch-11-astral/`
 - Số map: 7
 
 ## 1. Danh sách asset cần vẽ (kit chưa có asset)
@@ -12,59 +15,61 @@ Nguồn: Phần C `hd2d-maps-75-gemini-prompt.md`. Yêu cầu gốc: tile mặt 
 
 | Vẽ | Duyệt | id (số thứ tự; đặt tên tiếng Anh vào manifest `name`) | loại | mô tả + prompt đi kèm |
 |---|---|---|---|---|
-| ⬜ | ⬜ | `astral-floor-01` | floor | mặt đất tím/hoàng hôn — tile sàn nhìn từ trên xuống, seamless 512×512; HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
-| ⬜ | ⬜ | `astral-floor-02` | floor | đường mây lát đá — tile sàn nhìn từ trên xuống, seamless 512×512; HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
-| ⬜ | ⬜ | `astral-floor-03` | floor | cỏ tím — tile sàn nhìn từ trên xuống, seamless 512×512; HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
-| ⬜ | ⬜ | `astral-prop-01` | prop | cây tím (sway-split) — prop đứng billboard, pivot giữa-đáy; HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
-| ⬜ | ⬜ | `astral-prop-02` | prop | cây tím (sway-split) — prop đứng billboard, pivot giữa-đáy; HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
-| ⬜ | ⬜ | `astral-prop-03` | prop | cây tím (sway-split) — prop đứng billboard, pivot giữa-đáy; HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
-| ⬜ | ⬜ | `astral-prop-04` | prop | cổ thụ rỗng (Hốc Cổ Thụ) — prop đứng billboard, pivot giữa-đáy; HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
-| ⬜ | ⬜ | `astral-prop-05` | prop | tinh thể pha lê — prop đứng billboard, pivot giữa-đáy; HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
-| ⬜ | ⬜ | `astral-prop-06` | prop | tinh thể pha lê — prop đứng billboard, pivot giữa-đáy; HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
-| ⬜ | ⬜ | `astral-prop-07` | prop | tinh thể pha lê — prop đứng billboard, pivot giữa-đáy; HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
-| ⬜ | ⬜ | `astral-prop-08` | prop | đá lơ lửng — prop đứng billboard, pivot giữa-đáy; HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
-| ⬜ | ⬜ | `astral-prop-09` | prop | đá lơ lửng — prop đứng billboard, pivot giữa-đáy; HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
-| ⬜ | ⬜ | `astral-prop-10` | prop | đá lơ lửng — prop đứng billboard, pivot giữa-đáy; HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
-| ⬜ | ⬜ | `astral-prop-11` | prop | hoa phát sáng — prop đứng billboard, pivot giữa-đáy; HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
-| ⬜ | ⬜ | `astral-prop-12` | prop | vòng xoáy khe nứt (4 khung) — prop đứng billboard, pivot giữa-đáy; HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
-| ⬜ | ⬜ | `astral-prop-13` | prop | bờ hồ (viền) — prop đứng billboard, pivot giữa-đáy; HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
-| ⬜ | ⬜ | `astral-prop-14` | prop | cầu mây — prop đứng billboard, pivot giữa-đáy; HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
-| ⬜ | ⬜ | `astral-backdrop-far-01` | backdrop_far | dải ngân hà — backdrop xa 1280×384 lặp ngang liền (64 px/đơn vị); HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
-| ⬜ | ⬜ | `astral-backdrop-far-02` | backdrop_far | mây tím — backdrop xa 1280×384 lặp ngang liền (64 px/đơn vị); HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
-| ⬜ | ⬜ | `astral-backdrop-far-03` | backdrop_far | núi trôi — backdrop xa 1280×384 lặp ngang liền (64 px/đơn vị); HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
-| ⬜ | ⬜ | `astral-floor-extra-01` | floor | tile sàn bổ sung (đủ ≥8 biến thể khác texture), seamless 512×512 |
-| ⬜ | ⬜ | `astral-floor-extra-02` | floor | tile sàn bổ sung (đủ ≥8 biến thể khác texture), seamless 512×512 |
-| ⬜ | ⬜ | `astral-floor-extra-03` | floor | tile sàn bổ sung (đủ ≥8 biến thể khác texture), seamless 512×512 |
-| ⬜ | ⬜ | `astral-floor-extra-04` | floor | tile sàn bổ sung (đủ ≥8 biến thể khác texture), seamless 512×512 |
-| ⬜ | ⬜ | `astral-floor-extra-05` | floor | tile sàn bổ sung (đủ ≥8 biến thể khác texture), seamless 512×512 |
-| ⬜ | ⬜ | `astral-edge-01` | edge | dải chuyển tiếp giữa 2 tile chính, 512×128 liền hai đầu, mép bất quy tắc |
-| ⬜ | ⬜ | `astral-edge-02` | edge | dải chuyển tiếp giữa 2 tile chính, 512×128 liền hai đầu, mép bất quy tắc |
-| ⬜ | ⬜ | `astral-edge-03` | edge | dải chuyển tiếp giữa 2 tile chính, 512×128 liền hai đầu, mép bất quy tắc |
-| ⬜ | ⬜ | `astral-decal-01` | decal | decal tiếp đất theo chủ đề kit (vụn, vết, xương/đá), bất quy tắc, mép mềm |
-| ⬜ | ⬜ | `astral-decal-02` | decal | decal tiếp đất theo chủ đề kit (vụn, vết, xương/đá), bất quy tắc, mép mềm |
-| ⬜ | ⬜ | `astral-decal-03` | decal | decal tiếp đất theo chủ đề kit (vụn, vết, xương/đá), bất quy tắc, mép mềm |
-| ⬜ | ⬜ | `astral-decal-04` | decal | decal tiếp đất theo chủ đề kit (vụn, vết, xương/đá), bất quy tắc, mép mềm |
-| ⬜ | ⬜ | `astral-decal-05` | decal | decal tiếp đất theo chủ đề kit (vụn, vết, xương/đá), bất quy tắc, mép mềm |
-| ⬜ | ⬜ | `astral-decal-06` | decal | decal tiếp đất theo chủ đề kit (vụn, vết, xương/đá), bất quy tắc, mép mềm |
-| ⬜ | ⬜ | `astral-decal-07` | decal | decal tiếp đất theo chủ đề kit (vụn, vết, xương/đá), bất quy tắc, mép mềm |
-| ⬜ | ⬜ | `astral-decal-08` | decal | decal tiếp đất theo chủ đề kit (vụn, vết, xương/đá), bất quy tắc, mép mềm |
-| ⬜ | ⬜ | `astral-decal-09` | decal | decal tiếp đất theo chủ đề kit (vụn, vết, xương/đá), bất quy tắc, mép mềm |
-| ⬜ | ⬜ | `astral-decal-10` | decal | decal tiếp đất theo chủ đề kit (vụn, vết, xương/đá), bất quy tắc, mép mềm |
-| ⬜ | ⬜ | `astral-decal-11` | decal | decal tiếp đất theo chủ đề kit (vụn, vết, xương/đá), bất quy tắc, mép mềm |
-| ⬜ | ⬜ | `astral-decal-12` | decal | decal tiếp đất theo chủ đề kit (vụn, vết, xương/đá), bất quy tắc, mép mềm |
-| ⬜ | ⬜ | `astral-shadow-01` | shadow | bóng procedural alpha mềm, màu kit |
-| ⬜ | ⬜ | `astral-shadow-02` | shadow | bóng procedural alpha mềm, màu kit |
-| ⬜ | ⬜ | `astral-shadow-03` | shadow | bóng procedural alpha mềm, màu kit |
-| ⬜ | ⬜ | `astral-shadow-04` | shadow | bóng procedural alpha mềm, màu kit |
-| ⬜ | ⬜ | `astral-backdrop-far` | backdrop | 1280×384, lặp ngang liền, mỗi tầng một khung cảnh khác |
-| ⬜ | ⬜ | `astral-backdrop-mid` | backdrop | 1280×384, lặp ngang liền, mỗi tầng một khung cảnh khác |
-| ⬜ | ⬜ | `astral-backdrop-near` | backdrop | 1280×384, lặp ngang liền, mỗi tầng một khung cảnh khác |
-| ⬜ | ⬜ | `astral-portal-dormant` | portal | cổng nhìn thẳng mặt trước, đúng tông kit |
-| ⬜ | ⬜ | `astral-portal-active` | portal | cùng mask với dormant |
-| ⬜ | ⬜ | `astral-marker-arrival` | marker | vòng sáng 4 khung |
-| ⬜ | ⬜ | `astral-fx-01` | fx | hạt/tia sáng sprite sheet theo chủ đề |
-| ⬜ | ⬜ | `astral-fx-02` | fx | hạt/tia sáng sprite sheet theo chủ đề |
-| ⬜ | ⬜ | `astral-fx-03` | fx | hạt/tia sáng sprite sheet theo chủ đề |
+| ✅ | ⬜ | `astral-floor-01` | floor | mặt đất tím/hoàng hôn — tile sàn nhìn từ trên xuống, seamless 512×512; HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
+| ✅ | ⬜ | `astral-floor-02` | floor | đường mây lát đá — tile sàn nhìn từ trên xuống, seamless 512×512; HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
+| ✅ | ⬜ | `astral-floor-03` | floor | cỏ tím — tile sàn nhìn từ trên xuống, seamless 512×512; HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
+| ✅ | ⬜ | `astral-prop-01` | prop | cây tím (sway-split) — prop đứng billboard, pivot giữa-đáy; HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
+| ✅ | ⬜ | `astral-prop-02` | prop | cây tím (sway-split) — prop đứng billboard, pivot giữa-đáy; HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
+| ✅ | ⬜ | `astral-prop-03` | prop | cây tím (sway-split) — prop đứng billboard, pivot giữa-đáy; HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
+| ✅ | ⬜ | `astral-prop-04` | prop | cổ thụ rỗng (Hốc Cổ Thụ) — prop đứng billboard, pivot giữa-đáy; HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
+| ✅ | ⬜ | `astral-prop-05` | prop | tinh thể pha lê — prop đứng billboard, pivot giữa-đáy; HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
+| ✅ | ⬜ | `astral-prop-06` | prop | tinh thể pha lê — prop đứng billboard, pivot giữa-đáy; HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
+| ✅ | ⬜ | `astral-prop-07` | prop | tinh thể pha lê — prop đứng billboard, pivot giữa-đáy; HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
+| ✅ | ⬜ | `astral-prop-08` | prop | đá lơ lửng — prop đứng billboard, pivot giữa-đáy; HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
+| ✅ | ⬜ | `astral-prop-09` | prop | đá lơ lửng — prop đứng billboard, pivot giữa-đáy; HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
+| ✅ | ⬜ | `astral-prop-10` | prop | đá lơ lửng — prop đứng billboard, pivot giữa-đáy; HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
+| ✅ | ⬜ | `astral-prop-11` | prop | hoa phát sáng — prop đứng billboard, pivot giữa-đáy; HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
+| ✅ | ⬜ | `astral-prop-12` | prop | vòng xoáy khe nứt (4 khung) — prop đứng billboard, pivot giữa-đáy; HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
+| ✅ | ⬜ | `astral-prop-13` | prop | bờ hồ (viền) — prop đứng billboard, pivot giữa-đáy; HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
+| ✅ | ⬜ | `astral-prop-14` | prop | cầu mây — prop đứng billboard, pivot giữa-đáy; HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
+| ✅ | ⬜ | `astral-backdrop-far-01` | backdrop_far | dải ngân hà — backdrop xa 1280×384 lặp ngang liền (64 px/đơn vị); HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
+| ✅ | ⬜ | `astral-backdrop-far-02` | backdrop_far | mây tím — backdrop xa 1280×384 lặp ngang liền (64 px/đơn vị); HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
+| ✅ | ⬜ | `astral-backdrop-far-03` | backdrop_far | núi trôi — backdrop xa 1280×384 lặp ngang liền (64 px/đơn vị); HD-2D Octopath pixel art, palette Tinh Giới, outline tối cùng sắc, 33–48 màu, không bóng đổ/sương/chữ. |
+| ✅ | ⬜ | `astral-floor-extra-01` | floor | tile sàn bổ sung (đủ ≥8 biến thể khác texture), seamless 512×512 |
+| ✅ | ⬜ | `astral-floor-extra-02` | floor | tile sàn bổ sung (đủ ≥8 biến thể khác texture), seamless 512×512 |
+| ✅ | ⬜ | `astral-floor-extra-03` | floor | tile sàn bổ sung (đủ ≥8 biến thể khác texture), seamless 512×512 |
+| ✅ | ⬜ | `astral-floor-extra-04` | floor | tile sàn bổ sung (đủ ≥8 biến thể khác texture), seamless 512×512 |
+| ✅ | ⬜ | `astral-floor-extra-05` | floor | tile sàn bổ sung (đủ ≥8 biến thể khác texture), seamless 512×512 |
+| ✅ | ⬜ | `astral-edge-01` | edge | dải chuyển tiếp giữa 2 tile chính, 512×128 liền hai đầu, mép bất quy tắc |
+| ✅ | ⬜ | `astral-edge-02` | edge | dải chuyển tiếp giữa 2 tile chính, 512×128 liền hai đầu, mép bất quy tắc |
+| ✅ | ⬜ | `astral-edge-03` | edge | dải chuyển tiếp giữa 2 tile chính, 512×128 liền hai đầu, mép bất quy tắc |
+| ✅ | ⬜ | `astral-decal-01` | decal | decal tiếp đất theo chủ đề kit (vụn, vết, xương/đá), bất quy tắc, mép mềm |
+| ✅ | ⬜ | `astral-decal-02` | decal | decal tiếp đất theo chủ đề kit (vụn, vết, xương/đá), bất quy tắc, mép mềm |
+| ✅ | ⬜ | `astral-decal-03` | decal | decal tiếp đất theo chủ đề kit (vụn, vết, xương/đá), bất quy tắc, mép mềm |
+| ✅ | ⬜ | `astral-decal-04` | decal | decal tiếp đất theo chủ đề kit (vụn, vết, xương/đá), bất quy tắc, mép mềm |
+| ✅ | ⬜ | `astral-decal-05` | decal | decal tiếp đất theo chủ đề kit (vụn, vết, xương/đá), bất quy tắc, mép mềm |
+| ✅ | ⬜ | `astral-decal-06` | decal | decal tiếp đất theo chủ đề kit (vụn, vết, xương/đá), bất quy tắc, mép mềm |
+| ✅ | ⬜ | `astral-decal-07` | decal | decal tiếp đất theo chủ đề kit (vụn, vết, xương/đá), bất quy tắc, mép mềm |
+| ✅ | ⬜ | `astral-decal-08` | decal | decal tiếp đất theo chủ đề kit (vụn, vết, xương/đá), bất quy tắc, mép mềm |
+| ✅ | ⬜ | `astral-decal-09` | decal | decal tiếp đất theo chủ đề kit (vụn, vết, xương/đá), bất quy tắc, mép mềm |
+| ✅ | ⬜ | `astral-decal-10` | decal | decal tiếp đất theo chủ đề kit (vụn, vết, xương/đá), bất quy tắc, mép mềm |
+| ✅ | ⬜ | `astral-decal-11` | decal | decal tiếp đất theo chủ đề kit (vụn, vết, xương/đá), bất quy tắc, mép mềm |
+| ✅ | ⬜ | `astral-decal-12` | decal | decal tiếp đất theo chủ đề kit (vụn, vết, xương/đá), bất quy tắc, mép mềm |
+| ✅ | ⬜ | `astral-shadow-01` | shadow | bóng procedural alpha mềm, màu kit |
+| ✅ | ⬜ | `astral-shadow-02` | shadow | bóng procedural alpha mềm, màu kit |
+| ✅ | ⬜ | `astral-shadow-03` | shadow | bóng procedural alpha mềm, màu kit |
+| ✅ | ⬜ | `astral-shadow-04` | shadow | bóng procedural alpha mềm, màu kit |
+| ✅ | ⬜ | `astral-backdrop-far` | backdrop | 1280×384, lặp ngang liền, mỗi tầng một khung cảnh khác |
+| ✅ | ⬜ | `astral-backdrop-mid` | backdrop | 1280×384, lặp ngang liền, mỗi tầng một khung cảnh khác |
+| ✅ | ⬜ | `astral-backdrop-near` | backdrop | 1280×384, lặp ngang liền, mỗi tầng một khung cảnh khác |
+| ✅ | ⬜ | `astral-portal-dormant` | portal | cổng nhìn thẳng mặt trước, đúng tông kit |
+| ✅ | ⬜ | `astral-portal-active` | portal | cùng mask với dormant |
+| ✅ | ⬜ | `astral-marker-arrival` | marker | vòng sáng 4 khung |
+| ✅ | ⬜ | `astral-fx-01` | fx | hạt/tia sáng sprite sheet theo chủ đề |
+| ✅ | ⬜ | `astral-fx-02` | fx | hạt/tia sáng sprite sheet theo chủ đề |
+| ✅ | ⬜ | `astral-fx-03` | fx | hạt/tia sáng sprite sheet theo chủ đề |
+
+> Landmark rows are map placements that reuse shared Astral candidates listed in the final column. Names are visual interpretations of the supplied map screenshots, not claims of recovered unique APK sprites. All remain unapproved until Claude/owner review.
 
 ## 2. Prompt sheet chung cho kit
 
@@ -73,7 +78,7 @@ Nguồn: Phần C `hd2d-maps-75-gemini-prompt.md`. Yêu cầu gốc: tile mặt 
 Dùng agent-sprite-forge ($generate2dmap cho tile/prop, $generate2dsprite cho prop/decal/FX/marker). Route ảnh: image_gen tích hợp của Codex (kiểm `route_media.py resolve --kind image`). KHÔNG codeart2d, KHÔNG API, KHÔNG vẽ bằng code.
 Kit: Tinh Giới (astral). Style: Cảnh ma mị: rừng mây tím, hoàng hôn, hồ vân ảnh, cổ thụ; Khe nứt thời không phát sáng. Bảng màu: tím #5B4A9B, hồng hoàng hôn #E08AA0, vàng #F2C879.. Style anchor: batch-01-octopath/contact-sheet.png + 2 sprites.png linh thú.
 Mỗi lần gọi: 1 sheet ~6 vật trên nền #FF00FF, bố trí 2×3/3×2, cách nhau ≥48 px, không chạm mép. Giữ raw-01.png byte-identical. Cắt/khử nền/pixel finish bằng script forge. 33–48 màu, alpha nhị phân, lề ≥8 px, 128 px = 1 đơn vị (far 64), người = 1.31 đơn vị (cỡ tối đa vật nhỏ: tools/hd2d_audit/size_check.py).
-Mỗi asset: thư mục raw-01/final/prompt.md/review.md/qa.json trong apps/game-web/art-src/hd2d/batch-11-astral/<id>/. Tự nhìn 4× nền tối/caro. Xong: `python3 tools/hd2d_audit/art_gate.py batch-11-astral` = 0 lỗi, contact-sheet mới hơn manifest.
+Mỗi asset: thư mục raw-01/final/prompt.md/review.md/qa.json trong art/src/hd2d/batch-11-astral/<id>/. Tự nhìn 4× nền tối/caro. Xong: `python3 tools/hd2d_audit/art_gate.py batch-11-astral` = 0 lỗi, contact-sheet mới hơn manifest.
 ```
 
 ## 3. Từng map
@@ -97,8 +102,8 @@ Asset chính: dùng bảng kit (mục 1). Landmark riêng của map (Codex xem �
 
 | Vẽ | Duyệt | id | loại | mô tả | prompt |
 |---|---|---|---|---|---|
-| ⬜ | ⬜ | `astral_realm_unnamed_area_01-landmark-01` | landmark | (vật nhận diện #1 trong ảnh gốc) | — |
-| ⬜ | ⬜ | `astral_realm_unnamed_area_01-landmark-02` | landmark | (vật nhận diện #2, nếu có) | — |
+| ✅ | ⬜ | `astral_realm_unnamed_area_01-landmark-01` | landmark | Cụm thân cây cổ thụ và rễ tím (diễn giải từ ảnh map; dùng candidate chung, không tạo bản sao) | shared candidate: `astral-prop-04` |
+| ✅ | ⬜ | `astral_realm_unnamed_area_01-landmark-02` | landmark | Bờ hồ viền đá, hoa tím và cỏ (diễn giải từ ảnh map; dùng candidate chung, không tạo bản sao) | shared candidate: `astral-prop-13` |
 
 Prompt cho Codex:
 
@@ -124,8 +129,8 @@ Asset chính: dùng bảng kit (mục 1). Landmark riêng của map (Codex xem �
 
 | Vẽ | Duyệt | id | loại | mô tả | prompt |
 |---|---|---|---|---|---|
-| ⬜ | ⬜ | `astral_realm_spacetime_rift-landmark-01` | landmark | (vật nhận diện #1 trong ảnh gốc) | — |
-| ⬜ | ⬜ | `astral_realm_spacetime_rift-landmark-02` | landmark | (vật nhận diện #2, nếu có) | — |
+| ✅ | ⬜ | `astral_realm_spacetime_rift-landmark-01` | landmark | Vòng xoáy khe nứt thời-không (diễn giải từ ảnh map; dùng candidate chung, không tạo bản sao) | shared candidate: `astral-prop-12` |
+| ✅ | ⬜ | `astral_realm_spacetime_rift-landmark-02` | landmark | Cụm sao/hạt sáng quanh vùng nứt (diễn giải từ ảnh map; dùng candidate chung, không tạo bản sao) | shared candidate: `astral-fx-01` |
 
 Prompt cho Codex:
 
@@ -152,8 +157,8 @@ Asset chính: dùng bảng kit (mục 1). Landmark riêng của map (Codex xem �
 
 | Vẽ | Duyệt | id | loại | mô tả | prompt |
 |---|---|---|---|---|---|
-| ⬜ | ⬜ | `astral_realm_unnamed_area_02-landmark-01` | landmark | (vật nhận diện #1 trong ảnh gốc) | — |
-| ⬜ | ⬜ | `astral_realm_unnamed_area_02-landmark-02` | landmark | (vật nhận diện #2, nếu có) | — |
+| ✅ | ⬜ | `astral_realm_unnamed_area_02-landmark-01` | landmark | Cầu mây lát đá lơ lửng (diễn giải từ ảnh map; dùng candidate chung, không tạo bản sao) | shared candidate: `astral-prop-14` |
+| ✅ | ⬜ | `astral_realm_unnamed_area_02-landmark-02` | landmark | Đảo đá tím lơ lửng (diễn giải từ ảnh map; dùng candidate chung, không tạo bản sao) | shared candidate: `astral-prop-08` |
 
 Prompt cho Codex:
 
@@ -177,8 +182,8 @@ Asset chính: dùng bảng kit (mục 1). Landmark riêng của map (Codex xem �
 
 | Vẽ | Duyệt | id | loại | mô tả | prompt |
 |---|---|---|---|---|---|
-| ⬜ | ⬜ | `astral_realm_unnamed_area_03-landmark-01` | landmark | (vật nhận diện #1 trong ảnh gốc) | — |
-| ⬜ | ⬜ | `astral_realm_unnamed_area_03-landmark-02` | landmark | (vật nhận diện #2, nếu có) | — |
+| ✅ | ⬜ | `astral_realm_unnamed_area_03-landmark-01` | landmark | Bờ hồ Vân Ảnh, đá và hoa (diễn giải từ ảnh map; dùng candidate chung, không tạo bản sao) | shared candidate: `astral-prop-13` |
+| ✅ | ⬜ | `astral_realm_unnamed_area_03-landmark-02` | landmark | Hoa phát sáng ở mép nước (diễn giải từ ảnh map; dùng candidate chung, không tạo bản sao) | shared candidate: `astral-prop-11` |
 
 Prompt cho Codex:
 
@@ -202,8 +207,8 @@ Asset chính: dùng bảng kit (mục 1). Landmark riêng của map (Codex xem �
 
 | Vẽ | Duyệt | id | loại | mô tả | prompt |
 |---|---|---|---|---|---|
-| ⬜ | ⬜ | `astral_realm_unnamed_area_04-landmark-01` | landmark | (vật nhận diện #1 trong ảnh gốc) | — |
-| ⬜ | ⬜ | `astral_realm_unnamed_area_04-landmark-02` | landmark | (vật nhận diện #2, nếu có) | — |
+| ✅ | ⬜ | `astral_realm_unnamed_area_04-landmark-01` | landmark | Cổ thụ rỗng làm điểm nhận diện (diễn giải từ ảnh map; dùng candidate chung, không tạo bản sao) | shared candidate: `astral-prop-04` |
+| ✅ | ⬜ | `astral_realm_unnamed_area_04-landmark-02` | landmark | Cụm tinh thể tím dưới tán cổ thụ (diễn giải từ ảnh map; dùng candidate chung, không tạo bản sao) | shared candidate: `astral-prop-05` |
 
 Prompt cho Codex:
 
@@ -230,8 +235,8 @@ Asset chính: dùng bảng kit (mục 1). Landmark riêng của map (Codex xem �
 
 | Vẽ | Duyệt | id | loại | mô tả | prompt |
 |---|---|---|---|---|---|
-| ⬜ | ⬜ | `astral_realm_unnamed_area_05-landmark-01` | landmark | (vật nhận diện #1 trong ảnh gốc) | — |
-| ⬜ | ⬜ | `astral_realm_unnamed_area_05-landmark-02` | landmark | (vật nhận diện #2, nếu có) | — |
+| ✅ | ⬜ | `astral_realm_unnamed_area_05-landmark-01` | landmark | Cây tím nhiều tầng của rừng hoàng hôn (diễn giải từ ảnh map; dùng candidate chung, không tạo bản sao) | shared candidate: `astral-prop-03` |
+| ✅ | ⬜ | `astral_realm_unnamed_area_05-landmark-02` | landmark | Bụi hoa năm cánh trên nền tím (diễn giải từ ảnh map; dùng candidate chung, không tạo bản sao) | shared candidate: `astral-prop-11` |
 
 Prompt cho Codex:
 
@@ -255,8 +260,8 @@ Asset chính: dùng bảng kit (mục 1). Landmark riêng của map (Codex xem �
 
 | Vẽ | Duyệt | id | loại | mô tả | prompt |
 |---|---|---|---|---|---|
-| ⬜ | ⬜ | `astral_realm_unnamed_area_06-landmark-01` | landmark | (vật nhận diện #1 trong ảnh gốc) | — |
-| ⬜ | ⬜ | `astral_realm_unnamed_area_06-landmark-02` | landmark | (vật nhận diện #2, nếu có) | — |
+| ✅ | ⬜ | `astral_realm_unnamed_area_06-landmark-01` | landmark | Đảo đá lơ lửng có rễ (diễn giải từ ảnh map; dùng candidate chung, không tạo bản sao) | shared candidate: `astral-prop-08` |
+| ✅ | ⬜ | `astral_realm_unnamed_area_06-landmark-02` | landmark | Khe nứt thời-không ở cuối vùng (diễn giải từ ảnh map; dùng candidate chung, không tạo bản sao) | shared candidate: `astral-prop-12` |
 
 Prompt cho Codex:
 

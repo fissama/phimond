@@ -1,0 +1,31 @@
+{
+  "task_id": "NEW-battlefield-portal-active",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate.png",
+      "processing": "Crop generated raw alpha bbox; nearest-resize its RGB content to dormant alpha bbox; quantize visible RGB to 48 colors; apply dormant binary alpha mask exactly, preserving shared pivot.",
+      "colors_opaque": 48,
+      "alpha_margin_px": 12,
+      "binary_alpha": true,
+      "alpha_matches_dormant_pixel_identically": true,
+      "visible_magenta_pixels": 0,
+      "failure": null
+    }
+  ],
+  "selected_candidate": "candidate.png",
+  "sha256": "bdc4fd8b6485058661a0b67af67c9792f99392918fd3e509904e5814f80eb161",
+  "acceptance_result": {
+    "size_px": [
+      384,
+      384
+    ],
+    "colors_opaque": 48,
+    "alpha_margin_px": 12,
+    "mask_pair_pixel_identical": true,
+    "visible_magenta_pixels": 0
+  },
+  "art_gate": "NOT_RUN: handoff candidate is not registered in canonical manifest; manifest edits forbidden."
+}

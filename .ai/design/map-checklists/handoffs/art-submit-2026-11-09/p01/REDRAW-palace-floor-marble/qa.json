@@ -1,0 +1,33 @@
+{
+  "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-09/p01/REDRAW-palace-floor-marble/candidate-03.png",
+  "candidate_sha256": "c3da2730a14ace95aacfb1e308af8918447ce3ce857a7f6a5e3767ac15cf324b",
+  "size": [
+    512,
+    512
+  ],
+  "colors": 40,
+  "alpha_mode": "RGB opaque",
+  "attempts": {
+    "1": {
+      "wrap_x": 2.503,
+      "wrap_y": 2.576,
+      "autocorr": 0.359,
+      "note": "Best crop search; seam fail."
+    },
+    "2": {
+      "wrap_x": 2.194,
+      "wrap_y": 1.847,
+      "autocorr": 0.382,
+      "note": "Best crop search; x seam fails."
+    },
+    "3": {
+      "wrap_x": 2.148,
+      "wrap_y": 2.018,
+      "autocorr": 0.327,
+      "note": "Best crop search; 3×3 shows repeated vein/cloud patterns, seam fail."
+    }
+  },
+  "status": "FAILED_AFTER_3_TRIES",
+  "palette_decision": "Follows the palace map dark slate floor, excluding red carpet.",
+  "art_gate": "NOT_RUN: handoff-only; not registered before Claude acceptance"
+}

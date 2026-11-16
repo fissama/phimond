@@ -1,0 +1,75 @@
+{
+  "task_id": "NEW-dungeon-floor-extra-02",
+  "status": "FAILED_AFTER_3_TRIES",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01.png",
+      "processing": "nearest resize 512x512; median-cut quantize 48; opaque RGB",
+      "colors": 48,
+      "seam_x": 7.966,
+      "seam_y": 9.413,
+      "autocorr_max_lag_8_255": 0.5235,
+      "flat_perimeter_unique_colors": 48,
+      "visual_review": "3x3 shows strong horizontal band/motif repetition; fail"
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "processing": "nearest resize 512x512; median-cut quantize 48; opaque RGB",
+      "colors": 48,
+      "seam_x": 13.14,
+      "seam_y": 13.249,
+      "autocorr_max_lag_8_255": 0.2084,
+      "flat_perimeter_unique_colors": 48,
+      "visual_review": "3x3 structurally varied but visible boundary mismatch; fail"
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "processing": "nearest resize 512x512; median-cut quantize 48; opaque RGB",
+      "colors": 48,
+      "seam_x": 11.645,
+      "seam_y": 15.154,
+      "autocorr_max_lag_8_255": 0.1774,
+      "flat_perimeter_unique_colors": 48,
+      "sha256": "4b2a1f3de1cf094950ac37507fee163d2c5ad45c25b2b0d12444cd497fb3415d",
+      "visual_review": "3x3 shows exact motif repetition from tiling; edge mismatch, fail"
+    }
+  ],
+  "acceptance": {
+    "target_size": [
+      512,
+      512
+    ],
+    "colors": [
+      33,
+      48
+    ],
+    "seam_wrap_max": 1.25,
+    "autocorrelation_max": 0.25,
+    "flat_outer_margin_px": 8
+  },
+  "final_candidate": null,
+  "art_gate": "NOT_RUN: handoff-only; canonical scan deferred",
+  "tileable_postprocess": {
+    "method": "offset 256 px x/y, crossfade 24px using local samples from both sides, quantize 48, flatten 8px perimeter",
+    "raw": "raw-02.png",
+    "candidate": "candidate-tileable-postprocess.png",
+    "metrics": {
+      "size": [
+        512,
+        512
+      ],
+      "colors": 48,
+      "wrap_x": 0.0,
+      "wrap_y": 0.0,
+      "autocorr_max_lag_8_255": 0.23913691937923431,
+      "flat8_unique_colors": 1
+    },
+    "visual_review": "FAILED: 3x3 and 4x4 show obvious vertical/horizontal blend streaks at the internal seam plus repeated motif cadence; do not promote."
+  }
+}

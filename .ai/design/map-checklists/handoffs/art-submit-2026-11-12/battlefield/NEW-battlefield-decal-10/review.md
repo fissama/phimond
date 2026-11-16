@@ -1,0 +1,1 @@
+Selected alpha-key candidate has 320x320 size, 47 colors, binary alpha and 31px alpha margin. Placement preview shows a broken crescent without visible halo; candidate awaits Claude visual review and is not approved. Source map palette retained.

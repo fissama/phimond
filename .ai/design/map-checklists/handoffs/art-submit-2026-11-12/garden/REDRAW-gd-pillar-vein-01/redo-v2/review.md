@@ -1,0 +1,1 @@
+Redo-v2 generated from scratch to address low 1x visibility. Main gold stem and secondary branches are materially thicker with separate warm light/dark bands; no baked glow or shadow. Candidate handoff only; Claude review pending.

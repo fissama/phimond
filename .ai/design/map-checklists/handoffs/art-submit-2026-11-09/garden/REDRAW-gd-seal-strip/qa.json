@@ -1,0 +1,39 @@
+{
+  "asset_id": "gd-seal-strip",
+  "size_px": [
+    512,
+    160
+  ],
+  "color_count": 44,
+  "alpha_values": [
+    0,
+    255
+  ],
+  "alpha_binary": true,
+  "alpha_bbox": [
+    0,
+    22,
+    512,
+    142
+  ],
+  "alpha_margin_px": [
+    0,
+    22,
+    0,
+    18
+  ],
+  "source_raw_sha256": "ec564a669cd673746ff023c7ab4c4f7c5a3099f71badfe792835ec79f7f18841",
+  "final_sha256": "53926ffeb08b1954d323b24a4495ca7492ef2ee5fa666520b835d50fec1b0609",
+  "approved": false,
+  "status": "needs_claude_review",
+  "mechanical_status": "pass_pending_visual_review",
+  "generation_route": "built-in image_gen",
+  "postprocess": "crop source x=522..2153 y=100..609; alpha threshold 128; global 48-color palette reduction; nearest-neighbor resize to 512x136 and transparent pad 12 px top/bottom; no edge copying",
+  "tileable": "x",
+  "left_right_alpha_profile_equal": true,
+  "edge_rgb_mean_abs_delta": 3.835,
+  "margins_px": [
+    22,
+    18
+  ]
+}

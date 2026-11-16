@@ -1,0 +1,39 @@
+{
+  "task_id": "NEW-guild-prop-06",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "redo-v3/raw-01.png",
+      "decision": "Rejected: visible star-shaped sparkle glints conflict with no-glow/no-baked-effect error criteria."
+    },
+    {
+      "attempt": 2,
+      "raw": "redo-v3/raw-02.png",
+      "decision": "Selected after 4x inspection on light and dark backgrounds."
+    }
+  ],
+  "processing": "Threshold source alpha at >=128, erode 1px, crop visible silhouette, nearest resize into 256x256 with transparent padding, median-cut quantize 48 without dithering, retain only binary alpha. This asset is handoff-only.",
+  "result": {
+    "size": [
+      256,
+      256
+    ],
+    "colors": 47,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "alpha_margin_px": 10,
+    "sha256": "555ee29678fec859a5798b63b54874619dd62da5de9d79629e282a24219e1ae6",
+    "seam": "N/A",
+    "autocorr": "N/A"
+  },
+  "visual_qa": {
+    "1x": "Readable open chest with stacked gold at game-scale.",
+    "4x_light": "Hard pixel steps; no white fringe or glow visible.",
+    "4x_dark": "Binary cutout edge clean; no halo or cast shadow visible.",
+    "map_reference": "Guild map references establish warm beige stone, dark brown, teal and gold palette; treasure chest form follows the CSV prompt."
+  },
+  "art_gate": "NOT_RUN: candidate is handoff-only and not registered in canonical manifest; no manifest change made."
+}

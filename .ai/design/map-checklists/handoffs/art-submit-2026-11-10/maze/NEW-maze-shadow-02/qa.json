@@ -1,0 +1,28 @@
+{
+  "task_id": "NEW-maze-shadow-02",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate.png",
+      "rgb_colors": 1,
+      "alpha_kind": "soft",
+      "alpha_range": [
+        0,
+        175
+      ],
+      "alpha_margin": 16,
+      "failure": null
+    }
+  ],
+  "processing": "Preserved generated soft alpha, cropped alpha bounds >2, Lanczos resized to max 288\u00d7128, RGB collapsed to one median dusty-violet color [57,35,66], padded to 320\u00d7160.",
+  "acceptance": {
+    "rgb_colors": 1,
+    "soft_alpha": true,
+    "alpha_margin_min": 8,
+    "wide_soft_oval": true
+  },
+  "final_candidate": "candidate.png",
+  "art_gate": "NOT_RUN: handoff-only candidate, not registered in canonical manifest."
+}

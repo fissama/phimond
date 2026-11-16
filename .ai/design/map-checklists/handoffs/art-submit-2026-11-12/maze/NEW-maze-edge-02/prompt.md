@@ -1,0 +1,1 @@
+Narrow horizontal transition strip of irregular dusty violet/blue-gray bone-maze rubble, occasional ivory bone shards, muted brown ties and pink-beige paving baseline; transparent; irregular top and seamless ends without mirroring; crisp pixels; no glow/shadow/text/frame/fringe/magenta.

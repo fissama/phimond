@@ -1,0 +1,1 @@
+Task NEW-guild-floor-03 (order 315). The source screenshots show outdoor cracked stone paving, while the CSV plan says guild rug. Followed source map material and palette. Three generated variants, individually saved and processed only by resizing and quantizing.

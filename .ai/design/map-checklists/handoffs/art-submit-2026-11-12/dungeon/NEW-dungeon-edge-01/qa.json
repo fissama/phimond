@@ -1,0 +1,87 @@
+{
+  "task_id": "NEW-dungeon-edge-01",
+  "status": "FAILED_AFTER_3_TRIES",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01.png",
+      "processing": "nearest resize to 512 wide, center crop 512x128; alpha threshold 128; median-cut RGB quantize 48",
+      "colors": 44,
+      "alpha_binary": true,
+      "seam_alpha_mean": 3.984,
+      "seam_rgb_overlap_mean": 4.144,
+      "autocorr_max_lag_60_460": {
+        "value": 0.734,
+        "lag": 329
+      },
+      "magenta_opaque_pixels": 0,
+      "visual_review": "3x1 repeats recognizable limestone stones, fails cadence."
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "processing": "nearest resize to 512 wide, center crop 512x128; alpha threshold 128; median-cut RGB quantize 48",
+      "colors": 45,
+      "alpha_binary": true,
+      "seam_alpha_mean": 3.984,
+      "seam_rgb_overlap_mean": 31.682,
+      "autocorr_max_lag_60_460": {
+        "value": 0.571,
+        "lag": 375
+      },
+      "magenta_opaque_pixels": 0,
+      "visual_review": "3x1 cadence; RGB endpoint seam fails."
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "processing": "nearest resize to 512 wide, center crop 512x128; alpha threshold 128; median-cut RGB quantize 48",
+      "colors": 40,
+      "alpha_binary": true,
+      "seam_alpha_mean": 3.984,
+      "seam_rgb_overlap_mean": 4.667,
+      "autocorr_max_lag_60_460": {
+        "value": 0.592,
+        "lag": 264
+      },
+      "magenta_opaque_pixels": 0,
+      "visual_review": "3x1 repeats same rock group; fails cadence."
+    }
+  ],
+  "tileable_postprocess": {
+    "tool": "codex-tools/tileable_edge_postprocess.py",
+    "source_raw": "raw-03.png",
+    "candidate": "candidate-tileable-postprocess.png",
+    "colors": 39,
+    "alpha_binary": true,
+    "alpha_seam_mean": 0.0,
+    "rgb_seam_overlap_mean": 33.075,
+    "autocorr_max_lag_60_460": {
+      "value": 0.612,
+      "lag": 264
+    },
+    "visual_review": "FAILED: repeated stone cadence remains; endpoint RGB seam exceeds 14."
+  },
+  "acceptance": {
+    "target_size": [
+      512,
+      128
+    ],
+    "colors": [
+      33,
+      48
+    ],
+    "binary_alpha": true,
+    "seam_max": 14,
+    "autocorr_lag": [
+      60,
+      460
+    ],
+    "autocorr_max": 0.25
+  },
+  "final_candidate": null,
+  "art_gate": "NOT_RUN: handoff-only; canonical scan deferred"
+}

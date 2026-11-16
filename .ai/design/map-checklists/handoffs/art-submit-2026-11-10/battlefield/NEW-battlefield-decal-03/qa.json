@@ -1,0 +1,52 @@
+{
+  "task_id": "NEW-battlefield-decal-03",
+  "status": "FAILED_AFTER_3_TRIES",
+  "map_decision": "Pale cream plaza stone fragments retained per source map; no dirt, blood or bone motif.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01.png",
+      "colors": 24,
+      "alpha_margin_px": 17,
+      "source_alpha_varied": true,
+      "visible_chromatic_fringe": false,
+      "failure": "colors 24<33; source alpha not binary; baked soft halo/glow visible"
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "colors": 43,
+      "alpha_margin_px": 0,
+      "source_alpha_varied": true,
+      "visible_chromatic_fringe": false,
+      "failure": "margin 0<8; source alpha not binary; colored fringe around stone silhouette"
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "colors": 22,
+      "alpha_margin_px": 0,
+      "source_alpha_varied": true,
+      "visible_chromatic_fringe": false,
+      "failure": "colors 22<33; margin 0<8; source alpha not binary; baked soft halo/glow visible"
+    }
+  ],
+  "processing": "Center crop, nearest resize 320x320, median-cut quantize to 48 colors, binary alpha threshold.",
+  "acceptance": {
+    "size_px": [
+      256,
+      384
+    ],
+    "colors": [
+      33,
+      48
+    ],
+    "binary_alpha": true,
+    "alpha_margin_min": 8
+  },
+  "final_candidate": null,
+  "art_gate": "NOT_RUN: canonical manifest unchanged; final --all deferred."
+}

@@ -1,0 +1,38 @@
+{
+  "task_id": "NEW-guild-prop-01",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "attempts": 2,
+  "source_decision": "Visible crenellated beige stone perimeter wall and tower supported by source guild fortress image.",
+  "raw_used": "raw-02.jpg",
+  "raw_discarded": "raw-01.jpg (cast shadow on green background)",
+  "candidate": "candidate.png",
+  "sha256": "bc6347d5977d5a9873eb5d9d0c48c0acbda4f31a01f9c2d3c5a37f0585fa1e25",
+  "dimensions": [
+    877,
+    461
+  ],
+  "colors": 33,
+  "alpha_values": [
+    0,
+    255
+  ],
+  "alpha_binary": true,
+  "alpha_margin": {
+    "left": 12,
+    "top": 12,
+    "right": 12,
+    "bottom": 12
+  },
+  "residual_green_hue_pixels": 51,
+  "keying": "Green-hue chroma key; cropped to subject bbox with 12px padding; quantized opaque RGB to 48 colors.",
+  "visual_self_check": {
+    "object_type": "YES",
+    "palette": "YES",
+    "magenta": "NO",
+    "glow": "NO",
+    "cast_shadow_on_background": "NO in used raw",
+    "white_fringe": "NO apparent",
+    "pixel_edges": "YES; 4x nearest preview checked"
+  },
+  "art_gate": "NOT_RUN: handoff-only candidate; manifest untouched."
+}

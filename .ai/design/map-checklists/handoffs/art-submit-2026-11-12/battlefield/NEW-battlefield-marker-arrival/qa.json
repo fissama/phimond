@@ -1,0 +1,42 @@
+{
+  "task_id": "NEW-battlefield-marker-arrival",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate.png",
+      "processing": "Split source into four equal horizontal cells; binary alpha threshold 128; remove visible red fringe by color key; crop each cell; nearest-resize within 176x112; center in 192x128; shared 48-color median-cut palette.",
+      "colors_opaque": 45,
+      "alpha_binary": true,
+      "per_frame_alpha_margin_px": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "visible_magenta_pixels": 0,
+      "failure": null
+    }
+  ],
+  "selected_candidate": "candidate.png",
+  "sha256": "693b8357ebad9b7eb2f5af8a6a1f83ce478e11a74fccc9527259c1842ea31f9a",
+  "acceptance_result": {
+    "size_px": [
+      768,
+      128
+    ],
+    "frame_count": 4,
+    "colors_opaque": 45,
+    "binary_alpha": true,
+    "per_frame_alpha_margin_px": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "visible_magenta_pixels": 0,
+    "visual": "four stationary ring frames with staggered cyan facets; 4-frame preview supplied"
+  },
+  "art_gate": "NOT_RUN: handoff candidate is not registered in canonical manifest; manifest edits forbidden."
+}

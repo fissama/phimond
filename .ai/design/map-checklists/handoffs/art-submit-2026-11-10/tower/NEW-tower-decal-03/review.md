@@ -1,0 +1,1 @@
+All three generation attempts show diffuse colored glow/halo around leaf litter or splinter marks. Their source alpha has broad semitransparent areas. No candidate submitted. Map imagery supports wood, moss and leaf litter, not bones.

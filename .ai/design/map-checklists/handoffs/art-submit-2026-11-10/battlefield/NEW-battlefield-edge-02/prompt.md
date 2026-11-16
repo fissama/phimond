@@ -1,0 +1,1 @@
+ImageGen prompts: transparent horizontal 3:1 raw, distinctive layered cream marble shelf edge, polygonal plates, irregular stepped underside, gold flecks, no objects, seamless left-right, pixel-art HD-2D.

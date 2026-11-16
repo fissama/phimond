@@ -1,0 +1,37 @@
+{
+  "raw_file": "raw-03.png",
+  "raw_size": [
+    1408,
+    768
+  ],
+  "selected_attempt": 3,
+  "processing": "magenta color key; crop alpha bounds; 48-color median-cut quantization; nearest-neighbor resize to 360px; magenta fringe alpha-key cleanup; transparent 384x384 canvas",
+  "final_size": [
+    384,
+    384
+  ],
+  "color_count_rgb_opaque": 23,
+  "binary_alpha": true,
+  "alpha_bbox": [
+    42,
+    12,
+    341,
+    372
+  ],
+  "alpha_margins": [
+    42,
+    12,
+    43,
+    12
+  ],
+  "seam": "N/A landmark",
+  "autocorrelation": "N/A landmark",
+  "art_gate": "NOT_RUN: handoff candidate excluded from canonical art_gate scope",
+  "sha256": "90e610a009d1634d17d2f010cd449440a31b69763fa98b1c21b26872101c2c50",
+  "reference_crop": ".ai/design/map-checklists/evidence/tower_region_deep_woods-landmark-01/map-crop-striped-tree.png",
+  "attempts": {
+    "1": "rejected: canopy cropped at both horizontal image edges",
+    "2": "rejected: bottom of trunk cropped at lower image edge",
+    "3": "complete silhouette, but 23 colors (<33 minimum)"
+  }
+}

@@ -1,0 +1,3 @@
+# Source identification and visual review
+
+The selected object is the curved bone-and-stone balustrade visible along the back edge of the maze maps; crop evidence is saved as map-crop.jpg. The old generic green-vine description conflicts with the source. This candidate uses dark blue-gray/dusty-violet masonry, ivory rib-like arches and restrained warm light. Full silhouette is visible; after processing it is 664x287, 45 opaque colors, binary alpha, 12px margins. I removed only 22 isolated magenta artifact pixels through alpha keying and checked the 4x image. No obvious white fringe, cast shadow, glow or text. Candidate remains for Claude review; not registered in the canonical manifest.

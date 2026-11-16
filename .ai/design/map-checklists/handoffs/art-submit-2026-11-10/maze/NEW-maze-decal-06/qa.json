@@ -1,0 +1,49 @@
+{
+  "task_id": "NEW-maze-decal-06",
+  "status": "FAILED_AFTER_3_TRIES",
+  "map_decision": "Followed map-supported dusty rose and violet stone palette.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01.png",
+      "colors": 36,
+      "binary_alpha": true,
+      "failure": "Broad light/dark halo visible in raw around tiny chips; alpha threshold/crop cannot yield clean object edges."
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "colors": 45,
+      "binary_alpha": true,
+      "failure": "Broad light/dark halo visible in raw around tiny chips; alpha threshold/crop cannot yield clean object edges."
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "colors": 31,
+      "binary_alpha": true,
+      "failure": "Broad light/dark halo visible in raw around tiny chips; alpha threshold/crop cannot yield clean object edges."
+    }
+  ],
+  "processing": "Thresholded alpha\u2265220, cropped object bounds, nearest-resized/padded to 320\u00b2, quantized to 48 colors, binary alpha restored.",
+  "acceptance": {
+    "size_range": [
+      256,
+      384
+    ],
+    "colors": [
+      33,
+      48
+    ],
+    "binary_alpha": true,
+    "alpha_margin_min": 8,
+    "irregular_shape": true,
+    "no_glow": true
+  },
+  "final_candidate": null,
+  "art_gate": "NOT_RUN: handoff only; canonical manifest untouched.",
+  "raws_preserved": true
+}

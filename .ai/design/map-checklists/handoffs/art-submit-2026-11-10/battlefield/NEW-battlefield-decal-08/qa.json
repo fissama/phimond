@@ -1,0 +1,52 @@
+{
+  "task_id": "NEW-battlefield-decal-08",
+  "status": "FAILED_AFTER_3_TRIES",
+  "map_decision": "Irregular cream stone fragments and taupe grit retained per source-map palette.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01.png",
+      "colors": 37,
+      "alpha_margin_px": 0,
+      "raw_alpha_varied": true,
+      "visible_red_fringe": false,
+      "failure": "margin 0<8; source alpha nonbinary; baked glow/halo"
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "colors": 21,
+      "alpha_margin_px": 0,
+      "raw_alpha_varied": true,
+      "visible_red_fringe": false,
+      "failure": "colors 21<33; margin 0<8; source alpha nonbinary"
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "colors": 20,
+      "alpha_margin_px": 0,
+      "raw_alpha_varied": true,
+      "visible_red_fringe": false,
+      "failure": "colors 20<33; margin 0<8; source alpha nonbinary; baked glow/halo"
+    }
+  ],
+  "processing": "Center crop, nearest resize 320x320, median-cut quantize to 48 colors, binary alpha threshold.",
+  "acceptance": {
+    "size_px": [
+      256,
+      384
+    ],
+    "colors": [
+      33,
+      48
+    ],
+    "binary_alpha": true,
+    "alpha_margin_min": 8
+  },
+  "final_candidate": null,
+  "art_gate": "NOT_RUN: canonical manifest unchanged; final --all deferred."
+}

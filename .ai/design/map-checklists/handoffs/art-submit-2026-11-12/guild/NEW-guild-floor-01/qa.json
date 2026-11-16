@@ -1,0 +1,49 @@
+{
+  "task_id": "NEW-guild-floor-01",
+  "status": "FAILED_AFTER_3_TRIES",
+  "map_decision": "Warm brown-beige cracked courtyard stone retained to match guild map; no alternate structure substituted.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01.png",
+      "colors": 48,
+      "seam_wrap_mean": 6.6221,
+      "autocorr_max_lag_ge8": 0.4555,
+      "flat_8px_perimeter": false,
+      "failure": "seam 6.622>2; autocorr 0.455>.25; outer 8px band not flat; visible repeated large slab/grid cadence"
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "colors": 48,
+      "seam_wrap_mean": 14.9684,
+      "autocorr_max_lag_ge8": 0.2615,
+      "flat_8px_perimeter": false,
+      "failure": "seam 14.968>2; autocorr 0.261>.25; outer 8px band not flat; texture overly dense/repetitive tile rhythm"
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "colors": 48,
+      "seam_wrap_mean": 4.2008,
+      "autocorr_max_lag_ge8": 0.3383,
+      "flat_8px_perimeter": false,
+      "failure": "seam 4.201>2; autocorr 0.338>.25; outer 8px band not flat; coarse lower-detail surface with repeated broad slab shapes"
+    }
+  ],
+  "processing": "Nearest resize 512x512, median-cut quantize to 48 colors, 3x3 nearest previews.",
+  "acceptance": {
+    "colors": [
+      33,
+      48
+    ],
+    "seam_wrap_max": 2.0,
+    "autocorr_max": 0.25,
+    "outer_flat_margin_px": 8
+  },
+  "final_candidate": null,
+  "art_gate": "NOT_RUN: canonical manifest unchanged; final --all deferred."
+}

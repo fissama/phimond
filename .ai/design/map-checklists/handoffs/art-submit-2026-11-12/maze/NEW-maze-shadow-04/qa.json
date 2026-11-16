@@ -1,0 +1,28 @@
+{
+  "task_id": "NEW-maze-shadow-04",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate.png",
+      "rgb_colors": 1,
+      "alpha_kind": "soft",
+      "alpha_range": [
+        0,
+        155
+      ],
+      "alpha_margin": 16,
+      "failure": null
+    }
+  ],
+  "processing": "Crop alpha bounds >2, Lanczos resize max 128\u00b2, RGB set to one median dusty-violet color [57, 30, 62], preserve soft alpha, pad 160\u00b2.",
+  "acceptance": {
+    "rgb_colors": 1,
+    "soft_alpha": true,
+    "alpha_margin_min": 8,
+    "compact_oval": true
+  },
+  "final_candidate": "candidate.png",
+  "art_gate": "NOT_RUN: handoff-only."
+}

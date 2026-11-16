@@ -1,0 +1,19 @@
+{
+  "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-09/nightmare/REDRAW-nightmare-backdrop-mid/candidate-02c.png",
+  "candidate_sha256": "e28e9aa05294fd725cf706ed24634713e1ad5dd74c9ad989c751e87669f22e50",
+  "size": [
+    1280,
+    384
+  ],
+  "colors": 40,
+  "alpha_mode": "RGB opaque",
+  "seam_rgb_delta_mean": 10.707465277777779,
+  "autocorr_highpass_24_256": 0.015668435513897874,
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "attempts": {
+    "1": "40 colors; seam 6.46 and autocorrelation 0.018, but tree/arch shapes repeated within one tile.",
+    "2": "40 colors; initial seam 15.68; selected bottom-anchored recrop x=162,y=124,2000x600 -> 1280x384 gives seam 10.71; autocorrelation 0.0157; 3x1 preview shows distinct tower, collapsed arch, spire and dead tree."
+  },
+  "art_gate": "NOT_RUN: handoff-only; cannot register before Claude acceptance",
+  "transform": "Raw 2172x724; bottom-anchored 2000x600 crop x=162,y=124, nearest resize 1280x384; palette quantized max 40 colors."
+}

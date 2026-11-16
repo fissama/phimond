@@ -1,0 +1,81 @@
+{
+  "task_id": "NEW-guild-decal-02",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/guild/NEW-guild-decal-02/redo-v3/raw-01.png",
+      "raw_alpha_levels": 255,
+      "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/guild/NEW-guild-decal-02/redo-v3/candidate-attempt-01.png",
+      "size": [
+        384,
+        384
+      ],
+      "colors": 47,
+      "alpha_values": [
+        0,
+        255
+      ],
+      "margin": 52,
+      "bbox": [
+        52,
+        119,
+        332,
+        265
+      ],
+      "processing": "alpha>=128 threshold, 1px erosion, local fringe despill, crop foreground, nearest fit 280px into 384x384, quantize48",
+      "numeric_pass": true
+    },
+    {
+      "attempt": 2,
+      "raw": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/guild/NEW-guild-decal-02/redo-v3/raw-02.png",
+      "raw_alpha_levels": 256,
+      "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/guild/NEW-guild-decal-02/redo-v3/candidate-attempt-02.png",
+      "size": [
+        384,
+        384
+      ],
+      "colors": 47,
+      "alpha_values": [
+        0,
+        255
+      ],
+      "margin": 52,
+      "bbox": [
+        52,
+        143,
+        332,
+        241
+      ],
+      "processing": "alpha>=128 threshold, 1px erosion, local fringe despill, crop foreground, nearest fit 280px into 384x384, quantize48",
+      "numeric_pass": true
+    },
+    {
+      "attempt": 3,
+      "raw": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/guild/NEW-guild-decal-02/redo-v3/raw-03.png",
+      "raw_alpha_levels": 256,
+      "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/guild/NEW-guild-decal-02/redo-v3/candidate-attempt-03.png",
+      "size": [
+        384,
+        384
+      ],
+      "colors": 47,
+      "alpha_values": [
+        0,
+        255
+      ],
+      "margin": 52,
+      "bbox": [
+        52,
+        121,
+        332,
+        262
+      ],
+      "processing": "alpha>=128 threshold, 1px erosion, local fringe despill, crop foreground, nearest fit 280px into 384x384, quantize48",
+      "numeric_pass": true
+    }
+  ],
+  "selected_attempt": 2,
+  "visual_review_required": true,
+  "canonical_untouched": true,
+  "visual_review_light_dark": "PASS: irregular cracked paving cutout, no visible residual halo on light/dark 4x views"
+}

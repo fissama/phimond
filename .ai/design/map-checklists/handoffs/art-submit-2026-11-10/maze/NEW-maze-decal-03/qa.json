@@ -1,0 +1,52 @@
+{
+  "task_id": "NEW-maze-decal-03",
+  "status": "FAILED_AFTER_3_TRIES",
+  "map_decision": "Kept source-map pink-beige/dusty violet stone palette; no unsupported foliage or bones added.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01.png",
+      "colors": 47,
+      "binary_alpha": true,
+      "alpha_margin": 16,
+      "failure": "The requested isolated decal has a broad opaque pale/gray halo/background after alpha processing; attempt 3 also has <33 colors. Rejected."
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "colors": 34,
+      "binary_alpha": true,
+      "alpha_margin": 16,
+      "failure": "The requested isolated decal has a broad opaque pale/gray halo/background after alpha processing; attempt 3 also has <33 colors. Rejected."
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "colors": 20,
+      "binary_alpha": true,
+      "alpha_margin": 16,
+      "failure": "The requested isolated decal has a broad opaque pale/gray halo/background after alpha processing; attempt 3 also has <33 colors. Rejected."
+    }
+  ],
+  "processing": "Threshold alpha at 220, crop object bounds, nearest-resize/pad to 320\u00b2, median-cut quantize to 48 colors and restore binary alpha.",
+  "acceptance": {
+    "size_range": [
+      256,
+      384
+    ],
+    "colors": [
+      33,
+      48
+    ],
+    "binary_alpha": true,
+    "alpha_margin_min": 8,
+    "irregular_shape": true,
+    "no_glow": true
+  },
+  "final_candidate": null,
+  "art_gate": "NOT_RUN: handoff-only; canonical manifest untouched.",
+  "raws_preserved": true
+}

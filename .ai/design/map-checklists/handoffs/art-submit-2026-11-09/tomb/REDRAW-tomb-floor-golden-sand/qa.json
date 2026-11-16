@@ -1,0 +1,33 @@
+{
+  "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-09/tomb/REDRAW-tomb-floor-golden-sand/candidate-03.png",
+  "candidate_sha256": "6f7227b8479d6ea9ec97c0db54a63c335f9bd758954b56dd45abbaa7a234f25b",
+  "size": [
+    512,
+    512
+  ],
+  "colors": 40,
+  "alpha_mode": "RGB opaque",
+  "attempts": {
+    "1": {
+      "wrap_x": 2.107,
+      "wrap_y": 1.683,
+      "autocorr": 0.257,
+      "note": "Failed wrap x and autocorrelation."
+    },
+    "2": {
+      "wrap_x": 2.3204,
+      "wrap_y": 1.167,
+      "autocorr": 0.1452,
+      "note": "Failed wrap x."
+    },
+    "3": {
+      "wrap_x": 1.4337,
+      "wrap_y": 1.132,
+      "autocorr": 0.1012,
+      "note": "Metrics pass, but 3x3 view reveals repeated horizontal wind-ripple bands and recurring dark clusters."
+    }
+  },
+  "status": "FAILED_AFTER_3_TRIES",
+  "art_gate": "NOT_RUN: handoff-only; cannot register before Claude acceptance",
+  "metrics_note": "Final candidate meets mechanical limits but fails visual repeat-pattern criterion."
+}

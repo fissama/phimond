@@ -1,0 +1,2 @@
+Task NEW-guild-decal-10 — READY_FOR_CLAUDE_REVIEW (not approved).
+Checker keyed; one-pixel erosion; binary alpha; isolated specks under 5 pixels removed; 40 visible colors; 384x384, margin 12px. 4x light/dark checked. Compact lopsided cluster of overlapping broken paving slabs with sparse chips. Minor loose chips remain as part of the scatter; no checker-grid pattern, text, magenta, or glow apparent. Canonical/manifests unchanged.

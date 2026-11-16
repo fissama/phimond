@@ -1,0 +1,1 @@
+One generation selected. Four distinct stages from compact rune to outward fragments/dissipation. Object coloring and silhouette align with bone-maze palette. Binary alpha, 42 colors, all frame margins ≥8px.

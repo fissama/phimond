@@ -1,0 +1,1 @@
+Built-in image_gen, three attempts. First attempt selected as thin irregular abrasion streaks with lichen; attempts 2-3 were rejected for repetitive branch-like streaks and glow. Post-process: alpha threshold, crop, nearest resize, quantize.

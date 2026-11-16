@@ -1,0 +1,73 @@
+{
+  "task_id": "NEW-maze-floor-extra-02",
+  "status": "FAILED_AFTER_3_TRIES",
+  "map_decision": "Map reference governs: retained pink-beige stone paving; no unsupported trap decal or spike motifs added.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01.png",
+      "colors": 48,
+      "wrap_x": 0.328,
+      "wrap_y": 0.257,
+      "autocorr_max_lag_ge8": 0.3209,
+      "outer8_unique": [
+        15,
+        11,
+        32,
+        14
+      ],
+      "failure": "Seams exceed 2.0 and/or autocorrelation exceeds 0.25; the perimeter is not a flat 8px band."
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "colors": 48,
+      "wrap_x": 1.177,
+      "wrap_y": 2.095,
+      "autocorr_max_lag_ge8": 0.3981,
+      "outer8_unique": [
+        48,
+        48,
+        48,
+        48
+      ],
+      "failure": "Seams exceed 2.0 and/or autocorrelation exceeds 0.25; the perimeter is not a flat 8px band."
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "colors": 48,
+      "wrap_x": 1.487,
+      "wrap_y": 1.718,
+      "autocorr_max_lag_ge8": 0.5157,
+      "outer8_unique": [
+        48,
+        48,
+        48,
+        48
+      ],
+      "failure": "Seams exceed 2.0 and/or autocorrelation exceeds 0.25; the perimeter is not a flat 8px band."
+    }
+  ],
+  "processing": "Each generated raw square resized nearest to 512x512 and median-cut quantized to 48 RGB colors; no manual pixel painting. Metrics computed on candidate images.",
+  "acceptance": {
+    "size": [
+      512,
+      512
+    ],
+    "colors": [
+      33,
+      48
+    ],
+    "wrap_x_max": 2.0,
+    "wrap_y_max": 2.0,
+    "autocorrelation_max": 0.25,
+    "outer8_flat": true
+  },
+  "final_candidate": null,
+  "art_gate": "NOT_RUN: candidate handoffs are excluded from canonical manifest; canonical files/manifests are not modified before Claude acceptance.",
+  "raws_preserved": true
+}

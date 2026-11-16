@@ -1,0 +1,1 @@
+Attempt 3 has seam mean 0.3418 but autocorrelation 0.4932; 3x3 visibly repeats broad slab geometry. Attempts 1/2 fail autocorrelation and seam. Attempt 3 perimeter band uses 3 colors rather than a uniform flat 8px border. No candidate submitted.

@@ -1,0 +1,23 @@
+{
+  "task_id": "NEW-guild-prop-16",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "raw": "redo-v1/raw-01.png",
+  "candidate": "redo-v1/candidate.png",
+  "processing": "threshold alpha >=128; 1px erosion; crop; nearest resize to 384x192 transparent canvas; quantize 48; binary alpha",
+  "size": [
+    384,
+    192
+  ],
+  "colors": 47,
+  "alpha_values": [
+    0,
+    255
+  ],
+  "alpha_margin_px": 11,
+  "sha256": "de29af89bf5d8f70753659bf5e5146771d9ab600fa6a94e4b8714167ab2cfd2a",
+  "visual_check": {
+    "4x_light": "Long pen fence, hay rack and trough are readable; no visible red fringe after erosion.",
+    "4x_dark": "Clean cutout; no exterior glow or cast shadow."
+  },
+  "art_gate": "NOT_RUN: handoff-only."
+}

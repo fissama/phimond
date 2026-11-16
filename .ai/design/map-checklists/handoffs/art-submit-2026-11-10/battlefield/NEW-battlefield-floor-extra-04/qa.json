@@ -1,0 +1,57 @@
+{
+  "task_id": "NEW-battlefield-floor-extra-04",
+  "status": "FAILED_AFTER_3_TRIES",
+  "map_decision": "Pale cream limestone plaza retained to match reference; no burnt ground substituted.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01.png",
+      "colors": 48,
+      "seam_wrap_mean": 13.5091,
+      "autocorr_max_lag_ge8": 0.1934,
+      "flat_8px_perimeter": false,
+      "perimeter_colors": 48,
+      "failure": "seam 13.5091 > 2.0; outer 8px perimeter not flat"
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "colors": 48,
+      "seam_wrap_mean": 7.7679,
+      "autocorr_max_lag_ge8": 0.2816,
+      "flat_8px_perimeter": false,
+      "perimeter_colors": 45,
+      "failure": "seam 7.7679 > 2.0; autocorr 0.2816 > .25; outer 8px perimeter not flat"
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "colors": 48,
+      "seam_wrap_mean": 8.5241,
+      "autocorr_max_lag_ge8": 0.3601,
+      "flat_8px_perimeter": false,
+      "perimeter_colors": 48,
+      "failure": "seam 8.5241 > 2.0; autocorr 0.3601 > .25; outer 8px perimeter not flat"
+    }
+  ],
+  "processing": "Center crop, nearest resize to 512x512, median-cut quantize to 48 colors, 3x3 nearest previews.",
+  "acceptance": {
+    "size": [
+      512,
+      512
+    ],
+    "colors": [
+      33,
+      48
+    ],
+    "seam_wrap_max": 2.0,
+    "autocorr_max": 0.25,
+    "outer_flat_margin_px": 8
+  },
+  "final_candidate": null,
+  "cross_texture_check": "Texture uniqueness plausible by visual inspection; canonical cross-variant gate deferred.",
+  "art_gate": "NOT_RUN: canonical manifest unchanged; final --all deferred."
+}

@@ -1,0 +1,54 @@
+{
+  "task_id": "NEW-maze-edge-01",
+  "status": "FAILED_AFTER_3_TRIES",
+  "map_decision": "Used source map identity: bone/stone boundary in dusty violet-gray and pink-beige palette; omitted unsupported greenery.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01.png",
+      "colors": 44,
+      "binary_alpha": true,
+      "alpha_margin": 0,
+      "edge_seam_rgb_mean": 1.44,
+      "failure": "Visible red fringe artifacts, baked paving baseline, and visibly nonmatching left/right endpoints; unsuitable."
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "colors": 46,
+      "binary_alpha": true,
+      "alpha_margin": 0,
+      "edge_seam_rgb_mean": 2.0,
+      "failure": "Visible red fringe artifacts, baked paving baseline, and visibly nonmatching left/right endpoints; unsuitable."
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "colors": 45,
+      "binary_alpha": true,
+      "alpha_margin": 0,
+      "edge_seam_rgb_mean": 4.98,
+      "failure": "Visible red fringe artifacts, baked paving baseline, and visibly nonmatching left/right endpoints; unsuitable."
+    }
+  ],
+  "processing": "Each 3:1 raw cropped vertically to 4:1 and nearest-resized to 512x128; alpha thresholded to binary and RGB median-cut quantized to \u226448 colors. No hand drawing.",
+  "acceptance": {
+    "size": [
+      512,
+      128
+    ],
+    "colors": [
+      33,
+      48
+    ],
+    "binary_alpha": true,
+    "alpha_margin_min": 8,
+    "horizontal_seam_visual": true
+  },
+  "final_candidate": null,
+  "art_gate": "NOT_RUN: handoff-only candidate; canonical manifest untouched.",
+  "raws_preserved": true
+}

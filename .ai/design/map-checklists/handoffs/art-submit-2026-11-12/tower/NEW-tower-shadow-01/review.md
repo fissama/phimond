@@ -1,0 +1,1 @@
+FAILED_AFTER_3_TRIES: generated shadows are blurry atmospheric masses, not a readable pixel-art shadow mask. Although the task permits soft alpha, the color texture and feathering are too broad and smudged for the kit style. Recommend a dedicated alpha-mask generation workflow.

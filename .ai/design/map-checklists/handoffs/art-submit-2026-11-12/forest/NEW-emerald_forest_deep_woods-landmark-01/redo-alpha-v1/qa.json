@@ -1,0 +1,34 @@
+{
+  "task_id": "NEW-emerald_forest_deep_woods-landmark-01",
+  "source": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/forest/NEW-emerald_forest_deep_woods-landmark-01/candidate.png",
+  "source_sha256": "fe33f2d146248b66339d9c575add7c9b1062f7c1636512208e03694b11709f02",
+  "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/forest/NEW-emerald_forest_deep_woods-landmark-01/redo-alpha-v1/candidate.png",
+  "candidate_sha256": "89f1b1c6e8a6d03e797dc83f9f21253cd908a9dd54871cf0a1b2c62deffee41c",
+  "size": [
+    384,
+    384
+  ],
+  "alpha_values": [
+    0,
+    255
+  ],
+  "color_count_opaque": 46,
+  "alpha_bbox_margins_ltrb": [
+    61,
+    33,
+    58,
+    38
+  ],
+  "steps": [
+    "alpha threshold >=128",
+    "1px binary erosion",
+    "nearest-interior despill on 1px boundary",
+    "quantize opaque RGB to <=48 colors",
+    "preserve canvas and bottom alignment"
+  ],
+  "visual_previews": [
+    "preview-4x-light.png",
+    "preview-4x-dark.png"
+  ],
+  "note": "handoff candidate only; canonical and manifest untouched"
+}

@@ -1,0 +1,1 @@
+Source map shows beige masonry walls, deer-head plaques, and pale yellow-green patterned floor. Prompt plan mentions prison ironwork/chains/water; followed the map palette and created an inert beige masonry doorway. Thresholded soft alpha at 128, eroded 1px and quantized; candidate only.

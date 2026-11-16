@@ -1,0 +1,1 @@
+Candidate repair only: original 512x128 four-frame asset preserved as raw-source.png. Each 128x128 frame was nearest-neighbor scaled to 112x112 and centered, yielding >=8px cell padding without changing frame sequence, palette or canonical files. Candidate only; manifest unchanged.

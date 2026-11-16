@@ -1,0 +1,1 @@
+Claude review pending; not self-approved. Attempt 1 rejected for regular repeated tower motifs. Attempt 2 is a low, irregular wall skyline with diverse small roof clusters. Candidate has 48 colors, seam mean 3.51, horizontal-gradient autocorrelation max 0.026 at lag 8; inspect 3x1/4x1 for visual continuity and motif recurrence.

@@ -1,0 +1,61 @@
+{
+  "task_id": "NEW-maze-backdrop-far-01",
+  "status": "FAILED_AFTER_3_TRIES",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01.png",
+      "size": [
+        1280,
+        384
+      ],
+      "colors": 48,
+      "seam_mean_rgb": 5.986,
+      "autocorr_max_lag_ge8": 0.7739,
+      "failure": "Seam metric passes, but strong repeated arch rhythm and large flat dark lower band fail the full-frame/repetition visual check."
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "size": [
+        1280,
+        384
+      ],
+      "colors": 48,
+      "seam_mean_rgb": 21.645,
+      "autocorr_max_lag_ge8": 0.4502,
+      "failure": "Contains conspicuous green shrubs absent from source maps and seam exceeds 14."
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "size": [
+        1280,
+        384
+      ],
+      "colors": 48,
+      "seam_mean_rgb": 16.715,
+      "autocorr_max_lag_ge8": 0.6836,
+      "failure": "Seam exceeds 14, irregular architecture still has strong autocorrelation, no candidate passes."
+    }
+  ],
+  "processing": "Crop to 2172x652 aspect-matched band, nearest resize to 1280x384, median-cut quantize to 48 colors.",
+  "acceptance": {
+    "target_size": [
+      1280,
+      384
+    ],
+    "colors": [
+      33,
+      48
+    ],
+    "horizontal_seam_mean_rgb_lt14": true,
+    "horizontal_repeat_autocorrelation_max": 0.25
+  },
+  "final_candidate": null,
+  "art_gate": "NOT_RUN: no canonical candidate emitted; handoff excluded from canonical scan",
+  "raws_preserved": true
+}

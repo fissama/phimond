@@ -1,0 +1,1 @@
+Procedural shadow ellipse with Bayer 4x4 density dither, one kit-matched dark pigment and binary alpha. Generated from the task shadow category specification; handoff only, not canonical.\n

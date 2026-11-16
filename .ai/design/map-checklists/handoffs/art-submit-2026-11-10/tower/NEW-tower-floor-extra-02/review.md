@@ -1,0 +1,1 @@
+Three raw generations use distinct plank arrangements (diagonal, upright, horizontal). All normalize to 48 colors and visually depict canopy wood, but the generated perimeter is a brown frame/texture rather than a perfectly flat single-color 8px band. No compliant candidate is submitted; retained all raw attempts and measurements.

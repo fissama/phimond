@@ -1,0 +1,1 @@
+Three separate built-in image_gen attempts. Subject followed the deep-woods foliage reference; dirt-floor anchors used only for crisp pixel clustering. Requested seamless dense olive leaf floor, no stone/runes/frame, 33–48 colors and flat 8px border.

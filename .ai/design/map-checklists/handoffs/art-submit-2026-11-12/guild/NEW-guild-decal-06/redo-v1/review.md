@@ -1,0 +1,2 @@
+Task NEW-guild-decal-06 — READY_FOR_CLAUDE_REVIEW (not approved).
+Neutral checker keyed, eroded 1px, binary alpha; 40 visible colors. Candidate 384x384, 12px margin. 4x light/dark checked. Irregular starburst pavement fracture with detached chips; asymmetrical outlines; distinct from branch scar, rubble mound, and crescent chip trail. No checker fringe, text, magenta, or glow apparent. Canonical/manifests unchanged.

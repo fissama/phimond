@@ -1,0 +1,56 @@
+{
+  "task_id": "NEW-dungeon-floor-extra-04",
+  "status": "IN_PROGRESS",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01.png",
+      "processing": "nearest 512; median-cut 48; opaque",
+      "colors": 48,
+      "seam_x": 26.13216209411621,
+      "seam_y": 35.97005081176758,
+      "autocorr_max_lag_8_255": 0.4155145287513733,
+      "flat8_unique": 48,
+      "sha256": "bf14f6131761739063691e9ffdaf8a6ba21a298f92d3bd051ca912073843b6aa"
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "processing": "nearest 512; median-cut 48; opaque",
+      "colors": 48,
+      "seam_x": 13.85546875,
+      "seam_y": 16.505859375,
+      "autocorr_max_lag_8_255": 0.30880308151245117,
+      "flat8_unique": 48,
+      "sha256": "bb9ebcdd3fc21f6ff25610fd1c7907f3f1cd9feb798a2ebcb858d6bb159ee039"
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "processing": "nearest 512; median-cut 48; opaque",
+      "colors": 48,
+      "seam_x": 14.070963859558105,
+      "seam_y": 14.448567390441895,
+      "autocorr_max_lag_8_255": 0.2990792989730835,
+      "flat8_unique": 48,
+      "sha256": "0e0fb99afcafe0b402b17c93403165c33e2332ad4a602a1fec603fd8115dc6b7"
+    }
+  ],
+  "acceptance": {
+    "target_size": [
+      512,
+      512
+    ],
+    "colors": [
+      33,
+      48
+    ],
+    "wrap_max": 2.0,
+    "flat_outer_margin_px": 8,
+    "variant_corr_max": 0.3
+  },
+  "final_candidate": null
+}

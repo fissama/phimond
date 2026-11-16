@@ -1,0 +1,47 @@
+{
+  "task_id": "NEW-battlefield-backdrop-near",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "seam_mean_rgb": 17.76,
+      "max_autocorrelation_horizontal_gradient_lag_8_255": 0.0756,
+      "candidate": false,
+      "failure": "Seam mean exceeded 14; first generated column edge mismatch."
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": false,
+      "colors": 48,
+      "seam_mean_rgb": 1.24,
+      "max_autocorrelation_horizontal_gradient_lag_8_255": 0.0512,
+      "failure": "3x1 showed recurring repeated arch pairs and colonnade motifs."
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": true,
+      "processing": "Resize/crop to 1280x384; median-cut quantize to 48 colors without dithering.",
+      "colors": 48,
+      "seam_mean_rgb": 1.4045138359069824,
+      "max_autocorrelation_horizontal_gradient_lag_8_255": 0.043786381710210424,
+      "autocorrelation_lag": 249,
+      "failure": null
+    }
+  ],
+  "selected_candidate": "candidate.png",
+  "sha256": "7ffa626dc9e0d237665921e0f7cce02e2e9817c0b78846241b00fce8d9e16057",
+  "acceptance_result": {
+    "size_px": [
+      1280,
+      384
+    ],
+    "colors": 48,
+    "seam_mean_rgb": 1.4045138359069824,
+    "autocorrelation_horizontal_gradient_max": 0.043786381710210424,
+    "visual": "four individually distinct column forms; 3x1/4x1 previews supplied"
+  },
+  "art_gate": "NOT_RUN: handoff candidate is not registered in canonical manifest; manifest edits forbidden."
+}

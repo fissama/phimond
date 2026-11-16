@@ -1,0 +1,34 @@
+{
+  "task_id": "NEW-desert_entrance-landmark-01",
+  "source": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/desert/NEW-desert_entrance-landmark-01/candidate.png",
+  "source_sha256": "3d6591e0abaa9460bf1bdf5992446f88819e2f02cd279e66d383ff7f5cc91180",
+  "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/desert/NEW-desert_entrance-landmark-01/redo-alpha-v1/candidate.png",
+  "candidate_sha256": "490a849c0eaa649322bcf3e8954ca3f6d0f5008b8506c6c938a52a091f4fea75",
+  "size": [
+    384,
+    384
+  ],
+  "alpha_values": [
+    0,
+    255
+  ],
+  "color_count_opaque": 45,
+  "alpha_bbox_margins_ltrb": [
+    104,
+    49,
+    109,
+    62
+  ],
+  "steps": [
+    "alpha threshold >=128",
+    "1px binary erosion",
+    "nearest-interior despill on 1px boundary",
+    "quantize opaque RGB to <=48 colors",
+    "preserve canvas and bottom alignment"
+  ],
+  "visual_previews": [
+    "preview-4x-light.png",
+    "preview-4x-dark.png"
+  ],
+  "note": "handoff candidate only; canonical and manifest untouched"
+}

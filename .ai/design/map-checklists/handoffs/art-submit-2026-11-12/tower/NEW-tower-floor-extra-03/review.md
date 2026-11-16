@@ -1,0 +1,1 @@
+Three distinct branch-grain wood floor attempts were generated. All quantize to 48 colors, but none has a flat single-color 8px perimeter (3–5 edge colors after normalization); no candidate submitted. Raw attempts and measurements retained.

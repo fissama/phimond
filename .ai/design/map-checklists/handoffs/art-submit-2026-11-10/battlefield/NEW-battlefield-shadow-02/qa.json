@@ -1,0 +1,31 @@
+{
+  "task_id": "NEW-battlefield-shadow-02",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "map_decision": "Map reference shows a pale cream plaza, so the asset is a muted warm taupe procedural shadow mask, not scorched ground or a vehicle shadow. Shadow remains a standalone mask.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-alpha-key.png",
+      "processing": "ImageGen RGBA raw; converted generated taupe tonal falloff to one muted taupe RGB and soft stepped alpha; cropped faint fringe and resized to 240x80 on centered 256x96 canvas.",
+      "colors": 1,
+      "alpha_margin_px": 8,
+      "alpha_binary": false,
+      "failure": null
+    }
+  ],
+  "selected_candidate": "candidate-alpha-key.png",
+  "sha256": "744b474b944f8079bb90399079987677322160257054a29a1a367703e2517a04",
+  "acceptance_result": {
+    "size_px": [
+      256,
+      96
+    ],
+    "colors": 1,
+    "soft_alpha_values": 134,
+    "alpha_margin_px": 8,
+    "visible_magenta": false,
+    "visual": "standalone soft procedural silhouette; preview composited on cream for review"
+  },
+  "art_gate": "NOT_RUN: handoff candidate is not registered in canonical manifest; manifest edits forbidden."
+}

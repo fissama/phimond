@@ -1,0 +1,1 @@
+Three raw edge generations show a continuous branch/root motif but repeated clumps and in some images contour fringe. No candidate selected; further design needed to reduce rhythm repetition and ensure clean crop.

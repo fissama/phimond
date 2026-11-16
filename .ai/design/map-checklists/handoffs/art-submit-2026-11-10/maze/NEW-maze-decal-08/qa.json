@@ -1,0 +1,33 @@
+{
+  "task_id": "NEW-maze-decal-08",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate.png",
+      "colors": 46,
+      "binary_alpha": true,
+      "alpha_margin": 16,
+      "failure": null
+    }
+  ],
+  "processing": "Threshold alpha\u2265250, crop object, nearest-resize/pad to 320\u00b2, median-cut quantize to 48 colors, restore binary alpha.",
+  "acceptance": {
+    "size": [
+      320,
+      320
+    ],
+    "colors": [
+      33,
+      48
+    ],
+    "binary_alpha": true,
+    "alpha_margin_min": 8,
+    "irregular_shape": true,
+    "no_glow_after_threshold": true
+  },
+  "final_candidate": "candidate.png",
+  "art_gate": "NOT_RUN: candidate handoff is not registered in canonical manifest.",
+  "raws_preserved": true
+}

@@ -1,0 +1,28 @@
+{
+  "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-09/nightmare/REDRAW-nightmare-decal-06/candidate-03.png",
+  "candidate_sha256": "168ad22db72b13a28ffe561f77712e6ddd8573085929e75e5b9a0e7604dc9482",
+  "size": [
+    384,
+    384
+  ],
+  "colors": 28,
+  "alpha_mode": "binary",
+  "alpha_margin": 22,
+  "attempts": {
+    "1": {
+      "result": "REDO",
+      "reason": "Only 23 colors after processing."
+    },
+    "2": {
+      "result": "REDO",
+      "reason": "Only 26 colors after processing."
+    },
+    "3": {
+      "result": "FAIL",
+      "reason": "28 colors after processing; attempt also contains halo in raw which was removed by alpha key."
+    }
+  },
+  "status": "FAILED_AFTER_3_TRIES",
+  "best_attempt": null,
+  "art_gate": "NOT_RUN: handoff-only; cannot register before Claude acceptance"
+}

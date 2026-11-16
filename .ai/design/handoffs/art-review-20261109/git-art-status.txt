@@ -1,0 +1,914 @@
+ M .ai/design/gpt-redo/PROGRESS.md
+ M .ai/design/gpt-redo/README.md
+ M .ai/design/map-checklists/README.md
+ M .ai/design/map-checklists/REDRAW-QUEUE-20261024.md
+ M .ai/design/map-checklists/kit-ancient.md
+ M .ai/design/map-checklists/kit-astral.md
+ M .ai/design/map-checklists/kit-crossroads.md
+ M .ai/design/map-checklists/kit-ghost_castle.md
+ M .ai/design/map-checklists/kit-nightmare.md
+ M .ai/design/map-checklists/kit-tomb.md
+ M .ai/design/map-checklists/kit-windrock.md
+ M .ai/design/map-checklists/kit-world_tree.md
+ M .ai/design/v1.0.1/CHECKLIST-REDRAW-CODEX.md
+ M art/src/hd2d/batch-11-nightmare/contact-sheet.png
+ M art/src/hd2d/batch-11-nightmare/jobs/backdrop-mid-24/job.json
+ M art/src/hd2d/batch-11-nightmare/jobs/backdrop-mid-24/prompt.txt
+ M art/src/hd2d/batch-11-nightmare/jobs/backdrop-moon-26/job.json
+ M art/src/hd2d/batch-11-nightmare/jobs/backdrop-moon-26/prompt.txt
+ M art/src/hd2d/batch-11-nightmare/jobs/backdrop-near-25/job.json
+ M art/src/hd2d/batch-11-nightmare/jobs/backdrop-near-25/prompt.txt
+ M art/src/hd2d/batch-11-nightmare/jobs/campfire-22/job.json
+ M art/src/hd2d/batch-11-nightmare/jobs/far-single-20/job.json
+ M art/src/hd2d/batch-11-nightmare/jobs/floors-fine-21/job.json
+ M art/src/hd2d/batch-11-nightmare/jobs/wisp-lantern-23/job.json
+ M art/src/hd2d/batch-11-nightmare/manifest.json
+ M art/src/hd2d/batch-11-nightmare/nightmare-decal-11/detail-4x-checker.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-decal-11/detail-4x-dark.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-decal-11/final.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-decal-11/keyed-source.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-decal-11/palette.json
+ M art/src/hd2d/batch-11-nightmare/nightmare-decal-11/prompt.md
+ M art/src/hd2d/batch-11-nightmare/nightmare-decal-11/qa.json
+ M art/src/hd2d/batch-11-nightmare/nightmare-decal-11/review-4x-checker.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-decal-11/review-4x-dark.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-decal-12/detail-4x-checker.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-decal-12/detail-4x-dark.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-decal-12/final.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-decal-12/keyed-source.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-decal-12/palette.json
+ M art/src/hd2d/batch-11-nightmare/nightmare-decal-12/prompt.md
+ M art/src/hd2d/batch-11-nightmare/nightmare-decal-12/qa.json
+ M art/src/hd2d/batch-11-nightmare/nightmare-decal-12/review-4x-checker.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-decal-12/review-4x-dark.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-edge-01/detail-4x-checker.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-edge-01/detail-4x-dark.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-edge-01/final.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-edge-01/keyed-source.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-edge-01/palette.json
+ M art/src/hd2d/batch-11-nightmare/nightmare-edge-01/prompt.md
+ M art/src/hd2d/batch-11-nightmare/nightmare-edge-01/qa.json
+ M art/src/hd2d/batch-11-nightmare/nightmare-edge-01/repeat-3x3.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-edge-01/review-4x-checker.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-edge-01/review-4x-dark.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-edge-02/detail-4x-checker.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-edge-02/detail-4x-dark.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-edge-02/final.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-edge-02/keyed-source.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-edge-02/palette.json
+ M art/src/hd2d/batch-11-nightmare/nightmare-edge-02/prompt.md
+ M art/src/hd2d/batch-11-nightmare/nightmare-edge-02/qa.json
+ M art/src/hd2d/batch-11-nightmare/nightmare-edge-02/repeat-3x3.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-edge-02/review-4x-checker.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-edge-02/review-4x-dark.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-edge-03/detail-4x-checker.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-edge-03/detail-4x-dark.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-edge-03/final.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-edge-03/keyed-source.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-edge-03/palette.json
+ M art/src/hd2d/batch-11-nightmare/nightmare-edge-03/prompt.md
+ M art/src/hd2d/batch-11-nightmare/nightmare-edge-03/qa.json
+ M art/src/hd2d/batch-11-nightmare/nightmare-edge-03/repeat-3x3.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-edge-03/review-4x-checker.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-edge-03/review-4x-dark.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-01/detail-4x-checker.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-01/detail-4x-dark.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-01/final.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-01/keyed-source.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-01/palette.json
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-01/prompt.md
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-01/qa.json
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-01/repeat-3x3.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-01/review-4x-checker.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-01/review-4x-dark.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-01/review.md
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-02/detail-4x-checker.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-02/detail-4x-dark.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-02/final.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-02/keyed-source.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-02/palette.json
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-02/prompt.md
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-02/qa.json
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-02/repeat-3x3.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-02/review-4x-checker.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-02/review-4x-dark.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-02/review.md
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-03/detail-4x-checker.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-03/detail-4x-dark.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-03/final.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-03/keyed-source.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-03/palette.json
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-03/prompt.md
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-03/qa.json
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-03/repeat-3x3.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-03/review-4x-checker.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-03/review-4x-dark.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-03/review.md
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-01/detail-4x-checker.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-01/detail-4x-dark.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-01/final.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-01/keyed-source.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-01/palette.json
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-01/prompt.md
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-01/qa.json
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-01/repeat-3x3.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-01/review-4x-checker.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-01/review-4x-dark.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-01/review.md
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-02/detail-4x-checker.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-02/detail-4x-dark.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-02/final.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-02/keyed-source.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-02/palette.json
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-02/prompt.md
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-02/qa.json
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-02/repeat-3x3.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-02/review-4x-checker.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-02/review-4x-dark.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-02/review.md
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-03/detail-4x-checker.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-03/detail-4x-dark.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-03/final.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-03/keyed-source.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-03/palette.json
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-03/prompt.md
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-03/qa.json
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-03/repeat-3x3.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-03/review-4x-checker.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-03/review-4x-dark.png
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-03/review.md
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-04/qa.json
+ M art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-05/qa.json
+ M art/src/hd2d/batch-11-nightmare/nightmare-portal-active/qa.json
+ M art/src/hd2d/batch-11-nightmare/nightmare-portal-dormant/qa.json
+ M art/src/hd2d/batch-11-nightmare/nightmare-shadow-01/qa.json
+ M art/src/hd2d/batch-11-nightmare/nightmare-shadow-02/qa.json
+ M art/src/hd2d/batch-11-nightmare/nightmare-shadow-03/qa.json
+ M art/src/hd2d/batch-11-nightmare/nightmare-shadow-04/qa.json
+ M art/src/hd2d/batch-11-nightmare/package.py
+ M art/src/hd2d/batch-11-tomb/README.md
+ M art/src/hd2d/batch-11-tomb/contact-sheet.png
+ M art/src/hd2d/batch-11-tomb/manifest.json
+ M art/src/hd2d/batch-11-tomb/tomb-arch-gate/final.png
+ M art/src/hd2d/batch-11-tomb/tomb-arch-gate/prompt.md
+ M art/src/hd2d/batch-11-tomb/tomb-arch-gate/qa.json
+ M art/src/hd2d/batch-11-tomb/tomb-arch-gate/review.md
+ M art/src/hd2d/batch-11-tomb/tomb-brick-floor/final.png
+ M art/src/hd2d/batch-11-tomb/tomb-brick-floor/prompt.md
+ M art/src/hd2d/batch-11-tomb/tomb-brick-floor/qa.json
+ M art/src/hd2d/batch-11-tomb/tomb-brick-floor/repeat-3x3.png
+ M art/src/hd2d/batch-11-tomb/tomb-brick-floor/review.md
+ M art/src/hd2d/batch-11-tomb/tomb-gravestone-01/final.png
+ M art/src/hd2d/batch-11-tomb/tomb-gravestone-01/prompt.md
+ M art/src/hd2d/batch-11-tomb/tomb-gravestone-01/qa.json
+ M art/src/hd2d/batch-11-tomb/tomb-gravestone-01/review.md
+ M art/src/hd2d/batch-11-tomb/tomb-gravestone-02/final.png
+ M art/src/hd2d/batch-11-tomb/tomb-gravestone-02/prompt.md
+ M art/src/hd2d/batch-11-tomb/tomb-gravestone-02/qa.json
+ M art/src/hd2d/batch-11-tomb/tomb-gravestone-02/review.md
+ M art/src/hd2d/batch-11-tomb/tomb-graveyard-dirt/final.png
+ M art/src/hd2d/batch-11-tomb/tomb-graveyard-dirt/prompt.md
+ M art/src/hd2d/batch-11-tomb/tomb-graveyard-dirt/qa.json
+ M art/src/hd2d/batch-11-tomb/tomb-graveyard-dirt/repeat-3x3.png
+ M art/src/hd2d/batch-11-tomb/tomb-graveyard-dirt/review.md
+ M art/src/hd2d/batch-11-tomb/tomb-lantern-spirit/qa.json
+ M art/src/hd2d/batch-11-tomb/tomb-lantern-spirit/review.md
+ M art/src/hd2d/batch-11-tomb/tomb-necropolis-wall-far/final.png
+ M art/src/hd2d/batch-11-tomb/tomb-necropolis-wall-far/prompt.md
+ M art/src/hd2d/batch-11-tomb/tomb-necropolis-wall-far/qa.json
+ M art/src/hd2d/batch-11-tomb/tomb-necropolis-wall-far/review.md
+ M art/src/hd2d/batch-11-tomb/tomb-portal-active/final.png
+ M art/src/hd2d/batch-11-tomb/tomb-portal-active/prompt.md
+ M art/src/hd2d/batch-11-tomb/tomb-portal-active/qa.json
+ M art/src/hd2d/batch-11-tomb/tomb-portal-active/review.md
+ M art/src/hd2d/batch-11-tomb/tomb-portal-dormant/final.png
+ M art/src/hd2d/batch-11-tomb/tomb-portal-dormant/prompt.md
+ M art/src/hd2d/batch-11-tomb/tomb-portal-dormant/qa.json
+ M art/src/hd2d/batch-11-tomb/tomb-portal-dormant/review.md
+ M art/src/hd2d/batch-11-tomb/tomb-sarcophagus-01/final.png
+ M art/src/hd2d/batch-11-tomb/tomb-sarcophagus-01/prompt.md
+ M art/src/hd2d/batch-11-tomb/tomb-sarcophagus-01/qa.json
+ M art/src/hd2d/batch-11-tomb/tomb-sarcophagus-01/review.md
+ M art/src/hd2d/batch-11-tomb/tomb-tile-edge-decal/final.png
+ M art/src/hd2d/batch-11-tomb/tomb-tile-edge-decal/qa.json
+ M art/src/hd2d/batch-11-tomb/tomb-tile-edge-decal/review.md
+ M art/src/hd2d/batch-11-windrock/contact-sheet.png
+ M art/src/hd2d/batch-11-windrock/manifest.json
+ M art/src/hd2d/p01-release-art-20261023/sources/remedy-motion-20261026/finish_candidate.py
+?? .ai/design/gpt-redo/13c-garden-a-redraw-prompt.md
+?? .ai/design/gpt-redo/14-garden-pots-anim-prompt.md
+?? .ai/design/gpt-redo/15-garden-crops-anim-prompt.md
+?? .ai/design/handoffs/
+?? .ai/design/map-checklists/REVIEW-20261029.md
+?? .ai/design/map-checklists/review-20261102/astral-backdrop.png
+?? .ai/design/map-checklists/review-20261102/astral-decal.png
+?? .ai/design/map-checklists/review-20261102/astral-edge.png
+?? .ai/design/map-checklists/review-20261102/astral-floor.png
+?? .ai/design/map-checklists/review-20261102/astral-fx.png
+?? .ai/design/map-checklists/review-20261102/astral-marker.png
+?? .ai/design/map-checklists/review-20261102/astral-portal.png
+?? .ai/design/map-checklists/review-20261102/astral-prop.png
+?? .ai/design/map-checklists/review-20261102/astral-shadow.png
+?? .ai/design/map-checklists/review-20261102/crossroads-backdrop.png
+?? .ai/design/map-checklists/review-20261102/crossroads-decal.png
+?? .ai/design/map-checklists/review-20261102/crossroads-edge.png
+?? .ai/design/map-checklists/review-20261102/crossroads-floor.png
+?? .ai/design/map-checklists/review-20261102/crossroads-fx.png
+?? .ai/design/map-checklists/review-20261102/crossroads-landmark.png
+?? .ai/design/map-checklists/review-20261102/crossroads-prop.png
+?? .ai/design/map-checklists/review-20261102/crossroads-shadow.png
+?? .ai/design/map-checklists/review-20261102/nightmare-backdrop.png
+?? .ai/design/map-checklists/review-20261102/nightmare-decal.png
+?? .ai/design/map-checklists/review-20261102/nightmare-edge.png
+?? .ai/design/map-checklists/review-20261102/nightmare-floor.png
+?? .ai/design/map-checklists/review-20261102/nightmare-fx.png
+?? .ai/design/map-checklists/review-20261102/nightmare-prop.png
+?? .ai/design/map-checklists/review-20261102/nightmare-shadow.png
+?? .ai/design/map-checklists/review-20261102/tomb-backdrop.png
+?? .ai/design/map-checklists/review-20261102/tomb-decal.png
+?? .ai/design/map-checklists/review-20261102/tomb-edge.png
+?? .ai/design/map-checklists/review-20261102/tomb-fx.png
+?? .ai/design/map-checklists/review-20261102/tomb-marker.png
+?? .ai/design/map-checklists/review-20261102/tomb-portal.png
+?? .ai/design/map-checklists/review-20261102/tomb-prop.png
+?? .ai/design/map-checklists/review-20261102/tomb-shadow.png
+?? .ai/design/map-checklists/review-20261102/tomb-tile.png
+?? .ai/design/map-checklists/review-20261102/windrock-backdrop.png
+?? .ai/design/map-checklists/review-20261102/windrock-decal.png
+?? .ai/design/map-checklists/review-20261102/windrock-edge.png
+?? .ai/design/map-checklists/review-20261102/windrock-floor.png
+?? .ai/design/map-checklists/review-20261102/windrock-fx.png
+?? .ai/design/map-checklists/review-20261102/windrock-marker.png
+?? .ai/design/map-checklists/review-20261102/windrock-portal.png
+?? .ai/design/map-checklists/review-20261102/windrock-prop.png
+?? .ai/design/map-checklists/review-20261102/windrock-shadow.png
+?? .ai/design/v1.0.1/ARTWORK-EXPANSION-STATUS-20261030.md
+?? .ai/design/v1.0.1/backup-uncommitted/
+?? .ai/design/v1.0.1/forge-doctor-20261030-bundled.json
+?? .ai/design/v1.0.1/forge-doctor-20261030-current.json
+?? .ai/design/v1.0.1/forge-doctor-20261030.json
+?? art/src/hd2d/batch-02-octopath/summon-hall-redraw-20261028/
+?? art/src/hd2d/batch-07-octopath/delivery/
+?? art/src/hd2d/batch-07-octopath/review-20261030/
+?? art/src/hd2d/batch-11-ancient/
+?? art/src/hd2d/batch-11-astral/
+?? art/src/hd2d/batch-11-crossroads/
+?? art/src/hd2d/batch-11-ghost_castle/
+?? art/src/hd2d/batch-11-nightmare/checkpoint-20261027.md
+?? art/src/hd2d/batch-11-nightmare/floor-repeat-review-20261029.png
+?? art/src/hd2d/batch-11-nightmare/jobs/backdrop-mid-24/raw-01.png
+?? art/src/hd2d/batch-11-nightmare/jobs/backdrop-mid-24/raw-02.png
+?? art/src/hd2d/batch-11-nightmare/jobs/backdrop-moon-26/raw-01.png
+?? art/src/hd2d/batch-11-nightmare/jobs/backdrop-moon-26/raw-02.png
+?? art/src/hd2d/batch-11-nightmare/jobs/backdrop-moon-26/raw-03.png
+?? art/src/hd2d/batch-11-nightmare/jobs/backdrop-near-25/raw-01.png
+?? art/src/hd2d/batch-11-nightmare/jobs/backdrop-near-25/raw-02.png
+?? art/src/hd2d/batch-11-nightmare/jobs/backdrop-redraw-20261030/
+?? art/src/hd2d/batch-11-nightmare/jobs/backdrop-repair-27/
+?? art/src/hd2d/batch-11-nightmare/jobs/backdrop-repair-28/
+?? art/src/hd2d/batch-11-nightmare/jobs/backdrop-repair-29/
+?? art/src/hd2d/batch-11-nightmare/jobs/backdrop-repair-30/
+?? art/src/hd2d/batch-11-nightmare/jobs/backdrop-repair-31/
+?? art/src/hd2d/batch-11-nightmare/jobs/backdrop-repair-32/
+?? art/src/hd2d/batch-11-nightmare/jobs/backdrop-repair-33/
+?? art/src/hd2d/batch-11-nightmare/jobs/campfire-22/raw-01.png
+?? art/src/hd2d/batch-11-nightmare/jobs/campfire-22/raw-02.png
+?? art/src/hd2d/batch-11-nightmare/jobs/campfire-22/raw-03.png
+?? art/src/hd2d/batch-11-nightmare/jobs/decals-repair-30/
+?? art/src/hd2d/batch-11-nightmare/jobs/edges-decals-19/raw-02.png
+?? art/src/hd2d/batch-11-nightmare/jobs/edges-redraw-20261030-02/
+?? art/src/hd2d/batch-11-nightmare/jobs/edges-redraw-20261030-03/
+?? art/src/hd2d/batch-11-nightmare/jobs/edges-redraw-20261030/
+?? art/src/hd2d/batch-11-nightmare/jobs/edges-repair-27/
+?? art/src/hd2d/batch-11-nightmare/jobs/edges-repair-31/
+?? art/src/hd2d/batch-11-nightmare/jobs/edges-repair-32/
+?? art/src/hd2d/batch-11-nightmare/jobs/edges-repair-33/
+?? art/src/hd2d/batch-11-nightmare/jobs/edges-repair-34/
+?? art/src/hd2d/batch-11-nightmare/jobs/edges-repair-35/
+?? art/src/hd2d/batch-11-nightmare/jobs/edges-repair-36/
+?? art/src/hd2d/batch-11-nightmare/jobs/edges-repair-37/
+?? art/src/hd2d/batch-11-nightmare/jobs/edges-repair-38/
+?? art/src/hd2d/batch-11-nightmare/jobs/edges-repair-39/
+?? art/src/hd2d/batch-11-nightmare/jobs/edges-repair-40/
+?? art/src/hd2d/batch-11-nightmare/jobs/edges-repair-41/
+?? art/src/hd2d/batch-11-nightmare/jobs/edges-repair-42/
+?? art/src/hd2d/batch-11-nightmare/jobs/far-single-20/raw-01.png
+?? art/src/hd2d/batch-11-nightmare/jobs/far-single-20/raw-02.png
+?? art/src/hd2d/batch-11-nightmare/jobs/floor-02-redraw-20261030/
+?? art/src/hd2d/batch-11-nightmare/jobs/floor-seam-study-20261030/
+?? art/src/hd2d/batch-11-nightmare/jobs/floor-single-01/
+?? art/src/hd2d/batch-11-nightmare/jobs/floors-fine-21/raw-01.png
+?? art/src/hd2d/batch-11-nightmare/jobs/floors-repair-22/
+?? art/src/hd2d/batch-11-nightmare/jobs/floors-repair-23/
+?? art/src/hd2d/batch-11-nightmare/jobs/floors-repair-24/
+?? art/src/hd2d/batch-11-nightmare/jobs/floors-repair-25/
+?? art/src/hd2d/batch-11-nightmare/jobs/floors-repair-26/
+?? art/src/hd2d/batch-11-nightmare/jobs/fx-28/
+?? art/src/hd2d/batch-11-nightmare/jobs/marker-29/
+?? art/src/hd2d/batch-11-nightmare/jobs/nightmare-landmark02/
+?? art/src/hd2d/batch-11-nightmare/jobs/wisp-lantern-23/raw-01.png
+?? art/src/hd2d/batch-11-nightmare/jobs/wisp-lantern-23/raw-02.png
+?? art/src/hd2d/batch-11-nightmare/jobs/wisp-lantern-23/raw-03.png
+?? art/src/hd2d/batch-11-nightmare/jobs/wisp-lantern-25/
+?? art/src/hd2d/batch-11-nightmare/jobs/wisp-lantern-26/
+?? art/src/hd2d/batch-11-nightmare/jobs/wisp-lantern-27/
+?? art/src/hd2d/batch-11-nightmare/nightmare-backdrop-far-02/
+?? art/src/hd2d/batch-11-nightmare/nightmare-backdrop-far-redraw-20261030/
+?? art/src/hd2d/batch-11-nightmare/nightmare-backdrop-far/
+?? art/src/hd2d/batch-11-nightmare/nightmare-backdrop-mid/
+?? art/src/hd2d/batch-11-nightmare/nightmare-backdrop-near/
+?? art/src/hd2d/batch-11-nightmare/nightmare-campfire-frame-00/
+?? art/src/hd2d/batch-11-nightmare/nightmare-campfire-frame-01/
+?? art/src/hd2d/batch-11-nightmare/nightmare-campfire-frame-02/
+?? art/src/hd2d/batch-11-nightmare/nightmare-campfire-frame-03/
+?? art/src/hd2d/batch-11-nightmare/nightmare-campfire/
+?? art/src/hd2d/batch-11-nightmare/nightmare-decal-11/raw-01-before-decals-repair-30.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-decal-11/raw-01-selected-decals-repair-30.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-decal-11/review.md
+?? art/src/hd2d/batch-11-nightmare/nightmare-decal-12/raw-01-before-decals-repair-30.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-decal-12/raw-01-selected-decals-repair-30.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-decal-12/review.md
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-01/detail-4x-checker-before-edges-repair-35.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-01/detail-4x-dark-before-edges-repair-35.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-01/final-before-edges-repair-35.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-01/keyed-source-before-edges-repair-35.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-01/palette-before-edges-repair-35.json
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-01/qa-before-edges-repair-35.json
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-01/raw-01-before-edges-repair-31.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-01/raw-01-before-edges-repair-35.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-01/raw-01-selected-edges-repair-31.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-01/raw-01-selected-edges-repair-35.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-01/raw-02.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-01/repeat-3x3-before-edges-repair-35.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-01/review-4x-checker-before-edges-repair-35.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-01/review-4x-dark-before-edges-repair-35.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-01/review-before-edges-repair-35.md
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-01/review.md
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-02/detail-4x-checker-before-edges-repair-39.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-02/detail-4x-dark-before-edges-repair-39.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-02/final-before-edges-repair-39.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-02/final-before-redraw-20261030-03.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-02/keyed-source-before-edges-repair-39.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-02/palette-before-edges-repair-39.json
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-02/palette-before-redraw-20261030-03.json
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-02/prompt-before-redraw-20261030-03.md
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-02/qa-before-edges-repair-39.json
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-02/qa-before-redraw-20261030-03.json
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-02/raw-01-before-edges-repair-31.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-02/raw-01-before-edges-repair-39.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-02/raw-01-selected-edges-repair-31.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-02/raw-01-selected-edges-repair-39.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-02/raw-02.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-02/repeat-3x3-before-edges-repair-39.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-02/review-4x-checker-before-edges-repair-39.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-02/review-4x-dark-before-edges-repair-39.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-02/review-before-edges-repair-39.md
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-02/review-before-redraw-20261030-03.md
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-02/review.md
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-03-redraw-20261030/
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-03/final-before-redraw-20261030.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-03/palette-before-redraw-20261030.json
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-03/prompt-before-redraw-20261030.md
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-03/qa-before-redraw-20261030.json
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-03/raw-01-before-edges-repair-31.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-03/raw-01-selected-edges-repair-31.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-03/raw-02.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-03/review-before-redraw-20261030.md
+?? art/src/hd2d/batch-11-nightmare/nightmare-edge-03/review.md
+?? art/src/hd2d/batch-11-nightmare/nightmare-floor-01/raw-01-before-floor-single-01.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-floor-01/raw-01-before-floors-fine-21.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-floor-01/raw-01-selected-floor-single-01.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-floor-01/raw-01-selected-floors-fine-21.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-floor-02/detail-4x-checker-before-floors-repair-26.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-floor-02/detail-4x-dark-before-floors-repair-26.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-floor-02/final-before-floors-repair-26.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-floor-02/keyed-source-before-floors-repair-26.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-floor-02/palette-before-floors-repair-26.json
+?? art/src/hd2d/batch-11-nightmare/nightmare-floor-02/qa-before-floors-repair-26.json
+?? art/src/hd2d/batch-11-nightmare/nightmare-floor-02/raw-01-before-floors-fine-21.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-floor-02/raw-01-selected-floors-fine-21.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-floor-02/raw-01-selected-floors-repair-26.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-floor-02/repeat-3x3-before-floors-repair-26.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-floor-02/review-4x-checker-before-floors-repair-26.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-floor-02/review-4x-dark-before-floors-repair-26.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-floor-03/raw-01-before-floors-fine-21.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-floor-03/raw-01-selected-floors-fine-21.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-floor-03/raw-01-selected-floors-repair-26.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-01/raw-01-before-floors-fine-21.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-01/raw-01-selected-floors-fine-21.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-01/raw-01-selected-floors-repair-26.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-02/raw-01-before-floors-fine-21.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-02/raw-01-selected-floors-fine-21.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-02/raw-01-selected-floors-repair-26.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-03/raw-01-before-floors-fine-21.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-03/raw-01-selected-floors-fine-21.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-03/raw-01-selected-floors-repair-26.png
+?? art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-04/review.md
+?? art/src/hd2d/batch-11-nightmare/nightmare-floor-extra-05/review.md
+?? art/src/hd2d/batch-11-nightmare/nightmare-fx-01/
+?? art/src/hd2d/batch-11-nightmare/nightmare-fx-02/
+?? art/src/hd2d/batch-11-nightmare/nightmare-fx-03/
+?? art/src/hd2d/batch-11-nightmare/nightmare-marker-arrival-frame-00/
+?? art/src/hd2d/batch-11-nightmare/nightmare-marker-arrival-frame-01/
+?? art/src/hd2d/batch-11-nightmare/nightmare-marker-arrival-frame-02/
+?? art/src/hd2d/batch-11-nightmare/nightmare-marker-arrival-frame-03/
+?? art/src/hd2d/batch-11-nightmare/nightmare-marker-arrival/
+?? art/src/hd2d/batch-11-nightmare/nightmare-portal-active/review.md
+?? art/src/hd2d/batch-11-nightmare/nightmare-portal-dormant/review.md
+?? art/src/hd2d/batch-11-nightmare/nightmare-shadow-01/review.md
+?? art/src/hd2d/batch-11-nightmare/nightmare-shadow-02/review.md
+?? art/src/hd2d/batch-11-nightmare/nightmare-shadow-03/review.md
+?? art/src/hd2d/batch-11-nightmare/nightmare-shadow-04/review.md
+?? art/src/hd2d/batch-11-nightmare/nightmare-wisp-lantern-frame-00/
+?? art/src/hd2d/batch-11-nightmare/nightmare-wisp-lantern-frame-01/
+?? art/src/hd2d/batch-11-nightmare/nightmare-wisp-lantern-frame-02/
+?? art/src/hd2d/batch-11-nightmare/nightmare-wisp-lantern-frame-03/
+?? art/src/hd2d/batch-11-nightmare/nightmare-wisp-lantern/
+?? art/src/hd2d/batch-11-nightmare/nightmare_island_survivor_camp-landmark-02/
+?? art/src/hd2d/batch-11-tomb/build_contact_sheet.py
+?? art/src/hd2d/batch-11-tomb/jobs/
+?? art/src/hd2d/batch-11-tomb/tomb-ancient-keys/
+?? art/src/hd2d/batch-11-tomb/tomb-arch-gate/keyed-source.png
+?? art/src/hd2d/batch-11-tomb/tomb-arch-gate/raw-01.png
+?? art/src/hd2d/batch-11-tomb/tomb-arch-gate/review-4x-checker.png
+?? art/src/hd2d/batch-11-tomb/tomb-arch-gate/review-4x-dark.png
+?? art/src/hd2d/batch-11-tomb/tomb-bat-roost-arch/
+?? art/src/hd2d/batch-11-tomb/tomb-brick-floor/raw-01.png
+?? art/src/hd2d/batch-11-tomb/tomb-brick-floor/review-4x-checker.png
+?? art/src/hd2d/batch-11-tomb/tomb-brick-floor/review-4x-dark.png
+?? art/src/hd2d/batch-11-tomb/tomb-broken-column-short/
+?? art/src/hd2d/batch-11-tomb/tomb-broken-stairs/
+?? art/src/hd2d/batch-11-tomb/tomb-carved-seal-disc/
+?? art/src/hd2d/batch-11-tomb/tomb-collapsed-burial-arch/
+?? art/src/hd2d/batch-11-tomb/tomb-column-capital/
+?? art/src/hd2d/batch-11-tomb/tomb-cracked-clay-jar/
+?? art/src/hd2d/batch-11-tomb/tomb-cracked-ground-stela/
+?? art/src/hd2d/batch-11-tomb/tomb-cracked-pillar/
+?? art/src/hd2d/batch-11-tomb/tomb-dead-thorn-bush/
+?? art/src/hd2d/batch-11-tomb/tomb-dead-tree-stump/
+?? art/src/hd2d/batch-11-tomb/tomb-decal-bone-fragments/
+?? art/src/hd2d/batch-11-tomb/tomb-decal-coffin-drag/
+?? art/src/hd2d/batch-11-tomb/tomb-decal-cracked-earth/
+?? art/src/hd2d/batch-11-tomb/tomb-decal-gravel-trail/
+?? art/src/hd2d/batch-11-tomb/tomb-decal-moss-seam/
+?? art/src/hd2d/batch-11-tomb/tomb-decal-moss-soil/
+?? art/src/hd2d/batch-11-tomb/tomb-decal-ochre-dust/
+?? art/src/hd2d/batch-11-tomb/tomb-decal-rune-dust/
+?? art/src/hd2d/batch-11-tomb/tomb-decal-sand-ripple/
+?? art/src/hd2d/batch-11-tomb/tomb-decal-slate-chips/
+?? art/src/hd2d/batch-11-tomb/tomb-decal-spirit-stain/
+?? art/src/hd2d/batch-11-tomb/tomb-decal-thorn-litter/
+?? art/src/hd2d/batch-11-tomb/tomb-decal-tomb-rubble/
+?? art/src/hd2d/batch-11-tomb/tomb-edge-crypt-soil/
+?? art/src/hd2d/batch-11-tomb/tomb-edge-desert-sand/
+?? art/src/hd2d/batch-11-tomb/tomb-edge-ruin-rubble/
+?? art/src/hd2d/batch-11-tomb/tomb-effigy-coffin-lid/
+?? art/src/hd2d/batch-11-tomb/tomb-expedition-crate/
+?? art/src/hd2d/batch-11-tomb/tomb-floor-ashen-dust/
+?? art/src/hd2d/batch-11-tomb/tomb-floor-cracked-slate/
+?? art/src/hd2d/batch-11-tomb/tomb-floor-crypt-mossstone/
+?? art/src/hd2d/batch-11-tomb/tomb-floor-dry-gravel/
+?? art/src/hd2d/batch-11-tomb/tomb-floor-golden-sand/
+?? art/src/hd2d/batch-11-tomb/tomb-fx-rune-pulse-01/
+?? art/src/hd2d/batch-11-tomb/tomb-fx-spirit-wisp-01/
+?? art/src/hd2d/batch-11-tomb/tomb-fx-stone-chips-01/
+?? art/src/hd2d/batch-11-tomb/tomb-glyph-stele/
+?? art/src/hd2d/batch-11-tomb/tomb-gravestone-01/keyed-source.png
+?? art/src/hd2d/batch-11-tomb/tomb-gravestone-01/raw-01.png
+?? art/src/hd2d/batch-11-tomb/tomb-gravestone-01/review-4x-checker.png
+?? art/src/hd2d/batch-11-tomb/tomb-gravestone-01/review-4x-dark.png
+?? art/src/hd2d/batch-11-tomb/tomb-gravestone-02/keyed-source.png
+?? art/src/hd2d/batch-11-tomb/tomb-gravestone-02/raw-01.png
+?? art/src/hd2d/batch-11-tomb/tomb-gravestone-02/review-4x-checker.png
+?? art/src/hd2d/batch-11-tomb/tomb-gravestone-02/review-4x-dark.png
+?? art/src/hd2d/batch-11-tomb/tomb-graveyard-dirt/raw-01.png
+?? art/src/hd2d/batch-11-tomb/tomb-graveyard-dirt/raw-02.png
+?? art/src/hd2d/batch-11-tomb/tomb-graveyard-dirt/review-4x-checker.png
+?? art/src/hd2d/batch-11-tomb/tomb-graveyard-dirt/review-4x-dark.png
+?? art/src/hd2d/batch-11-tomb/tomb-guardian-statue-head/
+?? art/src/hd2d/batch-11-tomb/tomb-hanging-censer/
+?? art/src/hd2d/batch-11-tomb/tomb-iron-chain-shackle/
+?? art/src/hd2d/batch-11-tomb/tomb-lantern-post/
+?? art/src/hd2d/batch-11-tomb/tomb-lantern-spirit/detail-4x-alpha.png
+?? art/src/hd2d/batch-11-tomb/tomb-lantern-spirit/review-4x-checker.png
+?? art/src/hd2d/batch-11-tomb/tomb-lantern-spirit/review-4x-dark.png
+?? art/src/hd2d/batch-11-tomb/tomb-map-dry-sapling/
+?? art/src/hd2d/batch-11-tomb/tomb-map-orange-blooms/
+?? art/src/hd2d/batch-11-tomb/tomb-memorial-plinth/
+?? art/src/hd2d/batch-11-tomb/tomb-necropolis-wall-far/raw-02.png
+?? art/src/hd2d/batch-11-tomb/tomb-necropolis-wall-far/repeat-3x1.png
+?? art/src/hd2d/batch-11-tomb/tomb-necropolis-wall-far/review-2x-checker.png
+?? art/src/hd2d/batch-11-tomb/tomb-necropolis-wall-far/review-2x-dark.png
+?? art/src/hd2d/batch-11-tomb/tomb-necropolis-wall-mid/
+?? art/src/hd2d/batch-11-tomb/tomb-necropolis-wall-near/
+?? art/src/hd2d/batch-11-tomb/tomb-offering-altar/
+?? art/src/hd2d/batch-11-tomb/tomb-offering-bowl/
+?? art/src/hd2d/batch-11-tomb/tomb-open-sarcophagus-shell/
+?? art/src/hd2d/batch-11-tomb/tomb-portal-active/detail-4x-alpha.png
+?? art/src/hd2d/batch-11-tomb/tomb-portal-active/raw-02.png
+?? art/src/hd2d/batch-11-tomb/tomb-portal-active/review-4x-checker.png
+?? art/src/hd2d/batch-11-tomb/tomb-portal-active/review-4x-dark.png
+?? art/src/hd2d/batch-11-tomb/tomb-portal-dormant/detail-4x-alpha.png
+?? art/src/hd2d/batch-11-tomb/tomb-portal-dormant/raw-02.png
+?? art/src/hd2d/batch-11-tomb/tomb-portal-dormant/review-4x-checker.png
+?? art/src/hd2d/batch-11-tomb/tomb-portal-dormant/review-4x-dark.png
+?? art/src/hd2d/batch-11-tomb/tomb-root-reliquary/
+?? art/src/hd2d/batch-11-tomb/tomb-rooted-urn/
+?? art/src/hd2d/batch-11-tomb/tomb-rubble-barrier/
+?? art/src/hd2d/batch-11-tomb/tomb-sand-buried-marker/
+?? art/src/hd2d/batch-11-tomb/tomb-sandstone-boulder/
+?? art/src/hd2d/batch-11-tomb/tomb-sarcophagus-01/keyed-source.png
+?? art/src/hd2d/batch-11-tomb/tomb-sarcophagus-01/raw-01.png
+?? art/src/hd2d/batch-11-tomb/tomb-sarcophagus-01/review-4x-checker.png
+?? art/src/hd2d/batch-11-tomb/tomb-sarcophagus-01/review-4x-dark.png
+?? art/src/hd2d/batch-11-tomb/tomb-sealed-coffer/
+?? art/src/hd2d/batch-11-tomb/tomb-sealed-urn/
+?? art/src/hd2d/batch-11-tomb/tomb-shadow-dead-tree/
+?? art/src/hd2d/batch-11-tomb/tomb-shadow-gravestone/
+?? art/src/hd2d/batch-11-tomb/tomb-shadow-large-arch/
+?? art/src/hd2d/batch-11-tomb/tomb-shadow-small-prop/
+?? art/src/hd2d/batch-11-tomb/tomb-spawn-marker/
+?? art/src/hd2d/batch-11-tomb/tomb-spirit-brazier/
+?? art/src/hd2d/batch-11-tomb/tomb-tile-edge-decal/prompt.md
+?? art/src/hd2d/batch-11-tomb/tomb-tile-edge-decal/raw-01.png
+?? art/src/hd2d/batch-11-tomb/tomb-tile-edge-decal/raw-02.png
+?? art/src/hd2d/batch-11-tomb/tomb-tile-edge-decal/repeat-3x3.png
+?? art/src/hd2d/batch-11-tomb/tomb-tile-edge-decal/review-4x-checker.png
+?? art/src/hd2d/batch-11-tomb/tomb-tile-edge-decal/review-4x-dark.png
+?? art/src/hd2d/batch-11-tomb/tomb-wall-sprit-torch/
+?? art/src/hd2d/batch-11-windrock/jobs/backdrop-near-study-20261029/
+?? art/src/hd2d/batch-11-windrock/jobs/decal-study-02-20261029/
+?? art/src/hd2d/batch-11-windrock/jobs/decal-study-03-20261029/
+?? art/src/hd2d/batch-11-windrock/jobs/decal-study-04-20261029/
+?? art/src/hd2d/batch-11-windrock/jobs/decal-study-20261029/
+?? art/src/hd2d/batch-11-windrock/jobs/edges-redraw-20261030/
+?? art/src/hd2d/batch-11-windrock/jobs/edges-study-rejected-20261030/
+?? art/src/hd2d/batch-11-windrock/jobs/fx-study-02-20261030/
+?? art/src/hd2d/batch-11-windrock/jobs/fx-study-20261029/
+?? art/src/hd2d/batch-11-windrock/jobs/marker-study-20261029/
+?? art/src/hd2d/batch-11-windrock/jobs/portals-study-20261030/
+?? art/src/hd2d/batch-11-windrock/jobs/props-study-02-20261029/
+?? art/src/hd2d/batch-11-windrock/jobs/props-study-03-20261029/
+?? art/src/hd2d/batch-11-windrock/jobs/props-study-20261029/
+?? art/src/hd2d/batch-11-windrock/jobs/rock-fissure-01/
+?? art/src/hd2d/batch-11-windrock/jobs/shadows-study-20261029/
+?? art/src/hd2d/batch-11-windrock/windrock-avalanche-probe/
+?? art/src/hd2d/batch-11-windrock/windrock-bedroll/
+?? art/src/hd2d/batch-11-windrock/windrock-camp-lantern/
+?? art/src/hd2d/batch-11-windrock/windrock-camp-pot/
+?? art/src/hd2d/batch-11-windrock/windrock-camp-windchime/
+?? art/src/hd2d/batch-11-windrock/windrock-climbing-crampons/
+?? art/src/hd2d/batch-11-windrock/windrock-climbing-pickaxe/
+?? art/src/hd2d/batch-11-windrock/windrock-decal-ice-chips-01/
+?? art/src/hd2d/batch-11-windrock/windrock-decal-ice-patch-01/
+?? art/src/hd2d/batch-11-windrock/windrock-decal-ice-patch-02/
+?? art/src/hd2d/batch-11-windrock/windrock-decal-moss-seam-02/
+?? art/src/hd2d/batch-11-windrock/windrock-decal-moss-seam-03/
+?? art/src/hd2d/batch-11-windrock/windrock-decal-moss-stone-fragments-01/
+?? art/src/hd2d/batch-11-windrock/windrock-decal-rock-fissure-01/
+?? art/src/hd2d/batch-11-windrock/windrock-decal-scree-run-01/
+?? art/src/hd2d/batch-11-windrock/windrock-decal-scree-run-02/
+?? art/src/hd2d/batch-11-windrock/windrock-decal-snow-chips-02/
+?? art/src/hd2d/batch-11-windrock/windrock-decal-snow-drift-01/
+?? art/src/hd2d/batch-11-windrock/windrock-decal-snow-footprints-01/
+?? art/src/hd2d/batch-11-windrock/windrock-decal-snow-footprints-02/
+?? art/src/hd2d/batch-11-windrock/windrock-decal-snow-footprints-03/
+?? art/src/hd2d/batch-11-windrock/windrock-decal-snow-footprints-04/
+?? art/src/hd2d/batch-11-windrock/windrock-decal-snow-scatter-01/
+?? art/src/hd2d/batch-11-windrock/windrock-edge-01/
+?? art/src/hd2d/batch-11-windrock/windrock-edge-02/
+?? art/src/hd2d/batch-11-windrock/windrock-edge-03/
+?? art/src/hd2d/batch-11-windrock/windrock-fx-campfire-sparks-01/
+?? art/src/hd2d/batch-11-windrock/windrock-fx-cold-glint-01/
+?? art/src/hd2d/batch-11-windrock/windrock-fx-gust-rune/
+?? art/src/hd2d/batch-11-windrock/windrock-fx-icy-slash/
+?? art/src/hd2d/batch-11-windrock/windrock-fx-snow-motes/
+?? art/src/hd2d/batch-11-windrock/windrock-fx-snow-particles-01/
+?? art/src/hd2d/batch-11-windrock/windrock-fx-stone-dust-01/
+?? art/src/hd2d/batch-11-windrock/windrock-fx-wind-flecks-01/
+?? art/src/hd2d/batch-11-windrock/windrock-fx-wind-gust-01/
+?? art/src/hd2d/batch-11-windrock/windrock-peaks-near/
+?? art/src/hd2d/batch-11-windrock/windrock-portal-active-01/
+?? art/src/hd2d/batch-11-windrock/windrock-portal-dormant-01/
+?? art/src/hd2d/batch-11-windrock/windrock-rope-pitons/
+?? art/src/hd2d/batch-11-windrock/windrock-shadow-boulder-small/
+?? art/src/hd2d/batch-11-windrock/windrock-shadow-cairn-compact/
+?? art/src/hd2d/batch-11-windrock/windrock-shadow-pillar-long/
+?? art/src/hd2d/batch-11-windrock/windrock-shadow-roots-forked/
+?? art/src/hd2d/batch-11-windrock/windrock-shadow-stairs-wide/
+?? art/src/hd2d/batch-11-windrock/windrock-shadow-tent-wide/
+?? art/src/hd2d/batch-11-windrock/windrock-snow-goggles/
+?? art/src/hd2d/batch-11-windrock/windrock-snow-shovel/
+?? art/src/hd2d/batch-11-windrock/windrock-snow-sled/
+?? art/src/hd2d/batch-11-windrock/windrock-spawn-marker-01/
+?? art/src/hd2d/batch-11-windrock/windrock-supply-basket/
+?? art/src/hd2d/batch-11-windrock/windrock-survey-compass/
+?? art/src/hd2d/batch-11-windrock/windrock-wind-flag/
+?? art/src/hd2d/batch-11-windrock/windrock-wool-mittens/
+?? art/src/hd2d/batch-11-world_tree/
+?? art/src/hd2d/batch-12-city/redraw-20261028/
+?? art/src/hd2d/batch-14-missing-art/
+?? art/src/hd2d/batch-15-expansion/
+?? art/src/hd2d/batch-16-portrait-edge-repair/
+?? art/src/hd2d/batch-16-run-redraw/
+?? art/src/hd2d/batch-16-ui-n09/
+?? art/src/hd2d/batch-17-fx-light-frame3-edit/
+?? art/src/hd2d/batch-17-ui-n01-adjustment/
+?? art/src/hd2d/batch-17-ui-n03-legendary/
+?? art/src/hd2d/batch-17-ui-n09-attempt05/
+?? art/src/hd2d/batch-18-redraws/
+?? art/src/hd2d/garden-a/
+?? art/src/hd2d/octopath-s01-s27-20261029/
+?? art/src/hd2d/p01-release-art-20261023/delivery/player-male.run.codex-review-20261030.md
+?? art/src/hd2d/p01-release-art-20261023/delivery/portrait-review-codex-20261030.md
+?? art/src/hd2d/p01-release-art-20261023/delivery/run-review-codex-20261030.md
+?? art/src/hd2d/p01-release-art-20261023/sources/remedy-motion-20261026/guard-side-candidate-01/
+?? art/src/hd2d/p01-release-art-20261023/sources/remedy-motion-20261026/guard-side-raw-01.png
+?? art/src/hd2d/p01-release-art-20261023/sources/remedy-motion-20261026/guard-side-raw-01.prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/A/arena-floor/
+?? art/src/hd2d/p01-v1.1.0-b1/A/contact-sheet.png
+?? art/src/hd2d/p01-v1.1.0-b1/A/farm-dirt-path-strip/
+?? art/src/hd2d/p01-v1.1.0-b1/A/farm-tilled-01/detail-4x-checker.png
+?? art/src/hd2d/p01-v1.1.0-b1/A/farm-tilled-01/detail-4x-dark.png
+?? art/src/hd2d/p01-v1.1.0-b1/A/farm-tilled-01/preview-3x3.png
+?? art/src/hd2d/p01-v1.1.0-b1/A/farm-tilled-01/preview-offset.png
+?? art/src/hd2d/p01-v1.1.0-b1/A/farm-tilled-01/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/A/farm-tilled-01/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/A/farm-tilled-01/raw-01.png
+?? art/src/hd2d/p01-v1.1.0-b1/A/farm-tilled-01/raw-02.png
+?? art/src/hd2d/p01-v1.1.0-b1/A/farm-tilled-01/raw-03.png
+?? art/src/hd2d/p01-v1.1.0-b1/A/farm-tilled-01/raw-04.png
+?? art/src/hd2d/p01-v1.1.0-b1/A/farm-tilled-01/raw-05.png
+?? art/src/hd2d/p01-v1.1.0-b1/A/farm-tilled-01/redraw-attempts-20261105/
+?? art/src/hd2d/p01-v1.1.0-b1/A/farm-tilled-01/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/A/farm-tilled-02/
+?? art/src/hd2d/p01-v1.1.0-b1/A/manifest.json
+?? art/src/hd2d/p01-v1.1.0-b1/B/arena-stands-far/
+?? art/src/hd2d/p01-v1.1.0-b1/B/contact-sheet.png
+?? art/src/hd2d/p01-v1.1.0-b1/B/farm-hills-far/
+?? art/src/hd2d/p01-v1.1.0-b1/B/manifest.json
+?? art/src/hd2d/p01-v1.1.0-b1/B/royal-carpet-runner/
+?? art/src/hd2d/p01-v1.1.0-b1/B/streetlamp-lit/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/B/streetlamp-lit/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/B/streetlamp-lit/raw-01.png
+?? art/src/hd2d/p01-v1.1.0-b1/B/streetlamp-lit/redraw-attempts-20261105/
+?? art/src/hd2d/p01-v1.1.0-b1/B/streetlamp-lit/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/C/
+?? art/src/hd2d/p01-v1.1.0-b1/D/contact-sheet.png
+?? art/src/hd2d/p01-v1.1.0-b1/D/manifest.json
+?? art/src/hd2d/p01-v1.1.0-b1/D/pet-feed-bowl-food/
+?? art/src/hd2d/p01-v1.1.0-b1/D/pet-feed-bowl-water/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/D/pet-feed-bowl-water/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/D/pet-feed-bowl-water/raw-01.png
+?? art/src/hd2d/p01-v1.1.0-b1/D/pet-feed-bowl-water/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/D/recommendations.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-fence-corner/final-old.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-fence-corner/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-fence-corner/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-fence-corner/raw-01-old.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-fence-corner/raw-01.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-fence-corner/raw-02.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-fence-corner/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-fence-h/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-fence-h/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-fence-h/raw-01.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-fence-h/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-fence-v/final-old.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-fence-v/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-fence-v/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-fence-v/raw-01-old.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-fence-v/raw-01.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-fence-v/raw-02.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-fence-v/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-field-cabbage/final-pre-fringe-key.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-field-cabbage/preview-3x3.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-field-cabbage/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-field-cabbage/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-field-cabbage/raw-01.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-field-cabbage/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-field-carrot/final-pre-fringe-key.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-field-carrot/preview-3x3.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-field-carrot/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-field-carrot/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-field-carrot/raw-01.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-field-carrot/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-field-wheat/final-pre-fringe-key.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-field-wheat/preview-3x3.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-field-wheat/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-field-wheat/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-field-wheat/raw-01.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-field-wheat/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-gate/final-old.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-gate/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-gate/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-gate/raw-01-old.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-gate/raw-01.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-gate/raw-02.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-gate/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-haystack/final-old.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-haystack/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-haystack/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-haystack/raw-01-old.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-haystack/raw-01.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-haystack/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-scarecrow/final-old.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-scarecrow/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-scarecrow/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-scarecrow/raw-01-old.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-scarecrow/raw-01.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-scarecrow/raw-02.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-scarecrow/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-soil-edge-01/final-old.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-soil-edge-01/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-soil-edge-01/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-soil-edge-01/raw-01.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-soil-edge-01/raw-02.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-soil-edge-01/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-soil-edge-02/final-old.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-soil-edge-02/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-soil-edge-02/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-soil-edge-02/raw-01.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-soil-edge-02/raw-02.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-soil-edge-02/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-well/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-well/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-well/raw-01.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-well/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-wheelbarrow/final-old.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-wheelbarrow/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-wheelbarrow/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-wheelbarrow/raw-01-old.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-wheelbarrow/raw-01.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-wheelbarrow/raw-02.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/farm-wheelbarrow/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/A/manifest.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/manifest.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-cage-large/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-cage-large/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-cage-large/raw-atlas-cell.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-cage-large/review-4x-green.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-cage-large/review-4x-red.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-cage-large/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-cage-small/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-cage-small/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-cage-small/raw-atlas-cell.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-cage-small/review-4x-green.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-cage-small/review-4x-red.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-cage-small/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-floor-wood-fine/preview-3x3.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-floor-wood-fine/preview-offset.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-floor-wood-fine/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-floor-wood-fine/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-floor-wood-fine/raw-atlas-cell.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-floor-wood-fine/raw-imagegen.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-floor-wood-fine/raw-standalone.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-floor-wood-fine/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-perch-stand/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-perch-stand/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-perch-stand/raw-atlas-cell.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-perch-stand/review-4x-green.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-perch-stand/review-4x-red.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-perch-stand/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-rug-long/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-rug-long/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-rug-long/raw-atlas-cell.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-rug-long/review-4x-green.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-rug-long/review-4x-red.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-rug-long/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-rug-round/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-rug-round/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-rug-round/raw-atlas-cell.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-rug-round/review-4x-green.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-rug-round/review-4x-red.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-rug-round/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-scratch-post/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-scratch-post/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-scratch-post/raw-atlas-cell.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-scratch-post/review-4x-green.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-scratch-post/review-4x-red.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-scratch-post/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-shelf-alt/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-shelf-alt/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-shelf-alt/raw-atlas-cell.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-shelf-alt/review-4x-green.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-shelf-alt/review-4x-red.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-shelf-alt/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-sleeping-01/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-sleeping-01/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-sleeping-01/raw-atlas-cell.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-sleeping-01/review-4x-green.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-sleeping-01/review-4x-red.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-sleeping-01/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-sleeping-02/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-sleeping-02/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-sleeping-02/raw-atlas-cell.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-sleeping-02/review-4x-green.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-sleeping-02/review-4x-red.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-sleeping-02/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-toy-pile/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-toy-pile/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-toy-pile/raw-atlas-cell.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-toy-pile/review-4x-green.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-toy-pile/review-4x-red.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/pet-toy-pile/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/B/raw-atlas.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-barrier-corner/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-barrier-corner/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-barrier-corner/raw-atlas-cell.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-barrier-corner/review-4x-green.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-barrier-corner/review-4x-red.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-barrier-corner/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-barrier-h/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-barrier-h/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-barrier-h/raw-atlas-cell.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-barrier-h/review-4x-green.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-barrier-h/review-4x-red.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-barrier-h/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-brazier/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-brazier/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-brazier/raw-atlas-cell.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-brazier/review-4x-green.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-brazier/review-4x-red.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-brazier/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-center-medallion-large/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-center-medallion-large/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-center-medallion-large/raw-atlas-cell.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-center-medallion-large/review-4x-green.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-center-medallion-large/review-4x-red.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-center-medallion-large/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-column-short/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-column-short/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-column-short/raw-atlas-cell.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-column-short/review-4x-green.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-column-short/review-4x-red.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-column-short/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-gate/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-gate/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-gate/raw-atlas-cell.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-gate/raw-imagegen.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-gate/raw-portcullis.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-gate/review-4x-green.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-gate/review-4x-red.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-gate/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-judge-podium/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-judge-podium/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-judge-podium/raw-atlas-cell.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-judge-podium/review-4x-green.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-judge-podium/review-4x-red.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-judge-podium/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-sand-floor/preview-3x3.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-sand-floor/preview-offset.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-sand-floor/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-sand-floor/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-sand-floor/raw-atlas-cell.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-sand-floor/raw-imagegen.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-sand-floor/raw-standalone.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/arena-sand-floor/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/manifest.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/C/raw-atlas.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/manifest.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-banner-blue-long/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-banner-blue-long/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-banner-blue-long/raw-atlas-cell.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-banner-blue-long/review-4x-green.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-banner-blue-long/review-4x-red.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-banner-blue-long/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-banner-red-long/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-banner-red-long/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-banner-red-long/raw-atlas-cell.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-banner-red-long/review-4x-green.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-banner-red-long/review-4x-red.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-banner-red-long/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-floor-marble/preview-3x3.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-floor-marble/preview-offset.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-floor-marble/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-floor-marble/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-floor-marble/raw-atlas-cell.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-floor-marble/raw-imagegen.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-floor-marble/raw-standalone.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-floor-marble/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-guard-statue-gold/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-guard-statue-gold/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-guard-statue-gold/raw-atlas-cell.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-guard-statue-gold/review-4x-green.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-guard-statue-gold/review-4x-red.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-guard-statue-gold/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-throne-dais/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-throne-dais/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-throne-dais/raw-atlas-cell.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-throne-dais/review-4x-green.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-throne-dais/review-4x-red.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-throne-dais/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-window-blue/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-window-blue/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-window-blue/raw-atlas-cell.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-window-blue/review-4x-green.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-window-blue/review-4x-red.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-window-blue/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-window-red/prompt.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-window-red/qa.json
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-window-red/raw-atlas-cell.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-window-red/review-4x-green.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-window-red/review-4x-red.png
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/palace-window-red/review.md
+?? art/src/hd2d/p01-v1.1.0-b1/redo/D/raw-atlas.png

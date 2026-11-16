@@ -1,0 +1,1 @@
+Route: built-in image_gen, one attempt. Map screenshots determine subject; bush anchors style only. Requested isolated forked tree branch support, warm brown bark, transparent background, crisp HD-2D pixels, no statue/feather/glow/text/magenta/fringe.

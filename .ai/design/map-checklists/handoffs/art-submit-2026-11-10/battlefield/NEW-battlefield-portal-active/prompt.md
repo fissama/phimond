@@ -1,0 +1,1 @@
+ImageGen edit of dormant portal: preserve exact stone architecture/silhouette; make aperture active with contained cyan/teal pixel facets, subtly cool-lit inner arch; no glow beyond silhouette; preserve transparent background. Pipeline reapplied dormant alpha mask exactly.

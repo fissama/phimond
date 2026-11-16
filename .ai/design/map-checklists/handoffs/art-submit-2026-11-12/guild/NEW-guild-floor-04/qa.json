@@ -1,0 +1,82 @@
+{
+  "task_id": "NEW-guild-floor-04",
+  "status": "FAILED_AFTER_3_TRIES",
+  "decision": "Training-court plan vs source screenshots: source maps show shared outdoor cracked stone paving; followed source.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.jpg",
+      "candidate": "candidate-attempt-01.png",
+      "sha256": "d608ba969935ded3b48ec16c10e7a09ecab887922d995e848f25d71ef287c786",
+      "colors": 48,
+      "seam_x": 13.8874,
+      "seam_y": 16.0996,
+      "autocorr_x": 0.5325,
+      "autocorr_x_lag": 256,
+      "autocorr_y": 0.3704,
+      "autocorr_y_lag": 128,
+      "flat_8px_perimeter": false,
+      "failure": "seam 16.100>2; autocorr 0.532>.25; outer 8px not flat"
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.jpg",
+      "candidate": "candidate-attempt-02.png",
+      "sha256": "d2ade70211e9053373aff05335f0152597bc5e4ccb1477436af21e28b76318f4",
+      "colors": 48,
+      "seam_x": 9.4688,
+      "seam_y": 18.2793,
+      "autocorr_x": 0.1913,
+      "autocorr_x_lag": 8,
+      "autocorr_y": 0.1073,
+      "autocorr_y_lag": 8,
+      "flat_8px_perimeter": false,
+      "failure": "seam 18.279>2; outer 8px not flat"
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.jpg",
+      "candidate": "candidate-attempt-03.png",
+      "sha256": "1275e87a5b5c92a0aef714111211f8a28878517a452d5eb1a57e7f52665a1b02",
+      "colors": 48,
+      "seam_x": 14.6582,
+      "seam_y": 15.2975,
+      "autocorr_x": 0.5965,
+      "autocorr_x_lag": 8,
+      "autocorr_y": 0.5525,
+      "autocorr_y_lag": 8,
+      "flat_8px_perimeter": false,
+      "failure": "seam 15.298>2; autocorr 0.596>.25; outer 8px not flat"
+    }
+  ],
+  "processing": "Nearest resize 512x512; median-cut quantize to 48 colors; 3x3 previews.",
+  "acceptance": {
+    "colors": [
+      33,
+      48
+    ],
+    "seam_wrap_max": 2.0,
+    "autocorr_max": 0.25,
+    "outer_flat_margin_px": 8
+  },
+  "final_candidate": null,
+  "art_gate": "NOT_RUN: candidates unregistered; manifest unchanged.",
+  "tileable_postprocess": {
+    "method": "half-tile offset x/y, 24px local crossfade, quantize 48, flat8 perimeter",
+    "candidate": "candidate-tileable-postprocess.png",
+    "metrics": {
+      "selected_raw": "raw-03.jpg",
+      "source_attempt": 3,
+      "size": [
+        512,
+        512
+      ],
+      "colors": 48,
+      "wrap_x": 0.0,
+      "wrap_y": 0.0,
+      "autocorr_max_lag_8_255": 0.5957335233688354,
+      "flat8_unique_colors": 1
+    },
+    "decision": "FAILED: 3x3 and 4x4 visual inspection shows strong rectangular tile/grid cadence and repeated stone motif; no promotion."
+  }
+}

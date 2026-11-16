@@ -1,0 +1,43 @@
+{
+  "task_id": "NEW-battlefield-backdrop-far",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "normalized_size": [
+        1280,
+        384
+      ],
+      "colors_after_quantize": 48,
+      "seam_mean_rgb": 10.04,
+      "max_autocorrelation_full_luminance_lag_8_255": 0.6315,
+      "candidate": false,
+      "failure": "3x1 showed repeated focal tower silhouettes; full-luminance autocorrelation exceeded threshold."
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": true,
+      "processing": "Resize/crop to 1280x384; median-cut quantize to 48 colors without dithering.",
+      "colors": 48,
+      "seam_mean_rgb": 3.7595486640930176,
+      "max_autocorrelation_horizontal_gradient_lag_8_255": 0.02737342309516049,
+      "autocorrelation_lag": 16,
+      "failure": null
+    }
+  ],
+  "selected_candidate": "candidate.png",
+  "sha256": "8718398a58573c4e330a37211a430e50981e7a5386482157844291cb4ca791cd",
+  "acceptance_result": {
+    "size_px": [
+      1280,
+      384
+    ],
+    "colors": 48,
+    "edge_seam_mean": 3.7595486640930176,
+    "autocorrelation_horizontal_gradient_max": 0.02737342309516049,
+    "visual": "second render has irregular low cityscape; 3x1 and 4x1 previews provided; inspect skyline/cloud recurrence"
+  },
+  "art_gate": "NOT_RUN: handoff candidate is not registered in canonical manifest; manifest edits forbidden."
+}

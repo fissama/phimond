@@ -1,0 +1,73 @@
+{
+  "task_id": "NEW-maze-floor-03",
+  "status": "FAILED_AFTER_3_TRIES",
+  "map_decision": "CSV describes trap floor; source maps show flat pink-beige paving with separate upright spike props, so this tile contains only stone.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01.png",
+      "colors": 48,
+      "wrap_x": 1.548,
+      "wrap_y": 2.421,
+      "autocorr_max_lag_ge8": 0.5407,
+      "outer8_unique": [
+        18,
+        15,
+        18,
+        17
+      ],
+      "failure": "Vertical seam and autocorrelation fail; outer border varies."
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "colors": 48,
+      "wrap_x": 1.472,
+      "wrap_y": 2.786,
+      "autocorr_max_lag_ge8": 0.4047,
+      "outer8_unique": [
+        20,
+        20,
+        21,
+        21
+      ],
+      "failure": "Vertical seam, autocorrelation and flat border fail."
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "colors": 48,
+      "wrap_x": 1.59,
+      "wrap_y": 1.671,
+      "autocorr_max_lag_ge8": 0.2687,
+      "outer8_unique": [
+        17,
+        17,
+        18,
+        16
+      ],
+      "failure": "Both wrap axes pass, but autocorrelation >0.25 and flat border fails; 3x3 shows an inset edge band."
+    }
+  ],
+  "processing": "Each raw square resized nearest to 512x512 and median-cut quantized to 48 RGB colors; no manual pixel painting.",
+  "acceptance": {
+    "target_size": [
+      512,
+      512
+    ],
+    "color_range": [
+      33,
+      48
+    ],
+    "wrap_x_max": 2.0,
+    "wrap_y_max": 2.0,
+    "autocorrelation_max": 0.25,
+    "outer8_flat": true
+  },
+  "final_candidate": null,
+  "art_gate": "NOT_RUN: no canonical candidate emitted",
+  "raws_preserved": true
+}

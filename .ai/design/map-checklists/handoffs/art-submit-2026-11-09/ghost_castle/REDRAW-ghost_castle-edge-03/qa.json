@@ -1,0 +1,27 @@
+{
+  "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-09/ghost_castle/REDRAW-ghost_castle-edge-03/candidate-02.png",
+  "candidate_sha256": "69fb0a52d9116fd7a2d2739d7a8bf680e4b933ae86c947a1aa61bae33fa2b500",
+  "size": [
+    512,
+    128
+  ],
+  "colors": 38,
+  "alpha_mode": "binary",
+  "attempts": {
+    "1": {
+      "edge_seam": 2.699,
+      "visual": "endpoint seam failed"
+    },
+    "2": {
+      "edge_seam": 1.18,
+      "visual": "repeat 3x1 reveals regular repeated curtain clusters; rejected"
+    },
+    "3": {
+      "edge_seam": 2.695,
+      "visual": "endpoint seam failed; wall/window motif off target"
+    }
+  },
+  "status": "FAILED_AFTER_3_TRIES",
+  "best_attempt": 2,
+  "art_gate": "NOT_RUN: handoff-only; cannot register before Claude acceptance"
+}

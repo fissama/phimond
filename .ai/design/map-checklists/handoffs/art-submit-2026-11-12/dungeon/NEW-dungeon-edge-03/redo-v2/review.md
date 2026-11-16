@@ -1,0 +1,1 @@
+Source-map choice: pale yellow-green scaly stone floor and beige wall masonry. This variant uses one unbalanced rubble cluster, a long sparse gap, and small separated slab groups. Earlier attempts with regular trim/scale motifs rejected.

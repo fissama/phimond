@@ -1,0 +1,1 @@
+Irregular cracked pink-beige stone fragment with inset ivory bone ribs, two violet-gray pebble chips and tiny splinter; isolated top-down decal, transparent, crisp pixel-art, no halo/glow/shadow/text/frame/fringe/magenta. Threshold alpha≥250 used to remove diffuse exterior.

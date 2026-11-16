@@ -1,0 +1,1 @@
+Specific shadow task requires soft procedural alpha and one kit color, overriding the generic binary-alpha / 33–48-color criteria. Candidate is 256x96, one RGB color, soft alpha, 12px minimum nonzero-alpha margin. This is a standalone shadow mask, not a shadow baked onto another asset. Claude review pending.

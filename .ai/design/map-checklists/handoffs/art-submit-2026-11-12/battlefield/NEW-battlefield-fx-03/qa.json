@@ -1,0 +1,56 @@
+{
+  "task_id": "NEW-battlefield-fx-03",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": false,
+      "colors_opaque": 32,
+      "alpha_binary": true,
+      "per_frame_margin_px": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "failure": "Only 32 opaque colors after haze removal."
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": true,
+      "processing": "Split 4 frames; alpha threshold 242 removed diffuse haze; keyed saturated red/magenta/yellow fringe; crop and nearest-fit 192x128 cells; 48-color median-cut.",
+      "colors_opaque": 40,
+      "alpha_binary": true,
+      "per_frame_margin_px": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "visible_magenta_pixels": 0,
+      "failure": null
+    }
+  ],
+  "selected_candidate": "candidate.png",
+  "sha256": "58b5b2adb15b751b20add8c21828a2ebe281eb2059f631dd47c7a03cae27a54b",
+  "acceptance_result": {
+    "size_px": [
+      768,
+      128
+    ],
+    "frames": 4,
+    "colors_opaque": 40,
+    "alpha_binary": true,
+    "per_frame_margin_px": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "visible_magenta_pixels": 0,
+    "visual": "stone feather flake animation; fringe keyed from raw"
+  },
+  "art_gate": "NOT_RUN: handoff candidate is not registered in canonical manifest; manifest edits forbidden."
+}

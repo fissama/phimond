@@ -1,0 +1,32 @@
+{
+  "task_id": "NEW-guild_battlefield_main_field-landmark-01",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "map_decision": "Selected the small winged angel statue in the source map (center-left/center-right stone figures), not the fountain or bronze beast. Palette: cool gray stone, cream highlights, subdued gold accents. Crop saved as map-subject-crop.jpg.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate.png",
+      "processing": "Binary alpha threshold 128; key red fringe; crop visible object; nearest-resize preserving aspect to 360x424; bottom-center on 384x448 canvas; median-cut to 48 visible colors.",
+      "colors_opaque": 45,
+      "alpha_margin_px": 12,
+      "binary_alpha": true,
+      "visible_magenta_pixels": 0,
+      "failure": null
+    }
+  ],
+  "selected_candidate": "candidate.png",
+  "sha256": "2f5ba5dc03f5a96e1cd7e50b5eeac87d8778291558ee57c1ed60a23e5c5b308c",
+  "acceptance_result": {
+    "size_px": [
+      384,
+      448
+    ],
+    "colors_opaque": 45,
+    "alpha_margin_px": 12,
+    "binary_alpha": true,
+    "visible_magenta_pixels": 0,
+    "visual": "stone angel with feathered wings on pale plinth; crop reference included"
+  },
+  "art_gate": "NOT_RUN: handoff candidate is not registered in canonical manifest; manifest edits forbidden."
+}

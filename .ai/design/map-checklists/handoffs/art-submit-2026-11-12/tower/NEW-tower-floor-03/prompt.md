@@ -1,0 +1,1 @@
+Three separate built-in image_gen attempts. Image 3 (secret-floor screenshot) is the content authority; dirt-floor anchors only guide pixel clustering. Attempts 1–2 used all three maps; attempt 3 used the relevant secret-floor screenshot plus both style anchors. Requested seamless wood-plank floor, 33–48 colors, no frame, flat border, no grid/cadence.

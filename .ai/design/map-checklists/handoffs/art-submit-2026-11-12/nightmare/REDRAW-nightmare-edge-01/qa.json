@@ -1,0 +1,25 @@
+{
+  "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-09/nightmare/REDRAW-nightmare-edge-01/candidate-02.png",
+  "candidate_sha256": "c414416af2a7c89e1958f0800c1ff221dd5249c2fca5672dda027540a77ef33b",
+  "size": [
+    512,
+    128
+  ],
+  "colors": 34,
+  "alpha_values": [
+    0,
+    255
+  ],
+  "alpha_mode": "binary",
+  "edge_rgb_delta_mean": 5.041666666666667,
+  "edge_alpha_delta_mean": 5.9765625,
+  "autocorr_highpass_24_256": 0.055842822082147255,
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "attempts": {
+    "1": "27 colors after crop/quantize; rejected.",
+    "2": "34 colors; RGB seam 5.04, alpha seam 5.98; highpass autocorrelation 0.0558; 3x1 preview visually pass.",
+    "3": "Generated after provisional autocorr miscalculation; not selected. Attempt 2 retested with highpass method used for edge cadence."
+  },
+  "art_gate": "NOT_RUN: handoff-only; cannot register before Claude acceptance",
+  "crop_selection": "Raw 2172x724; 2048x512 crop at x=66,y=180; resize to 512x128, alpha-key and quantize."
+}

@@ -1,10 +1,21 @@
 # Kit `battlefield` — Chiến Địa Kết Minh
 
+> **Nghiệm thu Claude 2026-11-09** (mức V1, chưa 4×): THIẾU_CHƯA_CÓ 50. Map: {'CHƯA CÓ ART': 1}. Trạng thái hiện hành ở [ASSET-VERDICTS-20261109.csv](ASSET-VERDICTS-20261109.csv) / [MAP-COVERAGE-20261109.csv](MAP-COVERAGE-20261109.csv); tick ✅/❌ bên dưới là LỊCH SỬ, không phải approval.
+> **Cảnh báo brief:** brief plan (đất cháy/chiến xa) ≠ ảnh gốc (quảng trường trắng cột tím); cùng ảnh với arena2 — thực hiện `BRIEF-battlefield` trong [ROADMAP-ART-92MAPS-20261109.md](ROADMAP-ART-92MAPS-20261109.md) trước khi vẽ.
+
 > **Quy tắc bắt buộc cho Codex** (xem README.md): dùng https://github.com/0x0funky/agent-sprite-forge (generate2dmap / generate2dsprite) với route image_gen tích hợp; cấm codeart2d, API trả phí, vẽ bằng code, lật gương; không commit; không sửa tools/hd2d_audit/*, gate_waivers.json, check.sh; mỗi asset phải tự nhìn ảnh trước khi ghi "vẽ xong"; chỉ Claude/owner đánh dấu "duyệt".
 
 - Style/palette: Đất cháy xém, vũ khí cắm đất, chiến xa hỏng, tháp canh gỗ; khói lửa.
-- Thư mục asset: `apps/game-web/art-src/hd2d/batch-11-battlefield/`
+- Thư mục asset: `art/src/hd2d/batch-11-battlefield/`
 - Số map: 1
+
+## BRIEF-battlefield evidence (2026-11-11)
+
+Reviewed `.ai/design/map-checklists/refs/guild_battlefield_main_field.jpg`; contextual crop saved at `.ai/design/map-checklists/handoffs/art-submit-2026-11-10/battlefield/brief-evidence/guild_battlefield_main_field-focus.jpg`.
+
+Visible scene: flat pale cream arena floor; purple columns with gold collars at both sides/top; distant blue city wall/sky with orange conical roofs; a small central fountain; multiple gray winged statues; several bronze beast figures on decorated pedestals. This reference is also the source for arena2 and shares arena architecture/floor/backdrop.
+
+**Correction to old kit style:** the plan text “burnt earth, embedded weapons, broken chariots, wooden watchtower and smoke/fire” is unsupported by the screenshot. Do not invent those forms. Keep the CSV task rows for audit; where a row requires these absent objects, mark that asset BLOCKED with the missing-source reason rather than substitute an arena statue or prop. Palette is cream-beige, muted purple, gold, blue sky/city and orange roofs. Do not tick “Vẽ” or “Duyệt”.
 
 ## 1. Danh sách asset cần vẽ (kit chưa có asset)
 
@@ -69,7 +80,7 @@ Nguồn: Phần C `hd2d-maps-75-gemini-prompt.md`. Yêu cầu gốc: tile đất
 Dùng agent-sprite-forge ($generate2dmap cho tile/prop, $generate2dsprite cho prop/decal/FX/marker). Route ảnh: image_gen tích hợp của Codex (kiểm `route_media.py resolve --kind image`). KHÔNG codeart2d, KHÔNG API, KHÔNG vẽ bằng code.
 Kit: Chiến Địa Kết Minh (battlefield). Style: Đất cháy xém, vũ khí cắm đất, chiến xa hỏng, tháp canh gỗ; khói lửa.. Style anchor: batch-01-octopath/contact-sheet.png + 2 sprites.png linh thú.
 Mỗi lần gọi: 1 sheet ~6 vật trên nền #FF00FF, bố trí 2×3/3×2, cách nhau ≥48 px, không chạm mép. Giữ raw-01.png byte-identical. Cắt/khử nền/pixel finish bằng script forge. 33–48 màu, alpha nhị phân, lề ≥8 px, 128 px = 1 đơn vị (far 64), người = 1.31 đơn vị (cỡ tối đa vật nhỏ: tools/hd2d_audit/size_check.py).
-Mỗi asset: thư mục raw-01/final/prompt.md/review.md/qa.json trong apps/game-web/art-src/hd2d/batch-11-battlefield/<id>/. Tự nhìn 4× nền tối/caro. Xong: `python3 tools/hd2d_audit/art_gate.py batch-11-battlefield` = 0 lỗi, contact-sheet mới hơn manifest.
+Mỗi asset: thư mục raw-01/final/prompt.md/review.md/qa.json trong art/src/hd2d/batch-11-battlefield/<id>/. Tự nhìn 4× nền tối/caro. Xong: `python3 tools/hd2d_audit/art_gate.py batch-11-battlefield` = 0 lỗi, contact-sheet mới hơn manifest.
 ```
 
 ## 3. Từng map

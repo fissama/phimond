@@ -1,0 +1,1 @@
+Task NEW-guild-floor-02 (order 314). Source map determines paving material: brown-beige cracked courtyard stone, despite CSV plan text “sàn gỗ”. Image generation performed with Runway; first attempt was text-only, next two used guild map screenshots as palette/material references. Every raw image saved individually.

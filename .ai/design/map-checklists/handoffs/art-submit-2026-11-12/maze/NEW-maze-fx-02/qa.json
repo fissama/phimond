@@ -1,0 +1,43 @@
+{
+  "task_id": "NEW-maze-fx-02",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "result": "rejected: white cyan glow and soft central orb"
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate.png",
+      "result": "selected: glyph stones in four phases, crisp silhouette"
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "result": "rejected: generated cell-border/background artifacts"
+    }
+  ],
+  "processing": "Attempt 2 cropped into four cells; nearest resized; red/magenta fringe alpha-key; binary alpha threshold; quantized to 48 colors; fit to 176x112 per frame.",
+  "colors_total": 44,
+  "frame_alpha_margins_px": [
+    [
+      10,
+      8
+    ],
+    [
+      16,
+      8
+    ],
+    [
+      11,
+      8
+    ],
+    [
+      14,
+      8
+    ]
+  ],
+  "art_gate": "NOT_RUN: outside canonical manifest; --all deferred."
+}

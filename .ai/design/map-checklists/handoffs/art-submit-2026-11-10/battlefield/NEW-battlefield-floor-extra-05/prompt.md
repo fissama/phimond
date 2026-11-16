@@ -1,0 +1,1 @@
+ImageGen prompt set: new pale cream limestone plaza floor texture variant, irregular paving scale and spacing, restrained warm taupe joints and sparse muted gray-violet stone, crisp stepped pixels, no regular grid, no repeated motif, full frame seamless, no props/shadow/glow/text/magenta.

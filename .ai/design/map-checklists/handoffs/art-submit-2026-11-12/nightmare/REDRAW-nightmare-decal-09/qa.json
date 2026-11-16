@@ -1,0 +1,28 @@
+{
+  "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-09/nightmare/REDRAW-nightmare-decal-09/candidate-03.png",
+  "candidate_sha256": "257ccea24ffcbabf259e513654e089d234c1bd7a5e63703f113d75033e9dc612",
+  "size": [
+    384,
+    384
+  ],
+  "colors": 24,
+  "alpha_mode": "binary",
+  "alpha_margin": 22,
+  "attempts": {
+    "1": {
+      "result": "REDO",
+      "reason": "Only 18 colors after processing."
+    },
+    "2": {
+      "result": "REDO",
+      "reason": "32 colors; broad continuous terrain patch and dark border, not a loose decal."
+    },
+    "3": {
+      "result": "FAIL",
+      "reason": "24 colors after alpha key; only sparse islands remained after glow removal."
+    }
+  },
+  "status": "FAILED_AFTER_3_TRIES",
+  "best_attempt": null,
+  "art_gate": "NOT_RUN: handoff-only; cannot register before Claude acceptance"
+}

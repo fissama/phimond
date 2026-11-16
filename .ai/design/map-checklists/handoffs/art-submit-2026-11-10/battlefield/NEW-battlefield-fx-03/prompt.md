@@ -1,0 +1,1 @@
+ImageGen attempt 2: four-frame transparent stone-feather flakes inspired by angel-statue wings, ivory/pale stone, warm beige shadow, violet-gray outline and muted gold flecks; slight descent/turn; crisp pixel art, no haze/glow/magenta. Keyed fringe after generation.

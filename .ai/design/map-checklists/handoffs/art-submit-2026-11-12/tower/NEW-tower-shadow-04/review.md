@@ -1,0 +1,1 @@
+Selected attempt 2: a readable irregular branching canopy shadow, distinct from the earlier fog-like attempt. The crop and cream-background diagnostic shows no bright fringe after the single-pigment quantization. Candidate 384×384, one RGB pigment color with soft generated alpha, [12, 104, 12, 105] px margins. Awaits Claude visual review; not registered.

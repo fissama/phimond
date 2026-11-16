@@ -1,0 +1,1 @@
+Built-in image_gen, 2 attempts. Attempt 1 was an amorphous fog-like patch. Attempt 2 produced a clear irregular branching canopy shadow silhouette. Processed only by crop, nearest resize, one-color quantization, and preservation of generated soft alpha.

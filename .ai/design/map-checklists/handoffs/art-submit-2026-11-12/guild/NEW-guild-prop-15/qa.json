@@ -1,0 +1,34 @@
+{
+  "task_id": "NEW-guild-prop-15",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "redo-v1/raw-01.png",
+      "decision": "Rejected after 4x review: isolated pale pixel in transparent gap."
+    },
+    {
+      "attempt": 2,
+      "raw": "redo-v2/raw-02.png",
+      "decision": "Selected; thresholding and 1px erosion removed red alpha fringe."
+    }
+  ],
+  "processing": "Key alpha >=128; erode 1px; crop; nearest resize into transparent 256x256; quantize to 48 colors; binary alpha.",
+  "candidate": "redo-v2/candidate.png",
+  "size": [
+    256,
+    256
+  ],
+  "colors": 48,
+  "alpha_values": [
+    0,
+    255
+  ],
+  "alpha_margin_px": 10,
+  "sha256": "d1828a1085363b1678b405774780b037bacbdf0ee73caff74ef0c8ddaa5dd3ee",
+  "visual_check": {
+    "4x_light": "Stall and straw readable; clean material edges.",
+    "4x_dark": "No glow, halo, or exterior cast shadow."
+  },
+  "art_gate": "NOT_RUN: handoff-only."
+}

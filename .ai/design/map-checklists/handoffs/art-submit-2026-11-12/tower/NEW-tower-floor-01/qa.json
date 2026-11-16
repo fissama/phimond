@@ -1,0 +1,46 @@
+{
+  "status": "failed_after_three_attempts",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "exec-e7ede8ba-f7d5-49da-9320-956cc7c91252.png",
+      "resized_colors_pre_quantize": 3137,
+      "wrap_x": 3.77,
+      "wrap_y": 0.398,
+      "border_unique_8px": [
+        356,
+        316,
+        380,
+        425
+      ]
+    },
+    {
+      "attempt": 2,
+      "raw": "exec-155f4d7c-f31c-4002-89ec-97e996882baf.png",
+      "resized_colors_pre_quantize": 3211,
+      "wrap_x": 3.382,
+      "wrap_y": 5.054,
+      "border_unique_8px": [
+        532,
+        330,
+        695,
+        683
+      ]
+    },
+    {
+      "attempt": 3,
+      "raw": "exec-3b834518-c358-4418-b8fc-044cbb8195a1.png",
+      "resized_colors_pre_quantize": 2525,
+      "wrap_x": 4.415,
+      "wrap_y": 5.242,
+      "border_unique_8px": [
+        529,
+        464,
+        663,
+        662
+      ]
+    }
+  ],
+  "reason": "all attempts retain an inset frame/border and wrap ratios exceed floor threshold; no final candidate emitted",
+  "raws_preserved": true
+}

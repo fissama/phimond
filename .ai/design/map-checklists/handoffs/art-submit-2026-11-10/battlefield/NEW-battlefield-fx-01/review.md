@@ -1,0 +1,1 @@
+Claude review pending; not self-approved. Reference palette supports muted gold, cream and pale cyan for small magical arrival motes over the cream plaza. Raw generation contained unwanted neon-green contamination; green hue pixels were removed by keying. Review cadence and any residual bright edges; no external glow intended.

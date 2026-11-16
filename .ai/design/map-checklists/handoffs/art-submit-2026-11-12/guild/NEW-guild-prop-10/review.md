@@ -1,0 +1,1 @@
+Three offset crate forms give this task a distinct silhouette from the barrel, sacks, chest, and shelving. Candidate is 256×256, 48 colors, binary alpha, 10px margin, inspected at 4× against light and dark backgrounds. READY_FOR_CLAUDE_REVIEW only.

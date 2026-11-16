@@ -1,0 +1,1 @@
+Built-in image_gen, attempt 1 selected. Raw alpha thresholded at 128, cropped, RGB resized with Lanczos and alpha with nearest-neighbor, centered in 384×384, quantized to 48 colors. No repainting or other image edits.

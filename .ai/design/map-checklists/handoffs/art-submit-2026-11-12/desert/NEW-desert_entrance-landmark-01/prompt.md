@@ -1,0 +1,1 @@
+Route: built-in image_gen, one attempt. Image 1 is the map source; approved batch-01 bush sprites are pixel style references only. Prompt requested an isolated wind-carved sandstone/gray spire, crisp HD-2D pixel clusters, transparent background and no glow/text/magenta/fringe.

@@ -1,0 +1,1 @@
+ImageGen attempt 3: four distinct freestanding column structures inside frame—broad acanthus, slim plain, squat scroll capital, broken fluted; irregular spacing/heights; no arches/paired/repeated forms; same sky + parapet bands at both edges; 3:1 opaque tileable HD-2D pixel art, violet-gray stone/cream/gold.

@@ -1,0 +1,51 @@
+{
+  "task_id": "NEW-battlefield-floor-extra-02",
+  "status": "FAILED_AFTER_3_TRIES",
+  "map_decision": "Source-map cream limestone retained; no dirt/grass substituted.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01.png",
+      "colors": 48,
+      "seam_wrap_mean": 12.8604,
+      "autocorr_max_lag_ge8": 0.7788,
+      "failure": "Seam exceeds 2.0. Attempts 1/2 also exceed autocorrelation .25. No uniform flat 8px perimeter; 3x3 repeats broad stone shapes."
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "colors": 48,
+      "seam_wrap_mean": 3.4388,
+      "autocorr_max_lag_ge8": 0.3071,
+      "failure": "Seam exceeds 2.0. Attempts 1/2 also exceed autocorrelation .25. No uniform flat 8px perimeter; 3x3 repeats broad stone shapes."
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "colors": 48,
+      "seam_wrap_mean": 4.2337,
+      "autocorr_max_lag_ge8": 0.218,
+      "failure": "Seam exceeds 2.0. Attempts 1/2 also exceed autocorrelation .25. No uniform flat 8px perimeter; 3x3 repeats broad stone shapes."
+    }
+  ],
+  "processing": "Nearest resize to 512x512; median-cut quantize to 48; 3x3 previews created.",
+  "acceptance": {
+    "size": [
+      512,
+      512
+    ],
+    "seam_wrap_max": 2.0,
+    "autocorr_max": 0.25,
+    "colors": [
+      33,
+      48
+    ],
+    "outer_flat_margin_px": 8
+  },
+  "final_candidate": null,
+  "cross_texture_check": "Unavailable because floor-01 has no accepted final.",
+  "art_gate": "NOT_RUN: handoff only; canonical manifest unchanged."
+}

@@ -1,0 +1,349 @@
+{
+  "date": "2026-11-16",
+  "method": "RGB centered normalized correlation against horizontal, vertical, 180-degree flips; same-kit direct cross-floor correlation; wrap ratios and horizontal autocorrelation lags 8\u2013255",
+  "count": 18,
+  "thresholds": {
+    "mirror_flag": ">0.5 requires source/raw inspection and non-mirror remediation",
+    "wrap_x_y": "<=2.0",
+    "same_kit_cross_floor": "<0.3",
+    "autocorrelation": "<=0.25"
+  },
+  "floors": [
+    {
+      "task_id": "REDRAW-ancient-floor-01",
+      "kit": "ancient",
+      "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/ancient/REDRAW-ancient-floor-01/candidate.png",
+      "sha256": "ff232df470e525ef55f4362ccc6a4190d1111e3e154c9c6549bcb072a5139760",
+      "mirror_h": 0.42515415887915886,
+      "mirror_v": 0.4220987480484641,
+      "mirror_180": 0.3914790043017741,
+      "colors": 40,
+      "wrap_x": 0.38022190417179347,
+      "wrap_y": 0.2398019786654967,
+      "autocorr_max_lag_8_255": 0.45100154067975085,
+      "autocorr_lag": 8,
+      "mirror_flag_gt_0_5": false,
+      "max_cross_floor_corr_same_kit": [
+        "REDRAW-ancient-floor-extra-02",
+        0.26593941653610953
+      ]
+    },
+    {
+      "task_id": "REDRAW-ancient-floor-extra-02",
+      "kit": "ancient",
+      "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/ancient/REDRAW-ancient-floor-extra-02/candidate.png",
+      "sha256": "89f6cc375bb5b2dcf5bf417506522581eea824e6d20cc5328befecec8753e046",
+      "mirror_h": 0.21745735496140847,
+      "mirror_v": 0.20352527162387807,
+      "mirror_180": 0.21867294287699554,
+      "colors": 40,
+      "wrap_x": 0.8883072702656504,
+      "wrap_y": 1.2156614383892725,
+      "autocorr_max_lag_8_255": 0.27157209672397076,
+      "autocorr_lag": 8,
+      "mirror_flag_gt_0_5": false,
+      "max_cross_floor_corr_same_kit": [
+        "REDRAW-ancient-floor-01",
+        0.26593941653610953
+      ]
+    },
+    {
+      "task_id": "REDRAW-desert-sunken-brick-floor",
+      "kit": "desert",
+      "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/desert/REDRAW-desert-sunken-brick-floor/candidate.png",
+      "sha256": "374c5bdab3c09f34114481927ee0547e6cb8842d83c848e189e097bf525443fe",
+      "mirror_h": 0.8264925166668257,
+      "mirror_v": 0.8342228721043025,
+      "mirror_180": 0.8305446021094353,
+      "colors": 40,
+      "wrap_x": 1.073012634616683,
+      "wrap_y": 0.9684984804860302,
+      "autocorr_max_lag_8_255": 0.5270518240916056,
+      "autocorr_lag": 8,
+      "mirror_flag_gt_0_5": true,
+      "max_cross_floor_corr_same_kit": null
+    },
+    {
+      "task_id": "REDRAW-ghost_castle-floor-03",
+      "kit": "ghost_castle",
+      "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/ghost_castle/REDRAW-ghost_castle-floor-03/candidate.png",
+      "sha256": "686f80b2f69824705fbc7b7e8a3cd3f73f00e9e9c6daf2fed89cf8f2b5e8b780",
+      "mirror_h": 0.1137102465172182,
+      "mirror_v": 0.11523418704048885,
+      "mirror_180": 0.11852161439773667,
+      "colors": 40,
+      "wrap_x": 0.9070628985149913,
+      "wrap_y": 1.0784389907003689,
+      "autocorr_max_lag_8_255": 0.1681003339681437,
+      "autocorr_lag": 8,
+      "mirror_flag_gt_0_5": false,
+      "max_cross_floor_corr_same_kit": null
+    },
+    {
+      "task_id": "REDRAW-nightmare-floor-01",
+      "kit": "nightmare",
+      "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/nightmare/REDRAW-nightmare-floor-01/candidate.png",
+      "sha256": "7afbf9902b23eebf82ed1546a52c1de6907393e8ac303921f296ba80784114a5",
+      "mirror_h": 0.5010595689560587,
+      "mirror_v": 0.49004044403999925,
+      "mirror_180": 0.5075789183393392,
+      "colors": 40,
+      "wrap_x": 1.2291402166185756,
+      "wrap_y": 1.150674030726038,
+      "autocorr_max_lag_8_255": 0.22261906113731902,
+      "autocorr_lag": 8,
+      "mirror_flag_gt_0_5": true,
+      "max_cross_floor_corr_same_kit": [
+        "REDRAW-nightmare-floor-extra-04",
+        0.5044868409843095
+      ]
+    },
+    {
+      "task_id": "REDRAW-nightmare-floor-extra-01",
+      "kit": "nightmare",
+      "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/nightmare/REDRAW-nightmare-floor-extra-01/candidate.png",
+      "sha256": "5b43437b3758e6922a81b60b8b97cbbaba72697d2ebe1ab9c37e0d69574b2c16",
+      "mirror_h": 0.524522966319202,
+      "mirror_v": 0.5930368656725118,
+      "mirror_180": 0.5259402639042385,
+      "colors": 40,
+      "wrap_x": 1.2280319259740413,
+      "wrap_y": 0.8435326018227822,
+      "autocorr_max_lag_8_255": 0.36747622226442156,
+      "autocorr_lag": 8,
+      "mirror_flag_gt_0_5": true,
+      "max_cross_floor_corr_same_kit": [
+        "REDRAW-nightmare-floor-extra-04",
+        0.4723030083195064
+      ]
+    },
+    {
+      "task_id": "REDRAW-nightmare-floor-extra-02",
+      "kit": "nightmare",
+      "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/nightmare/REDRAW-nightmare-floor-extra-02/candidate.png",
+      "sha256": "6b85fcbcefcfc61e7941b9cbcb5ce367dc0755749ab4498603c9d481322496b5",
+      "mirror_h": 0.23663443552078464,
+      "mirror_v": 0.21811347102197703,
+      "mirror_180": 0.23020655132525691,
+      "colors": 40,
+      "wrap_x": 1.1503377892030735,
+      "wrap_y": 1.2343254052773427,
+      "autocorr_max_lag_8_255": 0.2990466583503559,
+      "autocorr_lag": 8,
+      "mirror_flag_gt_0_5": false,
+      "max_cross_floor_corr_same_kit": [
+        "REDRAW-nightmare-floor-extra-04",
+        0.3440788431890145
+      ]
+    },
+    {
+      "task_id": "REDRAW-nightmare-floor-extra-03",
+      "kit": "nightmare",
+      "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/nightmare/REDRAW-nightmare-floor-extra-03/candidate.png",
+      "sha256": "72b589cfa99268409a26b29ccc812767ffce1f060e3b326e7403556406723265",
+      "mirror_h": 0.30244541914821244,
+      "mirror_v": 0.343790602194978,
+      "mirror_180": 0.40316338774134125,
+      "colors": 40,
+      "wrap_x": 2.003546291492466,
+      "wrap_y": 1.7331518225324936,
+      "autocorr_max_lag_8_255": 0.4513305681704094,
+      "autocorr_lag": 8,
+      "mirror_flag_gt_0_5": false,
+      "max_cross_floor_corr_same_kit": [
+        "REDRAW-nightmare-floor-extra-01",
+        0.39891984009749093
+      ]
+    },
+    {
+      "task_id": "REDRAW-nightmare-floor-extra-04",
+      "kit": "nightmare",
+      "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/nightmare/REDRAW-nightmare-floor-extra-04/candidate.png",
+      "sha256": "c59c170c38cef695d89c850b13980575222e588ce6192746d937159d9db4102d",
+      "mirror_h": 0.5337884302399469,
+      "mirror_v": 0.5338474237508035,
+      "mirror_180": 0.5207618853522478,
+      "colors": 40,
+      "wrap_x": 1.7292819744517525,
+      "wrap_y": 1.823853944525723,
+      "autocorr_max_lag_8_255": 0.21542828286238316,
+      "autocorr_lag": 8,
+      "mirror_flag_gt_0_5": true,
+      "max_cross_floor_corr_same_kit": [
+        "REDRAW-nightmare-floor-extra-05",
+        0.5101195727285401
+      ]
+    },
+    {
+      "task_id": "REDRAW-nightmare-floor-extra-05",
+      "kit": "nightmare",
+      "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/nightmare/REDRAW-nightmare-floor-extra-05/candidate.png",
+      "sha256": "10c21f32df3aac6d107e7daa2f9e1c5b5b3b6cb53205a97ceb6ee02266bc97d6",
+      "mirror_h": 0.5311885174850687,
+      "mirror_v": 0.5232324544495442,
+      "mirror_180": 0.5235122904755084,
+      "colors": 40,
+      "wrap_x": 1.4930629935082824,
+      "wrap_y": 1.8673321679535775,
+      "autocorr_max_lag_8_255": 0.22702347409190293,
+      "autocorr_lag": 8,
+      "mirror_flag_gt_0_5": true,
+      "max_cross_floor_corr_same_kit": [
+        "REDRAW-nightmare-floor-extra-04",
+        0.5101195727285401
+      ]
+    },
+    {
+      "task_id": "REDRAW-windrock-rock-floor-01",
+      "kit": "windrock",
+      "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/windrock/REDRAW-windrock-rock-floor-01/candidate.png",
+      "sha256": "270712c8e530d60358623bc6a9e44d601d86553a7e3e541f63bc6737c1e6399a",
+      "mirror_h": 0.854744144761699,
+      "mirror_v": 0.8501854203570612,
+      "mirror_180": 0.849180689848443,
+      "colors": 40,
+      "wrap_x": 6.840993376085029,
+      "wrap_y": 5.392415357086054,
+      "autocorr_max_lag_8_255": 0.6315217902186399,
+      "autocorr_lag": 8,
+      "mirror_flag_gt_0_5": true,
+      "max_cross_floor_corr_same_kit": [
+        "REDRAW-windrock-mountain-path-floor",
+        0.812260075908281
+      ]
+    },
+    {
+      "task_id": "REDRAW-windrock-rock-floor-02",
+      "kit": "windrock",
+      "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/windrock/REDRAW-windrock-rock-floor-02/candidate.png",
+      "sha256": "b36a562cb020db18488d4127bf2d2b06ffb3a30ccb4eddd7383db8891ac25a58",
+      "mirror_h": 0.41516384822201824,
+      "mirror_v": 0.4052119854827296,
+      "mirror_180": 0.3969193461586298,
+      "colors": 40,
+      "wrap_x": 2.5625227115408937,
+      "wrap_y": 2.1349540332400387,
+      "autocorr_max_lag_8_255": 0.2097608986613132,
+      "autocorr_lag": 8,
+      "mirror_flag_gt_0_5": false,
+      "max_cross_floor_corr_same_kit": [
+        "REDRAW-windrock-rock-floor-01",
+        0.58635384198256
+      ]
+    },
+    {
+      "task_id": "REDRAW-windrock-gravel-floor",
+      "kit": "windrock",
+      "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/windrock/REDRAW-windrock-gravel-floor/candidate.png",
+      "sha256": "bfd2e51ea5ce77562784884a9ec3bfde542a8adf948f13202b61471b1f3e3972",
+      "mirror_h": 0.44718708529626733,
+      "mirror_v": 0.4561109474282868,
+      "mirror_180": 0.453641039166685,
+      "colors": 40,
+      "wrap_x": 5.44191744573624,
+      "wrap_y": 4.6130064051155015,
+      "autocorr_max_lag_8_255": 0.19258097344278974,
+      "autocorr_lag": 8,
+      "mirror_flag_gt_0_5": false,
+      "max_cross_floor_corr_same_kit": [
+        "REDRAW-windrock-rock-floor-01",
+        0.6296126847275827
+      ]
+    },
+    {
+      "task_id": "REDRAW-windrock-mountain-path-floor",
+      "kit": "windrock",
+      "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/windrock/REDRAW-windrock-mountain-path-floor/candidate.png",
+      "sha256": "43d28557a3c1b3bbb878ec35850c38b3b45c52ad522bb44ff85912ac2fa30621",
+      "mirror_h": 0.7870401550365174,
+      "mirror_v": 0.7843342593519368,
+      "mirror_180": 0.7785625403220376,
+      "colors": 40,
+      "wrap_x": 6.505736975291289,
+      "wrap_y": 5.498610396301214,
+      "autocorr_max_lag_8_255": 0.500617031802532,
+      "autocorr_lag": 8,
+      "mirror_flag_gt_0_5": true,
+      "max_cross_floor_corr_same_kit": [
+        "REDRAW-windrock-rock-floor-01",
+        0.812260075908281
+      ]
+    },
+    {
+      "task_id": "REDRAW-windrock-scree-floor",
+      "kit": "windrock",
+      "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/windrock/REDRAW-windrock-scree-floor/candidate.png",
+      "sha256": "faf72659feedc9e9d5aefed049d6d9639d31501c50904b935cdfd1dc44c1f9fa",
+      "mirror_h": 0.13269732692121908,
+      "mirror_v": 0.15380772265443518,
+      "mirror_180": 0.15088260422750938,
+      "colors": 40,
+      "wrap_x": 4.837576313299021,
+      "wrap_y": 3.9595230123882224,
+      "autocorr_max_lag_8_255": 0.19529868921966584,
+      "autocorr_lag": 8,
+      "mirror_flag_gt_0_5": false,
+      "max_cross_floor_corr_same_kit": [
+        "REDRAW-windrock-mountain-path-floor",
+        0.3405536154902012
+      ]
+    },
+    {
+      "task_id": "NEW-maya-floor-03",
+      "kit": "maya",
+      "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/maya/NEW-maya-floor-03/redo-v1/candidate-attempt-02.png",
+      "sha256": "8abfd7b69fc8676d6e78e3cab1291eba1176f8f1db8446c6be1b33c777451f2b",
+      "mirror_h": 0.3298502029826123,
+      "mirror_v": 0.3320800329334246,
+      "mirror_180": 0.33541279122205586,
+      "colors": 48,
+      "wrap_x": 0.0,
+      "wrap_y": 0.0,
+      "autocorr_max_lag_8_255": 0.23447256291421886,
+      "autocorr_lag": 8,
+      "mirror_flag_gt_0_5": false,
+      "max_cross_floor_corr_same_kit": [
+        "NEW-maya-floor-extra-01",
+        0.331068101964807
+      ]
+    },
+    {
+      "task_id": "NEW-maya-floor-extra-01",
+      "kit": "maya",
+      "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/maya/NEW-maya-floor-extra-01/redo-v1/candidate-attempt-02.png",
+      "sha256": "6042c5bc521c2c987ad90fbacdddd66630b7844133cdcb1f60f78285a21fed31",
+      "mirror_h": 0.3288842535798864,
+      "mirror_v": 0.3154123544799256,
+      "mirror_180": 0.3217006449227675,
+      "colors": 48,
+      "wrap_x": 0.0,
+      "wrap_y": 0.0,
+      "autocorr_max_lag_8_255": 0.21187610828404835,
+      "autocorr_lag": 8,
+      "mirror_flag_gt_0_5": false,
+      "max_cross_floor_corr_same_kit": [
+        "NEW-maya-floor-03",
+        0.331068101964807
+      ]
+    },
+    {
+      "task_id": "NEW-maya-floor-extra-02",
+      "kit": "maya",
+      "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/maya/NEW-maya-floor-extra-02/redo-v1/candidate-attempt-01.png",
+      "sha256": "241ba3aa90d63497176d76669a12fbee6d98f2bb6c9fe3a6b980314e8cad69dd",
+      "mirror_h": 0.26371964319077273,
+      "mirror_v": 0.2700911128030134,
+      "mirror_180": 0.2536942915498777,
+      "colors": 48,
+      "wrap_x": 0.0,
+      "wrap_y": 0.0,
+      "autocorr_max_lag_8_255": 0.1554931571546152,
+      "autocorr_lag": 8,
+      "mirror_flag_gt_0_5": false,
+      "max_cross_floor_corr_same_kit": [
+        "NEW-maya-floor-extra-01",
+        0.25493645314320224
+      ]
+    }
+  ]
+}

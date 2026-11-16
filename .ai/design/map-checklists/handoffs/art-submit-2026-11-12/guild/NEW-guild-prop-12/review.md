@@ -1,0 +1,1 @@
+Compact wooden barracks bed with cream linen and muted teal roll. Candidate measured 256×256, 47 colors, binary alpha, 10px margin; inspected at 4× on light/dark. READY_FOR_CLAUDE_REVIEW only; not self-approved.

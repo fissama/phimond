@@ -1,0 +1,33 @@
+{
+  "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-09/windrock/REDRAW-windrock-grass-snow-floor/candidate-03.png",
+  "candidate_sha256": "840d1e9334318d2f81b409aa59e05a8a7b7eedbbdf2fa3e3014052d8890c8fb8",
+  "size": [
+    512,
+    512
+  ],
+  "colors": 40,
+  "alpha_mode": "RGB opaque",
+  "attempts": {
+    "1": {
+      "wrap_x": 1.8509,
+      "wrap_y": 0.9427,
+      "autocorr": 0.0582,
+      "note": "Grass tufts too regularly spaced; continued."
+    },
+    "2": {
+      "wrap_x": 1.5728,
+      "wrap_y": 1.4093,
+      "autocorr": 0.2268,
+      "note": "Repeated tufts and rhythmic lines visible in 3x3; continued."
+    },
+    "3": {
+      "wrap_x": 1.9012,
+      "wrap_y": 1.2687,
+      "autocorr": 0.0722,
+      "note": "Grass still repeats in rows/grid; no clear frost flecks. Rejected visually."
+    }
+  },
+  "status": "FAILED_AFTER_3_TRIES",
+  "palette_decision": "Map references show dark brown ground with no visible snow on floor; kept snow minimal/omitted, following source palette.",
+  "art_gate": "NOT_RUN: handoff-only; cannot register before Claude acceptance"
+}

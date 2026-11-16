@@ -1,0 +1,1 @@
+Built-in image_gen, three attempts. Attempt 1 had glow; attempt 2 had simple moss/leaf scatter; attempt 3 used varied moss tufts and small leaf fragments. Alpha threshold, crop, nearest resize, quantization only.

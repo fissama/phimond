@@ -1,0 +1,52 @@
+{
+  "task_id": "NEW-battlefield-decal-01",
+  "status": "FAILED_AFTER_3_TRIES",
+  "map_decision": "Plaza debris and pale stone retained to match source; no bones, blood, or burnt earth.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01.png",
+      "colors": 40,
+      "alpha_margin_px": 34,
+      "binary_after_threshold": true,
+      "raw_alpha_varied": true,
+      "failure": "raw alpha not binary (threshold applied); red/yellow fringe and large decorative inscribed slabs; not intended decal"
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "colors": 25,
+      "alpha_margin_px": 0,
+      "binary_after_threshold": true,
+      "raw_alpha_varied": true,
+      "failure": "colors out of range; alpha margin 0<8; raw alpha not binary (threshold applied); visible baked soft halo/glow; smooth halo violates no baked shadow/glow"
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "colors": 26,
+      "alpha_margin_px": 20,
+      "binary_after_threshold": true,
+      "raw_alpha_varied": true,
+      "failure": "colors out of range; raw alpha not binary (threshold applied); visible baked soft halo/glow; smooth halo violates no baked shadow/glow"
+    }
+  ],
+  "processing": "Center crop, nearest resize to 320x320, median-cut quantize to 48 colors, binary alpha threshold.",
+  "acceptance": {
+    "size_px": [
+      256,
+      384
+    ],
+    "colors": [
+      33,
+      48
+    ],
+    "binary_alpha": true,
+    "alpha_margin_min": 8
+  },
+  "final_candidate": null,
+  "art_gate": "NOT_RUN: canonical manifest unchanged; final --all deferred."
+}

@@ -1,0 +1,1 @@
+ImageGen: small squat kidney-shaped shadow with off-center shallow notch, one blunt rounded end, muted warm taupe, soft alpha, transparent background, pixel-cluster edge, no scenery/text/glow/magenta. Pipeline excluded raw halo.

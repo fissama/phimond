@@ -1,0 +1,1 @@
+ImageGen: transparent 4-frame horizontal arrival sparkle sprite sheet; pale cyan crystal motes and muted gold pixel sparks around fixed center, gentle twinkle; no exterior glow/text/magenta. Raw green contamination was keyed out.

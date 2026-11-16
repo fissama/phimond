@@ -1,0 +1,51 @@
+{
+  "task_id": "NEW-battlefield-floor-extra-01",
+  "status": "FAILED_AFTER_3_TRIES",
+  "map_decision": "Pale cream plaza stone retained to match source; no burnt earth/grass substituted.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01.png",
+      "colors": 48,
+      "seam_wrap_mean": 4.2057,
+      "autocorr_max_lag_ge8": 0.2453,
+      "failure": "Seam exceeds 2.0; attempt 1/3 also exceed autocorrelation .25. Perimeter is not a flat 8px band; 3x3 shows recurring stone cadence."
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "colors": 48,
+      "seam_wrap_mean": 7.0286,
+      "autocorr_max_lag_ge8": 0.2039,
+      "failure": "Seam exceeds 2.0; attempt 1/3 also exceed autocorrelation .25. Perimeter is not a flat 8px band; 3x3 shows recurring stone cadence."
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "colors": 48,
+      "seam_wrap_mean": 3.7692,
+      "autocorr_max_lag_ge8": 0.2638,
+      "failure": "Seam exceeds 2.0; attempt 1/3 also exceed autocorrelation .25. Perimeter is not a flat 8px band; 3x3 shows recurring stone cadence."
+    }
+  ],
+  "processing": "Nearest resize to 512x512, median-cut quantize to 48 colors, 3x3 nearest previews.",
+  "acceptance": {
+    "size": [
+      512,
+      512
+    ],
+    "colors": [
+      33,
+      48
+    ],
+    "seam_wrap_max": 2.0,
+    "autocorr_max": 0.25,
+    "outer_flat_margin_px": 8
+  },
+  "final_candidate": null,
+  "cross_texture_check": "Not possible yet; no accepted base floor candidate.",
+  "art_gate": "NOT_RUN: handoff only; canonical manifest unchanged."
+}

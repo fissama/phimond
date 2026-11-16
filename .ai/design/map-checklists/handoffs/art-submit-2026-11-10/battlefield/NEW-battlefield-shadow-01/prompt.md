@@ -1,0 +1,1 @@
+ImageGen: isolated soft procedural ground shadow mask, square transparent raw, one muted warm taupe hue, soft alpha fade, no object or cast-source, no text/magenta/glow. Final mask processed to 256x96.

@@ -1,0 +1,1 @@
+Route: built-in image_gen, one attempt. Map screenshots determine sprout identity/palette; bush-01 and bush-02 are style anchors only. Requested compact upright 5–7 pointed leaves, warm olive/green, hard pixel clusters, transparent background, no glow/text/magenta/fringe.

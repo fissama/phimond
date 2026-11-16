@@ -1,0 +1,44 @@
+[
+  {
+    "attempt": 1,
+    "sha256": "d5cd2e5cc993be004ddc5df9ce76f70c8099266ac2a649611a6c53024b9f7103",
+    "size": [
+      1536,
+      1024
+    ],
+    "alpha_extrema": [
+      0,
+      254
+    ],
+    "alpha_ge_128_fraction": 0.0249,
+    "issue": "diffuse glow"
+  },
+  {
+    "attempt": 2,
+    "sha256": "debd8465db79cf4285c900022222995b54093dfce9b903190fe75d40e590a817",
+    "size": [
+      1536,
+      1024
+    ],
+    "alpha_extrema": [
+      0,
+      254
+    ],
+    "alpha_ge_128_fraction": 0.0406,
+    "issue": "diffuse glow"
+  },
+  {
+    "attempt": 3,
+    "sha256": "e830a3975b960ba4823bbfa7ee0de7980f71c601307f33d2d6d2cbf62afe789d",
+    "size": [
+      1774,
+      887
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "alpha_ge_128_fraction": 0.0268,
+    "issue": "after threshold, scattered grain becomes too tiny/sparse for clear game-scale decal"
+  }
+]

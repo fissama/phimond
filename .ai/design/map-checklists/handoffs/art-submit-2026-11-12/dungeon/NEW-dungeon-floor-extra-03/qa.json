@@ -1,0 +1,68 @@
+{
+  "task_id": "NEW-dungeon-floor-extra-03",
+  "status": "FAILED_AFTER_3_TRIES",
+  "attempts": [
+    {
+      "attempt": 1,
+      "colors": 48,
+      "seam_x": 9.767,
+      "seam_y": 18.99,
+      "autocorr_max_lag_8_255": 0.2381,
+      "flat_perimeter_unique_colors": 48,
+      "visual_review": "3x3 regular small-stone bands and tile motif repeat; fail"
+    },
+    {
+      "attempt": 2,
+      "colors": 48,
+      "seam_x": 17.06,
+      "seam_y": 23.786,
+      "autocorr_max_lag_8_255": 0.2013,
+      "flat_perimeter_unique_colors": 48,
+      "visual_review": "seam mismatch; fail"
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "processing": "nearest resize 512x512; median-cut quantize 48; opaque RGB",
+      "colors": 48,
+      "seam_x": 12.111,
+      "seam_y": 11.198,
+      "autocorr_max_lag_8_255": 0.2741,
+      "flat_perimeter_unique_colors": 48,
+      "visual_review": "3x3 exact tile motif repeat; seam, autocorr and flat8 fail"
+    }
+  ],
+  "acceptance": {
+    "target_size": [
+      512,
+      512
+    ],
+    "colors": [
+      33,
+      48
+    ],
+    "seam_wrap_max": 1.25,
+    "autocorrelation_max": 0.25,
+    "flat_outer_margin_px": 8
+  },
+  "final_candidate": null,
+  "art_gate": "NOT_RUN: handoff-only; canonical scan deferred",
+  "tileable_postprocess": {
+    "method": "offset 256 px x/y, crossfade 24px using local samples from both sides, quantize 48, flatten 8px perimeter",
+    "raw": "raw-01.png",
+    "candidate": "candidate-tileable-postprocess.png",
+    "metrics": {
+      "size": [
+        512,
+        512
+      ],
+      "colors": 48,
+      "wrap_x": 0.0,
+      "wrap_y": 0.0,
+      "autocorr_max_lag_8_255": 0.25759848952293396,
+      "flat8_unique_colors": 1
+    },
+    "visual_review": "FAILED: 3x3 and 4x4 show obvious vertical/horizontal blend streaks at the internal seam plus repeated motif cadence; do not promote."
+  }
+}

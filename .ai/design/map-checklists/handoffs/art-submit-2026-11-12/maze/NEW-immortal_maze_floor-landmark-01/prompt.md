@@ -1,0 +1,1 @@
+Reference: immortal_maze_floor.jpg. Landmark chosen from screenshot: unequal ivory spikes/claws bound with muted brown cord on compact violet-gray stone base. Standalone transparent sprite; crisp pixel art; no glow, shadow or background.

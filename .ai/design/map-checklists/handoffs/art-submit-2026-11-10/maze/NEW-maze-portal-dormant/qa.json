@@ -1,0 +1,29 @@
+{
+  "task_id": "NEW-maze-portal-dormant",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "result": "rejected: colored fringe and soft pixels visible"
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "result": "rejected: remaining fringe and soft rendering"
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "color_count": 47,
+      "alpha": "binary",
+      "alpha_margin_px": 14,
+      "result": "selected; silhouette complete, map type and palette align"
+    }
+  ],
+  "processing": "RGB fringe key for magenta/red edge artifacts; alpha threshold 128; crop visible bounds; nearest resize into 384x384; median-cut to 48 RGB colors; no geometry drawn by code.",
+  "map_decision": "Followed source-map skull gate and rib-bone supports; dormant interior kept dark teal.",
+  "final_candidate": "candidate-attempt-03.png",
+  "art_gate": "NOT_RUN: handoff candidate is outside canonical batch manifest; --all deferred until all tasks are ledgered."
+}

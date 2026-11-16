@@ -1,0 +1,20 @@
+{
+  "attempt": 3,
+  "raw": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/guild/NEW-guild-edge-01/redo-v3/raw-03.png",
+  "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/guild/NEW-guild-edge-01/redo-v3/candidate-attempt-03.png",
+  "raw_alpha_levels": 256,
+  "postprocess": "alpha erode 1px, threshold >=128 binary, local red/green edge despill, nearest resize/crop 512x128, roll+24px endpoint blend, quantize 48; no mirror",
+  "size": [
+    512,
+    128
+  ],
+  "colors_opaque": 44,
+  "alpha_values": [
+    0,
+    255
+  ],
+  "seam_rgb_mean": 2.6562,
+  "autocorr_max_lag_60_460": 0.80722,
+  "autocorr_lag": 173,
+  "numeric_pass": false
+}

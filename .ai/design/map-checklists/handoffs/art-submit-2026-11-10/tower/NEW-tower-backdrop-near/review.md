@@ -1,0 +1,1 @@
+FAILED_AFTER_3_TRIES. Attempt 1 seam 28.42 >14, autocorrelation 0.553. Attempt 2 seam 10.47, autocorrelation 0.611; evenly spaced trunks repeat. Attempt 3 seam 11.87, autocorrelation 0.705; 3x1 preview shows repeated branch/waterfall composition each tile. None passes the non-repetition requirement.

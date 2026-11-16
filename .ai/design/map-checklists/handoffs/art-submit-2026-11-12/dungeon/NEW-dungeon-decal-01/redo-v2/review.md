@@ -1,0 +1,1 @@
+Source-map decision: pale olive/yellow scale-patterned stone floor supports chipped flagstone and a short crack; no bones, water, chains, or trophy. Candidate is an irregular floor crack decal with scattered fragments, handoff only.

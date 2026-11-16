@@ -1,0 +1,71 @@
+{
+  "task_id": "NEW-battlefield-decal-07",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "map_decision": "Pale cream limestone debris retained per source map.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01.png",
+      "colors": 24,
+      "alpha_margin_px": 0,
+      "raw_alpha_varied": true,
+      "visible_red_fringe": false,
+      "failure": "colors 24<33; margin 0<8; raw alpha nonbinary/soft; baked glow/halo",
+      "reprocess": {
+        "candidate": "candidate-alpha-key-v2.png",
+        "alpha_threshold": 200,
+        "colors": 47,
+        "alpha_margin_px": 31,
+        "alpha_binary": true,
+        "result": "meets measurable requirements; candidate awaits Claude visual review"
+      }
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "colors": 27,
+      "alpha_margin_px": 0,
+      "raw_alpha_varied": true,
+      "visible_red_fringe": false,
+      "failure": "colors 27<33; margin 0<8; raw alpha nonbinary/soft; baked glow/halo"
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "colors": 44,
+      "alpha_margin_px": 0,
+      "raw_alpha_varied": true,
+      "visible_red_fringe": false,
+      "failure": "margin 0<8; raw alpha nonbinary/soft"
+    }
+  ],
+  "processing": "Selected raw-01 reprocessed with alpha-key threshold >=200; crop to post-key opaque bbox; pad to 24% then nearest resize 320x320; median-cut quantize to max 48 colors; binary alpha.",
+  "acceptance": {
+    "size_px": [
+      256,
+      384
+    ],
+    "colors": [
+      33,
+      48
+    ],
+    "binary_alpha": true,
+    "alpha_margin_min": 8
+  },
+  "final_candidate": "candidate-alpha-key-v2.png",
+  "art_gate": "NOT_RUN: handoff candidate is not registered in canonical manifest; user forbids manifest edits.",
+  "selected_candidate": "candidate-alpha-key-v2.png",
+  "acceptance_result": {
+    "size_px": [
+      320,
+      320
+    ],
+    "colors": 47,
+    "alpha_binary": true,
+    "alpha_margin_px": 31,
+    "matte_halo_remaining": "No visible halo in keyed 3x1 preview; irregular scattered chips remain."
+  }
+}

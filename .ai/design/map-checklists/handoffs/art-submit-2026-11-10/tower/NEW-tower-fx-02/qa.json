@@ -1,0 +1,25 @@
+{
+  "raw_file": "raw-01.png",
+  "raw_size": [
+    1408,
+    768
+  ],
+  "selected_attempt": 1,
+  "processing": "per-frame crop; magenta color-key; median-cut palette up to 40 colors; nearest-neighbor resize; binary alpha",
+  "final_size": [
+    768,
+    128
+  ],
+  "frames": 4,
+  "color_count_rgb_opaque": 16,
+  "binary_alpha": true,
+  "seam": "N/A FX",
+  "autocorrelation": "N/A FX",
+  "art_gate": "NOT_RUN: handoff candidate excluded from canonical art_gate scope",
+  "sha256": "1664aa8d51448d271520a668c925cfdceb86b281833067d47f1e9162a5ef5240",
+  "attempts": {
+    "1": "best cohesive one-row animation, but 16 colors after processing (<33 minimum)",
+    "2": "rejected: repeated two-row image; no four-frame progression",
+    "3": "rejected: four crop centers/particle distribution drift; below palette minimum"
+  }
+}

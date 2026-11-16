@@ -1,0 +1,28 @@
+{
+  "task_id": "NEW-immortal_maze_main_maze-landmark-01",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "map_decision": "Reference screenshot shows the distinctive central arched cyan gateway with curved stone ribs, stair platform and paired skulls. Followed this over generic plan wording; no unsupported foliage.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "result": "rejected: cyan opening reads as soft glow/gradient"
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "result": "rejected: broad portal surface remains softly shaded"
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "colors": 46,
+      "alpha": "binary",
+      "alpha_margin_px": 8,
+      "result": "selected: crisp hard-faceted portal, recognizable architecture"
+    }
+  ],
+  "processing": "Red/magenta edge key, alpha threshold 128, crop alpha bbox, nearest resize to fit 368px within 384 square, median-cut quantize to 48 colors.",
+  "art_gate": "NOT_RUN: candidate outside canonical manifest; --all deferred."
+}

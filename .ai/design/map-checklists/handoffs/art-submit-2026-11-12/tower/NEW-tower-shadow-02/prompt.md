@@ -1,0 +1,1 @@
+Built-in image_gen, 3 attempts; all attempts read as blurry atmospheric masses rather than a usable soft-alpha pixel shadow. The third attempts had leaf-like edges but still extensive haze and soft interior gradients. No candidate selected; this cannot be corrected by allowed crop/resize/quantization alone.

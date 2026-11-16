@@ -1,0 +1,57 @@
+{
+  "task_id": "NEW-dungeon-floor-01",
+  "status": "FAILED_AFTER_3_TRIES",
+  "map_decision": "Followed source-map floor: pale yellow-green/olive scale-like limestone paving. Prompt phrase \u201cwet stone\u201d interpreted only as subtle mottling; no dark dungeon or puddle substitute.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01.png",
+      "processing": "Nearest resize to 512x512; median-cut quantize to 48 colors; opaque RGB.",
+      "colors": 48,
+      "seam_wrap_mean": 12.2705078125,
+      "seam_x": 9.120442390441895,
+      "seam_y": 15.420573234558105,
+      "autocorr_max_lag_ge8": 0.4103339370541537,
+      "flat_8px_perimeter": false,
+      "failure": "seam 12.271>2; autocorr 0.410>0.25; flat perimeter=False"
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "processing": "Nearest resize to 512x512; median-cut quantize to 48 colors; opaque RGB.",
+      "colors": 48,
+      "seam_wrap_mean": 14.801432609558105,
+      "seam_x": 10.0078125,
+      "seam_y": 19.59505271911621,
+      "autocorr_max_lag_ge8": 0.28929626396923924,
+      "flat_8px_perimeter": false,
+      "failure": "seam 14.801>2; autocorr 0.289>0.25; flat perimeter=False"
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "processing": "Nearest resize to 512x512; median-cut quantize to 48 colors; opaque RGB.",
+      "colors": 48,
+      "seam_wrap_mean": 10.2841796875,
+      "seam_x": 9.170573234558105,
+      "seam_y": 11.397786140441895,
+      "autocorr_max_lag_ge8": 0.15272625898928466,
+      "flat_8px_perimeter": false,
+      "failure": "seam 10.284>2; autocorr 0.153>0.25; flat perimeter=False"
+    }
+  ],
+  "acceptance": {
+    "colors": [
+      33,
+      48
+    ],
+    "seam_wrap_max": 2.0,
+    "autocorr_max": 0.25,
+    "flat_outer_margin_px": 8
+  },
+  "final_candidate": null,
+  "art_gate": "NOT_RUN: handoff candidate is not registered in canonical manifest; manifest edits forbidden."
+}

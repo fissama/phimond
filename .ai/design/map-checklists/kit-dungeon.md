@@ -1,10 +1,21 @@
 # Kit `dungeon` — Địa Lao · Tầng I
 
+> **Nghiệm thu Claude 2026-11-09** (mức V1, chưa 4×): THIẾU_CHƯA_CÓ 47. Map: {'CHƯA CÓ ART': 1}. Trạng thái hiện hành ở [ASSET-VERDICTS-20261109.csv](ASSET-VERDICTS-20261109.csv) / [MAP-COVERAGE-20261109.csv](MAP-COVERAGE-20261109.csv); tick ✅/❌ bên dưới là LỊCH SỬ, không phải approval.
+> **Cảnh báo brief:** brief plan (ngục sắt) ≠ ảnh gốc (gạch be, đầu hươu cam) — thực hiện `BRIEF-dungeon` trong [ROADMAP-ART-92MAPS-20261109.md](ROADMAP-ART-92MAPS-20261109.md) trước khi vẽ.
+
 > **Quy tắc bắt buộc cho Codex** (xem README.md): dùng https://github.com/0x0funky/agent-sprite-forge (generate2dmap / generate2dsprite) với route image_gen tích hợp; cấm codeart2d, API trả phí, vẽ bằng code, lật gương; không commit; không sửa tools/hd2d_audit/*, gate_waivers.json, check.sh; mỗi asset phải tự nhìn ảnh trước khi ghi "vẽ xong"; chỉ Claude/owner đánh dấu "duyệt".
 
 - Style/palette: Tường đá ẩm rêu xanh, ngục sắt, xích treo, vũng nước.
-- Thư mục asset: `apps/game-web/art-src/hd2d/batch-11-dungeon/`
+- Thư mục asset: `art/src/hd2d/batch-11-dungeon/`
 - Số map: 1
+
+## BRIEF-dungeon evidence (2026-11-11)
+
+Reviewed `.ai/design/map-checklists/refs/dungeon_floor_01.jpg`; focus crop saved at `.ai/design/map-checklists/handoffs/art-submit-2026-11-10/dungeon/brief-evidence/dungeon_floor_01-focus.jpg`.
+
+Visible scene: horizontal beige/tan brick wall with a dark olive-gold base rail; repeated orange deer heads with antlers mounted high on the wall; pale yellow-green stone floor with rounded scale/leaf-like paving pattern. No visible iron bars, chains, water pools, straw, weapons or jail props. Palette stays warm beige, olive, pale green and small orange accents.
+
+**Correction to old kit style:** “iron dungeon, chains and water puddles” does not match this screenshot. Do not introduce those unsupported objects. Keep CSV rows for audit and mark any asset requiring absent items BLOCKED with the source-evidence reason; use the pictured brick wall, deer-head mounts and pale patterned floor for matching tasks. Do not tick “Vẽ” or “Duyệt”.
 
 ## 1. Danh sách asset cần vẽ (kit chưa có asset)
 
@@ -66,7 +77,7 @@ Nguồn: Phần C `hd2d-maps-75-gemini-prompt.md`. Yêu cầu gốc: tile sàn �
 Dùng agent-sprite-forge ($generate2dmap cho tile/prop, $generate2dsprite cho prop/decal/FX/marker). Route ảnh: image_gen tích hợp của Codex (kiểm `route_media.py resolve --kind image`). KHÔNG codeart2d, KHÔNG API, KHÔNG vẽ bằng code.
 Kit: Địa Lao · Tầng I (dungeon). Style: Tường đá ẩm rêu xanh, ngục sắt, xích treo, vũng nước.. Style anchor: batch-01-octopath/contact-sheet.png + 2 sprites.png linh thú.
 Mỗi lần gọi: 1 sheet ~6 vật trên nền #FF00FF, bố trí 2×3/3×2, cách nhau ≥48 px, không chạm mép. Giữ raw-01.png byte-identical. Cắt/khử nền/pixel finish bằng script forge. 33–48 màu, alpha nhị phân, lề ≥8 px, 128 px = 1 đơn vị (far 64), người = 1.31 đơn vị (cỡ tối đa vật nhỏ: tools/hd2d_audit/size_check.py).
-Mỗi asset: thư mục raw-01/final/prompt.md/review.md/qa.json trong apps/game-web/art-src/hd2d/batch-11-dungeon/<id>/. Tự nhìn 4× nền tối/caro. Xong: `python3 tools/hd2d_audit/art_gate.py batch-11-dungeon` = 0 lỗi, contact-sheet mới hơn manifest.
+Mỗi asset: thư mục raw-01/final/prompt.md/review.md/qa.json trong art/src/hd2d/batch-11-dungeon/<id>/. Tự nhìn 4× nền tối/caro. Xong: `python3 tools/hd2d_audit/art_gate.py batch-11-dungeon` = 0 lỗi, contact-sheet mới hơn manifest.
 ```
 
 ## 3. Từng map

@@ -1,0 +1,1 @@
+All three variants show unique lichen-speckled wood grain, with 48 colors, but fail the required flat 8px perimeter; edge bands contain 4–8 colors. No candidate submitted. Raw attempts and normalized previews retained.

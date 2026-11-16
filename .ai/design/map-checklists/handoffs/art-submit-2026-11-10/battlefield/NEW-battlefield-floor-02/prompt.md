@@ -1,0 +1,1 @@
+ImageGen prompt: pale cream stone arena floor variant with sparse hairline joints, still clean ceremonial plaza; follow attached source, no dirt/burnt ground. Top-down 512 seamless square, 8px flat border, 33–48 colors, crisp HD-2D pixel clusters.

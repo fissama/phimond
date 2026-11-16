@@ -1,0 +1,1 @@
+NEW-guild-prop-02 (order 318). Created a separate gatehouse inspired by the arched castle entrance visible in guild_fortress. This is a new interpretation, not asserted as a separate recovered sprite. Green keyed to binary alpha; crop with 12px margin; quantized to ≤48 colors.

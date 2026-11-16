@@ -1,0 +1,50 @@
+{
+  "task_id": "NEW-battlefield-floor-01",
+  "status": "FAILED_AFTER_3_TRIES",
+  "map_decision": "Followed source image: pale cream arena floor; omitted burnt earth/grass/debris from outdated prompts.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01.png",
+      "colors": 48,
+      "seam_mean_rgb": 1.5036,
+      "autocorr_max_lag_ge8": 0.967,
+      "failure": "Autocorrelation exceeds 0.25; 3x3 shows uniform slab repeat. Outer 8px is not flat except attempt 3 has three colors, not a uniform band."
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "colors": 48,
+      "seam_mean_rgb": 5.8252,
+      "autocorr_max_lag_ge8": 0.683,
+      "failure": "Autocorrelation exceeds 0.25; 3x3 shows uniform slab repeat. Outer 8px is not flat except attempt 3 has three colors, not a uniform band."
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "colors": 48,
+      "seam_mean_rgb": 0.3418,
+      "autocorr_max_lag_ge8": 0.4932,
+      "failure": "Autocorrelation exceeds 0.25; 3x3 shows uniform slab repeat. Outer 8px is not flat except attempt 3 has three colors, not a uniform band."
+    }
+  ],
+  "processing": "Center-crop raw to square, nearest resize 512x512, median-cut quantize to 48 colors; generated 3x3 nearest preview.",
+  "acceptance": {
+    "size": [
+      512,
+      512
+    ],
+    "colors": [
+      33,
+      48
+    ],
+    "seam_wrap_max": 2.0,
+    "autocorr_max": 0.25,
+    "outer_flat_margin_px": 8
+  },
+  "final_candidate": null,
+  "art_gate": "NOT_RUN: handoff only; canonical manifest unchanged."
+}

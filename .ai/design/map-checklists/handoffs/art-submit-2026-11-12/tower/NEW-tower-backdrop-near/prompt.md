@@ -1,0 +1,1 @@
+Runway image generation, 3 attempts. Attempt 1 failed horizontal seam and showed repeated rosette clusters. Attempt 2 passed seam but had evenly spaced trunks and failed autocorrelation. Attempt 3 passed seam but in 3x1 repeated the same branch/waterfall arrangement per tile and failed autocorrelation. All raws retained; no candidate.

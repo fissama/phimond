@@ -1,0 +1,1 @@
+Runway image generation, 3 attempts. Attempt 1 repeated umbrella canopies. Attempt 2 repeated root loops/lattice. Attempt 3 reduced the root lattice but still repeats the same trunk per tile and fails seam/autocorrelation. All raw images and the 3x1 repeat QA are preserved.

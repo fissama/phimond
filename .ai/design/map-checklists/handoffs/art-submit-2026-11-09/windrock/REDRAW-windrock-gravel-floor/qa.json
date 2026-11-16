@@ -1,0 +1,32 @@
+{
+  "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-09/windrock/REDRAW-windrock-gravel-floor/candidate-02.png",
+  "candidate_sha256": "bfd2e51ea5ce77562784884a9ec3bfde542a8adf948f13202b61471b1f3e3972",
+  "size": [
+    512,
+    512
+  ],
+  "colors": 40,
+  "alpha_mode": "RGB opaque",
+  "attempts": {
+    "1": {
+      "wrap_x": 2.064,
+      "wrap_y": 1.45,
+      "autocorr": 0.018,
+      "note": "Wrap x slightly above threshold; continued."
+    },
+    "2": {
+      "wrap_x": 1.5179,
+      "wrap_y": 1.1588,
+      "autocorr": 0.0299,
+      "crop_offset_on_640": [
+        79,
+        68
+      ],
+      "cross_corr_with_rock_floor_01": 0.0323,
+      "note": "Gravel texture; 3x3 reviewed, no regular row/grid rhythm."
+    }
+  },
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "palette_decision": "Followed map source dark umber ground over prompt slate/grass/snow palette.",
+  "art_gate": "NOT_RUN: handoff-only; cannot register before Claude acceptance"
+}

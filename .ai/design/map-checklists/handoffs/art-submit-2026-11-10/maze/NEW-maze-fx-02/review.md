@@ -1,0 +1,1 @@
+Attempt 1 rejected for diffuse bright center and glow; attempt 3 rejected for cell borders and background. Attempt 2 selected: discrete rune stones in four spatial phases, 44 colors, binary alpha, per-frame margin ≥8 px. Submitted for visual loop review.

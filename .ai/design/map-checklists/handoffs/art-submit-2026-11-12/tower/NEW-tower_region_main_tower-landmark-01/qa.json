@@ -1,0 +1,31 @@
+{
+  "raw_file": "raw-01.png",
+  "raw_size": [
+    1408,
+    768
+  ],
+  "processing": "magenta color key; crop alpha bounding box; median-cut quantization to 48-color palette; nearest-neighbor resize to fit 360px; transparent 384x384 canvas",
+  "final_size": [
+    384,
+    384
+  ],
+  "color_count_rgb_opaque": 38,
+  "binary_alpha": true,
+  "alpha_bbox": [
+    12,
+    30,
+    372,
+    354
+  ],
+  "alpha_margins": [
+    12,
+    30,
+    12,
+    30
+  ],
+  "seam": "N/A landmark",
+  "autocorrelation": "N/A landmark",
+  "art_gate": "NOT_RUN: handoff candidate excluded from canonical art_gate scope",
+  "sha256": "79372954980b1a1ed34e4a686221bd6a73419df6a8be4c9378bf121309c40f03",
+  "reference_crop": ".ai/design/map-checklists/evidence/tower_region_main_tower-landmark-01/map-crop-tree-canopy-left.png"
+}

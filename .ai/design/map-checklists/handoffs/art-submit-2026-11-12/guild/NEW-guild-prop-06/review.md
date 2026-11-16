@@ -1,0 +1,3 @@
+# Candidate review notes — NEW-guild-prop-06
+
+Attempt 1 was discarded because it included several star-shaped sparkles. Attempt 2 removes the sparkles and uses a quieter hard-edged pixel treatment. The guild map references show beige stone, warm brown, teal and gold; the CSV calls for a treasury chest overflowing with gold, so the asset follows that type and palette. Candidate measured 256×256, 47 visible colors, alpha values 0/255, 10px transparent margin. Visual checks completed at 1× and 4× on light/dark backgrounds. This is READY_FOR_CLAUDE_REVIEW only; not self-approved and not added to canonical assets or manifest.

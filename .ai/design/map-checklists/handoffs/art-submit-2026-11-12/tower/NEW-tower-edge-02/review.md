@@ -1,0 +1,1 @@
+Attempt 1 has transparent background but visibly repeating root/leaf motif. Attempts 2 and 3 have white backgrounds and visible white fringe/haze; they cannot be cleanly submitted as transparent cutouts. All three rejected. No candidate.

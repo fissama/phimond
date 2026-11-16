@@ -1,0 +1,1 @@
+Independent top-down seamless square pink-beige stone floor variant for underground bone maze; source-map palette, crisp stepped HD-2D pixel art, irregular flagstones, full bleed, no cross/grid/repetition, no props/text/glow/magenta. Local processing: nearest resize and 48-color median cut.

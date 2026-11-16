@@ -1,0 +1,1 @@
+Transparent narrow horizontal rubble edge, irregular dusty-violet/blue-gray stone with sparse ivory bone splinters and muted brown ties, no floor strip; asymmetric yet seamless ends, crisp HD-2D stepped pixels; avoid fringe, shadow, glow, text, frame, magenta, greenery.

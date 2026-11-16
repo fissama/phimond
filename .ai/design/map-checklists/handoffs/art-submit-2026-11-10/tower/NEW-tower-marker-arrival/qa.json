@@ -1,0 +1,58 @@
+{
+  "raw_file": "raw-02.png",
+  "raw_size": [
+    1792,
+    592
+  ],
+  "selected_attempt": 2,
+  "processing": "magenta color key; crop each ring; nearest-neighbor resize into 4 horizontal frames; 40-color quantization; binary alpha",
+  "final_size": [
+    768,
+    128
+  ],
+  "frames": 4,
+  "color_count_rgb_opaque": 21,
+  "binary_alpha": true,
+  "alpha_bbox": [
+    16,
+    8,
+    752,
+    120
+  ],
+  "alpha_margins_per_frame": [
+    [
+      16,
+      8,
+      16,
+      8
+    ],
+    [
+      16,
+      8,
+      16,
+      8
+    ],
+    [
+      16,
+      8,
+      16,
+      8
+    ],
+    [
+      16,
+      8,
+      16,
+      8
+    ]
+  ],
+  "frame_spacing": "4 equal 192x128 cells; centers aligned; no visible positional jitter",
+  "seam": "N/A marker",
+  "autocorrelation": "N/A marker",
+  "art_gate": "NOT_RUN: handoff candidates are excluded from canonical art_gate scope",
+  "sha256": "10c1825d78a45c0ee03fdf2823b668cda827dede0e47ef2edc3be976c7e3dc9b",
+  "attempts": {
+    "1": "rejected: black cell dividers and magenta fringe",
+    "2": "best visual/layout candidate; 21 colors after crop/resize/key, below minimum 33",
+    "3": "rejected: unintended horizontal divider bisects all four rings"
+  }
+}

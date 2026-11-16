@@ -1,0 +1,31 @@
+{
+  "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-09/tomb/REDRAW-tomb-edge-desert-sand/candidate-03.png",
+  "candidate_sha256": "72121c6765110751f8fb1d9de0897d48c773f0b5ab5cb3d184eccd4ba1e25962",
+  "size": [
+    512,
+    128
+  ],
+  "colors": 35,
+  "alpha_mode": "binary",
+  "seam_mean_rgba": 8.4355,
+  "attempts": {
+    "1": {
+      "colors": 29,
+      "seam_mean_rgba": 3.4844,
+      "note": "Too few colors."
+    },
+    "2": {
+      "colors": 27,
+      "seam_mean_rgba": 4.4043,
+      "note": "Too few colors."
+    },
+    "3": {
+      "colors": 35,
+      "seam_mean_rgba": 8.4355,
+      "note": "Continuous low sandy transition, 3x1 tile reviewed."
+    }
+  },
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "art_gate": "NOT_RUN: handoff-only; cannot register before Claude acceptance",
+  "visual_note": "Horizontal seam below 14, irregular top and full continuous band, no separate mounds."
+}

@@ -1,0 +1,75 @@
+{
+  "task_id": "NEW-maze-floor-01",
+  "status": "FAILED_AFTER_3_TRIES",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01.png",
+      "wrap_x": 9.429,
+      "wrap_y": 12.14,
+      "autocorr_max_lag_ge8": 0.4932,
+      "outer8_unique": [
+        46,
+        46,
+        48,
+        48
+      ],
+      "colors": 48,
+      "sha256": "9aa1dd2f6707dbeca0be9becb89d6a637a7de2f3f30b76d8a7b1460d47b3370c",
+      "failure": "Strong edge discontinuities on both axes; repeat shows visible cross-boundary joints and recurring motif."
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "wrap_x": 1.272,
+      "wrap_y": 3.252,
+      "autocorr_max_lag_ge8": 0.5132,
+      "outer8_unique": [
+        4,
+        4,
+        5,
+        3
+      ],
+      "colors": 48,
+      "sha256": "f5d57e5632075b9f1e919d9c0163d73d67405054b4d096644a583ea84da2ef86",
+      "failure": "Horizontal seam nearly passes; vertical seam and autocorrelation fail. 3x3 preview shows a clear pink frame grid and strongly recurring slab layout."
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "wrap_x": 2.183,
+      "wrap_y": 2.855,
+      "autocorr_max_lag_ge8": 0.4207,
+      "outer8_unique": [
+        29,
+        28,
+        36,
+        29
+      ],
+      "colors": 48,
+      "sha256": "2899d7659c5ac6048a139accf6f478e20875d85e57d12545500cf949485fd7cc",
+      "failure": "Both seam ratios exceed 2.0 and repeated slab/crack rhythm remains above 0.25 autocorrelation; outer 8px is not flat."
+    }
+  ],
+  "processing": "Each raw square resized nearest to 512x512 and median-cut quantized to 48 RGB colors; no pixel painting or seam retouching.",
+  "acceptance": {
+    "target_size": [
+      512,
+      512
+    ],
+    "color_range": [
+      33,
+      48
+    ],
+    "wrap_x_max": 2.0,
+    "wrap_y_max": 2.0,
+    "autocorrelation_max": 0.25,
+    "outer8_flat": true
+  },
+  "final_candidate": null,
+  "art_gate": "NOT_RUN: handoff candidates are excluded from canonical asset scan; no canonical file or manifest was changed.",
+  "raws_preserved": true
+}

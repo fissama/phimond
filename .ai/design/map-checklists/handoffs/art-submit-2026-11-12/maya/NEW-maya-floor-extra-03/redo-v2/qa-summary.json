@@ -1,0 +1,49 @@
+{
+  "task_id": "NEW-maya-floor-extra-03",
+  "attempts": [
+    {
+      "attempt": 2,
+      "raw": "raw-attempt-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "size": [
+        512,
+        512
+      ],
+      "colors": 46,
+      "alpha_values": [
+        255
+      ],
+      "wrap_x": 0.0,
+      "wrap_y": 0.0,
+      "flat_outer_8px": true,
+      "autocorr_max_8_255": 0.21847606136961767,
+      "autocorr_lag": 8,
+      "visual": "4x4 preview shows large spiral engraving recurring at tile cadence; reject."
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-attempt-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "size": [
+        512,
+        512
+      ],
+      "colors": 38,
+      "alpha_values": [
+        255
+      ],
+      "wrap_x": 0.0,
+      "wrap_y": 0.0,
+      "flat_outer_8px": true,
+      "autocorr_max_8_255": 0.3939173377580061,
+      "autocorr_lag": 8,
+      "visual": "4x4 preview shows slab rhythm repeating; numeric autocorrelation fails."
+    }
+  ],
+  "attempt_1_prior": {
+    "autocorr_max_8_255": 0.47651656442043594,
+    "autocorr_lag": 8
+  },
+  "result": "FAILED_AFTER_3_TRIES",
+  "note": "No attempt meets autocorrelation threshold <=0.25. Processing used nearest resize, indexed quantize <=48 colors, flat 8px perimeter; no art synthesized by code."
+}

@@ -1,0 +1,1 @@
+Chosen map object: the central monumental gate visible in the attached screenshot (arch, cyan portal opening, layered steps and two small skulls). Source map includes a bright cyan opening; interpreted as solid angular cyan facets to honor no-baked-glow rule. Candidate has 46 colors, binary alpha, bbox margin 8px.

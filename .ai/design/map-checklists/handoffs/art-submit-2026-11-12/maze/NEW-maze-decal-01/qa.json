@@ -1,0 +1,52 @@
+{
+  "task_id": "NEW-maze-decal-01",
+  "status": "FAILED_AFTER_3_TRIES",
+  "map_decision": "Used map-supported pink-beige rubble and dusty-violet bone/stone; no greenery.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01.png",
+      "colors": 47,
+      "binary_alpha": true,
+      "alpha_margin": 16,
+      "failure": "Generated halo/glow is present in the raw; threshold removes soft exterior but primary bone/debris remains strongly shaded and is not a clean decal cutout."
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "colors": 44,
+      "binary_alpha": true,
+      "alpha_margin": 16,
+      "failure": "Generated halo/glow is present in the raw; threshold removes soft exterior but primary bone/debris remains strongly shaded and is not a clean decal cutout."
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "colors": 47,
+      "binary_alpha": true,
+      "alpha_margin": 16,
+      "failure": "Generated halo/glow is present in the raw; threshold removes soft exterior but primary bone/debris remains strongly shaded and is not a clean decal cutout."
+    }
+  ],
+  "processing": "Threshold alpha at 200 to remove soft halo, crop object bounds, nearest-resize/pad to 320x320, median-cut quantize to 48 colors, restore binary alpha.",
+  "acceptance": {
+    "size_range": [
+      256,
+      384
+    ],
+    "colors": [
+      33,
+      48
+    ],
+    "binary_alpha": true,
+    "alpha_margin_min": 8,
+    "irregular_shape": true,
+    "no_glow": true
+  },
+  "final_candidate": null,
+  "art_gate": "NOT_RUN: handoff-only; canonical manifest untouched.",
+  "raws_preserved": true
+}

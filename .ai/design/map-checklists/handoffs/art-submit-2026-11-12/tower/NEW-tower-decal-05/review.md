@@ -1,0 +1,1 @@
+Selected a small irregular scatter of tan-gray pebbles and olive moss, materials visible in the forest path references. Attempts 2 and 3 showed diffuse glow; attempt 1 has no visible glow after alpha threshold. Candidate is 384×384, 47 colors, binary alpha and 12px minimum margin; reviewed at 1×. Awaiting Claude review; not registered.

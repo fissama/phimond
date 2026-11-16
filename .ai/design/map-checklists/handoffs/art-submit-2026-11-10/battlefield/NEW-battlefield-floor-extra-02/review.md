@@ -1,0 +1,1 @@
+All three processed 3x3 previews show repeating broad plates. Seam means 12.8604, 3.4388, 4.2337 (>2.0); autocorrelation attempts 1/2 also >.25. Attempt 3 autocorrelation passes at .218 but seam fails. None meets full tile criteria. No final candidate.

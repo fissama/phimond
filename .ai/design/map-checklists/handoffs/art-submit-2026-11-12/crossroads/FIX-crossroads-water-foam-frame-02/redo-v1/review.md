@@ -1,0 +1,1 @@
+Source image measured: binary alpha and actual >8px margins. Existing source QA records margin=0, which contradicts computed alpha bounds; candidate is a byte-preserved handoff copy. No canonical, source QA, or manifest edits.

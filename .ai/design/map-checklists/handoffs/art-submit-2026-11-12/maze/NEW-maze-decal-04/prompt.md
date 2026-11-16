@@ -1,0 +1,1 @@
+Isolated irregular small stone-chip/crack decal for top-down rose-beige maze floor, dusty violet and warm muted brown details, transparent cutout, no bones; no haze/glow/shadow/background/frame/text/fringe/magenta.

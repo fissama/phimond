@@ -1,0 +1,1 @@
+Route: built-in image_gen, one attempt. Image 1 controls subject and palette; approved batch-01 bush sprites guide pixel style only. Requested isolated bronze ship cannon in wooden carriage, crisp hard-edged HD-2D pixel art, transparent background, no glow/text/magenta/fringe.

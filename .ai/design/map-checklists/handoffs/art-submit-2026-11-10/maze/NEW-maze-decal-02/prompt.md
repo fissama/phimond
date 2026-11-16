@@ -1,0 +1,1 @@
+Transparent irregular stone-chip and fine crack scatter decal, pink-beige and dusty-violet maze palette, no bones, crisp pixel-art, isolated; no backdrop, haze, glow, shadow, text, frame, fringe or magenta.

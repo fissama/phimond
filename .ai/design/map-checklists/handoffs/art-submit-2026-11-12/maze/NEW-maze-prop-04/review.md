@@ -1,0 +1,3 @@
+# Source identification and visual review
+
+The map shows upright pale ivory spikes mounted above dark violet bases along the balustrade. The raw sheet contains four distinct extension states while preserving the same three-spike cluster, sockets, and binding material. The roadmap’s “trap” label is interpreted as the spike cluster; no floor trap panel is introduced. Candidate is 4x192x192, 47 colors, binary alpha, and each frame has >=18px transparent margins. Forty-three isolated magenta fringe pixels were removed by alpha key. At 4x the silhouettes read cleanly with no cast shadow, glow or lettering. Candidate remains for Claude review.

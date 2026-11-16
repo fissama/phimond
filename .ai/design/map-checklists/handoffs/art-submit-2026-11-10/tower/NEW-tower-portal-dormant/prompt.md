@@ -1,0 +1,1 @@
+Runway image generation, attempt 1. Raw returned JPEG with flat magenta background; final alpha created only by allowed color-key threshold, then crop, nearest resize and 48-color quantization. No repainting. The source references show tree canopy/bark palette, so portal is a natural root arch rather than stone/metal.

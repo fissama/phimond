@@ -1,0 +1,60 @@
+# Ghi chú xem hình (Claude 2026-11-09) — mức V1 = montage game-scale/2x2/3x1, KHÔNG phải 4× từng asset
+## Đã xem + giữ được nội dung
+- ancient grid_02 (decal07-12, shadow01-04, landmark-01, portal d/a, marker-arrival, fx01-03): ổn, decal mép bất quy tắc; marker-arrival lề 2px (<8). portal d/a trông giống hệt.
+- ancient floor_02 (extra-04 xanh đá, extra-05 cuội be): đọc tốt; wrap_y 1.54 (extra-05) hơi cao.
+- astral grid_02 (prop07-14, shadow01-04, tree trunk/canopy 01-03): chất lượng cao 40-48 màu; shadow c1 s1.0 (ngoại lệ procedural); prop-13 c33 mỏng/phẳng.
+- astral floor_02: extra-04 cuội tím OK; extra-05 hạt tím phẳng nhiễu.
+- astral back_02 (mid, near): đẹp, near gồm 2 lớp (tán treo + đảo nổi) trong một ảnh.
+- crossroads grid_02: decal08-12 ok, shadows c21-31 (soft), landmark-02 hòm gỗ cam (lạc tông xanh kit), fx 4 khung, portal d/a, marker 4 khung, water-foam 627x627 4 frame.
+- crossroads floor_02: extra-02/03 thấy VẠCH LƯỚI CHỮ THẬP viền phẳng giữa các ô 2x2 => lưới lộ rõ.
+- crossroads back_01 (far-02, far-01, mid, near): hang động xanh, ổn; mid/near nửa chiều ngang để trống nền navy.
+- desert grid_02..05: props rất tốt; decal/edge ok; torch frame c24-28 (<33); sand-mound c33 mỏng; dust-devil/spawn-marker ok.
+- desert floor_02 (sand-cracked-02, sunken-brick-floor, limestone-grit-floor): nhịp lặp cực rõ trong 2x2 (cụm giống hệt theo lưới), sunken-brick như decal trên nền phẳng.
+- ghost_castle grid_02: shadows c10-26 soft, decal 08-12 ổn, landmark gargoyle huy hiệu, bình đồng c34, decal-07 xám.
+- ghost_castle floor_02: extra-04 phiến chéo ổn; extra-05 bát giác lưới/đường nối giữa ô lộ (đúng như Codex tự ghi).
+- ghost_castle edge: edge-01 ok; edge-02 có VẠCH MAGENTA 1px ở mép tile (wx 12.3); edge-03 vạch viền tối ở mép tile.
+- ghost_castle back: far-01 ổn; mid ổn; near: hai thân cây dính ở điểm nối (seam wx 7.4).
+- nightmare grid_02/03: decal-01..04 cùng một họa tiết xương/đất; 05..08 cùng một họa tiết (sha trùng: 02=03; 05=06=08); decal-09/10 viền trắng-lavender (fringe); fx/portal/campfire/lantern tốt; shadows c1.
+- nightmare floor_02: extra-04/05 nền tím phẳng + decal thưa theo lưới đều.
+- nightmare edge: pixel thô hơn kit khác; edge-01/03 cụm cỏ nổi cách quãng có khe trống.
+- nightmare back: far c24 & far-02 c21 phẳng (trời tím + trăng); mid/near đẹp nhưng chỉ phủ ~50% chiều ngang, lặp có khe trống.
+- tomb grid_02/03: stela và keys là hai bóng sáng xanh mờ (halo nướng), không đọc ra tên; thorn-bush c19, stump c24, torch c22, censer c20, nhiều prop c26-29; decal 13 ok.
+- tomb floor_02: golden-sand wx2.27/wy2.32 và tile-edge-decal (nền xám nhiễu, tên "edge decal" nhưng là tile 512 đặc) wx1.5/wy2.3 > ngưỡng 1.25.
+- tomb edge: 3 dải thực chất là gò tam giác rời (đáy phẳng, hai đầu về 0) => lặp thành dãy đồi, không phải dải chuyển tiếp; edge-ruin-rubble c32.
+- tomb back: wall-far silhouette mỏng, mid đá, near rêu: ổn.
+- windrock grid_02/03: props/decal/fx/portal tốt; shadows c1.
+- windrock floor_02: 3 sàn lốm đốm, nhịp lặp theo lưới rõ trong 2x2.
+- windrock edge: c63 màu (>48), wx 2.3–2.8.
+- windrock back: far/mid/near đẹp, nhất quán.
+- world_tree floor_02: extra-04 lá/đất ổn; extra-05 cỏ wx2.5/wy3.6 cao.
+- garden-a contact: khớp REVIEW (trunk-seg, seal-strip, vein-01 là 5 asset trả).
+- p01 redo A..D contact (xanh): A=ruộng/hàng rào/giếng...; B=sàn gỗ, thảm, lồng...; C=arena; D=palace — đọc tốt, thiếu viền trắng.
+- batch-12 city contact: facade/props/animals/walkers đồng nhất, chất lượng tốt (chưa đo hash: UNVERIFIED).
+- world-tree comparison-true-3x1: attempt 11 lặp rõ cụm; 13 lặp cụm đều; 14 nhịp khối đồng đều, đường nối mờ; 15 phẳng; 16 lặp cụm đều có nhịp 170px => bác đúng.
+## CẦN XEM LẠI (kết quả ảnh đã bị loại khỏi ngữ cảnh, chưa giữ được ghi chú)
+world_tree grid_01/floor_01/edge_01/back_01; ancient grid_01/floor_01/edge_01/back_01; astral grid_01/floor_01/edge_01/back_01; crossroads grid_01/floor_01/edge_01; ghost grid_01/floor_01; desert floor_01/back_01/back_02/grid_01; nightmare floor_01/grid_01; tomb floor_01/grid_01; windrock floor_01/grid_01
+## Bổ sung (xem lại)
+- world_tree grid_01: decal01-12/fx01-03/marker/portal d-a/prop01-06 chất lượng tốt, 31-40 màu; decal-08 c31 <33; portal dormant/active gần như giống nhau; prop-03 (cành nằm ngang) mảnh.
+- world_tree floor_01: 6 sàn (floor-01..03, extra-01..03) đọc tốt, wrap 1.0–1.9, không thấy lưới rõ ở 2x2.
+- world_tree edge_01: edge-01 (rễ) và edge-02 (tán lá/cát) LỘ ĐƯỜNG CẮT tại mốc 512 trong 3x1 (wx 3.5 / 4.1); cần vẽ lại/seam.
+- world_tree back_01: far-01, far-02, mid, near đều đẹp, nhất quán; near cây bị cắt hai mép nhưng nối đúng khi lặp.
+- ancient grid_01 (prop01-18, decal01-06): rất tốt, 47-48 màu, nhất quán xanh ngọc; prop-15 và prop-17 gần như cùng một cụm pha lê (nghi trùng biến thể).
+- ancient floor_01: floor-02 nhiễu mịn, floor-03 đan lát, floor-extra-02 bát giác khổng lồ wx4.88/wy7.66 => seam rõ; floor-01 wy2.3 cao.
+- ancient edge_01: edge-01/02 liền mạch; edge-03 có cụm đối xứng gương lặp tại mốc 512 (nghi lật gương).
+- ancient back_01: far/mid/near cột đền, 48 màu, đẹp, nối liền; opaque.
+- astral grid_01 (decal01-12, fx01-03, marker, portal d/a, prop01-06): chất lượng cao; tree trunk/canopy c34-35 (sát ngưỡng 33); portal active/dormant cùng mask.
+- astral floor_01: floor-extra-03 LỘ VẠCH LƯỚI chữ thập rõ ở 2x2 (viền phẳng 8px); floor-01 hơi có vệt dọc giữa; còn lại ổn.
+- astral edge_01: 3 dải ổn, edge-03 lặp cụm đều (cadence rõ).
+- astral back_01: far-01/02/03/far đẹp, nhất quán, nối liền.
+- crossroads grid_01 (prop01-17, decal01-07): rất tốt 48 màu; prop có stalactite/stalagmite/coral/nấm ổn.
+- crossroads floor_01: TẤT CẢ floor-01..05, extra-01 (và extra-02/03 đã ghi) có KHE CHỮ THẬP navy phẳng rộng ~16px khi lát 2x2 => lưới lộ rõ; art từng ô tốt (35-41 màu).
+- crossroads edge_01: edge-01 (bờ nước) lệch đường bờ tại mốc 512 (wx3.19) lộ seam; edge-02/03 lặp cụm đều, wx 3.1/2.4.
+- ghost grid_01 (decal01-06, fx01-03, marker, portal d/a, prop01-12): đẹp, 40 màu, nhất quán gothic; prop-12 chân dung không mặt (có chủ ý).
+- ghost floor_01: floor-01/02 ổn; floor-03 wx2.45/wy2.26 và extra-01 cuội lớn wx2.2/wy2.2 nghi seam; extra-02/03 ổn.
+- desert floor_01 (sand-floor-01/02/03, sandstone-floor, sand-cracked-01, gravel-floor): sàn đều có nhịp lặp theo lưới trong 2x2; RÕ NHẤT: sandstone-floor (cụm đá rời theo lưới), sand-cracked-01 (hoa vết nứt theo lưới); sand-floor-01/02/03 và gravel-floor mịn hơn, cadence nhẹ. wrap=0 do viền phẳng.
+- desert back_01/02: dunes-wall-far, dunes-mid, ruins-near, horizon-gradient-01/02: đẹp, 40-45 màu; mid/near nửa dưới cát phẳng; đọc tốt.
+- desert grid_01: spawn-marker/dust-devil/torch-flame/magic-rune/oasis-sparkle 4 khung ổn; torch-flame c24-28 (<33); portal dormant (portal active ở grid_04 đã xem), prop/tòa nhà tốt.
+- nightmare floor_01: TẤT CẢ 6 floor (floor-01..03, extra-01..03; extra-04/05 đã ghi) có KHE CHỮ THẬP viền phẳng tím nhạt hơn nền khi lát 2x2 => lưới lộ; floor-01 gần như phẳng (ít chi tiết).
+- nightmare grid_01: prop/landmark/tree canopy-trunk 48 màu, đẹp, nhất quán tông tím-vàng-lục.
+- tomb floor_01: brick-floor tốt; graveyard-dirt gần như phẳng một màu nâu (thiếu chi tiết); crypt-mossstone/cracked-slate/ashen-dust/dry-gravel texture nhiễu, wrap 1.4–2.65 (ashen-dust wx2.65/wy2.28, cracked-slate wx2.26) nghi seam.
+- tomb grid_01: portal d/a, lantern-spirit 4 khung, bia/quan/bình/vòm/cột: đọc tốt dù 27-37 màu; tomb-glyph-stele là khối sáng xanh mờ pixel to (halo nướng, không đọc ra bia); spirit-brazier c23, lantern-post c27 vẫn đọc được.

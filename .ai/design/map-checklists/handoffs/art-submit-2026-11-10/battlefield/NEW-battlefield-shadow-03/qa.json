@@ -1,0 +1,31 @@
+{
+  "task_id": "NEW-battlefield-shadow-03",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "map_decision": "Map reference shows a pale cream plaza; selected a muted warm taupe mask. Standalone procedural shadow, not baked onto any object.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-alpha-key.png",
+      "processing": "ImageGen RGBA raw; derive soft alpha from generated tonal falloff; collapse RGB to one muted taupe; fit to centered 256x96 canvas.",
+      "colors": 1,
+      "alpha_margin_px": 8,
+      "alpha_binary": false,
+      "failure": null
+    }
+  ],
+  "selected_candidate": "candidate-alpha-key.png",
+  "sha256": "b15e885b4c5bc11cdb1e0f6b428b338ed2b3c51d765f1dc3505976aef18c6642",
+  "acceptance_result": {
+    "size_px": [
+      256,
+      96
+    ],
+    "colors": 1,
+    "soft_alpha_values": 128,
+    "alpha_margin_px": 8,
+    "visible_magenta": false,
+    "visual": "long asymmetrical diagonal shadow mask; preview composited on cream"
+  },
+  "art_gate": "NOT_RUN: handoff candidate is not registered in canonical manifest; manifest edits forbidden."
+}

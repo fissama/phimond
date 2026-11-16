@@ -1,0 +1,24 @@
+{
+  "task_id": "NEW-guild-prop-13",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "raw": "redo-v1/raw-01.png",
+  "candidate": "redo-v1/candidate.png",
+  "processing": "threshold alpha >=128; 1px erosion; crop; nearest resize into 256x256 transparent canvas; quantize 48; binary alpha",
+  "size": [
+    256,
+    256
+  ],
+  "colors": 48,
+  "alpha_values": [
+    0,
+    255
+  ],
+  "alpha_margin_px": 10,
+  "sha256": "1a673189877eee3cacdd4bf4d55353272789af4efb9392a53e47ead1b5732730",
+  "visual_check": {
+    "1x": "Rack and sword/spear/axe types read clearly.",
+    "4x_light": "Bright blade pixels are object material; no pale fringe or glow.",
+    "4x_dark": "Clean binary outer edge, no cast shadow."
+  },
+  "art_gate": "NOT_RUN: handoff-only."
+}

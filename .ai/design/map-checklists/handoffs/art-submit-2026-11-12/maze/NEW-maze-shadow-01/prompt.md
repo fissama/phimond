@@ -1,0 +1,1 @@
+One soft oval contact-shadow decal only, no object; dusty-violet-gray tint, soft alpha fade, transparent, top-down; no glow, colored gradients, text, frame or magenta. RGB collapsed to one kit color while preserving alpha gradient.

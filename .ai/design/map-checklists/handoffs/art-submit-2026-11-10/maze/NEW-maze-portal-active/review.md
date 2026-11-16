@@ -1,0 +1,1 @@
+Active portal shows cyan inner gate while stone, skull, bone and rope remain the same colors. Shared mask is pixel-identical to dormant candidate (0 differing alpha pixels); 48 RGB colors; transparent margin ≥14 px.

@@ -1,0 +1,1 @@
+ImageGen attempt 2: 4-frame horizontal pixel-art sprite, solid readable pale limestone chips and lavender-gray motes with muted gold flecks; gentle fixed-center circular drift; restrained colors, no neon/red/yellow halo/glow/text/magenta.

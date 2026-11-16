@@ -1,0 +1,1 @@
+Broken rose-beige stone chunk with pale bone splinters and dusty violet pebbles, irregular top-down maze decal, transparent cutout, no halo/glow/shadow/text/frame/fringe/magenta; alpha threshold≥250 to remove atmospheric exterior.

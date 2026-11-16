@@ -1,0 +1,52 @@
+# Prompt B — Tích hợp Căn Mạch Linh Viên (dữ liệu + server + client)
+Copy khối dưới gửi Codex. Art garden-a/b/c đã duyệt 70/70 + kit; không vẽ thêm trong đợt này.
+
+```
+NHIỆM VỤ: Tích hợp khu vườn ngầm "Căn Mạch Linh Viên" vào game Phimond: dữ liệu, server Go, client Three.js. KHÔNG ĐƯỢC DỪNG GIỮA CHỪNG: làm tuần tự theo các bước 0→6 bên dưới, chỉ báo xong khi mọi mục trong "ĐỊNH NGHĨA XONG" đều đạt và có bằng chứng (lệnh + kết quả). Không hỏi lại; chỗ chưa rõ thì chọn phương án hợp lý nhất, ghi vào docs/garden/DECISIONS.md kèm lý do. Chỉ dừng sớm nếu có lỗi môi trường chứng minh được (ghi lệnh + log), khi đó vẫn hoàn thành mọi phần còn lại.
+
+ĐỌC TRƯỚC (cold-start): AGENTS.md (quy trình build/test, "manual validation sau mỗi task", delivery ritual), .ai/ACTIVE.md, .ai/design/gpt-redo/15b-garden-crops-roster-v2.md (60 cây: id, tên, họ, level, tính cách), 19-garden-roadmap.md (mục Giai đoạn B), 16-garden-atlas-pipeline-v3.md, art/src/hd2d/garden-b/manifest.json + anim.json từng asset, art/src/hd2d/garden-c/ (seeds, bubble-thirsty), và P16-R01 trong .ai/plan (spec nông trại). Xem cách apps/client và apps/game-server hiện tổ chức (module, migrations, protocol, test) rồi làm theo đúng quy ước đó. Không sửa file ngoài phạm vi vườn trừ khi bắt buộc (router/menu/protocol); nếu sửa thì liệt kê trong báo cuối.
+
+LUẬT: Không vẽ/sửa/đổi tên art đã duyệt (chỉ copy/optimize vào đường dẫn runtime theo quy ước repo, giữ nguyên pixel, nearest-neighbor, không filter mịn). Không tự đặt approved. Không hard-code số cân bằng trong code: mọi số nằm ở data/garden/*.json. Server là nguồn sự thật về thời gian; client chỉ hiển thị. Không giảm bảo mật/validate; mọi hành động vườn kiểm tra quyền sở hữu, level, tiền, ô hợp lệ phía server. Mỗi bước có test; không bỏ test để qua.
+
+BƯỚC 0 — Rà soát & kế hoạch: viết docs/garden/PLAN.md (kiến trúc, bảng bảng/endpoint/message, file sẽ tạo). Kiểm tra mọi asset trong manifest có final.png + anim.json hợp lệ; lập docs/garden/ASSET-INDEX.json (id → đường dẫn, cell, cols, rows, fps, loop từng hàng, pivot).
+
+BƯỚC 1 — Dữ liệu (data/garden/):
+ a) crops.json — 60 cây từ roster-v2: id (giữ nguyên id roster), tên, họ (H/F/D/R/N/T), unlock_level (1 cây/level tới Lv20 rồi 1 cây/2 level tới Lv100; Lv1 có cây khởi đầu — đối chiếu roster), grow_seconds, seed_price, sell_price, yield (min/max), exp_farm, atlas_id, seed_family. Công thức cân bằng: grow_seconds tăng dần từ ~2 phút (Lv1) tới ~8–12 giờ (Lv100); lãi/giờ mỗi ô tăng đều theo level, cây mới luôn đáng trồng hơn cây cũ ≥10–15% lãi/giờ nhưng cây cũ vẫn có giá trị khi online ngắn (cây ngắn) — viết bảng tính tự động (tools/garden_balance.py) sinh crops.json từ vài tham số và in bảng kiểm (lãi/giờ, hoàn vốn, số lần thu hoạch để lên level). Không giới hạn vàng/ngày (chủ dự án đã quyết).
+ b) pots.json — 10 chậu: id, hạng G1–G5, 2 skin mỗi hạng, giá nâng cấp, % rút ngắn thời gian chín theo hạng (G1 0% → G5 ~30%), atlas_id. Chọn skin tự do trong hạng.
+ c) farm_levels.json — EXP farm theo level (tới 100), mốc mở tầng (10 tầng × 10 ô; tầng 1 mở sẵn; mỗi 10 farm level + vật phẩm mở thêm một tầng), phần thưởng.
+ d) stages.json — ngưỡng giai đoạn theo % thời gian: 0–15 hạt (seed, sprite hạt theo họ từ garden-c/seeds), 15–45 sprout, 45–85 grow, 85–99 grow + lấp lánh (engine), 100 ripe.
+ e) thirst.json — luật khát nước: ví dụ cây khát nếu quá X% thời gian không tưới; khát thì dừng tích lũy tăng trưởng hoặc giảm sản lượng (chọn 1, ghi DECISIONS); tưới tưới được ngay và cooldown.
+ f) JSON schema + test validate (id duy nhất, khớp ASSET-INDEX, đủ 60 cây/10 chậu, level đơn điệu, không có lãi/giờ tụt giữa các cây liền kề).
+
+BƯỚC 2 — Server Go (apps/game-server):
+ a) Migration mới (theo quy ước thư mục migrations, có up/down nếu repo dùng): bảng garden_farm (character_id, farm_level, farm_exp, unlocked_tiers…), garden_cell (character_id, tier, slot, pot_id, crop_id nullable, planted_at, last_watered_at, water_state, harvest_ready_at, mutation nullable), garden_inventory seeds/crops, garden_unlock (bộ sưu tập). Index hợp lý, ràng buộc unique (character_id,tier,slot).
+ b) Máy trạng thái ô: empty → seed → sprout → grow → ripe, thirsty xen kẽ; hàm thuần tính giai đoạn từ (now, planted_at, grow_seconds, pot_bonus, thirst) để test được; server tính lười (lazy) khi truy vấn, không cần tick nền. Chống gian lận đồng hồ: chỉ dùng thời gian server.
+ c) Hành động (message/endpoint theo protocol hiện tại): garden.state, plant(cell, crop), water(cell), harvest(cell), replant(cell) (thu xong tự gieo lại nếu đủ hạt/tiền, tùy cờ), buy_seed, sell_crop, upgrade_pot(cell), set_pot_skin, unlock_tier. Mỗi hành động trả trạng thái ô mới + sự kiện (exp, vàng, level up farm). Idempotent với retry; xử lý đồng thời bằng transaction/khóa hàng.
+ d) Tích hợp kinh tế hiện có (vàng, inventory, level nhân vật) qua service sẵn có, không nhân đôi bảng tiền. Hạt rơi từ quái = ghi vào DECISIONS và để hook (interface) nếu hệ thống drop chưa sẵn; hạt mua bằng vàng thì làm đủ.
+ e) Entrance: Giếng Linh Mạch ở Điền Trang dẫn xuống vườn (scene riêng, người chơi không đi lại trong vườn). Nếu Điền Trang chưa có điểm vào, thêm điểm tương tác tối thiểu và ghi vào báo cuối.
+ f) Test: unit cho máy trạng thái (mọi ngưỡng 0/15/45/85/99/100%, chậu giảm giờ, khát), integration cho từng hành động (đủ/không đủ tiền, sai level, ô người khác, race 2 request cùng lúc, retry), test migration. `go vet`, `go test ./...` xanh; `sh tools/check.sh` xanh.
+
+BƯỚC 3 — Client Three.js (apps/client):
+ a) Loader atlas + anim.json (cache texture, nearest filter, premultiplied/alpha đúng, không blur), API: playRow(assetId,rowName), lặp/một lần, pivot (96,168) cây & (96,175) chậu, cắm cây vào miệng chậu (96,112).
+ b) Cảnh vườn: 3 tầng/màn hình, mỗi tầng một hàng 10 ô, cuộn dọc liên tục giữa các màn 3 tầng (tầng 1 mở sẵn, tầng khóa hiển thị khóa), dùng kit garden-a đã duyệt làm nền/thân/ấn theo ASSET-INDEX. Một chạm một ô, không có nút tưới/thu hoạch hàng loạt. Tối ưu: sprite batching/instancing, không tải atlas cây chưa dùng (lazy-load theo cây đang trồng + cây trong menu), không vượt ngân sách tải đã ghi trong repo.
+ c) Hiển thị theo giai đoạn: seed = sprite hạt theo họ (garden-c/seeds, 4 khung lặp); sprout/grow/ripe = hàng tương ứng của atlas cây; 85–99% thêm lấp lánh engine (hạt nhỏ vẽ bằng code, không glow baked); khát = bong bóng bubble-thirsty gắn trên cây (pivot (32,60)), ẩn khi hết khát; tưới = chậu chạy hàng water + cây rung/scale nhẹ bằng engine (không có animation riêng cho cây) rồi chậu về wet; thu hoạch = hàng harvest rồi hàng plant (plant = seed→sprout) khi gieo lại; nâng cấp chậu = hàng upgrade; dọn = clear. Hàng wet dùng khi ô đang ẩm.
+ d) UI DOM (Preact + signals, theo quy ước client): menu chọn hạt (lọc theo họ, khóa theo level, giá), popup ô (cây, % tiến độ, thời gian còn lại), cửa hàng hạt, bán nông sản, nâng cấp/đổi skin chậu, thanh farm level + EXP dưới thanh level nhân vật trong HUD, sách sưu tập cây (mở khi từng thu hoạch), bảng đơn hàng (order board: thưởng chủ yếu farm EXP + ít vàng; sinh đơn phía server, hết hạn theo ngày). HUD đúng chuẩn Octopath đã chốt; không đổi HUD ngoài phần vườn. Tiếng Việt có dấu, dùng tên từ roster-v2.
+ e) Đồng bộ: dùng protocol/WS hiện có; khi vào vườn gọi garden.state, tự cập nhật bộ đếm cục bộ (chỉ để hiển thị, server quyết định). Offline/reconnect không mất trạng thái.
+ f) Test: unit cho chọn hàng theo giai đoạn/trạng thái, vị trí cắm pivot; e2e (npm run e2e) kịch bản: vào Giếng → trồng → chờ (có thể rút ngắn bằng cấu hình test hoặc fake clock) → tưới → thu hoạch → gieo lại → bán; chụp ảnh màn hình vườn ở Lv1, Lv12, Lv50, Lv100 (mỗi ảnh 1280×720 và viewport điện thoại ngang) lưu docs/garden/screens/.
+
+BƯỚC 4 — Lát cắt dọc Lv1–12 chạy được trước: sau khi xong 0–3 cho 12 cây đầu + 2 chậu (G1 hai skin) + hạt + bong bóng, chạy đủ test và dừng-kiểm tự thân (không dừng báo cáo), rồi MỞ RỘNG ra đủ 60 cây + 10 chậu + 10 tầng. Dữ liệu 60 cây phải có từ bước 1; bước 4 chủ yếu kiểm hiển thị 60 cây/10 chậu: tạo trang kiểm tra dev (route ẩn /garden-debug) liệt kê toàn bộ 60 cây × 5 trạng thái và 10 chậu × 5 hàng, chụp contact sheet kiểm tra (docs/garden/screens/debug-60.png), đảm bảo mọi hàng chạy đúng, không lệch pivot, không tràn ô.
+
+BƯỚC 5 — Cân bằng & mô phỏng: viết tools/garden_sim.py (hoặc .go test) mô phỏng người chơi theo 3 profile (online liên tục 8h, 3 phiên/ngày ngắn, 1 phiên/ngày) từ Lv1 → Lv100: in vàng/ngày, farm level theo ngày, thời gian tới các mốc (Lv12, 20, 50, 100), số lần chạm/ngày. Đạt: không có đoạn >30 phút chơi mà không có cây mới/giá trị mới ở Lv1–20; tốc độ vườn không vượt quá ~1/3 thu nhập tối đa của việc cày quái ở cùng level (đối chiếu số kinh tế hiện có; nếu chưa có thì ghi giả định); không hố cân bằng (lãi/giờ giảm khi lên level). Ghi kết quả vào docs/garden/BALANCE-REPORT.md và chỉnh tham số trong garden_balance.py, không chỉnh tay JSON.
+
+BƯỚC 6 — Hoàn thiện: docs/garden/README.md (cách chạy, dữ liệu, protocol, thêm cây mới), cập nhật .ai/ACTIVE.md và PROJECT_PROGRESS.md (phần vườn), liệt kê nợ kỹ thuật/phase sau (hạt rơi từ quái nếu chưa nối, xã hội thăm/hái trộm, thú giúp việc, sâu bọ, FX, aura đột biến, cổng ấn tầng 10, khung UI vườn, tint từng màn, thiết bị yếu) vào docs/garden/DEBT.md. Chạy `sh tools/check.sh`, `cd apps/client && npm run check && npm run e2e`, go test; rebuild server + chạy 127.0.0.1:8090 theo AGENTS.md (manual validation rule) và báo PID/port/log. Commit theo quy ước repo trên nhánh hiện tại (đừng push nếu AGENTS.md cấm; không commit file nặng ngoài art đã track).
+
+ĐỊNH NGHĨA XONG (tất cả phải đạt):
+ 1. 60 cây + 10 chậu có trong data/garden, validate test xanh, khớp ASSET-INDEX.
+ 2. Server: migration chạy được trên DB mới và DB có dữ liệu; mọi hành động có test; go test ./... và tools/check.sh xanh.
+ 3. Client: trồng → lớn qua 5 giai đoạn đúng hàng atlas → khát (bong bóng) → tưới (water row + rung) → thu hoạch (harvest → plant) → bán, chạy được trong trình duyệt thật (e2e xanh + ảnh chụp).
+ 4. /garden-debug hiển thị 60 cây × trạng thái và 10 chậu × 5 hàng không lỗi.
+ 5. BALANCE-REPORT.md có số liệu mô phỏng 3 profile Lv1→100 và đạt các điều kiện bước 5.
+ 6. Tài liệu + DEBT.md + ACTIVE.md đã cập nhật; server mới đang chạy để chủ dự án thử.
+
+BÁO CUỐI (ngắn, theo bảng): [mục ĐỊNH NGHĨA XONG × đạt/không + lệnh + kết quả], file đã tạo/sửa (nhóm theo data/server/client/docs), file ngoài phạm vi vườn đã sửa, điểm giả định/quyết định đã tự chọn (DECISIONS.md), nợ còn lại, PID/port server. Nếu mục nào chưa đạt: số đo/log cụ thể và đề xuất; KHÔNG tự hạ tiêu chí.
+```

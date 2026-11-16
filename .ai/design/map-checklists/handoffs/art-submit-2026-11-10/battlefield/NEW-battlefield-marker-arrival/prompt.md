@@ -1,0 +1,1 @@
+ImageGen: transparent sprite sheet of four equal horizontal frames, centered top-down oval arrival marker ring, same scale/position, four-step pulse with small cyan facets appearing/shifting, cream/violet/gold stone palette, no exterior glow/text/magenta.

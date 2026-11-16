@@ -1,0 +1,34 @@
+{
+  "task_id": "NEW-guild-prop-02",
+  "attempts": 2,
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "candidate": "candidate-attempt-02.png",
+  "dimensions": [
+    779,
+    669
+  ],
+  "colors": 48,
+  "alpha_values": [
+    0,
+    255
+  ],
+  "alpha_binary": true,
+  "alpha_margin": {
+    "left": 12,
+    "top": 12,
+    "right": 12,
+    "bottom": 12
+  },
+  "sha256": "85e70b183a9c5ff9254dc59ec3be63d9bc7ed4f8bc4ec9a41f012e2618c71c04",
+  "keying": "Runway background segmentation; alpha binarized at 128; 12px transparent crop margin; opaque pixels quantized to 48 colors.",
+  "visual_self_check": {
+    "object_type": "YES",
+    "palette": "YES",
+    "magenta": "NO",
+    "glow": "NO",
+    "cast_shadow_on_background": "NO after segmentation",
+    "white_fringe": "inspect preview",
+    "pixel_edges": "inspect preview"
+  },
+  "art_gate": "NOT_RUN: handoff candidate only; manifest unchanged."
+}

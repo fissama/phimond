@@ -1,0 +1,42 @@
+{
+  "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-09/windrock/REDRAW-windrock-snow-crust-floor/candidate-03.png",
+  "candidate_sha256": "4c5d7fb9935f8f6d72ef10bd85f72f510f86218b6d49845838b5f77b7ab1cc7d",
+  "size": [
+    512,
+    512
+  ],
+  "colors": 40,
+  "alpha_mode": "RGB opaque",
+  "attempts": {
+    "1": {
+      "wrap_x": 2.4642,
+      "wrap_y": 1.7567,
+      "autocorr": 0.3321,
+      "note": "Seam and autocorrelation fail."
+    },
+    "2": {
+      "wrap_x": 1.8561,
+      "wrap_y": 1.417,
+      "autocorr": 0.3034,
+      "note": "Autocorrelation fails."
+    },
+    "3": {
+      "wrap_x": 2.8293,
+      "wrap_y": 2.0472,
+      "autocorr": 0.4391,
+      "note": "Seam and autocorrelation fail."
+    }
+  },
+  "status": "FAILED_AFTER_3_TRIES",
+  "palette_decision": "Map references show predominantly dark ground and gray rock, so snow was rendered as very restrained gray crust.",
+  "art_gate": "NOT_RUN: handoff-only; cannot register before Claude acceptance",
+  "diagnostic_crop_candidate": {
+    "file": ".ai/design/map-checklists/handoffs/art-submit-2026-11-09/windrock/REDRAW-windrock-snow-crust-floor/candidate-05.png",
+    "sha256": "5e8df5ede2f814e3c49db603abe0c917da5451c96e007f4527594766f8a47999",
+    "wrap_x": 1.3013,
+    "wrap_y": 1.2382,
+    "autocorr": 0.0697,
+    "visual": "3x3 visibly repeats seams",
+    "note": "Diagnostic crop only, not counted as a fourth draw attempt; does not meet threshold."
+  }
+}

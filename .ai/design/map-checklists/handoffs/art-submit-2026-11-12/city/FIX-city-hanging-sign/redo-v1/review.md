@@ -1,0 +1,1 @@
+Candidate fix retains the original sign artwork but fits it inside the exact 197x280 canvas with binary alpha margins >=8px, then quantizes to 48 colors. This is a handoff-only proposal; canonical artwork/manifest/QA remain unchanged.

@@ -1,0 +1,33 @@
+{
+  "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-09/windrock/REDRAW-windrock-slate-floor/candidate-03.png",
+  "candidate_sha256": "ff3c170e789e96a52a4c8bfdc01390b5e4106b96bd924b293624f2a30c98212e",
+  "size": [
+    512,
+    512
+  ],
+  "colors": 40,
+  "alpha_mode": "RGB opaque",
+  "attempts": {
+    "1": {
+      "wrap_x": 2.0825,
+      "wrap_y": 1.4383,
+      "autocorr": 0.1838,
+      "note": "Wrap x just above limit."
+    },
+    "2": {
+      "wrap_x": 2.3607,
+      "wrap_y": 1.3734,
+      "autocorr": 0.22,
+      "note": "Wrap x failed."
+    },
+    "3": {
+      "wrap_x": 2.7946,
+      "wrap_y": 1.4757,
+      "autocorr": 0.29,
+      "note": "Both wrap and autocorr fail; 3x3 shows cobble grid."
+    }
+  },
+  "status": "FAILED_AFTER_3_TRIES",
+  "palette_decision": "Map refs show muted dark slate/brown rather than saturated blue; candidate kept subdued.",
+  "art_gate": "NOT_RUN: handoff-only; cannot register before Claude acceptance"
+}

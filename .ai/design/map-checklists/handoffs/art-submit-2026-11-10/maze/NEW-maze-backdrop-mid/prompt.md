@@ -1,0 +1,1 @@
+Wide mid-distance environment plate: bone maze arches and gray-violet masonry, pale cyan openings, rose-brown paving; full-bleed seamless horizontal composition, irregular silhouettes, no text, baked shadow/glow, magenta, or uniform repeating motifs. Raw generated with image_gen; center-cropped/resized to 1280×384 and quantized to 48 colors for QA.

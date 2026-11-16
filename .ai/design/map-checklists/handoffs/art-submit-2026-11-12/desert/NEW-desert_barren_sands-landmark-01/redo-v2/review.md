@@ -1,0 +1,1 @@
+Source desert ref includes a bright cactus beside an eroded stone spire. This landmark selects the cactus/stone pedestal, distinct from sealed-land slab and fossil assets. Handoff-only; Claude review pending.

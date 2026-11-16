@@ -1,0 +1,29 @@
+{
+  "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-09/p01/REDRAW-city-roofline-mid/candidate-03.png",
+  "candidate_sha256": "93a498fc618ed2056ea65d9b4fd81223a42fde76dc0d59e273939c76c37652ec",
+  "size": [
+    1280,
+    384
+  ],
+  "colors": 40,
+  "alpha_mode": "RGB opaque",
+  "attempts": {
+    "1": {
+      "seam_mean": 25.44,
+      "autocorr": 0.581,
+      "note": "3x1 shows obvious repeated skyline, failed."
+    },
+    "2": {
+      "seam_mean": 37.36,
+      "autocorr": 0.328,
+      "note": "Cropping still leaves end seam; towers and building forms too prominent."
+    },
+    "3": {
+      "seam_mean": 28.79,
+      "autocorr": 0.53,
+      "note": "3x1 repeats identical stall/roof forms; seam exceeds 14."
+    }
+  },
+  "status": "FAILED_AFTER_3_TRIES",
+  "art_gate": "NOT_RUN: handoff-only; not eligible for art_gate without registration"
+}

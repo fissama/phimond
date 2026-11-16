@@ -1,0 +1,1 @@
+ImageGen: distinct irregular crescent of pale cream limestone chips and taupe grit, sparse muted gray-violet pebbles; true transparent raw, crisp stepped pixel clusters, no baked effects. Locally crop/resize/quantize/alpha-key.

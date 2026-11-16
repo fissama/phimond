@@ -1,0 +1,1 @@
+ImageGen: HD-2D far panoramic battlefield backdrop, distant cream/sandy fortress city with terracotta conical roofs, blue sky and pale blue mountains, low continuous skyline anchored at bottom, fully opaque, horizontal tileable, no columns/fountain/statues/foreground, no text/glow/magenta.

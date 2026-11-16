@@ -1,0 +1,1 @@
+ImageGen prompt: four-frame horizontal transparent arrival-marker sprite, cyan-blue angular rune ring in dusty violet-gray stone, restrained 4-step pulse, 192x128 cells, ≥8px transparent margin, crisp HD-2D pixel clusters; no soft glow, shadow, text, magenta, frame borders.

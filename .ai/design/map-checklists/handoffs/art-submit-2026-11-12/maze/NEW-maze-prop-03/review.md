@@ -1,0 +1,3 @@
+# Source identification and visual review
+
+The map shows a central curved stone gate with a pale cyan opening, flanking skull motifs and a pink-violet stair approach. Candidate preserves that class and palette, but uses a fresh HD-2D interpretation. The portal is a flat pale cyan fill without baked glow; no cast shadow is present. After processing it is 664x440, 46 opaque colors, binary alpha and 12px margins. I removed 14 isolated magenta artifact pixels through alpha keying. The 4x review reads clearly and shows no white fringe/text. Candidate is for Claude review only; canonical manifest untouched.

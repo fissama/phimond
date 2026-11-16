@@ -1,0 +1,1 @@
+Handoff-only repair candidate: binary alpha threshold >=128, fitted to exact requested canvas with >=8px margins, crisp nearest-neighbor resize, quantized to <=48 visible colors. Source image was visually complete; canonical art/manifest/QA untouched.

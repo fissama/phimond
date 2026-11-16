@@ -1,0 +1,1 @@
+Four-frame horizontal spritesheet generated from one raw ImageGen source. Threshold alpha >=128, erode 1px per cell, center each sprite in its own 192x192 cell, quantize to 48 visible colors. No background, no soft glow/baked shadow, candidate only.

@@ -1,0 +1,1 @@
+Inspected 4x sheet. Four coherent but non-identical pulse states of a rune ring, each with 8px measured alpha margin and opaque/binary pixels. 41 colors overall. Some generated stone texture is finer than preferred; submitted for Claude visual review.

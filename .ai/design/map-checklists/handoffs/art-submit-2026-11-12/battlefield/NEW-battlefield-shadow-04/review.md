@@ -1,0 +1,1 @@
+Claude review pending; not self-approved. The raw generated image included a bright outer halo, which was excluded by the local alpha derivation. Candidate keeps only the darker central shadow body as one muted taupe RGB color with soft alpha. Review candidate for mask shape/softness.

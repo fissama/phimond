@@ -1,0 +1,32 @@
+{
+  "task_id": "NEW-dungeon-prop-01",
+  "status": "READY_FOR_CLAUDE_REVIEW",
+  "map_decision": "Source-map image shows small orange deer-head wall trophies on beige brick; it does not show an iron door. Followed visible mounted deer-head type and warm russet/tan palette; no iron door or chain substitution.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.jpg",
+      "candidate": "candidate.png",
+      "processing": "Key exact bright-green chroma background; binary alpha; crop object; nearest resize preserving aspect to 360x424; center-bottom on 384x448; median-cut to 48 colors.",
+      "colors_opaque": 39,
+      "alpha_margin_px": 12,
+      "binary_alpha": true,
+      "visible_magenta_pixels": 0,
+      "failure": null
+    }
+  ],
+  "selected_candidate": "candidate.png",
+  "sha256": "eb655de501eeb447c4a46fbabae52d2ba05a370c5056960a391597f3fe8c0963",
+  "acceptance_result": {
+    "size_px": [
+      384,
+      448
+    ],
+    "colors_opaque": 39,
+    "alpha_margin_px": 12,
+    "binary_alpha": true,
+    "visible_magenta_pixels": 0,
+    "visual": "mounted russet deer head with pale branching antlers; comparison crop supplied"
+  },
+  "art_gate": "NOT_RUN: handoff candidate is not registered in canonical manifest; manifest edits forbidden."
+}

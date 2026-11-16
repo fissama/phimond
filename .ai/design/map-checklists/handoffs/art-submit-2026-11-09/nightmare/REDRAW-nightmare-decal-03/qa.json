@@ -1,0 +1,29 @@
+{
+  "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-09/nightmare/REDRAW-nightmare-decal-03/candidate-03.png",
+  "candidate_sha256": "bcd67c079440de54320e98fb9a6f491e7415a7a75ce3fafe33801c6ca8417db4",
+  "size": [
+    384,
+    384
+  ],
+  "colors": 30,
+  "alpha_mode": "binary",
+  "alpha_margin": 22,
+  "attempts": {
+    "1": {
+      "result": "REDO",
+      "reason": "Scattered diagonal debris trail with broad dark groundlike patches; silhouette unsuitable."
+    },
+    "2": {
+      "result": "REDO",
+      "reason": "Compact stones but only 26 distinct colors after processing."
+    },
+    "3": {
+      "result": "PASS_CANDIDATE",
+      "reason": "Compact irregular rock cluster with crisp stepped highlights and no visible cast shadow."
+    }
+  },
+  "status": "FAILED_AFTER_3_TRIES",
+  "best_attempt": 3,
+  "art_gate": "NOT_RUN: handoff-only; cannot register before Claude acceptance",
+  "visual_review": "Human review still required; 4x preview saved."
+}

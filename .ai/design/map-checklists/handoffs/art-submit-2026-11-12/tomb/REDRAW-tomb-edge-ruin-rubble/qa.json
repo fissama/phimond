@@ -1,0 +1,31 @@
+{
+  "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-09/tomb/REDRAW-tomb-edge-ruin-rubble/candidate-03.png",
+  "candidate_sha256": "cd2dbc92b88ffe27b3d6a5041e729ca549982d008a29510f2dc203304a285f8b",
+  "size": [
+    512,
+    128
+  ],
+  "colors": 33,
+  "alpha_mode": "binary",
+  "seam_mean_rgba": 11.1484,
+  "attempts": {
+    "1": {
+      "colors": 26,
+      "seam_mean_rgba": 4.63,
+      "note": "Insufficient palette, flat rubble row."
+    },
+    "2": {
+      "colors": 33,
+      "seam_mean_rgba": 15.83,
+      "note": "Continuous strip but fails seam."
+    },
+    "3": {
+      "colors": 33,
+      "seam_mean_rgba": 11.1484,
+      "note": "Seam and colors pass, but contains a repeated architectural ruin motif once per tile and irregular mound peaks; rejected under repetition/mound errors."
+    }
+  },
+  "status": "FAILED_AFTER_3_TRIES",
+  "art_gate": "NOT_RUN: handoff-only; cannot register before Claude acceptance",
+  "visual_note": "3x1 preview saved; repeated arch motif is visibly periodic."
+}

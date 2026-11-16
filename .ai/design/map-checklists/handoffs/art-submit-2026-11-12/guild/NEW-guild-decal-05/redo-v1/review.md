@@ -1,0 +1,2 @@
+Task NEW-guild-decal-05 — READY_FOR_CLAUDE_REVIEW (not approved).
+Neutral checker keyed, eroded 1px, binary alpha; visible-color quantization 40 colors. Candidate 384x384, 12px alpha margin. 4x light/dark checked: uneven crescent trail of chipped paving fragments with open center; visibly distinct from decal-03 branch scar and decal-04 rubble pile. No visible checker fringe, text, magenta, or glow. Canonical/manifests unchanged.

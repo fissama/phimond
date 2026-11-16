@@ -1,0 +1,1 @@
+FAILED_AFTER_3_TRIES: no raw image meets the transparent-background/no-glow/no-fringe requirements. Attempt 1 has red fringe; attempts 2–3 have broad opaque hazy backgrounds. No candidate submitted. Recommend reattempt with a generation route that reliably preserves true alpha and crisp pixel edges.

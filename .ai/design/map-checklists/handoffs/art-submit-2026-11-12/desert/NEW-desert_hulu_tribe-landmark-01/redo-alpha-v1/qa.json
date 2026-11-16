@@ -1,0 +1,34 @@
+{
+  "task_id": "NEW-desert_hulu_tribe-landmark-01",
+  "source": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/desert/NEW-desert_hulu_tribe-landmark-01/candidate.png",
+  "source_sha256": "039568630c26ee277ecc120a9d7b4d28dc0e32db8f5293fa4ac41558daa06fbe",
+  "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-12/desert/NEW-desert_hulu_tribe-landmark-01/redo-alpha-v1/candidate.png",
+  "candidate_sha256": "275efc1a87920f7d417dc86448a397d4a1001b5ddb9685e1f71785af4dab6abc",
+  "size": [
+    384,
+    384
+  ],
+  "alpha_values": [
+    0,
+    255
+  ],
+  "color_count_opaque": 47,
+  "alpha_bbox_margins_ltrb": [
+    129,
+    66,
+    125,
+    89
+  ],
+  "steps": [
+    "alpha threshold >=128",
+    "1px binary erosion",
+    "nearest-interior despill on 1px boundary",
+    "quantize opaque RGB to <=48 colors",
+    "preserve canvas and bottom alignment"
+  ],
+  "visual_previews": [
+    "preview-4x-light.png",
+    "preview-4x-dark.png"
+  ],
+  "note": "handoff candidate only; canonical and manifest untouched"
+}

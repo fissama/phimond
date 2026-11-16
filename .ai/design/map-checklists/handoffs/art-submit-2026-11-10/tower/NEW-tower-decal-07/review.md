@@ -1,0 +1,1 @@
+Attempts 1 and 2 show diffuse glow around sand/bark flecks. Attempt 3 has less glow, but after binary alpha cleanup the remaining grains are tiny and sparse, not a readable decal at game scale. No candidate submitted.

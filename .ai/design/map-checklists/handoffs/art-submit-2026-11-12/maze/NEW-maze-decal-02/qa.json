@@ -1,0 +1,52 @@
+{
+  "task_id": "NEW-maze-decal-02",
+  "status": "FAILED_AFTER_3_TRIES",
+  "map_decision": "Followed source-map stone palette; no unsupported object types.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "raw": "raw-01.png",
+      "candidate": "candidate-attempt-01.png",
+      "colors": 47,
+      "binary_alpha": true,
+      "alpha_margin": 16,
+      "failure": "Raw includes broad soft halo/glow over most of the canvas; thresholding clips diffuse glow but the asset remains unsuitable and can leave contaminated edges."
+    },
+    {
+      "attempt": 2,
+      "raw": "raw-02.png",
+      "candidate": "candidate-attempt-02.png",
+      "colors": 45,
+      "binary_alpha": true,
+      "alpha_margin": 19,
+      "failure": "Raw includes broad soft halo/glow over most of the canvas; thresholding clips diffuse glow but the asset remains unsuitable and can leave contaminated edges."
+    },
+    {
+      "attempt": 3,
+      "raw": "raw-03.png",
+      "candidate": "candidate-attempt-03.png",
+      "colors": 43,
+      "binary_alpha": true,
+      "alpha_margin": 16,
+      "failure": "Raw includes broad soft halo/glow over most of the canvas; thresholding clips diffuse glow but the asset remains unsuitable and can leave contaminated edges."
+    }
+  ],
+  "processing": "Thresholded alpha\u2265200, cropped bounds, nearest-resized and padded to 320\u00b2, median-cut RGB quantized to 48 colors, binary alpha restored.",
+  "acceptance": {
+    "size_range": [
+      256,
+      384
+    ],
+    "colors": [
+      33,
+      48
+    ],
+    "binary_alpha": true,
+    "alpha_margin_min": 8,
+    "irregular_shape": true,
+    "no_glow": true
+  },
+  "final_candidate": null,
+  "art_gate": "NOT_RUN: handoff-only; canonical manifest untouched.",
+  "raws_preserved": true
+}

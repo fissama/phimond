@@ -1,0 +1,36 @@
+{
+  "candidate": ".ai/design/map-checklists/handoffs/art-submit-2026-11-09/p01/REDRAW-pet-floor-wood-fine/candidate-03.png",
+  "candidate_sha256": "369c99194071ca8cdaf2d21e00b015c6c15c3b1dd6ca43186736f9da0d232e80",
+  "size": [
+    512,
+    512
+  ],
+  "colors": 40,
+  "alpha_mode": "RGB opaque",
+  "attempts": {
+    "1": {
+      "wrap_x": 49.126,
+      "wrap_y": 3.858,
+      "autocorr": 0.779,
+      "note": "Center crop; severe x seam and row repetition."
+    },
+    "2": {
+      "wrap_x": 2.683,
+      "wrap_y": 2.229,
+      "autocorr": 0.659,
+      "note": "Best crop search; both seams fail."
+    },
+    "3": {
+      "wrap_x": 3.606,
+      "wrap_y": 2.294,
+      "autocorr": 0.613,
+      "crop": [
+        336,
+        504
+      ],
+      "note": "Best crop search; 3×3 visibly repeats plank rows/knots, seam thresholds fail."
+    }
+  },
+  "status": "FAILED_AFTER_3_TRIES",
+  "art_gate": "NOT_RUN: handoff-only; not registered before Claude acceptance"
+}

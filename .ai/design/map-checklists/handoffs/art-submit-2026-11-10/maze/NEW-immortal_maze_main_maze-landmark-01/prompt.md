@@ -1,0 +1,1 @@
+ImageGen prompt based on .ai/design/map-checklists/refs/immortal_maze_main_maze.jpg: standalone central monumental maze gateway, broad weathered violet-gray arch, oval cyan portal, mauve steps, two lower skull carvings; use screenshot for identity/palette only. Front-facing transparent sprite, crisp pixel clusters, hard cyan facets, no glow/shadow/text/magenta.
