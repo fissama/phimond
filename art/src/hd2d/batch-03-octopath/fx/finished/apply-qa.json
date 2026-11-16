@@ -1,0 +1,218 @@
+{
+  "status": "pass",
+  "method": "forge_palette.quantize_image: OKLab-nearest palette colour per pixel (exact palette colours kept), alpha binary at the threshold, then the written PNGs re-read and measured with forge_palette.fit_report against the palette",
+  "notProven": [
+    "Visual quality after snapping: compare an output with its input.",
+    "Indexed PNGs are engine exports; they are not checked by builders.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "output_off_palette_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "output_partial_alpha_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.098557,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../frame-inputs/f00.png",
+      "sha256": "6838f5c687f8d64a0a05239c46d2aa21eb4c51b32c42bf2943e8a5b1ffbc9ab6",
+      "bytes": 11629
+    },
+    {
+      "path": "../frame-inputs/f01.png",
+      "sha256": "057e4bad585a1755272c9abbfb75dcb0e34eed26b38ee6299ddcf6db284e7723",
+      "bytes": 14292
+    },
+    {
+      "path": "../frame-inputs/f02.png",
+      "sha256": "d89a5ef009aed3c6dc403f37441a7bbadd67c8821d00ef8e3a703acb780fb31c",
+      "bytes": 17139
+    },
+    {
+      "path": "../frame-inputs/f03.png",
+      "sha256": "799c73733c4d034f118b5b0e4829557fbfe46c8962b48e728433040db74ddccb",
+      "bytes": 12169
+    },
+    {
+      "path": "../frame-inputs/f04.png",
+      "sha256": "3099137a1e6c2476128dba09ab4431879f48ae6814f90d87bc8c2c6b1fe5dc86",
+      "bytes": 1494
+    },
+    {
+      "path": "../frame-inputs/f05.png",
+      "sha256": "b0aaaa61ee4af7cb2c555318d64eaef32a34c916bb6226d2e6c86ac8eb3e9414",
+      "bytes": 1444
+    },
+    {
+      "path": "../frame-inputs/f06.png",
+      "sha256": "be8d15222fbafe5c3cb6f703cd08c4abfab2da707563cdd0e95c12f52118502a",
+      "bytes": 1430
+    },
+    {
+      "path": "../frame-inputs/f07.png",
+      "sha256": "ba865c06479c931feca7125de608c68b98f6b8044363eea65ab8d1c8111e9110",
+      "bytes": 1451
+    },
+    {
+      "path": "../palette/palette.json",
+      "sha256": "0d4fdcbdd198f2c66e69d66e76ef26c751a2bf5b26668bc54764b7569d663e05",
+      "bytes": 1924
+    }
+  ],
+  "outputs": [
+    {
+      "path": "f00.png",
+      "sha256": "5e08fdf4d60f9f9db0689c7cb05c6e5c2408a6680947b8305d23a35229300c0f",
+      "bytes": 5809
+    },
+    {
+      "path": "f01.png",
+      "sha256": "c626363e7e64cb82088d488129a3e704441a42365ba7b97fc74a95956de807aa",
+      "bytes": 7059
+    },
+    {
+      "path": "f02.png",
+      "sha256": "70d4aa4c4acd87e3dad7dacaa93fbb283e9c99dd7adc70c42cb1f7d6971abdaa",
+      "bytes": 8042
+    },
+    {
+      "path": "f03.png",
+      "sha256": "0c2f0058f892a36135773a0fd02819bf13cac4f95cce61ff13389badf842133f",
+      "bytes": 6269
+    },
+    {
+      "path": "f04.png",
+      "sha256": "1fd58afbe5be07521061c2029a9a06e23ecf3527cb5aa0782037544cd7c9d67d",
+      "bytes": 1183
+    },
+    {
+      "path": "f05.png",
+      "sha256": "a5223915197191efed0b563dda98de7ad1a87ab59848533a7c55105b8e92e0f0",
+      "bytes": 1241
+    },
+    {
+      "path": "f06.png",
+      "sha256": "706947632e7b752bfa4c1487e2574a5765dffca8c7d47e494f24f2816bd7f7db",
+      "bytes": 1188
+    },
+    {
+      "path": "f07.png",
+      "sha256": "48463061e85eb58f1ab2daa9723f3e3bf287751129764120d47afbe664dbcd4a",
+      "bytes": 1222
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "fit": {
+    "f00.png": {
+      "measured_px": 4247,
+      "alpha_threshold": 128,
+      "off_palette_px": 4241,
+      "partial_alpha_px": 0,
+      "colors": 3950,
+      "palette_colors_used": 47,
+      "mean_delta_e": 0.015944,
+      "p95_delta_e": 0.031046,
+      "max_delta_e": 0.074562
+    },
+    "f01.png": {
+      "measured_px": 5359,
+      "alpha_threshold": 128,
+      "off_palette_px": 5349,
+      "partial_alpha_px": 0,
+      "colors": 4658,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.014785,
+      "p95_delta_e": 0.028889,
+      "max_delta_e": 0.098557
+    },
+    "f02.png": {
+      "measured_px": 6606,
+      "alpha_threshold": 128,
+      "off_palette_px": 6598,
+      "partial_alpha_px": 0,
+      "colors": 5584,
+      "palette_colors_used": 47,
+      "mean_delta_e": 0.014148,
+      "p95_delta_e": 0.027964,
+      "max_delta_e": 0.083672
+    },
+    "f03.png": {
+      "measured_px": 4322,
+      "alpha_threshold": 128,
+      "off_palette_px": 4321,
+      "partial_alpha_px": 0,
+      "colors": 4031,
+      "palette_colors_used": 47,
+      "mean_delta_e": 0.015413,
+      "p95_delta_e": 0.02864,
+      "max_delta_e": 0.063539
+    },
+    "f04.png": {
+      "measured_px": 246,
+      "alpha_threshold": 128,
+      "off_palette_px": 246,
+      "partial_alpha_px": 0,
+      "colors": 246,
+      "palette_colors_used": 38,
+      "mean_delta_e": 0.016743,
+      "p95_delta_e": 0.027509,
+      "max_delta_e": 0.035426
+    },
+    "f05.png": {
+      "measured_px": 244,
+      "alpha_threshold": 128,
+      "off_palette_px": 244,
+      "partial_alpha_px": 0,
+      "colors": 243,
+      "palette_colors_used": 36,
+      "mean_delta_e": 0.017591,
+      "p95_delta_e": 0.029115,
+      "max_delta_e": 0.072267
+    },
+    "f06.png": {
+      "measured_px": 239,
+      "alpha_threshold": 128,
+      "off_palette_px": 239,
+      "partial_alpha_px": 0,
+      "colors": 239,
+      "palette_colors_used": 36,
+      "mean_delta_e": 0.016337,
+      "p95_delta_e": 0.030505,
+      "max_delta_e": 0.041113
+    },
+    "f07.png": {
+      "measured_px": 247,
+      "alpha_threshold": 128,
+      "off_palette_px": 247,
+      "partial_alpha_px": 0,
+      "colors": 247,
+      "palette_colors_used": 42,
+      "mean_delta_e": 0.01757,
+      "p95_delta_e": 0.0351,
+      "max_delta_e": 0.052013
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.098557,
+    "worst_p95_delta_e": 0.0351,
+    "off_palette_px": 21485
+  },
+  "locked_inputs": []
+}

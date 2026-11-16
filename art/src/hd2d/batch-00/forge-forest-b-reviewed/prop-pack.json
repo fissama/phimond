@@ -1,0 +1,585 @@
+{
+  "schema": "generate2dmap.prop_pack.v2",
+  "tool": {
+    "name": "extract_prop_pack",
+    "version": "0.4.0"
+  },
+  "input": "../forest-b-sheet/raw-01.png",
+  "source_size": [
+    1536,
+    1024
+  ],
+  "source_sha256": "c81990cdb3defb62d7c3b86e2bd9c8fecd56417d21412d2458ab39045591b426",
+  "source_mode": "RGB",
+  "layout_mode": "auto_boxes",
+  "boxes_file": null,
+  "labels_file": null,
+  "background_mode": "chroma_key",
+  "art_source": "host_image",
+  "rows": null,
+  "cols": null,
+  "threshold": 100,
+  "edge_threshold": 150,
+  "despill_radius": 3,
+  "despill": {
+    "mode": "edge",
+    "applied": "edge",
+    "radius": 3,
+    "margin": 12,
+    "changed_px": 17643
+  },
+  "hygiene": {
+    "mode": "both",
+    "floor": 4,
+    "solid_min": 32,
+    "attach_radius": 2,
+    "connectivity": 8,
+    "floor_px": 0,
+    "detached_px": 0,
+    "detached_components": 0,
+    "max_removed_alpha": 0
+  },
+  "alpha_floor": 4,
+  "alpha_floor_pixels_removed": 0,
+  "trim_border": 0,
+  "edge_clean_depth": 0,
+  "component_mode": "all",
+  "component_padding": 16,
+  "min_component_area": "auto",
+  "edge_touch_margin": 0,
+  "geometry": {
+    "connectivity": 8,
+    "alpha_geometry_threshold": 16,
+    "anchor_mode": "stance",
+    "support_band_fraction": 0.25,
+    "anchor_rounding": "whole pixels, half-up",
+    "grid_rounding": null,
+    "keep_canvas": false,
+    "world_scale": null
+  },
+  "auto_boxes": {
+    "objects": 6,
+    "solid_alpha": 128,
+    "min_solid_area": 52,
+    "gap_px": 20,
+    "attach_px": 7,
+    "margin_px": 16,
+    "unowned_px": 0
+  },
+  "accepted": [
+    {
+      "index": 0,
+      "label": "bush",
+      "display_name": "bush",
+      "status": "accepted",
+      "image": "bush/prop.png",
+      "sha256": "60f2282841bd52620dea8d599ad857cd164d3262d9dd7c0d3d4f36d330a7d3d9",
+      "output_size": [
+        659,
+        367
+      ],
+      "grid": null,
+      "cell_box": [
+        854,
+        111,
+        1513,
+        478
+      ],
+      "source_box": [
+        854,
+        111,
+        1513,
+        478
+      ],
+      "source_rect": [
+        854,
+        111,
+        1513,
+        478
+      ],
+      "trim_offset": [
+        0,
+        0
+      ],
+      "padding": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "anchor_px": [
+        327,
+        351
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 100,
+      "trim_applied": 0,
+      "crop_bbox": [
+        16,
+        16,
+        643,
+        351
+      ],
+      "padded_crop_bbox": [
+        0,
+        0,
+        659,
+        367
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 145288,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 1,
+      "label": "tree",
+      "display_name": "tree",
+      "status": "accepted",
+      "image": "tree/prop.png",
+      "sha256": "20f492ca84fcc48049ba178bb4ae32dfe289255c55bd81526ae1fbe5ced7b1ba",
+      "output_size": [
+        904,
+        995
+      ],
+      "grid": null,
+      "cell_box": [
+        0,
+        13,
+        904,
+        1008
+      ],
+      "source_box": [
+        0,
+        13,
+        904,
+        1008
+      ],
+      "source_rect": [
+        0,
+        13,
+        904,
+        1008
+      ],
+      "trim_offset": [
+        0,
+        0
+      ],
+      "padding": [
+        14,
+        16,
+        16,
+        16
+      ],
+      "anchor_px": [
+        431,
+        979
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 100,
+      "trim_applied": 0,
+      "crop_bbox": [
+        14,
+        16,
+        888,
+        979
+      ],
+      "padded_crop_bbox": [
+        0,
+        0,
+        904,
+        995
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 537871,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 2,
+      "label": "pink-flowers",
+      "display_name": "pink-flowers",
+      "status": "accepted",
+      "image": "pink-flowers/prop.png",
+      "sha256": "aaff3ab28e5d3bae8db0c9897ad184305b061b18386a39143249e29d37eff25a",
+      "output_size": [
+        344,
+        227
+      ],
+      "grid": null,
+      "cell_box": [
+        842,
+        781,
+        1186,
+        1008
+      ],
+      "source_box": [
+        842,
+        781,
+        1186,
+        1008
+      ],
+      "source_rect": [
+        842,
+        781,
+        1186,
+        1008
+      ],
+      "trim_offset": [
+        0,
+        0
+      ],
+      "padding": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "anchor_px": [
+        181,
+        211
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 45,
+      "trim_applied": 0,
+      "crop_bbox": [
+        16,
+        16,
+        328,
+        211
+      ],
+      "padded_crop_bbox": [
+        0,
+        0,
+        344,
+        227
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 37028,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 3,
+      "label": "grass",
+      "display_name": "grass",
+      "status": "accepted",
+      "image": "grass/prop.png",
+      "sha256": "781ebf7c421ddc7deabf1570653d261faf6cf541cabaaacab6e3ddeb682482d0",
+      "output_size": [
+        323,
+        198
+      ],
+      "grid": null,
+      "cell_box": [
+        889,
+        552,
+        1212,
+        750
+      ],
+      "source_box": [
+        889,
+        552,
+        1212,
+        750
+      ],
+      "source_rect": [
+        889,
+        552,
+        1212,
+        750
+      ],
+      "trim_offset": [
+        0,
+        0
+      ],
+      "padding": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "anchor_px": [
+        162,
+        182
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 37,
+      "trim_applied": 0,
+      "crop_bbox": [
+        16,
+        16,
+        307,
+        182
+      ],
+      "padded_crop_bbox": [
+        0,
+        0,
+        323,
+        198
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 24293,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 4,
+      "label": "fern",
+      "display_name": "fern",
+      "status": "accepted",
+      "image": "fern/prop.png",
+      "sha256": "e213420d4cdd1ee0833293257aed402130ce228ba1f86a305c4c7d71034468bb",
+      "output_size": [
+        352,
+        232
+      ],
+      "grid": null,
+      "cell_box": [
+        1184,
+        776,
+        1536,
+        1008
+      ],
+      "source_box": [
+        1184,
+        776,
+        1536,
+        1008
+      ],
+      "source_rect": [
+        1184,
+        776,
+        1536,
+        1008
+      ],
+      "trim_offset": [
+        0,
+        0
+      ],
+      "padding": [
+        16,
+        16,
+        12,
+        16
+      ],
+      "anchor_px": [
+        174,
+        216
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 47,
+      "trim_applied": 0,
+      "crop_bbox": [
+        16,
+        16,
+        340,
+        216
+      ],
+      "padded_crop_bbox": [
+        0,
+        0,
+        352,
+        232
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 42544,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    },
+    {
+      "index": 5,
+      "label": "yellow-flowers",
+      "display_name": "yellow-flowers",
+      "status": "accepted",
+      "image": "yellow-flowers/prop.png",
+      "sha256": "61add03faaeecb627707c483386b3b6732e85f673a4b9c3e276cae8fae71e098",
+      "output_size": [
+        292,
+        228
+      ],
+      "grid": null,
+      "cell_box": [
+        1231,
+        534,
+        1523,
+        762
+      ],
+      "source_box": [
+        1231,
+        534,
+        1523,
+        762
+      ],
+      "source_rect": [
+        1231,
+        534,
+        1523,
+        762
+      ],
+      "trim_offset": [
+        0,
+        0
+      ],
+      "padding": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "anchor_px": [
+        146,
+        212
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 38,
+      "trim_applied": 0,
+      "crop_bbox": [
+        16,
+        16,
+        276,
+        212
+      ],
+      "padded_crop_bbox": [
+        0,
+        0,
+        292,
+        228
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 29654,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "edge_fringe_px": 0
+    }
+  ],
+  "rejected": [],
+  "edge_touch_props": [],
+  "warnings": [],
+  "qa": {
+    "status": "pass",
+    "method": "legacy #FF00FF key (100/150) and edge despill radius 3; alpha hygiene both; 8-connected components (all); checks measured on the published pixels",
+    "notProven": [
+      "that each label names the art in its cell or box",
+      "that a prop is complete: clipping is detected only where art meets the cell edge",
+      "keyed-edge quality beyond the edge fringe count",
+      "that anchors and suggested footprints match gameplay contact (both are measured from alpha)",
+      "runtime placement, collision or occlusion"
+    ],
+    "checks": [
+      {
+        "id": "accepted",
+        "status": "pass",
+        "value": 6,
+        "threshold": ">= 1"
+      },
+      {
+        "id": "edge_touch",
+        "status": "pass",
+        "value": [],
+        "threshold": 0
+      },
+      {
+        "id": "dropped_area",
+        "status": "pass",
+        "value": {},
+        "threshold": 0.01
+      },
+      {
+        "id": "strategy_aspect",
+        "status": "skipped",
+        "value": null,
+        "threshold": 1.6
+      },
+      {
+        "id": "edge_fringe",
+        "status": "pass",
+        "value": 0.0,
+        "threshold": 0.02
+      },
+      {
+        "id": "auto_box_unowned",
+        "status": "pass",
+        "value": 0,
+        "threshold": 0
+      }
+    ],
+    "inputs": [
+      {
+        "path": "../forest-b-sheet/raw-01.png",
+        "sha256": "c81990cdb3defb62d7c3b86e2bd9c8fecd56417d21412d2458ab39045591b426",
+        "bytes": 1925136
+      }
+    ],
+    "outputs": [
+      {
+        "path": "bush/prop.png",
+        "sha256": "60f2282841bd52620dea8d599ad857cd164d3262d9dd7c0d3d4f36d330a7d3d9",
+        "bytes": 289012
+      },
+      {
+        "path": "tree/prop.png",
+        "sha256": "20f492ca84fcc48049ba178bb4ae32dfe289255c55bd81526ae1fbe5ced7b1ba",
+        "bytes": 1023196
+      },
+      {
+        "path": "pink-flowers/prop.png",
+        "sha256": "aaff3ab28e5d3bae8db0c9897ad184305b061b18386a39143249e29d37eff25a",
+        "bytes": 82689
+      },
+      {
+        "path": "grass/prop.png",
+        "sha256": "781ebf7c421ddc7deabf1570653d261faf6cf541cabaaacab6e3ddeb682482d0",
+        "bytes": 55887
+      },
+      {
+        "path": "fern/prop.png",
+        "sha256": "e213420d4cdd1ee0833293257aed402130ce228ba1f86a305c4c7d71034468bb",
+        "bytes": 93905
+      },
+      {
+        "path": "yellow-flowers/prop.png",
+        "sha256": "61add03faaeecb627707c483386b3b6732e85f673a4b9c3e276cae8fae71e098",
+        "bytes": 68712
+      },
+      {
+        "path": "auto-boxes.json",
+        "sha256": "b896b0007a166ea39b938bcec6be66d308fff0f98fbc4b09998997d7f2f8a5dc",
+        "bytes": 867
+      }
+    ],
+    "tool": {
+      "name": "extract_prop_pack",
+      "version": "0.4.0"
+    }
+  }
+}

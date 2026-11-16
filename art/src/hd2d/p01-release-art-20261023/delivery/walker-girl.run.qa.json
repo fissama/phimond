@@ -1,0 +1,293 @@
+{
+  "name": "walker-girl.run.png",
+  "size": [
+    1536,
+    192
+  ],
+  "frames": 8,
+  "cell": [
+    192,
+    192
+  ],
+  "pivot": [
+    96,
+    184
+  ],
+  "colors": 48,
+  "partial_alpha": 0,
+  "raw_sha256": "1742b8daaa5449b34d0d5ff122edd488a5215414091691b28a2dbc6a9f3a4c27",
+  "sha256": "3599f8b748dcc374aee9133a12069dbb90131fa6a63e2b13b1f640360cb4a894",
+  "source_boxes": [
+    [
+      91,
+      29,
+      339,
+      405
+    ],
+    [
+      510,
+      28,
+      716,
+      406
+    ],
+    [
+      934,
+      28,
+      1134,
+      406
+    ],
+    [
+      1346,
+      24,
+      1549,
+      404
+    ],
+    [
+      1761,
+      27,
+      1979,
+      403
+    ],
+    [
+      2177,
+      27,
+      2392,
+      404
+    ],
+    [
+      2601,
+      22,
+      2805,
+      400
+    ],
+    [
+      3018,
+      20,
+      3264,
+      398
+    ]
+  ],
+  "transforms": [
+    {
+      "translate": [
+        54,
+        61
+      ],
+      "uniform_scale": 0.3263157894736842,
+      "head_anchor_x": 96
+    },
+    {
+      "translate": [
+        54,
+        61
+      ],
+      "uniform_scale": 0.3263157894736842,
+      "head_anchor_x": 96
+    },
+    {
+      "translate": [
+        57,
+        61
+      ],
+      "uniform_scale": 0.3263157894736842,
+      "head_anchor_x": 96
+    },
+    {
+      "translate": [
+        54,
+        60
+      ],
+      "uniform_scale": 0.3263157894736842,
+      "head_anchor_x": 96
+    },
+    {
+      "translate": [
+        54,
+        61
+      ],
+      "uniform_scale": 0.3263157894736842,
+      "head_anchor_x": 96
+    },
+    {
+      "translate": [
+        54,
+        61
+      ],
+      "uniform_scale": 0.3263157894736842,
+      "head_anchor_x": 96
+    },
+    {
+      "translate": [
+        54,
+        61
+      ],
+      "uniform_scale": 0.3263157894736842,
+      "head_anchor_x": 96
+    },
+    {
+      "translate": [
+        54,
+        61
+      ],
+      "uniform_scale": 0.3263157894736842,
+      "head_anchor_x": 96
+    }
+  ],
+  "postprocess": "key magenta, crop equal horizontal cells, ONE shared uniform nearest-neighbor scale, translation-only anchor, shared48palette. No pose synthesis, warp, flip, or retouch.",
+  "approved": false,
+  "status": "forge_warn_not_release_approved",
+  "frame_bboxes": [
+    [
+      54,
+      61,
+      135,
+      184
+    ],
+    [
+      54,
+      61,
+      121,
+      184
+    ],
+    [
+      57,
+      61,
+      122,
+      184
+    ],
+    [
+      54,
+      60,
+      120,
+      184
+    ],
+    [
+      54,
+      61,
+      125,
+      184
+    ],
+    [
+      54,
+      61,
+      124,
+      184
+    ],
+    [
+      54,
+      61,
+      121,
+      184
+    ],
+    [
+      54,
+      61,
+      134,
+      184
+    ]
+  ],
+  "duplicate_pairs": [],
+  "warnings": [],
+  "body_heights": [
+    123,
+    123,
+    123,
+    124,
+    123,
+    123,
+    123,
+    123
+  ],
+  "target_height": 124,
+  "scale_reference": "existing production idle stature; player168, boy128, girl124, baker164, elder158",
+  "revision": 2,
+  "source_grid": [
+    3,
+    3
+  ],
+  "source_grid_raw": "walker-girl.run.grid-raw-03.png",
+  "Claude_approved": false,
+  "forge_commit": "5324342fdfab72430f4e9604f3fe427009f8596d",
+  "forge_registration": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-girl.run/3599f8b748dc/registered/scale-frames.json",
+  "forge_qc": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/forge-registration-v2/walker-girl.run/3599f8b748dc/qc/sheet-qc.json",
+  "forge_unresolved_checks": [
+    {
+      "id": "leg_alternation",
+      "status": "warn",
+      "value": [
+        "near",
+        "near",
+        "near",
+        "near",
+        "far",
+        "near",
+        "near",
+        "near"
+      ],
+      "threshold": "lead differs between i and i+n/2",
+      "verdict": "mixed: some half-cycle pairs repeat the lead",
+      "pairs": [
+        [
+          0,
+          4,
+          false
+        ],
+        [
+          1,
+          5,
+          true
+        ],
+        [
+          2,
+          6,
+          true
+        ],
+        [
+          3,
+          7,
+          true
+        ]
+      ],
+      "mode": "auto-luminance",
+      "near_leading": 7,
+      "unclear": 0,
+      "half_cycle": {
+        "pairs": [
+          {
+            "pair": [
+              0,
+              4
+            ],
+            "iou_best_shift": 0.768
+          },
+          {
+            "pair": [
+              1,
+              5
+            ],
+            "iou_best_shift": 0.8955
+          },
+          {
+            "pair": [
+              2,
+              6
+            ],
+            "iou_best_shift": 0.849
+          },
+          {
+            "pair": [
+              3,
+              7
+            ],
+            "iou_best_shift": 0.8002
+          }
+        ],
+        "adjacent_iou_median": 0.7291,
+        "half_cycle_iou_median": 0.8246
+      },
+      "fix": "regenerate frames 4-7 with NEAR and FAR swapped (attach frames 0-3 and the guide)"
+    }
+  ],
+  "registration_input_sha256": "3599f8b748dcc374aee9133a12069dbb90131fa6a63e2b13b1f640360cb4a894",
+  "registration_processing": "ASF scale_frames.py, scale1, nearest, integer translation only, root-lock torso-x, shared192canvas and96,184anchor. No pose synthesis, warping, per-frame scaling or interpolation."
+}

@@ -1,0 +1,199 @@
+{
+  "status": "pass",
+  "method": "forge_palette.build_palette (weighted k-means++ in OKLab over unique colours, reserved colours fixed, coverage skipping) then forge_palette.fit_report of every input: OKLab dE of each pixel with alpha >= the threshold to its nearest palette colour",
+  "notProven": [
+    "Visual quality of the palette: look at swatches.png and an applied frame.",
+    "Colours of pixels below the alpha threshold were not sampled or measured.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "palette_colors",
+      "status": "pass",
+      "value": 48,
+      "threshold": 48
+    },
+    {
+      "id": "inputs_without_samples",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0,
+      "files": []
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.117883,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../elder-side-forge-01/frames/frame-00.png",
+      "sha256": "a09d3993aa5504c568bc81ff0d4e2e75629d04bb1556251dacf06eb436c60b59",
+      "bytes": 27838
+    },
+    {
+      "path": "../elder-side-forge-01/frames/frame-01.png",
+      "sha256": "d1347c54e9f8462039bae8c7b70f5f6af239c9b1ba32884e7b50183d88325d8b",
+      "bytes": 27420
+    },
+    {
+      "path": "../elder-side-forge-01/frames/frame-02.png",
+      "sha256": "d7ee88636b08ba9ac6d7de83578accf054d941c1423893d54bc7bd1bd7f19956",
+      "bytes": 23931
+    },
+    {
+      "path": "../elder-side-forge-01/frames/frame-03.png",
+      "sha256": "7d0a78e62a927d0cbeee763e116c2d4650b835e5333f0342463c781c21672bd6",
+      "bytes": 28975
+    },
+    {
+      "path": "../elder-side-forge-01/frames/frame-04.png",
+      "sha256": "f73469efefd6f7e8abcc6ca5330b8fb8c5275ede3b3f80f604312ce469441410",
+      "bytes": 28657
+    },
+    {
+      "path": "../elder-side-forge-01/frames/frame-05.png",
+      "sha256": "6592c55ee87050e5ea0c1e19a8968fee2f83c359410ab3d1a625b2630a252eb0",
+      "bytes": 26731
+    },
+    {
+      "path": "../elder-side-forge-01/frames/frame-06.png",
+      "sha256": "1d69ed21fc630c458d0af1d52d06099e7465e0afab1eb55d23bcad28d66c439c",
+      "bytes": 28613
+    },
+    {
+      "path": "../elder-side-forge-01/frames/frame-07.png",
+      "sha256": "704c12127560a1c0dc8a666ccb4ef90bda27c2f833dbac91172452653dd91e91",
+      "bytes": 29919
+    }
+  ],
+  "outputs": [
+    {
+      "path": "palette.json",
+      "sha256": "feab6f157372db6934f7dac02e35c33e0057b1952238c3bc575e16077878fd80",
+      "bytes": 1924
+    },
+    {
+      "path": "palette.gpl",
+      "sha256": "3385a7aff8ff3aa514cc6f53753c91c7250ad989710aa249960c1d0257969f74",
+      "bytes": 1020
+    },
+    {
+      "path": "palette.hex",
+      "sha256": "0316aa8d4b58a953bf054f39ae31f5362c9fc34e87553551bfec76e85e24703b",
+      "bytes": 336
+    },
+    {
+      "path": "swatches.png",
+      "sha256": "992da665a9bfc01f0b46f6c5695df369bf714543852d01a0c44879657adfec05",
+      "bytes": 696
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "palette": {
+    "colors": 48,
+    "reserved": 0,
+    "transparent_index": 255,
+    "seed": 0
+  },
+  "fit": {
+    "../elder-side-forge-01/frames/frame-00.png": {
+      "measured_px": 8615,
+      "alpha_threshold": 128,
+      "off_palette_px": 8587,
+      "partial_alpha_px": 1194,
+      "colors": 7593,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.014069,
+      "p95_delta_e": 0.026965,
+      "max_delta_e": 0.109198
+    },
+    "../elder-side-forge-01/frames/frame-01.png": {
+      "measured_px": 8597,
+      "alpha_threshold": 128,
+      "off_palette_px": 8580,
+      "partial_alpha_px": 1125,
+      "colors": 7598,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.014215,
+      "p95_delta_e": 0.027572,
+      "max_delta_e": 0.115949
+    },
+    "../elder-side-forge-01/frames/frame-02.png": {
+      "measured_px": 7467,
+      "alpha_threshold": 128,
+      "off_palette_px": 7457,
+      "partial_alpha_px": 896,
+      "colors": 6724,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.014444,
+      "p95_delta_e": 0.027248,
+      "max_delta_e": 0.100331
+    },
+    "../elder-side-forge-01/frames/frame-03.png": {
+      "measured_px": 9043,
+      "alpha_threshold": 128,
+      "off_palette_px": 9019,
+      "partial_alpha_px": 1165,
+      "colors": 7922,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.014061,
+      "p95_delta_e": 0.026712,
+      "max_delta_e": 0.109564
+    },
+    "../elder-side-forge-01/frames/frame-04.png": {
+      "measured_px": 8951,
+      "alpha_threshold": 128,
+      "off_palette_px": 8926,
+      "partial_alpha_px": 1210,
+      "colors": 7841,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.014044,
+      "p95_delta_e": 0.027005,
+      "max_delta_e": 0.117883
+    },
+    "../elder-side-forge-01/frames/frame-05.png": {
+      "measured_px": 8421,
+      "alpha_threshold": 128,
+      "off_palette_px": 8405,
+      "partial_alpha_px": 1055,
+      "colors": 7419,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.014105,
+      "p95_delta_e": 0.026941,
+      "max_delta_e": 0.117859
+    },
+    "../elder-side-forge-01/frames/frame-06.png": {
+      "measured_px": 8897,
+      "alpha_threshold": 128,
+      "off_palette_px": 8873,
+      "partial_alpha_px": 1198,
+      "colors": 7831,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.014145,
+      "p95_delta_e": 0.02693,
+      "max_delta_e": 0.109085
+    },
+    "../elder-side-forge-01/frames/frame-07.png": {
+      "measured_px": 9386,
+      "alpha_threshold": 128,
+      "off_palette_px": 9359,
+      "partial_alpha_px": 1226,
+      "colors": 8202,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.01396,
+      "p95_delta_e": 0.026469,
+      "max_delta_e": 0.106472
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.117883,
+    "worst_p95_delta_e": 0.027572,
+    "off_palette_px": 69206
+  }
+}

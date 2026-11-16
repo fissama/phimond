@@ -1,0 +1,11 @@
+{
+  "schema": "phimond.art-provenance.v1",
+  "asset": "hud-pet-sub.png",
+  "art_source": "host_image",
+  "route": "Codex built-in image_gen",
+  "model": "not exposed",
+  "references": ["../layout-guide-264x96.png", "hud-pet-main.png"],
+  "source": "../candidate-sub-01-raw.png",
+  "processing": ["resize to 264x96", "assemble_frames chroma key with binary alpha", "forge_matte 2px edge despill", "48-color palette build/apply"],
+  "status": "ready_for_owner_review"
+}

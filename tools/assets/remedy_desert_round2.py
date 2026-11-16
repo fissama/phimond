@@ -8,15 +8,15 @@
 6. desert-small-rock-03: Khử khối box nâu góc phải dưới.
 7. desert-small-cactus-02: Vá lỗ thủng trong thân và bo tròn tay gai bên phải.
 8. desert-decal-cracked-earth-patch: Làm sạch cạnh cắt và làm mềm viền.
-Đồng bộ sang apps/game-web/public/scenes/tex/hd2d_*.png và cập nhật manifest.json.
+Đồng bộ sang art/build/scenes/tex/hd2d_*.png và cập nhật manifest.json.
 """
 import json, os, hashlib, pathlib
 from PIL import Image, ImageDraw, ImageFilter
 import numpy as np
 
 R = pathlib.Path(__file__).resolve().parents[2]
-art_dir = R / "apps/game-web/art-src/hd2d/batch-11-desert"
-tex_dir = R / "apps/game-web/public/scenes/tex"
+art_dir = R / "art/src/hd2d/batch-11-desert"
+tex_dir = R / "art/build/scenes/tex"
 man_p = art_dir / "manifest.json"
 
 man_data = json.load(open(man_p))

@@ -1,0 +1,40 @@
+{
+  "id": "farm-tilled-01",
+  "status": "needs_claude_review",
+  "approved": false,
+  "candidate_quality": "PASS_INTERNAL_PENDING_CLAUDE",
+  "raw_source": "raw-05.png",
+  "raw_sha256": "2b4f20dca4b513f8a0d955e33dcc83147da4c0443d32f223c7295efedfa2f0d2",
+  "final_sha256": "d9c29365e98137ca32a46a9f1ee15070333c128cb58dcfe33ef421369aaa07ca",
+  "size_px": [
+    512,
+    512
+  ],
+  "distinct_rgb_colors": 48,
+  "seam_mean_255": {
+    "x": 4.597,
+    "x_neighbor": 1.006,
+    "x_max": 58,
+    "threshold_x": 14,
+    "y": 6.156,
+    "y_neighbor": 0.97,
+    "y_max": 72,
+    "threshold_y": 14
+  },
+  "checks": {
+    "size_512": true,
+    "palette_33_48": true,
+    "seam_x": true,
+    "seam_y": true,
+    "alpha_opaque": true,
+    "repeat_3x3_viewed": true,
+    "offset_viewed": true,
+    "visual": "furrows continue without visible join; no isolated clods; periodic furrow flow is expected for worked rows"
+  },
+  "rejected_attempts": [
+    "raw-01",
+    "raw-02",
+    "raw-03",
+    "raw-04"
+  ]
+}

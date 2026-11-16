@@ -1,0 +1,1063 @@
+{
+  "status": "pass",
+  "method": "forge_palette.build_palette (weighted k-means++ in OKLab over unique colours, reserved colours fixed, coverage skipping) then forge_palette.fit_report of every input: OKLab dE of each pixel with alpha >= the threshold to its nearest palette colour",
+  "notProven": [
+    "Visual quality of the palette: look at swatches.png and an applied frame.",
+    "Colours of pixels below the alpha threshold were not sampled or measured.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "palette_colors",
+      "status": "pass",
+      "value": 48,
+      "threshold": 48
+    },
+    {
+      "id": "inputs_without_samples",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0,
+      "files": []
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.136114,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../palette-inputs/npc-act_events.png",
+      "sha256": "65a8959a7ec3722575c0717e31416cb578c770a2bf028270e5b5c07d6319b914",
+      "bytes": 30959
+    },
+    {
+      "path": "../palette-inputs/npc-act_reward.png",
+      "sha256": "c2720ef121fe568b67fdf681e247493621b429714c95df5908fd4f9c93a95063",
+      "bytes": 25506
+    },
+    {
+      "path": "../palette-inputs/npc-arena_free.png",
+      "sha256": "7bdba30c7997c5af2e834cf0700a4016b26279c24430357e1c783061d4ff3885",
+      "bytes": 25657
+    },
+    {
+      "path": "../palette-inputs/npc-arena_master.png",
+      "sha256": "f60f0bd3736a88275c196896afe7bacdbce1ecc2167c7428fbd7e8c17ca5fa57",
+      "bytes": 27472
+    },
+    {
+      "path": "../palette-inputs/npc-beach_guide.png",
+      "sha256": "f60f0bd3736a88275c196896afe7bacdbce1ecc2167c7428fbd7e8c17ca5fa57",
+      "bytes": 27472
+    },
+    {
+      "path": "../palette-inputs/npc-bia_free.png",
+      "sha256": "f60f0bd3736a88275c196896afe7bacdbce1ecc2167c7428fbd7e8c17ca5fa57",
+      "bytes": 27472
+    },
+    {
+      "path": "../palette-inputs/npc-bia_shop.png",
+      "sha256": "0d31f9b90742eb272be014b055b628073a075df87b7640ae6a9b22eeef5432fe",
+      "bytes": 22108
+    },
+    {
+      "path": "../palette-inputs/npc-bia_skill.png",
+      "sha256": "dbbc41a1ae66ea66e60d9b4482cd63931f407ec1d85f49763f4962d40c8c240f",
+      "bytes": 43202
+    },
+    {
+      "path": "../palette-inputs/npc-deep_diver.png",
+      "sha256": "09672b19b1c07f54f5741ed7604133b3bd1ac80a2e4aadd17cdf9bc64ef935c4",
+      "bytes": 25828
+    },
+    {
+      "path": "../palette-inputs/npc-east_camp.png",
+      "sha256": "8b4aafaa8c8f5639b862754270aa23dbf7f875830de0f78c32275bc16a939d7a",
+      "bytes": 22536
+    },
+    {
+      "path": "../palette-inputs/npc-east_free.png",
+      "sha256": "f283297c76d0e39acd0f0d47ca9500380f7fa139a3cf091f81d7039a80b7dc95",
+      "bytes": 23973
+    },
+    {
+      "path": "../palette-inputs/npc-fish_free.png",
+      "sha256": "b04251af23d097566de308fa28fb87ea445621bd5cff60dee6962ef975cc8334",
+      "bytes": 22298
+    },
+    {
+      "path": "../palette-inputs/npc-fish_shop.png",
+      "sha256": "0d31f9b90742eb272be014b055b628073a075df87b7640ae6a9b22eeef5432fe",
+      "bytes": 22108
+    },
+    {
+      "path": "../palette-inputs/npc-fish_skill.png",
+      "sha256": "dbbc41a1ae66ea66e60d9b4482cd63931f407ec1d85f49763f4962d40c8c240f",
+      "bytes": 43202
+    },
+    {
+      "path": "../palette-inputs/npc-forest_guide.png",
+      "sha256": "20c21d80c8f5797c0c52af1a968eb28b8845686e35ee8f8bdaf6d4e60a97680f",
+      "bytes": 23762
+    },
+    {
+      "path": "../palette-inputs/npc-gate_captain.png",
+      "sha256": "972b5979329b0f34151dffc3d01e77546d24e53b82cb008255537f0cfe4fe1dc",
+      "bytes": 27657
+    },
+    {
+      "path": "../palette-inputs/npc-gate_guild.png",
+      "sha256": "65a8959a7ec3722575c0717e31416cb578c770a2bf028270e5b5c07d6319b914",
+      "bytes": 30959
+    },
+    {
+      "path": "../palette-inputs/npc-isl_captain.png",
+      "sha256": "a792054f4d5770eb570e58d2fe910d6fda29beabd066b271f97043cdab384f58",
+      "bytes": 25944
+    },
+    {
+      "path": "../palette-inputs/npc-mk_general.png",
+      "sha256": "0d31f9b90742eb272be014b055b628073a075df87b7640ae6a9b22eeef5432fe",
+      "bytes": 22108
+    },
+    {
+      "path": "../palette-inputs/npc-mk_smith.png",
+      "sha256": "9f7f70ada5a00e5acbfbe28bf5e1879ea5a0390e09987f868259d0bfa7880f11",
+      "bytes": 25117
+    },
+    {
+      "path": "../palette-inputs/npc-mk_trader.png",
+      "sha256": "dbbc41a1ae66ea66e60d9b4482cd63931f407ec1d85f49763f4962d40c8c240f",
+      "bytes": 43202
+    },
+    {
+      "path": "../palette-inputs/npc-pal_advisor.png",
+      "sha256": "09672b19b1c07f54f5741ed7604133b3bd1ac80a2e4aadd17cdf9bc64ef935c4",
+      "bytes": 25828
+    },
+    {
+      "path": "../palette-inputs/npc-pal_guild.png",
+      "sha256": "2515ee3cc5113f9055b94fd1deca7eadc23c68ffc3a693bef3a7287cb12c3522",
+      "bytes": 27503
+    },
+    {
+      "path": "../palette-inputs/npc-pal_healer.png",
+      "sha256": "64a0b1c881b3788064efa78d4b4eaa5b1f87045acb25da144e96e88d800d9420",
+      "bytes": 24483
+    },
+    {
+      "path": "../palette-inputs/npc-pet_bless.png",
+      "sha256": "ce6085574314096429a5463a24405185fb8e622f9e955470aac5cee90dd6af8c",
+      "bytes": 37540
+    },
+    {
+      "path": "../palette-inputs/npc-pet_enhance.png",
+      "sha256": "f66d2856f56924f0d5a88b3fccd5d90680fd67bfc5a4438ab4b7a7d8dd1a69a6",
+      "bytes": 26490
+    },
+    {
+      "path": "../palette-inputs/npc-pet_fusion.png",
+      "sha256": "fa528ba62d972f9232af1865cbc0f2f48b218211ed5742dcc2fa3e41e04f69c3",
+      "bytes": 27595
+    },
+    {
+      "path": "../palette-inputs/npc-pet_hatch.png",
+      "sha256": "067caad7574fa68fcd588b0f244e44f050d8fa281b06d00c6765c9dc3190728e",
+      "bytes": 26621
+    },
+    {
+      "path": "../palette-inputs/npc-pet_master.png",
+      "sha256": "a64bd90bf26ef95bfbaf1eb7f167e58f2583cfb8801ad772f760c983725f084f",
+      "bytes": 28272
+    },
+    {
+      "path": "../palette-inputs/npc-pet_shop.png",
+      "sha256": "0d31f9b90742eb272be014b055b628073a075df87b7640ae6a9b22eeef5432fe",
+      "bytes": 22108
+    },
+    {
+      "path": "../palette-inputs/npc-ranch_keeper.png",
+      "sha256": "7b4d048bd17791a4789d301d154ad3638f9442eea1d6503c92f63e07e916facb",
+      "bytes": 23797
+    },
+    {
+      "path": "../palette-inputs/npc-sau_free.png",
+      "sha256": "21284b3c044bf8fa192fcc3f0b6a91ed0fdb1f1dbeb82d4b803de0ebecb6168e",
+      "bytes": 29203
+    },
+    {
+      "path": "../palette-inputs/npc-sau_guard.png",
+      "sha256": "3e7da5444227333ff9953344b2f3e253fc6921caf9d720fce67ac8f8ce23a8a7",
+      "bytes": 25878
+    },
+    {
+      "path": "../palette-inputs/npc-ship_captain.png",
+      "sha256": "20c21d80c8f5797c0c52af1a968eb28b8845686e35ee8f8bdaf6d4e60a97680f",
+      "bytes": 23762
+    },
+    {
+      "path": "../palette-inputs/npc-ship_free.png",
+      "sha256": "9f7f70ada5a00e5acbfbe28bf5e1879ea5a0390e09987f868259d0bfa7880f11",
+      "bytes": 25117
+    },
+    {
+      "path": "../palette-inputs/npc-ship_healer.png",
+      "sha256": "f60f0bd3736a88275c196896afe7bacdbce1ecc2167c7428fbd7e8c17ca5fa57",
+      "bytes": 27472
+    },
+    {
+      "path": "../palette-inputs/npc-ship_pillar.png",
+      "sha256": "979273a60db1cedf1874a6482a7dab6940c24b1f5a26bea695e6943e1042bef8",
+      "bytes": 44184
+    },
+    {
+      "path": "../palette-inputs/npc-ship_shop.png",
+      "sha256": "0d31f9b90742eb272be014b055b628073a075df87b7640ae6a9b22eeef5432fe",
+      "bytes": 22108
+    },
+    {
+      "path": "../palette-inputs/npc-ship_skill.png",
+      "sha256": "dbbc41a1ae66ea66e60d9b4482cd63931f407ec1d85f49763f4962d40c8c240f",
+      "bytes": 43202
+    },
+    {
+      "path": "../palette-inputs/npc-sq_arena.png",
+      "sha256": "9ff81ecb5258bef5dc53a0435a0e79ea6c5f641a7285defb99a1281e8f4d7040",
+      "bytes": 31624
+    },
+    {
+      "path": "../palette-inputs/npc-sq_board.png",
+      "sha256": "a920a037dd7fca728c5a6c8b57089c586f3acec7af7acc68f4a3253e3e3e61f4",
+      "bytes": 28103
+    },
+    {
+      "path": "../palette-inputs/npc-sq_free.png",
+      "sha256": "a64bd90bf26ef95bfbaf1eb7f167e58f2583cfb8801ad772f760c983725f084f",
+      "bytes": 28272
+    },
+    {
+      "path": "../palette-inputs/npc-sq_healer.png",
+      "sha256": "64a0b1c881b3788064efa78d4b4eaa5b1f87045acb25da144e96e88d800d9420",
+      "bytes": 24483
+    },
+    {
+      "path": "../palette-inputs/npc-sq_pillar.png",
+      "sha256": "979273a60db1cedf1874a6482a7dab6940c24b1f5a26bea695e6943e1042bef8",
+      "bytes": 44184
+    },
+    {
+      "path": "../palette-inputs/npc-sq_skill.png",
+      "sha256": "64a0b1c881b3788064efa78d4b4eaa5b1f87045acb25da144e96e88d800d9420",
+      "bytes": 24483
+    },
+    {
+      "path": "../palette-inputs/npc-summoner_mira.png",
+      "sha256": "7b4d048bd17791a4789d301d154ad3638f9442eea1d6503c92f63e07e916facb",
+      "bytes": 23797
+    },
+    {
+      "path": "../palette-inputs/npc-trainer_elin.png",
+      "sha256": "f60f0bd3736a88275c196896afe7bacdbce1ecc2167c7428fbd7e8c17ca5fa57",
+      "bytes": 27472
+    },
+    {
+      "path": "../palette-inputs/npc-west_free.png",
+      "sha256": "3dd4566b364b673d371af63e5455613783906d1dd90639dcca594fcf488a73ba",
+      "bytes": 26480
+    },
+    {
+      "path": "../palette-inputs/npc-west_healer.png",
+      "sha256": "060f4857df6cf471ef31ecf278b2fad6c7e08917e0e1bbab630e778241405736",
+      "bytes": 27712
+    },
+    {
+      "path": "../palette-inputs/player-female.png",
+      "sha256": "2d60edd6cd594871dc46f6ad7c1e14242b0e3b791cb431548a4a748293d010cf",
+      "bytes": 27550
+    },
+    {
+      "path": "../palette-inputs/player-male.png",
+      "sha256": "a23a39b85c865d45524abcb0de291c80baa94327afd301327d0a0a57cf365089",
+      "bytes": 26834
+    },
+    {
+      "path": "../palette-inputs/portrait-arena_master.png",
+      "sha256": "a2e45e46af8d14524986aef31515546e6a33c4212f58d53b9f10fa76b5ac653c",
+      "bytes": 77411
+    },
+    {
+      "path": "../palette-inputs/portrait-beach_guide.png",
+      "sha256": "502f9a9dc6ff44c1f543ec1c9f259a97d6f8a88f4e0315dc213941c865970a66",
+      "bytes": 76710
+    },
+    {
+      "path": "../palette-inputs/portrait-forest_guide.png",
+      "sha256": "47aa02a8fe65afbb20e9e205f6782ba1af786ddaa43e689f553fdbb550914d10",
+      "bytes": 73816
+    },
+    {
+      "path": "../palette-inputs/portrait-gate_captain.png",
+      "sha256": "86c1f2f5195ff0475ee4f11bd5d85b047e5afdbc8cd2dbca1f3f5be9a7295218",
+      "bytes": 89181
+    },
+    {
+      "path": "../palette-inputs/portrait-pal_advisor.png",
+      "sha256": "c4fa56e4851d08c3dbc94a9dd07ce02c7e663055cdb615c4aba616b4e5e061cf",
+      "bytes": 90188
+    },
+    {
+      "path": "../palette-inputs/portrait-pet_fusion.png",
+      "sha256": "ca66fa4e486870070a275e181e039a30a4e3bd04942451878a7e178047e31f99",
+      "bytes": 85622
+    },
+    {
+      "path": "../palette-inputs/portrait-pet_master.png",
+      "sha256": "d495eaca8849b854c14455a23fc158e89b2926fe6d4085dc3ef1ab07aa6759e5",
+      "bytes": 89572
+    },
+    {
+      "path": "../palette-inputs/portrait-sau_guard.png",
+      "sha256": "dd5a2fd6f0f9dc88ec32b7614409411a696af72c8da6741dda16221026a39d48",
+      "bytes": 92930
+    },
+    {
+      "path": "../palette-inputs/portrait-ship_captain.png",
+      "sha256": "21724f2099c797a667054c60cd40b3bc81f9f43350c593aa7a5b53591a65c096",
+      "bytes": 80279
+    },
+    {
+      "path": "../palette-inputs/portrait-summoner_mira.png",
+      "sha256": "c065dfe3ffc9be11ac88088939aee32a786f9432bd946bdfe5354c850807f861",
+      "bytes": 69544
+    },
+    {
+      "path": "../palette-inputs/portrait-trainer_elin.png",
+      "sha256": "984b1441af5d1483e3bc686bcf901df6d7ea0f2b29a58ae5c5732c0d992a95c1",
+      "bytes": 80557
+    }
+  ],
+  "outputs": [
+    {
+      "path": "palette.json",
+      "sha256": "f47cdb7ffb23e901c8d81f99570ce8af0b6a247a1fb729a1a221759f159ee1fb",
+      "bytes": 1925
+    },
+    {
+      "path": "palette.gpl",
+      "sha256": "6123de166863ac967332e9e60b7b5ae8648a73f6f000bf04403d6db972f8e3fb",
+      "bytes": 1020
+    },
+    {
+      "path": "palette.hex",
+      "sha256": "56e9dcea78eecb8f328c76edc4b4dd175bd422f3dc8921a77c1dce6b9c485372",
+      "bytes": 336
+    },
+    {
+      "path": "swatches.png",
+      "sha256": "4dbb8aa847f613579d953dc46ca1fd2148a11a0781c7d00b556ed6b21f520dd5",
+      "bytes": 698
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "palette": {
+    "colors": 48,
+    "reserved": 0,
+    "transparent_index": 255,
+    "seed": 0
+  },
+  "fit": {
+    "../palette-inputs/npc-act_events.png": {
+      "measured_px": 9697,
+      "alpha_threshold": 128,
+      "off_palette_px": 9695,
+      "partial_alpha_px": 0,
+      "colors": 8890,
+      "palette_colors_used": 33,
+      "mean_delta_e": 0.027341,
+      "p95_delta_e": 0.042717,
+      "max_delta_e": 0.100576
+    },
+    "../palette-inputs/npc-act_reward.png": {
+      "measured_px": 8101,
+      "alpha_threshold": 128,
+      "off_palette_px": 8098,
+      "partial_alpha_px": 0,
+      "colors": 7447,
+      "palette_colors_used": 37,
+      "mean_delta_e": 0.030057,
+      "p95_delta_e": 0.048108,
+      "max_delta_e": 0.080956
+    },
+    "../palette-inputs/npc-arena_free.png": {
+      "measured_px": 7854,
+      "alpha_threshold": 128,
+      "off_palette_px": 7853,
+      "partial_alpha_px": 0,
+      "colors": 7242,
+      "palette_colors_used": 35,
+      "mean_delta_e": 0.025196,
+      "p95_delta_e": 0.041168,
+      "max_delta_e": 0.072241
+    },
+    "../palette-inputs/npc-arena_master.png": {
+      "measured_px": 8268,
+      "alpha_threshold": 128,
+      "off_palette_px": 8266,
+      "partial_alpha_px": 0,
+      "colors": 8024,
+      "palette_colors_used": 41,
+      "mean_delta_e": 0.036014,
+      "p95_delta_e": 0.060151,
+      "max_delta_e": 0.108213
+    },
+    "../palette-inputs/npc-beach_guide.png": {
+      "measured_px": 8268,
+      "alpha_threshold": 128,
+      "off_palette_px": 8266,
+      "partial_alpha_px": 0,
+      "colors": 8024,
+      "palette_colors_used": 41,
+      "mean_delta_e": 0.036014,
+      "p95_delta_e": 0.060151,
+      "max_delta_e": 0.108213
+    },
+    "../palette-inputs/npc-bia_free.png": {
+      "measured_px": 8268,
+      "alpha_threshold": 128,
+      "off_palette_px": 8266,
+      "partial_alpha_px": 0,
+      "colors": 8024,
+      "palette_colors_used": 41,
+      "mean_delta_e": 0.036014,
+      "p95_delta_e": 0.060151,
+      "max_delta_e": 0.108213
+    },
+    "../palette-inputs/npc-bia_shop.png": {
+      "measured_px": 6405,
+      "alpha_threshold": 128,
+      "off_palette_px": 6398,
+      "partial_alpha_px": 0,
+      "colors": 6069,
+      "palette_colors_used": 43,
+      "mean_delta_e": 0.031486,
+      "p95_delta_e": 0.051914,
+      "max_delta_e": 0.136114
+    },
+    "../palette-inputs/npc-bia_skill.png": {
+      "measured_px": 12707,
+      "alpha_threshold": 128,
+      "off_palette_px": 12706,
+      "partial_alpha_px": 0,
+      "colors": 12509,
+      "palette_colors_used": 47,
+      "mean_delta_e": 0.032996,
+      "p95_delta_e": 0.058752,
+      "max_delta_e": 0.123717
+    },
+    "../palette-inputs/npc-deep_diver.png": {
+      "measured_px": 8220,
+      "alpha_threshold": 128,
+      "off_palette_px": 8198,
+      "partial_alpha_px": 0,
+      "colors": 6994,
+      "palette_colors_used": 40,
+      "mean_delta_e": 0.029501,
+      "p95_delta_e": 0.051273,
+      "max_delta_e": 0.078972
+    },
+    "../palette-inputs/npc-east_camp.png": {
+      "measured_px": 7262,
+      "alpha_threshold": 128,
+      "off_palette_px": 7255,
+      "partial_alpha_px": 0,
+      "colors": 6432,
+      "palette_colors_used": 37,
+      "mean_delta_e": 0.028318,
+      "p95_delta_e": 0.047559,
+      "max_delta_e": 0.130267
+    },
+    "../palette-inputs/npc-east_free.png": {
+      "measured_px": 6930,
+      "alpha_threshold": 128,
+      "off_palette_px": 6929,
+      "partial_alpha_px": 0,
+      "colors": 6700,
+      "palette_colors_used": 45,
+      "mean_delta_e": 0.030375,
+      "p95_delta_e": 0.046378,
+      "max_delta_e": 0.073804
+    },
+    "../palette-inputs/npc-fish_free.png": {
+      "measured_px": 6745,
+      "alpha_threshold": 128,
+      "off_palette_px": 6742,
+      "partial_alpha_px": 0,
+      "colors": 6421,
+      "palette_colors_used": 35,
+      "mean_delta_e": 0.030122,
+      "p95_delta_e": 0.049359,
+      "max_delta_e": 0.12182
+    },
+    "../palette-inputs/npc-fish_shop.png": {
+      "measured_px": 6405,
+      "alpha_threshold": 128,
+      "off_palette_px": 6398,
+      "partial_alpha_px": 0,
+      "colors": 6069,
+      "palette_colors_used": 43,
+      "mean_delta_e": 0.031486,
+      "p95_delta_e": 0.051914,
+      "max_delta_e": 0.136114
+    },
+    "../palette-inputs/npc-fish_skill.png": {
+      "measured_px": 12707,
+      "alpha_threshold": 128,
+      "off_palette_px": 12706,
+      "partial_alpha_px": 0,
+      "colors": 12509,
+      "palette_colors_used": 47,
+      "mean_delta_e": 0.032996,
+      "p95_delta_e": 0.058752,
+      "max_delta_e": 0.123717
+    },
+    "../palette-inputs/npc-forest_guide.png": {
+      "measured_px": 8071,
+      "alpha_threshold": 128,
+      "off_palette_px": 8063,
+      "partial_alpha_px": 0,
+      "colors": 7236,
+      "palette_colors_used": 40,
+      "mean_delta_e": 0.034001,
+      "p95_delta_e": 0.058794,
+      "max_delta_e": 0.080314
+    },
+    "../palette-inputs/npc-gate_captain.png": {
+      "measured_px": 8960,
+      "alpha_threshold": 128,
+      "off_palette_px": 8951,
+      "partial_alpha_px": 0,
+      "colors": 7725,
+      "palette_colors_used": 30,
+      "mean_delta_e": 0.02477,
+      "p95_delta_e": 0.040632,
+      "max_delta_e": 0.094068
+    },
+    "../palette-inputs/npc-gate_guild.png": {
+      "measured_px": 9697,
+      "alpha_threshold": 128,
+      "off_palette_px": 9695,
+      "partial_alpha_px": 0,
+      "colors": 8890,
+      "palette_colors_used": 33,
+      "mean_delta_e": 0.027341,
+      "p95_delta_e": 0.042717,
+      "max_delta_e": 0.100576
+    },
+    "../palette-inputs/npc-isl_captain.png": {
+      "measured_px": 8064,
+      "alpha_threshold": 128,
+      "off_palette_px": 8062,
+      "partial_alpha_px": 0,
+      "colors": 7425,
+      "palette_colors_used": 36,
+      "mean_delta_e": 0.027411,
+      "p95_delta_e": 0.044062,
+      "max_delta_e": 0.113949
+    },
+    "../palette-inputs/npc-mk_general.png": {
+      "measured_px": 6405,
+      "alpha_threshold": 128,
+      "off_palette_px": 6398,
+      "partial_alpha_px": 0,
+      "colors": 6069,
+      "palette_colors_used": 43,
+      "mean_delta_e": 0.031486,
+      "p95_delta_e": 0.051914,
+      "max_delta_e": 0.136114
+    },
+    "../palette-inputs/npc-mk_smith.png": {
+      "measured_px": 7198,
+      "alpha_threshold": 128,
+      "off_palette_px": 7196,
+      "partial_alpha_px": 0,
+      "colors": 6949,
+      "palette_colors_used": 42,
+      "mean_delta_e": 0.031426,
+      "p95_delta_e": 0.054897,
+      "max_delta_e": 0.077522
+    },
+    "../palette-inputs/npc-mk_trader.png": {
+      "measured_px": 12707,
+      "alpha_threshold": 128,
+      "off_palette_px": 12706,
+      "partial_alpha_px": 0,
+      "colors": 12509,
+      "palette_colors_used": 47,
+      "mean_delta_e": 0.032996,
+      "p95_delta_e": 0.058752,
+      "max_delta_e": 0.123717
+    },
+    "../palette-inputs/npc-pal_advisor.png": {
+      "measured_px": 8220,
+      "alpha_threshold": 128,
+      "off_palette_px": 8198,
+      "partial_alpha_px": 0,
+      "colors": 6994,
+      "palette_colors_used": 40,
+      "mean_delta_e": 0.029501,
+      "p95_delta_e": 0.051273,
+      "max_delta_e": 0.078972
+    },
+    "../palette-inputs/npc-pal_guild.png": {
+      "measured_px": 9371,
+      "alpha_threshold": 128,
+      "off_palette_px": 9370,
+      "partial_alpha_px": 0,
+      "colors": 8477,
+      "palette_colors_used": 39,
+      "mean_delta_e": 0.032829,
+      "p95_delta_e": 0.050673,
+      "max_delta_e": 0.069414
+    },
+    "../palette-inputs/npc-pal_healer.png": {
+      "measured_px": 7845,
+      "alpha_threshold": 128,
+      "off_palette_px": 7831,
+      "partial_alpha_px": 0,
+      "colors": 6998,
+      "palette_colors_used": 45,
+      "mean_delta_e": 0.031007,
+      "p95_delta_e": 0.051379,
+      "max_delta_e": 0.093712
+    },
+    "../palette-inputs/npc-pet_bless.png": {
+      "measured_px": 12302,
+      "alpha_threshold": 128,
+      "off_palette_px": 12298,
+      "partial_alpha_px": 0,
+      "colors": 10818,
+      "palette_colors_used": 33,
+      "mean_delta_e": 0.031424,
+      "p95_delta_e": 0.050755,
+      "max_delta_e": 0.131363
+    },
+    "../palette-inputs/npc-pet_enhance.png": {
+      "measured_px": 8580,
+      "alpha_threshold": 128,
+      "off_palette_px": 8546,
+      "partial_alpha_px": 0,
+      "colors": 7609,
+      "palette_colors_used": 36,
+      "mean_delta_e": 0.031531,
+      "p95_delta_e": 0.054207,
+      "max_delta_e": 0.093591
+    },
+    "../palette-inputs/npc-pet_fusion.png": {
+      "measured_px": 9021,
+      "alpha_threshold": 128,
+      "off_palette_px": 9015,
+      "partial_alpha_px": 0,
+      "colors": 8075,
+      "palette_colors_used": 31,
+      "mean_delta_e": 0.029654,
+      "p95_delta_e": 0.049317,
+      "max_delta_e": 0.100657
+    },
+    "../palette-inputs/npc-pet_hatch.png": {
+      "measured_px": 8080,
+      "alpha_threshold": 128,
+      "off_palette_px": 8079,
+      "partial_alpha_px": 0,
+      "colors": 7763,
+      "palette_colors_used": 45,
+      "mean_delta_e": 0.030304,
+      "p95_delta_e": 0.046974,
+      "max_delta_e": 0.082359
+    },
+    "../palette-inputs/npc-pet_master.png": {
+      "measured_px": 9776,
+      "alpha_threshold": 128,
+      "off_palette_px": 9771,
+      "partial_alpha_px": 0,
+      "colors": 8571,
+      "palette_colors_used": 34,
+      "mean_delta_e": 0.03212,
+      "p95_delta_e": 0.051296,
+      "max_delta_e": 0.120609
+    },
+    "../palette-inputs/npc-pet_shop.png": {
+      "measured_px": 6405,
+      "alpha_threshold": 128,
+      "off_palette_px": 6398,
+      "partial_alpha_px": 0,
+      "colors": 6069,
+      "palette_colors_used": 43,
+      "mean_delta_e": 0.031486,
+      "p95_delta_e": 0.051914,
+      "max_delta_e": 0.136114
+    },
+    "../palette-inputs/npc-ranch_keeper.png": {
+      "measured_px": 7214,
+      "alpha_threshold": 128,
+      "off_palette_px": 7214,
+      "partial_alpha_px": 0,
+      "colors": 6702,
+      "palette_colors_used": 41,
+      "mean_delta_e": 0.029593,
+      "p95_delta_e": 0.052509,
+      "max_delta_e": 0.108246
+    },
+    "../palette-inputs/npc-sau_free.png": {
+      "measured_px": 9579,
+      "alpha_threshold": 128,
+      "off_palette_px": 9572,
+      "partial_alpha_px": 0,
+      "colors": 8492,
+      "palette_colors_used": 32,
+      "mean_delta_e": 0.032185,
+      "p95_delta_e": 0.05492,
+      "max_delta_e": 0.111905
+    },
+    "../palette-inputs/npc-sau_guard.png": {
+      "measured_px": 8802,
+      "alpha_threshold": 128,
+      "off_palette_px": 8788,
+      "partial_alpha_px": 0,
+      "colors": 7598,
+      "palette_colors_used": 43,
+      "mean_delta_e": 0.030427,
+      "p95_delta_e": 0.048415,
+      "max_delta_e": 0.089907
+    },
+    "../palette-inputs/npc-ship_captain.png": {
+      "measured_px": 8071,
+      "alpha_threshold": 128,
+      "off_palette_px": 8063,
+      "partial_alpha_px": 0,
+      "colors": 7236,
+      "palette_colors_used": 40,
+      "mean_delta_e": 0.034001,
+      "p95_delta_e": 0.058794,
+      "max_delta_e": 0.080314
+    },
+    "../palette-inputs/npc-ship_free.png": {
+      "measured_px": 7198,
+      "alpha_threshold": 128,
+      "off_palette_px": 7196,
+      "partial_alpha_px": 0,
+      "colors": 6949,
+      "palette_colors_used": 42,
+      "mean_delta_e": 0.031426,
+      "p95_delta_e": 0.054897,
+      "max_delta_e": 0.077522
+    },
+    "../palette-inputs/npc-ship_healer.png": {
+      "measured_px": 8268,
+      "alpha_threshold": 128,
+      "off_palette_px": 8266,
+      "partial_alpha_px": 0,
+      "colors": 8024,
+      "palette_colors_used": 41,
+      "mean_delta_e": 0.036014,
+      "p95_delta_e": 0.060151,
+      "max_delta_e": 0.108213
+    },
+    "../palette-inputs/npc-ship_pillar.png": {
+      "measured_px": 14481,
+      "alpha_threshold": 128,
+      "off_palette_px": 14479,
+      "partial_alpha_px": 0,
+      "colors": 13914,
+      "palette_colors_used": 43,
+      "mean_delta_e": 0.037773,
+      "p95_delta_e": 0.065655,
+      "max_delta_e": 0.106793
+    },
+    "../palette-inputs/npc-ship_shop.png": {
+      "measured_px": 6405,
+      "alpha_threshold": 128,
+      "off_palette_px": 6398,
+      "partial_alpha_px": 0,
+      "colors": 6069,
+      "palette_colors_used": 43,
+      "mean_delta_e": 0.031486,
+      "p95_delta_e": 0.051914,
+      "max_delta_e": 0.136114
+    },
+    "../palette-inputs/npc-ship_skill.png": {
+      "measured_px": 12707,
+      "alpha_threshold": 128,
+      "off_palette_px": 12706,
+      "partial_alpha_px": 0,
+      "colors": 12509,
+      "palette_colors_used": 47,
+      "mean_delta_e": 0.032996,
+      "p95_delta_e": 0.058752,
+      "max_delta_e": 0.123717
+    },
+    "../palette-inputs/npc-sq_arena.png": {
+      "measured_px": 9837,
+      "alpha_threshold": 128,
+      "off_palette_px": 9832,
+      "partial_alpha_px": 0,
+      "colors": 8958,
+      "palette_colors_used": 36,
+      "mean_delta_e": 0.026552,
+      "p95_delta_e": 0.042837,
+      "max_delta_e": 0.127673
+    },
+    "../palette-inputs/npc-sq_board.png": {
+      "measured_px": 8684,
+      "alpha_threshold": 128,
+      "off_palette_px": 8680,
+      "partial_alpha_px": 0,
+      "colors": 8194,
+      "palette_colors_used": 40,
+      "mean_delta_e": 0.037701,
+      "p95_delta_e": 0.063323,
+      "max_delta_e": 0.101096
+    },
+    "../palette-inputs/npc-sq_free.png": {
+      "measured_px": 9776,
+      "alpha_threshold": 128,
+      "off_palette_px": 9771,
+      "partial_alpha_px": 0,
+      "colors": 8571,
+      "palette_colors_used": 34,
+      "mean_delta_e": 0.03212,
+      "p95_delta_e": 0.051296,
+      "max_delta_e": 0.120609
+    },
+    "../palette-inputs/npc-sq_healer.png": {
+      "measured_px": 7845,
+      "alpha_threshold": 128,
+      "off_palette_px": 7831,
+      "partial_alpha_px": 0,
+      "colors": 6998,
+      "palette_colors_used": 45,
+      "mean_delta_e": 0.031007,
+      "p95_delta_e": 0.051379,
+      "max_delta_e": 0.093712
+    },
+    "../palette-inputs/npc-sq_pillar.png": {
+      "measured_px": 14481,
+      "alpha_threshold": 128,
+      "off_palette_px": 14479,
+      "partial_alpha_px": 0,
+      "colors": 13914,
+      "palette_colors_used": 43,
+      "mean_delta_e": 0.037773,
+      "p95_delta_e": 0.065655,
+      "max_delta_e": 0.106793
+    },
+    "../palette-inputs/npc-sq_skill.png": {
+      "measured_px": 7845,
+      "alpha_threshold": 128,
+      "off_palette_px": 7831,
+      "partial_alpha_px": 0,
+      "colors": 6998,
+      "palette_colors_used": 45,
+      "mean_delta_e": 0.031007,
+      "p95_delta_e": 0.051379,
+      "max_delta_e": 0.093712
+    },
+    "../palette-inputs/npc-summoner_mira.png": {
+      "measured_px": 7214,
+      "alpha_threshold": 128,
+      "off_palette_px": 7214,
+      "partial_alpha_px": 0,
+      "colors": 6702,
+      "palette_colors_used": 41,
+      "mean_delta_e": 0.029593,
+      "p95_delta_e": 0.052509,
+      "max_delta_e": 0.108246
+    },
+    "../palette-inputs/npc-trainer_elin.png": {
+      "measured_px": 8268,
+      "alpha_threshold": 128,
+      "off_palette_px": 8266,
+      "partial_alpha_px": 0,
+      "colors": 8024,
+      "palette_colors_used": 41,
+      "mean_delta_e": 0.036014,
+      "p95_delta_e": 0.060151,
+      "max_delta_e": 0.108213
+    },
+    "../palette-inputs/npc-west_free.png": {
+      "measured_px": 8242,
+      "alpha_threshold": 128,
+      "off_palette_px": 8240,
+      "partial_alpha_px": 0,
+      "colors": 7727,
+      "palette_colors_used": 41,
+      "mean_delta_e": 0.027359,
+      "p95_delta_e": 0.044246,
+      "max_delta_e": 0.075052
+    },
+    "../palette-inputs/npc-west_healer.png": {
+      "measured_px": 8657,
+      "alpha_threshold": 128,
+      "off_palette_px": 8655,
+      "partial_alpha_px": 0,
+      "colors": 8289,
+      "palette_colors_used": 41,
+      "mean_delta_e": 0.033944,
+      "p95_delta_e": 0.057621,
+      "max_delta_e": 0.094341
+    },
+    "../palette-inputs/player-female.png": {
+      "measured_px": 8382,
+      "alpha_threshold": 128,
+      "off_palette_px": 8382,
+      "partial_alpha_px": 0,
+      "colors": 8043,
+      "palette_colors_used": 31,
+      "mean_delta_e": 0.029494,
+      "p95_delta_e": 0.049833,
+      "max_delta_e": 0.131372
+    },
+    "../palette-inputs/player-male.png": {
+      "measured_px": 8383,
+      "alpha_threshold": 128,
+      "off_palette_px": 8380,
+      "partial_alpha_px": 0,
+      "colors": 7626,
+      "palette_colors_used": 44,
+      "mean_delta_e": 0.028244,
+      "p95_delta_e": 0.045979,
+      "max_delta_e": 0.126873
+    },
+    "../palette-inputs/portrait-arena_master.png": {
+      "measured_px": 26458,
+      "alpha_threshold": 128,
+      "off_palette_px": 26444,
+      "partial_alpha_px": 0,
+      "colors": 24210,
+      "palette_colors_used": 44,
+      "mean_delta_e": 0.043049,
+      "p95_delta_e": 0.068087,
+      "max_delta_e": 0.105439
+    },
+    "../palette-inputs/portrait-beach_guide.png": {
+      "measured_px": 26067,
+      "alpha_threshold": 128,
+      "off_palette_px": 26059,
+      "partial_alpha_px": 0,
+      "colors": 23502,
+      "palette_colors_used": 41,
+      "mean_delta_e": 0.043677,
+      "p95_delta_e": 0.068777,
+      "max_delta_e": 0.10206
+    },
+    "../palette-inputs/portrait-forest_guide.png": {
+      "measured_px": 28683,
+      "alpha_threshold": 128,
+      "off_palette_px": 28680,
+      "partial_alpha_px": 0,
+      "colors": 20505,
+      "palette_colors_used": 41,
+      "mean_delta_e": 0.027967,
+      "p95_delta_e": 0.048041,
+      "max_delta_e": 0.099986
+    },
+    "../palette-inputs/portrait-gate_captain.png": {
+      "measured_px": 35183,
+      "alpha_threshold": 128,
+      "off_palette_px": 35167,
+      "partial_alpha_px": 0,
+      "colors": 23690,
+      "palette_colors_used": 29,
+      "mean_delta_e": 0.026101,
+      "p95_delta_e": 0.041754,
+      "max_delta_e": 0.087347
+    },
+    "../palette-inputs/portrait-pal_advisor.png": {
+      "measured_px": 35184,
+      "alpha_threshold": 128,
+      "off_palette_px": 35181,
+      "partial_alpha_px": 0,
+      "colors": 24570,
+      "palette_colors_used": 39,
+      "mean_delta_e": 0.030542,
+      "p95_delta_e": 0.049411,
+      "max_delta_e": 0.097961
+    },
+    "../palette-inputs/portrait-pet_fusion.png": {
+      "measured_px": 33393,
+      "alpha_threshold": 128,
+      "off_palette_px": 33391,
+      "partial_alpha_px": 0,
+      "colors": 25105,
+      "palette_colors_used": 35,
+      "mean_delta_e": 0.029764,
+      "p95_delta_e": 0.048133,
+      "max_delta_e": 0.104838
+    },
+    "../palette-inputs/portrait-pet_master.png": {
+      "measured_px": 34327,
+      "alpha_threshold": 128,
+      "off_palette_px": 34326,
+      "partial_alpha_px": 0,
+      "colors": 26479,
+      "palette_colors_used": 37,
+      "mean_delta_e": 0.028843,
+      "p95_delta_e": 0.045881,
+      "max_delta_e": 0.106144
+    },
+    "../palette-inputs/portrait-sau_guard.png": {
+      "measured_px": 37387,
+      "alpha_threshold": 128,
+      "off_palette_px": 37369,
+      "partial_alpha_px": 0,
+      "colors": 26063,
+      "palette_colors_used": 41,
+      "mean_delta_e": 0.030426,
+      "p95_delta_e": 0.046496,
+      "max_delta_e": 0.075146
+    },
+    "../palette-inputs/portrait-ship_captain.png": {
+      "measured_px": 30473,
+      "alpha_threshold": 128,
+      "off_palette_px": 30460,
+      "partial_alpha_px": 0,
+      "colors": 23010,
+      "palette_colors_used": 44,
+      "mean_delta_e": 0.031678,
+      "p95_delta_e": 0.052989,
+      "max_delta_e": 0.108829
+    },
+    "../palette-inputs/portrait-summoner_mira.png": {
+      "measured_px": 25786,
+      "alpha_threshold": 128,
+      "off_palette_px": 25779,
+      "partial_alpha_px": 0,
+      "colors": 20448,
+      "palette_colors_used": 40,
+      "mean_delta_e": 0.032759,
+      "p95_delta_e": 0.060051,
+      "max_delta_e": 0.112233
+    },
+    "../palette-inputs/portrait-trainer_elin.png": {
+      "measured_px": 27870,
+      "alpha_threshold": 128,
+      "off_palette_px": 27870,
+      "partial_alpha_px": 0,
+      "colors": 25566,
+      "palette_colors_used": 44,
+      "mean_delta_e": 0.035639,
+      "p95_delta_e": 0.057545,
+      "max_delta_e": 0.107186
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.136114,
+    "worst_p95_delta_e": 0.068777,
+    "off_palette_px": 789322
+  }
+}

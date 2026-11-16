@@ -11,7 +11,7 @@ import json, os, pathlib
 
 R = pathlib.Path(__file__).resolve().parents[2]
 brief_p = R / ".ai/design/map-briefs/kit_desert/desert_entrance.json"
-man_p = R / "apps/game-web/art-src/hd2d/batch-11-desert/manifest.json"
+man_p = R / "art/src/hd2d/batch-11-desert/manifest.json"
 out_layout_p = R / ".ai/design/map-layouts/desert/desert_entrance.json"
 
 brief = json.load(open(brief_p))

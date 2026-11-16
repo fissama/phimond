@@ -1,0 +1,71 @@
+{
+  "status": "pass",
+  "method": "forge_palette.quantize_image: OKLab-nearest palette colour per pixel (exact palette colours kept), alpha binary at the threshold, then the written PNGs re-read and measured with forge_palette.fit_report against the palette",
+  "notProven": [
+    "Visual quality after snapping: compare an output with its input.",
+    "Indexed PNGs are engine exports; they are not checked by builders.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "output_off_palette_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "output_partial_alpha_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.071208,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../../palette-inputs/incense-braziers.png",
+      "sha256": "b1bc502df62d545206789aada5f24a80bc59ef895144912c5757a5f7d46ac293",
+      "bytes": 69019
+    },
+    {
+      "path": "../../palette-02/palette.json",
+      "sha256": "0a26995528930297cd92e7b1ff2dd37304aa2bf33e4da8d9af1efaee63cd791e",
+      "bytes": 1963
+    }
+  ],
+  "outputs": [
+    {
+      "path": "incense-braziers.png",
+      "sha256": "8fc0d2bb3a2eee4ca20d35e36fcbf971279758ba5daabad810bb33f91c969411",
+      "bytes": 29491
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "fit": {
+    "incense-braziers.png": {
+      "measured_px": 18856,
+      "alpha_threshold": 128,
+      "off_palette_px": 18824,
+      "partial_alpha_px": 6678,
+      "colors": 14718,
+      "palette_colors_used": 37,
+      "mean_delta_e": 0.024597,
+      "p95_delta_e": 0.051647,
+      "max_delta_e": 0.071208
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.071208,
+    "worst_p95_delta_e": 0.051647,
+    "off_palette_px": 18824
+  },
+  "locked_inputs": []
+}

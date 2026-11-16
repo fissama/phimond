@@ -1,0 +1,97 @@
+{
+  "id": "ghost_castle-marker-arrival",
+  "size": [
+    512,
+    128
+  ],
+  "mode": "RGBA",
+  "frames": 4,
+  "frame_px": [
+    128,
+    128
+  ],
+  "fps": 5,
+  "duration_ms_each": 200,
+  "shared_palette_colors": 48,
+  "frame_metrics": [
+    {
+      "frame": 1,
+      "size": [
+        128,
+        128
+      ],
+      "colors": 48,
+      "partial_alpha_pixels": 0,
+      "margin": [
+        11,
+        12,
+        11,
+        12
+      ],
+      "sha256": "846053640f3aba1052b4967e777e4eaab1e0e559aa31d52751f4ebaee3d80494"
+    },
+    {
+      "frame": 2,
+      "size": [
+        128,
+        128
+      ],
+      "colors": 48,
+      "partial_alpha_pixels": 0,
+      "margin": [
+        11,
+        12,
+        11,
+        12
+      ],
+      "sha256": "31910c7676a04665014c2b932a94612bb9c19266faa1e4798e311979bc169371"
+    },
+    {
+      "frame": 3,
+      "size": [
+        128,
+        128
+      ],
+      "colors": 48,
+      "partial_alpha_pixels": 0,
+      "margin": [
+        11,
+        12,
+        11,
+        12
+      ],
+      "sha256": "9b86ca358032569149b017493720ccc366e0f5d296c11d40739db83e7c890fce"
+    },
+    {
+      "frame": 4,
+      "size": [
+        128,
+        128
+      ],
+      "colors": 48,
+      "partial_alpha_pixels": 0,
+      "margin": [
+        11,
+        12,
+        11,
+        12
+      ],
+      "sha256": "799a77078263bee910cd2b941c7b736d562353ff48a5a8c3e4fe775ee0454274"
+    }
+  ],
+  "binary_alpha": true,
+  "raw_integrity": true,
+  "raw_sha256": "772ef1114903b552239b51356143c1ff7c9b5cee6cee8bb1067ccad8136af669",
+  "sha256": "27843890174bb2b176928ae77ac914edb47a901dc201d3d87e32a923415b73a6",
+  "source_spill_gate": "pass; sheet-qc --safe-margin 0.06; failed=[]; warnings=[]",
+  "processing_gate": "pass; generate2dsprite process mode=fx, strict_qc=true; palette_tool quantize-seq --colors 48 --loop-policy cycle strict pass",
+  "frame_qc": {
+    "status": "pass",
+    "cycle": "none with --loop",
+    "failed": [],
+    "warnings": []
+  },
+  "initial_sheet_qc_note": "Default safe_frame warning at 15% margin: all four raw cells had 7.0–7.6% horizontal margins, no clipping or cross-cell spill. Re-run strict with 6% safe margin passed; final frames are fitted to 128x128 and inspected at 4x.",
+  "visual_review": "actual_complete_4x_dark_and_checker_viewed",
+  "failures": []
+}

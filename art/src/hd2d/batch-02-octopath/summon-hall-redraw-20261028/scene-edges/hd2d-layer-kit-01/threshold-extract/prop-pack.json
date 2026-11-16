@@ -1,0 +1,290 @@
+{
+  "schema": "generate2dmap.prop_pack.v2",
+  "tool": {
+    "name": "extract_prop_pack",
+    "version": "0.4.0"
+  },
+  "input": "../../foreground-edge/final.png",
+  "source_size": [
+    2432,
+    280
+  ],
+  "source_sha256": "0a3c2b2540fc87a4c0437a90c7481e16dd5b9e4b247a215cb6a7545ac0c99fc4",
+  "source_mode": "RGBA",
+  "layout_mode": "explicit_boxes",
+  "boxes_file": "../threshold-boxes.json",
+  "labels_file": null,
+  "background_mode": "native_alpha",
+  "art_source": "host_image",
+  "rows": null,
+  "cols": null,
+  "threshold": 100,
+  "edge_threshold": 150,
+  "despill_radius": 0,
+  "despill": {
+    "mode": "off",
+    "applied": "off",
+    "radius": 0,
+    "margin": 12,
+    "changed_px": 0
+  },
+  "hygiene": {
+    "mode": "none",
+    "floor": 4,
+    "solid_min": 32,
+    "attach_radius": 2,
+    "connectivity": 8,
+    "floor_px": 0,
+    "detached_px": 0,
+    "detached_components": 0,
+    "max_removed_alpha": 0
+  },
+  "alpha_floor": 0,
+  "alpha_floor_pixels_removed": 0,
+  "trim_border": 0,
+  "edge_clean_depth": 0,
+  "component_mode": "largest",
+  "component_padding": 8,
+  "min_component_area": "auto",
+  "edge_touch_margin": 0,
+  "geometry": {
+    "connectivity": 8,
+    "alpha_geometry_threshold": 16,
+    "anchor_mode": "feet",
+    "support_band_fraction": 0.25,
+    "anchor_rounding": "whole pixels, half-up",
+    "grid_rounding": null,
+    "keep_canvas": false,
+    "world_scale": null
+  },
+  "accepted": [
+    {
+      "index": 0,
+      "label": "threshold-left",
+      "display_name": "threshold-left",
+      "status": "accepted",
+      "image": "threshold-left/prop.png",
+      "sha256": "d20943f184f57f78b982dc830959f7e809a33a51c99ac07c120e643e71d9aa41",
+      "output_size": [
+        1029,
+        267
+      ],
+      "grid": null,
+      "cell_box": [
+        0,
+        0,
+        1029,
+        280
+      ],
+      "source_box": [
+        0,
+        0,
+        1029,
+        280
+      ],
+      "source_rect": [
+        0,
+        10,
+        1029,
+        277
+      ],
+      "trim_offset": [
+        0,
+        10
+      ],
+      "padding": [
+        0,
+        8,
+        0,
+        8
+      ],
+      "anchor_px": [
+        515,
+        259
+      ],
+      "anchor_source": "measured",
+      "component_mode": "largest",
+      "component_count": 1,
+      "min_component_area": 100,
+      "trim_applied": 0,
+      "crop_bbox": [
+        0,
+        18,
+        1029,
+        269
+      ],
+      "padded_crop_bbox": [
+        0,
+        10,
+        1029,
+        277
+      ],
+      "selected_component_area": 256962,
+      "selected_component_bbox": [
+        0,
+        18,
+        1029,
+        269
+      ],
+      "kept_area": 256962,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": true
+    },
+    {
+      "index": 1,
+      "label": "threshold-right",
+      "display_name": "threshold-right",
+      "status": "accepted",
+      "image": "threshold-right/prop.png",
+      "sha256": "b82b1aea55312ad9b289f7965ef1850602fd11b13af90b32b788b43d98accc36",
+      "output_size": [
+        1029,
+        267
+      ],
+      "grid": null,
+      "cell_box": [
+        1403,
+        0,
+        2432,
+        280
+      ],
+      "source_box": [
+        1403,
+        0,
+        2432,
+        280
+      ],
+      "source_rect": [
+        1403,
+        10,
+        2432,
+        277
+      ],
+      "trim_offset": [
+        0,
+        10
+      ],
+      "padding": [
+        0,
+        8,
+        0,
+        8
+      ],
+      "anchor_px": [
+        515,
+        259
+      ],
+      "anchor_source": "measured",
+      "component_mode": "largest",
+      "component_count": 1,
+      "min_component_area": 100,
+      "trim_applied": 0,
+      "crop_bbox": [
+        0,
+        18,
+        1029,
+        269
+      ],
+      "padded_crop_bbox": [
+        0,
+        10,
+        1029,
+        277
+      ],
+      "selected_component_area": 257048,
+      "selected_component_bbox": [
+        0,
+        18,
+        1029,
+        269
+      ],
+      "kept_area": 257048,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": true
+    }
+  ],
+  "rejected": [],
+  "edge_touch_props": [
+    "threshold-left",
+    "threshold-right"
+  ],
+  "warnings": [
+    "props touch a cell edge (possible clipping): ['threshold-left', 'threshold-right']"
+  ],
+  "qa": {
+    "status": "warn",
+    "method": "native alpha, not keyed; alpha hygiene none; 8-connected components (largest); checks measured on the published pixels",
+    "notProven": [
+      "that each label names the art in its cell or box",
+      "that a prop is complete: clipping is detected only where art meets the cell edge",
+      "keyed-edge quality beyond the edge fringe count",
+      "that anchors and suggested footprints match gameplay contact (both are measured from alpha)",
+      "runtime placement, collision or occlusion"
+    ],
+    "checks": [
+      {
+        "id": "accepted",
+        "status": "pass",
+        "value": 2,
+        "threshold": ">= 1"
+      },
+      {
+        "id": "edge_touch",
+        "status": "warn",
+        "value": [
+          "threshold-left",
+          "threshold-right"
+        ],
+        "threshold": 0
+      },
+      {
+        "id": "dropped_area",
+        "status": "pass",
+        "value": {},
+        "threshold": 0.01
+      },
+      {
+        "id": "strategy_aspect",
+        "status": "skipped",
+        "value": null,
+        "threshold": 1.6
+      },
+      {
+        "id": "edge_fringe",
+        "status": "skipped",
+        "value": null,
+        "threshold": 0.02
+      }
+    ],
+    "inputs": [
+      {
+        "path": "../../foreground-edge/final.png",
+        "sha256": "0a3c2b2540fc87a4c0437a90c7481e16dd5b9e4b247a215cb6a7545ac0c99fc4",
+        "bytes": 240671
+      },
+      {
+        "path": "../threshold-boxes.json",
+        "sha256": "1a16d07c368f1608293eb2ca4ccf7f5b48d1e61635000d70908c81e500942035",
+        "bytes": 140
+      }
+    ],
+    "outputs": [
+      {
+        "path": "threshold-left/prop.png",
+        "sha256": "d20943f184f57f78b982dc830959f7e809a33a51c99ac07c120e643e71d9aa41",
+        "bytes": 120838
+      },
+      {
+        "path": "threshold-right/prop.png",
+        "sha256": "b82b1aea55312ad9b289f7965ef1850602fd11b13af90b32b788b43d98accc36",
+        "bytes": 119085
+      }
+    ],
+    "tool": {
+      "name": "extract_prop_pack",
+      "version": "0.4.0"
+    }
+  }
+}

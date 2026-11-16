@@ -1,0 +1,71 @@
+{
+  "status": "pass",
+  "method": "forge_palette.quantize_image: OKLab-nearest palette colour per pixel (exact palette colours kept), alpha binary at the threshold, then the written PNGs re-read and measured with forge_palette.fit_report against the palette",
+  "notProven": [
+    "Visual quality after snapping: compare an output with its input.",
+    "Indexed PNGs are engine exports; they are not checked by builders.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "output_off_palette_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "output_partial_alpha_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.114754,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../crop.png",
+      "sha256": "21284b3c044bf8fa192fcc3f0b6a91ed0fdb1f1dbeb82d4b803de0ebecb6168e",
+      "bytes": 29203
+    },
+    {
+      "path": "../../palette-masters/palette.json",
+      "sha256": "abee358b101f1dd4147278e5956ee68de6e2351a392cdf6f6d52f902e2b8a2f3",
+      "bytes": 1925
+    }
+  ],
+  "outputs": [
+    {
+      "path": "crop.png",
+      "sha256": "ef7070da21edd8b7f28b101bef6d3a6f6b89ff8e9fb4d00a2ee273fab085b99b",
+      "bytes": 16134
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "fit": {
+    "crop.png": {
+      "measured_px": 9579,
+      "alpha_threshold": 128,
+      "off_palette_px": 9572,
+      "partial_alpha_px": 0,
+      "colors": 8492,
+      "palette_colors_used": 32,
+      "mean_delta_e": 0.032277,
+      "p95_delta_e": 0.06316,
+      "max_delta_e": 0.114754
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.114754,
+    "worst_p95_delta_e": 0.06316,
+    "off_palette_px": 9572
+  },
+  "locked_inputs": []
+}

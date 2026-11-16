@@ -1,0 +1,431 @@
+{
+  "assets": [
+    {
+      "id": "sand-dry-warm",
+      "category": "floor",
+      "kit": "beach",
+      "file": "sand-dry-warm/final.png",
+      "px": [
+        512,
+        512
+      ],
+      "frame_px": [
+        512,
+        512
+      ],
+      "world": [
+        4.0,
+        4.0
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        256.0,
+        256.0
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 1,
+      "fps": null,
+      "sway": false,
+      "source_refs": [
+        "/Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level5_BaiBien/level5_BaiBien_001.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "replaces": null,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_job": "beach-grounds",
+      "source_raw": "raw-01.png",
+      "raw_sha256": "4acac6192a719d2cb0c98f0bb1748fd93503e3190baf154f7b3c1bdb6751dc0e",
+      "sha256": "5f481ae7899e702400062a82727285f6e175df0e8357f7f492de76e95eebc866",
+      "approved": false,
+      "status": "blocked",
+      "notes": "Octopath-directed generated art. Engine integration pending. Border correction uses only a measured smaller crop and nearest resize; no repaint or blending.",
+      "intended_tileable": "xy",
+      "art_review_status": "pending",
+      "seam_certification": "mechanical edge test only; inspect repeat preview for mortar/ridge discontinuities",
+      "seam_crop": [
+        5,
+        15,
+        511,
+        507
+      ],
+      "mechanical_status": "blocked"
+    },
+    {
+      "id": "sand-dry-cool",
+      "category": "floor",
+      "kit": "beach",
+      "file": "sand-dry-cool/final.png",
+      "px": [
+        512,
+        512
+      ],
+      "frame_px": [
+        512,
+        512
+      ],
+      "world": [
+        4.0,
+        4.0
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        256.0,
+        256.0
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "xy",
+      "slice": null,
+      "frames": 1,
+      "fps": null,
+      "sway": false,
+      "source_refs": [
+        "/Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level5_BaiBien/level5_BaiBien_001.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "replaces": null,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_job": "beach-grounds",
+      "source_raw": "raw-01.png",
+      "raw_sha256": "4acac6192a719d2cb0c98f0bb1748fd93503e3190baf154f7b3c1bdb6751dc0e",
+      "sha256": "df0b8b3a9025ec0798824ce1d4016d9d6cdf85c77090f363b755ec00de480681",
+      "approved": false,
+      "status": "needs_owner_review",
+      "notes": "Octopath-directed generated art. Engine integration pending.",
+      "art_review_status": "pending",
+      "seam_certification": "mechanical edge test only; inspect repeat preview for mortar/ridge discontinuities",
+      "mechanical_status": "pass"
+    },
+    {
+      "id": "sand-wet",
+      "category": "floor",
+      "kit": "beach",
+      "file": "sand-wet/final.png",
+      "px": [
+        512,
+        512
+      ],
+      "frame_px": [
+        512,
+        512
+      ],
+      "world": [
+        4.0,
+        4.0
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        256.0,
+        256.0
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "xy",
+      "slice": null,
+      "frames": 1,
+      "fps": null,
+      "sway": false,
+      "source_refs": [
+        "/Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level5_BaiBien/level5_BaiBien_001.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "replaces": null,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_job": "beach-grounds",
+      "source_raw": "raw-01.png",
+      "raw_sha256": "4acac6192a719d2cb0c98f0bb1748fd93503e3190baf154f7b3c1bdb6751dc0e",
+      "sha256": "8ac72720f9764aa7351f59a1e2f0f0349999c791e155a3c6d2abd524c4a43489",
+      "approved": false,
+      "status": "needs_owner_review",
+      "notes": "Octopath-directed generated art. Engine integration pending. Border correction uses only a measured smaller crop and nearest resize; no repaint or blending.",
+      "art_review_status": "pending",
+      "seam_certification": "mechanical edge test only; inspect repeat preview for mortar/ridge discontinuities",
+      "seam_crop": [
+        9,
+        4,
+        512,
+        512
+      ],
+      "mechanical_status": "pass"
+    },
+    {
+      "id": "sand-seagrass",
+      "category": "floor",
+      "kit": "beach",
+      "file": "sand-seagrass/final.png",
+      "px": [
+        512,
+        512
+      ],
+      "frame_px": [
+        512,
+        512
+      ],
+      "world": [
+        4.0,
+        4.0
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        256.0,
+        256.0
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 1,
+      "fps": null,
+      "sway": false,
+      "source_refs": [
+        "/Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level5_BaiBien/level5_BaiBien_001.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "replaces": null,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_job": "beach-grounds",
+      "source_raw": "raw-01.png",
+      "raw_sha256": "4acac6192a719d2cb0c98f0bb1748fd93503e3190baf154f7b3c1bdb6751dc0e",
+      "sha256": "804355f9ef94340d54033e6c53dae1641cbd5946e2259dbdd9af071d23205397",
+      "approved": false,
+      "status": "blocked",
+      "notes": "Octopath-directed generated art. Engine integration pending. Border correction uses only a measured smaller crop and nearest resize; no repaint or blending.",
+      "intended_tileable": "xy",
+      "art_review_status": "pending",
+      "seam_certification": "mechanical edge test only; inspect repeat preview for mortar/ridge discontinuities",
+      "seam_crop": [
+        5,
+        5,
+        512,
+        508
+      ],
+      "mechanical_status": "blocked"
+    },
+    {
+      "id": "shore-foam",
+      "category": "fx",
+      "kit": "beach",
+      "file": "shore-foam/final.png",
+      "px": [
+        1024,
+        256
+      ],
+      "frame_px": [
+        256,
+        256
+      ],
+      "world": [
+        2.0,
+        2.0
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        128.0,
+        128.0
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 4,
+      "fps": 6,
+      "sway": false,
+      "source_refs": [
+        "/Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level5_BaiBien/level5_BaiBien_004.png",
+        "/Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level5_BaiBien/level5_BaiBien_001.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "replaces": null,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_job": "coastal-fx",
+      "source_raw": "raw-01.png",
+      "raw_sha256": "4e72271cb002c939c0c020fa16148efd693d7c04b4757e565a25889d3b7a713f",
+      "sha256": "0fb3002965aac5ab52c528edce7ce5e6151479f8e815b742e7af8c32f291dafb",
+      "approved": false,
+      "status": "needs_owner_review",
+      "notes": "Octopath-directed generated art. Engine integration pending. world and pivot refer to ONE frame, not the full sheet.",
+      "mechanical_status": "pass"
+    },
+    {
+      "id": "undersea-bubbles",
+      "category": "fx",
+      "kit": "beach",
+      "file": "undersea-bubbles/final.png",
+      "px": [
+        512,
+        128
+      ],
+      "frame_px": [
+        128,
+        128
+      ],
+      "world": [
+        1.0,
+        1.0
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        64.0,
+        64.0
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 4,
+      "fps": 6,
+      "sway": false,
+      "source_refs": [
+        "/Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level5_BaiBien/level5_BaiBien_004.png",
+        "/Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level5_BaiBien/level5_BaiBien_001.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "replaces": null,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_job": "coastal-fx",
+      "source_raw": "raw-01.png",
+      "raw_sha256": "4e72271cb002c939c0c020fa16148efd693d7c04b4757e565a25889d3b7a713f",
+      "sha256": "bd49afd2f4fc882e95a926c5653e2573adf907a454b708ef7f60cf8b1706d290",
+      "approved": false,
+      "status": "needs_owner_review",
+      "notes": "Octopath-directed generated art. Engine integration pending. world and pivot refer to ONE frame, not the full sheet.",
+      "mechanical_status": "pass"
+    },
+    {
+      "id": "sea-islands-far",
+      "category": "backdrop_far",
+      "kit": "beach",
+      "file": "sea-islands-far/final.png",
+      "px": [
+        2048,
+        384
+      ],
+      "frame_px": [
+        2048,
+        384
+      ],
+      "world": [
+        32.0,
+        6.0
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        1024.0,
+        192.0
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "x",
+      "slice": null,
+      "frames": 1,
+      "fps": null,
+      "sway": false,
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/treasure_beach_west_beach.png",
+        "/Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level5_BaiBien/level5_BaiBien_001.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "replaces": null,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_job": "coastal-backdrops",
+      "source_raw": "raw-01.png",
+      "raw_sha256": "368dee9b1ce79f2a89829ae89faff149ee7e858488f1cd04411be94a55f0bde4",
+      "sha256": "46eca476b78ed1bcd370e7afb987e7a2315c85f6d62ecbd9a9e2d13d5868928c",
+      "approved": false,
+      "status": "needs_owner_review",
+      "notes": "Octopath-directed generated art. Engine integration pending.",
+      "alpha_finish": "bottom 64px alpha removal fade",
+      "render_layer": "background",
+      "mechanical_status": "pass"
+    },
+    {
+      "id": "coastal-cliff-mid",
+      "category": "backdrop_mid",
+      "kit": "beach",
+      "file": "coastal-cliff-mid/final.png",
+      "px": [
+        2048,
+        512
+      ],
+      "frame_px": [
+        2048,
+        512
+      ],
+      "world": [
+        16.0,
+        4.0
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        1024.0,
+        256.0
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "none",
+      "slice": null,
+      "frames": 1,
+      "fps": null,
+      "sway": false,
+      "source_refs": [
+        "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/treasure_beach_west_beach.png",
+        "/Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level5_BaiBien/level5_BaiBien_001.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+        "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "replaces": null,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_job": "coastal-backdrops",
+      "source_raw": "raw-01.png",
+      "raw_sha256": "368dee9b1ce79f2a89829ae89faff149ee7e858488f1cd04411be94a55f0bde4",
+      "sha256": "2bcf300a965228f5e36aada53d572ea78059fecbb65d1adf501dc26b36bc93fc",
+      "approved": false,
+      "status": "blocked",
+      "notes": "Octopath-directed generated art. Engine integration pending. Border correction uses only a measured smaller crop and nearest resize; no repaint or blending.",
+      "intended_tileable": "x",
+      "alpha_finish": "bottom 64px alpha removal fade",
+      "render_layer": "background",
+      "seam_crop": [
+        78,
+        0,
+        1936,
+        512
+      ],
+      "mechanical_status": "blocked"
+    }
+  ]
+}

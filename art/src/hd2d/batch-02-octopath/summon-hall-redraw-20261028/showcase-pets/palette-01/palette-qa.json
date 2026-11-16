@@ -1,0 +1,119 @@
+{
+  "status": "pass",
+  "method": "forge_palette.build_palette (weighted k-means++ in OKLab over unique colours, reserved colours fixed, coverage skipping) then forge_palette.fit_report of every input: OKLab dE of each pixel with alpha >= the threshold to its nearest palette colour",
+  "notProven": [
+    "Visual quality of the palette: look at swatches.png and an applied frame.",
+    "Colours of pixels below the alpha threshold were not sampled or measured.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "palette_colors",
+      "status": "pass",
+      "value": 48,
+      "threshold": 48
+    },
+    {
+      "id": "inputs_without_samples",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0,
+      "files": []
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.144196,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../flower-forge-02/clean.png",
+      "sha256": "c99d9c0b057532fdc0a273a3b1587a8da4544c634980052c98dc1d5e2fd36712",
+      "bytes": 55894
+    },
+    {
+      "path": "../unicorn-forge-02/clean.png",
+      "sha256": "74628e2b25f84310281c724961f1f8de6ffda20a097a527da925221b02e06569",
+      "bytes": 40968
+    },
+    {
+      "path": "../scorpion-forge-02/clean.png",
+      "sha256": "6a694ec123138d8405a9fc6782d020f9233486ca57ad976a8446d50414f30e1b",
+      "bytes": 45422
+    }
+  ],
+  "outputs": [
+    {
+      "path": "palette.json",
+      "sha256": "29ab804e192a398b4436745f6d59a9081ae1cc6bd77a1014b4728fd80a7c3278",
+      "bytes": 1958
+    },
+    {
+      "path": "palette.gpl",
+      "sha256": "1eabd9b50b5273a467ac9c81c4634bcc32556788ddeed981672caefaa2eaa14c",
+      "bytes": 1014
+    },
+    {
+      "path": "palette.hex",
+      "sha256": "61a2107a41f5a0ce418be794fd1253f2bcdebfd25a5dd9c623795819228b9054",
+      "bytes": 336
+    },
+    {
+      "path": "swatches.png",
+      "sha256": "e7f42ad9b0d70919fbc96c5f39740278ba7bf11b585c0de2cb00da7e7755b047",
+      "bytes": 699
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "palette": {
+    "colors": 48,
+    "reserved": 0,
+    "transparent_index": 255,
+    "seed": 0
+  },
+  "fit": {
+    "../flower-forge-02/clean.png": {
+      "measured_px": 17299,
+      "alpha_threshold": 128,
+      "off_palette_px": 17295,
+      "partial_alpha_px": 17997,
+      "colors": 12872,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.034077,
+      "p95_delta_e": 0.075485,
+      "max_delta_e": 0.137859
+    },
+    "../unicorn-forge-02/clean.png": {
+      "measured_px": 11038,
+      "alpha_threshold": 128,
+      "off_palette_px": 11036,
+      "partial_alpha_px": 12115,
+      "colors": 9260,
+      "palette_colors_used": 29,
+      "mean_delta_e": 0.022048,
+      "p95_delta_e": 0.043464,
+      "max_delta_e": 0.093919
+    },
+    "../scorpion-forge-02/clean.png": {
+      "measured_px": 12651,
+      "alpha_threshold": 128,
+      "off_palette_px": 12651,
+      "partial_alpha_px": 13666,
+      "colors": 11080,
+      "palette_colors_used": 43,
+      "mean_delta_e": 0.024211,
+      "p95_delta_e": 0.05135,
+      "max_delta_e": 0.144196
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.144196,
+    "worst_p95_delta_e": 0.075485,
+    "off_palette_px": 40982
+  }
+}

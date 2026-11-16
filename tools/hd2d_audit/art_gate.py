@@ -8,7 +8,7 @@ import numpy as np
 from PIL import Image
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-ART = f'{ROOT}/apps/game-web/art-src/hd2d'
+ART = f'{ROOT}/art/src/hd2d'
 LAYOUTS = f'{ROOT}/.ai/design/map-layouts'
 BRIEFS = f'{ROOT}/.ai/design/map-briefs'
 VALID = f'{ROOT}/tools/build-web-assets/validate_hd2d_map_layout.py'

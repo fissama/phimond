@@ -1,0 +1,11 @@
+Production isolated pixel-art game UI widgets kit exactly3columns x3rows nineequalcells, true transparent background with generous gutters, blank no text/letters/numbers. Redraw original APK panel/UI identity fromrefs1+2; petanchors3+4 onlypixelcompatibility. Octopath Traveler HD-2D style subduedivory/umber/dullgold/bluegray, crisp chunky clusteredpixels, flat fronts, hard4tonematerials, no smoothglossygradients. Row1: slim vertical empty SCROLLBAR TRACK with simple gold endcaps, bluegray center and NO thumb; independent golden scrollbar THUMB slider button, tiny vertical lozenge; plain long horizontal lineage connector strip antiquegold with smallround endpoints. Row2: plain long vertical lineage connector strip antiquegold with round endpoints; small round empty lineage tree NODE socket; small T-shaped lineage branching connector antiquegold. Row3: standalone square quantity MINUS button madderred with simple short ivory dash; standalone square quantity PLUS button mutedblue with ivory plus; square fusion material empty slot with goldcorner decorations and fully transparent center. All nine pieces independently isolated; sourceornament only atedges, no shadows orbloom. Track and thumb MUST be two distinct cells. Do not include complete settings menu or composited genealogy tree.
+
+
+Ordered references:
+{'path': '/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-06-octopath/source-hud-contact.png', 'sha256': '185446f5f5999c616080555a1200e7ee8061184680088f4e85c7c6b8d012bedb'}
+{'path': '/Users/phileanh/rust/phimond/apps/game-client/assets/reference/ui/UI.png', 'sha256': 'dedba6310459fb7301226aaef20e6aaf8f0b5c08234422515bfc6e67c80acee3'}
+{'path': '/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png', 'sha256': 'fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da'}
+{'path': '/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png', 'sha256': '043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3'}
+
+Route: built-in image_gen / art_source host_image. Raw SHA256 ef17361144cac15147584e047b42fde07a256a983c36a5ba147b6eaa8160024d
+Ownership box [100, 430, 350, 830]

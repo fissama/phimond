@@ -1,0 +1,76 @@
+# Garden-B defringe and gate report — 2026-11-13
+
+Manifest assets: 70. All values below are measured from each current `qa.json`.
+
+| Asset | Purple edge before | After | Mechanical gates | Status |
+|---|---:|---:|---:|---|
+| `cr-bac-ha` | 7753 | 3161 | 10/10 | approved_claude_20261110 |
+| `cr-ca-chua` | 5845 | 0 | 10/10 | approved_claude_20261110 |
+| `cr-chuoi` | 7571 | 2885 | 10/10 | approved_claude_20261110 |
+| `cr-cu-dau` | 10033 | 4364 | 10/10 | approved_claude_20261110 |
+| `cr-cuc-hoa` | 7000 | 3742 | 10/10 | approved_claude_20261110 |
+| `cr-gung` | 7951 | 2370 | 10/10 | approved_claude_20261110 |
+| `cr-hoa-giay` | 11054 | 5408 | 10/10 | approved_claude_20261110 |
+| `cr-huong-co` | 8659 | 7372 | 10/10 | approved_claude_20261110 |
+| `cr-huong-duong` | 5730 | 0 | 10/10 | approved_claude_20261110 |
+| `cr-khoai-lang` | 10113 | 4456 | 10/10 | approved_claude_20261110 |
+| `cr-moc-nhi` | 8359 | 3912 | 10/10 | approved_claude_20261110 |
+| `cr-nam-rom` | 5505 | 0 | 10/10 | approved_claude_20261110 |
+| `cr-ot` | 6171 | 0 | 10/10 | approved_claude_20261110 |
+| `cr-rau-ma` | 8074 | 4481 | 10/10 | approved_claude_20261110 |
+| `cr-sa` | 6229 | 22 | 9/10 | approved_claude_20261110 |
+| `cr-son-duoc` | 6220 | 2803 | 10/10 | approved_claude_20261110 |
+| `cr-tia-to` | 25578 | 25600 | 9/10 | approved_claude_20261110 |
+| `pot-g1-tho-dao` | 7358 | 3643 | 10/10 | approved_claude_20261110 |
+| `pot-g1b-thung-tre` | 6466 | 1785 | 10/10 | approved_claude_20261110 |
+| `pot-g2a-gao-dua` | 8003 | 2211 | 10/10 | approved_claude_20261110 |
+| `pot-g2b-truc-dong` | 7752 | 2866 | 9/10 | blocked_imagegen_limit |
+| `pot-g3a-can-moc` | 6576 | 1413 | 10/10 | approved_claude_20261110 |
+| `pot-g3b-sanh-nau` | 5362 | 0 | 10/10 | approved_claude_20261110 |
+| `cr-bi-do` | 7023 | 1630 | 10/10 | approved_claude_20261110 |
+| `cr-la-lot` | 6042 | 0 | 10/10 | approved_claude_20261110 |
+| `cr-khoai-mon` | 11340 | 9433 | 10/10 | approved_claude_20261110 |
+| `cr-hoa-hong` | 5778 | 3184 | 10/10 | approved_claude_20261110 |
+| `cr-dua-hau` | 8020 | 4642 | 8/10 | blocked |
+| `pot-g4a-lam-su` | 6327 | 0 | 10/10 | approved_claude_20261110 |
+| `pot-g4b-linh-thach` | 7343 | 1362 | 10/10 | approved_claude_20261110 |
+| `pot-g5a-dong-co` | 7131 | 730 | 9/10 | approved_claude_20261110 |
+| `pot-g5b-tinh-mach` | 20237 | 16475 | 10/10 | blocked |
+| `cr-ngai-cuu` | 5734 | 0 | 10/10 | ready_for_claude_review |
+| `cr-nghe` | 6681 | 0 | 9/10 | blocked |
+| `cr-du-du` | 5835 | 1201 | 10/10 | blocked_imagegen_limit |
+| `cr-hoa-sung` | 7342 | 2256 | 10/10 | blocked_imagegen_limit |
+| `cr-oi` | 5131 | 0 | 10/10 | ready_for_claude_review |
+| `cr-rieng` | 6356 | 1446 | 9/10 | blocked_imagegen_limit |
+| `cr-muop-dang` | 4997 | 0 | 10/10 | ready_for_claude_review |
+| `cr-ky-tu` | 7441 | 1853 | 9/10 | blocked |
+| `cr-hoa-mai` | 7471 | 0 | 10/10 | ready_for_claude_review |
+| `cr-xoai` | 6054 | 2596 | 10/10 | blocked_imagegen_limit |
+| `cr-san` | 5976 | 0 | 10/10 | ready_for_claude_review |
+| `cr-hau-dau-co` | 5053 | 0 | 10/10 | ready_for_claude_review |
+| `cr-hoa-sen` | 4542 | 1 | 10/10 | blocked_imagegen_limit |
+| `cr-buoi` | 3757 | 0 | 10/10 | ready_for_claude_review |
+| `cr-tam-that` | 5369 | 389 | 9/10 | blocked |
+| `cr-dua` | 7449 | 0 | 10/10 | ready_for_claude_review |
+| `cr-hoa-dao` | 8464 | 3747 | 9/10 | blocked |
+| `cr-mit` | 7108 | 2711 | 9/10 | blocked |
+| `cr-chom-chom` | 8108 | 3717 | 9/10 | blocked |
+| `cr-linh-chi` | 6576 | 4545 | 10/10 | blocked |
+| `cr-hoa-lan` | 10362 | 7631 | 10/10 | blocked |
+| `cr-nhan-sam` | 5423 | 0 | 10/10 | ready_for_claude_review |
+| `cr-thanh-long` | 6809 | 612 | 10/10 | blocked |
+| `cr-ngan-nhi` | 3555 | 630 | 10/10 | blocked_imagegen_limit |
+| `cr-mang-cut` | 6784 | 5200 | 10/10 | blocked_imagegen_limit |
+| `cr-dong-trung-ha-thao` | 3727 | 0 | 10/10 | ready_for_claude_review |
+| `cr-vai` | 5558 | 0 | 10/10 | ready_for_claude_review |
+| `cr-ho-phach-mam` | 6533 | 0 | 9/10 | blocked |
+| `cr-hoa-quynh` | 6392 | 3394 | 10/10 | blocked_imagegen_limit |
+| `cr-nguyet-huynh-tinh` | 5660 | 2403 | 10/10 | blocked_imagegen_limit |
+| `cr-tuyet-lien` | 7149 | 2189 | 10/10 | blocked_imagegen_limit |
+| `cr-tinh-hoa-lien` | 6814 | 2086 | 10/10 | blocked_imagegen_limit |
+| `cr-sau-rieng` | 4823 | 0 | 9/10 | blocked_imagegen_limit |
+| `cr-thach-anh-qua` | 6005 | 3805 | 10/10 | blocked_imagegen_limit |
+| `cr-ca-phe` | 7289 | 3446 | 10/10 | blocked_imagegen_limit |
+| `cr-ho-tieu` | 7786 | 1356 | 10/10 | blocked_imagegen_limit |
+| `cr-dia-mach-ket-tinh` | 6244 | 4753 | 10/10 | blocked_imagegen_limit |
+| `cr-linh-mach-mam` | 8169 | 1343 | 10/10 | blocked_imagegen_limit |

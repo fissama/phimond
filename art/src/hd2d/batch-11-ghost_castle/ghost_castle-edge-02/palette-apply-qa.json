@@ -1,0 +1,71 @@
+{
+  "status": "pass",
+  "method": "forge_palette.quantize_image: OKLab-nearest palette colour per pixel (exact palette colours kept), alpha binary at the threshold, then the written PNGs re-read and measured with forge_palette.fit_report against the palette",
+  "notProven": [
+    "Visual quality after snapping: compare an output with its input.",
+    "Indexed PNGs are engine exports; they are not checked by builders.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "output_off_palette_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "output_partial_alpha_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.179331,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../../../ghost_castle-edge-02/source-crop.png",
+      "sha256": "f9dfb2a846f18af61dea4193caf8d3e7916545f5c23e1e8accaae2043f5f5520",
+      "bytes": 91288
+    },
+    {
+      "path": "../palette-edge02/palette.json",
+      "sha256": "d7f4a39654dbcc4e7e30ef24a747a92e06aa8d90f4b87fafd718321e07ab15b3",
+      "bytes": 1670
+    }
+  ],
+  "outputs": [
+    {
+      "path": "source-crop.png",
+      "sha256": "e3f790f8567df0c4d3ffe786770677ab06842b05cecdab313d51271bbee807df",
+      "bytes": 36555
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "fit": {
+    "source-crop.png": {
+      "measured_px": 65536,
+      "alpha_threshold": 128,
+      "off_palette_px": 64999,
+      "partial_alpha_px": 0,
+      "colors": 21501,
+      "palette_colors_used": 40,
+      "mean_delta_e": 0.009224,
+      "p95_delta_e": 0.021976,
+      "max_delta_e": 0.179331
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.179331,
+    "worst_p95_delta_e": 0.021976,
+    "off_palette_px": 64999
+  },
+  "locked_inputs": []
+}

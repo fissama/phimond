@@ -1,0 +1,92 @@
+{
+  "status": "pass",
+  "method": "forge_palette.quantize_image: OKLab-nearest palette colour per pixel (exact palette colours kept), alpha binary at the threshold, then the written PNGs re-read and measured with forge_palette.fit_report against the palette",
+  "notProven": [
+    "Visual quality after snapping: compare an output with its input.",
+    "Indexed PNGs are engine exports; they are not checked by builders.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "output_off_palette_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "output_partial_alpha_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.069709,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../shared-stage/slot-common.png",
+      "sha256": "e3c9143e33ed6390a9ad897e0210a6339918723a801b11b6ca57a61be7997174",
+      "bytes": 6491
+    },
+    {
+      "path": "../shared-stage/slot-legendary.png",
+      "sha256": "f26e42a78abc35def886a90327315e89ba418af8df08405bb46daa6cd35ab34a",
+      "bytes": 6312
+    },
+    {
+      "path": "../shared-palette-v1/palette.json",
+      "sha256": "f2c9f41039e49542114d19a33ef79b92485f89cd712eda6ae4d95d066d2c93e5",
+      "bytes": 1955
+    }
+  ],
+  "outputs": [
+    {
+      "path": "slot-common.png",
+      "sha256": "3c59d2e9625b3a321482a590cde46a93235b1453c7bee07b7986bb346299641e",
+      "bytes": 2440
+    },
+    {
+      "path": "slot-legendary.png",
+      "sha256": "fadfdc3ac778bb846822bb7c3bf79237c31c5c04180db066918fe07f960f0f88",
+      "bytes": 2950
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "fit": {
+    "slot-common.png": {
+      "measured_px": 1792,
+      "alpha_threshold": 128,
+      "off_palette_px": 1721,
+      "partial_alpha_px": 1967,
+      "colors": 886,
+      "palette_colors_used": 18,
+      "mean_delta_e": 0.010721,
+      "p95_delta_e": 0.026132,
+      "max_delta_e": 0.040281
+    },
+    "slot-legendary.png": {
+      "measured_px": 1796,
+      "alpha_threshold": 128,
+      "off_palette_px": 1714,
+      "partial_alpha_px": 1923,
+      "colors": 1343,
+      "palette_colors_used": 33,
+      "mean_delta_e": 0.01645,
+      "p95_delta_e": 0.035065,
+      "max_delta_e": 0.069709
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.069709,
+    "worst_p95_delta_e": 0.035065,
+    "off_palette_px": 3435
+  },
+  "locked_inputs": []
+}

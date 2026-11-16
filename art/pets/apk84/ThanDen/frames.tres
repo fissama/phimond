@@ -1,0 +1,89 @@
+[gd_resource type="SpriteFrames" load_steps=15 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/pets/apk84/ThanDen/sprites.png" id="1"]
+
+[sub_resource type="AtlasTexture" id="F0"]
+
+atlas = ExtResource("1")
+
+region = Rect2(0, 0, 120, 168)
+
+[sub_resource type="AtlasTexture" id="F1"]
+
+atlas = ExtResource("1")
+
+region = Rect2(120, 0, 120, 168)
+
+[sub_resource type="AtlasTexture" id="F2"]
+
+atlas = ExtResource("1")
+
+region = Rect2(240, 0, 120, 168)
+
+[sub_resource type="AtlasTexture" id="F3"]
+
+atlas = ExtResource("1")
+
+region = Rect2(360, 0, 120, 168)
+
+[sub_resource type="AtlasTexture" id="F4"]
+
+atlas = ExtResource("1")
+
+region = Rect2(480, 0, 120, 168)
+
+[sub_resource type="AtlasTexture" id="F5"]
+
+atlas = ExtResource("1")
+
+region = Rect2(600, 0, 120, 168)
+
+[sub_resource type="AtlasTexture" id="F6"]
+
+atlas = ExtResource("1")
+
+region = Rect2(720, 0, 120, 168)
+
+[sub_resource type="AtlasTexture" id="F7"]
+
+atlas = ExtResource("1")
+
+region = Rect2(840, 0, 120, 168)
+
+[sub_resource type="AtlasTexture" id="F8"]
+
+atlas = ExtResource("1")
+
+region = Rect2(0, 168, 120, 168)
+
+[sub_resource type="AtlasTexture" id="F9"]
+
+atlas = ExtResource("1")
+
+region = Rect2(120, 168, 120, 168)
+
+[sub_resource type="AtlasTexture" id="F10"]
+
+atlas = ExtResource("1")
+
+region = Rect2(240, 168, 120, 168)
+
+[sub_resource type="AtlasTexture" id="F11"]
+
+atlas = ExtResource("1")
+
+region = Rect2(360, 168, 120, 168)
+
+[sub_resource type="AtlasTexture" id="F12"]
+
+atlas = ExtResource("1")
+
+region = Rect2(480, 168, 120, 168)
+
+[resource]
+
+animations = [{"name": &"idle", "speed": 1.0, "loop": true, "frames": [{"duration": 0.333333343, "texture": SubResource("F0")}, {"duration": 0.333333343, "texture": SubResource("F1")}, {"duration": 0.333333313, "texture": SubResource("F2")}, {"duration": 0.333333373, "texture": SubResource("F3")}]},
+{"name": &"run", "speed": 1.0, "loop": true, "frames": [{"duration": 0.333333343, "texture": SubResource("F4")}, {"duration": 0.333333343, "texture": SubResource("F5")}]},
+{"name": &"die", "speed": 1.0, "loop": true, "frames": [{"duration": 0.333333343, "texture": SubResource("F6")}]},
+{"name": &"attack", "speed": 1.0, "loop": false, "frames": [{"duration": 0.250000000, "texture": SubResource("F7")}, {"duration": 0.250000000, "texture": SubResource("F8")}, {"duration": 0.250000000, "texture": SubResource("F0")}]},
+{"name": &"magic", "speed": 1.0, "loop": false, "frames": [{"duration": 0.250000000, "texture": SubResource("F9")}, {"duration": 0.250000000, "texture": SubResource("F10")}, {"duration": 0.250000000, "texture": SubResource("F11")}, {"duration": 0.250000000, "texture": SubResource("F12")}, {"duration": 0.250000000, "texture": SubResource("F0")}]}]

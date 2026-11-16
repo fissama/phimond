@@ -1,0 +1,50 @@
+{
+  "species_id": "species_0033",
+  "source_species_id": "HoaHuongDuong",
+  "task_model": "gpt-6.1-sol",
+  "prompt_revision": 2,
+  "status": "ready_for_review",
+  "generation_calls": 4,
+  "raw_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0033/attempt-04/raw.png",
+  "raw_sha256": "b6ee5ea9db253e2fc0eb5c071c19309e0ced0fffc5a6f16391b4b9c370942f6a",
+  "mechanical_status": "pass",
+  "human_approved": false,
+  "blockers": [],
+  "visual_review": "All20 source identity/consistent sunflower anatomy/fixedLEFTcamera/natural vine move/attackcompactLEFT/castleafraise/finalfullydown reviewed on normalalpha composite. Source overlap repaired via builtin halfsize layout edit. Body smaller than typical155-202px guidance due preserved faint alpha; human readability/playback review required.",
+  "candidate_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0033/attempt-04/packed.png",
+  "candidate_sha256": "ebbb05c3c4ce796b8ea84be5983ee5287db79357544d92f700532820a4f1fe9a",
+  "preview_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0033/attempt-04/preview/preview.html",
+  "resume_attempts": [
+    {
+      "path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0033/attempt-02/raw.png",
+      "sha256": "2724d4d19ed15e80c03e343c023ad186c5705acfd10b16c4a397a3e1d0cf65af",
+      "status": "rejected sourceoverlap and addedFX"
+    },
+    {
+      "path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0033/attempt-03/raw.png",
+      "sha256": "88f7e9b0929c5ce1042e2e1d36274264199e6752423ff1fd5c66a71a88c83f91",
+      "status": "requires measured pack; attackposes2/3 overlap width"
+    },
+    {
+      "path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0033/attempt-04/raw.png",
+      "sha256": "b6ee5ea9db253e2fc0eb5c071c19309e0ced0fffc5a6f16391b4b9c370942f6a",
+      "status": "ready after all20 review+checker+preview"
+    }
+  ],
+  "self_review_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0033/attempt-04/self-review.json",
+  "historical_raw_selections": [
+    {
+      "raw_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0033/attempt-01/raw.png",
+      "raw_sha256": "3d11b4ef0ef58a8463c9ca8eb6bdc621954c34642534a62d08897bc35a3ad9b9",
+      "generated_source_path": "/Users/phileanh/.codex/generated_images/01a109eb-e660-7333-8bac-1eaab09607c9/exec-6115f619-2d42-4013-a4c4-fed884203659.png"
+    }
+  ],
+  "historical_generated_source_path": "/Users/phileanh/.codex/generated_images/01a109eb-e660-7333-8bac-1eaab09607c9/exec-6115f619-2d42-4013-a4c4-fed884203659.png",
+  "selected_attempt": "attempt-04",
+  "input_metadata_paths": [
+    "apps/game-client/assets/pets/redraws/batches/20261005/species_0033/attempt-04/inputs-resume.json"
+  ],
+  "prompt_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0033/attempt-04/prompt.txt",
+  "animation_playback_verified": false,
+  "runtime_active": false
+}

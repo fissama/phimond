@@ -9,7 +9,7 @@ R = pathlib.Path(__file__).resolve().parents[2]
 src_map_p = R / "tools/.cache/reference/rooms/level6_Phiadong.png"
 layout_p = R / ".ai/design/map-layouts/desert/desert_entrance.json"
 brief_p = R / ".ai/design/map-briefs/kit_desert/desert_entrance.json"
-man_p = R / "apps/game-web/art-src/hd2d/batch-11-desert/manifest.json"
+man_p = R / "art/src/hd2d/batch-11-desert/manifest.json"
 out_p = R / ".ai/design/map-layouts/desert/desert_entrance_preview.png"
 
 src_img = Image.open(src_map_p).convert("RGBA")

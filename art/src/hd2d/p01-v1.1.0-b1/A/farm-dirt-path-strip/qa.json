@@ -1,0 +1,46 @@
+{
+  "id": "farm-dirt-path-strip",
+  "status": "needs_claude_review",
+  "approved": false,
+  "candidate_quality": "PASS_INTERNAL_PENDING_CLAUDE",
+  "raw_source": "raw-02.png",
+  "raw_sha256": "3c9fd62a26710b31603748eda9fc72718f5d780086e2de9268f8b7fb107cfb69",
+  "final_sha256": "8761a041f5df8036e9ed8319e836626d3f601d40c55e8d297c1a53268b0197d8",
+  "size_px": [
+    940,
+    176
+  ],
+  "distinct_rgb_colors": 48,
+  "alpha_values": [
+    0,
+    255
+  ],
+  "seam_x_mean_255": 5.858,
+  "seam_x_neighbor": 2.483,
+  "seam_x_max": 152,
+  "alpha_seam_mean_255": 1.449,
+  "checks": {
+    "size_940x176": true,
+    "palette_33_48": true,
+    "binary_alpha": true,
+    "seam_x": true,
+    "alpha_seam_x": true,
+    "repeat_3x1_viewed": true,
+    "offset_viewed": true,
+    "top_bottom": "irregular grass-to-dirt edge; outside alpha transparent"
+  },
+  "rejected_attempts": [
+    "raw-01 checkerboard baked into RGB"
+  ],
+  "unique_rgb_colors": 48,
+  "wrap_x_edge_mean_abs_rgb": 9.833,
+  "manual_visual_review_required": true,
+  "magenta_fringe_pixels_remaining": 0,
+  "magenta_pixels_flood_keyed": 1737,
+  "key_method": "connected chroma flood from canvas boundary; binary alpha",
+  "magenta_chroma_pixels_keyed": 1871,
+  "wrap_x_pass": true,
+  "wrap_x_alpha_mismatch_px": 0,
+  "wrap_x_preview_viewed": true,
+  "wrap_x_visual_pass": true
+}

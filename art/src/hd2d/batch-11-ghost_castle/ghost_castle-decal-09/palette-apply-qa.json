@@ -1,0 +1,71 @@
+{
+  "status": "pass",
+  "method": "forge_palette.quantize_image: OKLab-nearest palette colour per pixel (exact palette colours kept), alpha binary at the threshold, then the written PNGs re-read and measured with forge_palette.fit_report against the palette",
+  "notProven": [
+    "Visual quality after snapping: compare an output with its input.",
+    "Indexed PNGs are engine exports; they are not checked by builders.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "output_off_palette_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "output_partial_alpha_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.06806,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../extracted-r8/ghost-castle-decal-09/prop.png",
+      "sha256": "6ae161331d1bff7c5e669b5e506dba24b697b782017bd586947acdf2876d8fcf",
+      "bytes": 58797
+    },
+    {
+      "path": "../palette-r8-09/palette.json",
+      "sha256": "18371481b5740e119733719a0f91b56eb77ff0aae87c4857fd40f767a41dbc3a",
+      "bytes": 1671
+    }
+  ],
+  "outputs": [
+    {
+      "path": "prop.png",
+      "sha256": "e2b6388ff7610361afb53dfc14a6afc58f3c4d68d46951df1b2d1eb518491944",
+      "bytes": 37378
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "fit": {
+    "prop.png": {
+      "measured_px": 19173,
+      "alpha_threshold": 128,
+      "off_palette_px": 19140,
+      "partial_alpha_px": 0,
+      "colors": 15931,
+      "palette_colors_used": 40,
+      "mean_delta_e": 0.016542,
+      "p95_delta_e": 0.032016,
+      "max_delta_e": 0.06806
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.06806,
+    "worst_p95_delta_e": 0.032016,
+    "off_palette_px": 19140
+  },
+  "locked_inputs": []
+}

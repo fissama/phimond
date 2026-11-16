@@ -1,0 +1,103 @@
+{
+  "status": "pass",
+  "method": "forge_palette.build_palette (weighted k-means++ in OKLab over unique colours, reserved colours fixed, coverage skipping) then forge_palette.fit_report of every input: OKLab dE of each pixel with alpha >= the threshold to its nearest palette colour",
+  "notProven": [
+    "Visual quality of the palette: look at swatches.png and an applied frame.",
+    "Colours of pixels below the alpha threshold were not sampled or measured.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "palette_colors",
+      "status": "pass",
+      "value": 48,
+      "threshold": 48
+    },
+    {
+      "id": "inputs_without_samples",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0,
+      "files": []
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.055548,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../../../batch-15-expansion/ui-group3-continuation-candidates/slot-legendary/slot-legendary.png",
+      "sha256": "481746a9071b737861279dee345dd0146357251b395386a3d93d35eaf3debc30",
+      "bytes": 6785
+    },
+    {
+      "path": "../../processed/clean.png",
+      "sha256": "b6a7b5c16fbcfcc70cd0002a5bd856a6672200f1c6e54c53023732833cc2722e",
+      "bytes": 5813
+    }
+  ],
+  "outputs": [
+    {
+      "path": "palette.json",
+      "sha256": "f7fc88a0cb46c11f04560c38b7ccc1821888be785a2aaf12845bbf6c6a475092",
+      "bytes": 1965
+    },
+    {
+      "path": "palette.gpl",
+      "sha256": "b16f5c326c75ffc87173b2d51fc91e737b9456c122c54474d091c8626c2d44fe",
+      "bytes": 1021
+    },
+    {
+      "path": "palette.hex",
+      "sha256": "48a809d71013ec0f5cda60541a9ba1135faaec20b69126b7f21cc7f00a8f7d51",
+      "bytes": 336
+    },
+    {
+      "path": "swatches.png",
+      "sha256": "1ca206388641737f5d2b08bec7eed1e589dc0d4081777d088109b953fe2ad02a",
+      "bytes": 675
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "palette": {
+    "colors": 48,
+    "reserved": 0,
+    "transparent_index": 255,
+    "seed": 0
+  },
+  "fit": {
+    "../../../batch-15-expansion/ui-group3-continuation-candidates/slot-legendary/slot-legendary.png": {
+      "measured_px": 6171,
+      "alpha_threshold": 128,
+      "off_palette_px": 4101,
+      "partial_alpha_px": 0,
+      "colors": 47,
+      "palette_colors_used": 21,
+      "mean_delta_e": 0.002694,
+      "p95_delta_e": 0.004914,
+      "max_delta_e": 0.05518
+    },
+    "../../processed/clean.png": {
+      "measured_px": 1446,
+      "alpha_threshold": 128,
+      "off_palette_px": 1439,
+      "partial_alpha_px": 1568,
+      "colors": 1113,
+      "palette_colors_used": 38,
+      "mean_delta_e": 0.014595,
+      "p95_delta_e": 0.030332,
+      "max_delta_e": 0.055548
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.055548,
+    "worst_p95_delta_e": 0.030332,
+    "off_palette_px": 5540
+  }
+}

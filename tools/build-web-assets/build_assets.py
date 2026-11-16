@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Xuất asset runtime cho apps/game-web từ nguồn đã duyệt.
+"""Xuất asset runtime cho art/runtime-src từ nguồn đã duyệt.
 
   python3 tools/build-web-assets/build_assets.py [--atlas-dir DIR] [--actors-dir DIR] [--out DIR]
 
@@ -21,7 +21,7 @@ ROW_NAMES = ['idle', 'move', 'attack', 'cast', 'down']
 ap = argparse.ArgumentParser()
 ap.add_argument('--atlas-dir', help='thư mục chứa <id>.png (vd 0111.png); mặc định dùng đường dẫn trong owner-atlas-selection.json')
 ap.add_argument('--actors-dir', help='thư mục chứa idle/ run/ và level*_*.png')
-ap.add_argument('--out', default=os.path.join(ROOT, 'apps', 'game-web', 'public', 'assets'))
+ap.add_argument('--out', default=os.path.join(ROOT, 'art', 'runtime-src'))
 a = ap.parse_args()
 
 mapping = json.load(open(os.path.join(HERE, 'legacy-species-map.json')))
@@ -72,7 +72,7 @@ for legacy, m in mapping.items():
 json.dump(manifest, open(os.path.join(out_pets, 'manifest.json'), 'w'), indent=1)
 
 # người chơi
-src = a.actors_dir or os.path.join(ROOT, 'apps/game-client/assets/reference')
+src = a.actors_dir or os.path.join(ROOT, 'art/reference')
 def frames(folder):
     return [Image.open(os.path.join(folder, f'{i:03d}.png')).convert('RGBA') for i in range(6)]
 if a.actors_dir:

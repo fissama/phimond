@@ -1,0 +1,1 @@
+Actual3x3 plus4x dark/checker inspected. Raw03 replaces dense noisy raw02: flat shared interior/edge base and sparse multicolor mineral clusters.46colors, seamX/Y0, outer8flat. Repeat no longer exposes broad empty grid corridors. Some recognisable cluster repetition remains normal for fixed tile. Self-inspected draft; Claude approval pending.

@@ -1,0 +1,107 @@
+{
+  "asset_id": "gd-trunk-seg-02",
+  "size_px": [
+    384,
+    512
+  ],
+  "color_count": 46,
+  "alpha_values": [
+    0,
+    255
+  ],
+  "alpha_binary": true,
+  "alpha_bbox": [
+    0,
+    0,
+    309,
+    512
+  ],
+  "alpha_margin_px": [
+    0,
+    0,
+    75,
+    0
+  ],
+  "source_raw_sha256": "ab129228d329a99b94f7dab277395424948046de493ff29b5ca49b02f88ec916",
+  "final_sha256": "b489a4a0f37074d04009c199f525746c7bad84dce1826dff78bd2de8208bf05a",
+  "approved": false,
+  "status": "retired_owner_choice_1",
+  "mechanical_status": "out_of_scope_retired",
+  "generation_route": "built-in image_gen",
+  "postprocess": "nearest-neighbor resize, alpha threshold at 128, 48-color palette reduction; no pixel edge copying or seam repair",
+  "vertical_top_bottom_exact": false,
+  "top_bottom_differing_pixels": 94,
+  "top_row_sha256": "cd71205503bbae03facd9b63e7ea2724ff7c45c1b7e9ad22e150a370767284ab",
+  "bottom_row_sha256": "57450d6a6a0cd2875b37c182c6cd3657cae9884a5461ea5e4e9a3ffbfa396ebb",
+  "boundary_opaque_spans": [
+    [
+      0,
+      303
+    ],
+    [
+      0,
+      303
+    ]
+  ],
+  "raw04_candidate": {
+    "source_raw_sha256": "2722cfcbc632b2f8530cc5340a9930286abaa6d07052cb931c2d4da5c4d4e68a",
+    "target_size_px": [
+      384,
+      512
+    ],
+    "visible_colors_after_resize": 45,
+    "paired_pixels_different_across_rows_0_7_vs_504_511": 806,
+    "top_bottom_x_spans": [
+      [
+        0,
+        300
+      ],
+      [
+        0,
+        301
+      ]
+    ],
+    "required_x_span": [
+      0,
+      312
+    ],
+    "promoted_to_final": false,
+    "status": "redo_required"
+  },
+  "raw05_candidate": {
+    "source_raw_sha256": "445e99f81164894fb59227758e7f199505920658946a91e64052e847b573e513",
+    "paired_pixels_different_across_rows_0_7_vs_504_511": 702,
+    "top_bottom_x_spans": [
+      [
+        0,
+        296
+      ],
+      [
+        0,
+        295
+      ]
+    ],
+    "promoted_to_final": false,
+    "status": "redo_required"
+  },
+  "current_final_status": "rejected_candidate_not_promoted",
+  "latest_raw05_candidate": {
+    "source_raw_sha256": "445e99f81164894fb59227758e7f199505920658946a91e64052e847b573e513",
+    "paired_pixels_different_across_rows_0_7_vs_504_511": 702,
+    "top_bottom_x_spans": [
+      [
+        0,
+        296
+      ],
+      [
+        0,
+        295
+      ]
+    ],
+    "promoted_to_final": false,
+    "status": "redo_required"
+  },
+  "active_asset": false,
+  "replacement_asset": "gd-trunk-seg-01",
+  "retirement_reason": "Owner selected one trunk body variant; gd-trunk-seg-01 is the sole active trunk body asset. Retained here for audit; do not load."
+}

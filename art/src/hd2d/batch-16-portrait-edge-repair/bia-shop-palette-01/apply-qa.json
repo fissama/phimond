@@ -1,0 +1,70 @@
+{
+  "status": "pass",
+  "method": "forge_palette.quantize_image: OKLab-nearest palette colour per pixel (exact palette colours kept), alpha binary at the threshold, then the written PNGs re-read and measured with forge_palette.fit_report against the palette",
+  "notProven": [
+    "Visual quality after snapping: compare an output with its input.",
+    "Indexed PNGs are engine exports; they are not checked by builders."
+  ],
+  "checks": [
+    {
+      "id": "output_off_palette_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "output_partial_alpha_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "max_delta_e",
+      "status": "pass",
+      "value": 0.145981,
+      "threshold": 0.15
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../bia-shop-process-01/clean.png",
+      "sha256": "7a560eb2c29bde9c3e9f66d2d6667fb067c31c8e7f6ee9ede0cd1e657cad2663",
+      "bytes": 89811
+    },
+    {
+      "path": "../portrait-bia-shop-original-palette.hex",
+      "sha256": "ff4afb5ccb4cc410847c1f1b4a71fa5bcc8c85297ddf9cf258731b2d0bd0fe23",
+      "bytes": 336
+    }
+  ],
+  "outputs": [
+    {
+      "path": "clean.png",
+      "sha256": "6832db9c7deb2b259e3e67b240dce81f2f5d10587251bde25ae683c23a3dfe34",
+      "bytes": 52845
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "fit": {
+    "clean.png": {
+      "measured_px": 30251,
+      "alpha_threshold": 128,
+      "off_palette_px": 29964,
+      "partial_alpha_px": 0,
+      "colors": 24316,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.021113,
+      "p95_delta_e": 0.05088,
+      "max_delta_e": 0.145981
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.145981,
+    "worst_p95_delta_e": 0.05088,
+    "off_palette_px": 29964
+  },
+  "locked_inputs": []
+}

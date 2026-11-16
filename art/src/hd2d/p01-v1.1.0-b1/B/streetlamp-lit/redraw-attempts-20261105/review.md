@@ -1,0 +1,1 @@
+Rejected: larger silhouette, different ornate lamp design, and wrong canvas. Required source canvas remains 88x266 alpha bbox (8,8,80,258). No accepted replacement possible from this generated result.

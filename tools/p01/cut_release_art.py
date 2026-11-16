@@ -24,8 +24,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import cut_city_batch12 as c  # noqa: E402  (dùng lại key/despill/finish/tight/scale_to)
 
 ROOT = Path(__file__).resolve().parents[2]
-SRC = ROOT / "apps/game-web/art-src/hd2d/p01-release-art-20261022/sources"
-OUT = ROOT / "apps/game-web/art-src/hd2d/batch-13-release"
+SRC = ROOT / "art/src/hd2d/p01-release-art-20261022/sources"
+OUT = ROOT / "art/src/hd2d/batch-13-release"
 c.B = OUT  # c.save() ghi vào batch mới
 DEBUG = "--debug" in sys.argv
 PLAYER_H = 166  # chuẩn người chơi đã duyệt: cao ~168 px, chân y=184

@@ -1,0 +1,22 @@
+{
+  "id": "terrain",
+  "rows": 4,
+  "cols": 2,
+  "prompt": "Use case: production game terrain textures, Octopath Traveler pixel art. Square-cell atlas, TWO COLUMNS x FOUR ROWS, edge-to-edge cells, no gutters or borders. Each cell is an independent square texture viewed directly from above, no perspective. Row1: sparse moss grass variant1 / scattered clover grass variant2. Row2: denser sage-grass variant3 / worn olive-brown packed dirt1. Row3: warm compacted dirt2 / transition with grass on TOP and dirt on BOTTOM separated by an organic roughly horizontal boundary. Row4: transition with grass on TOP and dark mossy root/forest-edge earth on BOTTOM / unused plain earth texture. Source1 original olive forest floor defines colors and materials; source2 original forest roots gives root texture content. Pet sheets support crisp pixel clusters only. Muted natural olive/sage/umber, low contrast, 3–4 clear tones, no noisy dither or gradients. HARD REQUIREMENT: first FIVE fill textures must tile independently on all four sides. Keep their outermost8px calm base material with the SAME BASE COLOR on opposing edges (grass base muted olive #696B49, dirt base warm earth #7C694C). Grass blades/clover and visible stones stay away from the exact outer perimeter so the base connects naturally, with no painted frame or outlined border. The two transition tiles repeat LEFT-RIGHT only: left/right boundary heights and material patterns must match exactly. No grass tufts, standing props, tree trunks, shadows, vignette, directional light, glow, text, labels, scene or border lines. Fully opaque material at every pixel. Engine supplies lighting and foliage props separately.",
+  "refs": [
+    "/Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level4_rungsau/level4_rungsau_001.png",
+    "/Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level4_rungsau/level4_rungsau_007.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+  ],
+  "source_card": "Original forest olive earth/grass, warm mossy roots; five independent fills and two horizontally repeating transition edges.",
+  "assets": [
+    "grass-floor-01",
+    "grass-floor-02",
+    "grass-floor-03",
+    "dirt-floor-01",
+    "dirt-floor-02",
+    "edge-grass-dirt",
+    "edge-grass-roots"
+  ]
+}

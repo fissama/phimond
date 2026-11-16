@@ -8,7 +8,7 @@ from PIL import Image
 import numpy as np
 
 R = pathlib.Path(__file__).resolve().parents[2]
-man_path = R / "apps/game-web/art-src/hd2d/batch-11-desert/manifest.json"
+man_path = R / "art/src/hd2d/batch-11-desert/manifest.json"
 
 if not man_path.exists():
     print(f"Không tìm thấy {man_path}")
@@ -24,7 +24,7 @@ for a in man["assets"]:
     if cat in ("tile", "backdrop"):
         continue
 
-    img_path = R / f"apps/game-web/art-src/hd2d/batch-11-desert/{aid}/final.png"
+    img_path = R / f"art/src/hd2d/batch-11-desert/{aid}/final.png"
     if not img_path.exists():
         continue
 

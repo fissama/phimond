@@ -9,7 +9,7 @@ import tempfile
 import unittest
 
 CLI = Path(__file__).with_name("p10_provenance.py").resolve()
-ASSETS = "apps/game-client/assets/pets/apk84"
+ASSETS = "art/pets/apk84"
 MANIFEST = ASSETS + "/manifest.json"
 
 

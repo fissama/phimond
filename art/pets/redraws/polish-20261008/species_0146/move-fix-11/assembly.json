@@ -1,0 +1,54 @@
+{
+  "status": "diagnostic_not_selected",
+  "method": "whole-image_affine_nearest_neighbor_no_alpha_erasure",
+  "common_scale": 0.187,
+  "approved_base_sha256": "e801c3d364f919509c84af935c9e15fbe8b2be127fcaf980c03bde9cb7a47114",
+  "rows": [
+    {
+      "phase": 1,
+      "source": "apps/game-client/assets/pets/redraws/polish-20261008/species_0146/move-fix-09/raw.png",
+      "source_sha256": "fdaf2bba01f9a1bd79d36e3ff0549bcb74c20c7fb44a082a5e9ca476530568aa",
+      "alpha_bounds": [
+        36,
+        26,
+        254,
+        253
+      ]
+    },
+    {
+      "phase": 2,
+      "source": "apps/game-client/assets/pets/redraws/polish-20261008/species_0146/move-fix-10/raw.png",
+      "source_sha256": "ff3f290b2d71eb714476cd2c6c670357f6fc1390a6d7f4ae9d5f789a0847a1fa",
+      "alpha_bounds": [
+        33,
+        26,
+        246,
+        248
+      ]
+    },
+    {
+      "phase": 3,
+      "source": "apps/game-client/assets/pets/redraws/polish-20261008/species_0146/move-fix-07/raw.png",
+      "source_sha256": "e79d2778cb4976275c8c1a75517c364279c241b032dc3b5b64f6147a08d4de19",
+      "alpha_bounds": [
+        30,
+        36,
+        251,
+        251
+      ]
+    },
+    {
+      "phase": 4,
+      "source": "apps/game-client/assets/pets/redraws/polish-20261008/species_0146/move-fix-08/raw.png",
+      "source_sha256": "52c6cf33b5bb8583e3058b26e89aaac29b37a89a9a0ad5d37f4d2f5e2aea1c86",
+      "alpha_bounds": [
+        41,
+        28,
+        246,
+        246
+      ]
+    }
+  ],
+  "unchanged_frame_count": 16,
+  "known_risk": "Faint alpha noise spans full source canvas, forcing centered scale and move-foot baseline high versus idle."
+}

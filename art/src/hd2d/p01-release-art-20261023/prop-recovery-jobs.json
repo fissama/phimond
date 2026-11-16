@@ -1,0 +1,65 @@
+[
+  {
+    "key": "city-transitions-recovered",
+    "source": "exec-5b16bdf3-a63d-47a7-8f1b-39493b2181dd.png",
+    "ids": [
+      "city-plinth-round",
+      "city-carpet-cap-square",
+      "city-carpet-cap-round",
+      "city-brick-cobble-edge",
+      "city-stone-step-edge",
+      "city-border-curve"
+    ],
+    "category": "ground_patch",
+    "refs": [
+      "/Users/phileanh/rust/phimond/.ai/design/gpt-redo/refs-v1.0.1-city/approved-city-kit.png",
+      "/Users/phileanh/rust/phimond/.ai/design/gpt-redo/refs-v1.0.1-city/current-palace-gate.png",
+      "/Users/phileanh/rust/phimond/.ai/design/gpt-redo/refs-v1.0.1-city/current-city-square.png"
+    ],
+    "prompt": "Source generation tool call2026-10-22: Production HD2D pixel-art CITY GROUND TRANSITION kit matching approved warm limestone/terracotta/antique gold/red fabric kit.1536x1024,3columns2rows,6independent512cells on pure #FF00FF,24px safe padding. Top-down ground with only shallow step front faces, fine crisp pixels, warm upper-left light,48colors. Cell0round limestone fountain foundation with2concentric low steps and irregular stone rim, NO square slab; cell1red palace carpet edge with golden braid/fringe; cell2rounded carpet end cap with fringe, floral gold border; cell3terracotta brick fading irregularly into warm-grey cobbles with chips/cracks, NO rigid rectangle; cell4shallow chipped limestone step with roots/cobble edge; cell5winding limestone/cobble border with red brick fragments. No text/grid/characters, no floating islands. NOTE actualcell1 renders square end-cap, not requested long-side fringe; exported honestly as cap-square. Side fringe still requires new art."
+  },
+  {
+    "key": "path-inner-recovered",
+    "source": "exec-670765fa-6cd7-4f3b-b35d-fdba6fea3b6e.png",
+    "ids": [
+      "path-transition-01",
+      "path-transition-02",
+      "path-transition-03",
+      "path-transition-04",
+      "path-transition-05",
+      "path-transition-06"
+    ],
+    "category": "ground_patch",
+    "refs": [
+      "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/tree-large-01-assembly-preview.png",
+      "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/grass-floor-01/final.png",
+      "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+      "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+    ],
+    "palette": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/palette/palette.json",
+    "prompt": "Source generation tool call2026-10-22: Production Phimond HD2D pixel-art forest TERRAIN OVERLAY kit matching approved olive grass/ochre soil/tree leaves.1536x1024PNG,3columns2rows,six512cells,uniform #FF00FF background,24px margin around each isolated patch. Orthographic top-down ground, no vertical dirt walls or floating islands. Crisp small pixels,48earth colors,warm upper-left light,dark colored contours. Four concave grass/soil corridor corner patches requested NW,NE,SW,SE; then Tjunction and3way fork with grass islands. Ragged encroaching grass blades, roots, leaf litter and small stones; no rigid square outline, no text/characters. Actual pieces delivered as generic transition01-06; do not claim Wang adjacency proof or exact orientation."
+  },
+  {
+    "key": "path-outer-recovered",
+    "source": "exec-7fffc14f-b68f-4267-b1d1-d5d735aac485.png",
+    "ids": [
+      "path-transition-07",
+      "path-transition-08",
+      "path-transition-09",
+      "path-transition-10",
+      "path-transition-11",
+      "path-transition-12"
+    ],
+    "category": "ground_patch",
+    "refs": [
+      "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/tree-large-01-assembly-preview.png",
+      "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/grass-floor-01/final.png",
+      "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+      "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+      "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+    ],
+    "palette": "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/palette/palette.json",
+    "prompt": "Source generation tool call2026-10-22: Production Phimond HD2D pixel-art forest TERRAIN OVERLAY kit matching approved olive grass/ochre soil/tree leaves.1536x1024PNG,3columns2rows,six512cells,uniform #FF00FF background,24px margin around each isolated patch. Orthographic top-down ground, no vertical dirt walls/floating islands. Crisp small pixels,48earth colors,warm upper-left light,dark colored contours. Four convex grass/soil corner patches requested NW,NE,SW,SE, followed by broad90degree path bend west-to-north and narrower bend east-to-south, wheel ruts and small stones. Ragged encroaching grass blades/roots/leaf litter, no square outline or text/characters. Actual pieces delivered generic transition07-12, not certified autotiles."
+  }
+]

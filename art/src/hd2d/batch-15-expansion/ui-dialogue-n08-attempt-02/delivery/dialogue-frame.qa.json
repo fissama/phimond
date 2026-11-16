@@ -1,0 +1,19 @@
+{
+  "schema": "phimond.ui-art-qa.v1",
+  "asset": "dialogue-frame.png",
+  "expected_dimensions": [1024, 224],
+  "dimensions": [1024, 224],
+  "dimensions_pass": true,
+  "visible_colors": 48,
+  "max_colors": 48,
+  "palette_apply_status": "pass",
+  "palette_max_delta_e": 0.077033,
+  "binary_alpha": true,
+  "alpha_values": [0, 255],
+  "transparent_dialogue_interior": "visually confirmed",
+  "transparent_portrait_socket": "visually confirmed",
+  "visual_review": "pass_with_geometry_caveat",
+  "owner_approval": "pending",
+  "geometry_note": "Portrait ring appears approximately 170 px diameter vs 160 px target; ring center visually near (112, 112). Confirm against actual HUD before approval.",
+  "not_proven": ["engine sampling", "in-game portrait fit", "owner approval"]
+}

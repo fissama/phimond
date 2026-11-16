@@ -1,0 +1,42 @@
+{
+  "id": "world_tree-floor-extra-05",
+  "size": [
+    512,
+    512
+  ],
+  "mode": "RGB",
+  "colors": 40,
+  "partial_alpha_pixels": 0,
+  "raw_integrity": true,
+  "raw_sha256": "00f5665d65ba7de2bb89a1432a55d97b688b65bc74fe47dc382ab656ddd184eb",
+  "sha256": "e2f090abcb44ff2ad681e640524011e74fab565306bf44abdff5f5ff1931a8b0",
+  "processing": "raw preserved; nearest resize 1254x1254\u2192512x512; no-dither 40-color median-cut RGB palette",
+  "tileable": "xy",
+  "seam_mean_x": 9.315,
+  "seam_mean_y": 10.12,
+  "outer8_unique_colors": [
+    33,
+    32,
+    38,
+    38
+  ],
+  "outer8_uniform": false,
+  "correlation_vs_existing_floors": {
+    "world_tree-floor-01": 0.6301,
+    "world_tree-floor-02": 0.8289,
+    "world_tree-floor-03": 0.8609,
+    "world_tree-floor-extra-01": 0.7409,
+    "world_tree-floor-extra-02": 0.6639,
+    "world_tree-floor-extra-03": 0.4976,
+    "world_tree-floor-extra-04": 0.6319
+  },
+  "repeat3x3_viewed": true,
+  "final_and_4x_viewed": true,
+  "visual_review": "candidate; mild moss cadence; secondary placement/offset recommended",
+  "approved": false,
+  "status": "needs_claude_visual_review",
+  "failures": [
+    "outer8_uniform=false",
+    "mild repeated moss cadence; use offset and owner map-scale review"
+  ]
+}

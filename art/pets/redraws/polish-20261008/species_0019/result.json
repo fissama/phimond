@@ -1,0 +1,11 @@
+{
+  "species_id": "species_0019",
+  "name_vi": "Nữ Đế Minh Giới",
+  "status": "repair_required",
+  "candidate_path": "apps/game-client/assets/pets/redraws/polish-20261008/species_0019/packed.png",
+  "candidate_sha256": "5e009929e857d6b029634607e87c478efa55cbfe08921eacbc2972515dde5782",
+  "human_approved": false,
+  "animation_playback_verified": false,
+  "runtime_active": false,
+  "review_note": "Existing atlas has Attack/Cast red effects split across rows/columns. Targeted 2x2 Attack works partly, but cast sheet clipped left FX; smaller cast version adds smooth glow; single release has design mismatch. No integrated 20-frame repair. Need four independent consistent Cast frames from same source, then pack with common pivot."
+}

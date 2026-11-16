@@ -1,0 +1,167 @@
+{
+  "status": "pass",
+  "method": "forge_palette.build_palette (weighted k-means++ in OKLab over unique colours, reserved colours fixed, coverage skipping) then forge_palette.fit_report of every input: OKLab dE of each pixel with alpha >= the threshold to its nearest palette colour",
+  "notProven": [
+    "Visual quality of the palette: look at swatches.png and an applied frame.",
+    "Colours of pixels below the alpha threshold were not sampled or measured.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "palette_colors",
+      "status": "pass",
+      "value": 48,
+      "threshold": 48
+    },
+    {
+      "id": "inputs_without_samples",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0,
+      "files": []
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.178317,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../stained-glass-panel/forge-01/clean.png",
+      "sha256": "c9425e3458a9b8654531de6a90a14e50c169cbd9ab36c11a7f4c8703810b30c5",
+      "bytes": 51121
+    },
+    {
+      "path": "../heraldic-banner/forge-01/clean.png",
+      "sha256": "b6d7ad674e4ff5675cf9e2645a2a28cf2fbdbf85f2ce5dae6fd4de127fd84fec",
+      "bytes": 62129
+    },
+    {
+      "path": "../oracle-globe/forge-03/clean.png",
+      "sha256": "f4f8376c529308c50e465ce3ba04315429fc765791208b6dfc1d6cf229f89977",
+      "bytes": 61981
+    },
+    {
+      "path": "../incense-braziers/forge-01/clean.png",
+      "sha256": "d8932ca394cf6f4aaf564de2ab90533d96cfaba9dc9e644a36a493785146f874",
+      "bytes": 71661
+    },
+    {
+      "path": "../hanging-lantern/forge-01/clean.png",
+      "sha256": "1542abbaaffd9f816cbc8a755a4cc5c2e14d2d9b1b9691396da2d03becabf3af",
+      "bytes": 31305
+    },
+    {
+      "path": "../ceremonial-lectern/forge-01/clean.png",
+      "sha256": "066efa07ecc81781a10dc91f4d74a006818283ede09a1d4c139c6f5e2a7b161e",
+      "bytes": 67016
+    }
+  ],
+  "outputs": [
+    {
+      "path": "palette.json",
+      "sha256": "0a26995528930297cd92e7b1ff2dd37304aa2bf33e4da8d9af1efaee63cd791e",
+      "bytes": 1963
+    },
+    {
+      "path": "palette.gpl",
+      "sha256": "dcf75af7eb45029458be19d0a8452b49235c97a0378cc8913d8f35ac6ea88f28",
+      "bytes": 1019
+    },
+    {
+      "path": "palette.hex",
+      "sha256": "a8e1d9b729c2f3cf6f06b147cd75fe07c685580c12791f835d86ea05ab30d636",
+      "bytes": 336
+    },
+    {
+      "path": "swatches.png",
+      "sha256": "db774d3b83fc1bccaf473e014bd6e2b646d88dc5c157047a64748416f45ff78c",
+      "bytes": 695
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "palette": {
+    "colors": 48,
+    "reserved": 0,
+    "transparent_index": 255,
+    "seed": 0
+  },
+  "fit": {
+    "../stained-glass-panel/forge-01/clean.png": {
+      "measured_px": 16476,
+      "alpha_threshold": 128,
+      "off_palette_px": 16470,
+      "partial_alpha_px": 1948,
+      "colors": 14896,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.026629,
+      "p95_delta_e": 0.063596,
+      "max_delta_e": 0.166285
+    },
+    "../heraldic-banner/forge-01/clean.png": {
+      "measured_px": 21712,
+      "alpha_threshold": 128,
+      "off_palette_px": 21704,
+      "partial_alpha_px": 3708,
+      "colors": 17132,
+      "palette_colors_used": 35,
+      "mean_delta_e": 0.020711,
+      "p95_delta_e": 0.038906,
+      "max_delta_e": 0.082137
+    },
+    "../oracle-globe/forge-03/clean.png": {
+      "measured_px": 17256,
+      "alpha_threshold": 128,
+      "off_palette_px": 17254,
+      "partial_alpha_px": 4427,
+      "colors": 15976,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.026643,
+      "p95_delta_e": 0.056543,
+      "max_delta_e": 0.175605
+    },
+    "../incense-braziers/forge-01/clean.png": {
+      "measured_px": 18900,
+      "alpha_threshold": 128,
+      "off_palette_px": 18888,
+      "partial_alpha_px": 7010,
+      "colors": 16529,
+      "palette_colors_used": 42,
+      "mean_delta_e": 0.022201,
+      "p95_delta_e": 0.041465,
+      "max_delta_e": 0.178317
+    },
+    "../hanging-lantern/forge-01/clean.png": {
+      "measured_px": 8665,
+      "alpha_threshold": 128,
+      "off_palette_px": 8664,
+      "partial_alpha_px": 2138,
+      "colors": 8058,
+      "palette_colors_used": 38,
+      "mean_delta_e": 0.023023,
+      "p95_delta_e": 0.043296,
+      "max_delta_e": 0.084399
+    },
+    "../ceremonial-lectern/forge-01/clean.png": {
+      "measured_px": 22717,
+      "alpha_threshold": 128,
+      "off_palette_px": 22701,
+      "partial_alpha_px": 3190,
+      "colors": 17986,
+      "palette_colors_used": 37,
+      "mean_delta_e": 0.019222,
+      "p95_delta_e": 0.036945,
+      "max_delta_e": 0.081486
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.178317,
+    "worst_p95_delta_e": 0.063596,
+    "off_palette_px": 105681
+  }
+}

@@ -12,7 +12,7 @@ OUT = R / '.ai/design/map-checklists'
 (OUT / 'refs').mkdir(parents=True, exist_ok=True)
 IMG = next(p for p in (pathlib.Path('~/Downloads/Phimond-P12-Review/map-images').expanduser(),
                        pathlib.Path('~/mnt/Downloads/Phimond-P12-Review/map-images').expanduser()) if p.exists())
-ART = R / 'apps/game-web/art-src/hd2d'
+ART = R / 'art/src/hd2d'
 MI = json.load(open(IMG.parent / 'map-images.json'))
 NAMES = dict(re.findall(r'\| `(\w+)` \| \*\*(.+?)\*\*', open(R / '.ai/plan/phases/P12-world/P12-world-names-master.md').read()))
 DOC = open(R / '.ai/design/hd2d-maps-75-gemini-prompt.md').read()
@@ -96,7 +96,7 @@ def drawn(a):
 
 
 def prompt_link(a):
-    p = R / f"apps/game-web/art-src/hd2d/{a['_batch']}/{a['id']}/prompt.md"
+    p = R / f"art/src/hd2d/{a['_batch']}/{a['id']}/prompt.md"
     return f"[prompt.md]({os.path.relpath(p, OUT)})" if p.exists() else '—'
 
 
@@ -167,7 +167,7 @@ def sheet_prompts(kit, title, style):
 Dùng agent-sprite-forge ($generate2dmap cho tile/prop, $generate2dsprite cho prop/decal/FX/marker). Route ảnh: image_gen tích hợp của Codex (kiểm `route_media.py resolve --kind image`). KHÔNG codeart2d, KHÔNG API, KHÔNG vẽ bằng code.
 Kit: {title} ({kit}). Style: {style}. Style anchor: batch-01-octopath/contact-sheet.png + 2 sprites.png linh thú.
 Mỗi lần gọi: 1 sheet ~6 vật trên nền #FF00FF, bố trí 2×3/3×2, cách nhau ≥48 px, không chạm mép. Giữ raw-01.png byte-identical. Cắt/khử nền/pixel finish bằng script forge. 33–48 màu, alpha nhị phân, lề ≥8 px, 128 px = 1 đơn vị (far 64), người = 1.31 đơn vị (cỡ tối đa vật nhỏ: tools/hd2d_audit/size_check.py).
-Mỗi asset: thư mục raw-01/final/prompt.md/review.md/qa.json trong apps/game-web/art-src/hd2d/batch-11-{kit}/<id>/. Tự nhìn 4× nền tối/caro. Xong: `python3 tools/hd2d_audit/art_gate.py batch-11-{kit}` = 0 lỗi, contact-sheet mới hơn manifest.
+Mỗi asset: thư mục raw-01/final/prompt.md/review.md/qa.json trong art/src/hd2d/batch-11-{kit}/<id>/. Tự nhìn 4× nền tối/caro. Xong: `python3 tools/hd2d_audit/art_gate.py batch-11-{kit}` = 0 lỗi, contact-sheet mới hơn manifest.
 ```"""
 
 
@@ -238,7 +238,7 @@ ALL = []
 
 def write_kit(kit, title, style, maps_meta, A, req_items=None, pieces_text=None):
     md = [f"# Kit `{kit}` — {title}", '', CODEX_HEAD, '', f"- Style/palette: {style}",
-          f"- Thư mục asset: `apps/game-web/art-src/hd2d/{BATCH_OF_KIT.get(kit, ['batch-11-' + kit])[0]}/`", f"- Số map: {len(maps_meta)}", '']
+          f"- Thư mục asset: `art/src/hd2d/{BATCH_OF_KIT.get(kit, ['batch-11-' + kit])[0]}/`", f"- Số map: {len(maps_meta)}", '']
     if A:
         md += ['## 1. Trạng thái asset hiện có', '',
                f"Tổng {len(A)} · duyệt {sum(1 for a in A if a.get('approved') is True)} · nháp {sum(1 for a in A if a.get('approved') is False)} · khác {sum(1 for a in A if a.get('approved') is None)}",

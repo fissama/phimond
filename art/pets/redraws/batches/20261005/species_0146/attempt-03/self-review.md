@@ -1,0 +1,1 @@
+Superseded: all20 poses were shrunk to about140px, but all-alpha packing reduced visible body further. This is below the useful body size for this bulky species. Attempt04 returns to larger attempt02 and only compacts R3C3 weapon reach. No alpha erased or painting scripts used.

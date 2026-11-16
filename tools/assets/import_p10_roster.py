@@ -181,7 +181,7 @@ for candidate in env.objects:
 # Source prefab has a one-character spelling difference. Explicit, reviewable
 # alias; never approximate-match arbitrary species to another actor.
 aliases = {"QuaiVatNhamThach": "QUAIVATNHAMTHAC"}
-pack_relative = Path("apps/game-client/assets/pets/apk84")
+pack_relative = Path("art/pets/apk84")
 pack = root / pack_relative
 manifest = {"source_sha256": source_sha256, "species": {}}
 catalog = {

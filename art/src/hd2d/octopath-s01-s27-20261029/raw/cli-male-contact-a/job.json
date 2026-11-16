@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 2,
+  "provider": "openai",
+  "kind": "image",
+  "route": "codex-cli",
+  "requestedModel": "codex-image_gen",
+  "options": {
+    "tool": "image_gen"
+  },
+  "promptSha256": "036dcad769d7645f94211fc59ea248974b0fe0b34f89c27bc32ec5ebb5075e79",
+  "references": [
+    {
+      "sha256": "f716603b322b23c9dcf81735d645bf007081670fd7f6625b42eba4cc47ce67d8",
+      "bytes": 24136
+    }
+  ],
+  "fingerprint": "7a3990e26bd9214f10e526c81f59e545b069eef7e9fcf0a6c4bc137cd1468a97",
+  "estimate": {
+    "usd": 0.0,
+    "currency": "USD",
+    "pricesVersion": "2026-10-06",
+    "items": [],
+    "basis": "subscription quota call: no per-call USD price; counted by call caps"
+  },
+  "consent": {
+    "provider": "openai",
+    "model": "codex-image_gen",
+    "calls": 1,
+    "estimateUsd": 0.0,
+    "route": "codex-cli",
+    "quota": true,
+    "account": "the user's own Codex sign-in (ChatGPT)",
+    "note": "uses the subscription quota of that sign-in, never API credit"
+  },
+  "artSource": "host_image",
+  "execution": "execute",
+  "status": "done",
+  "receipt": {
+    "startedAt": "2026-10-29T10:58:27.276Z",
+    "submittedAt": "2026-10-29T10:58:27.277Z",
+    "completedAt": "2026-10-29T10:59:30.066Z",
+    "wallMs": 62790,
+    "providerMs": 62784,
+    "attempt": 1,
+    "purpose": "S23 male run near-leg-forward contact",
+    "toolVersion": "cli_media/0.4.0",
+    "outcomeCode": "ok"
+  },
+  "ledger": {
+    "projectDir": "../../../../../../..",
+    "reservationId": "db251dba46be47a79d973a9ca5bb48fe",
+    "status": "done"
+  },
+  "cliRun": {
+    "tool": "codex",
+    "runId": "5118c7cdc9e348d19ea016358c7116f4",
+    "cwd": "<tmp>/forge-cli-5118c7cdc9e3-700d0ede",
+    "startedAt": "2026-10-29T10:58:27.276Z",
+    "version": "0.158.0",
+    "versionText": "codex-cli 0.158.0",
+    "recipe": "codex-exec-imagegen/1",
+    "home": "CODEX_HOME",
+    "verifiedBefore": true,
+    "threadId": "01a1874f-a9f7-7a21-aeee-2359c892c286"
+  },
+  "adoption": {
+    "method": "native-run-folder",
+    "source": "CODEX_HOME/generated_images/01a1874f-a9f7-7a21-aeee-2359c892c286/exec-ff14d24e-4aab-4b39-804e-1b70385e785b.png",
+    "sourceSha256": "b1f117ea37f4acf3c6560d4c7d6d01b5e3d74b3ba145632dfc3a2de619ec54c3",
+    "sourceMtime": "2026-10-29T10:59:24Z",
+    "freshAfter": "2026-10-29T10:58:27.277Z",
+    "checks": [
+      "inside the CLI's own folder for this run",
+      "no symlink or junction",
+      "regular file of a sane size",
+      "newer than the run",
+      "magic bytes",
+      "decodes",
+      "exactly one output",
+      "exclusive copy with matching sha256"
+    ],
+    "finalAnswerNamesFile": true
+  },
+  "artifact": {
+    "path": "generated.png",
+    "sha256": "b1f117ea37f4acf3c6560d4c7d6d01b5e3d74b3ba145632dfc3a2de619ec54c3",
+    "bytes": 551755,
+    "format": "PNG",
+    "size": [
+      1254,
+      1254
+    ]
+  }
+}

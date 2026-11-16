@@ -1,0 +1,21 @@
+{
+  "default": {
+    "command": "sh tools/check_hd2d_art.sh",
+    "exit_code": 1,
+    "scanned_assets": 170,
+    "errors": 40,
+    "warnings": 0,
+    "scope": "batch-11-* only",
+    "log": "gate-default.log"
+  },
+  "all": {
+    "command": "python3 tools/hd2d_audit/art_gate.py --all",
+    "exit_code": 1,
+    "scanned_assets": 899,
+    "errors": 338,
+    "warnings": 0,
+    "batch10_reported_errors": 0,
+    "log": "gate-all.log"
+  },
+  "acceptance": "pending Claude visual review; global gate failed"
+}

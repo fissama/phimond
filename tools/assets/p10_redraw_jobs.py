@@ -41,11 +41,11 @@ def validate(manifest, root=ROOT):
             if record.get(key) != job[key]:
                 errors.append(f"{job['species_id']}: {key} mismatch")
         for key, leaf in (('source_portrait', 'portrait.png'), ('source_atlas', 'sprites.png')):
-            expected_path = f'apps/game-client/assets/pets/apk84/{source_id}/{leaf}'
+            expected_path = f'art/pets/apk84/{source_id}/{leaf}'
             if job[key] != expected_path:
                 errors.append(f"{job['species_id']}: {key} path mismatch")
             paths.append((job[key], job[key + '_sha256']))
-        if job['output_dir'] != 'apps/game-client/assets/pets/redraws/batches/20261005/' + job['species_id']:
+        if job['output_dir'] != 'art/pets/redraws/batches/20261005/' + job['species_id']:
             errors.append(f"{job['species_id']}: output scope mismatch")
     for relative, expected_hash in paths:
         path = (root / relative).resolve()

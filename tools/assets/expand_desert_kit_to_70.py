@@ -12,7 +12,7 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 WORKSPACE = Path("/Users/phileanh/rust/phimond")
-BATCH_DIR = WORKSPACE / "apps/game-web/art-src/hd2d/batch-11-desert"
+BATCH_DIR = WORKSPACE / "art/src/hd2d/batch-11-desert"
 ART_DIR = Path("/Users/phileanh/.gemini/antigravity-ide/brain/011c27ea-b148-400e-9b78-4882eb990740")
 
 RAW_TILES = ART_DIR / "desert_tiles_expansion_1792140524856.jpg"

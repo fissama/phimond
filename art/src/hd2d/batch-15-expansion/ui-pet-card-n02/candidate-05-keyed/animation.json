@@ -1,0 +1,256 @@
+{
+  "schema": "generate2dsprite.full_frames.v2",
+  "frame_size": [
+    360,
+    128
+  ],
+  "source_frame_count": 1,
+  "sources": [
+    {
+      "path": "../candidate-05-resized/source-360x128.png",
+      "file_sha256": "88317ba3e33e1663ef1d5c35fd81d77b3ff9c3321a6e1e53bac20273ae3ce0cc",
+      "bytes": 57046,
+      "size": [
+        360,
+        128
+      ],
+      "mode": "RGBA",
+      "source_mode": "RGB",
+      "bit_depth": 8,
+      "conversion": "RGB -> RGBA",
+      "key": {
+        "quality": "hard",
+        "requested_quality": "auto",
+        "key_rgb": [
+          237,
+          7,
+          247
+        ],
+        "key_estimate": {
+          "declared": "magenta",
+          "declared_rgb": [
+            255,
+            0,
+            255
+          ],
+          "ring_px": 7552,
+          "native_alpha": false,
+          "use_native_alpha": false,
+          "near_share": 0.9069120762711864,
+          "key": [
+            237.0,
+            7.0,
+            247.0
+          ],
+          "source": "border_median",
+          "valid": true,
+          "reason": null,
+          "ring_share": 0.9033368644067796,
+          "coverage": 0.4970920138888889,
+          "distance_from_declared": 20.9
+        },
+        "qa": {
+          "opaque_key_px": 0,
+          "outer_ring_spill_fraction": 0.7255297679112008,
+          "semitransparent_fraction": 0.0,
+          "enclosed_key_pockets": 0,
+          "key_hued_px": 586,
+          "visible_px": 23084,
+          "outer_ring_px": 1982,
+          "thresholds": {
+            "key_tolerance": 48.0,
+            "spill_threshold": 20.0,
+            "min_pocket_area": 16,
+            "opaque_alpha": 128,
+            "spill_hue_balance": 0.5
+          },
+          "method": "forge_matte.matte_qa v1: straight-colour key distance and dominance on the keyed image; two-channel keys count spill only where the key channels are balanced"
+        }
+      }
+    }
+  ],
+  "frames": [
+    {
+      "index": 0,
+      "file": "frames/frame-00.png",
+      "source_index": 0,
+      "size": [
+        360,
+        128
+      ],
+      "mode": "RGBA",
+      "file_sha256": "706f87f54a0667cc9267fd5262cd9d35f2bae99a6290f151a001e3fdc352df4a",
+      "rgba_pixel_sha256": "83b56b8095a5ed807d8630cbb9ee3bc064c59c65a4e12d355bff8df017c482f1"
+    }
+  ],
+  "sequence": [
+    0
+  ],
+  "duration_ms": 250,
+  "total_duration_ms": 250,
+  "loop": 0,
+  "atlas": {
+    "file": "atlas.png",
+    "size": [
+      360,
+      128
+    ],
+    "rows": 1,
+    "cols": 1,
+    "file_sha256": "706f87f54a0667cc9267fd5262cd9d35f2bae99a6290f151a001e3fdc352df4a",
+    "rgba_pixels_exact": true
+  },
+  "webp": {
+    "decoded_frame_count": 1,
+    "decoded_frames": [
+      {
+        "index": 0,
+        "timestamp_ms": 0,
+        "duration_ms": 250,
+        "sequence_positions": [
+          0
+        ]
+      }
+    ],
+    "total_duration_ms": 250,
+    "loop": 0,
+    "alpha_and_visible_rgb_exact": true,
+    "timeline_verified": true,
+    "hidden_rgb_guaranteed": false,
+    "file": "animation.webp",
+    "file_sha256": "8e26585e215f4a5c30fbfb98b89e6003bca775abeb12e30c7d8df96afa90a31b",
+    "bytes": 32972,
+    "lossless": true,
+    "quality": 75,
+    "method": 3,
+    "timed_static_container": true,
+    "all_keyframes": false
+  },
+  "transitions": [
+    {
+      "from_sequence_position": 0,
+      "to_sequence_position": 0,
+      "from_frame": 0,
+      "to_frame": 0,
+      "wrap": true,
+      "premultiplied_rgb_mae": 0.0,
+      "alpha_mae": 0.0,
+      "changed_visible_pixels": 0
+    }
+  ],
+  "loop_seam": null,
+  "loop_overlap": null,
+  "static_regions": {},
+  "key": {
+    "mode": "chroma",
+    "key_color": "magenta",
+    "requested_quality": "auto",
+    "pixel_art": true,
+    "per_source": "sources[].key"
+  },
+  "slicing": {
+    "source": "inputs",
+    "mode": "inputs"
+  },
+  "spill_check": null,
+  "provenance": {
+    "user_manifest": null,
+    "user_assertions_verified": false
+  },
+  "validation": {
+    "png_rgba_exact": true,
+    "atlas_rgba_exact": true,
+    "webp_timeline_verified": true,
+    "visual_approval": false,
+    "note": "Numerical diagnostics only; no claim of seamless motion or visual continuity."
+  },
+  "processing": {
+    "resized": false,
+    "aligned": false,
+    "chroma_keyed": true,
+    "masked": false,
+    "blended": false
+  },
+  "qa": {
+    "status": "needs-visual-review",
+    "method": "Lossless packaging: frame PNGs and the atlas are decoded and compared pixel for pixel; the WebP timeline and its visible RGBA are decoded and verified. Spill: 8-connected components of alpha above the threshold that leave their owner cell. Seams: forge_core.seam_report of the played sequence (premultiplied RGBA MAE); wrap_ratio = seam / mean adjacent step. Drift: NCC of premultiplied luma.",
+    "notProven": [
+      "visual quality, identity or anatomy of any frame",
+      "smooth motion or a seamless loop (seam ratios are numeric diagnostics only)",
+      "that the crop boxes, grid or sequence match the intended phases",
+      "that RGB hidden under alpha 0 survives the WebP preview"
+    ],
+    "checks": [
+      {
+        "id": "png_rgba_exact",
+        "status": "pass",
+        "value": true,
+        "threshold": null
+      },
+      {
+        "id": "atlas_rgba_exact",
+        "status": "pass",
+        "value": true,
+        "threshold": null
+      },
+      {
+        "id": "webp_timeline",
+        "status": "pass",
+        "value": 250,
+        "threshold": null
+      },
+      {
+        "id": "cross_cell_spill",
+        "status": "skipped",
+        "value": null,
+        "threshold": null
+      },
+      {
+        "id": "chroma_key_residue",
+        "status": "pass",
+        "value": 0,
+        "threshold": 0
+      },
+      {
+        "id": "chroma_key_backdrop",
+        "status": "pass",
+        "value": 0,
+        "threshold": 0
+      },
+      {
+        "id": "loop_seam",
+        "status": "skipped",
+        "value": null,
+        "threshold": null
+      }
+    ],
+    "inputs": [
+      {
+        "path": "../candidate-05-resized/source-360x128.png",
+        "sha256": "88317ba3e33e1663ef1d5c35fd81d77b3ff9c3321a6e1e53bac20273ae3ce0cc",
+        "bytes": 57046
+      }
+    ],
+    "outputs": [
+      {
+        "path": "frames/frame-00.png",
+        "sha256": "706f87f54a0667cc9267fd5262cd9d35f2bae99a6290f151a001e3fdc352df4a",
+        "bytes": 43639
+      },
+      {
+        "path": "atlas.png",
+        "sha256": "706f87f54a0667cc9267fd5262cd9d35f2bae99a6290f151a001e3fdc352df4a",
+        "bytes": 43639
+      },
+      {
+        "path": "animation.webp",
+        "sha256": "8e26585e215f4a5c30fbfb98b89e6003bca775abeb12e30c7d8df96afa90a31b",
+        "bytes": 32972
+      }
+    ],
+    "tool": {
+      "name": "assemble_frames",
+      "version": "0.4.0"
+    }
+  }
+}

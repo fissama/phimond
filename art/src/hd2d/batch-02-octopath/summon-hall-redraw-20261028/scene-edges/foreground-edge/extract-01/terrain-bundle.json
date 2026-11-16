@@ -1,0 +1,183 @@
+{
+  "schema": "generate2dmap.terrain_tile_bundle.v2",
+  "source": {
+    "path": "../raw-02.png",
+    "sha256": "43e452157164707dbc66ac13e05eee42c5028ddb9ac19ecea9fbd9023dc88c80",
+    "bytes": 1484488,
+    "size": [
+      2162,
+      727
+    ],
+    "mode": "RGB",
+    "bit_depth": 8,
+    "conversion": "RGB -> RGBA"
+  },
+  "prompt": {
+    "path": "../prompt.md",
+    "sha256": "8e54cc1320b62e85121644b92d05820ea70169151ec330e0b1d6f85b1bc1ee19",
+    "bytes": 2182
+  },
+  "grid": {
+    "rows": 1,
+    "cols": 1,
+    "rounding": "exact",
+    "source_cell_size": [
+      2162,
+      727
+    ],
+    "output_tile_size": [
+      512,
+      171
+    ]
+  },
+  "tile": {
+    "shape": "rect",
+    "layer": "overlay",
+    "footprint": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        512.0,
+        0.0
+      ],
+      [
+        512.0,
+        171.0
+      ],
+      [
+        0.0,
+        171.0
+      ]
+    ]
+  },
+  "terrains": {
+    "foreground-edge": {
+      "display_name": "foreground-edge",
+      "row": 0,
+      "kind": "fill",
+      "variants": [
+        {
+          "path": "foreground-edge-1.png",
+          "source_cell": [
+            0,
+            0
+          ],
+          "source_box": [
+            0,
+            0,
+            2162,
+            727
+          ],
+          "resized": true,
+          "mean_luminance": 0.590964,
+          "contrast": 0.206839,
+          "visible_fraction": 0.315789,
+          "sha256": "ffae26f3a6541cec41281029a4b1de36bd9c560c8be87843be04a650f8283860"
+        }
+      ],
+      "variant_difference_min": 1.0
+    }
+  },
+  "processing": {
+    "background_mode": "chroma_key",
+    "background_mode_requested": "chroma_key",
+    "keyer": "forge_matte.legacy_hard_key",
+    "threshold": 100,
+    "edge_threshold": 150,
+    "despill_radius": 0,
+    "cell_shape": "square",
+    "resampler": "lanczos",
+    "grid_rounding": "exact",
+    "edge_policy": "isolated",
+    "wrap_aware_resize": false
+  },
+  "qc": {
+    "min_contrast": 0.035,
+    "min_variant_difference": 0.025,
+    "max_border_delta": 0.1,
+    "min_shape_coverage": 0.97,
+    "max_shape_spill": 0.03,
+    "max_seam_ratio": null,
+    "warnings": [],
+    "passed": true,
+    "seamless_verified": false
+  },
+  "qa": {
+    "status": "pass",
+    "method": "Grid slices of the atlas, background handled per --background-mode, resized to the tile size (Lanczos or nearest; wrap-aware for the seamless policy). Luminance contrast and mean thumbnail differences; drawn frames along opposite edges; footprint coverage and spill for iso/hex base tiles; for the seamless policy, premultiplied wrap and Wang-join steps normalised by the art's own steps near each edge.",
+    "notProven": [
+      "visual quality, style match and readability at game zoom",
+      "that each variant reads as the named terrain",
+      "seamlessness: no exact seam proof exists for image tiles (seamless_verified stays false)"
+    ],
+    "checks": [
+      {
+        "id": "contrast",
+        "status": "pass",
+        "value": 0.206839,
+        "threshold": 0.035
+      },
+      {
+        "id": "variant_difference",
+        "status": "pass",
+        "value": 1.0,
+        "threshold": 0.025
+      },
+      {
+        "id": "border_frame",
+        "status": "skipped",
+        "value": null,
+        "threshold": 0.1
+      },
+      {
+        "id": "shape_coverage",
+        "status": "skipped",
+        "value": null,
+        "threshold": 0.97
+      },
+      {
+        "id": "shape_spill",
+        "status": "skipped",
+        "value": null,
+        "threshold": 0.03
+      },
+      {
+        "id": "wrap_seams",
+        "status": "skipped",
+        "value": null,
+        "threshold": null
+      },
+      {
+        "id": "wang_seams",
+        "status": "skipped",
+        "value": null,
+        "threshold": null
+      }
+    ],
+    "inputs": [
+      {
+        "path": "../raw-02.png",
+        "sha256": "43e452157164707dbc66ac13e05eee42c5028ddb9ac19ecea9fbd9023dc88c80",
+        "bytes": 1484488
+      },
+      {
+        "path": "../prompt.md",
+        "sha256": "8e54cc1320b62e85121644b92d05820ea70169151ec330e0b1d6f85b1bc1ee19",
+        "bytes": 2182
+      }
+    ],
+    "outputs": [
+      {
+        "path": "foreground-edge-1.png",
+        "sha256": "ffae26f3a6541cec41281029a4b1de36bd9c560c8be87843be04a650f8283860",
+        "bytes": 59665
+      }
+    ],
+    "tool": {
+      "name": "extract_terrain_tiles.py",
+      "version": "0.4.0"
+    }
+  }
+}

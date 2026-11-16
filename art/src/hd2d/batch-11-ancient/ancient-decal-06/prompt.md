@@ -1,0 +1,10 @@
+Use case: stylized-concept
+Asset type: 2×1 sheet of two isolated ground decal sprites for an ancient jade temple floor.
+Primary request: LEFT cell: an irregular low patch of ancient moss growing through cracked jade grout, with a few embedded pale stone fragments and fine green moss clusters. RIGHT cell: broken aged-brass temple inlay fragments scattered among dark jade stone chips, several angular arc segments but no complete emblem.
+Input images: Image 1 Ancient Ruins map screenshot = material and palette reference. Image 2 approved Octopath pebble decal = style and ground scale. Image 3 approved Octopath contact sheet = style. Images 4–5 approved Phimond creature sprites = outline and palette discipline only.
+Style: crisp pixel-cluster HD-2D game art, 33–48 colors per decal, 3–4 clear shade groups, firm dark same-hue outlines, readable pixel steps, no antialiasing, no fuzzy painterly texture.
+Composition: exact 2 equal columns on solid pure #FF00FF background. Each decal centered and occupies about 60% of its 512×1024 cell, with at least 96 px clear margin around every edge and at least 96 px between subjects. Keep shapes ground-hugging and irregular, small detached chips stay close to the main patch, never near the canvas or cell boundary. No border or grid line.
+Lighting: warm top-left highlights, cool jade shadow facets. Palette: emerald moss, dark teal and jade, pale limestone, restrained aged brass, muted turquoise.
+Avoid: clipped edges, objects touching cell boundaries, repeated composition, full floor tiles, complete emblem, square/oval blob, text, symbols, runes, logos, watermark, background variation, checkerboard, magenta spill on the art, glow, shadows under objects, gradients, blur, noise, characters, standing props.
+
+Asset cut: ancient-decal-06. Raw sheet: `ancient-decal-06/raw-01.png` SHA256 `dac62943b6d4ae5ee7a0ddfd6e08baef7715f758bfe3b9bc617913a6f62865b0`. Route: built-in image_gen; image model not exposed. Crop/key/48-color finish and nearest downscale only; no content added by code. References and hashes are listed in `../jobs/decals-20261104-c/job.json`.

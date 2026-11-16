@@ -1,0 +1,69 @@
+[
+  {
+    "name": "palace-gate-passage.png",
+    "raw": "palace-gate-passage.raw-01.png",
+    "size": [
+      384,
+      420
+    ],
+    "mode": "opaque",
+    "refs": [
+      "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/palace-gate/final.png"
+    ],
+    "prompt": "Production pixel art for Phimond HD-2D, matching supplied existing golden sandstone city assets: warm ivory stone, aged ochre/gold trim, deep umber shadows, olive moss only sparsely. Fixed orthographic three-quarter RPG camera, vertical walls upright, upper-left light, sharp square pixel clusters, no antialias, no blur, no text/watermarks/characters. <=64 colors in final. Create the VIEW THROUGH the empty gate opening, not another gate frame. Full rectangular opaque 384x420 image showing a stone tunnel passage into a sunlit royal courtyard. Dark close sidewalls left/right, floor begins across full bottom edge; three shallow stairs at lower-middle lead toward a luminous courtyard at upper-middle. Symmetrical vanishing point near (192,145), restrained perspective consistent with 3/4 RPG view. It will sit BEHIND the arch in reference, so no ornate foreground arch, no doors blocking path. Tunnel floor and stairs readable in small scale. Top third shows warm stone courtyard/wall and daylight, not empty black. Fill entire canvas with artwork; no magenta, no border."
+  },
+  {
+    "name": "city-backwall-brick.png",
+    "raw": "city-backwall-brick.raw-01.png",
+    "size": [
+      512,
+      384
+    ],
+    "mode": "opaque",
+    "repeat": true,
+    "refs": [
+      "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/palace-wall-section/final.png"
+    ],
+    "prompt": "Production pixel art for Phimond HD-2D, matching supplied existing golden sandstone city assets: warm ivory stone, aged ochre/gold trim, deep umber shadows, olive moss only sparsely. Fixed orthographic three-quarter RPG camera, vertical walls upright, upper-left light, sharp square pixel clusters, no antialias, no blur, no text/watermarks/characters. <=64 colors in final. 512x384 opaque TEXTURE of shaded rear alley wall: straight-on rectangular courses of dark warm brown stone bricks. Repeating seamlessly horizontally, exactly same mortar course heights at left/right edges, continuous full wall without any columns, silhouettes, side edge, door/window or border. Bricks cropped naturally at both sides. Upper wall dark bronze-brown, lower quarter gradually deep umber to ground contact; gradient vertical only. Sparse chips and moss in mortar, subordinate detail so seen through gaps behind houses. Fill every pixel, no transparent or magenta areas. Horizontal repeat tiling is essential."
+  },
+  {
+    "name": "palace-wall-fill.png",
+    "raw": "palace-wall-fill.raw-01.png",
+    "size": [
+      512,
+      320
+    ],
+    "mode": "wall",
+    "repeat": true,
+    "refs": [
+      "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/palace-wall-section/final.png"
+    ],
+    "prompt": "Production pixel art for Phimond HD-2D, matching supplied existing golden sandstone city assets: warm ivory stone, aged ochre/gold trim, deep umber shadows, olive moss only sparsely. Fixed orthographic three-quarter RPG camera, vertical walls upright, upper-left light, sharp square pixel clusters, no antialias, no blur, no text/watermarks/characters. <=64 colors in final. One seamlessly HORIZONTALLY REPEATABLE 512x320 castle wall FILL module, matching reference sandstone and course scale. Fullwidth wall face and stone ledge with 4 evenly spaced simple square crenellations at top; crenels continue rhythmically across left/right seam. No tall end pillars, no towers, no heraldry, no side/end caps. Identical brick course y coordinates at both edges; bottom stone wall reaches bottom edge. Narrow pure #FF00FF background ONLY above top crenellations/in notches; the entire wall below battlement ledge is solid opaque. Keep orthographic wall face rather than receding side walls. Stone ledge y80ish, foot y320, 4merlons with one rhythm across edge. Do not inset wall in magenta margins."
+  },
+  {
+    "name": "city-roofline-gate.png",
+    "raw": "city-roofline-gate.raw-02.png",
+    "size": [
+      2048,
+      384
+    ],
+    "mode": "roofline",
+    "refs": [
+      "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/sources/city-roofline-gate.raw-01.png"
+    ],
+    "prompt": "Precise edit of supplied city skyline. Keep same horizontal red-roof sandstone town identity and pixel-art style. Make it a LOW DISTANT roofline strip rather than a big foreground castle. The occupied silhouette's width must be at least5.34TIMES its height: ALL roof/tower tips stay below the image's vertical MIDPOINT and ALL tower/building bases remain at bottom edge. On the existing2172x724canvas, magenta area fills y0..340 completely. Highest tower apex y350, bottom y724. Shorten the two overly tall side towers dramatically; central palace spire should also be short; layered roofs occupy mostly bottom250pixels. Architecture continuous across FULL WIDTH without magenta at left/right sides. Atmosphere: slightly desaturate red and gold, make less contrast than foreground gate, retain crisp pixels. No drawn sky, no blur, pure#FF00FF above skyline. No text or borders. Final export strip2048x384 will be cropped from occupied band using uniform scale, so occupied band height must not exceed407pixels across2172width. Do not use letterboxes or resize/distort existing pixels; redraw shorter architecture naturally."
+  },
+  {
+    "name": "forest-exit-arch.png",
+    "raw": "forest-exit-arch.raw-01.png",
+    "size": [
+      384,
+      384
+    ],
+    "mode": "cutout",
+    "refs": [
+      "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-13-release/forest-portal-arch/final.png"
+    ],
+    "prompt": "Production crisp pixel-art HD2D FOREST EXIT marker384x384, pure #FF00FF background, binary cutout, upper-left warm light,<=64colors. Match reference forest bark/olive-gold foliage and3/4camera, but make passage much CLEARER: two slender rooted ancient tree trunks lean gently inward framing a LARGE OPEN central passage, foliage thin canopy at very top only; center opening width at least55%ofimage, do not obscure with hanging leaves. Rooted feet left/right bottom, a SHORT wide bright golden dirt threshold at bottom center framed by two small coolgrey stones. The actual middle opening remains PURE MAGENTA so world behind can show through, no painted landscape inside, no portal magical glow. Bold light rim facing opening, dark green outer sides. At small scale it immediately reads as exit passage, not a dense round bush. One isolated complete asset, no other trees or background."
+  }
+]

@@ -1,0 +1,24 @@
+{
+  "id": "world_tree-shadow-04",
+  "size": [
+    512,
+    256
+  ],
+  "mode": "RGBA",
+  "colors": 37,
+  "partial_alpha_pixels": 41996,
+  "raw_integrity": true,
+  "raw_sha256": "a590226c118ed71dbf2f7b5eb031ee366fd67a2c03e310289e4b3de667996611",
+  "sha256": "3b5c86f8b54f7f458c6c6ab0f29520bcc74b6883484456ec4cbf279e86ae3670",
+  "processing": "remove alpha<=32 spill; premultiplied LANCZOS resize; no-dither 40-color palette",
+  "alpha_threshold": 32,
+  "tileable": "none",
+  "minimum_margin_px": 8,
+  "visual_review": "actual final 4x on checker and dark viewed",
+  "approved": false,
+  "status": "needs_claude_visual_review",
+  "failures": [],
+  "limitations": [
+    "soft diffuse treatment; in-map contrast and distinction from shadow-01 need owner review"
+  ]
+}

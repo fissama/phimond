@@ -1,0 +1,1 @@
+Attempt raw-02 is crisper pixel art with irregular grassy edges. Normalize crop/nearest, key magenta, quantize 48 colors. X edge mean absolute RGB=9.833; inspect 3x3 and shifted preview; no seam repair.

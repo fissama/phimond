@@ -1,0 +1,113 @@
+{
+  "status": "pass",
+  "method": "forge_palette.quantize_image: OKLab-nearest palette colour per pixel (exact palette colours kept), alpha binary at the threshold, then the written PNGs re-read and measured with forge_palette.fit_report against the palette",
+  "notProven": [
+    "Visual quality after snapping: compare an output with its input.",
+    "Indexed PNGs are engine exports; they are not checked by builders.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "output_off_palette_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "output_partial_alpha_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.09026,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../scaled-v6/frames/frame-00.png",
+      "sha256": "05c344eb2e4af83c43576854cd19cc5a21176a5888f0f98442131a7974c93001",
+      "bytes": 441
+    },
+    {
+      "path": "../scaled-v6/frames/frame-01.png",
+      "sha256": "66b954c8cb852aaa9303ccef1681d8838b1a946051c5a90247f3817d4f978b60",
+      "bytes": 642
+    },
+    {
+      "path": "../scaled-v6/frames/frame-02.png",
+      "sha256": "4aa2a2980f08d4e9f329114eb934caf5e6268d830a0f888ab1a0422c7aba8374",
+      "bytes": 586
+    },
+    {
+      "path": "../palette/palette.json",
+      "sha256": "5848b98e89ffb06d09f3d4aaf21478ee3691f0ed9a5d5c6176b0ba2bf039cf93",
+      "bytes": 1953
+    }
+  ],
+  "outputs": [
+    {
+      "path": "frame-00.png",
+      "sha256": "2fb6bfca05b3a2d047a545fd5955b7b5c12f2a477eb0904917c0a2015e5f4468",
+      "bytes": 329
+    },
+    {
+      "path": "frame-01.png",
+      "sha256": "ce7d56889da418110461b00e1fb777bb1a21c18df2669650a2e23f3b4bad2914",
+      "bytes": 505
+    },
+    {
+      "path": "frame-02.png",
+      "sha256": "8c51c7cddcda7051074c75c8f4b53e17d2b2b39c16f9852714e31c4ceb331c5e",
+      "bytes": 379
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "fit": {
+    "frame-00.png": {
+      "measured_px": 80,
+      "alpha_threshold": 128,
+      "off_palette_px": 78,
+      "partial_alpha_px": 85,
+      "colors": 73,
+      "palette_colors_used": 16,
+      "mean_delta_e": 0.008255,
+      "p95_delta_e": 0.019763,
+      "max_delta_e": 0.025892
+    },
+    "frame-01.png": {
+      "measured_px": 130,
+      "alpha_threshold": 128,
+      "off_palette_px": 129,
+      "partial_alpha_px": 131,
+      "colors": 127,
+      "palette_colors_used": 26,
+      "mean_delta_e": 0.012069,
+      "p95_delta_e": 0.03097,
+      "max_delta_e": 0.09026
+    },
+    "frame-02.png": {
+      "measured_px": 126,
+      "alpha_threshold": 128,
+      "off_palette_px": 116,
+      "partial_alpha_px": 125,
+      "colors": 97,
+      "palette_colors_used": 16,
+      "mean_delta_e": 0.007471,
+      "p95_delta_e": 0.020751,
+      "max_delta_e": 0.027789
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.09026,
+    "worst_p95_delta_e": 0.03097,
+    "off_palette_px": 323
+  },
+  "locked_inputs": []
+}

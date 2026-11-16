@@ -26,6 +26,6 @@ D = {
   'next_generation': {'name': 'Gốc rễ và cành nhánh', 'description': 'Hợp thành một thế hệ mới tại điền trang.'}},
  'recipes': {'snail_refinement': 'Tinh luyện Ốc Sên Rêu', 'grove_guardian': 'Hợp thành Hộ Vệ Lùm Cây', 'guardian_refinement': 'Tinh luyện Hộ Vệ Lùm Cây', 'tide_sentinel': 'Hợp thành Thủy Vệ Triều Dâng', 'moon_warden': 'Hợp thành Nguyệt Thủ', 'dawn_sovereign': 'Hợp thành Hoàng Đế Bình Minh'},
 }
-out = os.path.join(ROOT, 'apps/game-web/public/assets/i18n'); os.makedirs(out, exist_ok=True)
+out = os.path.join(ROOT, 'art/runtime-src/i18n'); os.makedirs(out, exist_ok=True)
 json.dump(D, open(os.path.join(out, 'vi.json'), 'w'), ensure_ascii=False, indent=1)
 print('ok', {k: len(v) for k, v in D.items()})

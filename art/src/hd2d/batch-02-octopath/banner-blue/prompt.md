@@ -1,0 +1,11 @@
+Use case: modular HD-2D game sprites. NINE separate city plaza ornaments in THREE ROWS x THREE COLUMNS with huge empty gutters. TOP: dry circular carved stone fountain with a slender winged woman statue in center, reference1 identity, NO water whatsoever; independent heroic robed stone guardian statue on square plinth, no lettering; short THREE-step pale stone stair module facing front. MIDDLE: low stone balustrade section with four small rounded balusters and two endposts; deep red plain vertical cloth banner on narrow bronze pole; blue-gray plain forked cloth banner on narrow bronze pole. BOTTOM: compact pruned urban broadleaf tree with thin trunk and round crown; second urban tree with forked trunk and oval crown; decorative carved stone pillar with simple floral relief, no runes or writing. Original reference1 fountain form/material, reference2 weathered palace limestone and red roofs, last2 pixel pet shading compatibility only. Octopath Traveler environment PIXEL ART, mature restrained warm limestone/umber/olive/deep madder/blue-gray palette, clear broad pixel clusters,3-4 tones, cool hue-tinted outlines, subtle upper-left warm key, crisp hard stepped edges, no illustration microdetail. Camera upright front billboard24degrees downward. Each whole object inside central55percent of its cell, no touching edge, no overlaps. Exact pure #FF00FF background. No floors, ground shadows, glow, water, text, emblems, labels, fog, scenery. Flags and trees are standalone sway-ready objects, not attached to scenery.
+
+
+
+Ordered reference images:
+- /Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level3_QTTP/level3_QTTP_026.png / sha256 d6bb4fd7de0cc553c28d917440cb49da4e9f37e5a034954be28bcf987a27f7b5
+- /Users/phileanh/Downloads/Phimond-P12-Review/map-images/city_palace_gate.png / sha256 f33acf1de43c13b01271f9de35508c8fbf61347dd007ed558373ee42c9e39b96
+- /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png / sha256 fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da
+- /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png / sha256 043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3
+
+Route: built-in image_gen; model not exposed; raw SHA256 fe02992ef558c0ff4cf93f459d0e30597d18e7306a79303f5851c65ebf0c58d4

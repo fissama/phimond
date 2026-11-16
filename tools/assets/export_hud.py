@@ -9,7 +9,7 @@ import UnityPy
 ROOT = Path(__file__).resolve().parents[2]
 SOURCE = Path('/Users/phileanh/Downloads/Spirit Beast World 3.2.apk')
 CACHE = ROOT / 'tools/.cache/reference/apk-3.2'
-OUT = ROOT / 'apps/game-client/assets/reference/hud'
+OUT = ROOT / 'art/reference/hud'
 # Alias -> serialized Sprite name. Repeated aliases intentionally retain a single source.
 NAMES = {
     'row_menu': 'tableitem_0', 'row_selected': 'tableitem1_0', 'tab_menu': 'tab',

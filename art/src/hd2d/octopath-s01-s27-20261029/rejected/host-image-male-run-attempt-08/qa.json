@@ -1,0 +1,27 @@
+{
+  "name": "host-image-male-run-attempt-08",
+  "source": "Codex image_gen",
+  "reference": "apps/client/public/hd2d/player-male.idle.png",
+  "raw_size": [2172, 724],
+  "raw_mode": "RGBA",
+  "raw_color_count": 214249,
+  "alpha_extrema": [0, 255],
+  "requested": {
+    "frames": 8,
+    "layout": "single horizontal row",
+    "target_size": [1536, 192],
+    "cell_size": [192, 192],
+    "binary_alpha": true,
+    "palette_max": 48,
+    "opposite_lead_legs_frames_1_5": true,
+    "consistent_body_height": true
+  },
+  "visual_review": {
+    "status": "rejected",
+    "reason": "The run repeats a four-pose pattern: frames 1 and 5 show the same lead-leg relation, so the mandatory opposite-contact check fails. Raw output dimensions, 214249 colors, and 256 alpha levels also fail the sprite-sheet mechanical contract.",
+    "body_scale_check": "not certified",
+    "stray_pixel_check": "not certified"
+  },
+  "approved": false,
+  "installed": false
+}

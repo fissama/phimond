@@ -1,0 +1,1 @@
+Self-review: Horizontal one-unit wooden fence segment matching approved farm fence rail. Game scale [1.0, 0.75] world units at 128 px/unit; alpha binary=True, palette=34, margin=8 px. Candidate for Claude review.

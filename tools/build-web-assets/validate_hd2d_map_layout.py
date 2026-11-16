@@ -11,7 +11,7 @@ mid = lay["map_id"]
 bp = sys.argv[2] if len(sys.argv) > 2 else next(iter(glob.glob(str(R / f".ai/design/map-briefs/*/{mid}.json"))))
 brief = json.load(open(bp))
 kit = brief["kit"].replace("kit_", "")
-mp = sys.argv[3:] or glob.glob(str(R / f"apps/game-web/art-src/hd2d/batch-11-{kit}/manifest.json"))
+mp = sys.argv[3:] or glob.glob(str(R / f"art/src/hd2d/batch-11-{kit}/manifest.json"))
 man = {}
 for p in mp:
     for a in json.load(open(p))["assets"]:

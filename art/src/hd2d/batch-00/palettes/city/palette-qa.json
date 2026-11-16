@@ -1,0 +1,167 @@
+{
+  "status": "pass",
+  "method": "forge_palette.build_palette (weighted k-means++ in OKLab over unique colours, reserved colours fixed, coverage skipping) then forge_palette.fit_report of every input: OKLab dE of each pixel with alpha >= the threshold to its nearest palette colour",
+  "notProven": [
+    "Visual quality of the palette: look at swatches.png and an applied frame.",
+    "Colours of pixels below the alpha threshold were not sampled or measured.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "palette_colors",
+      "status": "pass",
+      "value": 48,
+      "threshold": 48
+    },
+    {
+      "id": "inputs_without_samples",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0,
+      "files": []
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.161105,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../../finish-inputs/city/city-a-floor.png",
+      "sha256": "1a3398c1d7274715288e3003ba85c23ae60869f768626fe64d3d21d75fed57c4",
+      "bytes": 295754
+    },
+    {
+      "path": "../../finish-inputs/city/city-b-floor.png",
+      "sha256": "5a3fcb255ceb32f26bd092d086b680a72211f24eb8c047603ac70e1612aa3cc5",
+      "bytes": 285703
+    },
+    {
+      "path": "../../finish-inputs/city/city-barrel-a.png",
+      "sha256": "4137c51a82fe735e3ebd2c05d404cf1f4697ac4626ca4671d271f179e79318d4",
+      "bytes": 16907
+    },
+    {
+      "path": "../../finish-inputs/city/city-barrel-b.png",
+      "sha256": "b5d58b6d9931128b3c71d4fb63329dac7e31c79e7adb33f59bdea48d1b2ee7ba",
+      "bytes": 16792
+    },
+    {
+      "path": "../../finish-inputs/city/city-lamp-a.png",
+      "sha256": "45bf1e1b1dddc827b3e87448f29090e9cef5247d4a29cb25f75005db6d09e2cd",
+      "bytes": 43900
+    },
+    {
+      "path": "../../finish-inputs/city/city-lamp-b.png",
+      "sha256": "9b1b62500fef84b200e1b1aa053d003365ed6ee793145de1b1cbecf0641f6381",
+      "bytes": 44668
+    }
+  ],
+  "outputs": [
+    {
+      "path": "palette.json",
+      "sha256": "0afd80d396bd32a5f539b241097f302c03e084ae5f21bb05bf024461016f8bd4",
+      "bytes": 1950
+    },
+    {
+      "path": "palette.gpl",
+      "sha256": "fc730f84dffdc3775da1f2cad00e2f0b29bea07c27cbec780ef493067ed39605",
+      "bytes": 1006
+    },
+    {
+      "path": "palette.hex",
+      "sha256": "749d8462e826890512802e455707b3430c3b3a245df1e0dc62ae28f27876922b",
+      "bytes": 336
+    },
+    {
+      "path": "swatches.png",
+      "sha256": "50ca3a6b517f66d93b4d15cc899bb10e2999db16ba2f969ea8517affe3cef04c",
+      "bytes": 695
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "palette": {
+    "colors": 48,
+    "reserved": 0,
+    "transparent_index": 255,
+    "seed": 0
+  },
+  "fit": {
+    "../../finish-inputs/city/city-a-floor.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 261474,
+      "partial_alpha_px": 0,
+      "colors": 4354,
+      "palette_colors_used": 10,
+      "mean_delta_e": 0.011242,
+      "p95_delta_e": 0.019693,
+      "max_delta_e": 0.045465
+    },
+    "../../finish-inputs/city/city-b-floor.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 260361,
+      "partial_alpha_px": 0,
+      "colors": 3139,
+      "palette_colors_used": 8,
+      "mean_delta_e": 0.009799,
+      "p95_delta_e": 0.019967,
+      "max_delta_e": 0.044284
+    },
+    "../../finish-inputs/city/city-barrel-a.png": {
+      "measured_px": 5950,
+      "alpha_threshold": 128,
+      "off_palette_px": 5949,
+      "partial_alpha_px": 0,
+      "colors": 5594,
+      "palette_colors_used": 47,
+      "mean_delta_e": 0.017938,
+      "p95_delta_e": 0.031609,
+      "max_delta_e": 0.086152
+    },
+    "../../finish-inputs/city/city-barrel-b.png": {
+      "measured_px": 5884,
+      "alpha_threshold": 128,
+      "off_palette_px": 5883,
+      "partial_alpha_px": 0,
+      "colors": 5580,
+      "palette_colors_used": 45,
+      "mean_delta_e": 0.019888,
+      "p95_delta_e": 0.034375,
+      "max_delta_e": 0.089565
+    },
+    "../../finish-inputs/city/city-lamp-a.png": {
+      "measured_px": 15730,
+      "alpha_threshold": 128,
+      "off_palette_px": 15726,
+      "partial_alpha_px": 0,
+      "colors": 14582,
+      "palette_colors_used": 46,
+      "mean_delta_e": 0.023142,
+      "p95_delta_e": 0.040612,
+      "max_delta_e": 0.161105
+    },
+    "../../finish-inputs/city/city-lamp-b.png": {
+      "measured_px": 15790,
+      "alpha_threshold": 128,
+      "off_palette_px": 15786,
+      "partial_alpha_px": 0,
+      "colors": 14742,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.024555,
+      "p95_delta_e": 0.041453,
+      "max_delta_e": 0.118921
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.161105,
+    "worst_p95_delta_e": 0.041453,
+    "off_palette_px": 565179
+  }
+}

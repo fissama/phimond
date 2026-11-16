@@ -1,0 +1,71 @@
+{
+  "status": "pass",
+  "method": "forge_palette.quantize_image: OKLab-nearest palette colour per pixel (exact palette colours kept), alpha binary at the threshold, then the written PNGs re-read and measured with forge_palette.fit_report against the palette",
+  "notProven": [
+    "Visual quality after snapping: compare an output with its input.",
+    "Indexed PNGs are engine exports; they are not checked by builders.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "output_off_palette_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "output_partial_alpha_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.095762,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../crop.png",
+      "sha256": "db3839141d14c4f24176856e2fc68b4290548e51b9bd234f6a9c7de5e66155b7",
+      "bytes": 35812
+    },
+    {
+      "path": "../../jobs/coral-treasure/palette/palette.json",
+      "sha256": "6701c7d9aeb310e5c9a916da3f466d1b25fea646cd0153d02578220d12dfaab5",
+      "bytes": 1924
+    }
+  ],
+  "outputs": [
+    {
+      "path": "crop.png",
+      "sha256": "7c44018f42523ae2835b1f09cdfa69f9b93be2d1beb84d8c0252c2a5954ab702",
+      "bytes": 17266
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "fit": {
+    "crop.png": {
+      "measured_px": 11719,
+      "alpha_threshold": 128,
+      "off_palette_px": 11718,
+      "partial_alpha_px": 0,
+      "colors": 10904,
+      "palette_colors_used": 41,
+      "mean_delta_e": 0.027612,
+      "p95_delta_e": 0.047656,
+      "max_delta_e": 0.095762
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.095762,
+    "worst_p95_delta_e": 0.047656,
+    "off_palette_px": 11718
+  },
+  "locked_inputs": []
+}

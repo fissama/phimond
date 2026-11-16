@@ -1,0 +1,295 @@
+{
+  "status": "pass",
+  "method": "forge_palette.build_palette (weighted k-means++ in OKLab over unique colours, reserved colours fixed, coverage skipping) then forge_palette.fit_report of every input: OKLab dE of each pixel with alpha >= the threshold to its nearest palette colour",
+  "notProven": [
+    "Visual quality of the palette: look at swatches.png and an applied frame.",
+    "Colours of pixels below the alpha threshold were not sampled or measured.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "palette_colors",
+      "status": "pass",
+      "value": 48,
+      "threshold": 48
+    },
+    {
+      "id": "inputs_without_samples",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0,
+      "files": []
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.191314,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../../finish-inputs/forest/forest-a-bush.png",
+      "sha256": "20076d73da45ead87d449e2b7ca4b1167fb171c5ba2eb3e65137092247162d1c",
+      "bytes": 63474
+    },
+    {
+      "path": "../../finish-inputs/forest/forest-a-fern.png",
+      "sha256": "4e1dc7fd6c5f705a2cb6e456cce7754ab373be7785a3953286cb4391d86dab47",
+      "bytes": 18734
+    },
+    {
+      "path": "../../finish-inputs/forest/forest-a-floor.png",
+      "sha256": "c575dffcef3bfe58be11b25f07fc3c180946f6a7eceb086215c18736f26b2c66",
+      "bytes": 312547
+    },
+    {
+      "path": "../../finish-inputs/forest/forest-a-grass.png",
+      "sha256": "50f29ac188c5c883d623981abb0c26b35e283a03c5220e2bd11b6f54acb16fd0",
+      "bytes": 11307
+    },
+    {
+      "path": "../../finish-inputs/forest/forest-a-pink-flowers.png",
+      "sha256": "5146b4117e19bfa538383ed7c254180f6ead3d6d5edb5fb16ab132b4d1a2005b",
+      "bytes": 15484
+    },
+    {
+      "path": "../../finish-inputs/forest/forest-a-tree.png",
+      "sha256": "521a9c952830e9047a25a4603f4e5e0ac992a6eb02b87f96c7622e19560ea298",
+      "bytes": 224739
+    },
+    {
+      "path": "../../finish-inputs/forest/forest-a-yellow-flowers.png",
+      "sha256": "8e49b344767a93d6384adc473fc7bf9d02913d8dfa5ea54b0dfd247d927a3423",
+      "bytes": 13555
+    },
+    {
+      "path": "../../finish-inputs/forest/forest-b-bush.png",
+      "sha256": "6e426e245ab6c38453b615686bdddb04e9d972a545a3632d459e295aafecf992",
+      "bytes": 69617
+    },
+    {
+      "path": "../../finish-inputs/forest/forest-b-fern.png",
+      "sha256": "836a05b465a667f9162b7536fc25ded7cc26db0b1fb8cdca9cd149a630240e1f",
+      "bytes": 19685
+    },
+    {
+      "path": "../../finish-inputs/forest/forest-b-floor.png",
+      "sha256": "94d74cc5da2bbe2b90cb758874e61bbaf5da6b32ee8e930540303d8e808beaca",
+      "bytes": 309437
+    },
+    {
+      "path": "../../finish-inputs/forest/forest-b-grass.png",
+      "sha256": "fca6cfd5b4a3e1f0c38d0f146722cd9d6b1358857694d9fd2864e54f4ac3d54f",
+      "bytes": 11101
+    },
+    {
+      "path": "../../finish-inputs/forest/forest-b-pink-flowers.png",
+      "sha256": "9944b64ba05bd2bad4fe99851646a0527fc51ea1b5ffba4172d681b6db190ccb",
+      "bytes": 17950
+    },
+    {
+      "path": "../../finish-inputs/forest/forest-b-tree.png",
+      "sha256": "6f088e1852b29c2ba841c98e10f77b192fe7152e257371ef8e0b8ee92483e96b",
+      "bytes": 241361
+    },
+    {
+      "path": "../../finish-inputs/forest/forest-b-yellow-flowers.png",
+      "sha256": "3cfe5ad2c3137f2998eb5d9bf90477c1bee51bc0cf456dfec1f62adbe75857a3",
+      "bytes": 14663
+    }
+  ],
+  "outputs": [
+    {
+      "path": "palette.json",
+      "sha256": "13a9d1c4b177e1cd2975af03ce80e43f92dfdb32f770f8941c26e33f59e6ac77",
+      "bytes": 1953
+    },
+    {
+      "path": "palette.gpl",
+      "sha256": "a8c91402e07a794afaca354fa03e7f5c865b7e411e88c7e2f713c9a9a4b2a1b5",
+      "bytes": 1008
+    },
+    {
+      "path": "palette.hex",
+      "sha256": "b7f402c87ba2e243f75fc9855338c45943ee3db5fd726521c1c0f161413dbad7",
+      "bytes": 336
+    },
+    {
+      "path": "swatches.png",
+      "sha256": "38cdda4370f4e8f5aa7a356a68d273196586a3704bdee77db3887765f1f6637e",
+      "bytes": 704
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "palette": {
+    "colors": 48,
+    "reserved": 0,
+    "transparent_index": 255,
+    "seed": 0
+  },
+  "fit": {
+    "../../finish-inputs/forest/forest-a-bush.png": {
+      "measured_px": 22939,
+      "alpha_threshold": 128,
+      "off_palette_px": 22937,
+      "partial_alpha_px": 0,
+      "colors": 21660,
+      "palette_colors_used": 47,
+      "mean_delta_e": 0.01967,
+      "p95_delta_e": 0.035374,
+      "max_delta_e": 0.149897
+    },
+    "../../finish-inputs/forest/forest-a-fern.png": {
+      "measured_px": 6224,
+      "alpha_threshold": 128,
+      "off_palette_px": 6224,
+      "partial_alpha_px": 0,
+      "colors": 6095,
+      "palette_colors_used": 41,
+      "mean_delta_e": 0.019765,
+      "p95_delta_e": 0.034602,
+      "max_delta_e": 0.177983
+    },
+    "../../finish-inputs/forest/forest-a-floor.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 261377,
+      "partial_alpha_px": 0,
+      "colors": 27123,
+      "palette_colors_used": 22,
+      "mean_delta_e": 0.010506,
+      "p95_delta_e": 0.028523,
+      "max_delta_e": 0.072158
+    },
+    "../../finish-inputs/forest/forest-a-grass.png": {
+      "measured_px": 3551,
+      "alpha_threshold": 128,
+      "off_palette_px": 3551,
+      "partial_alpha_px": 0,
+      "colors": 3512,
+      "palette_colors_used": 36,
+      "mean_delta_e": 0.020122,
+      "p95_delta_e": 0.036809,
+      "max_delta_e": 0.099382
+    },
+    "../../finish-inputs/forest/forest-a-pink-flowers.png": {
+      "measured_px": 5091,
+      "alpha_threshold": 128,
+      "off_palette_px": 5091,
+      "partial_alpha_px": 0,
+      "colors": 5029,
+      "palette_colors_used": 47,
+      "mean_delta_e": 0.025235,
+      "p95_delta_e": 0.058207,
+      "max_delta_e": 0.163144
+    },
+    "../../finish-inputs/forest/forest-a-tree.png": {
+      "measured_px": 87596,
+      "alpha_threshold": 128,
+      "off_palette_px": 87591,
+      "partial_alpha_px": 0,
+      "colors": 75318,
+      "palette_colors_used": 47,
+      "mean_delta_e": 0.0225,
+      "p95_delta_e": 0.042649,
+      "max_delta_e": 0.140398
+    },
+    "../../finish-inputs/forest/forest-a-yellow-flowers.png": {
+      "measured_px": 4364,
+      "alpha_threshold": 128,
+      "off_palette_px": 4364,
+      "partial_alpha_px": 0,
+      "colors": 4297,
+      "palette_colors_used": 46,
+      "mean_delta_e": 0.023339,
+      "p95_delta_e": 0.047724,
+      "max_delta_e": 0.132809
+    },
+    "../../finish-inputs/forest/forest-b-bush.png": {
+      "measured_px": 27180,
+      "alpha_threshold": 128,
+      "off_palette_px": 27175,
+      "partial_alpha_px": 0,
+      "colors": 25124,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.019532,
+      "p95_delta_e": 0.041145,
+      "max_delta_e": 0.124348
+    },
+    "../../finish-inputs/forest/forest-b-fern.png": {
+      "measured_px": 6856,
+      "alpha_threshold": 128,
+      "off_palette_px": 6856,
+      "partial_alpha_px": 0,
+      "colors": 6698,
+      "palette_colors_used": 41,
+      "mean_delta_e": 0.022132,
+      "p95_delta_e": 0.041166,
+      "max_delta_e": 0.105093
+    },
+    "../../finish-inputs/forest/forest-b-floor.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 258124,
+      "partial_alpha_px": 0,
+      "colors": 27754,
+      "palette_colors_used": 21,
+      "mean_delta_e": 0.011022,
+      "p95_delta_e": 0.028257,
+      "max_delta_e": 0.066536
+    },
+    "../../finish-inputs/forest/forest-b-grass.png": {
+      "measured_px": 3731,
+      "alpha_threshold": 128,
+      "off_palette_px": 3731,
+      "partial_alpha_px": 0,
+      "colors": 3668,
+      "palette_colors_used": 36,
+      "mean_delta_e": 0.0192,
+      "p95_delta_e": 0.035648,
+      "max_delta_e": 0.140597
+    },
+    "../../finish-inputs/forest/forest-b-pink-flowers.png": {
+      "measured_px": 6238,
+      "alpha_threshold": 128,
+      "off_palette_px": 6236,
+      "partial_alpha_px": 0,
+      "colors": 6086,
+      "palette_colors_used": 46,
+      "mean_delta_e": 0.020758,
+      "p95_delta_e": 0.046037,
+      "max_delta_e": 0.121806
+    },
+    "../../finish-inputs/forest/forest-b-tree.png": {
+      "measured_px": 97435,
+      "alpha_threshold": 128,
+      "off_palette_px": 97414,
+      "partial_alpha_px": 0,
+      "colors": 82502,
+      "palette_colors_used": 47,
+      "mean_delta_e": 0.022851,
+      "p95_delta_e": 0.045052,
+      "max_delta_e": 0.191314
+    },
+    "../../finish-inputs/forest/forest-b-yellow-flowers.png": {
+      "measured_px": 4958,
+      "alpha_threshold": 128,
+      "off_palette_px": 4956,
+      "partial_alpha_px": 0,
+      "colors": 4879,
+      "palette_colors_used": 44,
+      "mean_delta_e": 0.022066,
+      "p95_delta_e": 0.043129,
+      "max_delta_e": 0.099382
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.191314,
+    "worst_p95_delta_e": 0.058207,
+    "off_palette_px": 795627
+  }
+}

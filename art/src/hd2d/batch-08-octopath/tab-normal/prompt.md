@@ -1,0 +1,11 @@
+Create a production sprite atlas of fantasy RPG menu UI components: exactly FOUR columns x FOUR rows, equal cells, every element isolated with generous transparent margins. Image1 original APK HUD montage is CONTENT reference: gold floral corner ornaments, blue panels, simple rectangular slots and list rows. Image2 is original panel. Image3/4 only pet pixel compatibility. Redraw in Octopath Traveler HD-2D style, clean clustered pixels, muted ivory and umber, dull gold borders, blue-gray flat interiors and madder accent. NO text, letters, numbers or captions. Flat front-on UI, flat stretchable centers, ornaments confined to corners and outer edge. Row1: large landscape menu panel 9slice; small landscape modal panel 9slice; long title bar; circular close button containing simple X glyph. Row2: tab normal; tab selected; long list row normal; long list row selected. Row3: square item slot normal; square item slot selected; square item slot locked with little padlock; square rare item slot gold rim with no stars. Row4: thin vertical scrollbar track AND thumb as ONE assembly; empty checkbox; checked checkbox (tick only); empty horizontal text input field. Exactly sixteen cells, no extra decorative pieces. All blank label and content areas. True transparent background.
+
+
+Ordered references:
+{'path': '/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-06-octopath/source-hud-contact.png', 'sha256': '185446f5f5999c616080555a1200e7ee8061184680088f4e85c7c6b8d012bedb'}
+{'path': '/Users/phileanh/rust/phimond/apps/game-client/assets/reference/ui/UI.png', 'sha256': 'dedba6310459fb7301226aaef20e6aaf8f0b5c08234422515bfc6e67c80acee3'}
+{'path': '/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png', 'sha256': 'fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da'}
+{'path': '/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png', 'sha256': '043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3'}
+
+Route: built-in image_gen / art_source host_image. Raw SHA256 af1702b61c3d66e9c166ae3e7376f61010070d423c99332b1b03c8feb67877c4
+Ownership box [0, 390, 335, 550]

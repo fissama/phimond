@@ -25,7 +25,7 @@ import scipy.ndimage as ndi
 from PIL import Image, ImageDraw, ImageFilter
 
 WORKSPACE = Path("/Users/phileanh/rust/phimond")
-BATCH_DIR = WORKSPACE / "apps/game-web/art-src/hd2d/batch-11-windrock"
+BATCH_DIR = WORKSPACE / "art/src/hd2d/batch-11-windrock"
 ART_DIR = Path("/Users/phileanh/.gemini/antigravity-ide/brain/011c27ea-b148-400e-9b78-4882eb990740")
 
 RAW_CHASMS = ART_DIR / "windrock_chasms_bridges_1792215005142.jpg"

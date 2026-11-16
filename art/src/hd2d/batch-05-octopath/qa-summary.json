@@ -1,0 +1,994 @@
+{
+  "asset_count": 62,
+  "npc_master_count": 49,
+  "player_master_count": 2,
+  "portrait_count": 11,
+  "mechanical_pass": 62,
+  "active_extraction": [
+    {
+      "job": "masters-01",
+      "manifest": "jobs/masters-01/extracted/prop-pack.json",
+      "qa": {
+        "status": "pass",
+        "method": "native alpha, not keyed; alpha hygiene both; 8-connected components (all); checks measured on the published pixels",
+        "notProven": [
+          "that each label names the art in its cell or box",
+          "that a prop is complete: clipping is detected only where art meets the cell edge",
+          "keyed-edge quality beyond the edge fringe count",
+          "that anchors and suggested footprints match gameplay contact (both are measured from alpha)",
+          "runtime placement, collision or occlusion"
+        ],
+        "checks": [
+          {
+            "id": "accepted",
+            "status": "pass",
+            "value": 4,
+            "threshold": ">= 1"
+          },
+          {
+            "id": "edge_touch",
+            "status": "pass",
+            "value": [],
+            "threshold": 0
+          },
+          {
+            "id": "dropped_area",
+            "status": "pass",
+            "value": {
+              "base-1": 0.0013,
+              "base-3": 0.0014,
+              "base-5": 0.0017,
+              "base-6": 0.0005
+            },
+            "threshold": 0.01
+          },
+          {
+            "id": "strategy_aspect",
+            "status": "skipped",
+            "value": null,
+            "threshold": 1.6
+          },
+          {
+            "id": "edge_fringe",
+            "status": "skipped",
+            "value": null,
+            "threshold": 0.02
+          }
+        ],
+        "inputs": [
+          {
+            "path": "../raw-01.png",
+            "sha256": "5eb4b8e4b1c2b15da4083ff9dddf29bd7092676c5446e4c2afa6c7fa1e51bb3f",
+            "bytes": 1088164
+          }
+        ],
+        "outputs": [
+          {
+            "path": "base-1/prop.png",
+            "sha256": "cb67e83ba3f89b779943447d22c4425e3e2824be532e6946d755e13ad06ee2cf",
+            "bytes": 250666
+          },
+          {
+            "path": "base-3/prop.png",
+            "sha256": "c2961c33e9f0f447e9577145129f089623d554d2937846c8b6186a7838bcf863",
+            "bytes": 229833
+          },
+          {
+            "path": "base-5/prop.png",
+            "sha256": "1cb1625cca526a8e1e35dbc62e55fc8935b13f2a09bb7cbc2dbe68a629a7a08f",
+            "bytes": 234982
+          },
+          {
+            "path": "base-6/prop.png",
+            "sha256": "c3089416755ca23bf5a0daea585567c2e69be525e0c586c996d014a4041a148d",
+            "bytes": 297143
+          }
+        ],
+        "tool": {
+          "name": "extract_prop_pack",
+          "version": "0.4.0"
+        }
+      }
+    },
+    {
+      "job": "masters-02",
+      "manifest": "jobs/masters-02/extracted-reviewed-v2/prop-pack.json",
+      "qa": {
+        "status": "pass",
+        "method": "native alpha, not keyed; alpha hygiene both; 8-connected components (all); checks measured on the published pixels",
+        "notProven": [
+          "that each label names the art in its cell or box",
+          "that a prop is complete: clipping is detected only where art meets the cell edge",
+          "keyed-edge quality beyond the edge fringe count",
+          "that anchors and suggested footprints match gameplay contact (both are measured from alpha)",
+          "runtime placement, collision or occlusion"
+        ],
+        "checks": [
+          {
+            "id": "accepted",
+            "status": "pass",
+            "value": 4,
+            "threshold": ">= 1"
+          },
+          {
+            "id": "edge_touch",
+            "status": "pass",
+            "value": [],
+            "threshold": 0
+          },
+          {
+            "id": "dropped_area",
+            "status": "pass",
+            "value": {
+              "base-7": 0.0006,
+              "base-8": 0.0004,
+              "base-26": 0.0003,
+              "base-58": 0.0008
+            },
+            "threshold": 0.01
+          },
+          {
+            "id": "strategy_aspect",
+            "status": "skipped",
+            "value": null,
+            "threshold": 1.6
+          },
+          {
+            "id": "edge_fringe",
+            "status": "skipped",
+            "value": null,
+            "threshold": 0.02
+          }
+        ],
+        "inputs": [
+          {
+            "path": "../raw-01.png",
+            "sha256": "1c2d9c5dc0ccdde36026bcddc563a42863c026b313c9ca63bc3496a8c0c1e2a8",
+            "bytes": 1463665
+          },
+          {
+            "path": "../boxes-reviewed-v2.json",
+            "sha256": "5c406c74bff3517a89661f21dc8dfe915b2cbd5a335b880b167766ef09bdff50",
+            "bytes": 453
+          }
+        ],
+        "outputs": [
+          {
+            "path": "base-7/prop.png",
+            "sha256": "3bf21116e1af02a57cdecf789b7fc858866c4a2e6221156ce63f3cf90f77a449",
+            "bytes": 499619
+          },
+          {
+            "path": "base-8/prop.png",
+            "sha256": "a1f952654b8c28b4a88ed8e1c39eaeff70f640d6d613c56a8c462b5d14ba1bd0",
+            "bytes": 266434
+          },
+          {
+            "path": "base-26/prop.png",
+            "sha256": "cfd23ba2e6ebd3e8b7a6653ccb74f0a836df2f7dac740de1979b9a81e9815b2a",
+            "bytes": 329331
+          },
+          {
+            "path": "base-58/prop.png",
+            "sha256": "ad59bec8ae8c56972f89adf2de997ced7d275089084c84897c777fa356fb14ef",
+            "bytes": 248343
+          }
+        ],
+        "tool": {
+          "name": "extract_prop_pack",
+          "version": "0.4.0"
+        }
+      }
+    },
+    {
+      "job": "masters-03",
+      "manifest": "jobs/masters-03/extracted/prop-pack.json",
+      "qa": {
+        "status": "pass",
+        "method": "native alpha, not keyed; alpha hygiene both; 8-connected components (all); checks measured on the published pixels",
+        "notProven": [
+          "that each label names the art in its cell or box",
+          "that a prop is complete: clipping is detected only where art meets the cell edge",
+          "keyed-edge quality beyond the edge fringe count",
+          "that anchors and suggested footprints match gameplay contact (both are measured from alpha)",
+          "runtime placement, collision or occlusion"
+        ],
+        "checks": [
+          {
+            "id": "accepted",
+            "status": "pass",
+            "value": 4,
+            "threshold": ">= 1"
+          },
+          {
+            "id": "edge_touch",
+            "status": "pass",
+            "value": [],
+            "threshold": 0
+          },
+          {
+            "id": "dropped_area",
+            "status": "pass",
+            "value": {
+              "base-59": 0.0018,
+              "base-61": 0.0016,
+              "base-62": 0.0016,
+              "base-68": 0.0025
+            },
+            "threshold": 0.01
+          },
+          {
+            "id": "strategy_aspect",
+            "status": "skipped",
+            "value": null,
+            "threshold": 1.6
+          },
+          {
+            "id": "edge_fringe",
+            "status": "skipped",
+            "value": null,
+            "threshold": 0.02
+          }
+        ],
+        "inputs": [
+          {
+            "path": "../raw-01.png",
+            "sha256": "b702b801e8fcaa2be1ab7c8dd64d4d0295fd60bc79e3d40b651e243ce33efbd1",
+            "bytes": 717693
+          }
+        ],
+        "outputs": [
+          {
+            "path": "base-59/prop.png",
+            "sha256": "3f9d8e919e5a44742d0528b3acd7e288591c0d8819e72f709a19c0b90c1a4af9",
+            "bytes": 186911
+          },
+          {
+            "path": "base-61/prop.png",
+            "sha256": "34eb0a71090d3845de89cd526bc83493aecd030b17c256c8b3bd8b3b1146c76b",
+            "bytes": 148216
+          },
+          {
+            "path": "base-62/prop.png",
+            "sha256": "82194196054992d95f3cc26e327554c3d43c729007ab5f92aae7e01c019fd018",
+            "bytes": 180532
+          },
+          {
+            "path": "base-68/prop.png",
+            "sha256": "4f49ff0277be52657b2e2a4b9fb97a02fb2bd5cd0b5e0d91d9ccdce0f3eeb8ad",
+            "bytes": 162295
+          }
+        ],
+        "tool": {
+          "name": "extract_prop_pack",
+          "version": "0.4.0"
+        }
+      }
+    },
+    {
+      "job": "masters-04",
+      "manifest": "jobs/masters-04/extracted/prop-pack.json",
+      "qa": {
+        "status": "pass",
+        "method": "native alpha, not keyed; alpha hygiene both; 8-connected components (all); checks measured on the published pixels",
+        "notProven": [
+          "that each label names the art in its cell or box",
+          "that a prop is complete: clipping is detected only where art meets the cell edge",
+          "keyed-edge quality beyond the edge fringe count",
+          "that anchors and suggested footprints match gameplay contact (both are measured from alpha)",
+          "runtime placement, collision or occlusion"
+        ],
+        "checks": [
+          {
+            "id": "accepted",
+            "status": "pass",
+            "value": 4,
+            "threshold": ">= 1"
+          },
+          {
+            "id": "edge_touch",
+            "status": "pass",
+            "value": [],
+            "threshold": 0
+          },
+          {
+            "id": "dropped_area",
+            "status": "pass",
+            "value": {
+              "base-69": 0.0009,
+              "base-70": 0.0013,
+              "base-71": 0.0009,
+              "base-77": 0.0012
+            },
+            "threshold": 0.01
+          },
+          {
+            "id": "strategy_aspect",
+            "status": "skipped",
+            "value": null,
+            "threshold": 1.6
+          },
+          {
+            "id": "edge_fringe",
+            "status": "skipped",
+            "value": null,
+            "threshold": 0.02
+          }
+        ],
+        "inputs": [
+          {
+            "path": "../raw-01.png",
+            "sha256": "e25d2ad4dc6bff182bda076fc91586fa92b265b0d2a2d45fa4aa7931bac622e0",
+            "bytes": 1002500
+          }
+        ],
+        "outputs": [
+          {
+            "path": "base-69/prop.png",
+            "sha256": "6066e0b1abec3312d4dce366ae77a768af5d3258997acccb1080648799b6f8c2",
+            "bytes": 264962
+          },
+          {
+            "path": "base-70/prop.png",
+            "sha256": "cc0267e13b515123b941eb87fe07f48d1adcef1671b6efa9e79c237e9822cb0a",
+            "bytes": 228341
+          },
+          {
+            "path": "base-71/prop.png",
+            "sha256": "9ed6306b354eb5f859a00ad4dab41a56ddcf9ccfe088461c10d3777097b23ade",
+            "bytes": 223026
+          },
+          {
+            "path": "base-77/prop.png",
+            "sha256": "03929467400ecd251c2b197fba4fd217b7d43c1eea10f586c655861f6f31ff1f",
+            "bytes": 235711
+          }
+        ],
+        "tool": {
+          "name": "extract_prop_pack",
+          "version": "0.4.0"
+        }
+      }
+    },
+    {
+      "job": "masters-05",
+      "manifest": "jobs/masters-05/extracted/prop-pack.json",
+      "qa": {
+        "status": "pass",
+        "method": "native alpha, not keyed; alpha hygiene both; 8-connected components (all); checks measured on the published pixels",
+        "notProven": [
+          "that each label names the art in its cell or box",
+          "that a prop is complete: clipping is detected only where art meets the cell edge",
+          "keyed-edge quality beyond the edge fringe count",
+          "that anchors and suggested footprints match gameplay contact (both are measured from alpha)",
+          "runtime placement, collision or occlusion"
+        ],
+        "checks": [
+          {
+            "id": "accepted",
+            "status": "pass",
+            "value": 4,
+            "threshold": ">= 1"
+          },
+          {
+            "id": "edge_touch",
+            "status": "pass",
+            "value": [],
+            "threshold": 0
+          },
+          {
+            "id": "dropped_area",
+            "status": "pass",
+            "value": {
+              "base-78": 0.0004,
+              "base-79": 0.0005,
+              "base-83": 0.0005,
+              "base-215": 0.0007
+            },
+            "threshold": 0.01
+          },
+          {
+            "id": "strategy_aspect",
+            "status": "skipped",
+            "value": null,
+            "threshold": 1.6
+          },
+          {
+            "id": "edge_fringe",
+            "status": "skipped",
+            "value": null,
+            "threshold": 0.02
+          }
+        ],
+        "inputs": [
+          {
+            "path": "../raw-01.png",
+            "sha256": "7556cba39d4e7da459f3f6f1e9dabaaa5a4a00ddca2009898070dea61d3dbaa3",
+            "bytes": 1152074
+          }
+        ],
+        "outputs": [
+          {
+            "path": "base-78/prop.png",
+            "sha256": "8aff4377916e78406d2bbd1b9eace716b4f6629fedde40511ca309c6637bb579",
+            "bytes": 263724
+          },
+          {
+            "path": "base-79/prop.png",
+            "sha256": "a9bc6bc8bc3ea824b9c62ee25bad2d2f94b70d6a52ca6f625b882ef6ec33420b",
+            "bytes": 265010
+          },
+          {
+            "path": "base-83/prop.png",
+            "sha256": "a40b8918319cb87eb26e5f277bf5e61863ca2a9c7139ce0d4f0522016f9c0c3b",
+            "bytes": 222778
+          },
+          {
+            "path": "base-215/prop.png",
+            "sha256": "df0b93a7630cbf34823e19bb3dda8936c1294b6bfdd9018680191e96f8b584db",
+            "bytes": 329138
+          }
+        ],
+        "tool": {
+          "name": "extract_prop_pack",
+          "version": "0.4.0"
+        }
+      }
+    },
+    {
+      "job": "masters-06",
+      "manifest": "jobs/masters-06/extracted/prop-pack.json",
+      "qa": {
+        "status": "pass",
+        "method": "native alpha, not keyed; alpha hygiene both; 8-connected components (all); checks measured on the published pixels",
+        "notProven": [
+          "that each label names the art in its cell or box",
+          "that a prop is complete: clipping is detected only where art meets the cell edge",
+          "keyed-edge quality beyond the edge fringe count",
+          "that anchors and suggested footprints match gameplay contact (both are measured from alpha)",
+          "runtime placement, collision or occlusion"
+        ],
+        "checks": [
+          {
+            "id": "accepted",
+            "status": "pass",
+            "value": 4,
+            "threshold": ">= 1"
+          },
+          {
+            "id": "edge_touch",
+            "status": "pass",
+            "value": [],
+            "threshold": 0
+          },
+          {
+            "id": "dropped_area",
+            "status": "pass",
+            "value": {
+              "npc-sau-free": 0.0022,
+              "npc-gate-captain": 0.0015,
+              "npc-act-reward": 0.0016,
+              "npc-pet-fusion": 0.0018
+            },
+            "threshold": 0.01
+          },
+          {
+            "id": "strategy_aspect",
+            "status": "skipped",
+            "value": null,
+            "threshold": 1.6
+          },
+          {
+            "id": "edge_fringe",
+            "status": "skipped",
+            "value": null,
+            "threshold": 0.02
+          }
+        ],
+        "inputs": [
+          {
+            "path": "../raw-01.png",
+            "sha256": "4516eb3b357a5a311dd352402c50df6fcb5fe7924b2b19279a8695078165f307",
+            "bytes": 1250675
+          }
+        ],
+        "outputs": [
+          {
+            "path": "npc-sau-free/prop.png",
+            "sha256": "e35ef97be542622aa2dfb4797f3f43ae036c0a78b9e6dfe4436127b9d1683852",
+            "bytes": 307371
+          },
+          {
+            "path": "npc-gate-captain/prop.png",
+            "sha256": "8232abce47e254f6424606ffc081e3c843bf047fa0711d7322a7f36441742d44",
+            "bytes": 307154
+          },
+          {
+            "path": "npc-act-reward/prop.png",
+            "sha256": "90ea9bfa44d97a4fa8204c72e3fd79cabcf8bfb2e3f77b8545613a45c8362cd4",
+            "bytes": 272973
+          },
+          {
+            "path": "npc-pet-fusion/prop.png",
+            "sha256": "b923807bdc6b71f6f9859eced86fa340aa964835f81afc180ac310b16519c1b0",
+            "bytes": 321282
+          }
+        ],
+        "tool": {
+          "name": "extract_prop_pack",
+          "version": "0.4.0"
+        }
+      }
+    },
+    {
+      "job": "masters-07",
+      "manifest": "jobs/masters-07/extracted/prop-pack.json",
+      "qa": {
+        "status": "pass",
+        "method": "native alpha, not keyed; alpha hygiene both; 8-connected components (all); checks measured on the published pixels",
+        "notProven": [
+          "that each label names the art in its cell or box",
+          "that a prop is complete: clipping is detected only where art meets the cell edge",
+          "keyed-edge quality beyond the edge fringe count",
+          "that anchors and suggested footprints match gameplay contact (both are measured from alpha)",
+          "runtime placement, collision or occlusion"
+        ],
+        "checks": [
+          {
+            "id": "accepted",
+            "status": "pass",
+            "value": 4,
+            "threshold": ">= 1"
+          },
+          {
+            "id": "edge_touch",
+            "status": "pass",
+            "value": [],
+            "threshold": 0
+          },
+          {
+            "id": "dropped_area",
+            "status": "pass",
+            "value": {
+              "npc-pet-hatch": 0.0003,
+              "npc-arena-free": 0.0004,
+              "npc-east-free": 0.0004,
+              "npc-west-free": 0.0003
+            },
+            "threshold": 0.01
+          },
+          {
+            "id": "strategy_aspect",
+            "status": "skipped",
+            "value": null,
+            "threshold": 1.6
+          },
+          {
+            "id": "edge_fringe",
+            "status": "skipped",
+            "value": null,
+            "threshold": 0.02
+          }
+        ],
+        "inputs": [
+          {
+            "path": "../raw-01.png",
+            "sha256": "f7c5c06fa7adf2dc03c7915596b79f128b6b491e9f37cda3803615fbc2c8873b",
+            "bytes": 905766
+          }
+        ],
+        "outputs": [
+          {
+            "path": "npc-pet-hatch/prop.png",
+            "sha256": "e51b2a094ceece6fb65903e6ee21d29c3e3ac94fc90f5220d52baf42c5a035cf",
+            "bytes": 191655
+          },
+          {
+            "path": "npc-arena-free/prop.png",
+            "sha256": "7dddc33cb7436a9c67bd6521328b17826b5b3a19ae02bfa4c7a4a66b5a342c96",
+            "bytes": 206316
+          },
+          {
+            "path": "npc-east-free/prop.png",
+            "sha256": "6fd5f3dcffbfa47ec9e7bc9007cf7949c9853eef5b4b3212094e703e242b3a06",
+            "bytes": 202983
+          },
+          {
+            "path": "npc-west-free/prop.png",
+            "sha256": "1ddcd0fa8f58617af0370b1299ac5e9a43f4a7694b2d2ffacd0b4390bb98e1e7",
+            "bytes": 223472
+          }
+        ],
+        "tool": {
+          "name": "extract_prop_pack",
+          "version": "0.4.0"
+        }
+      }
+    },
+    {
+      "job": "masters-08",
+      "manifest": "jobs/masters-08/extracted-reviewed/prop-pack.json",
+      "qa": {
+        "status": "pass",
+        "method": "native alpha, not keyed; alpha hygiene both; 8-connected components (all); checks measured on the published pixels",
+        "notProven": [
+          "that each label names the art in its cell or box",
+          "that a prop is complete: clipping is detected only where art meets the cell edge",
+          "keyed-edge quality beyond the edge fringe count",
+          "that anchors and suggested footprints match gameplay contact (both are measured from alpha)",
+          "runtime placement, collision or occlusion"
+        ],
+        "checks": [
+          {
+            "id": "accepted",
+            "status": "pass",
+            "value": 3,
+            "threshold": ">= 1"
+          },
+          {
+            "id": "edge_touch",
+            "status": "pass",
+            "value": [],
+            "threshold": 0
+          },
+          {
+            "id": "dropped_area",
+            "status": "pass",
+            "value": {
+              "npc-isl-captain": 0.001,
+              "player-male": 0.0006,
+              "player-female": 0.0012
+            },
+            "threshold": 0.01
+          },
+          {
+            "id": "strategy_aspect",
+            "status": "skipped",
+            "value": null,
+            "threshold": 1.6
+          },
+          {
+            "id": "edge_fringe",
+            "status": "skipped",
+            "value": null,
+            "threshold": 0.02
+          }
+        ],
+        "inputs": [
+          {
+            "path": "../raw-01.png",
+            "sha256": "0e3c8e08f22c906cf4589c8a83b143a9206e08a86032a3557802abd009fe8313",
+            "bytes": 682488
+          },
+          {
+            "path": "../boxes-reviewed.json",
+            "sha256": "4bf6dab422faa60ca17c89ee38d5190b2293da987a2fb47601ee89f18a0a8e84",
+            "bytes": 361
+          }
+        ],
+        "outputs": [
+          {
+            "path": "npc-isl-captain/prop.png",
+            "sha256": "667a18f108911940e964ffa5ed25eff3170fac5bf55fa57a924c3f9a046f9c29",
+            "bytes": 210653
+          },
+          {
+            "path": "player-male/prop.png",
+            "sha256": "2e26c2c632b1d567cbdc3c00779d039d91fdcb4a6032f98b4fd529ec3868d2d0",
+            "bytes": 221681
+          },
+          {
+            "path": "player-female/prop.png",
+            "sha256": "efcd67ccb9054b6aa96e7349d606dea46dc91963af32490038ebb8b682e0f3c3",
+            "bytes": 196433
+          }
+        ],
+        "tool": {
+          "name": "extract_prop_pack",
+          "version": "0.4.0"
+        }
+      }
+    },
+    {
+      "job": "portraits-01",
+      "manifest": "jobs/portraits-01/extracted-reviewed-v2/prop-pack.json",
+      "qa": {
+        "status": "pass",
+        "method": "native alpha, not keyed; alpha hygiene both; 8-connected components (all); checks measured on the published pixels",
+        "notProven": [
+          "that each label names the art in its cell or box",
+          "that a prop is complete: clipping is detected only where art meets the cell edge",
+          "keyed-edge quality beyond the edge fringe count",
+          "that anchors and suggested footprints match gameplay contact (both are measured from alpha)",
+          "runtime placement, collision or occlusion"
+        ],
+        "checks": [
+          {
+            "id": "accepted",
+            "status": "pass",
+            "value": 4,
+            "threshold": ">= 1"
+          },
+          {
+            "id": "edge_touch",
+            "status": "pass",
+            "value": [],
+            "threshold": 0
+          },
+          {
+            "id": "dropped_area",
+            "status": "pass",
+            "value": {
+              "portrait-summoner-mira": 0.0012,
+              "portrait-forest-guide": 0.0007,
+              "portrait-sau-guard": 0.001,
+              "portrait-gate-captain": 0.0005
+            },
+            "threshold": 0.01
+          },
+          {
+            "id": "strategy_aspect",
+            "status": "skipped",
+            "value": null,
+            "threshold": 1.6
+          },
+          {
+            "id": "edge_fringe",
+            "status": "skipped",
+            "value": null,
+            "threshold": 0.02
+          }
+        ],
+        "inputs": [
+          {
+            "path": "../raw-01.png",
+            "sha256": "08a9903172729bdd6789b31b4f5f4bb567d18a6e2a4cb55ff5084f9df63b1abf",
+            "bytes": 1604555
+          },
+          {
+            "path": "../boxes-reviewed-v2.json",
+            "sha256": "3a4852de877b681e779066d5d382ed833e050e851a472051acd9b5e0edcb7261",
+            "bytes": 509
+          }
+        ],
+        "outputs": [
+          {
+            "path": "portrait-summoner-mira/prop.png",
+            "sha256": "793bd946f38ee7933d01a641ec0078dfecb29fbb68994fa67335ee5cef34f0c6",
+            "bytes": 369302
+          },
+          {
+            "path": "portrait-forest-guide/prop.png",
+            "sha256": "dedcb0f3407938851d80c4698cf8a2edb947e24e452934f039e31bc02698aca2",
+            "bytes": 351590
+          },
+          {
+            "path": "portrait-sau-guard/prop.png",
+            "sha256": "6dbc27c88c3ee25997c3875b647f58950bdc3babc74bd20242150af60a866c3f",
+            "bytes": 466472
+          },
+          {
+            "path": "portrait-gate-captain/prop.png",
+            "sha256": "ebaf57917db3512708262fda01a0621cc4c09630516c86da8eb2198e9b63c2cd",
+            "bytes": 446798
+          }
+        ],
+        "tool": {
+          "name": "extract_prop_pack",
+          "version": "0.4.0"
+        }
+      }
+    },
+    {
+      "job": "portraits-02",
+      "manifest": "jobs/portraits-02/extracted-reviewed-v2/prop-pack.json",
+      "qa": {
+        "status": "pass",
+        "method": "native alpha, not keyed; alpha hygiene both; 8-connected components (all); checks measured on the published pixels",
+        "notProven": [
+          "that each label names the art in its cell or box",
+          "that a prop is complete: clipping is detected only where art meets the cell edge",
+          "keyed-edge quality beyond the edge fringe count",
+          "that anchors and suggested footprints match gameplay contact (both are measured from alpha)",
+          "runtime placement, collision or occlusion"
+        ],
+        "checks": [
+          {
+            "id": "accepted",
+            "status": "pass",
+            "value": 4,
+            "threshold": ">= 1"
+          },
+          {
+            "id": "edge_touch",
+            "status": "pass",
+            "value": [],
+            "threshold": 0
+          },
+          {
+            "id": "dropped_area",
+            "status": "pass",
+            "value": {
+              "portrait-trainer-elin": 0.0006,
+              "portrait-pal-advisor": 0.0002,
+              "portrait-pet-master": 0.0001,
+              "portrait-pet-fusion": 0.0003
+            },
+            "threshold": 0.01
+          },
+          {
+            "id": "strategy_aspect",
+            "status": "skipped",
+            "value": null,
+            "threshold": 1.6
+          },
+          {
+            "id": "edge_fringe",
+            "status": "skipped",
+            "value": null,
+            "threshold": 0.02
+          }
+        ],
+        "inputs": [
+          {
+            "path": "../raw-01.png",
+            "sha256": "4a8a5156b9f65c34379748b554d61ed0929086fb269691f57490b0f72229a752",
+            "bytes": 1555594
+          },
+          {
+            "path": "../boxes-reviewed-v2.json",
+            "sha256": "35dd4e57c1d1ee675c4da82656435ab10edce501ba27e3151a239624e7634901",
+            "bytes": 506
+          }
+        ],
+        "outputs": [
+          {
+            "path": "portrait-trainer-elin/prop.png",
+            "sha256": "93b6d101d645277221bb0c12deaf102bdc49a48ba9a8d6563714a8db7d1438e7",
+            "bytes": 360706
+          },
+          {
+            "path": "portrait-pal-advisor/prop.png",
+            "sha256": "a0dcd1c00c22a6b767547748db594c00ebb0844690ae340813db04a97f73cd9c",
+            "bytes": 362836
+          },
+          {
+            "path": "portrait-pet-master/prop.png",
+            "sha256": "713c5a2266b5602871f986481c64f2a63ba1c469184a3dc4a4c26021cb6d8a79",
+            "bytes": 417695
+          },
+          {
+            "path": "portrait-pet-fusion/prop.png",
+            "sha256": "2a0a715d53f4bee66baa5dbede4c6764b40bd772ec43fe39c9160f62e51c6fbb",
+            "bytes": 405822
+          }
+        ],
+        "tool": {
+          "name": "extract_prop_pack",
+          "version": "0.4.0"
+        }
+      }
+    },
+    {
+      "job": "portraits-03",
+      "manifest": "jobs/portraits-03/extracted/prop-pack.json",
+      "qa": {
+        "status": "pass",
+        "method": "native alpha, not keyed; alpha hygiene both; 8-connected components (all); checks measured on the published pixels",
+        "notProven": [
+          "that each label names the art in its cell or box",
+          "that a prop is complete: clipping is detected only where art meets the cell edge",
+          "keyed-edge quality beyond the edge fringe count",
+          "that anchors and suggested footprints match gameplay contact (both are measured from alpha)",
+          "runtime placement, collision or occlusion"
+        ],
+        "checks": [
+          {
+            "id": "accepted",
+            "status": "pass",
+            "value": 3,
+            "threshold": ">= 1"
+          },
+          {
+            "id": "edge_touch",
+            "status": "pass",
+            "value": [],
+            "threshold": 0
+          },
+          {
+            "id": "dropped_area",
+            "status": "pass",
+            "value": {
+              "portrait-arena-master": 0.0014,
+              "portrait-beach-guide": 0.0021,
+              "portrait-ship-captain": 0.0011
+            },
+            "threshold": 0.01
+          },
+          {
+            "id": "strategy_aspect",
+            "status": "skipped",
+            "value": null,
+            "threshold": 1.6
+          },
+          {
+            "id": "edge_fringe",
+            "status": "skipped",
+            "value": null,
+            "threshold": 0.02
+          }
+        ],
+        "inputs": [
+          {
+            "path": "../raw-01.png",
+            "sha256": "6983c77eb494d53999c6eca742d9a9ae5ea1790b92c6925808fd57c73080b382",
+            "bytes": 1102378
+          }
+        ],
+        "outputs": [
+          {
+            "path": "portrait-arena-master/prop.png",
+            "sha256": "e92dcf3c058b287bcbb940ee9d1c8b8a0bf91b4740cc55917f842e3c470f1510",
+            "bytes": 366143
+          },
+          {
+            "path": "portrait-beach-guide/prop.png",
+            "sha256": "378385b87c197ab16482fa135fe4d1e284dba1bef1cf61995232f905ac495599",
+            "bytes": 360001
+          },
+          {
+            "path": "portrait-ship-captain/prop.png",
+            "sha256": "789d49e4bbcde07a0e568a02249a605e806a08ff17ce02d79e0132043d4f9b96",
+            "bytes": 361205
+          }
+        ],
+        "tool": {
+          "name": "extract_prop_pack",
+          "version": "0.4.0"
+        }
+      }
+    }
+  ],
+  "historical_warnings": [
+    {
+      "path": "jobs/masters-02/extracted-reviewed/prop-pack.json",
+      "warnings": [
+        "props touch a cell edge (possible clipping): ['base-8', 'base-58']"
+      ],
+      "superseded": true
+    },
+    {
+      "path": "jobs/masters-02/extracted/prop-pack.json",
+      "warnings": [
+        "props touch a cell edge (possible clipping): ['base-7', 'base-8', 'base-26', 'base-58']"
+      ],
+      "superseded": true
+    },
+    {
+      "path": "jobs/masters-08/extracted/prop-pack.json",
+      "warnings": [
+        "props touch a cell edge (possible clipping): ['npc-isl-captain', 'player-male', 'player-female']"
+      ],
+      "superseded": true
+    },
+    {
+      "path": "jobs/portraits-01/extracted/prop-pack.json",
+      "warnings": [
+        "props touch a cell edge (possible clipping): ['portrait-summoner-mira', 'portrait-forest-guide']"
+      ],
+      "superseded": true
+    },
+    {
+      "path": "jobs/portraits-02/extracted/prop-pack.json",
+      "warnings": [
+        "props touch a cell edge (possible clipping): ['portrait-pal-advisor', 'portrait-pet-fusion']"
+      ],
+      "superseded": true
+    }
+  ],
+  "visual_review": "All raw sheets and complete final contact sheet inspected; light/dark1x2x panels generated per asset; player-female and west_healer individually inspected after registration fix. Owner art approval remains pending.",
+  "motion_clips_generated": 0,
+  "missing_portrait_ids": 6,
+  "animation_blocked_clip_count": 65,
+  "animation_blocked_frame_count_at_target_sampling": 292
+}

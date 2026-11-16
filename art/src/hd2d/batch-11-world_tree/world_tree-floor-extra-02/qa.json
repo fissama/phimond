@@ -1,0 +1,35 @@
+{
+  "id": "world_tree-floor-extra-02",
+  "size": [
+    512,
+    512
+  ],
+  "mode": "RGB",
+  "colors": 40,
+  "partial_alpha_pixels": 0,
+  "raw_integrity": true,
+  "raw_sha256": "9e9e942d140f69edb2dc5b22c5cbb6ccd14190fcb82cdfe2e716a5bb49772300",
+  "sha256": "4aef1c35be81e429939b41402e4f139f77cfb6fa45fbc1a77b089f5f7acd1e55",
+  "processing": "raw preserved; LANCZOS resize 1254x1254→512x512; no-dither 40-color palette",
+  "tileable": "xy",
+  "seam_mean_x": 6.302,
+  "seam_mean_y": 6.999,
+  "outer8_colors": [
+    40,
+    40,
+    40,
+    40
+  ],
+  "outer8_uniform": false,
+  "repeat3x3_viewed": true,
+  "visual_review": "actual final and repeat 3x3 viewed",
+  "correlation_vs_floor01": 0.0606,
+  "correlation_vs_floor02": 0.067,
+  "correlation_vs_floor03": 0.078,
+  "approved": false,
+  "status": "needs_claude_visual_review",
+  "failures": [
+    "outer8_uniform=false",
+    "small-grain moss cadence repeats in 3x3; use as restrained alternate ground texture"
+  ]
+}

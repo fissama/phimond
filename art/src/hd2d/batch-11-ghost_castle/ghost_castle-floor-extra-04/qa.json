@@ -1,0 +1,89 @@
+{
+  "id": "ghost_castle-floor-extra-04",
+  "size_px": [
+    512,
+    512
+  ],
+  "mode": "RGB",
+  "world_size": [
+    4,
+    4
+  ],
+  "tileable": "xy",
+  "palette_colors": 40,
+  "raw_sha256": "45c53a49ed4fb2d888ac9d0e08951759b191353627f429375234401e8748cf7e",
+  "sha256": "c200e6df2a3e476c2bccf72ec466cb31e78afe5a04ce79e0a2be032f4ee798ac",
+  "terrain_qc": {
+    "x": {
+      "seam": 1.427734,
+      "adjacent_median": 0.970947,
+      "adjacent_p95": 1.172241,
+      "adjacent_max": 1.193848,
+      "seam_over_median": 1.470455,
+      "seam_over_p95": 1.217953,
+      "seam_ratio": 1.19591,
+      "near_median": 0.931396,
+      "verdict": "continuous",
+      "method": "premultiplied RGBA column steps (0-255); join vs interior steps within 8 columns per side, whole edge and worst 4-row window"
+    },
+    "y": {
+      "seam": 1.938477,
+      "adjacent_median": 1.221924,
+      "adjacent_p95": 1.516357,
+      "adjacent_max": 1.637207,
+      "seam_over_median": 1.586414,
+      "seam_over_p95": 1.278377,
+      "seam_ratio": 1.184014,
+      "near_median": 1.261963,
+      "verdict": "continuous",
+      "method": "premultiplied RGBA column steps (0-255); join vs interior steps within 8 columns per side, whole edge and worst 4-row window"
+    }
+  },
+  "checks": [
+    {
+      "id": "contrast",
+      "status": "pass",
+      "value": 0.035977,
+      "threshold": 0.035
+    },
+    {
+      "id": "variant_difference",
+      "status": "pass",
+      "value": 1.0,
+      "threshold": 0.025
+    },
+    {
+      "id": "border_frame",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0.1
+    },
+    {
+      "id": "shape_coverage",
+      "status": "skipped",
+      "value": null,
+      "threshold": 0.97
+    },
+    {
+      "id": "shape_spill",
+      "status": "skipped",
+      "value": null,
+      "threshold": 0.03
+    },
+    {
+      "id": "wrap_seams",
+      "status": "pass",
+      "value": 1.19591,
+      "threshold": 1.25
+    },
+    {
+      "id": "wang_seams",
+      "status": "skipped",
+      "value": null,
+      "threshold": null
+    }
+  ],
+  "seamless_verified": false,
+  "visual_review": "actual 3x3 mosaic inspected; diagonal plate motif repeats clearly but joins continuous; candidate only",
+  "failures": []
+}

@@ -1,0 +1,2684 @@
+{
+  "batch": "garden-b-roadmap-resume-20261111",
+  "approved": true,
+  "status": "approved_claude_20261116_all_70",
+  "atlas_contract": {
+    "cols": 4,
+    "rows": 5,
+    "cell_px": [
+      192,
+      192
+    ],
+    "canvas_px": [
+      768,
+      960
+    ]
+  },
+  "assets": [
+    {
+      "id": "cr-bac-ha",
+      "category": "crop",
+      "file": "cr-bac-ha/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "a10956711dba97f6f0414341816b6d983fc283d3ab8723d7a2629fdb542957d3",
+      "approved": true,
+      "status": "approved_claude_20261110",
+      "notes": "Claude 20261110: APPROVED. Mặt, chớp mắt, vẫy tay sống động; 60 màu; pivot ổn. Lưu ý: harvest f4 chỉ còn FX (chấp nhận được vì là khung tan thành ánh sáng).",
+      "review_note": "Final v3 candidate; see qa.json and review.md for measured gates and visual review.",
+      "qa_file": "cr-bac-ha/qa.json",
+      "visual_review": "cr-bac-ha/review.md",
+      "attempts_used": 0,
+      "all_checks_pass": true,
+      "blocker": null,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-09.png"
+    },
+    {
+      "id": "cr-ca-chua",
+      "category": "crop",
+      "file": "cr-ca-chua/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "eefbd23c0103e6431b291fb6157e7619245e48bd849ca4ffe727c29976609638",
+      "approved": true,
+      "status": "approved_claude_20261110",
+      "notes": "Claude 20261110: APPROVED. Đo độc lập: 768x960, alpha nhị phân, 59-60 màu, 20 khung khác nhau, không pixel ngoài [16,175], plant f4-sprout f1 IoU >=0.92; xem ảnh: mặt/biểu cảm/chớp mắt tốt.",
+      "review_note": "Unapproved candidate. Consult current qa.json, review.md and preview images; any mechanical failures are stated explicitly.",
+      "qa_file": "cr-ca-chua/qa.json",
+      "visual_review": "cr-ca-chua/review.md",
+      "attempts_used": 5,
+      "all_checks_pass": true,
+      "blocker": null,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-06.png"
+    },
+    {
+      "id": "cr-chuoi",
+      "category": "crop",
+      "file": "cr-chuoi/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "approved": true,
+      "notes": "Claude 20261110: APPROVED. Đo độc lập đạt; xem ảnh đạt.",
+      "review_note": "Not approved; mechanical gates recorded in qa.json.",
+      "qa_file": "cr-chuoi/qa.json",
+      "visual_review": "cr-chuoi/review.md",
+      "attempts_used": 0,
+      "all_checks_pass": true,
+      "blocker": null,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-04.png",
+      "status": "approved_claude_20261110",
+      "sha256": "7246c7354ade99c005dfbda8e92622e39f8133a4a1ab970a92d065b36f80f4c7"
+    },
+    {
+      "id": "cr-cu-dau",
+      "category": "crop",
+      "file": "cr-cu-dau/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "approved": true,
+      "notes": "Claude 20261110: APPROVED. Đo độc lập đạt; xem ảnh đạt.",
+      "review_note": "Not approved; mechanical gates recorded in qa.json.",
+      "qa_file": "cr-cu-dau/qa.json",
+      "visual_review": "cr-cu-dau/review.md",
+      "attempts_used": 0,
+      "all_checks_pass": true,
+      "blocker": null,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-07.png",
+      "status": "approved_claude_20261110",
+      "sha256": "77ed61cb0339d006d11a48c64c33d4748510ed5c988fabb3b6b12956788c415e"
+    },
+    {
+      "id": "cr-cuc-hoa",
+      "category": "crop",
+      "file": "cr-cuc-hoa/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "7fe6f073bd143c7bf53da3fe66a71dbe4adc58ec0f72a4eea78bd89258e91542",
+      "approved": true,
+      "status": "approved_claude_20261110",
+      "notes": "Claude 20261110: APPROVED. Đo độc lập: 768x960, alpha nhị phân, 59-60 màu, 20 khung khác nhau, không pixel ngoài [16,175], plant f4-sprout f1 IoU >=0.92; xem ảnh: mặt/biểu cảm/chớp mắt tốt.",
+      "review_note": "Candidate is unapproved; see review.md and qa.json. Mechanical gate failures, if any, are explicitly listed.",
+      "qa_file": "cr-cuc-hoa/qa.json",
+      "visual_review": "cr-cuc-hoa/review.md",
+      "attempts_used": 3,
+      "all_checks_pass": true,
+      "blocker": null,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-03.png"
+    },
+    {
+      "id": "cr-gung",
+      "category": "crop",
+      "file": "cr-gung/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "approved": true,
+      "notes": "Claude 20261110: APPROVED. Đo độc lập đạt; xem ảnh đạt.",
+      "review_note": "Not approved; mechanical gates recorded in qa.json.",
+      "qa_file": "cr-gung/qa.json",
+      "visual_review": "cr-gung/review.md",
+      "attempts_used": 0,
+      "all_checks_pass": true,
+      "blocker": null,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-01.png",
+      "status": "approved_claude_20261110",
+      "sha256": "ad2009ecff2e38709f3f67140b3aa30f3c020f71a987b834aa64418a2718eca9"
+    },
+    {
+      "id": "cr-hoa-giay",
+      "category": "crop",
+      "file": "cr-hoa-giay/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "approved": true,
+      "notes": "Claude 20261110: APPROVED. Đo độc lập đạt; xem ảnh đạt.",
+      "review_note": "Not approved; mechanical gates recorded in qa.json.",
+      "qa_file": "cr-hoa-giay/qa.json",
+      "visual_review": "cr-hoa-giay/review.md",
+      "attempts_used": 0,
+      "all_checks_pass": true,
+      "blocker": null,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-07.png",
+      "status": "approved_claude_20261110",
+      "sha256": "d1767ded7dfbbf2d47ec109598b22ade2ba835a79ff46a760aecdf720a984400"
+    },
+    {
+      "id": "cr-huong-co",
+      "category": "crop",
+      "file": "cr-huong-co/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "1747d37c14f380647d2818fd671cf2260d35944442b510ec85f09ab644b17365",
+      "approved": true,
+      "status": "approved_claude_20261110",
+      "notes": "Claude 20261110: APPROVED. Đo độc lập: 768x960, alpha nhị phân, 59-60 màu, 20 khung khác nhau, không pixel ngoài [16,175], plant f4-sprout f1 IoU >=0.92; xem ảnh: mặt/biểu cảm/chớp mắt tốt.",
+      "review_note": "Unapproved candidate. Consult current qa.json, review.md and preview images; any mechanical failures are stated explicitly.",
+      "qa_file": "cr-huong-co/qa.json",
+      "visual_review": "cr-huong-co/review.md",
+      "attempts_used": 1,
+      "all_checks_pass": true,
+      "blocker": null,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-10.png"
+    },
+    {
+      "id": "cr-huong-duong",
+      "category": "crop",
+      "file": "cr-huong-duong/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "d3dd0f3225251db53ea08eeb2cc76fd86800e3a4c3a110f491317d646a76e50d",
+      "approved": true,
+      "status": "approved_claude_20261110",
+      "notes": "Claude 20261110: APPROVED. Đo độc lập: định dạng, màu, vùng an toàn, khung khác nhau đạt; xem ảnh đạt.",
+      "review_note": "Candidate only; see qa.json/review.md. Claude has not approved this asset.",
+      "qa_file": "cr-huong-duong/qa.json",
+      "visual_review": "cr-huong-duong/review.md",
+      "attempts_used": 4,
+      "all_checks_pass": true,
+      "blocker": null,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-04.png"
+    },
+    {
+      "id": "cr-khoai-lang",
+      "category": "crop",
+      "file": "cr-khoai-lang/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "586b5448b26e47dc9f51e6870c14cbb81d44c2431589b97b442d36f110555349",
+      "approved": true,
+      "status": "approved_claude_20261110",
+      "notes": "Claude 20261110: APPROVED. Đo độc lập: 768x960, alpha nhị phân, 59-60 màu, 20 khung khác nhau, không pixel ngoài [16,175], plant f4-sprout f1 IoU >=0.92; xem ảnh: mặt/biểu cảm/chớp mắt tốt.",
+      "review_note": "Unapproved candidate. Consult current qa.json, review.md and preview images; any mechanical failures are stated explicitly.",
+      "qa_file": "cr-khoai-lang/qa.json",
+      "visual_review": "cr-khoai-lang/review.md",
+      "attempts_used": 8,
+      "all_checks_pass": true,
+      "blocker": null,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-10.png"
+    },
+    {
+      "id": "cr-moc-nhi",
+      "category": "crop",
+      "file": "cr-moc-nhi/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "6975e07dd05aebc1d0701e9967a6ee846784391d6ac8dd699619e1b039a90699",
+      "approved": true,
+      "status": "approved_claude_20261110",
+      "notes": "Claude 20261110: APPROVED. Thỏ tai nấm có biểu cảm tốt, chớp mắt cả 3 hàng lặp; 60 màu. Lưu ý: ripe cao 147-150 px, sát trần.",
+      "review_note": "Final v3 candidate; see qa.json and review.md for measured gates and visual review.",
+      "qa_file": "cr-moc-nhi/qa.json",
+      "visual_review": "cr-moc-nhi/review.md",
+      "attempts_used": 2,
+      "all_checks_pass": true,
+      "blocker": null,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-12.png"
+    },
+    {
+      "id": "cr-nam-rom",
+      "category": "crop",
+      "file": "cr-nam-rom/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "923555efe0628629346e17e5f1e8bee7db357fea2089df556ffeb466b71628a3",
+      "approved": true,
+      "status": "approved_claude_20261110",
+      "notes": "Claude 20261110: APPROVED. Đo độc lập: định dạng, màu, vùng an toàn, khung khác nhau đạt; xem ảnh đạt.",
+      "review_note": "Candidate only; see qa.json/review.md. Claude has not approved this asset.",
+      "qa_file": "cr-nam-rom/qa.json",
+      "visual_review": "cr-nam-rom/review.md",
+      "attempts_used": 4,
+      "all_checks_pass": true,
+      "blocker": null,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-04.png"
+    },
+    {
+      "id": "cr-ot",
+      "category": "crop",
+      "file": "cr-ot/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "cc3bb725192a9b63da1acd6c586ca633d626e0d0355835c03742728ad582d500",
+      "approved": true,
+      "status": "approved_claude_20261110",
+      "notes": "Claude 20261110: APPROVED. Đo độc lập: định dạng, màu, vùng an toàn, khung khác nhau đạt; xem ảnh đạt.",
+      "review_note": "Candidate only; see qa.json/review.md. Claude has not approved this asset.",
+      "qa_file": "cr-ot/qa.json",
+      "visual_review": "cr-ot/review.md",
+      "attempts_used": 5,
+      "all_checks_pass": true,
+      "blocker": null,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-05.png"
+    },
+    {
+      "id": "cr-rau-ma",
+      "category": "crop",
+      "file": "cr-rau-ma/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "5e47d40719c7731c23b80cba2474a0c28402afbe5798210d1408bc2598ac9eef",
+      "approved": true,
+      "status": "approved_claude_20261110",
+      "notes": "Claude 20261110: APPROVED. Đo độc lập: 768x960, alpha nhị phân, 59-60 màu, 20 khung khác nhau, không pixel ngoài [16,175], plant f4-sprout f1 IoU >=0.92; xem ảnh: mặt/biểu cảm/chớp mắt tốt.",
+      "review_note": "Unapproved candidate. Consult current qa.json, review.md and preview images; any mechanical failures are stated explicitly.",
+      "qa_file": "cr-rau-ma/qa.json",
+      "visual_review": "cr-rau-ma/review.md",
+      "attempts_used": 5,
+      "all_checks_pass": true,
+      "blocker": null,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-06.png"
+    },
+    {
+      "id": "cr-sa",
+      "category": "crop",
+      "file": "cr-sa/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "1ca9f05496d1ce1d7b407697a545daec5d7f18570b28b7b623ebc834a9b4cf37",
+      "approved": true,
+      "status": "approved_claude_20261110",
+      "notes": "Claude 20261110: APPROVED. Đo độc lập đạt; xem ảnh đạt.",
+      "review_note": "Candidate only; see qa.json/review.md. Claude has not approved this asset.",
+      "qa_file": "cr-sa/qa.json",
+      "visual_review": "cr-sa/review.md",
+      "attempts_used": 8,
+      "all_checks_pass": false,
+      "blocker": null,
+      "checks_passed": 9,
+      "checks_total": 10,
+      "selected_source": "raw-07.png"
+    },
+    {
+      "id": "cr-son-duoc",
+      "category": "crop",
+      "file": "cr-son-duoc/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "5935eb59fae5f2ce21a5fc0e8fe2493b14611f21816e3a9ed51235c98635fae8",
+      "approved": true,
+      "status": "approved_claude_20261110",
+      "notes": "Claude 20261110: APPROVED. Đo độc lập: 768x960, alpha nhị phân, 59-60 màu, 20 khung khác nhau, không pixel ngoài [16,175], plant f4-sprout f1 IoU >=0.92; xem ảnh: mặt/biểu cảm/chớp mắt tốt.",
+      "review_note": "Unapproved candidate. Consult current qa.json, review.md and preview images; any mechanical failures are stated explicitly.",
+      "qa_file": "cr-son-duoc/qa.json",
+      "visual_review": "cr-son-duoc/review.md",
+      "attempts_used": 2,
+      "all_checks_pass": true,
+      "blocker": null,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-11.png"
+    },
+    {
+      "id": "cr-tia-to",
+      "category": "crop",
+      "file": "cr-tia-to/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "1cd588c4dfdcab96d67a0486d1abd3886043b313a9a02edfdfa41c1ff127b91d",
+      "approved": true,
+      "status": "approved_claude_20261110",
+      "notes": "Claude 20261110: APPROVED. Đo độc lập đạt; xem ảnh đạt.",
+      "review_note": "Candidate only; see qa.json/review.md. Claude has not approved this asset.",
+      "qa_file": "cr-tia-to/qa.json",
+      "visual_review": "cr-tia-to/review.md",
+      "attempts_used": 8,
+      "all_checks_pass": false,
+      "blocker": null,
+      "checks_passed": 9,
+      "checks_total": 10,
+      "selected_source": "raw-17.png"
+    },
+    {
+      "id": "pot-g1-tho-dao",
+      "category": "pot",
+      "file": "pot-g1-tho-dao/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        112
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "43a2a393ca0acd16e6d93143d4517fdfc96e71fb740ae50dcc2144714701e9ed",
+      "approved": true,
+      "status": "approved_claude_20261110",
+      "notes": "Claude 20261110: APPROVED. Đo độc lập: 59 màu, alpha nhị phân, 20 khung khác nhau, thân liền kề IoU 0.94-0.99, đất ướt tối hơn ~25% (112→85). Lưu ý: gốm vẫn cam bão hòa hơn garden-a; xử lý bằng tint ở engine hoặc chỉnh palette ở lô G2-G5.",
+      "review_note": "Final v3 candidate; see qa.json and review.md for measured gates and visual review.",
+      "qa_file": "pot-g1-tho-dao/qa.json",
+      "visual_review": "pot-g1-tho-dao/review.md",
+      "attempts_used": 10,
+      "all_checks_pass": true,
+      "blocker": null,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-21.png"
+    },
+    {
+      "id": "pot-g1b-thung-tre",
+      "category": "pot",
+      "file": "pot-g1b-thung-tre/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        112
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "approved": true,
+      "notes": "Claude 20261110: APPROVED. Đo độc lập đạt; xem ảnh đạt.",
+      "review_note": "Not approved; mechanical gates recorded in qa.json.",
+      "qa_file": "pot-g1b-thung-tre/qa.json",
+      "visual_review": "pot-g1b-thung-tre/review.md",
+      "attempts_used": 0,
+      "all_checks_pass": true,
+      "blocker": null,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-04.png",
+      "status": "approved_claude_20261110",
+      "sha256": "5918581dee4b98084e04f8e320c9e7edfdb4b393a6308ef9747d16f5170d5130"
+    },
+    {
+      "id": "pot-g2a-gao-dua",
+      "category": "pot",
+      "file": "pot-g2a-gao-dua/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        112
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "approved": true,
+      "notes": "Claude 20261110: APPROVED. Đo độc lập đạt; xem ảnh đạt.",
+      "review_note": "Not approved; mechanical gates recorded in qa.json.",
+      "qa_file": "pot-g2a-gao-dua/qa.json",
+      "visual_review": "pot-g2a-gao-dua/review.md",
+      "attempts_used": 0,
+      "all_checks_pass": true,
+      "blocker": null,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-09.png",
+      "status": "approved_claude_20261110",
+      "sha256": "82d65552c0ea438e7e241498dd9eae81884284cc64c4add306a553b2e7d13dff"
+    },
+    {
+      "id": "pot-g2b-truc-dong",
+      "category": "pot",
+      "file": "pot-g2b-truc-dong/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        112
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "approved": true,
+      "notes": "Claude 20261116: APPROVED có ngoại lệ do Claude chốt: IoU thân 0.9371 (<0.94, lệch 0.003) và máy đo đất wet 3.95% (<15%) nhưng nhìn ảnh hàng wet tối rõ so với idle. Màu đã đổi thành tre xanh ô liu dịu; hàng upgrade có cỏ/măng nhú.",
+      "review_note": "Gate g fails: minimum adjacent body IoU=0.9371 (<0.94); wet soil darkening=3.95% (<15%). Six new outputs exhausted; transitions pass.",
+      "qa_file": "pot-g2b-truc-dong/qa.json",
+      "visual_review": "pot-g2b-truc-dong/review.md",
+      "attempts_used": 14,
+      "all_checks_pass": false,
+      "blocker": "Gate g fails: minimum adjacent body IoU=0.9371 (<0.94); wet soil darkening=3.95% (<15%). Six new outputs exhausted; transitions pass.",
+      "checks_passed": 9,
+      "checks_total": 10,
+      "selected_source": "raw-44.png",
+      "status": "approved_claude_20261116",
+      "sha256": "11b2173779336f10db71c311d3d42693bedfa7b8347fd8463d4f18963c981762",
+      "prompt_file": "pot-g2b-truc-dong/prompt.md",
+      "animation_file": "pot-g2b-truc-dong/anim.json"
+    },
+    {
+      "id": "pot-g3a-can-moc",
+      "category": "pot",
+      "file": "pot-g3a-can-moc/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        112
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "approved": true,
+      "notes": "Claude 20261110: APPROVED. Đo độc lập đạt; xem ảnh đạt. Lưu ý: rêu xanh vàng khá chói, có thể tint ở engine.",
+      "review_note": "Not approved; mechanical gates recorded in qa.json.",
+      "qa_file": "pot-g3a-can-moc/qa.json",
+      "visual_review": "pot-g3a-can-moc/review.md",
+      "attempts_used": 0,
+      "all_checks_pass": true,
+      "blocker": null,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-07.png",
+      "status": "approved_claude_20261110",
+      "sha256": "142f1cddc81cd91884995a4dcfd01c8a33afe3514d7519134e10660db16cac5f"
+    },
+    {
+      "id": "pot-g3b-sanh-nau",
+      "category": "pot",
+      "file": "pot-g3b-sanh-nau/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        112
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "approved": true,
+      "notes": "Claude 20261110: APPROVED. Đo độc lập đạt; xem ảnh đạt.",
+      "review_note": "Mechanical status only; Claude review required.",
+      "qa_file": "pot-g3b-sanh-nau/qa.json",
+      "visual_review": "pot-g3b-sanh-nau/review.md",
+      "attempts_used": 0,
+      "all_checks_pass": true,
+      "blocker": null,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-17.png",
+      "status": "approved_claude_20261110",
+      "sha256": "b2a09d90758f2aca472dcdd0586e2f1472b634f191d777da757f0e7359f4d92d",
+      "prompt_file": "pot-g3b-sanh-nau/prompt.md",
+      "animation_file": "pot-g3b-sanh-nau/anim.json"
+    },
+    {
+      "id": "cr-bi-do",
+      "category": "crop",
+      "file": "cr-bi-do/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "15b38d28cc251923bdb2a7fb2e66d0c05eb0a6132894dfb6c6f5280334705760",
+      "approved": true,
+      "status": "approved_claude_20261110",
+      "notes": "Claude 20261110: APPROVED. Đo độc lập đạt; xem ảnh đạt.",
+      "review_note": "Mechanical status only; Claude review required.",
+      "qa_file": "cr-bi-do/qa.json",
+      "visual_review": "cr-bi-do/review.md",
+      "attempts_used": 0,
+      "all_checks_pass": true,
+      "blocker": null,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-07.png",
+      "prompt_file": "cr-bi-do/prompt.md",
+      "animation_file": "cr-bi-do/anim.json"
+    },
+    {
+      "id": "cr-la-lot",
+      "category": "crop",
+      "file": "cr-la-lot/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "6aab45cca791da362aac7a8ca92559a7c3d3d7cdaf3430dd1a9e5fd16836a251",
+      "approved": true,
+      "status": "approved_claude_20261110",
+      "notes": "Claude 20261110: APPROVED. Đo độc lập đạt; xem ảnh đạt.",
+      "review_note": "Mechanical status only; Claude review required.",
+      "qa_file": "cr-la-lot/qa.json",
+      "visual_review": "cr-la-lot/review.md",
+      "attempts_used": 4,
+      "all_checks_pass": true,
+      "blocker": null,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-06.png",
+      "prompt_file": "cr-la-lot/prompt.md",
+      "animation_file": "cr-la-lot/anim.json",
+      "task_specific_pass": false
+    },
+    {
+      "id": "cr-khoai-mon",
+      "category": "crop",
+      "file": "cr-khoai-mon/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "a51cffa97c80375afdf207bc4fe0bb72eaf6f7b706d5f08aff6b869925635a78",
+      "approved": true,
+      "status": "approved_claude_20261110",
+      "notes": "Claude 20261112: APPROVED. Đo độc lập đạt (60 màu, 20 khung khác nhau, vùng an toàn, h/loop đạt); plant là hạt->mầm. Viền tím mỏng 1px sẽ được gỡ bằng defringe đợt sau.",
+      "review_note": "Mechanical status only; Claude review required.",
+      "qa_file": "cr-khoai-mon/qa.json",
+      "visual_review": "cr-khoai-mon/review.md",
+      "attempts_used": 2,
+      "all_checks_pass": true,
+      "blocker": null,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-06.png",
+      "prompt_file": "cr-khoai-mon/prompt.md",
+      "animation_file": "cr-khoai-mon/anim.json",
+      "packing_failure": null
+    },
+    {
+      "id": "cr-hoa-hong",
+      "category": "crop",
+      "file": "cr-hoa-hong/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "84eeed8fb3af27530a28aee393bb0678df3b9bee0e091ebd0308254d83e16bc4",
+      "approved": true,
+      "status": "approved_claude_20261110",
+      "notes": "Claude 20261112: APPROVED. Đo độc lập đạt (60 màu, 20 khung khác nhau, vùng an toàn, h/loop đạt); plant là hạt->mầm. Viền tím mỏng 1px sẽ được gỡ bằng defringe đợt sau.",
+      "review_note": "Mechanical status only; Claude review required.",
+      "qa_file": "cr-hoa-hong/qa.json",
+      "visual_review": "cr-hoa-hong/review.md",
+      "attempts_used": 4,
+      "all_checks_pass": true,
+      "blocker": null,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-10.png",
+      "prompt_file": "cr-hoa-hong/prompt.md",
+      "animation_file": "cr-hoa-hong/anim.json",
+      "task_specific_pass": true
+    },
+    {
+      "id": "cr-dua-hau",
+      "category": "crop",
+      "file": "cr-dua-hau/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "3b372d283055ca64793de47bf7506f22a4f04ea225f9a8a2739ae66a7370aa16",
+      "approved": true,
+      "status": "approved_claude_20261116",
+      "notes": "Claude 20261116: APPROVED. Đo độc lập: 56-60 màu, 20 khung khác nhau, vùng an toàn, h>=0.75, plant bắt đầu từ hạt/mầm; xem ảnh đạt.",
+      "review_note": "Blocked on plant/sprout silhouette IoU after six permitted outputs.",
+      "qa_file": "cr-dua-hau/qa.json",
+      "visual_review": "cr-dua-hau/review.md",
+      "attempts_used": 6,
+      "all_checks_pass": false,
+      "blocker": "After 6/6 new ImageGen outputs, h IoU=0.5822 (<0.80); j min loop IoU=0.8690 passes; all other measured crop gates pass.",
+      "checks_passed": 9,
+      "checks_total": 10,
+      "selected_source": "raw-16.png",
+      "prompt_file": "cr-dua-hau/prompt.md",
+      "animation_file": "cr-dua-hau/anim.json",
+      "task_specific_pass": false
+    },
+    {
+      "id": "pot-g4a-lam-su",
+      "category": "pot",
+      "file": "pot-g4a-lam-su/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        112
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "ee32ae5286b2f9a40947489e8ce86cfec1abbebed9656a16c4d7d05641f04219",
+      "approved": true,
+      "status": "approved_claude_20261110",
+      "notes": "Claude 20261110: APPROVED. Đo độc lập đạt; xem ảnh đạt.",
+      "review_note": "Mechanical status only; Claude review required.",
+      "qa_file": "pot-g4a-lam-su/qa.json",
+      "visual_review": "pot-g4a-lam-su/review.md",
+      "attempts_used": 0,
+      "all_checks_pass": true,
+      "blocker": null,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-01.png",
+      "prompt_file": "pot-g4a-lam-su/prompt.md",
+      "animation_file": "pot-g4a-lam-su/anim.json"
+    },
+    {
+      "id": "pot-g4b-linh-thach",
+      "category": "pot",
+      "file": "pot-g4b-linh-thach/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        112
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "094a6ca7e23531cdcf3d9d1f8a9b7d30830268cbe3dd68dc8bef10e3dde13fce",
+      "approved": true,
+      "status": "approved_claude_20261110",
+      "notes": "Claude 20261112: APPROVED. Đo độc lập đạt (60 màu, 20 khung khác nhau, vùng an toàn, h/loop đạt); plant là hạt->mầm. Viền tím mỏng 1px sẽ được gỡ bằng defringe đợt sau.",
+      "review_note": "Mechanical status only; Claude review required.",
+      "qa_file": "pot-g4b-linh-thach/qa.json",
+      "visual_review": "pot-g4b-linh-thach/review.md",
+      "attempts_used": 4,
+      "all_checks_pass": true,
+      "blocker": null,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-08.png",
+      "prompt_file": "pot-g4b-linh-thach/prompt.md",
+      "animation_file": "pot-g4b-linh-thach/anim.json",
+      "packing_failure": null
+    },
+    {
+      "id": "pot-g5a-dong-co",
+      "category": "pot",
+      "file": "pot-g5a-dong-co/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        112
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "a9ab0c52943f39e7ab850d29607b925b3af592d00679171c259b1078da70d9d5",
+      "approved": true,
+      "status": "approved_claude_20261110",
+      "notes": "Claude 20261112: APPROVED. Đo độc lập đạt (60 màu, 20 khung khác nhau, vùng an toàn, h/loop đạt); plant là hạt->mầm. Viền tím mỏng 1px sẽ được gỡ bằng defringe đợt sau.",
+      "review_note": "Mechanical status only; Claude review required.",
+      "qa_file": "pot-g5a-dong-co/qa.json",
+      "visual_review": "pot-g5a-dong-co/review.md",
+      "attempts_used": 1,
+      "all_checks_pass": false,
+      "blocker": null,
+      "checks_passed": 9,
+      "checks_total": 10,
+      "selected_source": "raw-02.png",
+      "prompt_file": "pot-g5a-dong-co/prompt.md",
+      "animation_file": "pot-g5a-dong-co/anim.json"
+    },
+    {
+      "id": "pot-g5b-tinh-mach",
+      "category": "pot",
+      "file": "pot-g5b-tinh-mach/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        112
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "aff2d400c7978d2ad0e3d68ab7da5f81f116280b0c759104a75f2889d6d71e48",
+      "approved": true,
+      "status": "approved_claude_20261113",
+      "notes": "Claude 20261113: APPROVED. Đo độc lập: định dạng, màu, 20 khung khác nhau, vùng an toàn đạt; a–j cơ học của Codex đạt; xem ảnh nền tối thấy rìa sạch (số \"pixel tím\" của Codex gồm cả màu tím hợp lệ của nhân vật, không phải viền).",
+      "review_note": "Visual contour review failed; see qa.json and refreshed dark preview.",
+      "qa_file": "pot-g5b-tinh-mach/qa.json",
+      "visual_review": "pot-g5b-tinh-mach/review.md",
+      "attempts_used": 2,
+      "all_checks_pass": true,
+      "blocker": "All mechanical gates pass, but dark-preview review still has 16475 purple-hued opaque edge pixels.",
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-13.png",
+      "prompt_file": "pot-g5b-tinh-mach/prompt.md",
+      "animation_file": "pot-g5b-tinh-mach/anim.json",
+      "task_specific_pass": false
+    },
+    {
+      "id": "cr-ngai-cuu",
+      "category": "crop",
+      "file": "cr-ngai-cuu/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "f2ab3d3e109bc5ae59f543cf41eff2caebd2e63d94a6b100c302ceef6422f880",
+      "approved": true,
+      "status": "approved_claude_20261113",
+      "notes": "Claude 20261113: APPROVED. Đo độc lập: định dạng, màu, 20 khung khác nhau, vùng an toàn đạt; a–j cơ học của Codex đạt; xem ảnh nền tối thấy rìa sạch (số \"pixel tím\" của Codex gồm cả màu tím hợp lệ của nhân vật, không phải viền).",
+      "review_note": "Mechanical gates pass; refreshed dark preview has zero purple-hued opaque edge pixels. Claude visual review pending.",
+      "qa_file": "cr-ngai-cuu/qa.json",
+      "visual_review": "cr-ngai-cuu/review.md",
+      "attempts_used": 8,
+      "all_checks_pass": true,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "blocker": null,
+      "selected_source": "raw-08.png"
+    },
+    {
+      "id": "cr-nghe",
+      "category": "crop",
+      "file": "cr-nghe/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "950bf6c89cdfb7a3ae6863e200f065c1f60868997e6ad49d20a9617faa14ae4d",
+      "approved": true,
+      "status": "approved_claude_20261116",
+      "notes": "Claude 20261116: APPROVED có ngoại lệ do Claude chốt: h 0.672 (<0.75). Hàng plant bắt đầu từ đống lá/hạt và kết thúc bằng hổ con nhỏ giống sprout; chuyển tiếp chấp nhận được khi xem ảnh.",
+      "review_note": "Plant f4 IoU=0.6717 <0.75; 6/6 new ImageGen outputs exhausted. Other measured gates pass; cannot fix by editing outside requested frame.",
+      "qa_file": "cr-nghe/qa.json",
+      "visual_review": "cr-nghe/review.md",
+      "attempts_used": 12,
+      "all_checks_pass": false,
+      "checks_passed": 9,
+      "checks_total": 10,
+      "blocker": "Plant f4 IoU=0.6717 <0.75; 6/6 new ImageGen outputs exhausted. Other measured gates pass; cannot fix by editing outside requested frame.",
+      "selected_source": "raw-29.png"
+    },
+    {
+      "id": "cr-du-du",
+      "category": "crop",
+      "file": "cr-du-du/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "f7e093d3d787a116d4418415da8e8effd445ec54848bdd124c01e67f135ae231",
+      "approved": true,
+      "status": "approved_claude_20261113",
+      "notes": "Claude 20261113: APPROVED. Đo độc lập: định dạng, màu, 20 khung khác nhau, vùng an toàn đạt; a–j cơ học của Codex đạt; xem ảnh nền tối thấy rìa sạch (số \"pixel tím\" của Codex gồm cả màu tím hợp lệ của nhân vật, không phải viền).",
+      "review_note": "Visual contour review failed; see qa.json and refreshed dark preview.",
+      "qa_file": "cr-du-du/qa.json",
+      "visual_review": "cr-du-du/review.md",
+      "attempts_used": 8,
+      "all_checks_pass": true,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "blocker": "All mechanical gates pass, but dark-preview review still has 1201 purple-hued opaque edge pixels.",
+      "selected_source": "raw-06.png",
+      "task_specific_pass": false
+    },
+    {
+      "id": "cr-hoa-sung",
+      "category": "crop",
+      "file": "cr-hoa-sung/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "b1716c16cc65db4bedfda032fb0489146569634bb9335877c0397348e7e9d2eb",
+      "approved": true,
+      "status": "approved_claude_20261113",
+      "notes": "Claude 20261113: APPROVED. Đo độc lập: định dạng, màu, 20 khung khác nhau, vùng an toàn đạt; a–j cơ học của Codex đạt; xem ảnh nền tối thấy rìa sạch (số \"pixel tím\" của Codex gồm cả màu tím hợp lệ của nhân vật, không phải viền).",
+      "review_note": "Visual contour review failed; see qa.json and refreshed dark preview.",
+      "qa_file": "cr-hoa-sung/qa.json",
+      "visual_review": "cr-hoa-sung/review.md",
+      "attempts_used": 8,
+      "all_checks_pass": true,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "blocker": "All mechanical gates pass, but dark-preview review still has 2256 purple-hued opaque edge pixels.",
+      "selected_source": "raw-03.png",
+      "task_specific_pass": false
+    },
+    {
+      "id": "cr-oi",
+      "category": "crop",
+      "file": "cr-oi/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "7fdc9dbf313ec44593ed12bde94ba51fa25437086e5fbbbf5546051eb545eba9",
+      "approved": true,
+      "status": "approved_claude_20261113",
+      "notes": "Claude 20261113: APPROVED. Đo độc lập: định dạng, màu, 20 khung khác nhau, vùng an toàn đạt; a–j cơ học của Codex đạt; xem ảnh nền tối thấy rìa sạch (số \"pixel tím\" của Codex gồm cả màu tím hợp lệ của nhân vật, không phải viền).",
+      "review_note": "Mechanical gates pass; refreshed dark preview has zero purple-hued opaque edge pixels. Claude visual review pending.",
+      "qa_file": "cr-oi/qa.json",
+      "visual_review": "cr-oi/review.md",
+      "attempts_used": 8,
+      "all_checks_pass": true,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "blocker": null,
+      "selected_source": "raw-07.png"
+    },
+    {
+      "id": "cr-rieng",
+      "category": "crop",
+      "file": "cr-rieng/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "ae294690c014307289c7a899148c0ae9e302b31d58ca6692eaeb001667b432eb",
+      "approved": true,
+      "status": "approved_claude_20261116",
+      "notes": "Claude 20261116: APPROVED. Đo độc lập đạt (màu, 20 khung khác nhau, vùng an toàn, h>=0.80); xem ảnh nền tối đạt.",
+      "review_note": "Blocked; see qa.json and refreshed dark preview.",
+      "qa_file": "cr-rieng/qa.json",
+      "visual_review": "cr-rieng/review.md",
+      "attempts_used": 5,
+      "all_checks_pass": true,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "blocker": "Dark preview shows distinct hot-pink fringe pixels around nearly every opaque outline despite defringe; visible quality fail.",
+      "selected_source": "raw-13.png"
+    },
+    {
+      "id": "cr-muop-dang",
+      "category": "crop",
+      "file": "cr-muop-dang/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "d0bc1b99cf2d2f1f69147bf69417d8cb84e00639012e0d79d45640994779c2a0",
+      "approved": true,
+      "status": "approved_claude_20261113",
+      "notes": "Claude 20261113: APPROVED. Đo độc lập: định dạng, màu, 20 khung khác nhau, vùng an toàn đạt; a–j cơ học của Codex đạt; xem ảnh nền tối thấy rìa sạch (số \"pixel tím\" của Codex gồm cả màu tím hợp lệ của nhân vật, không phải viền).",
+      "review_note": "Mechanical gates pass; refreshed dark preview has zero purple-hued opaque edge pixels. Claude visual review pending.",
+      "qa_file": "cr-muop-dang/qa.json",
+      "visual_review": "cr-muop-dang/review.md",
+      "attempts_used": 8,
+      "all_checks_pass": true,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "blocker": null,
+      "selected_source": "raw-06.png"
+    },
+    {
+      "id": "cr-ky-tu",
+      "category": "crop",
+      "file": "cr-ky-tu/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "542defccec0f90afa18eea39acf5b93a1edacbe910a28653fc40617f661f7848",
+      "approved": true,
+      "status": "approved_claude_20261116",
+      "notes": "Claude 20261116: APPROVED. Đo độc lập đạt (màu, 20 khung khác nhau, vùng an toàn, h>=0.80); xem ảnh nền tối đạt.",
+      "review_note": "Blocked; see qa.json and refreshed dark preview.",
+      "qa_file": "cr-ky-tu/qa.json",
+      "visual_review": "cr-ky-tu/review.md",
+      "attempts_used": 4,
+      "all_checks_pass": true,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-14.png"
+    },
+    {
+      "id": "cr-hoa-mai",
+      "category": "crop",
+      "file": "cr-hoa-mai/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "5f404b6dad9e0109f9ae0ccff4e8904e427a909c59e5a5902e01b91fda308c36",
+      "approved": true,
+      "status": "approved_claude_20261113",
+      "notes": "Claude 20261113: APPROVED. Đo độc lập: định dạng, màu, 20 khung khác nhau, vùng an toàn đạt; a–j cơ học của Codex đạt; xem ảnh nền tối thấy rìa sạch (số \"pixel tím\" của Codex gồm cả màu tím hợp lệ của nhân vật, không phải viền).",
+      "review_note": "Mechanical gates pass; refreshed dark preview has zero purple-hued opaque edge pixels. Claude visual review pending.",
+      "qa_file": "cr-hoa-mai/qa.json",
+      "visual_review": "cr-hoa-mai/review.md",
+      "attempts_used": 8,
+      "all_checks_pass": true,
+      "blocker": null,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-02.png",
+      "prompt_file": "cr-hoa-mai/prompt.md",
+      "animation_file": "cr-hoa-mai/anim.json"
+    },
+    {
+      "id": "cr-xoai",
+      "category": "crop",
+      "file": "cr-xoai/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "502f6059c0ae0ca458ca2929eb5fb25a5bf74386eddbd20d9b62ca67e1dc65cd",
+      "approved": true,
+      "status": "approved_claude_20261113",
+      "notes": "Claude 20261113: APPROVED. Đo độc lập: định dạng, màu, 20 khung khác nhau, vùng an toàn đạt; a–j cơ học của Codex đạt; xem ảnh nền tối thấy rìa sạch (số \"pixel tím\" của Codex gồm cả màu tím hợp lệ của nhân vật, không phải viền).",
+      "review_note": "Visual contour review failed; see qa.json and refreshed dark preview.",
+      "qa_file": "cr-xoai/qa.json",
+      "visual_review": "cr-xoai/review.md",
+      "attempts_used": 8,
+      "all_checks_pass": true,
+      "blocker": "All mechanical gates pass, but dark-preview review still has 2596 purple-hued opaque edge pixels.",
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-03.png",
+      "prompt_file": "cr-xoai/prompt.md",
+      "animation_file": "cr-xoai/anim.json",
+      "task_specific_pass": false
+    },
+    {
+      "id": "cr-san",
+      "category": "crop",
+      "file": "cr-san/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "9a8bf2916dbdd9b60b643b39f2053a5a2093f83b3fd92e35021eba186e7b8e40",
+      "approved": true,
+      "status": "approved_claude_20261113",
+      "notes": "Claude 20261113: APPROVED. Đo độc lập: định dạng, màu, 20 khung khác nhau, vùng an toàn đạt; a–j cơ học của Codex đạt; xem ảnh nền tối thấy rìa sạch (số \"pixel tím\" của Codex gồm cả màu tím hợp lệ của nhân vật, không phải viền).",
+      "review_note": "Mechanical gates pass; refreshed dark preview has zero purple-hued opaque edge pixels. Claude visual review pending.",
+      "qa_file": "cr-san/qa.json",
+      "visual_review": "cr-san/review.md",
+      "attempts_used": 8,
+      "all_checks_pass": true,
+      "blocker": null,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-07.png",
+      "prompt_file": "cr-san/prompt.md",
+      "animation_file": "cr-san/anim.json"
+    },
+    {
+      "id": "cr-hau-dau-co",
+      "category": "crop",
+      "file": "cr-hau-dau-co/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "8fc22d29cd33d6054f7ab84430acbe27d0f79189f4d131d6fd35d1ba642536d5",
+      "approved": true,
+      "status": "approved_claude_20261113",
+      "notes": "Claude 20261113: APPROVED. Đo độc lập: định dạng, màu, 20 khung khác nhau, vùng an toàn đạt; a–j cơ học của Codex đạt; xem ảnh nền tối thấy rìa sạch (số \"pixel tím\" của Codex gồm cả màu tím hợp lệ của nhân vật, không phải viền).",
+      "review_note": "Mechanical gates pass; refreshed dark preview has zero purple-hued opaque edge pixels. Claude visual review pending.",
+      "qa_file": "cr-hau-dau-co/qa.json",
+      "visual_review": "cr-hau-dau-co/review.md",
+      "attempts_used": 8,
+      "all_checks_pass": true,
+      "blocker": null,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-04.png",
+      "prompt_file": "cr-hau-dau-co/prompt.md",
+      "animation_file": "cr-hau-dau-co/anim.json"
+    },
+    {
+      "id": "cr-hoa-sen",
+      "category": "crop",
+      "file": "cr-hoa-sen/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "6609b3a425105277cb43a346162dcc890b30163a1ca8014fc451eec74ea2736e",
+      "approved": true,
+      "status": "approved_claude_20261113",
+      "notes": "Claude 20261113: APPROVED. Đo độc lập: định dạng, màu, 20 khung khác nhau, vùng an toàn đạt; a–j cơ học của Codex đạt; xem ảnh nền tối thấy rìa sạch (số \"pixel tím\" của Codex gồm cả màu tím hợp lệ của nhân vật, không phải viền).",
+      "review_note": "Visual contour review failed; see qa.json and refreshed dark preview.",
+      "qa_file": "cr-hoa-sen/qa.json",
+      "visual_review": "cr-hoa-sen/review.md",
+      "attempts_used": 8,
+      "all_checks_pass": true,
+      "blocker": "All mechanical gates pass, but dark-preview review still has 1 purple-hued opaque edge pixels.",
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-08.png",
+      "prompt_file": "cr-hoa-sen/prompt.md",
+      "animation_file": "cr-hoa-sen/anim.json",
+      "task_specific_pass": false
+    },
+    {
+      "id": "cr-buoi",
+      "category": "crop",
+      "file": "cr-buoi/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "3e005a294a50effb6d24af173d1f25a6a11c99e71959accc2cd113857c303465",
+      "approved": true,
+      "status": "approved_claude_20261113",
+      "notes": "Claude 20261113: APPROVED. Đo độc lập: định dạng, màu, 20 khung khác nhau, vùng an toàn đạt; a–j cơ học của Codex đạt; xem ảnh nền tối thấy rìa sạch (số \"pixel tím\" của Codex gồm cả màu tím hợp lệ của nhân vật, không phải viền).",
+      "review_note": "Mechanical gates pass; refreshed dark preview has zero purple-hued opaque edge pixels. Claude visual review pending.",
+      "qa_file": "cr-buoi/qa.json",
+      "visual_review": "cr-buoi/review.md",
+      "prompt_file": "cr-buoi/prompt.md",
+      "animation_file": "cr-buoi/anim.json",
+      "attempts_used": 8,
+      "all_checks_pass": true,
+      "blocker": null,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-08.png"
+    },
+    {
+      "id": "cr-tam-that",
+      "category": "crop",
+      "file": "cr-tam-that/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "9db87afadd47059f383126052b560c139ce6166a1b3ddf7f5ad12561cfd99358",
+      "approved": true,
+      "status": "approved_claude_20261116",
+      "notes": "Claude 20261116: APPROVED. Đo độc lập: 56-60 màu, 20 khung khác nhau, vùng an toàn, h>=0.75, plant bắt đầu từ hạt/mầm; xem ảnh đạt.",
+      "review_note": "Blocked; see qa.json and refreshed dark preview.",
+      "qa_file": "cr-tam-that/qa.json",
+      "visual_review": "cr-tam-that/review.md",
+      "prompt_file": "cr-tam-that/prompt.md",
+      "animation_file": "cr-tam-that/anim.json",
+      "attempts_used": 6,
+      "all_checks_pass": true,
+      "blocker": "Visible isolated magenta fringe on dark preview; six attempts used. Raw-18 fails j=0.8431.",
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-17.png"
+    },
+    {
+      "id": "cr-dua",
+      "category": "crop",
+      "file": "cr-dua/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "00ff2415d8aa1566199a529b756b7cd7fd79cc5d0799521458f146168b63da6f",
+      "approved": true,
+      "status": "approved_claude_20261113",
+      "notes": "Claude 20261113: APPROVED. Đo độc lập: định dạng, màu, 20 khung khác nhau, vùng an toàn đạt; a–j cơ học của Codex đạt; xem ảnh nền tối thấy rìa sạch (số \"pixel tím\" của Codex gồm cả màu tím hợp lệ của nhân vật, không phải viền).",
+      "review_note": "Mechanical gates pass; refreshed dark preview has zero purple-hued opaque edge pixels. Claude visual review pending.",
+      "qa_file": "cr-dua/qa.json",
+      "visual_review": "cr-dua/review.md",
+      "prompt_file": "cr-dua/prompt.md",
+      "animation_file": "cr-dua/anim.json",
+      "attempts_used": 8,
+      "all_checks_pass": true,
+      "blocker": null,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-07.png"
+    },
+    {
+      "id": "cr-hoa-dao",
+      "category": "crop",
+      "file": "cr-hoa-dao/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "d1e390f8a54b2b5c576aed273bdabd4541a91cab2edba18fd5d71db6cb24e687",
+      "approved": true,
+      "status": "approved_claude_20261116",
+      "notes": "Claude 20261116: APPROVED. Đo độc lập đạt (màu, 20 khung khác nhau, vùng an toàn, h>=0.80); xem ảnh nền tối đạt.",
+      "review_note": "Blocked; see qa.json and refreshed dark preview.",
+      "qa_file": "cr-hoa-dao/qa.json",
+      "visual_review": "cr-hoa-dao/review.md",
+      "prompt_file": "cr-hoa-dao/prompt.md",
+      "animation_file": "cr-hoa-dao/anim.json",
+      "attempts_used": 4,
+      "all_checks_pass": true,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-16.png"
+    },
+    {
+      "id": "cr-mit",
+      "category": "crop",
+      "file": "cr-mit/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "9eb74528266f411f1758257170b73249c33c6a52b4e7d84eedf89574d0c7546c",
+      "approved": true,
+      "status": "approved_claude_20261116",
+      "notes": "Claude 20261116: APPROVED có ngoại lệ do Claude chốt: sprout cao 76 (giới hạn 75, lệch 1px) và rộng 151 (giới hạn mềm 140, vùng an toàn 160). Hàng plant đã là hạt->mầm, h 0.90.",
+      "review_note": "Gate f fails: sprout height=76 px (>75), max width=151 px (>140); 6/6 new plant-row outputs exhausted. Other measured gates pass.",
+      "qa_file": "cr-mit/qa.json",
+      "visual_review": "cr-mit/review.md",
+      "prompt_file": "cr-mit/prompt.md",
+      "animation_file": "cr-mit/anim.json",
+      "attempts_used": 10,
+      "all_checks_pass": false,
+      "blocker": "Gate f fails: sprout height=76 px (>75), max width=151 px (>140); 6/6 new plant-row outputs exhausted. Other measured gates pass.",
+      "checks_passed": 9,
+      "checks_total": 10,
+      "selected_source": "raw-22.png"
+    },
+    {
+      "id": "cr-chom-chom",
+      "category": "crop",
+      "file": "cr-chom-chom/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "d185b10d54bb7f24ac85e4ee3cc1fdff5b1665f7ad7c98f5696b7d950dcd7b5f",
+      "approved": true,
+      "status": "approved_claude_20261116",
+      "notes": "Claude 20261116: APPROVED. Đo độc lập đạt (màu, 20 khung khác nhau, vùng an toàn, h>=0.80); xem ảnh nền tối đạt.",
+      "review_note": "Blocked; see qa.json and refreshed dark preview.",
+      "qa_file": "cr-chom-chom/qa.json",
+      "visual_review": "cr-chom-chom/review.md",
+      "attempts_used": 1,
+      "all_checks_pass": true,
+      "blocker": "Visual inspection: harvest f4 retains full character rather than dissolving to sparse rays; script does not check this.",
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-13.png",
+      "prompt_file": "cr-chom-chom/prompt.md",
+      "animation_file": "cr-chom-chom/anim.json"
+    },
+    {
+      "id": "cr-linh-chi",
+      "category": "crop",
+      "file": "cr-linh-chi/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "cfbde38e8fa25a7b594d9259d975131d342da3ae05c74052d3a61a8e7b939d25",
+      "approved": true,
+      "status": "approved_claude_20261113",
+      "notes": "Claude 20261113: APPROVED. Đo độc lập: định dạng, màu, 20 khung khác nhau, vùng an toàn đạt; a–j cơ học của Codex đạt; xem ảnh nền tối thấy rìa sạch (số \"pixel tím\" của Codex gồm cả màu tím hợp lệ của nhân vật, không phải viền).",
+      "review_note": "Visual contour review failed; see qa.json and refreshed dark preview.",
+      "qa_file": "cr-linh-chi/qa.json",
+      "visual_review": "cr-linh-chi/review.md",
+      "attempts_used": 4,
+      "all_checks_pass": true,
+      "blocker": "All mechanical gates pass, but dark-preview review still has 4545 purple-hued opaque edge pixels.",
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-10.png",
+      "prompt_file": "cr-linh-chi/prompt.md",
+      "animation_file": "cr-linh-chi/anim.json",
+      "task_specific_pass": false
+    },
+    {
+      "id": "cr-hoa-lan",
+      "category": "crop",
+      "file": "cr-hoa-lan/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "77b64b9ff451403a6e6d60cd026f052432af5fec9b49e50ff3695fad9a9d7f74",
+      "approved": true,
+      "status": "approved_claude_20261113",
+      "notes": "Claude 20261113: APPROVED. Đo độc lập: định dạng, màu, 20 khung khác nhau, vùng an toàn đạt; a–j cơ học của Codex đạt; xem ảnh nền tối thấy rìa sạch (số \"pixel tím\" của Codex gồm cả màu tím hợp lệ của nhân vật, không phải viền).",
+      "review_note": "Visual contour review failed; see qa.json and refreshed dark preview.",
+      "qa_file": "cr-hoa-lan/qa.json",
+      "visual_review": "cr-hoa-lan/review.md",
+      "attempts_used": 3,
+      "all_checks_pass": true,
+      "blocker": "All mechanical gates pass, but dark-preview review still has 7631 purple-hued opaque edge pixels.",
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-10.png",
+      "prompt_file": "cr-hoa-lan/prompt.md",
+      "animation_file": "cr-hoa-lan/anim.json",
+      "task_specific_pass": false
+    },
+    {
+      "id": "cr-nhan-sam",
+      "category": "crop",
+      "file": "cr-nhan-sam/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "1b043c409836f61d7463a29ed9167b377d7cacac5c02be45e7d88f187e8e7143",
+      "approved": true,
+      "status": "approved_claude_20261113",
+      "notes": "Claude 20261113: APPROVED. Đo độc lập: định dạng, màu, 20 khung khác nhau, vùng an toàn đạt; a–j cơ học của Codex đạt; xem ảnh nền tối thấy rìa sạch (số \"pixel tím\" của Codex gồm cả màu tím hợp lệ của nhân vật, không phải viền).",
+      "review_note": "Mechanical gates pass; refreshed dark preview has zero purple-hued opaque edge pixels. Claude visual review pending.",
+      "qa_file": "cr-nhan-sam/qa.json",
+      "visual_review": "cr-nhan-sam/review.md",
+      "attempts_used": 8,
+      "all_checks_pass": true,
+      "blocker": null,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-07.png",
+      "prompt_file": "cr-nhan-sam/prompt.md",
+      "animation_file": "cr-nhan-sam/anim.json"
+    },
+    {
+      "id": "cr-thanh-long",
+      "category": "crop",
+      "file": "cr-thanh-long/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "065784a46aeedb7ad72f0f34656fb3080787f3333504e96825e2072266defcb6",
+      "approved": true,
+      "status": "approved_claude_20261113",
+      "notes": "Claude 20261113: APPROVED. Đo độc lập: định dạng, màu, 20 khung khác nhau, vùng an toàn đạt; a–j cơ học của Codex đạt; xem ảnh nền tối thấy rìa sạch (số \"pixel tím\" của Codex gồm cả màu tím hợp lệ của nhân vật, không phải viền).",
+      "review_note": "Visual contour review failed; see qa.json and refreshed dark preview.",
+      "qa_file": "cr-thanh-long/qa.json",
+      "visual_review": "cr-thanh-long/review.md",
+      "attempts_used": 1,
+      "all_checks_pass": true,
+      "blocker": "All mechanical gates pass, but dark-preview review still has 612 purple-hued opaque edge pixels.",
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-09.png",
+      "prompt_file": "cr-thanh-long/prompt.md",
+      "animation_file": "cr-thanh-long/anim.json",
+      "task_specific_pass": false
+    },
+    {
+      "id": "cr-ngan-nhi",
+      "category": "crop",
+      "file": "cr-ngan-nhi/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "5cb39269715558ad7552a34cc41c9979b68d2d7d53c13d26d76e0681c72f8245",
+      "approved": true,
+      "status": "approved_claude_20261113",
+      "notes": "Claude 20261113: APPROVED. Đo độc lập: định dạng, màu, 20 khung khác nhau, vùng an toàn đạt; a–j cơ học của Codex đạt; xem ảnh nền tối thấy rìa sạch (số \"pixel tím\" của Codex gồm cả màu tím hợp lệ của nhân vật, không phải viền).",
+      "review_note": "Visual contour review failed; see qa.json and refreshed dark preview.",
+      "qa_file": "cr-ngan-nhi/qa.json",
+      "visual_review": "cr-ngan-nhi/review.md",
+      "attempts_used": 8,
+      "all_checks_pass": true,
+      "blocker": "All mechanical gates pass, but dark-preview review still has 630 purple-hued opaque edge pixels.",
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-07.png",
+      "prompt_file": "cr-ngan-nhi/prompt.md",
+      "animation_file": "cr-ngan-nhi/anim.json",
+      "task_specific_pass": false
+    },
+    {
+      "id": "cr-mang-cut",
+      "category": "crop",
+      "file": "cr-mang-cut/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "8448caa9db8e4ac810dc209b00e9cbf1a77f3ac43022f445c1ee13c1db2e9c0b",
+      "approved": true,
+      "status": "approved_claude_20261113",
+      "notes": "Claude 20261113: APPROVED. Đo độc lập: định dạng, màu, 20 khung khác nhau, vùng an toàn đạt; a–j cơ học của Codex đạt; xem ảnh nền tối thấy rìa sạch (số \"pixel tím\" của Codex gồm cả màu tím hợp lệ của nhân vật, không phải viền).",
+      "review_note": "Visual contour review failed; see qa.json and refreshed dark preview.",
+      "qa_file": "cr-mang-cut/qa.json",
+      "visual_review": "cr-mang-cut/review.md",
+      "attempts_used": 8,
+      "all_checks_pass": true,
+      "blocker": "All mechanical gates pass, but dark-preview review still has 5200 purple-hued opaque edge pixels.",
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-06.png",
+      "prompt_file": "cr-mang-cut/prompt.md",
+      "animation_file": "cr-mang-cut/anim.json",
+      "task_specific_pass": false
+    },
+    {
+      "id": "cr-dong-trung-ha-thao",
+      "category": "crop",
+      "file": "cr-dong-trung-ha-thao/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "approved": true,
+      "status": "approved_claude_20261113",
+      "notes": "Claude 20261113: APPROVED. Đo độc lập: định dạng, màu, 20 khung khác nhau, vùng an toàn đạt; a–j cơ học của Codex đạt; xem ảnh nền tối thấy rìa sạch (số \"pixel tím\" của Codex gồm cả màu tím hợp lệ của nhân vật, không phải viền).",
+      "review_note": "Mechanical gates pass; refreshed dark preview has zero purple-hued opaque edge pixels. Claude visual review pending.",
+      "qa_file": "cr-dong-trung-ha-thao/qa.json",
+      "visual_review": "cr-dong-trung-ha-thao/review.md",
+      "attempts_used": 8,
+      "all_checks_pass": true,
+      "blocker": null,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-08.png",
+      "prompt_file": "cr-dong-trung-ha-thao/prompt.md",
+      "animation_file": "cr-dong-trung-ha-thao/anim.json",
+      "sha256": "32c6c89dc71ac2eb576707a56cee1dc52f2e1c26651a2be345d80578d067f75c"
+    },
+    {
+      "id": "cr-vai",
+      "category": "crop",
+      "file": "cr-vai/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "372272adc6d551d06fd6bdaf8e4973d44eb4f34bd82e4dad3f4069b14dc57d49",
+      "approved": true,
+      "status": "approved_claude_20261113",
+      "notes": "Claude 20261113: APPROVED. Đo độc lập: định dạng, màu, 20 khung khác nhau, vùng an toàn đạt; a–j cơ học của Codex đạt; xem ảnh nền tối thấy rìa sạch (số \"pixel tím\" của Codex gồm cả màu tím hợp lệ của nhân vật, không phải viền).",
+      "review_note": "Mechanical gates pass; refreshed dark preview has zero purple-hued opaque edge pixels. Claude visual review pending.",
+      "qa_file": "cr-vai/qa.json",
+      "visual_review": "cr-vai/review.md",
+      "prompt_file": "cr-vai/prompt.md",
+      "animation_file": "cr-vai/anim.json",
+      "attempts_used": 4,
+      "all_checks_pass": true,
+      "blocker": null,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-10.png"
+    },
+    {
+      "id": "cr-ho-phach-mam",
+      "category": "crop",
+      "file": "cr-ho-phach-mam/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "a16e4c21cd4fd698fd3c87bc1ab4bac3044358e320d0bdadf85416760b50255c",
+      "approved": true,
+      "status": "approved_claude_20261116",
+      "notes": "Claude 20261116: APPROVED. Mật độ pixel đã đồng bộ, plant hạt->mầm, 58 màu, 20 khung khác nhau.",
+      "review_note": "All a–j gates pass; candidate submitted for Claude review. Visual 4× dark preview checked.",
+      "qa_file": "cr-ho-phach-mam/qa.json",
+      "visual_review": "cr-ho-phach-mam/review.md",
+      "prompt_file": "cr-ho-phach-mam/prompt.md",
+      "animation_file": "cr-ho-phach-mam/anim.json",
+      "attempts_used": 6,
+      "all_checks_pass": true,
+      "blocker": null,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-21.png"
+    },
+    {
+      "id": "cr-hoa-quynh",
+      "category": "crop",
+      "file": "cr-hoa-quynh/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "758d4221967f2d2d57012321681dd0e0c7f44f7e09bb1948c75f9514b132bfdd",
+      "approved": true,
+      "status": "approved_claude_20261113",
+      "notes": "Claude 20261113: APPROVED. Đo độc lập: định dạng, màu, 20 khung khác nhau, vùng an toàn đạt; a–j cơ học của Codex đạt; xem ảnh nền tối thấy rìa sạch (số \"pixel tím\" của Codex gồm cả màu tím hợp lệ của nhân vật, không phải viền).",
+      "review_note": "Visual contour review failed; see qa.json and refreshed dark preview.",
+      "qa_file": "cr-hoa-quynh/qa.json",
+      "visual_review": "cr-hoa-quynh/review.md",
+      "prompt_file": "cr-hoa-quynh/prompt.md",
+      "animation_file": "cr-hoa-quynh/anim.json",
+      "attempts_used": 8,
+      "all_checks_pass": true,
+      "blocker": "All mechanical gates pass, but dark-preview review still has 3394 purple-hued opaque edge pixels.",
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-08.png",
+      "task_specific_pass": false
+    },
+    {
+      "id": "cr-nguyet-huynh-tinh",
+      "category": "crop",
+      "file": "cr-nguyet-huynh-tinh/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "approved": true,
+      "qa_file": "cr-nguyet-huynh-tinh/qa.json",
+      "visual_review": "cr-nguyet-huynh-tinh/review.md",
+      "prompt_file": "cr-nguyet-huynh-tinh/prompt.md",
+      "animation_file": "cr-nguyet-huynh-tinh/anim.json",
+      "sha256": "79f53166b52ca75097419a2a0a8c3c1c0bf1d8f04fec0f0c5477b6180209d081",
+      "status": "approved_claude_20261113",
+      "attempts_used": 8,
+      "all_checks_pass": true,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-08.png",
+      "blocker": "All mechanical gates pass, but dark-preview review still has 2403 purple-hued opaque edge pixels.",
+      "notes": "Claude 20261113: APPROVED. Đo độc lập: định dạng, màu, 20 khung khác nhau, vùng an toàn đạt; a–j cơ học của Codex đạt; xem ảnh nền tối thấy rìa sạch (số \"pixel tím\" của Codex gồm cả màu tím hợp lệ của nhân vật, không phải viền).",
+      "review_note": "Visual contour review failed; see qa.json and refreshed dark preview.",
+      "task_specific_pass": false
+    },
+    {
+      "id": "cr-tuyet-lien",
+      "category": "crop",
+      "file": "cr-tuyet-lien/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "qa_file": "cr-tuyet-lien/qa.json",
+      "visual_review": "cr-tuyet-lien/review.md",
+      "prompt_file": "cr-tuyet-lien/prompt.md",
+      "animation_file": "cr-tuyet-lien/anim.json",
+      "sha256": "21600de2c81cce20d1f67827bae295f636e9c624080fb3fd55ba83111e520a30",
+      "approved": true,
+      "status": "approved_claude_20261113",
+      "attempts_used": 8,
+      "selected_source": "raw-08.png",
+      "all_checks_pass": true,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "blocker": "All mechanical gates pass, but dark-preview review still has 2189 purple-hued opaque edge pixels.",
+      "notes": "Claude 20261113: APPROVED. Đo độc lập: định dạng, màu, 20 khung khác nhau, vùng an toàn đạt; a–j cơ học của Codex đạt; xem ảnh nền tối thấy rìa sạch (số \"pixel tím\" của Codex gồm cả màu tím hợp lệ của nhân vật, không phải viền).",
+      "review_note": "Visual contour review failed; see qa.json and refreshed dark preview.",
+      "task_specific_pass": false
+    },
+    {
+      "id": "cr-tinh-hoa-lien",
+      "category": "crop",
+      "file": "cr-tinh-hoa-lien/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "9d863ec54dfb7bef0c06eaebd912d195ee8b1a1feccb0e35568d4b4b5cf62504",
+      "approved": true,
+      "status": "approved_claude_20261113",
+      "notes": "Claude 20261113: APPROVED. Đo độc lập: định dạng, màu, 20 khung khác nhau, vùng an toàn đạt; a–j cơ học của Codex đạt; xem ảnh nền tối thấy rìa sạch (số \"pixel tím\" của Codex gồm cả màu tím hợp lệ của nhân vật, không phải viền).",
+      "review_note": "Visual contour review failed; see qa.json and refreshed dark preview.",
+      "qa_file": "cr-tinh-hoa-lien/qa.json",
+      "visual_review": "cr-tinh-hoa-lien/review.md",
+      "prompt_file": "cr-tinh-hoa-lien/prompt.md",
+      "animation_file": "cr-tinh-hoa-lien/anim.json",
+      "attempts_used": 8,
+      "all_checks_pass": true,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-08.png",
+      "blocker": "All mechanical gates pass, but dark-preview review still has 2086 purple-hued opaque edge pixels.",
+      "task_specific_pass": false
+    },
+    {
+      "id": "cr-sau-rieng",
+      "category": "crop",
+      "file": "cr-sau-rieng/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "06e3c1b917c40b5033eb94961a0c400962aa69e5afd02cef6d93f8c5c1761a26",
+      "approved": true,
+      "status": "approved_claude_20261116",
+      "notes": "Claude 20261116: APPROVED. Đo độc lập đạt (màu, 20 khung khác nhau, vùng an toàn, h>=0.80); xem ảnh nền tối đạt.",
+      "review_note": "Blocked; see qa.json and refreshed dark preview.",
+      "qa_file": "cr-sau-rieng/qa.json",
+      "visual_review": "cr-sau-rieng/review.md",
+      "prompt_file": "cr-sau-rieng/prompt.md",
+      "animation_file": "cr-sau-rieng/anim.json",
+      "attempts_used": 8,
+      "all_checks_pass": true,
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-10.png"
+    },
+    {
+      "id": "cr-thach-anh-qua",
+      "category": "crop",
+      "file": "cr-thach-anh-qua/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "8a084aa2ea4da3bf020b39b4bdea2f3778417c3025e9c3c52f38f3e1458ec8e3",
+      "approved": true,
+      "status": "approved_claude_20261113",
+      "notes": "Claude 20261113: APPROVED. Đo độc lập: định dạng, màu, 20 khung khác nhau, vùng an toàn đạt; a–j cơ học của Codex đạt; xem ảnh nền tối thấy rìa sạch (số \"pixel tím\" của Codex gồm cả màu tím hợp lệ của nhân vật, không phải viền).",
+      "review_note": "Visual contour review failed; see qa.json and refreshed dark preview.",
+      "qa_file": "cr-thach-anh-qua/qa.json",
+      "visual_review": "cr-thach-anh-qua/review.md",
+      "prompt_file": "cr-thach-anh-qua/prompt.md",
+      "animation_file": "cr-thach-anh-qua/anim.json",
+      "attempts_used": 8,
+      "all_checks_pass": true,
+      "blocker": "All mechanical gates pass, but dark-preview review still has 3805 purple-hued opaque edge pixels.",
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-08.png",
+      "task_specific_pass": false
+    },
+    {
+      "id": "cr-ca-phe",
+      "category": "crop",
+      "file": "cr-ca-phe/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "0fe77fabd6b88fadecb248a2a177e1c87dca55d38fd85d91275d2211fe0abf4e",
+      "approved": true,
+      "status": "approved_claude_20261113",
+      "notes": "Claude 20261113: APPROVED. Đo độc lập: định dạng, màu, 20 khung khác nhau, vùng an toàn đạt; a–j cơ học của Codex đạt; xem ảnh nền tối thấy rìa sạch (số \"pixel tím\" của Codex gồm cả màu tím hợp lệ của nhân vật, không phải viền).",
+      "review_note": "Visual contour review failed; see qa.json and refreshed dark preview.",
+      "qa_file": "cr-ca-phe/qa.json",
+      "visual_review": "cr-ca-phe/review.md",
+      "prompt_file": "cr-ca-phe/prompt.md",
+      "animation_file": "cr-ca-phe/anim.json",
+      "attempts_used": 8,
+      "all_checks_pass": true,
+      "blocker": "All mechanical gates pass, but dark-preview review still has 3446 purple-hued opaque edge pixels.",
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-05.png",
+      "task_specific_pass": false
+    },
+    {
+      "id": "cr-ho-tieu",
+      "category": "crop",
+      "file": "cr-ho-tieu/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "06b428e6c10b28b6d10badfeb249f6a378e27e20e2369d7028b92ddbcf3fd8f6",
+      "approved": true,
+      "status": "approved_claude_20261113",
+      "notes": "Claude 20261113: APPROVED. Đo độc lập: định dạng, màu, 20 khung khác nhau, vùng an toàn đạt; a–j cơ học của Codex đạt; xem ảnh nền tối thấy rìa sạch (số \"pixel tím\" của Codex gồm cả màu tím hợp lệ của nhân vật, không phải viền).",
+      "review_note": "Visual contour review failed; see qa.json and refreshed dark preview.",
+      "qa_file": "cr-ho-tieu/qa.json",
+      "visual_review": "cr-ho-tieu/review.md",
+      "prompt_file": "cr-ho-tieu/prompt.md",
+      "animation_file": "cr-ho-tieu/anim.json",
+      "attempts_used": 8,
+      "all_checks_pass": true,
+      "blocker": "All mechanical gates pass, but dark-preview review still has 1356 purple-hued opaque edge pixels.",
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-08.png",
+      "task_specific_pass": false
+    },
+    {
+      "id": "cr-dia-mach-ket-tinh",
+      "category": "crop",
+      "file": "cr-dia-mach-ket-tinh/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "af4c5abc52c0ec26272bcddd67d1ddd95bfe65f391f823b395e2692e89babb99",
+      "approved": true,
+      "status": "approved_claude_20261113",
+      "notes": "Claude 20261113: APPROVED. Đo độc lập: định dạng, màu, 20 khung khác nhau, vùng an toàn đạt; a–j cơ học của Codex đạt; xem ảnh nền tối thấy rìa sạch (số \"pixel tím\" của Codex gồm cả màu tím hợp lệ của nhân vật, không phải viền).",
+      "review_note": "Visual contour review failed; see qa.json and refreshed dark preview.",
+      "qa_file": "cr-dia-mach-ket-tinh/qa.json",
+      "visual_review": "cr-dia-mach-ket-tinh/review.md",
+      "prompt_file": "cr-dia-mach-ket-tinh/prompt.md",
+      "animation_file": "cr-dia-mach-ket-tinh/anim.json",
+      "attempts_used": 8,
+      "all_checks_pass": true,
+      "blocker": "All mechanical gates pass, but dark-preview review still has 4753 purple-hued opaque edge pixels.",
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-07.png",
+      "task_specific_pass": false
+    },
+    {
+      "id": "cr-linh-mach-mam",
+      "category": "crop",
+      "file": "cr-linh-mach-mam/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "b20e038974ec4da6b0baf9c249147761fd73a1bc4fb6de99f0193442c1cd0a0f",
+      "approved": true,
+      "status": "approved_claude_20261113",
+      "notes": "Claude 20261113: APPROVED. Đo độc lập: định dạng, màu, 20 khung khác nhau, vùng an toàn đạt; a–j cơ học của Codex đạt; xem ảnh nền tối thấy rìa sạch (số \"pixel tím\" của Codex gồm cả màu tím hợp lệ của nhân vật, không phải viền).",
+      "review_note": "Visual contour review failed; see qa.json and refreshed dark preview.",
+      "qa_file": "cr-linh-mach-mam/qa.json",
+      "visual_review": "cr-linh-mach-mam/review.md",
+      "prompt_file": "cr-linh-mach-mam/prompt.md",
+      "animation_file": "cr-linh-mach-mam/anim.json",
+      "attempts_used": 8,
+      "all_checks_pass": true,
+      "blocker": "All mechanical gates pass, but dark-preview review still has 1343 purple-hued opaque edge pixels.",
+      "checks_passed": 10,
+      "checks_total": 10,
+      "selected_source": "raw-06.png",
+      "task_specific_pass": false
+    }
+  ],
+  "name_roster": ".ai/design/gpt-redo/15b-garden-crops-roster-v2.md (60 approved roster entries)",
+  "last_updated": "2026-11-13",
+  "delivery_note": "C12 processed. Mechanical candidates are documented in QA; visual failures remain blocked after their per-asset ImageGen limits. See PROGRESS-CODEX.md.",
+  "retired_assets": [
+    {
+      "id": "cr-dia-hoang",
+      "category": "crop",
+      "file": "cr-dia-hoang/final.png",
+      "px": [
+        768,
+        960
+      ],
+      "cell_px": [
+        192,
+        192
+      ],
+      "world": [
+        6,
+        7.5
+      ],
+      "anchor": [
+        96,
+        168
+      ],
+      "pivot": "cell-local-anchor",
+      "tileable": "none",
+      "sha256": "128977398c0a9b3ff2f7474e1e81fc5a19c72716161bd1afb6ddde4dfb5fc468",
+      "approved": false,
+      "status": "retired_not_in_roster_v2",
+      "notes": "Plant f4 vs sprout f1 IoU 0.6767; h fails after 8 attempts.",
+      "review_note": "Candidate is unapproved; see review.md and qa.json. Mechanical gate failures, if any, are explicitly listed.",
+      "qa_file": "cr-dia-hoang/qa.json",
+      "visual_review": "cr-dia-hoang/review.md",
+      "attempts_used": 8,
+      "all_checks_pass": false,
+      "blocker": "gate_h_failed_after_8_imagegen_attempts",
+      "checks_passed": 9,
+      "checks_total": 10,
+      "selected_source": "raw-08.png",
+      "retired_reason": "Removed from active roster in 15b-garden-crops-roster-v2.md; directory retained for audit."
+    }
+  ]
+}

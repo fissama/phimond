@@ -1,0 +1,1 @@
+Actual3x3 repeat and detail4x dark/checker inspected. Quiet shared base removes framed texture island; distinct geometry/material clusters. Mechanical seamX/Y0, outer8flat,33–48colors. Fixed recognizable motif repetition remains a weakness. Draft self-inspected, Claude approval=false. No code edge painting/copying; only crop and whole-image kit palette subset finish.

@@ -1,0 +1,26 @@
+{
+  "id": "ancient-edge-01",
+  "size": [
+    512,
+    128
+  ],
+  "mode": "RGBA",
+  "colors": 48,
+  "partial_alpha_pixels": 0,
+  "key_residue_pixels": 0,
+  "margin": 0,
+  "raw_integrity": true,
+  "raw_sha256": "4877bebb08bb54e430f20e78bc68abf13a3b3ac9bd5f771d879eb01c52337bbc",
+  "sha256": "d10f230abbb4ecb3d400e715cd59f2692c4430aac3ab71e089d1c62bbb6c2e85",
+  "seam_x": [
+    3.336,
+    2.633
+  ],
+  "seam_pass": true,
+  "repeat_preview": "repeat-3x1.png",
+  "visual_review": "repeat_3x1_and_4x_dark_checker_viewed",
+  "failures": [],
+  "reviewed_on": "2026-11-04",
+  "processing": "crop 4:1 central strip; nearest resize 512x128; nondithered RGB 48-color median cut; binary alpha threshold 128",
+  "reviewer_note": "Viewed horizontal 3x1 repeat and the strip at 4x on dark and checker backgrounds. No visible join line, palette spill or alpha halo; irregular jade/limestone band fits Ancient floors."
+}

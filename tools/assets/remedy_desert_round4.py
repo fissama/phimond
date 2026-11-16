@@ -15,8 +15,8 @@ from PIL import Image, ImageDraw
 import numpy as np
 
 R = pathlib.Path(__file__).resolve().parents[2]
-art_dir = R / "apps/game-web/art-src/hd2d/batch-11-desert"
-tex_dir = R / "apps/game-web/public/scenes/tex"
+art_dir = R / "art/src/hd2d/batch-11-desert"
+tex_dir = R / "art/build/scenes/tex"
 raw_props_p = pathlib.Path("/Users/phileanh/.gemini/antigravity-ide/brain/011c27ea-b148-400e-9b78-4882eb990740/desert_props_pack_1792122396890.jpg")
 
 def save_and_sync(aid, img):

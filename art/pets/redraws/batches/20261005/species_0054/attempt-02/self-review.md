@@ -1,0 +1,1 @@
+Rejected: restored flag but nonuniform row positions produce boundary crossings. R1C1-R1C4 left and flag present; R2C1-R2C4 tail phases; R3C1-R3C4 pole windup strike recover; R4C1-R4C4 raised flag cast gestures; R5C1-R5C4 flinch to prone left. Requires third generation with smaller figures and strict grid. Animation playback not verified.

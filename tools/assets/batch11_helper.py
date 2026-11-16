@@ -13,7 +13,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 # Path config
 WORKSPACE = Path("/Users/phileanh/rust/phimond")
-HD2D_DIR = WORKSPACE / "apps/game-web/art-src/hd2d"
+HD2D_DIR = WORKSPACE / "art/src/hd2d"
 MAP_SOURCES = Path("/Users/phileanh/Downloads/Phimond-P12-Review/map-images")
 
 def get_sha256(path):

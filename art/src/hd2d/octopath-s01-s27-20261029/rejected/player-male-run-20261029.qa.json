@@ -1,0 +1,44 @@
+{
+  "status": "rejected_candidate",
+  "asset": "player-male.run.png",
+  "raw_candidate": "raw/route-codex-player-male-run-20261029/generated.png",
+  "route": "local:codex-cli (codex-image_gen)",
+  "processed_candidate": "processed/player-male.run-segmented/finished/candidate.png",
+  "qa": "processed/player-male.run-segmented/frames-qc/sheet-qc.json",
+  "failures": [
+    {
+      "id": "leg_alternation",
+      "status": "fail",
+      "value": "duplicated half-cycle: the same leg leads in both halves",
+      "frames": [
+        1,
+        5
+      ]
+    },
+    {
+      "id": "identity_head_ratio",
+      "status": "fail",
+      "value": 1.078,
+      "threshold": [
+        0.95,
+        1.05
+      ],
+      "frames": [
+        4,
+        8
+      ]
+    },
+    {
+      "id": "phase_coverage",
+      "status": "warn",
+      "value": "both halves lack flight phase"
+    },
+    {
+      "id": "torso_drift",
+      "status": "warn",
+      "value": 11.07,
+      "unit": "game px"
+    }
+  ],
+  "note": "This candidate is not in delivery and must not be used as the S24 approved style reference. Other pose-generation attempts also repeated the leading-leg arrangement."
+}

@@ -1,0 +1,11 @@
+{
+  "schema": "phimond.art-provenance.v1",
+  "asset": "hud-player-plate.png",
+  "art_source": "host_image",
+  "route": "Codex built-in image_gen",
+  "model": "not exposed",
+  "references": ["../layout-guide-320x88.png", "apps/game-web/art-src/hd2d/octopath-s01-s27-20261029/delivery/ui-minimap.png", "apps/game-web/art-src/hd2d/octopath-s01-s27-20261029/delivery/bar-frame-exp.png"],
+  "source": "../candidate-01-raw.png",
+  "processing": ["assemble_frames chroma key with binary alpha", "crop visible card bounds and uniform resize/pad to 320x88", "forge_matte 2px edge despill", "48-color palette build/apply"],
+  "status": "ready_for_owner_review"
+}

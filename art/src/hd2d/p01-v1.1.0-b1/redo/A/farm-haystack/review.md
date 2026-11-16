@@ -1,0 +1,1 @@
+Self-review: Layered golden haystack tied with muted rope, about 1.5 units high. Game canvas (192, 192)px = [1.5, 1.5] world units at 128px/unit. Alpha binary=True, palette=33, margin=8px. Needs Claude review.

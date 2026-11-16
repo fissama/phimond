@@ -9,7 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 MANIFEST = ROOT / '.ai/plan/phases/P10-pet-model/redraw-kit/manifest.json'
-OUT = ROOT / 'apps/game-client/assets/pets/redraws/batches/20261005'
+OUT = ROOT / 'art/pets/redraws/batches/20261005'
 
 
 def local_url(path):

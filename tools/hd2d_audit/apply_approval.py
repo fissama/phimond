@@ -12,7 +12,7 @@ manifest.json; không động vào ảnh, qa.json hay batch ngoài scope.
 import json, sys, pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
-ART = ROOT / "apps/game-web/art-src/hd2d"
+ART = ROOT / "art/src/hd2d"
 
 def main():
     args = [a for a in sys.argv[1:] if not a.startswith("--")]

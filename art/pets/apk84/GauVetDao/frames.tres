@@ -1,0 +1,59 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/pets/apk84/GauVetDao/sprites.png" id="1"]
+
+[sub_resource type="AtlasTexture" id="F0"]
+
+atlas = ExtResource("1")
+
+region = Rect2(0, 0, 44, 80)
+
+[sub_resource type="AtlasTexture" id="F1"]
+
+atlas = ExtResource("1")
+
+region = Rect2(44, 0, 44, 80)
+
+[sub_resource type="AtlasTexture" id="F2"]
+
+atlas = ExtResource("1")
+
+region = Rect2(88, 0, 44, 80)
+
+[sub_resource type="AtlasTexture" id="F3"]
+
+atlas = ExtResource("1")
+
+region = Rect2(132, 0, 44, 80)
+
+[sub_resource type="AtlasTexture" id="F4"]
+
+atlas = ExtResource("1")
+
+region = Rect2(176, 0, 44, 80)
+
+[sub_resource type="AtlasTexture" id="F5"]
+
+atlas = ExtResource("1")
+
+region = Rect2(220, 0, 44, 80)
+
+[sub_resource type="AtlasTexture" id="F6"]
+
+atlas = ExtResource("1")
+
+region = Rect2(264, 0, 44, 80)
+
+[sub_resource type="AtlasTexture" id="F7"]
+
+atlas = ExtResource("1")
+
+region = Rect2(308, 0, 44, 80)
+
+[resource]
+
+animations = [{"name": &"idle", "speed": 1.0, "loop": true, "frames": [{"duration": 0.333333343, "texture": SubResource("F0")}, {"duration": 0.333333343, "texture": SubResource("F1")}, {"duration": 0.333333313, "texture": SubResource("F2")}, {"duration": 0.333333373, "texture": SubResource("F3")}]},
+{"name": &"run", "speed": 1.0, "loop": true, "frames": [{"duration": 0.333333343, "texture": SubResource("F4")}, {"duration": 0.333333343, "texture": SubResource("F5")}, {"duration": 0.333333313, "texture": SubResource("F6")}]},
+{"name": &"die", "speed": 1.0, "loop": true, "frames": [{"duration": 0.333333343, "texture": SubResource("F7")}]},
+{"name": &"attack", "speed": 1.0, "loop": false, "frames": [{"duration": 0.250000000, "texture": SubResource("F0")}]},
+{"name": &"magic", "speed": 1.0, "loop": false, "frames": [{"duration": 0.250000000, "texture": SubResource("F0")}]}]

@@ -1,0 +1,35 @@
+{
+  "id": "world_tree-floor-extra-03",
+  "size": [
+    512,
+    512
+  ],
+  "mode": "RGB",
+  "colors": 40,
+  "partial_alpha_pixels": 0,
+  "raw_integrity": true,
+  "raw_sha256": "59a84bc549f3122f992a15a7f09670479a686d7af7d7bcfa3db3e2513b7a9c1c",
+  "sha256": "35dcbb9c921be9952b7d16408fe9b6975bef7b7455c0c858374e15abdcb87800",
+  "processing": "raw preserved; LANCZOS resize 1254x1254→512x512; no-dither 40-color palette",
+  "tileable": "xy",
+  "seam_mean_x": 1.7,
+  "seam_mean_y": 2.001,
+  "outer8_colors": [
+    40,
+    40,
+    39,
+    39
+  ],
+  "outer8_uniform": false,
+  "repeat3x3_viewed": true,
+  "visual_review": "actual final and repeat 3x3 viewed",
+  "correlation_vs_floor01": 0.0485,
+  "correlation_vs_floor02": 0.0532,
+  "correlation_vs_floor03": 0.0577,
+  "approved": false,
+  "status": "needs_claude_visual_review",
+  "failures": [
+    "outer8_uniform=false",
+    "dark tile with recognizable repeated scattered bark-flake placement; restrict use and offset in map composition"
+  ]
+}

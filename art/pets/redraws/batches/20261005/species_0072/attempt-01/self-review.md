@@ -1,0 +1,2 @@
+Wooden beard-faced tree with green canopy and roots preserved. All20 same LEFT threequarter bias. Idle sway, articulated root steps, branch-arm windup/lunge/recover, branch focus/raise/release/relax cast, flinch/sink/collapse/prone. Light composite clean; no FX.
+Mechanical PASS. Reviewed all20 static packed poses and original references. Single common nearest-neighbor scale preserves allalpha. Human approved false. Animation playback unverified. Body height below typical guidance possible.

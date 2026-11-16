@@ -1,0 +1,1 @@
+All20 static inspected against original APK portrait/atlas. Purple crow, yellowbeak, skullclutched beneath retained20. Rows1/2 wing/body variation; row3 beakstrike; row5 collapse/prone. R4C2 changes chestcamera to nearfrontal with symmetrical wings down, while otherposes left threequarter. Need targetedcast fixedcamera repair. Rawretained, noalphaerased. Humanapprovedfalse.

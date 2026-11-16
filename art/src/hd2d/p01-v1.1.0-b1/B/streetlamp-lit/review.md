@@ -1,0 +1,1 @@
+Mask copied byte-for-byte from city-lamp-a/final.png; alpha bbox (8, 8, 152, 328). Imagegen edit RGB registered to same bbox. Inspect glass alignment carefully; image model may have altered details, pending review.

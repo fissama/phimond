@@ -1,0 +1,3 @@
+# crossroads-floor-04 — 2026-10-28
+
+Viewed complete final and detail at 4× over dark and checker backgrounds, plus 3×3 repeat. Reads as shallow clear teal cave water over submerged stone with irregular pale aqua foam flecks. Repeat boundaries are visually continuous. Package QA: 35 colors, X/Y seam mean and max 0, uniform outer 8px, binary alpha, key residue 0, raw integrity true. Global palette remap merges the 14 colors found on the outer border into its most frequent base color globally; no spatial painting. Raw sheet retained byte-identically. This is the static floor base; the checklist's four-frame foam animation still needs a dedicated animation asset/check. Vẽ checked for the floor base; Duyệt remains unchecked.

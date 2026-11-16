@@ -1,0 +1,71 @@
+{
+  "status": "pass",
+  "asset_id": "city-backdrop",
+  "file": "final.png",
+  "dimensions": [
+    1216,
+    405
+  ],
+  "opaque_rgb_colors": 48,
+  "alpha_levels": [
+    255
+  ],
+  "binary_alpha": true,
+  "alpha_bbox": [
+    0,
+    0,
+    1216,
+    405
+  ],
+  "description": "Fixed 19-tile-wide Imperial City view behind the existing colonnade; 1216\u00d7405 at 64 px/world. Not repeated.",
+  "palette_apply_status": "pass",
+  "palette_apply_checks": [
+    {
+      "id": "output_off_palette_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "output_partial_alpha_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.231824,
+      "threshold": null
+    }
+  ],
+  "conform_status": "pass",
+  "conform_transform": {
+    "scale": 0.5598526703499079,
+    "src_rect": [
+      0.0,
+      0.2976973684210975,
+      2172.0,
+      723.702302631579
+    ],
+    "out_size": [
+      1216,
+      405
+    ],
+    "resampler": "lanczos",
+    "focus": [
+      0.5,
+      0.5
+    ],
+    "map": "out = (src - src_rect[0:2]) * scale",
+    "inverse": "src = out / scale + src_rect[0:2]",
+    "zoom_vs_cover": 1.0,
+    "dropped_source_px": {
+      "left": 0.0,
+      "top": 0.2976973684210975,
+      "right": 0.0,
+      "bottom": 0.29769736842104066
+    }
+  },
+  "not_tileable": true
+}

@@ -14,7 +14,7 @@ import numpy as np
 import scipy.ndimage as ndi
 
 WORKSPACE = Path('/Users/phileanh/rust/phimond')
-BATCH_DIR = WORKSPACE / 'apps/game-web/art-src/hd2d/batch-11-desert'
+BATCH_DIR = WORKSPACE / 'art/src/hd2d/batch-11-desert'
 
 print("=== 1. Polishing sand-dune-medium ===")
 dune_path = BATCH_DIR / 'desert-sand-dune-medium/final.png'

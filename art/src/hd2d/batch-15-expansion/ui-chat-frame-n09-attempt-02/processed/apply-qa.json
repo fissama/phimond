@@ -1,0 +1,71 @@
+{
+  "status": "pass",
+  "method": "forge_palette.quantize_image: OKLab-nearest palette colour per pixel (exact palette colours kept), alpha binary at the threshold, then the written PNGs re-read and measured with forge_palette.fit_report against the palette",
+  "notProven": [
+    "Visual quality after snapping: compare an output with its input.",
+    "Indexed PNGs are engine exports; they are not checked by builders.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "output_off_palette_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "output_partial_alpha_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.052251,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../raw/chat-frame-crop.png",
+      "sha256": "f258fb16559588a8d3ea21a6236482bb0cef38723c4bfeb655bd6b0a60e84dca",
+      "bytes": 68699
+    },
+    {
+      "path": "../palette/palette.json",
+      "sha256": "aa35411eecab089528ff647dcc8a884c7a564e5eb2c2f8ff82b220c8598233d4",
+      "bytes": 1948
+    }
+  ],
+  "outputs": [
+    {
+      "path": "chat-frame-crop.png",
+      "sha256": "c25b722d130caa62e9405dbb737f8289870c248a140d642da2786d7b898047d7",
+      "bytes": 17805
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "fit": {
+    "chat-frame-crop.png": {
+      "measured_px": 17426,
+      "alpha_threshold": 128,
+      "off_palette_px": 17195,
+      "partial_alpha_px": 21160,
+      "colors": 7139,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.006996,
+      "p95_delta_e": 0.015847,
+      "max_delta_e": 0.052251
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.052251,
+    "worst_p95_delta_e": 0.015847,
+    "off_palette_px": 17195
+  },
+  "locked_inputs": []
+}

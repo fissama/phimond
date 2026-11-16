@@ -1,0 +1,71 @@
+{
+  "status": "pass",
+  "method": "forge_palette.quantize_image: OKLab-nearest palette colour per pixel (exact palette colours kept), alpha binary at the threshold, then the written PNGs re-read and measured with forge_palette.fit_report against the palette",
+  "notProven": [
+    "Visual quality after snapping: compare an output with its input.",
+    "Indexed PNGs are engine exports; they are not checked by builders.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "output_off_palette_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "output_partial_alpha_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.095733,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../crop.png",
+      "sha256": "576d05a44b700f57ea38e1a81c2ad4387bc1a164333b9571fcdc8e487ab5d6b4",
+      "bytes": 180333
+    },
+    {
+      "path": "../../jobs/marine-structures/palette/palette.json",
+      "sha256": "01069fd975fc0dafc6b861236bfe920a8c30bcf88d20a92416026c67f40a12a5",
+      "bytes": 1924
+    }
+  ],
+  "outputs": [
+    {
+      "path": "crop.png",
+      "sha256": "7de52b4113248fa0a4f4d275bec2bfbb9226a8bbf91bf1b52fdd534cfa0fcca4",
+      "bytes": 96535
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "fit": {
+    "crop.png": {
+      "measured_px": 73851,
+      "alpha_threshold": 128,
+      "off_palette_px": 73799,
+      "partial_alpha_px": 0,
+      "colors": 52744,
+      "palette_colors_used": 46,
+      "mean_delta_e": 0.018207,
+      "p95_delta_e": 0.034504,
+      "max_delta_e": 0.095733
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.095733,
+    "worst_p95_delta_e": 0.034504,
+    "off_palette_px": 73799
+  },
+  "locked_inputs": []
+}

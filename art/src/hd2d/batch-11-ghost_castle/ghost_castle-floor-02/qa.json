@@ -1,0 +1,91 @@
+{
+  "id": "ghost_castle-floor-02",
+  "size_px": [
+    512,
+    512
+  ],
+  "mode": "RGB",
+  "world_size": [
+    4.0,
+    4.0
+  ],
+  "tileable": "xy",
+  "palette_colors": 40,
+  "palette_target": 40,
+  "raw_integrity": true,
+  "raw_sha256": "f88f591edf0514c0be7e27f68699b08568615852c1984819ce3f4a2321bf929f",
+  "sha256": "270172f1bc6925becc2ab9d5f11349dbc46af7b00cf0c653f40f415d90654684",
+  "terrain_qc": {
+    "x": {
+      "seam": 2.069824,
+      "adjacent_median": 0.858887,
+      "adjacent_p95": 1.569946,
+      "adjacent_max": 1.724121,
+      "seam_over_median": 2.409892,
+      "seam_over_p95": 1.318404,
+      "seam_ratio": 1.20051,
+      "near_median": 0.784668,
+      "verdict": "continuous",
+      "method": "premultiplied RGBA column steps (0-255); join vs interior steps within 8 columns per side, whole edge and worst 4-row window"
+    },
+    "y": {
+      "seam": 2.077148,
+      "adjacent_median": 0.986816,
+      "adjacent_p95": 1.849243,
+      "adjacent_max": 2.517578,
+      "seam_over_median": 2.104899,
+      "seam_over_p95": 1.123242,
+      "seam_ratio": 0.825058,
+      "near_median": 0.945312,
+      "verdict": "continuous",
+      "method": "premultiplied RGBA column steps (0-255); join vs interior steps within 8 columns per side, whole edge and worst 4-row window"
+    }
+  },
+  "checks": [
+    {
+      "id": "contrast",
+      "status": "pass",
+      "value": 0.045689,
+      "threshold": 0.035
+    },
+    {
+      "id": "variant_difference",
+      "status": "pass",
+      "value": 1.0,
+      "threshold": 0.025
+    },
+    {
+      "id": "border_frame",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0.1
+    },
+    {
+      "id": "shape_coverage",
+      "status": "skipped",
+      "value": null,
+      "threshold": 0.97
+    },
+    {
+      "id": "shape_spill",
+      "status": "skipped",
+      "value": null,
+      "threshold": 0.03
+    },
+    {
+      "id": "wrap_seams",
+      "status": "pass",
+      "value": 1.20051,
+      "threshold": 1.25
+    },
+    {
+      "id": "wang_seams",
+      "status": "skipped",
+      "value": null,
+      "threshold": null
+    }
+  ],
+  "seamless_verified": false,
+  "visual_review": "actual 3x3 mosaic and 4x detail inspected; no obvious join seam, wear pattern repeats visibly at tile scale; candidate only, not owner approved",
+  "failures": []
+}

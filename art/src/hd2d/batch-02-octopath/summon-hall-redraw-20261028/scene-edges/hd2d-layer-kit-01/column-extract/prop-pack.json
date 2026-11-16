@@ -1,0 +1,222 @@
+{
+  "schema": "generate2dmap.prop_pack.v2",
+  "tool": {
+    "name": "extract_prop_pack",
+    "version": "0.4.0"
+  },
+  "input": "../raw/column-source.png",
+  "source_size": [
+    197,
+    578
+  ],
+  "source_sha256": "d4ae6db464d79278278160b86dc019fe873193edee1eadca2f5967496468b850",
+  "source_mode": "RGBA",
+  "layout_mode": "auto_boxes",
+  "boxes_file": null,
+  "labels_file": null,
+  "background_mode": "native_alpha",
+  "art_source": "host_image",
+  "rows": null,
+  "cols": null,
+  "threshold": 100,
+  "edge_threshold": 150,
+  "despill_radius": 0,
+  "despill": {
+    "mode": "off",
+    "applied": "off",
+    "radius": 0,
+    "margin": 12,
+    "changed_px": 0
+  },
+  "hygiene": {
+    "mode": "both",
+    "floor": 4,
+    "solid_min": 32,
+    "attach_radius": 2,
+    "connectivity": 8,
+    "floor_px": 0,
+    "detached_px": 0,
+    "detached_components": 0,
+    "max_removed_alpha": 0
+  },
+  "alpha_floor": 4,
+  "alpha_floor_pixels_removed": 0,
+  "trim_border": 0,
+  "edge_clean_depth": 0,
+  "component_mode": "all",
+  "component_padding": 8,
+  "min_component_area": "auto",
+  "edge_touch_margin": 0,
+  "geometry": {
+    "connectivity": 8,
+    "alpha_geometry_threshold": 16,
+    "anchor_mode": "feet",
+    "support_band_fraction": 0.25,
+    "anchor_rounding": "whole pixels, half-up",
+    "grid_rounding": null,
+    "keep_canvas": false,
+    "world_scale": "1/16"
+  },
+  "auto_boxes": {
+    "objects": 1,
+    "solid_alpha": 128,
+    "min_solid_area": 4,
+    "gap_px": 4,
+    "attach_px": 1,
+    "margin_px": 8,
+    "unowned_px": 0
+  },
+  "accepted": [
+    {
+      "index": 0,
+      "label": "marble-column",
+      "display_name": "marble-column",
+      "status": "accepted",
+      "image": "marble-column/prop.png",
+      "sha256": "e84f8fc3b420004aaf78473ce4a1ed4345b5ec8b721e150dea820608688a6597",
+      "output_size": [
+        224,
+        560
+      ],
+      "grid": null,
+      "cell_box": [
+        0,
+        0,
+        197,
+        538
+      ],
+      "source_box": [
+        0,
+        0,
+        197,
+        538
+      ],
+      "source_rect": [
+        -12,
+        -14,
+        212,
+        546
+      ],
+      "trim_offset": [
+        -12,
+        -14
+      ],
+      "padding": [
+        20,
+        22,
+        23,
+        16
+      ],
+      "anchor_px": [
+        144,
+        544
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 61,
+      "trim_applied": 0,
+      "crop_bbox": [
+        8,
+        8,
+        189,
+        530
+      ],
+      "padded_crop_bbox": [
+        -12,
+        -14,
+        212,
+        546
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 51186,
+      "dropped_components": 0,
+      "dropped_area": 0,
+      "edge_touch": false,
+      "world_size": [
+        14,
+        35
+      ],
+      "world_anchor": [
+        9,
+        34
+      ]
+    }
+  ],
+  "rejected": [],
+  "edge_touch_props": [],
+  "warnings": [],
+  "qa": {
+    "status": "pass",
+    "method": "native alpha, not keyed; alpha hygiene both; 8-connected components (all); checks measured on the published pixels",
+    "notProven": [
+      "that each label names the art in its cell or box",
+      "that a prop is complete: clipping is detected only where art meets the cell edge",
+      "keyed-edge quality beyond the edge fringe count",
+      "that anchors and suggested footprints match gameplay contact (both are measured from alpha)",
+      "runtime placement, collision or occlusion"
+    ],
+    "checks": [
+      {
+        "id": "accepted",
+        "status": "pass",
+        "value": 1,
+        "threshold": ">= 1"
+      },
+      {
+        "id": "edge_touch",
+        "status": "pass",
+        "value": [],
+        "threshold": 0
+      },
+      {
+        "id": "dropped_area",
+        "status": "pass",
+        "value": {},
+        "threshold": 0.01
+      },
+      {
+        "id": "strategy_aspect",
+        "status": "skipped",
+        "value": null,
+        "threshold": 1.6
+      },
+      {
+        "id": "edge_fringe",
+        "status": "skipped",
+        "value": null,
+        "threshold": 0.02
+      },
+      {
+        "id": "auto_box_unowned",
+        "status": "pass",
+        "value": 0,
+        "threshold": 0
+      }
+    ],
+    "inputs": [
+      {
+        "path": "../raw/column-source.png",
+        "sha256": "d4ae6db464d79278278160b86dc019fe873193edee1eadca2f5967496468b850",
+        "bytes": 26416
+      }
+    ],
+    "outputs": [
+      {
+        "path": "marble-column/prop.png",
+        "sha256": "e84f8fc3b420004aaf78473ce4a1ed4345b5ec8b721e150dea820608688a6597",
+        "bytes": 26765
+      },
+      {
+        "path": "auto-boxes.json",
+        "sha256": "a374095c98bea8ada8c33bacb021508d7f4ab1bb1a42dca7647f567d2d479459",
+        "bytes": 307
+      }
+    ],
+    "tool": {
+      "name": "extract_prop_pack",
+      "version": "0.4.0"
+    }
+  }
+}

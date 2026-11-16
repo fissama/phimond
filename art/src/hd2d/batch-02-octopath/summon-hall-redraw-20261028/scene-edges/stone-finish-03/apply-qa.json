@@ -1,0 +1,92 @@
+{
+  "status": "pass",
+  "method": "forge_palette.quantize_image: OKLab-nearest palette colour per pixel (exact palette colours kept), alpha binary at the threshold, then the written PNGs re-read and measured with forge_palette.fit_report against the palette",
+  "notProven": [
+    "Visual quality after snapping: compare an output with its input.",
+    "Indexed PNGs are engine exports; they are not checked by builders.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "output_off_palette_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "output_partial_alpha_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.154626,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../stone-palette-inputs/foreground-edge.png",
+      "sha256": "e6ac465b6b17adbd96e50483379ae482fc211cac4cca5a1606c61fd75787d18a",
+      "bytes": 801487
+    },
+    {
+      "path": "../stone-palette-inputs/hall-stone.png",
+      "sha256": "c3c1eac728cb23fa4847b767066b800cad2cfdb406e6e474db68c2941f817ad5",
+      "bytes": 408757
+    },
+    {
+      "path": "../stone-palette-03/palette.json",
+      "sha256": "36eaa57e67e3aae537a5b6755f9182d6acf67a19c57536ed3a64d83dd4d18b34",
+      "bytes": 1958
+    }
+  ],
+  "outputs": [
+    {
+      "path": "foreground-edge.png",
+      "sha256": "0a3c2b2540fc87a4c0437a90c7481e16dd5b9e4b247a215cb6a7545ac0c99fc4",
+      "bytes": 240671
+    },
+    {
+      "path": "hall-stone.png",
+      "sha256": "a908fa880abe357e473358b7165723de15255d2b6ef5f091d926c18909cd970e",
+      "bytes": 138377
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "fit": {
+    "foreground-edge.png": {
+      "measured_px": 514010,
+      "alpha_threshold": 128,
+      "off_palette_px": 512720,
+      "partial_alpha_px": 15993,
+      "colors": 109558,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.011517,
+      "p95_delta_e": 0.02462,
+      "max_delta_e": 0.154626
+    },
+    "hall-stone.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 254411,
+      "partial_alpha_px": 0,
+      "colors": 21427,
+      "palette_colors_used": 34,
+      "mean_delta_e": 0.007067,
+      "p95_delta_e": 0.017709,
+      "max_delta_e": 0.043894
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.154626,
+    "worst_p95_delta_e": 0.02462,
+    "off_palette_px": 767131
+  },
+  "locked_inputs": []
+}

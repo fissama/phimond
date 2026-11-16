@@ -1,0 +1,35 @@
+{
+  "status": "technical-checks-pass; visual-review-required",
+  "checks": [
+    "6 exact sizes",
+    "6 palette limits including transparent entry",
+    "6 binary alpha checks",
+    "6 no-magenta checks",
+    "floor A/B boundary equality on all four edges",
+    "city opaque with flat top sky",
+    "roofs flat opaque base",
+    "3 distinct light variants"
+  ],
+  "floor_seams": {
+    "lr_mae": 4.147135416666667,
+    "tb_mae": 3.0390625,
+    "interior_lr_mae": 5.741769610241357,
+    "interior_tb_mae": 5.680296497879974
+  },
+  "reference_seams": {
+    "lr_mae": 4.147135416666667,
+    "tb_mae": 3.0390625,
+    "interior_lr_mae": 4.468744903783431,
+    "interior_tb_mae": 4.7752517530985
+  },
+  "roof_seams": {
+    "lr_mae": 3.525757575757576,
+    "tb_mae": 45.71491228070175,
+    "interior_lr_mae": 7.761041721202149,
+    "interior_tb_mae": 9.45671863734679
+  },
+  "floor_interior_changed_fraction": 0.8561313085327783,
+  "limitations": [
+    "WARN floor-zero-reuse: NOT fully satisfied/certified. Floor retains 2\u20138px reference boundary fragments for A/B compatibility; every brick/crack being wholly different is not guaranteed. Files: stone-floor-b.png and completion-20261029/floor-mixed-3x3.png."
+  ]
+}

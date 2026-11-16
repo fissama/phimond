@@ -1,0 +1,70 @@
+{
+  "status": "pass",
+  "method": "forge_palette.quantize_image: OKLab-nearest palette colour per pixel (exact palette colours kept), alpha binary at the threshold, then the written PNGs re-read and measured with forge_palette.fit_report against the palette",
+  "notProven": [
+    "Visual quality after snapping: compare an output with its input.",
+    "Indexed PNGs are engine exports; they are not checked by builders."
+  ],
+  "checks": [
+    {
+      "id": "output_off_palette_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "output_partial_alpha_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "max_delta_e",
+      "status": "pass",
+      "value": 0.12382,
+      "threshold": 0.15
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../sq-board-process-02/clean.png",
+      "sha256": "d7896c6ecf762cea3a8a961a918c746ffcfcf0b6931d9f60176aa4c9c4d09904",
+      "bytes": 96475
+    },
+    {
+      "path": "../portrait-sq-board-original-palette.hex",
+      "sha256": "9a7371ed31f1c291a615bdc515e442d4a3441598e316b77afecddb4a27dd179e",
+      "bytes": 336
+    }
+  ],
+  "outputs": [
+    {
+      "path": "clean.png",
+      "sha256": "f319b8dde68833b100f186b5f7ecf6ca03b8ce1efa1d545258c680c1885cb239",
+      "bytes": 59289
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "fit": {
+    "clean.png": {
+      "measured_px": 31616,
+      "alpha_threshold": 128,
+      "off_palette_px": 31474,
+      "partial_alpha_px": 0,
+      "colors": 25531,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.023766,
+      "p95_delta_e": 0.057653,
+      "max_delta_e": 0.12382
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.12382,
+    "worst_p95_delta_e": 0.057653,
+    "off_palette_px": 31474
+  },
+  "locked_inputs": []
+}

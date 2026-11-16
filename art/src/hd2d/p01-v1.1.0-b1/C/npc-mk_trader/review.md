@@ -1,0 +1,1 @@
+Attempt 03 selected: no logo-like marks; unique role props and silhouettes. Compare against approved NPC atlas and check down-facing 3/4, exact baseline and costume-region palette. Pending Claude review.

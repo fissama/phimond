@@ -1,0 +1,1 @@
+Self-review: Distinct asymmetric S-curved one-unit soil-to-grass corner transition, several green and warm brown shades and small pebbles. Palette=47, binary alpha=True, bbox=(8, 13, 120, 115), margin=8px. Needs Claude review.

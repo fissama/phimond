@@ -14,7 +14,7 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
 WORKSPACE = Path("/Users/phileanh/rust/phimond")
-BATCH11_TOMB = WORKSPACE / "apps/game-web/art-src/hd2d/batch-11-tomb"
+BATCH11_TOMB = WORKSPACE / "art/src/hd2d/batch-11-tomb"
 ARTIFACTS_DIR = Path("/Users/phileanh/.gemini/antigravity-ide/brain/011c27ea-b148-400e-9b78-4882eb990740")
 
 PACK_TILES = ARTIFACTS_DIR / "tomb_tiles_pilot_1792081888902.jpg"
@@ -358,7 +358,7 @@ def main():
     # -------------------------------------------------------------
     # 9. Prop: tomb-lantern-spirit (4-frame Spirit Lantern Animation Strip)
     # -------------------------------------------------------------
-    base_lantern = Image.open(WORKSPACE / "apps/game-web/art-src/hd2d/batch-04-octopath/storm-lantern/final.png").convert('RGBA')
+    base_lantern = Image.open(WORKSPACE / "art/src/hd2d/batch-04-octopath/storm-lantern/final.png").convert('RGBA')
     lw, lh = base_lantern.size
     frame_w = lw // 4
     strip_canvas = Image.new('RGBA', (lw, lh), (0, 0, 0, 0))

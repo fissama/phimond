@@ -1,0 +1,11 @@
+Use case: coastal game prop pack, SIX complete individual objects in TWO ROWS THREE COLUMNS with huge empty gutters. TOP LEFT: single rough weathered timber pier POST with rope coil around upperpart, full post no dock or ground. TOP CENTER: small branching muted coral-red reef coral, no rocky ground. TOP RIGHT: squat ochre brain coral with simple broad folded lobes, no ground. BOTTOM LEFT: cluster of three desaturated violet tube coral stalks, no ground. BOTTOM CENTER: small CLOSED domed wooden treasure chest with aged bronze straps and plain latch, no emblem or decoration. BOTTOM RIGHT: SAME wooden treasure chest OPEN, same width/base/contact, lid raised with dark EMPTY interior, no treasure glow or particles. Source1beach/coastalcolors and2weatheredwood identity; petrefs styleonly. Octopath Traveler inspired HD-2D PIXEL ART, restrained earthy desaturated coral/ochre/violet/umber/dullbronze, cool hue-tinted darkoutline,3-4 broad crisp clustered tones/material, subtle upperleft warmkey. Upright front billboard24degrees down, all whole objects in middle55percent owncell, ample transparent-key margin, no clipping or overlap. Background exact pure flat #FF00FF including tube holes/chest openings. NO rocksunder coral, sand, water, floor, cast shadows, glow, fog, text, people, labels, scenery, vector smoothness or noisy microtexture. Preserve matching chest body shape for closed/open state pair.
+
+
+
+Ordered reference images:
+- /Users/phileanh/Downloads/Phimond-P12-Review/map-images/treasure_beach_fishermen_beach.png / sha256 4bc61ad0041c8486117b2b5cb711387d424644fea3d0f6e48c0e85d9de73c130
+- /Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level5_BaiBien/level5_BaiBien_016.png / sha256 384bdfc77fb0177765ec8b700397ac37c45b5b1f3494d95f7f12cb4f62569137
+- /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png / sha256 fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da
+- /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png / sha256 043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3
+
+Route: built-in image_gen; model not exposed; raw SHA256 5f6214e73f58a70c2528ad5343581b26d417c8c0e0402d156e2c06dc7384a6f5

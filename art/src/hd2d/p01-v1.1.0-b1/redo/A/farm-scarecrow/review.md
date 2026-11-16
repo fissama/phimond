@@ -1,0 +1,1 @@
+Self-review: Friendly scarecrow about two units tall, patchwork blue-grey shirt, floppy hat, straw and wooden stake. Palette=48, binary alpha=True, bbox=(25, 8, 231, 248), margin=8px. Needs Claude review.

@@ -9,7 +9,6 @@ cd "$root"
 # P01: 5 map Đợt A hợp lệ (BFS, cổng, điểm đến, NPC, điểm quái) và client mới
 python3 tools/p01/build_maps.py --check
 (cd "$root/apps/client" && npm run check)
-node tools/check_godot.mjs
 node --test tools/load_gameplay_test.mjs
 # Cổng thiết kế P13 (skill/roster candidate V7.1, review server)
 (cd "$root/tools/content" && python3 -B -m unittest -q test_p13_design test_p13_roster_review)
@@ -17,10 +16,6 @@ node --test tools/load_gameplay_test.mjs
 cd "$root/apps/web"
 npm test
 npm run typecheck
-cd "$root/apps/game-web"
-npm run typecheck
-npm test
-npm run build
 # Cổng art HD-2D (asset + layout map). Bỏ qua tạm: HD2D_ART_GATE=0 sh tools/check.sh
 if [ "${HD2D_ART_GATE:-1}" != "0" ]; then
   sh "$root/tools/check_hd2d_art.sh"

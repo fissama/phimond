@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Sinh 5 cảnh HD-2D (severa, forest, beach, ranch, arena) cho apps/game-web.
+"""Sinh 5 cảnh HD-2D (severa, forest, beach, ranch, arena) cho art/build/scenes (bản thử, không phải runtime).
 
-  python3 tools/build-web-assets/build_scenes.py [--out apps/game-web/public/scenes]
+  python3 tools/build-web-assets/build_scenes.py [--out art/build/scenes]
 
 Nguồn: lớp sprite Unity trích từ APK (source/sprites + meta.json) + vật trang trí pixel-art gốc (pixelart.py).
 Tọa độ: x thế giới = x 2D; z = -KZ * (y2D + yoff); mặt sàn y = 0. 40 px = 1 đơn vị.
@@ -15,7 +15,7 @@ ROOT = os.path.abspath(os.path.join(HERE, '..', '..'))
 KZ = 1.5
 PPU = 40.0
 ap = argparse.ArgumentParser()
-ap.add_argument('--out', default=os.path.join(ROOT, 'apps/game-web/public/scenes'))
+ap.add_argument('--out', default=os.path.join(ROOT, 'art/build/scenes'))
 ap.add_argument('--sprites', default=os.path.join(HERE, 'source/sprites'))
 args = ap.parse_args()
 META = json.load(open(os.path.join(args.sprites, 'meta.json')))

@@ -1,0 +1,39 @@
+{
+  "size_px": [
+    512,
+    512
+  ],
+  "palette_colors_rgba": 48,
+  "alpha_values": [
+    255
+  ],
+  "alpha_binary": true,
+  "alpha_bbox": [
+    0,
+    0,
+    512,
+    512
+  ],
+  "margin_px": [
+    82,
+    76,
+    40,
+    41
+  ],
+  "source_atlas": "exec-d0ac864d-da02-45f7-886a-d28f9725dcae.png",
+  "visual_review": "latest candidate; inspect 3x3/contact sheet and Claude review",
+  "palette_colors": 48,
+  "seam_test": {
+    "seamX_mean_rgb_delta": 13.22,
+    "seamY_mean_rgb_delta": 3.95,
+    "baselineX_adjacent_mean_rgb_delta": 6.26,
+    "baselineY_adjacent_mean_rgb_delta": 1.03,
+    "seamX_over_baseline": 2.11,
+    "seamY_over_baseline": 3.82
+  },
+  "seam_status": "candidate; compare offsets visually and review quantitative edge discontinuity",
+  "source_standalone": "exec-263df54e-f64b-4bff-866d-f2416dae92b9.png",
+  "source": "ImageGen wrap-offset seam repair pass",
+  "source_imagegen_file": "raw-imagegen.png",
+  "source_imagegen_sha256": "b788170f2f54fc86b68b08b062bda43379567e2ee22a232e37d8d22cbbe49dc7"
+}

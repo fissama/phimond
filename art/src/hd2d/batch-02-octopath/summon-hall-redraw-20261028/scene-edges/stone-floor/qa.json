@@ -1,0 +1,71 @@
+{
+  "status": "pass",
+  "asset_id": "stone-floor",
+  "file": "final.png",
+  "dimensions": [
+    512,
+    512
+  ],
+  "opaque_rgb_colors": 34,
+  "alpha_levels": [
+    255
+  ],
+  "binary_alpha": true,
+  "alpha_bbox": [
+    0,
+    0,
+    512,
+    512
+  ],
+  "description": "512\u00d7512 limestone floor fill, intended to replace the rejected hall-floor-stone candidate.",
+  "palette_apply_status": "pass",
+  "palette_apply_checks": [
+    {
+      "id": "output_off_palette_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "output_partial_alpha_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.154626,
+      "threshold": null
+    }
+  ],
+  "terrain_extraction_status": "pass",
+  "terrain_warnings": [],
+  "wrap_seams": {
+    "x": {
+      "seam": 3.110352,
+      "adjacent_median": 3.533691,
+      "adjacent_p95": 10.483154,
+      "adjacent_max": 13.130859,
+      "seam_over_median": 0.880199,
+      "seam_over_p95": 0.2967,
+      "seam_ratio": 0.236873,
+      "near_median": 5.585205,
+      "verdict": "continuous",
+      "method": "premultiplied RGBA column steps (0-255); join vs interior steps within 8 columns per side, whole edge and worst 4-row window"
+    },
+    "y": {
+      "seam": 2.279297,
+      "adjacent_median": 3.114014,
+      "adjacent_p95": 9.359009,
+      "adjacent_max": 9.927734,
+      "seam_over_median": 0.731948,
+      "seam_over_p95": 0.24354,
+      "seam_ratio": 0.229589,
+      "near_median": 6.134521,
+      "verdict": "continuous",
+      "method": "premultiplied RGBA column steps (0-255); join vs interior steps within 8 columns per side, whole edge and worst 4-row window"
+    }
+  },
+  "seamless_verified": false
+}

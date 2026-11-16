@@ -1,0 +1,5 @@
+Seamless 512x512 top-down tree-bark soil tile, damp inner bark in dark olive-brown. Fine shallow pits, tiny irregular pale ochre chips and sparse hairline moss cracks. Even density to all edges; no border/perimeter band/empty margin, no straight line, rows, large roots, leaves, stones, central motif or diagonal stripe. Cracks/clusters irregular direction and low contrast. Orthographic and uniform, no gradient, vignette, shadows, props or perspective. Polished HD-2D terrain with warm highlights, cool olive shadows, grouped paint strokes. Ordered refs: secret chamber map (palette/content), approved batch-01 dirt-floor-02 (style). Route built-in Codex image_gen; model not exposed; generated 2026-11-05.
+
+Ordered reference files and SHA256:
+1. `.ai/design/map-checklists/refs/world_tree_secret_chamber.jpg` — `ebb9f09bb21d07af1f7ca9e1997fed7d7ded967b2c5ea0f90cf7c743690caf9d`
+2. `apps/game-web/art-src/hd2d/batch-01-octopath/dirt-floor-02/final.png` — `8a655932d1a1af4b4b600fb652a5aa6df28838798084162fb6f2971556854217`

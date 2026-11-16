@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 2,
+  "provider": "openai",
+  "kind": "image",
+  "route": "codex-cli",
+  "requestedModel": "codex-image_gen",
+  "options": {
+    "tool": "image_gen"
+  },
+  "promptSha256": "c994e3801daef5f9883d3b4fed9b2654c8ae4cc8dd955024347c246d4fcdc3d8",
+  "references": [
+    {
+      "sha256": "f716603b322b23c9dcf81735d645bf007081670fd7f6625b42eba4cc47ce67d8",
+      "bytes": 24136
+    }
+  ],
+  "fingerprint": "688ac841db8803704f6bd22f10a9159df9abeaca3cb9e6ea9c1743ec7e92c481",
+  "estimate": {
+    "usd": 0.0,
+    "currency": "USD",
+    "pricesVersion": "2026-10-06",
+    "items": [],
+    "basis": "subscription quota call: no per-call USD price; counted by call caps"
+  },
+  "consent": {
+    "provider": "openai",
+    "model": "codex-image_gen",
+    "calls": 1,
+    "estimateUsd": 0.0,
+    "route": "codex-cli",
+    "quota": true,
+    "account": "the user's own Codex sign-in (ChatGPT)",
+    "note": "uses the subscription quota of that sign-in, never API credit"
+  },
+  "artSource": "host_image",
+  "execution": "execute",
+  "status": "done",
+  "receipt": {
+    "startedAt": "2026-10-29T10:59:43.071Z",
+    "submittedAt": "2026-10-29T10:59:43.073Z",
+    "completedAt": "2026-10-29T11:00:54.554Z",
+    "wallMs": 71483,
+    "providerMs": 71470,
+    "attempt": 1,
+    "purpose": "S23 male run far-leg-forward contact",
+    "toolVersion": "cli_media/0.4.0",
+    "outcomeCode": "ok"
+  },
+  "ledger": {
+    "projectDir": "../../../../../../..",
+    "reservationId": "08f5da49c658435eb0c65cdc1a22da95",
+    "status": "done"
+  },
+  "cliRun": {
+    "tool": "codex",
+    "runId": "47c1b51de1e64982952dd3bfcbd48c84",
+    "cwd": "<tmp>/forge-cli-47c1b51de1e6-d4060068",
+    "startedAt": "2026-10-29T10:59:43.071Z",
+    "version": "0.158.0",
+    "versionText": "codex-cli 0.158.0",
+    "recipe": "codex-exec-imagegen/1",
+    "home": "CODEX_HOME",
+    "verifiedBefore": true,
+    "threadId": "01a18750-d229-7763-85d0-d33d3df86cc5"
+  },
+  "adoption": {
+    "method": "native-run-folder",
+    "source": "CODEX_HOME/generated_images/01a18750-d229-7763-85d0-d33d3df86cc5/exec-707ee2e4-ef00-4235-a6a5-2c347b086c4a.png",
+    "sourceSha256": "bf32e0afefc9b1c91ba8caaae4aa8c56e00176b7c1258bb4eb6350e3b4e6e690",
+    "sourceMtime": "2026-10-29T11:00:47Z",
+    "freshAfter": "2026-10-29T10:59:43.073Z",
+    "checks": [
+      "inside the CLI's own folder for this run",
+      "no symlink or junction",
+      "regular file of a sane size",
+      "newer than the run",
+      "magic bytes",
+      "decodes",
+      "exactly one output",
+      "exclusive copy with matching sha256"
+    ],
+    "finalAnswerNamesFile": true
+  },
+  "artifact": {
+    "path": "generated.png",
+    "sha256": "bf32e0afefc9b1c91ba8caaae4aa8c56e00176b7c1258bb4eb6350e3b4e6e690",
+    "bytes": 563683,
+    "format": "PNG",
+    "size": [
+      1254,
+      1254
+    ]
+  }
+}

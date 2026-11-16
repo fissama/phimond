@@ -71,15 +71,15 @@ def build():
     require(actual == Counter({(race, star): count for race, counts in MATRIX.items()
                                for star, count in enumerate(counts, 1)}), "Race x Star changed")
     species, recipes, items = {}, {}, {}
-    manifest = read(ROOT / "apps/game-client/assets/pets/apk84/manifest.json")
+    manifest = read(ROOT / "art/pets/apk84/manifest.json")
     for source_id, row in source_species.items():
         canonical = registry["species"][source_id]
         require(row["id"] == source_id, "source key/id mismatch")
         require(source_id in manifest["species"], "missing source actor")
         for path in row["assets"].values():
             require(path.startswith("res://assets/pets/apk84/"), "unexpected asset root")
-            require((ROOT / "apps/game-client" / path.removeprefix("res://")).is_file(), f"missing {path}")
-        folder = ROOT / "apps/game-client/assets/pets/apk84" / source_id
+            require((ROOT / "art" / path.removeprefix("res://assets/")).is_file(), f"missing {path}")
+        folder = ROOT / "art/pets/apk84" / source_id
         for file, field in [("portrait.png", "portrait_sha256"), ("sprites.png", "sprites_sha256")]:
             require(hashlib.sha256((folder / file).read_bytes()).hexdigest() ==
                     manifest["species"][source_id][field], f"asset hash changed: {source_id}/{file}")

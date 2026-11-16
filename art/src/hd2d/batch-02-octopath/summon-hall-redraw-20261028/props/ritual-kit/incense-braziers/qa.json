@@ -1,0 +1,75 @@
+{
+  "status": "pass",
+  "file": "final.png",
+  "dimensions": [
+    256,
+    256
+  ],
+  "opaque_rgb_colors": 37,
+  "alpha_levels": [
+    0,
+    255
+  ],
+  "binary_alpha": true,
+  "alpha_bbox": [
+    13,
+    25,
+    243,
+    231
+  ],
+  "forge_status": "pass",
+  "forge_checks": [
+    {
+      "id": "empty_frames",
+      "status": "pass",
+      "value": [],
+      "threshold": []
+    },
+    {
+      "id": "paste_clamped_frames",
+      "status": "pass",
+      "value": [],
+      "threshold": []
+    },
+    {
+      "id": "output_edge_touch_frames",
+      "status": "pass",
+      "value": [],
+      "threshold": []
+    },
+    {
+      "id": "source_edge_touch_frames",
+      "status": "pass",
+      "value": [],
+      "threshold": []
+    },
+    {
+      "id": "body_scale_cv",
+      "status": "skipped",
+      "value": 0.0,
+      "threshold": null
+    },
+    {
+      "id": "anchor_y_std",
+      "status": "skipped",
+      "value": 0.0,
+      "threshold": null
+    },
+    {
+      "id": "key_residue",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "key_ring_spill",
+      "status": "pass",
+      "value": 0.0,
+      "threshold": 0.01
+    }
+  ],
+  "palette_apply_status": "pass",
+  "palette_colors_used": 37,
+  "palette_max_delta_e": 0.071208,
+  "palette_file": "../palette-02/palette.json"
+}

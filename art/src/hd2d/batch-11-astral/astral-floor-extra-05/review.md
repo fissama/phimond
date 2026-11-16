@@ -1,0 +1,3 @@
+# Visual review — astral-floor-extra-05
+
+Final at 4× on dark and checker backgrounds and 3×3 repeat viewed. Fine lavender astral dust with scattered violet crystal chips and tiny gold grains, visibly distinct from flagstone, grass and ash tiles. Repeat has expected low-contrast texture periodicity with no hard edge seam or frame. 48 opaque colors. Seam means X 8.95 (neighbor 4.68), Y 7.60 (neighbor 3.09); all below 9. Correlation with existing floors: {'astral-floor-01': 0.038, 'astral-floor-02': 0.036, 'astral-floor-03': 0.028, 'astral-floor-extra-01': 0.031, 'astral-floor-extra-02': 0.038, 'astral-floor-extra-03': 0.028, 'astral-floor-extra-04': 0.041}. Owner review pending.

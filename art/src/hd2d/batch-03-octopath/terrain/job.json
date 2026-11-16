@@ -1,0 +1,54 @@
+{
+  "id": "beach-grounds",
+  "rows": 2,
+  "cols": 2,
+  "refs": [
+    "/Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level5_BaiBien/level5_BaiBien_001.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+  ],
+  "prompt": "Use case: tileable game ground texture atlas. EXACT TWO ROWS TWO COLUMNS, FOUR equal SQUARE seamless ground tiles edge-to-edge without gutters or outlines. TOP LEFT dry pale warm ochre coastal sand, TOP RIGHT second slightly cooler ivory drysand variant, BOTTOM LEFT muted graybeige wet compact sand, BOTTOM RIGHT sparse tiny olive seagrass sprigs on same pale sand base. Original beach sand material from reference1, no water from it. Petrefs shading/pixel compatibility only. Octopath Traveler HD-2D PIXEL TEXTURE with mature desaturated natural sand tones. Each tile flat topdown, uniform soft average value, only TWO or THREE VERY CLOSE value shades within each material. Large plain base-color coverage, tiny sparse calm pixelgrain clusters, no dark speckles or cracks or caustic lines. Extremely low contrast. All four edges of eachsquare same even basecolor and detail distribution, motifs continue naturally, no framing bands. Sparse seagrass tufts well inside tile, no tall plants. Seamless repeated4sides,512x512pertexturefinal. NO water, waves, seafoam, horizon, footprints, shells, rocks, sanddunes, ripples, central feature, shadows, lightingvignette, smoothgradients, transparency, text or scene. Fill whole atlas. This is quiet reusable ground under3Dengine lighting.",
+  "source_card": "Original beach001 sand/wet coastal colors. Only flat sand extracted conceptually; no water/caustics baked. Four512square lowcontrast fill variants for4worldunits. Seamtest mandatory.",
+  "assets": [
+    {
+      "id": "sand-dry-warm",
+      "kit": "beach",
+      "category": "floor",
+      "tileable": "xy",
+      "px": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "sand-dry-cool",
+      "kit": "beach",
+      "category": "floor",
+      "tileable": "xy",
+      "px": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "sand-wet",
+      "kit": "beach",
+      "category": "floor",
+      "tileable": "xy",
+      "px": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "sand-seagrass",
+      "kit": "beach",
+      "category": "floor",
+      "tileable": "xy",
+      "px": [
+        512,
+        512
+      ]
+    }
+  ]
+}

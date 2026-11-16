@@ -102,7 +102,7 @@ def build(registry=None, baseline=None, candidate=None):
 def snapshot():
     files = [OUT / name for name in ("species.json", "items.json", "special_recipes.json")]
     files += [ROOT / "data/pets/roster_apk84.json", SELECTION]
-    files += sorted((ROOT / "apps/game-client/assets/pets/apk84").rglob("*"))
+    files += sorted((ROOT / "art/pets/apk84").rglob("*"))
     files += [ROOT / item["candidate_path"] for item in read(SELECTION)["species"].values()]
     return {"schema_version": 1, "purpose": "preserve frozen source and approved atlas bytes",
             "files": {str(path.relative_to(ROOT)): sha(path) for path in files if path.is_file()},

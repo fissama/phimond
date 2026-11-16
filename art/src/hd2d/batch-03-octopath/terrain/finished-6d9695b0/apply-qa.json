@@ -1,0 +1,134 @@
+{
+  "status": "pass",
+  "method": "forge_palette.quantize_image: OKLab-nearest palette colour per pixel (exact palette colours kept), alpha binary at the threshold, then the written PNGs re-read and measured with forge_palette.fit_report against the palette",
+  "notProven": [
+    "Visual quality after snapping: compare an output with its input.",
+    "Indexed PNGs are engine exports; they are not checked by builders.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "output_off_palette_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "output_partial_alpha_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.071778,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../inputs-6d9695b0/sand-dry-cool.png",
+      "sha256": "e4169c16b9ba5f0d7b719c25dd9c4c227abf505813b410f44d89438170831a3e",
+      "bytes": 282257
+    },
+    {
+      "path": "../inputs-6d9695b0/sand-dry-warm.png",
+      "sha256": "a1a1fc4fdf7d9b7055b4d2fae162076c8afd367082d917053cc845783eafa7ea",
+      "bytes": 296321
+    },
+    {
+      "path": "../inputs-6d9695b0/sand-seagrass.png",
+      "sha256": "c23dd6fa040836915408817808a372fa7ae31c6f4e07febc1ddfead393b48d6c",
+      "bytes": 317475
+    },
+    {
+      "path": "../inputs-6d9695b0/sand-wet.png",
+      "sha256": "67064d49db56e440acad901f80d12d40ea7278767d5a9722256aa47e1aceb52e",
+      "bytes": 283626
+    },
+    {
+      "path": "../palette-6d9695b0/palette.json",
+      "sha256": "3ff9504e3519e046a2d37017a2014fb43ff4d797d1f2b8b3cda70ce0d4a5948a",
+      "bytes": 1924
+    }
+  ],
+  "outputs": [
+    {
+      "path": "sand-dry-cool.png",
+      "sha256": "df0b8b3a9025ec0798824ce1d4016d9d6cdf85c77090f363b755ec00de480681",
+      "bytes": 85580
+    },
+    {
+      "path": "sand-dry-warm.png",
+      "sha256": "a5e338efefe8836bb02b3aef0a2552e8068caf71542e49fd93ecc32b201031a5",
+      "bytes": 128768
+    },
+    {
+      "path": "sand-seagrass.png",
+      "sha256": "0547663915fce2ecde6ebe368cf40fc032d3aaaaf25a9d79d1cd256009b8f042",
+      "bytes": 166134
+    },
+    {
+      "path": "sand-wet.png",
+      "sha256": "e28bfed1edb61de72d09d877657530874893846d8ed451d93123f7d4cb008634",
+      "bytes": 104603
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "fit": {
+    "sand-dry-cool.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 250093,
+      "partial_alpha_px": 0,
+      "colors": 3194,
+      "palette_colors_used": 24,
+      "mean_delta_e": 0.003611,
+      "p95_delta_e": 0.007975,
+      "max_delta_e": 0.039754
+    },
+    "sand-dry-warm.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 245688,
+      "partial_alpha_px": 0,
+      "colors": 4597,
+      "palette_colors_used": 27,
+      "mean_delta_e": 0.003248,
+      "p95_delta_e": 0.006863,
+      "max_delta_e": 0.030228
+    },
+    "sand-seagrass.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 238983,
+      "partial_alpha_px": 0,
+      "colors": 11159,
+      "palette_colors_used": 46,
+      "mean_delta_e": 0.003363,
+      "p95_delta_e": 0.007803,
+      "max_delta_e": 0.071778
+    },
+    "sand-wet.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 241402,
+      "partial_alpha_px": 0,
+      "colors": 3539,
+      "palette_colors_used": 15,
+      "mean_delta_e": 0.003356,
+      "p95_delta_e": 0.007404,
+      "max_delta_e": 0.032016
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.071778,
+    "worst_p95_delta_e": 0.007975,
+    "off_palette_px": 976166
+  },
+  "locked_inputs": []
+}

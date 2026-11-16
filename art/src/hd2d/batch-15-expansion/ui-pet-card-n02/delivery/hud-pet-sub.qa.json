@@ -1,0 +1,148 @@
+{
+  "schema": "phimond.art-qa.v1",
+  "asset": "hud-pet-sub.png",
+  "status": "ready_for_owner_review",
+  "dimensions": [
+    264,
+    96
+  ],
+  "alpha_values": [
+    0,
+    255
+  ],
+  "visible_rgb_colors": 48,
+  "checks": [
+    {
+      "id": "dimensions",
+      "status": "pass",
+      "value": [
+        264,
+        96
+      ],
+      "threshold": [
+        264,
+        96
+      ]
+    },
+    {
+      "id": "binary_alpha",
+      "status": "pass",
+      "value": [
+        0,
+        255
+      ],
+      "threshold": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "visible_colors",
+      "status": "pass",
+      "value": 48,
+      "threshold": 48
+    },
+    {
+      "id": "palette_apply",
+      "status": "pass",
+      "evidence": "../candidate-sub-01-quantized/apply-qa.json",
+      "output_off_palette_px": 0,
+      "output_partial_alpha_px": 0
+    },
+    {
+      "id": "magenta_edge_pixels",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0,
+      "method": "opaque magenta-like pixels adjacent to transparent alpha, RGB heuristic"
+    },
+    {
+      "id": "well_geometry",
+      "status": "needs_visual_review",
+      "value": [
+        {
+          "area_px": 2429,
+          "bbox_xyxy": [
+            20,
+            19,
+            76,
+            76
+          ],
+          "centroid_xy": [
+            46.71,
+            46.3
+          ]
+        },
+        {
+          "area_px": 810,
+          "bbox_xyxy": [
+            105,
+            32,
+            240,
+            38
+          ],
+          "centroid_xy": [
+            172.0,
+            34.5
+          ]
+        },
+        {
+          "area_px": 675,
+          "bbox_xyxy": [
+            105,
+            49,
+            240,
+            54
+          ],
+          "centroid_xy": [
+            172.0,
+            51.0
+          ]
+        },
+        {
+          "area_px": 165,
+          "bbox_xyxy": [
+            67,
+            64,
+            81,
+            78
+          ],
+          "centroid_xy": [
+            73.62,
+            70.31
+          ]
+        }
+      ],
+      "threshold": {
+        "portrait_center": [
+          50,
+          48
+        ],
+        "portrait_outer_diameter": 76,
+        "level_center": [
+          76,
+          74
+        ],
+        "level_outer_diameter": 22,
+        "hp_bounds": [
+          98,
+          28,
+          248,
+          38
+        ],
+        "mp_bounds": [
+          98,
+          48,
+          248,
+          56
+        ]
+      }
+    }
+  ],
+  "visual_review": "Reviewed at 4x nearest-neighbor on checkerboard. Gold/teal companion card reads clearly; transparent wells are clean. Geometry is close to target, with exact ring/badge coordinate review pending.",
+  "not_proven": [
+    "exact outer geometry against every coordinate",
+    "owner approval",
+    "runtime contrast beside main card"
+  ]
+}

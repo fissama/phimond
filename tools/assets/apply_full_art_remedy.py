@@ -11,7 +11,7 @@ import numpy as np
 import json, hashlib, shutil, sys
 
 ROOT = Path("/Users/phileanh/rust/phimond")
-ART = ROOT / "apps/game-web/art-src/hd2d"
+ART = ROOT / "art/src/hd2d"
 BRAIN = Path("/Users/phileanh/.gemini/antigravity-ide/brain/011c27ea-b148-400e-9b78-4882eb990740")
 
 def sha(p):

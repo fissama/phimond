@@ -8,7 +8,7 @@ from PIL import Image
 import numpy as np
 
 R = '/Users/phileanh/rust/phimond'
-B = f'{R}/apps/game-web/art-src/hd2d/batch-11-desert'
+B = f'{R}/art/src/hd2d/batch-11-desert'
 ARTIFACT_DIR = '/Users/phileanh/.gemini/antigravity-ide/brain/011c27ea-b148-400e-9b78-4882eb990740'
 
 P_REPLACE = f'{ARTIFACT_DIR}/desert_props_replacement_pack_1792177228847.jpg'

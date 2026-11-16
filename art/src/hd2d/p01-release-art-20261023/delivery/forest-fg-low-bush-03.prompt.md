@@ -1,0 +1,4 @@
+Production Phimond HD2D game cutout, crisp pixel art, fixed orthographic three-quarter RPG camera, upper-left light,1px dark outline at final scale,<=48colors, hard edges, pure #FF00FF background binary alpha, no blur, no floor plane or cast shadow outside requested object, no text/signatures. Single complete isolated asset with safe margin. A flat sprawling dark ivy and moss bush, layered small olive leaves, tiny pale seedheads, no tall branches. Match supplied forest warm olive canopy and desaturated deep teal-green shadows. Foreground LOW vegetation to replace oversized trees: art occupies lower100px of final256x192canvas, height under120px including leaves, base at y184. No mushrooms or objects standing taller than leaves.
+
+References:
+- /Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-13-release/forest-portal-arch/final.png SHA256 d91182e510b07c4a4ca3e97311009da387aa5eb3f44a87b97a9350fccfbbf84a

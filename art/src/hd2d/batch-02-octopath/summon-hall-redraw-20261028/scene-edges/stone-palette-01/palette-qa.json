@@ -1,0 +1,103 @@
+{
+  "status": "pass",
+  "method": "forge_palette.build_palette (weighted k-means++ in OKLab over unique colours, reserved colours fixed, coverage skipping) then forge_palette.fit_report of every input: OKLab dE of each pixel with alpha >= the threshold to its nearest palette colour",
+  "notProven": [
+    "Visual quality of the palette: look at swatches.png and an applied frame.",
+    "Colours of pixels below the alpha threshold were not sampled or measured.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "palette_colors",
+      "status": "pass",
+      "value": 48,
+      "threshold": 48
+    },
+    {
+      "id": "inputs_without_samples",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0,
+      "files": []
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.083698,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../stone-floor/extract-01/hall-stone-1.png",
+      "sha256": "c3c1eac728cb23fa4847b767066b800cad2cfdb406e6e474db68c2941f817ad5",
+      "bytes": 408757
+    },
+    {
+      "path": "../foreground-edge/forge-01/clean.png",
+      "sha256": "facd20f291fa6c5db550669fbe697b1e7b642561f8052bb46a06ccf898367db4",
+      "bytes": 182368
+    }
+  ],
+  "outputs": [
+    {
+      "path": "palette.json",
+      "sha256": "690a36b83df9ea1a4dca0d0ad22d288db04915e7b2a8bdc7c0bf15d91360f511",
+      "bytes": 1958
+    },
+    {
+      "path": "palette.gpl",
+      "sha256": "e1f6f46a8c5371c404fa68d2389c3cc0279da7145c040c041c2b75efa81d30a4",
+      "bytes": 1014
+    },
+    {
+      "path": "palette.hex",
+      "sha256": "35b4d9a912b6e720e68bc95118775a31b452ac938550e3910ca9e7e3b0afa734",
+      "bytes": 336
+    },
+    {
+      "path": "swatches.png",
+      "sha256": "0c938a316583cf36c0405bb7f113d5cad5ee27b475070b44c3aac87079ce8e13",
+      "bytes": 697
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "palette": {
+    "colors": 48,
+    "reserved": 0,
+    "transparent_index": 255,
+    "seed": 0
+  },
+  "fit": {
+    "../stone-floor/extract-01/hall-stone-1.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 253012,
+      "partial_alpha_px": 0,
+      "colors": 21427,
+      "palette_colors_used": 39,
+      "mean_delta_e": 0.005415,
+      "p95_delta_e": 0.013346,
+      "max_delta_e": 0.035667
+    },
+    "../foreground-edge/forge-01/clean.png": {
+      "measured_px": 87384,
+      "alpha_threshold": 128,
+      "off_palette_px": 87066,
+      "partial_alpha_px": 3363,
+      "colors": 33114,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.010919,
+      "p95_delta_e": 0.024324,
+      "max_delta_e": 0.083698
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.083698,
+    "worst_p95_delta_e": 0.024324,
+    "off_palette_px": 340078
+  }
+}

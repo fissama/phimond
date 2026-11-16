@@ -1,0 +1,1 @@
+Visual review 2026-10-30: viewed final at 4× on dark and checker backgrounds. `gravel-trail` reads as an irregular ground decal; no magenta fringe or detached halo visible. 47 visible colors; alpha binary.

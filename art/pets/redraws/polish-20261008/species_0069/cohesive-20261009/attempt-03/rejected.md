@@ -1,0 +1,1 @@
+Design and face improved, intact-source/mechanical checks pass, but owner identifies insufficient Cast FX. This attempt has hand gestures with no visible spell and is rejected for Cast readability. Keep as evidence only; regenerate from original APK portrait without using this redraw as reference.

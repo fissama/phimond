@@ -1,0 +1,1 @@
+Actual final +4x dark/checker inspected. Original desert stone materials with approved portal style; clean frontal alpha opening, three inactive stone medallions. 42colors. Active mate not generated yet; no claim of paired-mask compliance. Self-inspected draft.

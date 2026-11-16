@@ -6,12 +6,12 @@ Bao gồm:
 - Đường gạch lát: tomb-brick-floor (z=3.2)
 - Decal chuyển tiếp: tomb-tile-edge-decal (z=-0.8)
 - Các prop: bia mộ, quan tài đá, cổng vòm, cổng dịch chuyển, đèn lồng u linh (4 frame)
-Xuất apps/game-web/public/scenes/tomb_hd2d.json + texture hd2d_*.png.
+Xuất art/build/scenes/tomb_hd2d.json + texture hd2d_*.png.
 """
 import json, random, shutil, os
 R = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-B = f'{R}/apps/game-web/art-src/hd2d/batch-11-tomb'
-OUT = f'{R}/apps/game-web/public/scenes'
+B = f'{R}/art/src/hd2d/batch-11-tomb'
+OUT = f'{R}/art/build/scenes'
 man = {a['id']: a for a in json.load(open(f'{B}/manifest.json'))['assets']}
 used = {}
 def tex(aid):

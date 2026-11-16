@@ -1,0 +1,24 @@
+{
+  "id": "ghost_castle-edge-01",
+  "size_px": [512, 128],
+  "mode": "RGBA",
+  "colors": 40,
+  "partial_alpha_pixels": 0,
+  "key_residue_pixels": 0,
+  "raw_integrity": true,
+  "raw_sha256": "ecca2953f49e816fa5e6169612efb639f6e4ec76c2ec5592bbb30bbe1070d15b",
+  "sha256": "56e01308af9369f1f7d649f573345dedd7bf55c1708b04d07635d09c538d3a81",
+  "seam_x": {
+    "seam": 6.054688,
+    "adjacent_median": 4.633789,
+    "adjacent_p95": 6.859863,
+    "adjacent_max": 7.494141,
+    "seam_ratio": 0.807923,
+    "limit": 1.25,
+    "verdict": "continuous"
+  },
+  "visual_review": "actual 3x horizontal repeat and 4x detail viewed; rubble cluster cadence is visible",
+  "warnings": ["Motif repeats visibly; interleave with other edge variants."],
+  "failures": [],
+  "reviewed_on": "2026-11-04"
+}

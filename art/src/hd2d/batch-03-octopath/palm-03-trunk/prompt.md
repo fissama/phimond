@@ -1,0 +1,11 @@
+Use case: production SWAY-SPLIT PALM PARTS for HD-2D game. SIX separate pieces in THREE ROWS TWO COLUMNS; one matching palm design per row. LEFT column ONLY complete bare palm TRUNK ending in small leaf attachment tip, no foliage or ground. RIGHT column ONLY detached palm CANOPY of broad drooping fronds with a few coconuts clustered around a short central stalk, no long trunk. Row1 slim slightly curved trunk and wide symmetrical leaf crown. Row2 gently S-curved ridged trunk and asymmetric wind-swept crown. Row3 straighter ringed older trunk and fuller rounded drooping crown. All3 paired crowns fit on matching trunk tip; allow visible overlapping stalk. Original1 palm ridged trunk/droopingfrond identity,2beach materials; petrefs pixelshading only. Octopath Traveler inspired HD-2D environment PIXEL ART, restrained dark olive/moss fronds, ochre/umber bark, cool desaturated hue-tinted outline, subtle warm upperleft key, broad clean3-4tone clusters/material. Upright front billboard24degrees down. Tall trunks and wide canopies MUST fit central55percent of their generous cells; wide EMPTY margins between ALL pieces; no touching edges, no clipping or overlap. Pure flat #FF00FF background throughout including leaf gaps. No whole trees, grass, sand, ground shadows, fog, glow, text, labels, scene, smoothvector or tiny noisy texture. These are isolated engine-composable palm parts.
+
+
+
+Ordered reference images:
+- /Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level5_BaiBien/level5_BaiBien_018.png / sha256 f8898e5444f71c79c1058b63228b1681650b78314dba1bbba33e2176c0699b50
+- /Users/phileanh/Downloads/Phimond-P12-Review/map-images/treasure_beach_fishermen_beach.png / sha256 4bc61ad0041c8486117b2b5cb711387d424644fea3d0f6e48c0e85d9de73c130
+- /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png / sha256 fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da
+- /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png / sha256 043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3
+
+Route: built-in image_gen; model not exposed; raw SHA256 cfccdd17c1b44b8eefa11fcc71f328e5d760db1009ec005c1e100961d32808d5

@@ -1,0 +1,680 @@
+{
+  "schema": "generate2dsprite.full_frames.v2",
+  "frame_size": [
+    280,
+    724
+  ],
+  "source_frame_count": 8,
+  "sources": [
+    {
+      "path": "../../raw/cli-male-two-contacts-cycle/generated.png",
+      "file_sha256": "c4112780d3d69fdac9546e6b6394af0c1ad65c5195aa1fbea32a6f870b9df49c",
+      "bytes": 1812520,
+      "size": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "source_mode": "RGB",
+      "bit_depth": 8,
+      "conversion": "RGB -> RGBA",
+      "key": {
+        "quality": "hard",
+        "requested_quality": "auto",
+        "key_rgb": [
+          250,
+          3,
+          251
+        ],
+        "key_estimate": {
+          "declared": "magenta",
+          "declared_rgb": [
+            255,
+            0,
+            255
+          ],
+          "ring_px": 46080,
+          "native_alpha": false,
+          "use_native_alpha": false,
+          "near_share": 0.9991536458333333,
+          "key": [
+            250.0,
+            3.0,
+            251.0
+          ],
+          "source": "border_median",
+          "valid": true,
+          "reason": null,
+          "ring_share": 0.9987630208333333,
+          "coverage": 0.7771613605608294,
+          "distance_from_declared": 7.07
+        },
+        "qa": {
+          "opaque_key_px": 0,
+          "outer_ring_spill_fraction": 0.8424799081515499,
+          "semitransparent_fraction": 0.0,
+          "enclosed_key_pockets": 0,
+          "key_hued_px": 3121,
+          "visible_px": 343384,
+          "outer_ring_px": 13065,
+          "thresholds": {
+            "key_tolerance": 48.0,
+            "spill_threshold": 20.0,
+            "min_pocket_area": 16,
+            "opaque_alpha": 128,
+            "spill_hue_balance": 0.5
+          },
+          "method": "forge_matte.matte_qa v1: straight-colour key distance and dominance on the keyed image; two-channel keys count spill only where the key channels are balanced"
+        }
+      }
+    }
+  ],
+  "frames": [
+    {
+      "index": 0,
+      "file": "frames/frame-00.png",
+      "source_index": 0,
+      "crop_box": [
+        0,
+        0,
+        272,
+        724
+      ],
+      "crop_id": "r0c0",
+      "sheet_origin": [
+        -8,
+        0
+      ],
+      "owned_components": 1,
+      "pixels_from_outside_cell": 0,
+      "size": [
+        280,
+        724
+      ],
+      "mode": "RGBA",
+      "file_sha256": "9a43b29e48c64893c9f12a9acee1874ca4c707779b2770a1602f2136e2969930",
+      "rgba_pixel_sha256": "41089d59123b60977b41d5f2a9ec07c113a7838b3842c4aa1dce0b245dbec92d"
+    },
+    {
+      "index": 1,
+      "file": "frames/frame-01.png",
+      "source_index": 0,
+      "crop_box": [
+        272,
+        0,
+        543,
+        724
+      ],
+      "crop_id": "r0c1",
+      "sheet_origin": [
+        264,
+        0
+      ],
+      "owned_components": 1,
+      "pixels_from_outside_cell": 0,
+      "size": [
+        280,
+        724
+      ],
+      "mode": "RGBA",
+      "file_sha256": "6f1901786e0a0516c9e68ab5148b9a23ba4e0626d988623db33e081c3fb4d071",
+      "rgba_pixel_sha256": "773bee5926d6f063be5b4ae4fbf91c2be0d1a57d9f054ca8279f7f651aa3dfc2"
+    },
+    {
+      "index": 2,
+      "file": "frames/frame-02.png",
+      "source_index": 0,
+      "crop_box": [
+        543,
+        0,
+        815,
+        724
+      ],
+      "crop_id": "r0c2",
+      "sheet_origin": [
+        535,
+        0
+      ],
+      "owned_components": 1,
+      "pixels_from_outside_cell": 0,
+      "size": [
+        280,
+        724
+      ],
+      "mode": "RGBA",
+      "file_sha256": "ad5dcc9ffb572581c5e05e0377106bde96227812356ad2f1712a366dc8d09803",
+      "rgba_pixel_sha256": "836f7582722fbc076dbd72c443f424fa204717f64dcc56f4fec3ab1606567fdb"
+    },
+    {
+      "index": 3,
+      "file": "frames/frame-03.png",
+      "source_index": 0,
+      "crop_box": [
+        815,
+        0,
+        1086,
+        724
+      ],
+      "crop_id": "r0c3",
+      "sheet_origin": [
+        807,
+        0
+      ],
+      "owned_components": 1,
+      "pixels_from_outside_cell": 0,
+      "size": [
+        280,
+        724
+      ],
+      "mode": "RGBA",
+      "file_sha256": "116493b1af0e136df0932353059500fc33a17ae18291cb46006decb8ef67eedc",
+      "rgba_pixel_sha256": "397d018c0aff0945976fa41b2d563dfa612abb418bf38c6270b007a22a69c369"
+    },
+    {
+      "index": 4,
+      "file": "frames/frame-04.png",
+      "source_index": 0,
+      "crop_box": [
+        1086,
+        0,
+        1358,
+        724
+      ],
+      "crop_id": "r0c4",
+      "sheet_origin": [
+        1078,
+        0
+      ],
+      "owned_components": 1,
+      "pixels_from_outside_cell": 0,
+      "size": [
+        280,
+        724
+      ],
+      "mode": "RGBA",
+      "file_sha256": "d4a5f3377f2842177e56a4e3abce54f9dd5ac0fd74d3072fb0bd3ee06cf1afee",
+      "rgba_pixel_sha256": "ff0adc2a2edec682b9a335cc8798457f5d1a03d1f683f0464272bc634be164b3"
+    },
+    {
+      "index": 5,
+      "file": "frames/frame-05.png",
+      "source_index": 0,
+      "crop_box": [
+        1358,
+        0,
+        1629,
+        724
+      ],
+      "crop_id": "r0c5",
+      "sheet_origin": [
+        1350,
+        0
+      ],
+      "owned_components": 1,
+      "pixels_from_outside_cell": 0,
+      "size": [
+        280,
+        724
+      ],
+      "mode": "RGBA",
+      "file_sha256": "41c65cf65469a90f67c01baef85ce2d6e39d9ea806ab8dc48d82fdb80b842f48",
+      "rgba_pixel_sha256": "616777f22609fb7436665fa1c0ef8fe06d9e70cc64f20f09263dcf1d59d15396"
+    },
+    {
+      "index": 6,
+      "file": "frames/frame-06.png",
+      "source_index": 0,
+      "crop_box": [
+        1629,
+        0,
+        1901,
+        724
+      ],
+      "crop_id": "r0c6",
+      "sheet_origin": [
+        1621,
+        0
+      ],
+      "owned_components": 1,
+      "pixels_from_outside_cell": 0,
+      "size": [
+        280,
+        724
+      ],
+      "mode": "RGBA",
+      "file_sha256": "f31a086fb2ed0b6334bb40915e0199d200d6b05160e6c655d2bacebccbeaa5cc",
+      "rgba_pixel_sha256": "46bef0c22dc57e00992eca630a051ec28d633b4254638ac8b5e8c3528961a977"
+    },
+    {
+      "index": 7,
+      "file": "frames/frame-07.png",
+      "source_index": 0,
+      "crop_box": [
+        1901,
+        0,
+        2172,
+        724
+      ],
+      "crop_id": "r0c7",
+      "sheet_origin": [
+        1893,
+        0
+      ],
+      "owned_components": 1,
+      "pixels_from_outside_cell": 62,
+      "size": [
+        280,
+        724
+      ],
+      "mode": "RGBA",
+      "file_sha256": "43e5375c90f6052fdfeac5cc60f324aa9e8b9c065ce96ee53116e531e133360e",
+      "rgba_pixel_sha256": "e2819a93d6129991f542f194ab5efb799bf4014cd659556ddbc57974791f0908"
+    }
+  ],
+  "sequence": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "duration_ms": 250,
+  "total_duration_ms": 2000,
+  "loop": 0,
+  "atlas": {
+    "file": "atlas.png",
+    "size": [
+      840,
+      2172
+    ],
+    "rows": 3,
+    "cols": 3,
+    "file_sha256": "7c0a6753bd89817a2f4865aeeb68b2f70ba69a0eea9bc266752b8299b1c6802a",
+    "rgba_pixels_exact": true
+  },
+  "webp": {
+    "decoded_frame_count": 8,
+    "decoded_frames": [
+      {
+        "index": 0,
+        "timestamp_ms": 0,
+        "duration_ms": 250,
+        "sequence_positions": [
+          0
+        ]
+      },
+      {
+        "index": 1,
+        "timestamp_ms": 250,
+        "duration_ms": 250,
+        "sequence_positions": [
+          1
+        ]
+      },
+      {
+        "index": 2,
+        "timestamp_ms": 500,
+        "duration_ms": 250,
+        "sequence_positions": [
+          2
+        ]
+      },
+      {
+        "index": 3,
+        "timestamp_ms": 750,
+        "duration_ms": 250,
+        "sequence_positions": [
+          3
+        ]
+      },
+      {
+        "index": 4,
+        "timestamp_ms": 1000,
+        "duration_ms": 250,
+        "sequence_positions": [
+          4
+        ]
+      },
+      {
+        "index": 5,
+        "timestamp_ms": 1250,
+        "duration_ms": 250,
+        "sequence_positions": [
+          5
+        ]
+      },
+      {
+        "index": 6,
+        "timestamp_ms": 1500,
+        "duration_ms": 250,
+        "sequence_positions": [
+          6
+        ]
+      },
+      {
+        "index": 7,
+        "timestamp_ms": 1750,
+        "duration_ms": 250,
+        "sequence_positions": [
+          7
+        ]
+      }
+    ],
+    "total_duration_ms": 2000,
+    "loop": 0,
+    "alpha_and_visible_rgb_exact": true,
+    "timeline_verified": true,
+    "hidden_rgb_guaranteed": false,
+    "file": "animation.webp",
+    "file_sha256": "9ea068e05ae223a6b21be2b02fd7856c6d6d61b978d51093b483045cad2a63a3",
+    "bytes": 692174,
+    "lossless": true,
+    "quality": 75,
+    "method": 3,
+    "timed_static_container": false,
+    "all_keyframes": false
+  },
+  "transitions": [
+    {
+      "from_sequence_position": 0,
+      "to_sequence_position": 1,
+      "from_frame": 0,
+      "to_frame": 1,
+      "wrap": false,
+      "premultiplied_rgb_mae": 13.494273,
+      "alpha_mae": 19.580357,
+      "changed_visible_pixels": 52256
+    },
+    {
+      "from_sequence_position": 1,
+      "to_sequence_position": 2,
+      "from_frame": 1,
+      "to_frame": 2,
+      "wrap": false,
+      "premultiplied_rgb_mae": 12.737076,
+      "alpha_mae": 18.084723,
+      "changed_visible_pixels": 48332
+    },
+    {
+      "from_sequence_position": 2,
+      "to_sequence_position": 3,
+      "from_frame": 2,
+      "to_frame": 3,
+      "wrap": false,
+      "premultiplied_rgb_mae": 14.019275,
+      "alpha_mae": 16.76142,
+      "changed_visible_pixels": 47619
+    },
+    {
+      "from_sequence_position": 3,
+      "to_sequence_position": 4,
+      "from_frame": 3,
+      "to_frame": 4,
+      "wrap": false,
+      "premultiplied_rgb_mae": 15.76034,
+      "alpha_mae": 26.254736,
+      "changed_visible_pixels": 54192
+    },
+    {
+      "from_sequence_position": 4,
+      "to_sequence_position": 5,
+      "from_frame": 4,
+      "to_frame": 5,
+      "wrap": false,
+      "premultiplied_rgb_mae": 13.591082,
+      "alpha_mae": 21.08857,
+      "changed_visible_pixels": 50857
+    },
+    {
+      "from_sequence_position": 5,
+      "to_sequence_position": 6,
+      "from_frame": 5,
+      "to_frame": 6,
+      "wrap": false,
+      "premultiplied_rgb_mae": 12.593741,
+      "alpha_mae": 15.11358,
+      "changed_visible_pixels": 46065
+    },
+    {
+      "from_sequence_position": 6,
+      "to_sequence_position": 7,
+      "from_frame": 6,
+      "to_frame": 7,
+      "wrap": false,
+      "premultiplied_rgb_mae": 14.024202,
+      "alpha_mae": 20.601766,
+      "changed_visible_pixels": 51959
+    },
+    {
+      "from_sequence_position": 7,
+      "to_sequence_position": 0,
+      "from_frame": 7,
+      "to_frame": 0,
+      "wrap": true,
+      "premultiplied_rgb_mae": 12.768478,
+      "alpha_mae": 13.698451,
+      "changed_visible_pixels": 52156
+    }
+  ],
+  "loop_seam": {
+    "frames": 8,
+    "seam": 13.000972,
+    "adjacent_median": 15.015794,
+    "adjacent_p95": 17.569335,
+    "adjacent_max": 18.383938,
+    "seam_over_median": 0.86582,
+    "seam_over_p95": 0.739981,
+    "method": "premultiplied RGBA mean absolute difference (0-255); seam = last -> first",
+    "adjacent_mean": 15.219468,
+    "wrap_ratio": 0.854233
+  },
+  "loop_overlap": null,
+  "static_regions": {},
+  "key": {
+    "mode": "chroma",
+    "key_color": "auto",
+    "requested_quality": "auto",
+    "pixel_art": true,
+    "per_source": "sources[].key"
+  },
+  "slicing": {
+    "source": "grid",
+    "rows": 1,
+    "cols": 8,
+    "rounding": "half-up (forge_core.rounded_grid_boxes)",
+    "mode": "ownership",
+    "threshold": 16,
+    "min_area": 4,
+    "attach_radius": 6,
+    "connectivity": 8,
+    "canvas": [
+      280,
+      724
+    ],
+    "padding": [
+      8,
+      0,
+      0,
+      0
+    ],
+    "registration": "frame pixel (u, v) = sheet pixel (u - padding[0] + cell x0, v - padding[1] + cell y0)",
+    "attached_px": 0,
+    "cell_fallback_px": 10,
+    "dropped_px": 0,
+    "haze": "keep",
+    "hidden_rgb": "zeroed (only visible pixels are copied)",
+    "method": "forge_core.ownership_slice (D14): 8-connected components of alpha > threshold with at least min_area px go whole to the cell holding most of their pixels; fainter visible pixels join the owner they reach within attach_radius steps; haze keep/drop decides the rest; one shared padding keeps registration"
+  },
+  "spill_check": {
+    "threshold": 16,
+    "min_area": 4,
+    "connectivity": 8,
+    "components": 13,
+    "crossing": [
+      {
+        "label": 4,
+        "area": 46349,
+        "bbox": [
+          1893,
+          181,
+          2164,
+          571
+        ],
+        "owner": 7,
+        "owner_id": "r0c7",
+        "pixels_over": 62,
+        "overhang_px": 8,
+        "pixels_per_box": {
+          "r0c6": 62,
+          "r0c7": 46287
+        },
+        "pixels_outside_every_box": 0
+      }
+    ],
+    "specks_crossing": 0,
+    "unboxed_components": 0,
+    "unboxed_px": 0,
+    "verdict": "spill",
+    "status": "resolved",
+    "background_share": 0.781636,
+    "note": "--slice ownership keeps each crossing component whole in its owner cell."
+  },
+  "provenance": {
+    "user_manifest": null,
+    "user_assertions_verified": false
+  },
+  "validation": {
+    "png_rgba_exact": true,
+    "atlas_rgba_exact": true,
+    "webp_timeline_verified": true,
+    "visual_approval": false,
+    "note": "Numerical diagnostics only; no claim of seamless motion or visual continuity."
+  },
+  "processing": {
+    "resized": false,
+    "aligned": false,
+    "chroma_keyed": true,
+    "masked": true,
+    "blended": false
+  },
+  "qa": {
+    "status": "needs-visual-review",
+    "method": "Lossless packaging: frame PNGs and the atlas are decoded and compared pixel for pixel; the WebP timeline and its visible RGBA are decoded and verified. Spill: 8-connected components of alpha above the threshold that leave their owner cell. Seams: forge_core.seam_report of the played sequence (premultiplied RGBA MAE); wrap_ratio = seam / mean adjacent step. Drift: NCC of premultiplied luma.",
+    "notProven": [
+      "visual quality, identity or anatomy of any frame",
+      "smooth motion or a seamless loop (seam ratios are numeric diagnostics only)",
+      "that the crop boxes, grid or sequence match the intended phases",
+      "that RGB hidden under alpha 0 survives the WebP preview"
+    ],
+    "checks": [
+      {
+        "id": "png_rgba_exact",
+        "status": "pass",
+        "value": true,
+        "threshold": null
+      },
+      {
+        "id": "atlas_rgba_exact",
+        "status": "pass",
+        "value": true,
+        "threshold": null
+      },
+      {
+        "id": "webp_timeline",
+        "status": "pass",
+        "value": 2000,
+        "threshold": null
+      },
+      {
+        "id": "cross_cell_spill",
+        "status": "pass",
+        "value": 62,
+        "threshold": 0
+      },
+      {
+        "id": "chroma_key_residue",
+        "status": "pass",
+        "value": 0,
+        "threshold": 0
+      },
+      {
+        "id": "chroma_key_backdrop",
+        "status": "pass",
+        "value": 0,
+        "threshold": 0
+      },
+      {
+        "id": "loop_seam",
+        "status": "needs-visual-review",
+        "value": 0.854233,
+        "threshold": null
+      }
+    ],
+    "inputs": [
+      {
+        "path": "../../raw/cli-male-two-contacts-cycle/generated.png",
+        "sha256": "c4112780d3d69fdac9546e6b6394af0c1ad65c5195aa1fbea32a6f870b9df49c",
+        "bytes": 1812520
+      }
+    ],
+    "outputs": [
+      {
+        "path": "frames/frame-00.png",
+        "sha256": "9a43b29e48c64893c9f12a9acee1874ca4c707779b2770a1602f2136e2969930",
+        "bytes": 131594
+      },
+      {
+        "path": "frames/frame-01.png",
+        "sha256": "6f1901786e0a0516c9e68ab5148b9a23ba4e0626d988623db33e081c3fb4d071",
+        "bytes": 117297
+      },
+      {
+        "path": "frames/frame-02.png",
+        "sha256": "ad5dcc9ffb572581c5e05e0377106bde96227812356ad2f1712a366dc8d09803",
+        "bytes": 112872
+      },
+      {
+        "path": "frames/frame-03.png",
+        "sha256": "116493b1af0e136df0932353059500fc33a17ae18291cb46006decb8ef67eedc",
+        "bytes": 114689
+      },
+      {
+        "path": "frames/frame-04.png",
+        "sha256": "d4a5f3377f2842177e56a4e3abce54f9dd5ac0fd74d3072fb0bd3ee06cf1afee",
+        "bytes": 128172
+      },
+      {
+        "path": "frames/frame-05.png",
+        "sha256": "41c65cf65469a90f67c01baef85ce2d6e39d9ea806ab8dc48d82fdb80b842f48",
+        "bytes": 109077
+      },
+      {
+        "path": "frames/frame-06.png",
+        "sha256": "f31a086fb2ed0b6334bb40915e0199d200d6b05160e6c655d2bacebccbeaa5cc",
+        "bytes": 114706
+      },
+      {
+        "path": "frames/frame-07.png",
+        "sha256": "43e5375c90f6052fdfeac5cc60f324aa9e8b9c065ce96ee53116e531e133360e",
+        "bytes": 128835
+      },
+      {
+        "path": "atlas.png",
+        "sha256": "7c0a6753bd89817a2f4865aeeb68b2f70ba69a0eea9bc266752b8299b1c6802a",
+        "bytes": 952284
+      },
+      {
+        "path": "animation.webp",
+        "sha256": "9ea068e05ae223a6b21be2b02fd7856c6d6d61b978d51093b483045cad2a63a3",
+        "bytes": 692174
+      }
+    ],
+    "tool": {
+      "name": "assemble_frames",
+      "version": "0.4.0"
+    }
+  }
+}

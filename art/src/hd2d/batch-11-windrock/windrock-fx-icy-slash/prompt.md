@@ -1,0 +1,15 @@
+# windrock-fx-icy-slash
+
+Route: built-in image_gen. Model not exposed.
+
+Transparent pixel-art FX sheet, 1536x1024, 3x2 cells. Top three cells contain small distinct isolated Windrock environmental FX: cold wind motes with snow crystals, short two-pronged icy wind slash, circular pale-blue gust rune sparkle. Each under 160px centered with clear margin. Blue-gray #7B8794/#566070, pale ice #B1C2D0/#E8EEF4. Crisp chunky pixels, 33-48 colors, restrained highlights, no glow/blur/gradient/shadow/ground/props/text. Original alpha had soft glow; thresholded alpha >127 removes halo; RGB unchanged.
+
+Actual attachments (ordered):
+1. .ai/design/map-checklists/refs/windrock_mountain_camp.jpg — SHA256 eaf094c2df78b9ecd04463d0ff9ba4e83f6b4377713ac9f00c56ed2dbb2b927a
+2. apps/game-web/art-src/hd2d/batch-01-octopath/contact-sheet.png — SHA256 4347e8dafc3491cb1516c88379effbf92c32b2ac1b17a0776469eedb7fa94a05
+3. apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png — SHA256 fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da
+4. apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png — SHA256 043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3
+
+Raw: source-alpha-binary.png; SHA256 eb0255e1f3e900143225f0736bba5e55731dcc36aa4e7cb808a02e77d509c3c4; source box [512, 512, 1024, 1024]; sheet extraction polygon None; translation-only source registration None. Final [192, 192]. Non-dithered 48color finish, nearest scaling. No content drawn with code.
+
+Finish details: {"visible_colors": 48, "palette_source": null, "palette_include": null, "palette_exclude": null, "palette_remap": null, "base_palette_filter": null, "native_alpha": true, "documented_exception": null, "job_palette_note": null}

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Dựng map thử HD-2D 'windrock_hd2d' từ batch-11-windrock mở rộng (74 assets).
-Xuất apps/game-web/public/scenes/windrock_hd2d.json + texture hd2d_windrock-*.png.
+Xuất art/build/scenes/windrock_hd2d.json + texture hd2d_windrock-*.png.
 Tuân thủ đầy đủ:
 - Cầu treo bắc qua 2 khe núi chasm-ravine-01/02 lòng đen sâu, có mố neo trái/phải.
 - Sàn đá rock-floor-01 chủ đạo, chênh độ sáng các tile <= 12/255.
@@ -14,8 +14,8 @@ from PIL import Image, ImageFilter
 import numpy as np
 
 R = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-B = f'{R}/apps/game-web/art-src/hd2d/batch-11-windrock'
-OUT = f'{R}/apps/game-web/public/scenes'
+B = f'{R}/art/src/hd2d/batch-11-windrock'
+OUT = f'{R}/art/build/scenes'
 os.makedirs(f'{OUT}/tex', exist_ok=True)
 
 man = {a['id']: a for a in json.load(open(f'{B}/manifest.json'))['assets']}

@@ -1,0 +1,11 @@
+{
+  "schema": "phimond.art-provenance.v1",
+  "asset": "hud-pet-main.png",
+  "art_source": "host_image",
+  "route": "Codex built-in image_gen",
+  "model": "not exposed",
+  "references": ["../layout-guide-360x128.png", "apps/game-web/art-src/hd2d/octopath-s01-s27-20261029/delivery/ui-minimap.png"],
+  "source": "../candidate-07-raw.png",
+  "processing": ["resize to 360x128", "assemble_frames chroma key with binary alpha", "forge_matte 2px edge despill", "48-color palette build/apply"],
+  "status": "ready_for_owner_review"
+}

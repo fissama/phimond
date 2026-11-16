@@ -7,8 +7,8 @@ from PIL import Image, ImageDraw, ImageFilter
 import numpy as np
 
 R = pathlib.Path(__file__).resolve().parents[2]
-art_dir = R / "apps/game-web/art-src/hd2d/batch-11-desert"
-tex_dir = R / "apps/game-web/public/scenes/tex"
+art_dir = R / "art/src/hd2d/batch-11-desert"
+tex_dir = R / "art/build/scenes/tex"
 man_p = art_dir / "manifest.json"
 
 def save_and_sync(aid, img):

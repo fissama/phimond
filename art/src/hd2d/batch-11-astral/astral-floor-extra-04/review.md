@@ -1,0 +1,3 @@
+# Visual review — astral-floor-extra-04
+
+Final at 4× on dark and checker backgrounds and 3×3 repeat viewed. Lavender irregular flagstone with dark plum joints and sparse warm gold flecks; visually distinct from the existing grass, paving, and loam tiles. Repeated pattern is visible as expected for a tile, but no hard boundary or framing grid is visible in the 3×3 review. Opaque RGBA, 48 colors. Seam means X 6.61 (neighbor 0.54), Y 6.46 (neighbor 0.67); all below 9. Correlation with existing floor tiles: {'astral-floor-01': 0.055, 'astral-floor-02': 0.06, 'astral-floor-03': 0.049, 'astral-floor-extra-01': 0.05, 'astral-floor-extra-02': 0.07, 'astral-floor-extra-03': 0.056}. Owner review pending.

@@ -1,0 +1,97 @@
+{
+  "id": "ghost_castle-fx-01",
+  "size": [
+    512,
+    128
+  ],
+  "mode": "RGBA",
+  "frames": 4,
+  "frame_px": [
+    128,
+    128
+  ],
+  "fps": 5,
+  "duration_ms_each": 200,
+  "shared_palette_colors": 40,
+  "frame_metrics": [
+    {
+      "frame": 1,
+      "size": [
+        128,
+        128
+      ],
+      "colors": 40,
+      "partial_alpha_pixels": 0,
+      "margin": [
+        54,
+        44,
+        53,
+        44
+      ],
+      "sha256": "db6265506596f8ee5f5ea7701e12eb51e65237a6f3ac6a60510c7362c6b929c4"
+    },
+    {
+      "frame": 2,
+      "size": [
+        128,
+        128
+      ],
+      "colors": 40,
+      "partial_alpha_pixels": 0,
+      "margin": [
+        53,
+        44,
+        53,
+        44
+      ],
+      "sha256": "0aec05aa7de3cbca5cffd8b431eb76c15fc569d6e4876d42038a41eca9ee2829"
+    },
+    {
+      "frame": 3,
+      "size": [
+        128,
+        128
+      ],
+      "colors": 40,
+      "partial_alpha_pixels": 0,
+      "margin": [
+        50,
+        43,
+        49,
+        44
+      ],
+      "sha256": "4fc3013fe2a9083fb74981b5e468173ec64123d4157a113c878a670ed61a402a"
+    },
+    {
+      "frame": 4,
+      "size": [
+        128,
+        128
+      ],
+      "colors": 40,
+      "partial_alpha_pixels": 0,
+      "margin": [
+        53,
+        45,
+        53,
+        44
+      ],
+      "sha256": "8ae6b6dfdbc8cdc6573f3e2170de2a694bebe55812423b3416fc0be509d77e60"
+    }
+  ],
+  "binary_alpha": true,
+  "raw_integrity": true,
+  "raw_sha256": "6641c3b534cfaa2f906326e3206d9a27f86f3c874ce256d6b5bfb875d0397bbb",
+  "sha256": "bb2d8053c6e0893d4801d59dd7b58e676a876662d0f5ad133e2926981127be1f",
+  "source_spill_gate": "pass; failed=[]; warnings=[]",
+  "processing_gate": "pass; generate2dsprite process mode=fx, strict_qc=true",
+  "frame_qc": {
+    "status": "warn",
+    "warning": "torso_drift",
+    "value": 2.39,
+    "threshold": 2.0,
+    "note": "This detector treats the intentionally leaning flame silhouette as a torso; sheet anchors and baseline are registered consistently. Retained as a review warning."
+  },
+  "visual_review": "actual_complete_4x_dark_and_checker_viewed",
+  "failures": []
+}

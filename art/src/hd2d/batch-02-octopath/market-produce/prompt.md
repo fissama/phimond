@@ -1,0 +1,10 @@
+Use case: modular game prop sheet. SIX separate MARKET objects, exactly TWO ROWS x THREE COLUMNS. Top row: freestanding market awning with dusty madder-red canvas roof and four narrow timber posts, NO merchandise or counter, open space beneath; same freestanding awning in muted moss-green canvas; same in faded blue-gray canvas. Bottom row: waist-high wooden produce counter with baskets of leafy vegetables and turnips; wooden fabric merchant counter displaying folded cloth and two rolled bolts; wooden weapons merchant counter with small back rack of sheathed swords, spearheads and plain buckler. Each counter is standalone WITHOUT attached awning; owner will assemble roof and counter as layers. Match the original reference market's timber columns, modest pointed canvas roof silhouette and warm old stone town identity. Pet references pixel-edge/shading compatibility only. Octopath Traveler inspired HD-2D PIXEL ART, restrained desaturated earthy palette, hue-tinted dark edges,3-4 broad crisp pixel tones per material, no tiny noisy phototexture, no smooth vector. Front upright billboard seen24degrees from above, not extreme isometric. Every complete object fits central60percent of its own cell with generous magenta gutter. Exact solid #FF00FF background. NO text, symbols, signs, floor, cast ground shadows, bloom, fog, people or scenery. Warm subtle upper-left key/cool internal shadows. Awning open centers stay magenta for key removal; prevent overlaps and clipping.
+
+
+
+Ordered reference images:
+- /Users/phileanh/Downloads/Phimond-P12-Review/map-images/city_market.png / sha256 9e6dd4ebef79d3179923b3b4082a93830e28b44cb3ed61b90d2b6b0bab78e112
+- /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png / sha256 fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da
+- /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png / sha256 043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3
+
+Route: built-in image_gen; model not exposed; raw SHA256 17bb2b9aa988ca0de2626206db209df766ffab3456ac42fee5e1c458e158a28e

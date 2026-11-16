@@ -20,7 +20,7 @@ import numpy as np
 from PIL import Image, ImageDraw
 
 WORKSPACE = Path("/Users/phileanh/rust/phimond")
-BATCH11_TOMB = WORKSPACE / "apps/game-web/art-src/hd2d/batch-11-tomb"
+BATCH11_TOMB = WORKSPACE / "art/src/hd2d/batch-11-tomb"
 ARTIFACTS_DIR = Path("/Users/phileanh/.gemini/antigravity-ide/brain/011c27ea-b148-400e-9b78-4882eb990740")
 
 PACK_TILES = ARTIFACTS_DIR / "tomb_tiles_pilot_1792081888902.jpg"

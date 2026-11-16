@@ -22,7 +22,7 @@ from PIL import Image, ImageDraw, ImageFilter
 from scipy.ndimage import label
 
 WORKSPACE = Path("/Users/phileanh/rust/phimond")
-BATCH11_WINDROCK = WORKSPACE / "apps/game-web/art-src/hd2d/batch-11-windrock"
+BATCH11_WINDROCK = WORKSPACE / "art/src/hd2d/batch-11-windrock"
 ART_DIR = Path("/Users/phileanh/.gemini/antigravity-ide/brain/011c27ea-b148-400e-9b78-4882eb990740")
 
 RAW_TILES = ART_DIR / "windrock_tiles_pack_1792132434076.jpg"

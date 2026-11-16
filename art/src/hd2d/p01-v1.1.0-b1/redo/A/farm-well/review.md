@@ -1,0 +1,1 @@
+Self-review: Stone ring well with timber lifting beam, rope and bucket; about 1.25x1.5 units. Game canvas (160, 192)px = [1.25, 1.5] world units at 128px/unit. Alpha binary=True, palette=35, margin=8px. Needs Claude review.

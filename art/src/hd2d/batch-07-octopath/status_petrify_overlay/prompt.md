@@ -1,0 +1,15 @@
+Attempt1 original prompt:
+Phimond game statusoverlay sprites HD2D Octopath mutedpixelart. EXACT4columns x7rows equal squarecells, 4loopphases ineachrow. Fixedcenterpivot, samepixelscale, wide24pxmargin. TRANSPARENTalpha nocharacters,no pet silhouette,no framedicons,no words,numerals,noZletters,bakedbloom or blurredgradients. Only sparseoverlayeffects designed to overlay livingpet sprites. Row1petrify: 4phases orbitinggraystone fragments. Row2doom: darkteal skull wisp with circling violetmotes4phases. Row3sleep: gold crescentandtinyblue dreammotes sloworbital4phases. Row4silence: 4phases redcrossedbars within pale brokenring. Row5bind: thornlessbrown rope loop slightlytightensandrelaxes4phases. Row6blind: 4phases darkgray hoodlike mistbands edged inhardpixels. Row7confusion:4phases violetgold motesorbit clockwise. Exact4frames for each7status, transparentwidelyseparatedcells, clean2–4shadeclusters.
+
+Selected prompt:
+Phimond game statusoverlay sprites HD2D Octopath mutedpixelart. EXACT4columns x7rows equal squarecells, 4loopphases ineachrow. Fixedcenterpivot, samepixelscale, wide24pxmargin. TRANSPARENTalpha nocharacters,no pet silhouette,no framedicons,no words,numerals,noZletters,bakedbloom or blurredgradients. Only sparseoverlayeffects designed to overlay livingpet sprites. Row1petrify: 4phases orbitinggraystone fragments. Row2doom: darkteal skull wisp with circling violetmotes4phases. Row3sleep: gold crescentandtinyblue dreammotes sloworbital4phases. Row4silence: 4phases redcrossedbars within pale brokenring. Row5bind: thornlessbrown rope loop slightlytightensandrelaxes4phases. Row6blind: 4phases darkgray hoodlike mistbands edged inhardpixels. Row7confusion:4phases violetgold motesorbit clockwise. Exact4frames for each7status, transparentwidelyseparatedcells, clean2–4shadeclusters.
+CRITICAL RETAKE: Entireemptybackground opaqueuniformpuremagenta #FF00FF. NOalpha,no blackbackground,no halo,haze,gradient or glow. Need actualcoloredhardedgepixelcores,no transparentmist. Sparse littleparticles with widegaps. Willkeyoutmagentaexternally. Exact4columns7rowsfixedcells.
+
+Selected ordered references:
+1. /Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-07-octopath/source-fx.png sha256=25f65d558ac8a1acf1b77115bf88e597558b6c63055df5eaf5e6c7f3e1eb22cd
+2. /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png sha256=fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da
+3. /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png sha256=043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3
+
+Route: built-in image_gen; model not exposed; cost unknown.
+Raw SHA256: 28faf61499416121f70ee6a84026774e1aff1ff55e23615aa11df17758e9f7d8
+Full per-attempt provenance: provenance.json

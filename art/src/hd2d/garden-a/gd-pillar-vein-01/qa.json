@@ -1,0 +1,36 @@
+{
+  "asset_id": "gd-pillar-vein-01",
+  "size_px": [
+    160,
+    340
+  ],
+  "color_count": 33,
+  "alpha_values": [
+    0,
+    255
+  ],
+  "alpha_binary": true,
+  "alpha_bbox": [
+    27,
+    18,
+    123,
+    319
+  ],
+  "alpha_margin_px": [
+    27,
+    18,
+    37,
+    21
+  ],
+  "source_raw_sha256": "b267d091f5dda89c0dcc43e6fe7913764845d5ec85dc2a3d1ec420a8af692264",
+  "final_sha256": "10bd1cf4a70c280800a4bb4b288b49d86a6badbffe97aa04ade7e6282a57790e",
+  "approved": false,
+  "status": "needs_claude_review",
+  "mechanical_status": "pass_pending_visual_review",
+  "generation_route": "built-in image_gen",
+  "postprocess": "nearest-neighbor resize to 160x340; alpha threshold 16; global palette reduction to max 48 visible colors; transparent RGB normalized",
+  "outside_pillar_pixels": 0,
+  "coverage_of_pillar": 0.06481,
+  "jaccard_mask_vs_vein02": 0.03559,
+  "pearson_mask_correlation_vs_vein02": 0.0357
+}

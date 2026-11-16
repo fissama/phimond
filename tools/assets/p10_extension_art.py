@@ -9,8 +9,8 @@ from preview_p10_redraw import export
 
 ROOT = Path(__file__).resolve().parents[2]
 PLAN = ROOT / '.ai/plan/phases/P10-pet-model/extension-20261013'
-ART = ROOT / 'apps/game-client/assets/pets/redraws/extension-20261013'
-ANCHOR = ROOT / 'apps/game-client/assets/pets/redraws/owner-feedback-20261009/species_0052/attempt-01/packed.png'
+ART = ROOT / 'art/pets/redraws/extension-20261013'
+ANCHOR = ROOT / 'art/pets/redraws/owner-feedback-20261009/species_0052/attempt-01/packed.png'
 
 def digest(p): return hashlib.sha256(p.read_bytes()).hexdigest()
 def write(p, value): p.write_text(json.dumps(value, ensure_ascii=False, indent=2)+'\n')

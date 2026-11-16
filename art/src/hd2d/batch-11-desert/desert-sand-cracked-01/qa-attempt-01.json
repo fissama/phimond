@@ -1,0 +1,29 @@
+{
+  "id": "desert-sand-cracked-01",
+  "size": [
+    512,
+    512
+  ],
+  "mode": "RGBA",
+  "colors": 35,
+  "partial_alpha_pixels": 0,
+  "key_residue_pixels": 0,
+  "margin": 0,
+  "raw_integrity": true,
+  "sha256": "293945f1a7e839f656972452720f7fd2b05c1c37400629c5faef4368ef406fce",
+  "visual_review": {
+    "status": "rejected_by_self_review",
+    "reason": "3x3 shows conspicuous square islands and wide empty lanes; raw01 not accepted despite zero edge differences on two tiles."
+  },
+  "failures": [
+    "SEAM_X_NONZERO",
+    "SEAM_Y_NONZERO",
+    "OUTER8_NOT_FLAT",
+    "VISUAL_GRID_LANES"
+  ],
+  "seam_x_mean": 0.2109375,
+  "seam_x_max": 18,
+  "seam_y_mean": 0.3515625,
+  "seam_y_max": 18,
+  "outer8_uniform": false
+}

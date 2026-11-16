@@ -1,0 +1,1 @@
+Visual hold: club retention corrected and mechanical packing passes, but Move still repeats two small foot shapes rather than a clear four-phase alternating gait. Must regenerate with articulated knees and explicit forward/back foot separation. Not included in lead-ready count.

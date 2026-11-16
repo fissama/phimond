@@ -1,0 +1,19 @@
+{
+  "id": "walker-girl",
+  "dir": "side",
+  "name": "walker-girl.run.png",
+  "raw": "walker-girl.run.grid-raw-03.png",
+  "refs": [
+    "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/sources/male-walk-guide-v6/guide.png",
+    "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/sources/walker-girl-head-torso-only-v3.png",
+    "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/sources/walker-girl-held-object-reference.png"
+  ],
+  "prompt": "Use case: sketch-to-render. Input1 is the AUTHORITATIVE8POSE walk skeleton, input2 is head/outfit identity ONLY. Draw square3x3sheet with exact8 poses row-major and9thcellblankmagenta. Follow NEAR/ORANGE leg geometry, FAR/BLUE leg geometry EXACTLY. Frame1 foreground leg reachesRIGHT, frame5foreground leg reachesLEFT/trails and crosses IN FRONT at crotch. Foreground arm goes backward in1, FORWARD across chest in5 unless occupied holding object. In frame5 the FORWARD leg is behind, darker; the trailingback leg is foreground, lighter. These are oppositelegcontacts. Do not repeat anatomical nearleg in front/right inboth1and5. Use only supplied head/torso reference and independently DRAW lowerbody per skeleton. Shade FAR leg and boot a very DARK COOL BROWN, foreground leg in warm light, preserve exact leg overlap. All8phase jointangles DIFFER; loading/passing/up transitions follow skeleton. Same torso length/headsize root and upper-left light; same footbaseline, subtle1pxbodybob. Pixelart48colors crisp dark1pxoutline final192cells, rich deliberatepixelclusters, pure#FF00FFbackground. No guides/skeleton/labels/text/shadows/trails drawn inoutput. Young girl, honeybrown braids tied yellowribbons, golden/ivory dress, brownboots. Input3 is identity's REDAPPLE held at chest with bothhands in ALL8frames; keepapple, hands staycarrying naturally while torso/braids sway and legs articulate. Legs followguide, arm swing replaced with natural steady applecarry.",
+  "frames": 8,
+  "source_grid": [
+    3,
+    3
+  ],
+  "generated_path": "/Users/phileanh/.codex/generated_images/01a16274-30fd-7c01-a90a-62e6d2bbfc47/exec-15569dcf-8283-444b-a1af-8064c38eb23c.png",
+  "cell_inner_trim": 8
+}

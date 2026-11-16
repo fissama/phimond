@@ -1,0 +1,407 @@
+{
+  "status": "pass",
+  "method": "forge_palette.build_palette (weighted k-means++ in OKLab over unique colours, reserved colours fixed, coverage skipping) then forge_palette.fit_report of every input: OKLab dE of each pixel with alpha >= the threshold to its nearest palette colour",
+  "notProven": [
+    "Visual quality of the palette: look at swatches.png and an applied frame.",
+    "Colours of pixels below the alpha threshold were not sampled or measured.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "palette_colors",
+      "status": "pass",
+      "value": 48,
+      "threshold": 48
+    },
+    {
+      "id": "inputs_without_samples",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0,
+      "files": []
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.142003,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../palette-inputs/cannon.png",
+      "sha256": "adf5679c710a8291ab419c68c866ac150a9d4a7aa8f2f83836c7f626c5c0f3ae",
+      "bytes": 30538
+    },
+    {
+      "path": "../palette-inputs/exit-arrow-down.png",
+      "sha256": "4e96db53b34fbd7573c19300c7254f5feadbef61ec056d4733573787c04dc4b0",
+      "bytes": 26649
+    },
+    {
+      "path": "../palette-inputs/exit-arrow-left.png",
+      "sha256": "daa521dc8406a7ee8b3c321734ff60fcbc4b1cc458162fefdeed91520355f08a",
+      "bytes": 34967
+    },
+    {
+      "path": "../palette-inputs/exit-arrow-right.png",
+      "sha256": "bd74ffdd8a0ca3955799b823d269fb03c145373f70b2a29c0a47422070eec662",
+      "bytes": 35002
+    },
+    {
+      "path": "../palette-inputs/exit-arrow-up.png",
+      "sha256": "b47e263d0e298b874ef261224605969f58260e60dfc08116c7c726ac3a6529c4",
+      "bytes": 26963
+    },
+    {
+      "path": "../palette-inputs/helm-wheel.png",
+      "sha256": "e8b5ac0864379cdfe704ba251935640162138daf2210f4c893a7ac08c96d80bb",
+      "bytes": 45674
+    },
+    {
+      "path": "../palette-inputs/mast-trunk.png",
+      "sha256": "a5696d1459a54f64068db5fdeb33313f08df66b81b4fe7d140968d1922cc9adf",
+      "bytes": 110318
+    },
+    {
+      "path": "../palette-inputs/nest-marker.png",
+      "sha256": "d84532ec4cb76d7f249755d2634cd618b3f32c7272dbee5d4b03cb86f4d54c1f",
+      "bytes": 13338
+    },
+    {
+      "path": "../palette-inputs/pirate-flag.png",
+      "sha256": "8ec22e74dd0e14e33083fbc9189ea606cd74ff8cb83aa4b1b764fe69c72dd7a6",
+      "bytes": 44814
+    },
+    {
+      "path": "../palette-inputs/quest-complete.png",
+      "sha256": "b057ac6fbeeb8de143795171bf3f0bde60535ae722f5b49455d1287516b8e5a0",
+      "bytes": 8057
+    },
+    {
+      "path": "../palette-inputs/quest-new.png",
+      "sha256": "c937d75e227142d4811ca7455f8e32b103632eef8a2048def092b2e76f229c55",
+      "bytes": 5717
+    },
+    {
+      "path": "../palette-inputs/rope-coil.png",
+      "sha256": "d10c6917ea120699737d6f8b8ae1ed379c96d4bce500f8382b291dea3f2fe9e3",
+      "bytes": 9136
+    },
+    {
+      "path": "../palette-inputs/rum-barrel.png",
+      "sha256": "0cad72778f1ea284eb8851edd5d18bc17b1408939ba8382a0b890112ecf7e4db",
+      "bytes": 28758
+    },
+    {
+      "path": "../palette-inputs/sail-cloth.png",
+      "sha256": "3d916c9da5a0bdf3e4395682d19c605dc003883e540709d56507f14016cb5bb5",
+      "bytes": 95412
+    },
+    {
+      "path": "../palette-inputs/ship-deck-tile.png",
+      "sha256": "44db1ced53b5e84bf0e08bbc3662b1b9eaeb8f5fa6c3710a030b21adb14260cd",
+      "bytes": 317036
+    },
+    {
+      "path": "../palette-inputs/ship-hull-backdrop.png",
+      "sha256": "9d13bf51bf75c7dcb77f2edaf3b0585d63c119a98be6c1f1ac92a159ba635b7f",
+      "bytes": 387381
+    },
+    {
+      "path": "../palette-inputs/storm-lantern.png",
+      "sha256": "2a7a7a5566a8369669215590e021dacfda7cc71304be142a72616460e2583719",
+      "bytes": 68520
+    },
+    {
+      "path": "../palette-inputs/talk-mark.png",
+      "sha256": "8af3ddcc2866a2f8c7dc4e036498abff93b3a53a21847cf8aa36767d59b86f0c",
+      "bytes": 1053
+    },
+    {
+      "path": "../palette-inputs/target-ring.png",
+      "sha256": "600cf21c5878a9b4ca069063acbc723707f0e05c17dfe1d762ffdea619bb13b7",
+      "bytes": 6110
+    },
+    {
+      "path": "../palette-inputs/teleport-pillar-high.png",
+      "sha256": "c9a4a539e6940194ed0baa5bb4b21d825d378dcfb81892203459be228e04e0cd",
+      "bytes": 56092
+    },
+    {
+      "path": "../palette-inputs/touch-ring.png",
+      "sha256": "7dc45c642a66f8426df47802c4ab5d3df983bff676e60c97960a2475e73f3fc8",
+      "bytes": 7602
+    }
+  ],
+  "outputs": [
+    {
+      "path": "palette.json",
+      "sha256": "de32b45f40e8101f2aafdc0462129c0bb1bc367c8014a6b6b20609058ff242eb",
+      "bytes": 1960
+    },
+    {
+      "path": "palette.gpl",
+      "sha256": "c71e00bbffa2ecfd73abb6e6f6f0cc38c0e1f15dd9b360e265c69a51c1a3e44e",
+      "bytes": 1015
+    },
+    {
+      "path": "palette.hex",
+      "sha256": "20a6471ad80f75ca24143f7f30d08a998a1ed364498914fbcc3928e61219f96d",
+      "bytes": 336
+    },
+    {
+      "path": "swatches.png",
+      "sha256": "858c99aa4bb64d5b245e5b31580c3a3c2f5544540712cc3978739b1295d24a53",
+      "bytes": 699
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "palette": {
+    "colors": 48,
+    "reserved": 0,
+    "transparent_index": 255,
+    "seed": 0
+  },
+  "fit": {
+    "../palette-inputs/cannon.png": {
+      "measured_px": 10928,
+      "alpha_threshold": 128,
+      "off_palette_px": 10885,
+      "partial_alpha_px": 11687,
+      "colors": 7073,
+      "palette_colors_used": 34,
+      "mean_delta_e": 0.020307,
+      "p95_delta_e": 0.04511,
+      "max_delta_e": 0.072753
+    },
+    "../palette-inputs/exit-arrow-down.png": {
+      "measured_px": 7020,
+      "alpha_threshold": 128,
+      "off_palette_px": 7010,
+      "partial_alpha_px": 8553,
+      "colors": 5496,
+      "palette_colors_used": 38,
+      "mean_delta_e": 0.02389,
+      "p95_delta_e": 0.050863,
+      "max_delta_e": 0.101238
+    },
+    "../palette-inputs/exit-arrow-left.png": {
+      "measured_px": 9735,
+      "alpha_threshold": 128,
+      "off_palette_px": 9722,
+      "partial_alpha_px": 11630,
+      "colors": 7409,
+      "palette_colors_used": 39,
+      "mean_delta_e": 0.023855,
+      "p95_delta_e": 0.054224,
+      "max_delta_e": 0.107197
+    },
+    "../palette-inputs/exit-arrow-right.png": {
+      "measured_px": 9728,
+      "alpha_threshold": 128,
+      "off_palette_px": 9713,
+      "partial_alpha_px": 11670,
+      "colors": 7251,
+      "palette_colors_used": 39,
+      "mean_delta_e": 0.02416,
+      "p95_delta_e": 0.057511,
+      "max_delta_e": 0.09015
+    },
+    "../palette-inputs/exit-arrow-up.png": {
+      "measured_px": 7265,
+      "alpha_threshold": 128,
+      "off_palette_px": 7250,
+      "partial_alpha_px": 8618,
+      "colors": 5644,
+      "palette_colors_used": 39,
+      "mean_delta_e": 0.024312,
+      "p95_delta_e": 0.058984,
+      "max_delta_e": 0.099389
+    },
+    "../palette-inputs/helm-wheel.png": {
+      "measured_px": 14472,
+      "alpha_threshold": 128,
+      "off_palette_px": 14437,
+      "partial_alpha_px": 16975,
+      "colors": 9476,
+      "palette_colors_used": 34,
+      "mean_delta_e": 0.016767,
+      "p95_delta_e": 0.028702,
+      "max_delta_e": 0.072753
+    },
+    "../palette-inputs/mast-trunk.png": {
+      "measured_px": 27216,
+      "alpha_threshold": 128,
+      "off_palette_px": 27141,
+      "partial_alpha_px": 41851,
+      "colors": 18227,
+      "palette_colors_used": 35,
+      "mean_delta_e": 0.020389,
+      "p95_delta_e": 0.043086,
+      "max_delta_e": 0.078222
+    },
+    "../palette-inputs/nest-marker.png": {
+      "measured_px": 3572,
+      "alpha_threshold": 128,
+      "off_palette_px": 3570,
+      "partial_alpha_px": 4294,
+      "colors": 3030,
+      "palette_colors_used": 30,
+      "mean_delta_e": 0.015775,
+      "p95_delta_e": 0.028633,
+      "max_delta_e": 0.05018
+    },
+    "../palette-inputs/pirate-flag.png": {
+      "measured_px": 15701,
+      "alpha_threshold": 128,
+      "off_palette_px": 15698,
+      "partial_alpha_px": 17963,
+      "colors": 10845,
+      "palette_colors_used": 25,
+      "mean_delta_e": 0.026351,
+      "p95_delta_e": 0.053434,
+      "max_delta_e": 0.10832
+    },
+    "../palette-inputs/quest-complete.png": {
+      "measured_px": 1773,
+      "alpha_threshold": 128,
+      "off_palette_px": 1772,
+      "partial_alpha_px": 2730,
+      "colors": 1427,
+      "palette_colors_used": 22,
+      "mean_delta_e": 0.02216,
+      "p95_delta_e": 0.035279,
+      "max_delta_e": 0.072753
+    },
+    "../palette-inputs/quest-new.png": {
+      "measured_px": 1323,
+      "alpha_threshold": 128,
+      "off_palette_px": 1323,
+      "partial_alpha_px": 1886,
+      "colors": 1090,
+      "palette_colors_used": 22,
+      "mean_delta_e": 0.023284,
+      "p95_delta_e": 0.037339,
+      "max_delta_e": 0.056414
+    },
+    "../palette-inputs/rope-coil.png": {
+      "measured_px": 2458,
+      "alpha_threshold": 128,
+      "off_palette_px": 2456,
+      "partial_alpha_px": 2680,
+      "colors": 2197,
+      "palette_colors_used": 25,
+      "mean_delta_e": 0.015352,
+      "p95_delta_e": 0.027115,
+      "max_delta_e": 0.072753
+    },
+    "../palette-inputs/rum-barrel.png": {
+      "measured_px": 10398,
+      "alpha_threshold": 128,
+      "off_palette_px": 10373,
+      "partial_alpha_px": 10872,
+      "colors": 7032,
+      "palette_colors_used": 33,
+      "mean_delta_e": 0.016804,
+      "p95_delta_e": 0.033948,
+      "max_delta_e": 0.072753
+    },
+    "../palette-inputs/sail-cloth.png": {
+      "measured_px": 37506,
+      "alpha_threshold": 128,
+      "off_palette_px": 37483,
+      "partial_alpha_px": 41976,
+      "colors": 12316,
+      "palette_colors_used": 33,
+      "mean_delta_e": 0.019685,
+      "p95_delta_e": 0.041751,
+      "max_delta_e": 0.083188
+    },
+    "../palette-inputs/ship-deck-tile.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 262144,
+      "partial_alpha_px": 0,
+      "colors": 18590,
+      "palette_colors_used": 19,
+      "mean_delta_e": 0.020016,
+      "p95_delta_e": 0.032465,
+      "max_delta_e": 0.047568
+    },
+    "../palette-inputs/ship-hull-backdrop.png": {
+      "measured_px": 253598,
+      "alpha_threshold": 128,
+      "off_palette_px": 253565,
+      "partial_alpha_px": 258484,
+      "colors": 37129,
+      "palette_colors_used": 24,
+      "mean_delta_e": 0.016155,
+      "p95_delta_e": 0.025274,
+      "max_delta_e": 0.042206
+    },
+    "../palette-inputs/storm-lantern.png": {
+      "measured_px": 20704,
+      "alpha_threshold": 128,
+      "off_palette_px": 20585,
+      "partial_alpha_px": 23971,
+      "colors": 12160,
+      "palette_colors_used": 34,
+      "mean_delta_e": 0.025436,
+      "p95_delta_e": 0.050076,
+      "max_delta_e": 0.085196
+    },
+    "../palette-inputs/talk-mark.png": {
+      "measured_px": 111,
+      "alpha_threshold": 128,
+      "off_palette_px": 111,
+      "partial_alpha_px": 212,
+      "colors": 107,
+      "palette_colors_used": 16,
+      "mean_delta_e": 0.019536,
+      "p95_delta_e": 0.034188,
+      "max_delta_e": 0.038831
+    },
+    "../palette-inputs/target-ring.png": {
+      "measured_px": 1114,
+      "alpha_threshold": 128,
+      "off_palette_px": 1114,
+      "partial_alpha_px": 1697,
+      "colors": 1082,
+      "palette_colors_used": 35,
+      "mean_delta_e": 0.021443,
+      "p95_delta_e": 0.040489,
+      "max_delta_e": 0.060323
+    },
+    "../palette-inputs/teleport-pillar-high.png": {
+      "measured_px": 17334,
+      "alpha_threshold": 128,
+      "off_palette_px": 17321,
+      "partial_alpha_px": 19764,
+      "colors": 15665,
+      "palette_colors_used": 44,
+      "mean_delta_e": 0.032395,
+      "p95_delta_e": 0.066485,
+      "max_delta_e": 0.142003
+    },
+    "../palette-inputs/touch-ring.png": {
+      "measured_px": 1380,
+      "alpha_threshold": 128,
+      "off_palette_px": 1380,
+      "partial_alpha_px": 2060,
+      "colors": 1351,
+      "palette_colors_used": 36,
+      "mean_delta_e": 0.024334,
+      "p95_delta_e": 0.048765,
+      "max_delta_e": 0.100081
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.142003,
+    "worst_p95_delta_e": 0.066485,
+    "off_palette_px": 715053
+  }
+}

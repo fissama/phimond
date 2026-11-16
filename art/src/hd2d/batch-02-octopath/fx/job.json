@@ -1,0 +1,44 @@
+{
+  "id": "city-fx",
+  "rows": 4,
+  "cols": 4,
+  "refs": [
+    "/Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level3_QTTP/level3_QTTP_026.png",
+    "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/city_activity_hall.png",
+    "/Users/phileanh/Downloads/Phimond-P12-Review/map-images/city_farm.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+  ],
+  "prompt": "Use case: game FX animation sprite atlas, EXACT FOUR ROWS x FOUR COLUMNS equal square cells,16 separate frames. Each ROW is one4frame looping action, ordered left to right. Leave outer25percent of EVERY cell entirely magenta. ROW1: small pale blue-gray fountain WATER ONLY, two fine streams arc outward from a central spout point and fall into a shallow elliptical ripple ring; NO stone or statue. Four gentle water splash phases, identical center and extents. ROW2: rustic iron wall torch fixture with a small ochre/cream FLAME; the iron fixture identical in all4frames and vertical fixed bottom-center, only flame flickers. ROW3: short ivory candle on simple bronze wall holder, identical stationary candle and holder in all4frames; only tiny flame changes. ROW4: freestanding FRONT-VIEW FOUR-BLADED WOODEN WINDMILL ROTOR ONLY, linen-covered narrow sail blades around one round hub; NO windmill body. Rotate rigid rotor0,22.5,45,67.5degrees clockwise across4frames, identical hub at exact cellcenter and identical radius, 90degree repeat symmetry. Original1fountain water identity,2interiorfixture materials,3farmwood/straw identity; pets pixel edge/shading only. Octopath Traveler HD-2D PIXEL ART, restrained earthy desaturated colors, clean broad pixel clusters, crisp stepped edges, no smooth gradients. Flat pure solid #FF00FF everywhere outside the objects including rotor gaps; no background scenery, floors, glow HALOS, fog, smoke, shadows, writing, labels or numbers. Only flame core and cool water pixels are luminous sources; engine adds lighting. Keep generous blank space around every frame to avoid clipping. Entire atlas rectangular consistent grid.",
+  "source_card": "Original winged fountain water, hall metal/candle fixtures, rustic farm materials. Four frame source sprites only; engine controls lighting and composite placement. Rotor separate from mill body.",
+  "assets": [
+    {
+      "id": "fountain-water",
+      "category": "fx",
+      "kit": "city",
+      "cell": 192,
+      "fps": 8
+    },
+    {
+      "id": "hall-torch",
+      "category": "fx",
+      "kit": "hall",
+      "cell": 128,
+      "fps": 8
+    },
+    {
+      "id": "hall-candle",
+      "category": "fx",
+      "kit": "hall",
+      "cell": 96,
+      "fps": 8
+    },
+    {
+      "id": "farm-windmill-rotor",
+      "category": "fx",
+      "kit": "farm",
+      "cell": 320,
+      "fps": 6
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+# desert-shicheng-dome-ruin
+
+Route: built-in image_gen. Model not exposed.
+
+Phimond desert environment production SHEET of SIX isolated props in2columns x3rows, flat#FF00FF,1536x1536. Image1 ORIGINAL desert Shicheng map is CONTENT authority: ruined ivory dome house, dry eroded spire, cactus and huge monster bones. Images2 approved batch02 facade and3 batch01 portal are PIXEL STYLE authorities for material clusters, restrained outlines, carved weathering; do not copy their architectural design or forest leaves. Images4-5 spirit pets are outline/thickness/volume anchors ONLY, no creatures.
+Each prop centered in its own768x512cell, at least48px margin within cell and≥64px between adjacentobjects. Complete silhouettes, no labels/grid/ground plane, no castground shadows. Frontal billboard camera24degrees above, top/front faces visible, no isometric diamondbases.
+Row1 LEFT desert-shicheng-dome-ruin: large landmark faithfully based on ORIGINAL ivory dome ruined house. Offwhite plaster/limestone dome with collapsed section showing warmstone arch ribs, crooked dark wooden door, small round broken window; attached fractured wall stub atone side. Irregular chipped silhouette and small bricks embedded in foundation. Warm sand trapped in creases, mutedmauve shadow. No writing, signs or newfolkhouse. Fill about620x400, wholly visible. Building looks ruinous unlike approved town reference.
+Row1 RIGHT desert-boulder-01: medium squat red sandstone rock with stratified angular slabs, brokencorner and3clear broadfacetedplanes, small cream vein. About350x260. Distinct ochre highlights/rust middle/coolmauve shade; no sand pedestal.
+Row2 LEFT desert-pottery-urn-broken: small broken ceramic urn reddishbrown, asymmetric missing lip, exposed thick cream rim and small diagonal ancient geometric band (no glyphs/letters). About160x220. No scattered disconnected chips, ground or shadow.
+Row2 RIGHT desert-portal-dormant: large FRONT FACING weathered sandstone sealed-land archway, twofootstones, chipped top arch with simple circular stone inlay atapex. EMPTY HOLE solid#FF00FF. Geometric worn relief, no text/runes/face, no energy/light/leaves. Dark inlays dormant, stone framecomplete about400x420. Keep originaldesertcream/redstonepalette, no forestvegetation.
+Row3 LEFT desert-cactus-01: tall drydesert green cactus inspired by originalmap, upright asymmetricaltwoarms with lobedolive/sage flesh, ribbed highlight ridges and small warmspineclusters, rootfoot complete with no soil oval. About240x350. No flowers, neon or generic treeleaves.
+Row3 RIGHT desert-monster-bones: giant ancient creature skull with two asymmetrical curved horns and attachedweathered lowerjaw/partialribs, based on originaldesertmonsterbone shape. About600x320, alltipscomplete. Ivory/greige bone contrasts strongly with redstone/greencactus, cool gray-violet recesses. No gore, blood or livingcreature.
+Exactly same painter as batch01/02: visible deliberate pixel clusters,2-4tones per material, weathering notnoise,33-48finalcolors per prop. Warm upper-left key and coolshade inobject only. Kit: sand#D9B26B/#B88A44, sandstone#A5522B, dustyivory, subduedmauve, sagegreen, umberwood. NEVER pureblackoutline, bloom/glow/fog/DOF/grain/smoothgradients/painterly oil. No translucent edges or magenta fringe. Each prop has32+pixels of materialdetail, nothingflat.
+
+Actual attachments (ordered):
+1. /Users/phileanh/Downloads/Phimond-P12-Review/map-images/desert_shicheng_ruins.png — SHA256 30a678461a1a1f13aafa1a925382223dda2abcba586bb3b343e87a683a6c04ea
+2. /Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/city-facade-townhouse/final.png — SHA256 57c926e3ba82ed8af80f01f1234c27156002491ca5267881e7ba40bdd2efe060
+3. /Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-01-octopath/forest-portal-active/final.png — SHA256 f229e35b82a6849b59dfc884ff62f13398336c5092537a992e9d7ec40c0af9b4
+4. /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png — SHA256 fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da
+5. /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png — SHA256 043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3
+
+Raw: raw-01.png; SHA256 1c86d9d8b516598e32d645db5fd049073363a379f86f8f63dddd909998fc36cc; source box [20, 0, 735, 405]. Final [672, 416]. Non-dithered 48color finish, nearest scaling. No content drawn with code.

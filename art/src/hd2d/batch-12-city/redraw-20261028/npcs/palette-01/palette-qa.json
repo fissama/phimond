@@ -1,0 +1,167 @@
+{
+  "status": "pass",
+  "method": "forge_palette.build_palette (weighted k-means++ in OKLab over unique colours, reserved colours fixed, coverage skipping) then forge_palette.fit_report of every input: OKLab dE of each pixel with alpha >= the threshold to its nearest palette colour",
+  "notProven": [
+    "Visual quality of the palette: look at swatches.png and an applied frame.",
+    "Colours of pixels below the alpha threshold were not sampled or measured.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "palette_colors",
+      "status": "pass",
+      "value": 48,
+      "threshold": 48
+    },
+    {
+      "id": "inputs_without_samples",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0,
+      "files": []
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.157173,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../forge-01/npc-1.png",
+      "sha256": "73ed1ce65bb95ae7824084e18fbbb26e833e57a7fbb186c250ad6b96a21e340e",
+      "bytes": 25211
+    },
+    {
+      "path": "../forge-01/npc-2.png",
+      "sha256": "fd075d55520365455385a82fd6446c1c70a0263a7f5bcc87588f4c011b1e8661",
+      "bytes": 26035
+    },
+    {
+      "path": "../forge-01/npc-3.png",
+      "sha256": "e81e2ad08bb53dd532b013587e1632341448d244e8b2270c13c0d8b55381de6b",
+      "bytes": 30729
+    },
+    {
+      "path": "../forge-01/npc-4.png",
+      "sha256": "3e8b12121cdb920a636b72170fd1336141a6e6a79bb59bc114a34e00b8e22771",
+      "bytes": 35712
+    },
+    {
+      "path": "../forge-01/npc-5.png",
+      "sha256": "1585b981229cd4a3599df98a8bb9a9c626748dfc04449c37a93a8647708f6cbc",
+      "bytes": 31754
+    },
+    {
+      "path": "../forge-01/npc-6.png",
+      "sha256": "a6a4c70fbdeb45e4f9df01e691d8060097d691233a53cd633438aaca5795b4ae",
+      "bytes": 36102
+    }
+  ],
+  "outputs": [
+    {
+      "path": "palette.json",
+      "sha256": "50fde83f8974003bb8076c41dbddbef52ab3e17ab959383f53fce899bd20624b",
+      "bytes": 1949
+    },
+    {
+      "path": "palette.gpl",
+      "sha256": "aff21c0463bb923c9e82647acf33e6aa246716481e61dd2c7470414860f33e04",
+      "bytes": 1005
+    },
+    {
+      "path": "palette.hex",
+      "sha256": "342b05057b61d1778913376516a6ee2d1f257bd6a689d978988d66899bf5f911",
+      "bytes": 336
+    },
+    {
+      "path": "swatches.png",
+      "sha256": "3ed4a997cf6f447eeacde60470d45e71d07137ec20cf86c8a15967d72ae95709",
+      "bytes": 698
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "palette": {
+    "colors": 48,
+    "reserved": 0,
+    "transparent_index": 255,
+    "seed": 0
+  },
+  "fit": {
+    "../forge-01/npc-1.png": {
+      "measured_px": 6803,
+      "alpha_threshold": 128,
+      "off_palette_px": 6802,
+      "partial_alpha_px": 1778,
+      "colors": 6532,
+      "palette_colors_used": 44,
+      "mean_delta_e": 0.025574,
+      "p95_delta_e": 0.045034,
+      "max_delta_e": 0.118141
+    },
+    "../forge-01/npc-2.png": {
+      "measured_px": 6774,
+      "alpha_threshold": 128,
+      "off_palette_px": 6773,
+      "partial_alpha_px": 2380,
+      "colors": 6485,
+      "palette_colors_used": 45,
+      "mean_delta_e": 0.026481,
+      "p95_delta_e": 0.044973,
+      "max_delta_e": 0.108695
+    },
+    "../forge-01/npc-3.png": {
+      "measured_px": 8924,
+      "alpha_threshold": 128,
+      "off_palette_px": 8923,
+      "partial_alpha_px": 1917,
+      "colors": 8472,
+      "palette_colors_used": 46,
+      "mean_delta_e": 0.023093,
+      "p95_delta_e": 0.04069,
+      "max_delta_e": 0.098401
+    },
+    "../forge-01/npc-4.png": {
+      "measured_px": 10158,
+      "alpha_threshold": 128,
+      "off_palette_px": 10157,
+      "partial_alpha_px": 1982,
+      "colors": 9761,
+      "palette_colors_used": 46,
+      "mean_delta_e": 0.026196,
+      "p95_delta_e": 0.046901,
+      "max_delta_e": 0.129484
+    },
+    "../forge-01/npc-5.png": {
+      "measured_px": 8456,
+      "alpha_threshold": 128,
+      "off_palette_px": 8455,
+      "partial_alpha_px": 2967,
+      "colors": 7885,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.022475,
+      "p95_delta_e": 0.037586,
+      "max_delta_e": 0.157173
+    },
+    "../forge-01/npc-6.png": {
+      "measured_px": 10468,
+      "alpha_threshold": 128,
+      "off_palette_px": 10466,
+      "partial_alpha_px": 2066,
+      "colors": 10059,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.024424,
+      "p95_delta_e": 0.040375,
+      "max_delta_e": 0.112567
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.157173,
+    "worst_p95_delta_e": 0.046901,
+    "off_palette_px": 51576
+  }
+}

@@ -1,0 +1,600 @@
+{
+  "schema": "generate2dsprite.sheet_plan.v1",
+  "request": {
+    "frames": 8,
+    "cycle": "walk",
+    "facing": "right",
+    "aspect": "2:1",
+    "envelope_aspect": 1.0,
+    "safe": 0.15,
+    "gutter": 0.04,
+    "budget_px": 1572864,
+    "max_empty": 1
+  },
+  "predicted_size": [
+    1774,
+    887
+  ],
+  "aspect": "2:1",
+  "layout": {
+    "rows": 2,
+    "cols": 4,
+    "empty_cells": 0,
+    "cell": [
+      443.5,
+      443.5
+    ],
+    "divides_exactly": false,
+    "safe_box": [
+      310.4,
+      310.4
+    ],
+    "envelope_px": [
+      310.1,
+      310.1
+    ]
+  },
+  "candidates": [
+    {
+      "aspect": "2:1",
+      "predicted_size": [
+        1774,
+        887
+      ],
+      "rows": 2,
+      "cols": 4,
+      "empty_cells": 0,
+      "cell": [
+        443.5,
+        443.5
+      ],
+      "divides_exactly": false,
+      "safe_box": [
+        310.4,
+        310.4
+      ],
+      "envelope_px": [
+        310.4,
+        310.4
+      ]
+    }
+  ],
+  "cells": [
+    {
+      "cell": [
+        0,
+        0
+      ],
+      "box": [
+        0,
+        0,
+        444,
+        444
+      ],
+      "safe_box": [
+        66.6,
+        66.6,
+        377.4,
+        377.4
+      ],
+      "gutter_px": 18,
+      "ground_y": 377.4,
+      "root_x": 237.5,
+      "used": true,
+      "phase": "contact",
+      "pose_bounds": [
+        158.5,
+        77.7,
+        318.0,
+        386.9
+      ],
+      "inside_safe_box": true,
+      "toe_ahead": "near",
+      "foot_gap_px": {
+        "near": 0.0,
+        "far": 12.7
+      }
+    },
+    {
+      "cell": [
+        0,
+        1
+      ],
+      "box": [
+        444,
+        0,
+        887,
+        444
+      ],
+      "safe_box": [
+        510.4,
+        66.6,
+        820.5,
+        377.4
+      ],
+      "gutter_px": 18,
+      "ground_y": 377.4,
+      "root_x": 681.0,
+      "used": true,
+      "phase": "down",
+      "pose_bounds": [
+        587.0,
+        70.6,
+        752.0,
+        386.9
+      ],
+      "inside_safe_box": true,
+      "toe_ahead": "near",
+      "foot_gap_px": {
+        "near": 0.0,
+        "far": 49.4
+      }
+    },
+    {
+      "cell": [
+        0,
+        2
+      ],
+      "box": [
+        887,
+        0,
+        1331,
+        444
+      ],
+      "safe_box": [
+        953.6,
+        66.6,
+        1264.4,
+        377.4
+      ],
+      "gutter_px": 18,
+      "ground_y": 377.4,
+      "root_x": 1124.5,
+      "used": true,
+      "phase": "passing",
+      "pose_bounds": [
+        1077.1,
+        69.4,
+        1186.3,
+        386.9
+      ],
+      "inside_safe_box": true,
+      "toe_ahead": "near",
+      "foot_gap_px": {
+        "near": 0.0,
+        "far": 29.3
+      }
+    },
+    {
+      "cell": [
+        0,
+        3
+      ],
+      "box": [
+        1331,
+        0,
+        1774,
+        444
+      ],
+      "safe_box": [
+        1397.5,
+        66.6,
+        1707.5,
+        377.4
+      ],
+      "gutter_px": 18,
+      "ground_y": 377.4,
+      "root_x": 1568.0,
+      "used": true,
+      "phase": "up",
+      "pose_bounds": [
+        1514.3,
+        76.1,
+        1637.5,
+        388.1
+      ],
+      "inside_safe_box": true,
+      "toe_ahead": "far",
+      "foot_gap_px": {
+        "near": 0.0,
+        "far": -1.2
+      }
+    },
+    {
+      "cell": [
+        1,
+        0
+      ],
+      "box": [
+        0,
+        444,
+        444,
+        887
+      ],
+      "safe_box": [
+        66.6,
+        510.4,
+        377.4,
+        820.5
+      ],
+      "gutter_px": 18,
+      "ground_y": 820.5,
+      "root_x": 237.5,
+      "used": true,
+      "phase": "contact",
+      "pose_bounds": [
+        158.5,
+        520.9,
+        318.0,
+        830.0
+      ],
+      "inside_safe_box": true,
+      "toe_ahead": "far",
+      "foot_gap_px": {
+        "near": 12.7,
+        "far": 0.0
+      }
+    },
+    {
+      "cell": [
+        1,
+        1
+      ],
+      "box": [
+        444,
+        444,
+        887,
+        887
+      ],
+      "safe_box": [
+        510.4,
+        510.4,
+        820.5,
+        820.5
+      ],
+      "gutter_px": 18,
+      "ground_y": 820.5,
+      "root_x": 681.0,
+      "used": true,
+      "phase": "down",
+      "pose_bounds": [
+        587.0,
+        513.8,
+        752.0,
+        830.0
+      ],
+      "inside_safe_box": true,
+      "toe_ahead": "far",
+      "foot_gap_px": {
+        "near": 49.4,
+        "far": 0.0
+      }
+    },
+    {
+      "cell": [
+        1,
+        2
+      ],
+      "box": [
+        887,
+        444,
+        1331,
+        887
+      ],
+      "safe_box": [
+        953.6,
+        510.4,
+        1264.4,
+        820.5
+      ],
+      "gutter_px": 18,
+      "ground_y": 820.5,
+      "root_x": 1124.5,
+      "used": true,
+      "phase": "passing",
+      "pose_bounds": [
+        1077.1,
+        512.5,
+        1186.3,
+        830.0
+      ],
+      "inside_safe_box": true,
+      "toe_ahead": "far",
+      "foot_gap_px": {
+        "near": 29.3,
+        "far": 0.0
+      }
+    },
+    {
+      "cell": [
+        1,
+        3
+      ],
+      "box": [
+        1331,
+        444,
+        1774,
+        887
+      ],
+      "safe_box": [
+        1397.5,
+        510.4,
+        1707.5,
+        820.5
+      ],
+      "gutter_px": 18,
+      "ground_y": 820.5,
+      "root_x": 1568.0,
+      "used": true,
+      "phase": "up",
+      "pose_bounds": [
+        1514.3,
+        519.2,
+        1637.5,
+        831.2
+      ],
+      "inside_safe_box": true,
+      "toe_ahead": "near",
+      "foot_gap_px": {
+        "near": -1.2,
+        "far": 0.0
+      }
+    }
+  ],
+  "phases": [
+    {
+      "index": 0,
+      "name": "contact",
+      "half": 0,
+      "near": [
+        24.0,
+        4.0
+      ],
+      "far": [
+        -24.0,
+        18.0
+      ],
+      "lift": 0.0,
+      "contact_leg": "near",
+      "ground": {
+        "near": true,
+        "far": false
+      }
+    },
+    {
+      "index": 1,
+      "name": "down",
+      "half": 0,
+      "near": [
+        12.0,
+        22.0
+      ],
+      "far": [
+        -20.0,
+        55.0
+      ],
+      "lift": 0.0,
+      "contact_leg": "near",
+      "ground": {
+        "near": true,
+        "far": false
+      }
+    },
+    {
+      "index": 2,
+      "name": "passing",
+      "half": 0,
+      "near": [
+        -4.0,
+        6.0
+      ],
+      "far": [
+        14.0,
+        70.0
+      ],
+      "lift": 0.0,
+      "contact_leg": "near",
+      "ground": {
+        "near": true,
+        "far": false
+      }
+    },
+    {
+      "index": 3,
+      "name": "up",
+      "half": 0,
+      "near": [
+        -18.0,
+        4.0
+      ],
+      "far": [
+        26.0,
+        30.0
+      ],
+      "lift": 0.0,
+      "contact_leg": "near",
+      "ground": {
+        "near": true,
+        "far": false
+      }
+    },
+    {
+      "index": 4,
+      "name": "contact",
+      "half": 1,
+      "near": [
+        -24.0,
+        18.0
+      ],
+      "far": [
+        24.0,
+        4.0
+      ],
+      "lift": 0.0,
+      "contact_leg": "far",
+      "ground": {
+        "near": false,
+        "far": true
+      }
+    },
+    {
+      "index": 5,
+      "name": "down",
+      "half": 1,
+      "near": [
+        -20.0,
+        55.0
+      ],
+      "far": [
+        12.0,
+        22.0
+      ],
+      "lift": 0.0,
+      "contact_leg": "far",
+      "ground": {
+        "near": false,
+        "far": true
+      }
+    },
+    {
+      "index": 6,
+      "name": "passing",
+      "half": 1,
+      "near": [
+        14.0,
+        70.0
+      ],
+      "far": [
+        -4.0,
+        6.0
+      ],
+      "lift": 0.0,
+      "contact_leg": "far",
+      "ground": {
+        "near": false,
+        "far": true
+      }
+    },
+    {
+      "index": 7,
+      "name": "up",
+      "half": 1,
+      "near": [
+        26.0,
+        30.0
+      ],
+      "far": [
+        -18.0,
+        4.0
+      ],
+      "lift": 0.0,
+      "contact_leg": "far",
+      "ground": {
+        "near": false,
+        "far": true
+      }
+    }
+  ],
+  "prompt": "prompt.txt",
+  "qa": {
+    "status": "pass",
+    "method": "geometry of the drawn guide plus sheet_qc.leg_lead/alternation_verdict on its own skeleton drawn clean on transparency",
+    "notProven": [
+      "That an image model follows the guide: not A/B tested (report v2 P2-4).",
+      "The host size rule was observed on 3 calls of one host tool; other tools differ."
+    ],
+    "checks": [
+      {
+        "id": "min_envelope",
+        "status": "pass",
+        "value": 310.1,
+        "threshold": 0.0,
+        "note": "predicted motion-envelope height per pose, in host pixels"
+      },
+      {
+        "id": "skeleton_in_safe_box",
+        "status": "pass",
+        "value": [],
+        "threshold": [],
+        "note": "every pose, line widths included, inside its safe box"
+      },
+      {
+        "id": "ground_contact",
+        "status": "pass",
+        "value": [],
+        "threshold": 1.0,
+        "note": "planted feet touch the ground line; airborne poses clear it"
+      },
+      {
+        "id": "leg_alternation",
+        "status": "pass",
+        "value": [
+          "near",
+          "near",
+          "near",
+          "far",
+          "far",
+          "far",
+          "far",
+          "near"
+        ],
+        "threshold": "lead differs between i and i+n/2",
+        "verdict": "alternates",
+        "pairs": [
+          [
+            0,
+            4,
+            false
+          ],
+          [
+            1,
+            5,
+            false
+          ],
+          [
+            2,
+            6,
+            false
+          ],
+          [
+            3,
+            7,
+            false
+          ]
+        ],
+        "note": "sheet_qc.py frames' NEAR/FAR test run on the guide's own skeleton"
+      }
+    ],
+    "inputs": [],
+    "outputs": [
+      {
+        "path": "guide.png",
+        "sha256": "7aa6e7c51af67722be4f8060c03608a468beb9c3d7a800229db903f0b6ae9c5f",
+        "bytes": 17077
+      },
+      {
+        "path": "guide.svg",
+        "sha256": "eae4e82dfc3adb4e58f5834d97a222dc37b3ee61f637650bf4c9a7d9c46ee3cf",
+        "bytes": 9776
+      },
+      {
+        "path": "guide-annotated.png",
+        "sha256": "91ff738872c1265e0a26dacc60829afa34ba99533059a49f9987c1781846ff5c",
+        "bytes": 23310
+      },
+      {
+        "path": "prompt.txt",
+        "sha256": "1be8a4b30a78741382a5a0fe359700dc352efbafe80d11e11ab66c24abffd8e0",
+        "bytes": 2110
+      }
+    ],
+    "tool": {
+      "name": "plan_guide.py",
+      "version": "0.4.0"
+    }
+  },
+  "tool": {
+    "name": "plan_guide.py",
+    "version": "0.4.0"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "status": "pass",
+  "method": "forge_palette.quantize_image: OKLab-nearest palette colour per pixel (exact palette colours kept), alpha binary at the threshold, then the written PNGs re-read and measured with forge_palette.fit_report against the palette",
+  "notProven": [
+    "Visual quality after snapping: compare an output with its input.",
+    "Indexed PNGs are engine exports; they are not checked by builders.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "output_off_palette_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "output_partial_alpha_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.165863,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../cli-city-transparent-v2-fit/city-backdrop-wide.png",
+      "sha256": "0a5ef110f05388427f9f1d50fe5cff5bed6c0a59f00dddd2de57e20a6db3f6b2",
+      "bytes": 1176474
+    },
+    {
+      "path": "../cli-city-transparent-v2-palette/palette.json",
+      "sha256": "5e3e1d23d86f43c81e5e8975b1c0acb09b5bebef01e97a1b615a089b2caea3d6",
+      "bytes": 1924
+    }
+  ],
+  "outputs": [
+    {
+      "path": "city-backdrop-wide.png",
+      "sha256": "121b24346cffedac5176970d1dad8a2750098acd4e52a003345be4cb4927958e",
+      "bytes": 445756
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "fit": {
+    "city-backdrop-wide.png": {
+      "measured_px": 412700,
+      "alpha_threshold": 128,
+      "off_palette_px": 412427,
+      "partial_alpha_px": 474211,
+      "colors": 230193,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.017877,
+      "p95_delta_e": 0.03399,
+      "max_delta_e": 0.165863
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.165863,
+    "worst_p95_delta_e": 0.03399,
+    "off_palette_px": 412427
+  },
+  "locked_inputs": []
+}

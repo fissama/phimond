@@ -1,0 +1,107 @@
+{
+  "route": "host_image",
+  "tool": "image_gen.imagegen",
+  "model": "tool default",
+  "estimateUsd": null,
+  "assets": [
+    {
+      "name": "stone-floor-b",
+      "size": [
+        512,
+        512
+      ],
+      "colors": 34,
+      "alpha": [
+        255
+      ],
+      "magentaPixels": 0,
+      "pass": true,
+      "sha256": "3fbbe79eb33799a69b71202adb87007751217ecac8160e5620e26ee3d7a3d4f9"
+    },
+    {
+      "name": "city-backdrop-wide",
+      "size": [
+        2432,
+        486
+      ],
+      "colors": 48,
+      "alpha": [
+        255
+      ],
+      "magentaPixels": 0,
+      "pass": true,
+      "sha256": "480159f0d15089337488343786f37a737863dd3408fb6705d8f195078718573d"
+    },
+    {
+      "name": "city-near-roofs",
+      "size": [
+        2432,
+        220
+      ],
+      "colors": 47,
+      "alpha": [
+        0,
+        255
+      ],
+      "magentaPixels": 0,
+      "pass": true,
+      "sha256": "576bca3ad9e3363b8c561d28480716bdcb04468a25a61b339a3999817a1177b7"
+    },
+    {
+      "name": "floor-light-1",
+      "size": [
+        256,
+        256
+      ],
+      "colors": 31,
+      "alpha": [
+        0,
+        255
+      ],
+      "magentaPixels": 0,
+      "pass": true,
+      "sha256": "dbc7115929074507cf4d1c5c272df45813443ca82f44d5027c4eec38ffc4329b"
+    },
+    {
+      "name": "floor-light-2",
+      "size": [
+        256,
+        256
+      ],
+      "colors": 31,
+      "alpha": [
+        0,
+        255
+      ],
+      "magentaPixels": 0,
+      "pass": true,
+      "sha256": "e3cbd22d8d5690ccc278971999dba37efb60a6278e250740b8edebc666abdd8d"
+    },
+    {
+      "name": "floor-light-3",
+      "size": [
+        256,
+        256
+      ],
+      "colors": 31,
+      "alpha": [
+        0,
+        255
+      ],
+      "magentaPixels": 0,
+      "pass": true,
+      "sha256": "40320864f6e3c6755a3b7e51f9236eb271e13b5b1527ae354fe7d11192865aa6"
+    }
+  ],
+  "processing": [
+    "Floor: nearest resize, reference palette, minimum-error cuts to retain a 2\u20138px compatibility collar. Interior uses generated artwork.",
+    "City: crop excess sky and bottom white margin, nearest resize, flatten saturated blue sky, quantize without dithering.",
+    "Roofs: crop transparent padding, threshold alpha, nearest sizing, 64px minimum-error overlap to form a 1216px period repeated twice, opaque flat baseline, 48-color export.",
+    "floor-light-1: nearest resize, ordered binary alpha coverage, max 32 colors without color dithering.",
+    "floor-light-2: nearest resize, ordered binary alpha coverage, max 32 colors without color dithering.",
+    "floor-light-3: nearest resize, ordered binary alpha coverage, max 32 colors without color dithering."
+  ],
+  "warnings": [
+    "WARN floor-zero-reuse: NOT fully satisfied/certified. Floor retains 2\u20138px reference boundary fragments for A/B compatibility; every brick/crack being wholly different is not guaranteed. Files: stone-floor-b.png and completion-20261029/floor-mixed-3x3.png."
+  ]
+}

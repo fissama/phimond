@@ -1,0 +1,176 @@
+{
+  "status": "pass",
+  "method": "forge_palette.quantize_image: OKLab-nearest palette colour per pixel (exact palette colours kept), alpha binary at the threshold, then the written PNGs re-read and measured with forge_palette.fit_report against the palette",
+  "notProven": [
+    "Visual quality after snapping: compare an output with its input.",
+    "Indexed PNGs are engine exports; they are not checked by builders.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "output_off_palette_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "output_partial_alpha_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.178317,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../palette-inputs/ceremonial-lectern.png",
+      "sha256": "066efa07ecc81781a10dc91f4d74a006818283ede09a1d4c139c6f5e2a7b161e",
+      "bytes": 67016
+    },
+    {
+      "path": "../palette-inputs/hanging-lantern.png",
+      "sha256": "1542abbaaffd9f816cbc8a755a4cc5c2e14d2d9b1b9691396da2d03becabf3af",
+      "bytes": 31305
+    },
+    {
+      "path": "../palette-inputs/heraldic-banner.png",
+      "sha256": "b6d7ad674e4ff5675cf9e2645a2a28cf2fbdbf85f2ce5dae6fd4de127fd84fec",
+      "bytes": 62129
+    },
+    {
+      "path": "../palette-inputs/incense-braziers.png",
+      "sha256": "d8932ca394cf6f4aaf564de2ab90533d96cfaba9dc9e644a36a493785146f874",
+      "bytes": 71661
+    },
+    {
+      "path": "../palette-inputs/oracle-globe.png",
+      "sha256": "f4f8376c529308c50e465ce3ba04315429fc765791208b6dfc1d6cf229f89977",
+      "bytes": 61981
+    },
+    {
+      "path": "../palette-inputs/stained-glass-panel.png",
+      "sha256": "c9425e3458a9b8654531de6a90a14e50c169cbd9ab36c11a7f4c8703810b30c5",
+      "bytes": 51121
+    },
+    {
+      "path": "../palette-02/palette.json",
+      "sha256": "0a26995528930297cd92e7b1ff2dd37304aa2bf33e4da8d9af1efaee63cd791e",
+      "bytes": 1963
+    }
+  ],
+  "outputs": [
+    {
+      "path": "ceremonial-lectern.png",
+      "sha256": "c7613715a3022551e77e9827c0e98f832ece9b073fede0f048a4e6e6be4c8059",
+      "bytes": 30635
+    },
+    {
+      "path": "hanging-lantern.png",
+      "sha256": "c6ec95e8fe06d715fd8a93379cd2204400caacc7174307baa04894e9b81b7e8f",
+      "bytes": 16956
+    },
+    {
+      "path": "heraldic-banner.png",
+      "sha256": "a8c447f3a267429aa30678c73e3e2c839b1439f991c1aa7b2251e125b3f6e319",
+      "bytes": 23524
+    },
+    {
+      "path": "incense-braziers.png",
+      "sha256": "1c2b8fe3fe6451c609d0e926b57b89c0f581a540f7dd5f6a7b96f89f41c18c03",
+      "bytes": 30651
+    },
+    {
+      "path": "oracle-globe.png",
+      "sha256": "b0c0894cb86ab1312e67951e390e18c3dc9cd37ac0400b4961efba37502d64ff",
+      "bytes": 30060
+    },
+    {
+      "path": "stained-glass-panel.png",
+      "sha256": "ab69ed704848159a0032955437d0ef323be49b462c87cbd55807e486399a1461",
+      "bytes": 25992
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "fit": {
+    "ceremonial-lectern.png": {
+      "measured_px": 22717,
+      "alpha_threshold": 128,
+      "off_palette_px": 22701,
+      "partial_alpha_px": 3190,
+      "colors": 17986,
+      "palette_colors_used": 37,
+      "mean_delta_e": 0.019222,
+      "p95_delta_e": 0.036945,
+      "max_delta_e": 0.081486
+    },
+    "hanging-lantern.png": {
+      "measured_px": 8665,
+      "alpha_threshold": 128,
+      "off_palette_px": 8664,
+      "partial_alpha_px": 2138,
+      "colors": 8058,
+      "palette_colors_used": 38,
+      "mean_delta_e": 0.023023,
+      "p95_delta_e": 0.043296,
+      "max_delta_e": 0.084399
+    },
+    "heraldic-banner.png": {
+      "measured_px": 21712,
+      "alpha_threshold": 128,
+      "off_palette_px": 21704,
+      "partial_alpha_px": 3708,
+      "colors": 17132,
+      "palette_colors_used": 35,
+      "mean_delta_e": 0.020711,
+      "p95_delta_e": 0.038906,
+      "max_delta_e": 0.082137
+    },
+    "incense-braziers.png": {
+      "measured_px": 18900,
+      "alpha_threshold": 128,
+      "off_palette_px": 18888,
+      "partial_alpha_px": 7010,
+      "colors": 16529,
+      "palette_colors_used": 42,
+      "mean_delta_e": 0.022201,
+      "p95_delta_e": 0.041465,
+      "max_delta_e": 0.178317
+    },
+    "oracle-globe.png": {
+      "measured_px": 17256,
+      "alpha_threshold": 128,
+      "off_palette_px": 17254,
+      "partial_alpha_px": 4427,
+      "colors": 15976,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.026643,
+      "p95_delta_e": 0.056543,
+      "max_delta_e": 0.175605
+    },
+    "stained-glass-panel.png": {
+      "measured_px": 16476,
+      "alpha_threshold": 128,
+      "off_palette_px": 16470,
+      "partial_alpha_px": 1948,
+      "colors": 14896,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.026629,
+      "p95_delta_e": 0.063596,
+      "max_delta_e": 0.166285
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.178317,
+    "worst_p95_delta_e": 0.063596,
+    "off_palette_px": 105681
+  },
+  "locked_inputs": []
+}

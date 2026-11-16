@@ -1,0 +1,68 @@
+{
+  "status": "pass",
+  "asset_id": "foreground-edge",
+  "file": "final.png",
+  "dimensions": [
+    2432,
+    280
+  ],
+  "opaque_rgb_colors": 48,
+  "alpha_levels": [
+    0,
+    255
+  ],
+  "binary_alpha": true,
+  "alpha_bbox": [
+    0,
+    18,
+    2432,
+    269
+  ],
+  "description": "2432\u00d7280 full-width foreground trim with a centered exit opening; not repeated.",
+  "palette_apply_status": "pass",
+  "palette_apply_checks": [
+    {
+      "id": "output_off_palette_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "output_partial_alpha_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.154626,
+      "threshold": null
+    }
+  ],
+  "terrain_extraction_status": "pass",
+  "terrain_warnings": [],
+  "center_gap_px": [
+    1029,
+    1403
+  ],
+  "center_gap_width_px": 374,
+  "not_tileable": true,
+  "superseded_forge_experiment": {
+    "status": "warn",
+    "checks": [
+      {
+        "id": "source_edge_touch_frames",
+        "status": "warn",
+        "value": [
+          [
+            0,
+            0
+          ]
+        ],
+        "threshold": []
+      }
+    ],
+    "note": "Square single-sprite experiment; superseded by the full-width terrain overlay."
+  }
+}

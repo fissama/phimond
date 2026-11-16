@@ -1,0 +1,33 @@
+{
+  "id": "arena-floor",
+  "status": "needs_claude_review",
+  "approved": false,
+  "candidate_quality": "PASS_INTERNAL_PENDING_CLAUDE",
+  "raw_source": "raw-05.png",
+  "raw_sha256": "55f0ccd86564e3216d25e6398de6df59e7d56299b12a5ff4b67e03d2602e3ac9",
+  "final_sha256": "c98f7058e19ab29543a57551d024cdaffeae62eb8aec1337fdf02204c6df5005",
+  "size_px": [
+    512,
+    512
+  ],
+  "distinct_rgb_colors": 48,
+  "alpha_values": 1,
+  "seam_mean_255": {
+    "x": 3.875,
+    "y": 6.9296875
+  },
+  "checks": {
+    "size_512": true,
+    "palette_33_48": true,
+    "seam_x": true,
+    "seam_y": true,
+    "repeat_3x3_viewed": true,
+    "offset_viewed": true,
+    "visual": "broad irregular sandstone slabs, no visible join at offset or 3x3"
+  },
+  "rejected_attempts": [
+    "raw-01",
+    "raw-02",
+    "raw-03"
+  ]
+}

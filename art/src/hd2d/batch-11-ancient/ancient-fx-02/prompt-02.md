@@ -1,0 +1,1 @@
+Attempt 02, built-in image_gen, instructed flat blue #0000FF matte, stone dust expanding across four cells. Cropped equal cells, keyed pixels where blue exceeds red/green by 55, nearest scaled each burst into 128px cell and jointly quantized to 48 colors.

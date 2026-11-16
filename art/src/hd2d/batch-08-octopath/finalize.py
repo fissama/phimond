@@ -1,0 +1,19 @@
+from pathlib import Path
+from PIL import Image,ImageDraw
+import json,numpy as np,math
+b=Path(__file__).resolve().parent
+m=json.loads((b/'manifest.json').read_text());qs=[]
+for a in m['assets']:
+ im=Image.open(b/a['file']).convert('RGBA');w,h=im.size;qa=json.loads((b/a['id']/'qa.json').read_text());body=a['logical_body'];p=Image.new('RGB',(max(240,int(body[0]+8))*2+32,max(96,int(body[1]+8))+32),(45,48,55));d=ImageDraw.Draw(p)
+ small=im.resize((round(w/3),round(h/3)),Image.Resampling.NEAREST)
+ for i,bg in enumerate([(235,230,218),(20,25,35)]):
+  tile=Image.new('RGB',small.size,bg);tile.paste(small,(0,0),small);p.paste(tile,(i*(p.width//2)+8,24));d.text((i*(p.width//2)+8,4),'960x640 logical / '+('light' if i==0 else 'dark'),fill='white')
+ p.save(b/a['id']/'game-size-preview.png')
+ qa['raw_file']='raw-02.png' if a['source_job']=='z-slice-safe' else 'raw-01.png';qa['verified_actual_dimensions']=list(im.size)==a['px']
+ if a['id'].split('-')[0] in ['confirm','back','accept','cancel']:
+  pts=np.argwhere(np.array(im.getchannel('A'))>0)[:,::-1];v,vec=np.linalg.eigh(np.cov(pts.T));z=vec[:,np.argmax(v)];qa['long_axis_degrees']=(math.degrees(math.atan2(z[1],z[0]))+90)%180-90
+ (b/a['id']/'qa.json').write_text(json.dumps(qa,indent=2));qs.append(qa)
+qa=dict(count=len(qs),rgba=len(qs),binary_alpha=len(qs),palette_48=sum(q['colors']<=48 for q in qs),alpha_margin_8=sum(min(q['alpha_margins'])>=8 for q in qs),raw_integrity=sum(q['raw_byte_identical'] for q in qs),stretch_preview_count=sum(q['stretch_preview_created'] for q in qs),unique_final_hashes=len(set(a['sha256'] for a in m['assets'])),owner_approved=0,warnings=['Some generated buttons/slots retain richer gloss than strictest Octopath direction; owner visual review pending.','Active-screen panel IDs intentionally share one reusable blank chrome template; these are modular assets, not custom compositions.','UI body is3x logical;12px source alpha padding is additional.','No runtime activation or integration test.'],failures=[q['failures'] for q in qs if q['failures']])
+(b/'qa-summary.json').write_text(json.dumps(qa,indent=2));(b/'asset-ids.txt').write_text('\n'.join(a['id'] for a in m['assets'])+'\n')
+(b/'README.md').write_text('# Phimond '+b.name+'\n\nDraft production art; approved:false. Built-in image_gen route (host_image); no paid API, internet art or code-drawn replacement art. Not activated.\n\nmanifest.json lists separate final.png paths, exactdimensions, @3x logical_body andslice guides. UI is screen-space;world:null. Each export retains byte-identical raw, full prompt with ordered reference paths/hashes, source identity card and QA. Original APK/JAR art supplies content, pet anchors only pixel edge compatibility.\n\ncontact-sheet.png overview. game-size-preview.png is logicalsize on light/dark. review-light-dark.png provides source1x/2x. stretch-preview.png performs actual9slice at originalsize and150%width/140%height; slice guides preserve corner ornaments. Initial slice-unsafe raws retained in jobs and assetraw-01; selected generic9slice template is raw-02. Generated normal/pressed/disabled rectangular button states remain distinct.\n\nQA: '+json.dumps(qa,indent=2)+'\n\nKnown limits: shared active-screen panels are explicit modular aliases. Runtime owns layouts, labels, numerals, portraits cut from existingpetatlases, and dynamic states. Menu-icon stars are framed medallions. Specialized hatch/breeding content is static. Deferred guild/friends/mail/auction/bank/manual/charge screen art excluded; guild chat chrome is only a shared world-HUD tab. No baked text or numerals; functional X/tick/plus/minus pictograms retained.\n\nExactIDs: asset-ids.txt. package.py crops/rotates/resizes/quantizes generated pixels andcreates previews. finalize.py refreshes mechanicalQA andlogicalsize sheets. All generatedsource attempts preserved.\n')
+print(json.dumps(qa))

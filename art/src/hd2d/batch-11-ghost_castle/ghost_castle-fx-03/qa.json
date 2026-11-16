@@ -1,0 +1,92 @@
+{
+  "id": "ghost_castle-fx-03",
+  "size": [
+    512,
+    128
+  ],
+  "mode": "RGBA",
+  "frames": 4,
+  "frame_px": [
+    128,
+    128
+  ],
+  "fps": 5,
+  "duration_ms_each": 200,
+  "shared_palette_colors": 40,
+  "frame_metrics": [
+    {
+      "frame": 1,
+      "size": [
+        128,
+        128
+      ],
+      "colors": 41,
+      "partial_alpha_pixels": 0,
+      "sha256": "e50f392e56b48aee9c07ff9eba8b338d0d00f72390cd4d8dbb2383ffc0a640d6"
+    },
+    {
+      "frame": 2,
+      "size": [
+        128,
+        128
+      ],
+      "colors": 40,
+      "partial_alpha_pixels": 0,
+      "sha256": "6309032e71e1e692f6b453a827105c3b2bedff320d48d7e98bca5a612ed63b82"
+    },
+    {
+      "frame": 3,
+      "size": [
+        128,
+        128
+      ],
+      "colors": 41,
+      "partial_alpha_pixels": 0,
+      "sha256": "35dc1fca8d8036e84d6a106e75cc08089c28aeaaa7523e5c6c267037ac69fbd4"
+    },
+    {
+      "frame": 4,
+      "size": [
+        128,
+        128
+      ],
+      "colors": 41,
+      "partial_alpha_pixels": 0,
+      "sha256": "cd9ecd11e06c7060cd3d94457f491406845b42c204e5b1e175be6346e87224d7"
+    }
+  ],
+  "binary_alpha": true,
+  "raw_integrity": true,
+  "raw_sha256": "48d12b13c6908ddf412434314f399d1709ede71d219db54ba9b41a31a8c275fe",
+  "sha256": "c2f1daa215ad4e08a6b100c70bc90a3c45f1c4046d412974e6c863080eb4c067",
+  "source_spill_gate": "warn; safe_frame cells [0,0],[0,1],[0,3]; no crossings/cuts",
+  "processing_gate": "pass; generate2dsprite process mode=fx strict_qc=true",
+  "frame_qc": {
+    "status": "fail",
+    "checks": [
+      {
+        "id": "identity_head_ratio",
+        "status": "fail",
+        "value": {
+          "0": 1.064,
+          "1": 1.0,
+          "2": 0.979,
+          "3": 1.0
+        },
+        "threshold": [
+          0.95,
+          1.05
+        ]
+      },
+      {
+        "id": "torso_drift",
+        "status": "warn",
+        "value": 50.56,
+        "threshold": 2.0
+      }
+    ],
+    "interpretation": "Character-specific detectors are not applicable to environmental VFX; reported without suppression."
+  },
+  "visual_review": "actual_complete_4x_dark_and_checker_viewed; candidate only, not owner approved",
+  "failures": []
+}

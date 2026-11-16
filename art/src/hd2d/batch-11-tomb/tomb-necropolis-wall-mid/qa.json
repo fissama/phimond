@@ -1,0 +1,23 @@
+{
+  "dimensions": [
+    1024,
+    384
+  ],
+  "mode": "RGBA",
+  "colors": 47,
+  "source_alpha_bbox_y": [
+    454,
+    612
+  ],
+  "seam_x_mae": 5.403,
+  "adjacent_x_mae": 3.188,
+  "raw_sha256": "30e3f3465cc402742eb1aa842acf3dbc5abc1c0f10e1f6da91e04ecd542908f6",
+  "candidate_sha256": "04c2f1aed46e0a55229cddd99329c3f6a95432e3fafb72206499b106febc5062",
+  "processing": "alpha threshold 240; crop full width to alpha bbox y=454:612; nearest resize to 1024x160; median-cut RGB to 47 colors; restore binary alpha; place at y=224",
+  "gate_pass_estimate": true,
+  "source": "jobs/backdrop-mid-redraw-20261104/tomb-necropolis-wall-mid-raw-05.png",
+  "sha256": "04c2f1aed46e0a55229cddd99329c3f6a95432e3fafb72206499b106febc5062",
+  "visual_repeat_3x1_viewed": true,
+  "decision": "candidate_selected_unapproved",
+  "review_note": "No arch, tower or named landmark repeats. The low broken wall profile repeats with mild capstone cadence at full 3x1; acceptable as a subdued midground texture, still needs composite scene review. Owner approval pending."
+}

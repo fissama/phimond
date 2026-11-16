@@ -1,0 +1,1 @@
+Viewed 4× dark/checker and 3× horizontal repeat. Tileable x seam: RGB MAE 0.62, adjacent-column MAE 0.56; left/right alpha occupancy both 4 px. No grid seam or magenta fringe visible. Visible RGB palette: 45.

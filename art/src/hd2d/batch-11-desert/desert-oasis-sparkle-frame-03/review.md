@@ -1,0 +1,1 @@
+2026-10-22 Actualall4framesfull4x inspected. Small glints and facetedfragments, no clipping/halos. Mineral/quartz read stronger than waterdrops; candidate forClaudecontentreview. Temporal playback pending. Candidateapproved=false.

@@ -21,7 +21,7 @@ import numpy as np
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[2]
-SRC = ROOT / "apps/game-web/art-src/hd2d/octopath-s01-s27-20261029/delivery"
+SRC = ROOT / "art/src/hd2d/octopath-s01-s27-20261029/delivery"
 V2 = SRC / "redraw-v2"
 HD = ROOT / "apps/client/public/hd2d"
 BATTLE = ROOT / "apps/client/public/battle"
@@ -64,7 +64,7 @@ HD_ITEMS: list[tuple[str, Path, str, str]] = [
 FX_ITEMS = ["fx-beast", "fx-insect", "fx-plant"]
 # Ba hệ đã duyệt từ lô P01 trước (fx-fire/water/earth); phong/quang/ám/vô chưa có (M01–M04).
 FX_OLD = ["fx-fire", "fx-water", "fx-earth"]
-OLD = ROOT / "apps/game-web/art-src/hd2d/p01-release-art-20261023/delivery"
+OLD = ROOT / "art/src/hd2d/p01-release-art-20261023/delivery"
 # bar-frame-*/bar-label-* đã duyệt nhưng chưa cài: HUD mới dùng vạch mảnh, chờ N01/N02 rồi mới quyết dùng.
 UI_ITEMS = ["ui-minimap"]
 

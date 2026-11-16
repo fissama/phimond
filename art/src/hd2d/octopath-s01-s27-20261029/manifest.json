@@ -1,0 +1,781 @@
+{
+  "status": "in-progress",
+  "art_source": "host_image",
+  "prompt_source": ".ai/design/v1.0.1/GPT-PROMPTS-OCTOPATH.md",
+  "generated": [
+    {
+      "name": "bar-frame-exp.png",
+      "size": [
+        256,
+        32
+      ],
+      "key": true,
+      "qa": "delivery/bar-frame-exp.qa.json"
+    },
+    {
+      "name": "bar-frame-hp.png",
+      "size": [
+        256,
+        32
+      ],
+      "key": true,
+      "qa": "delivery/bar-frame-hp.qa.json"
+    },
+    {
+      "name": "bar-frame-mp.png",
+      "size": [
+        256,
+        32
+      ],
+      "key": true,
+      "qa": "delivery/bar-frame-mp.qa.json"
+    },
+    {
+      "name": "bar-label-exp.png",
+      "size": [
+        64,
+        32
+      ],
+      "key": true,
+      "qa": "delivery/bar-label-exp.qa.json"
+    },
+    {
+      "name": "bar-label-hp.png",
+      "size": [
+        64,
+        32
+      ],
+      "key": true,
+      "qa": "delivery/bar-label-hp.qa.json"
+    },
+    {
+      "name": "bar-label-mp.png",
+      "size": [
+        64,
+        32
+      ],
+      "key": true,
+      "qa": "delivery/bar-label-mp.qa.json"
+    },
+    {
+      "name": "city-backdrop-wide.png",
+      "size": [
+        2432,
+        486
+      ],
+      "key": false,
+      "refs": [
+        "hall-city-backdrop.png"
+      ],
+      "desc": "S07. Wide layered sunlit city skyline, OPAQUE. Flat saturated blue sky with a few small pixel clouds at the top, faint blue mountains, cream towers with orange and green roofs, a large castle with a tall central spire at the center, houses getting lower toward both sides, and at the very bottom a continuous city wall with battlements whose base is a straight horizontal line along the bottom edge. No foreground objects, no people, no sky gradient. The left and right ends do not need to tile. Entire frame filled with sky and skyline: NO MAGENTA.",
+      "qa": "delivery/city-backdrop-wide.qa.json"
+    },
+    {
+      "name": "city-facade-alley.png",
+      "size": [
+        128,
+        384
+      ],
+      "key": true,
+      "qa": "delivery/city-facade-alley.qa.json"
+    },
+    {
+      "name": "city-facade-column.png",
+      "size": [
+        128,
+        384
+      ],
+      "key": true,
+      "qa": "delivery/city-facade-column.qa.json"
+    },
+    {
+      "name": "city-facade-gutter.png",
+      "size": [
+        128,
+        384
+      ],
+      "key": true,
+      "qa": "delivery/city-facade-gutter.qa.json"
+    },
+    {
+      "name": "city-near-roofs.png",
+      "size": [
+        2432,
+        220
+      ],
+      "key": true,
+      "tile": "x",
+      "refs": [
+        "hall-city-backdrop.png",
+        "city-roofline-mid.png"
+      ],
+      "desc": "S08. A thin strip of nearer rooftops and chimneys of the same city: orange and green tiled roofs, cream walls, chimneys, small towers, uneven top silhouette, flat straight bottom edge. Same palette but slightly larger in scale and a little darker and warmer so it reads as closer than the skyline behind it. The last 64 px must continue into the first 64 px with no seam. Magenta above roof silhouettes; architecture fills down to straight bottom edge. Very wide narrow strip.",
+      "qa": "delivery/city-near-roofs.qa.json"
+    },
+    {
+      "name": "dirt-cliff-face.png",
+      "size": [
+        512,
+        128
+      ],
+      "key": false,
+      "qa": "delivery/dirt-cliff-face.qa.json"
+    },
+    {
+      "name": "fence-stone-low.png",
+      "size": [
+        512,
+        96
+      ],
+      "key": true,
+      "qa": "delivery/fence-stone-low.qa.json"
+    },
+    {
+      "name": "fg-city-awning-edge.png",
+      "size": [
+        768,
+        256
+      ],
+      "key": true,
+      "refs": [
+        "awning-red.png",
+        "city-facade-shop.png"
+      ],
+      "desc": "S03. Foreground market awning edge: the front scalloped fringe of a red-and-cream striped canvas awning hanging from the top of the frame, wooden pole supports at both ends, strong shadow underneath, to be drawn very close to the camera and blurred in-engine. Top edge is flat and cut straight, scalloped fringe at the bottom, wavy cloth folds. No building or scene, fringe only on magenta.",
+      "qa": "delivery/fg-city-awning-edge.qa.json"
+    },
+    {
+      "name": "fg-city-bunting.png",
+      "size": [
+        1024,
+        160
+      ],
+      "key": true,
+      "tile": "x",
+      "refs": [
+        "city-bunting.png"
+      ],
+      "desc": "S04. Festival bunting string of small triangular flags in red, blue, cream and yellow hanging in a gentle curve across the frame, with a thin dark rope on top. Seen from slightly below. Must tile horizontally: the rope height and flag pattern at the right edge match the left edge. Isolated on magenta, long narrow strip, no extra objects.",
+      "qa": "delivery/fg-city-bunting.qa.json"
+    },
+    {
+      "name": "fg-city-lantern-pair.png",
+      "size": [
+        256,
+        384
+      ],
+      "key": true,
+      "refs": [
+        "city-hanging-sign.png",
+        "hall-lantern.png"
+      ],
+      "desc": "S05. Two wrought-iron hanging street lanterns on a curved bracket entering from the top-right, warm glowing yellow glass, dark iron, a bit of cobweb detail. Drawn large for foreground use. Isolated on magenta.",
+      "qa": "delivery/fg-city-lantern-pair.qa.json"
+    },
+    {
+      "name": "fg-forest-branch-a.png",
+      "size": [
+        512,
+        320
+      ],
+      "key": true,
+      "qa": "delivery/fg-forest-branch-a.qa.json"
+    },
+    {
+      "name": "fg-forest-branch-b.png",
+      "size": [
+        512,
+        320
+      ],
+      "key": true,
+      "qa": "delivery/fg-forest-branch-b.qa.json"
+    },
+    {
+      "name": "fg-forest-bush-a.png",
+      "size": [
+        384,
+        256
+      ],
+      "key": true,
+      "qa": "delivery/fg-forest-bush-a.qa.json"
+    },
+    {
+      "name": "fg-forest-bush-b.png",
+      "size": [
+        384,
+        256
+      ],
+      "key": true,
+      "qa": "delivery/fg-forest-bush-b.qa.json"
+    },
+    {
+      "name": "fg-forest-bush-c.png",
+      "size": [
+        384,
+        256
+      ],
+      "key": true,
+      "qa": "delivery/fg-forest-bush-c.qa.json"
+    },
+    {
+      "name": "fg-hall-curtain.png",
+      "size": [
+        320,
+        512
+      ],
+      "key": true,
+      "refs": [
+        "palace-curtain.png"
+      ],
+      "desc": "S06. A heavy dark-red velvet curtain with gold tassel and gold rod, hanging from the top-left corner and gathered at the side, deep folds with strong lights and shadows, partly cut by the frame edge. Isolated on magenta.",
+      "qa": "delivery/fg-hall-curtain.qa.json"
+    },
+    {
+      "name": "floor-light-1.png",
+      "size": [
+        256,
+        256
+      ],
+      "key": true,
+      "qa": "delivery/floor-light-1.qa.json",
+      "provenance": "previously approved S20/S21 output"
+    },
+    {
+      "name": "floor-light-2.png",
+      "size": [
+        256,
+        256
+      ],
+      "key": true,
+      "qa": "delivery/floor-light-2.qa.json",
+      "provenance": "previously approved S20/S21 output"
+    },
+    {
+      "name": "floor-light-3.png",
+      "size": [
+        256,
+        256
+      ],
+      "key": true,
+      "qa": "delivery/floor-light-3.qa.json",
+      "provenance": "previously approved S20/S21 output"
+    },
+    {
+      "name": "forest-far-layers.png",
+      "size": [
+        2048,
+        512
+      ],
+      "key": true,
+      "tile": "x",
+      "refs": [
+        "forest-far-canopy.png",
+        "forest-wall-far.png"
+      ],
+      "desc": "S09. Distant forest in three overlapping layers in one image: the farthest layer pale blue-green and hazy (low contrast), a middle layer of mid-green tree crowns, and a nearer layer of dark green crowns with a few trunks visible. Light mist between layers (use dithering, no soft alpha). Flat bottom edge, uneven top silhouette. Tiles horizontally: the last 64 px continue into the first 64 px. Magenta only above silhouette.",
+      "qa": "delivery/forest-far-layers.qa.json"
+    },
+    {
+      "name": "fx-beast.png",
+      "size": [
+        1152,
+        192
+      ],
+      "key": true,
+      "qa": "delivery/fx-beast.qa.json"
+    },
+    {
+      "name": "fx-insect.png",
+      "size": [
+        1152,
+        192
+      ],
+      "key": true,
+      "qa": "delivery/fx-insect.qa.json"
+    },
+    {
+      "name": "fx-plant.png",
+      "size": [
+        1152,
+        192
+      ],
+      "key": true,
+      "qa": "delivery/fx-plant.qa.json"
+    },
+    {
+      "name": "grass-ledge-top.png",
+      "size": [
+        512,
+        64
+      ],
+      "key": true,
+      "qa": "delivery/grass-ledge-top.qa.json"
+    },
+    {
+      "name": "palace-courtyard-passage.png",
+      "size": [
+        384,
+        420
+      ],
+      "key": true,
+      "refs": [
+        "palace-gate.png"
+      ],
+      "desc": "S10. View through the arched opening of the palace gate into the inner courtyard: stone steps rising, a bright light at the end of the passage, dark walls on both sides, a banner on the far wall. Drawn to fit behind the arch of the attached gate. Draw ONLY the passage behind the arch, not a duplicate foreground gate. Magenta outside the passage's arched silhouette.",
+      "qa": "delivery/palace-courtyard-passage.qa.json"
+    },
+    {
+      "name": "palace-wall-fill.png",
+      "size": [
+        512,
+        320
+      ],
+      "key": true,
+      "tile": "x",
+      "refs": [
+        "palace-wall-section.png",
+        "palace-crenel-wall.png"
+      ],
+      "desc": "S11. A long stretch of the palace outer wall with battlements and a stone ledge, same stone and color as the attached wall, no gate. Tiles horizontally with no seam. Wall masonry fills left to right and bottom edge, magenta only above battlements, avoid end posts or terminal caps.",
+      "qa": "delivery/palace-wall-fill.qa.json"
+    },
+    {
+      "name": "shadow-canopy.png",
+      "size": [
+        384,
+        128
+      ],
+      "key": true,
+      "qa": "delivery/shadow-canopy.qa.json"
+    },
+    {
+      "name": "shadow-rect.png",
+      "size": [
+        256,
+        96
+      ],
+      "key": true,
+      "qa": "delivery/shadow-rect.qa.json"
+    },
+    {
+      "name": "shadow-round-large.png",
+      "size": [
+        256,
+        128
+      ],
+      "key": true,
+      "qa": "delivery/shadow-round-large.qa.json"
+    },
+    {
+      "name": "shadow-round-small.png",
+      "size": [
+        128,
+        64
+      ],
+      "key": true,
+      "qa": "delivery/shadow-round-small.qa.json"
+    },
+    {
+      "name": "stone-floor-b.png",
+      "size": [
+        512,
+        512
+      ],
+      "key": false,
+      "qa": "delivery/stone-floor-b.qa.json",
+      "provenance": "previously approved S20/S21 output"
+    },
+    {
+      "name": "stone-plinth-round.png",
+      "size": [
+        256,
+        192
+      ],
+      "key": true,
+      "qa": "delivery/stone-plinth-round.qa.json"
+    },
+    {
+      "name": "stone-plinth-square.png",
+      "size": [
+        256,
+        192
+      ],
+      "key": true,
+      "qa": "delivery/stone-plinth-square.qa.json"
+    },
+    {
+      "name": "stone-step-face.png",
+      "size": [
+        384,
+        128
+      ],
+      "key": true,
+      "qa": "delivery/stone-step-face.qa.json"
+    },
+    {
+      "name": "stone-step-side-left.png",
+      "size": [
+        128,
+        256
+      ],
+      "key": true,
+      "qa": "delivery/stone-step-side-left.qa.json"
+    },
+    {
+      "name": "stone-step-side-right.png",
+      "size": [
+        128,
+        256
+      ],
+      "key": true,
+      "qa": "delivery/stone-step-side-right.qa.json"
+    },
+    {
+      "name": "stone-wall-face.png",
+      "size": [
+        512,
+        128
+      ],
+      "key": false,
+      "qa": "delivery/stone-wall-face.qa.json"
+    },
+    {
+      "name": "ui-minimap.png",
+      "size": [
+        512,
+        320
+      ],
+      "key": true,
+      "qa": "delivery/ui-minimap.qa.json"
+    },
+    {
+      "name": "wood-bridge-plank.png",
+      "size": [
+        512,
+        128
+      ],
+      "key": true,
+      "qa": "delivery/wood-bridge-plank.qa.json"
+    }
+  ],
+  "pending": [
+    {
+      "name": "player-male.run.png",
+      "size": [
+        1536,
+        192
+      ],
+      "status": "redraw_required",
+      "reason": "R01\u2013R06 are [\u2717] in the current checklist; the 2026-10-29 redraw contract requires opposite contact legs and clean, even-height frames. Current male side-run candidate fails leg_alternation and identity_head_ratio."
+    },
+    {
+      "name": "player-female.run.png",
+      "size": [
+        1536,
+        192
+      ],
+      "status": "redraw_required",
+      "reason": "R01\u2013R06 are [\u2717] in the current checklist; the 2026-10-29 redraw contract requires opposite contact legs and clean, even-height frames. Current male side-run candidate fails leg_alternation and identity_head_ratio."
+    },
+    {
+      "name": "player-male.run-down.png",
+      "size": [
+        1536,
+        192
+      ],
+      "status": "redraw_required",
+      "reason": "R01\u2013R06 are [\u2717] in the current checklist; the 2026-10-29 redraw contract requires opposite contact legs and clean, even-height frames. Current male side-run candidate fails leg_alternation and identity_head_ratio."
+    },
+    {
+      "name": "player-female.run-down.png",
+      "size": [
+        1536,
+        192
+      ],
+      "status": "redraw_required",
+      "reason": "R01\u2013R06 are [\u2717] in the current checklist; the 2026-10-29 redraw contract requires opposite contact legs and clean, even-height frames. Current male side-run candidate fails leg_alternation and identity_head_ratio."
+    },
+    {
+      "name": "player-male.run-up.png",
+      "size": [
+        1536,
+        192
+      ],
+      "status": "redraw_required",
+      "reason": "R01\u2013R06 are [\u2717] in the current checklist; the 2026-10-29 redraw contract requires opposite contact legs and clean, even-height frames. Current male side-run candidate fails leg_alternation and identity_head_ratio."
+    },
+    {
+      "name": "player-female.run-up.png",
+      "size": [
+        1536,
+        192
+      ],
+      "status": "redraw_required",
+      "reason": "R01\u2013R06 are [\u2717] in the current checklist; the 2026-10-29 redraw contract requires opposite contact legs and clean, even-height frames. Current male side-run candidate fails leg_alternation and identity_head_ratio."
+    },
+    {
+      "name": "walker-baker.run.png",
+      "size": [
+        1536,
+        192
+      ],
+      "status": "repair_required",
+      "previous_2026_10_24_qa": "warn",
+      "reason": "leg_alternation: mixed lead across half-cycle pairs; repair and re-run QA, then review frame 1/5, props and height under the new prompt.",
+      "source": "../p01-release-art-20261023/delivery/walker-baker.run.png"
+    },
+    {
+      "name": "walker-baker.run-down.png",
+      "size": [
+        1536,
+        192
+      ],
+      "status": "repair_required",
+      "previous_2026_10_24_qa": "warn",
+      "reason": "near_duplicates; repair and re-run QA, then review frame 1/5, props and height under the new prompt.",
+      "source": "../p01-release-art-20261023/delivery/walker-baker.run-down.png"
+    },
+    {
+      "name": "walker-baker.run-up.png",
+      "size": [
+        1536,
+        192
+      ],
+      "status": "repair_required",
+      "previous_2026_10_24_qa": "warn",
+      "reason": "seam; repair and re-run QA, then review frame 1/5, props and height under the new prompt.",
+      "source": "../p01-release-art-20261023/delivery/walker-baker.run-up.png"
+    },
+    {
+      "name": "walker-elder.run.png",
+      "size": [
+        1536,
+        192
+      ],
+      "status": "redraw_required",
+      "previous_2026_10_24_qa": "fail",
+      "reason": "leg_alternation: duplicated half-cycle; repair and re-run QA, then review frame 1/5, props and height under the new prompt.",
+      "source": "../p01-release-art-20261023/delivery/walker-elder.run.png"
+    },
+    {
+      "name": "walker-elder.run-down.png",
+      "size": [
+        1536,
+        192
+      ],
+      "status": "repair_required",
+      "previous_2026_10_24_qa": "warn",
+      "reason": "seam; repair and re-run QA, then review frame 1/5, props and height under the new prompt.",
+      "source": "../p01-release-art-20261023/delivery/walker-elder.run-down.png"
+    },
+    {
+      "name": "walker-elder.run-up.png",
+      "size": [
+        1536,
+        192
+      ],
+      "status": "visual_review_candidate",
+      "previous_2026_10_24_qa": "pass",
+      "reason": "automated QA pass; still needs visual review against the new S24 contract; all NPCs still need visual review of frame 1/5 and uniform height under the new prompt, and S24 requires an approved player-male.run reference.",
+      "source": "../p01-release-art-20261023/delivery/walker-elder.run-up.png"
+    },
+    {
+      "name": "walker-boy.run.png",
+      "size": [
+        1536,
+        192
+      ],
+      "status": "repair_required",
+      "previous_2026_10_24_qa": "warn",
+      "reason": "seam; repair and re-run QA, then review frame 1/5, props and height under the new prompt.",
+      "source": "../p01-release-art-20261023/delivery/walker-boy.run.png"
+    },
+    {
+      "name": "walker-boy.run-down.png",
+      "size": [
+        1536,
+        192
+      ],
+      "status": "visual_review_candidate",
+      "previous_2026_10_24_qa": "pass",
+      "reason": "automated QA pass; still needs visual review against the new S24 contract; all NPCs still need visual review of frame 1/5 and uniform height under the new prompt, and S24 requires an approved player-male.run reference.",
+      "source": "../p01-release-art-20261023/delivery/walker-boy.run-down.png"
+    },
+    {
+      "name": "walker-boy.run-up.png",
+      "size": [
+        1536,
+        192
+      ],
+      "status": "repair_required",
+      "previous_2026_10_24_qa": "warn",
+      "reason": "near_duplicates; seam; repair and re-run QA, then review frame 1/5, props and height under the new prompt.",
+      "source": "../p01-release-art-20261023/delivery/walker-boy.run-up.png"
+    },
+    {
+      "name": "walker-girl.run.png",
+      "size": [
+        1536,
+        192
+      ],
+      "status": "repair_required",
+      "previous_2026_10_24_qa": "warn",
+      "reason": "leg_alternation: mixed lead across half-cycle pairs; repair and re-run QA, then review frame 1/5, props and height under the new prompt.",
+      "source": "../p01-release-art-20261023/delivery/walker-girl.run.png"
+    },
+    {
+      "name": "walker-girl.run-down.png",
+      "size": [
+        1536,
+        192
+      ],
+      "status": "repair_required",
+      "previous_2026_10_24_qa": "warn",
+      "reason": "near_duplicates; repair and re-run QA, then review frame 1/5, props and height under the new prompt.",
+      "source": "../p01-release-art-20261023/delivery/walker-girl.run-down.png"
+    },
+    {
+      "name": "walker-girl.run-up.png",
+      "size": [
+        1536,
+        192
+      ],
+      "status": "visual_review_candidate",
+      "previous_2026_10_24_qa": "pass",
+      "reason": "automated QA pass; still needs visual review against the new S24 contract; all NPCs still need visual review of frame 1/5 and uniform height under the new prompt, and S24 requires an approved player-male.run reference.",
+      "source": "../p01-release-art-20261023/delivery/walker-girl.run-up.png"
+    },
+    {
+      "name": "walker-guard.run.png",
+      "size": [
+        1536,
+        192
+      ],
+      "status": "redraw_required",
+      "previous_2026_10_24_qa": "fail",
+      "reason": "identity_head_ratio; leg_alternation warning; repair and re-run QA, then review frame 1/5, props and height under the new prompt.",
+      "source": "../p01-release-art-20261023/delivery/walker-guard.run.png"
+    },
+    {
+      "name": "walker-guard.run-down.png",
+      "size": [
+        1536,
+        192
+      ],
+      "status": "visual_review_candidate",
+      "previous_2026_10_24_qa": "pass",
+      "reason": "automated QA pass; still needs visual review against the new S24 contract; all NPCs still need visual review of frame 1/5 and uniform height under the new prompt, and S24 requires an approved player-male.run reference.",
+      "source": "../p01-release-art-20261023/delivery/walker-guard.run-down.png"
+    },
+    {
+      "name": "walker-guard.run-up.png",
+      "size": [
+        1536,
+        192
+      ],
+      "status": "redraw_required",
+      "previous_2026_10_24_qa": "fail",
+      "reason": "identity_head_ratio; seam warning; repair and re-run QA, then review frame 1/5, props and height under the new prompt.",
+      "source": "../p01-release-art-20261023/delivery/walker-guard.run-up.png"
+    },
+    {
+      "name": "walker-traveller.run.png",
+      "size": [
+        1536,
+        192
+      ],
+      "status": "redraw_required",
+      "previous_2026_10_24_qa": "fail",
+      "reason": "leg_alternation: duplicated half-cycle; seam warning; repair and re-run QA, then review frame 1/5, props and height under the new prompt.",
+      "source": "../p01-release-art-20261023/delivery/walker-traveller.run.png"
+    },
+    {
+      "name": "walker-traveller.run-down.png",
+      "size": [
+        1536,
+        192
+      ],
+      "status": "repair_required",
+      "previous_2026_10_24_qa": "warn",
+      "reason": "near_duplicates; repair and re-run QA, then review frame 1/5, props and height under the new prompt.",
+      "source": "../p01-release-art-20261023/delivery/walker-traveller.run-down.png"
+    },
+    {
+      "name": "walker-traveller.run-up.png",
+      "size": [
+        1536,
+        192
+      ],
+      "status": "visual_review_candidate",
+      "previous_2026_10_24_qa": "pass",
+      "reason": "automated QA pass; still needs visual review against the new S24 contract; all NPCs still need visual review of frame 1/5 and uniform height under the new prompt, and S24 requires an approved player-male.run reference.",
+      "source": "../p01-release-art-20261023/delivery/walker-traveller.run-up.png"
+    }
+  ],
+  "qa_summary": {
+    "static_delivery_count": 45,
+    "technical_passes": 45,
+    "motion_pending": 24,
+    "human_visual_approval_required": true,
+    "s23_redraw_required": 6,
+    "s24_visual_review_candidates": 5,
+    "s24_repair_required": 9,
+    "s24_redraw_required": 4,
+    "motion_source_queue": "art/src/hd2d/p01-release-art-20261023/REVIEW-QUEUE.md"
+  },
+  "failed_attempts": [
+    {
+      "status": "rejected_candidate",
+      "asset": "player-male.run.png",
+      "raw_candidate": "raw/route-codex-player-male-run-20261029/generated.png",
+      "route": "local:codex-cli (codex-image_gen)",
+      "processed_candidate": "processed/player-male.run-segmented/finished/candidate.png",
+      "qa": "processed/player-male.run-segmented/frames-qc/sheet-qc.json",
+      "failures": [
+        {
+          "id": "leg_alternation",
+          "status": "fail",
+          "value": "duplicated half-cycle: the same leg leads in both halves",
+          "frames": [
+            1,
+            5
+          ]
+        },
+        {
+          "id": "identity_head_ratio",
+          "status": "fail",
+          "value": 1.078,
+          "threshold": [
+            0.95,
+            1.05
+          ],
+          "frames": [
+            4,
+            8
+          ]
+        },
+        {
+          "id": "phase_coverage",
+          "status": "warn",
+          "value": "both halves lack flight phase"
+        },
+        {
+          "id": "torso_drift",
+          "status": "warn",
+          "value": 11.07,
+          "unit": "game px"
+        }
+      ],
+      "note": "This candidate is not in delivery and must not be used as the S24 approved style reference. Other pose-generation attempts also repeated the leading-leg arrangement."
+    }
+  ],
+  "approval_notes": {
+    "approved_reuse": [
+      "stone-floor-b.png",
+      "floor-light-1.png",
+      "floor-light-2.png",
+      "floor-light-3.png"
+    ],
+    "current_s07_s08": "not approved by E19/E20; current file hashes differ from those approved outputs"
+  }
+}

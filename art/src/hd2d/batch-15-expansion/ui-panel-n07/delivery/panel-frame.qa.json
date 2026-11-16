@@ -1,0 +1,95 @@
+{
+  "schema": "phimond.art-qa.v1",
+  "asset": "panel-frame.png",
+  "status": "ready_for_owner_review",
+  "dimensions": [
+    192,
+    192
+  ],
+  "alpha_values": [
+    0,
+    255
+  ],
+  "visible_rgb_colors": 48,
+  "nine_slice": {
+    "corner_size": 48,
+    "seam_preview": "panel-frame-9slice-proof.png",
+    "target_sizes": [
+      [
+        192,
+        192
+      ],
+      [
+        320,
+        240
+      ],
+      [
+        512,
+        320
+      ],
+      [
+        768,
+        512
+      ]
+    ]
+  },
+  "checks": [
+    {
+      "id": "dimensions",
+      "status": "pass",
+      "value": [
+        192,
+        192
+      ],
+      "threshold": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "binary_alpha",
+      "status": "pass",
+      "value": [
+        0,
+        255
+      ],
+      "threshold": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "visible_colors",
+      "status": "pass",
+      "value": 48,
+      "threshold": 48
+    },
+    {
+      "id": "sprite_processing",
+      "status": "pass",
+      "evidence": "../processed/pipeline-meta.json"
+    },
+    {
+      "id": "palette_apply",
+      "status": "pass",
+      "evidence": "../quantized/apply-qa.json",
+      "output_off_palette_px": 0,
+      "output_partial_alpha_px": 0
+    },
+    {
+      "id": "nine_slice_join",
+      "status": "skipped",
+      "value": null,
+      "threshold": null,
+      "evidence": "panel-frame-9slice-proof.png",
+      "reason": "Composition proof rendered at multiple sizes; edge-seam pixel continuity and engine sampling are not yet verified."
+    }
+  ],
+  "visual_review": "Reviewed at 4x nearest-neighbor. Gold double border and 48px corner ornaments are legible; center is plain dark teal. 9-slice composition rendered at 192\u00d7192, 320\u00d7240, 512\u00d7320, and 768\u00d7512 with a standard 48px corner grid; see panel-frame-9slice-proof.png. Verify edge repetition and runtime contrast before owner approval.",
+  "not_proven": [
+    "pixel continuity at all nine-slice boundaries",
+    "owner approval",
+    "runtime contrast",
+    "engine-specific nine-slice sampling"
+  ]
+}

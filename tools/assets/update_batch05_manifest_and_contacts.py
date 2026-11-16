@@ -10,7 +10,7 @@ import hashlib
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
-BATCH05 = Path("/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-05-octopath")
+BATCH05 = Path("/Users/phileanh/rust/phimond/art/src/hd2d/batch-05-octopath")
 
 def get_sha256(path):
     h = hashlib.sha256()

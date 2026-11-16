@@ -5,8 +5,8 @@ Chạy từ gốc repo (cần Pillow + numpy + scipy):
     python3 tools/p01/cut_city_batch12.py          # cắt + ghi manifest + contact-sheet
     python3 tools/p01/cut_city_batch12.py --debug  # in danh sách vùng tìm được trên mỗi sheet
 
-Nguồn: apps/game-web/art-src/hd2d/batch-12-city/_intake/don10-web-r{1,2,3}/
-Kết quả: apps/game-web/art-src/hd2d/batch-12-city/<id>/final.png (và <id>/run.png cho người đi đường),
+Nguồn: art/src/hd2d/batch-12-city/_intake/don10-web-r{1,2,3}/
+Kết quả: art/src/hd2d/batch-12-city/<id>/final.png (và <id>/run.png cho người đi đường),
 manifest.json (approved=false → client dùng với cờ provisional tới khi owner duyệt), contact-sheet.png.
 
 Quy ước: 128 px = 1 đơn vị world. Nền magenta khử thành alpha nhị phân, giảm còn ≤ 64 màu.
@@ -23,7 +23,7 @@ from PIL import Image, ImageDraw
 from scipy import ndimage as ndi
 
 ROOT = Path(__file__).resolve().parents[2]
-B = ROOT / "apps/game-web/art-src/hd2d/batch-12-city"
+B = ROOT / "art/src/hd2d/batch-12-city"
 R1, R2, R3 = B / "_intake/don10-web-r1", B / "_intake/don10-web-r2", B / "_intake/don10-web-r3"
 DEBUG = "--debug" in sys.argv
 

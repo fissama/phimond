@@ -1,0 +1,71 @@
+{
+  "status": "pass",
+  "method": "forge_palette.quantize_image: OKLab-nearest palette colour per pixel (exact palette colours kept), alpha binary at the threshold, then the written PNGs re-read and measured with forge_palette.fit_report against the palette",
+  "notProven": [
+    "Visual quality after snapping: compare an output with its input.",
+    "Indexed PNGs are engine exports; they are not checked by builders.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "output_off_palette_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "output_partial_alpha_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.171448,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../cli-city-bunting-v2-fit/fg-city-bunting.png",
+      "sha256": "3394d53ad0edab96ac3c7f9a8052cab06f7e0de22a13ad245da68a890ac623a1",
+      "bytes": 167141
+    },
+    {
+      "path": "../cli-city-bunting-v2-palette/palette.json",
+      "sha256": "4c3251714b44c00b4bfcb83abc6412c9cebd90f51327715c2a80958a11bdfcdc",
+      "bytes": 1924
+    }
+  ],
+  "outputs": [
+    {
+      "path": "fg-city-bunting.png",
+      "sha256": "7291c0adcf1a251f7c07c48ff96b2035e97d11d51cba641818bb8a95dda60d69",
+      "bytes": 43317
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "fit": {
+    "fg-city-bunting.png": {
+      "measured_px": 31119,
+      "alpha_threshold": 128,
+      "off_palette_px": 31024,
+      "partial_alpha_px": 42629,
+      "colors": 21770,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.013317,
+      "p95_delta_e": 0.028727,
+      "max_delta_e": 0.171448
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.171448,
+    "worst_p95_delta_e": 0.028727,
+    "off_palette_px": 31024
+  },
+  "locked_inputs": []
+}

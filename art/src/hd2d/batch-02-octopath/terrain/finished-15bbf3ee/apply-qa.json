@@ -1,0 +1,239 @@
+{
+  "status": "pass",
+  "method": "forge_palette.quantize_image: OKLab-nearest palette colour per pixel (exact palette colours kept), alpha binary at the threshold, then the written PNGs re-read and measured with forge_palette.fit_report against the palette",
+  "notProven": [
+    "Visual quality after snapping: compare an output with its input.",
+    "Indexed PNGs are engine exports; they are not checked by builders.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "output_off_palette_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "output_partial_alpha_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.081271,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../inputs-15bbf3ee/arena-floor.png",
+      "sha256": "bd1d6648a5188025138b4c8d5c4a99c942674e6a2ae05160f01fc7dbae746b9f",
+      "bytes": 296531
+    },
+    {
+      "path": "../inputs-15bbf3ee/city-brick-path.png",
+      "sha256": "02a2461b14671714ed9ca33e2f3f54196f9146018597ce44be86bacabefea95d",
+      "bytes": 317881
+    },
+    {
+      "path": "../inputs-15bbf3ee/city-paving-01.png",
+      "sha256": "1b6224ccaf86aa1ccb72e081ac27ac5aace996580864aa0b535aab694f2e6c9c",
+      "bytes": 344588
+    },
+    {
+      "path": "../inputs-15bbf3ee/city-paving-02.png",
+      "sha256": "373e9a1f784a7d5abf55389abcc224ea9f8742e0e778655bf09572db94e8a4b4",
+      "bytes": 315524
+    },
+    {
+      "path": "../inputs-15bbf3ee/city-paving-03.png",
+      "sha256": "b3f4545379620ae0e482b0d3049d9ac1649ad37b8f512f37e51e8def074fb76d",
+      "bytes": 304231
+    },
+    {
+      "path": "../inputs-15bbf3ee/farm-tilled-01.png",
+      "sha256": "879b9ecec30e7303eb31c586c0213cd9bdc0c135eb3b25e32a891cd9bf90a95b",
+      "bytes": 350615
+    },
+    {
+      "path": "../inputs-15bbf3ee/farm-tilled-02.png",
+      "sha256": "f40dced9e9f9b5d93f70561c12ae63693fea7c1b236ea4041b905e62552f203e",
+      "bytes": 359191
+    },
+    {
+      "path": "../inputs-15bbf3ee/hall-floor-stone.png",
+      "sha256": "3a7591ec6c179525b15498dbd6ea49fadbd622cdb46b060cb640d8969d5d808f",
+      "bytes": 283029
+    },
+    {
+      "path": "../inputs-15bbf3ee/hall-floor-wood.png",
+      "sha256": "5a0db5d3697eb655eb6dbcb97ef3d49ad7ae5ed95a52b03424f9c8ca54b35584",
+      "bytes": 320184
+    },
+    {
+      "path": "../palette-15bbf3ee/palette.json",
+      "sha256": "a3f1dbad8cd5035cefaff688d832c428f51ecfdf959c4d191813b9ecbc3883fd",
+      "bytes": 1924
+    }
+  ],
+  "outputs": [
+    {
+      "path": "arena-floor.png",
+      "sha256": "c105bcf3b0b1fff6eecb9f5d754d52fce9ed1104d929086854adeb09da1be7eb",
+      "bytes": 83901
+    },
+    {
+      "path": "city-brick-path.png",
+      "sha256": "b198efcad7fcf28071f0c1f870aa47925e3fa894cf4c5d7c716345b81aac2f44",
+      "bytes": 105836
+    },
+    {
+      "path": "city-paving-01.png",
+      "sha256": "20523ad77ad61b2de8cff032161aec57a6b5ad4b8d1ebf045ce5ce53ca351664",
+      "bytes": 152940
+    },
+    {
+      "path": "city-paving-02.png",
+      "sha256": "8646467e12352e010d91f329f0e45641be43157255da04dd2c40522a04dcb49f",
+      "bytes": 134253
+    },
+    {
+      "path": "city-paving-03.png",
+      "sha256": "c4f40500e3ca2253b734c45b65961ae2a5702f260e2a653633e395744a5ea3e6",
+      "bytes": 120632
+    },
+    {
+      "path": "farm-tilled-01.png",
+      "sha256": "8e66e44b5ff09eeed137ba6eb94e806dc48807f1a44e0998d565c1a304081859",
+      "bytes": 136558
+    },
+    {
+      "path": "farm-tilled-02.png",
+      "sha256": "e1843844ae68c71e1d73d95b906d0f43b77aa7f4a8331173883b1e07d6543932",
+      "bytes": 145069
+    },
+    {
+      "path": "hall-floor-stone.png",
+      "sha256": "1f2d10e5ed5e15fd091938b0e8fe177dab3c4b875d986f22e837685aa1fa63c4",
+      "bytes": 104277
+    },
+    {
+      "path": "hall-floor-wood.png",
+      "sha256": "15d38a637bb067e578b04b3f07e2d243a34fe5449f88e7a73d52d600cdd38f00",
+      "bytes": 104461
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "fit": {
+    "arena-floor.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 258132,
+      "partial_alpha_px": 0,
+      "colors": 10683,
+      "palette_colors_used": 33,
+      "mean_delta_e": 0.006354,
+      "p95_delta_e": 0.013615,
+      "max_delta_e": 0.037463
+    },
+    "city-brick-path.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 261313,
+      "partial_alpha_px": 0,
+      "colors": 38616,
+      "palette_colors_used": 44,
+      "mean_delta_e": 0.011544,
+      "p95_delta_e": 0.026469,
+      "max_delta_e": 0.06394
+    },
+    "city-paving-01.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 260906,
+      "partial_alpha_px": 0,
+      "colors": 17130,
+      "palette_colors_used": 33,
+      "mean_delta_e": 0.007312,
+      "p95_delta_e": 0.013658,
+      "max_delta_e": 0.038939
+    },
+    "city-paving-02.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 259390,
+      "partial_alpha_px": 0,
+      "colors": 15819,
+      "palette_colors_used": 32,
+      "mean_delta_e": 0.006135,
+      "p95_delta_e": 0.012951,
+      "max_delta_e": 0.060087
+    },
+    "city-paving-03.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 259394,
+      "partial_alpha_px": 0,
+      "colors": 14222,
+      "palette_colors_used": 28,
+      "mean_delta_e": 0.006418,
+      "p95_delta_e": 0.013043,
+      "max_delta_e": 0.046296
+    },
+    "farm-tilled-01.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 260112,
+      "partial_alpha_px": 0,
+      "colors": 8451,
+      "palette_colors_used": 26,
+      "mean_delta_e": 0.007397,
+      "p95_delta_e": 0.013448,
+      "max_delta_e": 0.039028
+    },
+    "farm-tilled-02.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 260253,
+      "partial_alpha_px": 0,
+      "colors": 15935,
+      "palette_colors_used": 35,
+      "mean_delta_e": 0.008136,
+      "p95_delta_e": 0.016035,
+      "max_delta_e": 0.081271
+    },
+    "hall-floor-stone.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 255919,
+      "partial_alpha_px": 0,
+      "colors": 10103,
+      "palette_colors_used": 33,
+      "mean_delta_e": 0.005597,
+      "p95_delta_e": 0.015943,
+      "max_delta_e": 0.034808
+    },
+    "hall-floor-wood.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 261692,
+      "partial_alpha_px": 0,
+      "colors": 8551,
+      "palette_colors_used": 21,
+      "mean_delta_e": 0.009186,
+      "p95_delta_e": 0.014732,
+      "max_delta_e": 0.069548
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.081271,
+    "worst_p95_delta_e": 0.026469,
+    "off_palette_px": 2337111
+  },
+  "locked_inputs": []
+}

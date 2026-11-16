@@ -9,7 +9,7 @@ import math
 import numpy as np
 from PIL import Image
 
-BATCH05 = "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-05-octopath"
+BATCH05 = "/Users/phileanh/rust/phimond/art/src/hd2d/batch-05-octopath"
 
 def quantize_to_palette(im, max_colors=48):
     if im.mode != 'RGBA':

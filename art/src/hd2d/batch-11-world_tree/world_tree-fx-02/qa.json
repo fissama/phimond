@@ -1,0 +1,64 @@
+{
+  "id": "world_tree-fx-02",
+  "size": [
+    512,
+    128
+  ],
+  "mode": "RGBA",
+  "frames": 4,
+  "frame_px": [
+    128,
+    128
+  ],
+  "fps": 5,
+  "shared_palette_colors": 40,
+  "binary_alpha": true,
+  "raw_integrity": true,
+  "raw_sha256": "36df6428106e94b28b9484d6d2b445c6d8abc1f3d28222ad4366b8675482be9a",
+  "sha256": "503971a0ddb929ba712010fd4dcdf5dfed436625ee218def4764b8253c20f05c",
+  "frame_order": [
+    "tight low seed cluster",
+    "rising wider cluster",
+    "dispersing higher motes",
+    "sparse fading motes"
+  ],
+  "cell_edge_alpha_max": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "alpha_bbox_margins_px": [
+    [
+      20,
+      35,
+      21,
+      35
+    ],
+    [
+      20,
+      31,
+      21,
+      32
+    ],
+    [
+      25,
+      20,
+      25,
+      21
+    ],
+    [
+      24,
+      20,
+      25,
+      21
+    ]
+  ],
+  "visual_review": "actual 4x atlas viewed on checker and dark backgrounds",
+  "approved": false,
+  "status": "needs_claude_visual_review",
+  "failures": [],
+  "warnings": [
+    "sheet_qc.py spill: safe_frame warning for 1/4 cells (cell 4 art within 15% threshold); no cuts/cross-cell spill, final padding processed to at least 8 px"
+  ]
+}

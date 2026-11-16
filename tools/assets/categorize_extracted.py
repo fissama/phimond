@@ -8,11 +8,11 @@ Improvements over the first cut:
   5. Eng/Vietnamese comment headers on each category for downstream consumers
 
 Input:
-    apps/game-client/assets/extracted/sbw_v32/Texture2D/*.png (+Sprite)
-    apps/game-client/assets/extracted/sbw_v84/Texture2D/*.png (+Sprite)
+    art/apk-extracted/sbw_v32/Texture2D/*.png (+Sprite)
+    art/apk-extracted/sbw_v84/Texture2D/*.png (+Sprite)
 
 Output (per deliverable):
-    apps/game-client/assets/extracted/extended/
+    art/apk-extracted/extended/
     ├── ui/         ornamental panels, dialog backgrounds, frames
     ├── icons/      small (<=128px) square icons (items, skills, status, money)
     ├── buttons/    button 4-state textures
@@ -36,10 +36,10 @@ from pathlib import Path
 from PIL import Image
 
 REPO = Path("/Users/phileanh/rust/phimond")
-EXT_OUT = REPO / "apps/game-client/assets/extracted/extended"
+EXT_OUT = REPO / "art/apk-extracted/extended"
 RAW_DIRS = [
-    REPO / "apps/game-client/assets/extracted/sbw_v32",
-    REPO / "apps/game-client/assets/extracted/sbw_v84",
+    REPO / "art/apk-extracted/sbw_v32",
+    REPO / "art/apk-extracted/sbw_v84",
 ]
 
 CATEGORIES = (

@@ -1,0 +1,1 @@
+Actual final +4x dark/checker inspected. Original APK dome/door/window/attached ruin retained; expanded fractured dome interior. 40colors, complete silhouette. Weak point: attached tower-like broken pier is more elaborate than source. Self-inspected draft; Claude approval pending.

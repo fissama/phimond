@@ -1,0 +1,1 @@
+Edit `chat-frame.png` while preserving its 768×176 canvas and frame geometry. Match gold UI language of approved `ui-minimap.png`; make the entire interior a true transparent hole. Binary alpha, at most 48 colors, no added detail. Built-in image edit returned 2170×725 instead, with colored red/green fringe around the gold border, so reject without resizing into delivery.

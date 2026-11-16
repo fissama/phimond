@@ -1,0 +1,148 @@
+{
+  "schema": "phimond.art-qa.v1",
+  "asset": "hud-pet-main.png",
+  "status": "ready_for_owner_review",
+  "dimensions": [
+    360,
+    128
+  ],
+  "alpha_values": [
+    0,
+    255
+  ],
+  "visible_rgb_colors": 48,
+  "checks": [
+    {
+      "id": "dimensions",
+      "status": "pass",
+      "value": [
+        360,
+        128
+      ],
+      "threshold": [
+        360,
+        128
+      ]
+    },
+    {
+      "id": "binary_alpha",
+      "status": "pass",
+      "value": [
+        0,
+        255
+      ],
+      "threshold": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "visible_colors",
+      "status": "pass",
+      "value": 48,
+      "threshold": 48
+    },
+    {
+      "id": "palette_apply",
+      "status": "pass",
+      "evidence": "../candidate-07-despill-quantized/apply-qa.json",
+      "output_off_palette_px": 0,
+      "output_partial_alpha_px": 0
+    },
+    {
+      "id": "well_geometry",
+      "status": "needs_visual_review",
+      "value": [
+        {
+          "area_px": 5406,
+          "bbox_xyxy": [
+            24,
+            22,
+            109,
+            105
+          ],
+          "centroid_xy": [
+            65.53,
+            62.75
+          ]
+        },
+        {
+          "area_px": 1334,
+          "bbox_xyxy": [
+            143,
+            43,
+            333,
+            51
+          ],
+          "centroid_xy": [
+            237.42,
+            46.01
+          ]
+        },
+        {
+          "area_px": 1330,
+          "bbox_xyxy": [
+            143,
+            63,
+            333,
+            70
+          ],
+          "centroid_xy": [
+            237.5,
+            66.0
+          ]
+        },
+        {
+          "area_px": 312,
+          "bbox_xyxy": [
+            93,
+            90,
+            113,
+            110
+          ],
+          "centroid_xy": [
+            102.62,
+            99.32
+          ]
+        }
+      ],
+      "threshold": {
+        "portrait_center": [
+          68,
+          64
+        ],
+        "portrait_outer_diameter": 104,
+        "level_center": [
+          104,
+          100
+        ],
+        "level_outer_diameter": 28,
+        "hp_bounds": [
+          132,
+          40,
+          344,
+          52
+        ],
+        "mp_bounds": [
+          132,
+          62,
+          344,
+          72
+        ]
+      }
+    },
+    {
+      "id": "magenta_edge_pixels",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0,
+      "method": "opaque magenta-like pixels adjacent to transparent alpha, RGB heuristic"
+    }
+  ],
+  "visual_review": "Reviewed at 4x nearest-neighbor on checkerboard. Gold/teal form is legible; empty portrait, level, HP and MP wells are transparent. A 2px edge despill removed the magenta fringe (0 magenta-like opaque pixels adjacent to alpha 0); binary alpha and 48-color palette retained.",
+  "not_proven": [
+    "exact outer ring and trough geometry against all coordinates",
+    "owner approval",
+    "runtime contrast on final HUD"
+  ]
+}

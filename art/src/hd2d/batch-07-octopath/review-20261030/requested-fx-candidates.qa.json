@@ -1,0 +1,124 @@
+{
+  "schema": "phimond.fx-review.v1",
+  "date": "2026-10-30",
+  "contact_sheet": "requested-fx-final-candidates-contact.png",
+  "assets": [
+    {
+      "asset": "fx_wind_hit",
+      "source": "review-20261030/fx_wind_hit-despill/quantized/source.png",
+      "dimensions": [
+        1152,
+        192
+      ],
+      "visible_colors": 48,
+      "alpha": [
+        0,
+        255
+      ],
+      "magenta_like_edge_px": 0,
+      "palette_qa": "pass",
+      "max_delta_e": 0.13793
+    },
+    {
+      "asset": "fx_light_hit",
+      "source": "review-20261030/fx_light_hit-despill/quantized/source.png",
+      "dimensions": [
+        1152,
+        192
+      ],
+      "visible_colors": 48,
+      "alpha": [
+        0,
+        255
+      ],
+      "magenta_like_edge_px": 150,
+      "palette_qa": "pass",
+      "max_delta_e": 0.122244
+    },
+    {
+      "asset": "fx_dark_hit",
+      "source": "review-20261030/fx_dark_hit-quantized/final.png",
+      "dimensions": [
+        1152,
+        192
+      ],
+      "visible_colors": 48,
+      "alpha": [
+        0,
+        255
+      ],
+      "magenta_like_edge_px": 4161,
+      "palette_qa": "pass",
+      "max_delta_e": 0.110673
+    },
+    {
+      "asset": "fx_neutral_hit",
+      "source": "review-20261030/fx_neutral_hit-despill/quantized/source.png",
+      "dimensions": [
+        1152,
+        192
+      ],
+      "visible_colors": 48,
+      "alpha": [
+        0,
+        255
+      ],
+      "magenta_like_edge_px": 23,
+      "palette_qa": "pass",
+      "max_delta_e": 0.164366
+    },
+    {
+      "asset": "fx_physical_hit",
+      "source": "review-20261030/fx_physical_hit-despill/quantized/source.png",
+      "dimensions": [
+        1152,
+        192
+      ],
+      "visible_colors": 48,
+      "alpha": [
+        0,
+        255
+      ],
+      "magenta_like_edge_px": 0,
+      "palette_qa": "pass",
+      "max_delta_e": 0.084725
+    },
+    {
+      "asset": "fx_ko_dissolve",
+      "source": "review-20261030/fx_ko_dissolve-quantized/final.png",
+      "dimensions": [
+        1152,
+        192
+      ],
+      "visible_colors": 48,
+      "alpha": [
+        0,
+        255
+      ],
+      "magenta_like_edge_px": 3558,
+      "palette_qa": "pass",
+      "max_delta_e": 0.171114
+    },
+    {
+      "asset": "fx_capture_seal",
+      "source": "review-20261030/fx_capture_seal-despill/quantized/source.png",
+      "dimensions": [
+        1152,
+        192
+      ],
+      "visible_colors": 48,
+      "alpha": [
+        0,
+        255
+      ],
+      "magenta_like_edge_px": 0,
+      "palette_qa": "pass",
+      "max_delta_e": 0.07777
+    }
+  ],
+  "not_proven": [
+    "fixed pivot validation in game engine",
+    "owner approval",
+    "runtime timing/impact scale"
+  ]
+}

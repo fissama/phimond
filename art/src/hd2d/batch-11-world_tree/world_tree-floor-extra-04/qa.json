@@ -1,0 +1,35 @@
+{
+  "id": "world_tree-floor-extra-04",
+  "size": [
+    512,
+    512
+  ],
+  "mode": "RGB",
+  "colors": 40,
+  "partial_alpha_pixels": 0,
+  "raw_integrity": true,
+  "raw_sha256": "7b3d1243f11fa3725837579d040ed08bbf0c29312f8ac03240f14251ac08e357",
+  "sha256": "7276e798e6d81159986a1eedbf156aeb34fbede6c42e9b9a60f5379890e3578f",
+  "processing": "raw preserved; LANCZOS resize 1254x1254→512x512; no-dither 40-color palette",
+  "tileable": "xy",
+  "seam_mean_x": 7.611,
+  "seam_mean_y": 9.097,
+  "outer8_colors": [
+    40,
+    40,
+    40,
+    40
+  ],
+  "outer8_uniform": false,
+  "repeat3x3_viewed": true,
+  "visual_review": "actual final and repeat 3x3 viewed",
+  "correlation_vs_floor01": 0.0837,
+  "correlation_vs_floor02": 0.0923,
+  "correlation_vs_floor03": 0.0913,
+  "approved": false,
+  "status": "needs_claude_visual_review",
+  "failures": [
+    "outer8_uniform=false",
+    "fine shingle grain has visible directional cadence in 3x3; secondary use/offset pending owner review"
+  ]
+}

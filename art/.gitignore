@@ -1,0 +1,24 @@
+# art/ — kho nguồn art. Git chỉ theo dõi: ảnh final/được giao, manifest, prompt, QA, script.
+# Mọi ảnh trung gian (raw, jobs, attempt, contact sheet, review, crop...) nằm trên ĐĨA nhưng git bỏ qua.
+# QUAN TRỌNG: những file này KHÔNG có trên GitHub — phải tự backup thư mục art/ (Time Machine/ổ ngoài).
+
+# Ảnh trung gian
+src/**/*.png
+src/**/*.gif
+src/**/*.jpg
+src/**/*.jpeg
+src/**/*.zip
+# ...trừ ảnh final / giao / redo
+!src/**/final.png
+!src/**/final*.png
+!src/**/final/**/*.png
+!src/**/delivery/**/*.png
+!src/**/redo/**/*.png
+!src/**/approved/**/*.png
+!src/**/out/**/*.png
+# ...nhưng thư mục jobs luôn là trung gian
+src/**/jobs/**
+
+# Dữ liệu dựng lại được
+build/
+apk-extracted/

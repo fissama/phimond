@@ -14,15 +14,15 @@
 2. Fix desert-palm-trunk: strip bottom 66x28px dirt rectangle (rows >= 229) and add natural curved roots.
 3. Fix desert-monster-bones: retint sand mound to golden sand [237, 188, 85] and feather outer perimeter (mép mềm).
 4. Update desert-boulder-01 to authentic gray twisted spire + leaning cactus from level6_Phiadong.png.
-5. Update manifest.json with new hashes and copy all textures to apps/game-web/public/scenes/tex/.
+5. Update manifest.json with new hashes and copy all textures to art/build/scenes/tex/.
 """
 import os, json, hashlib, shutil, pathlib
 from PIL import Image, ImageFilter
 import numpy as np
 
 R = pathlib.Path(__file__).resolve().parents[2]
-art_dir = R / "apps/game-web/art-src/hd2d/batch-11-desert"
-tex_dir = R / "apps/game-web/public/scenes/tex"
+art_dir = R / "art/src/hd2d/batch-11-desert"
+tex_dir = R / "art/build/scenes/tex"
 man_path = art_dir / "manifest.json"
 
 def save_and_sync(aid, img):

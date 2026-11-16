@@ -1,0 +1,92 @@
+{
+  "id": "ghost_castle-fx-02",
+  "size": [
+    512,
+    128
+  ],
+  "mode": "RGBA",
+  "frames": 4,
+  "frame_px": [
+    128,
+    128
+  ],
+  "fps": 5,
+  "duration_ms_each": 200,
+  "shared_palette_colors": 40,
+  "frame_metrics": [
+    {
+      "frame": 1,
+      "size": [
+        128,
+        128
+      ],
+      "colors": 41,
+      "partial_alpha_pixels": 0,
+      "sha256": "e9f3a615e11aeca1857d495828240370fc9187ca16253ec6b934730badb4ebae"
+    },
+    {
+      "frame": 2,
+      "size": [
+        128,
+        128
+      ],
+      "colors": 41,
+      "partial_alpha_pixels": 0,
+      "sha256": "32941925aba0adaece8a960daad7ae312a8356548f579e1b6fcc3fa07a96f37a"
+    },
+    {
+      "frame": 3,
+      "size": [
+        128,
+        128
+      ],
+      "colors": 41,
+      "partial_alpha_pixels": 0,
+      "sha256": "2294312f1b3ade8264aaf7feffaf24a646af2ab1236ce3c124fc0d52a9413cfa"
+    },
+    {
+      "frame": 4,
+      "size": [
+        128,
+        128
+      ],
+      "colors": 41,
+      "partial_alpha_pixels": 0,
+      "sha256": "cdbecb86bd6e28749f4798895e0ceff97a72041f55b9de567327bd31ed71a0e7"
+    }
+  ],
+  "binary_alpha": true,
+  "raw_integrity": true,
+  "raw_sha256": "48d12b13c6908ddf412434314f399d1709ede71d219db54ba9b41a31a8c275fe",
+  "sha256": "3aa13fbde169445a27c423794ac1345c26709fe9c0ab5db7e1278b16c813e427",
+  "source_spill_gate": "warn; safe_frame cells [0,0],[0,1],[0,3]; no crossings/cuts",
+  "processing_gate": "pass; generate2dsprite process mode=fx strict_qc=true",
+  "frame_qc": {
+    "status": "fail",
+    "checks": [
+      {
+        "id": "identity_head_ratio",
+        "status": "fail",
+        "value": {
+          "0": 0.962,
+          "1": 0.981,
+          "2": 1.058,
+          "3": 1.019
+        },
+        "threshold": [
+          0.95,
+          1.05
+        ]
+      },
+      {
+        "id": "torso_drift",
+        "status": "warn",
+        "value": 9.46,
+        "threshold": 2.0
+      }
+    ],
+    "interpretation": "Character-specific detectors are not applicable to environmental VFX; reported without suppression."
+  },
+  "visual_review": "actual_complete_4x_dark_and_checker_viewed; candidate only, not owner approved",
+  "failures": []
+}

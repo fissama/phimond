@@ -27,7 +27,7 @@ import numpy as np
 import scipy.ndimage as ndi
 
 WORKSPACE = Path('/Users/phileanh/rust/phimond')
-BATCH_DIR = WORKSPACE / 'apps/game-web/art-src/hd2d/batch-11-desert'
+BATCH_DIR = WORKSPACE / 'art/src/hd2d/batch-11-desert'
 ARTIFACT_DIR = Path('/Users/phileanh/.gemini/antigravity-ide/brain/011c27ea-b148-400e-9b78-4882eb990740')
 
 P_EXP = ARTIFACT_DIR / 'desert_props_expansion_1792140594196.jpg'

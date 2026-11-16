@@ -1,0 +1,33 @@
+{
+  "id": "world_tree-floor-03",
+  "size": [
+    512,
+    512
+  ],
+  "mode": "RGB",
+  "colors": 40,
+  "partial_alpha_pixels": 0,
+  "raw_integrity": true,
+  "raw_sha256": "011127c20faa511baa42fe8f835874936f9493b0c13e0a68fe39c73df1aad24f",
+  "sha256": "0d7d1e2a4769574a853b02395e54c3038c25f77c97303b08769e82ff03dfd6b4",
+  "processing": "raw preserved; nearest resize 512x512; 40-color no-dither palette",
+  "tileable": "xy",
+  "seam_mean_x": 2.781,
+  "seam_mean_y": 3.122,
+  "outer8_colors": [
+    38,
+    35,
+    30,
+    32
+  ],
+  "outer8_uniform": false,
+  "repeat3x3_viewed": true,
+  "visual_review": "actual final 4x and 3x3 mosaic viewed",
+  "correlation_vs_floor02": 0.1113,
+  "approved": false,
+  "status": "needs_claude_visual_review",
+  "failures": [
+    "outer8_uniform=false",
+    "leaf fragments understated at map scale"
+  ]
+}

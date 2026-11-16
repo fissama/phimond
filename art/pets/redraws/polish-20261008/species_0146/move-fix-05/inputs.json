@@ -1,0 +1,21 @@
+{
+  "directory": "move-fix-05",
+  "prompt": "Edit this exact 2x2 walk sprite sheet. The top two poses are usable. The BOTTOM TWO POSES ARE WRONG, they duplicate the same stepping leg. Preserve entire character style, proportions, head, horns, wings, tail, sword and upper body. Replace ONLY the legs and feet in the bottom two figures. Do not mirror the entire figure. Same left facing camera.\nBottom LEFT must be the opposite contact pose of top LEFT: the BIG FOREGROUND LEG currently on screen RIGHT must step FORWARD towards screen LEFT across in front of the other leg, its foot planted flat LEFT under the blade. The SMALL BACKGROUND LEG must move BACK toward screen RIGHT behind foreground thigh, visible rear toes on ground and heel raised. Foreground gold kneecap now LEFT of belt, background gold kneecap RIGHT behind. Draw clear overlapping thighs to show which leg passes in front.\nBottom RIGHT must be opposite passing pose of top RIGHT: BIG FOREGROUND LEG passes forward toward screen LEFT, its toes lifted only slightly from ground directly under the belly. SMALL BACKGROUND LEG supports on floor screen RIGHT under hip. GOLD FOREGROUND KNEECAP moves LEFT, NEVER stays high on screen RIGHT as in the reference.\nTopLEFT=foreground leg BACK/right, background FRONT/left. TopRIGHT=foreground right leg passing while background left supports. BottomLEFT=foreground FRONT/left, background BACK/right. BottomRIGHT=foreground passes under belly LEFT while background supports RIGHT. This is a two-leg alternating walk, not repeatedly lifting the right leg. Short stride, low knees, feet almost flat. Grounded heavy gait. Exactly two legs and two feet per figure, no extra claws or limbs. Match top figures' planted foot baseline in their cells. No camera flip, no body stretching. Transparent RGBA 2x2 sheet, all4 complete figures, clean empty gutters, no shadows or captions.",
+  "refs": [
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/polish-20261008/species_0146/move-fix-04/raw.png"
+  ],
+  "generated": "/Users/phileanh/.codex/generated_images/01a0e5c8-b07f-7471-bf62-96df6be6402c/exec-837a1b73-978a-4651-b00b-e0aae31989d0.png",
+  "reason": "Targeted opposite leg correction still repeats near/far layout.",
+  "tool": "image_gen.imagegen",
+  "image_model": "not_exposed",
+  "status": "rejected",
+  "runtime_active": false,
+  "raw_sha256": "d017d9069c72e3b21725dec98ecd04987bac9371dce5a11dffe2d81647ea4300",
+  "prompt_sha256": "7e69684bafd3271f2791bc89a953977657aed1e26fb2bcb77b475abd26a56618",
+  "reference_hashes": [
+    {
+      "path": "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/polish-20261008/species_0146/move-fix-04/raw.png",
+      "sha256": "4ac7cff7ff8e686e530ea0148cb66e57f49e2fc211fd6ff06f6994e6f7da6049"
+    }
+  ]
+}

@@ -4,7 +4,7 @@
 Chạy từ gốc repo (cần Pillow + numpy):
     python3 tools/p01/install_idle_npcs.py [--src DIR] [--dry]
 
-- Nguồn mặc định: apps/game-web/art-src/hd2d/p01-release-art-20261023/delivery/<id>.idle.png.
+- Nguồn mặc định: art/src/hd2d/p01-release-art-20261023/delivery/<id>.idle.png.
 - Kiểm: kích thước (n×192)×192, alpha nhị phân, khử điểm ảnh hồng/tím sót ở mép (cùng hàm với install_s01_s27.py),
   chân khung nào cũng chạm gần cùng một hàng (để nhân vật không "nhảy" giữa các khung).
 - Ghi apps/client/public/hd2d/<id>.idle.png và đặt `idle_frames` trong assets.json (giữ nguyên các trường khác).
@@ -25,7 +25,7 @@ spec = importlib.util.spec_from_file_location("s01", ROOT / "tools/p01/install_s
 s01 = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(s01)
 
-DEFAULT_SRC = ROOT / "apps/game-web/art-src/hd2d/p01-release-art-20261023/delivery"
+DEFAULT_SRC = ROOT / "art/src/hd2d/p01-release-art-20261023/delivery"
 HD = ROOT / "apps/client/public/hd2d"
 NPCS = ["summoner_mira", "bia_free", "bia_skill", "sq_pillar", "sq_skill", "sq_exchange", "sq_warehouse"]
 FRAME = 192

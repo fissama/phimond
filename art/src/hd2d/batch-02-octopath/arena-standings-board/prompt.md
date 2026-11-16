@@ -1,0 +1,10 @@
+Use case: modular arena cutout pack. SIX separate standalone objects, TWO ROWS x THREE COLUMNS, generous empty gutters. TOP LEFT: short empty stone grandstand module, three stepped rows of seating behind low carved stone parapet, no people, no ground in front. TOP CENTER: plain dark red faction pennant on slim bronze pole with round finial, no emblem. TOP RIGHT: plain deep desaturated teal faction pennant on matching pole, no emblem. BOTTOM LEFT: complete arena stone column with spiral carved relief and simple dullgold bands, full base and capital, inspired by source architecture. BOTTOM CENTER: low freestanding timber weapon rack holding practice spears, two sheathed swords and a plain buckler. BOTTOM RIGHT: tall wooden standings board on two sturdy posts with completely BLANK dark slate inset surface, no chalk or slots or marks. Original source arena goldtrim/stone/madder materials and ceremonial architecture, last2 pet sheets pixel edge/shading only. Octopath Traveler inspired HD-2D PIXEL ART, mature restrained limestone/umber/dullgold/madder/teal palette, hue-tinted dark outlines, large clean3-4tone clusters/material, crisp stepped pixels, no tiny phototexture. Upright front billboard24degrees down. Each whole sprite inside middle55percent of its cell, no edge touching, no overlap. Flat exact pure #FF00FF background including all open gaps. NO floor, cast shadows, people, glow, flames, fog, letters, numbers, symbols, writing, scenery or composed arena scene.
+
+
+
+Ordered reference images:
+- /Users/phileanh/Downloads/Phimond-P12-Review/map-images/city_deathmatch_arena.png / sha256 b94923bc722634c330ca5a127c72d35e8ec525039e24f2ae372eb80ddd369c57
+- /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png / sha256 fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da
+- /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png / sha256 043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3
+
+Route: built-in image_gen; model not exposed; raw SHA256 af3fd480cfb405a117877d9b676c9848fc7667e5d909a6cad42ebffa51474659

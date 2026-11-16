@@ -1,0 +1,41 @@
+{
+  "id": "login-layer-2-citadel",
+  "px": [
+    1280,
+    720
+  ],
+  "mode": "RGBA",
+  "colors": 64,
+  "color_limit": 64,
+  "partial_alpha_pixels": 0,
+  "key_residue_pixels": 0,
+  "alpha_margins": [
+    0,
+    177,
+    0,
+    0
+  ],
+  "backdrop_edge_exception": "Side/bottom coverage intentional; whole viewport layer, no isolated prop is clipped.",
+  "bottom_24px_fully_opaque": true,
+  "source_raw": "raw-01.png",
+  "raw_integrity": true,
+  "sha256": "51fdce2d2c9e24929a3ed70dc1564344128750f1ba3e748b513b24cd43208223",
+  "despill": {
+    "mode": "edge",
+    "applied": "edge",
+    "radius": 3,
+    "margin": 12,
+    "changed_px": 1267,
+    "additional_key_hue_removed_px": 0
+  },
+  "visual_review": {
+    "status": "self_inspected_4x_needs_claude",
+    "backgrounds": [
+      "checker",
+      "dark"
+    ],
+    "approval": false,
+    "note": "Unchanged sky/citadel verified hash from previous inspection; forest/foreground reviewed again after raw04 edit."
+  },
+  "failures": []
+}

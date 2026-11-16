@@ -1,0 +1,25 @@
+{
+  "schema": "phimond.master-draft.v1",
+  "approved": false,
+  "id": "npc-bia_skill",
+  "identity": "long red-haired adult woman, green and orange flowing robes, curved botanical shoulder ornaments",
+  "master": "final.png",
+  "canvas": [
+    192,
+    192
+  ],
+  "body_height_px": 168,
+  "pivot_px": [
+    96,
+    184
+  ],
+  "art_source": "host_image",
+  "route": "built-in image_gen",
+  "finish": "pixel",
+  "palette": "../palette-all-v3/palette.json",
+  "animation_status": "blocked",
+  "blockers": [
+    "owner_master_approval_pending",
+    "no_configured_image_to_video_route"
+  ]
+}

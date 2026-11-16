@@ -1,0 +1,38 @@
+{
+  "id": "farm-tilled-02",
+  "status": "needs_claude_review",
+  "approved": false,
+  "candidate_quality": "PASS_INTERNAL_PENDING_CLAUDE",
+  "raw_source": "raw-03.png",
+  "raw_sha256": "702f80f5e1a43f8a000a3778a3942188c7b1cfca39c1a3c06327315fb1fe81a4",
+  "final_sha256": "68fb8f2925089522ab9f95a8690d68b7ff6347ebb647aec3ce0dff5e106f063c",
+  "size_px": [
+    512,
+    512
+  ],
+  "distinct_rgb_colors": 48,
+  "alpha_values": 1,
+  "seam_mean_255": {
+    "x": 9.271,
+    "x_neighbor": 3.873,
+    "x_max": 85,
+    "threshold_x": 14,
+    "y": 9.025,
+    "y_neighbor": 3.324,
+    "y_max": 81,
+    "threshold_y": 14
+  },
+  "checks": {
+    "size_512": true,
+    "palette_33_48": true,
+    "seam_x": true,
+    "seam_y": true,
+    "repeat_3x3_viewed": true,
+    "offset_viewed": true,
+    "seedlings_irregular": "two clustered upper-left and one isolated lower-right; no evenly spaced grid"
+  },
+  "rejected_attempts": [
+    "raw-01 uniform scattered-sprout grid",
+    "raw-02 proof sheet generated an obvious seedling grid"
+  ]
+}

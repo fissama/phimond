@@ -1,0 +1,5 @@
+One finished256x256 CHARACTER SELECTION BUST PORTRAIT, female main protagonist from image1. Image1 is an EXACT character identity and costume lock: same hair silhouette, hair color, face, eye color, shirt, coat/corset, gold trim, leather accessories and age. Image2 is only approved pixel-portrait style. Waist-up3/4 facing slightly toward viewer, confident approachable expression. Large readable face, whole crown and shoulders within8px padding, no frame or decorations; no equipment not in image1. HD2D Octopath-like crisp pixel clusters, colored dark1px outline at256scale,48colors,2-4tones per material, warm upper-left light, no antialias/blur/glow/groundshadow/text. Flat pure #FF00FF background for keying. Do NOT crop a tiny standing sprite; render a real waist-up portrait filling the square.
+
+References:
+- /Users/phileanh/rust/phimond/apps/client/public/hd2d/player-female.png SHA256 e6163019a639d844f5aba341cb6a308db3509ac6b35ec591e00a64225c2a654f
+- /Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-05-octopath/portrait-trainer_elin/final.png SHA256 75d36e4a91d4a8a7f7fb228ec31624c93074fc345dabbb9d71917e90588bee74

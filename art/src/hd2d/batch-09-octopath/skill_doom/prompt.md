@@ -1,0 +1,12 @@
+Selected prompt:
+Production asset sheet for Phimond, muted Octopath Traveler HD-2D pixel art. Crisp large color clusters, 2–4 shade steps, dark hue-tinted contours, top-left warm highlights and cool shadows. Muted antique gold, parchment, patinated bronze. Pet sheets only calibrate pixel outline/color shading, NOT content. No words, no labels, no digits, no scenery, no glow/bloom, no cast shadows. Each icon isolated on genuine transparent alpha with very wide clear gaps, centered equal grid cells. Readable silhouette at32x32. Do not connect objects. EXACT order left-to-right row-by-row. Create exactly16 distinct skill icons in4columns x4rows equal square cells. Refer to original icon visual grammar but make semantic designs,no enclosing frames. Row1: attack silver claw slash; earth_strike ochre jagged shock-rock; petrify gray stone head; cleanse_doom golden broken skull chain. Row2: insect_boon green beetle and upward gold rays; water_strike blue wave impact; doom dark teal skull hourglass; cleanse_sleep blue open eye with dispelled crescent. Row3: spirit_boon violet spirit rising from blue egg; wind_strike silvergreen slicing wind plume; sleep closed eye and moon(noZletters); cleanse_silence silver bell with dispelled red slash. Row4: bird_boon feathered wing under golden upwardray; fire_strike copper orange flameburst; silence closed mouth with red crossedbars; cleanse_bind red broken rope loops. Exact16motifs, aligned4x4 cells. Reference item sheet as original material/color/shading context, race egg sheet for boon motifs.
+
+Selected ordered references:
+1. /Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-09-octopath/source-items.png sha256=2422342dc8ec3382ea188420c8727f223a4b31cbaa027c86590d1327e3444944
+2. /Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-09-octopath/source-races.png sha256=644cfeb05eb0750e5594cd173911a7fb3bcad24ce8cd4e02b5a0371beb8029e0
+3. /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png sha256=fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da
+4. /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png sha256=043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3
+
+Route: built-in image_gen; model not exposed; cost unknown.
+Raw SHA256: 1b9ed79e802d93ad17cbc06e0650ae4aab884be11e992c127b48bf715e0cf42e
+Full per-attempt provenance: provenance.json

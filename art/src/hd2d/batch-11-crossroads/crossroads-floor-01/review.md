@@ -1,0 +1,3 @@
+# crossroads-floor-01 — 2026-10-28
+
+Viewed complete final and detail at 4× over dark and checker backgrounds, plus 3×3 repeat. Texture reads as damp cave slate with blue-green stone planes and remains legible after the global border palette merge. Repeat boundaries are visually continuous. Package QA: 39 colors, X/Y seam mean and max 0, uniform outer 8px, binary alpha, key residue 0, raw integrity true. Global palette remap collapses the 10 colors present on the outer border into the most frequent border color and applies to matching colors everywhere; no pixels were painted spatially. Source raw retained byte-identically. Checklist Vẽ checked; owner Duyệt remains unchecked.

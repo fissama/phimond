@@ -1,0 +1,151 @@
+{
+  "status": "pass",
+  "method": "forge_palette.build_palette (weighted k-means++ in OKLab over unique colours, reserved colours fixed, coverage skipping) then forge_palette.fit_report of every input: OKLab dE of each pixel with alpha >= the threshold to its nearest palette colour",
+  "notProven": [
+    "Visual quality of the palette: look at swatches.png and an applied frame.",
+    "Colours of pixels below the alpha threshold were not sampled or measured.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "palette_colors",
+      "status": "pass",
+      "value": 48,
+      "threshold": 48
+    },
+    {
+      "id": "inputs_without_samples",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0,
+      "files": []
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.176815,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../stained-glass-panel/forge-01/clean.png",
+      "sha256": "c9425e3458a9b8654531de6a90a14e50c169cbd9ab36c11a7f4c8703810b30c5",
+      "bytes": 51121
+    },
+    {
+      "path": "../heraldic-banner/forge-01/clean.png",
+      "sha256": "b6d7ad674e4ff5675cf9e2645a2a28cf2fbdbf85f2ce5dae6fd4de127fd84fec",
+      "bytes": 62129
+    },
+    {
+      "path": "../incense-braziers/forge-01/clean.png",
+      "sha256": "d8932ca394cf6f4aaf564de2ab90533d96cfaba9dc9e644a36a493785146f874",
+      "bytes": 71661
+    },
+    {
+      "path": "../hanging-lantern/forge-01/clean.png",
+      "sha256": "1542abbaaffd9f816cbc8a755a4cc5c2e14d2d9b1b9691396da2d03becabf3af",
+      "bytes": 31305
+    },
+    {
+      "path": "../ceremonial-lectern/forge-01/clean.png",
+      "sha256": "066efa07ecc81781a10dc91f4d74a006818283ede09a1d4c139c6f5e2a7b161e",
+      "bytes": 67016
+    }
+  ],
+  "outputs": [
+    {
+      "path": "palette.json",
+      "sha256": "5e20dbb321a48c56f8b642d981e84dfa53716400a2c355ee866dbf60ce032c0f",
+      "bytes": 1963
+    },
+    {
+      "path": "palette.gpl",
+      "sha256": "4315939ce66404ababccd0461bff8d5371a6cf0c7546d5c5e4419043ebea65fa",
+      "bytes": 1019
+    },
+    {
+      "path": "palette.hex",
+      "sha256": "c4a5e7fb4880c99c2d1aea5ab8575c24886c6a94259f218e536d9a904029d4fe",
+      "bytes": 336
+    },
+    {
+      "path": "swatches.png",
+      "sha256": "1463cf823273678550e2b8f79f4087ed64c0828d2e48c9348d907d487a7a9e4f",
+      "bytes": 696
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "palette": {
+    "colors": 48,
+    "reserved": 0,
+    "transparent_index": 255,
+    "seed": 0
+  },
+  "fit": {
+    "../stained-glass-panel/forge-01/clean.png": {
+      "measured_px": 16476,
+      "alpha_threshold": 128,
+      "off_palette_px": 16470,
+      "partial_alpha_px": 1948,
+      "colors": 14896,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.025473,
+      "p95_delta_e": 0.061794,
+      "max_delta_e": 0.14305
+    },
+    "../heraldic-banner/forge-01/clean.png": {
+      "measured_px": 21712,
+      "alpha_threshold": 128,
+      "off_palette_px": 21703,
+      "partial_alpha_px": 3708,
+      "colors": 17132,
+      "palette_colors_used": 39,
+      "mean_delta_e": 0.01962,
+      "p95_delta_e": 0.037227,
+      "max_delta_e": 0.088478
+    },
+    "../incense-braziers/forge-01/clean.png": {
+      "measured_px": 18900,
+      "alpha_threshold": 128,
+      "off_palette_px": 18887,
+      "partial_alpha_px": 7010,
+      "colors": 16529,
+      "palette_colors_used": 45,
+      "mean_delta_e": 0.021365,
+      "p95_delta_e": 0.039777,
+      "max_delta_e": 0.176815
+    },
+    "../hanging-lantern/forge-01/clean.png": {
+      "measured_px": 8665,
+      "alpha_threshold": 128,
+      "off_palette_px": 8663,
+      "partial_alpha_px": 2138,
+      "colors": 8058,
+      "palette_colors_used": 40,
+      "mean_delta_e": 0.022123,
+      "p95_delta_e": 0.041296,
+      "max_delta_e": 0.089261
+    },
+    "../ceremonial-lectern/forge-01/clean.png": {
+      "measured_px": 22717,
+      "alpha_threshold": 128,
+      "off_palette_px": 22695,
+      "partial_alpha_px": 3190,
+      "colors": 17986,
+      "palette_colors_used": 39,
+      "mean_delta_e": 0.017858,
+      "p95_delta_e": 0.033371,
+      "max_delta_e": 0.104368
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.176815,
+    "worst_p95_delta_e": 0.061794,
+    "off_palette_px": 88418
+  }
+}

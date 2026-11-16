@@ -1,0 +1,2 @@
+Golden pangolin armored plates/spines, long pale snout, claws and tail preserved. All20 LEFT. Idle, articulated crawl, crouch/rear/claw lunge/recover; focus/rear/release/relax gestures; flinch/curl/lower/prone. Light composite clean.
+Mechanical PASS. Reviewed all20 static packed poses and original references. Single common nearest-neighbor scale preserves allalpha. Human approved false. Animation playback unverified. Body height below typical guidance possible.

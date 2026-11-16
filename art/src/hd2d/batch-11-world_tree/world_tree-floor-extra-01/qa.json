@@ -1,0 +1,35 @@
+{
+  "id": "world_tree-floor-extra-01",
+  "size": [
+    512,
+    512
+  ],
+  "mode": "RGB",
+  "colors": 40,
+  "partial_alpha_pixels": 0,
+  "raw_integrity": true,
+  "raw_sha256": "1f239d641287e5d00d1c3a87188c2bfb081235b44e6cd869a75bfbbd68d35a29",
+  "sha256": "7cd73459fc0dea9885f9c91258dc74c0863bf6a45d80a6dde462bed6fb2e5368",
+  "processing": "raw preserved; LANCZOS resize 1254x1254→512x512; no-dither 40-color palette",
+  "tileable": "xy",
+  "seam_mean_x": 3.999,
+  "seam_mean_y": 4.102,
+  "outer8_colors": [
+    40,
+    40,
+    40,
+    39
+  ],
+  "outer8_uniform": false,
+  "repeat3x3_viewed": true,
+  "visual_review": "actual final and repeat 3x3 viewed",
+  "correlation_vs_floor01": 0.0502,
+  "correlation_vs_floor02": 0.0508,
+  "correlation_vs_floor03": 0.0632,
+  "approved": false,
+  "status": "needs_claude_visual_review",
+  "failures": [
+    "outer8_uniform=false",
+    "fine bark texture has mild repeat cadence; use as restrained secondary fill"
+  ]
+}

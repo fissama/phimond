@@ -1,0 +1,12 @@
+Create a production character MASTER STILL PACK, exactly 4 isolated assets in a 2 column by 2 row grid, read left-to-right top-to-bottom, even large spacing between quadrants. Each cell independent full body, same scale, complete feet. Transparent background. These are independent master stills, NOT animation frames. PRIMARY style Octopath Traveler HD-2D: grounded refined human proportions about 4.5 heads tall, mature expressive restrained faces, muted desaturated earthly colors, crisp clustered pixel art, hue-tinted dark outlines, 2-4 tones per material, subtle upper-left warm key with cool shadows. Pet anchor image LAST is ONLY pixel-edge/outline compatibility, do not copy its chibi anatomy or saturated palette. No cast shadow, floor, checkerboard, text, glow, fog, blur, scenery, labels or extra objects. Every character full body centered, frontal slight three-quarter, feet visible, neutral grounded rest pose. Retain original reference hair, clothing and color identity, adapting only proportion and refined pixel craft.
+Cell 1, content reference image 1: purple-haired woman with purple-blue long formal dress. Preserve attached original identity. 
+Cell 2, content reference image 2: brown-haired man, green coat, gold belt and pale shirt. Preserve attached original identity. 
+Cell 3, content reference image 3: black-haired woman with blue topknot, dark blue gold-trimmed robe. Preserve attached original identity. 
+Cell 4, content reference image 4: silver-grey-haired man with layered dark blue coat and pale cravat. Preserve attached original identity. 
+
+Ordered references:
+/Users/phileanh/rust/phimond/apps/game-client/assets/extracted/sbw_v32/Sprite/sharedassets3.assets_164_69.png sha256 1ccf3b1d31a17706a8ad978226e25d57f29a41ed737049f83069a6e91b15aee1
+/Users/phileanh/rust/phimond/apps/game-client/assets/extracted/sbw_v32/Sprite/sharedassets3.assets_147_70.png sha256 d683b0fd45de98017ab77bd4c4bbe5ab00e7442720bd89f0902d3019c024fd24
+/Users/phileanh/rust/phimond/apps/game-client/assets/extracted/sbw_v32/Sprite/sharedassets3.assets_163_71.png sha256 fa2fb7e26cbbca4d17bee96a7d6a0dbbc9613b7ce4f9df41e1184c0537f1031c
+/Users/phileanh/rust/phimond/apps/game-client/assets/extracted/sbw_v32/Sprite/sharedassets3.assets_144_77.png sha256 954a8b55c53ff41fe48c34d8c805fcb14f5ce50f0c90ddee93cb2c39dae9ce2b
+/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png sha256 fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da

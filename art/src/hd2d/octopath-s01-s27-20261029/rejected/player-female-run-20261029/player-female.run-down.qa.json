@@ -1,0 +1,23 @@
+{
+  "asset": "player-female.run-down.png",
+  "candidate_source": "rejected/player-female-run-20261029/player-female.run-down-raw.png",
+  "status": "rejected",
+  "expected_size": [
+    1536,
+    192
+  ],
+  "actual_size": [
+    2172,
+    724
+  ],
+  "unique_colors": 334394,
+  "alpha_levels_count": 256,
+  "alpha_binary": false,
+  "criteria": {
+    "8_cells_192x192": false,
+    "frame1_vs_5_opposite_contact": false,
+    "even_body_height": false,
+    "no_stray_or_magenta_fringe": false
+  },
+  "notes": "Raw host image candidate only; unsuitable output dimensions 2172x724. Front view poses do not show a convincing opposite-leg contact pair at frames 1 and 5; reject."
+}

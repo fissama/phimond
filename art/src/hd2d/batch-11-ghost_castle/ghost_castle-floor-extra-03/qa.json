@@ -1,0 +1,89 @@
+{
+  "id": "ghost_castle-floor-extra-03",
+  "size_px": [
+    512,
+    512
+  ],
+  "mode": "RGB",
+  "world_size": [
+    4,
+    4
+  ],
+  "tileable": "xy",
+  "palette_colors": 40,
+  "raw_sha256": "9037c4f36e69fe80b71156d8ba932e4208cbb17261619ac457adc81c62864652",
+  "sha256": "3090d18fb657243191782edf4de1f958733c78371649436ca399f76d9247d988",
+  "terrain_qc": {
+    "x": {
+      "seam": 2.123047,
+      "adjacent_median": 1.506836,
+      "adjacent_p95": 2.003662,
+      "adjacent_max": 2.067383,
+      "seam_over_median": 1.408944,
+      "seam_over_p95": 1.059583,
+      "seam_ratio": 1.026925,
+      "near_median": 1.17627,
+      "verdict": "continuous",
+      "method": "premultiplied RGBA column steps (0-255); join vs interior steps within 8 columns per side, whole edge and worst 4-row window"
+    },
+    "y": {
+      "seam": 2.947266,
+      "adjacent_median": 2.791992,
+      "adjacent_p95": 3.36731,
+      "adjacent_max": 3.851074,
+      "seam_over_median": 1.055614,
+      "seam_over_p95": 0.875258,
+      "seam_ratio": 0.76531,
+      "near_median": 2.359619,
+      "verdict": "continuous",
+      "method": "premultiplied RGBA column steps (0-255); join vs interior steps within 8 columns per side, whole edge and worst 4-row window"
+    }
+  },
+  "checks": [
+    {
+      "id": "contrast",
+      "status": "pass",
+      "value": 0.046646,
+      "threshold": 0.035
+    },
+    {
+      "id": "variant_difference",
+      "status": "pass",
+      "value": 1.0,
+      "threshold": 0.025
+    },
+    {
+      "id": "border_frame",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0.1
+    },
+    {
+      "id": "shape_coverage",
+      "status": "skipped",
+      "value": null,
+      "threshold": 0.97
+    },
+    {
+      "id": "shape_spill",
+      "status": "skipped",
+      "value": null,
+      "threshold": 0.03
+    },
+    {
+      "id": "wrap_seams",
+      "status": "pass",
+      "value": 1.026925,
+      "threshold": 1.25
+    },
+    {
+      "id": "wang_seams",
+      "status": "skipped",
+      "value": null,
+      "threshold": null
+    }
+  ],
+  "seamless_verified": false,
+  "visual_review": "actual 3x3 mosaic inspected; joins continuous but sparse rubble cluster motif repeats; candidate only",
+  "failures": []
+}

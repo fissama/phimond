@@ -1,0 +1,1 @@
+Rejected for reference provenance: upstream inputs-resume.json includes own redraw edit target and two other redraw atlases. The automatically copied original reference manifest describes audit inputs only and does not establish generation provenance. This repack is diagnostic, never a selected compliant candidate.

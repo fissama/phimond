@@ -1,0 +1,34 @@
+{
+  "id": "ghost_castle-floor-extra-05",
+  "size_px": [
+    512,
+    512
+  ],
+  "mode": "RGBA",
+  "colors": 40,
+  "partial_alpha_pixels": 0,
+  "key_residue_pixels": 0,
+  "margin": 0,
+  "raw_integrity": true,
+  "raw_sha256": "116d00a1725f02fc7ea127ec8b40790957dd0f114e5e853d2e5deb414d49b705",
+  "sha256": "861822a38f9431509207e6af5a4333f5b2aa8b494aabcee9289d2d7ed57f1236",
+  "terrain_qc": {
+    "contrast": 0.055168,
+    "min_contrast": 0.035,
+    "seam_x_ratio": 0.095335,
+    "seam_y_ratio": 1.0,
+    "max_seam_ratio": 1.25,
+    "verdict": "continuous",
+    "warnings": []
+  },
+  "outer8_uniform": false,
+  "visual_review": "actual 3x3 mosaic and 4x detail viewed; repeat has a regular visible octagonal cadence; candidate only",
+  "failures": [],
+  "alpha_max": 255,
+  "seamless_verified": false,
+  "reviewed_on": "2026-11-04",
+  "reviewer_note": "Strong geometric repetition; reserve for limited floor accents pending owner review.",
+  "warnings": [
+    "outer8_uniform: false — outermost 8 px are not one flat tone, per the kit tile rule; do not call this a fully compliant floor until owner accepts or the tile is redrawn."
+  ]
+}

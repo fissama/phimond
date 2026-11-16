@@ -1,0 +1,119 @@
+{
+  "status": "pass",
+  "method": "forge_palette.build_palette (weighted k-means++ in OKLab over unique colours, reserved colours fixed, coverage skipping) then forge_palette.fit_report of every input: OKLab dE of each pixel with alpha >= the threshold to its nearest palette colour",
+  "notProven": [
+    "Visual quality of the palette: look at swatches.png and an applied frame.",
+    "Colours of pixels below the alpha threshold were not sampled or measured.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "palette_colors",
+      "status": "pass",
+      "value": 48,
+      "threshold": 48
+    },
+    {
+      "id": "inputs_without_samples",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0,
+      "files": []
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.102906,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../stage/chat-frame.png",
+      "sha256": "5b653ed9480fe7ab090b9221b2a27a83268f90eef6719cacd152ffb0ddd700e8",
+      "bytes": 22888
+    },
+    {
+      "path": "../stage/chat-tab-normal.png",
+      "sha256": "2bd2fc5406d00f1bc20ea926582c92cc24ab183b57384b91f485deaeb1e9160c",
+      "bytes": 4618
+    },
+    {
+      "path": "../stage/chat-tab-selected.png",
+      "sha256": "c7484dca25115744f281e9bb862fd1f43b5e9434867baf635fbbabd55fd510e4",
+      "bytes": 3904
+    }
+  ],
+  "outputs": [
+    {
+      "path": "palette.json",
+      "sha256": "782ba50a4ff8e5752bfb3f96eb7bb2339686cea2ca00f18f8ba8650d53e4f2c8",
+      "bytes": 1951
+    },
+    {
+      "path": "palette.gpl",
+      "sha256": "983f07f4f2e7cb5f6fec10d4bff45fe2ae3769454d06a25d50669c0bcd15e8b9",
+      "bytes": 1007
+    },
+    {
+      "path": "palette.hex",
+      "sha256": "dcd41cd1c05a9841efcd66fdafd7a467eeb4a46d851e02b75930ce636656edbf",
+      "bytes": 336
+    },
+    {
+      "path": "swatches.png",
+      "sha256": "9b11e1ea0afc7adb7b7a3789bf0a0010b9c1630e7ab0415ca8d1f51b09b8e2ec",
+      "bytes": 693
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "palette": {
+    "colors": 48,
+    "reserved": 0,
+    "transparent_index": 255,
+    "seed": 0
+  },
+  "fit": {
+    "../stage/chat-frame.png": {
+      "measured_px": 11342,
+      "alpha_threshold": 128,
+      "off_palette_px": 11219,
+      "partial_alpha_px": 0,
+      "colors": 4533,
+      "palette_colors_used": 41,
+      "mean_delta_e": 0.008276,
+      "p95_delta_e": 0.020086,
+      "max_delta_e": 0.102906
+    },
+    "../stage/chat-tab-normal.png": {
+      "measured_px": 3616,
+      "alpha_threshold": 128,
+      "off_palette_px": 2955,
+      "partial_alpha_px": 0,
+      "colors": 622,
+      "palette_colors_used": 40,
+      "mean_delta_e": 0.004129,
+      "p95_delta_e": 0.016736,
+      "max_delta_e": 0.048206
+    },
+    "../stage/chat-tab-selected.png": {
+      "measured_px": 3373,
+      "alpha_threshold": 128,
+      "off_palette_px": 2292,
+      "partial_alpha_px": 0,
+      "colors": 554,
+      "palette_colors_used": 43,
+      "mean_delta_e": 0.003634,
+      "p95_delta_e": 0.014811,
+      "max_delta_e": 0.052202
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.102906,
+    "worst_p95_delta_e": 0.020086,
+    "off_palette_px": 16466
+  }
+}

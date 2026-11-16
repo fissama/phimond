@@ -1,0 +1,41 @@
+{
+  "id": "login-layer-3-forest",
+  "px": [
+    1280,
+    720
+  ],
+  "mode": "RGBA",
+  "colors": 44,
+  "color_limit": 64,
+  "partial_alpha_pixels": 0,
+  "key_residue_pixels": 0,
+  "alpha_margins": [
+    0,
+    338,
+    0,
+    0
+  ],
+  "backdrop_edge_exception": "Side/bottom coverage intentional; whole viewport layer, no isolated prop is clipped.",
+  "bottom_24px_fully_opaque": true,
+  "source_raw": "raw-04.png",
+  "raw_integrity": true,
+  "sha256": "255682349d1e4b7ddf7617fe407971d471efd6eec77950feaa486b5812222f13",
+  "despill": {
+    "mode": "edge",
+    "applied": "edge",
+    "radius": 3,
+    "margin": 12,
+    "changed_px": 1875,
+    "additional_key_hue_removed_px": 2
+  },
+  "visual_review": {
+    "status": "self_inspected_4x_needs_claude",
+    "backgrounds": [
+      "checker",
+      "dark"
+    ],
+    "approval": false,
+    "note": "Unchanged sky/citadel verified hash from previous inspection; forest/foreground reviewed again after raw04 edit."
+  },
+  "failures": []
+}

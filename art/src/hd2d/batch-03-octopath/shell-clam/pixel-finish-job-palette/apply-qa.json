@@ -1,0 +1,71 @@
+{
+  "status": "pass",
+  "method": "forge_palette.quantize_image: OKLab-nearest palette colour per pixel (exact palette colours kept), alpha binary at the threshold, then the written PNGs re-read and measured with forge_palette.fit_report against the palette",
+  "notProven": [
+    "Visual quality after snapping: compare an output with its input.",
+    "Indexed PNGs are engine exports; they are not checked by builders.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "output_off_palette_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "output_partial_alpha_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.067205,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../crop.png",
+      "sha256": "a9ae602d486309384ee05190dbeac3f81f0b883e78600fc75e93e8cf5d8b26df",
+      "bytes": 7440
+    },
+    {
+      "path": "../../jobs/coastal-small-props/palette/palette.json",
+      "sha256": "a91a9842989421eb817928b3bc2655be378c060684e2ed59015d4ce1de1f99b3",
+      "bytes": 1925
+    }
+  ],
+  "outputs": [
+    {
+      "path": "crop.png",
+      "sha256": "0c01686a7bdd353c1a99273e9ccb4c2085b0cbd939826419caf4fbf25f9f1018",
+      "bytes": 3838
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "fit": {
+    "crop.png": {
+      "measured_px": 2558,
+      "alpha_threshold": 128,
+      "off_palette_px": 2557,
+      "partial_alpha_px": 0,
+      "colors": 2435,
+      "palette_colors_used": 26,
+      "mean_delta_e": 0.024772,
+      "p95_delta_e": 0.043561,
+      "max_delta_e": 0.067205
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.067205,
+    "worst_p95_delta_e": 0.043561,
+    "off_palette_px": 2557
+  },
+  "locked_inputs": []
+}

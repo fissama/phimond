@@ -1,0 +1,11 @@
+Use case: stylized-concept. EXACTLY NINE isolated compact forest props in a THREE x THREE equal-cell grid, row-major: 1 small grey pebble cluster; 2 medium weathered grey mossy rock; 3 large squat rounded mossy boulder; 4 low old cut tree stump, visible rings and moss; 5 ochre mushroom cluster; 6 dusky violet mushroom cluster; 7 rounded low shrub with sparse muted pink flowers; 8 short open fern; 9 denser curled fern. Wide empty magenta margins; every complete prop within central 55% of its own cell, no overlapping or attached ground slabs. Background EXACT pure flat #FF00FF. Source 1 original mossy log/stump and source 2 original forest ferns define content/materials; pet sheets 3–4 pixel edges only. Octopath Traveler HD-2D environment PIXEL ART, restrained earthy moss/olive/sage greens and weathered umber materials, cool desaturated dark hue-tinted edges, warm subtle upper-left key, broad readable color clusters, 3–4 tones/material. No fluorescent greens, candy saturation, smooth vector edges or illustrative microtexture. Upright front billboards seen from 24 degrees above. No baked ground shadows, lighting glow, fog or scenery. Actual engine lighting comes later. Distinct simple silhouettes and 3–4 shade ramps, no text, letters, grid guides or labels. Aim 64–160px game body height; moss is muted sage, rocks charcoal/grey with warm worn edges, never luminous.
+
+
+
+Ordered reference images:
+- /Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level4_rungsau/level4_rungsau_007.png / sha256 3790657f376d2370b31d67c091deb797630969a4a0e1f3b5d8d8011fcd698e54
+- /Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level4_rungsau/level4_rungsau_020.png / sha256 3547a7c71091860904d1bf74872f4b9c3136450daf4b5373189d85b5685c4c5c
+- /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png / sha256 fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da
+- /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png / sha256 043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3
+
+Route: built-in image_gen; model not exposed; raw SHA256 fee9ad844ab73b507cc60388e333e63ba606a7cafc08f3c1a024746a8b1098fc

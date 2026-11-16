@@ -1,0 +1,3 @@
+# cr-dua — ImageGen prompts and provenance
+
+C08 Dừa: playful coconut child with green palm-frond hair, brown husk and cream face. Eight ImageGen outputs kept (`raw-01.png`…`raw-08.png`). Selected raw-07 SHA-256 `2d15231f30bdf49a10860b0b6cb4dc3ee4c6bf4e0998acdec820df7d14522e27`; packed final SHA-256 `25ab8d5a58814954619bc1166834cc40298ce1c39f867e7c4231c565b324ad4f`. Style references: Bạc Hà `8762627f89c593c6e0992febfb337b2387fd176ddba8e74bffbfa0e883aa73e8`, Mộc Nhĩ `2a6f0b7d813c7a6da3f5229c8559d4c593875a9f0df7fc60ce6d810391fa0f51`. No pixel edits; packed with v3 connected-component pivot/common-scale nearest-neighbor pipeline.

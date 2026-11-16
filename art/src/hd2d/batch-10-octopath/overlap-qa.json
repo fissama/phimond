@@ -1,0 +1,26 @@
+{
+  "pairs": [
+    {
+      "behind": "login-layer-1-sky",
+      "front": "login-layer-2-citadel",
+      "minimum_contiguous_bottom_overlap_px": 95,
+      "required_minimum": 24,
+      "pass": true
+    },
+    {
+      "behind": "login-layer-2-citadel",
+      "front": "login-layer-3-forest",
+      "minimum_contiguous_bottom_overlap_px": 95,
+      "required_minimum": 24,
+      "pass": true
+    },
+    {
+      "behind": "login-layer-3-forest",
+      "front": "login-layer-4-foreground",
+      "minimum_contiguous_bottom_overlap_px": 119,
+      "required_minimum": 24,
+      "pass": true
+    }
+  ],
+  "note": "Fullscreen aligned layer masks, measured shared opaque bottomcoverage. Lateral parallax reveal outside1280canvas not certified."
+}

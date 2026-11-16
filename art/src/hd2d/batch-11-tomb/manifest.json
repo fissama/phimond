@@ -1,0 +1,2920 @@
+{
+  "batch": "batch-11-tomb",
+  "kit": "tomb",
+  "name_vi": "L\u0103ng M\u1ed9",
+  "revision": 39,
+  "pilot_run": false,
+  "total_assets": 76,
+  "mechanical_pass": 76,
+  "approved": false,
+  "assets": [
+    {
+      "id": "tomb-portal-dormant",
+      "category": "portal",
+      "kit": "tomb",
+      "file": "tomb-portal-dormant/final.png",
+      "px": [
+        224,
+        233
+      ],
+      "world": [
+        1.75,
+        1.8203
+      ],
+      "pivot": "bottom_center",
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "1cbb5b2f435878654496db208e0b3510ba375d56af47060163a4553c6ce26a62",
+      "mechanical_status": "pass",
+      "failures": [],
+      "colors": 48,
+      "edge_to_center_luma_diff": null,
+      "raw_sha256": "7fb390007b339d6a12afdcb68be814fbdb523aca9072ce6be24c0e37c56d1776",
+      "approved": false,
+      "source_job": "tomb-portal-redraw-20261030-02",
+      "shared_mask_group": "tomb-portal-redraw-02"
+    },
+    {
+      "id": "tomb-portal-active",
+      "category": "portal",
+      "kit": "tomb",
+      "file": "tomb-portal-active/final.png",
+      "px": [
+        224,
+        233
+      ],
+      "world": [
+        1.75,
+        1.8203
+      ],
+      "pivot": "bottom_center",
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "769e376784a5d511a7a4e16a4ba8ba71598b6af17795b8e7fbe988c9fdebf060",
+      "mechanical_status": "pass",
+      "failures": [],
+      "colors": 48,
+      "edge_to_center_luma_diff": null,
+      "raw_sha256": "e8ab1ec6ec0bd69c3db5f3a4458136bdec818a77a33f1300bde4d65059cc5459",
+      "approved": false,
+      "source_job": "tomb-portal-redraw-20261030-02",
+      "shared_mask_group": "tomb-portal-redraw-02"
+    },
+    {
+      "id": "tomb-lantern-spirit",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-lantern-spirit/final.png",
+      "px": [
+        340,
+        144
+      ],
+      "world": [
+        2.6562,
+        1.125
+      ],
+      "pivot": "center",
+      "tileable": "none",
+      "frames": 4,
+      "fps": 5,
+      "sha256": "617a94d2aea327cbb2a7bfc00bd4e9c0db0abd4bda1d045367dd80c2123d706b",
+      "mechanical_status": "pass",
+      "failures": [],
+      "colors": 35,
+      "edge_to_center_luma_diff": null
+    },
+    {
+      "id": "tomb-necropolis-wall-far",
+      "category": "backdrop",
+      "kit": "tomb",
+      "file": "tomb-necropolis-wall-far/final.png",
+      "px": [
+        1024,
+        384
+      ],
+      "world": [
+        16.0,
+        6.0
+      ],
+      "pivot": "center",
+      "tileable": "x",
+      "frames": 1,
+      "fps": null,
+      "sha256": "ccb2dfee16a27126a44c7b119f8ada9743570842ad3bdcb192ac304dbd70fcfe",
+      "mechanical_status": "pass",
+      "failures": [],
+      "colors": 41,
+      "edge_to_center_luma_diff": null,
+      "raw_sha256": "21260f7abe46cb634b222cc9d29a5d3de9d1ab8b7f9d12483cf0c8f79a4d0c74",
+      "source_job": "backdrop-far-redraw-20261103",
+      "approved": false,
+      "self_visual_review": "2x_dark_checker_and_3x1_repeat_viewed_owner_scene_review_pending"
+    },
+    {
+      "id": "tomb-gravestone-01",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-gravestone-01/final.png",
+      "px": [
+        230,
+        220
+      ],
+      "world": [
+        1.7969,
+        1.7188
+      ],
+      "pivot": "bottom_center",
+      "pivot_px": [
+        115,
+        208
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "77502d124de45d14b3fea8e35d4b34f422170ad200f63fc4f6b6b9401a5641b3",
+      "raw_sha256": "a3ff0f452a65de7fa26cdeda94b1a7e7f650ca1ad46508d8cf58bc14328363ea",
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_dead_ruins.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/rock-large/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-props-study-20261030",
+      "approved": false
+    },
+    {
+      "id": "tomb-gravestone-02",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-gravestone-02/final.png",
+      "px": [
+        159,
+        248
+      ],
+      "world": [
+        1.2422,
+        1.9375
+      ],
+      "pivot": "bottom_center",
+      "pivot_px": [
+        79,
+        236
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "1f9c6e7f1c8038fda675b528ceb38970aee56d2fb8fa839e57a4aea37189fe81",
+      "raw_sha256": "a3ff0f452a65de7fa26cdeda94b1a7e7f650ca1ad46508d8cf58bc14328363ea",
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_dead_ruins.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/rock-large/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-props-study-20261030",
+      "approved": false
+    },
+    {
+      "id": "tomb-sarcophagus-01",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-sarcophagus-01/final.png",
+      "px": [
+        317,
+        192
+      ],
+      "world": [
+        2.4766,
+        1.5
+      ],
+      "pivot": "bottom_center",
+      "pivot_px": [
+        158,
+        180
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "4a5915d00d378a9ff5e71f656ece2ec1eea2a183a9ff1e9a49f23aab2a4073fd",
+      "raw_sha256": "a3ff0f452a65de7fa26cdeda94b1a7e7f650ca1ad46508d8cf58bc14328363ea",
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_dead_ruins.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/rock-large/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-props-study-20261030",
+      "approved": false
+    },
+    {
+      "id": "tomb-sealed-coffer",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-sealed-coffer/final.png",
+      "px": [
+        276,
+        192
+      ],
+      "world": [
+        2.1562,
+        1.5
+      ],
+      "pivot": "bottom_center",
+      "pivot_px": [
+        138,
+        180
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "8e02c94c41a08f498fad26f3db39ec7addce7e7b9f2c90d33ddeb310d655e752",
+      "raw_sha256": "a3ff0f452a65de7fa26cdeda94b1a7e7f650ca1ad46508d8cf58bc14328363ea",
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_dead_ruins.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/rock-large/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-props-study-20261030",
+      "approved": false
+    },
+    {
+      "id": "tomb-lantern-post",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-lantern-post/final.png",
+      "px": [
+        136,
+        200
+      ],
+      "world": [
+        1.0625,
+        1.5625
+      ],
+      "pivot": "bottom_center",
+      "pivot_px": [
+        68,
+        188
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "1696ee571c9b6f16e139c24a74a4a09eef97a520916006c94bb6da4590480c6a",
+      "raw_sha256": "a3ff0f452a65de7fa26cdeda94b1a7e7f650ca1ad46508d8cf58bc14328363ea",
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_dead_ruins.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/rock-large/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-props-study-20261030",
+      "approved": false
+    },
+    {
+      "id": "tomb-rooted-urn",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-rooted-urn/final.png",
+      "px": [
+        122,
+        140
+      ],
+      "world": [
+        0.9531,
+        1.0938
+      ],
+      "pivot": "bottom_center",
+      "pivot_px": [
+        80,
+        172
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "a31117422769f95ba2909093052f508e5fe471993aaef676f42e0e331a994443",
+      "raw_sha256": "a3ff0f452a65de7fa26cdeda94b1a7e7f650ca1ad46508d8cf58bc14328363ea",
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_dead_ruins.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/rock-large/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-props-study-20261030",
+      "approved": false,
+      "size_px": [
+        122,
+        140
+      ],
+      "world_size": [
+        0.9531,
+        1.0938
+      ]
+    },
+    {
+      "id": "tomb-arch-gate",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-arch-gate/final.png",
+      "px": [
+        301,
+        284
+      ],
+      "world": [
+        2.3516,
+        2.2188
+      ],
+      "pivot": "bottom_center",
+      "pivot_px": [
+        150,
+        272
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "0bec0cea8a9ad7fb020dd23f0710c318de8b759be96d9c097d6f6fb59ce9c991",
+      "raw_sha256": "78a8b88b319f661f35c3aa3c20db4238f32d86da2345a308fbc4d275f8471226",
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_deep_ruins.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/rock-large/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-props-study-02-20261030",
+      "approved": false
+    },
+    {
+      "id": "tomb-broken-column-short",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-broken-column-short/final.png",
+      "px": [
+        142,
+        168
+      ],
+      "world": [
+        1.1094,
+        1.3125
+      ],
+      "pivot": "bottom_center",
+      "pivot_px": [
+        71,
+        156
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "c2b10a1bb5e5e9088d7aa2def82302e19500b3a38e7861e995b4e9b5bdd2e08e",
+      "raw_sha256": "78a8b88b319f661f35c3aa3c20db4238f32d86da2345a308fbc4d275f8471226",
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_deep_ruins.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/rock-large/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-props-study-02-20261030",
+      "approved": false
+    },
+    {
+      "id": "tomb-cracked-pillar",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-cracked-pillar/final.png",
+      "px": [
+        154,
+        260
+      ],
+      "world": [
+        1.2031,
+        2.0312
+      ],
+      "pivot": "bottom_center",
+      "pivot_px": [
+        77,
+        236
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "c0cc4c7fdc59866e746bc3c13b75ceceeb33f31949a156df935f7df5c5e8fb74",
+      "raw_sha256": "78a8b88b319f661f35c3aa3c20db4238f32d86da2345a308fbc4d275f8471226",
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_deep_ruins.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/rock-large/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-props-study-02-20261030",
+      "approved": false,
+      "size_px": [
+        154,
+        260
+      ],
+      "world_size": [
+        1.2031,
+        2.0312
+      ]
+    },
+    {
+      "id": "tomb-offering-altar",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-offering-altar/final.png",
+      "px": [
+        316,
+        184
+      ],
+      "world": [
+        2.4688,
+        1.4375
+      ],
+      "pivot": "bottom_center",
+      "pivot_px": [
+        158,
+        172
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "dc024e3f915083664568cf6f7132810dfb346259df23aee349fb8fb077d0c644",
+      "raw_sha256": "78a8b88b319f661f35c3aa3c20db4238f32d86da2345a308fbc4d275f8471226",
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_deep_ruins.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/rock-large/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-props-study-02-20261030",
+      "approved": false
+    },
+    {
+      "id": "tomb-spirit-brazier",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-spirit-brazier/final.png",
+      "px": [
+        89,
+        121
+      ],
+      "world": [
+        0.6953,
+        0.9453
+      ],
+      "pivot": "bottom_center",
+      "pivot_px": [
+        72,
+        188
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "90b3f803fa6c97b15d1ecc08413398e9cd7ea0d7a85dd787135830f2557856b0",
+      "raw_sha256": "78a8b88b319f661f35c3aa3c20db4238f32d86da2345a308fbc4d275f8471226",
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_deep_ruins.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/rock-large/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-props-study-02-20261030",
+      "approved": false,
+      "size_px": [
+        89,
+        121
+      ],
+      "world_size": [
+        0.6953,
+        0.9453
+      ]
+    },
+    {
+      "id": "tomb-glyph-stele",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-glyph-stele/final.png",
+      "px": [
+        155,
+        248
+      ],
+      "world": [
+        1.2109,
+        1.9375
+      ],
+      "pivot": "bottom_center",
+      "pivot_px": [
+        77,
+        236
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "f654b383a901ca6281a743d6fb2d4deb702dde7fd7a2438b334e6e14885df27f",
+      "raw_sha256": "78a8b88b319f661f35c3aa3c20db4238f32d86da2345a308fbc4d275f8471226",
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_deep_ruins.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/rock-large/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-props-study-02-20261030",
+      "approved": false
+    },
+    {
+      "id": "tomb-iron-chain-shackle",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-iron-chain-shackle/final.png",
+      "px": [
+        250,
+        156
+      ],
+      "world": [
+        1.9531,
+        1.2188
+      ],
+      "pivot": "bottom_center",
+      "pivot_px": [
+        125,
+        144
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "fb5fa49198f9b208fb72edc8745e75edeb80b3649a5303bdbb9768900cb6c6a6",
+      "raw_sha256": "7965f03f4f2632b2ba1643c9e38a63716d173bfb34b585c1c47a0a7e2a16324a",
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_camp.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/stump/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-props-study-03-20261030",
+      "approved": false
+    },
+    {
+      "id": "tomb-rubble-barrier",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-rubble-barrier/final.png",
+      "px": [
+        212,
+        184
+      ],
+      "world": [
+        1.6562,
+        1.4375
+      ],
+      "pivot": "bottom_center",
+      "pivot_px": [
+        106,
+        172
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "35d74043bd4865dc10cf3891b928587b8e5da04c77ef41b9ebca7b086bb5ae52",
+      "raw_sha256": "7965f03f4f2632b2ba1643c9e38a63716d173bfb34b585c1c47a0a7e2a16324a",
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_camp.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/stump/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-props-study-03-20261030",
+      "approved": false
+    },
+    {
+      "id": "tomb-offering-bowl",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-offering-bowl/final.png",
+      "px": [
+        170,
+        152
+      ],
+      "world": [
+        1.3281,
+        1.1875
+      ],
+      "pivot": "bottom_center",
+      "pivot_px": [
+        85,
+        140
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "7261e2b1ca847feec28b1743a5c10052f362e384d49628c003b9e7257b4e3d86",
+      "raw_sha256": "7965f03f4f2632b2ba1643c9e38a63716d173bfb34b585c1c47a0a7e2a16324a",
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_camp.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/stump/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-props-study-03-20261030",
+      "approved": false
+    },
+    {
+      "id": "tomb-root-reliquary",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-root-reliquary/final.png",
+      "px": [
+        223,
+        208
+      ],
+      "world": [
+        1.7422,
+        1.625
+      ],
+      "pivot": "bottom_center",
+      "pivot_px": [
+        111,
+        196
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "6dfc427ec0d12eeb9f294eafdfe21ab2961cf152bdd22f85263673f50b8a5cf7",
+      "raw_sha256": "7965f03f4f2632b2ba1643c9e38a63716d173bfb34b585c1c47a0a7e2a16324a",
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_camp.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/stump/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-props-study-03-20261030",
+      "approved": false
+    },
+    {
+      "id": "tomb-bat-roost-arch",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-bat-roost-arch/final.png",
+      "px": [
+        188,
+        200
+      ],
+      "world": [
+        1.4688,
+        1.5625
+      ],
+      "pivot": "bottom_center",
+      "pivot_px": [
+        94,
+        188
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "25d66cbe9dcb714c23d705ba1bae24abc0c4510e44b4950c3aec22a134126906",
+      "raw_sha256": "7965f03f4f2632b2ba1643c9e38a63716d173bfb34b585c1c47a0a7e2a16324a",
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_camp.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/stump/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-props-study-03-20261030",
+      "approved": false
+    },
+    {
+      "id": "tomb-effigy-coffin-lid",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-effigy-coffin-lid/final.png",
+      "px": [
+        213,
+        200
+      ],
+      "world": [
+        1.6641,
+        1.5625
+      ],
+      "pivot": "bottom_center",
+      "pivot_px": [
+        106,
+        188
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "beaf61c35310b38617efebc803742bf1f3cc28561bacb6880476adee4a0bef56",
+      "raw_sha256": "7965f03f4f2632b2ba1643c9e38a63716d173bfb34b585c1c47a0a7e2a16324a",
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_camp.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/stump/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-props-study-03-20261030",
+      "approved": false
+    },
+    {
+      "id": "tomb-broken-stairs",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-broken-stairs/final.png",
+      "px": [
+        216,
+        156
+      ],
+      "world": [
+        1.6875,
+        1.2188
+      ],
+      "pivot": "bottom_center",
+      "pivot_px": [
+        108,
+        144
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "896a645c13e4e3d28653ca509cefdea32064363a93cbe3ba0e337e4216b6aea4",
+      "raw_sha256": "54c9b751df24635f4898fe6cc76feafb047a27705c1e1f59382ded03e02bd256",
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_deep_ruins.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/rock-medium/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-props-study-04-20261030",
+      "approved": false
+    },
+    {
+      "id": "tomb-column-capital",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-column-capital/final.png",
+      "px": [
+        167,
+        184
+      ],
+      "world": [
+        1.3047,
+        1.4375
+      ],
+      "pivot": "bottom_center",
+      "pivot_px": [
+        83,
+        172
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "2b1ce269756187fba131dda8810cb898257d7968db10139d51e45f5b4854102d",
+      "raw_sha256": "54c9b751df24635f4898fe6cc76feafb047a27705c1e1f59382ded03e02bd256",
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_deep_ruins.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/rock-medium/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-props-study-04-20261030",
+      "approved": false,
+      "name": "Tomb column capital"
+    },
+    {
+      "id": "tomb-sealed-urn",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-sealed-urn/final.png",
+      "px": [
+        140,
+        139
+      ],
+      "world": [
+        1.0938,
+        1.0859
+      ],
+      "pivot": "bottom_center",
+      "pivot_px": [
+        76,
+        140
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "b661d1f8760703574534ab87d50636d3f54438121e60564abefbd4bc37b5e029",
+      "raw_sha256": "54c9b751df24635f4898fe6cc76feafb047a27705c1e1f59382ded03e02bd256",
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_deep_ruins.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/rock-medium/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-props-study-04-20261030",
+      "approved": false,
+      "size_px": [
+        140,
+        139
+      ],
+      "world_size": [
+        1.0938,
+        1.0859
+      ]
+    },
+    {
+      "id": "tomb-wall-sprit-torch",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-wall-sprit-torch/final.png",
+      "px": [
+        151,
+        208
+      ],
+      "world": [
+        1.1797,
+        1.625
+      ],
+      "pivot": "bottom_center",
+      "pivot_px": [
+        75,
+        196
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "90dc1533a4c2540aec50a928fe0ba7b8bf25a8f5f4d14a048f2a280e6f0b4558",
+      "raw_sha256": "54c9b751df24635f4898fe6cc76feafb047a27705c1e1f59382ded03e02bd256",
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_deep_ruins.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/rock-medium/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-props-study-04-20261030",
+      "approved": false
+    },
+    {
+      "id": "tomb-cracked-ground-stela",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-cracked-ground-stela/final.png",
+      "px": [
+        108,
+        200
+      ],
+      "world": [
+        0.8438,
+        1.5625
+      ],
+      "pivot": "bottom_center",
+      "pivot_px": [
+        54,
+        188
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "7060b047599f291d0512cc6dbc2f21d2790e2d77c1f5c2ad1a76a0d911fb1009",
+      "raw_sha256": "54c9b751df24635f4898fe6cc76feafb047a27705c1e1f59382ded03e02bd256",
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_deep_ruins.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/rock-medium/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-props-study-04-20261030",
+      "approved": false
+    },
+    {
+      "id": "tomb-ancient-keys",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-ancient-keys/final.png",
+      "px": [
+        114,
+        200
+      ],
+      "world": [
+        0.8906,
+        1.5625
+      ],
+      "pivot": "bottom_center",
+      "pivot_px": [
+        57,
+        188
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "316dcaf89d9de44aa0c98b370f548352602433f6be4fc14437e61d31e64262dd",
+      "raw_sha256": "54c9b751df24635f4898fe6cc76feafb047a27705c1e1f59382ded03e02bd256",
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_deep_ruins.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/rock-medium/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-props-study-04-20261030",
+      "approved": false
+    },
+    {
+      "id": "tomb-dead-thorn-bush",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-dead-thorn-bush/final.png",
+      "px": [
+        181,
+        156
+      ],
+      "world": [
+        1.4141,
+        1.2188
+      ],
+      "pivot": "bottom_center",
+      "pivot_px": [
+        90,
+        144
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "693458809075e8b7309132b4afff873da228fcb91c1da2a28f4d0a2f99e61866",
+      "raw_sha256": "55d4cc7df74506adf6a9cc270e9e2946a308df9c47fd3d21caaa097c3191f980",
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_unnamed_area_01.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/rock-medium/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-props-study-05-20261030",
+      "approved": false
+    },
+    {
+      "id": "tomb-dead-tree-stump",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-dead-tree-stump/final.png",
+      "px": [
+        212,
+        184
+      ],
+      "world": [
+        1.6562,
+        1.4375
+      ],
+      "pivot": "bottom_center",
+      "pivot_px": [
+        106,
+        172
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "243ed4e9ed5755c32e3a6a86ab92bb25dd9a0df769c00ef5e466bb5d68d602bf",
+      "raw_sha256": "55d4cc7df74506adf6a9cc270e9e2946a308df9c47fd3d21caaa097c3191f980",
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_unnamed_area_01.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/rock-medium/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-props-study-05-20261030",
+      "approved": false
+    },
+    {
+      "id": "tomb-sandstone-boulder",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-sandstone-boulder/final.png",
+      "px": [
+        211,
+        152
+      ],
+      "world": [
+        1.6484,
+        1.1875
+      ],
+      "pivot": "bottom_center",
+      "pivot_px": [
+        105,
+        140
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "9bb3abc9798310bfbd4d994d77f19b5291b69776ec835b3740a8cacef7138ca8",
+      "raw_sha256": "55d4cc7df74506adf6a9cc270e9e2946a308df9c47fd3d21caaa097c3191f980",
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_unnamed_area_01.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/rock-medium/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-props-study-05-20261030",
+      "approved": false
+    },
+    {
+      "id": "tomb-cracked-clay-jar",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-cracked-clay-jar/final.png",
+      "px": [
+        128,
+        140
+      ],
+      "world": [
+        1.0,
+        1.0938
+      ],
+      "pivot": "bottom_center",
+      "pivot_px": [
+        95,
+        196
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "8cea49f7dc1e4284fcc3e542ba6ef43e47dd88a1526c9251a914f2b013081616",
+      "raw_sha256": "55d4cc7df74506adf6a9cc270e9e2946a308df9c47fd3d21caaa097c3191f980",
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_unnamed_area_01.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/rock-medium/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-props-study-05-20261030",
+      "approved": false,
+      "size_px": [
+        128,
+        140
+      ],
+      "world_size": [
+        1.0,
+        1.0938
+      ]
+    },
+    {
+      "id": "tomb-sand-buried-marker",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-sand-buried-marker/final.png",
+      "px": [
+        206,
+        200
+      ],
+      "world": [
+        1.6094,
+        1.5625
+      ],
+      "pivot": "bottom_center",
+      "pivot_px": [
+        103,
+        188
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "10785d883221a4910a74a5e8ce84ff439acc00beb8087dc7a259ef8999094809",
+      "raw_sha256": "55d4cc7df74506adf6a9cc270e9e2946a308df9c47fd3d21caaa097c3191f980",
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_unnamed_area_01.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/rock-medium/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-props-study-05-20261030",
+      "approved": false
+    },
+    {
+      "id": "tomb-collapsed-burial-arch",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-collapsed-burial-arch/final.png",
+      "px": [
+        224,
+        200
+      ],
+      "world": [
+        1.75,
+        1.5625
+      ],
+      "pivot": "bottom_center",
+      "pivot_px": [
+        112,
+        188
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "43939d75d10e4357ae3a471854b9ac0e91ab81485f2afb05d0585c9f3d61fa69",
+      "raw_sha256": "55d4cc7df74506adf6a9cc270e9e2946a308df9c47fd3d21caaa097c3191f980",
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_unnamed_area_01.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/rock-medium/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-props-study-05-20261030",
+      "approved": false
+    },
+    {
+      "id": "tomb-guardian-statue-head",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-guardian-statue-head/final.png",
+      "px": [
+        146,
+        156
+      ],
+      "world": [
+        1.1406,
+        1.2188
+      ],
+      "pivot": "bottom_center",
+      "pivot_px": [
+        73,
+        144
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "0148772f9334d090191062542385bc954a10f4d52dd82da7a94e95049ac313e1",
+      "raw_sha256": "fe8b469b69ce9ed86f7e1c41b33396895ad46a23f0b22944dece096daf17e988",
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_camp.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/wooden-exit-gate/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-props-study-06-20261030",
+      "approved": false
+    },
+    {
+      "id": "tomb-open-sarcophagus-shell",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-open-sarcophagus-shell/final.png",
+      "px": [
+        308,
+        184
+      ],
+      "world": [
+        2.4062,
+        1.4375
+      ],
+      "pivot": "bottom_center",
+      "pivot_px": [
+        154,
+        172
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "7911e048f1b382c873fe75b18f27c44cb92bab3b5f8a7eeb5d0d33e6b027c830",
+      "raw_sha256": "fe8b469b69ce9ed86f7e1c41b33396895ad46a23f0b22944dece096daf17e988",
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_camp.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/wooden-exit-gate/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-props-study-06-20261030",
+      "approved": false
+    },
+    {
+      "id": "tomb-hanging-censer",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-hanging-censer/final.png",
+      "px": [
+        93,
+        152
+      ],
+      "world": [
+        0.7266,
+        1.1875
+      ],
+      "pivot": "bottom_center",
+      "pivot_px": [
+        46,
+        140
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "39ed59ae3da67fb1a16c75901718c4560092a8537066c475c75482c788787af9",
+      "raw_sha256": "fe8b469b69ce9ed86f7e1c41b33396895ad46a23f0b22944dece096daf17e988",
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_camp.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/wooden-exit-gate/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-props-study-06-20261030",
+      "approved": false
+    },
+    {
+      "id": "tomb-carved-seal-disc",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-carved-seal-disc/final.png",
+      "px": [
+        216,
+        208
+      ],
+      "world": [
+        1.6875,
+        1.625
+      ],
+      "pivot": "bottom_center",
+      "pivot_px": [
+        108,
+        196
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "3e5455ce0e5b3c5716b0da49d246d6752a9457893d0a8c2d5f8b4b22ea8b4d65",
+      "raw_sha256": "fe8b469b69ce9ed86f7e1c41b33396895ad46a23f0b22944dece096daf17e988",
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_camp.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/wooden-exit-gate/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-props-study-06-20261030",
+      "approved": false
+    },
+    {
+      "id": "tomb-expedition-crate",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-expedition-crate/final.png",
+      "px": [
+        144,
+        134
+      ],
+      "world": [
+        1.125,
+        1.0469
+      ],
+      "pivot": "bottom_center",
+      "pivot_px": [
+        107,
+        188
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "c533b6a8148ceb41aff65bf13b822670f89ee2d539f1c283510266de76d39c1d",
+      "raw_sha256": "fe8b469b69ce9ed86f7e1c41b33396895ad46a23f0b22944dece096daf17e988",
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_camp.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/wooden-exit-gate/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-props-study-06-20261030",
+      "approved": false,
+      "size_px": [
+        144,
+        134
+      ],
+      "world_size": [
+        1.125,
+        1.0469
+      ]
+    },
+    {
+      "id": "tomb-memorial-plinth",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-memorial-plinth/final.png",
+      "px": [
+        185,
+        200
+      ],
+      "world": [
+        1.4453,
+        1.5625
+      ],
+      "pivot": "bottom_center",
+      "pivot_px": [
+        92,
+        188
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "ff31e37a5fbc5bb677d0adcc8ec8f5c41a2d68370aca537b66347284694196f1",
+      "raw_sha256": "fe8b469b69ce9ed86f7e1c41b33396895ad46a23f0b22944dece096daf17e988",
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_camp.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/wooden-exit-gate/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-props-study-06-20261030",
+      "approved": false
+    },
+    {
+      "id": "tomb-brick-floor",
+      "category": "tile",
+      "kit": "tomb",
+      "file": "tomb-brick-floor/final.png",
+      "px": [
+        512,
+        512
+      ],
+      "world": [
+        4,
+        4
+      ],
+      "pivot": "center",
+      "tileable": "xy",
+      "frames": 1,
+      "fps": null,
+      "sha256": "015c53737858d2ebd1c089da335e03975e5841f52180ae55d093106a01db0a68",
+      "raw_sha256": "223a65a06ee9d758bb779b4f03ff5582ddc58233fe566b24e1981da285cb9ec0",
+      "colors": 48,
+      "edge_to_center_luma_diff": 1.4858016967773438,
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_unnamed_area_01.jpg",
+        "art/src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+        "art/src/hd2d/batch-01-octopath/grass-floor-01/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "floors-redraw-20261030",
+      "approved": false
+    },
+    {
+      "id": "tomb-graveyard-dirt",
+      "category": "tile",
+      "kit": "tomb",
+      "file": "tomb-graveyard-dirt/final.png",
+      "px": [
+        512,
+        512
+      ],
+      "world": [
+        4,
+        4
+      ],
+      "pivot": "center",
+      "tileable": "xy",
+      "frames": 1,
+      "fps": null,
+      "sha256": "eefc3180efa9d3c057f3cbdf92d20b798a2bc04103e31998b039b41e1e35fdc3",
+      "raw_sha256": "1b95fe96e2394c438a60591cd484d46a16ba63e893293f15fb44e9be65620686",
+      "colors": 48,
+      "edge_to_center_luma_diff": null,
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_unnamed_area_01.jpg",
+        "art/src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+        "art/src/hd2d/batch-01-octopath/grass-floor-01/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "floors-redraw-20261103",
+      "approved": false,
+      "self_visual_review": "actual_final_viewed_4x_dark_and_checker_and_repeat_3x3"
+    },
+    {
+      "id": "tomb-floor-crypt-mossstone",
+      "category": "tile",
+      "kit": "tomb",
+      "file": "tomb-floor-crypt-mossstone/final.png",
+      "px": [
+        512,
+        512
+      ],
+      "world": [
+        4,
+        4
+      ],
+      "pivot": "center",
+      "tileable": "xy",
+      "frames": 1,
+      "fps": null,
+      "sha256": "c58c8b8595053e413fbf33219d986cac9be787b5f7edfee9998eb345b5293e8d",
+      "raw_sha256": "cfdfdc354c9308e745ba023c24ae8143bf0ba85433cea2ffb586cfc653066ab9",
+      "colors": 48,
+      "edge_to_center_luma_diff": 2.100818634033203,
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_unnamed_area_01.jpg",
+        "art/src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+        "art/src/hd2d/batch-01-octopath/grass-floor-01/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "floors-redraw-20261104",
+      "approved": false,
+      "source_raw": "jobs/floors-redraw-20261104/crypt-mossstone-raw-13.png",
+      "self_visual_review": "4x_dark_checker_and_3x3_repeat_and_game_scale_preview_viewed",
+      "status": "needs_owner_visual_review"
+    },
+    {
+      "id": "tomb-floor-cracked-slate",
+      "category": "tile",
+      "kit": "tomb",
+      "file": "tomb-floor-cracked-slate/final.png",
+      "px": [
+        512,
+        512
+      ],
+      "world": [
+        4,
+        4
+      ],
+      "pivot": "center",
+      "tileable": "xy",
+      "frames": 1,
+      "fps": null,
+      "sha256": "021f9971a83d7cfa927ab7e7ebe17ced9fa2ce93c27f37b4d595644d635b6a8c",
+      "raw_sha256": "cfa319feb7a32ded7432b7a97c054131aedec118217bce09ed0a8032ac53a339",
+      "colors": 48,
+      "edge_to_center_luma_diff": null,
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_unnamed_area_01.jpg",
+        "art/src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+        "art/src/hd2d/batch-01-octopath/grass-floor-01/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "floors-redraw-20261103",
+      "approved": false,
+      "self_visual_review": "actual_final_viewed_4x_dark_and_checker_and_repeat_3x3"
+    },
+    {
+      "id": "tomb-floor-ashen-dust",
+      "category": "tile",
+      "kit": "tomb",
+      "file": "tomb-floor-ashen-dust/final.png",
+      "px": [
+        512,
+        512
+      ],
+      "world": [
+        4,
+        4
+      ],
+      "pivot": "center",
+      "tileable": "xy",
+      "frames": 1,
+      "fps": null,
+      "sha256": "a90436d1aaf62236e9bb2eb00eff42fb5f8d74c22144844ce16081bf47371069",
+      "raw_sha256": "b14ba1cedede4c39efdecb5cf8686f9fea4fa508f27481a4b9fffa19ff353f1d",
+      "colors": 48,
+      "edge_to_center_luma_diff": null,
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_unnamed_area_01.jpg",
+        "art/src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+        "art/src/hd2d/batch-01-octopath/grass-floor-01/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "floors-redraw-20261103",
+      "approved": false,
+      "self_visual_review": "actual_final_viewed_4x_dark_and_checker_and_repeat_3x3"
+    },
+    {
+      "id": "tomb-floor-dry-gravel",
+      "category": "tile",
+      "kit": "tomb",
+      "file": "tomb-floor-dry-gravel/final.png",
+      "px": [
+        512,
+        512
+      ],
+      "world": [
+        4,
+        4
+      ],
+      "pivot": "center",
+      "tileable": "xy",
+      "frames": 1,
+      "fps": null,
+      "sha256": "3c93220028a5ce2aad17de1d3f470d75f35a97c23b3b8d542106d51c8748d7a6",
+      "raw_sha256": "e615a3000ea6f364893cd0c5d73fa31678a476b65c1bc1d385c50551f5644a78",
+      "colors": 48,
+      "edge_to_center_luma_diff": 1.1550458272298272,
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_unnamed_area_01.jpg",
+        "art/src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+        "art/src/hd2d/batch-01-octopath/grass-floor-01/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "floors-redraw-20261030",
+      "approved": false
+    },
+    {
+      "id": "tomb-floor-golden-sand",
+      "category": "tile",
+      "kit": "tomb",
+      "file": "tomb-floor-golden-sand/final.png",
+      "px": [
+        512,
+        512
+      ],
+      "world": [
+        4,
+        4
+      ],
+      "pivot": "center",
+      "tileable": "xy",
+      "frames": 1,
+      "fps": null,
+      "sha256": "5ae33bce27489418c09666defebc1f2dc653d6058d777b1046a6de76c181286b",
+      "raw_sha256": "5af20f73cb5a6a60d32568215acabe0a4c8ada3b85af8d6cca820845a7e66ea2",
+      "colors": 48,
+      "edge_to_center_luma_diff": null,
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_unnamed_area_01.jpg",
+        "art/src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+        "art/src/hd2d/batch-01-octopath/grass-floor-01/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "floors-redraw-20261103",
+      "approved": false,
+      "self_visual_review": "actual_final_viewed_4x_dark_and_checker_and_repeat_3x3"
+    },
+    {
+      "id": "tomb-tile-edge-decal",
+      "category": "tile",
+      "kit": "tomb",
+      "file": "tomb-tile-edge-decal/final.png",
+      "px": [
+        512,
+        512
+      ],
+      "world": [
+        4,
+        4
+      ],
+      "pivot": "center",
+      "tileable": "xy",
+      "frames": 1,
+      "fps": null,
+      "sha256": "592e8bcdc6c84e37542632901802cb44079412dee345ede44d21fed88a221179",
+      "raw_sha256": "8de22edb2f93808dbef30c0e99ea7330f00d52898c45f232f77cf352706567f8",
+      "colors": 48,
+      "edge_to_center_luma_diff": 3.591688791910798,
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_unnamed_area_01.jpg",
+        "art/src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+        "art/src/hd2d/batch-01-octopath/grass-floor-01/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tile-edge-redraw-20261103",
+      "approved": false,
+      "self_visual_review": "4x_dark_checker_and_3x3_repeat_viewed_owner_review_pending"
+    },
+    {
+      "id": "tomb-edge-crypt-soil",
+      "category": "edge",
+      "kit": "tomb",
+      "file": "tomb-edge-crypt-soil/final.png",
+      "px": [
+        512,
+        128
+      ],
+      "world": [
+        4,
+        1
+      ],
+      "pivot": "center",
+      "tileable": "x",
+      "frames": 1,
+      "fps": null,
+      "sha256": "4d874af211041e05a5af10a7f3fa2983a7ae47b6b48e951b7ab96ea179fad30e",
+      "raw_sha256": "79a8658c51dc1e7aa32c525656637ee872d92f676a4ebd1a4306e2f6b8fc4720",
+      "colors": 33,
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_dead_ruins.jpg",
+        "art/src/hd2d/batch-01-octopath/edge-grass-dirt/final.png",
+        "art/src/hd2d/batch-01-octopath/edge-grass-roots/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-edges-redraw-20261030",
+      "approved": false
+    },
+    {
+      "id": "tomb-edge-ruin-rubble",
+      "category": "edge",
+      "kit": "tomb",
+      "file": "tomb-edge-ruin-rubble/final.png",
+      "px": [
+        512,
+        128
+      ],
+      "world": [
+        4,
+        1
+      ],
+      "pivot": "center",
+      "tileable": "x",
+      "frames": 1,
+      "fps": null,
+      "sha256": "a042c35489191efc3f4f671fe2777567cf2a7c6fbaaa3c04ed014a6ce24c878c",
+      "raw_sha256": "79a8658c51dc1e7aa32c525656637ee872d92f676a4ebd1a4306e2f6b8fc4720",
+      "colors": 32,
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_dead_ruins.jpg",
+        "art/src/hd2d/batch-01-octopath/edge-grass-dirt/final.png",
+        "art/src/hd2d/batch-01-octopath/edge-grass-roots/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-edges-redraw-20261030",
+      "approved": false
+    },
+    {
+      "id": "tomb-edge-desert-sand",
+      "category": "edge",
+      "kit": "tomb",
+      "file": "tomb-edge-desert-sand/final.png",
+      "px": [
+        512,
+        128
+      ],
+      "world": [
+        4,
+        1
+      ],
+      "pivot": "center",
+      "tileable": "x",
+      "frames": 1,
+      "fps": null,
+      "sha256": "2245c204fce09770db788be7f7d468bb699a35c8d0a0ca720a1bb651d19dc124",
+      "raw_sha256": "79a8658c51dc1e7aa32c525656637ee872d92f676a4ebd1a4306e2f6b8fc4720",
+      "colors": 45,
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_unnamed_area_01.jpg",
+        "art/src/hd2d/batch-01-octopath/edge-grass-dirt/final.png",
+        "art/src/hd2d/batch-01-octopath/edge-grass-roots/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "edge-desert-reextract-20261030",
+      "approved": false,
+      "size_px": [
+        512,
+        128
+      ],
+      "world_size": [
+        4,
+        1
+      ]
+    },
+    {
+      "id": "tomb-decal-moss-soil",
+      "category": "decal",
+      "kit": "tomb",
+      "file": "tomb-decal-moss-soil/final.png",
+      "px": [
+        416,
+        259
+      ],
+      "world": [
+        3.25,
+        2.0234
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        208,
+        185
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "ed64d848a636ee71f2426c25d61567214197d906a81b3c51dabcdaba27272065",
+      "raw_sha256": "0c25d2e7dfb3d56071c9f59d7fbc98d817566fa316f1fd59fd343f47a5db2b8f",
+      "colors": 48,
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_resentment_path.jpg",
+        "art/src/hd2d/batch-01-octopath/moss-patch-01/final.png",
+        "art/src/hd2d/batch-01-octopath/mud-patch/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "tomb-decal-moss-redraw-20261030-03",
+      "approved": false,
+      "size_px": [
+        416,
+        259
+      ],
+      "world_size": [
+        3.25,
+        2.0234
+      ]
+    },
+    {
+      "id": "tomb-decal-tomb-rubble",
+      "category": "decal",
+      "kit": "tomb",
+      "file": "tomb-decal-tomb-rubble/final.png",
+      "px": [
+        416,
+        414
+      ],
+      "world": [
+        3.25,
+        3.2344
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        208,
+        207
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "3ba65a3e60b09c7ec590ca574e244116c34fa7887a0dbfeaeba8ca74e97b223b",
+      "raw_sha256": "2378c1e6783bcaabf55080c19f577272b7cbdeec3409724130693c7889afe4da",
+      "colors": 47,
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_dead_ruins.jpg",
+        "art/src/hd2d/batch-01-octopath/mud-patch/final.png",
+        "art/src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "decals-sheet-02-20261030",
+      "approved": false,
+      "size_px": [
+        416,
+        414
+      ],
+      "world_size": [
+        3.25,
+        3.2344
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_raw": "tomb-decal-tomb-rubble/raw-01.png",
+      "status": "needs_claude_visual_review",
+      "self_visual_review": "actual_final_viewed_4x_dark_and_checker"
+    },
+    {
+      "id": "tomb-decal-slate-chips",
+      "category": "decal",
+      "kit": "tomb",
+      "file": "tomb-decal-slate-chips/final.png",
+      "px": [
+        416,
+        388
+      ],
+      "world": [
+        3.25,
+        3.0312
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        208,
+        194
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "8eee3b341c60091e17bf7641002d88fe1771117ab4a68fc9462c5ac4c2e0569c",
+      "raw_sha256": "2378c1e6783bcaabf55080c19f577272b7cbdeec3409724130693c7889afe4da",
+      "colors": 47,
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_deep_ruins.jpg",
+        "art/src/hd2d/batch-01-octopath/mud-patch/final.png",
+        "art/src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "decals-sheet-02-20261030",
+      "approved": false,
+      "size_px": [
+        416,
+        388
+      ],
+      "world_size": [
+        3.25,
+        3.0312
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_raw": "tomb-decal-slate-chips/raw-01.png",
+      "status": "needs_claude_visual_review",
+      "self_visual_review": "actual_final_viewed_4x_dark_and_checker"
+    },
+    {
+      "id": "tomb-decal-spirit-stain",
+      "category": "decal",
+      "kit": "tomb",
+      "file": "tomb-decal-spirit-stain/final.png",
+      "px": [
+        416,
+        409
+      ],
+      "world": [
+        3.25,
+        3.1953
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        208,
+        204
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "5b14232c646cd6adf4bcb6b1808d15cc9bb9522df0d57ebd118b19c2a37ca000",
+      "raw_sha256": "2378c1e6783bcaabf55080c19f577272b7cbdeec3409724130693c7889afe4da",
+      "colors": 47,
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_resentment_path.jpg",
+        "art/src/hd2d/batch-01-octopath/mud-patch/final.png",
+        "art/src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "decals-sheet-02-20261030",
+      "approved": false,
+      "size_px": [
+        416,
+        409
+      ],
+      "world_size": [
+        3.25,
+        3.1953
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_raw": "tomb-decal-spirit-stain/raw-01.png",
+      "status": "needs_claude_visual_review",
+      "self_visual_review": "actual_final_viewed_4x_dark_and_checker"
+    },
+    {
+      "id": "tomb-decal-ochre-dust",
+      "category": "decal",
+      "kit": "tomb",
+      "file": "tomb-decal-ochre-dust/final.png",
+      "px": [
+        416,
+        392
+      ],
+      "world": [
+        3.25,
+        3.0625
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        208,
+        196
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "fba6f374201058d675c56669af854f7e16d9f7be651037a7cf5201d50cb75abf",
+      "raw_sha256": "2378c1e6783bcaabf55080c19f577272b7cbdeec3409724130693c7889afe4da",
+      "colors": 47,
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_unnamed_area_01.jpg",
+        "art/src/hd2d/batch-01-octopath/mud-patch/final.png",
+        "art/src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "decals-sheet-02-20261030",
+      "approved": false,
+      "size_px": [
+        416,
+        392
+      ],
+      "world_size": [
+        3.25,
+        3.0625
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_raw": "tomb-decal-ochre-dust/raw-01.png",
+      "status": "needs_claude_visual_review",
+      "self_visual_review": "actual_final_viewed_4x_dark_and_checker"
+    },
+    {
+      "id": "tomb-decal-gravel-trail",
+      "category": "decal",
+      "kit": "tomb",
+      "file": "tomb-decal-gravel-trail/final.png",
+      "px": [
+        357,
+        416
+      ],
+      "world": [
+        2.7891,
+        3.25
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        178,
+        208
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "769a2b3bd13d7fef79c9b53ad2b2bc2e0517a62510bf64f55fe4cdc71942a392",
+      "raw_sha256": "2378c1e6783bcaabf55080c19f577272b7cbdeec3409724130693c7889afe4da",
+      "colors": 47,
+      "mechanical_status": "pass",
+      "failures": [],
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_soul_cemetery.jpg",
+        "art/src/hd2d/batch-01-octopath/mud-patch/final.png",
+        "art/src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_job": "decals-sheet-02-20261030",
+      "approved": false,
+      "size_px": [
+        357,
+        416
+      ],
+      "world_size": [
+        2.7891,
+        3.25
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_raw": "tomb-decal-gravel-trail/raw-01.png",
+      "status": "needs_claude_visual_review",
+      "self_visual_review": "actual_final_viewed_4x_dark_and_checker"
+    },
+    {
+      "id": "tomb-spawn-marker",
+      "name": "Tomb arrival rune marker (4-frame loop)",
+      "category": "marker",
+      "kit": "tomb",
+      "file": "tomb-spawn-marker/final.png",
+      "px": [
+        768,
+        192
+      ],
+      "size_px": [
+        768,
+        192
+      ],
+      "world": [
+        1.5,
+        1.5
+      ],
+      "world_size": [
+        1.5,
+        1.5
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        384,
+        96
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "none",
+      "frames": 4,
+      "frame_px": [
+        192,
+        192
+      ],
+      "fps": 8,
+      "sway": false,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_deep_ruins.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png",
+        "art/src/hd2d/batch-01-octopath/moss-patch-01/final.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "tomb-spawn-marker/raw-01.png",
+      "raw_sha256": "5d831064d7424d26d5b06f2b47d34ae077a131696611adf9f47e47fe020a79e1",
+      "sha256": "57203bcda6d8415de876054ab2dd5245a46a5a889de618a3727ad2dbe5304ca6",
+      "colors": 46,
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "failures": [],
+      "self_visual_review": "actual_final_viewed_4x_dark_and_checker"
+    },
+    {
+      "id": "tomb-decal-cracked-earth",
+      "category": "decal",
+      "kit": "tomb",
+      "name": "Cracked Earth",
+      "file": "tomb-decal-cracked-earth/final.png",
+      "px": [
+        416,
+        399
+      ],
+      "size_px": [
+        416,
+        399
+      ],
+      "world": [
+        3.25,
+        3.1172
+      ],
+      "world_size": [
+        3.25,
+        3.1172
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        208,
+        199
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_despair_path.jpg",
+        "art/src/hd2d/batch-01-octopath/mud-patch/final.png",
+        "art/src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "tomb-decal-cracked-earth/raw-01.png",
+      "raw_sha256": "2378c1e6783bcaabf55080c19f577272b7cbdeec3409724130693c7889afe4da",
+      "sha256": "74cb3615963c43bfe963ea382469c383c1e0f79cf1300682ccfc90de0601a94e",
+      "colors": 47,
+      "source_job": "decals-sheet-02-20261030",
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "failures": [],
+      "self_visual_review": "actual_final_viewed_4x_dark_and_checker"
+    },
+    {
+      "id": "tomb-decal-rune-dust",
+      "category": "decal",
+      "kit": "tomb",
+      "name": "Rune Dust",
+      "file": "tomb-decal-rune-dust/final.png",
+      "px": [
+        416,
+        372
+      ],
+      "size_px": [
+        416,
+        372
+      ],
+      "world": [
+        3.25,
+        2.9062
+      ],
+      "world_size": [
+        3.25,
+        2.9062
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        208,
+        186
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_despair_path.jpg",
+        "art/src/hd2d/batch-01-octopath/mud-patch/final.png",
+        "art/src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "tomb-decal-rune-dust/raw-01.png",
+      "raw_sha256": "d32e2c8cad7835f3faa4fde3a5d0c94c240309c4ebd68f96a2dd7ddf4c46f7f9",
+      "sha256": "8039f51daf118a6cc9eb9fed606571e1056f7ce7fd2c404664ce26e832aa8011",
+      "colors": 47,
+      "source_job": "decals-sheet-03-20261030",
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "failures": [],
+      "self_visual_review": "actual_final_viewed_4x_dark_and_checker"
+    },
+    {
+      "id": "tomb-decal-bone-fragments",
+      "category": "decal",
+      "kit": "tomb",
+      "name": "Bone Fragments",
+      "file": "tomb-decal-bone-fragments/final.png",
+      "px": [
+        412,
+        408
+      ],
+      "size_px": [
+        412,
+        408
+      ],
+      "world": [
+        3.2188,
+        3.1875
+      ],
+      "world_size": [
+        3.2188,
+        3.1875
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        206,
+        204
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_dead_ruins.jpg",
+        "art/src/hd2d/batch-01-octopath/mud-patch/final.png",
+        "art/src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "tomb-decal-bone-fragments/raw-01.png",
+      "raw_sha256": "d32e2c8cad7835f3faa4fde3a5d0c94c240309c4ebd68f96a2dd7ddf4c46f7f9",
+      "sha256": "9af59dd9ea59a1399ae494028d92e16ba1d4d555f6c4ebb6c1d0ec8ed64ae8dd",
+      "colors": 48,
+      "source_job": "decals-sheet-03-20261030",
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "failures": [],
+      "self_visual_review": "actual_final_viewed_4x_dark_and_checker"
+    },
+    {
+      "id": "tomb-decal-thorn-litter",
+      "category": "decal",
+      "kit": "tomb",
+      "name": "Thorn Litter",
+      "file": "tomb-decal-thorn-litter/final.png",
+      "px": [
+        416,
+        370
+      ],
+      "size_px": [
+        416,
+        370
+      ],
+      "world": [
+        3.25,
+        2.8906
+      ],
+      "world_size": [
+        3.25,
+        2.8906
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        208,
+        185
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_unnamed_area_02.jpg",
+        "art/src/hd2d/batch-01-octopath/mud-patch/final.png",
+        "art/src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "tomb-decal-thorn-litter/raw-01.png",
+      "raw_sha256": "d32e2c8cad7835f3faa4fde3a5d0c94c240309c4ebd68f96a2dd7ddf4c46f7f9",
+      "sha256": "28185b2cfa049be6c0cc2cd7215d9fe2de38706de360edd3a18abecf6afc8c5e",
+      "colors": 48,
+      "source_job": "decals-sheet-03-20261030",
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "failures": [],
+      "self_visual_review": "actual_final_viewed_4x_dark_and_checker"
+    },
+    {
+      "id": "tomb-decal-sand-ripple",
+      "category": "decal",
+      "kit": "tomb",
+      "name": "Sand Ripple",
+      "file": "tomb-decal-sand-ripple/final.png",
+      "px": [
+        416,
+        355
+      ],
+      "size_px": [
+        416,
+        355
+      ],
+      "world": [
+        3.25,
+        2.7734
+      ],
+      "world_size": [
+        3.25,
+        2.7734
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        208,
+        177
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_unnamed_area_01.jpg",
+        "art/src/hd2d/batch-01-octopath/mud-patch/final.png",
+        "art/src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "tomb-decal-sand-ripple/raw-01.png",
+      "raw_sha256": "d32e2c8cad7835f3faa4fde3a5d0c94c240309c4ebd68f96a2dd7ddf4c46f7f9",
+      "sha256": "52bc47e91253b40fefa27a633162875604748f059a115b80710a578781f919db",
+      "colors": 47,
+      "source_job": "decals-sheet-03-20261030",
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "failures": [],
+      "self_visual_review": "actual_final_viewed_4x_dark_and_checker"
+    },
+    {
+      "id": "tomb-decal-moss-seam",
+      "category": "decal",
+      "kit": "tomb",
+      "name": "Moss Seam",
+      "file": "tomb-decal-moss-seam/final.png",
+      "px": [
+        397,
+        380
+      ],
+      "size_px": [
+        397,
+        380
+      ],
+      "world": [
+        3.1016,
+        2.9688
+      ],
+      "world_size": [
+        3.1016,
+        2.9688
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        198,
+        190
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_resentment_path.jpg",
+        "art/src/hd2d/batch-01-octopath/mud-patch/final.png",
+        "art/src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "tomb-decal-moss-seam/raw-01.png",
+      "raw_sha256": "d32e2c8cad7835f3faa4fde3a5d0c94c240309c4ebd68f96a2dd7ddf4c46f7f9",
+      "sha256": "a00de1022a16ba986d98e2d319c059e86e2a5055d4686c188dbc27549fda059e",
+      "colors": 48,
+      "source_job": "decals-sheet-03-20261030",
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "failures": [],
+      "self_visual_review": "actual_final_viewed_4x_dark_and_checker"
+    },
+    {
+      "id": "tomb-decal-coffin-drag",
+      "category": "decal",
+      "kit": "tomb",
+      "name": "Coffin Drag",
+      "file": "tomb-decal-coffin-drag/final.png",
+      "px": [
+        416,
+        377
+      ],
+      "size_px": [
+        416,
+        377
+      ],
+      "world": [
+        3.25,
+        2.9453
+      ],
+      "world_size": [
+        3.25,
+        2.9453
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        208,
+        188
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "art_source": "host_image",
+      "route": "built-in image_gen",
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_deep_ruins.jpg",
+        "art/src/hd2d/batch-01-octopath/mud-patch/final.png",
+        "art/src/hd2d/batch-01-octopath/dirt-floor-01/final.png",
+        "art/pets/redraws/references/DocDangNu/sprites.png",
+        "art/pets/redraws/references/DaoThienDuong/sprites.png"
+      ],
+      "source_raw": "tomb-decal-coffin-drag/raw-01.png",
+      "raw_sha256": "d32e2c8cad7835f3faa4fde3a5d0c94c240309c4ebd68f96a2dd7ddf4c46f7f9",
+      "sha256": "cc591d2e271097e4a8ba596efcf3f31692d73d64f50aea674574bfa29369d84f",
+      "colors": 47,
+      "source_job": "decals-sheet-03-20261030",
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "failures": [],
+      "self_visual_review": "actual_final_viewed_4x_dark_and_checker"
+    },
+    {
+      "id": "tomb-shadow-small-prop",
+      "category": "shadow",
+      "kit": "tomb",
+      "file": "tomb-shadow-small-prop/final.png",
+      "px": [
+        112,
+        64
+      ],
+      "size_px": [
+        112,
+        64
+      ],
+      "world": [
+        0.875,
+        0.5
+      ],
+      "world_size": [
+        0.875,
+        0.5
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        56,
+        32
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "art_source": "code",
+      "route": "procedural alpha shadow (kit exception)",
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_dead_ruins.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png"
+      ],
+      "source_raw": "tomb-shadow-small-prop/raw-01.png",
+      "raw_sha256": "e3e9409b88030190009fde63269f24c3ddbe73e224f32038914cb658c772bdf8",
+      "sha256": "fa09b7f53804890c700a27dd87916656cee75f83e3a10d4d6bc287a6dbbf34a9",
+      "colors": 3,
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "failures": [],
+      "self_visual_review": "actual_final_viewed_4x_dark_and_checker",
+      "procedural_padding_px": 8
+    },
+    {
+      "id": "tomb-shadow-gravestone",
+      "category": "shadow",
+      "kit": "tomb",
+      "file": "tomb-shadow-gravestone/final.png",
+      "px": [
+        160,
+        80
+      ],
+      "size_px": [
+        160,
+        80
+      ],
+      "world": [
+        1.25,
+        0.625
+      ],
+      "world_size": [
+        1.25,
+        0.625
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        80,
+        40
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "art_source": "code",
+      "route": "procedural alpha shadow (kit exception)",
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_dead_ruins.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png"
+      ],
+      "source_raw": "tomb-shadow-gravestone/raw-01.png",
+      "raw_sha256": "16ff9c0cda0898e3964f3e0852c339fc8fc227f7bad8ec6c052804cf4b29c433",
+      "sha256": "fe880759ceed1c861fd2cecd75f8158ebd98ae7231471566001f54d2ecb701db",
+      "colors": 7,
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "failures": [],
+      "self_visual_review": "actual_final_viewed_4x_dark_and_checker",
+      "procedural_padding_px": 8
+    },
+    {
+      "id": "tomb-shadow-large-arch",
+      "category": "shadow",
+      "kit": "tomb",
+      "file": "tomb-shadow-large-arch/final.png",
+      "px": [
+        272,
+        96
+      ],
+      "size_px": [
+        272,
+        96
+      ],
+      "world": [
+        2.125,
+        0.75
+      ],
+      "world_size": [
+        2.125,
+        0.75
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        136,
+        48
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "art_source": "code",
+      "route": "procedural alpha shadow (kit exception)",
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_dead_ruins.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png"
+      ],
+      "source_raw": "tomb-shadow-large-arch/raw-01.png",
+      "raw_sha256": "a4173a7f578f58d752bc38324f399922abf0b2abac533b2ef2c7a71b428558f5",
+      "sha256": "a06098e473aaee83e8e4ce12e3087e36df3d0b00ec4fd00aeb978e0ab0534e9b",
+      "colors": 7,
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "failures": [],
+      "self_visual_review": "actual_final_viewed_4x_dark_and_checker",
+      "procedural_padding_px": 8
+    },
+    {
+      "id": "tomb-shadow-dead-tree",
+      "category": "shadow",
+      "kit": "tomb",
+      "file": "tomb-shadow-dead-tree/final.png",
+      "px": [
+        224,
+        104
+      ],
+      "size_px": [
+        224,
+        104
+      ],
+      "world": [
+        1.75,
+        0.8125
+      ],
+      "world_size": [
+        1.75,
+        0.8125
+      ],
+      "pivot": "center",
+      "pivot_px": [
+        112,
+        52
+      ],
+      "pivot_uv": [
+        0.5,
+        0.5
+      ],
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "art_source": "code",
+      "route": "procedural alpha shadow (kit exception)",
+      "source_refs": [
+        ".ai/design/map-checklists/refs/tomb_region_dead_ruins.jpg",
+        "art/src/hd2d/batch-01-octopath/contact-sheet.png"
+      ],
+      "source_raw": "tomb-shadow-dead-tree/raw-01.png",
+      "raw_sha256": "d07e929967859e78aa7ed84dec39a4d97c25316fe3001808d6001e2f297a8def",
+      "sha256": "174bdfd481a22ebb99584cd21ace3c535da360d7e92e80dc8e19bf9809f641e8",
+      "colors": 7,
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "mechanical_status": "pass",
+      "failures": [],
+      "self_visual_review": "actual_final_viewed_4x_dark_and_checker",
+      "procedural_padding_px": 8
+    },
+    {
+      "id": "tomb-fx-spirit-wisp-01",
+      "category": "fx",
+      "kit": "tomb",
+      "file": "tomb-fx-spirit-wisp-01/final.png",
+      "px": [
+        160,
+        160
+      ],
+      "world": [
+        1.25,
+        1.25
+      ],
+      "pivot": "center",
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "f3315bf4d1019242dc9f8c9329a2cc1a5e071333e40f99f0da991bb2aaab278e",
+      "mechanical_status": "pass",
+      "failures": [],
+      "colors": 48,
+      "edge_to_center_luma_diff": null
+    },
+    {
+      "id": "tomb-fx-rune-pulse-01",
+      "category": "fx",
+      "kit": "tomb",
+      "file": "tomb-fx-rune-pulse-01/final.png",
+      "px": [
+        160,
+        160
+      ],
+      "world": [
+        1.25,
+        1.25
+      ],
+      "pivot": "center",
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "8db243b601aac0b46c901754818cb7371a9b98b715af983c5f098024f89a17ba",
+      "mechanical_status": "pass",
+      "failures": [],
+      "colors": 47,
+      "edge_to_center_luma_diff": null
+    },
+    {
+      "id": "tomb-fx-stone-chips-01",
+      "category": "fx",
+      "kit": "tomb",
+      "file": "tomb-fx-stone-chips-01/final.png",
+      "px": [
+        160,
+        160
+      ],
+      "world": [
+        1.25,
+        1.25
+      ],
+      "pivot": "center",
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "99aec5fbd49c9080ed0de2330d953960c92bafe8f110c78fc194d32c6a0dd721",
+      "mechanical_status": "pass",
+      "failures": [],
+      "colors": 47,
+      "edge_to_center_luma_diff": null
+    },
+    {
+      "id": "tomb-necropolis-wall-mid",
+      "category": "backdrop",
+      "kit": "tomb",
+      "file": "tomb-necropolis-wall-mid/final.png",
+      "px": [
+        1024,
+        384
+      ],
+      "world": [
+        16,
+        6
+      ],
+      "pivot": "center",
+      "tileable": "x",
+      "frames": 1,
+      "fps": null,
+      "sha256": "04c2f1aed46e0a55229cddd99329c3f6a95432e3fafb72206499b106febc5062",
+      "mechanical_status": "pass",
+      "failures": [],
+      "colors": 47,
+      "edge_to_center_luma_diff": null,
+      "source_raw": "jobs/backdrop-mid-redraw-20261104/tomb-necropolis-wall-mid-raw-05.png",
+      "raw_sha256": "30e3f3465cc402742eb1aa842acf3dbc5abc1c0f10e1f6da91e04ecd542908f6",
+      "source_job": "backdrop-mid-redraw-20261104",
+      "approved": false,
+      "status": "needs_claude_visual_review",
+      "self_visual_review": "final_and_repeat_3x1_viewed"
+    },
+    {
+      "id": "tomb-necropolis-wall-near",
+      "category": "backdrop",
+      "kit": "tomb",
+      "file": "tomb-necropolis-wall-near/final.png",
+      "px": [
+        1024,
+        384
+      ],
+      "world": [
+        16,
+        6
+      ],
+      "pivot": "center",
+      "tileable": "x",
+      "frames": 1,
+      "fps": null,
+      "sha256": "8ec45fee8088dac5dbadd15f457b8b6fd4ad0ad63180c60496abd1c13f5290c4",
+      "mechanical_status": "pass",
+      "failures": [],
+      "colors": 47,
+      "edge_to_center_luma_diff": null,
+      "raw_sha256": "905c86fc07d4e90f4cf0952f9f5a9f7f9da78c803ff8c94b6bb81d96e6441723",
+      "source_raw": "jobs/backdrop-near-redraw-20261104/tomb-necropolis-wall-near-raw-05.png",
+      "source_job": "backdrop-near-redraw-20261104",
+      "approved": false,
+      "status": "needs_composite_visual_review",
+      "self_visual_review": "final_and_repeat_3x1_viewed_owner_approval_pending"
+    },
+    {
+      "id": "tomb-map-dry-sapling",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-map-dry-sapling/final.png",
+      "px": [
+        160,
+        192
+      ],
+      "world": [
+        1.25,
+        1.5
+      ],
+      "pivot": "bottom_center",
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "a1886f69ada7edf67da28f2fd31f1f76c115aa2cad994ab93d9255c751de7a92",
+      "mechanical_status": "pass",
+      "failures": [],
+      "colors": 48,
+      "edge_to_center_luma_diff": null,
+      "approved": false
+    },
+    {
+      "id": "tomb-map-orange-blooms",
+      "category": "prop",
+      "kit": "tomb",
+      "file": "tomb-map-orange-blooms/final.png",
+      "px": [
+        96,
+        96
+      ],
+      "world": [
+        0.75,
+        0.75
+      ],
+      "pivot": "bottom_center",
+      "tileable": "none",
+      "frames": 1,
+      "fps": null,
+      "sha256": "caa3b8480efa462eb3ef22afcc76ab8edfff90631351d15fc72d38f84b4edb07",
+      "mechanical_status": "pass",
+      "failures": [],
+      "colors": 47,
+      "edge_to_center_luma_diff": null,
+      "approved": false
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "species_id": "species_0004",
+  "source_species_id": "XacUop",
+  "task_model": "gpt-6.1-sol",
+  "prompt_revision": 2,
+  "status": "ready_for_review",
+  "generation_calls": 5,
+  "raw_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0004/attempt-05/raw.png",
+  "raw_sha256": "98bbe04c8c10f20c5f1f40c98eb50fa354c6d216c737eb067a1e32803edd5054",
+  "mechanical_status": "pass",
+  "human_approved": false,
+  "blockers": [],
+  "visual_review": "All20 normalalpha frames: original greywraps yelloweyes redboots identity, exactONEball+ONEchain consistently gripped, fixedLEFTcamera, articulatedwalk+leftballstrike+freehandcast+fullyprone. R3C3 duplicated ball fixed, sourceoverlap fixed with builtin halfsize composition. Silhouette smaller than typicalheightguidance due preservedalpha; human64pxreadability/playbackreview pending.",
+  "resume_attempts": [
+    {
+      "path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0004/attempt-04/raw.png",
+      "sha256": "f462a74ae545fe8c0ceafb123d52c32bf714491decce5b8ba6ea3988cbd80f50",
+      "status": "Duplicateball FIXED, but attack wind-up/impact pose bounding boxes overlap in source. Layout repair pending"
+    },
+    {
+      "path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0004/attempt-05/raw.png",
+      "sha256": "98bbe04c8c10f20c5f1f40c98eb50fa354c6d216c737eb067a1e32803edd5054",
+      "status": "ready after all20+checker+preview"
+    }
+  ],
+  "candidate_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0004/attempt-05/packed.png",
+  "candidate_sha256": "154d5893f872cd73af72942360d6fb714c88010b55d7bbf4beabc5196fae8b03",
+  "self_review_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0004/attempt-05/self-review.json",
+  "preview_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0004/attempt-05/preview/preview.html",
+  "historical_raw_selections": [
+    {
+      "raw_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0004/attempt-01/raw.png",
+      "raw_sha256": "20f43732a35a59220ab43ae9f2d232adf73a9d86d902c5f6008fbcf3f3b6c339",
+      "generated_source_path": "/Users/phileanh/.codex/generated_images/01a109eb-e660-7333-8bac-1eaab09607c9/exec-aec8d95c-9fc7-40d8-99cf-f9d4ff5ef4bb.png"
+    }
+  ],
+  "historical_generated_source_path": "/Users/phileanh/.codex/generated_images/01a109eb-e660-7333-8bac-1eaab09607c9/exec-aec8d95c-9fc7-40d8-99cf-f9d4ff5ef4bb.png",
+  "selected_attempt": "attempt-05",
+  "input_metadata_paths": [
+    "apps/game-client/assets/pets/redraws/batches/20261005/species_0004/attempt-05/inputs-resume.json"
+  ],
+  "prompt_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0004/attempt-05/prompt.txt",
+  "animation_playback_verified": false,
+  "runtime_active": false
+}

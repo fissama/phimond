@@ -1,0 +1,2 @@
+Yellow-headed bird, curved pink beak, purple clawed wing arms and brown legs preserved. Idle breathing; alternating steps; crouch/raise/lunge/recover; beak/wing focus/raise/release/relax; flinch/sink/collapse/prone. All20 LEFT.
+Mechanical PASS. Reviewed all20 static packed poses and original references. Single common nearest-neighbor scale preserves allalpha. Human approved false. Animation playback unverified. Body height below typical guidance possible.

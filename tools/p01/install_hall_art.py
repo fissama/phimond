@@ -3,7 +3,7 @@
 
 Chỉ thêm/ghi đè các id liệt kê dưới đây, không đụng mục khác của assets.json.
 Dùng:  python3 tools/p01/install_hall_art.py <thư-mục-chứa-ảnh-đã-chép>   (xem SRC bên dưới để biết tên file)
-Nguồn gốc ảnh: apps/game-web/art-src/hd2d/batch-02-octopath/summon-hall-redraw-20261028/ (lô 10-28) và .../completion-20261029/summon-hall-extra-assets.zip
+Nguồn gốc ảnh: art/src/hd2d/batch-02-octopath/summon-hall-redraw-20261028/ (lô 10-28) và .../completion-20261029/summon-hall-extra-assets.zip
 (stone-floor-b, city-backdrop-wide, city-near-roofs, floor-light-1..3). Cột/nền/thành phố rộng nằm chung một thư mục khi chạy.
 """
 import json, shutil, sys

@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 2,
+  "provider": "openai",
+  "kind": "image",
+  "route": "codex-cli",
+  "requestedModel": "codex-image_gen",
+  "options": {
+    "tool": "image_gen"
+  },
+  "promptSha256": "12ab93cba3a05bdf46d47057d9e054eba57815e71791f2769213fd4c874b46d5",
+  "references": [
+    {
+      "sha256": "480159f0d15089337488343786f37a737863dd3408fb6705d8f195078718573d",
+      "bytes": 838586
+    }
+  ],
+  "fingerprint": "0d7da1903fbc19018ef0a1ce415c49d50c121dcdafa93e4f356013a9c44c9972",
+  "estimate": {
+    "usd": 0.0,
+    "currency": "USD",
+    "pricesVersion": "2026-10-06",
+    "items": [],
+    "basis": "subscription quota call: no per-call USD price; counted by call caps"
+  },
+  "consent": {
+    "provider": "openai",
+    "model": "codex-image_gen",
+    "calls": 1,
+    "estimateUsd": 0.0,
+    "route": "codex-cli",
+    "quota": true,
+    "account": "the user's own Codex sign-in (ChatGPT)",
+    "note": "uses the subscription quota of that sign-in, never API credit"
+  },
+  "artSource": "host_image",
+  "execution": "execute",
+  "status": "done",
+  "receipt": {
+    "startedAt": "2026-10-29T11:12:33.083Z",
+    "submittedAt": "2026-10-29T11:12:33.085Z",
+    "completedAt": "2026-10-29T11:13:38.361Z",
+    "wallMs": 65279,
+    "providerMs": 65266,
+    "attempt": 1,
+    "purpose": "S07 redraw skyline with transparent sky",
+    "toolVersion": "cli_media/0.4.0",
+    "outcomeCode": "ok"
+  },
+  "ledger": {
+    "projectDir": "../../../../../../..",
+    "reservationId": "037d1072aa9847e8b02b742ae72b6597",
+    "status": "done"
+  },
+  "cliRun": {
+    "tool": "codex",
+    "runId": "b72cc78c3c5a4d20a9e36e5f61cebd6a",
+    "cwd": "<tmp>/forge-cli-b72cc78c3c5a-e55fe891",
+    "startedAt": "2026-10-29T11:12:33.083Z",
+    "version": "0.158.0",
+    "versionText": "codex-cli 0.158.0",
+    "recipe": "codex-exec-imagegen/1",
+    "home": "CODEX_HOME",
+    "verifiedBefore": true,
+    "threadId": "01a1875c-9204-7c01-a8e4-b2eeb1e4823d"
+  },
+  "adoption": {
+    "method": "native-run-folder",
+    "source": "CODEX_HOME/generated_images/01a1875c-9204-7c01-a8e4-b2eeb1e4823d/exec-ea391d74-2488-4bd0-b9d5-65f6b6dccff2.png",
+    "sourceSha256": "d1b5a1e626a850be797619dfcf6878be4b3b32f0f675bfcce0968fca5c69da87",
+    "sourceMtime": "2026-10-29T11:13:32Z",
+    "freshAfter": "2026-10-29T11:12:33.085Z",
+    "checks": [
+      "inside the CLI's own folder for this run",
+      "no symlink or junction",
+      "regular file of a sane size",
+      "newer than the run",
+      "magic bytes",
+      "decodes",
+      "exactly one output",
+      "exclusive copy with matching sha256"
+    ],
+    "finalAnswerNamesFile": true
+  },
+  "artifact": {
+    "path": "generated.png",
+    "sha256": "d1b5a1e626a850be797619dfcf6878be4b3b32f0f675bfcce0968fca5c69da87",
+    "bytes": 1455366,
+    "format": "PNG",
+    "size": [
+      2172,
+      724
+    ]
+  }
+}

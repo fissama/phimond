@@ -1,22 +1,22 @@
 #!/usr/bin/env python3
 """Chuyển đổi layout.json của desert_entrance thành scene Three.js:
-apps/game-web/public/scenes/desert_entrance_hd2d.json
+art/build/scenes/desert_entrance_hd2d.json
 Phục vụ render 3 góc camera (0.15, 0.50, 0.85) và zoom 2x khu vực Cổng, NPC Edda.
 """
 import json, os, shutil, pathlib
 
 R = pathlib.Path(__file__).resolve().parents[2]
 layout_p = R / ".ai/design/map-layouts/desert/desert_entrance.json"
-man_p = R / "apps/game-web/art-src/hd2d/batch-11-desert/manifest.json"
-tex_dir = R / "apps/game-web/public/scenes/tex"
-out_scene_p = R / "apps/game-web/public/scenes/desert_entrance_hd2d.json"
+man_p = R / "art/src/hd2d/batch-11-desert/manifest.json"
+tex_dir = R / "art/build/scenes/tex"
+out_scene_p = R / "art/build/scenes/desert_entrance_hd2d.json"
 
 layout = json.load(open(layout_p))
 manifest = json.load(open(man_p))
 man_map = {a["id"]: a for a in manifest["assets"]}
 
 # Đảm bảo sprite cho NPC Edda
-npc_src = R / "apps/game-web/art-src/hd2d/batch-05-octopath/player-female/final.png"
+npc_src = R / "art/src/hd2d/batch-05-octopath/player-female/final.png"
 npc_dst = tex_dir / "hd2d_npc-desert-edda.png"
 if npc_src.exists():
     shutil.copyfile(npc_src, npc_dst)

@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 2,
+  "provider": "openai",
+  "kind": "image",
+  "route": "codex-cli",
+  "requestedModel": "codex-image_gen",
+  "options": {
+    "tool": "image_gen"
+  },
+  "promptSha256": "dc89fc1697227f7b688288aae05796d6dfc7bcbb21eeb45dae37e8acd65760ae",
+  "references": [
+    {
+      "sha256": "b81cd6036cf7f941c79bcab498e19f29e6dbddad5c2083cc5702a40bc4397bb2",
+      "bytes": 23143
+    },
+    {
+      "sha256": "7aa6e7c51af67722be4f8060c03608a468beb9c3d7a800229db903f0b6ae9c5f",
+      "bytes": 17077
+    }
+  ],
+  "fingerprint": "62f169a8e79da0fa8edee5335c2d14db483e8563506ca69627bc5f688709e2b9",
+  "estimate": {
+    "usd": 0.0,
+    "currency": "USD",
+    "pricesVersion": "2026-10-06",
+    "items": [],
+    "basis": "subscription quota call: no per-call USD price; counted by call caps"
+  },
+  "consent": {
+    "provider": "openai",
+    "model": "codex-image_gen",
+    "calls": 1,
+    "estimateUsd": 0.0,
+    "route": "codex-cli",
+    "quota": true,
+    "account": "the user's own Codex sign-in (ChatGPT)",
+    "note": "uses the subscription quota of that sign-in, never API credit"
+  },
+  "artSource": "host_image",
+  "execution": "execute",
+  "status": "done",
+  "receipt": {
+    "startedAt": "2026-10-29T11:24:40.840Z",
+    "submittedAt": "2026-10-29T11:24:40.841Z",
+    "completedAt": "2026-10-29T11:25:50.173Z",
+    "wallMs": 69334,
+    "providerMs": 69327,
+    "attempt": 1,
+    "purpose": "S23 female walk with pose and spacing guide",
+    "toolVersion": "cli_media/0.4.0",
+    "outcomeCode": "ok"
+  },
+  "ledger": {
+    "projectDir": "../../../../../../..",
+    "reservationId": "d6a801e6a5314b35835872e8a9466c29",
+    "status": "done"
+  },
+  "cliRun": {
+    "tool": "codex",
+    "runId": "ef59dd9e69f24db79c5ab207f363e34f",
+    "cwd": "<tmp>/forge-cli-ef59dd9e69f2-bb101ec7",
+    "startedAt": "2026-10-29T11:24:40.840Z",
+    "version": "0.158.0",
+    "versionText": "codex-cli 0.158.0",
+    "recipe": "codex-exec-imagegen/1",
+    "home": "CODEX_HOME",
+    "verifiedBefore": true,
+    "threadId": "01a18767-acde-7f40-999c-87a7953c3803"
+  },
+  "adoption": {
+    "method": "native-run-folder",
+    "source": "CODEX_HOME/generated_images/01a18767-acde-7f40-999c-87a7953c3803/exec-e62a5034-eac5-4e1b-ad55-43dee3cad4cb.png",
+    "sourceSha256": "d9be2accbfaf614e92c94e4afd9c53c5b8f729e73812175bd6a4193c261dee56",
+    "sourceMtime": "2026-10-29T11:25:46Z",
+    "freshAfter": "2026-10-29T11:24:40.841Z",
+    "checks": [
+      "inside the CLI's own folder for this run",
+      "no symlink or junction",
+      "regular file of a sane size",
+      "newer than the run",
+      "magic bytes",
+      "decodes",
+      "exactly one output",
+      "exclusive copy with matching sha256"
+    ],
+    "finalAnswerNamesFile": true
+  },
+  "artifact": {
+    "path": "generated.png",
+    "sha256": "d9be2accbfaf614e92c94e4afd9c53c5b8f729e73812175bd6a4193c261dee56",
+    "bytes": 1744227,
+    "format": "PNG",
+    "size": [
+      1774,
+      887
+    ]
+  }
+}

@@ -1,0 +1,3 @@
+# crossroads-floor-extra-03 — 2026-10-28
+
+Viewed complete final and detail at 4× over dark and checker backgrounds, plus 3×3 repeat. Reads as broad pale teal limestone plates with dark blue-green fissures, visually distinct from the dark slate, cobble, moss, water, silt and violet-grit textures. Repeat boundaries are visually continuous. Package QA: 38 colors, X/Y seam mean and max 0, uniform outer 8px, binary alpha, key residue 0, raw integrity true. Global palette remap collapses the 11 colors found on the outer border into its most frequent base color and applies to matching colors everywhere; no pixels were painted spatially. Raw sheet retained byte-identically. Checklist Vẽ checked; owner Duyệt remains unchecked.

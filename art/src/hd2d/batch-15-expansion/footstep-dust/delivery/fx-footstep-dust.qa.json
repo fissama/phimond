@@ -1,0 +1,23 @@
+{
+  "schema": "phimond.art-qa.v1",
+  "asset": "fx-footstep-dust.png",
+  "status": "ready_for_owner_review",
+  "dimensions": [256, 64],
+  "layout": {"frames": 4, "frame_size": [64, 64], "order": ["start", "expand", "breakup", "fade"]},
+  "alpha_values": [0, 255],
+  "visible_rgb_colors": 24,
+  "checks": [
+    {"id": "dimensions", "status": "pass", "value": [256, 64], "threshold": [256, 64]},
+    {"id": "binary_alpha", "status": "pass", "value": [0, 255], "threshold": [0, 255]},
+    {"id": "visible_colors", "status": "pass", "value": 24, "threshold": 24},
+    {"id": "sprite_processing", "status": "pass", "evidence": "processed/pipeline-meta.json", "pixel_grid_off_edges": 0},
+    {"id": "palette_apply", "status": "pass", "evidence": "quantized/apply-qa.json", "output_off_palette_px": 0, "output_partial_alpha_px": 0},
+    {"id": "raw_sheet_spill_qc", "status": "warn", "evidence": "spill-qc/sheet-qc.json", "warnings": [
+      {"id": "safe_frame", "value": 2, "threshold": 0, "cells": [[0, 1], [0, 2]]},
+      {"id": "faint_specks", "value": {"floor_px": 15232, "detached_components": 6}, "threshold": 0}
+    ]},
+    {"id": "animation_assembly", "status": "needs_visual_review", "evidence": "assembled/animation.json", "warnings": []}
+  ],
+  "visual_review": "Reviewed the 4x nearest-neighbor preview. Readable progression from a small grounded puff to spread motes and fade; raw alpha haze removed by processing.",
+  "not_proven": ["motion cadence in live gameplay", "owner approval"]
+}

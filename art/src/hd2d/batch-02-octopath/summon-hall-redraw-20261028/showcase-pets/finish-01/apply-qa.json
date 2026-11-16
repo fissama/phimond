@@ -1,0 +1,113 @@
+{
+  "status": "pass",
+  "method": "forge_palette.quantize_image: OKLab-nearest palette colour per pixel (exact palette colours kept), alpha binary at the threshold, then the written PNGs re-read and measured with forge_palette.fit_report against the palette",
+  "notProven": [
+    "Visual quality after snapping: compare an output with its input.",
+    "Indexed PNGs are engine exports; they are not checked by builders.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "output_off_palette_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "output_partial_alpha_px",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.144196,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../palette-inputs/flower.png",
+      "sha256": "c99d9c0b057532fdc0a273a3b1587a8da4544c634980052c98dc1d5e2fd36712",
+      "bytes": 55894
+    },
+    {
+      "path": "../palette-inputs/unicorn.png",
+      "sha256": "74628e2b25f84310281c724961f1f8de6ffda20a097a527da925221b02e06569",
+      "bytes": 40968
+    },
+    {
+      "path": "../palette-inputs/scorpion.png",
+      "sha256": "6a694ec123138d8405a9fc6782d020f9233486ca57ad976a8446d50414f30e1b",
+      "bytes": 45422
+    },
+    {
+      "path": "../palette-01/palette.json",
+      "sha256": "29ab804e192a398b4436745f6d59a9081ae1cc6bd77a1014b4728fd80a7c3278",
+      "bytes": 1958
+    }
+  ],
+  "outputs": [
+    {
+      "path": "flower.png",
+      "sha256": "7a160cbd637862f0ee1ed33b40ed341bbe8599766ded5d71e507966deb16330d",
+      "bytes": 18687
+    },
+    {
+      "path": "unicorn.png",
+      "sha256": "db39f68a3fbd39fddb9c4dffce78a732379bad25c994296a33fb38966a4f9134",
+      "bytes": 20070
+    },
+    {
+      "path": "scorpion.png",
+      "sha256": "258ca2e0473fde6d22bc960dbd72182a512f2e81c88be20ad042f6f30abf04cd",
+      "bytes": 21370
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "fit": {
+    "flower.png": {
+      "measured_px": 17299,
+      "alpha_threshold": 128,
+      "off_palette_px": 17295,
+      "partial_alpha_px": 17997,
+      "colors": 12872,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.034077,
+      "p95_delta_e": 0.075485,
+      "max_delta_e": 0.137859
+    },
+    "unicorn.png": {
+      "measured_px": 11038,
+      "alpha_threshold": 128,
+      "off_palette_px": 11036,
+      "partial_alpha_px": 12115,
+      "colors": 9260,
+      "palette_colors_used": 29,
+      "mean_delta_e": 0.022048,
+      "p95_delta_e": 0.043464,
+      "max_delta_e": 0.093919
+    },
+    "scorpion.png": {
+      "measured_px": 12651,
+      "alpha_threshold": 128,
+      "off_palette_px": 12651,
+      "partial_alpha_px": 13666,
+      "colors": 11080,
+      "palette_colors_used": 43,
+      "mean_delta_e": 0.024211,
+      "p95_delta_e": 0.05135,
+      "max_delta_e": 0.144196
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.144196,
+    "worst_p95_delta_e": 0.075485,
+    "off_palette_px": 40982
+  },
+  "locked_inputs": []
+}

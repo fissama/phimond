@@ -9,7 +9,7 @@ from pathlib import Path
 import shutil
 
 BASE = Path('tools/.cache/reference')
-OUT = Path('apps/game-client/assets/reference')
+OUT = Path('art/reference')
 ROOMS = {'severa': 'level3_QTTP.png', 'forest': 'level4_Map2.png',
          'beach': 'level5_BaiBien.png', 'ranch': 'level3_NongTrai.png',
          'arena': 'level3_DauTruong.png'}

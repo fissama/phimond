@@ -26,9 +26,9 @@ import numpy as np
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[2]
-SRC = ROOT / "apps/game-web/art-src/hd2d"
+SRC = ROOT / "art/src/hd2d"
 OUT = ROOT / "apps/client/public/hd2d"
-PETS_SRC = ROOT / "apps/game-web/public/assets/pets"
+PETS_SRC = ROOT / "art/runtime-src/pets"
 PETS_OUT = ROOT / "apps/client/public/pets"
 BATCHES = ["batch-01-octopath", "batch-02-octopath", "batch-05-octopath"]
 INTAKE3 = SRC / "batch-05-octopath/_intake/don09-chang-3-5"
@@ -249,7 +249,7 @@ def main():
     print(f"ui: {len(ui)} asset → {ui_out.relative_to(ROOT)}")
 
     # 5) Bản dịch tên nội dung (loài, vật phẩm, kỹ năng…) sang tiếng Việt.
-    vi = ROOT / "apps/game-web/public/assets/i18n/vi.json"
+    vi = ROOT / "art/runtime-src/i18n/vi.json"
     if vi.exists():
         (ROOT / "apps/client/public/i18n").mkdir(parents=True, exist_ok=True)
         shutil.copyfile(vi, ROOT / "apps/client/public/i18n/vi.json")

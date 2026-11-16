@@ -1,0 +1,103 @@
+{
+  "status": "pass",
+  "method": "forge_palette.build_palette (weighted k-means++ in OKLab over unique colours, reserved colours fixed, coverage skipping) then forge_palette.fit_report of every input: OKLab dE of each pixel with alpha >= the threshold to its nearest palette colour",
+  "notProven": [
+    "Visual quality of the palette: look at swatches.png and an applied frame.",
+    "Colours of pixels below the alpha threshold were not sampled or measured.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "palette_colors",
+      "status": "pass",
+      "value": 48,
+      "threshold": 48
+    },
+    {
+      "id": "inputs_without_samples",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0,
+      "files": []
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.1536,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../inputs-measured/coastal-cliff-mid.png",
+      "sha256": "b86c34304a47d9a21ba7938484fd46c2a6901597ede4f9250e86ce4e400ede15",
+      "bytes": 675293
+    },
+    {
+      "path": "../inputs-measured/sea-islands-far.png",
+      "sha256": "be75232dfad084cb77721c810778bff0a1386e7af12b08950a1bd89d80137b64",
+      "bytes": 350344
+    }
+  ],
+  "outputs": [
+    {
+      "path": "palette.json",
+      "sha256": "7ab9c9345852311e00e0f20638e4d03210c8ec18b72fb27c51fad5db565a17c6",
+      "bytes": 1924
+    },
+    {
+      "path": "palette.gpl",
+      "sha256": "513496e49d2585ba469df5629601c549d631f7de649b29941e733886b4e0cbc1",
+      "bytes": 1020
+    },
+    {
+      "path": "palette.hex",
+      "sha256": "1fc18be0617f8028d22596b7f9490638267d7308c568c139a17e3df000d84021",
+      "bytes": 336
+    },
+    {
+      "path": "swatches.png",
+      "sha256": "2e858a608d7e7e1d04c761affae7979ea63dd56f1cf195f29321a8ab0fe773eb",
+      "bytes": 686
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "palette": {
+    "colors": 48,
+    "reserved": 0,
+    "transparent_index": 255,
+    "seed": 0
+  },
+  "fit": {
+    "../inputs-measured/coastal-cliff-mid.png": {
+      "measured_px": 318046,
+      "alpha_threshold": 128,
+      "off_palette_px": 317834,
+      "partial_alpha_px": 0,
+      "colors": 121883,
+      "palette_colors_used": 39,
+      "mean_delta_e": 0.015578,
+      "p95_delta_e": 0.03168,
+      "max_delta_e": 0.1536
+    },
+    "../inputs-measured/sea-islands-far.png": {
+      "measured_px": 233930,
+      "alpha_threshold": 128,
+      "off_palette_px": 232875,
+      "partial_alpha_px": 0,
+      "colors": 49019,
+      "palette_colors_used": 48,
+      "mean_delta_e": 0.010785,
+      "p95_delta_e": 0.025396,
+      "max_delta_e": 0.110692
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.1536,
+    "worst_p95_delta_e": 0.03168,
+    "off_palette_px": 550709
+  }
+}

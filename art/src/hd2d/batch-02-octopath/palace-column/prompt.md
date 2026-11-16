@@ -1,0 +1,12 @@
+Use case: reusable game interior PROP PACK, NINE individual objects in THREE ROWS x THREE COLUMNS, generous empty gutters. TOP ROW: short freestanding dark oak bookshelf with muted books and jars, no lettering; oak service counter with carved panels and clean empty top; wooden quest noticeboard on two legs with several blank parchment rectangles, absolutely no marks/writing. MIDDLE ROW: low circular straw pet nest in wooden rim; second cozy pet sleeping basket with folded blue-gray blanket; third small dark timber pet shelter with open arched entrance and straw bedding. EMPTY nests, no animals or eggs. BOTTOM ROW: tall carved ivory palace column with restrained gold floral trim, full base and capital; full standing stone armored palace guard STATUE on low plinth with spear and shield, no human skin; detached simple dusty terracotta pitched roof module on timber eaves, no walls. Original first hall pale/gold ceremonial identity, second petroom timber and straw furniture, third palace ivory/gold columns. Last2 pet sheets only pixel style. Octopath Traveler inspired HD-2D PIXEL ART: mature desaturated umber/ivory/madder/bluegray materials, hue-tinted cool outlines, broad crisp3-4tone clusters, subtle upperleft key, stepped pixel edges. Upright front billboard24degrees down. All objects whole, comfortably inside central55percent of cells, no overlap or edge touching. Solid pure #FF00FF background, also inside pet entrance gaps. No floor, drop shadows, glow, fog, scenery, people, letters, numbers, runes, crests, noisy fine texture or smooth vector edges.
+
+
+
+Ordered reference images:
+- /Users/phileanh/Downloads/Phimond-P12-Review/map-images/city_activity_hall.png / sha256 5f2ca63af0b1a3a190f1667657d0919f49b93402c685ac7db6551e68feefa135
+- /Users/phileanh/Downloads/Phimond-P12-Review/map-images/city_pet_room.png / sha256 3f48367d5dcf35aae5a89f604db770815297360ef861bb4eda1fc9e15019cabb
+- /Users/phileanh/Downloads/Phimond-P12-Review/map-images/city_royal_palace.png / sha256 4b47a6dd6fe9c9627e6e2c759eac14f4c3ec58dbfb5e7c892d35de284edc4879
+- /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png / sha256 fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da
+- /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png / sha256 043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3
+
+Route: built-in image_gen; model not exposed; raw SHA256 506907e89c6e6bae270935bed0043396e7c6da8c6e208215d238bd7ea4693104

@@ -35,8 +35,8 @@ import numpy as np
 from PIL import Image
 
 WORKSPACE = Path("/Users/phileanh/rust/phimond")
-B01 = WORKSPACE / "apps/game-web/art-src/hd2d/batch-01-octopath"
-SCENES_DIR = WORKSPACE / "apps/game-web/public/scenes"
+B01 = WORKSPACE / "art/src/hd2d/batch-01-octopath"
+SCENES_DIR = WORKSPACE / "art/build/scenes"
 TEX_DIR = SCENES_DIR / "tex"
 
 def get_sha256(path):
@@ -376,11 +376,11 @@ def update_manifest_and_test():
     script_path = WORKSPACE / "tools/build-web-assets/build_hd2d_forest_test.py"
     script_code = '''#!/usr/bin/env python3
 """Dựng map thử HD-2D 'forest_hd2d' từ asset batch-01-octopath (không dùng asset placeholder).
-Xuất apps/game-web/public/scenes/forest_hd2d.json + texture hd2d_*.png. Chạy lại là ra cùng kết quả (seed cố định)."""
+Xuất art/build/scenes/forest_hd2d.json + texture hd2d_*.png. Chạy lại là ra cùng kết quả (seed cố định)."""
 import json, random, shutil, os
 R = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-B = f'{R}/apps/game-web/art-src/hd2d/batch-01-octopath'
-OUT = f'{R}/apps/game-web/public/scenes'
+B = f'{R}/art/src/hd2d/batch-01-octopath'
+OUT = f'{R}/art/build/scenes'
 man = {a['id']: a for a in json.load(open(f'{B}/manifest.json'))['assets']} if isinstance(json.load(open(f'{B}/manifest.json')), dict) else {a['id']: a for a in json.load(open(f'{B}/manifest.json'))}
 used = {}
 def tex(aid, src=None):

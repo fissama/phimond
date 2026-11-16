@@ -1,0 +1,53 @@
+[
+  {
+    "name": "stone-floor-b",
+    "refs": [
+      "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/summon-hall-redraw-20261028/scene-edges/stone-floor/final.png"
+    ],
+    "transparent": false,
+    "prompt": "Pixel art game asset, Octopath Traveler HD-2D style, flat 2D (no 3D render look), 1px dark outline where it is an object, light from top-left, no anti-aliasing, no gradients or vignette, no blur, no text. Max 48 colors, same warm sandstone palette as the attached reference. Output PNG exactly the size stated.\n\nUsing the attached tile as the exact style reference, draw a SECOND seamless tileable sandstone floor tile, 512×512, opaque, no transparency, no magenta. Same brick size, same colors, same crack thickness and same lighting as the reference, but a completely different arrangement of bricks and cracks (no brick or crack shape may match the reference). The left edge must continue into the right edge and the top edge into the bottom edge: no brick may be cut differently at the borders, no darker or lighter frame, no shading toward the edges. Flat even lighting across the whole tile. Top-down 3/4 view like the reference. Must also mix with the reference in a checkerboard grid seamlessly. Preserve the edge joint positions compatible with reference, make all interior bricks and cracks new. Produce just one tile."
+  },
+  {
+    "name": "city-backdrop-wide",
+    "refs": [
+      "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/summon-hall-redraw-20261028/scene-edges/city-backdrop/final.png"
+    ],
+    "transparent": false,
+    "prompt": "Pixel art game asset, Octopath Traveler HD-2D style, flat 2D (no 3D render look), 1px dark outline where it is an object, light from top-left, no anti-aliasing, no gradients or vignette, no blur, no text. Max 48 colors, same warm sandstone palette as the attached reference. Output PNG exactly the size stated.\n\nUsing the attached city plate as the style reference, draw a WIDER version of the same walled sunlit city skyline, 2432×486, opaque. Keep the same look: flat saturated blue sky with a few small pixel clouds at the top, faint blue mountains behind, cream towers with orange and green roofs, a large castle with a tall central spire at the center, and at the very bottom a continuous city wall with battlements whose base is a straight horizontal line along the bottom edge. Compose it as one continuous panorama with a clear castle at the center and houses getting lower toward both sides. The left and right ends do not need to tile. No foreground objects, no people, no fog, no sky gradient. Pixel density must match the reference (details about 2x finer than the reference is fine, but keep the same crisp pixel style). Full width ultra-wide 5:1 panorama. Wall base flush to bottom edge across the entire width."
+  },
+  {
+    "name": "city-near-roofs",
+    "refs": [
+      "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/summon-hall-redraw-20261028/scene-edges/city-backdrop/final.png"
+    ],
+    "transparent": true,
+    "prompt": "Pixel art game asset, Octopath Traveler HD-2D style, flat 2D (no 3D render look), 1px dark outline where it is an object, light from top-left, no anti-aliasing, no gradients or vignette, no blur, no text. Max 48 colors, same warm sandstone palette as the attached reference. Output PNG exactly the size stated.\n\nDraw a thin strip of nearer rooftops and chimneys of the same city, 2432×220, on a truly transparent background (the final asset is binary alpha only, replacing the intermediate magenta key stage). Orange and green tiled roofs, cream walls, a few chimneys and small towers, the silhouette of the top edge uneven. The bottom edge of the strip is flat and straight (it sits on the top of a city wall). Same palette and style as the reference but slightly larger in scale and slightly darker and warmer so it reads as closer than the skyline behind it. Left and right edges should tile horizontally: the last 64 px must continue into the first 64 px with no seam. Thin ultra-wide 11:1 strip, fill entire width with architecture, no side margins, no sky or ground. Roofs of differing heights with transparent space above, flat architecture base flush bottom."
+  },
+  {
+    "name": "floor-light-1",
+    "refs": [
+      "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/summon-hall-redraw-20261028/props/ritual-kit/stained-glass-panel/final.png",
+      "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/summon-hall-redraw-20261028/scene-edges/stone-floor/final.png"
+    ],
+    "transparent": true,
+    "prompt": "Pixel art game asset, Octopath Traveler HD-2D style, flat 2D (no 3D render look), 1px dark outline where it is an object, light from top-left, no anti-aliasing, no gradients or vignette, no blur, no text. Max 48 colors, same warm sandstone palette as the attached reference. Output PNG exactly the size stated.\n\nDraw a flat top-down patch of colored light falling on a stone floor, as if shining through the attached stained-glass panel, 256×256, on a truly transparent background (final binary alpha instead of intermediate magenta key). Binary alpha only: do NOT use soft glow or semi-transparent edges. Build the soft falloff with ordered pixel dithering (checkerboard dither) from a bright core to sparse pixels at the edge. Only the light colors of the panel (pink, red, blue, yellow, warm white), max 32 colors, an elongated slanted parallelogram shape with the window's pane pattern faintly visible inside. Variant 1: mostly warm white and yellow, geometric diagonal leaded diamonds. Same shape family but different pane pattern in each. This is ONLY an isolated flat light overlay; do not draw stone floor, physical window, frame, outline, cast shadow, or any opaque background. No magenta. Hard single-pixel checkerboard holes at perimeter and layered solid flat pixel colors inside."
+  },
+  {
+    "name": "floor-light-2",
+    "refs": [
+      "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/summon-hall-redraw-20261028/props/ritual-kit/stained-glass-panel/final.png",
+      "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/summon-hall-redraw-20261028/scene-edges/stone-floor/final.png"
+    ],
+    "transparent": true,
+    "prompt": "Pixel art game asset, Octopath Traveler HD-2D style, flat 2D (no 3D render look), 1px dark outline where it is an object, light from top-left, no anti-aliasing, no gradients or vignette, no blur, no text. Max 48 colors, same warm sandstone palette as the attached reference. Output PNG exactly the size stated.\n\nDraw a flat top-down patch of colored light falling on a stone floor, as if shining through the attached stained-glass panel, 256×256, on a truly transparent background (final binary alpha instead of intermediate magenta key). Binary alpha only: do NOT use soft glow or semi-transparent edges. Build the soft falloff with ordered pixel dithering (checkerboard dither) from a bright core to sparse pixels at the edge. Only the light colors of the panel (pink, red, blue, yellow, warm white), max 32 colors, an elongated slanted parallelogram shape with the window's pane pattern faintly visible inside. Variant 2: pink and red, floral central quatrefoil panes. Same shape family but different pane pattern in each. This is ONLY an isolated flat light overlay; do not draw stone floor, physical window, frame, outline, cast shadow, or any opaque background. No magenta. Hard single-pixel checkerboard holes at perimeter and layered solid flat pixel colors inside."
+  },
+  {
+    "name": "floor-light-3",
+    "refs": [
+      "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/summon-hall-redraw-20261028/props/ritual-kit/stained-glass-panel/final.png",
+      "/Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/batch-02-octopath/summon-hall-redraw-20261028/scene-edges/stone-floor/final.png"
+    ],
+    "transparent": true,
+    "prompt": "Pixel art game asset, Octopath Traveler HD-2D style, flat 2D (no 3D render look), 1px dark outline where it is an object, light from top-left, no anti-aliasing, no gradients or vignette, no blur, no text. Max 48 colors, same warm sandstone palette as the attached reference. Output PNG exactly the size stated.\n\nDraw a flat top-down patch of colored light falling on a stone floor, as if shining through the attached stained-glass panel, 256×256, on a truly transparent background (final binary alpha instead of intermediate magenta key). Binary alpha only: do NOT use soft glow or semi-transparent edges. Build the soft falloff with ordered pixel dithering (checkerboard dither) from a bright core to sparse pixels at the edge. Only the light colors of the panel (pink, red, blue, yellow, warm white), max 32 colors, an elongated slanted parallelogram shape with the window's pane pattern faintly visible inside. Variant 3: blue and cyan, long slender lance-shaped panes. Same shape family but different pane pattern in each. This is ONLY an isolated flat light overlay; do not draw stone floor, physical window, frame, outline, cast shadow, or any opaque background. No magenta. Hard single-pixel checkerboard holes at perimeter and layered solid flat pixel colors inside."
+  }
+]

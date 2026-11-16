@@ -1,0 +1,2 @@
+Pixel art game asset for HD-2D Octopath-style game; crisp pixel edges, painterly shading, warm top-left key light, cool shadows, strong contrast, dark outline, no anti-aliasing, no blur, no text or watermark. Palette max 48 colors matching attached references. Flat magenta #FF00FF outside cutouts, binary transparency when keyed, no magenta fringe. Deliver one requested image only at the stated size.
+S25, empty gold-framed EXP bar 256x32, no text and no fill, empty green slot, frame only. Exact filename bar-frame-exp.png, requested canvas 256x32 px.

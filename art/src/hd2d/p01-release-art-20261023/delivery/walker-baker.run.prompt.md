@@ -1,0 +1,13 @@
+Use case: sketch-to-render. Input1 is the AUTHORITATIVE8POSE walk skeleton, input2 is head/outfit identity ONLY. Draw square3x3sheet with exact8 poses row-major and9thcellblankmagenta. Follow NEAR/ORANGE leg geometry, FAR/BLUE leg geometry EXACTLY. Frame1 foreground leg reachesRIGHT, frame5foreground leg reachesLEFT/trails and crosses IN FRONT at crotch. Foreground arm goes backward in1, FORWARD across chest in5 unless occupied holding object. In frame5 the FORWARD leg is behind, darker; the trailingback leg is foreground, lighter. These are oppositelegcontacts. Do not repeat anatomical nearleg in front/right inboth1and5. Use only supplied head/torso reference and independently DRAW lowerbody per skeleton. Shade FAR leg and boot a very DARK COOL BROWN, foreground leg in warm light, preserve exact leg overlap. All8phase jointangles DIFFER; loading/passing/up transitions follow skeleton. Same torso length/headsize root and upper-left light; same footbaseline, subtle1pxbodybob. Pixelart48colors crisp dark1pxoutline final192cells, rich deliberatepixelclusters, pure#FF00FFbackground. No guides/skeleton/labels/text/shadows/trails drawn inoutput. Young villagewoman baker, greenkerchief, brownvest ivoryshirt, green skirt whiteapron, brownboots. Input3 is her wickerbasket of bread/produce: carry SAMEbasket at waist inALL8poses. Hands holdingbasket stable; arms do NOT swing freely because carryingbasket; legs stillfolloweachguidepose. Do not omitbasket. No fullstandingleg reference was supplied, do not draw8standingposes.
+
+Raw source: walker-baker.run.grid-raw-03.png; first8 actual cells row-major repacked losslessly, source grid [3, 3], gutter-only trim 8px; no pose edits. Final horizontal1536x192.
+
+References:
+- /Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/sources/male-walk-guide-v6/guide.png SHA256 aca7cea671152191631a69b82bc6e029774c2d7aac83ed2edd18999894ead819
+- /Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/sources/walker-baker-head-torso-only-v3.png SHA256 a8834b8b455af5a7e6786a3ae0b8d0a685a81295c502cb91b12dea20da7b8c67
+- /Users/phileanh/rust/phimond/apps/game-web/art-src/hd2d/p01-release-art-20261023/sources/walker-baker-held-object-reference.png SHA256 a6c827c63abe01357bb04edc1b29737a618009805606603d7e1af6bab4c7b904
+
+Raw SHA256: 9305913e826c0482b6d207463b49471517d4c2f8958f484a2354a2d5608adc9b
+
+
+Postprocess: Agent Sprite Forge v0.4.0 scale_frames.py (commit5324342), scale1/nearest/integer translations, torso-x registration, fixed192x192 canvas with96,184 anchor. Numeric QC does not approve anatomy, equipment or motion; Claude review still required.

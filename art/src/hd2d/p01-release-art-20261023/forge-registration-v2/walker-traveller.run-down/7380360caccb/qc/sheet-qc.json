@@ -1,0 +1,1081 @@
+{
+  "schema": "generate2dsprite.sheet_qc.v1",
+  "check": "frames",
+  "status": "warn",
+  "method": "solid alpha > 127; head ratio by multi-scale template match of the head band against the median frame; best-shift silhouette IoU; phases from ground clearance and stride width; NEAR/FAR lead from the lightness of the two feet (FAR one shade darker); torso x from the trunk columns of the torso band; seams from forge_core.transition_mae (premultiplied RGBA)",
+  "notProven": [
+    "Pose quality, anatomy, appeal and readability at game scale: look at frames-review.png and the game-size frames.",
+    "That the head band holds only the head: arms raised into it change the match.",
+    "NEAR/FAR leads in auto mode rely on the 'FAR limbs one shade darker' convention; declare the colours to be sure.",
+    "Phase labels come from feet clearance and stride width, not from the pose."
+  ],
+  "checks": [
+    {
+      "id": "identity_head_ratio",
+      "status": "pass",
+      "value": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0,
+        "3": 1.0,
+        "4": 1.0,
+        "5": 1.0,
+        "6": 1.0,
+        "7": 1.0
+      },
+      "threshold": [
+        0.95,
+        1.05
+      ],
+      "frames": [],
+      "note": "head scale against the median frame (frame 0 template)"
+    },
+    {
+      "id": "identity_residual",
+      "status": "pass",
+      "value": {
+        "0": null,
+        "1": 0.84,
+        "2": 1.0,
+        "3": 1.15,
+        "4": 1.46,
+        "5": 0.96,
+        "6": 0.77,
+        "7": 1.11
+      },
+      "threshold": 1.5,
+      "frames": [],
+      "note": "head match residual over the median: face or costume drift"
+    },
+    {
+      "id": "near_duplicates",
+      "status": "warn",
+      "value": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          6,
+          7
+        ]
+      ],
+      "threshold": 0.95,
+      "note": "pairs with best-shift silhouette IoU at or above the threshold and similar colours"
+    },
+    {
+      "id": "phase_coverage",
+      "status": "skipped",
+      "value": null,
+      "threshold": null,
+      "note": "needs --cycle run or walk and an even frame count of at least 4"
+    },
+    {
+      "id": "leg_alternation",
+      "status": "skipped",
+      "value": null,
+      "threshold": null,
+      "note": "needs --cycle run or walk and an even frame count of at least 4"
+    },
+    {
+      "id": "torso_drift",
+      "status": "pass",
+      "value": 0.57,
+      "threshold": 2.0,
+      "method": "trunk",
+      "median_x": 80.3,
+      "note": "range of the torso x in game px; scale_frames --root-lock torso-x removes it"
+    },
+    {
+      "id": "row_baseline",
+      "status": "pass",
+      "value": 0.0,
+      "threshold": 0.5,
+      "baselines": {
+        "0": 184
+      },
+      "note": "ground line of each sheet row; scale_frames --row-baseline aligns them"
+    },
+    {
+      "id": "seam",
+      "status": "pass",
+      "value": 1.11,
+      "threshold": 1.5,
+      "transitions": [],
+      "note": "largest frame-to-frame change over the median step; review these joins first"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../registered/frames/frame_000.png",
+      "sha256": "9fc04ce5ce396385f668fa1dd476f3be40a6743a3b91e0c581a4350df8b9f2ab",
+      "bytes": 21774
+    },
+    {
+      "path": "../registered/frames/frame_001.png",
+      "sha256": "096d59e277be3f71511958b4152887e03bcb31d35603a0135b1be25b3658b72b",
+      "bytes": 22295
+    },
+    {
+      "path": "../registered/frames/frame_002.png",
+      "sha256": "dea19f57d50bc3ec29653255dcccad778ffa6fbf30af8f41ff8d4086e5b52600",
+      "bytes": 21545
+    },
+    {
+      "path": "../registered/frames/frame_003.png",
+      "sha256": "a1330acbfd5bff8a06e38fcb30c51121e4564f369e710f0909731b22b47cb018",
+      "bytes": 21687
+    },
+    {
+      "path": "../registered/frames/frame_004.png",
+      "sha256": "926a31a3a48f3e22e4112b33f6a8568323fde3e4358eaf07d2ab9efaf0b94afc",
+      "bytes": 21974
+    },
+    {
+      "path": "../registered/frames/frame_005.png",
+      "sha256": "900f4cc28aa6dd46010cb8fcc638826b9265f37d555caf59fc9471c027c380c3",
+      "bytes": 21924
+    },
+    {
+      "path": "../registered/frames/frame_006.png",
+      "sha256": "661557926518d5834527cd096867ed28018d65a86595259ffbb8d09a88d2c848",
+      "bytes": 21673
+    },
+    {
+      "path": "../registered/frames/frame_007.png",
+      "sha256": "ea2a93c2378e39cf5031803c5106680d822e9048a53d2349ee92016ccb66a824",
+      "bytes": 22149
+    }
+  ],
+  "outputs": [
+    {
+      "path": "frames-review.png",
+      "sha256": "dda1fb0747925a457c2884fe5142f0f4da7d1070b1e0d8cf1b0f752e0dd5d174",
+      "bytes": 174341
+    }
+  ],
+  "tool": {
+    "name": "sheet_qc.py",
+    "version": "0.4.0"
+  },
+  "grid": {
+    "rows": 1,
+    "cols": 8
+  },
+  "input": {
+    "frames": [
+      {
+        "sha256": "9fc04ce5ce396385f668fa1dd476f3be40a6743a3b91e0c581a4350df8b9f2ab",
+        "size": [
+          192,
+          192
+        ],
+        "source_mode": "RGBA",
+        "bit_depth": 8,
+        "conversion": "none",
+        "keyed": null
+      },
+      {
+        "sha256": "096d59e277be3f71511958b4152887e03bcb31d35603a0135b1be25b3658b72b",
+        "size": [
+          192,
+          192
+        ],
+        "source_mode": "RGBA",
+        "bit_depth": 8,
+        "conversion": "none",
+        "keyed": null
+      },
+      {
+        "sha256": "dea19f57d50bc3ec29653255dcccad778ffa6fbf30af8f41ff8d4086e5b52600",
+        "size": [
+          192,
+          192
+        ],
+        "source_mode": "RGBA",
+        "bit_depth": 8,
+        "conversion": "none",
+        "keyed": null
+      },
+      {
+        "sha256": "a1330acbfd5bff8a06e38fcb30c51121e4564f369e710f0909731b22b47cb018",
+        "size": [
+          192,
+          192
+        ],
+        "source_mode": "RGBA",
+        "bit_depth": 8,
+        "conversion": "none",
+        "keyed": null
+      },
+      {
+        "sha256": "926a31a3a48f3e22e4112b33f6a8568323fde3e4358eaf07d2ab9efaf0b94afc",
+        "size": [
+          192,
+          192
+        ],
+        "source_mode": "RGBA",
+        "bit_depth": 8,
+        "conversion": "none",
+        "keyed": null
+      },
+      {
+        "sha256": "900f4cc28aa6dd46010cb8fcc638826b9265f37d555caf59fc9471c027c380c3",
+        "size": [
+          192,
+          192
+        ],
+        "source_mode": "RGBA",
+        "bit_depth": 8,
+        "conversion": "none",
+        "keyed": null
+      },
+      {
+        "sha256": "661557926518d5834527cd096867ed28018d65a86595259ffbb8d09a88d2c848",
+        "size": [
+          192,
+          192
+        ],
+        "source_mode": "RGBA",
+        "bit_depth": 8,
+        "conversion": "none",
+        "keyed": null
+      },
+      {
+        "sha256": "ea2a93c2378e39cf5031803c5106680d822e9048a53d2349ee92016ccb66a824",
+        "size": [
+          192,
+          192
+        ],
+        "source_mode": "RGBA",
+        "bit_depth": 8,
+        "conversion": "none",
+        "keyed": null
+      }
+    ]
+  },
+  "params": {
+    "cycle": "none",
+    "facing": "right",
+    "game_pixel": 1.0,
+    "frames_per_row": 8,
+    "loop": true,
+    "alpha_threshold": 127,
+    "reference_frame": 0,
+    "head_frac": 0.35,
+    "torso_band": [
+      0.4,
+      0.6
+    ],
+    "torso_colors": [],
+    "near_colors": [],
+    "far_colors": [],
+    "colour_tolerance": 30.0,
+    "leg_band": 0.3
+  },
+  "cells": [
+    {
+      "frame": 0,
+      "row": 0,
+      "bbox": [
+        26,
+        17,
+        126,
+        184
+      ],
+      "height_px": 167,
+      "width_px": 100,
+      "solid_px": 11526,
+      "ground": 184,
+      "head": {
+        "head_ratio": 1.0,
+        "scale": 1.0,
+        "residual": 0.0,
+        "residual_over_median": null,
+        "template": true,
+        "head_box": [
+          33,
+          17,
+          126,
+          75
+        ]
+      },
+      "colour_l1_to_median": 0.0478,
+      "phase": {
+        "label": "contact",
+        "clearance_game_px": 0.0,
+        "stride_ratio": 0.931
+      },
+      "lead": {
+        "mode": "auto-luminance",
+        "front_minus_back_L": -0.0378,
+        "separation_game_px": 33.98,
+        "lead": "far"
+      },
+      "torso_x": 80.4,
+      "torso_method": "trunk",
+      "cell": null,
+      "source": "frame_000.png"
+    },
+    {
+      "frame": 1,
+      "row": 0,
+      "bbox": [
+        28,
+        18,
+        131,
+        184
+      ],
+      "height_px": 166,
+      "width_px": 103,
+      "solid_px": 11714,
+      "ground": 184,
+      "head": {
+        "head_ratio": 1.0,
+        "scale": 1.0,
+        "residual": 13.81,
+        "residual_over_median": 0.84,
+        "template": false,
+        "head_box": [
+          35,
+          18,
+          128,
+          76
+        ]
+      },
+      "colour_l1_to_median": 0.0489,
+      "phase": {
+        "label": "contact",
+        "clearance_game_px": 0.0,
+        "stride_ratio": 0.931
+      },
+      "lead": {
+        "mode": "auto-luminance",
+        "front_minus_back_L": -0.0514,
+        "separation_game_px": 33.7,
+        "lead": "far"
+      },
+      "torso_x": 80.6,
+      "torso_method": "trunk",
+      "cell": null,
+      "source": "frame_001.png"
+    },
+    {
+      "frame": 2,
+      "row": 0,
+      "bbox": [
+        26,
+        17,
+        129,
+        184
+      ],
+      "height_px": 167,
+      "width_px": 103,
+      "solid_px": 11442,
+      "ground": 184,
+      "head": {
+        "head_ratio": 1.0,
+        "scale": 1.0,
+        "residual": 16.38,
+        "residual_over_median": 1.0,
+        "template": false,
+        "head_box": [
+          33,
+          17,
+          125,
+          75
+        ]
+      },
+      "colour_l1_to_median": 0.0375,
+      "phase": {
+        "label": "contact",
+        "clearance_game_px": 0.0,
+        "stride_ratio": 0.914
+      },
+      "lead": {
+        "mode": "auto-luminance",
+        "front_minus_back_L": -0.0144,
+        "separation_game_px": 35.1,
+        "lead": "unclear",
+        "reason": "the feet differ by less than one shade"
+      },
+      "torso_x": 80.1,
+      "torso_method": "trunk",
+      "cell": null,
+      "source": "frame_002.png"
+    },
+    {
+      "frame": 3,
+      "row": 0,
+      "bbox": [
+        24,
+        19,
+        129,
+        184
+      ],
+      "height_px": 165,
+      "width_px": 105,
+      "solid_px": 11670,
+      "ground": 184,
+      "head": {
+        "head_ratio": 1.0,
+        "scale": 1.0,
+        "residual": 18.84,
+        "residual_over_median": 1.15,
+        "template": false,
+        "head_box": [
+          31,
+          19,
+          125,
+          77
+        ]
+      },
+      "colour_l1_to_median": 0.055,
+      "phase": {
+        "label": "contact",
+        "clearance_game_px": 0.0,
+        "stride_ratio": 0.948
+      },
+      "lead": {
+        "mode": "auto-luminance",
+        "front_minus_back_L": 0.053,
+        "separation_game_px": 34.4,
+        "lead": "near"
+      },
+      "torso_x": 80.2,
+      "torso_method": "trunk",
+      "cell": null,
+      "source": "frame_003.png"
+    },
+    {
+      "frame": 4,
+      "row": 0,
+      "bbox": [
+        23,
+        20,
+        128,
+        184
+      ],
+      "height_px": 164,
+      "width_px": 105,
+      "solid_px": 11736,
+      "ground": 184,
+      "head": {
+        "head_ratio": 1.0,
+        "scale": 1.0,
+        "residual": 23.89,
+        "residual_over_median": 1.46,
+        "template": false,
+        "head_box": [
+          30,
+          20,
+          127,
+          77
+        ]
+      },
+      "colour_l1_to_median": 0.0477,
+      "phase": {
+        "label": "contact",
+        "clearance_game_px": 0.0,
+        "stride_ratio": 1.0
+      },
+      "lead": {
+        "mode": "auto-luminance",
+        "front_minus_back_L": -0.0514,
+        "separation_game_px": 37.98,
+        "lead": "far"
+      },
+      "torso_x": 80.6,
+      "torso_method": "trunk",
+      "cell": null,
+      "source": "frame_004.png"
+    },
+    {
+      "frame": 5,
+      "row": 0,
+      "bbox": [
+        24,
+        16,
+        129,
+        184
+      ],
+      "height_px": 168,
+      "width_px": 105,
+      "solid_px": 11629,
+      "ground": 184,
+      "head": {
+        "head_ratio": 1.0,
+        "scale": 1.0,
+        "residual": 15.77,
+        "residual_over_median": 0.96,
+        "template": false,
+        "head_box": [
+          31,
+          16,
+          125,
+          75
+        ]
+      },
+      "colour_l1_to_median": 0.0574,
+      "phase": {
+        "label": "contact",
+        "clearance_game_px": 0.0,
+        "stride_ratio": 0.914
+      },
+      "lead": {
+        "mode": "auto-luminance",
+        "front_minus_back_L": 0.0,
+        "separation_game_px": 33.21,
+        "lead": "unclear",
+        "reason": "the feet differ by less than one shade"
+      },
+      "torso_x": 80.2,
+      "torso_method": "trunk",
+      "cell": null,
+      "source": "frame_005.png"
+    },
+    {
+      "frame": 6,
+      "row": 0,
+      "bbox": [
+        26,
+        17,
+        131,
+        184
+      ],
+      "height_px": 167,
+      "width_px": 105,
+      "solid_px": 11611,
+      "ground": 184,
+      "head": {
+        "head_ratio": 1.0,
+        "scale": 1.0,
+        "residual": 12.62,
+        "residual_over_median": 0.77,
+        "template": false,
+        "head_box": [
+          34,
+          17,
+          128,
+          75
+        ]
+      },
+      "colour_l1_to_median": 0.0567,
+      "phase": {
+        "label": "contact",
+        "clearance_game_px": 0.0,
+        "stride_ratio": 0.931
+      },
+      "lead": {
+        "mode": "auto-luminance",
+        "front_minus_back_L": -0.0226,
+        "separation_game_px": 35.35,
+        "lead": "far"
+      },
+      "torso_x": 80.1,
+      "torso_method": "trunk",
+      "cell": null,
+      "source": "frame_006.png"
+    },
+    {
+      "frame": 7,
+      "row": 0,
+      "bbox": [
+        26,
+        19,
+        129,
+        184
+      ],
+      "height_px": 165,
+      "width_px": 103,
+      "solid_px": 11764,
+      "ground": 184,
+      "head": {
+        "head_ratio": 1.0,
+        "scale": 1.0,
+        "residual": 18.16,
+        "residual_over_median": 1.11,
+        "template": false,
+        "head_box": [
+          33,
+          19,
+          129,
+          77
+        ]
+      },
+      "colour_l1_to_median": 0.0533,
+      "phase": {
+        "label": "contact",
+        "clearance_game_px": 0.0,
+        "stride_ratio": 0.948
+      },
+      "lead": {
+        "mode": "auto-luminance",
+        "front_minus_back_L": 0.0226,
+        "separation_game_px": 35.6,
+        "lead": "near"
+      },
+      "torso_x": 80.7,
+      "torso_method": "trunk",
+      "cell": null,
+      "source": "frame_007.png"
+    }
+  ],
+  "identity": {
+    "median_scale": 1.0,
+    "median_residual": 16.38,
+    "reduction": 2,
+    "template": "frame 0",
+    "scales": [
+      0.9,
+      0.92,
+      0.94,
+      0.96,
+      0.98,
+      1.0,
+      1.02,
+      1.04,
+      1.06,
+      1.08,
+      1.1
+    ]
+  },
+  "near_duplicates": {
+    "pairs": [
+      {
+        "pair": [
+          6,
+          7
+        ],
+        "iou_best_shift": 0.9601,
+        "best_shift_src_px": [
+          0,
+          0
+        ],
+        "colour_l1": 0.0733
+      },
+      {
+        "pair": [
+          0,
+          1
+        ],
+        "iou_best_shift": 0.9538,
+        "best_shift_src_px": [
+          -2,
+          0
+        ],
+        "colour_l1": 0.0693
+      },
+      {
+        "pair": [
+          2,
+          6
+        ],
+        "iou_best_shift": 0.9533,
+        "best_shift_src_px": [
+          0,
+          0
+        ],
+        "colour_l1": 0.0791
+      },
+      {
+        "pair": [
+          3,
+          5
+        ],
+        "iou_best_shift": 0.9508,
+        "best_shift_src_px": [
+          0,
+          0
+        ],
+        "colour_l1": 0.0763
+      },
+      {
+        "pair": [
+          1,
+          5
+        ],
+        "iou_best_shift": 0.9505,
+        "best_shift_src_px": [
+          2,
+          0
+        ],
+        "colour_l1": 0.0914
+      },
+      {
+        "pair": [
+          2,
+          7
+        ],
+        "iou_best_shift": 0.9389,
+        "best_shift_src_px": [
+          0,
+          0
+        ],
+        "colour_l1": 0.0764
+      },
+      {
+        "pair": [
+          0,
+          5
+        ],
+        "iou_best_shift": 0.9373,
+        "best_shift_src_px": [
+          0,
+          0
+        ],
+        "colour_l1": 0.0945
+      },
+      {
+        "pair": [
+          0,
+          3
+        ],
+        "iou_best_shift": 0.9365,
+        "best_shift_src_px": [
+          0,
+          0
+        ],
+        "colour_l1": 0.0786
+      },
+      {
+        "pair": [
+          1,
+          3
+        ],
+        "iou_best_shift": 0.9361,
+        "best_shift_src_px": [
+          2,
+          0
+        ],
+        "colour_l1": 0.0809
+      },
+      {
+        "pair": [
+          1,
+          6
+        ],
+        "iou_best_shift": 0.9346,
+        "best_shift_src_px": [
+          0,
+          0
+        ],
+        "colour_l1": 0.0813
+      },
+      {
+        "pair": [
+          3,
+          4
+        ],
+        "iou_best_shift": 0.932,
+        "best_shift_src_px": [
+          0,
+          0
+        ],
+        "colour_l1": 0.0828
+      },
+      {
+        "pair": [
+          0,
+          6
+        ],
+        "iou_best_shift": 0.9318,
+        "best_shift_src_px": [
+          -2,
+          0
+        ],
+        "colour_l1": 0.0862
+      },
+      {
+        "pair": [
+          5,
+          6
+        ],
+        "iou_best_shift": 0.9293,
+        "best_shift_src_px": [
+          -2,
+          -2
+        ],
+        "colour_l1": 0.1058
+      },
+      {
+        "pair": [
+          3,
+          7
+        ],
+        "iou_best_shift": 0.9281,
+        "best_shift_src_px": [
+          -2,
+          0
+        ],
+        "colour_l1": 0.0707
+      },
+      {
+        "pair": [
+          0,
+          2
+        ],
+        "iou_best_shift": 0.928,
+        "best_shift_src_px": [
+          0,
+          0
+        ],
+        "colour_l1": 0.0646
+      },
+      {
+        "pair": [
+          0,
+          7
+        ],
+        "iou_best_shift": 0.9255,
+        "best_shift_src_px": [
+          -2,
+          0
+        ],
+        "colour_l1": 0.0869
+      },
+      {
+        "pair": [
+          1,
+          2
+        ],
+        "iou_best_shift": 0.9232,
+        "best_shift_src_px": [
+          2,
+          0
+        ],
+        "colour_l1": 0.0624
+      },
+      {
+        "pair": [
+          3,
+          6
+        ],
+        "iou_best_shift": 0.9228,
+        "best_shift_src_px": [
+          -2,
+          0
+        ],
+        "colour_l1": 0.0861
+      },
+      {
+        "pair": [
+          1,
+          7
+        ],
+        "iou_best_shift": 0.9208,
+        "best_shift_src_px": [
+          0,
+          0
+        ],
+        "colour_l1": 0.0869
+      },
+      {
+        "pair": [
+          4,
+          7
+        ],
+        "iou_best_shift": 0.9206,
+        "best_shift_src_px": [
+          -2,
+          0
+        ],
+        "colour_l1": 0.0796
+      },
+      {
+        "pair": [
+          2,
+          5
+        ],
+        "iou_best_shift": 0.9172,
+        "best_shift_src_px": [
+          2,
+          0
+        ],
+        "colour_l1": 0.0565
+      },
+      {
+        "pair": [
+          4,
+          5
+        ],
+        "iou_best_shift": 0.915,
+        "best_shift_src_px": [
+          0,
+          2
+        ],
+        "colour_l1": 0.0882
+      },
+      {
+        "pair": [
+          1,
+          4
+        ],
+        "iou_best_shift": 0.9146,
+        "best_shift_src_px": [
+          2,
+          -2
+        ],
+        "colour_l1": 0.0776
+      },
+      {
+        "pair": [
+          0,
+          4
+        ],
+        "iou_best_shift": 0.9123,
+        "best_shift_src_px": [
+          0,
+          0
+        ],
+        "colour_l1": 0.0713
+      },
+      {
+        "pair": [
+          5,
+          7
+        ],
+        "iou_best_shift": 0.9118,
+        "best_shift_src_px": [
+          -2,
+          0
+        ],
+        "colour_l1": 0.0818
+      },
+      {
+        "pair": [
+          2,
+          3
+        ],
+        "iou_best_shift": 0.9089,
+        "best_shift_src_px": [
+          2,
+          0
+        ],
+        "colour_l1": 0.0823
+      },
+      {
+        "pair": [
+          4,
+          6
+        ],
+        "iou_best_shift": 0.9072,
+        "best_shift_src_px": [
+          -2,
+          0
+        ],
+        "colour_l1": 0.0773
+      },
+      {
+        "pair": [
+          2,
+          4
+        ],
+        "iou_best_shift": 0.8903,
+        "best_shift_src_px": [
+          2,
+          -2
+        ],
+        "colour_l1": 0.0595
+      }
+    ],
+    "max_shift_src_px": 4
+  },
+  "half_cycle": null,
+  "alternation": {
+    "verdict": "duplicated half-cycle: the same leg leads in both halves",
+    "pairs": [
+      [
+        0,
+        4,
+        true
+      ],
+      [
+        3,
+        7,
+        true
+      ]
+    ],
+    "near_leading": 2,
+    "far_leading": 4,
+    "unclear": 2
+  },
+  "torso": {
+    "drift_game_px": 0.57
+  },
+  "row_baselines": {
+    "0": 184
+  },
+  "seam_ranking": [
+    {
+      "from": 5,
+      "to": 6,
+      "mae": 13.38,
+      "over_median": 1.11
+    },
+    {
+      "from": 7,
+      "to": 0,
+      "mae": 12.72,
+      "over_median": 1.06
+    },
+    {
+      "from": 4,
+      "to": 5,
+      "mae": 12.59,
+      "over_median": 1.04
+    },
+    {
+      "from": 0,
+      "to": 1,
+      "mae": 12.18,
+      "over_median": 1.01
+    },
+    {
+      "from": 2,
+      "to": 3,
+      "mae": 11.93,
+      "over_median": 0.99
+    },
+    {
+      "from": 1,
+      "to": 2,
+      "mae": 11.7,
+      "over_median": 0.97
+    },
+    {
+      "from": 3,
+      "to": 4,
+      "mae": 11.04,
+      "over_median": 0.92
+    },
+    {
+      "from": 6,
+      "to": 7,
+      "mae": 6.59,
+      "over_median": 0.55
+    }
+  ],
+  "seam": {
+    "frames": 8,
+    "seam": 12.723944769965279,
+    "adjacent_median": 11.9296875,
+    "adjacent_p95": 13.147559950086805,
+    "adjacent_max": 13.384535047743055,
+    "seam_over_median": 1.0665782125445682,
+    "seam_over_p95": 0.9677799392640358,
+    "method": "premultiplied RGBA mean absolute difference (0-255); seam = last -> first"
+  }
+}

@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """Dựng map thử HD-2D 'desert_hd2d' từ batch-11-desert (85 assets).
-Xuất apps/game-web/public/scenes/desert_hd2d.json + texture hd2d_*.png.
+Xuất art/build/scenes/desert_hd2d.json + texture hd2d_*.png.
 Bố cục tự nhiên có chiều sâu không gian, loại bỏ hoàn toàn hàng ngang triển lãm,
 khắc phục triệt để vạch dọc backdrop và tích hợp đầy đủ decal chuyển tiếp hữu cơ.
 """
 import json, random, shutil, os
 
 R = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-B = f'{R}/apps/game-web/art-src/hd2d/batch-11-desert'
-OUT = f'{R}/apps/game-web/public/scenes'
+B = f'{R}/art/src/hd2d/batch-11-desert'
+OUT = f'{R}/art/build/scenes'
 
 man_data = json.load(open(f'{B}/manifest.json'))
 man = {a['id']: a for a in (man_data['assets'] if isinstance(man_data, dict) else man_data)}

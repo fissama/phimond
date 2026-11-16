@@ -1,0 +1,1 @@
+2026-10-21 latest selected raw01 cracks-seal-repair-36: actual full4x dark inspected. Irregular fissure/open arc traces, no Ssymbol or letterlike glyphs, no rectangular backing; mineral grit slightly busy. Approved=false. Prior glyph rejection superseded.

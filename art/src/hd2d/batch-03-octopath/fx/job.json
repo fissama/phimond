@@ -1,0 +1,29 @@
+{
+  "id": "coastal-fx",
+  "rows": 2,
+  "cols": 4,
+  "refs": [
+    "/Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level5_BaiBien/level5_BaiBien_004.png",
+    "/Users/phileanh/rust/phimond/tools/build-web-assets/source/sprites/level5_BaiBien/level5_BaiBien_001.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png",
+    "/Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png"
+  ],
+  "prompt": "Use case: coastal game FX atlas, EXACT TWO ROWS FOUR COLUMNS of equal generous cells,8 separated frames with huge flat magenta gutters. TOP ROW: four sequential gentle shoreline FOAM CREST phases, white/cream and muted slateblue stepped pixels, thin low horizontal broken wavelip with no surrounding water. Eachframe similar horizontal width and samecenter/baseline, subtle advance/retreat/curl phase thenreturn, no spray outside margins. BOTTOM ROW: four frames of sparse small underwater AIR BUBBLES rising, several transparent-center crisp pale bluegray circular outlines, lowest bubble replaces highest for repeatloop, no water background. First originalref shorelinecrest identity,2beachsand/waterpalette; petrefs pixeloutlineonly. Octopath Traveler inspired HD-2D PIXEL ART, large controlled clustered pixels, no smoothgrads or antialias, restrained desaturatedslateblue/ivory colors. Exact solid flat #FF00FF background including bubble centers, no transparency illusion/checkerboard. Objects entirely withincentral55percent of everycell, keep every tiny particle away fromcell edges, no touching or overlap. NO full sea surface, sand, rocks, scene, shadows, fog, glow, bloom, text or labels. Artwork is isolated FX source sprites for engine water shader, not a watertexture or composedshore.",
+  "source_card": "Original shoreline crest004 and coastalcolors001. Four phase foam-only small source and four bubble phases; engine provides actual water surface, lighting and animation playback.",
+  "assets": [
+    {
+      "id": "shore-foam",
+      "category": "fx",
+      "kit": "beach",
+      "cell": 256,
+      "fps": 6
+    },
+    {
+      "id": "undersea-bubbles",
+      "category": "fx",
+      "kit": "beach",
+      "cell": 128,
+      "fps": 6
+    }
+  ]
+}

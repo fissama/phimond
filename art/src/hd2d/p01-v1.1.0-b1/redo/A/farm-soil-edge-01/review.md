@@ -1,0 +1,1 @@
+Self-review: Irregular one-unit grass-to-soil transition strip with crumbly earth, several grass shades and tiny roots/pebbles. Palette=48, binary alpha=True, bbox=(8, 39, 120, 89), margin=8px. Needs Claude review.

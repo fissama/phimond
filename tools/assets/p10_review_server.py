@@ -11,7 +11,7 @@ from urllib.parse import unquote, urlsplit
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[2]
-PETS = ROOT / 'apps/game-client/assets/pets'
+PETS = ROOT / 'art/pets'
 KIT = ROOT / '.ai/plan/phases/P10-pet-model/redraw-kit'
 PAGE = Path(__file__).with_name('p10_review.html')
 EXTENSION = PETS / 'redraws/extension-20261013'

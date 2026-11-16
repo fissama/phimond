@@ -1,0 +1,45 @@
+{
+  "species_id": "species_0040",
+  "source_species_id": "RongMaoDo",
+  "task_model": "gpt-6.1-sol",
+  "prompt_revision": 2,
+  "status": "ready_for_review",
+  "generation_calls": 3,
+  "raw_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0040/attempt-03/raw.png",
+  "raw_sha256": "ff700398381ea8156e38cba2abcd501e49f7dfb2838c77c29e34211a872dab9e",
+  "mechanical_status": "pass",
+  "human_approved": false,
+  "blockers": [],
+  "visual_review": "All20normalalpha frames reviewed against original orangecrested dinosaur creamthroat darkfeet shortarms longtail. Sourcefragments gone, fixedLEFTcamera, articulatedlegwalk/retracted-extendedLEFTclawstrike/freehandgatherreleasecasting/finalfullydown. Geometry-only halfsize builtin layout preserved fullposes. Body under typicalheightguidance; human64pxreadability/playback pending.",
+  "candidate_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0040/attempt-03/packed.png",
+  "candidate_sha256": "42c48674dd91d0147ca76b39a298c2d62aa3cdf0dedda6e306d902bd883b561b",
+  "preview_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0040/attempt-03/preview/preview.html",
+  "resume_attempts": [
+    {
+      "path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0040/attempt-02/raw.png",
+      "sha256": "f784cf8c06cfa3127c733778171881ecd8afeb4028af116426b8587dd07951f6",
+      "status": "requires sourceoverlap repair; compact-pose instruction not fully respected"
+    },
+    {
+      "path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0040/attempt-03/raw.png",
+      "sha256": "ff700398381ea8156e38cba2abcd501e49f7dfb2838c77c29e34211a872dab9e",
+      "status": "ready all20+checker+preview"
+    }
+  ],
+  "self_review_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0040/attempt-03/self-review.json",
+  "historical_raw_selections": [
+    {
+      "raw_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0040/attempt-01/raw.png",
+      "raw_sha256": "7e8e1e39d4134e009072a95d5683e1cdaf718055b42cc1b1d79a09db4cd658eb",
+      "generated_source_path": "/Users/phileanh/.codex/generated_images/01a109eb-e660-7333-8bac-1eaab09607c9/exec-97076b74-7893-4a97-b30b-14670ba30c97.png"
+    }
+  ],
+  "historical_generated_source_path": "/Users/phileanh/.codex/generated_images/01a109eb-e660-7333-8bac-1eaab09607c9/exec-97076b74-7893-4a97-b30b-14670ba30c97.png",
+  "selected_attempt": "attempt-03",
+  "input_metadata_paths": [
+    "apps/game-client/assets/pets/redraws/batches/20261005/species_0040/attempt-03/inputs-resume.json"
+  ],
+  "prompt_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0040/attempt-03/prompt.txt",
+  "animation_playback_verified": false,
+  "runtime_active": false
+}

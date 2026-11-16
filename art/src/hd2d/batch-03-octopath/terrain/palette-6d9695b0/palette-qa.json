@@ -1,0 +1,135 @@
+{
+  "status": "pass",
+  "method": "forge_palette.build_palette (weighted k-means++ in OKLab over unique colours, reserved colours fixed, coverage skipping) then forge_palette.fit_report of every input: OKLab dE of each pixel with alpha >= the threshold to its nearest palette colour",
+  "notProven": [
+    "Visual quality of the palette: look at swatches.png and an applied frame.",
+    "Colours of pixels below the alpha threshold were not sampled or measured.",
+    "No --max-delta-e gate was set."
+  ],
+  "checks": [
+    {
+      "id": "palette_colors",
+      "status": "pass",
+      "value": 48,
+      "threshold": 48
+    },
+    {
+      "id": "inputs_without_samples",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0,
+      "files": []
+    },
+    {
+      "id": "max_delta_e",
+      "status": "skipped",
+      "value": 0.071778,
+      "threshold": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../inputs-6d9695b0/sand-dry-cool.png",
+      "sha256": "e4169c16b9ba5f0d7b719c25dd9c4c227abf505813b410f44d89438170831a3e",
+      "bytes": 282257
+    },
+    {
+      "path": "../inputs-6d9695b0/sand-dry-warm.png",
+      "sha256": "a1a1fc4fdf7d9b7055b4d2fae162076c8afd367082d917053cc845783eafa7ea",
+      "bytes": 296321
+    },
+    {
+      "path": "../inputs-6d9695b0/sand-seagrass.png",
+      "sha256": "c23dd6fa040836915408817808a372fa7ae31c6f4e07febc1ddfead393b48d6c",
+      "bytes": 317475
+    },
+    {
+      "path": "../inputs-6d9695b0/sand-wet.png",
+      "sha256": "67064d49db56e440acad901f80d12d40ea7278767d5a9722256aa47e1aceb52e",
+      "bytes": 283626
+    }
+  ],
+  "outputs": [
+    {
+      "path": "palette.json",
+      "sha256": "3ff9504e3519e046a2d37017a2014fb43ff4d797d1f2b8b3cda70ce0d4a5948a",
+      "bytes": 1924
+    },
+    {
+      "path": "palette.gpl",
+      "sha256": "4503c43e23972ba4d0f9f4a4ab9c5689ac7d91bc67664add7b97e5bb7cd4ad13",
+      "bytes": 1020
+    },
+    {
+      "path": "palette.hex",
+      "sha256": "b3897ed4e1664d93a81c5d95c3b0fe0f5d1fd8a393b491ff834568428e138f56",
+      "bytes": 336
+    },
+    {
+      "path": "swatches.png",
+      "sha256": "9301e293dd694284af11eb6e6fa9c5eb77667b855729eb8d5b68223ba27aa02f",
+      "bytes": 690
+    }
+  ],
+  "tool": {
+    "name": "palette_tool",
+    "version": "0.4.0"
+  },
+  "palette": {
+    "colors": 48,
+    "reserved": 0,
+    "transparent_index": 255,
+    "seed": 0
+  },
+  "fit": {
+    "../inputs-6d9695b0/sand-dry-cool.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 250093,
+      "partial_alpha_px": 0,
+      "colors": 3194,
+      "palette_colors_used": 24,
+      "mean_delta_e": 0.003611,
+      "p95_delta_e": 0.007975,
+      "max_delta_e": 0.039754
+    },
+    "../inputs-6d9695b0/sand-dry-warm.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 245688,
+      "partial_alpha_px": 0,
+      "colors": 4597,
+      "palette_colors_used": 27,
+      "mean_delta_e": 0.003248,
+      "p95_delta_e": 0.006863,
+      "max_delta_e": 0.030228
+    },
+    "../inputs-6d9695b0/sand-seagrass.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 238983,
+      "partial_alpha_px": 0,
+      "colors": 11159,
+      "palette_colors_used": 46,
+      "mean_delta_e": 0.003363,
+      "p95_delta_e": 0.007803,
+      "max_delta_e": 0.071778
+    },
+    "../inputs-6d9695b0/sand-wet.png": {
+      "measured_px": 262144,
+      "alpha_threshold": 128,
+      "off_palette_px": 241402,
+      "partial_alpha_px": 0,
+      "colors": 3539,
+      "palette_colors_used": 15,
+      "mean_delta_e": 0.003356,
+      "p95_delta_e": 0.007404,
+      "max_delta_e": 0.032016
+    }
+  },
+  "totals": {
+    "max_delta_e": 0.071778,
+    "worst_p95_delta_e": 0.007975,
+    "off_palette_px": 976166
+  }
+}

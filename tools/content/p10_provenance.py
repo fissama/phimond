@@ -22,7 +22,7 @@ import stat
 import subprocess
 import sys
 
-ASSETS = "apps/game-client/assets/pets/apk84"
+ASSETS = "art/pets/apk84"
 MANIFEST = ASSETS + "/manifest.json"
 
 

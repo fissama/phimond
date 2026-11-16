@@ -1,0 +1,11 @@
+Selected prompt:
+Phimond DAMAGEfont bitmapglyph sprite sheet, muted Octopath Traveler pixelart, reference1 originaltinyfont grammar, refs2/3pixelshading only. EXACT7columns x2rows equalcells on genuine transparentalpha. Single glyphs isolated wideclearspacing. Toprow: 0,1,2,3,4,5,6. Bottomrow:7,8,9,+,−,MISS,critical starburst. Exact text ONLYthese requireddamage glyphs. Chunky narrowbold serifs, antiqueivory face, darkumber outline2–3tones, crisp hardpixelsteppededges no smoothantialiasing,nogradients,no glow. Samebaseline,heightandstrokeweight exceptMISS fitsonecell aswholeword. No labels,nobackground. Digits legible at20pxheight.
+
+Selected ordered references:
+1. /Users/phileanh/Downloads/Pokezoo-100-extracted/viewable/assets/sprites/battleNum/CONTACT-SHEET.png sha256=7eb49201c8f1e90ad2a0d02ace7df432241aaaf3dee081a1d7cc7a47d046043d
+2. /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DocDangNu/sprites.png sha256=fd3de2a91f6bc3684f29ac9f33bd27e5ed5ab2ca58aa2e648e3261fbacbc31da
+3. /Users/phileanh/rust/phimond/apps/game-client/assets/pets/redraws/references/DaoThienDuong/sprites.png sha256=043de906f8305b6a1b91ddfaf626b55071b87a43bb612bc70cfdf94d549de3e3
+
+Route: built-in image_gen; model not exposed; cost unknown.
+Raw SHA256: 2af112c5ca988826bb9e2afacb7caa04444d525f58592f6293faed717b8e4435
+Full per-attempt provenance: provenance.json

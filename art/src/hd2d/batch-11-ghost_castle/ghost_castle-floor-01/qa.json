@@ -1,0 +1,93 @@
+{
+  "id": "ghost_castle-floor-01",
+  "size_px": [
+    512,
+    512
+  ],
+  "mode": "RGB",
+  "world_size": [
+    4.0,
+    4.0
+  ],
+  "tileable": "xy",
+  "palette_colors": 40,
+  "palette_target": 40,
+  "raw_integrity": true,
+  "raw_sha256": "0b4bcc3a0dc7298625ec499768ff6b0bebd4d473662526ad199eec14ecb0fbe3",
+  "sha256": "ef5dca3e8d0afed2364e8dda248e6b35f5422d84a1d62be78a77027963355345",
+  "source_spill_gate": "not applicable to opaque tile",
+  "processing_gate": "pass; extract_terrain_tiles seamless check",
+  "terrain_qc": {
+    "x": {
+      "seam": 2.265625,
+      "adjacent_median": 1.920166,
+      "adjacent_p95": 2.411255,
+      "adjacent_max": 2.534668,
+      "seam_over_median": 1.179911,
+      "seam_over_p95": 0.939604,
+      "seam_ratio": 0.893855,
+      "near_median": 1.615967,
+      "verdict": "continuous",
+      "method": "premultiplied RGBA column steps (0-255); join vs interior steps within 8 columns per side, whole edge and worst 4-row window"
+    },
+    "y": {
+      "seam": 2.14209,
+      "adjacent_median": 1.80835,
+      "adjacent_p95": 2.723999,
+      "adjacent_max": 2.881836,
+      "seam_over_median": 1.184555,
+      "seam_over_p95": 0.786377,
+      "seam_ratio": 0.743307,
+      "near_median": 1.556152,
+      "verdict": "continuous",
+      "method": "premultiplied RGBA column steps (0-255); join vs interior steps within 8 columns per side, whole edge and worst 4-row window"
+    }
+  },
+  "checks": [
+    {
+      "id": "contrast",
+      "status": "pass",
+      "value": 0.04114,
+      "threshold": 0.035
+    },
+    {
+      "id": "variant_difference",
+      "status": "pass",
+      "value": 1.0,
+      "threshold": 0.025
+    },
+    {
+      "id": "border_frame",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0.1
+    },
+    {
+      "id": "shape_coverage",
+      "status": "skipped",
+      "value": null,
+      "threshold": 0.97
+    },
+    {
+      "id": "shape_spill",
+      "status": "skipped",
+      "value": null,
+      "threshold": 0.03
+    },
+    {
+      "id": "wrap_seams",
+      "status": "pass",
+      "value": 0.893855,
+      "threshold": 1.25
+    },
+    {
+      "id": "wang_seams",
+      "status": "skipped",
+      "value": null,
+      "threshold": null
+    }
+  ],
+  "seamless_verified": false,
+  "visual_review": "actual 3x3 mosaic and 4x detail inspected; no obvious grid/seam; candidate only, not owner approved",
+  "failures": []
+}

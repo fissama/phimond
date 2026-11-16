@@ -1,0 +1,45 @@
+{
+  "species_id": "species_0020",
+  "source_species_id": "ThuLinhHacAm",
+  "task_model": "gpt-6.1-sol",
+  "prompt_revision": 2,
+  "status": "ready_for_review",
+  "generation_calls": 4,
+  "raw_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0020/attempt-04/raw.png",
+  "raw_sha256": "056992185a33e0cfefc61367a7affd568e5e2a545fd15b7421d40f12eb6fe97a",
+  "mechanical_status": "pass",
+  "human_approved": false,
+  "blockers": [],
+  "visual_review": "All20normalalpha/sourceidentityreview: darkknight mountedbluehorse goldtrim silverblade cape. Casting sword now visiblygripped down besidehorse, freehandempty, fullblade20/20. FixedLEFTcamera. Sourcebasicposes ordered C3rest/C1raise/C2LEFTimpact/C4recover via complete-rectanglepacking only (rawunchanged). Distincthorselegcycle/castgesture/collapse fullydown. Human continuousplayback pending.",
+  "candidate_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0020/attempt-04/packed-v2.png",
+  "candidate_sha256": "c9e8169a9d3f4812a418d1c6cba7df21afe80a0e0557199ed31c9d5545cf5b68",
+  "self_review_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0020/attempt-04/self-review-v2.json",
+  "preview_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0020/attempt-04/preview-v2/preview.html",
+  "resume_attempts": [
+    {
+      "path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0020/attempt-03/raw.png",
+      "sha256": "af6ebe9ff6b9854877ed9141d5220db9ee4ca8d5abd71db0012a4016f9fc2682",
+      "status": "Still missing connectedgrip castingrow4columns2/3; attempt04inflight"
+    },
+    {
+      "path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0020/attempt-04/raw.png",
+      "sha256": "056992185a33e0cfefc61367a7affd568e5e2a545fd15b7421d40f12eb6fe97a",
+      "status": "ready swordgripfixed and fullpose ordering corrected"
+    }
+  ],
+  "historical_raw_selections": [
+    {
+      "raw_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0020/attempt-01/raw.png",
+      "raw_sha256": "8b8beb1b81ebdeb4a2ae2842c079e49c930f91e152a05c9a2bd0d05333cfee92",
+      "generated_source_path": "/Users/phileanh/.codex/generated_images/01a109eb-e660-7333-8bac-1eaab09607c9/exec-2e80f502-3c5e-4a90-a53e-d18e2006896c.png"
+    }
+  ],
+  "historical_generated_source_path": "/Users/phileanh/.codex/generated_images/01a109eb-e660-7333-8bac-1eaab09607c9/exec-2e80f502-3c5e-4a90-a53e-d18e2006896c.png",
+  "selected_attempt": "attempt-04",
+  "input_metadata_paths": [
+    "apps/game-client/assets/pets/redraws/batches/20261005/species_0020/attempt-04/inputs-resume.json"
+  ],
+  "prompt_path": "apps/game-client/assets/pets/redraws/batches/20261005/species_0020/attempt-04/prompt.txt",
+  "animation_playback_verified": false,
+  "runtime_active": false
+}

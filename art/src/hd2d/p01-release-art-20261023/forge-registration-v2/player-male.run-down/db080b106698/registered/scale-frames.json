@@ -1,0 +1,655 @@
+{
+  "schema": "generate2dsprite.scale_frames.v1",
+  "scale": 1.0,
+  "scale_from": "1",
+  "target_body_px": null,
+  "resampler": "nearest",
+  "canvas": [
+    192,
+    192
+  ],
+  "anchor_px": [
+    96,
+    184
+  ],
+  "padding": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "base_canvas": [
+    192,
+    192
+  ],
+  "base_anchor_px": [
+    96,
+    184
+  ],
+  "needed_padding": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "margin": null,
+  "anchor_mode": "stance",
+  "source_anchor": [
+    96.0,
+    184.0
+  ],
+  "reference_frame": 0,
+  "root_lock": "torso-x",
+  "lock": [],
+  "row_baseline": true,
+  "shift_quantum": 1,
+  "alpha_threshold": 16,
+  "frames_per_row": 8,
+  "torso": {
+    "colors": [],
+    "band": [
+      0.4,
+      0.6
+    ],
+    "method": "trunk"
+  },
+  "frames": [
+    {
+      "source": {
+        "path": "../input/frame_000.png",
+        "sha256": "6d92aec90aeb7f7e522d5d16543571e7200da775153f42621a691c6e2e52b2f6",
+        "bytes": 18635
+      },
+      "cell": null,
+      "output": {
+        "path": "frames/frame_000.png",
+        "sha256": "6d92aec90aeb7f7e522d5d16543571e7200da775153f42621a691c6e2e52b2f6",
+        "bytes": 18635
+      },
+      "shift": [
+        0,
+        0
+      ],
+      "output_bbox": [
+        49,
+        16,
+        153,
+        184
+      ],
+      "turn_slide_px": 0.0,
+      "turn_slide_output_px": 0.0,
+      "measure": {
+        "bbox": [
+          49,
+          16,
+          153,
+          184
+        ],
+        "ground": 184,
+        "body_height": 168,
+        "stance_x": 96.0,
+        "torso_x": 106.17,
+        "centroid_x": 104.45,
+        "hip_x": 102.5
+      }
+    },
+    {
+      "source": {
+        "path": "../input/frame_001.png",
+        "sha256": "3fdeaf5d077256c75ae47980b32557732cb79fbc9003e67505519166e96755e2",
+        "bytes": 18454
+      },
+      "cell": null,
+      "output": {
+        "path": "frames/frame_001.png",
+        "sha256": "3fdeaf5d077256c75ae47980b32557732cb79fbc9003e67505519166e96755e2",
+        "bytes": 18454
+      },
+      "shift": [
+        0,
+        0
+      ],
+      "output_bbox": [
+        50,
+        18,
+        154,
+        184
+      ],
+      "turn_slide_px": 6.0,
+      "turn_slide_output_px": 6.0,
+      "measure": {
+        "bbox": [
+          50,
+          18,
+          154,
+          184
+        ],
+        "ground": 184,
+        "body_height": 166,
+        "stance_x": 99.0,
+        "torso_x": 106.53,
+        "centroid_x": 103.66,
+        "hip_x": 102.5
+      }
+    },
+    {
+      "source": {
+        "path": "../input/frame_002.png",
+        "sha256": "4862e05d8c9e8ebac6b6af7dbfde9c4a0d5160aff5e407aeac0e9faf3f59d21c",
+        "bytes": 18171
+      },
+      "cell": null,
+      "output": {
+        "path": "frames/frame_002.png",
+        "sha256": "4862e05d8c9e8ebac6b6af7dbfde9c4a0d5160aff5e407aeac0e9faf3f59d21c",
+        "bytes": 18171
+      },
+      "shift": [
+        0,
+        0
+      ],
+      "output_bbox": [
+        55,
+        18,
+        154,
+        184
+      ],
+      "turn_slide_px": 14.0,
+      "turn_slide_output_px": 14.0,
+      "measure": {
+        "bbox": [
+          55,
+          18,
+          154,
+          184
+        ],
+        "ground": 184,
+        "body_height": 166,
+        "stance_x": 103.0,
+        "torso_x": 105.69,
+        "centroid_x": 105.8,
+        "hip_x": 105.0
+      }
+    },
+    {
+      "source": {
+        "path": "../input/frame_003.png",
+        "sha256": "f3bf9356b4c8bf33fc5974cfeb76b7cc095ac0c8cb2e9f360e337e8c253b9073",
+        "bytes": 18301
+      },
+      "cell": null,
+      "output": {
+        "path": "frames/frame_003.png",
+        "sha256": "f3bf9356b4c8bf33fc5974cfeb76b7cc095ac0c8cb2e9f360e337e8c253b9073",
+        "bytes": 18301
+      },
+      "shift": [
+        0,
+        0
+      ],
+      "output_bbox": [
+        53,
+        17,
+        155,
+        184
+      ],
+      "turn_slide_px": 8.0,
+      "turn_slide_output_px": 8.0,
+      "measure": {
+        "bbox": [
+          53,
+          17,
+          155,
+          184
+        ],
+        "ground": 184,
+        "body_height": 167,
+        "stance_x": 100.0,
+        "torso_x": 106.45,
+        "centroid_x": 103.44,
+        "hip_x": 105.0
+      }
+    },
+    {
+      "source": {
+        "path": "../input/frame_004.png",
+        "sha256": "4a844e28ad9a85707515778834a16224815c8c4b08ee20ebc505916a7e7fcdfe",
+        "bytes": 18972
+      },
+      "cell": null,
+      "output": {
+        "path": "frames/frame_004.png",
+        "sha256": "4a844e28ad9a85707515778834a16224815c8c4b08ee20ebc505916a7e7fcdfe",
+        "bytes": 18972
+      },
+      "shift": [
+        0,
+        0
+      ],
+      "output_bbox": [
+        52,
+        17,
+        162,
+        184
+      ],
+      "turn_slide_px": 29.0,
+      "turn_slide_output_px": 29.0,
+      "measure": {
+        "bbox": [
+          52,
+          17,
+          162,
+          184
+        ],
+        "ground": 184,
+        "body_height": 167,
+        "stance_x": 110.5,
+        "torso_x": 105.99,
+        "centroid_x": 107.37,
+        "hip_x": 105.0
+      }
+    },
+    {
+      "source": {
+        "path": "../input/frame_005.png",
+        "sha256": "8ff701c7b64579379926d0589568cf03a401789ddcdfbd3e6d410d219bdd258e",
+        "bytes": 17832
+      },
+      "cell": null,
+      "output": {
+        "path": "frames/frame_005.png",
+        "sha256": "8ff701c7b64579379926d0589568cf03a401789ddcdfbd3e6d410d219bdd258e",
+        "bytes": 17832
+      },
+      "shift": [
+        0,
+        0
+      ],
+      "output_bbox": [
+        54,
+        17,
+        158,
+        184
+      ],
+      "turn_slide_px": 30.0,
+      "turn_slide_output_px": 30.0,
+      "measure": {
+        "bbox": [
+          54,
+          17,
+          158,
+          184
+        ],
+        "ground": 184,
+        "body_height": 167,
+        "stance_x": 111.0,
+        "torso_x": 106.04,
+        "centroid_x": 107.16,
+        "hip_x": 106.0
+      }
+    },
+    {
+      "source": {
+        "path": "../input/frame_006.png",
+        "sha256": "93b34cbe30ab292a1b1434c71ffe371035099cf45fdde23e3f60ae562964fdf2",
+        "bytes": 18358
+      },
+      "cell": null,
+      "output": {
+        "path": "frames/frame_006.png",
+        "sha256": "93b34cbe30ab292a1b1434c71ffe371035099cf45fdde23e3f60ae562964fdf2",
+        "bytes": 18358
+      },
+      "shift": [
+        0,
+        0
+      ],
+      "output_bbox": [
+        50,
+        17,
+        157,
+        184
+      ],
+      "turn_slide_px": 25.0,
+      "turn_slide_output_px": 25.0,
+      "measure": {
+        "bbox": [
+          50,
+          17,
+          157,
+          184
+        ],
+        "ground": 184,
+        "body_height": 167,
+        "stance_x": 108.5,
+        "torso_x": 105.72,
+        "centroid_x": 104.21,
+        "hip_x": 104.0
+      }
+    },
+    {
+      "source": {
+        "path": "../input/frame_007.png",
+        "sha256": "d26eeb99ee1073074e50ae3eddb6820962c4d340d889d55529ac25a0272a92be",
+        "bytes": 18151
+      },
+      "cell": null,
+      "output": {
+        "path": "frames/frame_007.png",
+        "sha256": "d26eeb99ee1073074e50ae3eddb6820962c4d340d889d55529ac25a0272a92be",
+        "bytes": 18151
+      },
+      "shift": [
+        0,
+        0
+      ],
+      "output_bbox": [
+        51,
+        17,
+        160,
+        184
+      ],
+      "turn_slide_px": 25.0,
+      "turn_slide_output_px": 25.0,
+      "measure": {
+        "bbox": [
+          51,
+          17,
+          160,
+          184
+        ],
+        "ground": 184,
+        "body_height": 167,
+        "stance_x": 108.5,
+        "torso_x": 105.72,
+        "centroid_x": 104.39,
+        "hip_x": 104.0
+      }
+    }
+  ],
+  "transitions": {
+    "pairs": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        7,
+        0
+      ]
+    ],
+    "before": [
+      18.08,
+      20.533,
+      21.082,
+      23.785,
+      16.393,
+      23.653,
+      14.347,
+      29.255
+    ],
+    "after": [
+      18.08,
+      20.533,
+      21.082,
+      23.785,
+      16.393,
+      23.653,
+      14.347,
+      29.255
+    ],
+    "metric": "forge_core.transition_mae (premultiplied RGBA) on one shared crop"
+  },
+  "seam": {
+    "before": {
+      "frames": 8,
+      "seam": 29.255425621576062,
+      "adjacent_median": 20.532738095238095,
+      "adjacent_p95": 23.745575221238937,
+      "adjacent_max": 23.78535872313527,
+      "seam_over_median": 1.42481852570656,
+      "seam_over_p95": 1.2320369310493227,
+      "method": "premultiplied RGBA mean absolute difference (0-255); seam = last -> first"
+    },
+    "after": {
+      "frames": 8,
+      "seam": 29.255425621576062,
+      "adjacent_median": 20.532738095238095,
+      "adjacent_p95": 23.745575221238937,
+      "adjacent_max": 23.78535872313527,
+      "seam_over_median": 1.42481852570656,
+      "seam_over_p95": 1.2320369310493227,
+      "method": "premultiplied RGBA mean absolute difference (0-255); seam = last -> first"
+    }
+  },
+  "input": {
+    "frames": [
+      {
+        "sha256": "6d92aec90aeb7f7e522d5d16543571e7200da775153f42621a691c6e2e52b2f6",
+        "size": [
+          192,
+          192
+        ],
+        "source_mode": "RGBA",
+        "bit_depth": 8,
+        "conversion": "none",
+        "keyed": null
+      },
+      {
+        "sha256": "3fdeaf5d077256c75ae47980b32557732cb79fbc9003e67505519166e96755e2",
+        "size": [
+          192,
+          192
+        ],
+        "source_mode": "RGBA",
+        "bit_depth": 8,
+        "conversion": "none",
+        "keyed": null
+      },
+      {
+        "sha256": "4862e05d8c9e8ebac6b6af7dbfde9c4a0d5160aff5e407aeac0e9faf3f59d21c",
+        "size": [
+          192,
+          192
+        ],
+        "source_mode": "RGBA",
+        "bit_depth": 8,
+        "conversion": "none",
+        "keyed": null
+      },
+      {
+        "sha256": "f3bf9356b4c8bf33fc5974cfeb76b7cc095ac0c8cb2e9f360e337e8c253b9073",
+        "size": [
+          192,
+          192
+        ],
+        "source_mode": "RGBA",
+        "bit_depth": 8,
+        "conversion": "none",
+        "keyed": null
+      },
+      {
+        "sha256": "4a844e28ad9a85707515778834a16224815c8c4b08ee20ebc505916a7e7fcdfe",
+        "size": [
+          192,
+          192
+        ],
+        "source_mode": "RGBA",
+        "bit_depth": 8,
+        "conversion": "none",
+        "keyed": null
+      },
+      {
+        "sha256": "8ff701c7b64579379926d0589568cf03a401789ddcdfbd3e6d410d219bdd258e",
+        "size": [
+          192,
+          192
+        ],
+        "source_mode": "RGBA",
+        "bit_depth": 8,
+        "conversion": "none",
+        "keyed": null
+      },
+      {
+        "sha256": "93b34cbe30ab292a1b1434c71ffe371035099cf45fdde23e3f60ae562964fdf2",
+        "size": [
+          192,
+          192
+        ],
+        "source_mode": "RGBA",
+        "bit_depth": 8,
+        "conversion": "none",
+        "keyed": null
+      },
+      {
+        "sha256": "d26eeb99ee1073074e50ae3eddb6820962c4d340d889d55529ac25a0272a92be",
+        "size": [
+          192,
+          192
+        ],
+        "source_mode": "RGBA",
+        "bit_depth": 8,
+        "conversion": "none",
+        "keyed": null
+      }
+    ]
+  },
+  "profile": null,
+  "qa": {
+    "status": "pass",
+    "method": "one pinned resample per frame (forge_core.resample_rgba) on a work canvas holding every frame, then one crop; the crop is checked to keep every visible pixel",
+    "notProven": [
+      "That the locked feature (torso, stance, hip) is the right root for this action.",
+      "Pose quality and smoothness: review scale-review.png and play the clip."
+    ],
+    "checks": [
+      {
+        "id": "no_clipping",
+        "status": "pass",
+        "value": 0,
+        "threshold": 0,
+        "note": "every visible source pixel is on the canvas"
+      },
+      {
+        "id": "integer_nearest",
+        "status": "pass",
+        "value": 1.0,
+        "threshold": "N or 1/N"
+      },
+      {
+        "id": "registration",
+        "status": "pass",
+        "value": {
+          "horizontal": "torso-x",
+          "vertical": "row-baseline",
+          "row_grounds": {
+            "0": 184
+          },
+          "feature_values": [
+            106.17,
+            106.53,
+            105.69,
+            106.45,
+            105.99,
+            106.04,
+            105.72,
+            105.72
+          ]
+        },
+        "threshold": null,
+        "note": "per-frame whole-pixel shifts against the reference frame"
+      },
+      {
+        "id": "turn_slide",
+        "status": "pass",
+        "value": {
+          "design": 30.0,
+          "output": 30.0
+        },
+        "threshold": null,
+        "note": "2 x |stance x - anchor x| in output px, before (design) and after pixel sampling (output); 0 means a mirrored turn keeps the feet in place"
+      }
+    ],
+    "inputs": [
+      {
+        "path": "../input/frame_000.png",
+        "sha256": "6d92aec90aeb7f7e522d5d16543571e7200da775153f42621a691c6e2e52b2f6",
+        "bytes": 18635
+      },
+      {
+        "path": "../input/frame_001.png",
+        "sha256": "3fdeaf5d077256c75ae47980b32557732cb79fbc9003e67505519166e96755e2",
+        "bytes": 18454
+      },
+      {
+        "path": "../input/frame_002.png",
+        "sha256": "4862e05d8c9e8ebac6b6af7dbfde9c4a0d5160aff5e407aeac0e9faf3f59d21c",
+        "bytes": 18171
+      },
+      {
+        "path": "../input/frame_003.png",
+        "sha256": "f3bf9356b4c8bf33fc5974cfeb76b7cc095ac0c8cb2e9f360e337e8c253b9073",
+        "bytes": 18301
+      },
+      {
+        "path": "../input/frame_004.png",
+        "sha256": "4a844e28ad9a85707515778834a16224815c8c4b08ee20ebc505916a7e7fcdfe",
+        "bytes": 18972
+      },
+      {
+        "path": "../input/frame_005.png",
+        "sha256": "8ff701c7b64579379926d0589568cf03a401789ddcdfbd3e6d410d219bdd258e",
+        "bytes": 17832
+      },
+      {
+        "path": "../input/frame_006.png",
+        "sha256": "93b34cbe30ab292a1b1434c71ffe371035099cf45fdde23e3f60ae562964fdf2",
+        "bytes": 18358
+      },
+      {
+        "path": "../input/frame_007.png",
+        "sha256": "d26eeb99ee1073074e50ae3eddb6820962c4d340d889d55529ac25a0272a92be",
+        "bytes": 18151
+      }
+    ],
+    "outputs": [
+      {
+        "path": "scale-review.png",
+        "sha256": "cbb1c9e148e82daa86872fe397dc50b29462638f4b4b63e824ad95ee625ba30b",
+        "bytes": 143879
+      }
+    ],
+    "tool": {
+      "name": "scale_frames.py",
+      "version": "0.4.0"
+    }
+  },
+  "tool": {
+    "name": "scale_frames.py",
+    "version": "0.4.0"
+  }
+}
