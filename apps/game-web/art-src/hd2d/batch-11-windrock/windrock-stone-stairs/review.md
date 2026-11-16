@@ -1,1 +1,0 @@
-Actualfull4xdark/checkerviewed, completeconnectedcontour,nopinkrim/groundshadow/strays.40colors,native1:1,margin>=8,worldpredeclared. Stairsnaturalrectanglecutexcludesneighboringtentwithoutclippingstairs; sourcecropandrawretained. Warmtanstonehighlightssomewhatdominant;ownerreviewpending.

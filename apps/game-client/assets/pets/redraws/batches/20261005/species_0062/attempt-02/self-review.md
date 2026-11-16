@@ -1,1 +1,0 @@
-Rejectedidentitypalette: GREENoriginalarms becamebrownfurry,burgundyclothbecameyellowskirt. Equipmentbetterall20singleblade. R3C3headfrontturnrisk. Thirdoriginal-basedredrawinflight. Animationunverified.

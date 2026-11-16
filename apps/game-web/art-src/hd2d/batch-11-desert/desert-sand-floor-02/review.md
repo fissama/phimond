@@ -1,1 +1,0 @@
-Actual3x3 and4x dark/checker opened. Narrow repeat corridors remain a weak point; substantially quieter than rejected long-ripple sheets. Draft candidate only; Claude must judge repeat acceptability. No final approval.

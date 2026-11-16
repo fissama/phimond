@@ -1,1 +1,0 @@
-2026-10-21: Actual full4x of all4 generated frames inspected on darkbackground. Body registration bottom-center stable; phase shifts arc right -> front -> fade. Fine surface grain shimmers slightly. No clipping/chroma. Temporal playback QA pending; approved=false.

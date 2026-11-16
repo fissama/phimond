@@ -1,1 +1,0 @@
-2026-10-21 actual full4x darkpanels inspected. Complete irregular lip, dark innerrockfaces, two clearly different geometries, no clipping or floating components seen. Foregroundlip somewhat broad. Native1:1,approved=false.
