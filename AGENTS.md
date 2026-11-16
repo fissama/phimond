@@ -1,6 +1,6 @@
 # AGENTS.md
 
-> Phimond — Pokémon-style 2D game MVP. Workspace at `/Users/phileanh/rust/phimond`. Read this file on cold-start before any task.
+> Phimond — game web HD-2D (client `apps/client` Three.js, server `apps/game-server` Go). Workspace at `/Users/phileanh/rust/phimond`. Read this file on cold-start before any task. Cấu trúc thư mục và chính sách art: [`docs/REPO-LAYOUT.md`](docs/REPO-LAYOUT.md). Client Godot (`apps/game-client`) và client thử `apps/game-web` đã bị xóa (tag `archive/game-client-final`, `archive/game-web-final`).
 
 ## Build / Run / Test
 
@@ -29,10 +29,9 @@ env LOAD_ALLOW_MUTATION=1 GAME_API_URL=http://127.0.0.1:8090 \
   LOAD_USERS=10 LOAD_SECONDS=120 LOAD_PROFILE=mixed \
   LOAD_RECONNECT=1 LOAD_RUN_ID=<id> node tools/load_gameplay.mjs
 
-# Godot headless smoke
-GAME_API_URL=http://127.0.0.1:8090 \
-  apps/game-client/.tools/Godot.app/Contents/MacOS/Godot \
-  --path apps/game-client --script res://scripts/reference_live_check.gd
+# Client (apps/client): typecheck + unit + build; e2e cần server chạy
+cd apps/client && npm run check
+cd apps/client && npm run e2e
 ```
 
 ## Required workflow rule — manual validation after every task
@@ -43,12 +42,12 @@ GAME_API_URL=http://127.0.0.1:8090 \
 2. `git status` để xác nhận working tree clean (sau khi commit/push xong).
 3. **Rebuild server với code mới nhất** rồi start trên `127.0.0.1:8090` với `GAME_METRICS=1` (để user thấy stage metrics).
 4. Confirm `/healthz` returns 200.
-5. Báo lại cho user: server PID, port, log path, Godot editor debug port (nếu đang mở).
+5. Báo lại cho user: server PID, port, log path.
 6. Đợi user validate xong mới chuyển task kế tiếp.
 
 **Lý do:** Người dùng muốn manual test sau mỗi task completion (đặc biệt là khi P00 chốt và sang P01); không được để source "chạy cũ" trong khi user đang ở UI thật.
 
-**Cổng mặc định:** server `127.0.0.1:8090`, Godot editor `127.0.0.1:6007` (debug, nếu editor đang mở).
+**Cổng mặc định:** server `127.0.0.1:8090`, client dev (Vite) `5180`.
 **Log:** `/tmp/p00-serve.log` (server, rotate khi restart).
 **Test accounts:** xem `.ai/plan/phases/P00-baseline/evidence/*.accounts.json` (p00_* prefix + cũ hơn ref_*/contact_*).
 
@@ -66,18 +65,12 @@ launching the next task:
    cd apps/game-server && go build -o /tmp/phimond-server ./cmd/server
    cd apps/game-server && go test -race ./... -count=1
    curl -s http://127.0.0.1:8090/healthz
-   # Client smokes:
-   apps/game-client/.tools/Godot.app/Contents/MacOS/Godot \
-     --headless --path apps/game-client \
-     --script res://scripts/min_smoke.gd
-   apps/game-client/.tools/Godot.app/Contents/MacOS/Godot \
-     --headless --path apps/game-client \
-     --script res://scripts/contact_check.gd
-   apps/game-client/.tools/Godot.app/Contents/MacOS/Godot \
-     --headless --path apps/game-client \
-     --script res://scripts/layout_audit.gd
+   # Client:
+   cd apps/client && npm run check
+   cd apps/client && npm run e2e
+   # Map: python3 tools/p01/build_maps.py --check
    ```
-   Every smoke must end with the script's `PASS:` line. Failures are blockers.
+   Mọi lệnh phải xanh. Failures are blockers.
 3. **Self-review** — re-read `git diff <base>..HEAD`, list what is *actually*
    live (not aspirational). Confirm the implementation matches the spec's
    behavior contract. Be honest about flaky / known issues; do not paper
@@ -167,15 +160,15 @@ AGENTS.md version: edited 2026-09-30 to reflect P10 closure + P11 scaffold.
 - Server authoritative: không sửa damage/RNG/capture/reward để che presentation bug.
 - DB chỉ dùng `phimond_reconstruction` (từ `.env`). Không touch `philandz`.
 - `.env` ignored; **never** commit. Account manifest dùng cho test prefix `p00_*`.
-- Godot binary + zip ở `apps/game-client/.tools/` đã ignore qua `apps/**/.tools/`. Cỡ ~700MB.
-- Godot warnings về UID `tab_unselected.tres` cũ — engine tự fallback path, không phải lỗi load.
+- Art nguồn nặng (~11 GB) nằm trong `art/`; git chỉ theo dõi ảnh final, manifest, prompt, QA và 160 atlas pet đã duyệt (xem `art/.gitignore`). Ảnh trung gian KHÔNG có trên GitHub: backup riêng thư mục `art/`.
+- Push main kích hoạt release CI. Đường dẫn trong `paths-ignore` của `.github/workflows/release-main.yml` (md, `.ai`, `docs`, `art`, `tools`...) không ra bản mới; đổi `apps/client`, `apps/game-server`, `data`, `migrations`, `packages` thì ra bản mới.
 
 ## Roles of agents
 
 Các task beads (khi chia nhỏ) ưu tiên 3 workers song song:
 - **Code** (worker): sửa Go internal; chạm `apps/game-server/internal/{transport,character,persistence}/`.
 - **Docs** (worker): chỉ `.md` files; không đụng code.
-- **Operational** (worker): chạy server + load + Godot smoke; tạo evidence trong `evidence/`.
+- **Operational** (worker): chạy server + load + e2e client; tạo evidence trong `evidence/`.
 
 Khi chạy parallel, **mỗi worker owns file scope riêng** để không revert chéo. File scope conflict (cùng file được 2 worker edit) phải sequence hoặc gộp vào 1 worker.
 
@@ -190,11 +183,10 @@ cd apps/game-server && go build -o /tmp/phimond-server ./cmd/server
 cd apps/game-server && env GAME_METRICS=1 GAME_ADDR=127.0.0.1:8090 \
   GAME_DB_NAME=phimond_reconstruction \
   MYSQL_HOST=philand-philand.i.aivencloud.com MYSQL_PORT=25390 \
-  MYSQL_USER=avnadmin MYSQL_PASSWORD='AVNS_zlIsmS1_dmZ-hQ2460r' \
+  MYSQL_USER=avnadmin MYSQL_PASSWORD='<see .env>' \
   MYSQL_DATABASE=phimond_reconstruction MYSQL_TLS=true MYSQL_TLS_INSECURE=true \
   GAME_DATA_DIR=../../data \
   /tmp/phimond-server > /tmp/p00-serve.log 2>&1 &
 
-# Godot: trong editor đã mở (PID 57609 LoginScreen scene), chỉ cần
-# reconnect WS bằng cách Play scene hoặc tắt/mở LoginScreen.
+# Client dev: cd apps/client && npm run dev   (mở http://localhost:5180)
 ```

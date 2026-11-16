@@ -70,7 +70,7 @@ Danh sách đầy đủ và phase sở hữu ở [`P01-scope.md`](P01-scope.md) 
 - NPC: `data/npcs/npcs.json`. Validator content bắt NPC phải đứng trên ô chặn đúng quy ước.
 - Client: `render/scene.ts` giữ THEMES, `floorFor`, `propsFor`, bảng `MAP_PROPS/MAP_EXTRAS/MAP_DECALS` theo map; `assets.json` là manifest ảnh (prop pivot chân, floor 512 px = 4 ô, decal pivot giữa). 128 px/ô.
 - Giao thức WS: `apps/game-server/internal/transport` (có ping 25 s, AFK 10 phút không gửi lệnh).
-- Phát hành: push `main`; commit `feat` tăng minor, `fix` tăng patch; push chỉ đổi `.ai`, md, `apps/game-web` thì CI bỏ qua (paths-ignore).
+- Phát hành: push `main`; commit `feat` tăng minor, `fix` tăng patch; push chỉ đổi `.ai`, md, `docs`, `art`, `tools`... thì CI bỏ qua (paths-ignore trong `.github/workflows/release-main.yml`).
 
 **Quy tắc phải giữ**
 - Có người chơi thật: mọi thay đổi `characters.state` cần migration và tương thích ngược; không sửa file migration đã áp dụng (checksum nằm trong DB prod).
@@ -87,5 +87,5 @@ Danh sách đầy đủ và phase sở hữu ở [`P01-scope.md`](P01-scope.md) 
 ## 8. Việc còn lại trước khi "đóng sạch"
 
 1. ~~Owner xác nhận ký đóng P01 (đóng có nợ).~~ Đã ký 2026-11-13.
-2. ~~Push các commit art lên `main`.~~ Đã push cùng commit tài liệu.
-3. Nợ N14: chưa xóa `apps/game-web` và `apps/game-client`, vì hai thư mục còn chứa nguồn art và asset APK gốc (xem N14).
+2. ~~Push các commit art lên `main`.~~ Đã đổi: 7 commit art (4,5 GB) KHÔNG push, chỉ giữ ở nhánh local `backup/pre-restructure-20261113`; art nguồn nằm trong `art/`, git chỉ theo dõi ảnh final/manifest/prompt.
+3. ~~Nợ N14: dọn `apps/game-web` và `apps/game-client`.~~ Xong 2026-11-16 (xem [`docs/REPO-LAYOUT.md`](../../../../docs/REPO-LAYOUT.md)).

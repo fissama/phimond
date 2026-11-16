@@ -1,52 +1,45 @@
 # Phimond
 
-A playable reconstruction of the pet-training and multi-generation synthesis loop of 《靈獸世界 Online》. This is the **first vertical slice**, not a complete or certified 100% replica. Historical rules, deliberate reconstruction, and remaining gaps are recorded in [research](docs/research/fidelity.md) and [delivery status](docs/STATUS.md).
+Game web HD-2D (phong cách Octopath) dựng lại vòng chơi nuôi thú và dung hợp nhiều đời của 《靈獸世界 Online》. Đang chơi được tại <https://play.philand.io.vn> (bản `v1.1.0`: 11 map từ Triệu Linh Điện tới Vương Cung, Điền Trang, Phòng thú cưng). Đây chưa phải bản sao đầy đủ hay đã được chứng nhận 100%; luật gốc, phần dựng lại có chủ ý và khoảng trống nằm ở [research](docs/research/fidelity.md) và [trạng thái](docs/STATUS.md).
 
-## Play locally
+## Cấu trúc
 
-The Go API uses `http://127.0.0.1:8090`; the companion journal uses `http://localhost:3100`. The game itself is a Godot 4 desktop client in `apps/game-client`.
+| Thư mục | Nội dung |
+|---|---|
+| `apps/client` | Client web: Vite + TypeScript + Three.js + Preact. Đây là client duy nhất của game. |
+| `apps/game-server` | Server Go: luật chơi, map, NPC, trận đấu, MySQL, REST + WebSocket. |
+| `apps/web` | Trang đồng hành (Next.js): bách khoa, công thức, nhật ký pet. |
+| `data` | Catalog chạy thật (loài, kỹ năng, vật phẩm, map `data/maps/p01`, NPC). Thiết kế 160 loài/97 kỹ năng nằm ở `.ai/plan/phases/`. |
+| `migrations` | Schema MySQL có version. |
+| `packages` | Hợp đồng giao thức (`protocol`, `protocol-ts`). |
+| `deploy` | Docker + manifest triển khai homelab (k3s); xem [docs/DEPLOY-HOMELAB.md](docs/DEPLOY-HOMELAB.md). |
+| `art` | Kho art nguồn (GPT/Codex): ảnh final, manifest, prompt, 160 atlas pet đã duyệt. Ảnh trung gian nằm trên đĩa, git bỏ qua. |
+| `tools` | Công cụ dựng map, cài art, kiểm tra nội dung và art. |
+| `docs` | Kiến trúc, DB, gameplay, nghiên cứu, báo cáo. |
+| `.ai` | Master plan, spec từng phase, đơn đặt art, review. |
 
-1. Configure the root `.env` from `.env.example`. Use a **new, dedicated MySQL database**. The configured database for this workspace is `phimond_reconstruction`. Existing `philandz` is not used or migrated.
-2. Create/migrate that new schema: `./tools/server.sh -migrate`.
-3. Start the authoritative server: `./tools/server.sh`.
-4. On this Mac, double-click [launch.command](apps/game-client/launch.command), which uses the downloaded local Godot runtime. Otherwise open `apps/game-client/project.godot` in Godot 4 and press F5, or run `godot --path apps/game-client`. See [client instructions](apps/game-client/README.md).
-5. Start the companion: `cd apps/web && npm ci && npm run dev`.
-6. Register your own account in either client (username 3–24 ASCII letters/digits/underscores, password 10–72 UTF-8 bytes). Both use the same account and pets.
+Chi tiết, chính sách art và bản đồ đường dẫn cũ → mới: [docs/REPO-LAYOUT.md](docs/REPO-LAYOUT.md).
 
-Go 1.25+, Node 20.9+, MySQL 8+, and Godot 4 are required. Credentials live only in ignored root `.env`. Hosted MySQL supports `MYSQL_TLS=true`, `MYSQL_CA_FILE`, and explicit development opt-in `MYSQL_TLS_INSECURE=true`. This workspace uses the latter at the user's request; the default verifies certificates.
+## Chạy local
 
-## First expedition
+1. Tạo `.env` từ `.env.example`. Dùng **một database MySQL riêng** (`phimond_reconstruction`), không dùng database khác.
+2. Migrate: `./tools/server.sh -migrate`.
+3. Chạy server: `./tools/server.sh` (mặc định `http://127.0.0.1:8090`).
+4. Chạy client: `cd apps/client && npm ci && npm run dev` rồi mở `http://localhost:5180`. Hướng dẫn thêm (thử trên iPhone cùng Wi-Fi, e2e): [apps/client/README.md](apps/client/README.md).
+5. Trang đồng hành (tùy chọn): `cd apps/web && npm ci && npm run dev` (cổng 3100).
 
-You begin in Severa at position 6 beside Trainer Elin, with a Moss Snail, 100 gold, seals and supplies. Accept journal quests, learn Earth Pulse at the trainer, and heal for free. Move right to the forest gateway at 39, enter, then search for beasts. Lower HP before attempting capture. Quests pay gold/experience and supplies; choose your active pet to train it.
+Cần Go 1.25+, Node 20.9+, MySQL 8+. Thông tin đăng nhập chỉ nằm trong `.env` (đã bị git bỏ qua).
 
-Return to the city and use the left gateway to Whisperleaf Ranch. Approach Keeper Oren at position 6 for appraisal, recipe study and synthesis. Two recipe-compatible opposite-gender parents must reach level 20. Synthesis costs a soul and gold; optional blessing consumes a leaf. Parents become retired ancestors, while the child inherits individual qualities, resistances and **only actually learned parental skills**. Repeating this produces multi-generation ancestry. Strengthening consumes an inactive same-star donor and improves future inheritance.
-
-Arena I requires trainer level 10. Win at the Imperial Arena to unlock Treasure Beach. The companion website reads the server catalog for the encyclopedia and synthesis dependency tree; My Journal shows your persistent pets and ancestry.
-
-## Layout
-
-- `apps/game-server`: Go domain, validated content, MySQL persistence, REST and WebSocket server.
-- `apps/game-client`: Godot rendering, UI and intent-only network client.
-- `apps/web`: Next.js companion encyclopedia, recipe planner and account journal.
-- `data`: 14 species, 29 skills, seven statuses, eight race definitions, six recipes, five rooms, four quests and configurable reconstructed rules. This is the live runtime catalog; the 160-species design roster, 97-skill and 28-recipe-candidate designs live under `.ai/plan/phases/` and are not activated.
-- `migrations`: versioned MySQL schema, restricted to a Phimond-marked database.
-- `packages/protocol`: v1 contract.
-- `docs`: architecture, database, gameplay, research and remaining scope.
-- `infra/compose.yml`: optional separate Go deployment against your configured MySQL.
-
-The old `server/`, `client/`, `shared/`, `data/players` and root Docker Compose project remain intact. Their protocol and saves are separate. [Legacy setup instructions](docs/LEGACY_README.md) describe that previous prototype; its running server still uses port 8080.
-
-## Verify
+## Kiểm tra
 
 ```sh
-cd apps/game-server
-go test -race ./...
-go vet ./...
-# Explicit live integration (only an already marked dedicated database):
-set -a; . ../../.env; set +a
-MYSQL_TEST=1 go test -race ./internal/persistence ./internal/game
+sh tools/check.sh          # go test -race, go vet, map, client typecheck/unit/build, web, cổng art
+cd apps/client && npm run e2e   # Playwright, cần server chạy
+python3 tools/p01/build_maps.py --check   # kiểm tra 11 map
 ```
 
-`node tools/smoke.mjs` checks the live HTTP/WebSocket boundary. It creates isolated test accounts without logging credentials. Godot's fixture/live smoke commands are in its README. `cd apps/web && npm test && npm run build` checks the companion; `npm run test:live` exercises the running app in Chromium.
+## Phát hành
 
-Gameplay and economy changes commit immediately. Duplicate request IDs cannot double-spend. No old JSON saves are imported. See [known limits](docs/STATUS.md) before treating this as a production MMO.
+Push lên `main` chạy `.github/workflows/release-main.yml`: kiểm tra → tính version từ commit (`feat` tăng minor, `fix` tăng patch) → build 2 image → gắn tag → cập nhật manifest ở repo hạ tầng. Thay đổi chỉ ở tài liệu, `.ai`, `art`, `tools`... được bỏ qua (không ra bản mới vì mỗi lần rollout ngắt người chơi).
+
+Lịch sử: client Godot và client thử `apps/game-web` đã bị xóa; xem lại bằng tag `archive/game-client-final` và `archive/game-web-final`.
