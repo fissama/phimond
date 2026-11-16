@@ -30,6 +30,7 @@ on:
       - 'package-lock.json'
       - '*.mjs'
       - 'node_modules/**'
+      - 'Claude outputs/**'
   workflow_dispatch: {}
 
 concurrency:
