@@ -1,6 +1,6 @@
 # AD — Tải asset cho client web: kế hoạch triển khai
 
-- **Ngày:** 2026-11-18. **Trạng thái:** DRAFT, chờ owner duyệt §8.
+- **Ngày:** 2026-11-18. **Trạng thái:** owner duyệt làm từng bản (2026-11-18). **v1.1.1 (AD0–AD2): đã code + test, chờ owner cho push** — số đo ở [`evidence/v1.1.1-bench-20261118.md`](evidence/v1.1.1-bench-20261118.md). §8 câu 2–5 chưa chốt (cần trước v1.1.3).
 - **Vấn đề owner báo:** v1.1.0 kéo rất nhiều ảnh về trình duyệt (tab Network dày request), gây chậm, rò tài nguyên và các lỗi kèm theo.
 - **Liên quan:** nợ P01 **N08** (R08 tải/giải phóng theo map, budget, `?bench=`) và **N07** (Low phải nhẹ hơn High). Phase này trả một phần hai nợ đó.
 - **Phạm vi:** `apps/client` (render, loader, UI skin), `tools/` dựng asset, `deploy/web/nginx.conf`, `.github/workflows/release-main.yml`, một kho lưu (S3/R2) + CDN. Không đổi server Go, giao thức, save người chơi.
@@ -52,6 +52,8 @@ Giả định cần đo xác nhận ở AD0: số request lần đầu/lần sau
 Mỗi bước một nhóm commit nhỏ. Commit đổi `apps/client`/`deploy` sẽ ra bản patch; gộp bước để giảm số lần rollout (§6).
 
 ### AD0 — Đo trước (baseline) + `?bench=` (trả một phần N08)
+
+> **Đã làm (2026-11-18):** `src/render/bench.ts` (`?bench=1`, `window.__phimondBench()`), `tests/e2e/bench.spec.ts` (vòng thành phố vì rừng có quái làm bench không ổn định). Baseline chạy trên SwiftShader preset Thấp; chưa đo tay iPhone.
 - Thêm chế độ `?bench=1` trong client: overlay nhỏ hiển thị `textures.stats()`, `renderer.info.memory` (textures/geometries), số request ảnh từ `performance.getEntriesByType('resource')`, thời gian tải map (`__phimondLastMapLoadMs` đã có), FPS trung bình.
 - Script Playwright `apps/client/tests/e2e/bench.spec.ts`: vào game → đi vòng Triệu Linh Điện → Bìa Rừng → Rừng Sâu → Hoàng Môn → Quảng Trường → Thương Phố, lặp 10 vòng; ghi JSON: request lần đầu/lần hai, byte, thời gian đổi map, bộ nhớ sau mỗi vòng. Chạy 3 preset.
 - Lưu kết quả `.ai/plan/phases/AD-asset-delivery/evidence/baseline-<ngày>.json` + bảng tóm tắt.
@@ -59,6 +61,8 @@ Mỗi bước một nhóm commit nhỏ. Commit đổi `apps/client`/`deploy` s�
 - **Xong khi:** có số baseline cho mọi dòng ở §2.
 
 ### AD1 — Băm tên + cache dài + dọn file nặng
+
+> **Đã làm (2026-11-18), khác kế hoạch:** băm bằng plugin Vite `apps/client/vite-hash-public.ts` thay cho script Python (stage build Docker chỉ có Node; một bước build duy nhất). Manifest được **nhúng vào `index.html`** thay vì tải riêng (không tốn thêm request). File tên gốc **vẫn giữ** trong bản build để client đang chạy bản cũ tự lùi về khi rollout (dist gấp đôi, bỏ ở AD6). Thêm `no-cache` cho `location /`.
 - `tools/assets/build_runtime.py`: đọc `apps/client/public/{hd2d,ui,battle,pets,audio}` (đầu ra hiện tại của `tools/p01/sync_client_assets.py`), ghi `build/runtime-assets/<nhóm>/<tên>.<hash8>.<ext>` + `asset-manifest.json` (`"hd2d/bush-01.png" → "hd2d/bush-01.3fa9c1d2.png"`, kèm kích thước, byte). Hash = SHA-256 nội dung. Chạy lại không đổi gì nếu ảnh không đổi.
 - Client: một hàm `assetUrl(logicalPath)` tra manifest (nạp 1 lần lúc khởi động, có fallback về tên cũ khi thiếu). Thay `hd2dUrl`, `uiUrl`, `petUrl`, nhạc, ảnh trận, CSS skin dùng hàm này.
 - nginx: file có hash → `Cache-Control: public, max-age=31536000, immutable`; `asset-manifest.json` → `no-cache` (nhỏ, có ETag); bỏ `max-age=3600` cho ảnh.
@@ -68,6 +72,8 @@ Mỗi bước một nhóm commit nhỏ. Commit đổi `apps/client`/`deploy` s�
 - **Xong khi:** vào lại game ≤ 5 request ảnh; ảnh chụp 11 map không đổi.
 
 ### AD2 — Sửa rò và budget theo preset (trả N07 + một phần N08)
+
+> **Đã làm (2026-11-18):** rò nằm ở mọi `clone()` texture (sprite nhiều khung, dải idle/run NPC/người, linh thú, nền xa), không chỉ nền xa; sửa bằng `ownedClone` + `disposeTree`. Budget chốt Thấp/TB/Cao = **64/128/192 MB** (không phải 64/96/160 để tránh map lớn ở TB bị giải mã lại liên tục; chỉnh lại khi có số đo máy thật); cắt còn ½ budget sau mỗi lần vào map. Chưa đo vào/ra trận 20 lần và chưa chứng minh Low nhẹ hơn High trên máy thật (N07 vẫn mở một phần).
 - Sửa F4: đưa texture `clone()` của nền xa vào `disposables`; rà toàn bộ `clone()`, `new THREE.Texture`, `CanvasTexture`, material tạo động trong `render/` (`scene.ts`, `atmosphere.ts`, `engine.ts`, sprite người chơi/NPC/quái, hiệu ứng trận) xem có dispose khi rời map/trận không.
 - `TextureCache`: budget theo preset (Low 64 / Medium 96 / High 160 MB, chỉnh theo số đo); khi đổi map: bỏ pin tất cả, **pin lại chỉ texture của map mới + map kề**, đẩy phần còn lại ngay (không chờ vượt budget). Texture đã đẩy vẫn còn trong cache HTTP nên quay lại nhanh.
 - Low: giảm kích thước nền xa/nền trận (bản 50% sinh ở AD1), tắt texture trang trí phụ (decal nhiều lớp), giới hạn pixel ratio.
