@@ -10,6 +10,7 @@ import { buildScene, THEMES, type BuiltScene } from './scene.ts';
 import { blobShadow, CharacterSprite, foeRing, PetSprite, propSprite } from './sprites.ts';
 import type { Cell, Direction } from '../world/coords.ts';
 import { follow } from '../world/smooth.ts';
+import { attachBench, detachBench } from './bench.ts';
 
 export type Pick =
   | { kind: 'ground'; cell: Cell }
@@ -82,6 +83,7 @@ export class Engine {
     this.sun.position.set(-8, 14, 10);
     this.scene.add(this.hemi, this.sun, this.sun.target, this.playerRoot);
     this.resizeObs = new ResizeObserver(() => this.resize());
+    attachBench(this);
     this.resizeObs.observe(host);
   }
 
@@ -361,6 +363,7 @@ export class Engine {
   }
 
   dispose(): void {
+    detachBench(this);
     cancelAnimationFrame(this.raf);
     this.unloadMap();
     this.resizeObs.disconnect();
@@ -370,9 +373,10 @@ export class Engine {
     this.labels.remove();
   }
 
-  stats(): { calls: number; triangles: number; textures: number; geometries: number; cacheMB: number } {
+  stats(): { calls: number; triangles: number; textures: number; geometries: number; cacheMB: number; cacheCount: number } {
     const i = this.renderer.info;
-    return { calls: i.render.calls, triangles: i.render.triangles, textures: i.memory.textures, geometries: i.memory.geometries, cacheMB: textures.stats().mb };
+    const c = textures.stats();
+    return { calls: i.render.calls, triangles: i.render.triangles, textures: i.memory.textures, geometries: i.memory.geometries, cacheMB: c.mb, cacheCount: c.count };
   }
 
   private frame(dt: number): void {

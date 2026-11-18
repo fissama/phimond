@@ -9,6 +9,9 @@ const MULTI_SERVER_PORT = 8097;
 const MULTI_WEB_PORT = 5187;
 // PHIMOND_DEVSERVER_BIN: dùng binary devserver đã build sẵn thay cho `go run` (môi trường không tải được toolchain Go).
 const DEVSERVER = process.env.PHIMOND_DEVSERVER_BIN ?? 'go run ./cmd/devserver';
+// PHIMOND_E2E_DIST=1: chạy trên bản build (`npm run build` trước) qua `vite preview` thay vì Vite dev — để kiểm tên asset đã băm (AD1).
+// Bản build chỉ bật móc __phimond khi URL có `?debug`.
+const WEB = (port: number) => (process.env.PHIMOND_E2E_DIST ? `npx vite preview --port ${port} --strictPort` : `npx vite --port ${port}`);
 
 export default defineConfig({
   testDir: 'tests/e2e',
@@ -37,7 +40,7 @@ export default defineConfig({
       reuseExistingServer: false,
     },
     {
-      command: `npx vite --port ${WEB_PORT}`,
+      command: WEB(WEB_PORT),
       env: { GAME_SERVER: `http://127.0.0.1:${SERVER_PORT}` },
       url: `http://127.0.0.1:${WEB_PORT}`,
       timeout: 60_000,
@@ -52,7 +55,7 @@ export default defineConfig({
       reuseExistingServer: false,
     },
     {
-      command: `npx vite --port ${MULTI_WEB_PORT}`,
+      command: WEB(MULTI_WEB_PORT),
       env: { GAME_SERVER: `http://127.0.0.1:${MULTI_SERVER_PORT}` },
       url: `http://127.0.0.1:${MULTI_WEB_PORT}`,
       timeout: 60_000,
