@@ -8,7 +8,7 @@ Tất cả đều CC0 (miền công cộng) từ OpenGameArt, không bắt buộ
 | forest.ogg | Forest Whisper Theme (bản OGG) | CleytonKauffman | CC0 | https://opengameart.org/content/forest-whisper-theme |
 | deep.ogg | Cathedral in the forest (ambient loop) | congusbongus | CC0 | https://opengameart.org/content/cathedral-in-the-forest-ambient-loop |
 | battle.mp3 | RPG Battle Loop | iamoneabe | CC0 | https://opengameart.org/content/rpg-battle-loop |
-| victory.wav | Victory Fanfare Short | cynicmusic | CC0 | https://opengameart.org/content/victory-fanfare-short |
+| victory.ogg, victory.mp3 (chuyển từ victory.wav 2026-11-18) | Victory Fanfare Short | cynicmusic | CC0 | https://opengameart.org/content/victory-fanfare-short |
 | palace.mp3 | A New Town (RPG Theme) | cynicmusic | CC0 | https://opengameart.org/content/a-new-town-rpg-theme |
 
 Ghi chú: file zip Forest Whisper tải về bị cụt (thiếu cuối file); bản OGG đã được cứu nguyên vẹn từ zip, bản WAV trong zip mất.

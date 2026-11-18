@@ -1,11 +1,12 @@
 import { defineConfig } from 'vite';
 import preact from '@preact/preset-vite';
+import { hashPublic } from './vite-hash-public.ts';
 
 // Dev: Vite chuyển /api và /ws sang server Go (mặc định 127.0.0.1:8090) nên trình duyệt gọi cùng origin, không cần cấu hình CORS.
 const target = process.env.GAME_SERVER ?? 'http://127.0.0.1:8090';
 
 export default defineConfig({
-  plugins: [preact()],
+  plugins: [preact(), hashPublic()],
   base: './',
   resolve: { preserveSymlinks: true },
   // Gói protocol nội bộ (symlink) không pre-bundle để sửa schema có hiệu lực ngay.

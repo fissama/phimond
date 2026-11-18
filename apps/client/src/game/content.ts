@@ -1,5 +1,6 @@
 import type { BattleEvent, Catalog, MapDef, Npc } from '@phimond/protocol';
 import { Grid } from '../world/grid.ts';
+import { fetchAsset } from '../assetUrl.ts';
 
 /** Tên tiếng Việt cho nội dung server còn tên tiếng Anh (loài, vật phẩm, kỹ năng, trạng thái, công thức). */
 type Dict = Record<string, Record<string, string | { name: string; description?: string }>>;
@@ -8,7 +9,7 @@ const reverse = new Map<string, string>();
 
 export async function loadDictionary(): Promise<void> {
   try {
-    const r = await fetch(`${import.meta.env.BASE_URL}i18n/vi.json`);
+    const r = await fetchAsset('i18n/vi.json');
     if (r.ok) dict = (await r.json()) as Dict;
   } catch {
     dict = {};

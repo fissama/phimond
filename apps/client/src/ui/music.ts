@@ -1,6 +1,7 @@
 import { effect } from '@preact/signals';
 import { settings } from '../state/settings.ts';
 import { session } from '../state/app.ts';
+import { assetUrl, fetchAsset, hasAsset } from '../assetUrl.ts';
 
 /**
  * Nhạc nền theo ngữ cảnh (map / trận) bằng thẻ <audio> lặp, chuyển bài mờ dần. File nhạc nằm ở
@@ -18,7 +19,7 @@ interface Manifest {
   gain?: Record<string, number>;
 }
 
-const BASE = `${import.meta.env.BASE_URL}audio/music/`;
+const DIR = 'audio/music/';
 const FADE_MS = 900;
 let manifest: Manifest | null = null;
 let manifestTried = false;
@@ -32,7 +33,7 @@ async function loadManifest(): Promise<Manifest | null> {
   if (manifest || manifestTried) return manifest;
   manifestTried = true;
   try {
-    const r = await fetch(`${BASE}manifest.json`);
+    const r = await fetchAsset(`${DIR}manifest.json`);
     if (!r.ok || !(r.headers.get('content-type') ?? '').includes('json')) return null;
     manifest = (await r.json()) as Manifest;
   } catch {
@@ -47,9 +48,10 @@ function open(files: string[], loop: boolean): HTMLAudioElement | null {
   const el = new Audio();
   el.loop = loop;
   el.preload = 'auto';
-  const ok = files.find((f) => el.canPlayType(f.endsWith('.ogg') ? 'audio/ogg; codecs="vorbis"' : f.endsWith('.mp3') ? 'audio/mpeg' : 'audio/wav') !== '');
+  // Bản build biết file nào có thật: bỏ qua file khai báo mà chưa có (tránh request 404 rồi mới chuyển bài).
+  const ok = files.filter((f) => hasAsset(DIR + f)).find((f) => el.canPlayType(f.endsWith('.ogg') ? 'audio/ogg; codecs="vorbis"' : f.endsWith('.mp3') ? 'audio/mpeg' : 'audio/wav') !== '');
   if (!ok) return null;
-  el.src = `${BASE}${ok}`;
+  el.src = assetUrl(DIR + ok);
   el.volume = 0;
   return el;
 }

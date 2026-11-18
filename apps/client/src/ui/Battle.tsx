@@ -10,6 +10,7 @@ import { battleResultOpen, pushLog } from '../state/ui.ts';
 import { damageGlyphs, iconFor, uiUrl } from './skin.ts';
 import { sfx } from './sound.ts';
 import { playJingle } from './music.ts';
+import { assetUrl } from '../assetUrl.ts';
 
 /** Tên hiển thị của đơn vị; quái cùng tên (encounter 2–3 quái giống nhau) có hậu tố A/B/C theo thứ tự đội hình. */
 /** Bảng hiệu ứng 6 khung 192×192 đã duyệt (public/battle/fx-*.png). Hệ khác (phong/quang/ám/vô) dùng hiệu ứng CSS cho tới khi có bảng. */
@@ -312,7 +313,7 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
                   bottom: foot + bodyH * 0.25,
                   width: f.sheet ? bodyH * 0.9 : bodyW * 1.1,
                   height: f.sheet ? bodyH * 0.9 : bodyH * 0.8,
-                  ...(f.sheet ? { backgroundImage: `url(${import.meta.env.BASE_URL}battle/${f.sheet}.png)` } : {}),
+                  ...(f.sheet ? { backgroundImage: `url(${assetUrl(`battle/${f.sheet}.png`)})` } : {}),
                 }}
                 aria-hidden="true"
               />
@@ -345,7 +346,7 @@ export function Battle({ world, ch }: { world: GameWorld; ch: Character }) {
   return (
     <div class={`battle ${shake ? 'shake' : ''}`} data-testid="battle">
       <div class="scene">
-        <img class="bg" src={`${import.meta.env.BASE_URL}battle/battle-bg-${bgKey}.png`} alt="" onError={(e) => ((e.currentTarget as HTMLImageElement).style.display = 'none')} />
+        <img class="bg" src={assetUrl(`battle/battle-bg-${bgKey}.png`)} alt="" onError={(e) => ((e.currentTarget as HTMLImageElement).style.display = 'none')} />
         <div class="vignette" />
         <div class="ground" />
         <div class="motes" aria-hidden="true" />

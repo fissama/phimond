@@ -70,6 +70,26 @@ python3 tools/p01/sync_client_assets.py     # chạy từ gốc repo, cần Pill
 
 Asset chặn 1.0.0 chưa duyệt (sàn thành, nền xa thành, 7 NPC mới, hòm thư) đang dùng **bản tạm** cắt từ ảnh owner nộp (`_intake/`), đánh dấu `provisional` trong `public/hd2d/assets.json`. Nhân vật chính dùng dải idle/run cũ (một hướng) tới khi cắt xong bộ 3 hướng của đơn 09. Duyệt art xong thì chạy lại script.
 
+### Tải asset (AD1, từ v1.1.1)
+
+- Mọi đường dẫn ảnh/âm thanh/json trong `public/` phải đi qua `assetUrl('hd2d/x.png')` (hoặc `hd2dUrl`, `uiUrl`, `petUrl`, `fetchAsset`) trong `src/assetUrl.ts`. Không ghép `import.meta.env.BASE_URL` tay.
+- `vite build` chạy plugin `vite-hash-public.ts`: thêm bản sao `tên.<10 hex>.đuôi` cho mỗi file trong `public/{hd2d,ui,battle,pets,audio,i18n}`, ghi `dist/asset-manifest.json`, nhúng bảng tên vào `index.html` và sửa `url(../ui/…)` trong CSS. nginx cache file đã băm 1 năm (`immutable`); `index.html` luôn `no-cache`.
+- File tên gốc vẫn nằm trong bản build để người đang chơi bản cũ (sau khi rollout) tự lùi về tên gốc khi file băm cũ không còn. Vì vậy `dist/` nặng gấp đôi `public/` (~156 MB); bỏ được khi asset chuyển lên CDN (AD6).
+- Không đặt tên file gốc giống tên đã băm (`.<10 ký tự hex>.đuôi`): build sẽ báo lỗi.
+
+### Đo hiệu năng (AD0, `?bench=`)
+
+- Mở game với `?bench=1` (bản build: `?bench=1&debug`) để hiện bảng số đo: FPS, số texture GPU, bộ nhớ cache texture, thời gian tải map, số request ảnh và dung lượng tải.
+- Bench tự động (đi vòng thành phố nhiều lần, ghi JSON):
+
+```sh
+npm run build   # chỉ khi đo bản build
+PHIMOND_E2E_DIST=1 PHIMOND_BENCH=1 PHIMOND_BENCH_LOOPS=5 PHIMOND_BENCH_QUALITY=low \
+  PHIMOND_BENCH_ASSERT=1 PHIMOND_BENCH_OUT=test-results/bench.json npx playwright test bench --project=chromium
+```
+
+Bỏ `PHIMOND_E2E_DIST=1` để đo bản dev. `PHIMOND_BENCH_ASSERT=1` làm test thất bại nếu số texture GPU tăng dần qua các vòng (rò).
+
 ## Cấu trúc
 
 | Thư mục | Vai trò |
@@ -84,7 +104,7 @@ Asset chặn 1.0.0 chưa duyệt (sàn thành, nền xa thành, 7 NPC mới, hò
 
 ## Giới hạn đã biết (theo plan, làm ở bước sau)
 
-- Benchmark (`?bench=`), đo frame/bộ nhớ trên thiết bị thật và QA thủ công: S6/S7 (owner yêu cầu sau).
+- Đã có `?bench=` (AD0). Còn thiếu: đo frame/bộ nhớ trên thiết bị thật (iPhone Safari) và QA thủ công (nợ N09/N10).
 - Quái dùng 14 loài cũ hiển thị bằng atlas P10 (nợ N02); chức năng NPC chưa có ở server báo "chưa mở" (N04); Huyết Chiến Đài chưa mở (N01).
 - Nhân vật chính một hướng; NPC idle tĩnh với 7 NPC mới (chặng 6 chưa có).
 - Kênh chat Thế giới/Khu vực/Đội/Riêng chỉ là khung; log hiện thông báo hệ thống và đổi map.

@@ -1,9 +1,10 @@
+import { assetUrl, fetchAsset } from '../assetUrl.ts';
 /**
  * Giao diện dùng bộ UI HD-2D đã duyệt (art-src batch 06 HUD, 07 trận, 08 menu, 09 icon, 10 logo/tải).
  * Ảnh nằm ở public/ui (sinh bằng tools/p01/sync_client_assets.py). CSS được sinh lúc chạy để đường dẫn
- * đúng với BASE_URL ở cả bản dev và bản build.
+ * đúng với BASE_URL ở cả bản dev và bản build (tên đã băm khi build, xem `assetUrl`).
  */
-export const uiUrl = (id: string) => `${import.meta.env.BASE_URL}ui/${id}.png`;
+export const uiUrl = (id: string) => assetUrl(`ui/${id}.png`);
 
 type Slice = [number, number, number, number]; // trái, trên, phải, dưới (theo manifest)
 
@@ -116,7 +117,7 @@ export function damageGlyphs(text: string): string[] {
 const known = new Set<string>();
 export async function loadUiManifest(): Promise<void> {
   try {
-    const r = await fetch(`${import.meta.env.BASE_URL}ui/ui.json`);
+    const r = await fetchAsset('ui/ui.json');
     if (r.ok) Object.keys((await r.json()) as Record<string, unknown>).forEach((k) => known.add(k));
   } catch {
     /* thiếu manifest: chỉ mất icon */

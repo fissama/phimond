@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { assetUrl, fetchAsset, unhashedUrl } from '../assetUrl.ts';
 
 export interface AssetInfo {
   category: string;
@@ -29,17 +30,16 @@ export interface PetAtlas {
   legacy: Record<string, { species: string; artPending?: boolean }>;
 }
 
-const BASE = import.meta.env.BASE_URL;
-export const hd2dUrl = (id: string, kind?: 'idle' | 'run' | 'run-down' | 'run-up') => `${BASE}hd2d/${id}${kind ? '.' + kind : ''}.png`;
-export const petUrl = (file: string) => `${BASE}pets/${file}`;
+export const hd2dUrl = (id: string, kind?: 'idle' | 'run' | 'run-down' | 'run-up') => assetUrl(`hd2d/${id}${kind ? '.' + kind : ''}.png`);
+export const petUrl = (file: string) => assetUrl(`pets/${file}`);
 
 let manifest: Record<string, AssetInfo> = {};
 let pets: PetAtlas | null = null;
 
 export async function loadManifests(): Promise<void> {
   const [a, p] = await Promise.all([
-    fetch(`${BASE}hd2d/assets.json`).then((r) => (r.ok ? r.json() : {})),
-    fetch(`${BASE}pets/manifest.json`).then((r) => (r.ok ? r.json() : null)),
+    fetchAsset('hd2d/assets.json').then((r) => (r.ok ? r.json() : {})),
+    fetchAsset('pets/manifest.json').then((r) => (r.ok ? r.json() : null)),
   ]);
   manifest = a as Record<string, AssetInfo>;
   pets = p as PetAtlas | null;
@@ -78,7 +78,9 @@ class TextureCache {
       return hit.tex;
     }
     const e = { tex: Promise.resolve(null as unknown as THREE.Texture), bytes: 0, used: ++this.tick, pinned: true };
-    e.tex = this.loader.loadAsync(url).then((t) => {
+    // Bản băm không còn (bản mới vừa rollout) → lùi về tên gốc thay vì để trống texture.
+    const load = this.loader.loadAsync(url).catch((err: unknown) => (unhashedUrl(url) !== url ? this.loader.loadAsync(unhashedUrl(url)) : Promise.reject(err)));
+    e.tex = load.then((t) => {
       t.colorSpace = THREE.SRGBColorSpace;
       t.magFilter = THREE.NearestFilter;
       t.minFilter = opts.repeat ? THREE.NearestMipmapLinearFilter : THREE.LinearFilter;
