@@ -41,9 +41,9 @@ export const PRESETS: Record<Quality, {
   post: 'none' | 'grade' | 'full';
   textureBudgetMB: number;
 }> = {
-  low: { label: 'Thấp', renderScale: 0.75, maxPixelRatio: 1, shadows: 'none', shadowMapSize: 0, decor: 0.35, fx: false, backdrop: true, antialias: false, post: 'none', textureBudgetMB: 96 },
-  medium: { label: 'Trung bình', renderScale: 1, maxPixelRatio: 1.5, shadows: 'blob', shadowMapSize: 0, decor: 0.8, fx: true, backdrop: true, antialias: false, post: 'grade', textureBudgetMB: 160 },
-  high: { label: 'Cao', renderScale: 1, maxPixelRatio: 2, shadows: 'real', shadowMapSize: 2048, decor: 1, fx: true, backdrop: true, antialias: true, post: 'full', textureBudgetMB: 256 },
+  low: { label: 'Thấp', renderScale: 0.75, maxPixelRatio: 1, shadows: 'none', shadowMapSize: 0, decor: 0.35, fx: false, backdrop: true, antialias: false, post: 'none', textureBudgetMB: 64 },
+  medium: { label: 'Trung bình', renderScale: 1, maxPixelRatio: 1.5, shadows: 'blob', shadowMapSize: 0, decor: 0.8, fx: true, backdrop: true, antialias: false, post: 'grade', textureBudgetMB: 128 },
+  high: { label: 'Cao', renderScale: 1, maxPixelRatio: 2, shadows: 'real', shadowMapSize: 2048, decor: 1, fx: true, backdrop: true, antialias: true, post: 'full', textureBudgetMB: 192 },
 };
 
 const KEY = 'phimond.settings.v1';

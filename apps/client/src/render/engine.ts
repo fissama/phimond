@@ -4,7 +4,7 @@ import { PRESETS, settings, type FpsCap, type Quality } from '../state/settings.
 import { INDOOR, lightAt, type Light } from './daylight.ts';
 import { Post } from './post.ts';
 import { applySun, paintedShadow, sunFor } from './shadows.ts';
-import { asset, textures } from './assets.ts';
+import { asset, disposeTree, textures } from './assets.ts';
 import { Footsteps } from './footsteps.ts';
 import { buildScene, THEMES, type BuiltScene } from './scene.ts';
 import { blobShadow, CharacterSprite, foeRing, PetSprite, propSprite } from './sprites.ts';
@@ -157,7 +157,10 @@ export class Engine {
       this.player.enableSilhouette();
       this.playerRoot.add(this.player.root);
     }
-    if (this.playerBlob) this.playerRoot.remove(this.playerBlob);
+    if (this.playerBlob) {
+      this.playerRoot.remove(this.playerBlob);
+      disposeTree(this.playerBlob); // bóng dựng lại mỗi map: geometry/material cũ phải trả lại GPU
+    }
     this.playerBlob = blob ? ((await paintedShadow('small', 0.95)) ?? blobShadow(0.42)) : null;
     if (this.playerBlob) this.playerRoot.add(this.playerBlob);
 
@@ -204,6 +207,8 @@ export class Engine {
         this.showcases.push({ root, sprite, t: Math.random() * 6, baseY });
       }),
     );
+    // Map mới đã giữ (pin) đủ texture của nó: trả bớt texture của map cũ ngay, không chờ tràn budget (AD2).
+    textures.trim();
   }
 
   private async addSpawn(s: WildSpawn, blob: boolean, real: boolean): Promise<void> {
@@ -233,25 +238,13 @@ export class Engine {
     for (const a of [...this.npcs.values(), ...this.spawns.values()]) {
       this.scene.remove(a.root);
       a.label?.remove();
-      a.root.traverse((o) => {
-        const m = o as THREE.Mesh;
-        if (m.isMesh) {
-          m.geometry.dispose();
-          (m.material as THREE.Material).dispose();
-        }
-      });
+      disposeTree(a.root);
     }
     this.npcs.clear();
     this.spawns.clear();
     for (const c of this.showcases) {
       this.scene.remove(c.root);
-      c.root.traverse((o) => {
-        const m = o as THREE.Mesh;
-        if (m.isMesh) {
-          m.geometry.dispose();
-          (m.material as THREE.Material).dispose();
-        }
-      });
+      disposeTree(c.root);
     }
     this.showcases.length = 0;
     textures.unpinAll();

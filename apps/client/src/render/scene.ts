@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import type { MapDef } from '@phimond/protocol';
 import { PRESETS, type Quality } from '../state/settings.ts';
-import { asset, hd2dUrl, textures } from './assets.ts';
+import { asset, disposeTree, hd2dUrl, ownedClone, textures } from './assets.ts';
 import { animate, blobShadow, propSprite } from './sprites.ts';
 import { spawnAmbient, type Ambient } from './ambient.ts';
 import type { Light } from './daylight.ts';
@@ -835,7 +835,7 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
     propJobs.push(
       (async () => {
         const a = asset(map.backdrop!)!;
-        const tex = (await textures.get(hd2dUrl(map.backdrop!), { repeat: true })).clone();
+        const tex = ownedClone(await textures.get(hd2dUrl(map.backdrop!), { repeat: true }));
         const wWorld = a.px[0] / 64;
         const hWorld = a.px[1] / 64;
         const span = W + 30;
@@ -921,15 +921,7 @@ export async function buildScene(map: MapDef, quality: Quality): Promise<BuiltSc
       }
     },
     dispose() {
-      group.traverse((o) => {
-        const m = o as THREE.Mesh;
-        if (m.isMesh) {
-          m.geometry?.dispose();
-          const mat = m.material as THREE.Material;
-          mat.dispose();
-          (m.customDepthMaterial as THREE.Material | undefined)?.dispose();
-        }
-      });
+      disposeTree(group);
       disposables.forEach((d) => d.dispose());
       atmo?.dispose();
       lmask?.dispose();

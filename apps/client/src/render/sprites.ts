@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { asset, hd2dUrl, petArt, petAtlas, petUrl, textures, type AssetInfo } from './assets.ts';
+import { asset, hd2dUrl, ownedClone, petArt, petAtlas, petUrl, textures, type AssetInfo } from './assets.ts';
 
 export const PPU = 128; // px mỗi đơn vị world (nền xa 64)
 /** Góc nghiêng sprite theo camera (đứng nghiêng như HD-2D để không bị dẹt khi nhìn chéo xuống). */
@@ -37,7 +37,7 @@ export async function propSprite(id: string, opts: SpriteOpts = {}): Promise<THR
   if (!a) return null;
   const base = await textures.get(hd2dUrl(id));
   const frames = Math.max(1, a.frames || 1);
-  const tex = frames > 1 ? base.clone() : base;
+  const tex = frames > 1 ? ownedClone(base) : base;
   const fw = a.px[0] / frames;
   if (frames > 1) {
     tex.repeat.set(1 / frames, 1);
@@ -89,7 +89,7 @@ export class CharacterSprite {
     const a = asset(id);
     const load = async (key: 'idle' | 'run' | 'runDown' | 'runUp', kind: 'idle' | 'run' | 'run-down' | 'run-up', frames?: number) => {
       if (!frames) return;
-      const t = (await textures.get(hd2dUrl(id, kind))).clone();
+      const t = ownedClone(await textures.get(hd2dUrl(id, kind)));
       t.repeat.set(1 / frames, 1);
       t.needsUpdate = true;
       s.strips[key] = { tex: t, frames };
@@ -109,6 +109,8 @@ export class CharacterSprite {
     s.mesh = new THREE.Mesh(geo, mat);
     s.mesh.rotation.x = opts.tilt ?? SPRITE_TILT;
     if (opts.castShadow && first) enableShadow(s.mesh, first.tex);
+    // Các dải khung không gắn vào material lúc này vẫn phải được giải phóng khi rời map.
+    s.root.userData.ownedTextures = Object.values(s.strips).map((x) => x!.tex).filter((t) => t.userData.owned);
     s.root.add(s.mesh);
     return s;
   }
@@ -200,7 +202,7 @@ export class PetSprite {
     const atlas = petAtlas();
     const art = petArt(speciesId);
     if (!atlas || !art) return s;
-    const tex = (await textures.get(petUrl(art.file))).clone();
+    const tex = ownedClone(await textures.get(petUrl(art.file)));
     tex.repeat.set(1 / atlas.cols, 1 / atlas.rows);
     tex.needsUpdate = true;
     s.tex = tex;
