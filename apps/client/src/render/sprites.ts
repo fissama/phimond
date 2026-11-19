@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { asset, hd2dUrl, ownedClone, petArt, petAtlas, petUrl, textures, type AssetInfo } from './assets.ts';
+import { asset, hd2dUrl, ownedClone, petArt, petAtlas, petUrl, setFrame, textures, type AssetInfo } from './assets.ts';
 
 export const PPU = 128; // px mỗi đơn vị world (nền xa 64)
 /** Góc nghiêng sprite theo camera (đứng nghiêng như HD-2D để không bị dẹt khi nhìn chéo xuống). */
@@ -39,10 +39,7 @@ export async function propSprite(id: string, opts: SpriteOpts = {}): Promise<THR
   const frames = Math.max(1, a.frames || 1);
   const tex = frames > 1 ? ownedClone(base) : base;
   const fw = a.px[0] / frames;
-  if (frames > 1) {
-    tex.repeat.set(1 / frames, 1);
-    tex.needsUpdate = true;
-  }
+  if (frames > 1) setFrame(tex, 0, frames);
   const pivot: [number, number] = frames > 1 ? [fw / 2, a.pivot_px[1]] : a.pivot_px;
   const mesh = new THREE.Mesh(spriteGeometry(fw, a.px[1], pivot, opts.ppu), spriteMaterial(tex, opts));
   mesh.rotation.x = opts.tilt ?? SPRITE_TILT;
@@ -57,7 +54,7 @@ export function animate(mesh: THREE.Object3D, dt: number): void {
   if (!anim) return;
   anim.t += dt;
   const f = Math.floor(anim.t * anim.fps) % anim.frames;
-  anim.tex.offset.x = f / anim.frames;
+  setFrame(anim.tex, f, anim.frames);
 }
 
 /**
@@ -90,8 +87,7 @@ export class CharacterSprite {
     const load = async (key: 'idle' | 'run' | 'runDown' | 'runUp', kind: 'idle' | 'run' | 'run-down' | 'run-up', frames?: number) => {
       if (!frames) return;
       const t = ownedClone(await textures.get(hd2dUrl(id, kind)));
-      t.repeat.set(1 / frames, 1);
-      t.needsUpdate = true;
+      setFrame(t, 0, frames);
       s.strips[key] = { tex: t, frames };
     };
     if (a) {
@@ -174,7 +170,7 @@ export class CharacterSprite {
       if (this.mesh.customDepthMaterial) (this.mesh.customDepthMaterial as THREE.MeshDepthMaterial).map = strip.tex;
     }
     const frame = running ? Math.floor(this.phase) % strip.frames : Math.floor(this.t * 6) % strip.frames;
-    strip.tex.offset.x = frame / strip.frames;
+    setFrame(strip.tex, frame, strip.frames);
     this.mesh.scale.x = this.flip && !this.vertical ? -1 : 1;
     if (this.ghost) {
       const gm = this.ghost.material as THREE.MeshBasicMaterial;

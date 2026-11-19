@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto';
 import { copyFileSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
 import type { Plugin } from 'vite';
+import { buildAtlas, webpify } from './vite-atlas.ts';
 
 /**
  * AD1 — băm tên asset tĩnh khi build (`vite build`), để nginx/CDN cache 1 năm (`immutable`).
@@ -13,7 +14,8 @@ import type { Plugin } from 'vite';
  *  2. ghi `dist/asset-manifest.json` (đường dẫn logic → đường dẫn đã băm) cho công cụ/CDN;
  *  3. nhúng manifest vào `dist/index.html` (`window.__PHIMOND_ASSETS__`) để client tra không tốn thêm request;
  *  4. sửa `url(../ui/x.png)` trong CSS đã build sang tên đã băm.
- * Bản dev (`vite`) không chạy plugin: client dùng đường dẫn gốc (`src/assetUrl.ts`).
+ * Trước khi băm: gói atlas và thêm bản WebP (`vite-atlas.ts`); đường dẫn logic `.png` của ảnh đã có WebP trỏ sang bản WebP.
+ * Bản dev (`vite`) không chạy plugin: client dùng đường dẫn gốc, không atlas, không WebP (`src/assetUrl.ts`).
  */
 export const HASHED_DIRS = ['hd2d', 'ui', 'battle', 'pets', 'audio', 'i18n'];
 const SKIP = /(^|\/)\.DS_Store$|\.md$/i;
@@ -51,28 +53,41 @@ export function rewriteCssUrls(css: string, manifest: Record<string, string>): s
 
 export function hashPublic(): Plugin {
   let outDir = 'dist';
+  let root = '.';
   return {
     name: 'phimond-hash-public',
     apply: 'build',
     configResolved(c) {
+      root = c.root;
       outDir = c.build.outDir.startsWith('/') ? c.build.outDir : join(c.root, c.build.outDir);
     },
-    closeBundle() {
+    async closeBundle() {
+      const t0 = Date.now();
+      // AD3: gói atlas từ ảnh hd2d theo map (đọc atlas-groups.json ở gốc client), ghi hd2d/atlas/*.webp + hd2d/atlas.json.
+      const atlas = await buildAtlas(outDir, join(root, 'atlas-groups.json'));
+      // AD4: thêm bản WebP lossless cho PNG (trừ trang atlas vốn đã là WebP).
+      const wp = await webpify(outDir, HASHED_DIRS, join(outDir, 'hd2d', 'atlas'));
       const manifest: Record<string, string> = {};
-      for (const d of HASHED_DIRS) {
-        for (const file of walk(join(outDir, d))) {
-          const logical = relative(outDir, file).split(sep).join('/');
-          if (/\.DS_Store$/.test(logical)) {
-            rmSync(file);
-            continue;
-          }
-          if (SKIP.test(logical)) continue;
-          // Tên gốc trông như đã băm sẽ bị nginx cache 1 năm và bị client cắt nhầm khi lùi về tên gốc: chặn từ lúc build.
-          if (/\.[0-9a-f]{10}\.[a-z0-9]+$/i.test(logical)) throw new Error(`phimond-hash-public: tên gốc giống tên đã băm: ${logical}`);
-          const name = hashedName(logical, readFileSync(file));
-          copyFileSync(file, join(outDir, name));
-          manifest[logical] = name;
+      const files = HASHED_DIRS.flatMap((d) => walk(join(outDir, d)));
+      for (const file of files) {
+        const logical = relative(outDir, file).split(sep).join('/');
+        if (/\.DS_Store$/.test(logical)) {
+          rmSync(file);
+          continue;
         }
+        if (SKIP.test(logical)) continue;
+        // Tên gốc trông như đã băm sẽ bị nginx cache 1 năm và bị client cắt nhầm khi lùi về tên gốc: chặn từ lúc build.
+        if (/\.[0-9a-f]{10}\.[a-z0-9]+$/i.test(logical)) throw new Error(`phimond-hash-public: tên gốc giống tên đã băm: ${logical}`);
+        // PNG đã có bản WebP: đường dẫn logic .png trỏ sang bản WebP đã băm; PNG chỉ giữ tên gốc (cho client bản cũ).
+        if (wp.converted.has(file)) continue;
+        const name = hashedName(logical, readFileSync(file));
+        copyFileSync(file, join(outDir, name));
+        manifest[logical] = name;
+      }
+      for (const png of wp.converted) {
+        const logical = relative(outDir, png).split(sep).join('/');
+        const webpLogical = logical.slice(0, -4) + '.webp';
+        manifest[logical] = manifest[webpLogical]!;
       }
       const sorted = Object.fromEntries(Object.entries(manifest).sort(([a], [b]) => a.localeCompare(b)));
       writeFileSync(join(outDir, 'asset-manifest.json'), JSON.stringify(sorted, null, 1));
@@ -85,7 +100,11 @@ export function hashPublic(): Plugin {
       const inline = `<script>window.__PHIMOND_ASSETS__=${JSON.stringify(sorted).replace(/</g, '\\u003c')}</script>`;
       if (!html.includes('</title>')) throw new Error('phimond-hash-public: index.html không có </title> để chèn manifest');
       writeFileSync(indexPath, html.replace('</title>', `</title>\n    ${inline}`));
-      this.info?.(`băm ${Object.keys(sorted).length} asset → asset-manifest.json`);
+      const mb = (n: number) => (n / 1048576).toFixed(1);
+      this.info?.(
+        `atlas: ${atlas ? `${atlas.pages.length} trang, ${Object.keys(atlas.sprites).length} ảnh` : 'không có atlas-groups.json'}; ` +
+          `WebP: ${wp.converted.size} ảnh, ${mb(wp.before)} → ${mb(wp.after)} MB; băm ${Object.keys(sorted).length} asset (${((Date.now() - t0) / 1000).toFixed(0)} s)`,
+      );
     },
   };
 }

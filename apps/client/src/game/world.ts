@@ -2,7 +2,7 @@ import { effect, signal } from '@preact/signals';
 import type { Character, IntentMap, IntentOp, MapDef } from '@phimond/protocol';
 import type { Batch, Session } from '../net/session.ts';
 import { Engine, type Pick } from '../render/engine.ts';
-import { prefetch, hd2dUrl } from '../render/assets.ts';
+import { atlasPageUrls, prefetch, hd2dUrl } from '../render/assets.ts';
 import { settings } from '../state/settings.ts';
 import { battleResultOpen, closeOverlay, fatal, loading, overlay, pushLog, toast } from '../state/ui.ts';
 import { sfx } from '../ui/sound.ts';
@@ -185,6 +185,7 @@ export class GameWorld {
     for (const id of next) {
       const m = this.content.map(id);
       if (m?.backdrop) urls.push(hd2dUrl(m.backdrop));
+      urls.push(...atlasPageUrls(id, this.engine.currentQuality)); // bản build: trang atlas của map kề (AD5)
     }
     prefetch(urls);
   }

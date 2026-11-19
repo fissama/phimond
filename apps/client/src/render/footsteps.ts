@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { hd2dUrl, textures } from './assets.ts';
+import { hd2dUrl, textures, setFrame } from './assets.ts';
 
 /**
  * Bụi/cỏ dưới chân người chơi (GPT 2026-10-30, batch-15): dải 4 khung 64×64 phát một lần mỗi ~0,5 ô đi được.
@@ -35,8 +35,7 @@ export class Footsteps {
     geo.translate(0, SIZE / 2, 0);
     for (let i = 0; i < 6; i++) {
       const tex = base.clone();
-      tex.repeat.set(1 / FRAMES, 1);
-      tex.needsUpdate = true;
+      setFrame(tex, 0, FRAMES);
       const mat = new THREE.MeshBasicMaterial({ map: tex, alphaTest: 0.35, transparent: true, depthWrite: false });
       const mesh = new THREE.Mesh(geo, mat);
       mesh.visible = false;
@@ -75,7 +74,7 @@ export class Footsteps {
         p.mesh.visible = false;
         continue;
       }
-      p.tex.offset.x = f / FRAMES;
+      setFrame(p.tex, f, FRAMES);
     }
   }
 

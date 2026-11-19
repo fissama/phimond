@@ -32,3 +32,8 @@ export async function fetchAsset(path: string): Promise<Response> {
   if (r?.ok || url === unhashedUrl(url)) return r ?? fetch(url);
   return fetch(unhashedUrl(url));
 }
+
+/** Đang chạy bản build (có bảng tên đã băm). Bản dev: false. */
+export function isBuild(): boolean {
+  return hashed;
+}

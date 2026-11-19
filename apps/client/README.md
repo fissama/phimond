@@ -74,8 +74,22 @@ Asset chặn 1.0.0 chưa duyệt (sàn thành, nền xa thành, 7 NPC mới, hò
 
 - Mọi đường dẫn ảnh/âm thanh/json trong `public/` phải đi qua `assetUrl('hd2d/x.png')` (hoặc `hd2dUrl`, `uiUrl`, `petUrl`, `fetchAsset`) trong `src/assetUrl.ts`. Không ghép `import.meta.env.BASE_URL` tay.
 - `vite build` chạy plugin `vite-hash-public.ts`: thêm bản sao `tên.<10 hex>.đuôi` cho mỗi file trong `public/{hd2d,ui,battle,pets,audio,i18n}`, ghi `dist/asset-manifest.json`, nhúng bảng tên vào `index.html` và sửa `url(../ui/…)` trong CSS. nginx cache file đã băm 1 năm (`immutable`); `index.html` luôn `no-cache`.
-- File tên gốc vẫn nằm trong bản build để người đang chơi bản cũ (sau khi rollout) tự lùi về tên gốc khi file băm cũ không còn. Vì vậy `dist/` nặng gấp đôi `public/` (~156 MB); bỏ được khi asset chuyển lên CDN (AD6).
+- File tên gốc vẫn nằm trong bản build để người đang chơi bản cũ (sau khi rollout) tự lùi về tên gốc khi file băm cũ không còn. Vì vậy `dist/` nặng hơn nhiều so với `public/` (~170 MB với cả bản WebP và atlas từ v1.1.2); bỏ được khi asset chuyển lên CDN (AD6).
 - Không đặt tên file gốc giống tên đã băm (`.<10 ký tự hex>.đuôi`): build sẽ báo lỗi.
+
+### Atlas và WebP (AD3/AD4, từ v1.1.2)
+
+- Bản build gói ảnh hd2d (prop, decal, NPC, dải idle/run, hiệu ứng; trừ sàn lặp, nền xa và ảnh lớn hơn 2044 px) thành **trang atlas WebP lossless** theo đúng tập `map@preset` dùng ảnh đó (`vite-atlas.ts`). Một map ở một preset chỉ tải trang chứa ảnh nó dùng; mỗi ô có viền kéo mép 2 px chống lem.
+- Danh sách ảnh theo map nằm ở `atlas-groups.json` (commit trong repo). **Chạy lại khi thêm/đổi prop, NPC hoặc map** (cần devserver như e2e):
+
+```sh
+PHIMOND_ATLAS_USAGE=1 npx playwright test atlas-usage --project=chromium
+```
+
+  Ảnh chưa có trong file vẫn chạy được (tải lẻ), chỉ không được gói.
+- Code lấy texture vẫn gọi `textures.get(hd2dUrl(id))`; ảnh trong atlas trả về texture con đã chỉnh offset/repeat. Sprite nhiều khung **phải** chọn khung bằng `setFrame(tex, f, frames)` (không tự đặt `offset.x`/`repeat`), để đúng cả ảnh lẻ lẫn ô atlas.
+- Mọi PNG được thêm bản WebP lossless (pixel y hệt, nhẹ hơn ~60%); bảng tên trỏ `.png` sang bản WebP. Cần `sharp` (devDependency, có bản dựng sẵn cho Linux glibc/musl và macOS). Build lâu thêm ~40 s.
+- Bản dev (`npm run dev`) không atlas, không WebP: chỉ bản build mới có, nên kiểm tra hiển thị bằng `npm run build` rồi e2e/bench với `PHIMOND_E2E_DIST=1`. Chụp 11 map để so trước/sau: `PHIMOND_E2E_DIST=1 PHIMOND_SCREENS=/tmp/screens npx playwright test screens --project=chromium`.
 
 ### Đo hiệu năng (AD0, `?bench=`)
 
