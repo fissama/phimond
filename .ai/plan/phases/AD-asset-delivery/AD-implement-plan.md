@@ -1,6 +1,6 @@
 # AD — Tải asset cho client web: kế hoạch triển khai
 
-- **Ngày:** 2026-11-18. **Trạng thái:** owner duyệt làm từng bản (2026-11-18). **v1.1.1 (AD0–AD2): đã code + test, chờ owner cho push** — số đo ở [`evidence/v1.1.1-bench-20261118.md`](evidence/v1.1.1-bench-20261118.md). §8 câu 2–5 chưa chốt (cần trước v1.1.3).
+- **Ngày:** 2026-11-18. **Trạng thái:** owner duyệt làm từng bản (2026-11-18). **AD0–AD5 đã code + test** — số đo: [`evidence/v1.1.1-bench-20261118.md`](evidence/v1.1.1-bench-20261118.md) (AD0–AD2), [`evidence/v1.1.2-bench-20261118.md`](evidence/v1.1.2-bench-20261118.md) (AD3–AD5). Push v1.1.1 lần đầu (2026-11-18) hỏng ở bước push image web: 413 do Cloudflare chặn request > 100 MB trước Harbor → Dockerfile tách layer; vì chưa có tag v1.1.1 nên **AD0–AD5 phát hành chung dưới tag v1.1.1**. §8 câu 2–5 chưa chốt (cần trước AD6).
 - **Vấn đề owner báo:** v1.1.0 kéo rất nhiều ảnh về trình duyệt (tab Network dày request), gây chậm, rò tài nguyên và các lỗi kèm theo.
 - **Liên quan:** nợ P01 **N08** (R08 tải/giải phóng theo map, budget, `?bench=`) và **N07** (Low phải nhẹ hơn High). Phase này trả một phần hai nợ đó.
 - **Phạm vi:** `apps/client` (render, loader, UI skin), `tools/` dựng asset, `deploy/web/nginx.conf`, `.github/workflows/release-main.yml`, một kho lưu (S3/R2) + CDN. Không đổi server Go, giao thức, save người chơi.
@@ -82,6 +82,8 @@ Mỗi bước một nhóm commit nhỏ. Commit đổi `apps/client`/`deploy` s�
 - **Xong khi:** đạt dòng "bộ nhớ" và "sau 10 vòng" ở §2 trên Chromium; iPhone đo tay.
 
 ### AD3 — Atlas theo kit/map + UI sprite sheet
+
+> **Đã làm (2026-11-18), khác kế hoạch:** gói bằng `vite-atlas.ts` (Node + `sharp`) lúc build, không bằng Python; nhóm theo đúng tập `map@preset` dùng ảnh (`atlas-groups.json` sinh từ `tests/e2e/atlas-usage.spec.ts`) thay vì theo kit, để không tải ảnh thừa; xếp skyline 87%. **Chưa gộp ảnh UI** (9 lát CSS dễ vỡ; đã cache 1 năm + WebP).
 - `build_runtime.py` thêm bước gói atlas (thuật toán MaxRects, viết bằng Python + Pillow, không thêm công cụ ngoài): nhóm theo kit (`town`, `forest`, `hall`, `palace`, `farm`, `arena`…) hoặc theo danh sách prop từng map (`MAP_PROPS/MAP_EXTRAS/MAP_DECALS`); trang tối đa 2048×2048 (an toàn cho iPhone), **viền 2 px kéo dài mép (extrude)** chống lem khi lọc, giữ pixel nguyên (không co giãn).
 - Manifest atlas: mỗi id có `atlas`, `rect [x,y,w,h]`, giữ `px`, `pivot_px`, `frames`. Ảnh có nhiều khung (idle/run) xếp liền trong cùng atlas.
 - Không gói: sàn lặp (`repeat`), nền xa, nền trận, ảnh pet lớn (đã là atlas P10).
@@ -91,6 +93,8 @@ Mỗi bước một nhóm commit nhỏ. Commit đổi `apps/client`/`deploy` s�
 - **Xong khi:** request ảnh khi vào map lần đầu giảm ≥ 70% so với baseline.
 
 ### AD4 — Định dạng nhẹ hơn
+
+> **Đã làm (2026-11-18):** WebP **lossless** cho mọi PNG (51,7 → 21,1 MB, pixel y hệt). Chưa dùng WebP có mất dữ liệu cho nền trận/nền xa (cần owner duyệt).
 - Prop/UI/sprite: **WebP lossless** (hoặc PNG đã tối ưu bằng `oxipng`/Pillow `optimize` nếu WebP lossless không nhỏ hơn); chọn theo file nào nhỏ hơn, ghi vào manifest.
 - Nền trận, nền xa: **WebP lossy** chất lượng ~85, owner duyệt bằng mắt từng ảnh (bảng so sánh trong `evidence/`).
 - Giữ PNG gốc trong `art/`; chỉ bản chạy thật đổi định dạng.
@@ -98,6 +102,8 @@ Mỗi bước một nhóm commit nhỏ. Commit đổi `apps/client`/`deploy` s�
 - **Xong khi:** đạt dòng "dung lượng tải lần đầu" ở §2.
 
 ### AD5 — Thứ tự tải và prefetch
+
+> **Đã làm một phần (2026-11-18):** nạp sẵn lúc rảnh (≤3 ảnh cùng lúc, bỏ qua khi tiết kiệm dữ liệu/2G) nền xa + trang atlas của map kề ở preset đang chơi. **Chưa** tách thiết yếu/trang trí: sau atlas tải map chỉ 21–57 ms (SwiftShader), làm lại nếu đo iPhone thật thấy chậm.
 - Chia tài nguyên map thành **thiết yếu** (sàn, người chơi, NPC, cổng, va chạm hiển thị) và **trang trí** (prop xa, decal, động vật, hiệu ứng). Tắt màn tải khi xong phần thiết yếu; phần trang trí hiện dần (fade 150 ms).
 - Prefetch map kề: lấy **toàn bộ** atlas + sàn + nền của map kề (không chỉ nền), chạy lúc rảnh (`requestIdleCallback`), giới hạn 4 request song song, không prefetch khi `navigator.connection.saveData` hoặc mạng chậm, không prefetch ở preset Low trên di động (tùy số đo).
 - **Xong khi:** đạt dòng "đổi map sang map kề" ở §2.
